@@ -173,21 +173,14 @@ async function ghGraphQL(query, variables) {
   return data.data;
 }
 
-/** Real language byte breakdown → top 3 as rounded percentages summing to 100. */
-async function languagesFor(repo) {
-  if (!TOKEN) return synthLangs(repo.language);
-  try {
-    const bytes = await gh(repo.languages_url);
-    const entries = Object.entries(bytes).sort((a, b) => b[1] - a[1]).slice(0, 3);
-    const total = entries.reduce((s, [, v]) => s + v, 0) || 1;
-    let langs = entries.map(([name, v]) => ({ name, pct: Math.round((v / total) * 100) }));
-    // normalise rounding drift so the bar fills exactly 100%
-    const drift = 100 - langs.reduce((s, l) => s + l.pct, 0);
-    if (langs.length) langs[0].pct += drift;
-    return langs.length ? langs : synthLangs(repo.language);
-  } catch {
-    return synthLangs(repo.language);
-  }
+/**
+ * Language breakdown for the REST (token-less) path. REST discovery only runs
+ * when there's no token, so real per-repo language calls would exceed the
+ * anonymous budget — we synthesise from the primary language. (The authenticated
+ * path uses GraphQL, which returns the real byte breakdown inline.)
+ */
+function languagesFor(repo) {
+  return synthLangs(repo.language);
 }
 
 function synthLangs(primary) {

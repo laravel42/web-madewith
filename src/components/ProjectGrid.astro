@@ -104,6 +104,11 @@ const countInitial = countFormat === "terminal" ? `// ${n} result${n === 1 ? "" 
         const label = tag.dataset.tag || "All";
         activeTag = activeTag === label && label !== "All" ? "All" : label;
         for (const t of tags) t.classList.toggle("is-active", t.dataset.tag === activeTag);
+        // Keep the URL in sync so a filtered view is shareable/bookmarkable.
+        const next = new URL(location.href);
+        if (activeTag === "All") next.searchParams.delete("tag");
+        else next.searchParams.set("tag", activeTag);
+        history.replaceState({}, "", next.toString());
         apply();
       });
     }

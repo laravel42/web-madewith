@@ -7,14 +7,14 @@ interface Props { theme: Theme; project: Project; related: Project[]; }
 const { theme, project, related } = Astro.props;
 const base = `/${theme.slug}`;
 const radius = `${theme.radius}px`;
-const stars = formatStars(project.stars);
-const initial = project.author.charAt(0).toUpperCase();
+const stars = formatStars(project.stars || 0);
+const initial = (project.author || "").charAt(0).toUpperCase();
 const isTerminal = theme.variant === "terminal";
 const editorial = theme.editorial;
 const btnRadius = editorial ? "2px" : isTerminal ? "8px" : "10px";
 
 const palette = isTerminal ? [theme.accent, "#37423a", "#232a26"] : [theme.accent, "#cfd8d3", "#e6ebe8"];
-const langs = project.langs.map((l, i) => ({ ...l, color: palette[i] ?? (isTerminal ? "#1c231e" : "#eef1ef") }));
+const langs = (project.langs || []).map((l, i) => ({ ...l, color: palette[i] ?? (isTerminal ? "#1c231e" : "#eef1ef") }));
 const demo = project.demo;
 ---
 

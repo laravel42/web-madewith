@@ -7,8 +7,8 @@ interface Props { theme: Theme; project: Project; rank: string; }
 const { theme, project, rank } = Astro.props;
 const base = `/${theme.slug}`;
 const href = `${base}/project/${project.slug}`;
-const stars = formatStars(project.stars);
-const initial = project.author.charAt(0).toUpperCase();
+const stars = formatStars(project.stars || 0);
+const initial = (project.author || "").charAt(0).toUpperCase();
 // shared data hooks for the client-side filter
 const dataAttrs = {
   "data-role": "card",
