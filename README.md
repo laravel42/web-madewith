@@ -61,12 +61,29 @@ The scraper is built to stay well under GitHub's limits, three ways:
    secondary-limit `403/429`, and sends `If-None-Match` so unchanged endpoints
    return a **free `304`** that costs no quota (`scripts/.cache/etags.json`).
 
-### Scheduled refresh (the traffic hook)
+`scripts/scrape.mjs` is the **local** scraper (writes `src/data/*.json` for dev).
+Production scheduling runs on Cloudflare — see below.
 
-`.github/workflows/refresh-data.yml` runs the scraper **daily** (and on demand),
-commits any changed `src/data/*.json`, and re-builds. It uses the Actions
-built-in `GITHUB_TOKEN`, which enables the GraphQL path automatically — no
-secret to configure, and a full refresh (~6 requests) never nears the limit.
+### Scheduled refresh — Cloudflare Worker (not GitHub Actions)
+
+Scheduled scraping runs in a **Cloudflare Worker on a Cron Trigger** (`worker/`),
+not GitHub Actions (which bill per minute). Daily it scrapes every domain, writes
+datasets to **R2**, appends metric snapshots, and pings the Pages **deploy hook**
+so the static site rebuilds with fresh data.
+
+The Worker applies the reference pipeline's insights: **star-range partitioned
+discovery**, **dedupe by GitHub repo id**, **ETag `304` caching** in KV, explicit
+`401/403/404/422/429/5xx` handling with secondary-limit backoff, a **weighted
+quality score** for ranking, and append-only snapshots. See
+[`worker/README.md`](worker/README.md). At build time `scripts/pull-data.mjs`
+hydrates `src/data/` from the Worker's `/data/<slug>.json` (R2), falling back to
+the committed data so the build never breaks.
+
+```
+GitHub  ──scrape──▶  Worker (cron)  ──▶  R2 datasets  ──deploy hook──▶  Pages build
+                          │                                                  │
+                          └── KV: ETags + last-run meta      pull-data.mjs ──┘ (hydrates src/data)
+```
 
 ## Architecture
 
@@ -91,8 +108,12 @@ src/
     [domain]/submit.astro
     [domain]/project/[slug].astro
 scripts/
-  scrape.mjs          ← GitHub scraper (search → classify → normalise → write)
+  scrape.mjs          ← local GitHub scraper (search → classify → normalise → write)
+  pull-data.mjs       ← build-time hydration of src/data from R2 (fallback to committed)
   seed/*.json         ← committed fallback snapshots
+worker/               ← Cloudflare Worker: scheduled scraping → R2 → deploy hook
+  src/{index,github,scrape,classify,score,storage,domains}.ts
+  test/scrape.test.ts ← unit tests (discovery/dedupe/noise/scoring + ETag 304)
 ```
 
 The **home gallery is interactive without a framework**: SSR renders every card
@@ -106,7 +127,8 @@ reads on load. This keeps every project URL crawlable for SEO.
 1. Add one entry to `DOMAINS` in `src/config/domains.ts` (name, accent, fonts,
    hero id, chrome, SEO copy). Reuse an existing `heroId`/`variant` or add a
    bespoke hero in `src/components/heroes/`.
-2. Add the domain's GitHub query to `DOMAINS` in `scripts/scrape.mjs`.
+2. Add the domain's GitHub query to `DOMAINS` in `scripts/scrape.mjs` **and**
+   `worker/src/domains.ts` (production scraper).
 3. `npm run scrape && npm run build`.
 
 Colour, logo letter, shape language and data are all config — the engine is shared.
@@ -124,16 +146,12 @@ npx wrangler login          # opens Cloudflare auth in your browser
 npm run deploy              # astro build && wrangler pages deploy
 ```
 
-**Option B — CI on every push (recommended).** `.github/workflows/deploy.yml`
-builds and deploys on push to `main`. Add two repository secrets first:
-
-| Secret | Value |
-| --- | --- |
-| `CLOUDFLARE_API_TOKEN` | a token with the **Cloudflare Pages → Edit** permission |
-| `CLOUDFLARE_ACCOUNT_ID` | your Cloudflare account id |
-
-The deploy workflow also re-scrapes fresh GitHub data before building, so each
-deploy ships the latest galleries.
+**Option B — Cloudflare Pages Git integration (recommended).** Connect the repo
+in the Cloudflare dashboard (build command `npm run build`, output `dist`). Set
+`MADEWITH_DATA_BASE_URL` to the scraper Worker's URL so each build hydrates the
+latest data from R2. No GitHub Actions, no per-minute CI billing — builds are
+triggered by pushes and by the Worker's daily deploy hook. See
+[`worker/README.md`](worker/README.md) for the scraper setup.
 
 **Custom domains.** In the Pages project, map each production domain
 (`madewithnuxt.com`, `madewithnode.com`, …) and, if you want each to serve only

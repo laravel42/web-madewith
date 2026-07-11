@@ -1,0 +1,25 @@
+{
+  // MadeWith… data-scraping Worker. Cron Trigger replaces scheduled GitHub
+  // Actions. Scrapes GitHub → R2 datasets → pings the Pages deploy hook.
+  //
+  // One-time setup:
+  //   wrangler r2 bucket create madewith-data
+  //   wrangler kv namespace create STATE     # paste the id below
+  //   wrangler secret put GITHUB_TOKEN       # read-only PAT (public repos)
+  //   wrangler secret put REFRESH_SECRET     # gates POST /refresh
+  //   wrangler secret put PAGES_DEPLOY_HOOK  # Cloudflare Pages deploy-hook URL
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "madewith-scraper",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-07-11",
+  "triggers": {
+    "crons": ["17 6 * * *"]
+  },
+  "observability": { "enabled": true },
+  "r2_buckets": [
+    { "binding": "DATA", "bucket_name": "madewith-data" }
+  ],
+  "kv_namespaces": [
+    { "binding": "STATE", "id": "REPLACE_WITH_KV_NAMESPACE_ID" }
+  ]
+}
