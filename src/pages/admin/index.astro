@@ -96,15 +96,18 @@
       const toast = (m: string) => { const t = $("#toast"); t.textContent = m; t.classList.add("show"); setTimeout(() => t.classList.remove("show"), 2200); };
       const esc = (s: any) => String(s ?? "").replace(/[<>&]/g, (c) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" }[c]!));
 
-      // tabs
-      document.querySelectorAll<HTMLElement>(".tab").forEach((t) => t.addEventListener("click", () => {
-        document.querySelectorAll(".tab").forEach((x) => x.classList.remove("active"));
-        document.querySelectorAll(".panel").forEach((x) => x.classList.remove("active"));
-        t.classList.add("active");
-        $(`[data-panel="${t.dataset.tab}"]`).classList.add("active");
-        if (t.dataset.tab === "submissions") loadSubs();
-        if (t.dataset.tab === "entries") loadEntries();
-      }));
+      // tabs — kept in sync with ?tab= so a view is shareable and survives refresh
+      const setTab = (tab: string) => {
+        if (!document.querySelector(`.tab[data-tab="${tab}"]`)) tab = "overview";
+        document.querySelectorAll<HTMLElement>(".tab").forEach((x) => x.classList.toggle("active", x.dataset.tab === tab));
+        document.querySelectorAll<HTMLElement>(".panel").forEach((x) => x.classList.toggle("active", x.dataset.panel === tab));
+        const url = new URL(location.href);
+        url.searchParams.set("tab", tab);
+        history.replaceState({}, "", url.toString());
+        if (tab === "submissions") loadSubs();
+        if (tab === "entries") loadEntries();
+      };
+      document.querySelectorAll<HTMLElement>(".tab").forEach((t) => t.addEventListener("click", () => setTab(t.dataset.tab!)));
 
       let domains: any[] = [];
 
@@ -184,6 +187,8 @@
       });
 
       loadOverview();
+      const initTab = new URLSearchParams(location.search).get("tab");
+      if (initTab && initTab !== "overview") setTab(initTab);
     </script>
   </body>
 </html>

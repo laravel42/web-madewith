@@ -37,7 +37,8 @@ async function loadKeys(teamDomain: string, kv: KVNamespace): Promise<Jwk[]> {
   const res = await fetch(`https://${teamDomain}/cdn-cgi/access/certs`);
   if (!res.ok) throw new Error(`JWKS fetch failed: ${res.status}`);
   const { keys } = (await res.json()) as { keys: Jwk[] };
-  await kv.put(cacheKey, JSON.stringify(keys), { expirationTtl: 3600 });
+  // Cache is best-effort — a transient KV write failure must not deny valid auth.
+  try { await kv.put(cacheKey, JSON.stringify(keys), { expirationTtl: 3600 }); } catch (e) { console.error(`JWKS cache write failed: ${(e as Error).message}`); }
   return keys;
 }
 

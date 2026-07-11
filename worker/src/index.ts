@@ -23,14 +23,20 @@ import { handleAdmin } from "./admin";
 import { handleSubmit } from "./submit";
 import { json, triggerDeploy } from "./util";
 
-async function refreshAll(env: Env): Promise<{ slug: string; published: number; total: number }[]> {
+async function refreshAll(env: Env): Promise<Array<{ slug: string; published?: number; total?: number; error?: string }>> {
   const gh = new GitHub({ token: env.GITHUB_TOKEN, etags: kvEtagStore(env.STATE), log: (m) => console.log(m) });
   const db = new Db(env.DB);
   const now = Date.now();
   const summary = [];
   for (const domain of DOMAINS) {
-    const ds = await scrapeAndPublish(gh, env.DATA, db, domain, now);
-    summary.push({ slug: domain.slug, published: ds.projects.length, total: ds.totalRepos });
+    try {
+      const ds = await scrapeAndPublish(gh, env.DATA, db, domain, now);
+      summary.push({ slug: domain.slug, published: ds.projects.length, total: ds.totalRepos });
+    } catch (e) {
+      // One domain failing (GitHub hiccup, etc.) must not abort the whole run.
+      console.error(`scheduled scrape failed for ${domain.slug}: ${(e as Error).message}`);
+      summary.push({ slug: domain.slug, error: (e as Error).message });
+    }
   }
   await env.STATE.put("meta:lastRun", JSON.stringify({ at: new Date(now).toISOString(), summary }));
   await triggerDeploy(env);

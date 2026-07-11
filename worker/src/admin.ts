@@ -31,13 +31,16 @@ export async function handleAdmin(req: Request, env: Env, path: string, ctx: Exe
 
   // GET /admin/api/overview
   if (seg[0] === "overview" && method === "GET") {
-    const [lastRun, pending] = await Promise.all([env.STATE.get("meta:lastRun", "json"), db.countPending()]);
-    const domains = [];
-    for (const d of DOMAINS) {
-      const [raw, pubText] = await Promise.all([readRaw(env.DATA, d.slug), readDataset(env.DATA, d.slug)]);
-      const pub = pubText ? JSON.parse(pubText) : null;
-      domains.push({ slug: d.slug, techName: d.techName, published: pub?.projects.length ?? 0, total: pub?.totalRepos ?? 0, scrapedAt: pub?.scrapedAt ?? null, hasRaw: !!raw });
-    }
+    const [lastRun, pending, domains] = await Promise.all([
+      env.STATE.get("meta:lastRun", "json"),
+      db.countPending(),
+      Promise.all(DOMAINS.map(async (d) => {
+        const [raw, pubText] = await Promise.all([readRaw(env.DATA, d.slug), readDataset(env.DATA, d.slug)]);
+        let pub: any = null;
+        if (pubText) { try { pub = JSON.parse(pubText); } catch (e) { console.error(`bad published dataset for ${d.slug}: ${(e as Error).message}`); } }
+        return { slug: d.slug, techName: d.techName, published: pub?.projects.length ?? 0, total: pub?.totalRepos ?? 0, scrapedAt: pub?.scrapedAt ?? null, hasRaw: !!raw };
+      })),
+    ]);
     return json({ email: identity.email, pending, lastRun, domains });
   }
 
@@ -55,7 +58,12 @@ export async function handleAdmin(req: Request, env: Env, path: string, ctx: Exe
       if (body.action === "approve") {
         const parsed = parseRepoUrl(sub.repo_url);
         if (!parsed) return json({ error: "invalid repo_url" }, 400);
-        const project = await scrapeRepo(ghClient(env), parsed.owner, parsed.name, Date.now());
+        let project;
+        try {
+          project = await scrapeRepo(ghClient(env), parsed.owner, parsed.name, Date.now());
+        } catch (err) {
+          return json({ error: `GitHub scrape failed: ${(err as Error).message}` }, 502);
+        }
         if (!project) return json({ error: "repo not found on GitHub" }, 404);
         if (sub.category) project.category = sub.category;
         await db.upsertApproved(sub.slug, project, nowIso);
@@ -108,7 +116,10 @@ export async function handleAdmin(req: Request, env: Env, path: string, ctx: Exe
     if (seg[0] === "refresh") {
       const gh = ghClient(env);
       const results = [];
-      for (const d of targets) results.push({ slug: d.slug, published: (await scrapeAndPublish(gh, env.DATA, db, d, Date.now())).projects.length });
+      for (const d of targets) {
+        try { results.push({ slug: d.slug, published: (await scrapeAndPublish(gh, env.DATA, db, d, Date.now())).projects.length }); }
+        catch (err) { console.error(`refresh failed for ${d.slug}: ${(err as Error).message}`); results.push({ slug: d.slug, error: (err as Error).message }); }
+      }
       ctx.waitUntil(triggerDeploy(env));
       return json({ refreshed: results });
     }
