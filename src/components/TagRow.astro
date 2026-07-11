@@ -1,0 +1,16 @@
+---
+import type { Theme } from "../config/domains";
+import { TAG_ORDER } from "../config/categories";
+
+interface Props { theme: Theme; gap?: number; }
+const { theme, gap = 8 } = Astro.props;
+const isTerminal = theme.variant === "terminal";
+const hash = (l: string) => "#" + l.toLowerCase().replace(/[^a-z0-9]/g, "");
+---
+<div style={`display:flex; gap:${gap}px; flex-wrap:wrap;`}>
+  {TAG_ORDER.map((label) => (
+    <span class={`tag${label === "All" ? " is-active" : ""}`} data-role="tag" data-tag={label}>
+      {isTerminal ? hash(label) : label}
+    </span>
+  ))}
+</div>

@@ -1,0 +1,51 @@
+name: Refresh catalog data
+
+# Keeps the galleries fresh (the traffic hook from the brief). Runs daily and
+# on demand. The built-in GITHUB_TOKEN switches the scraper to its GraphQL path,
+# so a full 6-domain refresh costs ~6 requests against a 1,000/hr budget — it
+# never approaches a rate limit.
+
+on:
+  schedule:
+    - cron: "17 6 * * *" # daily, 06:17 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-data
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Scrape GitHub
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npm run scrape
+
+      - name: Verify the site still builds
+        run: npm run build
+
+      - name: Commit refreshed data
+        run: |
+          git config user.name "madewith-bot"
+          git config user.email "bot@users.noreply.github.com"
+          if [ -n "$(git status --porcelain src/data)" ]; then
+            git add src/data
+            git commit -m "chore(data): daily GitHub refresh [skip ci]"
+            git push
+          else
+            echo "No data changes."
+          fi

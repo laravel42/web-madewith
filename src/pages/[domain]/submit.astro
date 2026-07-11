@@ -1,0 +1,16 @@
+---
+import { DOMAINS, type Theme } from "../../config/domains";
+import CatalogLayout from "../../layouts/CatalogLayout.astro";
+import SubmitForm from "../../components/SubmitForm.astro";
+
+export function getStaticPaths() {
+  return DOMAINS.map((theme) => ({ params: { domain: theme.slug }, props: { theme } }));
+}
+
+const { theme } = Astro.props as { theme: Theme };
+const title = `Submit your project — Made with ${theme.techName}`;
+const description = `Built something with ${theme.techName}? Submit your open-source project to the Made with ${theme.techName} gallery — free, and great for backlinks.`;
+---
+<CatalogLayout theme={theme} active="submit" title={title} description={description}>
+  <SubmitForm theme={theme} />
+</CatalogLayout>

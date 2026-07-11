@@ -1,0 +1,129 @@
+---
+import type { Theme } from "../config/domains";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  theme: Theme;
+  title?: string;
+  description?: string;
+  /** Current path within the domain, e.g. "" | "categories" | "submit". */
+  active?: string;
+}
+
+const { theme, title, description, active = "" } = Astro.props;
+const seoTitle = title ?? theme.seoTitle;
+const seoDescription = description ?? theme.seoDescription;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const base = `/${theme.slug}`;
+const wrapperClass = `mw v-${theme.variant}${theme.editorial ? " is-editorial" : ""}`;
+// soft accent tint differs between light (white base) and terminal (dark base)
+const softMix = theme.variant === "terminal" ? "22%, #0c0f0e" : "13%, #ffffff";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href={`/favicon-${theme.slug}.svg`} />
+    <title>{seoTitle}</title>
+    <meta name="description" content={seoDescription} />
+    <link rel="canonical" href={canonical} />
+    <meta name="generator" content="MadeWith… catalog" />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={`Made with ${theme.techName}`} />
+    <meta property="og:title" content={seoTitle} />
+    <meta property="og:description" content={seoDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={seoTitle} />
+    <meta name="twitter:description" content={seoDescription} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href={theme.fontHref} rel="stylesheet" />
+
+    <style is:global>
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body { margin: 0; }
+      input, textarea, select, button { font-family: inherit; }
+      a { color: inherit; }
+
+      .mw {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        font-family: var(--body);
+      }
+      .mw ::placeholder { color: #9aa39e; }
+      .mw-main { flex: 1; }
+
+      .disp { font-family: var(--disp); }
+      .soft { background: color-mix(in srgb, var(--accent) var(--softMix)); }
+
+      /* ---- tag pills (light) ---- */
+      .tag {
+        font-size: 13px; padding: 7px 14px; border-radius: 20px; cursor: pointer;
+        background: #f1f4f2; color: #5c665f; border: 1px solid transparent;
+        transition: background .12s, color .12s;
+      }
+      .tag.is-active {
+        background: color-mix(in srgb, var(--accent) var(--softMix));
+        color: var(--accent); font-weight: 600;
+      }
+
+      /* ---- tag pills (terminal) ---- */
+      .v-terminal .tag {
+        font-size: 12px; padding: 6px 12px; border-radius: 5px;
+        background: transparent; color: #7c887f; border: 1px solid #232a26;
+      }
+      .v-terminal .tag.is-active {
+        background: color-mix(in srgb, var(--accent) var(--softMix));
+        color: var(--accent); border-color: var(--accent);
+      }
+
+      /* ---- cards ---- */
+      .card {
+        border: 1px solid #eef0ef; border-radius: var(--radius); overflow: hidden;
+        background: #fff; cursor: pointer; text-decoration: none; display: block; color: inherit;
+        transition: transform .15s ease, box-shadow .15s ease;
+      }
+      .card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(20,40,30,.09); }
+
+      .v-terminal .card {
+        border: 1px solid #1f2622; border-radius: 10px; background: #101410;
+        transition: transform .15s ease, border-color .15s ease;
+      }
+      .v-terminal .card:hover { transform: translateY(-3px); box-shadow: none; border-color: var(--accent); }
+
+      .is-editorial .card-editorial {
+        border-right: 1px solid #e8e8e8; border-bottom: 1px solid #e8e8e8;
+        background: #fff; cursor: pointer; text-decoration: none; color: inherit; display: block;
+        transition: background .12s;
+      }
+      .is-editorial .card-editorial:hover { background: #fafafa; }
+
+      /* ---- buttons ---- */
+      .btn { cursor: pointer; text-decoration: none; display: inline-block; text-align: center; font-weight: 700; }
+      .btn-primary { background: var(--accent); color: var(--accentInk); border-radius: var(--radius); }
+      .v-terminal .btn-primary { background: var(--accent); color: #04231a; border-radius: 8px; }
+
+      /* hidden by client filter */
+      [hidden] { display: none !important; }
+    </style>
+    <slot name="head" />
+  </head>
+  <body>
+    <div class={wrapperClass} style={`--accent:${theme.accent}; --accentInk:${theme.accentInk}; --radius:${theme.radius}px; --disp:${theme.dispFont}; --body:${theme.bodyFont}; --softMix:${softMix}; background:${theme.bg}; color:${theme.ink};`}>
+      <Header theme={theme} active={active} />
+      <main class="mw-main">
+        <slot />
+      </main>
+      <Footer theme={theme} />
+    </div>
+  </body>
+</html>

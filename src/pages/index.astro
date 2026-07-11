@@ -1,0 +1,77 @@
+---
+import { DOMAINS } from "../config/domains";
+import { getCatalog, formatTotal } from "../lib/catalog";
+
+const sites = DOMAINS.map((d) => {
+  const data = getCatalog(d.slug);
+  return {
+    ...d,
+    total: formatTotal(data.totalRepos),
+    top: [...data.projects].sort((a, b) => b.stars - a.stars).slice(0, 3).map((p) => p.name),
+  };
+});
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MadeWith… — a network of showcase catalogs for your favourite tech</title>
+    <meta name="description" content="A network of daily-updated showcase galleries of the best open-source projects, one per technology — Nuxt, Node, Next, Ionic, Statamic and Twill — ranked by GitHub stars." />
+    <link rel="canonical" href="https://madewith.dev/" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: "Hanken Grotesk", sans-serif; color: #16201b; background: radial-gradient(1000px 500px at 80% -10%, #eef4ff 0%, rgba(238,244,255,0) 60%), #fbfcfb; -webkit-font-smoothing: antialiased; }
+      a { text-decoration: none; color: inherit; }
+      .wrap { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+      .disp { font-family: "Sora", sans-serif; }
+      .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+      .card { border: 1px solid #ebeeec; border-radius: 18px; background: #fff; padding: 26px; transition: transform .15s ease, box-shadow .15s ease; }
+      .card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(20,40,30,.1); }
+      @media (max-width: 860px) { .grid { grid-template-columns: 1fr 1fr; } }
+      @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <header class="wrap" style="display:flex; align-items:center; justify-content:space-between; padding-top:26px; padding-bottom:26px;">
+      <div style="display:flex; align-items:center; gap:11px;">
+        <div class="disp" style="width:34px; height:34px; border-radius:10px; background:#16201b; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800;">M</div>
+        <span style="font-weight:800; font-size:19px; letter-spacing:-0.01em;">MadeWith…</span>
+      </div>
+      <a href="#network" style="font-size:14px; font-weight:600; color:#4a554f;">Browse the network ↓</a>
+    </header>
+
+    <section class="wrap" style="padding-top:56px; padding-bottom:44px; text-align:center;">
+      <div style="font-size:13px; font-weight:700; color:#3880FF; letter-spacing:.12em; text-transform:uppercase;">The MadeWith… network</div>
+      <h1 class="disp" style="font-size:56px; font-weight:800; letter-spacing:-0.03em; line-height:1.03; margin:16px auto 0; max-width:760px;">One catalog engine. A showcase site for every stack.</h1>
+      <p style="font-size:18px; color:#4a6157; margin:18px auto 0; max-width:600px; line-height:1.55;">Each site is a daily-updated gallery of the best open-source projects for a technology, scraped live from GitHub and ranked by stars — themed to its own brand identity.</p>
+    </section>
+
+    <section id="network" class="wrap" style="padding-bottom:80px;">
+      <div class="grid">
+        {sites.map((s) => (
+          <a href={`/${s.slug}/`} class="card">
+            <div style="display:flex; align-items:center; justify-content:space-between;">
+              <div class="disp" style={`width:44px; height:44px; border-radius:12px; background:${s.accent}; color:${s.accentInk}; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:20px;`}>{s.techName.charAt(0)}</div>
+              <span style="font-size:12px; color:#8b9690;">{s.total} repos</span>
+            </div>
+            <div class="disp" style="font-weight:700; font-size:21px; margin-top:18px; letter-spacing:-0.01em;">Made with {s.techName}</div>
+            <div style="font-size:14px; color:#6b756f; margin-top:6px;">{s.domain}</div>
+            <div style="font-size:13px; color:#8b9690; margin-top:14px; line-height:1.5;">Featuring {s.top.join(", ")} and more.</div>
+            <div style={`margin-top:18px; font-size:14px; font-weight:600; color:${s.accent === "#0a0a0a" ? "#16201b" : s.accent};`}>Visit the gallery →</div>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <footer style="border-top:1px solid #ebeeec; background:#fff;">
+      <div class="wrap" style="padding:28px 32px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:13px; color:#8b9690;">
+        <span>MadeWith… network · data from GitHub, refreshed daily</span>
+        <span>{sites.length} sites live</span>
+      </div>
+    </footer>
+  </body>
+</html>

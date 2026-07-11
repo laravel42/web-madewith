@@ -1,0 +1,9 @@
+{
+  // Cloudflare Pages project config for the MadeWith… static site.
+  // The site is fully pre-rendered, so Pages just serves ./dist — no SSR
+  // adapter or Worker runtime needed. Deploy with `npm run deploy`.
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "madewith-catalog",
+  "compatibility_date": "2025-07-11",
+  "pages_build_output_dir": "./dist"
+}
