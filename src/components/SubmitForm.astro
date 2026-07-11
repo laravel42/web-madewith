@@ -22,7 +22,7 @@ const labels = isTerminal
       <div style="font-size:14px; color:#8b948d; margin-top:12px; max-width:440px; margin-inline:auto; line-height:1.6;">We'll review your repo and merge it into the {theme.techName} index within 48h. Thanks for contributing.</div>
       <a href={`${base}/`} style={`border:1px solid ${theme.accent}; color:${theme.accent}; background:transparent; padding:12px 22px; border-radius:8px; text-decoration:none; font-size:14px; display:inline-block; margin-top:26px;`}>cd ../gallery</a>
     </div>
-    <form data-role="submit-form">
+    <form data-role="submit-form" data-slug={theme.slug}>
       <div style={`font-size:13px; color:${theme.accent}; margin-bottom:16px;`}>// contribute</div>
       <div class="disp" style="font-size:38px; font-weight:700; letter-spacing:-0.02em; color:#f1f6f2;">Submit your project</div>
       <div style="font-size:14px; color:#8b948d; margin-top:10px; line-height:1.6;">Shipped something with {theme.techName}? Add it to the index — free, and great for backlinks.</div>
@@ -58,7 +58,7 @@ const labels = isTerminal
       <div style="font-size:16px; color:#5c665f; margin-top:12px; max-width:420px; margin-inline:auto; line-height:1.55;">We'll review your project and add it to the {theme.techName} gallery within 48 hours. Thanks for contributing.</div>
       <a href={`${base}/`} class="btn btn-primary" style="padding:13px 22px; font-size:15px; margin-top:26px;">Back to gallery</a>
     </div>
-    <form data-role="submit-form">
+    <form data-role="submit-form" data-slug={theme.slug}>
       <div style={`font-size:13px; font-weight:600; color:${theme.accent}; letter-spacing:.05em; text-transform:uppercase; margin-bottom:14px;`}>Contribute</div>
       <div class="disp" style="font-size:40px; font-weight:800; letter-spacing:-0.03em;">Submit your project</div>
       <div style="font-size:16px; color:#5c665f; margin-top:10px; line-height:1.55;">Built something with {theme.techName}? Add it to the gallery — free, and great for backlinks.</div>
@@ -92,11 +92,33 @@ const labels = isTerminal
     const success = document.querySelector<HTMLElement>('[data-role="submit-success"]');
     if (!form || !success || form.dataset.submitInitialized) return;
     form.dataset.submitInitialized = "true";
-    form.addEventListener("submit", (e) => {
+    const apiBase = import.meta.env.PUBLIC_API_BASE;
+    const val = (name: string) => (form.querySelector(`[name="${name}"]`) as HTMLInputElement | null)?.value.trim() || "";
+
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
-      form.hidden = true;
-      success.hidden = false;
-      window.scrollTo({ top: 0 });
+      const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+      // No API configured (e.g. local/preview) → keep the client-only success state.
+      if (!apiBase) { form.hidden = true; success.hidden = false; window.scrollTo({ top: 0 }); return; }
+
+      if (btn) { btn.disabled = true; btn.dataset.label = btn.textContent || ""; btn.textContent = "Submitting…"; }
+      try {
+        const res = await fetch(`${apiBase.replace(/\/$/, "")}/submit`, {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({
+            slug: form.dataset.slug,
+            repo_url: val("repo"), name: val("name"), description: val("description"),
+            category: val("category"), demo_url: val("demo"),
+          }),
+        });
+        const data = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error((data as any).error || `Submission failed (${res.status})`);
+        form.hidden = true; success.hidden = false; window.scrollTo({ top: 0 });
+      } catch (err) {
+        alert((err as Error).message);
+        if (btn) { btn.disabled = false; btn.textContent = btn.dataset.label || "Submit"; }
+      }
     });
   }
   initSubmit();

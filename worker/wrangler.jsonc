@@ -1,13 +1,19 @@
 {
-  // MadeWith… data-scraping Worker. Cron Trigger replaces scheduled GitHub
-  // Actions. Scrapes GitHub → R2 datasets → pings the Pages deploy hook.
+  // MadeWith… Worker — scheduled scraper + public submissions + admin API.
   //
   // One-time setup:
   //   wrangler r2 bucket create madewith-data
-  //   wrangler kv namespace create STATE     # paste the id below
-  //   wrangler secret put GITHUB_TOKEN       # read-only PAT (public repos)
-  //   wrangler secret put REFRESH_SECRET     # gates POST /refresh
-  //   wrangler secret put PAGES_DEPLOY_HOOK  # Cloudflare Pages deploy-hook URL
+  //   wrangler kv namespace create STATE           # paste id below
+  //   wrangler d1 create madewith-admin            # paste id below
+  //   wrangler d1 migrations apply madewith-admin  # runs migrations/*.sql
+  //   wrangler secret put GITHUB_TOKEN             # read-only PAT (public repos)
+  //   wrangler secret put REFRESH_SECRET           # gates POST /refresh
+  //   wrangler secret put PAGES_DEPLOY_HOOK        # Cloudflare Pages deploy-hook URL
+  //
+  // Admin auth (Cloudflare Access): create a self-hosted Access application in
+  // front of this Worker's /admin/* and the Pages /admin/* route, then set:
+  //   ACCESS_TEAM_DOMAIN  e.g. "yourteam.cloudflareaccess.com"
+  //   ACCESS_AUD          the Access application's AUD tag
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "madewith-scraper",
   "main": "src/index.ts",
@@ -16,10 +22,17 @@
     "crons": ["17 6 * * *"]
   },
   "observability": { "enabled": true },
+  "vars": {
+    "ACCESS_TEAM_DOMAIN": "",
+    "ACCESS_AUD": ""
+  },
   "r2_buckets": [
     { "binding": "DATA", "bucket_name": "madewith-data" }
   ],
   "kv_namespaces": [
     { "binding": "STATE", "id": "REPLACE_WITH_KV_NAMESPACE_ID" }
+  ],
+  "d1_databases": [
+    { "binding": "DB", "database_name": "madewith-admin", "database_id": "REPLACE_WITH_D1_DATABASE_ID", "migrations_dir": "migrations" }
   ]
 }

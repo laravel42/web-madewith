@@ -51,6 +51,19 @@ Cloudflare Pages project to the Worker's URL (e.g.
 `https://madewith-scraper.<account>.workers.dev`). The build's `pull-data` step
 reads `/data/<slug>.json` from there, falling back to the committed seed data.
 
+## Admin API
+
+Beyond scraping, the Worker also serves the admin backend (see `../docs/admin.md`):
+
+- `POST /submit` — public project submission (validated, per-IP daily cap) → D1 `pending`.
+- `/admin/api/*` — Cloudflare Access-gated: overview stats, submission moderation
+  (approve/reject), per-entry overrides (hide/feature/edit), and refresh/republish.
+  Requires the `DB` (D1) binding and `ACCESS_TEAM_DOMAIN` / `ACCESS_AUD`.
+
+Publishing merges **raw scrape + approved entries + overrides** into
+`data/<slug>.json` (`src/merge.ts`); raw scrape is kept in R2 so republish needs no
+GitHub calls.
+
 ## Develop & test
 
 ```bash
