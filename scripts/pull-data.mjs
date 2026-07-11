@@ -40,7 +40,9 @@ async function main() {
       console.log(`pull-data: ✓ ${slug} (${payload.projects.length} projects, scraped ${payload.scrapedAt || "?"})`);
       updated++;
     } catch (err) {
-      const local = JSON.parse(await readFile(join(DATA_DIR, `${slug}.json`), "utf8").catch(() => "null"));
+      // A malformed local file must not abort the whole hydration loop.
+      let local = null;
+      try { local = JSON.parse(await readFile(join(DATA_DIR, `${slug}.json`), "utf8")); } catch { /* no/invalid local file */ }
       console.log(`pull-data: • ${slug} kept committed data — ${err.message}${local ? "" : " (and no local fallback!)"}`);
     }
   }

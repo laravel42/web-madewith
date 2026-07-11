@@ -16,11 +16,14 @@ export interface ScoreInput {
 const DAY = 86_400_000;
 
 export function qualityScore(r: ScoreInput, now: number): number {
-  // Popularity: log-scaled stars, ~0..1 across 1 → 200k stars.
-  const popularity = Math.min(1, Math.log10(r.stars + 1) / Math.log10(200_000));
+  // Popularity: log-scaled stars, ~0..1 across 1 → 200k stars. Clamp so a bad
+  // (negative) star count can't produce NaN/-Infinity.
+  const stars = Math.max(0, r.stars || 0);
+  const popularity = Math.min(1, Math.log10(stars + 1) / Math.log10(200_000));
 
-  // Recency: 1.0 if pushed today, decaying to ~0 over a year.
-  const ageDays = r.pushedAt ? Math.max(0, (now - Date.parse(r.pushedAt)) / DAY) : 3650;
+  // Recency: 1.0 if pushed today, decaying to ~0 over a year. Guard bad dates.
+  const parsed = r.pushedAt ? Date.parse(r.pushedAt) : NaN;
+  const ageDays = Number.isNaN(parsed) ? 3650 : Math.max(0, (now - parsed) / DAY);
   const recency = Math.max(0, 1 - ageDays / 365);
 
   // Completeness: signals a real, documented project.

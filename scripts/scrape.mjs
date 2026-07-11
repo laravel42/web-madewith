@@ -136,8 +136,9 @@ async function ghFetch(url, { method = "GET", body, cacheKey } = {}, attempt = 0
   // 304 → nothing changed, reuse cached payload for free (doesn't burn quota).
   if (res.status === 304 && cached) return cached.data;
 
-  // Secondary rate limit / abuse detection → honour Retry-After, else backoff.
-  if ((res.status === 403 || res.status === 429) && attempt < 4) {
+  // Retry only on genuine rate limits (permanent 403s must fail fast, not spin).
+  const isRateLimit = res.status === 429 || (res.status === 403 && (res.headers.get("x-ratelimit-remaining") === "0" || res.headers.has("retry-after")));
+  if (isRateLimit && attempt < 4) {
     const remaining = Number(res.headers.get("x-ratelimit-remaining"));
     const retryAfter = Number(res.headers.get("retry-after"));
     let waitMs;

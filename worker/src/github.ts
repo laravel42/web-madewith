@@ -87,7 +87,10 @@ export class GitHub {
       if (res.status === 404) throw new GitHubUnavailable(url);
       if (res.status === 422) throw new GitHubQueryError(`invalid query: ${url}`);
 
-      if ((res.status === 403 || res.status === 429 || res.status >= 500) && attempt < this.maxAttempts) {
+      // Only retry a 403 when it's an actual rate limit (remaining 0 or Retry-After).
+      // A permanent 403 (bad scope, blocked repo) must fail fast, not spin.
+      const isRateLimit = res.status === 429 || (res.status === 403 && (res.headers.get("x-ratelimit-remaining") === "0" || res.headers.has("retry-after")));
+      if ((isRateLimit || res.status >= 500) && attempt < this.maxAttempts) {
         await this.backoff(res, attempt);
         continue;
       }
@@ -112,7 +115,10 @@ export class GitHub {
       this.track(res);
 
       if (res.status === 401) throw new GitHubAuthError("GitHub 401 — check the token");
-      if ((res.status === 403 || res.status === 429 || res.status >= 500) && attempt < this.maxAttempts) {
+      // Only retry a 403 when it's an actual rate limit (remaining 0 or Retry-After).
+      // A permanent 403 (bad scope, blocked repo) must fail fast, not spin.
+      const isRateLimit = res.status === 429 || (res.status === 403 && (res.headers.get("x-ratelimit-remaining") === "0" || res.headers.has("retry-after")));
+      if ((isRateLimit || res.status >= 500) && attempt < this.maxAttempts) {
         await this.backoff(res, attempt);
         continue;
       }

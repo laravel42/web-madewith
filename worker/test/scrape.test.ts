@@ -87,6 +87,27 @@ test("hard noise (fork / framework core) is never kept, even in a tiny ecosystem
   assert.ok(ids.includes(10) && ids.includes(11), "real projects kept");
 });
 
+test("rest() fails fast on a permanent 403 (no rate-limit signal), but retries a rate-limited 403", async () => {
+  // Permanent 403 (scopes/blocked) → throw on the first call, no spinning.
+  let calls = 0;
+  globalThis.fetch = (async () => { calls++; return new Response("{}", { status: 403, headers: { "x-ratelimit-remaining": "42" } }); }) as any;
+  const gh = new GitHub({ token: "x", etags: memStore(), maxAttempts: 5 });
+  await assert.rejects(() => gh.rest("https://api.github.com/x"), /GitHub 403/);
+  assert.equal(calls, 1, "permanent 403 is not retried");
+
+  // Rate-limited 403 (remaining 0, reset in the past) → retried, then succeeds.
+  let n = 0;
+  globalThis.fetch = (async () => {
+    n++;
+    if (n === 1) return new Response("{}", { status: 403, headers: { "x-ratelimit-remaining": "0", "x-ratelimit-reset": String(Math.floor(Date.now() / 1000) - 1) } });
+    return new Response(JSON.stringify({ ok: true }), { status: 200 });
+  }) as any;
+  const gh2 = new GitHub({ token: "x", etags: memStore(), maxAttempts: 5 });
+  const res = await gh2.rest<{ ok: boolean }>("https://api.github.com/y");
+  assert.equal(res.data.ok, true);
+  assert.equal(n, 2, "rate-limited 403 is retried once then succeeds");
+});
+
 test("rest() uses ETag conditional requests (304 → cached, no re-parse cost)", async () => {
   const store = memStore();
   const gh = new GitHub({ token: "x", etags: store });
