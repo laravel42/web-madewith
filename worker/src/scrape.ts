@@ -57,7 +57,7 @@ function relativeTime(iso: string | null, now: number): string {
 function stackFrom(node: RepoNode): string[] {
   const skip = new Set(["hacktoberfest", "javascript", "typescript"]);
   const pretty: Record<string, string> = { nextjs: "Next.js", nuxtjs: "Nuxt", nodejs: "Node", vuejs: "Vue", reactjs: "React", tailwindcss: "Tailwind CSS", graphql: "GraphQL" };
-  const topics = node.repositoryTopics.nodes.map((t) => t.topic.name);
+  const topics = node.repositoryTopics?.nodes?.map((t) => t.topic.name) ?? [];
   const chips = topics.filter((t) => !skip.has(t)).slice(0, 4)
     .map((t) => pretty[t] || t.split("-").map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(" "));
   const lang = node.primaryLanguage?.name;
@@ -66,8 +66,8 @@ function stackFrom(node: RepoNode): string[] {
 }
 
 function languages(node: RepoNode): Lang[] {
-  const total = node.languages.totalSize || 0;
-  let langs = node.languages.edges.map((e) => ({ name: e.node.name, pct: total ? Math.round((e.size / total) * 100) : 0 })).slice(0, 3);
+  const total = node.languages?.totalSize || 0;
+  let langs = (node.languages?.edges ?? []).map((e) => ({ name: e.node.name, pct: total ? Math.round((e.size / total) * 100) : 0 })).slice(0, 3);
   if (!langs.length) {
     const l = node.primaryLanguage?.name || "JavaScript";
     return [{ name: l, pct: 72 }, { name: l === "TypeScript" ? "JavaScript" : "CSS", pct: 20 }, { name: "Other", pct: 8 }];
@@ -80,7 +80,7 @@ function languages(node: RepoNode): Lang[] {
 function longCopy(node: RepoNode) {
   const desc = (node.description || "").trim().replace(/\s+/g, " ");
   const base = desc ? (desc.endsWith(".") ? desc : desc + ".") : "An open-source project built with a modern stack.";
-  const topicPhrase = node.repositoryTopics.nodes.slice(0, 3).map((t) => t.topic.name).join(", ");
+  const topicPhrase = (node.repositoryTopics?.nodes ?? []).slice(0, 3).map((t) => t.topic.name).join(", ");
   return {
     long1: `${base} Maintained by ${node.owner.login} on GitHub, where it has earned ${node.stargazerCount.toLocaleString()} stars from the community.`,
     long2: topicPhrase
@@ -90,7 +90,7 @@ function longCopy(node: RepoNode) {
 }
 
 function normalise(node: RepoNode, now: number): Project {
-  const topics = node.repositoryTopics.nodes.map((t) => t.topic.name);
+  const topics = node.repositoryTopics?.nodes?.map((t) => t.topic.name) ?? [];
   const { long1, long2 } = longCopy(node);
   return {
     githubId: node.databaseId,
@@ -129,7 +129,7 @@ function hardNoise(node: RepoNode, domain: DomainDiscovery): boolean {
 
 /** Soft noise (awesome-list link repos) is dropped when possible, relaxed only for tiny ecosystems. */
 function softNoise(node: RepoNode): boolean {
-  return /^awesome[-_]/.test(node.name.toLowerCase()) || node.repositoryTopics.nodes.some((t) => t.topic.name === "awesome-list");
+  return /^awesome[-_]/.test(node.name.toLowerCase()) || (node.repositoryTopics?.nodes?.some((t) => t.topic.name === "awesome-list") ?? false);
 }
 
 /**

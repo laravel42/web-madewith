@@ -34,11 +34,15 @@ const labels = isTerminal
           <div style="flex:1;"><label for="t-category" style="display:block; font-size:12px; color:#7c887f; margin-bottom:8px;">{labels.cat}</label><select id="t-category" name="category" style="width:100%; border:1px solid #232a26; border-radius:8px; padding:13px 15px; font-size:14px; outline:none; background:#121614; color:#e8efe9;">{CATEGORY_ORDER.map((c) => <option>{c}</option>)}</select></div>
           <div style="flex:1;"><label for="t-demo" style="display:block; font-size:12px; color:#7c887f; margin-bottom:8px;">{labels.demo}</label><input id="t-demo" name="demo" type="url" placeholder="https://…" style="width:100%; border:1px solid #232a26; border-radius:8px; padding:13px 15px; font-size:14px; outline:none; background:#121614; color:#e8efe9;"/></div>
         </div>
-        <div><div style="font-size:12px; color:#7c887f; margin-bottom:8px;">{labels.shot}</div>
-          <div style="border:1.5px dashed #2a332d; border-radius:10px; padding:34px; text-align:center; color:#5c665f; font-size:13px; background:#101410;">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" style="margin-bottom:8px;"><path d="M12 16V4m0 0L8 8m4-4 4 4" stroke="#4a554f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke="#4a554f" stroke-width="2" stroke-linecap="round"/></svg>
-            <div>Drop an image or <span style={`color:${theme.accent};`}>browse</span></div>
-          </div>
+        <div>
+          <label for="t-screenshot" style="display:block; cursor:pointer;">
+            <span style="display:block; font-size:12px; color:#7c887f; margin-bottom:8px;">{labels.shot}</span>
+            <span style="display:block; border:1.5px dashed #2a332d; border-radius:10px; padding:34px; text-align:center; color:#5c665f; font-size:13px; background:#101410;">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" style="margin-bottom:8px;"><path d="M12 16V4m0 0L8 8m4-4 4 4" stroke="#4a554f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke="#4a554f" stroke-width="2" stroke-linecap="round"/></svg>
+              <span style="display:block;">Drop an image or <span style={`color:${theme.accent};`}>browse</span></span>
+            </span>
+          </label>
+          <input id="t-screenshot" name="screenshot" type="file" accept="image/*" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); border:0;"/>
         </div>
         <button type="submit" style={`background:${theme.accent}; color:#04231a; font-weight:700; padding:15px 22px; border-radius:8px; cursor:pointer; font-size:14px; text-align:center; margin-top:6px; border:none;`}>{labels.submit}</button>
       </div>
@@ -66,11 +70,15 @@ const labels = isTerminal
           <div style="flex:1;"><label for="l-category" style="display:block; font-size:13px; font-weight:600; color:#3a443f; margin-bottom:8px;">{labels.cat}</label><select id="l-category" name="category" style={`width:100%; border:1px solid #e0e5e2; border-radius:${btnRadius}; padding:13px 15px; font-size:15px; outline:none; background:#fff; color:#16201b;`}>{CATEGORY_ORDER.map((c) => <option>{c}</option>)}</select></div>
           <div style="flex:1;"><label for="l-demo" style="display:block; font-size:13px; font-weight:600; color:#3a443f; margin-bottom:8px;">{labels.demo}</label><input id="l-demo" name="demo" type="url" placeholder="https://…" style={`width:100%; border:1px solid #e0e5e2; border-radius:${btnRadius}; padding:13px 15px; font-size:15px; outline:none; background:#fff; color:#16201b;`}/></div>
         </div>
-        <div><div style="font-size:13px; font-weight:600; color:#3a443f; margin-bottom:8px;">{labels.shot}</div>
-          <div style={`border:1.5px dashed #d6ddd9; border-radius:${radius}; padding:34px; text-align:center; color:#8b9690; font-size:14px; background:#fff;`}>
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" style="margin-bottom:8px;"><path d="M12 16V4m0 0L8 8m4-4 4 4" stroke="#aab3ae" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke="#aab3ae" stroke-width="2" stroke-linecap="round"/></svg>
-            <div>Drop an image or <span style={`color:${theme.editorial ? "#0a0a0a" : theme.accent};`}>browse</span></div>
-          </div>
+        <div>
+          <label for="l-screenshot" style="display:block; cursor:pointer;">
+            <span style="display:block; font-size:13px; font-weight:600; color:#3a443f; margin-bottom:8px;">{labels.shot}</span>
+            <span style={`display:block; border:1.5px dashed #d6ddd9; border-radius:${radius}; padding:34px; text-align:center; color:#8b9690; font-size:14px; background:#fff;`}>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" style="margin-bottom:8px;"><path d="M12 16V4m0 0L8 8m4-4 4 4" stroke="#aab3ae" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke="#aab3ae" stroke-width="2" stroke-linecap="round"/></svg>
+              <span style="display:block;">Drop an image or <span style={`color:${theme.editorial ? "#0a0a0a" : theme.accent};`}>browse</span></span>
+            </span>
+          </label>
+          <input id="l-screenshot" name="screenshot" type="file" accept="image/*" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); border:0;"/>
         </div>
         <button type="submit" class="btn btn-primary" style="padding:15px 22px; font-size:15px; margin-top:6px; border:none; width:100%;">{labels.submit}</button>
       </div>
@@ -82,7 +90,8 @@ const labels = isTerminal
   function initSubmit() {
     const form = document.querySelector<HTMLFormElement>('[data-role="submit-form"]');
     const success = document.querySelector<HTMLElement>('[data-role="submit-success"]');
-    if (!form || !success) return;
+    if (!form || !success || form.dataset.submitInitialized) return;
+    form.dataset.submitInitialized = "true";
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       form.hidden = true;

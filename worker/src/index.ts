@@ -80,6 +80,18 @@ export default {
   },
 
   async fetch(req: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
+    // CORS preflight for cross-origin browser access to /data/*.
+    if (req.method === "OPTIONS") {
+      return new Response(null, {
+        headers: {
+          "access-control-allow-origin": "*",
+          "access-control-allow-methods": "GET, POST, OPTIONS",
+          "access-control-allow-headers": "content-type, authorization",
+          "access-control-max-age": "86400",
+        },
+      });
+    }
+
     const url = new URL(req.url);
     const path = url.pathname.replace(/\/+$/, "") || "/";
 

@@ -13,7 +13,7 @@ const { theme, total } = Astro.props;
     <div style="display:flex; gap:10px; margin-top:28px; max-width:560px;">
       <div style="flex:1; display:flex; align-items:center; gap:10px; background:#fff; border:1px solid #c9f5e2; border-radius:12px; padding:13px 16px;">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#00a866" stroke-width="2"/><path d="m20 20-3.5-3.5" stroke="#00a866" stroke-width="2" stroke-linecap="round"/></svg>
-        <input data-role="search" placeholder="Search projects…" style="border:none; outline:none; background:transparent; font-size:15px; width:100%; color:#16201b;"/>
+        <input data-role="search" aria-label="Search projects" placeholder="Search projects…" style="border:none; outline:none; background:transparent; font-size:15px; width:100%; color:#16201b;"/>
       </div>
       <div data-role="sort" style="display:flex; align-items:center; gap:8px; background:#00DC82; border-radius:12px; padding:13px 18px; font-size:14px; font-weight:700; color:#04231a; cursor:pointer; white-space:nowrap; box-shadow:0 8px 18px rgba(0,220,130,.34);">
         <span data-sort-label data-label-stars="Most stars" data-label-name="A–Z">Most stars</span>

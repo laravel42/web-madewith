@@ -34,7 +34,8 @@ const countInitial = countFormat === "terminal" ? `// ${n} result${n === 1 ? "" 
   // absent controls (e.g. no tag pills in editorial) are simply skipped.
   function initCatalog() {
     const grid = document.querySelector<HTMLElement>('[data-role="grid"]');
-    if (!grid) return;
+    if (!grid || grid.dataset.catalogInitialized) return;
+    grid.dataset.catalogInitialized = "true";
     const cards = Array.from(grid.querySelectorAll<HTMLElement>('[data-role="card"]'));
     const empty = grid.querySelector<HTMLElement>('[data-role="empty"]');
     const search = document.querySelector<HTMLInputElement>('[data-role="search"]');
