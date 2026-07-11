@@ -1,0 +1,47 @@
+---
+import type { Theme } from "../../config/domains";
+import TagRow from "../TagRow.astro";
+interface Props { theme: Theme; total: string; }
+const { theme, total } = Astro.props;
+---
+<div style="max-width:1140px; margin:22px auto 8px; padding:44px 46px; border-radius:28px; background:radial-gradient(560px 300px at 92% 6%, rgba(0,220,130,.20), rgba(0,220,130,0) 62%), linear-gradient(135deg,#e6fff4 0%,#f2fdf8 100%); border:1px solid #c9f5e2; display:flex; align-items:center; gap:46px; flex-wrap:wrap;">
+  <div style="flex:1; min-width:320px;">
+    <div style="font-size:13px; font-weight:600; color:#00a866; letter-spacing:.05em; text-transform:uppercase; margin-bottom:14px;">{theme.eyebrow}</div>
+    <div class="disp" style="font-size:46px; font-weight:800; letter-spacing:-0.03em; line-height:1.04; background:linear-gradient(96deg,#053f2b,#00b56c); -webkit-background-clip:text; background-clip:text; color:transparent;">{theme.heroTitle}</div>
+    <div style="font-size:17px; color:#4a6157; margin-top:16px; max-width:500px; line-height:1.55;">A hand-curated, daily-updated gallery of open-source projects. Browse {total} repos, ranked by GitHub stars.</div>
+
+    <div style="display:flex; gap:10px; margin-top:28px; max-width:560px;">
+      <div style="flex:1; display:flex; align-items:center; gap:10px; background:#fff; border:1px solid #c9f5e2; border-radius:12px; padding:13px 16px;">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#00a866" stroke-width="2"/><path d="m20 20-3.5-3.5" stroke="#00a866" stroke-width="2" stroke-linecap="round"/></svg>
+        <input data-role="search" aria-label="Search projects" placeholder="Search projects…" style="border:none; outline:none; background:transparent; font-size:15px; width:100%; color:#16201b;"/>
+      </div>
+      <div data-role="sort" style="display:flex; align-items:center; gap:8px; background:#00DC82; border-radius:12px; padding:13px 18px; font-size:14px; font-weight:700; color:#04231a; cursor:pointer; white-space:nowrap; box-shadow:0 8px 18px rgba(0,220,130,.34);">
+        <span data-sort-label data-label-stars="Most stars" data-label-name="A–Z">Most stars</span>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="#04231a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+
+    <div style="margin-top:20px;"><TagRow theme={theme} /></div>
+  </div>
+
+  <div style="flex-shrink:0; width:346px; background:#fff; border-radius:16px; box-shadow:0 34px 70px rgba(0,150,90,.24); overflow:hidden; border:1px solid #e3f3ea;">
+    <div style="height:40px; background:#f4faf7; border-bottom:1px solid #e6f2ec; display:flex; align-items:center; gap:7px; padding:0 15px;">
+      <span style="width:10px;height:10px;border-radius:50%;background:#ff5f57;"></span>
+      <span style="width:10px;height:10px;border-radius:50%;background:#febc2e;"></span>
+      <span style="width:10px;height:10px;border-radius:50%;background:#28c840;"></span>
+      <div style="flex:1; margin-left:9px; height:18px; background:#fff; border:1px solid #e6f2ec; border-radius:9px;"></div>
+    </div>
+    <div>
+      <div style="height:104px; background:radial-gradient(300px 140px at 80% -20%, rgba(0,220,130,.55), transparent 60%), linear-gradient(135deg,#04231a 0%,#0a3d2a 100%); padding:22px 20px 0;">
+        <div style="height:8px; width:38%; background:#00DC82; border-radius:4px; margin-bottom:10px;"></div>
+        <div style="height:15px; width:66%; background:rgba(255,255,255,.92); border-radius:5px; margin-bottom:8px;"></div>
+        <div style="height:15px; width:48%; background:rgba(255,255,255,.55); border-radius:5px;"></div>
+      </div>
+      <div style="padding:16px; display:grid; grid-template-columns:1fr 1fr; gap:11px;">
+        {[80,72,66,78].map((w, i) => (
+          <div style="border:1px solid #eef4f1; border-radius:10px; padding:11px;"><div style="height:44px; background:#eafaf2; border-radius:7px; margin-bottom:9px;"></div><div style={`height:7px;width:${w}%;background:#eef4f1;border-radius:4px;margin-bottom:6px;`}></div><div style={`height:6px;width:${w-20}%;background:#f2f6f4;border-radius:4px;`}></div></div>
+        ))}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+{
+  "name": "madewith-catalog",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MadeWith… — a replicable, per-domain showcase catalog of open-source projects, fed by real GitHub data.",
+  "scripts": {
+    "scrape": "node scripts/scrape.mjs",
+    "dev": "astro dev",
+    "prebuild": "node scripts/pull-data.mjs",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "deploy": "astro build && wrangler pages deploy",
+    "cf:preview": "wrangler pages dev ./dist"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "3.2.1",
+    "astro": "^4.16.18"
+  },
+  "devDependencies": {
+    "wrangler": "^4.110.0"
+  }
+}

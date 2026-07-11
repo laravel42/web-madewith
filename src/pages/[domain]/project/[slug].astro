@@ -1,0 +1,25 @@
+---
+import { DOMAINS, type Theme } from "../../../config/domains";
+import { getCatalog, relatedProjects, type Project } from "../../../lib/catalog";
+import CatalogLayout from "../../../layouts/CatalogLayout.astro";
+import ProjectDetail from "../../../components/ProjectDetail.astro";
+
+export function getStaticPaths() {
+  return DOMAINS.flatMap((theme) => {
+    const data = getCatalog(theme.slug);
+    return data.projects.map((project) => ({
+      params: { domain: theme.slug, slug: project.slug },
+      props: { theme, project },
+    }));
+  });
+}
+
+const { theme, project } = Astro.props as { theme: Theme; project: Project };
+const data = getCatalog(theme.slug);
+const related = relatedProjects(data, project, 3);
+const title = `${project.name} — Made with ${theme.techName}`;
+const description = `${project.desc} Built with ${theme.techName} by ${project.author}. ${project.stars.toLocaleString()} GitHub stars.`;
+---
+<CatalogLayout theme={theme} active="" title={title} description={description}>
+  <ProjectDetail theme={theme} project={project} related={related} />
+</CatalogLayout>

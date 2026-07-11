@@ -1,0 +1,20 @@
+---
+import { DOMAINS, type Theme } from "../../config/domains";
+import { getCatalog, categoryCards, formatTotal } from "../../lib/catalog";
+import CatalogLayout from "../../layouts/CatalogLayout.astro";
+import CategoryBrowse from "../../components/CategoryBrowse.astro";
+
+export function getStaticPaths() {
+  return DOMAINS.map((theme) => ({ params: { domain: theme.slug }, props: { theme } }));
+}
+
+const { theme } = Astro.props as { theme: Theme };
+const data = getCatalog(theme.slug);
+const cats = categoryCards(data);
+const total = formatTotal(data.totalRepos);
+const title = `Browse ${theme.techName} projects by category — Made with ${theme.techName}`;
+const description = `Explore the ${theme.techName} ecosystem by category: ${cats.map((c) => c.label).join(", ")}. Curated open-source projects ranked by GitHub stars.`;
+---
+<CatalogLayout theme={theme} active="categories" title={title} description={description}>
+  <CategoryBrowse theme={theme} cats={cats} total={total} />
+</CatalogLayout>

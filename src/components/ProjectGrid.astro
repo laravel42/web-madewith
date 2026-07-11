@@ -1,0 +1,121 @@
+---
+import type { Theme } from "../config/domains";
+import type { Project } from "../lib/catalog";
+import ProjectCard from "./ProjectCard.astro";
+
+interface Props { theme: Theme; projects: Project[]; }
+const { theme, projects } = Astro.props;
+const n = projects.length;
+const countFormat = theme.variant === "terminal" ? "terminal" : "minimal";
+const countInitial = countFormat === "terminal" ? `// ${n} result${n === 1 ? "" : "s"}` : `${n} project${n === 1 ? "" : "s"}`;
+---
+
+{theme.editorial ? (
+  <div style="max-width:1200px; margin:0 auto; padding:0 32px 80px;">
+    <div data-role="count" data-format="minimal" style="font-size:13px; color:#8b9690; margin:18px 0;">{countInitial}</div>
+    <div data-role="grid" style="display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid #e8e8e8; border-left:1px solid #e8e8e8;">
+      {projects.map((p, i) => <ProjectCard theme={theme} project={p} rank={(i < 9 ? "0" : "") + (i + 1)} />)}
+      <div data-role="empty" hidden style="grid-column:1 / -1; padding:60px 20px; text-align:center; color:#8b9690; font-size:15px; border-right:1px solid #e8e8e8; border-bottom:1px solid #e8e8e8;">No projects match your search.</div>
+    </div>
+  </div>
+) : (
+  <div style={`max-width:1200px; margin:0 auto; padding:${theme.variant === "terminal" ? "12px" : "14px"} 32px 80px;`}>
+    <div data-role="count" data-format={countFormat} style={`font-size:${theme.variant === "terminal" ? "12px" : "13px"}; color:${theme.variant === "terminal" ? "#5c665f" : "#8b9690"}; margin-bottom:${theme.variant === "terminal" ? "16px" : "18px"};`}>{countInitial}</div>
+    <div data-role="grid" style={`display:grid; grid-template-columns:repeat(3,1fr); gap:${theme.variant === "terminal" ? "18px" : "24px"};`}>
+      {projects.map((p, i) => <ProjectCard theme={theme} project={p} rank={(i < 9 ? "0" : "") + (i + 1)} />)}
+      <div data-role="empty" hidden style="grid-column:1 / -1; padding:60px 20px; text-align:center; color:#8b9690; font-size:15px;">No projects match your search.</div>
+    </div>
+  </div>
+)}
+
+<script>
+  // Shared client-side catalog engine: search + sort + tag filter, wired to the
+  // hero controls via data-role hooks. Works across all three visual variants;
+  // absent controls (e.g. no tag pills in editorial) are simply skipped.
+  function initCatalog() {
+    const grid = document.querySelector<HTMLElement>('[data-role="grid"]');
+    if (!grid || grid.dataset.catalogInitialized) return;
+    grid.dataset.catalogInitialized = "true";
+    const cards = Array.from(grid.querySelectorAll<HTMLElement>('[data-role="card"]'));
+    const empty = grid.querySelector<HTMLElement>('[data-role="empty"]');
+    const search = document.querySelector<HTMLInputElement>('[data-role="search"]');
+    const sortBtn = document.querySelector<HTMLElement>('[data-role="sort"]');
+    const sortLabel = document.querySelector<HTMLElement>('[data-sort-label]');
+    const tags = Array.from(document.querySelectorAll<HTMLElement>('[data-role="tag"]'));
+    const count = document.querySelector<HTMLElement>('[data-role="count"]');
+
+    let query = "";
+    let sort: "stars" | "name" = "stars";
+    let activeTag = "All";
+
+    // Deep-link: /<slug>/?tag=Category (from the category browse screen)
+    const param = new URLSearchParams(location.search).get("tag");
+    if (param && tags.some((t) => t.dataset.tag === param)) {
+      activeTag = param;
+      for (const t of tags) t.classList.toggle("is-active", t.dataset.tag === activeTag);
+    }
+
+    const stars = (el: HTMLElement) => Number(el.dataset.stars || "0");
+    const name = (el: HTMLElement) => el.dataset.name || "";
+
+    function apply() {
+      // sort the DOM
+      const ordered = [...cards].sort((a, b) =>
+        sort === "stars" ? stars(b) - stars(a) : name(a).localeCompare(name(b))
+      );
+      ordered.forEach((c) => grid!.appendChild(c));
+      if (empty) grid!.appendChild(empty);
+
+      // filter
+      let shown = 0;
+      for (const c of cards) {
+        const hay = `${c.dataset.name} ${c.dataset.desc} ${c.dataset.author} ${c.dataset.category}`.toLowerCase();
+        const matchTag = activeTag === "All" || c.dataset.category === activeTag;
+        const matchQuery = !query || hay.includes(query);
+        const visible = matchTag && matchQuery;
+        c.hidden = !visible;
+        if (visible) shown++;
+      }
+      if (empty) empty.hidden = shown !== 0;
+
+      // count label
+      if (count) {
+        const fmt = count.dataset.format;
+        const suffix = activeTag !== "All" ? (fmt === "terminal" ? ` · ${activeTag}` : ` in ${activeTag}`) : "";
+        count.textContent = fmt === "terminal"
+          ? `// ${shown} result${shown === 1 ? "" : "s"}${suffix}`
+          : `${shown} project${shown === 1 ? "" : "s"}${suffix}`;
+      }
+    }
+
+    search?.addEventListener("input", () => { query = search.value.trim().toLowerCase(); apply(); });
+
+    sortBtn?.addEventListener("click", () => {
+      sort = sort === "stars" ? "name" : "stars";
+      if (sortLabel) {
+        sortLabel.textContent = sort === "stars"
+          ? sortLabel.dataset.labelStars || "Most stars"
+          : sortLabel.dataset.labelName || "A–Z";
+      }
+      apply();
+    });
+
+    for (const tag of tags) {
+      tag.addEventListener("click", () => {
+        const label = tag.dataset.tag || "All";
+        activeTag = activeTag === label && label !== "All" ? "All" : label;
+        for (const t of tags) t.classList.toggle("is-active", t.dataset.tag === activeTag);
+        // Keep the URL in sync so a filtered view is shareable/bookmarkable.
+        const next = new URL(location.href);
+        if (activeTag === "All") next.searchParams.delete("tag");
+        else next.searchParams.set("tag", activeTag);
+        history.replaceState({}, "", next.toString());
+        apply();
+      });
+    }
+
+    apply();
+  }
+  initCatalog();
+  document.addEventListener("astro:page-load", initCatalog);
+</script>

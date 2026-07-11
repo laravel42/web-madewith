@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+</style>
+</helmet>
+
+<div data-drags-parent="1" style="position:absolute; left:80px; top:36px; font-family:'Hanken Grotesk',sans-serif; font-weight:800; font-size:30px; color:#1a1a1a; letter-spacing:-0.02em;">MadeWith… — homepage directions</div>
+<div style="position:absolute; left:80px; top:76px; width:760px; font-family:'Hanken Grotesk',sans-serif; font-size:15px; line-height:1.5; color:#6b6b6b;">One catalog template, three visual systems. Each frame is themed to a different domain to prove the “swap accent + logo only” model. Same structure underneath: logo · SEO hero · search/sort/tags · project grid.</div>
+
+<!-- ============ FRAME A · MINIMAL · Nuxt ============ -->
+<div style="position:absolute; left:80px; top:150px; width:1180px;">
+  <div data-drags-parent="1" style="position:absolute; top:-26px; font-family:'Hanken Grotesk',sans-serif; font-weight:600; font-size:13px; color:#00875a;">A · Clean &amp; minimal — themed to Nuxt</div>
+  <div style="background:#ffffff; border-radius:4px; box-shadow:0 1px 3px rgba(0,0,0,.10); overflow:hidden; font-family:'Hanken Grotesk',sans-serif; color:#16201b;">
+
+    <!-- header -->
+    <div style="display:flex; align-items:center; justify-content:space-between; padding:22px 40px; border-bottom:1px solid #eef0ef;">
+      <div style="display:flex; align-items:center; gap:11px;">
+        <div style="width:34px; height:34px; border-radius:9px; background:#00DC82; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px rgba(0,220,130,.35);">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M13 3 L22 19 H16 L13 13.5 L10 19 H2 L9.2 6.5" stroke="#04231a" stroke-width="2.2" stroke-linejoin="round" fill="none"/></svg>
+        </div>
+        <span style="font-weight:800; font-size:18px; letter-spacing:-0.01em;">Made with <span style="color:#00875a;">Nuxt</span></span>
+      </div>
+      <div style="display:flex; align-items:center; gap:28px; font-size:14px; font-weight:500; color:#4a554f;">
+        <span>Projects</span><span>Categories</span><span>About</span>
+        <span style="background:#00DC82; color:#04231a; font-weight:700; padding:9px 16px; border-radius:8px;">Submit a project</span>
+      </div>
+    </div>
+
+    <!-- hero -->
+    <div style="padding:54px 40px 34px;">
+      <div style="font-size:13px; font-weight:600; color:#00875a; letter-spacing:.04em; text-transform:uppercase; margin-bottom:14px;">The Nuxt showcase</div>
+      <div style="font-size:46px; font-weight:800; letter-spacing:-0.03em; line-height:1.04; max-width:760px;">Discover the best apps, starters &amp; sites built with Nuxt</div>
+      <div style="font-size:17px; color:#5c665f; margin-top:16px; max-width:620px; line-height:1.55;">A hand-curated, daily-updated gallery of open-source projects. Browse 1,240+ repos, sorted by stars, and find your next stack.</div>
+      <div style="display:flex; gap:12px; margin-top:28px; max-width:680px;">
+        <div style="flex:1; display:flex; align-items:center; gap:10px; background:#f4f6f5; border:1px solid #e6eae8; border-radius:10px; padding:13px 16px;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#8b9690" stroke-width="2"/><path d="m20 20-3.5-3.5" stroke="#8b9690" stroke-width="2" stroke-linecap="round"/></svg>
+          <span style="color:#9aa39e; font-size:15px;">Search projects, authors, tags…</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px; background:#fff; border:1px solid #e6eae8; border-radius:10px; padding:13px 16px; font-size:14px; font-weight:600; color:#3a443f;">Most stars
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="#3a443f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+      </div>
+      <div style="display:flex; gap:9px; margin-top:20px; flex-wrap:wrap;">
+        <span style="background:#e6f9f0; color:#00875a; font-weight:600; font-size:13px; padding:7px 14px; border-radius:20px;">All</span>
+        <span style="background:#f4f6f5; color:#5c665f; font-size:13px; padding:7px 14px; border-radius:20px;">Dashboards</span>
+        <span style="background:#f4f6f5; color:#5c665f; font-size:13px; padding:7px 14px; border-radius:20px;">E-commerce</span>
+        <span style="background:#f4f6f5; color:#5c665f; font-size:13px; padding:7px 14px; border-radius:20px;">UI Kits</span>
+        <span style="background:#f4f6f5; color:#5c665f; font-size:13px; padding:7px 14px; border-radius:20px;">Blogs</span>
+        <span style="background:#f4f6f5; color:#5c665f; font-size:13px; padding:7px 14px; border-radius:20px;">DevTools</span>
+      </div>
+    </div>
+
+    <!-- grid -->
+    <div style="padding:8px 40px 48px; display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
+      <sc-for list="{{ projects }}" as="p" hint-placeholder-count="6">
+        <div style="border:1px solid #eef0ef; border-radius:14px; overflow:hidden; background:#fff;">
+          <div style="height:152px; background:#f4f6f5; border-bottom:1px solid #eef0ef; position:relative; padding:11px;">
+            <div style="display:flex; gap:5px; margin-bottom:13px;"><span style="width:8px;height:8px;border-radius:50%;background:#dfe4e1;"></span><span style="width:8px;height:8px;border-radius:50%;background:#dfe4e1;"></span><span style="width:8px;height:8px;border-radius:50%;background:#dfe4e1;"></span></div>
+            <div style="height:8px; width:55%; background:#e3e8e5; border-radius:4px; margin-bottom:9px;"></div>
+            <div style="height:30px; width:42%; background:#00DC82; opacity:.85; border-radius:6px; margin-bottom:11px;"></div>
+            <div style="height:7px; width:80%; background:#e9edeb; border-radius:4px; margin-bottom:7px;"></div>
+            <div style="height:7px; width:68%; background:#e9edeb; border-radius:4px;"></div>
+          </div>
+          <div style="padding:15px 16px 16px;">
+            <div style="font-weight:700; font-size:16px; margin-bottom:5px;">{{ p.name }}</div>
+            <div style="font-size:13.5px; color:#6b756f; line-height:1.45; margin-bottom:14px; min-height:38px;">{{ p.desc }}</div>
+            <div style="display:flex; align-items:center; justify-content:space-between;">
+              <div style="display:flex; align-items:center; gap:8px;">
+                <span style="width:22px;height:22px;border-radius:50%;background:#00DC82;color:#04231a;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;">{{ p.initial }}</span>
+                <span style="font-size:13px; color:#6b756f;">{{ p.author }}</span>
+              </div>
+              <div style="display:flex; align-items:center; gap:5px; font-size:13px; font-weight:600; color:#3a443f;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="#f5b400"><path d="m12 2 3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
+                {{ p.starsLabel }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FRAME B · TERMINAL · Node ============ -->
+<div style="position:absolute; left:1340px; top:150px; width:1180px;">
+  <div data-drags-parent="1" style="position:absolute; top:-26px; font-family:'Hanken Grotesk',sans-serif; font-weight:600; font-size:13px; color:#5FA04E;">B · Developer / terminal — themed to Node</div>
+  <div style="background:#0c0f0e; border-radius:4px; box-shadow:0 1px 3px rgba(0,0,0,.25); overflow:hidden; font-family:'JetBrains Mono',monospace; color:#c7d0ca;">
+
+    <div style="display:flex; align-items:center; justify-content:space-between; padding:20px 40px; border-bottom:1px solid #1c211e;">
+      <div style="display:flex; align-items:center; gap:11px;">
+        <span style="color:#5FA04E; font-weight:700; font-size:16px;">$</span>
+        <span style="font-weight:700; font-size:16px; color:#e8efe9;">made-with-<span style="color:#5FA04E;">node</span></span>
+        <span style="width:8px; height:16px; background:#5FA04E; display:inline-block; margin-left:2px;"></span>
+      </div>
+      <div style="display:flex; align-items:center; gap:24px; font-size:13px; color:#7c887f;">
+        <span>--projects</span><span>--categories</span>
+        <span style="border:1px solid #5FA04E; color:#5FA04E; padding:8px 15px; border-radius:6px;">+ submit</span>
+      </div>
+    </div>
+
+    <div style="padding:48px 40px 30px;">
+      <div style="font-size:13px; color:#5FA04E; margin-bottom:16px;">// 2,380 open-source projects indexed</div>
+      <div style="font-family:'Space Grotesk',sans-serif; font-size:44px; font-weight:700; letter-spacing:-0.02em; line-height:1.08; color:#f1f6f2; max-width:780px;">Real apps shipped with Node.js</div>
+      <div style="font-size:15px; color:#8b948d; margin-top:16px; max-width:600px; line-height:1.6;">Indexed nightly from GitHub. Filter by runtime, framework &amp; stars — discover production repos worth reading.</div>
+      <div style="display:flex; gap:12px; margin-top:28px; max-width:700px;">
+        <div style="flex:1; display:flex; align-items:center; gap:10px; background:#121614; border:1px solid #232a26; border-radius:8px; padding:13px 16px;">
+          <span style="color:#5FA04E;">&gt;</span><span style="color:#5c665f; font-size:14px;">grep projects…</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:8px; background:#121614; border:1px solid #232a26; border-radius:8px; padding:13px 16px; font-size:13px; color:#c7d0ca;">sort --stars ▾</div>
+      </div>
+      <div style="display:flex; gap:8px; margin-top:18px; flex-wrap:wrap; font-size:12px;">
+        <span style="background:#16211a; color:#5FA04E; border:1px solid #2a3a2f; padding:6px 12px; border-radius:5px;">#all</span>
+        <span style="border:1px solid #232a26; color:#7c887f; padding:6px 12px; border-radius:5px;">#api</span>
+        <span style="border:1px solid #232a26; color:#7c887f; padding:6px 12px; border-radius:5px;">#cli</span>
+        <span style="border:1px solid #232a26; color:#7c887f; padding:6px 12px; border-radius:5px;">#realtime</span>
+        <span style="border:1px solid #232a26; color:#7c887f; padding:6px 12px; border-radius:5px;">#fullstack</span>
+      </div>
+    </div>
+
+    <div style="padding:8px 40px 48px; display:grid; grid-template-columns:repeat(3,1fr); gap:18px;">
+      <sc-for list="{{ projects }}" as="p" hint-placeholder-count="6">
+        <div style="border:1px solid #1f2622; border-radius:10px; overflow:hidden; background:#101410;">
+          <div style="height:138px; background:#0e120f; border-bottom:1px solid #1f2622; padding:13px;">
+            <div style="font-size:11px; color:#3f4a43; margin-bottom:10px;">~/{{ p.author }}/{{ p.slug }}</div>
+            <div style="height:7px; width:60%; background:#1c231e; border-radius:3px; margin-bottom:8px;"></div>
+            <div style="height:26px; width:46%; background:#5FA04E; opacity:.8; border-radius:4px; margin-bottom:10px;"></div>
+            <div style="height:6px; width:78%; background:#1c231e; border-radius:3px; margin-bottom:6px;"></div>
+            <div style="height:6px; width:64%; background:#1c231e; border-radius:3px;"></div>
+          </div>
+          <div style="padding:14px 15px;">
+            <div style="font-weight:700; font-size:14px; color:#e8efe9; margin-bottom:6px;">{{ p.name }}</div>
+            <div style="font-size:12px; color:#7c887f; line-height:1.5; margin-bottom:13px; min-height:36px;">{{ p.desc }}</div>
+            <div style="display:flex; align-items:center; justify-content:space-between; font-size:12px;">
+              <span style="color:#5c665f;">@{{ p.author }}</span>
+              <span style="color:#5FA04E;">★ {{ p.starsLabel }}</span>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FRAME C · EDITORIAL · Next ============ -->
+<div style="position:absolute; left:2600px; top:150px; width:1180px;">
+  <div data-drags-parent="1" style="position:absolute; top:-26px; font-family:'Hanken Grotesk',sans-serif; font-weight:600; font-size:13px; color:#111;">C · Bold &amp; editorial — themed to Next.js</div>
+  <div style="background:#ffffff; border-radius:4px; box-shadow:0 1px 3px rgba(0,0,0,.10); overflow:hidden; font-family:'Hanken Grotesk',sans-serif; color:#0a0a0a;">
+
+    <div style="display:flex; align-items:center; justify-content:space-between; padding:24px 44px; border-bottom:2px solid #0a0a0a;">
+      <div style="display:flex; align-items:center; gap:11px;">
+        <div style="width:30px; height:30px; border-radius:50%; background:#0a0a0a; display:flex; align-items:center; justify-content:center;">
+          <span style="color:#fff; font-weight:800; font-size:15px; font-family:'Bricolage Grotesque',sans-serif;">N</span>
+        </div>
+        <span style="font-weight:700; font-size:17px; letter-spacing:-0.01em;">Made with Next</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:26px; font-size:14px; font-weight:600;">
+        <span>Gallery</span><span>Categories</span>
+        <span style="background:#0a0a0a; color:#fff; padding:9px 18px; border-radius:0;">Submit ↗</span>
+      </div>
+    </div>
+
+    <div style="padding:50px 44px 30px; border-bottom:1px solid #e8e8e8;">
+      <div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:82px; line-height:0.92; letter-spacing:-0.04em;">MADE WITH<br>NEXT.JS</div>
+      <div style="display:flex; align-items:flex-end; justify-content:space-between; margin-top:26px; gap:40px;">
+        <div style="font-size:18px; color:#444; max-width:520px; line-height:1.5;">The definitive index of sites &amp; apps in production. 3,100 projects, ranked by GitHub stars and shipped weekly.</div>
+        <div style="display:flex; gap:10px; flex-shrink:0;">
+          <div style="display:flex; align-items:center; gap:9px; border:1.5px solid #0a0a0a; padding:12px 18px; font-size:14px; color:#888;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#0a0a0a" stroke-width="2"/><path d="m20 20-3.5-3.5" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round"/></svg>Search
+          </div>
+          <div style="display:flex; align-items:center; gap:8px; border:1.5px solid #0a0a0a; padding:12px 18px; font-size:14px; font-weight:700;">★ Stars ▾</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(3,1fr);">
+      <sc-for list="{{ projects }}" as="p" hint-placeholder-count="6">
+        <div style="border-right:1px solid #e8e8e8; border-bottom:1px solid #e8e8e8; padding:0;">
+          <div style="height:158px; background:#f5f5f5; position:relative; padding:14px; border-bottom:1px solid #e8e8e8;">
+            <div style="position:absolute; top:14px; right:14px; font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:13px;">{{ p.rank }}</div>
+            <div style="height:8px; width:50%; background:#e3e3e3; border-radius:0; margin-bottom:9px; margin-top:26px;"></div>
+            <div style="height:30px; width:44%; background:#0a0a0a; margin-bottom:11px;"></div>
+            <div style="height:7px; width:78%; background:#e8e8e8; margin-bottom:6px;"></div>
+            <div style="height:7px; width:62%; background:#e8e8e8;"></div>
+          </div>
+          <div style="padding:18px 20px 20px;">
+            <div style="font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:18px; letter-spacing:-0.01em; margin-bottom:6px;">{{ p.name }}</div>
+            <div style="font-size:13.5px; color:#666; line-height:1.45; margin-bottom:15px; min-height:38px;">{{ p.desc }}</div>
+            <div style="display:flex; align-items:center; justify-content:space-between; border-top:1px solid #f0f0f0; padding-top:13px;">
+              <span style="font-size:13px; font-weight:600;">@{{ p.author }}</span>
+              <span style="font-size:13px; font-weight:700;">★ {{ p.starsLabel }}</span>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</div>
+
+<!-- post-it -->
+<div style="position:absolute; left:80px; top:1700px; width:300px; background:#fef4a8; padding:16px 18px; font-family:'Hanken Grotesk',sans-serif; font-size:13px; line-height:1.5; color:#5c4a00; box-shadow:0 1px 4px rgba(0,0,0,.12); transform:rotate(-1deg);">
+  <b>Theming model:</b> one accent color + one logo per domain. Everything else (layout, type, spacing, card structure) stays identical — so a new “MadeWith…” site is a config swap, not a redesign.
+</div>
+<div style="position:absolute; left:420px; top:1710px; width:300px; background:#fef4a8; padding:16px 18px; font-family:'Hanken Grotesk',sans-serif; font-size:13px; line-height:1.5; color:#5c4a00; box-shadow:0 1px 4px rgba(0,0,0,.12); transform:rotate(1deg);">
+  <b>Next steps:</b> pick a direction → I’ll build it into a full tweakable prototype (homepage + detail + category + submit) with a live accent/logo switcher so you can preview every domain.
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const raw = [
+      { name: "Pulse", desc: "Real-time analytics dashboard with live charts and team workspaces.", stars: 3200, author: "sarah-dev", slug: "pulse" },
+      { name: "Aurora UI", desc: "Accessible component library and design kit for product teams.", stars: 2140, author: "lindsey", slug: "aurora-ui" },
+      { name: "Cobalt Store", desc: "Headless e-commerce starter with cart, checkout and Stripe.", stars: 1810, author: "devhouse", slug: "cobalt" },
+      { name: "Drift", desc: "Markdown-first blog engine with MDX and full-text search.", stars: 1450, author: "j-kemp", slug: "drift" },
+      { name: "Relay", desc: "Self-hosted status page and uptime monitor for small teams.", stars: 980, author: "opsteam", slug: "relay" },
+      { name: "Lumen Docs", desc: "Documentation site generator with versioning and i18n.", stars: 760, author: "writeonce", slug: "lumen" },
+    ];
+    const fmt = n => n >= 1000 ? (n / 1000).toFixed(1).replace(/\.0$/, "") + "k" : "" + n;
+    const projects = raw.map((p, i) => ({
+      ...p,
+      starsLabel: fmt(p.stars),
+      initial: p.author.charAt(0).toUpperCase(),
+      rank: "0" + (i + 1),
+    }));
+    return { projects };
+  }
+}
+</script>
+</body>
+</html>

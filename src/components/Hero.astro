@@ -1,0 +1,24 @@
+---
+import type { Theme } from "../config/domains";
+import NuxtHero from "./heroes/NuxtHero.astro";
+import NodeHero from "./heroes/NodeHero.astro";
+import NextHero from "./heroes/NextHero.astro";
+import IonicHero from "./heroes/IonicHero.astro";
+import StatamicHero from "./heroes/StatamicHero.astro";
+import TwillHero from "./heroes/TwillHero.astro";
+
+interface Props { theme: Theme; total: string; }
+const { theme, total } = Astro.props;
+
+const HEROES = {
+  nuxt: NuxtHero,
+  node: NodeHero,
+  next: NextHero,
+  ionic: IonicHero,
+  statamic: StatamicHero,
+  twill: TwillHero,
+} as const;
+
+const HeroComponent = HEROES[theme.heroId];
+---
+<HeroComponent theme={theme} total={total} />

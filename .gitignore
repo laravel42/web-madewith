@@ -1,0 +1,19 @@
+# build output
+dist/
+.astro/
+
+# scraper etag cache
+scripts/.cache/
+
+# dependencies
+node_modules/
+
+# env & logs
+.env
+.env.*
+!.env.example
+npm-debug.log*
+*.log
+
+# OS
+.DS_Store
