@@ -1,0 +1,189 @@
+---
+// Admin dashboard. Protect /admin/* with a Cloudflare Access application.
+// All data comes from the same-origin /admin/api/* Pages Function proxy.
+---
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>MadeWith… Admin</title>
+    <link rel="icon" href="/favicon.svg" />
+    <style>
+      * { box-sizing: border-box; }
+      body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: #16201b; background: #f6f8f7; -webkit-font-smoothing: antialiased; }
+      a { color: inherit; }
+      .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+      header { background: #16201b; color: #fff; }
+      header .wrap { display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; }
+      .brand { font-weight: 800; letter-spacing: -0.01em; }
+      .who { font-size: 13px; color: #b9c4be; }
+      nav { display: flex; gap: 4px; border-bottom: 1px solid #e6eae8; background: #fff; }
+      nav .wrap { display: flex; gap: 4px; padding: 0 24px; }
+      .tab { padding: 14px 16px; font-size: 14px; font-weight: 600; color: #5c665f; cursor: pointer; border-bottom: 2px solid transparent; background: none; border-top: none; border-left: none; border-right: none; }
+      .tab.active { color: #16201b; border-bottom-color: #16201b; }
+      main { padding: 28px 0 80px; }
+      .panel { display: none; }
+      .panel.active { display: block; }
+      h2 { font-size: 18px; margin: 0 0 14px; }
+      .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+      .card { background: #fff; border: 1px solid #e6eae8; border-radius: 12px; padding: 18px; }
+      table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid #e6eae8; border-radius: 12px; overflow: hidden; }
+      th, td { text-align: left; padding: 11px 14px; font-size: 13.5px; border-bottom: 1px solid #eef0ef; }
+      th { background: #fafbfa; color: #6b756f; font-weight: 600; }
+      tr:last-child td { border-bottom: none; }
+      .btn { font-size: 13px; font-weight: 600; padding: 7px 12px; border-radius: 8px; cursor: pointer; border: 1px solid #d6ddd9; background: #fff; color: #16201b; }
+      .btn:hover { background: #f4f6f5; }
+      .btn.primary { background: #16201b; color: #fff; border-color: #16201b; }
+      .btn.danger { color: #b3261e; border-color: #ecc1bd; }
+      .btn.on { background: #00a866; color: #fff; border-color: #00a866; }
+      .pill { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 20px; background: #eef0ef; color: #5c665f; }
+      .pill.warn { background: #fff2cc; color: #8a6d00; }
+      select { padding: 8px 10px; border: 1px solid #d6ddd9; border-radius: 8px; font-size: 14px; background: #fff; }
+      .muted { color: #8b9690; font-size: 13px; }
+      .stat { font-size: 28px; font-weight: 800; }
+      .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 14px; }
+      #toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background: #16201b; color: #fff; padding: 10px 16px; border-radius: 10px; font-size: 13px; opacity: 0; transition: opacity .2s; pointer-events: none; }
+      #toast.show { opacity: 1; }
+    </style>
+  </head>
+  <body>
+    <header><div class="wrap"><span class="brand">MadeWith… Admin</span><span class="who" id="who">…</span></div></header>
+    <nav><div class="wrap">
+      <button class="tab active" data-tab="overview">Overview</button>
+      <button class="tab" data-tab="submissions">Submissions <span class="pill warn" id="pendingBadge" hidden>0</span></button>
+      <button class="tab" data-tab="entries">Entries</button>
+    </div></nav>
+    <main class="wrap">
+      <section class="panel active" data-panel="overview">
+        <div class="row" style="justify-content:space-between; margin-bottom:16px;">
+          <h2 style="margin:0;">Overview</h2>
+          <div class="row">
+            <button class="btn" id="republishAll">Republish all</button>
+            <button class="btn primary" id="refreshAll">Refresh all (scrape)</button>
+          </div>
+        </div>
+        <div class="grid" id="stats" style="margin-bottom:20px;"></div>
+        <table><thead><tr><th>Domain</th><th>Published</th><th>Ecosystem</th><th>Last scraped</th><th></th></tr></thead><tbody id="domainRows"><tr><td colspan="5" class="muted">Loading…</td></tr></tbody></table>
+      </section>
+
+      <section class="panel" data-panel="submissions">
+        <div class="row" style="justify-content:space-between; margin-bottom:16px;">
+          <h2 style="margin:0;">Submissions</h2>
+          <select id="subFilter"><option value="pending">Pending</option><option value="">All</option><option value="approved">Approved</option><option value="rejected">Rejected</option></select>
+        </div>
+        <table><thead><tr><th>Project</th><th>Domain</th><th>Repo</th><th>Status</th><th></th></tr></thead><tbody id="subRows"><tr><td colspan="5" class="muted">Loading…</td></tr></tbody></table>
+      </section>
+
+      <section class="panel" data-panel="entries">
+        <div class="row" style="justify-content:space-between; margin-bottom:16px;">
+          <h2 style="margin:0;">Entries</h2>
+          <select id="entryDomain"></select>
+        </div>
+        <table><thead><tr><th>Project</th><th>Author</th><th>★</th><th>Category</th><th>State</th><th></th></tr></thead><tbody id="entryRows"><tr><td colspan="6" class="muted">Select a domain…</td></tr></tbody></table>
+      </section>
+    </main>
+    <div id="toast"></div>
+
+    <script>
+      const $ = (s: string, r: ParentNode = document) => r.querySelector(s) as HTMLElement;
+      const api = (p: string, opts?: RequestInit) => fetch(`/admin/api/${p}`, opts).then(async (r) => {
+        const body = await r.json().catch(() => ({}));
+        if (!r.ok) throw new Error((body as any).error || `HTTP ${r.status}`);
+        return body as any;
+      });
+      const toast = (m: string) => { const t = $("#toast"); t.textContent = m; t.classList.add("show"); setTimeout(() => t.classList.remove("show"), 2200); };
+      const esc = (s: any) => String(s ?? "").replace(/[<>&]/g, (c) => ({ "<": "&lt;", ">": "&gt;", "&": "&amp;" }[c]!));
+
+      // tabs
+      document.querySelectorAll<HTMLElement>(".tab").forEach((t) => t.addEventListener("click", () => {
+        document.querySelectorAll(".tab").forEach((x) => x.classList.remove("active"));
+        document.querySelectorAll(".panel").forEach((x) => x.classList.remove("active"));
+        t.classList.add("active");
+        $(`[data-panel="${t.dataset.tab}"]`).classList.add("active");
+        if (t.dataset.tab === "submissions") loadSubs();
+        if (t.dataset.tab === "entries") loadEntries();
+      }));
+
+      let domains: any[] = [];
+
+      async function loadOverview() {
+        try {
+          const o = await api("overview");
+          $("#who").textContent = o.email || "";
+          domains = o.domains;
+          const badge = $("#pendingBadge"); badge.textContent = o.pending; badge.hidden = !o.pending;
+          $("#stats").innerHTML =
+            `<div class="card"><div class="muted">Pending submissions</div><div class="stat">${o.pending}</div></div>` +
+            `<div class="card"><div class="muted">Domains</div><div class="stat">${o.domains.length}</div></div>` +
+            `<div class="card"><div class="muted">Last full run</div><div style="font-weight:600;margin-top:6px;">${o.lastRun ? new Date(o.lastRun.at).toLocaleString() : "—"}</div></div>`;
+          $("#domainRows").innerHTML = o.domains.map((d: any) =>
+            `<tr><td><b>${esc(d.techName)}</b> <span class="muted">/${d.slug}</span></td><td>${d.published}</td><td>${d.total ? d.total.toLocaleString() : "—"}</td><td class="muted">${d.scrapedAt ? new Date(d.scrapedAt).toLocaleString() : "never"}</td>` +
+            `<td class="row"><button class="btn" data-republish="${d.slug}">Republish</button><button class="btn primary" data-refresh="${d.slug}">Refresh</button></td></tr>`).join("");
+          // populate entries domain select
+          $("#entryDomain").innerHTML = o.domains.map((d: any) => `<option value="${d.slug}">${esc(d.techName)}</option>`).join("");
+        } catch (e) { $("#domainRows").innerHTML = `<tr><td colspan="5" class="danger">${esc((e as Error).message)} — are you signed in via Access?</td></tr>`; }
+      }
+
+      async function post(p: string, body: any, msg: string) {
+        try { const r = await api(p, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body) }); toast(msg); return r; }
+        catch (e) { toast("Error: " + (e as Error).message); }
+      }
+
+      document.addEventListener("click", async (e) => {
+        const el = e.target as HTMLElement;
+        if (el.dataset.refresh) { el.textContent = "…"; await post("refresh", { slug: el.dataset.refresh }, `Refreshed ${el.dataset.refresh}`); loadOverview(); }
+        if (el.dataset.republish) { await post("republish", { slug: el.dataset.republish }, `Republished ${el.dataset.republish}`); loadOverview(); }
+      });
+      $("#refreshAll").addEventListener("click", async () => { await post("refresh", {}, "Refresh started for all domains"); loadOverview(); });
+      $("#republishAll").addEventListener("click", async () => { await post("republish", {}, "Republished all"); loadOverview(); });
+
+      // submissions
+      async function loadSubs() {
+        const status = ($("#subFilter") as HTMLSelectElement).value;
+        try {
+          const { submissions } = await api(`submissions${status ? `?status=${status}` : ""}`);
+          $("#subRows").innerHTML = submissions.length ? submissions.map((s: any) =>
+            `<tr><td><b>${esc(s.name)}</b><div class="muted">${esc(s.description || "")}</div></td><td>${esc(s.slug)}</td>` +
+            `<td><a href="${esc(s.repo_url)}" target="_blank" rel="noopener">repo ↗</a></td><td><span class="pill ${s.status === "pending" ? "warn" : ""}">${s.status}</span></td>` +
+            `<td class="row">${s.status === "pending" ? `<button class="btn on" data-approve="${s.id}">Approve</button><button class="btn danger" data-reject="${s.id}">Reject</button>` : `<span class="muted">${esc(s.decided_by || "")}</span>`}</td></tr>`).join("")
+            : `<tr><td colspan="5" class="muted">No submissions.</td></tr>`;
+        } catch (e) { $("#subRows").innerHTML = `<tr><td colspan="5" class="danger">${esc((e as Error).message)}</td></tr>`; }
+      }
+      $("#subFilter").addEventListener("change", loadSubs);
+      document.addEventListener("click", async (e) => {
+        const el = e.target as HTMLElement;
+        if (el.dataset.approve) { el.textContent = "…"; await post(`submissions/${el.dataset.approve}`, { action: "approve" }, "Approved & published"); loadSubs(); loadOverview(); }
+        if (el.dataset.reject) { await post(`submissions/${el.dataset.reject}`, { action: "reject" }, "Rejected"); loadSubs(); }
+      });
+
+      // entries
+      async function loadEntries() {
+        const slug = ($("#entryDomain") as HTMLSelectElement).value || domains[0]?.slug;
+        if (!slug) return;
+        try {
+          const { entries } = await api(`entries/${slug}`);
+          $("#entryRows").innerHTML = entries.length ? entries.map((en: any) => {
+            const o = en.override || {};
+            return `<tr><td><b>${esc(en.name)}</b> ${en.manual ? '<span class="pill">manual</span>' : ""}</td><td class="muted">${esc(en.author)}</td><td>${en.stars?.toLocaleString?.() ?? en.stars}</td><td>${esc(o.category || en.category)}</td>` +
+              `<td>${o.hidden ? '<span class="pill">hidden</span>' : ""}${o.featured ? '<span class="pill warn">featured</span>' : ""}</td>` +
+              `<td class="row"><button class="btn ${o.featured ? "on" : ""}" data-feature="${slug}:${en.githubId}:${o.featured ? 0 : 1}:${o.hidden ? 1 : 0}">${o.featured ? "Unfeature" : "Feature"}</button>` +
+              `<button class="btn ${o.hidden ? "danger" : ""}" data-hide="${slug}:${en.githubId}:${o.hidden ? 0 : 1}:${o.featured ? 1 : 0}">${o.hidden ? "Unhide" : "Hide"}</button></td></tr>`;
+          }).join("") : `<tr><td colspan="6" class="muted">No entries (scrape first).</td></tr>`;
+        } catch (e) { $("#entryRows").innerHTML = `<tr><td colspan="6" class="danger">${esc((e as Error).message)}</td></tr>`; }
+      }
+      $("#entryDomain").addEventListener("change", loadEntries);
+      document.addEventListener("click", async (e) => {
+        const el = e.target as HTMLElement;
+        const set = el.dataset.feature || el.dataset.hide;
+        if (!set) return;
+        const [slug, gid, a, b] = set.split(":");
+        const body = el.dataset.feature ? { featured: a === "1", hidden: b === "1" } : { hidden: a === "1", featured: b === "1" };
+        await post(`entries/${slug}/${gid}`, body, "Updated & republished"); loadEntries();
+      });
+
+      loadOverview();
+    </script>
+  </body>
+</html>

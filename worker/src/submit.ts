@@ -1,0 +1,62 @@
+/** Public project submission: validate, rate-limit, store as pending for moderation. */
+import { Db } from "./db";
+import { DOMAIN_SLUGS } from "./domains";
+import { CATEGORIES } from "./classify";
+
+export interface SubmitInput {
+  slug: string;
+  repo_url: string;
+  name: string;
+  description: string | null;
+  category: string | null;
+  demo_url: string | null;
+}
+
+const GITHUB_REPO = /^https:\/\/github\.com\/[\w.-]+\/[\w.-]+\/?$/i;
+const cap = (s: unknown, n: number) => (typeof s === "string" ? s.trim().slice(0, n) : "");
+
+export function validateSubmission(body: any): { ok: true; value: SubmitInput } | { ok: false; error: string } {
+  if (!body || typeof body !== "object") return { ok: false, error: "invalid body" };
+  const slug = cap(body.slug, 40).toLowerCase();
+  if (!DOMAIN_SLUGS.includes(slug)) return { ok: false, error: "unknown domain" };
+
+  const repo_url = cap(body.repo_url, 200);
+  if (!GITHUB_REPO.test(repo_url)) return { ok: false, error: "repo_url must be a https://github.com/owner/repo URL" };
+
+  const name = cap(body.name, 100);
+  if (!name) return { ok: false, error: "name is required" };
+
+  const category = body.category ? cap(body.category, 40) : null;
+  if (category && !CATEGORIES.includes(category as any)) return { ok: false, error: "unknown category" };
+
+  const demo_url = body.demo_url ? cap(body.demo_url, 200) : null;
+  if (demo_url && !/^https?:\/\//i.test(demo_url)) return { ok: false, error: "demo_url must be http(s)" };
+
+  return { ok: true, value: { slug, repo_url, name, description: cap(body.description, 400) || null, category, demo_url } };
+}
+
+/** Simple per-IP daily cap so the queue can't be flooded. */
+async function rateLimited(kv: KVNamespace, ip: string, day: string, limit = 20): Promise<boolean> {
+  const key = `submitcount:${ip}:${day}`;
+  const n = Number((await kv.get(key)) || "0");
+  if (n >= limit) return true;
+  await kv.put(key, String(n + 1), { expirationTtl: 60 * 60 * 26 });
+  return false;
+}
+
+export async function handleSubmit(req: Request, db: Db, kv: KVNamespace, nowIso: string): Promise<Response> {
+  let body: any;
+  try { body = await req.json(); } catch { return json({ error: "invalid JSON" }, 400); }
+  const v = validateSubmission(body);
+  if (!v.ok) return json({ error: v.error }, 400);
+
+  const ip = req.headers.get("cf-connecting-ip") || "anon";
+  const day = nowIso.slice(0, 10);
+  if (await rateLimited(kv, ip, day)) return json({ error: "rate limit — try again tomorrow" }, 429);
+
+  const id = await db.insertSubmission({ ...v.value, created_at: nowIso });
+  return json({ ok: true, id, status: "pending" }, 201);
+}
+
+const json = (b: unknown, status = 200) =>
+  new Response(JSON.stringify(b), { status, headers: { "content-type": "application/json", "access-control-allow-origin": "*" } });

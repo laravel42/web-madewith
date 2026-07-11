@@ -30,3 +30,6 @@ export const DOMAINS: DomainDiscovery[] = [
   { slug: "statamic", match: "topic:statamic",    techName: "Statamic", keep: 12, exclude: ["statamic/cms", "statamic/statamic"] },
   { slug: "twill",    match: "twill laravel cms", techName: "Twill",    keep: 12, exclude: ["area17/twill"] },
 ];
+
+export const DOMAIN_SLUGS = DOMAINS.map((d) => d.slug);
+export const getDomain = (slug: string): DomainDiscovery | undefined => DOMAINS.find((d) => d.slug === slug);

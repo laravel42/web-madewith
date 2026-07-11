@@ -11,6 +11,8 @@ export interface Project {
   demo: string | null; repoUrl: string; long1: string; long2: string;
   stack: string[]; updated: string; license: string; langs: Lang[];
   topics: string[]; score: number;
+  /** Set by editorial overrides at publish time. */
+  featured?: boolean;
 }
 export interface DomainDataset {
   slug: string; scrapedAt: string; source: string; totalRepos: number; projects: Project[];
@@ -185,4 +187,29 @@ export async function scrapeAll(gh: GitHub, now: number): Promise<Record<string,
   const out: Record<string, DomainDataset> = {};
   for (const domain of DOMAINS) out[domain.slug] = await scrapeDomain(gh, domain, now);
   return out;
+}
+
+const REPO_QUERY = `
+query($owner: String!, $name: String!) {
+  repository(owner: $owner, name: $name) {
+    databaseId name nameWithOwner description stargazerCount homepageUrl url
+    isFork isArchived pushedAt
+    owner { login avatarUrl }
+    licenseInfo { spdxId }
+    primaryLanguage { name }
+    repositoryTopics(first: 12) { nodes { topic { name } } }
+    languages(first: 5, orderBy: { field: SIZE, direction: DESC }) { totalSize edges { size node { name } } }
+  }
+}`;
+
+/** Fetch + normalise a single repo (used when an admin approves a submission). */
+export async function scrapeRepo(gh: GitHub, owner: string, name: string, now: number): Promise<Project | null> {
+  const d = await gh.graphql<{ repository: RepoNode | null }>(REPO_QUERY, { owner, name });
+  return d.repository ? normalise(d.repository, now) : null;
+}
+
+/** Parse "https://github.com/owner/repo" → { owner, name }. */
+export function parseRepoUrl(url: string): { owner: string; name: string } | null {
+  const m = url.match(/^https:\/\/github\.com\/([\w.-]+)\/([\w.-]+?)(?:\.git)?\/?$/i);
+  return m ? { owner: m[1], name: m[2] } : null;
 }
