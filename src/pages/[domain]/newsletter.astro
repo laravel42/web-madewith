@@ -1,0 +1,16 @@
+---
+import { DOMAINS, type Theme } from "../../config/domains";
+import CatalogLayout from "../../layouts/CatalogLayout.astro";
+import NewsletterForm from "../../components/NewsletterForm.astro";
+
+export function getStaticPaths() {
+  return DOMAINS.map((theme) => ({ params: { domain: theme.slug }, props: { theme } }));
+}
+
+const { theme } = Astro.props as { theme: Theme };
+const title = `Newsletter — Made with ${theme.techName}`;
+const description = `Subscribe to the Made with ${theme.techName} newsletter for a digest of standout open-source projects when the gallery refreshes.`;
+---
+<CatalogLayout theme={theme} active="newsletter" title={title} description={description}>
+  <NewsletterForm theme={theme} />
+</CatalogLayout>

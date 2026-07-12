@@ -1,5 +1,8 @@
 ---
 import type { Theme } from "../config/domains";
+import { CATEGORY_META } from "../config/categories";
+import Glyph from "./Glyph.astro";
+
 interface Cat { label: string; count: number; blurb: string; }
 interface Props { theme: Theme; cats: Cat[]; total: string; }
 const { theme, cats, total } = Astro.props;
@@ -14,17 +17,23 @@ const href = (label: string) => `${base}/?tag=${encodeURIComponent(label)}`;
     <div style="font-size:12px; color:#5c665f; margin-bottom:14px;"><a href={`${base}/`} style="cursor:pointer; text-decoration:none; color:inherit;">~</a> / categories</div>
     <div class="disp" style="font-size:38px; font-weight:700; letter-spacing:-0.02em; color:#f1f6f2;">Browse by category</div>
     <div style="font-size:14px; color:#8b948d; margin-top:10px; max-width:560px;">ls the {theme.techName} ecosystem — {total} projects across {catCount} categories.</div>
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:32px;">
-      {cats.map((c) => (
-        <a href={href(c.label)} class="card" style="padding:20px;">
-          <div style="display:flex; align-items:center; justify-content:space-between;">
-            <div class="disp" style="font-weight:600; font-size:18px; color:#e8efe9;">{c.label}</div>
-            <span style={`background:color-mix(in srgb, ${theme.accent} 22%, #0c0f0e); color:${theme.accent}; border:1px solid ${theme.accent}; font-size:12px; padding:2px 9px; border-radius:5px;`}>{c.count}</span>
-          </div>
-          <div style="font-size:12.5px; color:#7c887f; margin-top:8px; line-height:1.5;">{c.blurb}</div>
-          <div style={`margin-top:15px; font-size:12px; color:${theme.accent};`}>cd → </div>
-        </a>
-      ))}
+    <div class="mw-grid3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:32px;">
+      {cats.map((c) => {
+        const meta = CATEGORY_META[c.label];
+        return (
+          <a href={href(c.label)} class="card" style={`padding:20px; border-top:3px solid ${meta.color};`}>
+            <div style={`width:40px; height:40px; border-radius:10px; background:color-mix(in srgb, ${meta.color} 18%, #0c0f0e); display:flex; align-items:center; justify-content:center; margin-bottom:14px;`}>
+              <Glyph name={c.label} size={20} color={meta.color} />
+            </div>
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+              <div class="disp" style="font-weight:600; font-size:18px; color:#e8efe9;">{c.label}</div>
+              <span style={`background:color-mix(in srgb, ${meta.color} 22%, #0c0f0e); color:${meta.color}; border:1px solid ${meta.color}; font-size:12px; padding:2px 9px; border-radius:5px;`}>{c.count}</span>
+            </div>
+            <div style="font-size:12.5px; color:#7c887f; margin-top:8px; line-height:1.5;">{c.blurb}</div>
+            <div style={`margin-top:15px; font-size:12px; color:${meta.color};`}>cd → </div>
+          </a>
+        );
+      })}
     </div>
   </div>
 ) : (
@@ -32,17 +41,23 @@ const href = (label: string) => `${base}/?tag=${encodeURIComponent(label)}`;
     <div style="font-size:13px; color:#8b9690; margin-bottom:14px;"><a href={`${base}/`} style="cursor:pointer; text-decoration:none; color:inherit;">Home</a> &nbsp;/&nbsp; Categories</div>
     <div class="disp" style="font-size:40px; font-weight:800; letter-spacing:-0.03em;">Browse by category</div>
     <div style="font-size:16px; color:#5c665f; margin-top:10px; max-width:560px;">Jump into a slice of the {theme.techName} ecosystem. {total} projects across {catCount} categories.</div>
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:34px;">
-      {cats.map((c) => (
-        <a href={href(c.label)} class="card" style={`border-radius:${radius}; padding:22px;`}>
-          <div style="display:flex; align-items:center; justify-content:space-between;">
-            <div class="disp" style="font-weight:700; font-size:19px; letter-spacing:-0.01em;">{c.label}</div>
-            <span style={`background:color-mix(in srgb, ${theme.accent} 13%, #fff); color:${theme.editorial ? "#0a0a0a" : theme.accent}; font-weight:700; font-size:13px; padding:3px 10px; border-radius:20px;`}>{c.count}</span>
-          </div>
-          <div style="font-size:13.5px; color:#6b756f; margin-top:8px; line-height:1.45;">{c.blurb}</div>
-          <div style={`margin-top:16px; font-size:13px; font-weight:600; color:${theme.editorial ? "#0a0a0a" : theme.accent};`}>Explore →</div>
-        </a>
-      ))}
+    <div class="mw-grid3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:34px;">
+      {cats.map((c) => {
+        const meta = CATEGORY_META[c.label];
+        return (
+          <a href={href(c.label)} class="card" style={`border-radius:${radius}; padding:22px; border-top:3px solid ${meta.color}; background:linear-gradient(180deg, ${meta.bg} 0%, #fff 42%);`}>
+            <div style={`width:44px; height:44px; border-radius:12px; background:${meta.bg}; border:1px solid color-mix(in srgb, ${meta.color} 20%, #fff); display:flex; align-items:center; justify-content:center; margin-bottom:16px; box-shadow:0 8px 18px color-mix(in srgb, ${meta.color} 12%, transparent);`}>
+              <Glyph name={c.label} size={22} color={meta.color} />
+            </div>
+            <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+              <div class="disp" style={`font-weight:700; font-size:19px; letter-spacing:-0.01em; color:${meta.color};`}>{c.label}</div>
+              <span style={`background:color-mix(in srgb, ${meta.color} 12%, #fff); color:${meta.color}; font-weight:700; font-size:13px; padding:3px 10px; border-radius:20px;`}>{c.count}</span>
+            </div>
+            <div style="font-size:13.5px; color:#6b756f; margin-top:8px; line-height:1.45;">{c.blurb}</div>
+            <div style={`margin-top:16px; font-size:13px; font-weight:600; color:${meta.color};`}>Explore →</div>
+          </a>
+        );
+      })}
     </div>
   </div>
 )}

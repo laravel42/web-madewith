@@ -42,10 +42,23 @@ async function loadKeys(teamDomain: string, kv: KVNamespace): Promise<Jwk[]> {
   return keys;
 }
 
+type AccessEnv = {
+  ACCESS_TEAM_DOMAIN?: string;
+  ACCESS_AUD?: string;
+  ADMIN_DEV_BYPASS?: string;
+  STATE: KVNamespace;
+};
+
 /** Returns the verified identity, or null if the token is missing/invalid. */
-export async function verifyAccess(req: Request, env: { ACCESS_TEAM_DOMAIN?: string; ACCESS_AUD?: string; STATE: KVNamespace }): Promise<AccessIdentity | null> {
+export async function verifyAccess(req: Request, env: AccessEnv): Promise<AccessIdentity | null> {
   const team = env.ACCESS_TEAM_DOMAIN;
   const aud = env.ACCESS_AUD;
+
+  // Local dev: wrangler dev + ADMIN_DEV_BYPASS=true in .dev.vars (Access unset).
+  if (env.ADMIN_DEV_BYPASS === "true" && (!team || !aud) && req.headers.get("x-admin-dev-bypass") === "1") {
+    return { email: req.headers.get("x-admin-dev-email") || "dev@local", sub: "dev" };
+  }
+
   if (!team || !aud) return null; // misconfigured → deny
 
   const token = req.headers.get("cf-access-jwt-assertion") || cookie(req, "CF_Authorization");

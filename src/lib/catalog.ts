@@ -1,4 +1,5 @@
 import { CATEGORY_META, CATEGORY_ORDER } from "../config/categories";
+import { similarProjects as rankBySimilarity } from "./similarity";
 
 export interface Lang { name: string; pct: number; }
 
@@ -19,6 +20,7 @@ export interface Project {
   updated: string;
   license: string;
   langs: Lang[];
+  versions?: { name: string; url: string }[];
   topics: string[];
 }
 
@@ -49,9 +51,14 @@ export function formatStars(n: number): string {
   return n >= 1000 ? (n / 1000).toFixed(1).replace(/\.0$/, "") + "k" : "" + n;
 }
 
-/** Human total for the hero ("8,584+"). */
+/** Human total for the hero ("8,584+"). Uses GitHub search total — prefer formatGalleryTotal for UI copy. */
 export function formatTotal(n: number): string {
   return n.toLocaleString() + "+";
+}
+
+/** Published gallery count for hero/category copy (exact, no "+"). */
+export function formatGalleryTotal(data: CatalogData): string {
+  return data.projects.length.toLocaleString();
 }
 
 /** Projects sorted by stars, enriched with display fields + 1-based rank. */
@@ -77,14 +84,31 @@ export function categoryCards(data: CatalogData) {
     .filter((c) => c.count > 0);
 }
 
+export interface CategoryFilter {
+  label: string;
+  count: number;
+}
+
+/** Top category pills for the hero filter row on a domain gallery. */
+export function topCategoryFilters(data: CatalogData, limit = 5, visibleCategories?: string[] | null): CategoryFilter[] {
+  const cards = categoryCards(data).sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
+  if (visibleCategories && visibleCategories.length > 0) {
+    const order = new Map(visibleCategories.map((l, i) => [l, i]));
+    return cards
+      .filter((c) => order.has(c.label))
+      .sort((a, b) => (order.get(a.label)! - order.get(b.label)!))
+      .slice(0, limit)
+      .map(({ label, count }) => ({ label, count }));
+  }
+  if (visibleCategories && visibleCategories.length === 0) return [];
+  return cards.slice(0, limit).map(({ label, count }) => ({ label, count }));
+}
+
 export function categoryCount(data: CatalogData): number {
   return categoryCards(data).length;
 }
 
-/** Related projects for a detail page: same category first, then fill from the rest. */
+/** Related projects for a detail page — ranked by multi-signal similarity. */
 export function relatedProjects(data: CatalogData, current: Project, n = 3) {
-  const ranked = rankedProjects(data);
-  const sameCat = ranked.filter((p) => p.slug !== current.slug && p.category === current.category);
-  const others = ranked.filter((p) => p.slug !== current.slug && p.category !== current.category);
-  return [...sameCat, ...others].slice(0, n);
+  return rankBySimilarity(data.projects, current, n);
 }

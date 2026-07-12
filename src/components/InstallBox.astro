@@ -1,0 +1,119 @@
+---
+import type { Theme } from "../config/domains";
+import type { Project } from "../lib/catalog";
+
+interface Props { theme: Theme; project: Project; }
+const { theme, project } = Astro.props;
+
+const clone = `git clone ${project.repoUrl}.git`;
+const isPHP = theme.slug === "statamic" || theme.slug === "twill";
+// Best-effort package name: repo name on npm, vendor/package on Packagist.
+const managers = isPHP
+  ? [{ id: "composer", label: "composer", color: "#885630", cmd: `composer require ${project.fullName}` }]
+  : [
+      { id: "npm", label: "npm", color: "#cb3837", cmd: `npm install ${project.name}` },
+      { id: "pnpm", label: "pnpm", color: "#f69220", cmd: `pnpm add ${project.name}` },
+      { id: "yarn", label: "yarn", color: "#2c8ebb", cmd: `yarn add ${project.name}` },
+      { id: "bun", label: "bun", color: "#fbf0df", cmd: `bun add ${project.name}` },
+    ];
+// White accent (Next) would vanish on the dark widget — fall back to indigo.
+const accent = theme.editorial ? "#6366f1" : theme.accent;
+---
+
+<div class="install" data-install style={`--pm-accent:${accent};`}>
+  <div class="row">
+    <input class="fld" data-clone readonly value={clone} aria-label="Clone command" />
+    <button class="cp" type="button" data-copy="[data-clone]" aria-label="Copy clone command">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+    </button>
+  </div>
+
+  <div class="pms" role="radiogroup" aria-label="Package manager">
+    {managers.map((m, i) => (
+      <button class="pm" type="button" data-pm data-cmd={m.cmd} aria-pressed={i === 0 ? "true" : "false"}>
+        <span class="dot" style={`background:${m.color};`}></span>{m.label}
+      </button>
+    ))}
+  </div>
+
+  <div class="row">
+    <code class="fld out" data-cmd-out>{managers[0].cmd}</code>
+    <button class="cp" type="button" data-copy="[data-cmd-out]" aria-label="Copy install command">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+    </button>
+  </div>
+</div>
+
+<style>
+  .install { max-width: 100%; }
+  .row { display: flex; align-items: stretch; }
+  .fld {
+    flex: 1; min-width: 0; margin: 0;
+    background: #0d1117; border: 1px solid #30363d; color: #e6edf3;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px;
+    padding: 10px 12px; border-radius: 8px 0 0 8px; outline: none;
+    white-space: nowrap; overflow-x: auto;
+  }
+  .out { display: block; }
+  .cp {
+    flex-shrink: 0; background: #161b22; border: 1px solid #30363d; border-left: none;
+    border-radius: 0 8px 8px 0; color: #7d8590; cursor: pointer; padding: 0 13px;
+    display: flex; align-items: center; transition: color .12s;
+  }
+  .cp:hover { color: #e6edf3; }
+  .cp.copied { color: #3fb950; }
+
+  .pms { display: flex; gap: 6px; margin: 12px 0; flex-wrap: wrap; }
+  .pm {
+    display: inline-flex; align-items: center; background: transparent;
+    border: 1px solid #30363d; color: #9aa3b2;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px;
+    padding: 6px 12px; border-radius: 6px; cursor: pointer; transition: border-color .12s, color .12s, background .12s;
+  }
+  .pm:hover { border-color: var(--pm-accent); color: #e6edf3; }
+  .pm[aria-pressed="true"] {
+    border-color: var(--pm-accent); color: var(--pm-accent);
+    background: color-mix(in srgb, var(--pm-accent) 14%, transparent); font-weight: 700;
+  }
+  .dot { width: 8px; height: 8px; border-radius: 50%; margin-right: 7px; }
+</style>
+
+<script>
+  function initInstall() {
+    document.querySelectorAll<HTMLElement>("[data-install]").forEach((root) => {
+      if (root.dataset.init) return;
+      root.dataset.init = "1";
+
+      const flash = async (btn: HTMLElement, text: string) => {
+        try {
+          await navigator.clipboard.writeText(text);
+          btn.classList.add("copied");
+          setTimeout(() => btn.classList.remove("copied"), 1200);
+        } catch { /* clipboard blocked — no-op */ }
+      };
+
+      root.querySelectorAll<HTMLElement>("[data-copy]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const el = root.querySelector<HTMLElement>(btn.getAttribute("data-copy") || "");
+          if (!el) return;
+          const text = (el as HTMLInputElement).value || el.textContent || "";
+          flash(btn, text);
+        });
+      });
+
+      const clone = root.querySelector<HTMLInputElement>("[data-clone]");
+      clone?.addEventListener("focus", () => clone.select());
+
+      const out = root.querySelector<HTMLElement>("[data-cmd-out]");
+      const pms = Array.from(root.querySelectorAll<HTMLElement>("[data-pm]"));
+      for (const b of pms) {
+        b.addEventListener("click", () => {
+          for (const x of pms) x.setAttribute("aria-pressed", x === b ? "true" : "false");
+          if (out) out.textContent = b.getAttribute("data-cmd");
+        });
+      }
+    });
+  }
+  initInstall();
+  document.addEventListener("astro:page-load", initInstall);
+</script>

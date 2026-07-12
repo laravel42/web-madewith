@@ -95,6 +95,30 @@ export class Db {
       .bind(o.slug, o.github_id, o.hidden ? 1 : 0, o.featured ? 1 : 0, o.name, o.description, o.category, o.updated_at, o.updated_by)
       .run();
   }
+
+  // ---- domain page settings ----
+  async getDomainSettings(slug: string): Promise<import("./domain-settings").DomainSettingsPayload | null> {
+    const row = await this.d1.prepare(`SELECT data FROM domain_settings WHERE slug = ?`).bind(slug).first<{ data: string }>();
+    if (!row) return null;
+    try {
+      return JSON.parse(row.data);
+    } catch {
+      return null;
+    }
+  }
+
+  async upsertDomainSettings(slug: string, data: import("./domain-settings").DomainSettingsPayload, by: string, at: string): Promise<void> {
+    await this.d1
+      .prepare(`INSERT INTO domain_settings (slug, data, updated_at, updated_by) VALUES (?, ?, ?, ?)
+                ON CONFLICT(slug) DO UPDATE SET data = excluded.data, updated_at = excluded.updated_at, updated_by = excluded.updated_by`)
+      .bind(slug, JSON.stringify(data), at, by)
+      .run();
+  }
+
+  async listDomainSettings(): Promise<Array<{ slug: string; data: import("./domain-settings").DomainSettingsPayload }>> {
+    const rows = (await this.d1.prepare(`SELECT slug, data FROM domain_settings`).all<{ slug: string; data: string }>()).results ?? [];
+    return rows.map((r) => ({ slug: r.slug, data: JSON.parse(r.data) }));
+  }
 }
 
 function rowToOverride(r: any): Override {

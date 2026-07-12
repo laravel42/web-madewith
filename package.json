@@ -7,6 +7,7 @@
   "scripts": {
     "scrape": "node scripts/scrape.mjs",
     "dev": "astro dev",
+    "dev:worker": "npm run dev --prefix worker",
     "prebuild": "node scripts/pull-data.mjs",
     "build": "astro build",
     "preview": "astro preview",
@@ -15,8 +16,11 @@
     "cf:preview": "wrangler pages dev ./dist"
   },
   "dependencies": {
-    "@astrojs/sitemap": "3.2.1",
-    "astro": "^4.16.18"
+    "@astrojs/sitemap": "3.7.3",
+    "@tailwindcss/vite": "^4.3.2",
+    "astro": "^7.0.7",
+    "flowbite": "^4.0.2",
+    "tailwindcss": "^4.3.2"
   },
   "devDependencies": {
     "wrangler": "^4.110.0"

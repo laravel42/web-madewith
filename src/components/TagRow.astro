@@ -1,16 +1,42 @@
 ---
 import type { Theme } from "../config/domains";
-import { TAG_ORDER } from "../config/categories";
+import type { CategoryFilter } from "../lib/catalog";
+import { CATEGORY_META } from "../config/categories";
+import Glyph from "./Glyph.astro";
 
-interface Props { theme: Theme; gap?: number; }
-const { theme, gap = 8 } = Astro.props;
+interface Props {
+  theme: Theme;
+  gap?: number;
+  categories: CategoryFilter[];
+}
+
+const { theme, gap = 8, categories } = Astro.props;
 const isTerminal = theme.variant === "terminal";
 const hash = (l: string) => "#" + l.toLowerCase().replace(/[^a-z0-9]/g, "");
+
+const pills = [{ label: "All", count: null as number | null }, ...categories.map((c) => ({ label: c.label, count: c.count }))];
 ---
 <div style={`display:flex; gap:${gap}px; flex-wrap:wrap;`}>
-  {TAG_ORDER.map((label) => (
-    <span class={`tag${label === "All" ? " is-active" : ""}`} data-role="tag" data-tag={label}>
-      {isTerminal ? hash(label) : label}
-    </span>
-  ))}
+  {pills.map(({ label, count }) => {
+    const meta = label === "All" ? null : CATEGORY_META[label];
+    const active = label === "All";
+    return (
+      <span
+        class={`tag${active ? " is-active" : ""}`}
+        data-role="tag"
+        data-tag={label}
+        style={meta && !active ? `display:inline-flex; align-items:center; background:${meta.bg}; color:${meta.color}; border-color:color-mix(in srgb, ${meta.color} 25%, transparent);` : "display:inline-flex; align-items:center;"}
+      >
+        {meta && !isTerminal && (
+          <span style="display:inline-flex; vertical-align:middle; margin-right:6px; opacity:.85;">
+            <Glyph name={label} size={14} color={active ? "var(--accentInk)" : meta.color} />
+          </span>
+        )}
+        {isTerminal ? hash(label) : label}
+        {count != null && (
+          <span style={`margin-left:6px; font-size:0.88em; font-weight:700; opacity:${active ? 0.85 : 0.7};`}>{count}</span>
+        )}
+      </span>
+    );
+  })}
 </div>

@@ -12,7 +12,7 @@
 export async function onRequest(context: {
   request: Request;
   params: { path?: string | string[] };
-  env: { ADMIN_WORKER_URL?: string };
+  env: { ADMIN_WORKER_URL?: string; ADMIN_DEV_BYPASS?: string };
 }): Promise<Response> {
   const { request, params, env } = context;
   if (!env.ADMIN_WORKER_URL) {
@@ -26,6 +26,10 @@ export async function onRequest(context: {
   const headers = new Headers();
   const jwt = request.headers.get("cf-access-jwt-assertion");
   if (jwt) headers.set("cf-access-jwt-assertion", jwt);
+  const workerBase = env.ADMIN_WORKER_URL.replace(/\/+$/, "");
+  if (env.ADMIN_DEV_BYPASS === "true" || /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/i.test(workerBase)) {
+    headers.set("x-admin-dev-bypass", "1");
+  }
   const ct = request.headers.get("content-type");
   if (ct) headers.set("content-type", ct);
 

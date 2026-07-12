@@ -1,0 +1,65 @@
+---
+import AdminNavBar from "../components/AdminNavBar.astro";
+import AdminSideBar from "../components/AdminSideBar.astro";
+
+interface Props {
+  title: string;
+  active: "overview" | "submissions" | "domains" | "settings";
+}
+
+const { title, active } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>{title} — MadeWithWhat Admin</title>
+    <link rel="icon" href="/favicon.svg" />
+    <script is:inline>
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+  </head>
+  <body class="bg-gray-50 dark:bg-gray-900 antialiased">
+    <AdminNavBar />
+    <AdminSideBar active={active} />
+
+    <div class="flex pt-16 overflow-hidden bg-gray-50 dark:bg-gray-900">
+      <div
+        id="main-content"
+        class="relative w-full h-full overflow-y-auto bg-gray-50 lg:ml-64 dark:bg-gray-900 min-h-screen"
+      >
+        <slot />
+        <footer class="p-4 my-6 mx-4 text-sm text-gray-500 dark:text-gray-400">
+          MadeWithWhat Admin · protected by Cloudflare Access
+        </footer>
+      </div>
+    </div>
+
+    <div
+      id="admin-toast"
+      class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 px-4 py-2 text-sm text-white bg-gray-900 rounded-lg shadow-lg opacity-0 pointer-events-none transition-opacity dark:bg-gray-700"
+    ></div>
+  </body>
+</html>
+
+<script>
+  import "flowbite";
+</script>
+
+<style is:global>
+  @import "../../styles/admin.css";
+  @import url("https://fonts.cdnfonts.com/css/inter");
+  body {
+    font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  }
+</style>

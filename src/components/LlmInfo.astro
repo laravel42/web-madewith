@@ -1,0 +1,65 @@
+---
+import type { Theme } from "../config/domains";
+import { buildLlmsTxt } from "../lib/feed";
+import type { CatalogData } from "../lib/catalog";
+
+interface Props { theme: Theme; data: CatalogData; llmsTxt: string; }
+const { theme, data, llmsTxt } = Astro.props;
+const base = `/${theme.slug}`;
+const isTerminal = theme.variant === "terminal";
+const muted = isTerminal ? "#8b948d" : "#5c665f";
+const faint = isTerminal ? "#7c887f" : "#8b9690";
+const codeBg = isTerminal ? "#121614" : "#f4f6f5";
+const codeBorder = isTerminal ? "#232a26" : "#e0e5e2";
+---
+
+<div style="max-width:760px; margin:0 auto; padding:48px 32px 90px;">
+  {isTerminal ? (
+    <>
+      <div style="font-size:12px; color:#5c665f; margin-bottom:14px;"><a href={`${base}/`} style="cursor:pointer; text-decoration:none; color:inherit;">~</a> / llm</div>
+      <div class="disp" style="font-size:38px; font-weight:700; letter-spacing:-0.02em; color:#f1f6f2;">LLM context</div>
+    </>
+  ) : (
+    <>
+      <div style={`font-size:13px; color:${faint}; margin-bottom:14px;`}><a href={`${base}/`} style="cursor:pointer; text-decoration:none; color:inherit;">Home</a> &nbsp;/&nbsp; LLM</div>
+      <div class="disp" style="font-size:40px; font-weight:800; letter-spacing:-0.03em;">LLM context</div>
+    </>
+  )}
+  <div style={`font-size:${isTerminal ? "14px" : "16px"}; color:${muted}; margin-top:10px; line-height:1.6; max-width:620px;`}>
+    Structured catalog metadata for AI agents and crawlers. Copy the text below or fetch the plain-text endpoint directly.
+  </div>
+
+  <div style={`margin-top:28px; display:flex; flex-wrap:wrap; gap:12px; font-size:${isTerminal ? "13px" : "14px"};`}>
+    <a href={`${base}/llms.txt`} class="filter-link" style={`border:1px solid ${theme.accent}; color:${theme.accent}; padding:9px 16px; border-radius:${isTerminal ? "6px" : `${theme.radius}px`}; text-decoration:none; font-weight:600;`}>llms.txt ↓</a>
+    <a href={`${base}/rss.xml`} class="filter-link" style={`color:${faint}; padding:9px 0; text-decoration:none;`}>RSS feed</a>
+  </div>
+
+  <div style={`margin-top:28px; border:1px solid ${codeBorder}; border-radius:${isTerminal ? "10px" : `${theme.radius}px`}; background:${codeBg}; overflow:hidden;`}>
+    <div style={`display:flex; align-items:center; justify-content:space-between; padding:12px 16px; border-bottom:1px solid ${codeBorder}; font-size:12px; color:${faint};`}>
+      <span>{data.projects.length.toLocaleString()} projects · updated {new Date(data.scrapedAt).toLocaleDateString()}</span>
+      <button type="button" data-role="copy-llms" style={`background:transparent; border:1px solid ${codeBorder}; color:inherit; padding:5px 12px; border-radius:6px; cursor:pointer; font-size:12px;`}>Copy</button>
+    </div>
+    <pre data-role="llms-body" style={`margin:0; padding:18px 16px 22px; font-size:13px; line-height:1.65; white-space:pre-wrap; word-break:break-word; color:${isTerminal ? "#c7d0ca" : "#3a443f"}; overflow-x:auto;`}>{llmsTxt}</pre>
+  </div>
+</div>
+
+<script>
+  function initLlmCopy() {
+    const btn = document.querySelector<HTMLButtonElement>('[data-role="copy-llms"]');
+    const pre = document.querySelector<HTMLElement>('[data-role="llms-body"]');
+    if (!btn || !pre || btn.dataset.copyInitialized) return;
+    btn.dataset.copyInitialized = "true";
+    btn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(pre.textContent || "");
+        btn.textContent = "Copied!";
+        setTimeout(() => { btn.textContent = "Copy"; }, 1800);
+      } catch {
+        btn.textContent = "Failed";
+        setTimeout(() => { btn.textContent = "Copy"; }, 1800);
+      }
+    });
+  }
+  initLlmCopy();
+  document.addEventListener("astro:page-load", initLlmCopy);
+</script>

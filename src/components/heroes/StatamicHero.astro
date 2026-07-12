@@ -1,13 +1,16 @@
 ---
 import type { Theme } from "../../config/domains";
+import { heroSubcopy } from "../../config/domain-settings";
 import TagRow from "../TagRow.astro";
-interface Props { theme: Theme; total: string; }
-const { theme, total } = Astro.props;
+import type { CategoryFilter } from "../../lib/catalog";
+interface Props { theme: Theme; total: string; categories: CategoryFilter[]; }
+const { theme, total, categories } = Astro.props;
+const subcopy = heroSubcopy(theme, total);
 ---
-<div style="max-width:1140px; margin:22px auto 10px; padding:58px 50px; background:radial-gradient(700px 320px at 86% -10%, #5a37b0 0%, rgba(90,55,176,0) 60%), linear-gradient(158deg,#191231 0%,#251a46 100%); border-radius:24px;">
+<div class="hero-panel" style="max-width:1140px; margin:22px auto 10px; padding:58px 50px; background:radial-gradient(700px 320px at 86% -10%, #5a37b0 0%, rgba(90,55,176,0) 60%), linear-gradient(158deg,#191231 0%,#251a46 100%); border-radius:24px;">
   <div style="font-size:13px; font-weight:700; color:#c3a8ff; letter-spacing:.16em; text-transform:uppercase; margin-bottom:16px;">{theme.eyebrow}</div>
-  <div class="disp" style="font-size:64px; font-weight:400; letter-spacing:-0.01em; line-height:1.0; max-width:820px; color:#f6f2ff;">{theme.heroTitle}</div>
-  <div style="font-size:17px; color:#c7bce6; margin-top:18px; max-width:620px; line-height:1.6;">A hand-curated, daily-updated gallery of open-source projects. Browse {total} repos, ranked by GitHub stars — and find your next stack.</div>
+  <div class="disp" style="font-size:clamp(40px, 8vw, 64px); font-weight:400; letter-spacing:-0.01em; line-height:1.0; max-width:820px; color:#f6f2ff;">{theme.heroTitle}</div>
+  <div style="font-size:17px; color:#c7bce6; margin-top:18px; max-width:620px; line-height:1.6;">{subcopy}</div>
 
   <div style="display:flex; gap:12px; margin-top:32px; max-width:700px;">
     <div style="flex:1; display:flex; align-items:center; gap:10px; background:#fff; border:1px solid #e6eae8; border-radius:10px; padding:13px 16px;">
@@ -20,5 +23,5 @@ const { theme, total } = Astro.props;
     </div>
   </div>
 
-  <div style="margin-top:22px;"><TagRow theme={theme} gap={9} /></div>
+  <div style="margin-top:22px;"><TagRow theme={theme} gap={9} categories={categories} /></div>
 </div>

@@ -2,6 +2,7 @@
 import type { Theme } from "../config/domains";
 import type { Project } from "../lib/catalog";
 import { formatStars } from "../lib/catalog";
+import InstallBox from "./InstallBox.astro";
 
 interface Props { theme: Theme; project: Project; related: Project[]; }
 const { theme, project, related } = Astro.props;
@@ -13,9 +14,20 @@ const isTerminal = theme.variant === "terminal";
 const editorial = theme.editorial;
 const btnRadius = editorial ? "2px" : isTerminal ? "8px" : "10px";
 
-const palette = isTerminal ? [theme.accent, "#37423a", "#232a26"] : [theme.accent, "#cfd8d3", "#e6ebe8"];
-const langs = (project.langs || []).map((l, i) => ({ ...l, color: palette[i] ?? (isTerminal ? "#1c231e" : "#eef1ef") }));
+// Dominant language keeps the brand accent, except editorial (Next) whose accent
+// is white and would vanish on the light Languages card — give it a visible base.
+const langBase = editorial ? "#6366f1" : theme.accent;
+const palette = isTerminal
+  ? [theme.accent, "#37423a", "#232a26"]
+  : [langBase, "#f59e0b", "#10b981", "#ec4899", "#06b6d4"];
+const langs = (project.langs || []).map((l, i) => ({ ...l, color: palette[i] ?? (isTerminal ? "#1c231e" : "#94a3b8") }));
+// "Built with" chip tint — brand accent, or indigo for editorial (white accent).
+const chipColor = editorial ? "#6366f1" : theme.accent;
 const demo = project.demo;
+
+// Latest 5 releases/tags (may be empty if the repo has none).
+const versions = (project.versions || []).slice(0, 5);
+const homeLabel = editorial ? "Back to gallery" : "Back to projects";
 ---
 
 {isTerminal ? (
@@ -31,46 +43,36 @@ const demo = project.demo;
         <div style="display:flex; align-items:center; gap:18px; margin-top:20px;">
           <div style="display:flex; align-items:center; gap:9px;">
             <span style={`width:36px; height:36px; border-radius:7px; background:color-mix(in srgb, ${theme.accent} 22%, #0c0f0e); color:${theme.accent}; border:1px solid ${theme.accent}; font-size:14px; font-weight:700; display:flex; align-items:center; justify-content:center; overflow:hidden;`}><img src={project.avatar} alt={project.author} width="36" height="36" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/></span>
-            <div><div style="font-size:13px; color:#e8efe9;">@{project.author}</div><div style="font-size:11px; color:#5c665f;">maintainer</div></div>
+            <div><a href={`${base}/?author=${encodeURIComponent(project.author)}`} class="filter-link" style="font-size:13px; color:#e8efe9;">@{project.author}</a><div style="font-size:11px; color:#5c665f;">maintainer</div></div>
           </div>
           <div style={`display:flex; align-items:center; gap:6px; font-size:14px; color:${theme.accent};`}>★ {stars} stars</div>
         </div>
       </div>
-      <div style="display:flex; flex-direction:column; gap:10px; min-width:210px;">
-        {demo && <a href={demo} target="_blank" rel="noopener" style={`background:${theme.accent}; color:#04231a; font-weight:700; padding:14px 22px; border-radius:${btnRadius}; text-decoration:none; text-align:center; font-size:14px;`}>live demo ↗</a>}
-        <a href={project.repoUrl} target="_blank" rel="noopener" style={`background:transparent; color:#c7d0ca; padding:14px 22px; border-radius:${btnRadius}; text-decoration:none; text-align:center; font-size:14px; border:1px solid #2a332d;`}>view on github</a>
+      <div style="display:flex; flex-wrap:wrap; gap:10px;">
+        {demo && <a href={demo} target="_blank" rel="noopener" style={`background:${theme.accent}; color:${theme.accentInk}; font-weight:700; padding:9px 15px; border-radius:${btnRadius}; text-decoration:none; font-size:13px; display:inline-flex; align-items:center; gap:6px;`}>go to website ↗</a>}
+        <a href={project.repoUrl} target="_blank" rel="noopener" style={`background:#24292f; color:#fff; font-weight:600; padding:9px 15px; border-radius:${btnRadius}; text-decoration:none; font-size:13px; display:inline-flex; align-items:center; gap:6px; border:1px solid #3a4048;`}><svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>github</a>
       </div>
     </div>
 
-    <div style="margin-top:30px; height:420px; background:#0e120f; border:1px solid #1f2622; border-radius:10px; padding:18px;">
-      <div style="display:flex; align-items:center; gap:8px; margin-bottom:16px;">
+    <div style="margin-top:30px; background:#0e120f; border:1px solid #1f2622; border-radius:10px; overflow:hidden;">
+      <div style="display:flex; align-items:center; gap:8px; padding:14px 16px; border-bottom:1px solid #1f2622;">
         <span style="width:11px;height:11px;border-radius:50%;background:#232a26;"></span><span style="width:11px;height:11px;border-radius:50%;background:#232a26;"></span><span style="width:11px;height:11px;border-radius:50%;background:#232a26;"></span>
         <span style="font-size:11px; color:#3f4a43; margin-left:8px;">{project.slug} — preview</span>
       </div>
-      <div style="display:flex; gap:16px; height:346px;">
-        <div style="width:180px; background:#121614; border-radius:8px; border:1px solid #1f2622; padding:14px;">
-          <div style={`height:22px;width:48%;background:${theme.accent};opacity:.8;border-radius:4px;`}></div>
-          <div style="height:8px;width:80%;background:#1c231e;border-radius:4px;margin:14px 0 9px;"></div>
-          <div style="height:8px;width:65%;background:#1c231e;border-radius:4px;margin-bottom:9px;"></div>
-          <div style="height:8px;width:72%;background:#1c231e;border-radius:4px;"></div>
-        </div>
-        <div style="flex:1; background:#121614; border-radius:8px; border:1px solid #1f2622; padding:18px;">
-          <div style="height:12px;width:40%;background:#1c231e;border-radius:5px;margin-bottom:18px;"></div>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;"><div style="height:90px;background:#0e120f;border-radius:8px;"></div><div style="height:90px;background:#0e120f;border-radius:8px;"></div><div style="height:90px;background:#0e120f;border-radius:8px;"></div></div>
-          <div style={`height:120px; background:color-mix(in srgb, ${theme.accent} 22%, #0c0f0e); border-radius:8px; margin-top:14px;`}></div>
-        </div>
-      </div>
+      <img src={`https://opengraph.githubassets.com/1/${project.fullName}`} alt={`${project.name} repository preview`} width="1200" height="600" loading="lazy" decoding="async" style="width:100%; height:auto; display:block;"/>
     </div>
 
-    <div style="display:grid; grid-template-columns:1.6fr 1fr; gap:40px; margin-top:38px;">
+    <div class="mw-split" style="display:grid; grid-template-columns:1.6fr 1fr; gap:40px; margin-top:38px;">
       <div>
         <div class="disp" style="font-size:21px; font-weight:600; color:#f1f6f2; margin-bottom:14px;"># README</div>
         <div style="font-size:14px; color:#a3ada7; line-height:1.75;">{project.long1}</div>
         <div style="font-size:14px; color:#a3ada7; line-height:1.75; margin-top:14px;">{project.long2}</div>
-        <div class="disp" style="font-size:17px; font-weight:600; color:#f1f6f2; margin:28px 0 12px;"># dependencies</div>
+        <div class="disp" style="font-size:17px; font-weight:600; color:#f1f6f2; margin:28px 0 12px;"># tags</div>
         <div style="display:flex; gap:8px; flex-wrap:wrap;">
-          {project.stack.map((s) => <span style="font-size:12px; color:#c7d0ca; background:#121614; border:1px solid #232a26; padding:7px 12px; border-radius:6px;">{s}</span>)}
+          {project.stack.map((s) => <a href={`${base}/?tag=${encodeURIComponent(s)}`} class="tag-link" style={`font-size:11px; font-weight:600; color:${theme.accent}; background:color-mix(in srgb, ${theme.accent} 16%, #0c0f0e); border:1px solid color-mix(in srgb, ${theme.accent} 42%, #0c0f0e); padding:4px 10px; border-radius:999px;`}>{s}</a>)}
         </div>
+        <div class="disp" style="font-size:17px; font-weight:600; color:#f1f6f2; margin:28px 0 12px;"># install</div>
+        <InstallBox theme={theme} project={project} />
       </div>
       <div>
         <div style="background:#101410; border:1px solid #1f2622; border-radius:10px; padding:20px;">
@@ -80,23 +82,30 @@ const demo = project.demo;
           </div>
           {langs.map((l) => (
             <div style="display:flex; align-items:center; justify-content:space-between; font-size:12.5px; margin-bottom:9px;">
-              <span style="display:flex; align-items:center; gap:8px; color:#c7d0ca;"><span style={`width:9px; height:9px; border-radius:2px; background:${l.color}; display:inline-block;`}></span>{l.name}</span>
+              <span style="display:flex; align-items:center; gap:8px; color:#c7d0ca;"><span style={`width:9px; height:9px; border-radius:2px; background:${l.color}; display:inline-block;`}></span><a href={`${base}/?lang=${encodeURIComponent(l.name)}`} class="filter-link" style="color:inherit;">{l.name}</a></span>
               <span style="color:#5c665f;">{l.pct}%</span>
             </div>
           ))}
           <div style="border-top:1px solid #1c211e; margin-top:14px; padding-top:14px; display:flex; justify-content:space-between; font-size:12.5px;"><span style="color:#5c665f;">last commit</span><span style="color:#c7d0ca;">{project.updated}</span></div>
-          <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-top:9px;"><span style="color:#5c665f;">license</span><span style="color:#c7d0ca;">{project.license}</span></div>
+          <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-top:9px;"><span style="color:#5c665f;">license</span><a href={`${base}/?license=${encodeURIComponent(project.license)}`} class="filter-link" style="color:#c7d0ca;">{project.license}</a></div>
         </div>
+        {versions.length > 0 && (
+          <div style="background:#101410; border:1px solid #1f2622; border-radius:10px; padding:16px 20px; margin-top:16px;">
+            <div style="font-size:12px; color:#5c665f; text-transform:uppercase; letter-spacing:.04em; margin-bottom:10px;">latest versions</div>
+            {versions.map((v) => (
+              <a href={v.url} target="_blank" rel="noopener" class="version-link" style="font-size:12.5px; color:#c7d0ca;"><span style={`color:${theme.accent};`}>{v.name}</span><span style="color:#5c665f;">↗</span></a>
+            ))}
+          </div>
+        )}
       </div>
     </div>
 
     <div class="disp" style="font-size:21px; font-weight:600; color:#f1f6f2; margin:44px 0 18px;">more {theme.techName} repos</div>
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px;">
+    <div class="mw-grid3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px;">
       {related.map((p) => (
         <a href={`${base}/project/${p.slug}`} class="card">
-          <div style="height:88px; background:#0e120f; border-bottom:1px solid #1f2622; padding:12px;">
-            <div style="font-size:10px; color:#3f4a43; margin-bottom:8px;">~/{p.slug}</div>
-            <div style={`height:22px;width:48%;background:${theme.accent};opacity:.8;border-radius:4px;`}></div>
+          <div style="aspect-ratio:2 / 1; background:#0e120f; border-bottom:1px solid #1f2622; overflow:hidden;">
+            <img src={`https://opengraph.githubassets.com/1/${p.fullName}`} alt={`${p.name} repository preview`} width="1200" height="600" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:contain; display:block;"/>
           </div>
           <div style="padding:13px 15px 15px;">
             <div class="disp" style="font-weight:600; font-size:14px; color:#e8efe9; margin-bottom:5px;">{p.name}</div>
@@ -108,57 +117,47 @@ const demo = project.demo;
   </div>
 ) : (
   <div style="max-width:1080px; margin:0 auto; padding:36px 32px 80px;">
-    <a href={`${base}/`} style="display:inline-flex; align-items:center; gap:7px; font-size:14px; font-weight:600; color:#5c665f; cursor:pointer; text-decoration:none; margin-bottom:26px;">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m15 6-6 6 6 6" stroke="#5c665f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> Back to gallery
+    <a href={`${base}/`} style={`display:inline-flex; align-items:center; gap:7px; font-size:14px; font-weight:600; color:${editorial ? "#a1a1a1" : "#5c665f"}; cursor:pointer; text-decoration:none; margin-bottom:26px;`}>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m15 6-6 6 6 6" stroke={editorial ? "#a1a1a1" : "#5c665f"} stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> {homeLabel}
     </a>
     <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:30px; flex-wrap:wrap;">
       <div style="flex:1; min-width:300px;">
         <span style="font-size:12px; font-weight:600; color:#8b9690; background:#f1f4f2; padding:4px 10px; border-radius:6px;">{project.category}</span>
         <div class="disp" style="font-size:42px; font-weight:800; letter-spacing:-0.03em; margin-top:14px; line-height:1.05;">{project.name}</div>
-        <div style="font-size:17px; color:#5c665f; margin-top:12px; line-height:1.55; max-width:600px;">{project.desc}</div>
+        <div style={`font-size:17px; color:${editorial ? "#a1a1a1" : "#5c665f"}; margin-top:12px; line-height:1.55; max-width:600px;`}>{project.desc}</div>
         <div style="display:flex; align-items:center; gap:18px; margin-top:20px;">
           <div style="display:flex; align-items:center; gap:9px;">
             <span style={`width:38px; height:38px; border-radius:50%; overflow:hidden; background:${theme.accent}; display:flex; align-items:center; justify-content:center;`}><img src={project.avatar} alt={project.author} width="38" height="38" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/></span>
-            <div><div style="font-size:14px; font-weight:600;">{project.author}</div><div style="font-size:12px; color:#8b9690;">Maintainer</div></div>
+            <div><a href={`${base}/?author=${encodeURIComponent(project.author)}`} class="filter-link" style="font-size:14px; font-weight:600;">{project.author}</a><div style={`font-size:12px; color:${editorial ? "#a1a1a1" : "#8b9690"};`}>Maintainer</div></div>
           </div>
-          <div style="display:flex; align-items:center; gap:6px; font-size:15px; font-weight:700; color:#3a443f;">
+          <div style={`display:flex; align-items:center; gap:6px; font-size:15px; font-weight:700; color:${editorial ? "#ededed" : "#3a443f"};`}>
             <svg width="17" height="17" viewBox="0 0 24 24" fill="#f5b400"><path d="m12 2 3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
             {stars} stars
           </div>
         </div>
       </div>
-      <div style="display:flex; flex-direction:column; gap:10px; min-width:200px;">
-        {demo && <a href={demo} target="_blank" rel="noopener" style={`background:${theme.accent}; color:${theme.accentInk}; font-weight:700; padding:14px 22px; border-radius:${btnRadius}; text-decoration:none; display:block; text-align:center; font-size:15px;`}>Live demo ↗</a>}
-        <a href={project.repoUrl} target="_blank" rel="noopener" style={`background:#fff; color:#1a221d; font-weight:600; padding:14px 22px; border-radius:${btnRadius}; text-decoration:none; display:block; border:1px solid #dfe5e1; text-align:center; font-size:15px;`}>View on GitHub</a>
+      <div style="display:flex; flex-wrap:wrap; gap:10px;">
+        {demo && <a href={demo} target="_blank" rel="noopener" style={`background:${theme.accent}; color:${theme.accentInk}; font-weight:700; padding:9px 16px; border-radius:${btnRadius}; text-decoration:none; font-size:13px; display:inline-flex; align-items:center; gap:6px;`}>Go to website ↗</a>}
+        <a href={project.repoUrl} target="_blank" rel="noopener" style={`background:#24292f; color:#fff; font-weight:600; padding:9px 16px; border-radius:${btnRadius}; text-decoration:none; font-size:13px; display:inline-flex; align-items:center; gap:6px; border:1px solid #3a4048;`}><svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>View on GitHub</a>
       </div>
     </div>
 
-    <div style={`margin-top:30px; height:420px; background:#f4f6f5; border:1px solid #eef0ef; border-radius:${radius}; padding:20px;`}>
-      <div style="display:flex; gap:6px; margin-bottom:18px;"><span style="width:11px;height:11px;border-radius:50%;background:#e0e5e2;"></span><span style="width:11px;height:11px;border-radius:50%;background:#e0e5e2;"></span><span style="width:11px;height:11px;border-radius:50%;background:#e0e5e2;"></span></div>
-      <div style="display:flex; gap:18px; height:340px;">
-        <div style="width:180px; background:#fff; border-radius:8px; border:1px solid #eaeeec; padding:14px;">
-          <div style={`height:22px; width:45%; background:${theme.accent}; opacity:.9; border-radius:${editorial ? "0" : "5px"};`}></div>
-          <div style="height:9px;width:80%;background:#eef1ef;border-radius:4px;margin:14px 0 9px;"></div>
-          <div style="height:9px;width:65%;background:#eef1ef;border-radius:4px;margin-bottom:9px;"></div>
-          <div style="height:9px;width:72%;background:#eef1ef;border-radius:4px;"></div>
-        </div>
-        <div style="flex:1; background:#fff; border-radius:8px; border:1px solid #eaeeec; padding:18px;">
-          <div style="height:13px;width:40%;background:#e8ece9;border-radius:5px;margin-bottom:18px;"></div>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;"><div style="height:90px;background:#f6f8f7;border-radius:8px;"></div><div style="height:90px;background:#f6f8f7;border-radius:8px;"></div><div style="height:90px;background:#f6f8f7;border-radius:8px;"></div></div>
-          <div style={`height:120px; background:color-mix(in srgb, ${theme.accent} 13%, #fff); border-radius:8px; margin-top:14px;`}></div>
-        </div>
-      </div>
+    <div style={`margin-top:30px; background:#f4f6f5; border:1px solid #eef0ef; border-radius:${radius}; overflow:hidden;`}>
+      <div style="display:flex; gap:6px; padding:16px 18px; border-bottom:1px solid #eef0ef;"><span style="width:11px;height:11px;border-radius:50%;background:#e0e5e2;"></span><span style="width:11px;height:11px;border-radius:50%;background:#e0e5e2;"></span><span style="width:11px;height:11px;border-radius:50%;background:#e0e5e2;"></span></div>
+      <img src={`https://opengraph.githubassets.com/1/${project.fullName}`} alt={`${project.name} repository preview`} width="1200" height="600" loading="lazy" decoding="async" style="width:100%; height:auto; display:block;"/>
     </div>
 
-    <div style="display:grid; grid-template-columns:1.6fr 1fr; gap:40px; margin-top:38px;">
+    <div class="mw-split" style="display:grid; grid-template-columns:1.6fr 1fr; gap:40px; margin-top:38px;">
       <div>
         <div class="disp" style="font-size:22px; font-weight:700; margin-bottom:14px;">About this project</div>
-        <div style="font-size:15.5px; color:#4a554f; line-height:1.7;">{project.long1}</div>
-        <div style="font-size:15.5px; color:#4a554f; line-height:1.7; margin-top:14px;">{project.long2}</div>
-        <div class="disp" style="font-size:18px; font-weight:700; margin:28px 0 12px;">Built with</div>
+        <div style={`font-size:15.5px; color:${editorial ? "#c4c4c4" : "#4a554f"}; line-height:1.7;`}>{project.long1}</div>
+        <div style={`font-size:15.5px; color:${editorial ? "#c4c4c4" : "#4a554f"}; line-height:1.7; margin-top:14px;`}>{project.long2}</div>
+        <div class="disp" style="font-size:18px; font-weight:700; margin:28px 0 12px;">Tags</div>
         <div style="display:flex; gap:8px; flex-wrap:wrap;">
-          {project.stack.map((s) => <span style="font-size:13px; font-weight:500; color:#3a443f; background:#fff; border:1px solid #e6eae8; padding:7px 13px; border-radius:8px;">{s}</span>)}
+          {project.stack.map((s) => <a href={`${base}/?tag=${encodeURIComponent(s)}`} class="tag-link" style={`font-size:11.5px; font-weight:600; color:color-mix(in srgb, ${chipColor} 58%, #1a221d); background:color-mix(in srgb, ${chipColor} 14%, #fff); border:1px solid color-mix(in srgb, ${chipColor} 30%, #fff); padding:4px 10px; border-radius:999px;`}>{s}</a>)}
         </div>
+        <div class="disp" style="font-size:18px; font-weight:700; margin:28px 0 12px;">Install</div>
+        <InstallBox theme={theme} project={project} />
       </div>
       <div>
         <div style={`background:#fff; border:1px solid #eef0ef; border-radius:${radius}; padding:22px;`}>
@@ -168,22 +167,30 @@ const demo = project.demo;
           </div>
           {langs.map((l) => (
             <div style="display:flex; align-items:center; justify-content:space-between; font-size:13.5px; margin-bottom:9px;">
-              <span style="display:flex; align-items:center; gap:8px; color:#3a443f;"><span style={`width:9px; height:9px; border-radius:3px; background:${l.color}; display:inline-block;`}></span>{l.name}</span>
+              <span style="display:flex; align-items:center; gap:8px; color:#3a443f;"><span style={`width:9px; height:9px; border-radius:3px; background:${l.color}; display:inline-block;`}></span><a href={`${base}/?lang=${encodeURIComponent(l.name)}`} class="filter-link" style="color:inherit;">{l.name}</a></span>
               <span style="color:#8b9690;">{l.pct}%</span>
             </div>
           ))}
           <div style="border-top:1px solid #f0f2f0; margin-top:14px; padding-top:14px; display:flex; justify-content:space-between; font-size:13.5px;"><span style="color:#8b9690;">Last updated</span><span style="font-weight:600;">{project.updated}</span></div>
-          <div style="display:flex; justify-content:space-between; font-size:13.5px; margin-top:9px;"><span style="color:#8b9690;">License</span><span style="font-weight:600;">{project.license}</span></div>
+          <div style="display:flex; justify-content:space-between; font-size:13.5px; margin-top:9px;"><span style="color:#8b9690;">License</span><a href={`${base}/?license=${encodeURIComponent(project.license)}`} class="filter-link" style="font-weight:600; color:inherit;">{project.license}</a></div>
         </div>
+        {versions.length > 0 && (
+          <div style={`background:#fff; border:1px solid #eef0ef; border-radius:${radius}; padding:16px 22px; margin-top:16px;`}>
+            <div style="font-size:13px; font-weight:700; color:#8b9690; text-transform:uppercase; letter-spacing:.04em; margin-bottom:10px;">Latest versions</div>
+            {versions.map((v) => (
+              <a href={v.url} target="_blank" rel="noopener" class="version-link" style="font-size:13.5px; color:#3a443f;"><span style="font-weight:600;">{v.name}</span><span style="color:#8b9690;">↗</span></a>
+            ))}
+          </div>
+        )}
       </div>
     </div>
 
     <div class="disp" style="font-size:22px; font-weight:700; margin:44px 0 18px;">More {theme.techName} projects</div>
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+    <div class="mw-grid3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
       {related.map((p) => (
         <a href={`${base}/project/${p.slug}`} class="card">
-          <div style="height:96px; background:#f4f6f5; border-bottom:1px solid #eef0ef; padding:11px;">
-            <div style={`height:22px; width:45%; background:${theme.accent}; opacity:.9; border-radius:${editorial ? "0" : "5px"};`}></div>
+          <div style="aspect-ratio:2 / 1; background:#f4f6f5; border-bottom:1px solid #eef0ef; overflow:hidden;">
+            <img src={`https://opengraph.githubassets.com/1/${p.fullName}`} alt={`${p.name} repository preview`} width="1200" height="600" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:contain; display:block;"/>
           </div>
           <div style="padding:13px 15px 15px;">
             <div class="disp" style="font-weight:700; font-size:15px; margin-bottom:5px;">{p.name}</div>

@@ -1,0 +1,21 @@
+---
+import { DOMAINS, type Theme } from "../../config/domains";
+import { getCatalog } from "../../lib/catalog";
+import { buildLlmsTxt } from "../../lib/feed";
+import CatalogLayout from "../../layouts/CatalogLayout.astro";
+import LlmInfo from "../../components/LlmInfo.astro";
+
+export function getStaticPaths() {
+  return DOMAINS.map((theme) => ({ params: { domain: theme.slug }, props: { theme } }));
+}
+
+const { theme } = Astro.props as { theme: Theme };
+const data = getCatalog(theme.slug);
+const site = Astro.site ?? new URL("https://madewithwhat.net");
+const llmsTxt = buildLlmsTxt(theme, data, site);
+const title = `LLM context — Made with ${theme.techName}`;
+const description = `Structured catalog metadata for AI agents: top ${theme.techName} projects, links, and refresh info. Also available as llms.txt.`;
+---
+<CatalogLayout theme={theme} active="llm" title={title} description={description}>
+  <LlmInfo theme={theme} data={data} llmsTxt={llmsTxt} />
+</CatalogLayout>

@@ -1,57 +1,68 @@
 /**
  * Per-domain theme configuration — the whole "replicate per domain" model lives
- * here. Every MadeWith… site shares one engine (components, data pipeline, four
+ * here. Every MadeWithWhat site shares one engine (components, data pipeline, four
  * screens) and differs only by the tokens below: colour, logo letter, fonts,
  * shape language and a hero treatment. Cloning a domain = adding one entry.
  */
 
-export type Variant = "light" | "terminal";
-export type HeroId = "nuxt" | "node" | "next" | "ionic" | "statamic" | "twill";
+import catalog from "./domain-catalog.json";
+import { applyThemeOverrides, getDomainSettings } from "./domain-settings";
 
-export interface Theme {
-  /** URL/data slug, e.g. "nuxt" → /nuxt and src/data/nuxt.json */
-  slug: string;
-  /** Display name, e.g. "Nuxt" */
-  techName: string;
-  /** The live domain this site ships to. */
-  domain: string;
-  /** Brand accent + readable ink on top of it. */
+export type Variant = "light" | "terminal";
+export type HeroId = "nuxt" | "node" | "next" | "ionic" | "statamic" | "twill" | "generic";
+export type DomainGroup = "frontend" | "frameworks" | "backend" | "cms" | "commerce";
+export type NetworkCardStyle = "default" | "tint" | "black" | "terminal";
+
+export interface NetworkSiteMeta {
   accent: string;
   accentInk: string;
-  /** Layout system. "light" covers minimal + editorial; "terminal" is Node. */
+  card: NetworkCardStyle;
+}
+
+export interface Theme {
+  slug: string;
+  techName: string;
+  domain: string;
+  group: DomainGroup;
+  accent: string;
+  accentInk: string;
   variant: Variant;
-  /** Editorial sub-mode of the light variant (masthead + ranked borderless grid). */
   editorial: boolean;
-  /** Which bespoke hero to render. */
   heroId: HeroId;
-  /** Font family CSS values. */
+  /** Optional override; generic domains use /favicon.svg until bespoke assets ship. */
+  favicon?: string;
   dispFont: string;
   bodyFont: string;
-  /** Google Fonts stylesheet href for this domain. */
   fontHref: string;
-  /** Corner radius (px) for cards, inputs, buttons. */
   radius: number;
-  /** Page background + base ink. */
   bg: string;
   ink: string;
-  /** Sticky-header chrome (a signature identity element per domain). */
   headerBg: string;
   headerBorder: string;
-  /** Footer chrome. */
   footerBg: string;
   footerBorder: string;
-  /** Copy. */
   eyebrow: string;
   heroTitle: string;
-  /** Editorial-only oversized headline (rendered as-is, may contain <br>). */
   heroHeadline?: string;
-  /** Tint the card category chip with the brand accent (else neutral grey). */
   chipAccent?: boolean;
   tagline: string;
-  /** SEO. */
   seoTitle: string;
   seoDescription: string;
+  /** Set via admin domain settings (build-time from config/*.json). */
+  pageUrl?: string;
+  visibleCategories?: string[] | null;
 }
+
+export interface CatalogEntry {
+  slug: string;
+  techName: string;
+  domain: string;
+  group: DomainGroup;
+  bespoke: boolean;
+  scrape: { query: string; minStars: number; exclude: string[] };
+}
+
+export const DOMAIN_CATALOG = catalog as CatalogEntry[];
 
 const FONTS = {
   nuxt: "https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap",
@@ -60,162 +71,180 @@ const FONTS = {
   ionic: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap",
   statamic: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap",
   twill: "https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700;6..72,800&display=swap",
+  generic: "https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap",
 };
 
-export const DOMAINS: Theme[] = [
-  {
-    slug: "nuxt",
-    techName: "Nuxt",
-    domain: "madewithnuxt.com",
-    accent: "#00DC82",
-    accentInk: "#04231a",
+/** Placeholder palette per group — swap for bespoke tokens when designs land. */
+const GROUP_ACCENT: Record<DomainGroup, string> = {
+  frontend: "#2F6FEB",
+  frameworks: "#16A34A",
+  backend: "#d97706",
+  cms: "#7c3aed",
+  commerce: "#b45309",
+};
+
+/** Per-tech accents & card variants for the network landing (design handoff). */
+const NETWORK_CARD: Partial<Record<string, NetworkCardStyle>> = {
+  express: "terminal",
+  node: "terminal",
+  next: "black",
+  react: "tint",
+  python: "tint",
+  statamic: "tint",
+  shopify: "tint",
+};
+
+const NETWORK_ACCENT: Partial<Record<string, { accent: string; accentInk: string }>> = {
+  react: { accent: "#61DAFB", accentInk: "#04222c" },
+  vue: { accent: "#4FC08D", accentInk: "#06231a" },
+  angular: { accent: "#DD0031", accentInk: "#ffffff" },
+  svelte: { accent: "#FF3E00", accentInk: "#ffffff" },
+  jquery: { accent: "#0769AD", accentInk: "#ffffff" },
+  alpine: { accent: "#77C1D2", accentInk: "#0a2233" },
+  solidjs: { accent: "#2C4F7C", accentInk: "#ffffff" },
+  next: { accent: "#000000", accentInk: "#ffffff" },
+  nuxt: { accent: "#00DC82", accentInk: "#04231a" },
+  astro: { accent: "#FF5D01", accentInk: "#ffffff" },
+  sveltekit: { accent: "#FF3E00", accentInk: "#ffffff" },
+  laravel: { accent: "#FF2D20", accentInk: "#ffffff" },
+  symfony: { accent: "#1A171B", accentInk: "#ffffff" },
+  django: { accent: "#0C4B33", accentInk: "#ffffff" },
+  rails: { accent: "#D30001", accentInk: "#ffffff" },
+  "spring-boot": { accent: "#6DB33F", accentInk: "#0a2109" },
+  "aspnet-core": { accent: "#512BD4", accentInk: "#ffffff" },
+  express: { accent: "#4B5563", accentInk: "#ffffff" },
+  nestjs: { accent: "#E0234E", accentInk: "#ffffff" },
+  fastapi: { accent: "#009688", accentInk: "#ffffff" },
+  flask: { accent: "#111111", accentInk: "#ffffff" },
+  gin: { accent: "#00ADD8", accentInk: "#04222c" },
+  fiber: { accent: "#00ADD8", accentInk: "#04222c" },
+  python: { accent: "#3776AB", accentInk: "#ffffff" },
+  statamic: { accent: "#7C3AED", accentInk: "#ffffff" },
+  wordpress: { accent: "#21759B", accentInk: "#ffffff" },
+  drupal: { accent: "#0678BE", accentInk: "#ffffff" },
+  joomla: { accent: "#5091CD", accentInk: "#ffffff" },
+  octobercms: { accent: "#E63C2A", accentInk: "#ffffff" },
+  strapi: { accent: "#4945FF", accentInk: "#ffffff" },
+  directus: { accent: "#6644FF", accentInk: "#ffffff" },
+  payload: { accent: "#000000", accentInk: "#ffffff" },
+  shopify: { accent: "#95BF47", accentInk: "#10230a" },
+  magento: { accent: "#EC6737", accentInk: "#ffffff" },
+  prestashop: { accent: "#DF0067", accentInk: "#ffffff" },
+  woocommerce: { accent: "#7F54B3", accentInk: "#ffffff" },
+  bagisto: { accent: "#0EA5E9", accentInk: "#04222c" },
+};
+
+export function networkMetaFor(theme: Theme): NetworkSiteMeta {
+  const card = NETWORK_CARD[theme.slug] ?? (theme.variant === "terminal" ? "terminal" : "default");
+  const accent = NETWORK_ACCENT[theme.slug]?.accent ?? theme.accent;
+  const accentInk = NETWORK_ACCENT[theme.slug]?.accentInk ?? theme.accentInk;
+  return { card, accent, accentInk };
+}
+
+function genericTheme(entry: CatalogEntry): Theme {
+  const accent = GROUP_ACCENT[entry.group];
+  return {
+    slug: entry.slug,
+    techName: entry.techName,
+    domain: entry.domain,
+    group: entry.group,
+    accent,
+    accentInk: "#ffffff",
     variant: "light",
     editorial: false,
-    heroId: "nuxt",
-    dispFont: "'Sora', sans-serif",
+    heroId: "generic",
+    favicon: "/favicon.svg",
+    dispFont: "'Inter', sans-serif",
     bodyFont: "'Hanken Grotesk', sans-serif",
-    fontHref: FONTS.nuxt,
-    radius: 14,
-    bg: "radial-gradient(1100px 460px at 72% -10%, #cffbe9 0%, rgba(207,251,233,0) 62%), #fbfcfb",
+    fontHref: FONTS.generic,
+    radius: 12,
+    bg: "#f8faf9",
     ink: "#16201b",
-    headerBg: "rgba(251,252,251,.85)",
-    headerBorder: "1px solid #ebeeec",
+    headerBg: "rgba(248,250,249,.92)",
+    headerBorder: "1px solid #e8ecea",
     footerBg: "#fff",
-    footerBorder: "1px solid #ebeeec",
-    eyebrow: "The Nuxt showcase",
-    heroTitle: "Discover the best apps & sites built with Nuxt",
+    footerBorder: "1px solid #e8ecea",
+    eyebrow: `The ${entry.techName} showcase`,
+    heroTitle: `Discover the best projects built with ${entry.techName}`,
+    tagline: "A hand-curated, daily-updated gallery of open-source projects. Browse the ecosystem, ranked by GitHub stars.",
+    seoTitle: `Made with ${entry.techName} — the showcase of projects built with ${entry.techName}`,
+    seoDescription: `A curated, daily-updated gallery of the best open-source projects built with ${entry.techName}, ranked by GitHub stars. Discover dashboards, UI kits, e-commerce, blogs and dev tools.`,
+  };
+}
+
+/** Bespoke themes — existing domains with unique identity. */
+const BESPOKE_THEMES: Record<string, Omit<Theme, "slug" | "techName" | "domain" | "group">> = {
+  nuxt: {
+    accent: "#00DC82", accentInk: "#04231a", variant: "light", editorial: false, heroId: "nuxt",
+    dispFont: "'Sora', sans-serif", bodyFont: "'Hanken Grotesk', sans-serif", fontHref: FONTS.nuxt, radius: 14,
+    bg: "radial-gradient(1100px 460px at 72% -10%, #cffbe9 0%, rgba(207,251,233,0) 62%), #fbfcfb", ink: "#16201b",
+    headerBg: "rgba(251,252,251,.85)", headerBorder: "1px solid #ebeeec", footerBg: "#fff", footerBorder: "1px solid #ebeeec",
+    eyebrow: "The Nuxt showcase", heroTitle: "Discover the best apps & sites built with Nuxt",
     tagline: "A hand-curated, daily-updated gallery of open-source projects. Browse the ecosystem, ranked by GitHub stars.",
     seoTitle: "Made with Nuxt — the showcase of apps & sites built with Nuxt",
     seoDescription: "A curated, daily-updated gallery of the best open-source projects built with Nuxt, ranked by GitHub stars. Discover dashboards, UI kits, e-commerce, blogs and dev tools.",
   },
-  {
-    slug: "node",
-    techName: "Node",
-    domain: "madewithnode.com",
-    accent: "#5FA04E",
-    accentInk: "#04231a",
-    variant: "terminal",
-    editorial: false,
-    heroId: "node",
-    dispFont: "'Space Grotesk', sans-serif",
-    bodyFont: "'JetBrains Mono', monospace",
-    fontHref: FONTS.node,
-    radius: 10,
-    bg: "#0c0f0e",
-    ink: "#c7d0ca",
-    headerBg: "rgba(12,15,14,.88)",
-    headerBorder: "1px solid #1c211e",
-    footerBg: "#0a0d0c",
-    footerBorder: "1px solid #1c211e",
-    eyebrow: "// open-source projects indexed",
-    heroTitle: "Real apps shipped with Node",
+  node: {
+    accent: "#5FA04E", accentInk: "#04231a", variant: "terminal", editorial: false, heroId: "node",
+    dispFont: "'Space Grotesk', sans-serif", bodyFont: "'JetBrains Mono', monospace", fontHref: FONTS.node, radius: 10,
+    bg: "radial-gradient(1100px 520px at 78% -10%, #123322 0%, rgba(18,51,34,0) 58%), #080b0a", ink: "#c7d0ca",
+    headerBg: "rgba(12,15,14,.88)", headerBorder: "1px solid #1c211e", footerBg: "#0a0d0c", footerBorder: "1px solid #1c211e",
+    eyebrow: "// open-source projects indexed", heroTitle: "Real apps shipped with Node",
     tagline: "Indexed nightly from GitHub. Filter by category & stars — discover production repos worth reading.",
     seoTitle: "made-with-node — production apps & tools built with Node.js",
     seoDescription: "A nightly-indexed directory of real open-source projects built with Node.js, ranked by GitHub stars. Grep the ecosystem for dashboards, dev tools, UI kits and more.",
   },
-  {
-    slug: "next",
-    techName: "Next",
-    domain: "madewithnext.com",
-    accent: "#0a0a0a",
-    accentInk: "#ffffff",
-    variant: "light",
-    editorial: true,
-    heroId: "next",
-    dispFont: "'Bricolage Grotesque', sans-serif",
-    bodyFont: "'Hanken Grotesk', sans-serif",
-    fontHref: FONTS.next,
-    radius: 2,
-    bg: "#ffffff",
-    ink: "#0a0a0a",
-    headerBg: "rgba(255,255,255,.92)",
-    headerBorder: "2px solid #0a0a0a",
-    footerBg: "#fff",
-    footerBorder: "1px solid #e8e8e8",
-    eyebrow: "The Next showcase",
-    heroTitle: "The definitive index of Next.js sites & apps in production",
+  next: {
+    accent: "#ffffff", accentInk: "#0a0a0a", variant: "light", editorial: true, heroId: "next",
+    dispFont: "'Bricolage Grotesque', sans-serif", bodyFont: "'Hanken Grotesk', sans-serif", fontHref: FONTS.next, radius: 2,
+    bg: "#000000", ink: "#fafafa", headerBg: "rgba(0,0,0,.85)", headerBorder: "1px solid #262626",
+    footerBg: "#000000", footerBorder: "1px solid #262626",
+    eyebrow: "The Next showcase", heroTitle: "The definitive index of Next.js sites & apps in production",
     heroHeadline: "MADE WITH<br>NEXT.JS",
     tagline: "The definitive index of sites & apps in production, ranked by GitHub stars and shipped weekly.",
     seoTitle: "Made with Next.js — the definitive index of Next.js sites & apps",
     seoDescription: "The definitive, ranked index of production sites and apps built with Next.js. Browse the editorial gallery of the highest-starred open-source Next.js projects on GitHub.",
   },
-  {
-    slug: "ionic",
-    techName: "Ionic",
-    domain: "madewithionic.com",
-    accent: "#3880FF",
-    accentInk: "#ffffff",
-    variant: "light",
-    editorial: false,
-    heroId: "ionic",
-    dispFont: "'Poppins', sans-serif",
-    bodyFont: "'Poppins', sans-serif",
-    fontHref: FONTS.ionic,
-    radius: 22,
-    bg: "#fbfcfb",
-    ink: "#16201b",
-    headerBg: "rgba(244,248,255,.9)",
-    headerBorder: "1px solid #e3ecfb",
-    footerBg: "#fff",
-    footerBorder: "1px solid #e3ecfb",
-    eyebrow: "The Ionic showcase",
-    heroTitle: "Discover the best apps built with Ionic",
+  ionic: {
+    accent: "#3880FF", accentInk: "#ffffff", variant: "light", editorial: false, heroId: "ionic",
+    dispFont: "'Poppins', sans-serif", bodyFont: "'Poppins', sans-serif", fontHref: FONTS.ionic, radius: 22,
+    bg: "radial-gradient(1050px 450px at 75% -10%, #d7e6ff 0%, rgba(215,230,255,0) 60%), #fbfcfb", ink: "#16201b",
+    headerBg: "rgba(244,248,255,.9)", headerBorder: "1px solid #e3ecfb", footerBg: "#fff", footerBorder: "1px solid #e3ecfb",
+    eyebrow: "The Ionic showcase", heroTitle: "Discover the best apps built with Ionic",
     tagline: "A hand-curated, daily-updated gallery of open-source apps. Browse the ecosystem, ranked by GitHub stars.",
     seoTitle: "Made with Ionic — the showcase of mobile apps built with Ionic",
     seoDescription: "A curated, daily-updated gallery of the best open-source mobile & web apps built with Ionic, ranked by GitHub stars. Discover UI kits, dev tools and production apps.",
   },
-  {
-    slug: "statamic",
-    techName: "Statamic",
-    domain: "madewithstatamic.com",
-    accent: "#7C3AED",
-    accentInk: "#ffffff",
-    variant: "light",
-    editorial: false,
-    heroId: "statamic",
-    chipAccent: true,
-    dispFont: "'Instrument Serif', serif",
-    bodyFont: "'Manrope', sans-serif",
-    fontHref: FONTS.statamic,
-    radius: 10,
-    bg: "radial-gradient(1000px 440px at 78% -10%, #ece3ff 0%, rgba(236,227,255,0) 60%), #fbfcfb",
-    ink: "#16201b",
-    headerBg: "rgba(251,250,255,.88)",
-    headerBorder: "1px solid #ece7f6",
-    footerBg: "#fff",
-    footerBorder: "1px solid #ece7f6",
-    eyebrow: "The Statamic showcase",
-    heroTitle: "Discover the best sites built with Statamic",
+  statamic: {
+    accent: "#FF269E", accentInk: "#ffffff", variant: "light", editorial: false, heroId: "statamic", chipAccent: true,
+    dispFont: "'Instrument Serif', serif", bodyFont: "'Manrope', sans-serif", fontHref: FONTS.statamic, radius: 10,
+    bg: "radial-gradient(1000px 440px at 78% -10%, #ece3ff 0%, rgba(236,227,255,0) 60%), #fbfcfb", ink: "#16201b",
+    headerBg: "rgba(251,250,255,.88)", headerBorder: "1px solid #ece7f6", footerBg: "#fff", footerBorder: "1px solid #ece7f6",
+    eyebrow: "The Statamic showcase", heroTitle: "Discover the best sites built with Statamic",
     tagline: "A hand-curated, daily-updated gallery of open-source projects. Browse the ecosystem, ranked by GitHub stars — and find your next stack.",
     seoTitle: "Made with Statamic — the showcase of sites built with Statamic",
     seoDescription: "A curated, daily-updated gallery of the best open-source sites and add-ons built with Statamic, ranked by GitHub stars. Discover CMS builds, UI kits and dev tools.",
   },
-  {
-    slug: "twill",
-    techName: "Twill",
-    domain: "madewithtwill.com",
-    accent: "#F4503C",
-    accentInk: "#ffffff",
-    variant: "light",
-    editorial: false,
-    heroId: "twill",
-    dispFont: "'Newsreader', serif",
-    bodyFont: "'Hanken Grotesk', sans-serif",
-    fontHref: FONTS.twill,
-    radius: 5,
-    bg: "#f7f4ee",
-    ink: "#211d16",
-    headerBg: "rgba(247,244,238,.92)",
-    headerBorder: "2px solid #17140f",
-    footerBg: "#f2efe7",
-    footerBorder: "2px solid #17140f",
-    eyebrow: "The Twill showcase",
-    heroTitle: "Discover the best sites built with Twill",
+  twill: {
+    accent: "#6621d9", accentInk: "#ffffff", variant: "light", editorial: false, heroId: "twill",
+    dispFont: "'Newsreader', serif", bodyFont: "'Hanken Grotesk', sans-serif", fontHref: FONTS.twill, radius: 5,
+    bg: "#f7f4ee", ink: "#211d16", headerBg: "rgba(247,244,238,.92)", headerBorder: "1px solid #17140f",
+    footerBg: "#f2efe7", footerBorder: "1px solid #17140f",
+    eyebrow: "The Twill showcase", heroTitle: "Discover the best sites built with Twill",
     tagline: "A hand-curated, daily-updated gallery of open-source projects. Browse the ecosystem, ranked by GitHub stars — and find your next stack.",
     seoTitle: "Made with Twill — the showcase of sites built with Twill CMS",
     seoDescription: "A curated, daily-updated gallery of the best open-source sites and packages built with Twill, the Laravel CMS, ranked by GitHub stars. Discover CMS builds and dev tools.",
   },
-];
+};
+
+function buildTheme(entry: CatalogEntry): Theme {
+  if (entry.bespoke && BESPOKE_THEMES[entry.slug]) {
+    return { slug: entry.slug, techName: entry.techName, domain: entry.domain, group: entry.group, ...BESPOKE_THEMES[entry.slug] };
+  }
+  return genericTheme(entry);
+}
+
+export const DOMAINS: Theme[] = DOMAIN_CATALOG.map(buildTheme);
 
 export const DOMAIN_MAP: Record<string, Theme> = Object.fromEntries(DOMAINS.map((d) => [d.slug, d]));
 
@@ -224,3 +253,65 @@ export function getTheme(slug: string): Theme {
   if (!t) throw new Error(`Unknown domain slug: ${slug}`);
   return t;
 }
+
+/** Legacy admin values map to current network sections. */
+export function normalizeDomainGroup(group: string | undefined | null): DomainGroup {
+  if (group === "frontend" || group === "frameworks" || group === "backend" || group === "cms" || group === "commerce") return group;
+  return "frameworks";
+}
+
+/** Theme with admin overrides from pulled config (if any). */
+export function getResolvedTheme(slug: string): Theme {
+  const theme = applyThemeOverrides(getTheme(slug), getDomainSettings(slug));
+  return { ...theme, group: normalizeDomainGroup(theme.group) };
+}
+
+/** Domains grouped for the network landing page. */
+export const DOMAINS_BY_GROUP: Record<DomainGroup, Theme[]> = {
+  frontend: DOMAINS.filter((d) => d.group === "frontend"),
+  frameworks: DOMAINS.filter((d) => d.group === "frameworks"),
+  backend: DOMAINS.filter((d) => d.group === "backend"),
+  cms: DOMAINS.filter((d) => d.group === "cms"),
+  commerce: DOMAINS.filter((d) => d.group === "commerce"),
+};
+
+export const GROUP_LABELS: Record<DomainGroup, string> = {
+  frontend: "Frontend",
+  frameworks: "Frameworks",
+  backend: "Backend",
+  cms: "CMS",
+  commerce: "Commerce",
+};
+
+export const GROUP_META: Record<DomainGroup, { label: string; icon: string; color: string; bg: string }> = {
+  frontend: {
+    label: "Frontend",
+    icon: "▤",
+    color: "#2F6FEB",
+    bg: "color-mix(in srgb, #2F6FEB 16%, #ffffff)",
+  },
+  frameworks: {
+    label: "Frameworks",
+    icon: "◈",
+    color: "#16A34A",
+    bg: "color-mix(in srgb, #16A34A 16%, #ffffff)",
+  },
+  backend: {
+    label: "Backend",
+    icon: "❯",
+    color: "#EA7A2B",
+    bg: "color-mix(in srgb, #EA7A2B 16%, #ffffff)",
+  },
+  cms: {
+    label: "CMS",
+    icon: "❏",
+    color: "#7C3AED",
+    bg: "color-mix(in srgb, #7C3AED 16%, #ffffff)",
+  },
+  commerce: {
+    label: "Commerce",
+    icon: "⛬",
+    color: "#C2612B",
+    bg: "color-mix(in srgb, #C2612B 16%, #ffffff)",
+  },
+};

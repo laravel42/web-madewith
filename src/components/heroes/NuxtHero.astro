@@ -1,14 +1,17 @@
 ---
 import type { Theme } from "../../config/domains";
+import { heroSubcopy } from "../../config/domain-settings";
 import TagRow from "../TagRow.astro";
-interface Props { theme: Theme; total: string; }
-const { theme, total } = Astro.props;
+import type { CategoryFilter } from "../../lib/catalog";
+interface Props { theme: Theme; total: string; categories: CategoryFilter[]; }
+const { theme, total, categories } = Astro.props;
+const subcopy = heroSubcopy(theme, total);
 ---
-<div style="max-width:1140px; margin:22px auto 8px; padding:44px 46px; border-radius:28px; background:radial-gradient(560px 300px at 92% 6%, rgba(0,220,130,.20), rgba(0,220,130,0) 62%), linear-gradient(135deg,#e6fff4 0%,#f2fdf8 100%); border:1px solid #c9f5e2; display:flex; align-items:center; gap:46px; flex-wrap:wrap;">
+<div class="hero-panel" style="max-width:1140px; margin:22px auto 8px; padding:44px 46px; border-radius:28px; background:radial-gradient(560px 300px at 92% 6%, rgba(0,220,130,.20), rgba(0,220,130,0) 62%), linear-gradient(135deg,#e6fff4 0%,#f2fdf8 100%); border:1px solid #c9f5e2; display:flex; align-items:center; gap:46px; flex-wrap:wrap;">
   <div style="flex:1; min-width:320px;">
     <div style="font-size:13px; font-weight:600; color:#00a866; letter-spacing:.05em; text-transform:uppercase; margin-bottom:14px;">{theme.eyebrow}</div>
-    <div class="disp" style="font-size:46px; font-weight:800; letter-spacing:-0.03em; line-height:1.04; background:linear-gradient(96deg,#053f2b,#00b56c); -webkit-background-clip:text; background-clip:text; color:transparent;">{theme.heroTitle}</div>
-    <div style="font-size:17px; color:#4a6157; margin-top:16px; max-width:500px; line-height:1.55;">A hand-curated, daily-updated gallery of open-source projects. Browse {total} repos, ranked by GitHub stars.</div>
+    <div class="disp" style="font-size:clamp(32px, 7vw, 46px); font-weight:800; letter-spacing:-0.03em; line-height:1.04; background:linear-gradient(96deg,#053f2b,#00b56c); -webkit-background-clip:text; background-clip:text; color:transparent;">{theme.heroTitle}</div>
+    <div style="font-size:17px; color:#4a6157; margin-top:16px; max-width:500px; line-height:1.55;">{subcopy}</div>
 
     <div style="display:flex; gap:10px; margin-top:28px; max-width:560px;">
       <div style="flex:1; display:flex; align-items:center; gap:10px; background:#fff; border:1px solid #c9f5e2; border-radius:12px; padding:13px 16px;">
@@ -21,7 +24,7 @@ const { theme, total } = Astro.props;
       </div>
     </div>
 
-    <div style="margin-top:20px;"><TagRow theme={theme} /></div>
+    <div style="margin-top:20px;"><TagRow theme={theme} categories={categories} /></div>
   </div>
 
   <div style="flex-shrink:0; width:346px; background:#fff; border-radius:16px; box-shadow:0 34px 70px rgba(0,150,90,.24); overflow:hidden; border:1px solid #e3f3ea;">

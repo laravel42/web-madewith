@@ -18,7 +18,7 @@ import { GitHub } from "./github";
 import { DOMAINS } from "./domains";
 import { Db } from "./db";
 import { scrapeAndPublish } from "./publish";
-import { kvEtagStore, readDataset } from "./storage";
+import { kvEtagStore, readDataset, readDomainConfig } from "./storage";
 import { handleAdmin } from "./admin";
 import { handleSubmit } from "./submit";
 import { json, triggerDeploy } from "./util";
@@ -77,6 +77,15 @@ export default {
     const dataMatch = path.match(/^\/data\/([a-z0-9-]+)\.json$/);
     if (dataMatch && req.method === "GET") {
       const bodyText = await readDataset(env.DATA, dataMatch[1]);
+      if (!bodyText) return json({ error: "not found" }, 404);
+      return new Response(bodyText, {
+        headers: { "content-type": "application/json", "cache-control": "public, max-age=300, s-maxage=3600", "access-control-allow-origin": "*" },
+      });
+    }
+
+    const configMatch = path.match(/^\/config\/([a-z0-9-]+)\.json$/);
+    if (configMatch && req.method === "GET") {
+      const bodyText = await readDomainConfig(env.DATA, configMatch[1]);
       if (!bodyText) return json({ error: "not found" }, 404);
       return new Response(bodyText, {
         headers: { "content-type": "application/json", "cache-control": "public, max-age=300, s-maxage=3600", "access-control-allow-origin": "*" },

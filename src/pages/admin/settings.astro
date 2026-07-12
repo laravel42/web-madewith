@@ -1,0 +1,22 @@
+---
+import AdminLayout from "../../admin/layouts/AdminLayout.astro";
+---
+
+<AdminLayout title="Settings" active="settings">
+  <div class="px-4 pt-6 pb-12">
+    <div class="mb-6">
+      <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Settings</h1>
+      <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">
+        Environment parameters for the admin worker, Pages proxy, and local tooling. Fix missing values here before running Refresh or approving submissions.
+      </p>
+    </div>
+    <div id="settings-root">
+      <p class="text-sm text-gray-500 dark:text-gray-400">Loading…</p>
+    </div>
+  </div>
+</AdminLayout>
+
+<script>
+  import { initSettingsPage } from "../../admin/scripts/settings-admin";
+  initSettingsPage();
+</script>

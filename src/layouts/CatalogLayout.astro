@@ -1,5 +1,6 @@
 ---
 import type { Theme } from "../config/domains";
+import { canonicalUrl } from "../config/domain-settings";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
@@ -14,7 +15,7 @@ interface Props {
 const { theme, title, description, active = "" } = Astro.props;
 const seoTitle = title ?? theme.seoTitle;
 const seoDescription = description ?? theme.seoDescription;
-const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const canonical = canonicalUrl(theme, Astro.url.pathname, Astro.site!.href);
 const base = `/${theme.slug}`;
 const wrapperClass = `mw v-${theme.variant}${theme.editorial ? " is-editorial" : ""}`;
 // soft accent tint differs between light (white base) and terminal (dark base)
@@ -26,11 +27,12 @@ const softMix = theme.variant === "terminal" ? "22%, #0c0f0e" : "13%, #ffffff";
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href={`/favicon-${theme.slug}.svg`} />
+    <link rel="icon" href={theme.favicon ?? `/favicon-${theme.slug}.svg`} />
     <title>{seoTitle}</title>
     <meta name="description" content={seoDescription} />
     <link rel="canonical" href={canonical} />
-    <meta name="generator" content="MadeWith… catalog" />
+    <link rel="alternate" type="application/rss+xml" title={`Made with ${theme.techName}`} href={`${base}/rss.xml`} />
+    <meta name="generator" content="MadeWithWhat catalog" />
 
     <!-- Open Graph / Twitter -->
     <meta property="og:type" content="website" />
@@ -89,9 +91,13 @@ const softMix = theme.variant === "terminal" ? "22%, #0c0f0e" : "13%, #ffffff";
       /* ---- cards ---- */
       .card {
         border: 1px solid #eef0ef; border-radius: var(--radius); overflow: hidden;
-        background: #fff; cursor: pointer; text-decoration: none; display: block; color: inherit;
+        background: #fff; cursor: pointer; text-decoration: none; display: flex; flex-direction: column; color: inherit;
         transition: transform .15s ease, box-shadow .15s ease;
       }
+      /* Anchor each card's footer to the bottom so rows align regardless of
+         title/description height. */
+      .card-body { flex: 1; display: flex; flex-direction: column; }
+      .card-foot { margin-top: auto; }
       .card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(20,40,30,.09); }
 
       .v-terminal .card {
@@ -102,18 +108,118 @@ const softMix = theme.variant === "terminal" ? "22%, #0c0f0e" : "13%, #ffffff";
 
       .is-editorial .card-editorial {
         border-right: 1px solid #e8e8e8; border-bottom: 1px solid #e8e8e8;
-        background: #fff; cursor: pointer; text-decoration: none; color: inherit; display: block;
+        background: #fff; cursor: pointer; text-decoration: none; color: inherit; display: flex; flex-direction: column;
         transition: background .12s;
       }
       .is-editorial .card-editorial:hover { background: #fafafa; }
+      /* Editorial cards stay light (Vercel-style) even when the page ink is
+         light for a dark background — pin their text dark so it stays legible. */
+      .is-editorial .card, .is-editorial .card-editorial { color: #0a0a0a; }
 
       /* ---- buttons ---- */
       .btn { cursor: pointer; text-decoration: none; display: inline-block; text-align: center; font-weight: 700; }
       .btn-primary { background: var(--accent); color: var(--accentInk); border-radius: var(--radius); }
       .v-terminal .btn-primary { background: var(--accent); color: #04231a; border-radius: 8px; }
 
+      /* active tag/category in the count label — solid brand chip, high contrast */
+      .active-tag {
+        background: var(--accent); color: var(--accentInk);
+        font-weight: 700; padding: 2px 10px; border-radius: 999px;
+        margin-left: 5px; letter-spacing: .01em; white-space: nowrap;
+      }
+      .v-terminal .active-tag { border-radius: 5px; }
+
+      /* clickable "Tags" chips on the detail page → filtered gallery */
+      .tag-link { cursor: pointer; text-decoration: none; transition: transform .12s ease, box-shadow .12s ease, filter .12s ease; }
+      .tag-link:hover { transform: translateY(-1px); box-shadow: 0 3px 12px rgba(0,0,0,.16); filter: saturate(1.3) brightness(1.04); }
+
+      /* clickable inline filters (author, language, license) → filtered gallery */
+      .filter-link { cursor: pointer; text-decoration: none; transition: color .12s ease, text-decoration-color .12s ease; }
+      .filter-link:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+
+      /* version rows in the detail sidebar → linked to the GitHub release/tag */
+      .version-link { display: flex; align-items: center; justify-content: space-between; text-decoration: none; padding: 6px 8px; margin: 0 -8px; border-radius: 6px; transition: background .12s ease; }
+      .version-link:hover { background: color-mix(in srgb, var(--accent) 12%, transparent); }
+
+      /* ---- pagination ---- */
+      .pager { display: flex; justify-content: center; align-items: center; gap: 6px; margin-top: 40px; flex-wrap: wrap; }
+      .pager-btn {
+        min-width: 38px; height: 38px; padding: 0 11px; border-radius: 8px;
+        border: 1px solid #dfe5e1; background: transparent; color: inherit;
+        font: inherit; font-size: 14px; cursor: pointer;
+        transition: border-color .12s, background .12s, color .12s;
+      }
+      .pager-btn:hover:not(:disabled):not(.is-active) { border-color: var(--accent); }
+      .pager-btn.is-active { background: var(--accent); color: var(--accentInk); border-color: var(--accent); font-weight: 700; }
+      .pager-btn:disabled { opacity: .35; cursor: default; }
+      .pager-gap { color: #9aa39e; padding: 0 3px; }
+      .v-terminal .pager-btn { border-radius: 5px; border-color: #232a26; }
+
+      /* ---- hero panels (bordered card heroes) ---- */
+      .hero-panel { box-sizing: border-box; }
+
       /* hidden by client filter */
       [hidden] { display: none !important; }
+
+      /* ---- responsive: hero panels flush under header on mid/small ---- */
+      @media (max-width: 1280px) {
+        .hero-panel {
+          max-width: none !important;
+          width: 100%;
+          margin-top: 0 !important;
+          margin-left: 0 !important;
+          margin-right: 0 !important;
+          border-radius: 0 !important;
+          border-left: none !important;
+          border-right: none !important;
+          border-top: none !important;
+          padding-left: 30px !important;
+          padding-right: 30px !important;
+          padding-top: 32px !important;
+          text-align: center;
+          flex-direction: column !important;
+          align-items: center !important;
+        }
+
+        /* Ionic / Nuxt — text column */
+        .hero-panel[style*="display:flex"] > div:first-child {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+          min-width: 0 !important;
+        }
+
+        .hero-panel > div[style*="max-width"],
+        .hero-panel[style*="display:flex"] > div:first-child > div[style*="max-width"] {
+          margin-inline: auto;
+        }
+
+        .hero-panel > div[style*="display:flex"],
+        .hero-panel[style*="display:flex"] > div:first-child > div[style*="display:flex"] {
+          margin-inline: auto;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+
+        .hero-panel [style*="flex-wrap"] {
+          justify-content: center !important;
+        }
+
+        .hero-panel input[data-role="search"] {
+          text-align: left;
+        }
+      }
+
+      /* ---- responsive: collapse the fixed 3-up grids + stack the detail
+         split. Inline grid-template-columns needs !important to be overridden. */
+      @media (max-width: 900px) {
+        [data-role="grid"], .mw-grid3 { grid-template-columns: repeat(2, 1fr) !important; }
+        .mw-split { grid-template-columns: 1fr !important; gap: 32px !important; }
+      }
+      @media (max-width: 600px) {
+        [data-role="grid"], .mw-grid3 { grid-template-columns: 1fr !important; }
+      }
     </style>
     <slot name="head" />
   </head>

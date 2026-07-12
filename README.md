@@ -1,4 +1,4 @@
-# MadeWith… — a replicable multi-domain showcase catalog
+# MadeWithWhat — a replicable multi-domain showcase catalog
 
 A network of "Made with [Tech]" showcase sites — one catalog engine, themed per
 domain, fed by **real GitHub data**. Each site is a daily-updatable gallery of

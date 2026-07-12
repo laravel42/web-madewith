@@ -1,15 +1,10 @@
-/** Deterministic category classification (workflow 04 is rule-based, not LLM by default). */
-export const CATEGORIES = ["Dashboards", "E-commerce", "UI Kits", "Blogs", "DevTools", "Docs"] as const;
+/** Deterministic category classification — rules live in src/config/categories.json. */
+import raw from "../../src/config/categories.json";
+
+export const CATEGORIES = raw.categories.map((c) => c.label) as readonly string[];
 export type Category = (typeof CATEGORIES)[number];
 
-const RULES: Array<[Category, string[]]> = [
-  ["E-commerce", ["ecommerce", "e-commerce", "commerce", "shop", "store", "cart", "checkout", "stripe", "payment", "marketplace"]],
-  ["Dashboards", ["dashboard", "admin", "analytics", "panel", "backoffice", "back-office", "metrics", "monitoring"]],
-  ["Docs", ["docs", "documentation", "handbook", "knowledge", "wiki"]],
-  ["Blogs", ["blog", "cms", "content", "markdown", "mdx", "publishing", "newsletter", "portfolio"]],
-  ["UI Kits", ["ui", "component", "components", "design-system", "design", "kit", "tailwind", "css", "theme", "template", "starter", "boilerplate"]],
-  ["DevTools", ["cli", "devtool", "developer", "tool", "tools", "monitor", "lint", "build", "bundler", "framework", "api", "sdk", "plugin", "generator"]],
-];
+const RULES: Array<[Category, string[]]> = raw.categories.map((c) => [c.label as Category, c.keywords]);
 
 export function classify(input: { topics?: string[]; description?: string | null; name?: string }): Category {
   const hay = `${(input.topics || []).join(" ")} ${input.description || ""} ${input.name || ""}`.toLowerCase();

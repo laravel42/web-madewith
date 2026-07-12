@@ -1,5 +1,6 @@
 ---
 import type { Theme } from "../config/domains";
+import type { CategoryFilter } from "../lib/catalog";
 import NuxtHero from "./heroes/NuxtHero.astro";
 import NodeHero from "./heroes/NodeHero.astro";
 import NextHero from "./heroes/NextHero.astro";
@@ -7,8 +8,14 @@ import IonicHero from "./heroes/IonicHero.astro";
 import StatamicHero from "./heroes/StatamicHero.astro";
 import TwillHero from "./heroes/TwillHero.astro";
 
-interface Props { theme: Theme; total: string; }
-const { theme, total } = Astro.props;
+import GenericHero from "./heroes/GenericHero.astro";
+
+interface Props {
+  theme: Theme;
+  total: string;
+  categories: CategoryFilter[];
+}
+const { theme, total, categories } = Astro.props;
 
 const HEROES = {
   nuxt: NuxtHero,
@@ -17,8 +24,9 @@ const HEROES = {
   ionic: IonicHero,
   statamic: StatamicHero,
   twill: TwillHero,
+  generic: GenericHero,
 } as const;
 
 const HeroComponent = HEROES[theme.heroId];
 ---
-<HeroComponent theme={theme} total={total} />
+<HeroComponent theme={theme} total={total} categories={categories} />

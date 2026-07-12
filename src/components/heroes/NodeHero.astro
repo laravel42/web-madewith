@@ -1,13 +1,16 @@
 ---
 import type { Theme } from "../../config/domains";
+import { heroSubcopy } from "../../config/domain-settings";
 import TagRow from "../TagRow.astro";
-interface Props { theme: Theme; total: string; }
-const { theme, total } = Astro.props;
+import type { CategoryFilter } from "../../lib/catalog";
+interface Props { theme: Theme; total: string; categories: CategoryFilter[]; }
+const { theme, total, categories } = Astro.props;
+const subcopy = heroSubcopy(theme, total);
 ---
 <div style="max-width:1200px; margin:0 auto; padding:56px 32px 28px;">
-  <div style={`font-size:13px; color:${theme.accent}; margin-bottom:16px;`}>// {total} open-source projects indexed</div>
-  <div class="disp" style="font-size:48px; font-weight:700; letter-spacing:-0.02em; line-height:1.06; color:#f1f6f2; max-width:820px;">{theme.heroTitle}</div>
-  <div style="font-size:15px; color:#8b948d; margin-top:16px; max-width:620px; line-height:1.6;">Indexed nightly from GitHub. Filter by category &amp; stars — discover production repos worth reading.</div>
+  <div style={`font-size:13px; color:${theme.accent}; margin-bottom:16px;`}>{theme.eyebrow.replace("{total}", total)}</div>
+  <div class="disp" style="font-size:clamp(34px, 7vw, 48px); font-weight:700; letter-spacing:-0.02em; line-height:1.06; color:#f1f6f2; max-width:820px;">{theme.heroTitle}</div>
+  <div style="font-size:15px; color:#8b948d; margin-top:16px; max-width:620px; line-height:1.6;">{subcopy}</div>
 
   <div style="display:flex; gap:12px; margin-top:30px; max-width:720px;">
     <div style="flex:1; display:flex; align-items:center; gap:10px; background:#121614; border:1px solid #232a26; border-radius:8px; padding:13px 16px;">
@@ -19,5 +22,5 @@ const { theme, total } = Astro.props;
     </div>
   </div>
 
-  <div style="margin-top:20px;"><TagRow theme={theme} /></div>
+  <div style="margin-top:20px;"><TagRow theme={theme} categories={categories} /></div>
 </div>

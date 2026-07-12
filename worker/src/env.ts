@@ -9,4 +9,6 @@ export interface Env {
   /** Cloudflare Access (admin auth). */
   ACCESS_TEAM_DOMAIN?: string;
   ACCESS_AUD?: string;
+  /** Local dev only — set in worker/.dev.vars, never in production. */
+  ADMIN_DEV_BYPASS?: string;
 }

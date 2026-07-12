@@ -1,0 +1,16 @@
+---
+import { DOMAINS } from "../config/domains";
+import { getCatalog } from "../lib/catalog";
+import { buildNetworkLlmsTxt } from "../lib/feed";
+import NetworkLayout from "../layouts/NetworkLayout.astro";
+import NetworkLlmInfo from "../components/NetworkLlmInfo.astro";
+
+const site = Astro.site ?? new URL("https://madewithwhat.net");
+const llmsTxt = buildNetworkLlmsTxt(site);
+const projectCount = DOMAINS.reduce((sum, d) => sum + getCatalog(d.slug).projects.length, 0);
+const title = "LLM context";
+const description = "Structured catalog metadata for AI agents: MadeWithWhat network galleries, top projects, and refresh info. Also available as llms.txt.";
+---
+<NetworkLayout title={title} description={description}>
+  <NetworkLlmInfo llmsTxt={llmsTxt} projectCount={projectCount} />
+</NetworkLayout>

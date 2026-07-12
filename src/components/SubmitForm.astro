@@ -7,6 +7,8 @@ const base = `/${theme.slug}`;
 const radius = `${theme.radius}px`;
 const isTerminal = theme.variant === "terminal";
 const btnRadius = theme.editorial ? "2px" : isTerminal ? "8px" : "10px";
+// Field labels sit on the page background; lighten them on the dark editorial theme.
+const labelInk = theme.editorial ? "#b4b4b4" : "#3a443f";
 const labels = isTerminal
   ? { repo: "repository_url", name: "project_name", desc: "description", cat: "category", demo: "demo_url", shot: "screenshot", submit: "./submit" }
   : { repo: "GitHub repository URL", name: "Project name", desc: "Short description", cat: "Category", demo: "Live demo URL", shot: "Screenshot", submit: "Submit project" };
@@ -63,16 +65,16 @@ const labels = isTerminal
       <div class="disp" style="font-size:40px; font-weight:800; letter-spacing:-0.03em;">Submit your project</div>
       <div style="font-size:16px; color:#5c665f; margin-top:10px; line-height:1.55;">Built something with {theme.techName}? Add it to the gallery — free, and great for backlinks.</div>
       <div style="margin-top:34px; display:flex; flex-direction:column; gap:20px;">
-        <div><label for="l-repo" style="display:block; font-size:13px; font-weight:600; color:#3a443f; margin-bottom:8px;">{labels.repo}</label><input id="l-repo" name="repo" type="url" required placeholder="https://github.com/you/your-project" style={`width:100%; border:1px solid #e0e5e2; border-radius:${btnRadius}; padding:13px 15px; font-size:15px; outline:none; background:#fff; color:#16201b;`}/></div>
-        <div><label for="l-name" style="display:block; font-size:13px; font-weight:600; color:#3a443f; margin-bottom:8px;">{labels.name}</label><input id="l-name" name="name" required placeholder="e.g. Pulse" style={`width:100%; border:1px solid #e0e5e2; border-radius:${btnRadius}; padding:13px 15px; font-size:15px; outline:none; background:#fff; color:#16201b;`}/></div>
-        <div><label for="l-desc" style="display:block; font-size:13px; font-weight:600; color:#3a443f; margin-bottom:8px;">{labels.desc}</label><textarea id="l-desc" name="description" rows="3" placeholder="One sentence on what it does." style={`width:100%; border:1px solid #e0e5e2; border-radius:${btnRadius}; padding:13px 15px; font-size:15px; outline:none; background:#fff; color:#16201b; resize:vertical;`}></textarea></div>
+        <div><label for="l-repo" style={`display:block; font-size:13px; font-weight:600; color:${labelInk}; margin-bottom:8px;`}>{labels.repo}</label><input id="l-repo" name="repo" type="url" required placeholder="https://github.com/you/your-project" style={`width:100%; border:1px solid #e0e5e2; border-radius:${btnRadius}; padding:13px 15px; font-size:15px; outline:none; background:#fff; color:#16201b;`}/></div>
+        <div><label for="l-name" style={`display:block; font-size:13px; font-weight:600; color:${labelInk}; margin-bottom:8px;`}>{labels.name}</label><input id="l-name" name="name" required placeholder="e.g. Pulse" style={`width:100%; border:1px solid #e0e5e2; border-radius:${btnRadius}; padding:13px 15px; font-size:15px; outline:none; background:#fff; color:#16201b;`}/></div>
+        <div><label for="l-desc" style={`display:block; font-size:13px; font-weight:600; color:${labelInk}; margin-bottom:8px;`}>{labels.desc}</label><textarea id="l-desc" name="description" rows="3" placeholder="One sentence on what it does." style={`width:100%; border:1px solid #e0e5e2; border-radius:${btnRadius}; padding:13px 15px; font-size:15px; outline:none; background:#fff; color:#16201b; resize:vertical;`}></textarea></div>
         <div style="display:flex; gap:16px;">
-          <div style="flex:1;"><label for="l-category" style="display:block; font-size:13px; font-weight:600; color:#3a443f; margin-bottom:8px;">{labels.cat}</label><select id="l-category" name="category" style={`width:100%; border:1px solid #e0e5e2; border-radius:${btnRadius}; padding:13px 15px; font-size:15px; outline:none; background:#fff; color:#16201b;`}>{CATEGORY_ORDER.map((c) => <option>{c}</option>)}</select></div>
-          <div style="flex:1;"><label for="l-demo" style="display:block; font-size:13px; font-weight:600; color:#3a443f; margin-bottom:8px;">{labels.demo}</label><input id="l-demo" name="demo" type="url" placeholder="https://…" style={`width:100%; border:1px solid #e0e5e2; border-radius:${btnRadius}; padding:13px 15px; font-size:15px; outline:none; background:#fff; color:#16201b;`}/></div>
+          <div style="flex:1;"><label for="l-category" style={`display:block; font-size:13px; font-weight:600; color:${labelInk}; margin-bottom:8px;`}>{labels.cat}</label><select id="l-category" name="category" style={`width:100%; border:1px solid #e0e5e2; border-radius:${btnRadius}; padding:13px 15px; font-size:15px; outline:none; background:#fff; color:#16201b;`}>{CATEGORY_ORDER.map((c) => <option>{c}</option>)}</select></div>
+          <div style="flex:1;"><label for="l-demo" style={`display:block; font-size:13px; font-weight:600; color:${labelInk}; margin-bottom:8px;`}>{labels.demo}</label><input id="l-demo" name="demo" type="url" placeholder="https://…" style={`width:100%; border:1px solid #e0e5e2; border-radius:${btnRadius}; padding:13px 15px; font-size:15px; outline:none; background:#fff; color:#16201b;`}/></div>
         </div>
         <div>
           <label for="l-screenshot" style="display:block; cursor:pointer;">
-            <span style="display:block; font-size:13px; font-weight:600; color:#3a443f; margin-bottom:8px;">{labels.shot}</span>
+            <span style={`display:block; font-size:13px; font-weight:600; color:${labelInk}; margin-bottom:8px;`}>{labels.shot}</span>
             <span style={`display:block; border:1.5px dashed #d6ddd9; border-radius:${radius}; padding:34px; text-align:center; color:#8b9690; font-size:14px; background:#fff;`}>
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" style="margin-bottom:8px;"><path d="M12 16V4m0 0L8 8m4-4 4 4" stroke="#aab3ae" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke="#aab3ae" stroke-width="2" stroke-linecap="round"/></svg>
               <span style="display:block;">Drop an image or <span style={`color:${theme.editorial ? "#0a0a0a" : theme.accent};`}>browse</span></span>

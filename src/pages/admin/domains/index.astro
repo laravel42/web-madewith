@@ -1,0 +1,50 @@
+---
+import AdminLayout from "../../../admin/layouts/AdminLayout.astro";
+import { DOMAINS } from "../../../config/domains";
+import { getCatalog } from "../../../lib/catalog";
+
+const catalogCounts = Object.fromEntries(
+  DOMAINS.map((d) => {
+    try {
+      return [d.slug, getCatalog(d.slug).projects.length];
+    } catch {
+      return [d.slug, 0];
+    }
+  }),
+);
+
+const catalogGroups = Object.fromEntries(DOMAINS.map((d) => [d.slug, d.group]));
+---
+
+<AdminLayout title="Domains" active="domains">
+  <div class="px-4 pt-6">
+    <div class="mb-4">
+      <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Domains</h1>
+      <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Edit hero copy, URLs, meta tags, categories, and project visibility per tech site.</p>
+    </div>
+
+    <div class="overflow-hidden shadow rounded-lg">
+      <div class="overflow-x-auto">
+        <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-600">
+          <thead class="bg-gray-100 dark:bg-gray-700">
+            <tr>
+              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">Tech</th>
+              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">Category</th>
+              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">Page URL</th>
+              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">Projects</th>
+              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">Status</th>
+            </tr>
+          </thead>
+          <tbody id="domain-list" class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700" data-catalog-counts={JSON.stringify(catalogCounts)} data-catalog-groups={JSON.stringify(catalogGroups)}>
+            <tr><td colspan="5" class="p-4 text-sm text-gray-500 dark:text-gray-400">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</AdminLayout>
+
+<script>
+  import { initDomainsListPage } from "../../../admin/scripts/domains-admin";
+  initDomainsListPage();
+</script>

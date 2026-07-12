@@ -156,7 +156,7 @@ export async function scrapeDomain(gh: GitHub, domain: DomainDiscovery, now: num
   for (const [lo, hi] of STAR_PARTITIONS) {
     const stars = hi == null ? `stars:>=${lo}` : `stars:${lo}..${hi}`;
     const q = `${domain.match} ${stars} sort:stars-desc`;
-    const { search } = await gh.graphql<{ search: { repositoryCount: number; nodes: RepoNode[] } }>(SEARCH, { q, n: 50 });
+    const { search } = await gh.graphql<{ search: { repositoryCount: number; nodes: RepoNode[] } }>(SEARCH, { q, n: 100 });
     for (const node of search.nodes) if (node?.databaseId) byId.set(node.databaseId, node);
     // Enough high-quality candidates from big partitions → skip the long tail.
     const usable = [...byId.values()].filter((n) => !hardNoise(n, domain) && !softNoise(n)).length;

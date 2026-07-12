@@ -1,0 +1,118 @@
+---
+import AdminLayout from "../../../admin/layouts/AdminLayout.astro";
+import { DOMAINS } from "../../../config/domains";
+
+export function getStaticPaths() {
+  return DOMAINS.map((d) => ({ params: { slug: d.slug } }));
+}
+
+const { slug } = Astro.params;
+---
+
+<AdminLayout title={`Edit ${slug}`} active="domains">
+  <div id="domain-editor" class="px-4 pt-6 pb-12" data-slug={slug}>
+    <div class="mb-6 flex flex-wrap items-center justify-between gap-3">
+      <div>
+        <a href="/admin/domains/" class="text-sm text-primary-700 hover:underline dark:text-primary-400">← All domains</a>
+        <h1 id="edit-title" class="mt-2 text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Loading…</h1>
+        <p id="edit-slug" class="text-sm text-gray-500 dark:text-gray-400"></p>
+      </div>
+      <button id="save-domain" type="button" class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 dark:bg-primary-600">
+        Save changes
+      </button>
+    </div>
+
+    <div class="grid gap-6 lg:grid-cols-2">
+      <section class="p-5 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+        <h2 class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">Hero section</h2>
+        <div class="space-y-4">
+          <div>
+            <label for="f-eyebrow" class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">Eyebrow</label>
+            <input id="f-eyebrow" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white" />
+          </div>
+          <div>
+            <label for="f-heroTitle" class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">Title</label>
+            <input id="f-heroTitle" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white" />
+          </div>
+          <div>
+            <label for="f-heroHeadline" class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">Headline (HTML, e.g. Next.js)</label>
+            <input id="f-heroHeadline" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white" placeholder="Optional — MADE WITH&lt;br&gt;NEXT.JS" />
+          </div>
+          <div>
+            <label for="f-tagline" class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">Subcopy</label>
+            <textarea id="f-tagline" rows="3" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white" placeholder="Use {total} for project count"></textarea>
+          </div>
+        </div>
+      </section>
+
+      <section class="p-5 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+        <h2 class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">URL &amp; meta</h2>
+        <div class="space-y-4">
+          <div>
+            <label for="f-group" class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">Category</label>
+            <select id="f-group" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+              <option value="frontend">Frontend</option>
+              <option value="frameworks">Frameworks</option>
+              <option value="backend">Backend</option>
+              <option value="cms">CMS</option>
+              <option value="commerce">Commerce</option>
+            </select>
+            <p class="mt-1 text-xs text-gray-500 dark:text-gray-400">Network section on the MadeWithWhat landing page.</p>
+          </div>
+          <div>
+            <label for="f-domain" class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">Hostname</label>
+            <input id="f-domain" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white" placeholder="madewithnuxt.com" />
+          </div>
+          <div>
+            <label for="f-pageUrl" class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">Direct page URL</label>
+            <input id="f-pageUrl" type="url" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white" placeholder="https://madewithnuxt.com/" />
+          </div>
+          <div>
+            <label for="f-seoTitle" class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">Meta title</label>
+            <input id="f-seoTitle" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white" />
+          </div>
+          <div>
+            <label for="f-seoDescription" class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">Meta description</label>
+            <textarea id="f-seoDescription" rows="3" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white"></textarea>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="p-5 mt-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+      <h2 class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">Visible categories</h2>
+      <div class="flex gap-6 mb-4 text-sm">
+        <label class="inline-flex items-center gap-2"><input id="cat-mode-auto" type="radio" name="cat-mode" value="auto" class="text-primary-600" checked /> Auto (top 5 by count)</label>
+        <label class="inline-flex items-center gap-2"><input id="cat-mode-custom" type="radio" name="cat-mode" value="custom" class="text-primary-600" /> Custom selection</label>
+      </div>
+      <div id="category-checks" class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3"></div>
+    </section>
+
+    <section class="p-5 mt-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
+      <h2 class="mb-1 text-lg font-semibold text-gray-900 dark:text-white">Projects</h2>
+      <p class="mb-4 text-sm text-gray-500 dark:text-gray-400">Toggle visibility for each project. Hidden entries are excluded from the published gallery.</p>
+      <div class="overflow-x-auto">
+        <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-600">
+          <thead class="bg-gray-100 dark:bg-gray-700">
+            <tr>
+              <th class="p-3 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">Project</th>
+              <th class="p-3 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">Author</th>
+              <th class="p-3 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">★</th>
+              <th class="p-3 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">Category</th>
+              <th class="p-3 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">Visible</th>
+            </tr>
+          </thead>
+          <tbody id="project-rows" class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
+            <tr><td colspan="5" class="p-4 text-sm text-gray-500">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</AdminLayout>
+
+<script>
+  import { initDomainEditPage } from "../../../admin/scripts/domains-admin";
+  const slug = document.getElementById("domain-editor")?.dataset.slug;
+  if (slug) initDomainEditPage(slug);
+</script>

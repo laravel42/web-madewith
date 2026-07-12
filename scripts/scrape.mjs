@@ -37,6 +37,7 @@ const DATA_DIR = join(__dirname, "..", "src", "data");
 const SEED_DIR = join(__dirname, "seed");
 const CACHE_DIR = join(__dirname, ".cache");
 const ETAG_FILE = join(CACHE_DIR, "etags.json");
+const CATEGORY_DEFS = JSON.parse(readFileSync(join(__dirname, "..", "src", "config", "categories.json"), "utf8")).categories;
 
 const TOKEN = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || "";
 
@@ -48,29 +49,23 @@ try { ETAGS = JSON.parse(readFileSync(ETAG_FILE, "utf8")); } catch { ETAGS = {};
 function saveEtags() {
   try { writeFileSync(ETAG_FILE, JSON.stringify(ETAGS)); } catch { /* best-effort */ }
 }
-const PER_DOMAIN = 12; // projects to keep per domain
+const PER_DOMAIN = Number(process.env.SCRAPE_PER_DOMAIN) || 100; // projects to keep per domain
+const PAGE_SIZE = Number(process.env.SCRAPE_PAGE_SIZE) || 50; // GraphQL nodes/page (lower = lighter query, fewer 502s)
+const MAX_PAGES = 12;   // caps raw candidates (search API caps at 1000 anyway)
 
-/** Search queries per domain. Ordered — first match with enough results wins. */
-const DOMAINS = [
-  { slug: "nuxt",     query: "topic:nuxt",       minStars: 40,  exclude: ["nuxt/nuxt", "nuxt/framework"] },
-  { slug: "node",     query: "topic:nodejs",     minStars: 500, exclude: ["nodejs/node"] },
-  { slug: "next",     query: "topic:nextjs",     minStars: 200, exclude: ["vercel/next.js"] },
-  { slug: "ionic",    query: "topic:ionic",      minStars: 20,  exclude: ["ionic-team/ionic-framework", "ionic-team/ionic"] },
-  { slug: "statamic", query: "topic:statamic",   minStars: 3,   exclude: ["statamic/cms", "statamic/statamic"] },
-  { slug: "twill",    query: "twill laravel cms", minStars: 0,  exclude: ["area17/twill"] },
-];
+/** Search queries per domain — sourced from src/config/domain-catalog.json. */
+const catalog = JSON.parse(readFileSync(join(__dirname, "..", "src", "config", "domain-catalog.json"), "utf8"));
+const DOMAINS = catalog.map(({ slug, scrape }) => ({
+  slug,
+  query: scrape.query,
+  minStars: scrape.minStars,
+  exclude: scrape.exclude,
+}));
 
-const CATEGORIES = ["Dashboards", "E-commerce", "UI Kits", "Blogs", "DevTools", "Docs"];
+const CATEGORIES = CATEGORY_DEFS.map((c) => c.label);
 
-/** Keyword → category classification, checked in priority order. */
-const CLASSIFIERS = [
-  ["E-commerce", ["ecommerce", "e-commerce", "commerce", "shop", "store", "cart", "checkout", "stripe", "payment", "marketplace"]],
-  ["Dashboards", ["dashboard", "admin", "analytics", "panel", "backoffice", "back-office", "metrics", "monitoring"]],
-  ["Docs",       ["docs", "documentation", "handbook", "knowledge", "wiki"]],
-  ["Blogs",      ["blog", "cms", "content", "markdown", "mdx", "publishing", "newsletter", "portfolio"]],
-  ["UI Kits",    ["ui", "component", "components", "design-system", "design", "kit", "tailwind", "css", "theme", "template", "starter", "boilerplate"]],
-  ["DevTools",   ["cli", "devtool", "developer", "tool", "tools", "monitor", "lint", "build", "bundler", "framework", "api", "sdk", "plugin", "generator"]],
-];
+/** Keyword → category classification, checked in priority order (from categories.json). */
+const CLASSIFIERS = CATEGORY_DEFS.map((c) => [c.label, c.keywords]);
 
 function classify({ topics = [], description = "", name = "" }) {
   const hay = (topics.join(" ") + " " + (description || "") + " " + name).toLowerCase();
@@ -136,9 +131,11 @@ async function ghFetch(url, { method = "GET", body, cacheKey } = {}, attempt = 0
   // 304 → nothing changed, reuse cached payload for free (doesn't burn quota).
   if (res.status === 304 && cached) return cached.data;
 
-  // Retry only on genuine rate limits (permanent 403s must fail fast, not spin).
+  // Retry on genuine rate limits (permanent 403s fail fast) and transient 5xx
+  // server errors (GitHub returns sporadic 502/503 on heavy GraphQL queries).
   const isRateLimit = res.status === 429 || (res.status === 403 && (res.headers.get("x-ratelimit-remaining") === "0" || res.headers.has("retry-after")));
-  if (isRateLimit && attempt < 4) {
+  const isServerErr = res.status >= 500 && res.status < 600;
+  if ((isRateLimit || isServerErr) && attempt < 4) {
     const remaining = Number(res.headers.get("x-ratelimit-remaining"));
     const retryAfter = Number(res.headers.get("retry-after"));
     let waitMs;
@@ -222,6 +219,7 @@ function normalise(repo) {
     updated: relativeTime(repo.pushed_at),
     license: (repo.license && repo.license.spdx_id && repo.license.spdx_id !== "NOASSERTION") ? repo.license.spdx_id : "—",
     langs: null, // filled in below
+    versions: repo._versions || [],
     topics: repo.topics || [],
   };
 }
@@ -240,10 +238,11 @@ function selectRepos(domain, repos) {
 }
 
 const GQL_SEARCH = `
-query($q: String!, $n: Int!) {
+query($q: String!, $n: Int!, $after: String) {
   rateLimit { remaining resetAt cost }
-  search(query: $q, type: REPOSITORY, first: $n) {
+  search(query: $q, type: REPOSITORY, first: $n, after: $after) {
     repositoryCount
+    pageInfo { hasNextPage endCursor }
     nodes {
       ... on Repository {
         name nameWithOwner description stargazerCount homepageUrl url
@@ -255,6 +254,8 @@ query($q: String!, $n: Int!) {
         languages(first: 5, orderBy: { field: SIZE, direction: DESC }) {
           totalSize edges { size node { name } }
         }
+        releases(first: 5, orderBy: { field: CREATED_AT, direction: DESC }) { nodes { tagName url } }
+        refs(refPrefix: "refs/tags/", first: 5, orderBy: { field: TAG_COMMIT_DATE, direction: DESC }) { nodes { name } }
       }
     }
   }
@@ -269,6 +270,10 @@ function fromGraphQL(node) {
     .slice(0, 3);
   const drift = 100 - langs.reduce((s, l) => s + l.pct, 0);
   if (langs.length) langs[0].pct += drift;
+  // Latest versions: prefer published releases, fall back to raw tags.
+  const releases = (node.releases?.nodes || []).map((r) => ({ name: r.tagName, url: r.url }));
+  const tags = (node.refs?.nodes || []).map((t) => ({ name: t.name, url: `${node.url}/releases/tag/${encodeURIComponent(t.name)}` }));
+  const versions = (releases.length ? releases : tags).filter((v) => v.name).slice(0, 5);
   return {
     name: node.name,
     full_name: node.nameWithOwner,
@@ -284,23 +289,42 @@ function fromGraphQL(node) {
     language: node.primaryLanguage?.name,
     topics,
     _langs: langs.length ? langs : synthLangs(node.primaryLanguage?.name),
+    _versions: versions,
   };
 }
 
 async function scrapeDomainGraphQL(domain) {
   const gql = `${domain.query} sort:stars-desc`;
-  const data = await ghGraphQL(GQL_SEARCH, { q: gql, n: 50 });
-  const nodes = (data.search.nodes || []).map(fromGraphQL);
+  const nodes = [];
+  let after = null, total = 0;
+  // Page through 100-repo batches until enough survive filtering (or no more).
+  for (let page = 0; page < MAX_PAGES; page++) {
+    const data = await ghGraphQL(GQL_SEARCH, { q: gql, n: PAGE_SIZE, after });
+    total = data.search.repositoryCount;
+    nodes.push(...(data.search.nodes || []).map(fromGraphQL));
+    const pi = data.search.pageInfo;
+    if (!pi?.hasNextPage || selectRepos(domain, nodes).length >= PER_DOMAIN) break;
+    after = pi.endCursor;
+    await sleep(600); // gentle pacing to avoid secondary rate limits
+  }
   const items = selectRepos(domain, nodes);
   if (!items.length) throw new Error("no repositories matched");
   const projects = items.map((repo) => ({ ...normalise(repo), langs: repo._langs }));
-  return { total: data.search.repositoryCount, projects };
+  return { total, projects };
 }
 
 async function scrapeDomainREST(domain) {
   const q = encodeURIComponent(domain.query);
-  const search = await gh(`https://api.github.com/search/repositories?q=${q}&sort=stars&order=desc&per_page=50`, `search:${domain.slug}`);
-  const items = selectRepos(domain, search.items || []);
+  const raw = [];
+  let total = 0;
+  // Search API returns max 100/page and 1000 results total; page until enough.
+  for (let page = 1; page <= MAX_PAGES; page++) {
+    const search = await gh(`https://api.github.com/search/repositories?q=${q}&sort=stars&order=desc&per_page=100&page=${page}`, `search:${domain.slug}:${page}`);
+    total = search.total_count;
+    raw.push(...(search.items || []));
+    if ((search.items || []).length < 100 || selectRepos(domain, raw).length >= PER_DOMAIN) break;
+  }
+  const items = selectRepos(domain, raw);
   if (!items.length) throw new Error("no repositories matched");
 
   const projects = [];
@@ -309,7 +333,7 @@ async function scrapeDomainREST(domain) {
     p.langs = await languagesFor(repo);
     projects.push(p);
   }
-  return { total: search.total_count, projects };
+  return { total, projects };
 }
 
 /** Use GraphQL when authenticated (far fewer requests); REST otherwise. */
@@ -324,7 +348,11 @@ async function main() {
   console.log(`MadeWith… scraper — ${mode}\n`);
   let ok = 0;
 
-  for (const domain of DOMAINS) {
+  // Optional filter: SCRAPE_ONLY=next,node scrapes just those domains.
+  const only = (process.env.SCRAPE_ONLY || "").split(",").map((s) => s.trim()).filter(Boolean);
+  const domains = only.length ? DOMAINS.filter((d) => only.includes(d.slug)) : DOMAINS;
+
+  for (const domain of domains) {
     const out = join(DATA_DIR, `${domain.slug}.json`);
     try {
       const { total, projects } = await scrapeDomain(domain);
@@ -351,7 +379,7 @@ async function main() {
     }
   }
   saveEtags();
-  console.log(`\nDone. ${ok}/${DOMAINS.length} domains scraped fresh.`);
+  console.log(`\nDone. ${ok}/${domains.length} domains scraped fresh.`);
 }
 
 main().catch((e) => { console.error(e); process.exit(1); });

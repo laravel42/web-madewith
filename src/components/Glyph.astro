@@ -1,0 +1,135 @@
+---
+/** Simple stroke icons for domain groups and catalog categories. */
+interface Props { name: string; size?: number; color?: string; }
+const { name, size = 20, color = "currentColor" } = Astro.props;
+const s = size;
+---
+
+{name === "frontend" && (
+  <svg width={s} height={s} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <rect x="4" y="5" width="16" height="14" rx="2" stroke={color} stroke-width="2"/>
+    <path d="M4 9h16M9 5v14" stroke={color} stroke-width="2"/>
+  </svg>
+)}
+{name === "frameworks" && (
+  <svg width={s} height={s} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M12 3 4 8v8l8 5 8-5V8l-8-5Z" stroke={color} stroke-width="2" stroke-linejoin="round"/>
+    <path d="M12 12 4 8M12 12l8-4M12 12v9" stroke={color} stroke-width="2" stroke-linejoin="round"/>
+  </svg>
+)}
+{name === "backend" && (
+  <svg width={s} height={s} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <rect x="4" y="4" width="16" height="6" rx="1.5" stroke={color} stroke-width="2"/>
+    <rect x="4" y="14" width="16" height="6" rx="1.5" stroke={color} stroke-width="2"/>
+    <circle cx="8" cy="7" r="1" fill={color}/>
+    <circle cx="8" cy="17" r="1" fill={color}/>
+    <path d="M12 7h5M12 17h5" stroke={color} stroke-width="2" stroke-linecap="round"/>
+  </svg>
+)}
+{name === "cms" && (
+  <svg width={s} height={s} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M6 4h12a2 2 0 0 1 2 2v14l-4-3-4 3-4-3-4 3V6a2 2 0 0 1 2-2Z" stroke={color} stroke-width="2" stroke-linejoin="round"/>
+    <path d="M9 9h6M9 13h4" stroke={color} stroke-width="2" stroke-linecap="round"/>
+  </svg>
+)}
+{name === "commerce" && (
+  <svg width={s} height={s} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M6 6h15l-1.5 9H7.5L6 6Z" stroke={color} stroke-width="2" stroke-linejoin="round"/>
+    <path d="M6 6 5 3H2" stroke={color} stroke-width="2" stroke-linecap="round"/>
+    <circle cx="9" cy="19" r="1.5" fill={color}/>
+    <circle cx="17" cy="19" r="1.5" fill={color}/>
+  </svg>
+)}
+{name === "Dashboards" && (
+  <svg width={s} height={s} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <rect x="3" y="3" width="8" height="8" rx="1.5" stroke={color} stroke-width="2"/>
+    <rect x="13" y="3" width="8" height="5" rx="1.5" stroke={color} stroke-width="2"/>
+    <rect x="13" y="10" width="8" height="11" rx="1.5" stroke={color} stroke-width="2"/>
+    <rect x="3" y="13" width="8" height="8" rx="1.5" stroke={color} stroke-width="2"/>
+  </svg>
+)}
+{name === "E-commerce" && (
+  <svg width={s} height={s} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M4 7h16l-2 11H6L4 7Z" stroke={color} stroke-width="2" stroke-linejoin="round"/>
+    <path d="M9 11h6" stroke={color} stroke-width="2" stroke-linecap="round"/>
+    <path d="M8 7V5a4 4 0 0 1 8 0v2" stroke={color} stroke-width="2"/>
+  </svg>
+)}
+{name === "UI Kits" && (
+  <svg width={s} height={s} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <rect x="3" y="3" width="7" height="7" rx="1.5" stroke={color} stroke-width="2"/>
+    <rect x="14" y="3" width="7" height="7" rx="1.5" stroke={color} stroke-width="2"/>
+    <rect x="3" y="14" width="7" height="7" rx="1.5" stroke={color} stroke-width="2"/>
+    <rect x="14" y="14" width="7" height="7" rx="1.5" stroke={color} stroke-width="2"/>
+  </svg>
+)}
+{name === "Blogs" && (
+  <svg width={s} height={s} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M6 4h12v16H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Z" stroke={color} stroke-width="2"/>
+    <path d="M8 8h8M8 12h8M8 16h5" stroke={color} stroke-width="2" stroke-linecap="round"/>
+  </svg>
+)}
+{name === "DevTools" && (
+  <svg width={s} height={s} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="m14 4 6 6-8 8H6v-6l8-8Z" stroke={color} stroke-width="2" stroke-linejoin="round"/>
+    <path d="M12 6l2 2" stroke={color} stroke-width="2"/>
+  </svg>
+)}
+{name === "Docs" && (
+  <svg width={s} height={s} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M5 4h10l4 4v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1Z" stroke={color} stroke-width="2" stroke-linejoin="round"/>
+    <path d="M15 4v4h4M8 12h8M8 16h6" stroke={color} stroke-width="2" stroke-linecap="round"/>
+  </svg>
+)}
+{name === "Mobile" && (
+  <svg width={s} height={s} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <rect x="7" y="3" width="10" height="18" rx="2" stroke={color} stroke-width="2"/>
+    <path d="M11 18h2" stroke={color} stroke-width="2" stroke-linecap="round"/>
+  </svg>
+)}
+{name === "AI & ML" && (
+  <svg width={s} height={s} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1" stroke={color} stroke-width="2" stroke-linecap="round"/>
+    <circle cx="12" cy="12" r="4" stroke={color} stroke-width="2"/>
+  </svg>
+)}
+{name === "Authentication" && (
+  <svg width={s} height={s} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <rect x="5" y="11" width="14" height="10" rx="2" stroke={color} stroke-width="2"/>
+    <path d="M8 11V8a4 4 0 0 1 8 0v3" stroke={color} stroke-width="2"/>
+    <circle cx="12" cy="16" r="1.5" fill={color}/>
+  </svg>
+)}
+{name === "SaaS" && (
+  <svg width={s} height={s} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M4 14a4 4 0 0 1 4-4h8a4 4 0 0 1 0 8H8a4 4 0 0 1-4-4Z" stroke={color} stroke-width="2"/>
+    <path d="M8 6h8M8 18h5" stroke={color} stroke-width="2" stroke-linecap="round"/>
+  </svg>
+)}
+{name === "Real-time" && (
+  <svg width={s} height={s} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M4 12a8 8 0 0 1 16 0" stroke={color} stroke-width="2" stroke-linecap="round"/>
+    <path d="M12 12v5M9 17h6" stroke={color} stroke-width="2" stroke-linecap="round"/>
+    <circle cx="12" cy="12" r="1.5" fill={color}/>
+  </svg>
+)}
+{name === "Testing" && (
+  <svg width={s} height={s} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M9 11l2 2 4-4" stroke={color} stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="4" y="4" width="16" height="16" rx="2" stroke={color} stroke-width="2"/>
+  </svg>
+)}
+{name === "APIs" && (
+  <svg width={s} height={s} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <circle cx="6" cy="12" r="2" stroke={color} stroke-width="2"/>
+    <circle cx="18" cy="6" r="2" stroke={color} stroke-width="2"/>
+    <circle cx="18" cy="18" r="2" stroke={color} stroke-width="2"/>
+    <path d="M8 11l8-4M8 13l8 4" stroke={color} stroke-width="2"/>
+  </svg>
+)}
+{name === "Templates" && (
+  <svg width={s} height={s} viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <rect x="3" y="5" width="18" height="14" rx="2" stroke={color} stroke-width="2"/>
+    <path d="M3 10h18M8 5v14" stroke={color} stroke-width="2"/>
+  </svg>
+)}

@@ -15,6 +15,7 @@ export function kvEtagStore(kv: KVNamespace): EtagStore {
 }
 
 const PUBLISHED = (slug: string) => `data/${slug}.json`;
+const CONFIG = (slug: string) => `config/${slug}.json`;
 const RAW = (slug: string) => `raw/${slug}.json`;
 const SNAPSHOT = (slug: string, iso: string) => `snapshots/${slug}/${iso}.json`;
 const JSON_META = { contentType: "application/json" };
@@ -42,5 +43,14 @@ export async function writePublished(r2: R2Bucket, dataset: DomainDataset): Prom
 
 export async function readDataset(r2: R2Bucket, slug: string): Promise<string | null> {
   const obj = await r2.get(PUBLISHED(slug));
+  return obj ? obj.text() : null;
+}
+
+export async function writeDomainConfig(r2: R2Bucket, slug: string, config: unknown): Promise<void> {
+  await r2.put(CONFIG(slug), JSON.stringify(config), { httpMetadata: JSON_META });
+}
+
+export async function readDomainConfig(r2: R2Bucket, slug: string): Promise<string | null> {
+  const obj = await r2.get(CONFIG(slug));
   return obj ? obj.text() : null;
 }

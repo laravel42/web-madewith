@@ -1,13 +1,16 @@
 ---
 import type { Theme } from "../../config/domains";
+import { heroSubcopy } from "../../config/domain-settings";
 import TagRow from "../TagRow.astro";
-interface Props { theme: Theme; total: string; }
-const { theme, total } = Astro.props;
+import type { CategoryFilter } from "../../lib/catalog";
+interface Props { theme: Theme; total: string; categories: CategoryFilter[]; }
+const { theme, total, categories } = Astro.props;
+const subcopy = heroSubcopy(theme, total);
 ---
 <div style="max-width:1200px; margin:0 auto; padding:60px 32px 30px;">
   <div style={`font-size:13px; font-weight:600; color:${theme.accent}; letter-spacing:.05em; text-transform:uppercase; margin-bottom:14px;`}>{theme.eyebrow}</div>
-  <div class="disp" style="font-size:52px; font-weight:800; letter-spacing:-0.03em; line-height:1.03; max-width:780px;">{theme.heroTitle}</div>
-  <div style="font-size:18px; color:#5c665f; margin-top:18px; max-width:640px; line-height:1.55;">A hand-curated, daily-updated gallery of open-source projects. Browse {total} repos, ranked by GitHub stars — and find your next stack.</div>
+  <div class="disp" style="font-size:clamp(36px, 7.5vw, 52px); font-weight:800; letter-spacing:-0.03em; line-height:1.03; max-width:780px;">{theme.heroTitle}</div>
+  <div style="font-size:18px; color:#5c665f; margin-top:18px; max-width:640px; line-height:1.55;">{subcopy}</div>
 
   <div style="display:flex; gap:12px; margin-top:32px; max-width:700px;">
     <div style="flex:1; display:flex; align-items:center; gap:10px; background:#fff; border:1px solid #e6eae8; border-radius:10px; padding:13px 16px;">
@@ -20,5 +23,5 @@ const { theme, total } = Astro.props;
     </div>
   </div>
 
-  <div style="margin-top:22px;"><TagRow theme={theme} gap={9} /></div>
+  <div style="margin-top:22px;"><TagRow theme={theme} gap={9} categories={categories} /></div>
 </div>

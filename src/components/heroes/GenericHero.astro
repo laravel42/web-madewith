@@ -1,0 +1,27 @@
+---
+import type { Theme } from "../../config/domains";
+import { heroSubcopy } from "../../config/domain-settings";
+import TagRow from "../TagRow.astro";
+import type { CategoryFilter } from "../../lib/catalog";
+interface Props { theme: Theme; total: string; categories: CategoryFilter[]; }
+const { theme, total, categories } = Astro.props;
+const subcopy = heroSubcopy(theme, total);
+---
+<div style="max-width:1140px; margin:22px auto 8px; padding:44px 46px; border-radius:var(--radius); background:color-mix(in srgb, var(--accent) 7%, #fff); border:1px solid color-mix(in srgb, var(--accent) 22%, #e8ecea);">
+  <div style="font-size:13px; font-weight:600; color:var(--accent); letter-spacing:.05em; text-transform:uppercase; margin-bottom:14px;">{theme.eyebrow}</div>
+  <div class="disp" style="font-size:clamp(32px, 7vw, 44px); font-weight:800; letter-spacing:-0.03em; line-height:1.06; max-width:720px;">{theme.heroTitle}</div>
+  <div style="font-size:17px; color:#5c665f; margin-top:16px; max-width:560px; line-height:1.55;">{subcopy}</div>
+
+  <div style="display:flex; gap:10px; margin-top:28px; max-width:560px;">
+    <div style="flex:1; display:flex; align-items:center; gap:10px; background:#fff; border:1px solid #e0e5e2; border-radius:var(--radius); padding:13px 16px;">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#8b9690" stroke-width="2"/><path d="m20 20-3.5-3.5" stroke="#8b9690" stroke-width="2" stroke-linecap="round"/></svg>
+      <input data-role="search" aria-label="Search projects, authors, or tags" placeholder="Search projects, authors, tags…" style="border:none; outline:none; background:transparent; font-size:15px; width:100%; color:#16201b;"/>
+    </div>
+    <div data-role="sort" style="display:flex; align-items:center; gap:8px; background:var(--accent); border-radius:var(--radius); padding:13px 18px; font-size:14px; font-weight:700; color:var(--accentInk); cursor:pointer; white-space:nowrap;">
+      <span data-sort-label data-label-stars="Most stars" data-label-name="A–Z">Most stars</span>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+  </div>
+
+  <div style="margin-top:20px;"><TagRow theme={theme} categories={categories} /></div>
+</div>
