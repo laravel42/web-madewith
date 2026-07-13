@@ -2,9 +2,9 @@
 import type { Theme } from "../config/domains";
 import type { Project } from "../lib/catalog";
 import { formatStars } from "../lib/catalog";
+import { projectDisplayLong, projectDisplayName, projectPreviewExcerpt } from "../lib/preview-text";
 import InstallBox from "./InstallBox.astro";
-import ProjectPreviewImage from "./ProjectPreviewImage.astro";
-import ProjectShotWireframe from "./ProjectShotWireframe.astro";
+import ProjectShot from "./ProjectShot.astro";
 
 interface Props { theme: Theme; project: Project; related: Project[]; }
 const { theme, project, related } = Astro.props;
@@ -12,6 +12,11 @@ const base = `/${theme.slug}`;
 const radius = `${theme.radius}px`;
 const stars = formatStars(project.stars || 0);
 const initial = (project.author || "").charAt(0).toUpperCase();
+const displayName = projectDisplayName(project);
+const displayDesc = projectPreviewExcerpt(project);
+const displayLong1 = projectDisplayLong(project, "long1");
+const displayLong2 = projectDisplayLong(project, "long2");
+const relatedCards = related.map((p) => ({ project: p, name: projectDisplayName(p) }));
 const isTerminal = theme.variant === "terminal";
 const editorial = theme.editorial;
 const btnRadius = editorial ? "2px" : isTerminal ? "8px" : "10px";
@@ -42,8 +47,8 @@ const previewVariant = isTerminal ? "terminal" : editorial ? "editorial" : "defa
     <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:30px; flex-wrap:wrap;">
       <div style="flex:1; min-width:300px;">
         <span style="font-size:11px; color:#5c665f;">[{project.category}]</span>
-        <div class="disp" style="font-size:40px; font-weight:700; letter-spacing:-0.02em; margin-top:10px; line-height:1.05; color:#f1f6f2;">{project.name}</div>
-        <div style="font-size:15px; color:#8b948d; margin-top:12px; line-height:1.6; max-width:600px;">{project.desc}</div>
+        <div class="disp" style="font-size:40px; font-weight:700; letter-spacing:-0.02em; margin-top:10px; line-height:1.05; color:#f1f6f2;">{displayName}</div>
+        <div style="font-size:15px; color:#8b948d; margin-top:12px; line-height:1.6; max-width:600px;">{displayDesc}</div>
         <div style="display:flex; align-items:center; gap:18px; margin-top:20px;">
           <div style="display:flex; align-items:center; gap:9px;">
             <span style={`width:36px; height:36px; border-radius:7px; background:color-mix(in srgb, ${theme.accent} 22%, #0c0f0e); color:${theme.accent}; border:1px solid ${theme.accent}; font-size:14px; font-weight:700; display:flex; align-items:center; justify-content:center; overflow:hidden;`}><img src={project.avatar} alt={project.author} width="36" height="36" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/></span>
@@ -64,18 +69,15 @@ const previewVariant = isTerminal ? "terminal" : editorial ? "editorial" : "defa
         <span style="font-size:11px; color:#3f4a43; margin-left:8px;">{project.slug} — preview</span>
       </div>
       <div style="position:relative; min-height:220px;">
-        <ProjectShotWireframe theme={theme} size="detail" />
-        <div style="position:absolute; inset:0; z-index:1;">
-          <ProjectPreviewImage fullName={project.fullName} name={project.name} variant={previewVariant} layout="auto" withWireframe />
-        </div>
+        <ProjectShot theme={theme} fullName={project.fullName} name={project.name} size="detail" variant={previewVariant} layout="auto" />
       </div>
     </div>
 
     <div class="mw-split" style="display:grid; grid-template-columns:1.6fr 1fr; gap:40px; margin-top:38px;">
       <div>
         <div class="disp" style="font-size:21px; font-weight:600; color:#f1f6f2; margin-bottom:14px;"># README</div>
-        <div style="font-size:14px; color:#a3ada7; line-height:1.75;">{project.long1}</div>
-        <div style="font-size:14px; color:#a3ada7; line-height:1.75; margin-top:14px;">{project.long2}</div>
+        <div style="font-size:14px; color:#a3ada7; line-height:1.75;">{displayLong1}</div>
+        <div style="font-size:14px; color:#a3ada7; line-height:1.75; margin-top:14px;">{displayLong2}</div>
         <div class="disp" style="font-size:17px; font-weight:600; color:#f1f6f2; margin:28px 0 12px;"># tags</div>
         <div style="display:flex; gap:8px; flex-wrap:wrap;">
           {project.stack.map((s) => <a href={`${base}/?tag=${encodeURIComponent(s)}`} class="tag-link" style={`font-size:11px; font-weight:600; color:${theme.accent}; background:color-mix(in srgb, ${theme.accent} 16%, #0c0f0e); border:1px solid color-mix(in srgb, ${theme.accent} 42%, #0c0f0e); padding:4px 10px; border-radius:999px;`}>{s}</a>)}
@@ -111,16 +113,13 @@ const previewVariant = isTerminal ? "terminal" : editorial ? "editorial" : "defa
 
     <div class="disp" style="font-size:21px; font-weight:600; color:#f1f6f2; margin:44px 0 18px;">more {theme.techName} repos</div>
     <div class="mw-grid3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px;">
-      {related.map((p) => (
+      {relatedCards.map(({ project: p, name }) => (
         <a href={`${base}/project/${p.slug}`} class="card">
           <div style="aspect-ratio:2 / 1; background:#0e120f; border-bottom:1px solid #1f2622; overflow:hidden; position:relative;">
-            <ProjectShotWireframe theme={theme} size="sm" />
-            <div style="position:absolute; inset:0; z-index:1;">
-              <ProjectPreviewImage fullName={p.fullName} name={p.name} variant={previewVariant} withWireframe />
-            </div>
+            <ProjectShot theme={theme} fullName={p.fullName} name={p.name} size="sm" variant={previewVariant} />
           </div>
           <div style="padding:13px 15px 15px;">
-            <div class="disp" style="font-weight:600; font-size:14px; color:#e8efe9; margin-bottom:5px;">{p.name}</div>
+            <div class="disp" style="font-weight:600; font-size:14px; color:#e8efe9; margin-bottom:5px;">{name}</div>
             <div style="display:flex; align-items:center; justify-content:space-between; font-size:11.5px; color:#5c665f; margin-top:8px;"><span>@{p.author}</span><span style={`color:${theme.accent};`}>★ {formatStars(p.stars)}</span></div>
           </div>
         </a>
@@ -135,8 +134,8 @@ const previewVariant = isTerminal ? "terminal" : editorial ? "editorial" : "defa
     <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:30px; flex-wrap:wrap;">
       <div style="flex:1; min-width:300px;">
         <span style={`font-size:11px; font-weight:600; color:${theme.accent}; background:${soft}; padding:3px 9px; border-radius:20px;`}>{project.category}</span>
-        <div class="disp" style="font-size:42px; font-weight:800; letter-spacing:-0.03em; margin-top:14px; line-height:1.05;">{project.name}</div>
-        <div style={`font-size:17px; color:${editorial ? "#a1a1a1" : "#5c665f"}; margin-top:12px; line-height:1.55; max-width:600px;`}>{project.desc}</div>
+        <div class="disp" style="font-size:42px; font-weight:800; letter-spacing:-0.03em; margin-top:14px; line-height:1.05;">{displayName}</div>
+        <div style={`font-size:17px; color:${editorial ? "#a1a1a1" : "#5c665f"}; margin-top:12px; line-height:1.55; max-width:600px;`}>{displayDesc}</div>
         <div style="display:flex; align-items:center; gap:18px; margin-top:20px;">
           <div style="display:flex; align-items:center; gap:9px;">
             <span style={`width:38px; height:38px; border-radius:50%; overflow:hidden; background:${theme.accent}; display:flex; align-items:center; justify-content:center;`}><img src={project.avatar} alt={project.author} width="38" height="38" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/></span>
@@ -157,18 +156,15 @@ const previewVariant = isTerminal ? "terminal" : editorial ? "editorial" : "defa
     <div style={`margin-top:30px; background:#f4f6f5; border:1px solid #eef0ef; border-radius:${radius}; overflow:hidden;`}>
       <div style="display:flex; gap:6px; padding:16px 18px; border-bottom:1px solid #eef0ef;"><span style="width:11px;height:11px;border-radius:50%;background:#e0e5e2;"></span><span style="width:11px;height:11px;border-radius:50%;background:#e0e5e2;"></span><span style="width:11px;height:11px;border-radius:50%;background:#e0e5e2;"></span></div>
       <div style="position:relative; min-height:280px; background:#f8faf9;">
-        <ProjectShotWireframe theme={theme} size="detail" />
-        <div style="position:absolute; inset:0; z-index:1;">
-          <ProjectPreviewImage fullName={project.fullName} name={project.name} variant={previewVariant} layout="auto" withWireframe />
-        </div>
+        <ProjectShot theme={theme} fullName={project.fullName} name={project.name} size="detail" variant={previewVariant} layout="auto" />
       </div>
     </div>
 
     <div class="mw-split" style="display:grid; grid-template-columns:1.6fr 1fr; gap:40px; margin-top:38px;">
       <div>
         <div class="disp" style="font-size:22px; font-weight:700; margin-bottom:14px;">About this project</div>
-        <div style={`font-size:15.5px; color:${editorial ? "#c4c4c4" : "#4a554f"}; line-height:1.7;`}>{project.long1}</div>
-        <div style={`font-size:15.5px; color:${editorial ? "#c4c4c4" : "#4a554f"}; line-height:1.7; margin-top:14px;`}>{project.long2}</div>
+        <div style={`font-size:15.5px; color:${editorial ? "#c4c4c4" : "#4a554f"}; line-height:1.7;`}>{displayLong1}</div>
+        <div style={`font-size:15.5px; color:${editorial ? "#c4c4c4" : "#4a554f"}; line-height:1.7; margin-top:14px;`}>{displayLong2}</div>
         <div class="disp" style="font-size:18px; font-weight:700; margin:28px 0 12px;">Tags</div>
         <div style="display:flex; gap:8px; flex-wrap:wrap;">
           {project.stack.map((s) => <a href={`${base}/?tag=${encodeURIComponent(s)}`} class="tag-link" style={`font-size:11.5px; font-weight:600; color:color-mix(in srgb, ${chipColor} 58%, #1a221d); background:color-mix(in srgb, ${chipColor} 14%, #fff); border:1px solid color-mix(in srgb, ${chipColor} 30%, #fff); padding:4px 10px; border-radius:999px;`}>{s}</a>)}
@@ -204,16 +200,13 @@ const previewVariant = isTerminal ? "terminal" : editorial ? "editorial" : "defa
 
     <div class="disp" style="font-size:22px; font-weight:700; margin:44px 0 18px;">More {theme.techName} projects</div>
     <div class="mw-grid3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
-      {related.map((p) => (
+      {relatedCards.map(({ project: p, name }) => (
         <a href={`${base}/project/${p.slug}`} class="card">
           <div style="aspect-ratio:2 / 1; background:#f4f6f5; border-bottom:1px solid #eef0ef; overflow:hidden; position:relative;">
-            <ProjectShotWireframe theme={theme} size="sm" />
-            <div style="position:absolute; inset:0; z-index:1;">
-              <ProjectPreviewImage fullName={p.fullName} name={p.name} variant={previewVariant} withWireframe />
-            </div>
+            <ProjectShot theme={theme} fullName={p.fullName} name={p.name} size="sm" variant={previewVariant} />
           </div>
           <div style="padding:13px 15px 15px;">
-            <div class="disp" style="font-weight:700; font-size:15px; margin-bottom:5px;">{p.name}</div>
+            <div class="disp" style="font-weight:700; font-size:15px; margin-bottom:5px;">{name}</div>
             <div style="display:flex; align-items:center; justify-content:space-between; font-size:12.5px; color:#8b9690; margin-top:8px;"><span>{p.author}</span><span style="font-weight:600; color:#3a443f;">★ {formatStars(p.stars)}</span></div>
           </div>
         </a>

@@ -48,6 +48,7 @@ const imgStyle =
     loading="lazy"
     decoding="async"
     style={imgStyle}
+    onload="this.closest('[data-role=project-shot]')?.setAttribute('data-preview-loaded','')"
     onerror="this.remove()"
   />
 </div>

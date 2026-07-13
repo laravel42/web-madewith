@@ -1,0 +1,74 @@
+---
+import type { Theme } from "../config/domains";
+import ProjectPreviewImage from "./ProjectPreviewImage.astro";
+import ProjectShotWireframe from "./ProjectShotWireframe.astro";
+
+interface Props {
+  theme: Theme;
+  fullName: string;
+  name: string;
+  size?: "card" | "sm" | "detail";
+  variant?: "terminal" | "editorial" | "default";
+  layout?: "fill" | "auto";
+}
+
+const { theme, fullName, name, size = "card", variant = "default", layout = "fill" } = Astro.props;
+const wireframeVariant = variant === "editorial" ? "editorial" : "default";
+const autoLayout = layout === "auto";
+---
+
+<div class:list={["project-shot", autoLayout && "project-shot-auto"]} data-role="project-shot">
+  <div class="project-shot-wireframe" data-role="shot-wireframe">
+    <ProjectShotWireframe theme={theme} size={size} variant={wireframeVariant} />
+  </div>
+  <div class="project-shot-image">
+    <ProjectPreviewImage fullName={fullName} name={name} variant={variant} layout={layout} withWireframe />
+  </div>
+</div>
+
+<style>
+  .project-shot {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .project-shot-wireframe {
+    position: absolute;
+    inset: 0;
+  }
+
+  .project-shot-image {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  .project-shot[data-preview-loaded] .project-shot-wireframe {
+    display: none;
+  }
+
+  .project-shot-auto {
+    height: auto;
+    min-height: 220px;
+  }
+
+  .project-shot-auto .project-shot-wireframe {
+    position: relative;
+    inset: auto;
+  }
+</style>
+
+<script>
+  function markLoadedShots(root: ParentNode = document) {
+    root.querySelectorAll<HTMLImageElement>('[data-role="project-shot"] img').forEach((img) => {
+      if (img.complete && img.naturalWidth > 0) {
+        img.closest('[data-role="project-shot"]')?.setAttribute("data-preview-loaded", "");
+      }
+    });
+  }
+
+  markLoadedShots();
+  document.addEventListener("astro:page-load", () => markLoadedShots());
+</script>
