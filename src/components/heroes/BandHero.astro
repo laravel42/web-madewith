@@ -22,7 +22,7 @@ const radius = dark ? "24px" : "28px";
   style={`max-width:1140px; margin:22px auto 8px; padding:${pad}; border-radius:${radius}; background:${bandBg}; border:${bandBorder};`}
 >
   <div style={`font-size:13px; font-weight:700; color:${eyebrowColor}; letter-spacing:.05em; text-transform:uppercase; margin-bottom:14px;`}>{theme.eyebrow}</div>
-  <div class="disp" style={`font-size:clamp(32px, 7vw, ${dark ? "52px" : "46px"}); font-weight:${theme.heroBandDark && theme.slug === "statamic" ? 400 : 800}; letter-spacing:-0.03em; line-height:1.04; max-width:820px;${titleColor ? ` color:${titleColor};` : ""}`}>{theme.heroTitle}</div>
+  <h1 class="disp" style={`margin:0; font-size:clamp(32px, 7vw, ${dark ? "52px" : "46px"}); font-weight:${theme.heroBandDark && theme.slug === "statamic" ? 400 : 800}; letter-spacing:-0.03em; line-height:1.04; max-width:820px;${titleColor ? ` color:${titleColor};` : ""}`}>{theme.heroTitle}</h1>
   <div style={`font-size:17px; color:${subColor}; margin-top:16px; max-width:560px; line-height:1.55;`}>{subcopy}</div>
 
   <div style="display:flex; gap:10px; margin-top:28px; max-width:640px;">
