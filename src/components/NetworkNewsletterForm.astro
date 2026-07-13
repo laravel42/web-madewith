@@ -23,12 +23,13 @@
 </div>
 
 <script>
+  import { subscribeNewsletter } from "../lib/newsletter";
+
   function initNewsletter() {
     const form = document.querySelector<HTMLFormElement>('[data-role="newsletter-form"]');
     const success = document.querySelector<HTMLElement>('[data-role="newsletter-success"]');
     if (!form || !success || form.dataset.newsletterInitialized) return;
     form.dataset.newsletterInitialized = "true";
-    const apiBase = import.meta.env.PUBLIC_API_BASE;
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -36,18 +37,12 @@
       const email = (form.querySelector('[name="email"]') as HTMLInputElement | null)?.value.trim() || "";
       if (!email) return;
 
-      if (!apiBase) { form.hidden = true; success.hidden = false; window.scrollTo({ top: 0 }); return; }
-
       if (btn) { btn.disabled = true; btn.dataset.label = btn.textContent || ""; btn.textContent = "Subscribing…"; }
       try {
-        const res = await fetch(`${apiBase.replace(/\/$/, "")}/newsletter`, {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify({ email, scope: "network" }),
-        });
-        const data = await res.json().catch(() => ({}));
-        if (!res.ok) throw new Error((data as any).error || `Subscription failed (${res.status})`);
-        form.hidden = true; success.hidden = false; window.scrollTo({ top: 0 });
+        await subscribeNewsletter({ email, scope: "network" });
+        form.hidden = true;
+        success.hidden = false;
+        window.scrollTo({ top: 0 });
       } catch (err) {
         alert((err as Error).message);
         if (btn) { btn.disabled = false; btn.textContent = btn.dataset.label || "Subscribe"; }

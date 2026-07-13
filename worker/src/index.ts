@@ -7,6 +7,7 @@
  *      GET  /health
  *      GET  /data/<slug>.json          current published dataset (build hydration)
  *      POST /submit                    public project submission (validated, rate-limited)
+ *      POST /newsletter                public newsletter signup (validated, rate-limited)
  *      /admin/api/*                     Cloudflare Access-gated admin API
  *      POST /refresh                    legacy secret-gated full refresh
  *
@@ -21,6 +22,7 @@ import { scrapeAndPublish } from "./publish";
 import { kvEtagStore, readDataset, readDomainConfig } from "./storage";
 import { handleAdmin } from "./admin";
 import { handleSubmit } from "./submit";
+import { handleNewsletter } from "./newsletter";
 import { json, triggerDeploy } from "./util";
 
 async function refreshAll(env: Env): Promise<Array<{ slug: string; published?: number; total?: number; error?: string }>> {
@@ -94,6 +96,10 @@ export default {
 
     if (path === "/submit" && req.method === "POST") {
       return handleSubmit(req, new Db(env.DB), env.STATE, new Date().toISOString());
+    }
+
+    if (path === "/newsletter" && req.method === "POST") {
+      return handleNewsletter(req, new Db(env.DB), env.STATE, new Date().toISOString());
     }
 
     if (path === "/admin/api" || path.startsWith("/admin/api/")) {

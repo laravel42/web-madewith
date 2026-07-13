@@ -1,0 +1,316 @@
+---
+---
+
+<dialog class="subscribe-modal" data-role="subscribe-modal" aria-labelledby="subscribe-modal-title">
+  <div class="subscribe-modal-panel" role="document">
+    <button type="button" class="subscribe-modal-close" data-action="close-subscribe" aria-label="Close">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+
+    <div data-role="subscribe-modal-form">
+      <p class="subscribe-modal-eyebrow">Newsletter</p>
+      <h2 id="subscribe-modal-title" class="disp subscribe-modal-title">Stay in the loop</h2>
+      <p class="subscribe-modal-copy">
+        Get a digest of standout open-source projects across the MadeWithWhat network when galleries refresh — no spam, unsubscribe any time.
+      </p>
+
+      <form data-role="subscribe-modal-submit" class="subscribe-modal-fields" novalidate>
+        <label class="subscribe-modal-label" for="subscribe-modal-email">Email address</label>
+        <input
+          id="subscribe-modal-email"
+          name="email"
+          type="email"
+          required
+          autocomplete="email"
+          placeholder="you@example.com"
+          class="subscribe-modal-input"
+        />
+        <p class="subscribe-modal-error" data-role="subscribe-modal-error" hidden></p>
+        <button type="submit" class="subscribe-modal-submit">Subscribe</button>
+      </form>
+    </div>
+
+    <div data-role="subscribe-modal-success" class="subscribe-modal-success" hidden>
+      <div class="subscribe-modal-success-icon" aria-hidden="true">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
+          <path d="m5 13 4 4 10-10" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h2 class="disp subscribe-modal-title">You're subscribed!</h2>
+      <p class="subscribe-modal-copy">We'll send a digest when galleries refresh across the network.</p>
+      <button type="button" class="subscribe-modal-submit" data-action="close-subscribe">Done</button>
+    </div>
+  </div>
+</dialog>
+
+<style>
+  .subscribe-modal {
+    border: none;
+    padding: 0;
+    margin: auto;
+    max-width: min(460px, calc(100vw - 32px));
+    width: min(460px, calc(100vw - 32px));
+    background: transparent;
+    overflow: hidden;
+  }
+
+  .subscribe-modal::backdrop {
+    background: rgba(18, 22, 26, 0.52);
+    backdrop-filter: blur(4px);
+  }
+
+  .subscribe-modal-panel {
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    background: #fff;
+    border: 1px solid #e6e8eb;
+    border-radius: 18px;
+    padding: 28px 28px 24px;
+    box-shadow: 0 24px 60px rgba(20, 30, 50, 0.18);
+    overflow: hidden;
+  }
+
+  .subscribe-modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+    border: none;
+    border-radius: 10px;
+    background: #f3f4f6;
+    color: #5c6169;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .subscribe-modal-close:hover {
+    background: #e9ebee;
+    color: #12161a;
+  }
+
+  .subscribe-modal-eyebrow {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #2f6feb;
+    margin: 0 0 10px;
+  }
+
+  .subscribe-modal-title {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0;
+    color: #12161a;
+  }
+
+  .subscribe-modal-copy {
+    font-size: 15px;
+    line-height: 1.55;
+    color: #5c6169;
+    margin: 10px 0 0;
+  }
+
+  .subscribe-modal-fields {
+    margin-top: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .subscribe-modal-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #3a4048;
+  }
+
+  .subscribe-modal-input {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    border: 1px solid #e0e5e2;
+    border-radius: 10px;
+    padding: 13px 15px;
+    font-size: 15px;
+    outline: none;
+    background: #fff;
+    color: #12161a;
+    font-family: inherit;
+  }
+
+  .subscribe-modal-input:focus {
+    border-color: #2f6feb;
+    box-shadow: 0 0 0 3px color-mix(in srgb, #2f6feb 18%, transparent);
+  }
+
+  .subscribe-modal-error {
+    margin: 0;
+    font-size: 13px;
+    color: #b42318;
+  }
+
+  .subscribe-modal-submit {
+    box-sizing: border-box;
+    margin-top: 4px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 15px;
+    font-weight: 700;
+    font-family: inherit;
+    color: #fff;
+    background: #2f6feb;
+    cursor: pointer;
+  }
+
+  .subscribe-modal-submit:hover:not(:disabled) {
+    background: #1c4fbf;
+  }
+
+  .subscribe-modal-submit:disabled {
+    opacity: 0.7;
+    cursor: wait;
+  }
+
+  .subscribe-modal-success {
+    text-align: center;
+    padding: 8px 0 4px;
+  }
+
+  .subscribe-modal-success-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: #2f6feb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 18px;
+  }
+</style>
+
+<script>
+  import { subscribeNewsletter } from "../lib/newsletter";
+
+  function initSubscribeModal() {
+    const dialog = document.querySelector<HTMLDialogElement>('[data-role="subscribe-modal"]');
+    if (!dialog || dialog.dataset.subscribeInitialized) return;
+    dialog.dataset.subscribeInitialized = "true";
+
+    const formWrap = dialog.querySelector<HTMLElement>('[data-role="subscribe-modal-form"]');
+    const panel = dialog.querySelector<HTMLElement>(".subscribe-modal-panel");
+    const success = dialog.querySelector<HTMLElement>('[data-role="subscribe-modal-success"]');
+    const form = dialog.querySelector<HTMLFormElement>('[data-role="subscribe-modal-submit"]');
+    const emailInput = dialog.querySelector<HTMLInputElement>("#subscribe-modal-email");
+    const errorEl = dialog.querySelector<HTMLElement>('[data-role="subscribe-modal-error"]');
+    if (!formWrap || !panel || !success || !form || !emailInput || !errorEl) return;
+
+    let lastFocus: HTMLElement | null = null;
+
+    function showError(message: string) {
+      errorEl.textContent = message;
+      errorEl.hidden = !message;
+    }
+
+    function resetModal() {
+      form.reset();
+      showError("");
+      formWrap.hidden = false;
+      success.hidden = true;
+    }
+
+    function openModal(trigger: HTMLElement | null) {
+      lastFocus = trigger;
+      resetModal();
+      dialog.showModal();
+      requestAnimationFrame(() => emailInput.focus());
+    }
+
+    function closeModal() {
+      if (!dialog.open) return;
+      dialog.close();
+      resetModal();
+      lastFocus?.focus();
+      lastFocus = null;
+    }
+
+    document.addEventListener("click", (event) => {
+      const target = event.target as HTMLElement | null;
+      const openTrigger = target?.closest<HTMLElement>('[data-action="open-subscribe"]');
+      if (openTrigger) {
+        event.preventDefault();
+        openModal(openTrigger);
+        return;
+      }
+      if (target?.closest('[data-action="close-subscribe"]')) {
+        event.preventDefault();
+        closeModal();
+      }
+    });
+
+    dialog.addEventListener("click", (event) => {
+      if (event.target === dialog) closeModal();
+    });
+
+    dialog.addEventListener("close", () => {
+      resetModal();
+      lastFocus?.focus();
+      lastFocus = null;
+    });
+
+    dialog.addEventListener("cancel", (event) => {
+      event.preventDefault();
+      closeModal();
+    });
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const email = emailInput.value.trim();
+      if (!email) {
+        showError("Enter your email address.");
+        emailInput.focus();
+        return;
+      }
+
+      const submitBtn = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+      const label = submitBtn?.textContent || "Subscribe";
+      showError("");
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Subscribing…";
+      }
+
+      try {
+        await subscribeNewsletter({ email, scope: "network" });
+        formWrap.hidden = true;
+        success.hidden = false;
+      } catch (err) {
+        showError((err as Error).message || "Subscription failed. Try again.");
+        emailInput.focus();
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = label;
+        }
+      }
+    });
+  }
+
+  initSubscribeModal();
+  document.addEventListener("astro:page-load", initSubscribeModal);
+</script>

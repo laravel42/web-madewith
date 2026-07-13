@@ -64,6 +64,35 @@ export class Db {
     return r?.n ?? 0;
   }
 
+  // ---- newsletter subscribers ----
+  async upsertNewsletterSubscriber(input: {
+    email: string;
+    scope: "network" | "domain";
+    slug: string;
+    created_at: string;
+  }): Promise<"subscribed" | "already_subscribed" | "reactivated"> {
+    const existing = await this.d1
+      .prepare(`SELECT status FROM newsletter_subscribers WHERE email = ? AND scope = ? AND slug = ?`)
+      .bind(input.email, input.scope, input.slug)
+      .first<{ status: string }>();
+
+    if (!existing) {
+      await this.d1
+        .prepare(`INSERT INTO newsletter_subscribers (email, scope, slug, status, created_at) VALUES (?, ?, ?, 'active', ?)`)
+        .bind(input.email, input.scope, input.slug, input.created_at)
+        .run();
+      return "subscribed";
+    }
+
+    if (existing.status === "active") return "already_subscribed";
+
+    await this.d1
+      .prepare(`UPDATE newsletter_subscribers SET status = 'active', unsubscribed_at = NULL, created_at = ? WHERE email = ? AND scope = ? AND slug = ?`)
+      .bind(input.created_at, input.email, input.scope, input.slug)
+      .run();
+    return "reactivated";
+  }
+
   // ---- approved entries ----
   async upsertApproved(slug: string, project: Project, at: string): Promise<void> {
     await this.d1
