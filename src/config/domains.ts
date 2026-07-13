@@ -6,10 +6,13 @@
  */
 
 import catalog from "./domain-catalog.json";
+import { applyEngineTokens } from "./engine-theme";
+import type { HeroArch } from "./engine-theme";
 import { applyThemeOverrides, getDomainSettings } from "./domain-settings";
 
 export type Variant = "light" | "terminal";
 export type HeroId = "nuxt" | "node" | "next" | "ionic" | "statamic" | "twill" | "generic";
+export type { HeroArch };
 export type DomainGroup = "frameworks" | "frontend" | "backend" | "cms-crm" | "commerce" | "ai-llm";
 export type NetworkCardStyle = "default" | "tint" | "black" | "terminal";
 
@@ -29,6 +32,13 @@ export interface Theme {
   variant: Variant;
   editorial: boolean;
   heroId: HeroId;
+  /** Engine layout — band, browser, phone, terminal, or banner (editorial grid). */
+  heroArch?: HeroArch;
+  heroGradient?: string;
+  heroMockHero?: string;
+  heroBandDark?: boolean;
+  heroBandBg?: string;
+  heroSoftBorder?: string;
   /** Optional override; generic domains use /favicon.svg until bespoke assets ship. */
   favicon?: string;
   dispFont: string;
@@ -88,11 +98,7 @@ const GROUP_ACCENT: Record<DomainGroup, string> = {
 const NETWORK_CARD: Partial<Record<string, NetworkCardStyle>> = {
   express: "terminal",
   next: "black",
-  react: "tint",
-  statamic: "tint",
-  preact: "tint",
-  qwik: "tint",
-  lit: "tint",
+  ollama: "black",
 };
 
 const NETWORK_ACCENT: Partial<Record<string, { accent: string; accentInk: string }>> = {
@@ -122,37 +128,37 @@ const NETWORK_ACCENT: Partial<Record<string, { accent: string; accentInk: string
   fastify: { accent: "#000000", accentInk: "#ffffff" },
   hono: { accent: "#E36002", accentInk: "#ffffff" },
   koa: { accent: "#33333D", accentInk: "#ffffff" },
-  "actix-web": { accent: "#000000", accentInk: "#ffffff" },
-  rocket: { accent: "#000000", accentInk: "#ffffff" },
+  "actix-web": { accent: "#2E7D9A", accentInk: "#ffffff" },
+  rocket: { accent: "#D33847", accentInk: "#ffffff" },
   phoenix: { accent: "#FD4F00", accentInk: "#ffffff" },
   preact: { accent: "#673AB8", accentInk: "#ffffff" },
   lit: { accent: "#324FFF", accentInk: "#ffffff" },
-  qwik: { accent: "#AC7EF4", accentInk: "#0a0a0a" },
+  qwik: { accent: "#18B6F6", accentInk: "#04222c" },
   ghost: { accent: "#15171A", accentInk: "#ffffff" },
-  shopware: { accent: "#189EFF", accentInk: "#ffffff" },
-  saleor: { accent: "#2D2D2D", accentInk: "#ffffff" },
-  medusa: { accent: "#000000", accentInk: "#ffffff" },
-  opencart: { accent: "#23A8E0", accentInk: "#ffffff" },
+  shopware: { accent: "#189EFF", accentInk: "#04222c" },
+  saleor: { accent: "#06847B", accentInk: "#ffffff" },
+  medusa: { accent: "#6D28D9", accentInk: "#ffffff" },
+  opencart: { accent: "#23A1D4", accentInk: "#ffffff" },
   odoo: { accent: "#714B67", accentInk: "#ffffff" },
-  erpnext: { accent: "#0089FF", accentInk: "#ffffff" },
-  suitecrm: { accent: "#F08300", accentInk: "#ffffff" },
-  espocrm: { accent: "#5C9FD6", accentInk: "#ffffff" },
-  dolibarr: { accent: "#263C5C", accentInk: "#ffffff" },
-  "twenty-crm": { accent: "#000000", accentInk: "#ffffff" },
-  vtiger: { accent: "#1B4F72", accentInk: "#ffffff" },
-  monica: { accent: "#325776", accentInk: "#ffffff" },
+  erpnext: { accent: "#2490EF", accentInk: "#ffffff" },
+  suitecrm: { accent: "#D65B27", accentInk: "#ffffff" },
+  espocrm: { accent: "#1B4E6B", accentInk: "#ffffff" },
+  dolibarr: { accent: "#2C5987", accentInk: "#ffffff" },
+  "twenty-crm": { accent: "#1961ED", accentInk: "#ffffff" },
+  vtiger: { accent: "#17A2B8", accentInk: "#04222c" },
+  monica: { accent: "#EA6E4B", accentInk: "#ffffff" },
   ollama: { accent: "#000000", accentInk: "#ffffff" },
-  langchain: { accent: "#1C3C3C", accentInk: "#ffffff" },
-  llamaindex: { accent: "#000000", accentInk: "#ffffff" },
-  flowise: { accent: "#3B82F6", accentInk: "#ffffff" },
-  dify: { accent: "#155EEF", accentInk: "#ffffff" },
-  "open-webui": { accent: "#000000", accentInk: "#ffffff" },
-  librechat: { accent: "#000000", accentInk: "#ffffff" },
-  anythingllm: { accent: "#7C3AED", accentInk: "#ffffff" },
-  haystack: { accent: "#00D4AA", accentInk: "#04222c" },
-  vllm: { accent: "#000000", accentInk: "#ffffff" },
+  langchain: { accent: "#199C82", accentInk: "#ffffff" },
+  llamaindex: { accent: "#8A3FFC", accentInk: "#ffffff" },
+  flowise: { accent: "#10B981", accentInk: "#04231a" },
+  dify: { accent: "#1C64F2", accentInk: "#ffffff" },
+  "open-webui": { accent: "#6366F1", accentInk: "#ffffff" },
+  librechat: { accent: "#0EA5A4", accentInk: "#04231f" },
+  anythingllm: { accent: "#36B37E", accentInk: "#04231a" },
+  haystack: { accent: "#C6E42A", accentInk: "#1a2200" },
+  vllm: { accent: "#5B8DEF", accentInk: "#ffffff" },
   ionic: { accent: "#3880FF", accentInk: "#ffffff" },
-  twill: { accent: "#6621d9", accentInk: "#ffffff" },
+  twill: { accent: "#E4442B", accentInk: "#ffffff" },
   statamic: { accent: "#7C3AED", accentInk: "#ffffff" },
   wordpress: { accent: "#21759B", accentInk: "#ffffff" },
   drupal: { accent: "#0678BE", accentInk: "#ffffff" },
@@ -271,10 +277,10 @@ const BESPOKE_THEMES: Record<string, Omit<Theme, "slug" | "techName" | "domain" 
 };
 
 function buildTheme(entry: CatalogEntry): Theme {
-  if (entry.bespoke && BESPOKE_THEMES[entry.slug]) {
-    return { slug: entry.slug, techName: entry.techName, domain: entry.domain, group: entry.group, ...BESPOKE_THEMES[entry.slug] };
-  }
-  return genericTheme(entry);
+  const base = entry.bespoke && BESPOKE_THEMES[entry.slug]
+    ? { slug: entry.slug, techName: entry.techName, domain: entry.domain, group: entry.group, ...BESPOKE_THEMES[entry.slug] }
+    : genericTheme(entry);
+  return applyEngineTokens(base);
 }
 
 export const DOMAINS: Theme[] = DOMAIN_CATALOG.map(buildTheme);
@@ -305,7 +311,7 @@ export function normalizeDomainGroup(group: string | undefined | null): DomainGr
 
 /** Theme with admin overrides from pulled config (if any). */
 export function getResolvedTheme(slug: string): Theme {
-  const theme = applyThemeOverrides(getTheme(slug), getDomainSettings(slug));
+  const theme = applyEngineTokens(applyThemeOverrides(getTheme(slug), getDomainSettings(slug)));
   return { ...theme, group: normalizeDomainGroup(theme.group) };
 }
 

@@ -1,7 +1,602 @@
 {
   "slug": "spring-boot",
-  "scrapedAt": "1970-01-01T00:00:00.000Z",
-  "source": "placeholder",
-  "totalRepos": 0,
-  "projects": []
+  "scrapedAt": "2026-07-12T23:09:41.507Z",
+  "source": "github",
+  "totalRepos": 86410,
+  "projects": [
+    {
+      "slug": "mall",
+      "name": "mall",
+      "fullName": "macrozheng/mall",
+      "category": "APIs",
+      "stars": 84125,
+      "author": "macrozheng",
+      "avatar": "https://avatars.githubusercontent.com/u/15903809?u=c76ae8e89e30a5aeeaf667fbcb749efa73fa28b3&v=4",
+      "desc": "mall项目是一套电商系统，包括前台商城系统及后台管理系统，基于Spring Boot+MyBatis实现，采用Docker容器化部署。 前台商城系统包含首页门户、商品推荐、商品搜索、商品展示、购物车、订单流程、会员中心、客户服务、帮助中心等模块。 后台管理系统包含商品管理、订单管理、会员管理、促销管理、运营管理、内容管理、统计报表、财务管理、权限管理、设置等模块。",
+      "demo": "https://www.macrozheng.com/admin/",
+      "repoUrl": "https://github.com/macrozheng/mall",
+      "long1": "mall项目是一套电商系统，包括前台商城系统及后台管理系统，基于Spring Boot+MyBatis实现，采用Docker容器化部署。 前台商城系统包含首页门户、商品推荐、商品搜索、商品展示、购物车、订单流程、会员中心、客户服务、帮助中心等模块。 后台管理系统包含商品管理、订单管理、会员管理、促销管理、运营管理、内容管理、统计报表、财务管理、权限管理、设置等模块。. Maintained by macrozheng on GitHub, where it has earned 84,125 stars from the community.",
+      "long2": "It's actively developed around spring-boot, spring-security, mybatis, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Java",
+        "Spring Boot",
+        "Spring Security",
+        "Mybatis",
+        "Docker"
+      ],
+      "updated": "2 months ago",
+      "license": "Apache-2.0",
+      "langs": [
+        {
+          "name": "Java",
+          "pct": 100
+        },
+        {
+          "name": "Shell",
+          "pct": 0
+        },
+        {
+          "name": "Dockerfile",
+          "pct": 0
+        }
+      ],
+      "versions": [
+        {
+          "name": "v1.0.3",
+          "url": "https://github.com/macrozheng/mall/releases/tag/v1.0.3"
+        },
+        {
+          "name": "v1.0.2",
+          "url": "https://github.com/macrozheng/mall/releases/tag/v1.0.2"
+        },
+        {
+          "name": "v1.0.1",
+          "url": "https://github.com/macrozheng/mall/releases/tag/v1.0.1"
+        }
+      ],
+      "topics": [
+        "spring-boot",
+        "spring-security",
+        "mybatis",
+        "docker",
+        "swagger-ui",
+        "mysql",
+        "redis",
+        "elasticsearch",
+        "mongodb",
+        "elk",
+        "spring",
+        "rabbitmq"
+      ]
+    },
+    {
+      "slug": "spring-boot-demo",
+      "name": "spring-boot-demo",
+      "fullName": "xkcoding/spring-boot-demo",
+      "category": "DevTools",
+      "stars": 34096,
+      "author": "xkcoding",
+      "avatar": "https://avatars.githubusercontent.com/u/10429917?u=2ab29bd2c0344eecd8922933cc3141e063c34c9b&v=4",
+      "desc": "🚀一个用来深入学习并实战 Spring Boot 的项目。",
+      "demo": "https://parg.co/UZM",
+      "repoUrl": "https://github.com/xkcoding/spring-boot-demo",
+      "long1": "🚀一个用来深入学习并实战 Spring Boot 的项目。. Maintained by xkcoding on GitHub, where it has earned 34,096 stars from the community.",
+      "long2": "It's actively developed around java, in-action, demo, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Java",
+        "In Action",
+        "Demo",
+        "Web"
+      ],
+      "updated": "2 year ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "Java",
+          "pct": 88
+        },
+        {
+          "name": "HTML",
+          "pct": 9
+        },
+        {
+          "name": "TSQL",
+          "pct": 3
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "java",
+        "in-action",
+        "demo",
+        "web",
+        "spring",
+        "spring-boot",
+        "spring-boot-2",
+        "spring-boot-demo",
+        "xkcoding"
+      ]
+    },
+    {
+      "slug": "conductor",
+      "name": "conductor",
+      "fullName": "conductor-oss/conductor",
+      "category": "AI & ML",
+      "stars": 31991,
+      "author": "conductor-oss",
+      "avatar": "https://avatars.githubusercontent.com/u/153258413?v=4",
+      "desc": "Conductor is an event driven agentic workflow engine providing durable and highly resilient execution engine for applications and AI Agents",
+      "demo": "https://docs.conductor-oss.org/",
+      "repoUrl": "https://github.com/conductor-oss/conductor",
+      "long1": "Conductor is an event driven agentic workflow engine providing durable and highly resilient execution engine for applications and AI Agents. Maintained by conductor-oss on GitHub, where it has earned 31,991 stars from the community.",
+      "long2": "It's actively developed around distributed-systems, grpc, java, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Distributed Systems",
+        "Grpc",
+        "Java",
+        "Microservice Orchestration"
+      ],
+      "updated": "today",
+      "license": "Apache-2.0",
+      "langs": [
+        {
+          "name": "Java",
+          "pct": 60
+        },
+        {
+          "name": "TypeScript",
+          "pct": 25
+        },
+        {
+          "name": "JavaScript",
+          "pct": 15
+        }
+      ],
+      "versions": [
+        {
+          "name": "v3.32.0-rc.5",
+          "url": "https://github.com/conductor-oss/conductor/releases/tag/v3.32.0-rc.5"
+        },
+        {
+          "name": "v3.32.0-rc.4",
+          "url": "https://github.com/conductor-oss/conductor/releases/tag/v3.32.0-rc.4"
+        },
+        {
+          "name": "v3.32.0-rc.3",
+          "url": "https://github.com/conductor-oss/conductor/releases/tag/v3.32.0-rc.3"
+        },
+        {
+          "name": "v3.32.0-rc.2",
+          "url": "https://github.com/conductor-oss/conductor/releases/tag/v3.32.0-rc.2"
+        },
+        {
+          "name": "v3.32.0-rc.1",
+          "url": "https://github.com/conductor-oss/conductor/releases/tag/v3.32.0-rc.1"
+        }
+      ],
+      "topics": [
+        "distributed-systems",
+        "grpc",
+        "java",
+        "javascript",
+        "microservice-orchestration",
+        "orchestration-engine",
+        "orchestrator",
+        "reactjs",
+        "spring-boot",
+        "workflow-automation",
+        "workflow-engine",
+        "workflow-management"
+      ]
+    },
+    {
+      "slug": "spring-boot-examples",
+      "name": "spring-boot-examples",
+      "fullName": "ityouknow/spring-boot-examples",
+      "category": "AI & ML",
+      "stars": 30531,
+      "author": "ityouknow",
+      "avatar": "https://avatars.githubusercontent.com/u/4979648?u=e447466d7ed677222b240a07a4fc701d4f63d2e7&v=4",
+      "desc": "about learning Spring Boot via examples. Spring Boot 教程、技术栈示例代码，快速简单上手教程。",
+      "demo": "http://www.ityouknow.com/spring-boot.html",
+      "repoUrl": "https://github.com/ityouknow/spring-boot-examples",
+      "long1": "about learning Spring Boot via examples. Spring Boot 教程、技术栈示例代码，快速简单上手教程。. Maintained by ityouknow on GitHub, where it has earned 30,531 stars from the community.",
+      "long2": "It's actively developed around spring-boot, spring-data-jpa, mybatis, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Java",
+        "Spring Boot",
+        "Spring Data Jpa",
+        "Mybatis",
+        "Thymeleaf"
+      ],
+      "updated": "3 years ago",
+      "license": "—",
+      "langs": [
+        {
+          "name": "Java",
+          "pct": 91
+        },
+        {
+          "name": "HTML",
+          "pct": 9
+        },
+        {
+          "name": "Dockerfile",
+          "pct": 0
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "spring-boot",
+        "spring-data-jpa",
+        "mybatis",
+        "thymeleaf",
+        "rabbitmq",
+        "mongodb",
+        "spring-boot-mongodb",
+        "scheduler",
+        "spring-boot-mail",
+        "spring-boot-examples",
+        "spring-boot-upload-file",
+        "fastdfs"
+      ]
+    },
+    {
+      "slug": "apollo",
+      "name": "apollo",
+      "fullName": "apolloconfig/apollo",
+      "category": "Mobile",
+      "stars": 29787,
+      "author": "apolloconfig",
+      "avatar": "https://avatars.githubusercontent.com/u/83490506?v=4",
+      "desc": "Apollo is a reliable configuration management system suitable for microservice configuration management scenarios.",
+      "demo": "https://www.apolloconfig.com",
+      "repoUrl": "https://github.com/apolloconfig/apollo",
+      "long1": "Apollo is a reliable configuration management system suitable for microservice configuration management scenarios. Maintained by apolloconfig on GitHub, where it has earned 29,787 stars from the community.",
+      "long2": "It's actively developed around configuration-management, spring-boot, config-management, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Java",
+        "Configuration Management",
+        "Spring Boot",
+        "Config Management",
+        "Microservices"
+      ],
+      "updated": "yesterday",
+      "license": "Apache-2.0",
+      "langs": [
+        {
+          "name": "Java",
+          "pct": 76
+        },
+        {
+          "name": "JavaScript",
+          "pct": 12
+        },
+        {
+          "name": "HTML",
+          "pct": 12
+        }
+      ],
+      "versions": [
+        {
+          "name": "v2.5.2",
+          "url": "https://github.com/apolloconfig/apollo/releases/tag/v2.5.2"
+        },
+        {
+          "name": "v2.5.1",
+          "url": "https://github.com/apolloconfig/apollo/releases/tag/v2.5.1"
+        },
+        {
+          "name": "v2.5.0",
+          "url": "https://github.com/apolloconfig/apollo/releases/tag/v2.5.0"
+        },
+        {
+          "name": "v2.4.0",
+          "url": "https://github.com/apolloconfig/apollo/releases/tag/v2.4.0"
+        },
+        {
+          "name": "v2.3.0",
+          "url": "https://github.com/apolloconfig/apollo/releases/tag/v2.3.0"
+        }
+      ],
+      "topics": [
+        "configuration-management",
+        "spring-boot",
+        "config-management",
+        "microservices",
+        "spring-cloud",
+        "distributed-configuration"
+      ]
+    },
+    {
+      "slug": "springall",
+      "name": "SpringAll",
+      "fullName": "wuyouzhuguli/SpringAll",
+      "category": "Authentication",
+      "stars": 28965,
+      "author": "wuyouzhuguli",
+      "avatar": "https://avatars.githubusercontent.com/u/16661027?u=d192bb312be614119d95ae61ca547b2556f2b2f6&v=4",
+      "desc": "循序渐进，学习Spring Boot、Spring Boot & Shiro、Spring Batch、Spring Cloud、Spring Cloud Alibaba、Spring Security & Spring Security OAuth2，博客Spring系列源码：https://mrbird.cc",
+      "demo": null,
+      "repoUrl": "https://github.com/wuyouzhuguli/SpringAll",
+      "long1": "循序渐进，学习Spring Boot、Spring Boot & Shiro、Spring Batch、Spring Cloud、Spring Cloud Alibaba、Spring Security & Spring Security OAuth2，博客Spring系列源码：https://mrbird.cc. Maintained by wuyouzhuguli on GitHub, where it has earned 28,965 stars from the community.",
+      "long2": "It's actively developed around spring-boot, springboot, learning, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Java",
+        "Spring Boot",
+        "Springboot",
+        "Learning",
+        "Shiro"
+      ],
+      "updated": "2 years ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "Java",
+          "pct": 92
+        },
+        {
+          "name": "HTML",
+          "pct": 4
+        },
+        {
+          "name": "CSS",
+          "pct": 4
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "spring-boot",
+        "springboot",
+        "learning",
+        "shiro",
+        "spring-boot-learning",
+        "spring-security",
+        "spring-cloud"
+      ]
+    },
+    {
+      "slug": "generator-jhipster",
+      "name": "generator-jhipster",
+      "fullName": "jhipster/generator-jhipster",
+      "category": "UI Kits",
+      "stars": 22427,
+      "author": "jhipster",
+      "avatar": "https://avatars.githubusercontent.com/u/6059488?v=4",
+      "desc": "JHipster is a development platform to quickly generate, develop, & deploy modern web applications & microservice architectures.",
+      "demo": "https://www.jhipster.tech",
+      "repoUrl": "https://github.com/jhipster/generator-jhipster",
+      "long1": "JHipster is a development platform to quickly generate, develop, & deploy modern web applications & microservice architectures. Maintained by jhipster on GitHub, where it has earned 22,427 stars from the community.",
+      "long2": "It's actively developed around angular, spring-boot, webpack, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Angular",
+        "Spring Boot",
+        "Webpack",
+        "Java"
+      ],
+      "updated": "today",
+      "license": "Apache-2.0",
+      "langs": [
+        {
+          "name": "TypeScript",
+          "pct": 78
+        },
+        {
+          "name": "Java",
+          "pct": 15
+        },
+        {
+          "name": "EJS",
+          "pct": 7
+        }
+      ],
+      "versions": [
+        {
+          "name": "v9.2.0",
+          "url": "https://github.com/jhipster/generator-jhipster/releases/tag/v9.2.0"
+        },
+        {
+          "name": "v9.1.0",
+          "url": "https://github.com/jhipster/generator-jhipster/releases/tag/v9.1.0"
+        },
+        {
+          "name": "v9.0.0",
+          "url": "https://github.com/jhipster/generator-jhipster/releases/tag/v9.0.0"
+        },
+        {
+          "name": "v9.0.0-beta.3",
+          "url": "https://github.com/jhipster/generator-jhipster/releases/tag/v9.0.0-beta.3"
+        },
+        {
+          "name": "v9.0.0-beta.2",
+          "url": "https://github.com/jhipster/generator-jhipster/releases/tag/v9.0.0-beta.2"
+        }
+      ],
+      "topics": [
+        "angular",
+        "spring-boot",
+        "webpack",
+        "java",
+        "docker",
+        "yeoman-generator",
+        "generator",
+        "react",
+        "kubernetes",
+        "cloud",
+        "jhipster",
+        "hacktoberfest"
+      ]
+    },
+    {
+      "slug": "eladmin",
+      "name": "eladmin",
+      "fullName": "elunez/eladmin",
+      "category": "Authentication",
+      "stars": 21931,
+      "author": "elunez",
+      "avatar": "https://avatars.githubusercontent.com/u/42142420?u=15e591fd6700dd0ec52099aef1cfc9be90d329d5&v=4",
+      "desc": "eladmin jpa 版本：项目基于 Spring Boot 2.7.18、 Jpa、 Spring Security、Redis、Vue的前后端分离的后台管理系统，项目采用分模块开发方式， 权限控制采用 RBAC，支持数据字典与数据权限管理，支持一键生成前后端代码，支持动态路由",
+      "demo": "https://eladmin.vip/demo",
+      "repoUrl": "https://github.com/elunez/eladmin",
+      "long1": "eladmin jpa 版本：项目基于 Spring Boot 2.7.18、 Jpa、 Spring Security、Redis、Vue的前后端分离的后台管理系统，项目采用分模块开发方式， 权限控制采用 RBAC，支持数据字典与数据权限管理，支持一键生成前后端代码，支持动态路由. Maintained by elunez on GitHub, where it has earned 21,931 stars from the community.",
+      "long2": "It's actively developed around spring-boot, spring-security, jpa, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Java",
+        "Spring Boot",
+        "Spring Security",
+        "Jpa",
+        "Redis"
+      ],
+      "updated": "2 months ago",
+      "license": "Apache-2.0",
+      "langs": [
+        {
+          "name": "Java",
+          "pct": 88
+        },
+        {
+          "name": "PLpgSQL",
+          "pct": 8
+        },
+        {
+          "name": "FreeMarker",
+          "pct": 4
+        }
+      ],
+      "versions": [
+        {
+          "name": "v2.7",
+          "url": "https://github.com/elunez/eladmin/releases/tag/v2.7"
+        }
+      ],
+      "topics": [
+        "spring-boot",
+        "spring-security",
+        "jpa",
+        "redis",
+        "vue",
+        "element-ui",
+        "swagger2",
+        "admin",
+        "eladmin",
+        "jwt"
+      ]
+    },
+    {
+      "slug": "litemall",
+      "name": "litemall",
+      "fullName": "linlinjava/litemall",
+      "category": "Real-time",
+      "stars": 20316,
+      "author": "linlinjava",
+      "avatar": "https://avatars.githubusercontent.com/u/4223779?u=4b83cbd2b01929891a3065e3c2927e520524df51&v=4",
+      "desc": "又一个小商城。litemall = Spring Boot后端 + Vue管理员前端 + 微信小程序用户前端 + Vue用户移动端",
+      "demo": null,
+      "repoUrl": "https://github.com/linlinjava/litemall",
+      "long1": "又一个小商城。litemall = Spring Boot后端 + Vue管理员前端 + 微信小程序用户前端 + Vue用户移动端. Maintained by linlinjava on GitHub, where it has earned 20,316 stars from the community.",
+      "long2": "It's actively developed around litemall, wechat-mini-program, spring-boot, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Java",
+        "Litemall",
+        "Wechat Mini Program",
+        "Spring Boot",
+        "Mall"
+      ],
+      "updated": "2 week ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "Java",
+          "pct": 73
+        },
+        {
+          "name": "JavaScript",
+          "pct": 18
+        },
+        {
+          "name": "Vue",
+          "pct": 9
+        }
+      ],
+      "versions": [
+        {
+          "name": "v1.8.0",
+          "url": "https://github.com/linlinjava/litemall/releases/tag/v1.8.0"
+        },
+        {
+          "name": "v1.7.0",
+          "url": "https://github.com/linlinjava/litemall/releases/tag/v1.7.0"
+        },
+        {
+          "name": "v1.5.0",
+          "url": "https://github.com/linlinjava/litemall/releases/tag/v1.5.0"
+        },
+        {
+          "name": "v1.4.0",
+          "url": "https://github.com/linlinjava/litemall/releases/tag/v1.4.0"
+        },
+        {
+          "name": "v1.3.0",
+          "url": "https://github.com/linlinjava/litemall/releases/tag/v1.3.0"
+        }
+      ],
+      "topics": [
+        "litemall",
+        "wechat-mini-program",
+        "spring-boot",
+        "mall",
+        "wechat",
+        "vue"
+      ]
+    },
+    {
+      "slug": "springboot-labs",
+      "name": "SpringBoot-Labs",
+      "fullName": "yudaocode/SpringBoot-Labs",
+      "category": "DevTools",
+      "stars": 20091,
+      "author": "yudaocode",
+      "avatar": "https://avatars.githubusercontent.com/u/124941343?v=4",
+      "desc": "一个涵盖六个专栏：Spring Boot 2.X、Spring Cloud、Spring Cloud Alibaba、Dubbo、分布式消息队列、分布式事务的仓库。希望胖友小手一抖，右上角来个 Star，感恩 1024",
+      "demo": null,
+      "repoUrl": "https://github.com/yudaocode/SpringBoot-Labs",
+      "long1": "一个涵盖六个专栏：Spring Boot 2.X、Spring Cloud、Spring Cloud Alibaba、Dubbo、分布式消息队列、分布式事务的仓库。希望胖友小手一抖，右上角来个 Star，感恩 1024. Maintained by yudaocode on GitHub, where it has earned 20,091 stars from the community.",
+      "long2": "It's actively developed around spring-boot, spring-cloud, spring-cloud-alibaba, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Java",
+        "Spring Boot",
+        "Spring Cloud",
+        "Spring Cloud Alibaba",
+        "Dubbo"
+      ],
+      "updated": "2 years ago",
+      "license": "—",
+      "langs": [
+        {
+          "name": "Java",
+          "pct": 97
+        },
+        {
+          "name": "HTML",
+          "pct": 2
+        },
+        {
+          "name": "Shell",
+          "pct": 1
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "spring-boot",
+        "spring-cloud",
+        "spring-cloud-alibaba",
+        "dubbo",
+        "rocketmq",
+        "rabbitmq",
+        "kafka",
+        "activemq"
+      ]
+    }
+  ]
 }

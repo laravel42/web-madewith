@@ -1,7 +1,625 @@
 {
   "slug": "shopify",
-  "scrapedAt": "1970-01-01T00:00:00.000Z",
-  "source": "placeholder",
-  "totalRepos": 0,
-  "projects": []
+  "scrapedAt": "2026-07-12T23:13:07.860Z",
+  "source": "github",
+  "totalRepos": 3048,
+  "projects": [
+    {
+      "slug": "commerce",
+      "name": "commerce",
+      "fullName": "vercel/commerce",
+      "category": "E-commerce",
+      "stars": 14141,
+      "author": "vercel",
+      "avatar": "https://avatars.githubusercontent.com/u/14985020?v=4",
+      "desc": "Next.js Commerce",
+      "demo": "https://demo.vercel.store",
+      "repoUrl": "https://github.com/vercel/commerce",
+      "long1": "Next.js Commerce. Maintained by vercel on GitHub, where it has earned 14,141 stars from the community.",
+      "long2": "It's actively developed around ecommerce, react, nextjs, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Ecommerce",
+        "React",
+        "Next.js",
+        "Shopify"
+      ],
+      "updated": "1 month ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "TypeScript",
+          "pct": 99
+        },
+        {
+          "name": "CSS",
+          "pct": 1
+        },
+        {
+          "name": "JavaScript",
+          "pct": 0
+        }
+      ],
+      "versions": [
+        {
+          "name": "v1",
+          "url": "https://github.com/vercel/commerce/releases/tag/v1"
+        }
+      ],
+      "topics": [
+        "ecommerce",
+        "react",
+        "nextjs",
+        "shopify"
+      ]
+    },
+    {
+      "slug": "mitosis",
+      "name": "mitosis",
+      "fullName": "BuilderIO/mitosis",
+      "category": "E-commerce",
+      "stars": 13886,
+      "author": "BuilderIO",
+      "avatar": "https://avatars.githubusercontent.com/u/35700027?v=4",
+      "desc": "Write components once, run everywhere. Compiles to React, Vue, Qwik, Solid, Angular, Svelte, and more.",
+      "demo": "https://mitosis.builder.io",
+      "repoUrl": "https://github.com/BuilderIO/mitosis",
+      "long1": "Write components once, run everywhere. Compiles to React, Vue, Qwik, Solid, Angular, Svelte, and more. Maintained by BuilderIO on GitHub, where it has earned 13,886 stars from the community.",
+      "long2": "It's actively developed around jsx, react, vue, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Jsx",
+        "React",
+        "Vue",
+        "Liquid"
+      ],
+      "updated": "1 month ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "TypeScript",
+          "pct": 96
+        },
+        {
+          "name": "MDX",
+          "pct": 3
+        },
+        {
+          "name": "JavaScript",
+          "pct": 1
+        }
+      ],
+      "versions": [
+        {
+          "name": "@builder.io/mitosis@0.13.2",
+          "url": "https://github.com/BuilderIO/mitosis/releases/tag/%40builder.io/mitosis%400.13.2"
+        },
+        {
+          "name": "@builder.io/mitosis-cli@0.13.2",
+          "url": "https://github.com/BuilderIO/mitosis/releases/tag/%40builder.io/mitosis-cli%400.13.2"
+        },
+        {
+          "name": "@builder.io/mitosis-cli@0.13.1",
+          "url": "https://github.com/BuilderIO/mitosis/releases/tag/%40builder.io/mitosis-cli%400.13.1"
+        },
+        {
+          "name": "@builder.io/mitosis@0.13.1",
+          "url": "https://github.com/BuilderIO/mitosis/releases/tag/%40builder.io/mitosis%400.13.1"
+        },
+        {
+          "name": "@builder.io/mitosis-cli@0.13.0",
+          "url": "https://github.com/BuilderIO/mitosis/releases/tag/%40builder.io/mitosis-cli%400.13.0"
+        }
+      ],
+      "topics": [
+        "jsx",
+        "react",
+        "vue",
+        "liquid",
+        "declarative",
+        "no-code",
+        "solid",
+        "figma",
+        "builder",
+        "shopify",
+        "jsx-lite",
+        "angular"
+      ]
+    },
+    {
+      "slug": "vue-storefront",
+      "name": "vue-storefront",
+      "fullName": "vuestorefront/vue-storefront",
+      "category": "E-commerce",
+      "stars": 10931,
+      "author": "vuestorefront",
+      "avatar": "https://avatars.githubusercontent.com/u/37238315?v=4",
+      "desc": "Alokai is a Frontend as a Service solution that simplifies composable commerce. It connects all the technologies needed to build and deploy fast & scalable ecommerce frontends. It guides merchants to deliver exceptional customer experiences quickly and easily.",
+      "demo": "https://www.alokai.com",
+      "repoUrl": "https://github.com/vuestorefront/vue-storefront",
+      "long1": "Alokai is a Frontend as a Service solution that simplifies composable commerce. It connects all the technologies needed to build and deploy fast & scalable ecommerce frontends. It guides merchants to deliver exceptional customer experiences quickly and easily. Maintained by vuestorefront on GitHub, where it has earned 10,931 stars from the community.",
+      "long2": "It's actively developed around vue-storefront, pwa, headless, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Vue Storefront",
+        "Pwa",
+        "Headless",
+        "Vue"
+      ],
+      "updated": "1 month ago",
+      "license": "—",
+      "langs": [
+        {
+          "name": "JavaScript",
+          "pct": 72
+        },
+        {
+          "name": "CSS",
+          "pct": 20
+        },
+        {
+          "name": "Other",
+          "pct": 8
+        }
+      ],
+      "versions": [
+        {
+          "name": "@vue-storefront/middleware@5.4.0",
+          "url": "https://github.com/vuestorefront/vue-storefront/releases/tag/%40vue-storefront/middleware%405.4.0"
+        },
+        {
+          "name": "@vue-storefront/sdk-axios-request-sender@3.0.0",
+          "url": "https://github.com/vuestorefront/vue-storefront/releases/tag/%40vue-storefront/sdk-axios-request-sender%403.0.0"
+        },
+        {
+          "name": "@vue-storefront/changesets@3.0.0",
+          "url": "https://github.com/vuestorefront/vue-storefront/releases/tag/%40vue-storefront/changesets%403.0.0"
+        },
+        {
+          "name": "@vue-storefront/sdk-axios-request-sender@2.1.0",
+          "url": "https://github.com/vuestorefront/vue-storefront/releases/tag/%40vue-storefront/sdk-axios-request-sender%402.1.0"
+        },
+        {
+          "name": "@vue-storefront/sdk-axios-request-sender@2.0.1",
+          "url": "https://github.com/vuestorefront/vue-storefront/releases/tag/%40vue-storefront/sdk-axios-request-sender%402.0.1"
+        }
+      ],
+      "topics": [
+        "vue-storefront",
+        "pwa",
+        "headless",
+        "vue",
+        "ecommerce",
+        "magento",
+        "storefront",
+        "mobile",
+        "e-commerce",
+        "nuxt",
+        "magento2",
+        "shopware"
+      ]
+    },
+    {
+      "slug": "builder",
+      "name": "builder",
+      "fullName": "BuilderIO/builder",
+      "category": "E-commerce",
+      "stars": 8772,
+      "author": "BuilderIO",
+      "avatar": "https://avatars.githubusercontent.com/u/35700027?v=4",
+      "desc": "Visual Development for React, Vue, Svelte, Qwik, and more",
+      "demo": "https://builder.io",
+      "repoUrl": "https://github.com/BuilderIO/builder",
+      "long1": "Visual Development for React, Vue, Svelte, Qwik, and more. Maintained by BuilderIO on GitHub, where it has earned 8,772 stars from the community.",
+      "long2": "It's actively developed around react, webcomponents, wysiwyg, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "React",
+        "Webcomponents",
+        "Wysiwyg",
+        "Frontend"
+      ],
+      "updated": "2 days ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "TypeScript",
+          "pct": 95
+        },
+        {
+          "name": "JavaScript",
+          "pct": 4
+        },
+        {
+          "name": "Vue",
+          "pct": 1
+        }
+      ],
+      "versions": [
+        {
+          "name": "@builder.io/sdk-react-native@5.2.4",
+          "url": "https://github.com/BuilderIO/builder/releases/tag/%40builder.io/sdk-react-native%405.2.4"
+        },
+        {
+          "name": "@builder.io/sdk-react@5.2.4",
+          "url": "https://github.com/BuilderIO/builder/releases/tag/%40builder.io/sdk-react%405.2.4"
+        },
+        {
+          "name": "@builder.io/sdk-solid@5.2.4",
+          "url": "https://github.com/BuilderIO/builder/releases/tag/%40builder.io/sdk-solid%405.2.4"
+        },
+        {
+          "name": "@builder.io/sdk-svelte@5.2.4",
+          "url": "https://github.com/BuilderIO/builder/releases/tag/%40builder.io/sdk-svelte%405.2.4"
+        },
+        {
+          "name": "@builder.io/sdk-vue@5.2.4",
+          "url": "https://github.com/BuilderIO/builder/releases/tag/%40builder.io/sdk-vue%405.2.4"
+        }
+      ],
+      "topics": [
+        "react",
+        "webcomponents",
+        "wysiwyg",
+        "frontend",
+        "angular",
+        "vue",
+        "shopify",
+        "next-js",
+        "landing-pages",
+        "page-builder",
+        "drag-drop",
+        "builder"
+      ]
+    },
+    {
+      "slug": "hydrogen",
+      "name": "hydrogen",
+      "fullName": "Shopify/hydrogen",
+      "category": "E-commerce",
+      "stars": 2061,
+      "author": "Shopify",
+      "avatar": "https://avatars.githubusercontent.com/u/8085?v=4",
+      "desc": "Hydrogen lets you build faster headless storefronts in less time, on Shopify.",
+      "demo": "https://skeleton.hydrogen.shop",
+      "repoUrl": "https://github.com/Shopify/hydrogen",
+      "long1": "Hydrogen lets you build faster headless storefronts in less time, on Shopify. Maintained by Shopify on GitHub, where it has earned 2,061 stars from the community.",
+      "long2": "It's actively developed around hydrogen, react, remix, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Hydrogen",
+        "React",
+        "Remix",
+        "Shopify"
+      ],
+      "updated": "2 days ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "TypeScript",
+          "pct": 93
+        },
+        {
+          "name": "JavaScript",
+          "pct": 5
+        },
+        {
+          "name": "HTML",
+          "pct": 2
+        }
+      ],
+      "versions": [
+        {
+          "name": "@shopify/mini-oxygen@4.2.0",
+          "url": "https://github.com/Shopify/hydrogen/releases/tag/%40shopify/mini-oxygen%404.2.0"
+        },
+        {
+          "name": "@shopify/cli-hydrogen@13.0.0",
+          "url": "https://github.com/Shopify/hydrogen/releases/tag/%40shopify/cli-hydrogen%4013.0.0"
+        },
+        {
+          "name": "skeleton@2026.4.4",
+          "url": "https://github.com/Shopify/hydrogen/releases/tag/skeleton%402026.4.4"
+        },
+        {
+          "name": "@shopify/cli-hydrogen@12.0.2",
+          "url": "https://github.com/Shopify/hydrogen/releases/tag/%40shopify/cli-hydrogen%4012.0.2"
+        },
+        {
+          "name": "@shopify/hydrogen@2026.4.4",
+          "url": "https://github.com/Shopify/hydrogen/releases/tag/%40shopify/hydrogen%402026.4.4"
+        }
+      ],
+      "topics": [
+        "hydrogen",
+        "react",
+        "remix",
+        "shopify"
+      ]
+    },
+    {
+      "slug": "fluid",
+      "name": "fluid",
+      "fullName": "sebastienros/fluid",
+      "category": "E-commerce",
+      "stars": 1761,
+      "author": "sebastienros",
+      "avatar": "https://avatars.githubusercontent.com/u/1165805?v=4",
+      "desc": "Fluid is an open-source .NET template engine based on the Liquid template language.",
+      "demo": null,
+      "repoUrl": "https://github.com/sebastienros/fluid",
+      "long1": "Fluid is an open-source .NET template engine based on the Liquid template language. Maintained by sebastienros on GitHub, where it has earned 1,761 stars from the community.",
+      "long2": "It's actively developed around liquid, parser, dotnet, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "C#",
+        "Liquid",
+        "Parser",
+        "Dotnet",
+        "Template"
+      ],
+      "updated": "3 weeks ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "C#",
+          "pct": 100
+        },
+        {
+          "name": "Liquid",
+          "pct": 0
+        },
+        {
+          "name": "Mustache",
+          "pct": 0
+        }
+      ],
+      "versions": [
+        {
+          "name": "v3.0.0-beta.5",
+          "url": "https://github.com/sebastienros/fluid/releases/tag/v3.0.0-beta.5"
+        },
+        {
+          "name": "v3.0.0-beta.4",
+          "url": "https://github.com/sebastienros/fluid/releases/tag/v3.0.0-beta.4"
+        },
+        {
+          "name": "v3.0.0-beta.3",
+          "url": "https://github.com/sebastienros/fluid/releases/tag/v3.0.0-beta.3"
+        },
+        {
+          "name": "v3.0.0-beta.2",
+          "url": "https://github.com/sebastienros/fluid/releases/tag/v3.0.0-beta.2"
+        },
+        {
+          "name": "v3.0.0-beta.1",
+          "url": "https://github.com/sebastienros/fluid/releases/tag/v3.0.0-beta.1"
+        }
+      ],
+      "topics": [
+        "liquid",
+        "parser",
+        "dotnet",
+        "template",
+        "shopify",
+        "view-engine"
+      ]
+    },
+    {
+      "slug": "hull",
+      "name": "HULL",
+      "fullName": "ndimatteo/HULL",
+      "category": "E-commerce",
+      "stars": 1450,
+      "author": "ndimatteo",
+      "avatar": "https://avatars.githubusercontent.com/u/737188?u=2b1f862c734f86cf3915cc74bd3933c610c80bfc&v=4",
+      "desc": "💀 Headless Shopify Starter – powered by Next.js + Sanity.io",
+      "demo": "https://hull.dev",
+      "repoUrl": "https://github.com/ndimatteo/HULL",
+      "long1": "💀 Headless Shopify Starter – powered by Next.js + Sanity.io. Maintained by ndimatteo on GitHub, where it has earned 1,450 stars from the community.",
+      "long2": "It's actively developed around nextjs, next-js, starter, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "JavaScript",
+        "Next.js",
+        "Next Js",
+        "Starter",
+        "Starter Template"
+      ],
+      "updated": "3 years ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "JavaScript",
+          "pct": 86
+        },
+        {
+          "name": "CSS",
+          "pct": 14
+        },
+        {
+          "name": "TypeScript",
+          "pct": 0
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "nextjs",
+        "next-js",
+        "starter",
+        "starter-template",
+        "headless",
+        "shopify",
+        "tailwindcss",
+        "sanity",
+        "vercel",
+        "react",
+        "framer-motion",
+        "ecommerce"
+      ]
+    },
+    {
+      "slug": "themekit",
+      "name": "themekit",
+      "fullName": "Shopify/themekit",
+      "category": "E-commerce",
+      "stars": 1307,
+      "author": "Shopify",
+      "avatar": "https://avatars.githubusercontent.com/u/8085?v=4",
+      "desc": "Shopify theme development command line tool.",
+      "demo": "https://shopify.dev/tools/theme-kit",
+      "repoUrl": "https://github.com/Shopify/themekit",
+      "long1": "Shopify theme development command line tool. Maintained by Shopify on GitHub, where it has earned 1,307 stars from the community.",
+      "long2": "It's actively developed around theme-kit, go, shopify-themes, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Theme Kit",
+        "Go",
+        "Shopify Themes",
+        "Shopify"
+      ],
+      "updated": "8 months ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "Go",
+          "pct": 92
+        },
+        {
+          "name": "Liquid",
+          "pct": 7
+        },
+        {
+          "name": "Python",
+          "pct": 1
+        }
+      ],
+      "versions": [
+        {
+          "name": "v1.3.3",
+          "url": "https://github.com/Shopify/themekit/releases/tag/v1.3.3"
+        },
+        {
+          "name": "v1.3.2",
+          "url": "https://github.com/Shopify/themekit/releases/tag/v1.3.2"
+        },
+        {
+          "name": "v1.3.1",
+          "url": "https://github.com/Shopify/themekit/releases/tag/v1.3.1"
+        },
+        {
+          "name": "v1.3.0",
+          "url": "https://github.com/Shopify/themekit/releases/tag/v1.3.0"
+        },
+        {
+          "name": "v1.2.0",
+          "url": "https://github.com/Shopify/themekit/releases/tag/v1.2.0"
+        }
+      ],
+      "topics": [
+        "theme-kit",
+        "go",
+        "shopify-themes",
+        "shopify",
+        "themekit",
+        "shopify-theme"
+      ]
+    },
+    {
+      "slug": "openship",
+      "name": "openship",
+      "fullName": "openshiporg/openship",
+      "category": "E-commerce",
+      "stars": 1172,
+      "author": "openshiporg",
+      "avatar": "https://avatars.githubusercontent.com/u/52301253?v=4",
+      "desc": "multi-channel fulfillment at scale",
+      "demo": "https://openship.org",
+      "repoUrl": "https://github.com/openshiporg/openship",
+      "long1": "multi-channel fulfillment at scale. Maintained by openshiporg on GitHub, where it has earned 1,172 stars from the community.",
+      "long2": "It's actively developed around 3pl, e-commerce, fulfillment, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "3pl",
+        "E Commerce",
+        "Fulfillment",
+        "Marketplace Api"
+      ],
+      "updated": "4 months ago",
+      "license": "AGPL-3.0",
+      "langs": [
+        {
+          "name": "TypeScript",
+          "pct": 90
+        },
+        {
+          "name": "JavaScript",
+          "pct": 10
+        },
+        {
+          "name": "CSS",
+          "pct": 0
+        }
+      ],
+      "versions": [
+        {
+          "name": "v3.0",
+          "url": "https://github.com/openshiporg/openship/releases/tag/v3.0"
+        },
+        {
+          "name": "v.2.0.0",
+          "url": "https://github.com/openshiporg/openship/releases/tag/v.2.0.0"
+        }
+      ],
+      "topics": [
+        "3pl",
+        "e-commerce",
+        "fulfillment",
+        "marketplace-api",
+        "shopify",
+        "oms",
+        "order-management",
+        "order-management-system",
+        "netlify",
+        "nextjs",
+        "vercel",
+        "warehouse"
+      ]
+    },
+    {
+      "slug": "shopify-app-template-node",
+      "name": "shopify-app-template-node",
+      "fullName": "Shopify/shopify-app-template-node",
+      "category": "E-commerce",
+      "stars": 1011,
+      "author": "Shopify",
+      "avatar": "https://avatars.githubusercontent.com/u/8085?v=4",
+      "desc": "A project worth exploring.",
+      "demo": null,
+      "repoUrl": "https://github.com/Shopify/shopify-app-template-node",
+      "long1": "An open-source project built with a modern stack. Maintained by Shopify on GitHub, where it has earned 1,011 stars from the community.",
+      "long2": "It's actively developed around shopify, react, javascript, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "JavaScript",
+        "Shopify",
+        "React",
+        "Shopify App"
+      ],
+      "updated": "4 months ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "JavaScript",
+          "pct": 97
+        },
+        {
+          "name": "Dockerfile",
+          "pct": 3
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "shopify",
+        "react",
+        "javascript",
+        "shopify-app"
+      ]
+    }
+  ]
 }
