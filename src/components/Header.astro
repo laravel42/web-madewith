@@ -1,5 +1,8 @@
 ---
 import type { Theme } from "../config/domains";
+import GlobalSiteNav from "./GlobalSiteNav.astro";
+import MadeWithTechWordmark from "./MadeWithTechWordmark.astro";
+import NavIcon from "./NavIcon.astro";
 
 interface Props { theme: Theme; active?: string; }
 const { theme, active = "" } = Astro.props;
@@ -8,29 +11,31 @@ const logo = theme.techName.charAt(0).toUpperCase();
 const techSlug = theme.techName.toLowerCase().replace(/[^a-z0-9]/g, "");
 
 const isTerminal = theme.variant === "terminal";
-const isEditorial = theme.editorial;
+const isNext = theme.slug === "next";
+const isBannerHeader = theme.heroArch === "banner" && !isNext;
+const isEditorial = theme.editorial && isNext;
 
 const links = isTerminal
   ? [
-      { href: `${base}/`, label: "--projects", key: "" },
-      { href: `${base}/categories`, label: "--categories", key: "categories" },
+      { href: `${base}/`, label: "--projects", key: "", icon: "projects" as const },
+      { href: `${base}/categories`, label: "--categories", key: "categories", icon: "categories" as const },
     ]
-  : isEditorial
+  : isNext || isBannerHeader
     ? [
-        { href: `${base}/`, label: "Gallery", key: "" },
-        { href: `${base}/categories`, label: "Categories", key: "categories" },
+        { href: `${base}/`, label: "Gallery", key: "", icon: "gallery" as const },
+        { href: `${base}/categories`, label: "Categories", key: "categories", icon: "categories" as const },
       ]
     : [
-        { href: `${base}/`, label: "Projects", key: "" },
-        { href: `${base}/categories`, label: "Categories", key: "categories" },
+        { href: `${base}/`, label: "Projects", key: "", icon: "projects" as const },
+        { href: `${base}/categories`, label: "Categories", key: "categories", icon: "categories" as const },
       ];
 
 const submitHref = `${base}/submit`;
-const submitLabel = isTerminal ? "+ submit" : isEditorial ? "Submit ↗" : "Submit a project";
+const submitLabel = isTerminal ? "+ submit" : isNext || isBannerHeader ? "Submit ↗" : "Submit a project";
 ---
 
 <header
-  class:list={["mw-header", isTerminal && "is-terminal", isEditorial && "is-editorial"]}
+  class:list={["mw-header", isTerminal && "is-terminal", isEditorial && "is-editorial", isBannerHeader && "is-banner"]}
   style={`--header-bg:${theme.headerBg}; --header-border:${theme.headerBorder}; --accent:${theme.accent}; --accentInk:${theme.accentInk}; --radius:${theme.radius}px;`}
 >
   <div class="mw-header-inner">
@@ -41,15 +46,10 @@ const submitLabel = isTerminal ? "+ submit" : isEditorial ? "Submit ↗" : "Subm
           <span class="mw-header-brand-text">made-with-<span class="mw-header-brand-accent">{techSlug}</span></span>
           <span class="mw-header-cursor"></span>
         </>
-      ) : isEditorial ? (
-        <>
-          <span class="mw-header-logo is-round disp">{logo}</span>
-          <span class="mw-header-brand-text disp">Made with {theme.techName}</span>
-        </>
       ) : (
         <>
-          <span class="mw-header-logo disp">{logo}</span>
-          <span class="mw-header-brand-text disp">Made with <span class="mw-header-brand-accent">{theme.techName}</span></span>
+          <span class:list={["mw-header-logo", "disp", (isNext || isBannerHeader) && "is-round", isBannerHeader && "is-banner-logo"]}>{logo}</span>
+          <MadeWithTechWordmark techName={theme.techName} accent={theme.accent} />
         </>
       )}
     </a>
@@ -67,16 +67,35 @@ const submitLabel = isTerminal ? "+ submit" : isEditorial ? "Submit ↗" : "Subm
     </button>
 
     <nav id="mw-header-nav" class="mw-header-nav">
-      {links.map((link) => (
+      <div class="mw-header-nav-center">
+        <div
+          class="mw-header-global-nav"
+          style={isTerminal ? `--global-nav-accent:${theme.accent};` : undefined}
+        >
+          <GlobalSiteNav
+            part="links"
+            variant={isTerminal ? "terminal" : "light"}
+            includeBlog={false}
+            includeRss={false}
+            includeSubscribe={false}
+          />
+        </div>
+        {links.map((link) => (
+          <a
+            href={link.href}
+            class:list={["mw-header-link", active === link.key && "is-active"]}
+          >
+            <NavIcon name={link.icon} />
+            {link.label}
+          </a>
+        ))}
+      </div>
+      <div class="mw-header-nav-end">
         <a
-          href={link.href}
-          class:list={["mw-header-link", active === link.key && "is-active"]}
-        >{link.label}</a>
-      ))}
-      <a
-        href={submitHref}
-        class:list={["mw-header-submit", !isTerminal && !isEditorial && "btn btn-primary"]}
-      >{submitLabel}</a>
+          href={submitHref}
+          class:list={["mw-header-submit", !isTerminal && !isEditorial && !isBannerHeader && "btn btn-primary"]}
+        >{submitLabel}</a>
+      </div>
     </nav>
   </div>
 </header>
@@ -103,6 +122,7 @@ const submitLabel = isTerminal ? "+ submit" : isEditorial ? "Submit ↗" : "Subm
   }
 
   .is-editorial .mw-header-inner { padding: 20px 32px; }
+  .is-banner .mw-header-inner { padding: 20px 32px; }
 
   .mw-header-brand {
     display: flex;
@@ -125,16 +145,6 @@ const submitLabel = isTerminal ? "+ submit" : isEditorial ? "Submit ↗" : "Subm
   }
 
   .is-terminal .mw-header-brand-text { color: #e8efe9; }
-
-  .is-editorial .mw-header-brand-text {
-    font-weight: 700;
-    font-size: 17px;
-  }
-
-  .mw-header:not(.is-terminal):not(.is-editorial) .mw-header-brand-text {
-    font-weight: 800;
-    font-size: 18px;
-  }
 
   .mw-header-brand-accent { color: var(--accent); }
 
@@ -165,6 +175,11 @@ const submitLabel = isTerminal ? "+ submit" : isEditorial ? "Submit ↗" : "Subm
     height: 30px;
     border-radius: 50%;
     font-size: 15px;
+  }
+
+  .mw-header-logo.is-banner-logo {
+    background: #0a0a0a;
+    color: #fff;
   }
 
   .mw-header-toggle {
@@ -204,14 +219,56 @@ const submitLabel = isTerminal ? "+ submit" : isEditorial ? "Submit ↗" : "Subm
   .mw-header-nav {
     display: flex;
     align-items: center;
-    gap: 26px;
+    gap: 8px;
     font-size: 14px;
     font-weight: 500;
     color: #4a554f;
   }
 
+  .mw-header-nav-center {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .mw-header-nav-end {
+    display: flex;
+    align-items: center;
+  }
+
+  .mw-header:not(.is-terminal):not(.is-editorial):not(.is-banner) .mw-header-inner {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    column-gap: 4px;
+  }
+
+  .mw-header:not(.is-terminal):not(.is-editorial):not(.is-banner) .mw-header-brand {
+    grid-column: 1;
+    justify-self: start;
+  }
+
+  .mw-header:not(.is-terminal):not(.is-editorial):not(.is-banner) .mw-header-nav {
+    display: contents;
+  }
+
+  .mw-header:not(.is-terminal):not(.is-editorial):not(.is-banner) .mw-header-nav-center {
+    grid-column: 2;
+    justify-self: center;
+  }
+
+  .mw-header:not(.is-terminal):not(.is-editorial):not(.is-banner) .mw-header-nav-end {
+    grid-column: 3;
+    justify-self: end;
+  }
+
+  .mw-header:not(.is-terminal):not(.is-editorial):not(.is-banner) .mw-header-nav {
+    font-size: 14px;
+    color: #2a3038;
+  }
+
   .is-terminal .mw-header-nav {
-    gap: 22px;
+    gap: 8px;
     font-size: 13px;
     color: #7c887f;
   }
@@ -220,10 +277,57 @@ const submitLabel = isTerminal ? "+ submit" : isEditorial ? "Submit ↗" : "Subm
     font-weight: 600;
   }
 
+  .is-banner .mw-header-nav {
+    font-weight: 600;
+    color: #0a0a0a;
+  }
+
   .mw-header-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35em;
     text-decoration: none;
     color: inherit;
     white-space: nowrap;
+    padding: 5px 11px;
+    border-radius: 999px;
+    transition: color 0.12s ease, background 0.12s ease, text-decoration-color 0.12s ease;
+  }
+
+  .mw-header:not(.is-terminal):not(.is-editorial):not(.is-banner) .mw-header-link {
+    color: #2a3038;
+    font-weight: 600;
+  }
+
+  .mw-header-link.is-active {
+    color: var(--accent);
+    font-weight: 700;
+    background: color-mix(in srgb, var(--accent) 14%, transparent);
+  }
+
+  .mw-header:not(.is-terminal):not(.is-editorial):not(.is-banner) .mw-header-link.is-active {
+    color: #12161a;
+    font-weight: 700;
+    background: color-mix(in srgb, rgb(47, 111, 235) 14%, transparent);
+  }
+
+  .mw-header:not(.is-terminal):not(.is-editorial):not(.is-banner) .mw-header-link:hover {
+    color: rgb(47, 111, 235);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .mw-header:not(.is-terminal):not(.is-editorial):not(.is-banner) .mw-header-link.is-active:hover {
+    color: #12161a;
+    text-decoration: none;
+  }
+
+  .mw-header-link.is-active :global(.nav-icon) {
+    opacity: 1;
+  }
+
+  .is-terminal .mw-header-link.is-active {
+    background: color-mix(in srgb, var(--accent) 18%, transparent);
   }
 
   .mw-header-submit {
@@ -232,23 +336,30 @@ const submitLabel = isTerminal ? "+ submit" : isEditorial ? "Submit ↗" : "Subm
     cursor: pointer;
   }
 
-  .is-terminal .mw-header-submit {
-    border: 1px solid var(--accent);
-    color: var(--accent);
+  .mw-header-global-nav {
+    display: flex;
+    align-items: center;
+  }
+
+  .mw-header-global-nav :global(.global-site-nav) {
+    gap: 6px;
+  }
+
+  .mw-header.is-terminal .mw-header-global-nav :global(.global-site-nav-link) {
+    color: inherit;
+    font-weight: inherit;
+    text-decoration: none;
     background: transparent;
-    padding: 8px 15px;
-    border-radius: 6px;
   }
 
-  .is-editorial .mw-header-submit {
-    background: var(--accent);
-    color: var(--accentInk);
-    padding: 9px 18px;
+  .mw-header.is-terminal .mw-header-global-nav :global(.global-site-nav-link:hover) {
+    color: var(--accent);
+    text-decoration: none;
   }
 
-  .mw-header:not(.is-terminal):not(.is-editorial) .mw-header-submit {
-    padding: 9px 16px;
-    font-size: 14px;
+  .mw-header.is-terminal .mw-header-global-nav :global(.global-site-nav-link.is-active) {
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 14%, transparent);
   }
 
   @media (max-width: 768px) {
@@ -257,18 +368,37 @@ const submitLabel = isTerminal ? "+ submit" : isEditorial ? "Submit ↗" : "Subm
       padding: 14px 20px;
     }
 
+    .mw-header-global-nav {
+      width: 100%;
+    }
+
+    .mw-header-global-nav .global-site-nav {
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
+    .mw-header-global-nav + .mw-header-link,
+    .mw-header-nav-center > .mw-header-global-nav + .mw-header-link,
+    .mw-header-nav-center + .mw-header-nav-end {
+      border-top: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+    }
+
+    .is-terminal .mw-header-global-nav + .mw-header-link,
+    .is-terminal .mw-header-nav-center > .mw-header-global-nav + .mw-header-link {
+      border-top-color: #232a26;
+    }
+
     .is-editorial .mw-header-inner { padding: 16px 20px; }
+
+    .mw-header:not(.is-terminal):not(.is-editorial):not(.is-banner) .mw-header-inner {
+      display: flex;
+    }
 
     .mw-header-brand {
       flex: 1;
       min-width: 0;
     }
-
-    .mw-header:not(.is-terminal):not(.is-editorial) .mw-header-brand-text {
-      font-size: 16px;
-    }
-
-    .is-editorial .mw-header-brand-text { font-size: 15px; }
 
     .mw-header-logo {
       width: 30px;
@@ -299,6 +429,11 @@ const submitLabel = isTerminal ? "+ submit" : isEditorial ? "Submit ↗" : "Subm
       backdrop-filter: blur(10px);
     }
 
+    .mw-header-nav-center,
+    .mw-header-nav-end {
+      display: contents;
+    }
+
     .mw-header.is-open .mw-header-nav { display: flex; }
 
     .mw-header-link,
@@ -325,6 +460,31 @@ const submitLabel = isTerminal ? "+ submit" : isEditorial ? "Submit ↗" : "Subm
     .mw-header:not(.is-terminal):not(.is-editorial) .mw-header-submit {
       padding: 11px 16px;
     }
+  }
+
+  .is-terminal .mw-header-submit {
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    background: transparent;
+    padding: 8px 15px;
+    border-radius: 6px;
+  }
+
+  .is-editorial .mw-header-submit {
+    background: var(--accent);
+    color: var(--accentInk);
+    padding: 9px 18px;
+  }
+
+  .is-banner .mw-header-submit {
+    background: #0a0a0a;
+    color: #fff;
+    padding: 9px 18px;
+  }
+
+  .mw-header:not(.is-terminal):not(.is-editorial):not(.is-banner) .mw-header-submit {
+    padding: 9px 16px;
+    font-size: 14px;
   }
 </style>
 

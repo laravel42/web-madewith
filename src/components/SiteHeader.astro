@@ -1,0 +1,81 @@
+---
+import MadeWithWhatWordmark from "./MadeWithWhatWordmark.astro";
+import GlobalSiteNav from "./GlobalSiteNav.astro";
+import type { GlobalNavActive } from "./GlobalSiteNav.astro";
+
+interface Props {
+  active?: GlobalNavActive;
+  subscribeHref?: string;
+  subscribeLabel?: string;
+}
+
+const {
+  active = "network",
+  subscribeHref,
+  subscribeLabel,
+} = Astro.props;
+---
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" aria-label="MadeWithWhat home" class="site-header-brand">
+      <MadeWithWhatWordmark size="header" />
+    </a>
+    <GlobalSiteNav
+      part="links"
+      active={active}
+      includeSubscribe={false}
+    />
+    <div class="site-header-end">
+      <GlobalSiteNav
+        part="subscribe"
+        subscribeHref={subscribeHref}
+        subscribeLabel={subscribeLabel}
+      />
+    </div>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background: rgba(251, 252, 251, 0.86);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #ececec;
+  }
+
+  .site-header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 18px 28px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    column-gap: 4px;
+  }
+
+  .site-header-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: inherit;
+    justify-self: start;
+    grid-column: 1;
+  }
+
+  .site-header-inner :global(.global-site-nav) {
+    justify-self: center;
+    grid-column: 2;
+  }
+
+  .site-header-end {
+    justify-self: end;
+    grid-column: 3;
+    display: flex;
+    align-items: center;
+  }
+</style>

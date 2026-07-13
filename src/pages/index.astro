@@ -1,11 +1,9 @@
 ---
 import { DOMAINS, GROUP_META, getResolvedTheme, networkMetaFor, type DomainGroup } from "../config/domains";
 import { getCatalog } from "../lib/catalog";
-import { MW_LOGOS } from "../lib/logos";
 import NetworkCard from "../components/NetworkCard.astro";
-import MadeWithWhatWordmark from "../components/MadeWithWhatWordmark.astro";
 import NetworkFooter from "../components/NetworkFooter.astro";
-import GitHubBadge from "../components/GitHubBadge.astro";
+import SiteHeader from "../components/SiteHeader.astro";
 
 function siteCard(slug: string) {
   const d = getResolvedTheme(slug);
@@ -19,7 +17,6 @@ function siteCard(slug: string) {
     href: `/${d.slug}/`,
     count: data.projects.length,
     blurb: top.length ? `Featuring ${top.join(", ")} and more.` : "Gallery indexing in progress.",
-    logoPath: MW_LOGOS[d.techName] ?? "",
     ...net,
   };
 }
@@ -128,8 +125,17 @@ const FONT_HREF =
         overflow-x: clip;
         font-family: "Hanken Grotesk", sans-serif;
         color: #12161a;
-        background: #fbfcfb;
+        background: radial-gradient(680px 340px at 12% 2%, rgba(47, 111, 235, 0.06), transparent 60%), radial-gradient(620px 320px at 88% 8%, rgba(124, 58, 237, 0.055), transparent 60%), radial-gradient(700px 360px at 50% 120%, rgba(14, 165, 164, 0.05), transparent 60%), #fbfcfb;
         -webkit-font-smoothing: antialiased;
+      }
+      .page-shell { position: relative; min-height: 100vh; display: flex; flex-direction: column; flex: 1; }
+      .page-grid {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background-image: linear-gradient(#12161a08 1px, transparent 1px), linear-gradient(90deg, #12161a08 1px, transparent 1px);
+        background-size: 34px 34px;
+        mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 620px);
       }
       a { text-decoration: none; color: inherit; }
       .skip-link {
@@ -195,21 +201,7 @@ const FONT_HREF =
         flex: 1;
         height: 1px;
       }
-      .site-header {
-        position: sticky;
-        top: 0;
-        z-index: 30;
-        background: rgba(251, 252, 251, 0.86);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid #ececec;
-      }
-      .site-header-inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 18px 0;
-      }
-      .hero { max-width: 760px; margin: 0 auto; padding: 64px 28px 30px; text-align: center; }
+      .hero { max-width: 920px; margin: 0 auto; padding: 64px 28px 30px; text-align: center; }
       .hero-eyebrow {
         font-size: 12px;
         font-weight: 700;
@@ -220,7 +212,7 @@ const FONT_HREF =
       }
       .hero-title {
         font-family: "Bricolage Grotesque", sans-serif;
-        font-size: clamp(34px, 7vw, 46px);
+        font-size: clamp(40px, 8vw, 54px);
         font-weight: 800;
         letter-spacing: -0.03em;
         line-height: 1.04;
@@ -234,57 +226,40 @@ const FONT_HREF =
         max-width: 560px;
       }
       .filter-row {
-        display: grid;
-        grid-template-columns: repeat(3, auto);
-        column-gap: 10px;
-        row-gap: 10px;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 4px;
         justify-content: center;
         margin-top: 30px;
+        max-width: 100%;
       }
       .filter-pill {
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-width: 170px;
-        font-size: 13.5px;
-        font-weight: 600;
-        padding: 8px 15px;
-        border-radius: 22px;
-        transition: transform 0.12s ease;
-      }
-      .filter-pill-main {
         display: inline-flex;
         align-items: center;
-        gap: 7px;
+        gap: 3px;
+        font-size: 10px;
+        font-weight: 600;
+        padding: 4px 8px;
+        border-radius: 14px;
+        white-space: nowrap;
+        transition: transform 0.12s ease;
       }
       .filter-pill:hover { transform: translateY(-2px); }
-      .filter-pill-count {
-        position: absolute;
-        right: 15px;
-        opacity: 0.6;
-      }
       .network { padding: 24px 0 40px; }
       @media (max-width: 860px) { .grid { grid-template-columns: 1fr 1fr; } }
       @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
     </style>
   </head>
   <body>
+    <div class="page-shell">
+    <div class="page-grid" aria-hidden="true"></div>
     <a class="skip-link" href="#network">Skip to galleries</a>
-    <header class="site-header">
-      <div class="wrap site-header-inner">
-        <a href="/" aria-label="MadeWithWhat home" style="display:flex; align-items:center; gap:10px;">
-          <div class="disp" style="width:30px; height:30px; border-radius:8px; background:#12161a; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:16px;">M</div>
-          <MadeWithWhatWordmark size="header" />
-        </a>
-        <GitHubBadge />
-      </div>
-    </header>
+    <SiteHeader active="network" />
 
     <section class="hero" aria-labelledby="hero-title">
       <div class="hero-eyebrow">The MadeWithWhat network</div>
-      <h1 class="hero-title" id="hero-title">One catalog engine. A showcase site for every stack.</h1>
-      <p class="hero-copy">Each site is a daily-updated gallery of the best open-source projects for a technology, indexed from GitHub and ranked by stars — themed to its own brand identity.</p>
+      <h1 class="hero-title" id="hero-title">One catalog engine.<br />A showcase site for every stack.</h1>
+      <p class="hero-copy">Each site is a daily-updated gallery of the best open-source projects for a technology, scraped live from GitHub and ranked by stars — themed to its own brand identity.</p>
       <nav class="filter-row" aria-label="Jump to stack category">
         {sections.map(({ group, meta, sites }) => (
           <a
@@ -292,11 +267,8 @@ const FONT_HREF =
             class="filter-pill"
             style={`color:${meta.color}; background:color-mix(in srgb, ${meta.color} 9%, #ffffff); border:1px solid color-mix(in srgb, ${meta.color} 22%, #ffffff);`}
           >
-            <span class="filter-pill-main">
-              <span aria-hidden="true">{meta.icon}</span>
-              {meta.label}
-            </span>
-            <span class="filter-pill-count">{sites.length}</span>
+            <span aria-hidden="true">{meta.icon}</span>
+            {meta.label}
           </a>
         ))}
       </nav>
@@ -324,7 +296,6 @@ const FONT_HREF =
                 accent={s.accent}
                 accentInk={s.accentInk}
                 card={s.card}
-                logoPath={s.logoPath}
               />
             ))}
           </div>
@@ -333,5 +304,6 @@ const FONT_HREF =
     </main>
 
     <NetworkFooter />
+    </div>
   </body>
 </html>

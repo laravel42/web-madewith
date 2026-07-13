@@ -1,7 +1,6 @@
 ---
-import MadeWithWhatWordmark from "../components/MadeWithWhatWordmark.astro";
 import NetworkFooter from "../components/NetworkFooter.astro";
-import GitHubBadge from "../components/GitHubBadge.astro";
+import SiteHeader from "../components/SiteHeader.astro";
 
 interface Props {
   title: string;
@@ -42,20 +41,6 @@ const FONT_HREF =
       a { text-decoration: none; color: inherit; }
       .disp { font-family: "Bricolage Grotesque", sans-serif; }
       .wrap { max-width: 1100px; margin: 0 auto; padding: 0 28px; width: 100%; }
-      .site-header {
-        position: sticky;
-        top: 0;
-        z-index: 30;
-        background: rgba(251, 252, 251, 0.86);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid #ececec;
-      }
-      .site-header-inner {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 18px 0;
-      }
       .filter-link {
         cursor: pointer;
         text-decoration: none;
@@ -79,15 +64,7 @@ const FONT_HREF =
     </style>
   </head>
   <body>
-    <header class="site-header">
-      <div class="wrap site-header-inner">
-        <a href="/" style="display:flex; align-items:center; gap:10px;">
-          <div class="disp" style="width:30px; height:30px; border-radius:8px; background:#12161a; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:16px;">M</div>
-          <MadeWithWhatWordmark size="header" />
-        </a>
-        <GitHubBadge />
-      </div>
-    </header>
+    <SiteHeader active="network" />
 
     <slot />
 
