@@ -33,15 +33,9 @@ const fallbackJsonLd = {
 const jsonLdScript = article.jsonLd ?? JSON.stringify(fallbackJsonLd);
 const ogImage = article.image ? new URL(article.image, Astro.site ?? Astro.url).href : undefined;
 ---
-<BlogLayout title={displayTitle} description={displayDescription} active="blog" accent={tech.accent} headerCta={{ href: tech.galleryHref, label: "Gallery ↗" }}>
+<BlogLayout title={displayTitle} description={displayDescription} active="blog" accent={tech.accent} headerCta={{ href: tech.galleryHref, label: "Gallery ↗" }} ogType="article" canonical={canonicalUrl} image={ogImage}>
   <Fragment slot="head">
-    <link rel="canonical" href={canonicalUrl} />
     <script type="application/ld+json" set:html={jsonLdScript} />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content={displayTitle} />
-    <meta property="og:description" content={displayDescription} />
-    <meta property="og:url" content={canonicalUrl} />
-    {ogImage && <meta property="og:image" content={ogImage} />}
   </Fragment>
   <BlogArticleView article={article} />
 </BlogLayout>

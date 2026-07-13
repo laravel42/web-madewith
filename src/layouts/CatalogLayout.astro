@@ -11,13 +11,18 @@ interface Props {
   description?: string;
   /** Current path within the domain, e.g. "" | "categories" | "submit". */
   active?: string;
+  /** Thin utility pages (newsletter/submit/llm) pass this to stay out of the index. */
+  noindex?: boolean;
+  /** Absolute OG image URL; defaults to the domain's generated card. */
+  ogImage?: string;
 }
 
-const { theme, title, description, active = "" } = Astro.props;
+const { theme, title, description, active = "", noindex = false, ogImage } = Astro.props;
 const seoTitle = title ?? theme.seoTitle;
 const seoDescription = description ?? theme.seoDescription;
 const canonical = canonicalUrl(theme, Astro.url.pathname, Astro.site!.href);
 const base = `/${theme.slug}`;
+const ogImageUrl = ogImage ?? new URL(`${base}/og.png`, Astro.site!.href).href;
 const wrapperClass = `mw v-${theme.variant}${theme.editorial ? " is-editorial" : ""}`;
 // soft accent tint differs between light (white base) and terminal (dark base)
 const softMix = theme.variant === "terminal" ? "22%, #0c0f0e" : "13%, #ffffff";
@@ -31,6 +36,7 @@ const softMix = theme.variant === "terminal" ? "22%, #0c0f0e" : "13%, #ffffff";
     <link rel="icon" href={theme.favicon ?? `/favicon-${theme.slug}.svg`} />
     <title>{seoTitle}</title>
     <meta name="description" content={seoDescription} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
     <link rel="canonical" href={canonical} />
     <link rel="alternate" type="application/rss+xml" title={`Made with ${theme.techName}`} href={`${base}/rss.xml`} />
     <meta name="generator" content="MadeWithWhat catalog" />
@@ -41,9 +47,13 @@ const softMix = theme.variant === "terminal" ? "22%, #0c0f0e" : "13%, #ffffff";
     <meta property="og:title" content={seoTitle} />
     <meta property="og:description" content={seoDescription} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={seoTitle} />
     <meta name="twitter:description" content={seoDescription} />
+    <meta name="twitter:image" content={ogImageUrl} />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
