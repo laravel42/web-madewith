@@ -5,9 +5,11 @@ interface Props {
   variant?: "terminal" | "editorial" | "default";
   layout?: "fill" | "auto";
   withWireframe?: boolean;
+  /** Above-the-fold cards load eagerly with high fetch priority for LCP. */
+  priority?: boolean;
 }
 
-const { fullName, name, variant = "default", layout = "fill", withWireframe = false } = Astro.props;
+const { fullName, name, variant = "default", layout = "fill", withWireframe = false, priority = false } = Astro.props;
 const src = `https://opengraph.githubassets.com/1/${fullName}`;
 
 const palette = {
@@ -45,7 +47,8 @@ const imgStyle =
     alt={`${name} repository preview`}
     width="1200"
     height="600"
-    loading="lazy"
+    loading={priority ? "eager" : "lazy"}
+    fetchpriority={priority ? "high" : "auto"}
     decoding="async"
     style={imgStyle}
     onload="this.closest('[data-role=project-shot]')?.setAttribute('data-preview-loaded','')"

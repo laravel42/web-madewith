@@ -10,9 +10,10 @@ interface Props {
   size?: "card" | "sm" | "detail";
   variant?: "terminal" | "editorial" | "default";
   layout?: "fill" | "auto";
+  priority?: boolean;
 }
 
-const { theme, fullName, name, size = "card", variant = "default", layout = "fill" } = Astro.props;
+const { theme, fullName, name, size = "card", variant = "default", layout = "fill", priority = false } = Astro.props;
 const wireframeVariant = variant === "editorial" ? "editorial" : "default";
 const autoLayout = layout === "auto";
 ---
@@ -22,7 +23,7 @@ const autoLayout = layout === "auto";
     <ProjectShotWireframe theme={theme} size={size} variant={wireframeVariant} />
   </div>
   <div class="project-shot-image">
-    <ProjectPreviewImage fullName={fullName} name={name} variant={variant} layout={layout} withWireframe />
+    <ProjectPreviewImage fullName={fullName} name={name} variant={variant} layout={layout} withWireframe priority={priority} />
   </div>
 </div>
 

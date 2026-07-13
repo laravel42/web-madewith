@@ -5,8 +5,8 @@ import { formatStars } from "../lib/catalog";
 import { projectDisplayName, projectPreviewExcerpt } from "../lib/preview-text";
 import ProjectShot from "./ProjectShot.astro";
 
-interface Props { theme: Theme; project: Project; rank: string; }
-const { theme, project, rank } = Astro.props;
+interface Props { theme: Theme; project: Project; rank: string; priority?: boolean; }
+const { theme, project, rank, priority = false } = Astro.props;
 const base = `/${theme.slug}`;
 const href = `${base}/project/${project.slug}`;
 const stars = formatStars(project.stars || 0);
@@ -35,7 +35,7 @@ const previewVariant = dark ? "terminal" : editorial ? "editorial" : "default";
 {theme.variant === "terminal" ? (
   <a href={href} class="card" {...dataAttrs}>
     <div style={`height:152px; background:${shotBg}; border-bottom:1px solid ${shotBorder}; position:relative; overflow:hidden;`}>
-      <ProjectShot theme={theme} fullName={project.fullName} name={project.name} size="card" variant={previewVariant} />
+      <ProjectShot theme={theme} fullName={project.fullName} name={project.name} size="card" variant={previewVariant} priority={priority} />
     </div>
     <div class="card-body" style="padding:14px 15px 15px;">
       <div style="font-size:11px; color:#5c665f; margin-bottom:7px;">[{project.category}]</div>
@@ -50,7 +50,7 @@ const previewVariant = dark ? "terminal" : editorial ? "editorial" : "default";
 ) : editorial ? (
   <a href={href} class="card-editorial" {...dataAttrs}>
     <div style={`height:158px; background:${shotBg}; position:relative; border-bottom:1px solid ${shotBorder}; overflow:hidden; padding:14px;`}>
-      <ProjectShot theme={theme} fullName={project.fullName} name={project.name} size="card" variant="editorial" />
+      <ProjectShot theme={theme} fullName={project.fullName} name={project.name} size="card" variant="editorial" priority={priority} />
       <div class="disp" style="position:absolute; top:14px; right:14px; z-index:2; font-weight:800; font-size:13px;">{rank}</div>
     </div>
     <div class="card-body" style="padding:18px 20px 20px;">
@@ -65,7 +65,7 @@ const previewVariant = dark ? "terminal" : editorial ? "editorial" : "default";
 ) : (
   <a href={href} class="card" {...dataAttrs}>
     <div style={`height:152px; background:${shotBg}; border-bottom:1px solid ${shotBorder}; position:relative; overflow:hidden;`}>
-      <ProjectShot theme={theme} fullName={project.fullName} name={project.name} size="card" variant="default" />
+      <ProjectShot theme={theme} fullName={project.fullName} name={project.name} size="card" variant="default" priority={priority} />
     </div>
     <div class="card-body" style="padding:15px 16px 16px;">
       <div style="margin-bottom:7px;">
