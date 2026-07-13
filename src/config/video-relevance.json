@@ -1,0 +1,272 @@
+{
+  "globalReject": [
+    "\\b#dancetutorial\\b",
+    "\\bdance tutorial\\b",
+    "\\bchoreography\\b",
+    "\\bk[- ]?pop\\b",
+    "\\ble\\s+sserafim\\b",
+    "\\b#illit\\b",
+    "\\b#katseye\\b",
+    "\\bminecraft\\b",
+    "\\broblox\\b",
+    "\\bblox\\s*fruits?\\b",
+    "\\bcrochet\\b",
+    "\\bknitting\\b",
+    "\\bmandolin lesson\\b",
+    "\\byarn\\b",
+    "\\bwindrose\\b",
+    "\\b#windrosegameplay\\b",
+    "\\bpaper airplane\\b",
+    "\\bphoenix wright\\b",
+    "\\bmarvel vs capcom\\b",
+    "\\bair force 1\\b",
+    "\\bphoenix suns\\b",
+    "\\bgin and tonic\\b",
+    "\\bmodel rocket\\b",
+    "\\bghost hunting\\b",
+    "\\bastrology\\b",
+    "\\bhoroscope\\b",
+    "\\bsulfur cube\\b"
+  ],
+  "programmingContext": [
+    "\\btutorial\\b",
+    "\\bcourse\\b",
+    "\\bguide\\b",
+    "\\bhow to\\b",
+    "\\bgetting started\\b",
+    "\\bwalkthrough\\b",
+    "\\bframework\\b",
+    "\\bprogramming\\b",
+    "\\bcoding\\b",
+    "\\bdeveloper\\b",
+    "\\bapi\\b",
+    "\\blibrary\\b",
+    "\\bdeploy\\b",
+    "\\bcrash course\\b",
+    "\\bexplained\\b",
+    "\\blecture\\b",
+    "\\bworkshop\\b",
+    "\\bdocumentation\\b",
+    "\\bopen[- ]source\\b",
+    "\\bgithub\\b",
+    "\\bnpm\\b",
+    "\\bpip install\\b",
+    "\\bdocker\\b",
+    "\\bkubernetes\\b",
+    "\\bbackend\\b",
+    "\\bfrontend\\b",
+    "\\bfull[- ]stack\\b",
+    "\\bweb dev\\b",
+    "\\bsoftware\\b",
+    "\\bapplication\\b",
+    "\\bproject setup\\b",
+    "\\bbuild an?\\b"
+  ],
+  "techAliases": {
+    "next": ["next\\.?js", "nextjs"],
+    "nuxt": ["nuxt\\.?js", "nuxt"],
+    "aspnet-core": ["asp\\.?net\\s*core", "aspnet\\s*core"],
+    "spring-boot": ["spring\\s+boot"],
+    "rails": ["ruby on rails", "rails"],
+    "sveltekit": ["sveltekit", "svelte kit"],
+    "solidjs": ["solidjs", "solid\\.?js"],
+    "alpine": ["alpine\\.?js", "alpinejs"],
+    "vue": ["vue\\.?js", "vuejs"],
+    "angular": ["angular"],
+    "actix-web": ["actix\\s*web", "actix-web"],
+    "open-webui": ["open\\s*webui", "open-webui"],
+    "anythingllm": ["anythingllm", "anything\\s*llm"],
+    "twenty-crm": ["twenty\\s*crm", "twenty crm"],
+    "payload": ["payload\\s*cms", "payloadcms"],
+    "octobercms": ["october\\s*cms", "octobercms"],
+    "llamaindex": ["llamaindex", "llama\\s*index"],
+    "erpnext": ["erpnext", "erp\\s*next"],
+    "suitecrm": ["suitecrm", "suite\\s*crm"],
+    "espocrm": ["espocrm", "espo\\s*crm"],
+    "vtiger": ["vtiger"],
+    "prestashop": ["prestashop"],
+    "woocommerce": ["woocommerce", "woo\\s*commerce"],
+    "shopware": ["shopware"],
+    "opencart": ["opencart"],
+    "librechat": ["librechat"],
+    "fastapi": ["fastapi", "fast\\s*api"],
+    "nestjs": ["nestjs", "nest\\.?js"],
+    "vllm": ["vllm", "v-llm"]
+  },
+  "strictSlugs": {
+    "phoenix": {
+      "reject": [
+        "\\broblox\\b",
+        "\\bminecraft\\b",
+        "\\bplushies\\b",
+        "\\bphoenix\\s+sc\\b",
+        "\\bblox\\b"
+      ],
+      "requireAny": [
+        "\\belixir\\b",
+        "\\bliveview\\b",
+        "\\blive\\s+view\\b",
+        "\\becto\\b",
+        "\\bphoenix\\s+framework\\b",
+        "\\bhex\\.?pm\\b",
+        "\\bgigalixir\\b",
+        "\\botp\\b",
+        "\\bphoenix\\s+live\\b"
+      ]
+    },
+    "haystack": {
+      "reject": [
+        "\\bcrochet\\b",
+        "\\bstitch\\b",
+        "\\bmandolin\\b",
+        "\\bleetcode\\b",
+        "\\bwindrose\\b",
+        "\\bopenhaystack\\b",
+        "\\bairtag\\b",
+        "\\bmud pies\\b",
+        "\\bcookie\\b",
+        "\\brecipe\\b"
+      ],
+      "requireAny": [
+        "\\bdeepset\\b",
+        "\\bhaystack\\s+ai\\b",
+        "\\bhaystack\\s+2\\b",
+        "\\bnlp\\s+pipeline\\b",
+        "\\bsemantic\\s+search\\b",
+        "\\bdocument\\s+store\\b",
+        "\\bretrieval[- ]augmented\\b",
+        "\\brag\\s+pipeline\\b",
+        "\\bquestion\\s+answering\\b",
+        "\\bhayhooks\\b",
+        "\\bpipelines?\\s+for\\s+nlp\\b",
+        "\\bhaystack\\s+and\\s+elasticsearch\\b",
+        "\\bwith\\s+haystack\\b",
+        "\\bindex.*\\bhaystack\\b"
+      ]
+    },
+    "ionic": {
+      "reject": [
+        "\\bionic compounds?\\b",
+        "\\btransition metals?\\b",
+        "\\bplasma thruster\\b",
+        "\\bchemistry\\b",
+        "\\bnasa\\b.*\\bthruster\\b"
+      ],
+      "requireAny": [
+        "\\bionic\\s+framework\\b",
+        "\\bcapacitor\\b",
+        "\\bionic\\s+angular\\b",
+        "\\bionic\\s+react\\b",
+        "\\bionic\\s+vue\\b",
+        "\\b@ionic\\b",
+        "\\bionic\\s+[0-9]\\b",
+        "\\bionic\\s+app\\b"
+      ]
+    },
+    "gin": {
+      "reject": ["\\bcocktail\\b", "\\bgin\\s+and\\s+tonic\\b"],
+      "requireAny": [
+        "\\bgolang\\b",
+        "\\bgo\\s+lang\\b",
+        "\\bgin-gonic\\b",
+        "\\bgin\\s+framework\\b",
+        "\\bgo\\s+web\\b",
+        "\\brest\\s+api\\s+go\\b"
+      ]
+    },
+    "fiber": {
+      "reject": ["\\bdietary\\s+fiber\\b", "\\bnutrition\\b", "\\boptical\\s+fiber\\b"],
+      "requireAny": [
+        "\\bgofiber\\b",
+        "\\bgo\\s+fiber\\b",
+        "\\bgolang\\s+fiber\\b",
+        "\\bfiber\\s+framework\\b",
+        "\\bgofiber/fiber\\b"
+      ]
+    },
+    "ghost": {
+      "reject": ["\\bparanormal\\b", "\\bscary\\s+sketch\\b", "\\bhorror\\b"],
+      "requireAny": [
+        "\\bghost\\s+cms\\b",
+        "\\bghost\\s+blog\\b",
+        "\\btryghost\\b",
+        "\\bheadless\\s+cms\\b",
+        "\\bghost\\s+theme\\b"
+      ]
+    },
+    "rocket": {
+      "reject": ["\\bkerbal\\b", "\\bspacex\\b", "\\bpvc\\s+pipe\\b", "\\bmodel\\s+rocket\\b"],
+      "requireAny": [
+        "\\brocket\\.rs\\b",
+        "\\brust\\s+rocket\\b",
+        "\\brocket\\s+framework\\b",
+        "\\brwf2\\b",
+        "\\brocket\\s+web\\s+framework\\b"
+      ]
+    },
+    "hono": {
+      "requireAny": [
+        "\\bhonojs\\b",
+        "\\bhono\\s+framework\\b",
+        "\\bhono\\s+cloudflare\\b",
+        "\\bedge\\s+worker\\b",
+        "\\bweb\\s+standard\\b"
+      ]
+    },
+    "lit": {
+      "reject": ["\\bminecraft\\b", "\\broblox\\b"],
+      "requireAny": [
+        "\\blit\\s+element\\b",
+        "\\blit\\s+html\\b",
+        "\\bweb\\s+components?\\b",
+        "\\blit\\s+dev\\b",
+        "\\b@lit\\b"
+      ]
+    },
+    "monica": {
+      "requireAny": [
+        "\\bmonica\\s+crm\\b",
+        "\\bmonicahq\\b",
+        "\\bpersonal\\s+crm\\b",
+        "\\brelationship\\s+manager\\b"
+      ]
+    },
+    "medusa": {
+      "requireAny": [
+        "\\bmedusajs\\b",
+        "\\bmedusa\\s+js\\b",
+        "\\bheadless\\s+commerce\\b",
+        "\\bmedusa\\s+commerce\\b",
+        "\\be-commerce\\s+backend\\b"
+      ]
+    },
+    "astro": {
+      "reject": ["\\bastrology\\b", "\\bhoroscope\\b", "\\bzodiac\\b"],
+      "requireAny": [
+        "\\bastro\\s+framework\\b",
+        "\\bastro\\s+js\\b",
+        "\\bwithastro\\b",
+        "\\bastro\\s+islands\\b",
+        "\\bastro\\s+build\\b",
+        "\\bastro\\s+dev\\b"
+      ]
+    },
+    "flowise": {
+      "requireAny": [
+        "\\bflowise\\s*ai\\b",
+        "\\bflowiseai\\b",
+        "\\bllm\\s+flow\\b",
+        "\\bvisual\\s+langchain\\b",
+        "\\bchatflow\\b"
+      ]
+    },
+    "koa": {
+      "requireAny": [
+        "\\bkoa\\.?js\\b",
+        "\\bnode\\.?js\\s+koa\\b",
+        "\\bkoa\\s+framework\\b",
+        "\\bkoajs\\b"
+      ]
+    }
+  }
+}
