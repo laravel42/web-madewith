@@ -1,0 +1,91 @@
+---
+import { DOMAINS } from "../config/domains";
+import NetworkLayout from "../layouts/NetworkLayout.astro";
+
+// Cloudflare Pages serves this for unmatched routes with a real 404 status
+// (the file must be named 404.html in the build output — Astro emits that from
+// this page), replacing the previous soft-404 that returned the homepage as 200.
+const title = "Page not found — MadeWithWhat";
+const description = "The page you were looking for doesn't exist. Browse the MadeWithWhat network of open-source galleries instead.";
+const popular = DOMAINS.slice(0, 8);
+---
+<NetworkLayout title={title} description={description} noindex>
+  <main class="nf-wrap">
+    <p class="nf-code">404</p>
+    <h1 class="nf-title">This page wandered off.</h1>
+    <p class="nf-copy">
+      The URL you followed doesn't match anything in the catalog. It may have
+      been moved, or never existed.
+    </p>
+    <div class="nf-actions">
+      <a href="/" class="btn-primary nf-btn">Back to the network</a>
+      <a href="/blog/" class="nf-link">Read the blog →</a>
+    </div>
+    <nav class="nf-domains" aria-label="Popular galleries">
+      {popular.map((d) => (
+        <a href={`/${d.slug}/`} class="nf-chip" style={`--c:${d.accent};`}>Made with {d.techName}</a>
+      ))}
+    </nav>
+  </main>
+
+  <style>
+    .nf-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 90px 28px 120px;
+      text-align: center;
+    }
+    .nf-code {
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: clamp(72px, 18vw, 132px);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      margin: 0;
+      color: rgb(47, 111, 235);
+    }
+    .nf-title {
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-size: clamp(28px, 6vw, 40px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin: 14px 0 0;
+    }
+    .nf-copy {
+      font-size: 17px;
+      color: #5c6169;
+      line-height: 1.55;
+      max-width: 460px;
+      margin: 16px auto 0;
+    }
+    .nf-actions {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+    .nf-btn { padding: 12px 22px; font-size: 15px; }
+    .nf-link { font-size: 15px; font-weight: 600; color: rgb(47, 111, 235); }
+    .nf-link:hover { text-decoration: underline; text-underline-offset: 3px; }
+    .nf-domains {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 48px;
+    }
+    .nf-chip {
+      font-size: 13px;
+      font-weight: 600;
+      padding: 7px 14px;
+      border-radius: 20px;
+      color: var(--c);
+      background: color-mix(in srgb, var(--c) 9%, #ffffff);
+      border: 1px solid color-mix(in srgb, var(--c) 22%, #ffffff);
+      transition: transform 0.12s ease;
+    }
+    .nf-chip:hover { transform: translateY(-2px); }
+  </style>
+</NetworkLayout>
