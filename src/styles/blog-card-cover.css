@@ -332,10 +332,6 @@
 .blog-card-excerpt,
 .blog-index-card-excerpt,
 .domain-blog-excerpt {
-  display: -webkit-box;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
   font-family: "Hanken Grotesk", sans-serif;
   font-size: 13px;
   font-weight: 500;
@@ -352,7 +348,6 @@
   line-height: 1.5;
   letter-spacing: 0;
   color: #3f454d;
-  -webkit-line-clamp: 3;
 }
 
 .blog-card-cover-featured.blog-card-cover--no-title {

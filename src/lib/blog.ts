@@ -263,7 +263,7 @@ export function articleDeckDescription(article: Pick<BlogArticle, "excerpt" | "d
   return excerpt.length >= description.length ? excerpt : description;
 }
 
-/** Card/list preview — full deck text; clamp in CSS for layout. */
+/** Card/list preview — full deck text, rendered unclamped. */
 export function articleCardExcerpt(article: Pick<BlogArticle, "excerpt" | "description" | "title">): string {
   return articleDeckDescription(article);
 }
