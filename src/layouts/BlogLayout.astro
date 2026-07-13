@@ -1,0 +1,274 @@
+---
+import NetworkFooter from "../components/NetworkFooter.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  active?: "network" | "blog" | "rss";
+  accent?: string;
+  headerCta?: { href: string; label: string };
+}
+
+const { title, description, active = "blog", accent = "rgb(47, 111, 235)", headerCta } = Astro.props;
+const pageTitle = title.includes("MadeWithWhat") ? title : `${title} — MadeWithWhat`;
+const FONT_HREF =
+  "https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500;700&display=swap";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href={FONT_HREF} rel="stylesheet" />
+    <link rel="alternate" type="application/rss+xml" title="MadeWithWhat Blog" href="/blog/rss.xml" />
+    <slot name="head" />
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        overflow-x: clip;
+        font-family: "Hanken Grotesk", sans-serif;
+        color: #12161a;
+        background: radial-gradient(680px 340px at 12% 2%, rgba(47, 111, 235, 0.06), transparent 60%), #fbfcfb;
+        -webkit-font-smoothing: antialiased;
+      }
+      :global(a) {
+        text-decoration: none;
+        color: inherit;
+      }
+      .disp { font-family: "Bricolage Grotesque", sans-serif; }
+      .mw-link { color: rgb(47, 111, 235); }
+      .mw-link:hover { color: #1c4fbf; }
+      .filter-link {
+        cursor: pointer;
+        text-decoration: none;
+        transition: color 0.12s ease, text-decoration-color 0.12s ease;
+      }
+      .filter-link:hover {
+        color: rgb(47, 111, 235);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      :global(.blog-hero) {
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 64px 28px 30px;
+        text-align: center;
+      }
+      :global(.blog-hero-eyebrow) {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        color: #2f6feb;
+        text-transform: uppercase;
+        margin-bottom: 18px;
+      }
+      :global(.blog-hero-title) {
+        font-family: "Bricolage Grotesque", sans-serif;
+        font-size: clamp(40px, 8vw, 54px);
+        font-weight: 800;
+        letter-spacing: -0.03em;
+        line-height: 1.04;
+        margin: 0;
+      }
+      :global(.blog-hero-copy) {
+        font-size: 17px;
+        color: #5c6169;
+        margin: 18px auto 0;
+        line-height: 1.55;
+        max-width: 560px;
+      }
+      :global(.prose) {
+        max-width: 100%;
+        overflow-wrap: anywhere;
+      }
+      :global(.prose h2) {
+        font-family: "Bricolage Grotesque", sans-serif;
+        font-size: 26px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin: 42px 0 14px;
+        scroll-margin-top: 96px;
+      }
+      :global(.prose p) {
+        font-family: "Newsreader", serif;
+        font-size: 19px;
+        line-height: 1.7;
+        color: #2b2f36;
+        margin: 0 0 18px;
+      }
+      :global(.prose ul),
+      :global(.prose ol) {
+        font-family: "Newsreader", serif;
+        font-size: 19px;
+        line-height: 1.7;
+        color: #2b2f36;
+        padding-left: 22px;
+        margin: 0 0 18px;
+      }
+      :global(.prose li) { margin: 0 0 8px; }
+      :global(.prose strong) { font-weight: 700; color: #12161a; }
+      :global(.prose code) {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 15px;
+        background: #f2f4f7;
+        padding: 2px 6px;
+        border-radius: 5px;
+        color: var(--blog-accent, #2f6feb);
+      }
+      :global(.prose pre) {
+        background: #0f1420;
+        border-radius: 12px;
+        padding: 18px 20px;
+        overflow: auto;
+        margin: 0 0 18px;
+      }
+      :global(.prose pre code) {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 14px;
+        color: #c7d0da;
+        background: none;
+        padding: 0;
+        white-space: pre;
+      }
+      :global(.prose blockquote) {
+        border-left: 3px solid var(--blog-accent, #2f6feb);
+        margin: 0 0 18px;
+        padding: 6px 0 6px 20px;
+        font-family: "Newsreader", serif;
+        font-size: 20px;
+        font-style: italic;
+        color: #3a4048;
+      }
+      :global(.prose h3) {
+        font-family: "Bricolage Grotesque", sans-serif;
+        font-size: 21px;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+        margin: 28px 0 12px;
+        scroll-margin-top: 96px;
+      }
+      :global(.prose a) {
+        color: var(--blog-accent, #2f6feb);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      :global(.prose table) {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 0 0 22px;
+        font-size: 15px;
+        display: block;
+        overflow-x: auto;
+      }
+      :global(.prose th),
+      :global(.prose td) {
+        border: 1px solid #e3e6ea;
+        padding: 10px 12px;
+        text-align: left;
+        vertical-align: top;
+      }
+      :global(.prose th) {
+        background: #f6f7f9;
+        font-weight: 700;
+      }
+      :global(.prose figure) {
+        margin: 0 0 22px;
+      }
+      :global(.prose figure img) {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        border-radius: 14px;
+        display: block;
+      }
+      :global(.prose figcaption) {
+        font-size: 13px;
+        color: #9aa0a6;
+        margin-top: 8px;
+        text-align: center;
+      }
+      :global(.prose .callout) {
+        border-radius: 12px;
+        padding: 14px 16px;
+        margin: 0 0 18px;
+        font-family: "Newsreader", serif;
+        font-size: 17px;
+        line-height: 1.6;
+      }
+      :global(.prose .callout strong) {
+        display: block;
+        font-family: "Hanken Grotesk", sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+      }
+      :global(.prose .callout p) {
+        font-size: 17px;
+        margin: 0;
+      }
+      :global(.prose .callout-note) {
+        background: #eef4ff;
+        border: 1px solid #c9d9fb;
+        color: #24324d;
+      }
+      :global(.prose .callout-tip) {
+        background: #edf8f1;
+        border: 1px solid #b9e3c7;
+        color: #1f3d2b;
+      }
+      :global(.prose .callout-warning) {
+        background: #fff4e8;
+        border: 1px solid #f2d2a6;
+        color: #5a3b12;
+      }
+      @media (max-width: 900px) {
+        .blog-grid-3 { grid-template-columns: 1fr 1fr !important; }
+        .blog-featured { grid-template-columns: 1fr !important; }
+        .blog-article-grid { grid-template-columns: 1fr !important; }
+        .blog-toc-layout { grid-template-columns: 1fr !important; }
+      }
+      @media (max-width: 560px) {
+        .blog-grid-3 { grid-template-columns: 1fr !important; }
+      }
+      .blog-index-card {
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+      }
+      .blog-index-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 28px rgba(20, 30, 50, 0.08);
+      }
+      .blog-featured {
+        transition: transform 0.15s ease, box-shadow 0.15s ease;
+      }
+      .blog-featured:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 24px 56px rgba(20, 30, 50, 0.1);
+      }
+    </style>
+  </head>
+  <body style={`--blog-accent:${accent};`}>
+    <SiteHeader
+      active={active}
+      subscribeHref={headerCta?.href}
+      subscribeLabel={headerCta?.label}
+    />
+
+    <slot />
+
+    <NetworkFooter />
+  </body>
+</html>

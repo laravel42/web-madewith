@@ -1,0 +1,38 @@
+---
+import BlogLayout from "../../layouts/BlogLayout.astro";
+import BlogArticleView from "../../components/blog/BlogArticleView.astro";
+import { blogTechFor } from "../../lib/blog-tech";
+import { getArticle, getArticles } from "../../lib/blog";
+
+export function getStaticPaths() {
+  return getArticles().map((article) => ({ params: { slug: article.slug } }));
+}
+
+const { slug } = Astro.params;
+const article = getArticle(slug!);
+if (!article) return Astro.redirect("/blog/");
+
+const tech = blogTechFor(article.primaryTechnology);
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: article.title,
+  description: article.description,
+  datePublished: article.date,
+  dateModified: article.updated,
+  author: { "@type": "Person", name: article.author },
+  publisher: { "@type": "Organization", name: "MadeWithWhat" },
+  articleSection: article.category,
+  keywords: article.tags.join(", "),
+};
+---
+<BlogLayout title={article.title} description={article.description} active="blog" accent={tech.accent} headerCta={{ href: tech.galleryHref, label: "Gallery ↗" }}>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content={article.title} />
+    <meta property="og:description" content={article.description} />
+    {article.image && <meta property="og:image" content={new URL(article.image, Astro.site ?? Astro.url).href} />}
+  </Fragment>
+  <BlogArticleView article={article} />
+</BlogLayout>

@@ -1,0 +1,164 @@
+---
+import { articleCardMeta, getArticles } from "../../lib/blog";
+import { buildBlogRssXml } from "../../lib/feed";
+
+const site = Astro.site ?? new URL("https://madewithwhat.net");
+const feedUrl = new URL("/blog/rss.xml", site).href;
+const articles = getArticles().map(articleCardMeta);
+const rawXml = buildBlogRssXml(getArticles(), site);
+---
+
+<main>
+  <section class="blog-hero">
+    <div class="blog-hero-eyebrow">The MadeWithWhat syndication</div>
+    <h1 class="blog-hero-title">Subscribe by RSS.<br />for every stack.</h1>
+    <p class="blog-hero-copy">Follow every new guide across the network in your reader of choice — no algorithm, no account, no email required.</p>
+
+    <div class="blog-hero-feed">
+      <code>{feedUrl}</code>
+      <button type="button" data-role="rss-copy">Copy</button>
+    </div>
+    <div class="blog-hero-links">
+      <span>Open in:</span>
+      <a href={`https://feedly.com/i/subscription/feed/${encodeURIComponent(feedUrl)}`} target="_blank" rel="noopener noreferrer" class="mw-link">Feedly</a>
+      <a href={feedUrl} class="mw-link">Raw feed</a>
+    </div>
+  </section>
+
+  <section aria-label="Available feeds" style="max-width:1080px; margin:0 auto; padding:38px 28px 8px; width:100%;">
+    <h2 class="disp" style="font-size:22px; font-weight:800; letter-spacing:-0.02em; margin:0 0 18px;">Feeds you can follow</h2>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px;">
+      <div style="background:#fff; border:1px solid #e9ebee; border-radius:16px; padding:20px;">
+        <div style="font-size:15px; font-weight:800;">Everything</div>
+        <p style="font-size:13.5px; color:#6b7178; line-height:1.5; margin:7px 0 12px;">Every new article across all stacks.</p>
+        <code style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#EA7A2B;">/blog/rss.xml</code>
+      </div>
+      <div style="background:#fff; border:1px solid #e9ebee; border-radius:16px; padding:20px;">
+        <div style="font-size:15px; font-weight:800;">Per technology</div>
+        <p style="font-size:13.5px; color:#6b7178; line-height:1.5; margin:7px 0 12px;">Filter by stack in your reader using categories.</p>
+        <code style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#EA7A2B;">/blog/rss.xml</code>
+      </div>
+      <div style="background:#fff; border:1px solid #e9ebee; border-radius:16px; padding:20px;">
+        <div style="font-size:15px; font-weight:800;">Network galleries</div>
+        <p style="font-size:13.5px; color:#6b7178; line-height:1.5; margin:7px 0 12px;">Project updates from every gallery.</p>
+        <code style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#EA7A2B;">/rss.xml</code>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="Feed contents" style="max-width:1080px; margin:0 auto; padding:38px 28px 70px; width:100%;">
+    <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:18px; flex-wrap:wrap;">
+      <h2 class="disp" style="font-size:22px; font-weight:800; letter-spacing:-0.02em; margin:0;">Currently in the feed</h2>
+      <div style="display:flex; gap:6px; background:#eef0f3; border-radius:11px; padding:4px;">
+        <button type="button" data-role="rss-tab" data-view="rendered" style="font-size:13px; font-weight:600; padding:6px 14px; border-radius:8px; cursor:pointer; border:none; font-family:inherit; background:#fff; color:#12161a; box-shadow:0 1px 3px rgba(0,0,0,.08);">Preview</button>
+        <button type="button" data-role="rss-tab" data-view="raw" style="font-size:13px; font-weight:600; padding:6px 14px; border-radius:8px; cursor:pointer; border:none; font-family:inherit; background:transparent; color:#6b7178;">Raw XML</button>
+      </div>
+    </div>
+
+    <ul data-role="rss-rendered" style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:2px;">
+      {articles.map((item) => (
+        <li>
+          <a href={item.href} style="display:flex; align-items:center; gap:16px; padding:16px; border-radius:12px; border:1px solid transparent;">
+            <span style={`width:9px; height:9px; border-radius:50%; background:${item.tech.accent}; flex-shrink:0;`}></span>
+            <span style="flex:1; min-width:0;">
+              <span style="display:block; font-size:15.5px; font-weight:700; letter-spacing:-0.01em;">{item.title}</span>
+              <span style="display:block; font-size:13px; color:#6b7178; margin-top:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{item.excerpt}</span>
+            </span>
+            <span style={`font-size:12.5px; font-weight:600; color:${item.tech.accent}; white-space:nowrap;`}>{item.primaryTechnology}</span>
+            <time datetime={item.date} style="font-size:12.5px; color:#9aa0a6; white-space:nowrap; width:96px; text-align:right;">{item.dateLabel}</time>
+          </a>
+        </li>
+      ))}
+    </ul>
+
+    <pre data-role="rss-raw" hidden style="background:#0f1420; border-radius:14px; padding:22px 24px; overflow:auto; margin:0; max-height:520px;"><code style="font-family:'JetBrains Mono',monospace; font-size:13px; line-height:1.65; color:#c7d0da; white-space:pre;">{rawXml}</code></pre>
+  </section>
+</main>
+
+<style>
+  .blog-hero-feed {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 26px auto 0;
+    max-width: 560px;
+    background: #fff;
+    border: 1px solid #e3e6ea;
+    border-radius: 13px;
+    padding: 6px 6px 6px 16px;
+    box-shadow: 0 6px 18px rgba(20, 30, 50, 0.04);
+  }
+
+  .blog-hero-feed code {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 14px;
+    color: #3a4048;
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background: transparent;
+    padding: 0;
+  }
+
+  .blog-hero-feed button {
+    background: #2f6feb;
+    color: #fff;
+    border: none;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 11px 18px;
+    border-radius: 9px;
+    cursor: pointer;
+    font-family: inherit;
+    white-space: nowrap;
+  }
+
+  .blog-hero-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    margin-top: 14px;
+    font-size: 13px;
+    color: #9aa0a6;
+    align-items: center;
+  }
+
+  .blog-hero-links a {
+    font-weight: 600;
+  }
+</style>
+
+<script define:vars={{ feedUrl }}>
+  function initBlogRss() {
+    const copyBtn = document.querySelector("[data-role=rss-copy]");
+    const tabs = document.querySelectorAll("[data-role=rss-tab]");
+    const rendered = document.querySelector("[data-role=rss-rendered]");
+    const raw = document.querySelector("[data-role=rss-raw]");
+    if (!copyBtn || !rendered || !raw) return;
+
+    copyBtn.addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText(feedUrl);
+        copyBtn.textContent = "Copied ✓";
+        setTimeout(() => { copyBtn.textContent = "Copy"; }, 1600);
+      } catch {
+        copyBtn.textContent = "Copy failed";
+      }
+    });
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const view = tab.dataset.view;
+        const on = "font-size:13px; font-weight:600; padding:6px 14px; border-radius:8px; cursor:pointer; border:none; font-family:inherit; background:#fff; color:#12161a; box-shadow:0 1px 3px rgba(0,0,0,.08);";
+        const off = "font-size:13px; font-weight:600; padding:6px 14px; border-radius:8px; cursor:pointer; border:none; font-family:inherit; background:transparent; color:#6b7178;";
+        tabs.forEach((el) => { el.style.cssText = el.dataset.view === view ? on : off; });
+        rendered.hidden = view !== "rendered";
+        raw.hidden = view !== "raw";
+      });
+    });
+  }
+  initBlogRss();
+  document.addEventListener("astro:page-load", initBlogRss);
+</script>

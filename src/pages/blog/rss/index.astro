@@ -1,0 +1,10 @@
+---
+import BlogLayout from "../../../layouts/BlogLayout.astro";
+import BlogRssView from "../../../components/blog/BlogRssView.astro";
+
+const title = "RSS Feeds — MadeWithWhat Blog";
+const description = "Subscribe to the MadeWithWhat blog by RSS — one feed for everything, or filter by technology in your reader.";
+---
+<BlogLayout title={title} description={description} active="rss" accent="#EA7A2B">
+  <BlogRssView />
+</BlogLayout>

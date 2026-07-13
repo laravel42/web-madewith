@@ -221,6 +221,8 @@ export function buildNetworkLlmsTxt(site: URL, topLimit = 30, perDomainLimit = 5
     "## Useful links",
     "",
     `- RSS feed: ${new URL("/rss.xml", site).href}`,
+    `- Blog: ${new URL("/blog/", site).href}`,
+    `- Blog RSS: ${new URL("/blog/rss.xml", site).href}`,
     `- Newsletter: ${new URL("/newsletter/", site).href}`,
     `- LLM context: ${new URL("/llm/", site).href}`,
     "",
@@ -229,4 +231,44 @@ export function buildNetworkLlmsTxt(site: URL, topLimit = 30, perDomainLimit = 5
     "Each gallery ranks open-source projects by GitHub stars for a specific technology. Project pages include description, stack, languages, license, and related projects.",
   ];
   return lines.join("\n");
+}
+
+/** RSS 2.0 feed for the MadeWithWhat blog. */
+export function buildBlogRssXml(
+  articles: Array<{ slug: string; title: string; description: string; date: string; category: string; primaryTechnology: string }>,
+  site: URL,
+): string {
+  const base = new URL("/blog/", site).href;
+  const feedUrl = new URL("/blog/rss.xml", site).href;
+  const updated = articles[0]?.date
+    ? new Date(`${articles[0].date}T09:00:00Z`).toUTCString()
+    : new Date().toUTCString();
+
+  const items = articles
+    .map((article) => {
+      const link = new URL(`/blog/${article.slug}/`, site).href;
+      return `    <item>
+      <title>${escapeXml(article.title)}</title>
+      <link>${escapeXml(link)}</link>
+      <guid isPermaLink="true">${escapeXml(link)}</guid>
+      <description>${escapeXml(article.description)}</description>
+      <category>${escapeXml(article.primaryTechnology)}</category>
+      <pubDate>${new Date(`${article.date}T09:00:00Z`).toUTCString()}</pubDate>
+    </item>`;
+    })
+    .join("\n");
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>The MadeWithWhat Blog</title>
+    <link>${escapeXml(base)}</link>
+    <description>Guides, patterns and performance deep-dives across 69 web stacks.</description>
+    <language>en-us</language>
+    <lastBuildDate>${updated}</lastBuildDate>
+    <atom:link href="${escapeXml(feedUrl)}" rel="self" type="application/rss+xml" />
+    <generator>MadeWithWhat blog</generator>
+${items}
+  </channel>
+</rss>`;
 }

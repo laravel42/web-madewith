@@ -1,0 +1,10 @@
+---
+import BlogLayout from "../../layouts/BlogLayout.astro";
+import BlogIndex from "../../components/blog/BlogIndex.astro";
+
+const title = "The MadeWithWhat Blog — Guides & Deep-Dives for Every Stack";
+const description = "Practical, daily-updated guides, patterns and performance deep-dives across web stacks — from Laravel and React to Ollama and Odoo.";
+---
+<BlogLayout title={title} description={description} active="blog">
+  <BlogIndex />
+</BlogLayout>

@@ -76,8 +76,9 @@ discovery**, **dedupe by GitHub repo id**, **ETag `304` caching** in KV, explici
 `401/403/404/422/429/5xx` handling with secondary-limit backoff, a **weighted
 quality score** for ranking, and append-only snapshots. See
 [`worker/README.md`](worker/README.md). At build time `scripts/pull-data.mjs`
-hydrates `src/data/` from the Worker's `/data/<slug>.json` (R2), falling back to
-the committed data so the build never breaks.
+hydrates `src/data/` from the Worker's `/data/<slug>.json` (R2), and
+`scripts/hydrate-blog.mjs` syncs `factory/output/` into `src/content/blog/` and
+`public/assets/`.
 
 ```
 GitHub  ──scrape──▶  Worker (cron)  ──▶  R2 datasets  ──deploy hook──▶  Pages build
@@ -110,6 +111,7 @@ src/
 scripts/
   scrape.mjs          ← local GitHub scraper (search → classify → normalise → write)
   pull-data.mjs       ← build-time hydration of src/data from R2 (fallback to committed)
+  hydrate-blog.mjs    ← sync factory/output articles + assets into src/content/blog, public/assets
   seed/*.json         ← committed fallback snapshots
 worker/               ← Cloudflare Worker: scheduled scraping → R2 → deploy hook
   src/{index,github,scrape,classify,score,storage,domains}.ts
