@@ -235,55 +235,6 @@ const articlesJson = safeJsonForScript(articles);
     align-items: stretch;
   }
 
-  :global(.blog-index-card) {
-    display: flex;
-    flex-direction: column;
-    background: #fff;
-    border: 1px solid #e9ebee;
-    border-radius: 16px;
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-  }
-
-  :global(.blog-index-card:hover) {
-    transform: translateY(-2px);
-    box-shadow: 0 12px 28px rgba(20, 30, 50, 0.06);
-  }
-
-  :global(.blog-index-card a) {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    height: 100%;
-    text-decoration: none;
-    color: inherit;
-    border-radius: 16px;
-    overflow: hidden;
-  }
-
-  :global(.blog-index-card-body) {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    padding: 16px 17px 18px;
-  }
-
-  :global(.blog-index-card-stack) {
-    text-transform: uppercase;
-    margin-bottom: 2px;
-  }
-
-  :global(.blog-index-card-excerpt) {
-    margin: 9px 0 0;
-  }
-
-  :global(.blog-index-card-meta) {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: auto;
-    padding-top: 14px;
-  }
-
   @media (max-width: 900px) {
     .blog-grid-3 {
       grid-template-columns: 1fr;

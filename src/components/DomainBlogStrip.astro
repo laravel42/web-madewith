@@ -8,10 +8,8 @@ const { theme } = Astro.props;
 const dark = theme.variant === "terminal";
 const editorial = theme.editorial;
 const accent = editorial ? "#6366f1" : theme.accent;
-const radius = `${theme.radius}px`;
 const cardBorder = dark ? "#1f2622" : "#eef0ef";
 const textCol = dark ? "#e8efe9" : "#12161a";
-const muted = dark ? "#7c887f" : "#6b756f";
 const font = theme.dispFont;
 
 function matchesDomainBlog(article: BlogArticle, techName: string): boolean {
@@ -54,38 +52,32 @@ if (!posts.length) return null;
     </div>
     <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
       {posts.map((post, index) => (
-        <a
-          href={post.href}
-          class="card domain-blog-card"
-          style={`display:block; background:${dark ? "#101410" : "#fff"}; border:1px solid ${cardBorder}; border-radius:${radius}; overflow:hidden;`}
-        >
-          <BlogCardCover
-            accent={post.tech.accent}
-            accentInk={post.tech.accentInk}
-            tech={post.primaryTechnology}
-            category={post.category}
-            title={post.title}
-            size="domain"
-            variant={(index % 3) as 0 | 1 | 2}
-          />
-          <div style="padding:17px 18px 18px;">
-            <p class="domain-blog-excerpt">{post.excerpt}</p>
-          </div>
-        </a>
+        <article class="blog-index-card">
+          <a href={post.href} aria-label={`Read: ${post.title}`}>
+            <BlogCardCover
+              accent={post.tech.accent}
+              accentInk={post.tech.accentInk}
+              tech={post.primaryTechnology}
+              category={post.category}
+              title={post.title}
+              size="index"
+              variant={(index % 3) as 0 | 1 | 2}
+            />
+            <div class="blog-index-card-body">
+              <div class="blog-index-card-stack" style={`color:${post.tech.accent};`}>{post.primaryTechnology}</div>
+              <p class="blog-index-card-excerpt">{post.excerpt}</p>
+              <div class="blog-index-card-meta">
+                <span style={post.avatarStyle}>{post.authorInitial}</span>{post.author} · <time datetime={post.date}>{post.dateLabel}</time> · {post.readMin} min
+              </div>
+            </div>
+          </a>
+        </article>
       ))}
     </div>
   </div>
 </section>
 
 <style>
-  .domain-blog-excerpt {
-  margin: 0;
-}
-
-.domain-blog-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 28px rgba(20, 40, 30, 0.09);
-  }
   @media (max-width: 900px) {
     section > div > div:last-child { grid-template-columns: 1fr 1fr !important; }
   }
