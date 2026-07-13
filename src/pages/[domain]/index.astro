@@ -1,6 +1,8 @@
 ---
 import { DOMAINS, getResolvedTheme, type Theme } from "../../config/domains";
 import { getCatalog, rankedProjects, formatGalleryTotal, topCategoryFilters } from "../../lib/catalog";
+import { projectDisplayName } from "../../lib/preview-text";
+import { canonicalUrl } from "../../config/domain-settings";
 import CatalogLayout from "../../layouts/CatalogLayout.astro";
 import Hero from "../../components/Hero.astro";
 import ProjectGrid from "../../components/ProjectGrid.astro";
@@ -16,8 +18,45 @@ const data = getCatalog(theme.slug);
 const projects = rankedProjects(data);
 const total = formatGalleryTotal(data);
 const categories = topCategoryFilters(data, 5, theme.visibleCategories);
+
+const site = Astro.site!.href;
+const canonical = canonicalUrl(theme, Astro.url.pathname, site);
+const topProjects = projects.slice(0, 20);
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": canonical,
+      url: canonical,
+      name: theme.seoTitle,
+      description: theme.seoDescription,
+      inLanguage: "en",
+      isPartOf: { "@type": "WebSite", name: `Made with ${theme.techName}`, url: canonical },
+      mainEntity: {
+        "@type": "ItemList",
+        numberOfItems: topProjects.length,
+        itemListElement: topProjects.map((p, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: projectDisplayName(p),
+          url: canonicalUrl(theme, `/${theme.slug}/project/${p.slug}/`, site),
+        })),
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: `Made with ${theme.techName}`, item: canonical },
+      ],
+    },
+  ],
+};
 ---
 <CatalogLayout theme={theme} active="">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
   <Hero theme={theme} total={total} categories={categories} />
   <ProjectGrid theme={theme} projects={projects} />
   <DomainBlogStrip theme={theme} />
