@@ -263,7 +263,7 @@ function strOrNull(v: unknown): string | null {
   return s || null;
 }
 
-const DOMAIN_GROUPS = ["frontend", "frameworks", "backend", "cms", "commerce"] as const;
+const DOMAIN_GROUPS = ["frameworks", "frontend", "backend", "cms-crm", "commerce", "ai-llm"] as const;
 
 function validGroup(v: unknown): DomainSettingsPayload["group"] {
   if (v === undefined || v === null || v === "") return undefined;

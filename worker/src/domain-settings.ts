@@ -11,7 +11,7 @@ export interface DomainSettingsPayload {
   seoTitle?: string | null;
   seoDescription?: string | null;
   /** Network landing page section */
-  group?: "frontend" | "frameworks" | "backend" | "cms" | "commerce" | null;
+  group?: "frameworks" | "frontend" | "backend" | "cms-crm" | "commerce" | "ai-llm" | null;
   /** null/undefined = auto (top by count); [] = none; non-empty = explicit allowlist order */
   visibleCategories?: string[] | null;
 }
