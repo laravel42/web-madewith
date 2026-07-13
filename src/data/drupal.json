@@ -1,6 +1,6 @@
 {
   "slug": "drupal",
-  "scrapedAt": "2026-07-13T06:37:58.039929+00:00",
+  "scrapedAt": "2026-07-13T07:30:48.769083+00:00",
   "source": "scrapy-github",
   "totalRepos": 100,
   "projects": [
@@ -9,13 +9,13 @@
       "name": "nginxconfig.io",
       "fullName": "digitalocean/nginxconfig.io",
       "category": "DevTools",
-      "stars": 28287,
+      "stars": 28286,
       "author": "digitalocean",
       "avatar": "https://avatars.githubusercontent.com/u/4650108?v=4",
       "desc": "\u2699\ufe0f NGINX config generator on steroids \ud83d\udc89",
       "demo": "https://do.co/nginxconfig",
       "repoUrl": "https://github.com/digitalocean/nginxconfig.io",
-      "long1": "\u2699\ufe0f NGINX config generator on steroids \ud83d\udc89. Maintained by digitalocean on GitHub, where it has earned 28,287 stars from the community.",
+      "long1": "\u2699\ufe0f NGINX config generator on steroids \ud83d\udc89. Maintained by digitalocean on GitHub, where it has earned 28,286 stars from the community.",
       "long2": "It's actively developed around nginx, nginx-configuration, php-fpm, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
@@ -24,7 +24,7 @@
         "Php Fpm",
         "Ssl"
       ],
-      "updated": "recently",
+      "updated": "2 years ago",
       "license": "MIT",
       "langs": [
         {
@@ -118,26 +118,25 @@
       "long1": "A development tool for all your projects that is fast, easy, powerful and liberating. Maintained by lando on GitHub, where it has earned 4,237 stars from the community.",
       "long2": "It's actively developed around local, development, environment, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "JavaScript",
         "Local",
         "Development",
         "Environment",
         "Docker"
       ],
-      "updated": "recently",
+      "updated": "1 week ago",
       "license": "MIT",
       "langs": [
         {
-          "pct": 72,
-          "name": "JavaScript"
+          "name": "JavaScript",
+          "pct": 72
         },
         {
-          "pct": 20,
-          "name": "CSS"
+          "name": "JavaScript",
+          "pct": 20
         },
         {
-          "pct": 8,
-          "name": "Other"
+          "name": "Other",
+          "pct": 8
         }
       ],
       "versions": [
@@ -1515,6 +1514,44 @@
       ]
     },
     {
+      "slug": "cve-2018-7600",
+      "name": "CVE-2018-7600",
+      "fullName": "a2u/CVE-2018-7600",
+      "category": "DevTools",
+      "stars": 353,
+      "author": "a2u",
+      "avatar": "https://avatars.githubusercontent.com/u/1529979?u=9868a0d230d14686ee1bd27377565ff7c727788b&v=4",
+      "desc": "\ud83d\udc80Proof-of-Concept for CVE-2018-7600 Drupal SA-CORE-2018-002",
+      "demo": null,
+      "repoUrl": "https://github.com/a2u/CVE-2018-7600",
+      "long1": "\ud83d\udc80Proof-of-Concept for CVE-2018-7600 Drupal SA-CORE-2018-002. Maintained by a2u on GitHub, where it has earned 353 stars from the community.",
+      "long2": "It's actively developed around poc, drupalgeddon2, exploit, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Python",
+        "Poc",
+        "Drupalgeddon2",
+        "Exploit",
+        "Drupal"
+      ],
+      "updated": "7 years ago",
+      "license": "\u2014",
+      "langs": [
+        {
+          "name": "Python",
+          "pct": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "poc",
+        "drupalgeddon2",
+        "exploit",
+        "drupal",
+        "cve-2018-7600",
+        "sa-core-2018-002"
+      ]
+    },
+    {
       "slug": "commerce",
       "name": "commerce",
       "fullName": "drupalcommerce/commerce",
@@ -1552,44 +1589,6 @@
       "topics": [
         "drupal-commerce",
         "drupal"
-      ]
-    },
-    {
-      "slug": "cve-2018-7600",
-      "name": "CVE-2018-7600",
-      "fullName": "a2u/CVE-2018-7600",
-      "category": "DevTools",
-      "stars": 353,
-      "author": "a2u",
-      "avatar": "https://avatars.githubusercontent.com/u/1529979?u=9868a0d230d14686ee1bd27377565ff7c727788b&v=4",
-      "desc": "\ud83d\udc80Proof-of-Concept for CVE-2018-7600 Drupal SA-CORE-2018-002",
-      "demo": null,
-      "repoUrl": "https://github.com/a2u/CVE-2018-7600",
-      "long1": "\ud83d\udc80Proof-of-Concept for CVE-2018-7600 Drupal SA-CORE-2018-002. Maintained by a2u on GitHub, where it has earned 353 stars from the community.",
-      "long2": "It's actively developed around poc, drupalgeddon2, exploit, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Python",
-        "Poc",
-        "Drupalgeddon2",
-        "Exploit",
-        "Drupal"
-      ],
-      "updated": "7 years ago",
-      "license": "\u2014",
-      "langs": [
-        {
-          "name": "Python",
-          "pct": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "poc",
-        "drupalgeddon2",
-        "exploit",
-        "drupal",
-        "cve-2018-7600",
-        "sa-core-2018-002"
       ]
     },
     {
@@ -3457,113 +3456,6 @@
       ]
     },
     {
-      "slug": "shila-drupal-theme",
-      "name": "shila-drupal-theme",
-      "fullName": "aleksip/shila-drupal-theme",
-      "category": "AI & ML",
-      "stars": 82,
-      "author": "aleksip",
-      "avatar": "https://avatars.githubusercontent.com/u/1181287?u=f6d458b0a6a91a2ab221dd5884810ae922ccace6&v=4",
-      "desc": "Atomic design and Pattern Lab friendly, component-based, fairly unopinionated starting point for new Drupal themes",
-      "demo": null,
-      "repoUrl": "https://github.com/aleksip/shila-drupal-theme",
-      "long1": "Atomic design and Pattern Lab friendly, component-based, fairly unopinionated starting point for new Drupal themes. Maintained by aleksip on GitHub, where it has earned 82 stars from the community.",
-      "long2": "It's actively developed around drupal, drupal-theme, drupal-8, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "CSS",
-        "Drupal",
-        "Drupal Theme",
-        "Drupal 8",
-        "Pattern Lab"
-      ],
-      "updated": "6 years ago",
-      "license": "GPL-2.0",
-      "langs": [
-        {
-          "name": "CSS",
-          "pct": 64
-        },
-        {
-          "name": "HTML",
-          "pct": 35
-        },
-        {
-          "name": "JavaScript",
-          "pct": 1
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "drupal",
-        "drupal-theme",
-        "drupal-8",
-        "pattern-lab",
-        "atomic-design"
-      ]
-    },
-    {
-      "slug": "docker-examples",
-      "name": "docker-examples",
-      "fullName": "geerlingguy/docker-examples",
-      "category": "DevTools",
-      "stars": 82,
-      "author": "geerlingguy",
-      "avatar": "https://avatars.githubusercontent.com/u/481677?u=d430bda7f20ac8c31b29d9a687a1d84c9abd30e0&v=4",
-      "desc": "There are many like it, but this one is mine.",
-      "demo": null,
-      "repoUrl": "https://github.com/geerlingguy/docker-examples",
-      "long1": "There are many like it, but this one is mine. Maintained by geerlingguy on GitHub, where it has earned 82 stars from the community.",
-      "long2": "It's actively developed around docker, examples, image, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Python",
-        "Docker",
-        "Examples",
-        "Image",
-        "Php"
-      ],
-      "updated": "7 years ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "Python",
-          "pct": 56
-        },
-        {
-          "name": "Dockerfile",
-          "pct": 32
-        },
-        {
-          "name": "HTML",
-          "pct": 12
-        }
-      ],
-      "versions": [
-        {
-          "name": "0.3.0",
-          "url": "https://github.com/geerlingguy/docker-examples/releases/tag/0.3.0"
-        },
-        {
-          "name": "0.2.0",
-          "url": "https://github.com/geerlingguy/docker-examples/releases/tag/0.2.0"
-        },
-        {
-          "name": "0.1.0",
-          "url": "https://github.com/geerlingguy/docker-examples/releases/tag/0.1.0"
-        }
-      ],
-      "topics": [
-        "docker",
-        "examples",
-        "image",
-        "php",
-        "flask",
-        "symfony",
-        "drupal",
-        "mysql",
-        "devops"
-      ]
-    },
-    {
       "slug": "stonehenge",
       "name": "stonehenge",
       "fullName": "druidfi/stonehenge",
@@ -3633,6 +3525,113 @@
         "typo3",
         "drupal",
         "symfony"
+      ]
+    },
+    {
+      "slug": "docker-examples",
+      "name": "docker-examples",
+      "fullName": "geerlingguy/docker-examples",
+      "category": "DevTools",
+      "stars": 82,
+      "author": "geerlingguy",
+      "avatar": "https://avatars.githubusercontent.com/u/481677?u=d430bda7f20ac8c31b29d9a687a1d84c9abd30e0&v=4",
+      "desc": "There are many like it, but this one is mine.",
+      "demo": null,
+      "repoUrl": "https://github.com/geerlingguy/docker-examples",
+      "long1": "There are many like it, but this one is mine. Maintained by geerlingguy on GitHub, where it has earned 82 stars from the community.",
+      "long2": "It's actively developed around docker, examples, image, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Python",
+        "Docker",
+        "Examples",
+        "Image",
+        "Php"
+      ],
+      "updated": "7 years ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "Python",
+          "pct": 56
+        },
+        {
+          "name": "Dockerfile",
+          "pct": 32
+        },
+        {
+          "name": "HTML",
+          "pct": 12
+        }
+      ],
+      "versions": [
+        {
+          "name": "0.3.0",
+          "url": "https://github.com/geerlingguy/docker-examples/releases/tag/0.3.0"
+        },
+        {
+          "name": "0.2.0",
+          "url": "https://github.com/geerlingguy/docker-examples/releases/tag/0.2.0"
+        },
+        {
+          "name": "0.1.0",
+          "url": "https://github.com/geerlingguy/docker-examples/releases/tag/0.1.0"
+        }
+      ],
+      "topics": [
+        "docker",
+        "examples",
+        "image",
+        "php",
+        "flask",
+        "symfony",
+        "drupal",
+        "mysql",
+        "devops"
+      ]
+    },
+    {
+      "slug": "shila-drupal-theme",
+      "name": "shila-drupal-theme",
+      "fullName": "aleksip/shila-drupal-theme",
+      "category": "AI & ML",
+      "stars": 82,
+      "author": "aleksip",
+      "avatar": "https://avatars.githubusercontent.com/u/1181287?u=f6d458b0a6a91a2ab221dd5884810ae922ccace6&v=4",
+      "desc": "Atomic design and Pattern Lab friendly, component-based, fairly unopinionated starting point for new Drupal themes",
+      "demo": null,
+      "repoUrl": "https://github.com/aleksip/shila-drupal-theme",
+      "long1": "Atomic design and Pattern Lab friendly, component-based, fairly unopinionated starting point for new Drupal themes. Maintained by aleksip on GitHub, where it has earned 82 stars from the community.",
+      "long2": "It's actively developed around drupal, drupal-theme, drupal-8, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "CSS",
+        "Drupal",
+        "Drupal Theme",
+        "Drupal 8",
+        "Pattern Lab"
+      ],
+      "updated": "6 years ago",
+      "license": "GPL-2.0",
+      "langs": [
+        {
+          "name": "CSS",
+          "pct": 64
+        },
+        {
+          "name": "HTML",
+          "pct": 35
+        },
+        {
+          "name": "JavaScript",
+          "pct": 1
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "drupal",
+        "drupal-theme",
+        "drupal-8",
+        "pattern-lab",
+        "atomic-design"
       ]
     },
     {
@@ -4079,6 +4078,48 @@
       ]
     },
     {
+      "slug": "contribkanban-com",
+      "name": "contribkanban.com",
+      "fullName": "mglaman/contribkanban.com",
+      "category": "DevTools",
+      "stars": 63,
+      "author": "mglaman",
+      "avatar": "https://avatars.githubusercontent.com/u/3698644?u=4bd0107407834e2c35bf0d34cbf1659c449a0005&v=4",
+      "desc": "ContribKanban.com - turning Drupal.org issue queues into kanban boards to better Drupalkind",
+      "demo": "http://contribkanban.com/",
+      "repoUrl": "https://github.com/mglaman/contribkanban.com",
+      "long1": "ContribKanban.com - turning Drupal.org issue queues into kanban boards to better Drupalkind. Maintained by mglaman on GitHub, where it has earned 63 stars from the community.",
+      "long2": "It's actively developed around drupal, javascript, kanban-board, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Drupal",
+        "Kanban Board"
+      ],
+      "updated": "5 days ago",
+      "license": "GPL-2.0",
+      "langs": [
+        {
+          "name": "PHP",
+          "pct": 60
+        },
+        {
+          "name": "JavaScript",
+          "pct": 39
+        },
+        {
+          "name": "Twig",
+          "pct": 1
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "drupal",
+        "javascript",
+        "kanban-board",
+        "hacktoberfest"
+      ]
+    },
+    {
       "slug": "drupal-ai",
       "name": "drupal-ai",
       "fullName": "edutrul/drupal-ai",
@@ -4119,48 +4160,6 @@
         "ai-agents",
         "ai-tools",
         "drupal"
-      ]
-    },
-    {
-      "slug": "contribkanban-com",
-      "name": "contribkanban.com",
-      "fullName": "mglaman/contribkanban.com",
-      "category": "DevTools",
-      "stars": 63,
-      "author": "mglaman",
-      "avatar": "https://avatars.githubusercontent.com/u/3698644?u=4bd0107407834e2c35bf0d34cbf1659c449a0005&v=4",
-      "desc": "ContribKanban.com - turning Drupal.org issue queues into kanban boards to better Drupalkind",
-      "demo": "http://contribkanban.com/",
-      "repoUrl": "https://github.com/mglaman/contribkanban.com",
-      "long1": "ContribKanban.com - turning Drupal.org issue queues into kanban boards to better Drupalkind. Maintained by mglaman on GitHub, where it has earned 63 stars from the community.",
-      "long2": "It's actively developed around drupal, javascript, kanban-board, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Drupal",
-        "Kanban Board"
-      ],
-      "updated": "5 days ago",
-      "license": "GPL-2.0",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 60
-        },
-        {
-          "name": "JavaScript",
-          "pct": 39
-        },
-        {
-          "name": "Twig",
-          "pct": 1
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "drupal",
-        "javascript",
-        "kanban-board",
-        "hacktoberfest"
       ]
     },
     {
@@ -4272,59 +4271,6 @@
       ]
     },
     {
-      "slug": "docker-lamp",
-      "name": "docker-lamp",
-      "fullName": "keopx/docker-lamp",
-      "category": "AI & ML",
-      "stars": 56,
-      "author": "keopx",
-      "avatar": "https://avatars.githubusercontent.com/u/537583?u=ee985b7995f8e3cc8c54ee3a77f8727140cdc6f3&v=4",
-      "desc": "Debian 9, Apache 2.4, MySQL 8.0/5.7/5.6/5.5/ and PHP 7.3/7.2/7.1/7.0/5.6 for Docker. Additional tools: phpMyAdmin and MailHog",
-      "demo": "https://www.keopx.net",
-      "repoUrl": "https://github.com/keopx/docker-lamp",
-      "long1": "Debian 9, Apache 2.4, MySQL 8.0/5.7/5.6/5.5/ and PHP 7.3/7.2/7.1/7.0/5.6 for Docker. Additional tools: phpMyAdmin and MailHog. Maintained by keopx on GitHub, where it has earned 56 stars from the community.",
-      "long2": "It's actively developed around drupal, mysql, php, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "VCL",
-        "Drupal",
-        "Mysql",
-        "Php",
-        "Varnish"
-      ],
-      "updated": "8 years ago",
-      "license": "GPL-3.0",
-      "langs": [
-        {
-          "name": "VCL",
-          "pct": 67
-        },
-        {
-          "name": "PHP",
-          "pct": 33
-        }
-      ],
-      "versions": [
-        {
-          "name": "lastest",
-          "url": "https://github.com/keopx/docker-lamp/releases/tag/lastest"
-        }
-      ],
-      "topics": [
-        "drupal",
-        "mysql",
-        "php",
-        "varnish",
-        "drupal-8",
-        "drupal-7",
-        "docker4drupal",
-        "docker",
-        "php56",
-        "php7",
-        "php71",
-        "mailhog"
-      ]
-    },
-    {
       "slug": "drupal8-vagrant",
       "name": "drupal8-vagrant",
       "fullName": "thom8/drupal8-vagrant",
@@ -4382,41 +4328,92 @@
       ]
     },
     {
-      "slug": "commerce-examples",
-      "name": "commerce_examples",
-      "fullName": "mglaman/commerce_examples",
-      "category": "E-commerce",
+      "slug": "docker-lamp",
+      "name": "docker-lamp",
+      "fullName": "keopx/docker-lamp",
+      "category": "AI & ML",
+      "stars": 56,
+      "author": "keopx",
+      "avatar": "https://avatars.githubusercontent.com/u/537583?u=ee985b7995f8e3cc8c54ee3a77f8727140cdc6f3&v=4",
+      "desc": "Debian 9, Apache 2.4, MySQL 8.0/5.7/5.6/5.5/ and PHP 7.3/7.2/7.1/7.0/5.6 for Docker. Additional tools: phpMyAdmin and MailHog",
+      "demo": "https://www.keopx.net",
+      "repoUrl": "https://github.com/keopx/docker-lamp",
+      "long1": "Debian 9, Apache 2.4, MySQL 8.0/5.7/5.6/5.5/ and PHP 7.3/7.2/7.1/7.0/5.6 for Docker. Additional tools: phpMyAdmin and MailHog. Maintained by keopx on GitHub, where it has earned 56 stars from the community.",
+      "long2": "It's actively developed around drupal, mysql, php, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "VCL",
+        "Drupal",
+        "Mysql",
+        "Php",
+        "Varnish"
+      ],
+      "updated": "8 years ago",
+      "license": "GPL-3.0",
+      "langs": [
+        {
+          "name": "VCL",
+          "pct": 67
+        },
+        {
+          "name": "PHP",
+          "pct": 33
+        }
+      ],
+      "versions": [
+        {
+          "name": "lastest",
+          "url": "https://github.com/keopx/docker-lamp/releases/tag/lastest"
+        }
+      ],
+      "topics": [
+        "drupal",
+        "mysql",
+        "php",
+        "varnish",
+        "drupal-8",
+        "drupal-7",
+        "docker4drupal",
+        "docker",
+        "php56",
+        "php7",
+        "php71",
+        "mailhog"
+      ]
+    },
+    {
+      "slug": "drupal8-examples",
+      "name": "drupal8_examples",
+      "fullName": "daggerhart/drupal8_examples",
+      "category": "UI Kits",
       "stars": 55,
-      "author": "mglaman",
-      "avatar": "https://avatars.githubusercontent.com/u/3698644?u=4bd0107407834e2c35bf0d34cbf1659c449a0005&v=4",
-      "desc": "Examples module for Drupal Commerce 2.x",
-      "demo": null,
-      "repoUrl": "https://github.com/mglaman/commerce_examples",
-      "long1": "Examples module for Drupal Commerce 2.x. Maintained by mglaman on GitHub, where it has earned 55 stars from the community.",
-      "long2": "It's actively developed around drupal, drupal-commerce, demo, and is a solid reference for anyone building with these tools.",
+      "author": "daggerhart",
+      "avatar": "https://avatars.githubusercontent.com/u/1205329?u=c20e3f6dba120afb8a071c5e21da0136a1ddea9c&v=4",
+      "desc": "Examples / practice Drupal 8 modules and themes",
+      "demo": "https://www.daggerhartlab.com",
+      "repoUrl": "https://github.com/daggerhart/drupal8_examples",
+      "long1": "Examples / practice Drupal 8 modules and themes. Maintained by daggerhart on GitHub, where it has earned 55 stars from the community.",
+      "long2": "It's actively developed around drupal, drupal-8, drupal-module, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
         "Drupal",
-        "Drupal Commerce",
-        "Demo"
+        "Drupal 8",
+        "Drupal Module",
+        "Drupal Theme"
       ],
-      "updated": "8 years ago",
+      "updated": "4 years ago",
       "license": "\u2014",
       "langs": [
         {
           "name": "PHP",
-          "pct": 98
-        },
-        {
-          "name": "HTML",
-          "pct": 2
+          "pct": 100
         }
       ],
       "versions": [],
       "topics": [
         "drupal",
-        "drupal-commerce",
-        "demo"
+        "drupal-8",
+        "drupal-module",
+        "drupal-theme"
       ]
     },
     {
@@ -4487,100 +4484,41 @@
       ]
     },
     {
-      "slug": "drupal8-examples",
-      "name": "drupal8_examples",
-      "fullName": "daggerhart/drupal8_examples",
-      "category": "UI Kits",
+      "slug": "commerce-examples",
+      "name": "commerce_examples",
+      "fullName": "mglaman/commerce_examples",
+      "category": "E-commerce",
       "stars": 55,
-      "author": "daggerhart",
-      "avatar": "https://avatars.githubusercontent.com/u/1205329?u=c20e3f6dba120afb8a071c5e21da0136a1ddea9c&v=4",
-      "desc": "Examples / practice Drupal 8 modules and themes",
-      "demo": "https://www.daggerhartlab.com",
-      "repoUrl": "https://github.com/daggerhart/drupal8_examples",
-      "long1": "Examples / practice Drupal 8 modules and themes. Maintained by daggerhart on GitHub, where it has earned 55 stars from the community.",
-      "long2": "It's actively developed around drupal, drupal-8, drupal-module, and is a solid reference for anyone building with these tools.",
+      "author": "mglaman",
+      "avatar": "https://avatars.githubusercontent.com/u/3698644?u=4bd0107407834e2c35bf0d34cbf1659c449a0005&v=4",
+      "desc": "Examples module for Drupal Commerce 2.x",
+      "demo": null,
+      "repoUrl": "https://github.com/mglaman/commerce_examples",
+      "long1": "Examples module for Drupal Commerce 2.x. Maintained by mglaman on GitHub, where it has earned 55 stars from the community.",
+      "long2": "It's actively developed around drupal, drupal-commerce, demo, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
         "Drupal",
-        "Drupal 8",
-        "Drupal Module",
-        "Drupal Theme"
+        "Drupal Commerce",
+        "Demo"
       ],
-      "updated": "4 years ago",
+      "updated": "8 years ago",
       "license": "\u2014",
       "langs": [
         {
           "name": "PHP",
-          "pct": 100
+          "pct": 98
+        },
+        {
+          "name": "HTML",
+          "pct": 2
         }
       ],
       "versions": [],
       "topics": [
         "drupal",
-        "drupal-8",
-        "drupal-module",
-        "drupal-theme"
-      ]
-    },
-    {
-      "slug": "mcp-server-drupal",
-      "name": "mcp-server-drupal",
-      "fullName": "Omedia/mcp-server-drupal",
-      "category": "DevTools",
-      "stars": 51,
-      "author": "Omedia",
-      "avatar": "https://avatars.githubusercontent.com/u/5867941?v=4",
-      "desc": "TS based companion MCP server for the Drupal MCP module that works with the STDIO transport.",
-      "demo": "https://drupalmcp.io",
-      "repoUrl": "https://github.com/Omedia/mcp-server-drupal",
-      "long1": "TS based companion MCP server for the Drupal MCP module that works with the STDIO transport. Maintained by Omedia on GitHub, where it has earned 51 stars from the community.",
-      "long2": "It's actively developed around deno, drupal, mcp, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Deno",
-        "Drupal",
-        "Mcp",
-        "Mcp Server"
-      ],
-      "updated": "1 year ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "TypeScript",
-          "pct": 94
-        },
-        {
-          "name": "Dockerfile",
-          "pct": 3
-        },
-        {
-          "name": "Shell",
-          "pct": 3
-        }
-      ],
-      "versions": [
-        {
-          "name": "v1.0.0",
-          "url": "https://github.com/Omedia/mcp-server-drupal/releases/tag/v1.0.0"
-        },
-        {
-          "name": "v1.0.0-alpha5",
-          "url": "https://github.com/Omedia/mcp-server-drupal/releases/tag/v1.0.0-alpha5"
-        },
-        {
-          "name": "v1.0.0-alpha2",
-          "url": "https://github.com/Omedia/mcp-server-drupal/releases/tag/v1.0.0-alpha2"
-        },
-        {
-          "name": "1.0.0-alpha1",
-          "url": "https://github.com/Omedia/mcp-server-drupal/releases/tag/1.0.0-alpha1"
-        }
-      ],
-      "topics": [
-        "deno",
-        "drupal",
-        "mcp",
-        "mcp-server"
+        "drupal-commerce",
+        "demo"
       ]
     },
     {
@@ -4646,6 +4584,67 @@
         "media",
         "drupal",
         "distribution"
+      ]
+    },
+    {
+      "slug": "mcp-server-drupal",
+      "name": "mcp-server-drupal",
+      "fullName": "Omedia/mcp-server-drupal",
+      "category": "DevTools",
+      "stars": 51,
+      "author": "Omedia",
+      "avatar": "https://avatars.githubusercontent.com/u/5867941?v=4",
+      "desc": "TS based companion MCP server for the Drupal MCP module that works with the STDIO transport.",
+      "demo": "https://drupalmcp.io",
+      "repoUrl": "https://github.com/Omedia/mcp-server-drupal",
+      "long1": "TS based companion MCP server for the Drupal MCP module that works with the STDIO transport. Maintained by Omedia on GitHub, where it has earned 51 stars from the community.",
+      "long2": "It's actively developed around deno, drupal, mcp, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Deno",
+        "Drupal",
+        "Mcp",
+        "Mcp Server"
+      ],
+      "updated": "1 year ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "TypeScript",
+          "pct": 94
+        },
+        {
+          "name": "Dockerfile",
+          "pct": 3
+        },
+        {
+          "name": "Shell",
+          "pct": 3
+        }
+      ],
+      "versions": [
+        {
+          "name": "v1.0.0",
+          "url": "https://github.com/Omedia/mcp-server-drupal/releases/tag/v1.0.0"
+        },
+        {
+          "name": "v1.0.0-alpha5",
+          "url": "https://github.com/Omedia/mcp-server-drupal/releases/tag/v1.0.0-alpha5"
+        },
+        {
+          "name": "v1.0.0-alpha2",
+          "url": "https://github.com/Omedia/mcp-server-drupal/releases/tag/v1.0.0-alpha2"
+        },
+        {
+          "name": "1.0.0-alpha1",
+          "url": "https://github.com/Omedia/mcp-server-drupal/releases/tag/1.0.0-alpha1"
+        }
+      ],
+      "topics": [
+        "deno",
+        "drupal",
+        "mcp",
+        "mcp-server"
       ]
     },
     {

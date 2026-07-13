@@ -1,8 +1,8 @@
 {
   "slug": "odoo",
-  "scrapedAt": "2026-07-13T06:38:00.778584+00:00",
+  "scrapedAt": "2026-07-13T07:30:50.915283+00:00",
   "source": "scrapy-github",
-  "totalRepos": 171,
+  "totalRepos": 170,
   "projects": [
     {
       "slug": "steedos-platform",
@@ -2215,7 +2215,7 @@
         "Odoo",
         "Python"
       ],
-      "updated": "today",
+      "updated": "yesterday",
       "license": "AGPL-3.0",
       "langs": [
         {
@@ -3965,6 +3965,46 @@
       ]
     },
     {
+      "slug": "website-addons",
+      "name": "website-addons",
+      "fullName": "itpp-labs/website-addons",
+      "category": "DevTools",
+      "stars": 128,
+      "author": "itpp-labs",
+      "avatar": "https://avatars.githubusercontent.com/u/60265024?v=4",
+      "desc": "Odoo Website Addons",
+      "demo": "https://itpp.dev",
+      "repoUrl": "https://github.com/itpp-labs/website-addons",
+      "long1": "Odoo Website Addons. Maintained by itpp-labs on GitHub, where it has earned 128 stars from the community.",
+      "long2": "It's actively developed around odoo-addons, odoo, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Python",
+        "Odoo Addons",
+        "Odoo"
+      ],
+      "updated": "2 years ago",
+      "license": "\u2014",
+      "langs": [
+        {
+          "name": "Python",
+          "pct": 53
+        },
+        {
+          "name": "HTML",
+          "pct": 43
+        },
+        {
+          "name": "JavaScript",
+          "pct": 4
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "odoo-addons",
+        "odoo"
+      ]
+    },
+    {
       "slug": "server-backend",
       "name": "server-backend",
       "fullName": "OCA/server-backend",
@@ -4005,46 +4045,6 @@
         "hacktoberfest",
         "odoo",
         "python"
-      ]
-    },
-    {
-      "slug": "website-addons",
-      "name": "website-addons",
-      "fullName": "itpp-labs/website-addons",
-      "category": "DevTools",
-      "stars": 128,
-      "author": "itpp-labs",
-      "avatar": "https://avatars.githubusercontent.com/u/60265024?v=4",
-      "desc": "Odoo Website Addons",
-      "demo": "https://itpp.dev",
-      "repoUrl": "https://github.com/itpp-labs/website-addons",
-      "long1": "Odoo Website Addons. Maintained by itpp-labs on GitHub, where it has earned 128 stars from the community.",
-      "long2": "It's actively developed around odoo-addons, odoo, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Python",
-        "Odoo Addons",
-        "Odoo"
-      ],
-      "updated": "2 years ago",
-      "license": "\u2014",
-      "langs": [
-        {
-          "name": "Python",
-          "pct": 53
-        },
-        {
-          "name": "HTML",
-          "pct": 43
-        },
-        {
-          "name": "JavaScript",
-          "pct": 4
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "odoo-addons",
-        "odoo"
       ]
     },
     {
@@ -4171,38 +4171,6 @@
       ]
     },
     {
-      "slug": "access-addons",
-      "name": "access-addons",
-      "fullName": "itpp-labs/access-addons",
-      "category": "DevTools",
-      "stars": 118,
-      "author": "itpp-labs",
-      "avatar": "https://avatars.githubusercontent.com/u/60265024?v=4",
-      "desc": "Odoo Addons for extended access control",
-      "demo": "https://itpp.dev",
-      "repoUrl": "https://github.com/itpp-labs/access-addons",
-      "long1": "Odoo Addons for extended access control. Maintained by itpp-labs on GitHub, where it has earned 118 stars from the community.",
-      "long2": "It's actively developed around odoo, odoo-addons, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Python",
-        "Odoo",
-        "Odoo Addons"
-      ],
-      "updated": "1 year ago",
-      "license": "\u2014",
-      "langs": [
-        {
-          "name": "Python",
-          "pct": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "odoo",
-        "odoo-addons"
-      ]
-    },
-    {
       "slug": "odoo-docker-tutorial",
       "name": "odoo-docker-tutorial",
       "fullName": "twtrubiks/odoo-docker-tutorial",
@@ -4248,6 +4216,38 @@
         "odoo13",
         "python3",
         "postgresql"
+      ]
+    },
+    {
+      "slug": "access-addons",
+      "name": "access-addons",
+      "fullName": "itpp-labs/access-addons",
+      "category": "DevTools",
+      "stars": 118,
+      "author": "itpp-labs",
+      "avatar": "https://avatars.githubusercontent.com/u/60265024?v=4",
+      "desc": "Odoo Addons for extended access control",
+      "demo": "https://itpp.dev",
+      "repoUrl": "https://github.com/itpp-labs/access-addons",
+      "long1": "Odoo Addons for extended access control. Maintained by itpp-labs on GitHub, where it has earned 118 stars from the community.",
+      "long2": "It's actively developed around odoo, odoo-addons, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Python",
+        "Odoo",
+        "Odoo Addons"
+      ],
+      "updated": "1 year ago",
+      "license": "\u2014",
+      "langs": [
+        {
+          "name": "Python",
+          "pct": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "odoo",
+        "odoo-addons"
       ]
     },
     {
@@ -4791,43 +4791,6 @@
       ]
     },
     {
-      "slug": "odoo-stubs",
-      "name": "odoo-stubs",
-      "fullName": "odoo-ide/odoo-stubs",
-      "category": "DevTools",
-      "stars": 96,
-      "author": "odoo-ide",
-      "avatar": "https://avatars.githubusercontent.com/u/96681023?v=4",
-      "desc": "Python Stubs for Odoo",
-      "demo": null,
-      "repoUrl": "https://github.com/odoo-ide/odoo-stubs",
-      "long1": "Python Stubs for Odoo. Maintained by odoo-ide on GitHub, where it has earned 96 stars from the community.",
-      "long2": "It's actively developed around odoo, pep484, python, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Odoo",
-        "Pep484",
-        "Python",
-        "Types"
-      ],
-      "updated": "2 weeks ago",
-      "license": "GPL-3.0",
-      "langs": [
-        {
-          "name": "Python",
-          "pct": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "odoo",
-        "pep484",
-        "python",
-        "types",
-        "typing",
-        "stub"
-      ]
-    },
-    {
       "slug": "operating-unit",
       "name": "operating-unit",
       "fullName": "OCA/operating-unit",
@@ -4868,6 +4831,43 @@
         "hacktoberfest",
         "odoo",
         "python"
+      ]
+    },
+    {
+      "slug": "odoo-stubs",
+      "name": "odoo-stubs",
+      "fullName": "odoo-ide/odoo-stubs",
+      "category": "DevTools",
+      "stars": 96,
+      "author": "odoo-ide",
+      "avatar": "https://avatars.githubusercontent.com/u/96681023?v=4",
+      "desc": "Python Stubs for Odoo",
+      "demo": null,
+      "repoUrl": "https://github.com/odoo-ide/odoo-stubs",
+      "long1": "Python Stubs for Odoo. Maintained by odoo-ide on GitHub, where it has earned 96 stars from the community.",
+      "long2": "It's actively developed around odoo, pep484, python, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Odoo",
+        "Pep484",
+        "Python",
+        "Types"
+      ],
+      "updated": "2 weeks ago",
+      "license": "GPL-3.0",
+      "langs": [
+        {
+          "name": "Python",
+          "pct": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "odoo",
+        "pep484",
+        "python",
+        "types",
+        "typing",
+        "stub"
       ]
     },
     {
@@ -5126,47 +5126,6 @@
       ]
     },
     {
-      "slug": "product-variant",
-      "name": "product-variant",
-      "fullName": "OCA/product-variant",
-      "category": "DevTools",
-      "stars": 91,
-      "author": "OCA",
-      "avatar": "https://avatars.githubusercontent.com/u/7600578?v=4",
-      "desc": "A project worth exploring.",
-      "demo": null,
-      "repoUrl": "https://github.com/OCA/product-variant",
-      "long1": "A project worth exploring. Maintained by OCA on GitHub, where it has earned 91 stars from the community.",
-      "long2": "It's actively developed around erp, hacktoberfest, odoo, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Python",
-        "Erp",
-        "Odoo"
-      ],
-      "updated": "2 days ago",
-      "license": "AGPL-3.0",
-      "langs": [
-        {
-          "name": "Python",
-          "pct": 57
-        },
-        {
-          "name": "HTML",
-          "pct": 41
-        },
-        {
-          "name": "JavaScript",
-          "pct": 2
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "erp",
-        "hacktoberfest",
-        "odoo"
-      ]
-    },
-    {
       "slug": "server-brand",
       "name": "server-brand",
       "fullName": "OCA/server-brand",
@@ -5198,6 +5157,47 @@
         {
           "name": "JavaScript",
           "pct": 13
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "erp",
+        "hacktoberfest",
+        "odoo"
+      ]
+    },
+    {
+      "slug": "product-variant",
+      "name": "product-variant",
+      "fullName": "OCA/product-variant",
+      "category": "DevTools",
+      "stars": 91,
+      "author": "OCA",
+      "avatar": "https://avatars.githubusercontent.com/u/7600578?v=4",
+      "desc": "A project worth exploring.",
+      "demo": null,
+      "repoUrl": "https://github.com/OCA/product-variant",
+      "long1": "A project worth exploring. Maintained by OCA on GitHub, where it has earned 91 stars from the community.",
+      "long2": "It's actively developed around erp, hacktoberfest, odoo, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Python",
+        "Erp",
+        "Odoo"
+      ],
+      "updated": "2 days ago",
+      "license": "AGPL-3.0",
+      "langs": [
+        {
+          "name": "Python",
+          "pct": 57
+        },
+        {
+          "name": "HTML",
+          "pct": 41
+        },
+        {
+          "name": "JavaScript",
+          "pct": 2
         }
       ],
       "versions": [],
@@ -5303,51 +5303,6 @@
       ]
     },
     {
-      "slug": "deltatech",
-      "name": "deltatech",
-      "fullName": "dhongu/deltatech",
-      "category": "DevTools",
-      "stars": 85,
-      "author": "dhongu",
-      "avatar": "https://avatars.githubusercontent.com/u/8823556?u=5863065effff009b2de0a4a8b2c171b22c7d7f9c&v=4",
-      "desc": "Terrabit addons for Odoo",
-      "demo": "http://www.terrabit.ro",
-      "repoUrl": "https://github.com/dhongu/deltatech",
-      "long1": "Terrabit addons for Odoo. Maintained by dhongu on GitHub, where it has earned 85 stars from the community.",
-      "long2": "It's actively developed around odoo, python, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "HTML",
-        "Odoo",
-        "Python"
-      ],
-      "updated": "today",
-      "license": "AGPL-3.0",
-      "langs": [
-        {
-          "name": "HTML",
-          "pct": 52
-        },
-        {
-          "name": "Python",
-          "pct": 46
-        },
-        {
-          "name": "JavaScript",
-          "pct": 2
-        }
-      ],
-      "versions": [
-        {
-          "name": "v15.0",
-          "url": "https://github.com/dhongu/deltatech/releases/tag/v15.0"
-        }
-      ],
-      "topics": [
-        "odoo",
-        "python"
-      ]
-    },
-    {
       "slug": "odoomap",
       "name": "odoomap",
       "fullName": "MohamedKarrab/odoomap",
@@ -5412,43 +5367,47 @@
       ]
     },
     {
-      "slug": "trucos-odoo",
-      "name": "trucos_odoo",
-      "fullName": "Odoo-10-test/trucos_odoo",
+      "slug": "deltatech",
+      "name": "deltatech",
+      "fullName": "dhongu/deltatech",
       "category": "DevTools",
-      "stars": 84,
-      "author": "Odoo-10-test",
-      "avatar": "https://avatars.githubusercontent.com/u/25354525?v=4",
-      "desc": "Mis trucos de odoo para ayudarme a programar. Saludos Marlon.",
-      "demo": null,
-      "repoUrl": "https://github.com/Odoo-10-test/trucos_odoo",
-      "long1": "Mis trucos de odoo para ayudarme a programar. Saludos Marlon. Maintained by Odoo-10-test on GitHub, where it has earned 84 stars from the community.",
-      "long2": "It's actively developed around odoo, erp, python, and is a solid reference for anyone building with these tools.",
+      "stars": 85,
+      "author": "dhongu",
+      "avatar": "https://avatars.githubusercontent.com/u/8823556?u=5863065effff009b2de0a4a8b2c171b22c7d7f9c&v=4",
+      "desc": "Terrabit addons for Odoo",
+      "demo": "http://www.terrabit.ro",
+      "repoUrl": "https://github.com/dhongu/deltatech",
+      "long1": "Terrabit addons for Odoo. Maintained by dhongu on GitHub, where it has earned 85 stars from the community.",
+      "long2": "It's actively developed around odoo, python, and is a solid reference for anyone building with these tools.",
       "stack": [
+        "HTML",
         "Odoo",
-        "Erp",
         "Python"
       ],
-      "updated": "2 years ago",
-      "license": "\u2014",
+      "updated": "today",
+      "license": "AGPL-3.0",
       "langs": [
         {
-          "name": "Python",
-          "pct": 53
+          "name": "HTML",
+          "pct": 52
         },
         {
-          "name": "HTML",
-          "pct": 30
+          "name": "Python",
+          "pct": 46
         },
         {
           "name": "JavaScript",
-          "pct": 17
+          "pct": 2
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "name": "v15.0",
+          "url": "https://github.com/dhongu/deltatech/releases/tag/v15.0"
+        }
+      ],
       "topics": [
         "odoo",
-        "erp",
         "python"
       ]
     },
@@ -5492,6 +5451,47 @@
         "erp",
         "hacktoberfest",
         "odoo",
+        "python"
+      ]
+    },
+    {
+      "slug": "trucos-odoo",
+      "name": "trucos_odoo",
+      "fullName": "Odoo-10-test/trucos_odoo",
+      "category": "DevTools",
+      "stars": 84,
+      "author": "Odoo-10-test",
+      "avatar": "https://avatars.githubusercontent.com/u/25354525?v=4",
+      "desc": "Mis trucos de odoo para ayudarme a programar. Saludos Marlon.",
+      "demo": null,
+      "repoUrl": "https://github.com/Odoo-10-test/trucos_odoo",
+      "long1": "Mis trucos de odoo para ayudarme a programar. Saludos Marlon. Maintained by Odoo-10-test on GitHub, where it has earned 84 stars from the community.",
+      "long2": "It's actively developed around odoo, erp, python, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Odoo",
+        "Erp",
+        "Python"
+      ],
+      "updated": "2 years ago",
+      "license": "\u2014",
+      "langs": [
+        {
+          "name": "Python",
+          "pct": 53
+        },
+        {
+          "name": "HTML",
+          "pct": 30
+        },
+        {
+          "name": "JavaScript",
+          "pct": 17
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "odoo",
+        "erp",
         "python"
       ]
     },
