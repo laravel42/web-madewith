@@ -1,0 +1,70 @@
+---
+interface Props {
+  accent: string;
+  accentInk: string;
+  tech: string;
+  techName?: string;
+  category: string;
+  title: string;
+  size?: "index" | "related" | "domain" | "featured" | "article";
+  variant?: 0 | 1 | 2;
+  showTitle?: boolean;
+  logoPath?: string;
+}
+
+const {
+  accent,
+  accentInk,
+  tech,
+  techName = tech,
+  category,
+  title,
+  size = "index",
+  variant = 0,
+  showTitle = true,
+  logoPath = "",
+} = Astro.props;
+const hasLogo = !!logoPath;
+const showFeaturedArt = !showTitle && size === "featured";
+---
+
+<div
+  class:list={[
+    "blog-card-cover",
+    size !== "index" && `blog-card-cover-${size}`,
+    variant === 1 && "blog-card-cover--b",
+    variant === 2 && "blog-card-cover--c",
+    !showTitle && "blog-card-cover--no-title",
+  ]}
+  style={`--cover-accent:${accent}; --cover-ink:${accentInk};`}
+>
+  {!showFeaturedArt && <span class="blog-card-cover-tech">{tech}</span>}
+  <span class="blog-card-cover-category">{category}</span>
+  {showTitle && <span class="blog-card-cover-title">{title}</span>}
+  {showFeaturedArt && (
+    <>
+      <div class="blog-card-cover-tech-lockup">
+        <span class="blog-article-logo" aria-hidden="true">
+          {hasLogo ? (
+            <svg viewBox="0 0 24 24" width="28" height="28">
+              <path d={logoPath} fill="currentColor" />
+            </svg>
+          ) : (
+            <span class="blog-article-logo-fallback">{tech.charAt(0)}</span>
+          )}
+        </span>
+        <span class="blog-article-tech-copy">
+          <span class="blog-article-tech-eyebrow">Made with</span>
+          <span class="blog-article-tech-name">{techName}</span>
+        </span>
+      </div>
+      {hasLogo ? (
+        <svg class="blog-card-cover-watermark" viewBox="0 0 24 24" aria-hidden="true">
+          <path d={logoPath} fill="currentColor" />
+        </svg>
+      ) : (
+        <span class="blog-card-cover-monogram disp" aria-hidden="true">{tech.charAt(0)}</span>
+      )}
+    </>
+  )}
+</div>

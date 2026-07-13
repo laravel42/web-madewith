@@ -1,13 +1,18 @@
 ---
 import { blogTechFor } from "../../lib/blog-tech";
 import { blogTocFromMarkdown, prepareBlogBody, renderBlogMarkdown } from "../../lib/blog-markdown";
-import { articleCardMeta, defaultArticleBody, formatBlogDate, getArticles, type BlogArticle } from "../../lib/blog";
+import { articleCardMeta, articleDeckDescription, defaultArticleBody, formatBlogDate, getArticles, type BlogArticle } from "../../lib/blog";
+import BlogArticleHeroCover from "./BlogArticleHeroCover.astro";
+import BlogCardCover from "./BlogCardCover.astro";
 import { MW_LOGOS } from "../../lib/logos";
+import { englishDisplayText } from "../../lib/preview-text";
 
 interface Props { article: BlogArticle; }
 const { article } = Astro.props;
+const displayTitle = englishDisplayText(article.title, article.excerpt, article.description);
+const displayDescription = articleDeckDescription(article);
 const tech = blogTechFor(article.primaryTechnology);
-const logoPath = MW_LOGOS[article.primaryTechnology] ?? "";
+const logoPath = MW_LOGOS[tech.techName] ?? "";
 const hasLogo = !!logoPath;
 const bodySource = prepareBlogBody(article.body || defaultArticleBody(article.primaryTechnology), {
   heroImage: article.image,
@@ -19,76 +24,57 @@ const related = getArticles()
   .slice(0, 3)
   .map(articleCardMeta);
 const galleryHref = tech.galleryHref;
-const coverBg = `radial-gradient(420px 200px at 78% -10%, rgba(255,255,255,.22), transparent 60%), linear-gradient(135deg, color-mix(in srgb, ${tech.accent} 62%, #000) 0%, ${tech.accent} 100%)`;
+const coverVariant = (article.slug.charCodeAt(0) % 3) as 0 | 1 | 2;
 ---
 
-<main>
-  <div style="position:fixed; top:0; left:0; right:0; height:3px; background:transparent; z-index:50;">
+<main class="blog-main">
+  <div class="blog-read-progress" style="position:fixed; top:0; left:0; right:0; height:3px; background:transparent; z-index:50;">
     <div data-role="read-progress" style={`height:100%; width:0%; background:${tech.accent}; transition:width .08s linear;`}></div>
   </div>
 
-  <article>
-    <div style="max-width:760px; margin:0 auto; padding:44px 28px 0;">
-      <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px;">
-        <span style={`font-size:12px; font-weight:700; color:${tech.accent}; text-transform:uppercase; letter-spacing:.05em;`}>{article.primaryTechnology}</span>
-        <span style={`font-size:12px; font-weight:600; color:${tech.accentInk}; background:${tech.accent}; padding:3px 10px; border-radius:20px;`}>{article.category}</span>
-      </div>
-      <h1 class="disp" style="font-size:44px; font-weight:800; letter-spacing:-0.03em; line-height:1.06; margin:0;">{article.title}</h1>
-      <p style="font-size:19px; color:#5c6169; line-height:1.55; margin:18px 0 0;">{article.description}</p>
-      <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; margin:26px 0 0; padding-bottom:26px; border-bottom:1px solid #ececec;">
-        <div style="display:flex; align-items:center; gap:12px;">
-          <span style={`width:44px; height:44px; border-radius:50%; background:${tech.accent}; color:${tech.accentInk}; font-weight:700; font-size:17px; display:flex; align-items:center; justify-content:center;`}>{article.author.charAt(0).toUpperCase()}</span>
+  <article class="blog-article" style={`--hero-accent:${tech.accent}; --hero-ink:${tech.accentInk}`}>
+    <div class="blog-article-header">
+      <BlogArticleHeroCover
+        accent={tech.accent}
+        accentInk={tech.accentInk}
+        techName={tech.techName}
+        primaryTechnology={article.primaryTechnology}
+        category={article.category}
+        title={displayTitle}
+        galleryHref={galleryHref}
+        logoPath={logoPath}
+        variant={coverVariant}
+      />
+
+      <div class="blog-article-intro">
+        <p class="blog-article-description">{displayDescription}</p>
+        <div class="blog-article-meta">
+          <span class="blog-article-avatar">{article.author.charAt(0).toUpperCase()}</span>
           <div>
-            <address style="font-style:normal; font-size:14.5px; font-weight:700; color:#12161a;">{article.author}</address>
-            <div style="font-size:13px; color:#9aa0a6;"><time datetime={article.date}>{formatBlogDate(article.date)}</time> · {article.readMin} min read</div>
+            <address class="blog-article-author">{article.author}</address>
+            <div class="blog-article-meta-line">
+              <time datetime={article.date}>{formatBlogDate(article.date)}</time>
+              <span aria-hidden="true">·</span>
+              <span>{article.readMin} min read</span>
+            </div>
           </div>
-        </div>
-        <div style="display:flex; gap:8px;">
-          <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(article.title)}&url=${encodeURIComponent(Astro.url.href)}`} target="_blank" rel="noopener noreferrer" aria-label="Share on X" style="width:36px; height:36px; border-radius:10px; border:1px solid #e6e8eb; display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700; color:#5c6169;">X</a>
-          <button type="button" data-role="copy-link" aria-label="Copy link" style="width:36px; height:36px; border-radius:10px; border:1px solid #e6e8eb; display:flex; align-items:center; justify-content:center; color:#5c6169; background:#fff; cursor:pointer; font-size:15px;">🔗</button>
         </div>
       </div>
     </div>
 
-    <figure style="max-width:960px; margin:30px auto 0; padding:0 28px;">
-      {article.image ? (
-        <img
-          src={article.image}
-          alt=""
-          width="960"
-          height="300"
-          style="width:100%; height:auto; max-height:420px; object-fit:cover; border-radius:20px; display:block;"
-          loading="eager"
-          decoding="async"
-        />
-      ) : (
-        <div role="img" aria-label={`${article.primaryTechnology} banner`} style={`height:300px; border-radius:20px; background:${coverBg}; display:flex; align-items:center; justify-content:center; overflow:hidden; position:relative;`}>
-          {hasLogo && (
-            <svg viewBox="0 0 24 24" width="200" height="200" aria-hidden="true" style="position:absolute; right:26px; bottom:-10px; opacity:.16;">
-              <path d={logoPath} fill="#ffffff" />
-            </svg>
-          )}
-          <span class="disp" style="font-weight:800; font-size:130px; color:rgba(255,255,255,.18); line-height:1;">{article.primaryTechnology}</span>
-        </div>
-      )}
-      <figcaption style="font-size:12.5px; color:#9aa0a6; text-align:center; margin-top:10px;">
-        {article.image ? article.title : `A fresh ${article.primaryTechnology} project is only a couple of commands away.`}
-      </figcaption>
-    </figure>
-
-    <div class="blog-toc-layout" style="max-width:960px; margin:0 auto; padding:22px 28px 20px; display:grid; grid-template-columns:1fr 210px; gap:44px; align-items:start;">
+    <div class="blog-toc-layout">
       <div class="prose" set:html={html}></div>
       {toc.length > 0 && (
-        <aside aria-label="Table of contents" style="position:sticky; top:100px;">
-          <div style="font-size:12px; font-weight:700; color:#9aa0a6; text-transform:uppercase; letter-spacing:.06em; margin-bottom:12px;">On this page</div>
-          <nav style="display:flex; flex-direction:column; gap:9px; font-size:13.5px; border-left:2px solid #eceef1; padding-left:14px;">
-            {toc.map((item) => <a href={`#${item.id}`} class="mw-link">{item.label}</a>)}
+        <aside class="blog-toc" aria-label="Table of contents">
+          <div class="blog-toc-label">On this page</div>
+          <nav class="blog-toc-nav">
+            {toc.map((item) => <a href={`#${item.id}`} class="blog-toc-link">{item.label}</a>)}
           </nav>
         </aside>
       )}
     </div>
 
-    <div style="max-width:760px; margin:22px auto 0; padding:0 28px;">
+    <div class="blog-article-author">
       <div style="display:flex; gap:16px; align-items:flex-start; background:#fff; border:1px solid #e9ebee; border-radius:16px; padding:22px;">
         <span style={`width:52px; height:52px; border-radius:50%; background:${tech.accent}; color:${tech.accentInk}; font-weight:700; font-size:20px; display:flex; align-items:center; justify-content:center; flex-shrink:0;`}>{article.author.charAt(0).toUpperCase()}</span>
         <div>
@@ -100,13 +86,21 @@ const coverBg = `radial-gradient(420px 200px at 78% -10%, rgba(255,255,255,.22),
     </div>
   </article>
 
-  <section aria-label="Related articles" style="max-width:960px; margin:44px auto 0; padding:0 28px;">
+  <section class="blog-article-section" aria-label="Related articles">
     <h2 class="disp" style="font-size:22px; font-weight:800; letter-spacing:-0.02em; margin:0 0 20px;">Keep reading</h2>
     <div class="blog-grid-3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px;">
-      {related.map((item) => (
+      {related.map((item, index) => (
         <article style="background:#fff; border:1px solid #e9ebee; border-radius:16px; overflow:hidden;">
           <a href={item.href} class="blog-related-link" aria-label={`Read: ${item.title}`}>
-            <div style={item.coverStyle.replace("height:150px", "height:120px")}><span style={item.tagChipStyle}>{item.category}</span></div>
+            <BlogCardCover
+              accent={item.tech.accent}
+              accentInk={item.tech.accentInk}
+              tech={item.primaryTechnology}
+              category={item.category}
+              title={item.title}
+              size="related"
+              variant={(index % 3) as 0 | 1 | 2}
+            />
             <div style="padding:15px 16px 16px;">
               <div style={`font-size:11.5px; font-weight:700; color:${item.tech.accent}; text-transform:uppercase; letter-spacing:.04em;`}>{item.primaryTechnology}</div>
               <h3 style="font-size:15.5px; font-weight:800; line-height:1.3; margin:6px 0 0;">{item.title}</h3>
@@ -117,7 +111,7 @@ const coverBg = `radial-gradient(420px 200px at 78% -10%, rgba(255,255,255,.22),
     </div>
   </section>
 
-  <section aria-label="Newsletter" style="max-width:960px; margin:44px auto 0; padding:0 28px 70px;">
+  <section class="blog-article-section blog-article-newsletter" aria-label="Newsletter">
     <div style="background:linear-gradient(135deg,#141a2e,#1f2b52); border-radius:20px; padding:36px 40px; display:flex; align-items:center; justify-content:space-between; gap:26px; flex-wrap:wrap;">
       <div style="max-width:440px;">
         <h2 class="disp" style="font-size:24px; font-weight:800; letter-spacing:-0.02em; color:#fff; margin:0;">Get the next guide in your inbox</h2>
@@ -132,6 +126,159 @@ const coverBg = `radial-gradient(420px 200px at 78% -10%, rgba(255,255,255,.22),
 </main>
 
 <style>
+  .blog-main {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 28px 70px;
+    overflow-x: clip;
+  }
+
+  .blog-article-header {
+    margin: 0 auto;
+    padding-top: 32px;
+  }
+
+  .blog-article-intro {
+    width: 100%;
+    box-sizing: border-box;
+    margin: 24px 0 0;
+    padding: 24px 32px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f6f7f9 0%, #fafafa 55%, #ffffff 100%);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 32px 48px;
+    align-items: center;
+  }
+
+  .blog-article-description {
+    font-size: 19px;
+    font-weight: 700;
+    color: #3a4048;
+    line-height: 1.55;
+    margin: 0;
+  }
+
+  .blog-article-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0;
+    justify-self: end;
+    flex-shrink: 0;
+  }
+
+  .blog-article-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--hero-accent);
+    color: var(--hero-ink);
+    font-weight: 700;
+    font-size: 17px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  address.blog-article-author {
+    font-style: normal;
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #12161a;
+  }
+
+  .blog-article-meta-line {
+    font-size: 13px;
+    color: #9aa0a6;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 2px;
+  }
+
+  @media (max-width: 900px) {
+    .blog-article-intro {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      align-items: start;
+    }
+
+    .blog-article-meta {
+      justify-self: start;
+    }
+
+    .blog-toc-layout {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  .blog-toc-layout {
+    margin-top: 22px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 220px;
+    gap: 44px;
+    align-items: start;
+  }
+
+  .blog-toc-layout .prose {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .blog-toc {
+    position: sticky;
+    top: 100px;
+  }
+
+  .blog-toc-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #9aa0a6;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 14px;
+  }
+
+  .blog-toc-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin: 0;
+    padding: 0 0 0 16px;
+    border-left: 2px solid #e6e8eb;
+  }
+
+  .blog-toc-link {
+    display: block;
+    padding: 5px 0;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+    color: #5c6169;
+    text-decoration: none;
+    transition: color 0.12s ease;
+  }
+
+  .blog-toc-link:hover,
+  .blog-toc-link:focus-visible {
+    color: var(--hero-accent, #2f6feb);
+    outline: none;
+  }
+
+  div.blog-article-author {
+    max-width: 760px;
+    margin: 48px auto 0;
+  }
+
+  .blog-article-section {
+    margin-top: 44px;
+  }
+
   .blog-related-link {
     text-decoration: none;
     color: inherit;
@@ -153,23 +300,6 @@ const coverBg = `radial-gradient(420px 200px at 78% -10%, rgba(255,255,255,.22),
     onScroll();
   }
 
-  function initCopyLink() {
-    const btn = document.querySelector("[data-role=copy-link]");
-    if (!btn || btn.dataset.initialized) return;
-    btn.dataset.initialized = "true";
-    btn.addEventListener("click", async () => {
-      try {
-        await navigator.clipboard.writeText(location.href);
-        btn.textContent = "✓";
-        setTimeout(() => { btn.textContent = "🔗"; }, 1600);
-      } catch {
-        btn.textContent = "!";
-        setTimeout(() => { btn.textContent = "🔗"; }, 1600);
-      }
-    });
-  }
-
   initReadProgress();
-  initCopyLink();
-  document.addEventListener("astro:page-load", () => { initReadProgress(); initCopyLink(); });
+  document.addEventListener("astro:page-load", initReadProgress);
 </script>

@@ -1,6 +1,7 @@
 ---
 import type { Theme } from "../config/domains";
-import { articleCardMeta, getArticles } from "../lib/blog";
+import { articleCardMeta, getArticles, type BlogArticle } from "../lib/blog";
+import BlogCardCover from "./blog/BlogCardCover.astro";
 
 interface Props { theme: Theme; }
 const { theme } = Astro.props;
@@ -12,8 +13,25 @@ const cardBorder = dark ? "#1f2622" : "#eef0ef";
 const textCol = dark ? "#e8efe9" : "#12161a";
 const muted = dark ? "#7c887f" : "#6b756f";
 const font = theme.dispFont;
+
+function matchesDomainBlog(article: BlogArticle, techName: string): boolean {
+  const tech = techName.toLowerCase();
+  const slug = tech.replace(/[^a-z0-9]+/g, "");
+  if (article.primaryTechnology === techName) return true;
+  if (article.secondaryTechnology === techName) return true;
+  return article.tags.some((tag) => {
+    const normalized = tag.toLowerCase();
+    return normalized === tech || normalized.includes(tech) || normalized.replace(/[^a-z0-9]+/g, "") === slug;
+  });
+}
+
 const posts = getArticles()
-  .filter((a) => a.primaryTechnology === theme.techName)
+  .filter((article) => matchesDomainBlog(article, theme.techName))
+  .sort((a, b) => {
+    const imageRank = Number(!!b.image) - Number(!!a.image);
+    if (imageRank) return imageRank;
+    return b.date.localeCompare(a.date) || a.title.localeCompare(b.title);
+  })
   .slice(0, 3)
   .map(articleCardMeta);
 
@@ -35,18 +53,23 @@ if (!posts.length) return null;
       <a href="/blog/" class="filter-link" style={`font-size:14px; font-weight:600; color:${accent}; white-space:nowrap;`}>All articles →</a>
     </div>
     <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
-      {posts.map((post) => (
+      {posts.map((post, index) => (
         <a
           href={post.href}
           class="card domain-blog-card"
           style={`display:block; background:${dark ? "#101410" : "#fff"}; border:1px solid ${cardBorder}; border-radius:${radius}; overflow:hidden;`}
         >
-          <div style={`height:118px; background:linear-gradient(135deg, color-mix(in srgb, ${post.tech.accent} 82%, #000), ${post.tech.accent}); display:flex; align-items:flex-end; padding:13px;`}>
-            <span style="font-size:11px; font-weight:700; color:#fff; background:rgba(0,0,0,.22); padding:4px 10px; border-radius:20px;">{post.category}</span>
-          </div>
+          <BlogCardCover
+            accent={post.tech.accent}
+            accentInk={post.tech.accentInk}
+            tech={post.primaryTechnology}
+            category={post.category}
+            title={post.title}
+            size="domain"
+            variant={(index % 3) as 0 | 1 | 2}
+          />
           <div style="padding:17px 18px 18px;">
-            <div style={`font-family:${font}; font-weight:700; font-size:16px; line-height:1.3; letter-spacing:-0.01em; color:${textCol};`}>{post.title}</div>
-            <p style={`font-size:13.5px; color:${muted}; line-height:1.5; margin:8px 0 0; min-height:40px;`}>{post.excerpt}</p>
+            <p class="domain-blog-excerpt">{post.excerpt}</p>
           </div>
         </a>
       ))}
@@ -55,7 +78,11 @@ if (!posts.length) return null;
 </section>
 
 <style>
-  .domain-blog-card:hover {
+  .domain-blog-excerpt {
+  margin: 0;
+}
+
+.domain-blog-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 28px rgba(20, 40, 30, 0.09);
   }

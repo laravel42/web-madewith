@@ -1,5 +1,6 @@
 import { blogTechFor } from "./blog-tech";
 import { formatBlogDate } from "./blog-dates";
+import { englishDisplayText } from "./preview-text";
 
 export interface BlogArticle {
   slug: string;
@@ -17,9 +18,24 @@ export interface BlogArticle {
   readMin: number;
   body?: string;
   sourcePath?: string;
+  canonical?: string;
+  jsonLd?: string;
 }
 
 export const BLOG_CATEGORIES = ["All", "Tutorial", "Patterns", "Performance", "Guide", "AI / LLM", "Headless"] as const;
+
+export const BLOG_CATEGORY_META: Record<
+  (typeof BLOG_CATEGORIES)[number],
+  { icon: string; color: string }
+> = {
+  All: { icon: "◎", color: "#2F6FEB" },
+  Tutorial: { icon: "▣", color: "#16A34A" },
+  Patterns: { icon: "◈", color: "#7C3AED" },
+  Performance: { icon: "△", color: "#EA7A2B" },
+  Guide: { icon: "❯", color: "#0D9488" },
+  "AI / LLM": { icon: "✦", color: "#6366F1" },
+  Headless: { icon: "❏", color: "#C2612B" },
+};
 
 /** Map factory editorial categories to blog index filter pills. */
 const FACTORY_CATEGORY_MAP: Record<string, (typeof BLOG_CATEGORIES)[number]> = {
@@ -146,6 +162,8 @@ function articleFromParsed(path: string, data: Record<string, unknown>, body: st
     readMin: estimateReadMin(title, body),
     body: body || undefined,
     sourcePath: path,
+    canonical: data.canonical ? String(data.canonical) : undefined,
+    jsonLd: data.jsonLd ? String(data.jsonLd) : undefined,
   };
 }
 
@@ -228,6 +246,28 @@ export function articleHref(slug: string): string {
   return `/blog/${slug}/`;
 }
 
+function isTruncatedMetaDescription(text: string): boolean {
+  const trimmed = text.trim();
+  if (!trimmed) return false;
+  if (/\b(and|or|for|to|with|a|an|the|in|on|of)\.$/i.test(trimmed)) return true;
+  return trimmed.length > 120 && !/[.!?]["']?$/.test(trimmed);
+}
+
+/** Human-facing deck copy — prefers excerpt when SEO description is clipped. */
+export function articleDeckDescription(article: Pick<BlogArticle, "excerpt" | "description" | "title">): string {
+  const excerpt = englishDisplayText(article.excerpt, article.description, article.title);
+  const description = englishDisplayText(article.description, article.excerpt, article.title);
+  if (!excerpt) return description;
+  if (!description) return excerpt;
+  if (isTruncatedMetaDescription(description)) return excerpt;
+  return excerpt.length >= description.length ? excerpt : description;
+}
+
+/** Card/list preview — full deck text; clamp in CSS for layout. */
+export function articleCardExcerpt(article: Pick<BlogArticle, "excerpt" | "description" | "title">): string {
+  return articleDeckDescription(article);
+}
+
 export function articleCardMeta(article: BlogArticle) {
   const tech = blogTechFor(article.primaryTechnology);
   const coverStyle = article.image
@@ -235,6 +275,9 @@ export function articleCardMeta(article: BlogArticle) {
     : `height:150px; background:linear-gradient(135deg, color-mix(in srgb, ${tech.accent} 80%, #000), ${tech.accent}); display:flex; align-items:flex-end; padding:13px; position:relative;`;
   return {
     ...article,
+    title: englishDisplayText(article.title, article.excerpt, article.description),
+    excerpt: articleCardExcerpt(article),
+    description: englishDisplayText(article.description, article.excerpt, article.title),
     tech,
     href: articleHref(article.slug),
     dateLabel: formatBlogDate(article.date),
@@ -253,8 +296,8 @@ export function articleIndexItem(article: BlogArticle) {
     : `height:150px; background:linear-gradient(135deg, color-mix(in srgb, ${tech.accent} 80%, #000), ${tech.accent}); display:flex; align-items:flex-end; padding:13px; position:relative;`;
   return {
     slug: article.slug,
-    title: article.title,
-    excerpt: article.excerpt,
+    title: englishDisplayText(article.title, article.excerpt, article.description),
+    excerpt: articleCardExcerpt(article),
     category: article.category,
     primaryTechnology: article.primaryTechnology,
     author: article.author,

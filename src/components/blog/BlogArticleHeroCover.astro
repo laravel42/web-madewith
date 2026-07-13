@@ -1,0 +1,63 @@
+---
+interface Props {
+  accent: string;
+  accentInk: string;
+  techName: string;
+  primaryTechnology: string;
+  category: string;
+  title: string;
+  galleryHref: string;
+  logoPath?: string;
+  variant?: 0 | 1 | 2;
+}
+
+const {
+  accent,
+  accentInk,
+  techName,
+  primaryTechnology,
+  category,
+  title,
+  galleryHref,
+  logoPath = "",
+  variant = 0,
+} = Astro.props;
+const hasLogo = !!logoPath;
+---
+
+<header
+  class:list={[
+    "blog-card-cover",
+    "blog-article-hero-cover",
+    variant === 1 && "blog-card-cover--b",
+    variant === 2 && "blog-card-cover--c",
+  ]}
+  style={`--cover-accent:${accent}; --cover-ink:${accentInk};`}
+>
+  <div class="blog-article-hero-top">
+    <a href={galleryHref} class="blog-article-tech-link filter-link">
+      <span class="blog-article-logo" aria-hidden="true">
+        {hasLogo ? (
+          <svg viewBox="0 0 24 24" width="28" height="28">
+            <path d={logoPath} fill="currentColor" />
+          </svg>
+        ) : (
+          <span class="blog-article-logo-fallback">{primaryTechnology.charAt(0)}</span>
+        )}
+      </span>
+      <span class="blog-article-tech-copy">
+        <span class="blog-article-tech-eyebrow">Made with</span>
+        <span class="blog-article-tech-name">{techName}</span>
+      </span>
+    </a>
+    <span class="blog-article-hero-category">{category}</span>
+  </div>
+
+  <h1 class="disp blog-article-hero-title">{title}</h1>
+
+  {hasLogo && (
+    <svg class="blog-article-hero-watermark" viewBox="0 0 24 24" aria-hidden="true">
+      <path d={logoPath} fill="currentColor" />
+    </svg>
+  )}
+</header>

@@ -1,6 +1,8 @@
 ---
 import NetworkFooter from "../components/NetworkFooter.astro";
+import PageShell from "../components/PageShell.astro";
 import SiteHeader from "../components/SiteHeader.astro";
+import "../styles/blog-card-cover.css";
 
 interface Props {
   title: string;
@@ -26,7 +28,7 @@ const FONT_HREF =
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href={FONT_HREF} rel="stylesheet" />
-    <link rel="alternate" type="application/rss+xml" title="MadeWithWhat Blog" href="/blog/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="MadeWithWhat Articles" href="/articles/rss.xml" />
     <slot name="head" />
     <style>
       * { box-sizing: border-box; }
@@ -40,7 +42,6 @@ const FONT_HREF =
         overflow-x: clip;
         font-family: "Hanken Grotesk", sans-serif;
         color: #12161a;
-        background: radial-gradient(680px 340px at 12% 2%, rgba(47, 111, 235, 0.06), transparent 60%), #fbfcfb;
         -webkit-font-smoothing: antialiased;
       }
       :global(a) {
@@ -90,8 +91,20 @@ const FONT_HREF =
         max-width: 560px;
       }
       :global(.prose) {
+        min-width: 0;
         max-width: 100%;
         overflow-wrap: anywhere;
+        word-break: break-word;
+      }
+      :global(.prose > *) {
+        max-width: 100%;
+      }
+      :global(.prose img),
+      :global(.prose video),
+      :global(.prose iframe),
+      :global(.prose table),
+      :global(.prose pre) {
+        max-width: 100%;
       }
       :global(.prose h2) {
         font-family: "Bricolage Grotesque", sans-serif;
@@ -167,21 +180,36 @@ const FONT_HREF =
       :global(.prose table) {
         width: 100%;
         border-collapse: collapse;
-        margin: 0 0 22px;
-        font-size: 15px;
-        display: block;
-        overflow-x: auto;
+        margin: 0 0 24px;
+        font-family: "Hanken Grotesk", sans-serif;
+        font-size: 14px;
+        line-height: 1.5;
+        letter-spacing: -0.01em;
+        color: #3a4048;
+        border: 1px solid #e6e8eb;
+        border-radius: 12px;
+        overflow: hidden;
       }
       :global(.prose th),
       :global(.prose td) {
-        border: 1px solid #e3e6ea;
-        padding: 10px 12px;
+        border-bottom: 1px solid #eceef1;
+        padding: 12px 14px;
         text-align: left;
         vertical-align: top;
       }
+      :global(.prose tr:last-child td) {
+        border-bottom: none;
+      }
       :global(.prose th) {
         background: #f6f7f9;
+        font-size: 11px;
         font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #6b7178;
+      }
+      :global(.prose tbody tr:nth-child(even) td) {
+        background: #fafbfc;
       }
       :global(.prose figure) {
         margin: 0 0 22px;
@@ -235,11 +263,177 @@ const FONT_HREF =
         border: 1px solid #f2d2a6;
         color: #5a3b12;
       }
+      :global(.prose .blog-faq) {
+        margin: 42px 0 0;
+        padding: 28px;
+        background: #f8f9fb;
+        border: 1px solid #e9ebee;
+        border-radius: 18px;
+      }
+      :global(.prose .blog-faq > h2) {
+        font-family: "Bricolage Grotesque", sans-serif;
+        font-size: 26px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin: 0 0 20px;
+        scroll-margin-top: 96px;
+      }
+      :global(.prose .blog-faq-list) {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      :global(.prose .blog-faq-item) {
+        background: #fff;
+        border: 1px solid #e9ebee;
+        border-radius: 12px;
+        padding: 16px 18px;
+      }
+      :global(.prose .blog-faq-question) {
+        font-family: "Bricolage Grotesque", sans-serif;
+        font-size: 17px;
+        font-weight: 800;
+        letter-spacing: -0.01em;
+        line-height: 1.35;
+        color: #12161a;
+        margin: 0 0 8px;
+        scroll-margin-top: 96px;
+      }
+      :global(.prose .blog-faq-answer) {
+        font-family: "Newsreader", serif;
+        font-size: 17px;
+        line-height: 1.65;
+        color: #3a4048;
+        margin: 0;
+      }
+      :global(.prose .blog-seo-meta) {
+        margin: 42px 0 0;
+        padding: 28px;
+        background: linear-gradient(180deg, #f4f7fc 0%, #f8f9fb 100%);
+        border: 1px solid #dde3ee;
+        border-radius: 18px;
+      }
+      :global(.prose .blog-seo-meta > h2) {
+        font-family: "Bricolage Grotesque", sans-serif;
+        font-size: 22px;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        margin: 0 0 8px;
+        scroll-margin-top: 96px;
+      }
+      :global(.prose .blog-seo-meta-lead) {
+        font-family: "Newsreader", serif;
+        font-size: 15px;
+        line-height: 1.55;
+        color: #5c6169;
+        margin: 0 0 20px;
+      }
+      :global(.prose .blog-seo-meta-list) {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin: 0;
+      }
+      :global(.prose .blog-seo-meta-row) {
+        display: grid;
+        grid-template-columns: minmax(120px, 168px) minmax(0, 1fr);
+        gap: 12px 16px;
+        align-items: start;
+        background: #fff;
+        border: 1px solid #e9ebee;
+        border-radius: 12px;
+        padding: 12px 14px;
+        margin: 0;
+      }
+      :global(.prose .blog-seo-meta-key) {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 11.5px;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+        text-transform: lowercase;
+        color: #4a5568;
+        background: #eef1f6;
+        border-radius: 6px;
+        padding: 4px 8px;
+        margin: 0;
+        width: fit-content;
+        max-width: 100%;
+        word-break: break-word;
+      }
+      :global(.prose .blog-seo-meta-key-og) {
+        color: #1e4d8c;
+        background: #e8f0fb;
+      }
+      :global(.prose .blog-seo-meta-key-article) {
+        color: #5a3b12;
+        background: #fbf1df;
+      }
+      :global(.prose .blog-seo-meta-value) {
+        font-family: "Newsreader", serif;
+        font-size: 15px;
+        line-height: 1.55;
+        color: #12161a;
+        margin: 0;
+        word-break: break-word;
+      }
+      :global(.prose .blog-seo-meta-value a) {
+        color: #2f6feb;
+        text-decoration: none;
+      }
+      :global(.prose .blog-seo-meta-value a:hover) {
+        text-decoration: underline;
+      }
+      :global(.prose .blog-seo-meta-path) {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 13px;
+        background: #f3f4f6;
+        padding: 2px 6px;
+        border-radius: 4px;
+      }
+      :global(.prose .blog-seo-schema) {
+        margin-top: 18px;
+        border: 1px solid #1f2937;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #111827;
+      }
+      :global(.prose .blog-seo-schema-label) {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #9ca3af;
+        padding: 10px 14px;
+        border-bottom: 1px solid #374151;
+        background: #0f172a;
+      }
+      :global(.prose .blog-seo-schema-pre) {
+        margin: 0;
+        padding: 16px;
+        overflow-x: auto;
+        background: transparent;
+        border: none;
+        border-radius: 0;
+      }
+      :global(.prose .blog-seo-schema-pre code) {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 12.5px;
+        line-height: 1.55;
+        color: #e5e7eb;
+        background: transparent;
+        padding: 0;
+        white-space: pre;
+      }
       @media (max-width: 900px) {
+        :global(.prose .blog-seo-meta-row) {
+          grid-template-columns: 1fr;
+          gap: 8px;
+        }
         .blog-grid-3 { grid-template-columns: 1fr 1fr !important; }
         .blog-featured { grid-template-columns: 1fr !important; }
         .blog-article-grid { grid-template-columns: 1fr !important; }
-        .blog-toc-layout { grid-template-columns: 1fr !important; }
+        .blog-toc-layout { grid-template-columns: minmax(0, 1fr) !important; }
       }
       @media (max-width: 560px) {
         .blog-grid-3 { grid-template-columns: 1fr !important; }
@@ -260,15 +454,17 @@ const FONT_HREF =
       }
     </style>
   </head>
-  <body style={`--blog-accent:${accent};`}>
-    <SiteHeader
-      active={active}
-      subscribeHref={headerCta?.href}
-      subscribeLabel={headerCta?.label}
-    />
+  <body class="has-page-shell" style={`--blog-accent:${accent};`}>
+    <PageShell>
+      <SiteHeader
+        active={active}
+        subscribeHref={headerCta?.href}
+        subscribeLabel={headerCta?.label}
+      />
 
-    <slot />
+      <slot />
 
-    <NetworkFooter />
+      <NetworkFooter />
+    </PageShell>
   </body>
 </html>
