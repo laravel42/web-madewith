@@ -32,6 +32,7 @@ each entry maps to its own domain.
 ```bash
 npm install
 npm run scrape      # pull fresh data from GitHub into src/data/*.json
+npm run scrape:spawn  # parallel shards — publishes each domain as results land
 npm run dev         # http://localhost:4321
 npm run build       # static site → dist/
 ```
@@ -50,7 +51,7 @@ The scraper is built to stay well under GitHub's limits, three ways:
    10 → 30/min). Just set it:
    ```bash
    cp .env.example .env   # add GITHUB_TOKEN, then:
-   GITHUB_TOKEN=xxxx npm run scrape
+   npm run scrape
    ```
 2. **GraphQL (automatic with a token).** One request returns a domain's repos
    *and* their real language breakdowns, so the whole 6-site network refreshes
@@ -62,6 +63,15 @@ The scraper is built to stay well under GitHub's limits, three ways:
    return a **free `304`** that costs no quota (`scripts/.cache/etags.json`).
 
 `scripts/scrape.mjs` is the **local** scraper (writes `src/data/*.json` for dev).
+For large catalogs, `scripts/spawn-scrape-jobs.mjs` runs **parallel star-partition
+shards** across every domain and publishes each dataset incrementally as shards
+complete (`GITHUB_TOKEN` is read from `.env`):
+
+```bash
+npm run scrape:spawn -- --jobs 8 --keep 1000
+npm run scrape:spawn -- --domains laravel,react --dry-run
+```
+
 Production scheduling runs on Cloudflare — see below.
 
 ### Scheduled refresh — Cloudflare Worker (not GitHub Actions)

@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "database": "${workspaceFolder:web-madewith}/scripts/.cache/scrape.sqlite3",
+            "name": "scrape"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}

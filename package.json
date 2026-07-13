@@ -5,7 +5,12 @@
   "private": true,
   "description": "MadeWith… — a replicable, per-domain showcase catalog of open-source projects, fed by real GitHub data.",
   "scripts": {
-    "scrape": "node scripts/scrape.mjs",
+    "scrape": "bash scraper/crawl.sh",
+    "scrape:publish": "bash scraper/publish.sh",
+    "scrape:status": "cd scraper && .venv/bin/python status.py",
+    "scrape:migrate-json": "bash scraper/migrate_json.sh",
+    "scrape:youtube": "bash scraper/crawl_youtube.sh",
+    "scrape:youtube:publish": "bash scraper/publish_videos.sh",
     "dev": "astro dev",
     "dev:worker": "npm run dev --prefix worker",
     "hydrate-blog": "node scripts/hydrate-blog.mjs",
