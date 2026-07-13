@@ -1,5 +1,6 @@
 ---
 import NetworkFooter from "../components/NetworkFooter.astro";
+import PageShell from "../components/PageShell.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 
 interface Props {
@@ -35,7 +36,6 @@ const FONT_HREF =
         overflow-x: clip;
         font-family: "Hanken Grotesk", sans-serif;
         color: #12161a;
-        background: #fbfcfb;
         -webkit-font-smoothing: antialiased;
       }
       a { text-decoration: none; color: inherit; }
@@ -63,11 +63,13 @@ const FONT_HREF =
       }
     </style>
   </head>
-  <body>
-    <SiteHeader active="network" />
+  <body class="has-page-shell">
+    <PageShell>
+      <SiteHeader active="network" />
 
-    <slot />
+      <slot />
 
-    <NetworkFooter />
+      <NetworkFooter />
+    </PageShell>
   </body>
 </html>

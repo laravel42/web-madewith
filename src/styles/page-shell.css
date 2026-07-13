@@ -1,0 +1,50 @@
+body.has-page-shell {
+  background:
+    radial-gradient(680px 340px at 12% 2%, rgba(47, 111, 235, 0.06), transparent 60%),
+    radial-gradient(620px 320px at 88% 8%, rgba(124, 58, 237, 0.055), transparent 60%),
+    radial-gradient(700px 360px at 50% 120%, rgba(14, 165, 164, 0.05), transparent 60%),
+    #fbfcfb;
+}
+
+.page-shell {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.page-grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(#12161a08 1px, transparent 1px),
+    linear-gradient(90deg, #12161a08 1px, transparent 1px);
+  background-size: 34px 34px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 620px);
+}
+
+.page-shell .skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.page-shell .skip-link:focus {
+  position: fixed;
+  left: 16px;
+  top: 16px;
+  z-index: 100;
+  width: auto;
+  height: auto;
+  padding: 10px 14px;
+  background: #12161a;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}

@@ -1,5 +1,6 @@
 ---
 import NavIcon from "./NavIcon.astro";
+import { isDefaultSubscribeHref } from "../lib/newsletter";
 
 export type GlobalNavActive = "network" | "blog" | "rss";
 
@@ -29,6 +30,7 @@ const {
 
 const showLinks = part === "all" || part === "links";
 const showSubscribe = includeSubscribe && (part === "all" || part === "subscribe");
+const openSubscribeModal = isDefaultSubscribeHref(subscribeHref);
 ---
 
 {showLinks && (
@@ -50,12 +52,20 @@ const showSubscribe = includeSubscribe && (part === "all" || part === "subscribe
     </a>
   )}
   {showSubscribe && part === "all" && (
-    <a href={subscribeHref} class="global-site-nav-subscribe">{subscribeLabel}</a>
+    openSubscribeModal ? (
+      <a href={subscribeHref} class="global-site-nav-subscribe" data-action="open-subscribe">{subscribeLabel}</a>
+    ) : (
+      <a href={subscribeHref} class="global-site-nav-subscribe">{subscribeLabel}</a>
+    )
   )}
 </nav>
 )}
 {showSubscribe && part === "subscribe" && (
-  <a href={subscribeHref} class="global-site-nav-subscribe">{subscribeLabel}</a>
+  openSubscribeModal ? (
+    <a href={subscribeHref} class="global-site-nav-subscribe" data-action="open-subscribe">{subscribeLabel}</a>
+  ) : (
+    <a href={subscribeHref} class="global-site-nav-subscribe">{subscribeLabel}</a>
+  )
 )}
 
 <style>

@@ -1,0 +1,19 @@
+---
+import "../styles/page-shell.css";
+import SubscribeModal from "./SubscribeModal.astro";
+
+interface Props {
+  skipTo?: string;
+  skipLabel?: string;
+  showSubscribeModal?: boolean;
+}
+
+const { skipTo, skipLabel = "Skip to content", showSubscribeModal = true } = Astro.props;
+---
+
+<div class="page-shell">
+  <div class="page-grid" aria-hidden="true"></div>
+  {skipTo && <a class="skip-link" href={skipTo}>{skipLabel}</a>}
+  <slot />
+  {showSubscribeModal && <SubscribeModal />}
+</div>
