@@ -11,6 +11,6 @@ const projectCount = DOMAINS.reduce((sum, d) => sum + getCatalog(d.slug).project
 const title = "LLM context";
 const description = "Structured catalog metadata for AI agents: MadeWithWhat network galleries, top projects, and refresh info. Also available as llms.txt.";
 ---
-<NetworkLayout title={title} description={description}>
+<NetworkLayout title={title} description={description} noindex>
   <NetworkLlmInfo llmsTxt={llmsTxt} projectCount={projectCount} />
 </NetworkLayout>

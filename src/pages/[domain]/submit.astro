@@ -11,6 +11,6 @@ const { theme } = Astro.props as { theme: Theme };
 const title = `Submit your project — Made with ${theme.techName}`;
 const description = `Built something with ${theme.techName}? Submit your open-source project to the Made with ${theme.techName} gallery — free, and great for backlinks.`;
 ---
-<CatalogLayout theme={theme} active="submit" title={title} description={description}>
+<CatalogLayout theme={theme} active="submit" title={title} description={description} noindex>
   <SubmitForm theme={theme} />
 </CatalogLayout>

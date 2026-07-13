@@ -9,7 +9,16 @@ const adminWorkerUrl = process.env.ADMIN_WORKER_URL || "http://127.0.0.1:8787";
 
 export default defineConfig({
   site: "https://madewithwhat.net",
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      // Keep the index clean: no admin UI, no thin utility pages (newsletter /
+      // submit / llm), and no generated OG image endpoints.
+      filter: (page) =>
+        !/\/admin(\/|$)/.test(page) &&
+        !/\/(newsletter|submit|llm)\/?$/.test(page) &&
+        !/\/og\.png$/.test(page),
+    }),
+  ],
   build: { format: "directory" },
   devToolbar: { enabled: false },
   vite: {

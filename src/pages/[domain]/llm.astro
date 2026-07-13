@@ -16,6 +16,6 @@ const llmsTxt = buildLlmsTxt(theme, data, site);
 const title = `LLM context — Made with ${theme.techName}`;
 const description = `Structured catalog metadata for AI agents: top ${theme.techName} projects, links, and refresh info. Also available as llms.txt.`;
 ---
-<CatalogLayout theme={theme} active="llm" title={title} description={description}>
+<CatalogLayout theme={theme} active="llm" title={title} description={description} noindex>
   <LlmInfo theme={theme} data={data} llmsTxt={llmsTxt} />
 </CatalogLayout>
