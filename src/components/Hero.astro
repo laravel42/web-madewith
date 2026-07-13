@@ -7,8 +7,11 @@ import NextHero from "./heroes/NextHero.astro";
 import IonicHero from "./heroes/IonicHero.astro";
 import StatamicHero from "./heroes/StatamicHero.astro";
 import TwillHero from "./heroes/TwillHero.astro";
-
-import GenericHero from "./heroes/GenericHero.astro";
+import BandHero from "./heroes/BandHero.astro";
+import BrowserHero from "./heroes/BrowserHero.astro";
+import PhoneHero from "./heroes/PhoneHero.astro";
+import TerminalHero from "./heroes/TerminalHero.astro";
+import BannerHero from "./heroes/BannerHero.astro";
 
 interface Props {
   theme: Theme;
@@ -17,16 +20,26 @@ interface Props {
 }
 const { theme, total, categories } = Astro.props;
 
-const HEROES = {
+const BESPOKE: Partial<Record<string, typeof NuxtHero>> = {
   nuxt: NuxtHero,
   node: NodeHero,
   next: NextHero,
   ionic: IonicHero,
   statamic: StatamicHero,
   twill: TwillHero,
-  generic: GenericHero,
+};
+
+const BY_ARCH = {
+  band: BandHero,
+  browser: BrowserHero,
+  phone: PhoneHero,
+  terminal: TerminalHero,
+  banner: BannerHero,
 } as const;
 
-const HeroComponent = HEROES[theme.heroId];
+const HeroComponent =
+  BESPOKE[theme.slug] ??
+  BY_ARCH[theme.heroArch ?? "band"] ??
+  BandHero;
 ---
 <HeroComponent theme={theme} total={total} categories={categories} />

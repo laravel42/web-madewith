@@ -4,6 +4,7 @@ import type { Project } from "../lib/catalog";
 import { formatStars } from "../lib/catalog";
 import InstallBox from "./InstallBox.astro";
 import ProjectPreviewImage from "./ProjectPreviewImage.astro";
+import ProjectShotWireframe from "./ProjectShotWireframe.astro";
 
 interface Props { theme: Theme; project: Project; related: Project[]; }
 const { theme, project, related } = Astro.props;
@@ -29,6 +30,7 @@ const demo = project.demo;
 // Latest 5 releases/tags (may be empty if the repo has none).
 const versions = (project.versions || []).slice(0, 5);
 const homeLabel = editorial ? "Back to gallery" : "Back to projects";
+const soft = `color-mix(in srgb, ${theme.accent} 13%, #ffffff)`;
 const previewVariant = isTerminal ? "terminal" : editorial ? "editorial" : "default";
 ---
 
@@ -61,7 +63,12 @@ const previewVariant = isTerminal ? "terminal" : editorial ? "editorial" : "defa
         <span style="width:11px;height:11px;border-radius:50%;background:#232a26;"></span><span style="width:11px;height:11px;border-radius:50%;background:#232a26;"></span><span style="width:11px;height:11px;border-radius:50%;background:#232a26;"></span>
         <span style="font-size:11px; color:#3f4a43; margin-left:8px;">{project.slug} — preview</span>
       </div>
-      <ProjectPreviewImage fullName={project.fullName} name={project.name} variant={previewVariant} layout="auto" />
+      <div style="position:relative; min-height:220px;">
+        <ProjectShotWireframe theme={theme} size="detail" />
+        <div style="position:absolute; inset:0; z-index:1;">
+          <ProjectPreviewImage fullName={project.fullName} name={project.name} variant={previewVariant} layout="auto" withWireframe />
+        </div>
+      </div>
     </div>
 
     <div class="mw-split" style="display:grid; grid-template-columns:1.6fr 1fr; gap:40px; margin-top:38px;">
@@ -106,8 +113,11 @@ const previewVariant = isTerminal ? "terminal" : editorial ? "editorial" : "defa
     <div class="mw-grid3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px;">
       {related.map((p) => (
         <a href={`${base}/project/${p.slug}`} class="card">
-          <div style="aspect-ratio:2 / 1; background:#0e120f; border-bottom:1px solid #1f2622; overflow:hidden;">
-            <ProjectPreviewImage fullName={p.fullName} name={p.name} variant={previewVariant} />
+          <div style="aspect-ratio:2 / 1; background:#0e120f; border-bottom:1px solid #1f2622; overflow:hidden; position:relative;">
+            <ProjectShotWireframe theme={theme} size="sm" />
+            <div style="position:absolute; inset:0; z-index:1;">
+              <ProjectPreviewImage fullName={p.fullName} name={p.name} variant={previewVariant} withWireframe />
+            </div>
           </div>
           <div style="padding:13px 15px 15px;">
             <div class="disp" style="font-weight:600; font-size:14px; color:#e8efe9; margin-bottom:5px;">{p.name}</div>
@@ -124,7 +134,7 @@ const previewVariant = isTerminal ? "terminal" : editorial ? "editorial" : "defa
     </a>
     <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:30px; flex-wrap:wrap;">
       <div style="flex:1; min-width:300px;">
-        <span style="font-size:12px; font-weight:600; color:#8b9690; background:#f1f4f2; padding:4px 10px; border-radius:6px;">{project.category}</span>
+        <span style={`font-size:11px; font-weight:600; color:${theme.accent}; background:${soft}; padding:3px 9px; border-radius:20px;`}>{project.category}</span>
         <div class="disp" style="font-size:42px; font-weight:800; letter-spacing:-0.03em; margin-top:14px; line-height:1.05;">{project.name}</div>
         <div style={`font-size:17px; color:${editorial ? "#a1a1a1" : "#5c665f"}; margin-top:12px; line-height:1.55; max-width:600px;`}>{project.desc}</div>
         <div style="display:flex; align-items:center; gap:18px; margin-top:20px;">
@@ -146,7 +156,12 @@ const previewVariant = isTerminal ? "terminal" : editorial ? "editorial" : "defa
 
     <div style={`margin-top:30px; background:#f4f6f5; border:1px solid #eef0ef; border-radius:${radius}; overflow:hidden;`}>
       <div style="display:flex; gap:6px; padding:16px 18px; border-bottom:1px solid #eef0ef;"><span style="width:11px;height:11px;border-radius:50%;background:#e0e5e2;"></span><span style="width:11px;height:11px;border-radius:50%;background:#e0e5e2;"></span><span style="width:11px;height:11px;border-radius:50%;background:#e0e5e2;"></span></div>
-      <ProjectPreviewImage fullName={project.fullName} name={project.name} variant={previewVariant} layout="auto" />
+      <div style="position:relative; min-height:280px; background:#f8faf9;">
+        <ProjectShotWireframe theme={theme} size="detail" />
+        <div style="position:absolute; inset:0; z-index:1;">
+          <ProjectPreviewImage fullName={project.fullName} name={project.name} variant={previewVariant} layout="auto" withWireframe />
+        </div>
+      </div>
     </div>
 
     <div class="mw-split" style="display:grid; grid-template-columns:1.6fr 1fr; gap:40px; margin-top:38px;">
@@ -191,8 +206,11 @@ const previewVariant = isTerminal ? "terminal" : editorial ? "editorial" : "defa
     <div class="mw-grid3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
       {related.map((p) => (
         <a href={`${base}/project/${p.slug}`} class="card">
-          <div style="aspect-ratio:2 / 1; background:#f4f6f5; border-bottom:1px solid #eef0ef; overflow:hidden;">
-            <ProjectPreviewImage fullName={p.fullName} name={p.name} variant={previewVariant} />
+          <div style="aspect-ratio:2 / 1; background:#f4f6f5; border-bottom:1px solid #eef0ef; overflow:hidden; position:relative;">
+            <ProjectShotWireframe theme={theme} size="sm" />
+            <div style="position:absolute; inset:0; z-index:1;">
+              <ProjectPreviewImage fullName={p.fullName} name={p.name} variant={previewVariant} withWireframe />
+            </div>
           </div>
           <div style="padding:13px 15px 15px;">
             <div class="disp" style="font-weight:700; font-size:15px; margin-bottom:5px;">{p.name}</div>

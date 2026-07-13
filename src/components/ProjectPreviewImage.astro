@@ -4,9 +4,10 @@ interface Props {
   name: string;
   variant?: "terminal" | "editorial" | "default";
   layout?: "fill" | "auto";
+  withWireframe?: boolean;
 }
 
-const { fullName, name, variant = "default", layout = "fill" } = Astro.props;
+const { fullName, name, variant = "default", layout = "fill", withWireframe = false } = Astro.props;
 const src = `https://opengraph.githubassets.com/1/${fullName}`;
 
 const palette = {
@@ -27,6 +28,7 @@ const imgStyle =
 ---
 
 <div style={wrapStyle}>
+  {!withWireframe && (
   <div
     aria-hidden="true"
     style={`position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:16px; text-align:center;`}
@@ -37,6 +39,7 @@ const imgStyle =
     <span style={`font-family:ui-monospace, SFMono-Regular, Menlo, monospace; font-size:11px; color:${palette.text}; max-width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;`}>{fullName}</span>
     <span style={`font-size:10px; color:${palette.sub};`}>No preview available</span>
   </div>
+  )}
   <img
     src={src}
     alt={`${name} repository preview`}

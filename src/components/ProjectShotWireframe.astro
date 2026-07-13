@@ -1,0 +1,65 @@
+---
+import type { Theme } from "../config/domains";
+
+interface Props {
+  theme: Theme;
+  size?: "card" | "sm" | "detail";
+  variant?: "default" | "editorial";
+}
+
+const { theme, size = "card", variant = "default" } = Astro.props;
+const dark = theme.variant === "terminal";
+const accent = theme.accent;
+const radius = theme.radius;
+const blockRadius = radius < 4 ? "0" : size === "sm" ? "5px" : "6px";
+const dot = dark ? "#2a322d" : "#dfe4e1";
+const barA = dark ? "#2a322d" : variant === "editorial" ? "#e3e3e3" : "#e3e8e5";
+const barB = dark ? "#232a26" : variant === "editorial" ? "#e8e8e8" : "#e9edeb";
+const panelBg = dark
+  ? `color-mix(in srgb, ${accent} 18%, #0e120f)`
+  : `color-mix(in srgb, ${accent} 12%, #f4f6f5)`;
+---
+
+{size === "detail" ? (
+  <div style="display:flex; gap:14px; padding:18px; min-height:220px;">
+    <div style={`width:180px; background:${dark ? "#101410" : "#fff"}; border-radius:8px; border:1px solid ${dark ? "#1f2622" : "#eaeeec"}; padding:14px; flex-shrink:0;`}>
+      <div style={`height:22px; width:45%; background:${accent}; opacity:.9; border-radius:${blockRadius};`}></div>
+      <div style={`height:9px; width:80%; background:${dark ? "#232a26" : "#eef1ef"}; border-radius:4px; margin:14px 0 9px;`}></div>
+      <div style={`height:9px; width:65%; background:${dark ? "#232a26" : "#eef1ef"}; border-radius:4px;`}></div>
+    </div>
+    <div style={`flex:1; background:${dark ? "#101410" : "#fff"}; border-radius:8px; border:1px solid ${dark ? "#1f2622" : "#eaeeec"}; padding:18px;`}>
+      <div style={`height:13px; width:40%; background:${dark ? "#2a322d" : "#e8ece9"}; border-radius:5px; margin-bottom:18px;`}></div>
+      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;">
+        <div style={`height:80px; background:${dark ? "#0e120f" : "#f6f8f7"}; border-radius:8px;`}></div>
+        <div style={`height:80px; background:${dark ? "#0e120f" : "#f6f8f7"}; border-radius:8px;`}></div>
+        <div style={`height:80px; background:${dark ? "#0e120f" : "#f6f8f7"}; border-radius:8px;`}></div>
+      </div>
+      <div style={`height:110px; background:${panelBg}; border-radius:8px; margin-top:14px;`}></div>
+    </div>
+  </div>
+) : variant === "editorial" ? (
+  <div aria-hidden="true" style="position:relative; height:100%;">
+    <div style={`height:8px; width:50%; background:${barA}; margin-bottom:9px; margin-top:26px;`}></div>
+    <div style={`height:30px; width:44%; background:${accent}; margin-bottom:11px;`}></div>
+    <div style={`height:7px; width:78%; background:${barB}; margin-bottom:6px;`}></div>
+    <div style={`height:7px; width:62%; background:${barB};`}></div>
+  </div>
+) : (
+  <div aria-hidden="true" style="position:absolute; inset:0; padding:11px;">
+    <div style="display:flex; gap:5px; margin-bottom:13px;">
+      <span style={`width:8px; height:8px; border-radius:50%; background:${dot};`}></span>
+      <span style={`width:8px; height:8px; border-radius:50%; background:${dot};`}></span>
+      <span style={`width:8px; height:8px; border-radius:50%; background:${dot};`}></span>
+    </div>
+    {size === "card" && <div style={`height:8px; width:55%; background:${barA}; border-radius:4px; margin-bottom:9px;`}></div>}
+    <div
+      style={`height:${size === "sm" ? "22px" : "30px"}; width:${size === "sm" ? "45%" : "42%"}; background:${accent}; opacity:.9; border-radius:${blockRadius}; margin-bottom:${size === "card" ? "11px" : "0"};`}
+    ></div>
+    {size === "card" && (
+      <>
+        <div style={`height:7px; width:80%; background:${barB}; border-radius:4px; margin-bottom:7px;`}></div>
+        <div style={`height:7px; width:68%; background:${barB}; border-radius:4px;`}></div>
+      </>
+    )}
+  </div>
+)}

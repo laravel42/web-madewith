@@ -3,6 +3,7 @@ import type { Theme } from "../config/domains";
 import type { Project } from "../lib/catalog";
 import { formatStars } from "../lib/catalog";
 import ProjectPreviewImage from "./ProjectPreviewImage.astro";
+import ProjectShotWireframe from "./ProjectShotWireframe.astro";
 
 interface Props { theme: Theme; project: Project; rank: string; }
 const { theme, project, rank } = Astro.props;
@@ -10,7 +11,10 @@ const base = `/${theme.slug}`;
 const href = `${base}/project/${project.slug}`;
 const stars = formatStars(project.stars || 0);
 const initial = (project.author || "").charAt(0).toUpperCase();
-// shared data hooks for the client-side filter
+const dark = theme.variant === "terminal";
+const shotBg = dark ? "#0e120f" : theme.editorial ? "#f5f5f5" : "#f4f6f5";
+const shotBorder = dark ? "#1f2622" : theme.editorial ? "#e8e8e8" : "#eef0ef";
+const soft = `color-mix(in srgb, ${theme.accent} 13%, #ffffff)`;
 const dataAttrs = {
   "data-role": "card",
   "data-name": project.name.toLowerCase(),
@@ -18,18 +22,21 @@ const dataAttrs = {
   "data-author": project.author.toLowerCase(),
   "data-category": project.category,
   "data-stars": String(project.stars),
-  // Pipe-joined lowercase stack, so a tag deep-link (?tag=React) can match.
   "data-stack": (project.stack || []).join("|").toLowerCase(),
   "data-langs": (project.langs || []).map((l) => l.name).join("|").toLowerCase(),
   "data-license": (project.license || "").toLowerCase(),
 };
 const editorial = theme.editorial;
+const previewVariant = dark ? "terminal" : editorial ? "editorial" : "default";
 ---
 
 {theme.variant === "terminal" ? (
   <a href={href} class="card" {...dataAttrs}>
-    <div style="height:140px; background:#0e120f; border-bottom:1px solid #1f2622; padding:14px; overflow:hidden;">
-      <ProjectPreviewImage fullName={project.fullName} name={project.name} variant="terminal" />
+    <div style={`height:152px; background:${shotBg}; border-bottom:1px solid ${shotBorder}; position:relative; overflow:hidden;`}>
+      <ProjectShotWireframe theme={theme} size="card" />
+      <div style="position:absolute; inset:0; z-index:1;">
+        <ProjectPreviewImage fullName={project.fullName} name={project.name} variant={previewVariant} withWireframe />
+      </div>
     </div>
     <div class="card-body" style="padding:14px 15px 15px;">
       <div style="font-size:11px; color:#5c665f; margin-bottom:7px;">[{project.category}]</div>
@@ -43,9 +50,12 @@ const editorial = theme.editorial;
   </a>
 ) : editorial ? (
   <a href={href} class="card-editorial" {...dataAttrs}>
-    <div style="height:158px; background:#f5f5f5; position:relative; border-bottom:1px solid #e8e8e8; padding:14px; overflow:hidden;">
-      <ProjectPreviewImage fullName={project.fullName} name={project.name} variant="editorial" />
-      <div class="disp" style="position:absolute; top:12px; right:12px; background:#fff; padding:2px 8px; font-weight:800; font-size:13px;">{rank}</div>
+    <div style={`height:158px; background:${shotBg}; position:relative; border-bottom:1px solid ${shotBorder}; overflow:hidden; padding:14px;`}>
+      <ProjectShotWireframe theme={theme} size="card" variant="editorial" />
+      <div style="position:absolute; inset:0; z-index:1;">
+        <ProjectPreviewImage fullName={project.fullName} name={project.name} variant="editorial" withWireframe />
+      </div>
+      <div class="disp" style="position:absolute; top:14px; right:14px; z-index:2; font-weight:800; font-size:13px;">{rank}</div>
     </div>
     <div class="card-body" style="padding:18px 20px 20px;">
       <div class="disp" style="font-weight:700; font-size:18px; letter-spacing:-0.01em; margin-bottom:6px;">{project.name}</div>
@@ -58,16 +68,15 @@ const editorial = theme.editorial;
   </a>
 ) : (
   <a href={href} class="card" {...dataAttrs}>
-    <div style="height:152px; background:#f4f6f5; border-bottom:1px solid #eef0ef; padding:14px; overflow:hidden;">
-      <ProjectPreviewImage fullName={project.fullName} name={project.name} variant="default" />
+    <div style={`height:152px; background:${shotBg}; border-bottom:1px solid ${shotBorder}; position:relative; overflow:hidden;`}>
+      <ProjectShotWireframe theme={theme} size="card" />
+      <div style="position:absolute; inset:0; z-index:1;">
+        <ProjectPreviewImage fullName={project.fullName} name={project.name} variant="default" withWireframe />
+      </div>
     </div>
     <div class="card-body" style="padding:15px 16px 16px;">
-      <div style="display:flex; align-items:center; gap:8px; margin-bottom:7px;">
-        {theme.chipAccent ? (
-          <span style={`font-size:11px; font-weight:600; color:${theme.accent}; background:color-mix(in srgb, ${theme.accent} 12%, #fff); padding:3px 9px; border-radius:20px; letter-spacing:.02em;`}>{project.category}</span>
-        ) : (
-          <span style="font-size:11px; font-weight:600; color:#8b9690; background:#f1f4f2; padding:3px 8px; border-radius:5px;">{project.category}</span>
-        )}
+      <div style="margin-bottom:7px;">
+        <span style={`font-size:11px; font-weight:600; color:${theme.accent}; background:${soft}; padding:3px 9px; border-radius:20px;`}>{project.category}</span>
       </div>
       <div class="disp" style="font-weight:700; font-size:17px; margin-bottom:5px; letter-spacing:-0.01em;">{project.name}</div>
       <div style="font-size:13.5px; color:#6b756f; line-height:1.45; margin-bottom:14px; min-height:38px;">{project.desc}</div>
