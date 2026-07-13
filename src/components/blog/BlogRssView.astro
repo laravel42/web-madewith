@@ -1,11 +1,114 @@
 ---
-import { articleCardMeta, getArticles } from "../../lib/blog";
-import { buildBlogRssXml } from "../../lib/feed";
+import { articleCardMeta, getArticles, safeJsonForScript } from "../../lib/blog";
+import { blogTechFor } from "../../lib/blog-tech";
+import { formatStars } from "../../lib/catalog";
+import { networkProjectEntries } from "../../lib/feed";
+import { englishDisplayText, projectDisplayName, projectPreviewExcerpt, truncatePreviewText, videoDisplayDescription, videoDisplayTitle } from "../../lib/preview-text";
+import { allVideoEntries } from "../../lib/videos";
+import NavIcon from "../NavIcon.astro";
 
-const site = Astro.site ?? new URL("https://madewithwhat.net");
-const feedUrl = new URL("/blog/rss.xml", site).href;
-const articles = getArticles().map(articleCardMeta);
-const rawXml = buildBlogRssXml(getArticles(), site);
+const PREVIEW_LIMIT = 50;
+
+const feedOrigin = import.meta.env.DEV ? Astro.url : (Astro.site ?? new URL("https://madewithwhat.net"));
+const articlesFeedPath = "/articles/rss.xml";
+const articlesFeedUrl = new URL(articlesFeedPath, feedOrigin).href;
+
+const feeds = [
+  {
+    id: "projects",
+    name: "Projects",
+    path: "/projects/rss.xml",
+    copy: "Top open-source repos from every MadeWith gallery, ranked by GitHub stars. Each entry is tagged with its stack so you can follow one technology or the whole network in a single feed.",
+    tone: "projects",
+    accent: "#2f6feb",
+    accentSoft: "#e8f0fe",
+    navIcon: "network",
+  },
+  {
+    id: "articles",
+    name: "Articles",
+    path: "/articles/rss.xml",
+    copy: "Every guide, comparison, and deep-dive published on the blog. Posts carry an RSS category for their primary stack — filter by React, Laravel, Django, and dozens more in your reader.",
+    tone: "articles",
+    accent: "#ea7a2b",
+    accentSoft: "#fff3ea",
+    navIcon: "blog",
+  },
+  {
+    id: "video",
+    name: "Video",
+    path: "/video/rss.xml",
+    copy: "Curated tutorials and talks for each technology in the network. Videos are grouped by stack via RSS categories, so you can subscribe to everything or narrow down to a single ecosystem.",
+    tone: "video",
+    accent: "#e03e6b",
+    accentSoft: "#fde8ef",
+    navIcon: "gallery",
+  },
+] as const;
+
+type FeedId = (typeof feeds)[number]["id"];
+
+interface PreviewItem {
+  title: string;
+  excerpt: string;
+  href: string;
+  stack: string;
+  accent: string;
+  meta: string;
+  metaIcon?: "star";
+  author?: string;
+  repoUrl?: string;
+  repoLabel?: string;
+}
+
+const feedPreview: Record<FeedId, PreviewItem[]> = {
+  projects: networkProjectEntries()
+    .sort((a, b) => b.project.stars - a.project.stars)
+    .slice(0, PREVIEW_LIMIT)
+    .map(({ domainSlug, techName, project }) => {
+      const tech = blogTechFor(techName);
+      return {
+        title: projectDisplayName(project),
+        excerpt: truncatePreviewText(projectPreviewExcerpt(project)),
+        href: `/${domainSlug}/project/${project.slug}/`,
+        stack: techName,
+        accent: tech.accent,
+        meta: `${formatStars(project.stars)} stars`,
+        metaIcon: "star",
+        author: project.author,
+        repoUrl: project.repoUrl,
+        repoLabel: project.fullName,
+      };
+    }),
+  articles: getArticles()
+    .map(articleCardMeta)
+    .slice(0, PREVIEW_LIMIT)
+    .map((item) => ({
+      title: englishDisplayText(item.title, item.excerpt),
+      excerpt: truncatePreviewText(englishDisplayText(item.excerpt, item.title)),
+      href: item.href,
+      stack: item.primaryTechnology,
+      accent: item.tech.accent,
+      meta: item.dateLabel,
+    })),
+  video: allVideoEntries()
+    .sort((a, b) => Date.parse(b.video.publishedAt) - Date.parse(a.video.publishedAt))
+    .slice(0, PREVIEW_LIMIT)
+    .map(({ techName, video }) => {
+      const tech = blogTechFor(techName);
+      return {
+        title: videoDisplayTitle(video.title, video.description, techName),
+        excerpt: truncatePreviewText(videoDisplayDescription(video.description, video.title)),
+        href: video.url,
+        stack: techName,
+        accent: tech.accent,
+        meta: video.duration,
+      };
+    }),
+};
+
+const defaultFeed: FeedId = "articles";
+const feedPreviewJson = safeJsonForScript(feedPreview);
 ---
 
 <main>
@@ -15,63 +118,47 @@ const rawXml = buildBlogRssXml(getArticles(), site);
     <p class="blog-hero-copy">Follow every new guide across the network in your reader of choice — no algorithm, no account, no email required.</p>
 
     <div class="blog-hero-feed">
-      <code>{feedUrl}</code>
+      <code>{articlesFeedUrl}</code>
       <button type="button" data-role="rss-copy">Copy</button>
     </div>
-    <div class="blog-hero-links">
-      <span>Open in:</span>
-      <a href={`https://feedly.com/i/subscription/feed/${encodeURIComponent(feedUrl)}`} target="_blank" rel="noopener noreferrer" class="mw-link">Feedly</a>
-      <a href={feedUrl} class="mw-link">Raw feed</a>
-    </div>
   </section>
 
-  <section aria-label="Available feeds" style="max-width:1080px; margin:0 auto; padding:38px 28px 8px; width:100%;">
-    <h2 class="disp" style="font-size:22px; font-weight:800; letter-spacing:-0.02em; margin:0 0 18px;">Feeds you can follow</h2>
-    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px;">
-      <div style="background:#fff; border:1px solid #e9ebee; border-radius:16px; padding:20px;">
-        <div style="font-size:15px; font-weight:800;">Everything</div>
-        <p style="font-size:13.5px; color:#6b7178; line-height:1.5; margin:7px 0 12px;">Every new article across all stacks.</p>
-        <code style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#EA7A2B;">/blog/rss.xml</code>
-      </div>
-      <div style="background:#fff; border:1px solid #e9ebee; border-radius:16px; padding:20px;">
-        <div style="font-size:15px; font-weight:800;">Per technology</div>
-        <p style="font-size:13.5px; color:#6b7178; line-height:1.5; margin:7px 0 12px;">Filter by stack in your reader using categories.</p>
-        <code style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#EA7A2B;">/blog/rss.xml</code>
-      </div>
-      <div style="background:#fff; border:1px solid #e9ebee; border-radius:16px; padding:20px;">
-        <div style="font-size:15px; font-weight:800;">Network galleries</div>
-        <p style="font-size:13.5px; color:#6b7178; line-height:1.5; margin:7px 0 12px;">Project updates from every gallery.</p>
-        <code style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#EA7A2B;">/rss.xml</code>
-      </div>
-    </div>
-  </section>
-
-  <section aria-label="Feed contents" style="max-width:1080px; margin:0 auto; padding:38px 28px 70px; width:100%;">
-    <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; margin-bottom:18px; flex-wrap:wrap;">
-      <h2 class="disp" style="font-size:22px; font-weight:800; letter-spacing:-0.02em; margin:0;">Currently in the feed</h2>
-      <div style="display:flex; gap:6px; background:#eef0f3; border-radius:11px; padding:4px;">
-        <button type="button" data-role="rss-tab" data-view="rendered" style="font-size:13px; font-weight:600; padding:6px 14px; border-radius:8px; cursor:pointer; border:none; font-family:inherit; background:#fff; color:#12161a; box-shadow:0 1px 3px rgba(0,0,0,.08);">Preview</button>
-        <button type="button" data-role="rss-tab" data-view="raw" style="font-size:13px; font-weight:600; padding:6px 14px; border-radius:8px; cursor:pointer; border:none; font-family:inherit; background:transparent; color:#6b7178;">Raw XML</button>
-      </div>
-    </div>
-
-    <ul data-role="rss-rendered" style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:2px;">
-      {articles.map((item) => (
-        <li>
-          <a href={item.href} style="display:flex; align-items:center; gap:16px; padding:16px; border-radius:12px; border:1px solid transparent;">
-            <span style={`width:9px; height:9px; border-radius:50%; background:${item.tech.accent}; flex-shrink:0;`}></span>
-            <span style="flex:1; min-width:0;">
-              <span style="display:block; font-size:15.5px; font-weight:700; letter-spacing:-0.01em;">{item.title}</span>
-              <span style="display:block; font-size:13px; color:#6b7178; margin-top:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">{item.excerpt}</span>
-            </span>
-            <span style={`font-size:12.5px; font-weight:600; color:${item.tech.accent}; white-space:nowrap;`}>{item.primaryTechnology}</span>
-            <time datetime={item.date} style="font-size:12.5px; color:#9aa0a6; white-space:nowrap; width:96px; text-align:right;">{item.dateLabel}</time>
-          </a>
-        </li>
+  <section aria-label="Available feeds" class="rss-feeds-section">
+    <h2 class="disp rss-feeds-title">Feeds you can follow</h2>
+    <div class="rss-feeds-grid">
+      {feeds.map((feed) => (
+        <article class={`rss-feed-card rss-feed-card--${feed.tone}`} style={`--feed-accent:${feed.accent}; --feed-accent-soft:${feed.accentSoft};`}>
+          <span class="rss-feed-icon" aria-hidden="true">
+            <NavIcon name={feed.navIcon} />
+          </span>
+          <h3 class="rss-feed-name">{feed.name}</h3>
+          <p class="rss-feed-copy">{feed.copy}</p>
+          <div class="rss-feed-row">
+            <code class="rss-feed-path">{feed.path}</code>
+            <a href={feed.path} class="rss-feed-link">Open feed</a>
+          </div>
+        </article>
       ))}
-    </ul>
+    </div>
+  </section>
 
-    <pre data-role="rss-raw" hidden style="background:#0f1420; border-radius:14px; padding:22px 24px; overflow:auto; margin:0; max-height:520px;"><code style="font-family:'JetBrains Mono',monospace; font-size:13px; line-height:1.65; color:#c7d0da; white-space:pre;">{rawXml}</code></pre>
+  <section aria-label="Feed preview" class="rss-preview-section">
+    <div class="rss-feed-selector" role="tablist" aria-label="Feed category">
+      {feeds.map((feed) => (
+        <button
+          type="button"
+          role="tab"
+          class:list={["rss-feed-tab", feed.id === defaultFeed && "is-active"]}
+          data-feed={feed.id}
+          aria-selected={feed.id === defaultFeed ? "true" : "false"}
+          style={`--tab-accent:${feed.accent};`}
+        >
+          {feed.name}
+        </button>
+      ))}
+    </div>
+
+    <ul class="rss-preview-list" data-role="feed-preview"></ul>
   </section>
 </main>
 
@@ -114,51 +201,422 @@ const rawXml = buildBlogRssXml(getArticles(), site);
     white-space: nowrap;
   }
 
-  .blog-hero-links {
+  .rss-feeds-section {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 38px 28px 8px;
+    width: 100%;
+  }
+
+  .rss-feeds-title {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 0 0 18px;
+  }
+
+  .rss-feeds-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+
+  .rss-feed-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid color-mix(in srgb, var(--feed-accent) 18%, #e9ebee);
+    border-radius: 18px;
+    padding: 18px 18px 16px;
+    background:
+      radial-gradient(120px 90px at 100% 0%, color-mix(in srgb, var(--feed-accent) 22%, transparent), transparent 70%),
+      linear-gradient(160deg, #fff 0%, var(--feed-accent-soft) 100%);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.9) inset,
+      0 10px 28px color-mix(in srgb, var(--feed-accent) 10%, transparent);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  }
+
+  .rss-feed-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, color-mix(in srgb, var(--feed-accent) 7%, transparent), transparent 55%);
+    pointer-events: none;
+  }
+
+  .rss-feed-card:hover {
+    transform: translateY(-2px);
+    border-color: color-mix(in srgb, var(--feed-accent) 32%, #e9ebee);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.95) inset,
+      0 16px 36px color-mix(in srgb, var(--feed-accent) 16%, transparent);
+  }
+
+  .rss-feed-icon {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 11px;
+    color: var(--feed-accent);
+    background: color-mix(in srgb, var(--feed-accent) 12%, #fff);
+    border: 1px solid color-mix(in srgb, var(--feed-accent) 20%, #fff);
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--feed-accent) 12%, transparent);
+  }
+
+  .rss-feed-icon :global(.nav-icon) {
+    width: 20px;
+    height: 20px;
+    opacity: 1;
+  }
+
+  .rss-feed-name {
+    position: relative;
+    z-index: 1;
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin: 10px 0 0;
+    color: #12161a;
+  }
+
+  .rss-feed-copy {
+    position: relative;
+    z-index: 1;
+    font-size: 13px;
+    color: #5c6169;
+    line-height: 1.45;
+    margin: 6px 0 0;
+  }
+
+  .rss-feed-row {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 12px;
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid color-mix(in srgb, var(--feed-accent) 16%, #fff);
+    border-radius: 9px;
+    padding: 4px 4px 4px 10px;
+    backdrop-filter: blur(6px);
+  }
+
+  .rss-feed-path {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11.5px;
+    color: color-mix(in srgb, var(--feed-accent) 72%, #12161a);
+    background: transparent;
+    border: none;
+    padding: 6px 0;
+    margin: 0;
+  }
+
+  .rss-feed-link {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    flex-shrink: 0;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 13px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, color-mix(in srgb, var(--feed-accent) 88%, #000), var(--feed-accent));
+    box-shadow: 0 6px 16px color-mix(in srgb, var(--feed-accent) 28%, transparent);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .rss-feed-link:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 22px color-mix(in srgb, var(--feed-accent) 34%, transparent);
+  }
+
+  .rss-preview-section {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 30px 28px 70px;
+    width: 100%;
+  }
+
+  .rss-feed-selector {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    justify-content: center;
-    margin-top: 14px;
-    font-size: 13px;
-    color: #9aa0a6;
-    align-items: center;
+    margin-bottom: 16px;
   }
 
-  .blog-hero-links a {
+  .rss-feed-tab {
+    font-size: 13px;
     font-weight: 600;
+    color: #3a4048;
+    background: #fff;
+    border: 1px solid #e6e8eb;
+    padding: 8px 14px;
+    border-radius: 18px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: transform 0.12s ease, background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+  }
+
+  .rss-feed-tab:hover {
+    transform: translateY(-1px);
+    border-color: color-mix(in srgb, var(--tab-accent) 30%, #e6e8eb);
+  }
+
+  .rss-feed-tab.is-active {
+    font-weight: 700;
+    color: #fff;
+    background: var(--tab-accent);
+    border-color: var(--tab-accent);
+    box-shadow: 0 6px 16px color-mix(in srgb, var(--tab-accent) 28%, transparent);
+  }
+
+  .rss-preview-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .rss-preview-list :global(li) {
+    border-radius: 10px;
+    transition: background 0.12s ease;
+  }
+
+  .rss-preview-list :global(li:hover) {
+    background: #f8f9fb;
+  }
+
+  .rss-preview-list :global(.rss-preview-link) {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 12px;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .rss-preview-list :global(.rss-preview-dot) {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .rss-preview-list :global(.rss-preview-body) {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .rss-preview-list :global(.rss-preview-headline) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 6px;
+    min-width: 0;
+    line-height: 1.25;
+  }
+
+  .rss-preview-list :global(.rss-preview-title) {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+
+  .rss-preview-list :global(.rss-preview-byline) {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    color: #8b939c;
+    line-height: 1.3;
+    min-width: 0;
+  }
+
+  .rss-preview-list :global(.rss-preview-author) {
+    font-weight: 600;
+    color: #5c6169;
+  }
+
+  .rss-preview-list :global(.rss-preview-repo) {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 10.5px;
+    color: #2f6feb;
+  }
+
+  .rss-preview-list :global(.rss-preview-excerpt) {
+    display: block;
+    font-size: 12px;
+    color: #6b7178;
+    margin-top: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.35;
+  }
+
+  .rss-preview-list :global(.rss-preview-stack) {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    color: color-mix(in srgb, var(--stack-accent) 58%, #1a221d);
+    background: color-mix(in srgb, var(--stack-accent) 14%, #fff);
+    border: 1px solid color-mix(in srgb, var(--stack-accent) 30%, #e3e6ea);
+    padding: 3px 8px;
+    border-radius: 999px;
+  }
+
+  .rss-preview-list :global(.rss-preview-meta) {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 4px;
+    flex-shrink: 0;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #9aa0a6;
+    white-space: nowrap;
+    min-width: 72px;
+    text-align: right;
+  }
+
+  .rss-preview-list :global(.rss-preview-star) {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    color: #f0b429;
+  }
+
+  @media (max-width: 900px) {
+    .rss-feeds-grid {
+      grid-template-columns: 1fr;
+    }
   }
 </style>
 
-<script define:vars={{ feedUrl }}>
-  function initBlogRss() {
-    const copyBtn = document.querySelector("[data-role=rss-copy]");
-    const tabs = document.querySelectorAll("[data-role=rss-tab]");
-    const rendered = document.querySelector("[data-role=rss-rendered]");
-    const raw = document.querySelector("[data-role=rss-raw]");
-    if (!copyBtn || !rendered || !raw) return;
-
-    copyBtn.addEventListener("click", async () => {
-      try {
-        await navigator.clipboard.writeText(feedUrl);
-        copyBtn.textContent = "Copied ✓";
-        setTimeout(() => { copyBtn.textContent = "Copy"; }, 1600);
-      } catch {
-        copyBtn.textContent = "Copy failed";
-      }
-    });
-
-    tabs.forEach((tab) => {
-      tab.addEventListener("click", () => {
-        const view = tab.dataset.view;
-        const on = "font-size:13px; font-weight:600; padding:6px 14px; border-radius:8px; cursor:pointer; border:none; font-family:inherit; background:#fff; color:#12161a; box-shadow:0 1px 3px rgba(0,0,0,.08);";
-        const off = "font-size:13px; font-weight:600; padding:6px 14px; border-radius:8px; cursor:pointer; border:none; font-family:inherit; background:transparent; color:#6b7178;";
-        tabs.forEach((el) => { el.style.cssText = el.dataset.view === view ? on : off; });
-        rendered.hidden = view !== "rendered";
-        raw.hidden = view !== "raw";
-      });
-    });
+<script id="rss-feed-preview" type="application/json" set:html={feedPreviewJson}></script>
+<script define:vars={{ articlesFeedUrl, defaultFeed }}>
+  function escapeHtml(value) {
+    return String(value)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
   }
+
+  function metaHtml(item) {
+    if (item.metaIcon === "star") {
+      return `<span class="rss-preview-meta">
+        <svg class="rss-preview-star" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        <span>${escapeHtml(item.meta)}</span>
+      </span>`;
+    }
+    return `<span class="rss-preview-meta">${escapeHtml(item.meta)}</span>`;
+  }
+
+  function truncateExcerpt(text, max = 120) {
+    const trimmed = String(text).trim();
+    if (trimmed.length <= max) return trimmed;
+    return `${trimmed.slice(0, max).trim()}…`;
+  }
+
+  function renderFeedPreview(feedId) {
+    const list = document.querySelector("[data-role=feed-preview]");
+    const dataEl = document.getElementById("rss-feed-preview");
+    if (!list || !dataEl) return;
+
+    const feedPreviewJson = JSON.parse(dataEl.textContent || "{}");
+    const items = feedPreviewJson[feedId] ?? [];
+    list.innerHTML = items.map((item) => {
+      const external = item.href.startsWith("http");
+      const byline = item.author && item.repoLabel
+        ? `<span class="rss-preview-byline">
+            <span aria-hidden="true">·</span>
+            <span class="rss-preview-author">${escapeHtml(item.author)}</span>
+            <span aria-hidden="true">·</span>
+            <span class="rss-preview-repo">${escapeHtml(item.repoLabel)}</span>
+          </span>`
+        : "";
+      const excerpt = truncateExcerpt(item.excerpt);
+
+      return `
+      <li>
+        <a href="${escapeHtml(item.href)}" class="rss-preview-link"${external ? ' target="_blank" rel="noopener noreferrer"' : ""}>
+          <span class="rss-preview-dot" style="background:${escapeHtml(item.accent)}"></span>
+          <span class="rss-preview-body">
+            <span class="rss-preview-headline">
+              <span class="rss-preview-title">${escapeHtml(item.title)}</span>
+              ${byline}
+            </span>
+            <span class="rss-preview-excerpt">${escapeHtml(excerpt)}</span>
+          </span>
+          <span class="rss-preview-stack" style="--stack-accent:${escapeHtml(item.accent)}">${escapeHtml(item.stack)}</span>
+          ${metaHtml(item)}
+        </a>
+      </li>
+    `;
+    }).join("");
+  }
+
+  function initBlogRss() {
+    const previewRoot = document.querySelector(".rss-preview-section");
+    if (!previewRoot || previewRoot.dataset.initialized) return;
+    previewRoot.dataset.initialized = "true";
+
+    const copyBtn = document.querySelector("[data-role=rss-copy]");
+    if (copyBtn) {
+      copyBtn.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(articlesFeedUrl);
+          copyBtn.textContent = "Copied ✓";
+          setTimeout(() => { copyBtn.textContent = "Copy"; }, 1600);
+        } catch {
+          copyBtn.textContent = "Copy failed";
+        }
+      });
+    }
+
+    const tabs = [...document.querySelectorAll(".rss-feed-tab")];
+    for (const tab of tabs) {
+      tab.addEventListener("click", () => {
+        const feedId = tab.dataset.feed;
+        if (!feedId) return;
+
+        for (const other of tabs) {
+          const active = other === tab;
+          other.classList.toggle("is-active", active);
+          other.setAttribute("aria-selected", active ? "true" : "false");
+        }
+
+        renderFeedPreview(feedId);
+      });
+    }
+
+    renderFeedPreview(defaultFeed);
+  }
+
   initBlogRss();
   document.addEventListener("astro:page-load", initBlogRss);
 </script>

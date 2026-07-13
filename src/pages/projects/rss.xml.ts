@@ -1,10 +1,8 @@
 import type { APIRoute } from "astro";
-import { getArticles } from "../../lib/blog";
-import { buildArticlesRssXml } from "../../lib/feed";
+import { buildProjectsRssXml } from "../../lib/feed";
 
 export const GET: APIRoute = ({ site }) => {
-  const origin = site ?? new URL("https://madewithwhat.net");
-  const xml = buildArticlesRssXml(getArticles(), origin);
+  const xml = buildProjectsRssXml(site ?? new URL("https://madewithwhat.net"));
   return new Response(xml, {
     headers: {
       "Content-Type": "application/rss+xml; charset=utf-8",
