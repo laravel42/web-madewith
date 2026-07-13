@@ -6,11 +6,14 @@ const ALL_CATEGORIES = [
 ];
 
 const GROUP_LABELS: Record<string, string> = {
-  frontend: "Frontend",
   frameworks: "Frameworks",
+  frontend: "Frontend",
   backend: "Backend",
-  cms: "CMS",
+  "cms-crm": "CMS / CRM",
+  cms: "CMS / CRM",
+  "crm-erp": "CMS / CRM",
   commerce: "Commerce",
+  "ai-llm": "AI / LLM",
 };
 
 function catalogCounts(): Record<string, number> {

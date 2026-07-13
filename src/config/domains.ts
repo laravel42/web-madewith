@@ -10,7 +10,7 @@ import { applyThemeOverrides, getDomainSettings } from "./domain-settings";
 
 export type Variant = "light" | "terminal";
 export type HeroId = "nuxt" | "node" | "next" | "ionic" | "statamic" | "twill" | "generic";
-export type DomainGroup = "frontend" | "frameworks" | "backend" | "cms" | "commerce";
+export type DomainGroup = "frameworks" | "frontend" | "backend" | "cms-crm" | "commerce" | "ai-llm";
 export type NetworkCardStyle = "default" | "tint" | "black" | "terminal";
 
 export interface NetworkSiteMeta {
@@ -76,22 +76,23 @@ const FONTS = {
 
 /** Placeholder palette per group — swap for bespoke tokens when designs land. */
 const GROUP_ACCENT: Record<DomainGroup, string> = {
-  frontend: "#2F6FEB",
   frameworks: "#16A34A",
+  frontend: "#2F6FEB",
   backend: "#d97706",
-  cms: "#7c3aed",
+  "cms-crm": "#7c3aed",
   commerce: "#b45309",
+  "ai-llm": "#6366f1",
 };
 
 /** Per-tech accents & card variants for the network landing (design handoff). */
 const NETWORK_CARD: Partial<Record<string, NetworkCardStyle>> = {
   express: "terminal",
-  node: "terminal",
   next: "black",
   react: "tint",
-  python: "tint",
   statamic: "tint",
-  shopify: "tint",
+  preact: "tint",
+  qwik: "tint",
+  lit: "tint",
 };
 
 const NETWORK_ACCENT: Partial<Record<string, { accent: string; accentInk: string }>> = {
@@ -118,7 +119,40 @@ const NETWORK_ACCENT: Partial<Record<string, { accent: string; accentInk: string
   flask: { accent: "#111111", accentInk: "#ffffff" },
   gin: { accent: "#00ADD8", accentInk: "#04222c" },
   fiber: { accent: "#00ADD8", accentInk: "#04222c" },
-  python: { accent: "#3776AB", accentInk: "#ffffff" },
+  fastify: { accent: "#000000", accentInk: "#ffffff" },
+  hono: { accent: "#E36002", accentInk: "#ffffff" },
+  koa: { accent: "#33333D", accentInk: "#ffffff" },
+  "actix-web": { accent: "#000000", accentInk: "#ffffff" },
+  rocket: { accent: "#000000", accentInk: "#ffffff" },
+  phoenix: { accent: "#FD4F00", accentInk: "#ffffff" },
+  preact: { accent: "#673AB8", accentInk: "#ffffff" },
+  lit: { accent: "#324FFF", accentInk: "#ffffff" },
+  qwik: { accent: "#AC7EF4", accentInk: "#0a0a0a" },
+  ghost: { accent: "#15171A", accentInk: "#ffffff" },
+  shopware: { accent: "#189EFF", accentInk: "#ffffff" },
+  saleor: { accent: "#2D2D2D", accentInk: "#ffffff" },
+  medusa: { accent: "#000000", accentInk: "#ffffff" },
+  opencart: { accent: "#23A8E0", accentInk: "#ffffff" },
+  odoo: { accent: "#714B67", accentInk: "#ffffff" },
+  erpnext: { accent: "#0089FF", accentInk: "#ffffff" },
+  suitecrm: { accent: "#F08300", accentInk: "#ffffff" },
+  espocrm: { accent: "#5C9FD6", accentInk: "#ffffff" },
+  dolibarr: { accent: "#263C5C", accentInk: "#ffffff" },
+  "twenty-crm": { accent: "#000000", accentInk: "#ffffff" },
+  vtiger: { accent: "#1B4F72", accentInk: "#ffffff" },
+  monica: { accent: "#325776", accentInk: "#ffffff" },
+  ollama: { accent: "#000000", accentInk: "#ffffff" },
+  langchain: { accent: "#1C3C3C", accentInk: "#ffffff" },
+  llamaindex: { accent: "#000000", accentInk: "#ffffff" },
+  flowise: { accent: "#3B82F6", accentInk: "#ffffff" },
+  dify: { accent: "#155EEF", accentInk: "#ffffff" },
+  "open-webui": { accent: "#000000", accentInk: "#ffffff" },
+  librechat: { accent: "#000000", accentInk: "#ffffff" },
+  anythingllm: { accent: "#7C3AED", accentInk: "#ffffff" },
+  haystack: { accent: "#00D4AA", accentInk: "#04222c" },
+  vllm: { accent: "#000000", accentInk: "#ffffff" },
+  ionic: { accent: "#3880FF", accentInk: "#ffffff" },
+  twill: { accent: "#6621d9", accentInk: "#ffffff" },
   statamic: { accent: "#7C3AED", accentInk: "#ffffff" },
   wordpress: { accent: "#21759B", accentInk: "#ffffff" },
   drupal: { accent: "#0678BE", accentInk: "#ffffff" },
@@ -127,7 +161,6 @@ const NETWORK_ACCENT: Partial<Record<string, { accent: string; accentInk: string
   strapi: { accent: "#4945FF", accentInk: "#ffffff" },
   directus: { accent: "#6644FF", accentInk: "#ffffff" },
   payload: { accent: "#000000", accentInk: "#ffffff" },
-  shopify: { accent: "#95BF47", accentInk: "#10230a" },
   magento: { accent: "#EC6737", accentInk: "#ffffff" },
   prestashop: { accent: "#DF0067", accentInk: "#ffffff" },
   woocommerce: { accent: "#7F54B3", accentInk: "#ffffff" },
@@ -256,7 +289,17 @@ export function getTheme(slug: string): Theme {
 
 /** Legacy admin values map to current network sections. */
 export function normalizeDomainGroup(group: string | undefined | null): DomainGroup {
-  if (group === "frontend" || group === "frameworks" || group === "backend" || group === "cms" || group === "commerce") return group;
+  if (group === "cms" || group === "crm-erp") return "cms-crm";
+  if (
+    group === "frameworks" ||
+    group === "frontend" ||
+    group === "backend" ||
+    group === "cms-crm" ||
+    group === "commerce" ||
+    group === "ai-llm"
+  ) {
+    return group;
+  }
   return "frameworks";
 }
 
@@ -268,33 +311,35 @@ export function getResolvedTheme(slug: string): Theme {
 
 /** Domains grouped for the network landing page. */
 export const DOMAINS_BY_GROUP: Record<DomainGroup, Theme[]> = {
-  frontend: DOMAINS.filter((d) => d.group === "frontend"),
   frameworks: DOMAINS.filter((d) => d.group === "frameworks"),
+  frontend: DOMAINS.filter((d) => d.group === "frontend"),
   backend: DOMAINS.filter((d) => d.group === "backend"),
-  cms: DOMAINS.filter((d) => d.group === "cms"),
+  "cms-crm": DOMAINS.filter((d) => d.group === "cms-crm"),
   commerce: DOMAINS.filter((d) => d.group === "commerce"),
+  "ai-llm": DOMAINS.filter((d) => d.group === "ai-llm"),
 };
 
 export const GROUP_LABELS: Record<DomainGroup, string> = {
-  frontend: "Frontend",
   frameworks: "Frameworks",
+  frontend: "Frontend",
   backend: "Backend",
-  cms: "CMS",
+  "cms-crm": "CMS / CRM",
   commerce: "Commerce",
+  "ai-llm": "AI / LLM",
 };
 
 export const GROUP_META: Record<DomainGroup, { label: string; icon: string; color: string; bg: string }> = {
-  frontend: {
-    label: "Frontend",
-    icon: "▤",
-    color: "#2F6FEB",
-    bg: "color-mix(in srgb, #2F6FEB 16%, #ffffff)",
-  },
   frameworks: {
     label: "Frameworks",
     icon: "◈",
     color: "#16A34A",
     bg: "color-mix(in srgb, #16A34A 16%, #ffffff)",
+  },
+  frontend: {
+    label: "Frontend",
+    icon: "▤",
+    color: "#2F6FEB",
+    bg: "color-mix(in srgb, #2F6FEB 16%, #ffffff)",
   },
   backend: {
     label: "Backend",
@@ -302,8 +347,8 @@ export const GROUP_META: Record<DomainGroup, { label: string; icon: string; colo
     color: "#EA7A2B",
     bg: "color-mix(in srgb, #EA7A2B 16%, #ffffff)",
   },
-  cms: {
-    label: "CMS",
+  "cms-crm": {
+    label: "CMS / CRM",
     icon: "❏",
     color: "#7C3AED",
     bg: "color-mix(in srgb, #7C3AED 16%, #ffffff)",
@@ -313,5 +358,11 @@ export const GROUP_META: Record<DomainGroup, { label: string; icon: string; colo
     icon: "⛬",
     color: "#C2612B",
     bg: "color-mix(in srgb, #C2612B 16%, #ffffff)",
+  },
+  "ai-llm": {
+    label: "AI / LLM",
+    icon: "✦",
+    color: "#6366F1",
+    bg: "color-mix(in srgb, #6366F1 16%, #ffffff)",
   },
 };

@@ -1,13 +1,14 @@
 ---
 interface Props {
-  size?: "header" | "footer";
+  size?: "header" | "footer" | "compact";
 }
 
 const { size = "header" } = Astro.props;
-const mainSize = size === "header" ? "17px" : "16px";
+const mainSize = size === "header" ? "17px" : size === "footer" ? "16px" : "12.5px";
+const withSize = size === "header" ? "16px" : size === "footer" ? "16px" : "12.5px";
 const brand = "rgb(47, 111, 235)";
 ---
 
 <span class="disp" style={`font-weight:800; font-size:${mainSize}; letter-spacing:-0.01em;`}>
-  <span style={`color:${brand};`}>made</span><span style="font-size:16px; font-weight:800;">with</span><span style={`color:${brand};`}>what</span>
+  <span style={`color:${brand};`}>made</span><span style={`font-size:${withSize}; font-weight:800;`}>with</span><span style={`color:${brand};`}>what</span>
 </span>

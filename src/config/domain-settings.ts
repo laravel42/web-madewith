@@ -10,7 +10,7 @@ export interface DomainSettingsOverride {
   pageUrl?: string;
   seoTitle?: string;
   seoDescription?: string;
-  group?: "frontend" | "frameworks" | "backend" | "cms" | "commerce";
+  group?: "frameworks" | "frontend" | "backend" | "cms-crm" | "commerce" | "ai-llm";
   visibleCategories?: string[] | null;
   updatedAt?: string;
 }

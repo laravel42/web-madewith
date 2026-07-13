@@ -5,6 +5,7 @@ import { MW_LOGOS } from "../lib/logos";
 import NetworkCard from "../components/NetworkCard.astro";
 import MadeWithWhatWordmark from "../components/MadeWithWhatWordmark.astro";
 import NetworkFooter from "../components/NetworkFooter.astro";
+import GitHubBadge from "../components/GitHubBadge.astro";
 
 function siteCard(slug: string) {
   const d = getResolvedTheme(slug);
@@ -23,7 +24,7 @@ function siteCard(slug: string) {
   };
 }
 
-const groups: DomainGroup[] = ["frameworks", "frontend", "backend", "cms", "commerce"];
+const groups: DomainGroup[] = ["frameworks", "frontend", "backend", "cms-crm", "commerce", "ai-llm"];
 const sections = groups
   .map((group) => ({
     group,
@@ -31,6 +32,53 @@ const sections = groups
     sites: DOMAINS.filter((d) => getResolvedTheme(d.slug).group === group).map((d) => siteCard(d.slug)),
   }))
   .filter((s) => s.sites.length > 0);
+
+const site = Astro.site ?? new URL("https://madewithwhat.net");
+const canonical = new URL("/", site).href;
+const seoTitle = "MadeWithWhat — open-source project galleries for every stack";
+const seoDescription = `Browse ${DOMAINS.length} daily-updated showcase galleries across frameworks, frontends, backends, CMS/CRM, commerce, and AI/LLM — indexed from GitHub and ranked by stars.`;
+const ogImage = new URL("/favicon.svg", site).href;
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": `${canonical}#website`,
+      url: canonical,
+      name: "MadeWithWhat",
+      description: seoDescription,
+      inLanguage: "en",
+      publisher: { "@id": `${canonical}#organization` },
+    },
+    {
+      "@type": "Organization",
+      "@id": `${canonical}#organization`,
+      name: "MadeWithWhat",
+      url: canonical,
+      logo: { "@type": "ImageObject", url: ogImage },
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": canonical,
+      url: canonical,
+      name: seoTitle,
+      description: seoDescription,
+      inLanguage: "en",
+      isPartOf: { "@id": `${canonical}#website` },
+      about: sections.map(({ meta, sites }) => ({
+        "@type": "ItemList",
+        name: meta.label,
+        numberOfItems: sites.length,
+        itemListElement: sites.map((s, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          name: `Made with ${s.techName}`,
+          url: new URL(s.href, site).href,
+        })),
+      })),
+    },
+  ],
+};
 
 const FONT_HREF =
   "https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=JetBrains+Mono:wght@400;500;700&display=swap";
@@ -40,9 +88,31 @@ const FONT_HREF =
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>MadeWithWhat — a network of showcase catalogs for your favourite tech</title>
-    <meta name="description" content="A network of daily-updated showcase galleries of the best open-source projects — React, Vue, Laravel, Django, WordPress, Shopify and more — ranked by GitHub stars." />
-    <link rel="canonical" href="https://madewithwhat.net/" />
+    <title>{seoTitle}</title>
+    <meta name="description" content={seoDescription} />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="theme-color" content="#12161a" />
+    <meta name="generator" content="MadeWithWhat" />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title="MadeWithWhat network" href="/rss.xml" />
+    <link rel="alternate" type="text/plain" title="MadeWithWhat LLM context" href="/llms.txt" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MadeWithWhat" />
+    <meta property="og:title" content={seoTitle} />
+    <meta property="og:description" content={seoDescription} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="en_GB" />
+    <meta property="og:image" content={ogImage} />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={seoTitle} />
+    <meta name="twitter:description" content={seoDescription} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href={FONT_HREF} rel="stylesheet" />
@@ -55,15 +125,38 @@ const FONT_HREF =
         min-height: 100vh;
         display: flex;
         flex-direction: column;
+        overflow-x: clip;
         font-family: "Hanken Grotesk", sans-serif;
         color: #12161a;
         background: #fbfcfb;
         -webkit-font-smoothing: antialiased;
       }
       a { text-decoration: none; color: inherit; }
+      .skip-link {
+        position: absolute;
+        left: -9999px;
+        top: auto;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+      .skip-link:focus {
+        position: fixed;
+        left: 16px;
+        top: 16px;
+        z-index: 100;
+        width: auto;
+        height: auto;
+        padding: 10px 14px;
+        background: #12161a;
+        color: #fff;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+      }
       .wrap { max-width: 1100px; margin: 0 auto; padding: 0 28px; width: 100%; }
       .disp { font-family: "Bricolage Grotesque", sans-serif; }
-      .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+      .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; align-items: stretch; }
       .section { scroll-margin-top: 24px; padding-top: 34px; }
       .section-head {
         display: flex;
@@ -141,44 +234,57 @@ const FONT_HREF =
         max-width: 560px;
       }
       .filter-row {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
+        display: grid;
+        grid-template-columns: repeat(3, auto);
+        column-gap: 10px;
+        row-gap: 10px;
         justify-content: center;
         margin-top: 30px;
       }
       .filter-pill {
-        display: inline-flex;
+        position: relative;
+        display: flex;
         align-items: center;
-        gap: 7px;
+        justify-content: center;
+        min-width: 170px;
         font-size: 13.5px;
         font-weight: 600;
         padding: 8px 15px;
         border-radius: 22px;
         transition: transform 0.12s ease;
       }
+      .filter-pill-main {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+      }
       .filter-pill:hover { transform: translateY(-2px); }
-      .filter-pill-count { opacity: 0.6; }
+      .filter-pill-count {
+        position: absolute;
+        right: 15px;
+        opacity: 0.6;
+      }
       .network { padding: 24px 0 40px; }
       @media (max-width: 860px) { .grid { grid-template-columns: 1fr 1fr; } }
       @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
     </style>
   </head>
   <body>
+    <a class="skip-link" href="#network">Skip to galleries</a>
     <header class="site-header">
       <div class="wrap site-header-inner">
-        <div style="display:flex; align-items:center; gap:10px;">
+        <a href="/" aria-label="MadeWithWhat home" style="display:flex; align-items:center; gap:10px;">
           <div class="disp" style="width:30px; height:30px; border-radius:8px; background:#12161a; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:16px;">M</div>
           <MadeWithWhatWordmark size="header" />
-        </div>
-        <a href="#network" style="font-size:14px; font-weight:500; color:#5c6169;">Browse the network ↓</a>
+        </a>
+        <GitHubBadge />
       </div>
     </header>
 
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-title">
       <div class="hero-eyebrow">The MadeWithWhat network</div>
-      <h1 class="hero-title">One catalog engine. A showcase site for every stack.</h1>
-      <p class="hero-copy">Each site is a daily-updated gallery of the best open-source projects for a technology, scraped live from GitHub and ranked by stars — themed to its own brand identity.</p>
+      <h1 class="hero-title" id="hero-title">One catalog engine. A showcase site for every stack.</h1>
+      <p class="hero-copy">Each site is a daily-updated gallery of the best open-source projects for a technology, indexed from GitHub and ranked by stars — themed to its own brand identity.</p>
       <nav class="filter-row" aria-label="Jump to stack category">
         {sections.map(({ group, meta, sites }) => (
           <a
@@ -186,20 +292,22 @@ const FONT_HREF =
             class="filter-pill"
             style={`color:${meta.color}; background:color-mix(in srgb, ${meta.color} 9%, #ffffff); border:1px solid color-mix(in srgb, ${meta.color} 22%, #ffffff);`}
           >
-            <span aria-hidden="true">{meta.icon}</span>
-            {meta.label}
+            <span class="filter-pill-main">
+              <span aria-hidden="true">{meta.icon}</span>
+              {meta.label}
+            </span>
             <span class="filter-pill-count">{sites.length}</span>
           </a>
         ))}
       </nav>
     </section>
 
-    <main id="network" class="wrap network">
+    <main id="network" class="wrap network" aria-label="Technology galleries">
       {sections.map(({ group, meta, sites }) => (
-        <section class="section" id={group}>
+        <section class="section" id={group} aria-labelledby={`section-${group}`}>
           <div class="section-head">
             <span class="section-icon" style={`background:${meta.bg}; color:${meta.color};`} aria-hidden="true">{meta.icon}</span>
-            <h2 class="section-label">{meta.label}</h2>
+            <h2 class="section-label" id={`section-${group}`}>{meta.label}</h2>
             <span class="section-count" style={`color:${meta.color}; background:color-mix(in srgb, ${meta.color} 12%, #ffffff);`}>
               {sites.length} {sites.length === 1 ? "site" : "sites"}
             </span>

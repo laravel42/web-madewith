@@ -1,6 +1,7 @@
 ---
 import MadeWithWhatWordmark from "../components/MadeWithWhatWordmark.astro";
 import NetworkFooter from "../components/NetworkFooter.astro";
+import GitHubBadge from "../components/GitHubBadge.astro";
 
 interface Props {
   title: string;
@@ -32,6 +33,7 @@ const FONT_HREF =
         min-height: 100vh;
         display: flex;
         flex-direction: column;
+        overflow-x: clip;
         font-family: "Hanken Grotesk", sans-serif;
         color: #12161a;
         background: #fbfcfb;
@@ -83,7 +85,7 @@ const FONT_HREF =
           <div class="disp" style="width:30px; height:30px; border-radius:8px; background:#12161a; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:16px;">M</div>
           <MadeWithWhatWordmark size="header" />
         </a>
-        <a href="/#network" style="font-size:14px; font-weight:500; color:#5c6169;">Browse the network ↓</a>
+        <GitHubBadge />
       </div>
     </header>
 

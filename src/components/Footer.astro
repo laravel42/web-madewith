@@ -1,11 +1,14 @@
 ---
 import type { Theme } from "../config/domains";
+import MadeWithWhatWordmark from "./MadeWithWhatWordmark.astro";
 
 interface Props { theme: Theme; }
 const { theme } = Astro.props;
 const base = `/${theme.slug}`;
 const logo = theme.techName.charAt(0).toUpperCase();
 const techSlug = theme.techName.toLowerCase().replace(/[^a-z0-9]/g, "");
+const laravel42Url = "https://laravel42.com";
+const laravel42Icon = `${laravel42Url}/apple-touch-icon.png`;
 ---
 
 {theme.variant === "terminal" ? (
@@ -18,7 +21,12 @@ const techSlug = theme.techName.toLowerCase().replace(/[^a-z0-9]/g, "");
         <a href={`${base}/rss.xml`} class="filter-link" style="color:inherit;">rss</a>
         <a href={`${base}/newsletter`} class="filter-link" style="color:inherit;">newsletter</a>
         <a href={`${base}/llm`} class="filter-link" style="color:inherit;">llm</a>
-        <a href="/" class="filter-link" style="color:inherit; display:inline-flex; align-items:center; gap:6px; font-weight:700;"><img src="/favicon.svg" alt="" width="15" height="15" style="border-radius:3px;"/>MadeWithWhat</a>
+        <a href="/" class="filter-link" style="color:inherit; display:inline-flex; align-items:center; text-decoration:none;">
+          <MadeWithWhatWordmark size="compact" />
+        </a>
+        <a href={laravel42Url} target="_blank" rel="noopener noreferrer" class="filter-link" style="display:inline-flex; align-items:center; text-decoration:none;" aria-label="Laravel42">
+          <img src={laravel42Icon} alt="" width="20" height="20" style="border-radius:4px;" />
+        </a>
       </div>
     </div>
   </div>
@@ -37,7 +45,12 @@ const techSlug = theme.techName.toLowerCase().replace(/[^a-z0-9]/g, "");
         <a href={`${base}/rss.xml`} class="filter-link" style="color:inherit;">RSS</a>
         <a href={`${base}/newsletter`} class="filter-link" style="color:inherit;">Newsletter</a>
         <a href={`${base}/llm`} class="filter-link" style="color:inherit;">LLM</a>
-        <a href="/" class="filter-link" style="color:inherit; display:inline-flex; align-items:center; gap:6px; font-weight:700;"><img src="/favicon.svg" alt="" width="15" height="15" style="border-radius:3px;"/>MadeWithWhat</a>
+        <a href="/" class="filter-link" style="color:inherit; display:inline-flex; align-items:center; text-decoration:none;">
+          <MadeWithWhatWordmark size="compact" />
+        </a>
+        <a href={laravel42Url} target="_blank" rel="noopener noreferrer" class="filter-link" style="display:inline-flex; align-items:center; text-decoration:none;" aria-label="Laravel42">
+          <img src={laravel42Icon} alt="" width="20" height="20" style="border-radius:4px;" />
+        </a>
       </div>
     </div>
   </div>

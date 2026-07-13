@@ -1,0 +1,50 @@
+---
+interface Props {
+  fullName: string;
+  name: string;
+  variant?: "terminal" | "editorial" | "default";
+  layout?: "fill" | "auto";
+}
+
+const { fullName, name, variant = "default", layout = "fill" } = Astro.props;
+const src = `https://opengraph.githubassets.com/1/${fullName}`;
+
+const palette = {
+  terminal: { icon: "#3f4a43", text: "#5c665f", sub: "#3f4a43" },
+  editorial: { icon: "#d4d4d4", text: "#a1a1a1", sub: "#d4d4d4" },
+  default: { icon: "#c5ccc8", text: "#8b9690", sub: "#c5ccc8" },
+}[variant];
+
+const wrapStyle =
+  layout === "fill"
+    ? "position:relative; width:100%; height:100%; overflow:hidden;"
+    : "position:relative; width:100%; aspect-ratio:2 / 1; overflow:hidden;";
+
+const imgStyle =
+  layout === "fill"
+    ? "position:relative; z-index:1; width:100%; height:100%; object-fit:contain; display:block; background:transparent;"
+    : "position:relative; z-index:1; width:100%; height:100%; object-fit:contain; display:block; background:transparent;";
+---
+
+<div style={wrapStyle}>
+  <div
+    aria-hidden="true"
+    style={`position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px; padding:16px; text-align:center;`}
+  >
+    <svg width="36" height="36" viewBox="0 0 16 16" fill={palette.icon} aria-hidden="true">
+      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z" />
+    </svg>
+    <span style={`font-family:ui-monospace, SFMono-Regular, Menlo, monospace; font-size:11px; color:${palette.text}; max-width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;`}>{fullName}</span>
+    <span style={`font-size:10px; color:${palette.sub};`}>No preview available</span>
+  </div>
+  <img
+    src={src}
+    alt={`${name} repository preview`}
+    width="1200"
+    height="600"
+    loading="lazy"
+    decoding="async"
+    style={imgStyle}
+    onerror="this.remove()"
+  />
+</div>

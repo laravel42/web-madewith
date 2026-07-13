@@ -159,7 +159,7 @@ ${items}
 /** Plain-text llms.txt for the MadeWithWhat network homepage. */
 export function buildNetworkLlmsTxt(site: URL, topLimit = 30, perDomainLimit = 5): string {
   const base = new URL("/", site).href;
-  const groups: DomainGroup[] = ["frameworks", "frontend", "backend", "cms", "commerce"];
+  const groups: DomainGroup[] = ["frameworks", "frontend", "backend", "cms-crm", "commerce", "ai-llm"];
   const galleryLines: string[] = [];
 
   for (const group of groups) {

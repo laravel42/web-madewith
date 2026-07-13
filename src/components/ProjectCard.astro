@@ -2,6 +2,7 @@
 import type { Theme } from "../config/domains";
 import type { Project } from "../lib/catalog";
 import { formatStars } from "../lib/catalog";
+import ProjectPreviewImage from "./ProjectPreviewImage.astro";
 
 interface Props { theme: Theme; project: Project; rank: string; }
 const { theme, project, rank } = Astro.props;
@@ -28,7 +29,7 @@ const editorial = theme.editorial;
 {theme.variant === "terminal" ? (
   <a href={href} class="card" {...dataAttrs}>
     <div style="height:140px; background:#0e120f; border-bottom:1px solid #1f2622; padding:14px; overflow:hidden;">
-      <img src={`https://opengraph.githubassets.com/1/${project.fullName}`} alt={`${project.name} repository preview`} width="1200" height="600" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:contain; display:block;"/>
+      <ProjectPreviewImage fullName={project.fullName} name={project.name} variant="terminal" />
     </div>
     <div class="card-body" style="padding:14px 15px 15px;">
       <div style="font-size:11px; color:#5c665f; margin-bottom:7px;">[{project.category}]</div>
@@ -43,7 +44,7 @@ const editorial = theme.editorial;
 ) : editorial ? (
   <a href={href} class="card-editorial" {...dataAttrs}>
     <div style="height:158px; background:#f5f5f5; position:relative; border-bottom:1px solid #e8e8e8; padding:14px; overflow:hidden;">
-      <img src={`https://opengraph.githubassets.com/1/${project.fullName}`} alt={`${project.name} repository preview`} width="1200" height="600" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:contain; display:block;"/>
+      <ProjectPreviewImage fullName={project.fullName} name={project.name} variant="editorial" />
       <div class="disp" style="position:absolute; top:12px; right:12px; background:#fff; padding:2px 8px; font-weight:800; font-size:13px;">{rank}</div>
     </div>
     <div class="card-body" style="padding:18px 20px 20px;">
@@ -58,7 +59,7 @@ const editorial = theme.editorial;
 ) : (
   <a href={href} class="card" {...dataAttrs}>
     <div style="height:152px; background:#f4f6f5; border-bottom:1px solid #eef0ef; padding:14px; overflow:hidden;">
-      <img src={`https://opengraph.githubassets.com/1/${project.fullName}`} alt={`${project.name} repository preview`} width="1200" height="600" loading="lazy" decoding="async" style="width:100%; height:100%; object-fit:contain; display:block;"/>
+      <ProjectPreviewImage fullName={project.fullName} name={project.name} variant="default" />
     </div>
     <div class="card-body" style="padding:15px 16px 16px;">
       <div style="display:flex; align-items:center; gap:8px; margin-bottom:7px;">
