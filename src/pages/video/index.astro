@@ -1,0 +1,304 @@
+---
+import NetworkLayout from "../../layouts/NetworkLayout.astro";
+import VideoCard from "../../components/VideoCard.astro";
+import { allVideoCards, videoGroupChips } from "../../lib/video-view";
+
+const cards = allVideoCards();
+const featured = cards[0];
+const chips = videoGroupChips(cards);
+const stacks = new Set(cards.map((c) => c.techName)).size;
+const total = cards.length;
+
+const site = Astro.site ?? new URL(Astro.url.origin);
+const canonical = new URL("/video/", site).href;
+const featuredCover = featured
+  ? `linear-gradient(135deg, color-mix(in srgb, ${featured.accent} 58%, #000) 0%, ${featured.accent} 100%)`
+  : "";
+
+const title = "MadeWithWhat Video Collection — Talks, Tutorials & Deep-Dives";
+const description = `A curated, daily-updated video library across ${stacks} web stacks — conference talks, tutorials, course clips and performance deep-dives for every technology in the network.`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "MadeWithWhat Video Collection",
+  url: canonical,
+  description: `Talks, tutorials and deep-dives across ${stacks} web stacks.`,
+  isPartOf: { "@type": "WebSite", name: "MadeWithWhat", url: new URL("/", site).href },
+  mainEntity: {
+    "@type": "ItemList",
+    numberOfItems: Math.min(cards.length, 20),
+    itemListElement: cards.slice(0, 20).map((c, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: c.title,
+      url: new URL(c.href, site).href,
+    })),
+  },
+};
+---
+<NetworkLayout title={title} description={description} active="video">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+    <link rel="alternate" type="application/rss+xml" title="MadeWithWhat Videos" href="/video/rss.xml" />
+  </Fragment>
+
+  <main class="vid">
+    <!-- HERO -->
+    <section class="vid-hero">
+      <div class="vid-eyebrow">The MadeWithWhat video collection</div>
+      <h1 class="vid-title">Watch, learn, ship —<br />for every stack.</h1>
+      <p class="vid-copy">Conference talks, tutorials, course clips and performance deep-dives across {stacks} technologies in the network — curated from across YouTube, refreshed daily, and ranked so you always land on something worth watching.</p>
+
+      <nav class="vid-chips" data-role="video-chips" aria-label="Filter by category">
+        <button type="button" class="vid-chip is-active" data-cat="all" style="--chip:#12161a;">All</button>
+        {chips.map((c) => (
+          <button type="button" class="vid-chip" data-cat={c.group} style={`--chip:${c.color};`}>
+            <span aria-hidden="true">{c.icon}</span> {c.label}
+          </button>
+        ))}
+      </nav>
+    </section>
+
+    <!-- FEATURED -->
+    {featured && (
+      <section class="vid-featured-wrap" data-role="video-featured" aria-label="Featured video">
+        <a href={featured.href} class="vid-featured">
+          <div class="vid-featured-cover" style={`background:${featuredCover};`}>
+            {featured.thumbnail && <img src={featured.thumbnail} alt="" loading="eager" fetchpriority="high" width="640" height="360" decoding="async" onerror="this.remove()" />}
+            <span class="vid-featured-badge">Featured · {featured.kind}</span>
+            <span class="vid-featured-dur">{featured.duration}</span>
+            <span class="vid-featured-play"><span class="vid-featured-tri" style={`border-color:transparent transparent transparent ${featured.accent};`}></span></span>
+          </div>
+          <div class="vid-featured-body">
+            <div class="vid-featured-tech" style={`color:${featured.accent};`}>{featured.techName}</div>
+            <h2 class="vid-featured-title">{featured.title}</h2>
+            <p class="vid-featured-copy">{featured.excerpt}</p>
+            <div class="vid-featured-meta">
+              <span class="vid-featured-avatar" style={`background:${featured.accent}; color:${featured.accentInk};`}>{featured.channelInitial}</span>
+              <div>
+                <address class="vid-featured-creator">{featured.channel}</address>
+                <div class="vid-featured-sub"><time datetime={featured.dateIso}>{featured.dateLabel}</time> · {featured.viewsLabel} views</div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </section>
+    )}
+
+    <!-- GRID -->
+    <section class="vid-grid-wrap" aria-label="Videos" data-featured-slug={featured?.slug ?? ""}>
+      <div class="vid-grid-head">
+        <h2 class="vid-grid-label" data-role="video-results">Latest videos</h2>
+        <span class="vid-grid-count" data-role="video-count">{total} videos</span>
+      </div>
+
+      <div class="vid-grid" data-role="video-grid" data-featured-slug={featured?.slug ?? ""}>
+        {cards.map((item, i) => <VideoCard item={item} priority={i > 0 && i < 4} />)}
+      </div>
+
+      <div class="vid-empty" data-role="video-empty" hidden>
+        <div class="vid-empty-title">No videos match your filters.</div>
+        <div class="vid-empty-copy">Try a different category.</div>
+        <button type="button" class="vid-empty-reset" data-role="video-reset">Clear filters</button>
+      </div>
+
+      <nav class="vid-pager" data-role="video-pager" aria-label="Pagination" hidden></nav>
+    </section>
+
+    <!-- NEWSLETTER BANNER (copied from the blog) -->
+    <section class="vid-news" aria-label="Newsletter">
+      <div class="vid-news-box">
+        <div class="vid-news-copy">
+          <h2 class="disp vid-news-title">One email a week. Every stack.</h2>
+          <p class="vid-news-sub">The best new videos across the network, hand-picked. No spam, unsubscribe anytime.</p>
+        </div>
+        <form action="/newsletter/" method="get" class="vid-news-form">
+          <input type="email" name="email" aria-label="Email address" placeholder="you@example.com" />
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <style>
+    .vid { max-width: 1080px; margin: 0 auto; padding: 0 28px; width: 100%; }
+    /* Header copied from the blog hero: centered eyebrow / title / copy + chips. */
+    .vid-hero { max-width: 920px; margin: 0 auto; padding: 64px 0 30px; text-align: center; }
+    .vid-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: #2f6feb; text-transform: uppercase; margin-bottom: 18px; }
+    .vid-title { font-family: "Bricolage Grotesque", sans-serif; font-size: clamp(40px, 8vw, 54px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.04; margin: 0; }
+    .vid-copy { font-size: 17px; color: #5c6169; margin: 18px auto 0; line-height: 1.55; max-width: 560px; }
+
+    .vid-chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 26px; }
+    .vid-chip {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 12px; font-weight: 600; font-family: inherit; cursor: pointer;
+      padding: 6px 12px; border-radius: 18px; white-space: nowrap;
+      color: var(--chip); background: color-mix(in srgb, var(--chip) 9%, #ffffff);
+      border: 1px solid color-mix(in srgb, var(--chip) 22%, #ffffff);
+      transition: transform 0.12s ease;
+    }
+    .vid-chip:hover { transform: translateY(-2px); }
+    .vid-chip.is-active { font-weight: 700; background: color-mix(in srgb, var(--chip) 18%, #ffffff); border-color: color-mix(in srgb, var(--chip) 40%, #ffffff); }
+
+    .vid-featured-wrap { padding: 30px 0 8px; }
+    .vid-featured {
+      display: grid; grid-template-columns: 1.15fr 1fr; gap: 0; background: #fff;
+      border: 1px solid #e9ebee; border-radius: 20px; overflow: hidden;
+      box-shadow: 0 20px 50px rgb(20 30 50 / 6%); color: inherit; text-decoration: none;
+    }
+    .vid-featured-cover { position: relative; min-height: 340px; }
+    .vid-featured-cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .vid-featured-badge { position: absolute; top: 22px; left: 22px; z-index: 2; font-size: 12px; font-weight: 700; color: #fff; background: rgb(0 0 0 / 28%); padding: 5px 12px; border-radius: 20px; backdrop-filter: blur(4px); }
+    .vid-featured-dur { position: absolute; bottom: 22px; right: 22px; z-index: 2; font-size: 12.5px; font-weight: 700; color: #fff; background: rgb(0 0 0 / 55%); padding: 5px 11px; border-radius: 8px; font-variant-numeric: tabular-nums; }
+    .vid-featured-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 2; width: 72px; height: 72px; border-radius: 50%; background: rgb(255 255 255 / 92%); display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgb(0 0 0 / 30%); }
+    .vid-featured-tri { width: 0; height: 0; border-style: solid; border-width: 13px 0 13px 21px; margin-left: 4px; }
+    .vid-featured-body { padding: 34px; display: flex; flex-direction: column; justify-content: center; }
+    .vid-featured-tech { font-size: 12.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+    .vid-featured-title { font-family: "Bricolage Grotesque", sans-serif; font-size: 29px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.14; margin: 9px 0 0; }
+    .vid-featured-copy { font-size: 15.5px; color: #5c6169; line-height: 1.6; margin: 14px 0 0; }
+    .vid-featured-meta { display: flex; align-items: center; gap: 11px; margin-top: 22px; }
+    .vid-featured-avatar { width: 38px; height: 38px; border-radius: 50%; font-weight: 700; font-size: 15px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .vid-featured-creator { font-style: normal; font-size: 14px; font-weight: 600; color: #12161a; }
+    .vid-featured-sub { font-size: 12.5px; color: #9aa0a6; margin-top: 2px; }
+
+    .vid-grid-wrap { padding: 30px 0 20px; }
+    .vid-grid-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 20px; gap: 16px; }
+    .vid-grid-label { font-family: "Bricolage Grotesque", sans-serif; font-size: 22px; font-weight: 800; letter-spacing: -0.02em; margin: 0; }
+    .vid-grid-count { font-size: 13px; color: #9aa0a6; white-space: nowrap; }
+    .vid-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; align-items: stretch; }
+
+    /* Newsletter banner copied from the blog. */
+    .vid-news { padding: 26px 0 70px; }
+    .vid-news-box { background: linear-gradient(135deg, #141a2e, #1f2b52); border-radius: 20px; padding: 40px; display: flex; align-items: center; justify-content: space-between; gap: 30px; flex-wrap: wrap; }
+    .vid-news-copy { max-width: 460px; }
+    .vid-news-title { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; color: #fff; margin: 0; }
+    .vid-news-sub { font-size: 15px; color: #b8c0d4; margin: 10px 0 0; line-height: 1.55; }
+    .vid-news-form { display: flex; gap: 10px; flex: 1; min-width: 280px; max-width: 420px; }
+    .vid-news-form input { flex: 1; border: none; border-radius: 12px; padding: 14px 16px; font-size: 15px; outline: none; font-family: inherit; }
+    .vid-news-form button { background: #2F6FEB; color: #fff; border: none; font-weight: 700; font-size: 15px; padding: 14px 22px; border-radius: 12px; cursor: pointer; font-family: inherit; white-space: nowrap; }
+
+    .vid-empty { text-align: center; padding: 64px 0; color: #9aa0a6; }
+    .vid-empty-title { font-size: 17px; font-weight: 600; color: #5c6169; }
+    .vid-empty-copy { font-size: 14px; margin-top: 6px; }
+    .vid-empty-reset { margin-top: 18px; font-size: 14px; font-weight: 600; color: #fff; background: #12161a; padding: 10px 18px; border-radius: 22px; cursor: pointer; border: none; font-family: inherit; }
+
+    /* Pagination copied from the blog pager. Pager children are created in JS
+       (no scope attribute), so these rules must be :global to match them. */
+    .vid-pager { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 40px; flex-wrap: wrap; }
+    .vid-pager :global(button) {
+      min-width: 36px; text-align: center; padding: 8px 12px;
+      font-family: inherit; font-size: 13.5px; font-weight: 600; color: #3a4048;
+      background: #fff; border: 1px solid #e6e8eb; border-radius: 10px; cursor: pointer;
+      font-variant-numeric: tabular-nums;
+      transition: border-color 0.12s ease, background 0.12s ease, color 0.12s ease;
+    }
+    .vid-pager :global(button:hover:not(:disabled):not(.is-active)) { border-color: #2F6FEB; color: #2F6FEB; }
+    .vid-pager :global(button.is-active) { color: #fff; background: #2F6FEB; border-color: #2F6FEB; cursor: default; }
+    .vid-pager :global(button:disabled) { color: #c7ccd2; cursor: default; }
+    .vid-pager :global(.vid-pager-gap) { min-width: 20px; text-align: center; color: #c7ccd2; font-weight: 700; user-select: none; }
+
+    @media (max-width: 900px) {
+      .vid-featured { grid-template-columns: 1fr; }
+      .vid-featured-cover { min-height: 220px; aspect-ratio: 16 / 9; }
+      .vid-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 560px) { .vid-grid { grid-template-columns: 1fr; } }
+  </style>
+
+  <script>
+    function initVideoIndex() {
+      const grid = document.querySelector<HTMLElement>('[data-role="video-grid"]');
+      if (!grid || grid.dataset.init) return;
+      grid.dataset.init = "1";
+
+      const cards = Array.from(grid.querySelectorAll<HTMLElement>('[data-role="video-card"]'));
+      const empty = document.querySelector<HTMLElement>('[data-role="video-empty"]');
+      const pager = document.querySelector<HTMLElement>('[data-role="video-pager"]');
+      const chipsWrap = document.querySelector<HTMLElement>('[data-role="video-chips"]');
+      const chips = Array.from(document.querySelectorAll<HTMLElement>('.vid-chip'));
+      const countLabel = document.querySelector<HTMLElement>('[data-role="video-count"]');
+      const resultsLabel = document.querySelector<HTMLElement>('[data-role="video-results"]');
+      const featured = document.querySelector<HTMLElement>('[data-role="video-featured"]');
+      const resetBtn = document.querySelector<HTMLElement>('[data-role="video-reset"]');
+      const featuredSlug = grid.dataset.featuredSlug || "";
+      const PAGE = 24;
+
+      let cat = "all";
+      let catLabel = "All";
+      let page = 1;
+
+      function matches(c: HTMLElement) {
+        return cat === "all" || c.dataset.group === cat;
+      }
+
+      function renderPager(pages: number) {
+        if (!pager) return;
+        pager.textContent = "";
+        if (pages <= 1) { pager.hidden = true; return; }
+        pager.hidden = false;
+        const mk = (label: string, target: number, opts: { active?: boolean; disabled?: boolean } = {}) => {
+          const b = document.createElement("button");
+          b.type = "button";
+          b.textContent = label;
+          if (opts.active) b.classList.add("is-active");
+          if (opts.disabled) b.disabled = true;
+          else b.addEventListener("click", () => { page = target; apply(); window.scrollTo({ top: 0, behavior: "smooth" }); });
+          return b;
+        };
+        pager.append(mk("← Prev", page - 1, { disabled: page === 1 }));
+        const nums = [...new Set([1, page - 1, page, page + 1, pages])].filter((n) => n >= 1 && n <= pages).sort((a, b) => a - b);
+        let prev = 0;
+        for (const n of nums) {
+          if (n - prev > 1) { const g = document.createElement("span"); g.className = "vid-pager-gap"; g.textContent = "…"; pager.append(g); }
+          pager.append(mk(String(n), n, { active: n === page }));
+          prev = n;
+        }
+        pager.append(mk("Next →", page + 1, { disabled: page === pages }));
+      }
+
+      function apply() {
+        const isDefault = cat === "all";
+        if (featured) featured.hidden = !(isDefault && page === 1);
+
+        let matched = cards.filter(matches);
+        if (isDefault) matched = matched.filter((c) => c.dataset.slug !== featuredSlug);
+
+        const pages = Math.max(1, Math.ceil(matched.length / PAGE));
+        page = Math.min(Math.max(1, page), pages);
+        const start = (page - 1) * PAGE;
+        const win = new Set(matched.slice(start, start + PAGE));
+        for (const c of cards) c.hidden = !win.has(c);
+
+        if (empty) empty.hidden = matched.length !== 0;
+        grid.hidden = matched.length === 0;
+
+        const total = matched.length + (isDefault ? 1 : 0);
+        if (resultsLabel) resultsLabel.textContent = isDefault ? "Latest videos" : `${catLabel} videos`;
+        if (countLabel) countLabel.textContent = `${total} video${total === 1 ? "" : "s"}`;
+        renderPager(pages);
+      }
+
+      chipsWrap?.addEventListener("click", (e) => {
+        const btn = (e.target as HTMLElement).closest<HTMLElement>(".vid-chip");
+        if (!btn) return;
+        cat = btn.dataset.cat || "all";
+        catLabel = btn.textContent?.trim() || "All";
+        page = 1;
+        for (const c of chips) c.classList.toggle("is-active", c === btn);
+        apply();
+      });
+
+      resetBtn?.addEventListener("click", () => {
+        cat = "all"; catLabel = "All"; page = 1;
+        for (const c of chips) c.classList.toggle("is-active", c.dataset.cat === "all");
+        apply();
+      });
+
+      apply();
+    }
+
+    initVideoIndex();
+    document.addEventListener("astro:page-load", initVideoIndex);
+  </script>
+</NetworkLayout>

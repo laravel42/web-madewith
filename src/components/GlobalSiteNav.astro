@@ -2,7 +2,7 @@
 import NavIcon from "./NavIcon.astro";
 import { isDefaultSubscribeHref } from "../lib/newsletter";
 
-export type GlobalNavActive = "network" | "blog" | "rss";
+export type GlobalNavActive = "network" | "blog" | "video" | "rss";
 
 interface Props {
   active?: GlobalNavActive;
@@ -10,6 +10,7 @@ interface Props {
   subscribeHref?: string;
   subscribeLabel?: string;
   includeBlog?: boolean;
+  includeVideo?: boolean;
   includeRss?: boolean;
   includeSubscribe?: boolean;
   variant?: "light" | "terminal";
@@ -22,6 +23,7 @@ const {
   subscribeHref = "/newsletter/",
   subscribeLabel = "Subscribe",
   includeBlog = true,
+  includeVideo = true,
   includeRss = true,
   includeSubscribe = true,
   variant = "light",
@@ -43,6 +45,12 @@ const openSubscribeModal = isDefaultSubscribeHref(subscribeHref);
     <a href="/blog/" class:list={["global-site-nav-link", "filter-link", active === "blog" && "is-active"]}>
       <NavIcon name="blog" />
       Blog
+    </a>
+  )}
+  {includeVideo && (
+    <a href="/video/" class:list={["global-site-nav-link", "filter-link", active === "video" && "is-active"]}>
+      <NavIcon name="video" />
+      Videos
     </a>
   )}
   {includeRss && (

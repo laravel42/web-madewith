@@ -1,0 +1,311 @@
+---
+import NetworkLayout from "../../layouts/NetworkLayout.astro";
+import { allVideoCards, getVideoDetail, isoDuration } from "../../lib/video-view";
+import { getTranscript, segmentTime } from "../../lib/transcripts";
+import { renderArticle } from "../../lib/markdown";
+
+export function getStaticPaths() {
+  return allVideoCards().map((item) => ({ params: { slug: item.slug } }));
+}
+
+const { slug } = Astro.params;
+const detail = getVideoDetail(slug!);
+if (!detail) return Astro.redirect("/video/");
+const { item, related } = detail;
+
+const transcript = getTranscript(item.videoId);
+// Prefer transcript-derived chapters (full-video coverage) over the ones parsed
+// from the YouTube description; fall back to the description parse.
+const chapters = transcript?.chapters?.length
+  ? transcript.chapters.map((c) => ({
+      time: segmentTime(c.startTime),
+      seconds: Math.floor(c.startTime),
+      label: c.title,
+      description: c.description,
+    }))
+  : item.chapters;
+
+const summaryHtml = renderArticle(transcript?.summary ?? "");
+const transcriptionHtml = renderArticle(transcript?.transcription ?? "");
+
+const site = Astro.site ?? new URL(Astro.url.origin);
+const canonical = new URL(item.href, site).href;
+const embedUrl = `https://www.youtube-nocookie.com/embed/${item.videoId}`;
+const title = `${item.title} — ${item.techName} video`;
+const description = item.excerpt;
+const topics = [item.techName, item.kind, item.groupLabel];
+
+const playerCover = `linear-gradient(135deg, color-mix(in srgb, ${item.accent} 55%, #000) 0%, ${item.accent} 100%)`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "VideoObject",
+      "@id": canonical,
+      name: item.title,
+      description: item.excerpt,
+      thumbnailUrl: item.thumbnail ? [item.thumbnail] : undefined,
+      uploadDate: item.dateIso,
+      duration: isoDuration(item.durationSeconds),
+      contentUrl: item.videoUrl,
+      embedUrl,
+      url: canonical,
+      publisher: { "@type": "Organization", name: "MadeWithWhat" },
+      author: { "@type": "Person", name: item.channel },
+      interactionStatistic: {
+        "@type": "InteractionCounter",
+        interactionType: { "@type": "WatchAction" },
+        userInteractionCount: item.views,
+      },
+      isPartOf: { "@type": "WebSite", name: "MadeWithWhat", url: new URL("/", site).href },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Videos", item: new URL("/video/", site).href },
+        { "@type": "ListItem", position: 2, name: item.title, item: canonical },
+      ],
+    },
+  ],
+};
+---
+<NetworkLayout title={title} description={description} active="video" image={item.thumbnail} ogType="video.other">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+
+  <main class="vd">
+    <div class="vd-grid">
+      <!-- LEFT: player + meta -->
+      <div class="vd-main">
+        <div class="vd-player" data-role="player" data-embed={`${embedUrl}?autoplay=1&rel=0`} style={`background:${playerCover};`}>
+          {item.thumbnail && <img class="vd-poster-img" src={item.thumbnail} alt="" width="1280" height="720" fetchpriority="high" decoding="async" onerror="this.remove()" />}
+          <button type="button" class="vd-play-btn" data-role="play" aria-label="Play video">
+            <span class="vd-play-tag">{item.kind} · {item.techName}</span>
+            <span class="vd-play-dur">{item.duration}</span>
+            <span class="vd-play-circle"><span class="vd-play-tri" style={`border-color:transparent transparent transparent ${item.accent};`}></span></span>
+          </button>
+        </div>
+
+        <h1 class="vd-title">{item.title}</h1>
+
+        <div class="vd-byline">
+          <span class="vd-avatar" style={`background:${item.accent}; color:${item.accentInk};`}>{item.channelInitial}</span>
+          <div class="vd-byline-text">
+            <div class="vd-creator">{item.channel}</div>
+            <div class="vd-creator-sub">Creator on the {item.techName} channel</div>
+          </div>
+          <div class="vd-byline-end">
+            <a href={item.videoUrl} target="_blank" rel="noopener" class="vd-watch-btn" style={`background:${item.accent}; color:${item.accentInk};`}>Watch on YouTube ↗</a>
+          </div>
+        </div>
+
+        <div class="vd-stats">
+          <span><strong>{item.viewsLabel}</strong> views</span>
+          <span><time datetime={item.dateIso}>{item.dateLabel}</time></span>
+          <span>{item.duration} runtime</span>
+          <a href={item.galleryHref} class="mw-link vd-gallery-link">Made with {item.techName} →</a>
+        </div>
+
+        <div class="vd-desc">
+          <p>{item.description}</p>
+
+          {chapters.length > 0 && (
+            <div class="vd-chapters">
+              <div class="vd-chapters-head">Chapters</div>
+              <div class="vd-chapters-list">
+                {chapters.map((ch) => (
+                  <button type="button" class="vd-chapter" data-chapter data-seconds={ch.seconds}>
+                    <span class="vd-chapter-time" style={`color:${item.accent};`}>{ch.time}</span>
+                    <span class="vd-chapter-copy">
+                      <span class="vd-chapter-label">{ch.label}</span>
+                      {"description" in ch && ch.description && <span class="vd-chapter-description">{ch.description}</span>}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {summaryHtml && (
+            <div class="vd-article">
+              <div class="vd-article-head">Summary</div>
+              <div class="vd-article-body" set:html={summaryHtml} />
+            </div>
+          )}
+
+          {transcriptionHtml && (
+            <details class="vd-transcript">
+              <summary class="vd-transcript-head">
+                <span>Transcription</span>
+                <span class="vd-transcript-meta">AI-formatted literal speech</span>
+              </summary>
+              <div class="vd-transcript-body vd-article-body" set:html={transcriptionHtml} />
+            </details>
+          )}
+
+          <div class="vd-topics">
+            {topics.map((t) => <span class="vd-topic">#{t.replace(/[^A-Za-z0-9]+/g, "").toLowerCase()}</span>)}
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: related -->
+      <aside class="vd-related" aria-label="Related videos">
+        <div class="vd-related-head">Related videos</div>
+        <div class="vd-related-list">
+          {related.map((r) => (
+            <a href={r.href} class="vd-related-item">
+              <div class="vd-related-cover" style={`background:linear-gradient(135deg, color-mix(in srgb, ${r.accent} 82%, #000), ${r.accent});`}>
+                {r.thumbnail && <img src={r.thumbnail} alt="" width="150" height="84" loading="lazy" decoding="async" onerror="this.remove()" />}
+                <span class="vd-related-dur">{r.duration}</span>
+              </div>
+              <div class="vd-related-text">
+                <div class="vd-related-tech" style={`color:${r.accent};`}>{r.techName}</div>
+                <div class="vd-related-title">{r.title}</div>
+                <div class="vd-related-sub">{r.channel} · {r.viewsLabel} views</div>
+              </div>
+            </a>
+          ))}
+        </div>
+        <a href="/video/" class="vd-related-all">Browse the full collection →</a>
+      </aside>
+    </div>
+  </main>
+
+  <style>
+    .vd { max-width: 1180px; margin: 0 auto; padding: 26px 28px 20px; width: 100%; }
+    .vd-grid { display: grid; grid-template-columns: 1fr 348px; gap: 34px; align-items: start; }
+
+    .vd-player { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 20px; overflow: hidden; box-shadow: 0 1px 0 rgb(255 255 255 / 60%) inset, 0 26px 64px -20px rgb(20 20 40 / 32%); }
+    .vd-poster-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .vd-player :global(iframe) { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .vd-play-btn { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: transparent; cursor: pointer; padding: 0; }
+    .vd-play-tag { position: absolute; top: 20px; left: 20px; font-size: 12.5px; font-weight: 700; color: #fff; background: rgb(0 0 0 / 30%); padding: 6px 13px; border-radius: 20px; backdrop-filter: blur(4px); }
+    .vd-play-dur { position: absolute; bottom: 20px; right: 20px; font-size: 13px; font-weight: 700; color: #fff; background: rgb(0 0 0 / 55%); padding: 5px 11px; border-radius: 8px; font-variant-numeric: tabular-nums; }
+    .vd-play-circle { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 88px; height: 88px; border-radius: 50%; background: rgb(255 255 255 / 94%); display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 34px rgb(0 0 0 / 32%); transition: transform 0.15s ease; }
+    .vd-play-btn:hover .vd-play-circle { transform: translate(-50%, -50%) scale(1.05); }
+    .vd-play-tri { width: 0; height: 0; border-style: solid; border-width: 16px 0 16px 26px; margin-left: 5px; }
+
+    .vd-title { font-family: "Bricolage Grotesque", sans-serif; font-size: 31px; font-weight: 800; letter-spacing: -0.025em; line-height: 1.12; margin: 26px 0 0; color: #12161a; }
+
+    .vd-byline { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; margin-top: 18px; padding: 14px 16px; background: #fff; border: 1px solid #e9ebee; border-radius: 16px; box-shadow: 0 6px 18px -14px rgb(20 20 40 / 30%); }
+    .vd-avatar { width: 44px; height: 44px; border-radius: 50%; font-weight: 700; font-size: 17px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 12px -4px rgb(0 0 0 / 30%); }
+    .vd-byline-text { min-width: 0; }
+    .vd-creator { font-size: 15px; font-weight: 700; color: #12161a; }
+    .vd-creator-sub { font-size: 12.5px; color: #9aa0a6; margin-top: 1px; }
+    .vd-byline-end { flex: 1; display: flex; justify-content: flex-end; }
+    .vd-watch-btn { font-size: 13px; font-weight: 700; padding: 10px 16px; border-radius: 22px; white-space: nowrap; box-shadow: 0 8px 20px -10px rgb(20 20 40 / 45%); transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    .vd-watch-btn:hover { transform: translateY(-1px); box-shadow: 0 12px 26px -10px rgb(20 20 40 / 50%); }
+
+    .vd-stats { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin-top: 16px; font-size: 13px; color: #5c6169; }
+    .vd-stats > span { display: inline-flex; align-items: center; gap: 5px; background: #f2f4f6; border: 1px solid #e9ebee; padding: 6px 12px; border-radius: 20px; }
+    .vd-stats strong { color: #12161a; font-variant-numeric: tabular-nums; }
+    .vd-gallery-link { font-weight: 700; margin-left: auto; }
+
+    .vd-desc { margin-top: 20px; background: #fff; border: 1px solid #e9ebee; border-radius: 16px; padding: 22px 24px; box-shadow: 0 6px 20px -16px rgb(20 20 40 / 30%); }
+    .vd-desc p { font-size: 15px; color: #3a4048; line-height: 1.7; margin: 0; }
+
+    .vd-chapters { margin-top: 20px; padding-top: 18px; border-top: 1px solid #eef0f2; }
+    .vd-chapters-head { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: #9aa0a6; text-transform: uppercase; margin-bottom: 12px; }
+    .vd-chapters-list { display: flex; flex-direction: column; gap: 2px; }
+    .vd-chapter { display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; padding: 9px 10px; border: 0; background: transparent; border-radius: 10px; cursor: pointer; transition: background 0.12s ease; }
+    .vd-chapter:hover, .vd-chapter[data-active] { background: #f4f5f7; }
+    .vd-chapter-time { font-family: "Bricolage Grotesque", sans-serif; font-size: 13px; font-weight: 700; min-width: 52px; flex-shrink: 0; font-variant-numeric: tabular-nums; }
+    .vd-chapter-copy { display: flex; flex-direction: column; gap: 2px; }
+    .vd-chapter-label { font-size: 14px; color: #12161a; line-height: 1.4; }
+    .vd-chapter-description { font-size: 12.5px; color: #737982; line-height: 1.45; }
+
+    .vd-article { margin-top: 20px; padding-top: 18px; border-top: 1px solid #eef0f2; }
+    .vd-article-head { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: #9aa0a6; text-transform: uppercase; margin-bottom: 14px; }
+    .vd-article-body { font-size: 15.5px; color: #2b3138; line-height: 1.75; }
+    .vd-article-body :global(h2) { font-family: "Bricolage Grotesque", sans-serif; font-size: 22px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; color: #12161a; margin: 30px 0 12px; }
+    .vd-article-body :global(h3) { font-family: "Bricolage Grotesque", sans-serif; font-size: 17px; font-weight: 700; line-height: 1.3; color: #12161a; margin: 24px 0 10px; }
+    .vd-article-body :global(h2:first-child), .vd-article-body :global(h3:first-child) { margin-top: 0; }
+    .vd-article-body :global(p) { margin: 0 0 14px; }
+    .vd-article-body :global(em) { color: #5c6169; }
+    .vd-article-body :global(ul), .vd-article-body :global(ol) { margin: 0 0 16px; padding-left: 22px; }
+    .vd-article-body :global(li) { margin: 4px 0; }
+    .vd-article-body :global(li::marker) { color: #b5bac0; }
+    .vd-article-body :global(a) { color: #2f6bff; text-decoration: none; }
+    .vd-article-body :global(a:hover) { text-decoration: underline; }
+    .vd-article-body :global(code) { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 0.86em; background: #f2f4f6; border: 1px solid #e9ebee; padding: 1px 5px; border-radius: 5px; }
+    .vd-article-body :global(pre) { background: #12161a; color: #e6e9ef; border-radius: 12px; padding: 16px 18px; overflow-x: auto; margin: 0 0 16px; font-size: 13px; line-height: 1.6; }
+    .vd-article-body :global(pre code) { background: none; border: 0; padding: 0; color: inherit; font-size: 13px; }
+    .vd-article-body :global(blockquote) { margin: 0 0 16px; padding: 12px 16px; border-left: 3px solid #d7dbe0; background: #f7f8fa; border-radius: 0 10px 10px 0; color: #3a4048; }
+    .vd-article-body :global(blockquote p) { margin: 0 0 6px; }
+    .vd-article-body :global(blockquote p:last-child) { margin-bottom: 0; }
+    .vd-article-body :global(.callout) { border-left-width: 3px; border-left-style: solid; }
+    .vd-article-body :global(.callout-title) { font-weight: 700; font-size: 12.5px; letter-spacing: 0.02em; text-transform: uppercase; }
+    .vd-article-body :global(.callout-note) { border-left-color: #4a8cff; background: #eef4ff; }
+    .vd-article-body :global(.callout-note .callout-title) { color: #2f6bff; }
+    .vd-article-body :global(.callout-tip) { border-left-color: #1fb26b; background: #ecfaf2; }
+    .vd-article-body :global(.callout-tip .callout-title) { color: #128a50; }
+    .vd-article-body :global(.callout-important) { border-left-color: #8a63ff; background: #f2eeff; }
+    .vd-article-body :global(.callout-important .callout-title) { color: #6a3fe0; }
+    .vd-article-body :global(.callout-warning), .vd-article-body :global(.callout-caution) { border-left-color: #f0a020; background: #fff6e8; }
+    .vd-article-body :global(.callout-warning .callout-title), .vd-article-body :global(.callout-caution .callout-title) { color: #c47a0a; }
+
+    .vd-transcript { margin-top: 20px; padding-top: 18px; border-top: 1px solid #eef0f2; }
+    .vd-transcript-head { display: flex; align-items: baseline; gap: 10px; cursor: pointer; list-style: none; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: #9aa0a6; text-transform: uppercase; }
+    .vd-transcript-head::-webkit-details-marker { display: none; }
+    .vd-transcript-head::before { content: "▸"; display: inline-block; transition: transform 0.15s ease; color: #c7ccd2; }
+    .vd-transcript[open] .vd-transcript-head::before { transform: rotate(90deg); }
+    .vd-transcript-meta { font-weight: 600; letter-spacing: 0; text-transform: none; color: #b5bac0; }
+    .vd-transcript-body { margin-top: 14px; max-height: 560px; overflow-y: auto; padding-right: 10px; }
+
+    .vd-topics { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; padding-top: 18px; border-top: 1px solid #eef0f2; }
+    .vd-topic { font-size: 12.5px; font-weight: 600; color: #5c6169; background: #f2f4f6; padding: 6px 12px; border-radius: 20px; transition: background 0.15s ease, color 0.15s ease; }
+    .vd-topic:hover { background: #e9edf1; color: #12161a; }
+
+    .vd-related-head { font-family: "Bricolage Grotesque", sans-serif; font-size: 16px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 14px; }
+    .vd-related-list { display: flex; flex-direction: column; gap: 14px; }
+    .vd-related-item { display: grid; grid-template-columns: 150px 1fr; gap: 12px; align-items: start; color: inherit; text-decoration: none; }
+    .vd-related-cover { position: relative; width: 150px; height: 84px; border-radius: 11px; overflow: hidden; }
+    .vd-related-cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .vd-related-dur { position: absolute; bottom: 6px; right: 6px; font-size: 10.5px; font-weight: 700; color: #fff; background: rgb(0 0 0 / 60%); padding: 2px 6px; border-radius: 5px; font-variant-numeric: tabular-nums; }
+    .vd-related-tech { font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+    .vd-related-title { font-size: 13.5px; font-weight: 700; line-height: 1.32; margin-top: 4px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .vd-related-sub { font-size: 12px; color: #9aa0a6; margin-top: 6px; }
+    .vd-related-all { display: block; text-align: center; margin-top: 18px; font-size: 13.5px; font-weight: 700; color: #12161a; background: #fff; border: 1px solid #e6e8eb; padding: 12px; border-radius: 12px; }
+
+    @media (max-width: 940px) {
+      .vd-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <script>
+    function initVideoPlayer() {
+      const player = document.querySelector<HTMLElement>('[data-role="player"]');
+      if (!player || player.dataset.wired) return;
+      player.dataset.wired = "1";
+
+      const mount = (startSeconds?: number) => {
+        const base = player.dataset.embed;
+        if (!base) return;
+        const src = startSeconds ? `${base}&start=${startSeconds}` : base;
+        const iframe = document.createElement("iframe");
+        iframe.src = src;
+        iframe.title = "YouTube video player";
+        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        iframe.setAttribute("allowfullscreen", "");
+        player.replaceChildren(iframe);
+      };
+
+      player.querySelector<HTMLElement>('[data-role="play"]')?.addEventListener("click", () => mount());
+
+      document.querySelectorAll<HTMLElement>("[data-chapter]").forEach((chapter) => {
+        chapter.addEventListener("click", () => {
+          const seconds = Number(chapter.dataset.seconds) || 0;
+          document.querySelectorAll("[data-chapter][data-active]").forEach((el) => el.removeAttribute("data-active"));
+          chapter.setAttribute("data-active", "");
+          mount(seconds);
+          player.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      });
+    }
+    initVideoPlayer();
+    document.addEventListener("astro:page-load", initVideoPlayer);
+  </script>
+</NetworkLayout>
