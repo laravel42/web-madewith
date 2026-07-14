@@ -1,0 +1,2312 @@
+{
+  "videoId": "SO8lBVWF2Y8",
+  "language": "en",
+  "source": "auto",
+  "segments": [
+    {
+      "start": 0.0,
+      "text": "I have a love-hate relationship with"
+    },
+    {
+      "start": 2.4,
+      "text": "hooks in React. If you've been using"
+    },
+    {
+      "start": 4.28,
+      "text": "them for any amount of time, you"
+    },
+    {
+      "start": 5.6,
+      "text": "probably do, too. I mean, I love how"
+    },
+    {
+      "start": 8.08,
+      "text": "powerful they are and how easy it makes"
+    },
+    {
+      "start": 9.92,
+      "text": "it to do certain things with reactivity"
+    },
+    {
+      "start": 11.76,
+      "text": "in your website, but I hate how complex"
+    },
+    {
+      "start": 14.36,
+      "text": "they can be and how easy it is to ruin"
+    },
+    {
+      "start": 16.52,
+      "text": "your application with hooks. There's so"
+    },
+    {
+      "start": 18.36,
+      "text": "many rules you need to know, and there's"
+    },
+    {
+      "start": 19.88,
+      "text": "a lot of special techniques that are"
+    },
+    {
+      "start": 21.36,
+      "text": "very specific to hooks that you need to"
+    },
+    {
+      "start": 23.28,
+      "text": "understand in order to make sure your"
+    },
+    {
+      "start": 24.72,
+      "text": "application is as performant as"
+    },
+    {
+      "start": 26.4,
+      "text": "possible. If you don't follow these"
+    },
+    {
+      "start": 28.12,
+      "text": "rules, which is quite difficult to do,"
+    },
+    {
+      "start": 30.0,
+      "text": "you can really kill the performance of"
+    },
+    {
+      "start": 31.72,
+      "text": "your application, and it's just super"
+    },
+    {
+      "start": 33.44,
+      "text": "hard to work with. This is why I really"
+    },
+    {
+      "start": 35.52,
+      "text": "like the idea of signals, because what"
+    },
+    {
+      "start": 37.6,
+      "text": "they do is all the same powerful stuff"
+    },
+    {
+      "start": 39.4,
+      "text": "as hooks, but they make it incredibly"
+    },
+    {
+      "start": 41.16,
+      "text": "easy to use. There are no complicated"
+    },
+    {
+      "start": 43.0,
+      "text": "rules to worry about, and performance is"
+    },
+    {
+      "start": 45.16,
+      "text": "out of the box by default, so you don't"
+    },
+    {
+      "start": 46.84,
+      "text": "even have to worry about it."
+    },
+    {
+      "start": 51.56,
+      "text": "Welcome back to WebDevSimplified. My"
+    },
+    {
+      "start": 53.56,
+      "text": "name is Kyle, and my job is to simplify"
+    },
+    {
+      "start": 55.32,
+      "text": "the web for you so you can start"
+    },
+    {
+      "start": 56.6,
+      "text": "building your dream project sooner. And"
+    },
+    {
+      "start": 58.4,
+      "text": "to get started, I have a really simple"
+    },
+    {
+      "start": 59.92,
+      "text": "to-do list application built out to kind"
+    },
+    {
+      "start": 61.72,
+      "text": "of show you why signals are so useful"
+    },
+    {
+      "start": 64.04,
+      "text": "and some of the problems that they"
+    },
+    {
+      "start": 65.08,
+      "text": "solve. So, this is a simple application."
+    },
+    {
+      "start": 67.08,
+      "text": "You can see I have a navbar, a to-do"
+    },
+    {
+      "start": 69.08,
+      "text": "list, and a sidebar. And in all of my"
+    },
+    {
+      "start": 70.92,
+      "text": "components, I actually have a console"
+    },
+    {
+      "start": 72.28,
+      "text": "log just saying that we've rendered that"
+    },
+    {
+      "start": 73.64,
+      "text": "component, so we can see what the"
+    },
+    {
+      "start": 74.92,
+      "text": "re-rendering looks like in our"
+    },
+    {
+      "start": 76.08,
+      "text": "application. Our navbar, super"
+    },
+    {
+      "start": 78.08,
+      "text": "straightforward, it's just this top"
+    },
+    {
+      "start": 79.36,
+      "text": "section you see here. Our sidebar, also"
+    },
+    {
+      "start": 81.56,
+      "text": "super straightforward, it's this"
+    },
+    {
+      "start": 82.64,
+      "text": "right-hand sidebar you see right here."
+    },
+    {
+      "start": 84.36,
+      "text": "Common stuff you would see in a normal"
+    },
+    {
+      "start": 85.96,
+      "text": "application. And then our to-do list is"
+    },
+    {
+      "start": 87.8,
+      "text": "a bit more complicated. You can see that"
+    },
+    {
+      "start": 89.6,
+      "text": "we have this to-dos value stored in"
+    },
+    {
+      "start": 91.56,
+      "text": "state, and it's also persisted inside of"
+    },
+    {
+      "start": 93.6,
+      "text": "local storage. And we have a function"
+    },
+    {
+      "start": 95.24,
+      "text": "for adding a to-do, a function for"
+    },
+    {
+      "start": 96.84,
+      "text": "toggling, so when I toggle this, for"
+    },
+    {
+      "start": 98.2,
+      "text": "example, and refresh, you can see all of"
+    },
+    {
+      "start": 99.84,
+      "text": "my data persist. All this is happening"
+    },
+    {
+      "start": 101.84,
+      "text": "with this use effect here. And then I"
+    },
+    {
+      "start": 103.36,
+      "text": "just have all the different JSX for this"
+    },
+    {
+      "start": 105.48,
+      "text": "form, as well as the to-dos being"
+    },
+    {
+      "start": 107.16,
+      "text": "rendered out down here. And if I add"
+    },
+    {
+      "start": 108.88,
+      "text": "something in, you can see it shows up"
+    },
+    {
+      "start": 110.2,
+      "text": "and persist when I refresh my page. Now,"
+    },
+    {
+      "start": 112.04,
+      "text": "this is about the most basic form of"
+    },
+    {
+      "start": 113.68,
+      "text": "application you can get, and in this"
+    },
+    {
+      "start": 115.08,
+      "text": "particular scenario, using state or"
+    },
+    {
+      "start": 117.04,
+      "text": "signals, it really doesn't matter."
+    },
+    {
+      "start": 118.2,
+      "text": "They're both pretty easy to use and it's"
+    },
+    {
+      "start": 119.88,
+      "text": "doesn't really make a difference which"
+    },
+    {
+      "start": 120.96,
+      "text": "one you use because it's so simple the"
+    },
+    {
+      "start": 122.56,
+      "text": "application that we're building. You can"
+    },
+    {
+      "start": 124.44,
+      "text": "see if we inspect our page here, I'll"
+    },
+    {
+      "start": 126.28,
+      "text": "bring this over and we look at the"
+    },
+    {
+      "start": 127.28,
+      "text": "console, you'll notice if I just clear"
+    },
+    {
+      "start": 128.8,
+      "text": "this out, whenever I like toggle one of"
+    },
+    {
+      "start": 130.64,
+      "text": "my to-do's or something like that, you"
+    },
+    {
+      "start": 131.88,
+      "text": "can see that the only thing re-rendering"
+    },
+    {
+      "start": 133.52,
+      "text": "is my to-do list. Nothing else in my"
+    },
+    {
+      "start": 135.24,
+      "text": "application is being changed. But now,"
+    },
+    {
+      "start": 137.44,
+      "text": "what happens if my application gets a"
+    },
+    {
+      "start": 138.84,
+      "text": "little bit more complex? And now I want"
+    },
+    {
+      "start": 140.959,
+      "text": "to show the completed to-do count inside"
+    },
+    {
+      "start": 143.08,
+      "text": "of this header as well. Well, I need to"
+    },
+    {
+      "start": 145.36,
+      "text": "get all of this to-do state. I need to"
+    },
+    {
+      "start": 147.16,
+      "text": "remove all of this from my to-do list"
+    },
+    {
+      "start": 149.24,
+      "text": "and I need to move it over into my app"
+    },
+    {
+      "start": 150.84,
+      "text": "instead. So, it would need to be inside"
+    },
+    {
+      "start": 152.52,
+      "text": "of here like this. Now, the reason that"
+    },
+    {
+      "start": 154.0,
+      "text": "I need to do it this way is because I"
+    },
+    {
+      "start": 155.28,
+      "text": "need access to this to-do state inside"
+    },
+    {
+      "start": 157.4,
+      "text": "of my app because my app is a parent of"
+    },
+    {
+      "start": 159.4,
+      "text": "this navbar. So, obviously if I want to"
+    },
+    {
+      "start": 161.24,
+      "text": "pass my state to the navbar, I need to"
+    },
+    {
+      "start": 163.2,
+      "text": "have access to it inside of the parent"
+    },
+    {
+      "start": 165.0,
+      "text": "component. Now, I just copied over the"
+    },
+    {
+      "start": 166.72,
+      "text": "code to actually make this work and as"
+    },
+    {
+      "start": 168.4,
+      "text": "you can see inside of the app, we now"
+    },
+    {
+      "start": 169.64,
+      "text": "have all of the code related to our"
+    },
+    {
+      "start": 171.08,
+      "text": "to-do's and we're passing our to-do's"
+    },
+    {
+      "start": 172.959,
+      "text": "into our navbar. And then we're passing"
+    },
+    {
+      "start": 174.6,
+      "text": "all the information for adding and"
+    },
+    {
+      "start": 175.8,
+      "text": "toggling to-do's and so on into our"
+    },
+    {
+      "start": 177.16,
+      "text": "to-do list. So, we look at our to-do"
+    },
+    {
+      "start": 178.68,
+      "text": "list, you can see it's very simple."
+    },
+    {
+      "start": 180.08,
+      "text": "There's almost nothing in here because"
+    },
+    {
+      "start": 181.44,
+      "text": "it's just dealing with this one form"
+    },
+    {
+      "start": 182.88,
+      "text": "input. And you can see in our navbar,"
+    },
+    {
+      "start": 184.68,
+      "text": "it's actually getting the completed"
+    },
+    {
+      "start": 185.92,
+      "text": "to-do's and you can see up here, the"
+    },
+    {
+      "start": 187.08,
+      "text": "completed number is one. And when I"
+    },
+    {
+      "start": 188.6,
+      "text": "toggle, you can see that this is"
+    },
+    {
+      "start": 189.72,
+      "text": "properly updating. Now, if we look at"
+    },
+    {
+      "start": 191.68,
+      "text": "how the actual re-rendering of our"
+    },
+    {
+      "start": 193.12,
+      "text": "application works, if I clear this, you"
+    },
+    {
+      "start": 194.76,
+      "text": "notice when I toggled this, it's"
+    },
+    {
+      "start": 196.2,
+      "text": "actually re-rendered my app, my navbar,"
+    },
+    {
+      "start": 198.04,
+      "text": "my to-do list and my sidebar. And that's"
+    },
+    {
+      "start": 200.16,
+      "text": "because I'm storing this state in my"
+    },
+    {
+      "start": 202.239,
+      "text": "application, so in my app right here,"
+    },
+    {
+      "start": 204.28,
+      "text": "which means I need to re-render my app"
+    },
+    {
+      "start": 205.72,
+      "text": "anytime that state changes. And when you"
+    },
+    {
+      "start": 207.519,
+      "text": "re-render a parent component, you must"
+    },
+    {
+      "start": 209.36,
+      "text": "also re-render all of the children"
+    },
+    {
+      "start": 210.92,
+      "text": "inside of that. So, my navbar"
+    },
+    {
+      "start": 212.04,
+      "text": "re-renders, my to-do list re-renders and"
+    },
+    {
+      "start": 213.72,
+      "text": "my sidebar re-renders, even though in"
+    },
+    {
+      "start": 215.6,
+      "text": "reality, when I toggle this laundry"
+    },
+    {
+      "start": 217.28,
+      "text": "checkbox, my actual app doesn't change."
+    },
+    {
+      "start": 220.04,
+      "text": "Like the actual, you know, HTML being"
+    },
+    {
+      "start": 222.0,
+      "text": "generated for the app portion doesn't"
+    },
+    {
+      "start": 223.4,
+      "text": "change. My sidebar obviously doesn't"
+    },
+    {
+      "start": 225.4,
+      "text": "change, but those things are being"
+    },
+    {
+      "start": 226.56,
+      "text": "re-rendered unnecessarily. Now, this"
+    },
+    {
+      "start": 228.64,
+      "text": "honestly isn't a massive deal,"
+    },
+    {
+      "start": 230.519,
+      "text": "especially on a small scale application"
+    },
+    {
+      "start": 232.04,
+      "text": "like this. But, as your application"
+    },
+    {
+      "start": 233.72,
+      "text": "grows and grows and grows, and your"
+    },
+    {
+      "start": 235.28,
+      "text": "state becomes shared across all of your"
+    },
+    {
+      "start": 237.04,
+      "text": "different application, it's very common"
+    },
+    {
+      "start": 238.92,
+      "text": "that a lot of your state ends up inside"
+    },
+    {
+      "start": 240.56,
+      "text": "of your app component or some other"
+    },
+    {
+      "start": 242.16,
+      "text": "really high-level component, or maybe"
+    },
+    {
+      "start": 244.16,
+      "text": "you move it into context, but you still"
+    },
+    {
+      "start": 245.68,
+      "text": "get the same problem where your app is"
+    },
+    {
+      "start": 247.24,
+      "text": "just wrapped by like seven different"
+    },
+    {
+      "start": 248.64,
+      "text": "contexts. You have all these extra"
+    },
+    {
+      "start": 250.4,
+      "text": "re-renders you really don't need. So,"
+    },
+    {
+      "start": 252.0,
+      "text": "that's the first thing that signals are"
+    },
+    {
+      "start": 253.68,
+      "text": "trying to solve. And in my opinion, it's"
+    },
+    {
+      "start": 255.48,
+      "text": "one of the smaller things they're"
+    },
+    {
+      "start": 256.519,
+      "text": "solving. They solve this performance by"
+    },
+    {
+      "start": 258.0,
+      "text": "making it performant by default, and you"
+    },
+    {
+      "start": 259.48,
+      "text": "don't have to worry about doing a bunch"
+    },
+    {
+      "start": 260.64,
+      "text": "of things like memoizing or react.memo"
+    },
+    {
+      "start": 262.68,
+      "text": "and all that stuff that you would need"
+    },
+    {
+      "start": 263.8,
+      "text": "to do to actually make this as"
+    },
+    {
+      "start": 265.48,
+      "text": "performant as you can."
+    },
+    {
+      "start": 266.919,
+      "text": "The real place where signals shine is"
+    },
+    {
+      "start": 268.919,
+      "text": "that they get rid of all of the rules"
+    },
+    {
+      "start": 270.32,
+      "text": "related to hooks. For example, with"
+    },
+    {
+      "start": 272.08,
+      "text": "hooks, you need to know that you can"
+    },
+    {
+      "start": 273.16,
+      "text": "only use your hooks at the top of your"
+    },
+    {
+      "start": 274.72,
+      "text": "component. You can't use them inside of"
+    },
+    {
+      "start": 276.04,
+      "text": "like an if statement. You can't use them"
+    },
+    {
+      "start": 277.72,
+      "text": "other places. They must be used only in"
+    },
+    {
+      "start": 279.2,
+      "text": "components and custom hooks. There's a"
+    },
+    {
+      "start": 280.72,
+      "text": "ton of rules around like how you use a"
+    },
+    {
+      "start": 282.24,
+      "text": "use effect, making sure you have all"
+    },
+    {
+      "start": 283.52,
+      "text": "your dependencies in here. All of that"
+    },
+    {
+      "start": 285.4,
+      "text": "is a thing of the past with signals"
+    },
+    {
+      "start": 287.0,
+      "text": "because they handle all your"
+    },
+    {
+      "start": 288.08,
+      "text": "dependencies for you. You can use them"
+    },
+    {
+      "start": 289.6,
+      "text": "wherever you want, in a component,"
+    },
+    {
+      "start": 291.0,
+      "text": "outside a component, in a function, it"
+    },
+    {
+      "start": 292.72,
+      "text": "doesn't matter. It's so amazing how"
+    },
+    {
+      "start": 294.84,
+      "text": "powerful they are. And this entire"
+    },
+    {
+      "start": 296.48,
+      "text": "signals library that I'm going to be"
+    },
+    {
+      "start": 297.8,
+      "text": "using for this video is going to be the"
+    },
+    {
+      "start": 299.48,
+      "text": "Preact Signals library. And you don't"
+    },
+    {
+      "start": 301.4,
+      "text": "have to be using Preact for this. They"
+    },
+    {
+      "start": 302.8,
+      "text": "have libraries for Svelte, Preact,"
+    },
+    {
+      "start": 304.48,
+      "text": "React, normal JavaScript, it doesn't"
+    },
+    {
+      "start": 305.96,
+      "text": "matter. And they have this amazing blog"
+    },
+    {
+      "start": 307.6,
+      "text": "article that I'll link in the"
+    },
+    {
+      "start": 308.48,
+      "text": "description for you that goes over their"
+    },
+    {
+      "start": 310.12,
+      "text": "entire thought process behind why they"
+    },
+    {
+      "start": 311.76,
+      "text": "implemented signals and why they did it"
+    },
+    {
+      "start": 313.36,
+      "text": "the way they did. This is an amazing"
+    },
+    {
+      "start": 314.84,
+      "text": "article look at. They even have some"
+    },
+    {
+      "start": 316.36,
+      "text": "sort of performance metrics here, and"
+    },
+    {
+      "start": 317.84,
+      "text": "you can see that they've actually"
+    },
+    {
+      "start": 318.84,
+      "text": "increased the speed time of the page"
+    },
+    {
+      "start": 320.52,
+      "text": "from 2.6 seconds to 0.6 seconds just by"
+    },
+    {
+      "start": 323.32,
+      "text": "implementing signals, which is"
+    },
+    {
+      "start": 324.6,
+      "text": "absolutely crazy. So, in order to show"
+    },
+    {
+      "start": 326.28,
+      "text": "you how signals work, I've taken our"
+    },
+    {
+      "start": 327.8,
+      "text": "code and I've reverted it to exactly"
+    },
+    {
+      "start": 329.36,
+      "text": "what we had before where everything is"
+    },
+    {
+      "start": 330.8,
+      "text": "still inside of our to-do list. If we go"
+    },
+    {
+      "start": 332.12,
+      "text": "back to our code, you can see we no"
+    },
+    {
+      "start": 333.2,
+      "text": "longer have that completed section here."
+    },
+    {
+      "start": 335.0,
+      "text": "I'm going to show you what it would look"
+    },
+    {
+      "start": 335.88,
+      "text": "like implementing this using an actual"
+    },
+    {
+      "start": 338.16,
+      "text": "signal instead of using a hook inside of"
+    },
+    {
+      "start": 340.32,
+      "text": "React. So, to use this signal library,"
+    },
+    {
+      "start": 342.28,
+      "text": "we first need to install it. So, we'll"
+    },
+    {
+      "start": 343.8,
+      "text": "npm i @preact/signals-react."
+    },
+    {
+      "start": 348.28,
+      "text": "So, we'll run that to install the"
+    },
+    {
+      "start": 349.4,
+      "text": "library and now we can start using"
+    },
+    {
+      "start": 351.0,
+      "text": "signals. And signals allow us to replace"
+    },
+    {
+      "start": 352.96,
+      "text": "all of our use states as well as our use"
+    },
+    {
+      "start": 354.88,
+      "text": "effects. And in doing so, we can replace"
+    },
+    {
+      "start": 356.92,
+      "text": "almost always our use memos and use"
+    },
+    {
+      "start": 358.72,
+      "text": "callbacks because that all of that is"
+    },
+    {
+      "start": 360.2,
+      "text": "kind of taken care of for us. Memos and"
+    },
+    {
+      "start": 362.04,
+      "text": "callbacks are just really there as a way"
+    },
+    {
+      "start": 363.76,
+      "text": "to add performance to your application"
+    },
+    {
+      "start": 365.44,
+      "text": "and signals just do that by default. So"
+    },
+    {
+      "start": 367.24,
+      "text": "in order to understand how a signal"
+    },
+    {
+      "start": 368.76,
+      "text": "works, let's take a look at creating a"
+    },
+    {
+      "start": 370.24,
+      "text": "signal right now. So we can just call"
+    },
+    {
+      "start": 371.84,
+      "text": "this signal function. So we're going to"
+    },
+    {
+      "start": 373.64,
+      "text": "get that from signals-react. So we're"
+    },
+    {
+      "start": 375.32,
+      "text": "just going to say signal just like that."
+    },
+    {
+      "start": 376.96,
+      "text": "We're going to make sure that it imports"
+    },
+    {
+      "start": 378.08,
+      "text": "from the React library. There we go. And"
+    },
+    {
+      "start": 380.0,
+      "text": "all this signal does is take a value. So"
+    },
+    {
+      "start": 382.36,
+      "text": "for example, I could just give it the"
+    },
+    {
+      "start": 383.4,
+      "text": "string of Kyle and I could say that this"
+    },
+    {
+      "start": 385.4,
+      "text": "signal is going to be a name signal. So"
+    },
+    {
+      "start": 387.28,
+      "text": "we'll say const name equals signal Kyle."
+    },
+    {
+      "start": 390.04,
+      "text": "So now I have this name variable and if"
+    },
+    {
+      "start": 391.48,
+      "text": "we just console log what this name"
+    },
+    {
+      "start": 392.919,
+      "text": "variable looks like, we'll go over to"
+    },
+    {
+      "start": 394.2,
+      "text": "our application. We'll give it a"
+    },
+    {
+      "start": 395.52,
+      "text": "refresh. Make sure I rerun the"
+    },
+    {
+      "start": 396.68,
+      "text": "application first."
+    },
+    {
+      "start": 398.48,
+      "text": "And we'll just look at our console to"
+    },
+    {
+      "start": 399.56,
+      "text": "see what this looks like. And you can"
+    },
+    {
+      "start": 401.08,
+      "text": "see, if we scroll to the very top, I get"
+    },
+    {
+      "start": 402.68,
+      "text": "this thing all the way up here and you"
+    },
+    {
+      "start": 404.12,
+      "text": "can see it has kind of a lot of"
+    },
+    {
+      "start": 405.48,
+      "text": "complicated information going on behind"
+    },
+    {
+      "start": 407.12,
+      "text": "the scenes but the most important thing"
+    },
+    {
+      "start": 408.36,
+      "text": "is it has this value property right here"
+    },
+    {
+      "start": 410.12,
+      "text": "which always returns to me whatever the"
+    },
+    {
+      "start": 411.48,
+      "text": "current value of this thing is. That's"
+    },
+    {
+      "start": 413.4,
+      "text": "the only thing I really care about for"
+    },
+    {
+      "start": 415.08,
+      "text": "this signal. All this other complicated"
+    },
+    {
+      "start": 416.84,
+      "text": "stuff is just to make sure everything"
+    },
+    {
+      "start": 418.12,
+      "text": "works behind the scenes cuz it does a"
+    },
+    {
+      "start": 419.48,
+      "text": "lot of really cool stuff. So if I want"
+    },
+    {
+      "start": 421.28,
+      "text": "to access this value, I could just say"
+    },
+    {
+      "start": 423.16,
+      "text": "name.value and now if I refresh and I"
+    },
+    {
+      "start": 425.84,
+      "text": "look over here, you'll see that it"
+    },
+    {
+      "start": 427.0,
+      "text": "should print out Kyle at the top of my"
+    },
+    {
+      "start": 428.44,
+      "text": "screen just like that. There we go. Now"
+    },
+    {
+      "start": 430.24,
+      "text": "the real power of this comes in the"
+    },
+    {
+      "start": 431.96,
+      "text": "ability to actually make sure everything"
+    },
+    {
+      "start": 433.64,
+      "text": "that uses this signal automatically"
+    },
+    {
+      "start": 435.52,
+      "text": "updates anytime my signal changes. So"
+    },
+    {
+      "start": 437.8,
+      "text": "for example, if I just say name.value is"
+    },
+    {
+      "start": 440.2,
+      "text": "now equal to Sally, all of the code that"
+    },
+    {
+      "start": 442.6,
+      "text": "uses this signal is going to get updated"
+    },
+    {
+      "start": 444.68,
+      "text": "with this new signal value which is"
+    },
+    {
+      "start": 446.72,
+      "text": "incredibly amazing. So I'm just going to"
+    },
+    {
+      "start": 448.64,
+      "text": "put this inside of a set interval for"
+    },
+    {
+      "start": 450.36,
+      "text": "now. So I'll say set interval and we'll"
+    },
+    {
+      "start": 452.8,
+      "text": "say that every half a second I'm going"
+    },
+    {
+      "start": 455.24,
+      "text": "to update the name to something else. So"
+    },
+    {
+      "start": 456.96,
+      "text": "we're just going to say math.random."
+    },
+    {
+      "start": 461.36,
+      "text": "Oops, math.random."
+    },
+    {
+      "start": 463.2,
+      "text": "There we go. We're just going to convert"
+    },
+    {
+      "start": 464.16,
+      "text": "this name to a random number. And I'm"
+    },
+    {
+      "start": 465.36,
+      "text": "just going to put that inside of my JSX."
+    },
+    {
+      "start": 467.88,
+      "text": "So here, we're just going to put that"
+    },
+    {
+      "start": 469.04,
+      "text": "number. So we'll say name"
+    },
+    {
+      "start": 471.72,
+      "text": ".value. So as you can see, I'm not using"
+    },
+    {
+      "start": 474.4,
+      "text": "state. I'm not using anything at all."
+    },
+    {
+      "start": 475.8,
+      "text": "All I'm doing is I just have a name"
+    },
+    {
+      "start": 477.08,
+      "text": "value here, and I'm just changing the"
+    },
+    {
+      "start": 478.52,
+      "text": "name every 500 milliseconds. And now if"
+    },
+    {
+      "start": 480.84,
+      "text": "I save, you can see every 500"
+    },
+    {
+      "start": 482.4,
+      "text": "milliseconds my application is updating"
+    },
+    {
+      "start": 484.6,
+      "text": "with that new value inside of it. And"
+    },
+    {
+      "start": 486.8,
+      "text": "I'm not doing anything related to state"
+    },
+    {
+      "start": 488.32,
+      "text": "or anything complicated at all. And if I"
+    },
+    {
+      "start": 490.4,
+      "text": "look at my code to see what's"
+    },
+    {
+      "start": 491.68,
+      "text": "re-rendering, if I just close out of"
+    },
+    {
+      "start": 493.12,
+      "text": "this, you can see the only thing"
+    },
+    {
+      "start": 494.2,
+      "text": "re-rendering is my to-do list cuz that's"
+    },
+    {
+      "start": 495.68,
+      "text": "the only component that's using these"
+    },
+    {
+      "start": 497.28,
+      "text": "updated things. So really, if you look"
+    },
+    {
+      "start": 499.2,
+      "text": "at a signal, all it is is a way for you"
+    },
+    {
+      "start": 501.2,
+      "text": "to store a value, and then whenever that"
+    },
+    {
+      "start": 503.2,
+      "text": "value is changed, to update everything"
+    },
+    {
+      "start": 505.36,
+      "text": "that relies upon that signal's value,"
+    },
+    {
+      "start": 508.0,
+      "text": "which is really, really powerful. And"
+    },
+    {
+      "start": 509.24,
+      "text": "that already solves a lot of the use"
+    },
+    {
+      "start": 510.8,
+      "text": "state stuff we need. So if I wanted to"
+    },
+    {
+      "start": 512.56,
+      "text": "convert what I'm doing with use state"
+    },
+    {
+      "start": 513.88,
+      "text": "down here to a signal, I could create a"
+    },
+    {
+      "start": 515.719,
+      "text": "to-do's signal. We'll say that's equal"
+    },
+    {
+      "start": 517.88,
+      "text": "to a signal, and I'll also just create a"
+    },
+    {
+      "start": 519.68,
+      "text": "function that essentially encapsulate"
+    },
+    {
+      "start": 521.56,
+      "text": "all of this code inside of here for"
+    },
+    {
+      "start": 523.08,
+      "text": "getting my value from state. So we'll"
+    },
+    {
+      "start": 524.56,
+      "text": "just say like get to-do's is going to"
+    },
+    {
+      "start": 527.24,
+      "text": "return these values right here. And then"
+    },
+    {
+      "start": 529.16,
+      "text": "we'll just call that inside of our"
+    },
+    {
+      "start": 530.24,
+      "text": "signal to get our default value. There"
+    },
+    {
+      "start": 532.4,
+      "text": "we go. So as soon as my application"
+    },
+    {
+      "start": 534.32,
+      "text": "runs, it calls this get to-do's"
+    },
+    {
+      "start": 535.8,
+      "text": "function, and it just gets it from local"
+    },
+    {
+      "start": 537.64,
+      "text": "storage. Now we have our to-do's. So we"
+    },
+    {
+      "start": 539.36,
+      "text": "can remove all this code right here for"
+    },
+    {
+      "start": 540.8,
+      "text": "setting our to-do's. We don't need to"
+    },
+    {
+      "start": 541.88,
+      "text": "worry about any of that. And here where"
+    },
+    {
+      "start": 543.44,
+      "text": "we're setting our to-do's, we can just"
+    },
+    {
+      "start": 545.08,
+      "text": "directly set the value variable for our"
+    },
+    {
+      "start": 546.88,
+      "text": "to-do's. So we can say here our to-do's"
+    },
+    {
+      "start": 549.76,
+      "text": ".value is going to be equal to taking"
+    },
+    {
+      "start": 552.6,
+      "text": "our current to-do's.value,"
+    },
+    {
+      "start": 554.839,
+      "text": "you know, going over that, and then"
+    },
+    {
+      "start": 556.32,
+      "text": "adding a new to-do into that. Super"
+    },
+    {
+      "start": 558.08,
+      "text": "straightforward. Same thing here. I can"
+    },
+    {
+      "start": 559.56,
+      "text": "just say"
+    },
+    {
+      "start": 560.88,
+      "text": "to-do's.value"
+    },
+    {
+      "start": 562.6,
+      "text": "is equal to, and all I want to do is"
+    },
+    {
+      "start": 564.12,
+      "text": "just take my current to-do's.value, map"
+    },
+    {
+      "start": 566.64,
+      "text": "over it, and get the new information. So"
+    },
+    {
+      "start": 568.44,
+      "text": "I don't have to worry about any of that"
+    },
+    {
+      "start": 569.56,
+      "text": "setting stuff, worrying about what"
+    },
+    {
+      "start": 571.12,
+      "text": "happens when I have an old version of a"
+    },
+    {
+      "start": 572.52,
+      "text": "to-do, a new version of a to-do, you"
+    },
+    {
+      "start": 573.96,
+      "text": "know, how I actually do my setting, is"
+    },
+    {
+      "start": 575.839,
+      "text": "it the function version or not. I don't"
+    },
+    {
+      "start": 577.36,
+      "text": "have to worry about any of that. You can"
+    },
+    {
+      "start": 579.04,
+      "text": "see if I give that a quick save and I"
+    },
+    {
+      "start": 580.68,
+      "text": "actually use that to do. So I remove"
+    },
+    {
+      "start": 582.28,
+      "text": "this name section here and I'm using my"
+    },
+    {
+      "start": 584.24,
+      "text": "to-do's.value down here. You can now see"
+    },
+    {
+      "start": 586.8,
+      "text": "I have my information in my list and it"
+    },
+    {
+      "start": 588.6,
+      "text": "looks like everything is pretty much"
+    },
+    {
+      "start": 589.72,
+      "text": "working as it is before. You notice"
+    },
+    {
+      "start": 591.48,
+      "text": "right now nothing's being stored in"
+    },
+    {
+      "start": 593.08,
+      "text": "local storage cuz my use effect is not"
+    },
+    {
+      "start": 595.0,
+      "text": "working because right now it's never"
+    },
+    {
+      "start": 596.6,
+      "text": "updating since my to-do's never actually"
+    },
+    {
+      "start": 598.68,
+      "text": "changes, but we can get around and we"
+    },
+    {
+      "start": 600.56,
+      "text": "can fix that. This is because also this"
+    },
+    {
+      "start": 602.92,
+      "text": "signals library has use effects"
+    },
+    {
+      "start": 605.04,
+      "text": "essentially built into it by the effect"
+    },
+    {
+      "start": 607.4,
+      "text": "function. So this effect function, all"
+    },
+    {
+      "start": 609.24,
+      "text": "you need to do is anything that you want"
+    },
+    {
+      "start": 610.72,
+      "text": "to update based on a signal value, you"
+    },
+    {
+      "start": 612.48,
+      "text": "put inside of here. So in our case,"
+    },
+    {
+      "start": 614.0,
+      "text": "we're updating our local storage every"
+    },
+    {
+      "start": 615.48,
+      "text": "single time our to-do's change. So every"
+    },
+    {
+      "start": 617.44,
+      "text": "time our to-do's.value changes, I want"
+    },
+    {
+      "start": 619.8,
+      "text": "to update the information in local"
+    },
+    {
+      "start": 621.32,
+      "text": "storage. And the really crazy thing"
+    },
+    {
+      "start": 622.96,
+      "text": "about this, I don't need to pass a"
+    },
+    {
+      "start": 624.52,
+      "text": "second dependency array into here. Since"
+    },
+    {
+      "start": 626.92,
+      "text": "I'm using my to-do's.value in this"
+    },
+    {
+      "start": 628.72,
+      "text": "function, the signals library is smart"
+    },
+    {
+      "start": 630.6,
+      "text": "enough to look at that and say, \"Okay, I"
+    },
+    {
+      "start": 632.4,
+      "text": "am using to-do's inside of this effect."
+    },
+    {
+      "start": 634.4,
+      "text": "So every single time my to-do's changes,"
+    },
+    {
+      "start": 636.32,
+      "text": "I'm going to rerun this effect.\" So"
+    },
+    {
+      "start": 638.04,
+      "text": "let's get rid of this code that we had"
+    },
+    {
+      "start": 639.08,
+      "text": "down here. Now you'll notice we're not"
+    },
+    {
+      "start": 640.8,
+      "text": "using use state or use effect anywhere."
+    },
+    {
+      "start": 642.8,
+      "text": "You can see I can essentially completely"
+    },
+    {
+      "start": 644.08,
+      "text": "remove this. Technically we are using"
+    },
+    {
+      "start": 646.12,
+      "text": "use state right here, but we could"
+    },
+    {
+      "start": 647.68,
+      "text": "change that if we wanted to. It really"
+    },
+    {
+      "start": 648.76,
+      "text": "doesn't matter. But you can see we have"
+    },
+    {
+      "start": 649.72,
+      "text": "no use effects or anything. But now when"
+    },
+    {
+      "start": 651.72,
+      "text": "I add something to my list, you can see"
+    },
+    {
+      "start": 653.32,
+      "text": "I have these four items. Refresh, it's"
+    },
+    {
+      "start": 654.88,
+      "text": "all persisted. I uncheck these,"
+    },
+    {
+      "start": 656.4,
+      "text": "everything is persisted. So now I have"
+    },
+    {
+      "start": 658.36,
+      "text": "everything being persisted. I have no"
+    },
+    {
+      "start": 660.12,
+      "text": "rules to worry about. I mean, all of"
+    },
+    {
+      "start": 661.4,
+      "text": "this code's not even in a React"
+    },
+    {
+      "start": 662.92,
+      "text": "component. I could put this code"
+    },
+    {
+      "start": 664.24,
+      "text": "anywhere at all. It doesn't matter. And"
+    },
+    {
+      "start": 666.4,
+      "text": "it's amazing that it's just all working"
+    },
+    {
+      "start": 667.88,
+      "text": "out of the box without having to do any"
+    },
+    {
+      "start": 669.2,
+      "text": "extra work. And the best part is this is"
+    },
+    {
+      "start": 671.4,
+      "text": "incredibly performant because of the"
+    },
+    {
+      "start": 673.0,
+      "text": "next thing I'm going to show you. So we"
+    },
+    {
+      "start": 674.76,
+      "text": "want to put the completed to-do's in the"
+    },
+    {
+      "start": 676.44,
+      "text": "navigation bar. Well, I can just export"
+    },
+    {
+      "start": 678.88,
+      "text": "this signal right here for to-do's. I"
+    },
+    {
+      "start": 680.64,
+      "text": "can use that other places. So let's go"
+    },
+    {
+      "start": 682.32,
+      "text": "into my navbar. I'm going to come in"
+    },
+    {
+      "start": 684.0,
+      "text": "here and I'm going to import that to-do"
+    },
+    {
+      "start": 685.4,
+      "text": "information. So I'm going to import"
+    },
+    {
+      "start": 687.68,
+      "text": "to-do's from that to-do list. And now"
+    },
+    {
+      "start": 689.68,
+      "text": "what I can can is I can actually get"
+    },
+    {
+      "start": 691.12,
+      "text": "whatever the value is going to be from"
+    },
+    {
+      "start": 692.92,
+      "text": "my to-do's. So, in my case, I would need"
+    },
+    {
+      "start": 694.6,
+      "text": "to filter it and so on. So, let's create"
+    },
+    {
+      "start": 696.44,
+      "text": "a div and this is going to say"
+    },
+    {
+      "start": 699.72,
+      "text": "completed"
+    },
+    {
+      "start": 701.12,
+      "text": "and then inside of here, we're going to"
+    },
+    {
+      "start": 702.12,
+      "text": "take our to-do's. We're going to filter"
+    },
+    {
+      "start": 703.88,
+      "text": "our to-do's"
+    },
+    {
+      "start": 705.2,
+      "text": "and we only want to get the to-do's"
+    },
+    {
+      "start": 706.64,
+      "text": "where that completed property is true."
+    },
+    {
+      "start": 708.84,
+      "text": "There we go. And I specifically want to"
+    },
+    {
+      "start": 710.64,
+      "text": "make sure I do the value for my to-do's."
+    },
+    {
+      "start": 713.12,
+      "text": "There we go. Give that a quick refresh."
+    },
+    {
+      "start": 714.68,
+      "text": "And actually, I need to make sure I get"
+    },
+    {
+      "start": 715.8,
+      "text": "the length of this if I want to just get"
+    },
+    {
+      "start": 717.16,
+      "text": "the number. So, we'll just come in here"
+    },
+    {
+      "start": 718.6,
+      "text": "with the length. So, now you can see I"
+    },
+    {
+      "start": 719.8,
+      "text": "have two completed to-do's, which is"
+    },
+    {
+      "start": 721.24,
+      "text": "pulling from this value. And now you can"
+    },
+    {
+      "start": 722.8,
+      "text": "see it's down to one and zero and so on."
+    },
+    {
+      "start": 725.16,
+      "text": "But, the really cool thing that's"
+    },
+    {
+      "start": 726.36,
+      "text": "happening here, if I go to my console, I"
+    },
+    {
+      "start": 727.84,
+      "text": "just clear everything out, when I change"
+    },
+    {
+      "start": 729.72,
+      "text": "this, for example, you notice only my"
+    },
+    {
+      "start": 731.52,
+      "text": "navbar and my to-do list are changing"
+    },
+    {
+      "start": 733.48,
+      "text": "because those are the only things using"
+    },
+    {
+      "start": 735.2,
+      "text": "this signal. And if I update this state"
+    },
+    {
+      "start": 737.28,
+      "text": "right here, you can see it's only the"
+    },
+    {
+      "start": 738.4,
+      "text": "to-do list changing. But, down here when"
+    },
+    {
+      "start": 739.8,
+      "text": "I change this, I'm only updating those"
+    },
+    {
+      "start": 741.64,
+      "text": "two components that actually use this"
+    },
+    {
+      "start": 743.4,
+      "text": "information, which is incredible. Now,"
+    },
+    {
+      "start": 745.32,
+      "text": "one important thing to note is if you"
+    },
+    {
+      "start": 747.0,
+      "text": "are using signals built from other"
+    },
+    {
+      "start": 749.0,
+      "text": "signals, you should generally use a"
+    },
+    {
+      "start": 750.92,
+      "text": "computed signal. For example, if I"
+    },
+    {
+      "start": 752.68,
+      "text": "wanted to use this in other places"
+    },
+    {
+      "start": 754.2,
+      "text": "throughout my application, I could turn"
+    },
+    {
+      "start": 755.839,
+      "text": "this into its own signal that has all"
+    },
+    {
+      "start": 757.76,
+      "text": "the same properties, but it would be"
+    },
+    {
+      "start": 759.12,
+      "text": "computed from those other signals, which"
+    },
+    {
+      "start": 761.04,
+      "text": "just means it's going to automatically"
+    },
+    {
+      "start": 762.56,
+      "text": "update when my signals it depends on"
+    },
+    {
+      "start": 764.44,
+      "text": "changes. To show you what I'm talking"
+    },
+    {
+      "start": 765.96,
+      "text": "about, we're going to use the computed"
+    },
+    {
+      "start": 767.68,
+      "text": "function. We're going to get that from"
+    },
+    {
+      "start": 768.92,
+      "text": "the signals React library."
+    },
+    {
+      "start": 771.04,
+      "text": "And we're going to come in here. This"
+    },
+    {
+      "start": 772.0,
+      "text": "works pretty much exactly the same as"
+    },
+    {
+      "start": 773.52,
+      "text": "effect, but inside of here, I'm actually"
+    },
+    {
+      "start": 775.4,
+      "text": "just going to return. So, in here, I'm"
+    },
+    {
+      "start": 776.72,
+      "text": "going to return this right here. This is"
+    },
+    {
+      "start": 778.56,
+      "text": "essentially going to give me that"
+    },
+    {
+      "start": 779.6,
+      "text": "information. And this is my completed"
+    },
+    {
+      "start": 782.48,
+      "text": "to-do's count. There we go. Let me make"
+    },
+    {
+      "start": 784.72,
+      "text": "sure I spell that right. And now this"
+    },
+    {
+      "start": 786.08,
+      "text": "gives me a brand new signal that has its"
+    },
+    {
+      "start": 787.92,
+      "text": "own dot value property on it. So, I"
+    },
+    {
+      "start": 790.12,
+      "text": "could say dot value and so on. I can use"
+    },
+    {
+      "start": 792.04,
+      "text": "this inside of effects. I can use it in"
+    },
+    {
+      "start": 793.8,
+      "text": "other computed signals. I can pass it"
+    },
+    {
+      "start": 795.56,
+      "text": "all over my application to make sure"
+    },
+    {
+      "start": 796.92,
+      "text": "everything auto updates properly if I"
+    },
+    {
+      "start": 798.96,
+      "text": "wanted to use this in other places. And"
+    },
+    {
+      "start": 800.88,
+      "text": "now I can just place that into my JSX"
+    },
+    {
+      "start": 802.76,
+      "text": "down here."
+    },
+    {
+      "start": 803.88,
+      "text": "Give it a save and I'll get the exact"
+    },
+    {
+      "start": 805.04,
+      "text": "same response. As you can see up here,"
+    },
+    {
+      "start": 806.44,
+      "text": "this completed is properly re-rendering"
+    },
+    {
+      "start": 808.28,
+      "text": "when I'm changing my values here, and"
+    },
+    {
+      "start": 809.8,
+      "text": "it's only re-rendering the two"
+    },
+    {
+      "start": 811.12,
+      "text": "components that change, even though"
+    },
+    {
+      "start": 812.64,
+      "text": "they're completely separate from one"
+    },
+    {
+      "start": 814.0,
+      "text": "another. This is a really great way to"
+    },
+    {
+      "start": 815.64,
+      "text": "pass information between multiple"
+    },
+    {
+      "start": 817.28,
+      "text": "different components. Now, another thing"
+    },
+    {
+      "start": 818.96,
+      "text": "that's really cool about these signals"
+    },
+    {
+      "start": 820.96,
+      "text": "is inside of this library, there's"
+    },
+    {
+      "start": 822.28,
+      "text": "actually hooks built in. So, if I wanted"
+    },
+    {
+      "start": 824.16,
+      "text": "to use my signals inside of my to-do"
+    },
+    {
+      "start": 826.48,
+      "text": "list component, I can come in here and I"
+    },
+    {
+      "start": 828.12,
+      "text": "can use the use signal hook or the use"
+    },
+    {
+      "start": 830.52,
+      "text": "signal effect hook. These both are going"
+    },
+    {
+      "start": 832.6,
+      "text": "to allow me to use a signal or an effect"
+    },
+    {
+      "start": 835.12,
+      "text": "inside of my actual component, and it's"
+    },
+    {
+      "start": 837.2,
+      "text": "going to work with React properly. But,"
+    },
+    {
+      "start": 839.24,
+      "text": "a lot of times when you're dealing with"
+    },
+    {
+      "start": 840.24,
+      "text": "signals, you don't actually need them"
+    },
+    {
+      "start": 841.8,
+      "text": "inside your components. You can pull"
+    },
+    {
+      "start": 843.08,
+      "text": "them out of your components so they can"
+    },
+    {
+      "start": 844.44,
+      "text": "be used in many different places."
+    },
+    {
+      "start": 846.84,
+      "text": "Now, a lot of you may notice, if you're"
+    },
+    {
+      "start": 848.48,
+      "text": "looking at this code, that it's not 100%"
+    },
+    {
+      "start": 851.08,
+      "text": "optimized for testing. And the reason"
+    },
+    {
+      "start": 853.12,
+      "text": "for that is is because we look at my app"
+    },
+    {
+      "start": 854.88,
+      "text": "here, my navbar doesn't have any props"
+    },
+    {
+      "start": 857.24,
+      "text": "being passed in, but it's pulling in"
+    },
+    {
+      "start": 858.88,
+      "text": "data from another file. This makes it"
+    },
+    {
+      "start": 860.76,
+      "text": "very hard to actually test this."
+    },
+    {
+      "start": 862.76,
+      "text": "Instead, it would be much better if I"
+    },
+    {
+      "start": 864.16,
+      "text": "passed my to-dos into my navbar so that"
+    },
+    {
+      "start": 866.72,
+      "text": "is a lot easier for me to test my"
+    },
+    {
+      "start": 868.36,
+      "text": "navbar. So, instead of actually pulling"
+    },
+    {
+      "start": 870.4,
+      "text": "it in like this, I pass it into my"
+    },
+    {
+      "start": 872.24,
+      "text": "navbar like this, so it's going to work."
+    },
+    {
+      "start": 874.64,
+      "text": "Now, the problem with this is I need to"
+    },
+    {
+      "start": 876.0,
+      "text": "rewrite my code a little bit, but"
+    },
+    {
+      "start": 877.44,
+      "text": "signals make this incredibly easy. And"
+    },
+    {
+      "start": 879.24,
+      "text": "this is actually how the Preact signals"
+    },
+    {
+      "start": 880.96,
+      "text": "library recommend you do things with"
+    },
+    {
+      "start": 882.52,
+      "text": "signals is you extract out the creating"
+    },
+    {
+      "start": 884.76,
+      "text": "of your signals into its own file or"
+    },
+    {
+      "start": 886.52,
+      "text": "section, and then you pass those down to"
+    },
+    {
+      "start": 888.32,
+      "text": "props just like you do inside of normal"
+    },
+    {
+      "start": 890.48,
+      "text": "React. You still get all the same"
+    },
+    {
+      "start": 891.92,
+      "text": "performance gains, but it's much easier"
+    },
+    {
+      "start": 893.52,
+      "text": "to test this as well. So, what I'm going"
+    },
+    {
+      "start": 895.12,
+      "text": "to do is I'm going to go into my to-do"
+    },
+    {
+      "start": 896.32,
+      "text": "list, and all this information for"
+    },
+    {
+      "start": 897.68,
+      "text": "creating all this state, I'm actually"
+    },
+    {
+      "start": 899.12,
+      "text": "going to pull all of this out. I'm going"
+    },
+    {
+      "start": 900.44,
+      "text": "to move it into my app instead. I could"
+    },
+    {
+      "start": 902.32,
+      "text": "create a separate file for this if I"
+    },
+    {
+      "start": 903.8,
+      "text": "wanted to be extra diligent with clean"
+    },
+    {
+      "start": 905.44,
+      "text": "code, but for our cases, this is simple"
+    },
+    {
+      "start": 907.08,
+      "text": "enough code. We can just paste it"
+    },
+    {
+      "start": 908.12,
+      "text": "directly into here, and I'll make sure"
+    },
+    {
+      "start": 909.52,
+      "text": "that I import this signal library. So,"
+    },
+    {
+      "start": 911.56,
+      "text": "let's just get the signal library being"
+    },
+    {
+      "start": 913.16,
+      "text": "imported."
+    },
+    {
+      "start": 914.88,
+      "text": "Just like that, we'll get it from that"
+    },
+    {
+      "start": 916.04,
+      "text": "React library, and we'll do the exact"
+    },
+    {
+      "start": 917.64,
+      "text": "same thing down here with effects as"
+    },
+    {
+      "start": 919.48,
+      "text": "well. So, we have all that being passed"
+    },
+    {
+      "start": 920.839,
+      "text": "in, and now in my to-do list, I can pass"
+    },
+    {
+      "start": 923.04,
+      "text": "down my to-dos."
+    },
+    {
+      "start": 924.88,
+      "text": "And in my navbar, I can pass in my"
+    },
+    {
+      "start": 926.84,
+      "text": "to-dos as well, just like that. So, I'm"
+    },
+    {
+      "start": 929.24,
+      "text": "passing things down just like I would in"
+    },
+    {
+      "start": 930.88,
+      "text": "normal React. It makes things for"
+    },
+    {
+      "start": 932.16,
+      "text": "testing a lot easier. Now, if I go into"
+    },
+    {
+      "start": 934.36,
+      "text": "my to-do list, I can remove all this"
+    },
+    {
+      "start": 935.92,
+      "text": "signals-related code, and I'm getting my"
+    },
+    {
+      "start": 937.8,
+      "text": "to-dos in from my props. And now, if I"
+    },
+    {
+      "start": 940.16,
+      "text": "save, you'll notice magically everything"
+    },
+    {
+      "start": 941.8,
+      "text": "is working just fine. I can add a new"
+    },
+    {
+      "start": 943.28,
+      "text": "to-do. My completed props up here is"
+    },
+    {
+      "start": 945.2,
+      "text": "updating, and if I look at the actual"
+    },
+    {
+      "start": 946.88,
+      "text": "components that are being re-rendered,"
+    },
+    {
+      "start": 948.52,
+      "text": "if I just clear everything out, when I"
+    },
+    {
+      "start": 949.76,
+      "text": "toggle, you'll notice again, only the"
+    },
+    {
+      "start": 951.36,
+      "text": "components that depend on that state are"
+    },
+    {
+      "start": 952.92,
+      "text": "re-rendering, even though I'm storing"
+    },
+    {
+      "start": 954.48,
+      "text": "the state technically in this app"
+    },
+    {
+      "start": 956.12,
+      "text": "component, and it's being passed down"
+    },
+    {
+      "start": 957.88,
+      "text": "from the app component, it's not"
+    },
+    {
+      "start": 959.36,
+      "text": "re-rendering everything cuz it's only"
+    },
+    {
+      "start": 960.88,
+      "text": "re-rendering the places it's actually"
+    },
+    {
+      "start": 962.56,
+      "text": "used in. And everything works just like"
+    },
+    {
+      "start": 964.92,
+      "text": "normal React. I can easily test this"
+    },
+    {
+      "start": 966.88,
+      "text": "component by passing in my own to-do"
+    },
+    {
+      "start": 968.64,
+      "text": "signal into here without having to worry"
+    },
+    {
+      "start": 970.2,
+      "text": "about it importing from different files."
+    },
+    {
+      "start": 972.2,
+      "text": "So, all this works just like you're used"
+    },
+    {
+      "start": 973.72,
+      "text": "to with normal React."
+    },
+    {
+      "start": 975.48,
+      "text": "Now, I've really only scratched the"
+    },
+    {
+      "start": 976.84,
+      "text": "surface of what you can do with signals,"
+    },
+    {
+      "start": 978.6,
+      "text": "so you can see the power, and hopefully"
+    },
+    {
+      "start": 980.12,
+      "text": "it's got you excited about them. And if"
+    },
+    {
+      "start": 982.0,
+      "text": "you want to see a full crash course on"
+    },
+    {
+      "start": 983.48,
+      "text": "signals, let me know. If I end up"
+    },
+    {
+      "start": 984.96,
+      "text": "creating one, I'll link it right over"
+    },
+    {
+      "start": 986.24,
+      "text": "here for you. And with that said, thank"
+    },
+    {
+      "start": 987.96,
+      "text": "you very much for watching, and have a"
+    },
+    {
+      "start": 989.24,
+      "text": "good day."
+    }
+  ],
+  "text": "I have a love-hate relationship with hooks in React. If you've been using them for any amount of time, you probably do, too. I mean, I love how powerful they are and how easy it makes it to do certain things with reactivity in your website, but I hate how complex they can be and how easy it is to ruin your application with hooks. There's so many rules you need to know, and there's a lot of special techniques that are very specific to hooks that you need to understand in order to make sure your application is as performant as possible. If you don't follow these rules, which is quite difficult to do, you can really kill the performance of your application, and it's just super hard to work with. This is why I really like the idea of signals, because what they do is all the same powerful stuff as hooks, but they make it incredibly easy to use. There are no complicated rules to worry about, and performance is out of the box by default, so you don't even have to worry about it. Welcome back to WebDevSimplified. My name is Kyle, and my job is to simplify the web for you so you can start building your dream project sooner. And to get started, I have a really simple to-do list application built out to kind of show you why signals are so useful and some of the problems that they solve. So, this is a simple application. You can see I have a navbar, a to-do list, and a sidebar. And in all of my components, I actually have a console log just saying that we've rendered that component, so we can see what the re-rendering looks like in our application. Our navbar, super straightforward, it's just this top section you see here. Our sidebar, also super straightforward, it's this right-hand sidebar you see right here. Common stuff you would see in a normal application. And then our to-do list is a bit more complicated. You can see that we have this to-dos value stored in state, and it's also persisted inside of local storage. And we have a function for adding a to-do, a function for toggling, so when I toggle this, for example, and refresh, you can see all of my data persist. All this is happening with this use effect here. And then I just have all the different JSX for this form, as well as the to-dos being rendered out down here. And if I add something in, you can see it shows up and persist when I refresh my page. Now, this is about the most basic form of application you can get, and in this particular scenario, using state or signals, it really doesn't matter. They're both pretty easy to use and it's doesn't really make a difference which one you use because it's so simple the application that we're building. You can see if we inspect our page here, I'll bring this over and we look at the console, you'll notice if I just clear this out, whenever I like toggle one of my to-do's or something like that, you can see that the only thing re-rendering is my to-do list. Nothing else in my application is being changed. But now, what happens if my application gets a little bit more complex? And now I want to show the completed to-do count inside of this header as well. Well, I need to get all of this to-do state. I need to remove all of this from my to-do list and I need to move it over into my app instead. So, it would need to be inside of here like this. Now, the reason that I need to do it this way is because I need access to this to-do state inside of my app because my app is a parent of this navbar. So, obviously if I want to pass my state to the navbar, I need to have access to it inside of the parent component. Now, I just copied over the code to actually make this work and as you can see inside of the app, we now have all of the code related to our to-do's and we're passing our to-do's into our navbar. And then we're passing all the information for adding and toggling to-do's and so on into our to-do list. So, we look at our to-do list, you can see it's very simple. There's almost nothing in here because it's just dealing with this one form input. And you can see in our navbar, it's actually getting the completed to-do's and you can see up here, the completed number is one. And when I toggle, you can see that this is properly updating. Now, if we look at how the actual re-rendering of our application works, if I clear this, you notice when I toggled this, it's actually re-rendered my app, my navbar, my to-do list and my sidebar. And that's because I'm storing this state in my application, so in my app right here, which means I need to re-render my app anytime that state changes. And when you re-render a parent component, you must also re-render all of the children inside of that. So, my navbar re-renders, my to-do list re-renders and my sidebar re-renders, even though in reality, when I toggle this laundry checkbox, my actual app doesn't change. Like the actual, you know, HTML being generated for the app portion doesn't change. My sidebar obviously doesn't change, but those things are being re-rendered unnecessarily. Now, this honestly isn't a massive deal, especially on a small scale application like this. But, as your application grows and grows and grows, and your state becomes shared across all of your different application, it's very common that a lot of your state ends up inside of your app component or some other really high-level component, or maybe you move it into context, but you still get the same problem where your app is just wrapped by like seven different contexts. You have all these extra re-renders you really don't need. So, that's the first thing that signals are trying to solve. And in my opinion, it's one of the smaller things they're solving. They solve this performance by making it performant by default, and you don't have to worry about doing a bunch of things like memoizing or react.memo and all that stuff that you would need to do to actually make this as performant as you can. The real place where signals shine is that they get rid of all of the rules related to hooks. For example, with hooks, you need to know that you can only use your hooks at the top of your component. You can't use them inside of like an if statement. You can't use them other places. They must be used only in components and custom hooks. There's a ton of rules around like how you use a use effect, making sure you have all your dependencies in here. All of that is a thing of the past with signals because they handle all your dependencies for you. You can use them wherever you want, in a component, outside a component, in a function, it doesn't matter. It's so amazing how powerful they are. And this entire signals library that I'm going to be using for this video is going to be the Preact Signals library. And you don't have to be using Preact for this. They have libraries for Svelte, Preact, React, normal JavaScript, it doesn't matter. And they have this amazing blog article that I'll link in the description for you that goes over their entire thought process behind why they implemented signals and why they did it the way they did. This is an amazing article look at. They even have some sort of performance metrics here, and you can see that they've actually increased the speed time of the page from 2.6 seconds to 0.6 seconds just by implementing signals, which is absolutely crazy. So, in order to show you how signals work, I've taken our code and I've reverted it to exactly what we had before where everything is still inside of our to-do list. If we go back to our code, you can see we no longer have that completed section here. I'm going to show you what it would look like implementing this using an actual signal instead of using a hook inside of React. So, to use this signal library, we first need to install it. So, we'll npm i @preact/signals-react. So, we'll run that to install the library and now we can start using signals. And signals allow us to replace all of our use states as well as our use effects. And in doing so, we can replace almost always our use memos and use callbacks because that all of that is kind of taken care of for us. Memos and callbacks are just really there as a way to add performance to your application and signals just do that by default. So in order to understand how a signal works, let's take a look at creating a signal right now. So we can just call this signal function. So we're going to get that from signals-react. So we're just going to say signal just like that. We're going to make sure that it imports from the React library. There we go. And all this signal does is take a value. So for example, I could just give it the string of Kyle and I could say that this signal is going to be a name signal. So we'll say const name equals signal Kyle. So now I have this name variable and if we just console log what this name variable looks like, we'll go over to our application. We'll give it a refresh. Make sure I rerun the application first. And we'll just look at our console to see what this looks like. And you can see, if we scroll to the very top, I get this thing all the way up here and you can see it has kind of a lot of complicated information going on behind the scenes but the most important thing is it has this value property right here which always returns to me whatever the current value of this thing is. That's the only thing I really care about for this signal. All this other complicated stuff is just to make sure everything works behind the scenes cuz it does a lot of really cool stuff. So if I want to access this value, I could just say name.value and now if I refresh and I look over here, you'll see that it should print out Kyle at the top of my screen just like that. There we go. Now the real power of this comes in the ability to actually make sure everything that uses this signal automatically updates anytime my signal changes. So for example, if I just say name.value is now equal to Sally, all of the code that uses this signal is going to get updated with this new signal value which is incredibly amazing. So I'm just going to put this inside of a set interval for now. So I'll say set interval and we'll say that every half a second I'm going to update the name to something else. So we're just going to say math.random. Oops, math.random. There we go. We're just going to convert this name to a random number. And I'm just going to put that inside of my JSX. So here, we're just going to put that number. So we'll say name .value. So as you can see, I'm not using state. I'm not using anything at all. All I'm doing is I just have a name value here, and I'm just changing the name every 500 milliseconds. And now if I save, you can see every 500 milliseconds my application is updating with that new value inside of it. And I'm not doing anything related to state or anything complicated at all. And if I look at my code to see what's re-rendering, if I just close out of this, you can see the only thing re-rendering is my to-do list cuz that's the only component that's using these updated things. So really, if you look at a signal, all it is is a way for you to store a value, and then whenever that value is changed, to update everything that relies upon that signal's value, which is really, really powerful. And that already solves a lot of the use state stuff we need. So if I wanted to convert what I'm doing with use state down here to a signal, I could create a to-do's signal. We'll say that's equal to a signal, and I'll also just create a function that essentially encapsulate all of this code inside of here for getting my value from state. So we'll just say like get to-do's is going to return these values right here. And then we'll just call that inside of our signal to get our default value. There we go. So as soon as my application runs, it calls this get to-do's function, and it just gets it from local storage. Now we have our to-do's. So we can remove all this code right here for setting our to-do's. We don't need to worry about any of that. And here where we're setting our to-do's, we can just directly set the value variable for our to-do's. So we can say here our to-do's .value is going to be equal to taking our current to-do's.value, you know, going over that, and then adding a new to-do into that. Super straightforward. Same thing here. I can just say to-do's.value is equal to, and all I want to do is just take my current to-do's.value, map over it, and get the new information. So I don't have to worry about any of that setting stuff, worrying about what happens when I have an old version of a to-do, a new version of a to-do, you know, how I actually do my setting, is it the function version or not. I don't have to worry about any of that. You can see if I give that a quick save and I actually use that to do. So I remove this name section here and I'm using my to-do's.value down here. You can now see I have my information in my list and it looks like everything is pretty much working as it is before. You notice right now nothing's being stored in local storage cuz my use effect is not working because right now it's never updating since my to-do's never actually changes, but we can get around and we can fix that. This is because also this signals library has use effects essentially built into it by the effect function. So this effect function, all you need to do is anything that you want to update based on a signal value, you put inside of here. So in our case, we're updating our local storage every single time our to-do's change. So every time our to-do's.value changes, I want to update the information in local storage. And the really crazy thing about this, I don't need to pass a second dependency array into here. Since I'm using my to-do's.value in this function, the signals library is smart enough to look at that and say, \"Okay, I am using to-do's inside of this effect. So every single time my to-do's changes, I'm going to rerun this effect.\" So let's get rid of this code that we had down here. Now you'll notice we're not using use state or use effect anywhere. You can see I can essentially completely remove this. Technically we are using use state right here, but we could change that if we wanted to. It really doesn't matter. But you can see we have no use effects or anything. But now when I add something to my list, you can see I have these four items. Refresh, it's all persisted. I uncheck these, everything is persisted. So now I have everything being persisted. I have no rules to worry about. I mean, all of this code's not even in a React component. I could put this code anywhere at all. It doesn't matter. And it's amazing that it's just all working out of the box without having to do any extra work. And the best part is this is incredibly performant because of the next thing I'm going to show you. So we want to put the completed to-do's in the navigation bar. Well, I can just export this signal right here for to-do's. I can use that other places. So let's go into my navbar. I'm going to come in here and I'm going to import that to-do information. So I'm going to import to-do's from that to-do list. And now what I can can is I can actually get whatever the value is going to be from my to-do's. So, in my case, I would need to filter it and so on. So, let's create a div and this is going to say completed and then inside of here, we're going to take our to-do's. We're going to filter our to-do's and we only want to get the to-do's where that completed property is true. There we go. And I specifically want to make sure I do the value for my to-do's. There we go. Give that a quick refresh. And actually, I need to make sure I get the length of this if I want to just get the number. So, we'll just come in here with the length. So, now you can see I have two completed to-do's, which is pulling from this value. And now you can see it's down to one and zero and so on. But, the really cool thing that's happening here, if I go to my console, I just clear everything out, when I change this, for example, you notice only my navbar and my to-do list are changing because those are the only things using this signal. And if I update this state right here, you can see it's only the to-do list changing. But, down here when I change this, I'm only updating those two components that actually use this information, which is incredible. Now, one important thing to note is if you are using signals built from other signals, you should generally use a computed signal. For example, if I wanted to use this in other places throughout my application, I could turn this into its own signal that has all the same properties, but it would be computed from those other signals, which just means it's going to automatically update when my signals it depends on changes. To show you what I'm talking about, we're going to use the computed function. We're going to get that from the signals React library. And we're going to come in here. This works pretty much exactly the same as effect, but inside of here, I'm actually just going to return. So, in here, I'm going to return this right here. This is essentially going to give me that information. And this is my completed to-do's count. There we go. Let me make sure I spell that right. And now this gives me a brand new signal that has its own dot value property on it. So, I could say dot value and so on. I can use this inside of effects. I can use it in other computed signals. I can pass it all over my application to make sure everything auto updates properly if I wanted to use this in other places. And now I can just place that into my JSX down here. Give it a save and I'll get the exact same response. As you can see up here, this completed is properly re-rendering when I'm changing my values here, and it's only re-rendering the two components that change, even though they're completely separate from one another. This is a really great way to pass information between multiple different components. Now, another thing that's really cool about these signals is inside of this library, there's actually hooks built in. So, if I wanted to use my signals inside of my to-do list component, I can come in here and I can use the use signal hook or the use signal effect hook. These both are going to allow me to use a signal or an effect inside of my actual component, and it's going to work with React properly. But, a lot of times when you're dealing with signals, you don't actually need them inside your components. You can pull them out of your components so they can be used in many different places. Now, a lot of you may notice, if you're looking at this code, that it's not 100% optimized for testing. And the reason for that is is because we look at my app here, my navbar doesn't have any props being passed in, but it's pulling in data from another file. This makes it very hard to actually test this. Instead, it would be much better if I passed my to-dos into my navbar so that is a lot easier for me to test my navbar. So, instead of actually pulling it in like this, I pass it into my navbar like this, so it's going to work. Now, the problem with this is I need to rewrite my code a little bit, but signals make this incredibly easy. And this is actually how the Preact signals library recommend you do things with signals is you extract out the creating of your signals into its own file or section, and then you pass those down to props just like you do inside of normal React. You still get all the same performance gains, but it's much easier to test this as well. So, what I'm going to do is I'm going to go into my to-do list, and all this information for creating all this state, I'm actually going to pull all of this out. I'm going to move it into my app instead. I could create a separate file for this if I wanted to be extra diligent with clean code, but for our cases, this is simple enough code. We can just paste it directly into here, and I'll make sure that I import this signal library. So, let's just get the signal library being imported. Just like that, we'll get it from that React library, and we'll do the exact same thing down here with effects as well. So, we have all that being passed in, and now in my to-do list, I can pass down my to-dos. And in my navbar, I can pass in my to-dos as well, just like that. So, I'm passing things down just like I would in normal React. It makes things for testing a lot easier. Now, if I go into my to-do list, I can remove all this signals-related code, and I'm getting my to-dos in from my props. And now, if I save, you'll notice magically everything is working just fine. I can add a new to-do. My completed props up here is updating, and if I look at the actual components that are being re-rendered, if I just clear everything out, when I toggle, you'll notice again, only the components that depend on that state are re-rendering, even though I'm storing the state technically in this app component, and it's being passed down from the app component, it's not re-rendering everything cuz it's only re-rendering the places it's actually used in. And everything works just like normal React. I can easily test this component by passing in my own to-do signal into here without having to worry about it importing from different files. So, all this works just like you're used to with normal React. Now, I've really only scratched the surface of what you can do with signals, so you can see the power, and hopefully it's got you excited about them. And if you want to see a full crash course on signals, let me know. If I end up creating one, I'll link it right over here for you. And with that said, thank you very much for watching, and have a good day."
+}

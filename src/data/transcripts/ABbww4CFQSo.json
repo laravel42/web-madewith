@@ -1,0 +1,1752 @@
+{
+  "videoId": "ABbww4CFQSo",
+  "language": "en",
+  "source": "auto",
+  "segments": [
+    {
+      "start": 0.029,
+      "text": "How to do my gorgeous"
+    },
+    {
+      "start": 0.83,
+      "text": "friends on the internet."
+    },
+    {
+      "start": 1.965,
+      "text": "I'm so excited today."
+    },
+    {
+      "start": 3.066,
+      "text": "We're finally going"
+    },
+    {
+      "start": 3.733,
+      "text": "to talk about Chat Cn."
+    },
+    {
+      "start": 5.435,
+      "text": "That's the package name"
+    },
+    {
+      "start": 6.402,
+      "text": "and the guy's name, actually."
+    },
+    {
+      "start": 8.171,
+      "text": "So we're going to take a look at how we"
+    },
+    {
+      "start": 9.205,
+      "text": "can use it the next 13,"
+    },
+    {
+      "start": 10.606,
+      "text": "how we can add different"
+    },
+    {
+      "start": 12.241,
+      "text": "components and teaming as well,"
+    },
+    {
+      "start": 14.944,
+      "text": "and dark mode and light"
+    },
+    {
+      "start": 15.912,
+      "text": "mode, all the good jazz."
+    },
+    {
+      "start": 17.413,
+      "text": "So hope you're excited."
+    },
+    {
+      "start": 18.681,
+      "text": "You want to see it?"
+    },
+    {
+      "start": 19.449,
+      "text": "I'll show you now."
+    },
+    {
+      "start": 20.65,
+      "text": "What does this button do? [STATIC]"
+    },
+    {
+      "start": 23.619,
+      "text": "So let's get started, shall we?"
+    },
+    {
+      "start": 25.455,
+      "text": "I have a new"
+    },
+    {
+      "start": 26.255,
+      "text": "installation of Next.js 13 here."
+    },
+    {
+      "start": 29.492,
+      "text": "So yeah, we get to"
+    },
+    {
+      "start": 30.86,
+      "text": "basically install these reusable"
+    },
+    {
+      "start": 34.097,
+      "text": "components straight into our app"
+    },
+    {
+      "start": 35.865,
+      "text": "and we can customize them as well."
+    },
+    {
+      "start": 38.001,
+      "text": "So that's the nice thing about Shat-CN"
+    },
+    {
+      "start": 40.236,
+      "text": "is that they have a CLI"
+    },
+    {
+      "start": 41.337,
+      "text": "and then you can just import"
+    },
+    {
+      "start": 43.539,
+      "text": "the button that you need or the input"
+    },
+    {
+      "start": 45.041,
+      "text": "that you need, et cetera."
+    },
+    {
+      "start": 46.576,
+      "text": "You need to be a tad bit"
+    },
+    {
+      "start": 47.81,
+      "text": "careful here what you select."
+    },
+    {
+      "start": 49.879,
+      "text": "So we'll use TypeScript for sure."
+    },
+    {
+      "start": 53.783,
+      "text": "We'll keep the default style here."
+    },
+    {
+      "start": 55.418,
+      "text": "You can have a look at these if you"
+    },
+    {
+      "start": 56.719,
+      "text": "prefer another base color."
+    },
+    {
+      "start": 59.122,
+      "text": "We'll keep Slate."
+    },
+    {
+      "start": 60.256,
+      "text": "Our global CSS is in our app folder,"
+    },
+    {
+      "start": 62.492,
+      "text": "so we're going to keep that."
+    },
+    {
+      "start": 64.193,
+      "text": "Would you like to use"
+    },
+    {
+      "start": 64.894,
+      "text": "CSS variables for colors?"
+    },
+    {
+      "start": 66.963,
+      "text": "We're going to hit yes,"
+    },
+    {
+      "start": 68.598,
+      "text": "because this also"
+    },
+    {
+      "start": 69.399,
+      "text": "applies to teaming as well."
+    },
+    {
+      "start": 71.234,
+      "text": "So you could either"
+    },
+    {
+      "start": 71.734,
+      "text": "use CSS utility classes"
+    },
+    {
+      "start": 73.369,
+      "text": "with a prefix of dark,"
+    },
+    {
+      "start": 75.104,
+      "text": "or you could use these"
+    },
+    {
+      "start": 76.139,
+      "text": "variables that they added."
+    },
+    {
+      "start": 77.473,
+      "text": "So if we have a look here at teaming,"
+    },
+    {
+      "start": 79.776,
+      "text": "as you can see, this is"
+    },
+    {
+      "start": 80.877,
+      "text": "like just something standard."
+    },
+    {
+      "start": 81.978,
+      "text": "You can do in Tailwind,"
+    },
+    {
+      "start": 83.012,
+      "text": "add the BG, the dark prefix,"
+    },
+    {
+      "start": 86.115,
+      "text": "and then that's going to apply when"
+    },
+    {
+      "start": 88.217,
+      "text": "you're in dark mode."
+    },
+    {
+      "start": 89.085,
+      "text": "It's going to ask you also to give the"
+    },
+    {
+      "start": 90.553,
+      "text": "Tailwind config JS file,"
+    },
+    {
+      "start": 93.056,
+      "text": "but since we used"
+    },
+    {
+      "start": 94.624,
+      "text": "TypeScript with our next JS,"
+    },
+    {
+      "start": 97.126,
+      "text": "we're going to have to hit tab here"
+    },
+    {
+      "start": 99.062,
+      "text": "and modify this to TS like that."
+    },
+    {
+      "start": 101.798,
+      "text": "Import alias, this is"
+    },
+    {
+      "start": 102.732,
+      "text": "where your components"
+    },
+    {
+      "start": 104.2,
+      "text": "are going to get imported to."
+    },
+    {
+      "start": 106.102,
+      "text": "Utils, don't worry about that."
+    },
+    {
+      "start": 107.837,
+      "text": "Just hit enter a couple of"
+    },
+    {
+      "start": 108.838,
+      "text": "more times and that's it."
+    },
+    {
+      "start": 110.84,
+      "text": "This is going to do some merging of"
+    },
+    {
+      "start": 112.542,
+      "text": "classes here for you,"
+    },
+    {
+      "start": 114.577,
+      "text": "basically, that's all it does."
+    },
+    {
+      "start": 116.379,
+      "text": "Anyway, let's close"
+    },
+    {
+      "start": 117.046,
+      "text": "that and that should be it."
+    },
+    {
+      "start": 118.948,
+      "text": "NPM run dev, we are good to go."
+    },
+    {
+      "start": 122.452,
+      "text": "And as you can see, actually,"
+    },
+    {
+      "start": 123.653,
+      "text": "if we have a look here in the page,"
+    },
+    {
+      "start": 127.223,
+      "text": "you're going to see that"
+    },
+    {
+      "start": 127.89,
+      "text": "they use dark mode here as well."
+    },
+    {
+      "start": 129.692,
+      "text": "So they're using it on an"
+    },
+    {
+      "start": 130.793,
+      "text": "SVG, which is quite clever,"
+    },
+    {
+      "start": 132.662,
+      "text": "because then you can just"
+    },
+    {
+      "start": 133.362,
+      "text": "invert the color of the SVG."
+    },
+    {
+      "start": 135.631,
+      "text": "Anyway, so we'll keep"
+    },
+    {
+      "start": 136.766,
+      "text": "that just as a reference"
+    },
+    {
+      "start": 138.201,
+      "text": "so I can show you how it"
+    },
+    {
+      "start": 139.735,
+      "text": "works on utility classes as well."
+    },
+    {
+      "start": 142.071,
+      "text": "But let's create a quick nav"
+    },
+    {
+      "start": 144.24,
+      "text": "here and add that toggle button."
+    },
+    {
+      "start": 146.843,
+      "text": "So we're going to head over to,"
+    },
+    {
+      "start": 148.878,
+      "text": "yeah, let's just do"
+    },
+    {
+      "start": 149.545,
+      "text": "it here in components,"
+    },
+    {
+      "start": 150.88,
+      "text": "make a new one called nav.tsx."
+    },
+    {
+      "start": 153.549,
+      "text": "Cool, I'm going to copy this over because"
+    },
+    {
+      "start": 155.218,
+      "text": "essentially what I did"
+    },
+    {
+      "start": 156.519,
+      "text": "was I took this bit"
+    },
+    {
+      "start": 158.054,
+      "text": "here, just this image,"
+    },
+    {
+      "start": 161.257,
+      "text": "and I copied it over in my nav layout."
+    },
+    {
+      "start": 165.294,
+      "text": "So for that, it's just a"
+    },
+    {
+      "start": 167.63,
+      "text": "use client component here."
+    },
+    {
+      "start": 169.999,
+      "text": "We have the image imported"
+    },
+    {
+      "start": 171.434,
+      "text": "and then just a nav with a UL,"
+    },
+    {
+      "start": 174.103,
+      "text": "and then we have the image there."
+    },
+    {
+      "start": 175.705,
+      "text": "And this can be some"
+    },
+    {
+      "start": 177.173,
+      "text": "toggle button here and hit save."
+    },
+    {
+      "start": 181.077,
+      "text": "Cool, so let's pop that in."
+    },
+    {
+      "start": 182.712,
+      "text": "We'll go here into our"
+    },
+    {
+      "start": 184.013,
+      "text": "homepage, banish, destroy everything,"
+    },
+    {
+      "start": 188.651,
+      "text": "clear everything out."
+    },
+    {
+      "start": 190.319,
+      "text": "There you go."
+    },
+    {
+      "start": 190.853,
+      "text": "I'm going to pop it in here."
+    },
+    {
+      "start": 192.221,
+      "text": "You could do it in"
+    },
+    {
+      "start": 193.156,
+      "text": "your layouts if you want,"
+    },
+    {
+      "start": 195.558,
+      "text": "but for this one,"
+    },
+    {
+      "start": 196.592,
+      "text": "let's just pop it in here"
+    },
+    {
+      "start": 197.46,
+      "text": "to keep it nice and"
+    },
+    {
+      "start": 198.561,
+      "text": "easy to see everything."
+    },
+    {
+      "start": 200.163,
+      "text": "So there we go, for sale and"
+    },
+    {
+      "start": 201.664,
+      "text": "a toggle button right there."
+    },
+    {
+      "start": 203.666,
+      "text": "Let's start adding some text"
+    },
+    {
+      "start": 206.068,
+      "text": "and maybe a button as well."
+    },
+    {
+      "start": 208.037,
+      "text": "So head over here and the main tag,"
+    },
+    {
+      "start": 211.107,
+      "text": "create a section for this."
+    },
+    {
+      "start": 213.075,
+      "text": "So let's add some padding"
+    },
+    {
+      "start": 214.377,
+      "text": "here, a flex, a flex of call,"
+    },
+    {
+      "start": 217.346,
+      "text": "and a gap of eight,"
+    },
+    {
+      "start": 219.482,
+      "text": "because I'm going to"
+    },
+    {
+      "start": 219.916,
+      "text": "keep adding some text here."
+    },
+    {
+      "start": 222.351,
+      "text": "Rather than doing a normal button,"
+    },
+    {
+      "start": 224.086,
+      "text": "we can import the button from chat CN."
+    },
+    {
+      "start": 227.19,
+      "text": "So how can we do that?"
+    },
+    {
+      "start": 228.491,
+      "text": "Let's close this up."
+    },
+    {
+      "start": 229.859,
+      "text": "You're going to run the"
+    },
+    {
+      "start": 230.393,
+      "text": "command, MPX chat CN, I forgot it."
+    },
+    {
+      "start": 234.096,
+      "text": "I forgot it, I'm not going to lie."
+    },
+    {
+      "start": 237.6,
+      "text": "Yeah, let's search it up,"
+    },
+    {
+      "start": 239.335,
+      "text": "button, button, where is it?"
+    },
+    {
+      "start": 242.238,
+      "text": "Here we go."
+    },
+    {
+      "start": 243.873,
+      "text": "Okay, so you just add and"
+    },
+    {
+      "start": 245.374,
+      "text": "button, chat CN at latest."
+    },
+    {
+      "start": 247.577,
+      "text": "So let's go back, pop that sucker in,"
+    },
+    {
+      "start": 250.68,
+      "text": "and then as you can see in"
+    },
+    {
+      "start": 252.548,
+      "text": "our folder structure here,"
+    },
+    {
+      "start": 254.383,
+      "text": "look, I made a new folder called UI"
+    },
+    {
+      "start": 257.22,
+      "text": "and I added that button there."
+    },
+    {
+      "start": 258.921,
+      "text": "So yes, good start."
+    },
+    {
+      "start": 261.424,
+      "text": "So now we can go here, add a div,"
+    },
+    {
+      "start": 263.693,
+      "text": "and we'll just create the two new buttons"
+    },
+    {
+      "start": 266.362,
+      "text": "and I'm going to import it like that."
+    },
+    {
+      "start": 269.131,
+      "text": "All right, let's go back to our view here"
+    },
+    {
+      "start": 271.634,
+      "text": "and we're going to say learn more."
+    },
+    {
+      "start": 274.704,
+      "text": "And then we'll add"
+    },
+    {
+      "start": 275.338,
+      "text": "another one right below,"
+    },
+    {
+      "start": 276.939,
+      "text": "we'll keep it the same."
+    },
+    {
+      "start": 278.574,
+      "text": "We'll say enroll now."
+    },
+    {
+      "start": 282.311,
+      "text": "Oh, what did I do?"
+    },
+    {
+      "start": 283.079,
+      "text": "I added this here."
+    },
+    {
+      "start": 284.08,
+      "text": "Let me just copy and move that down here."
+    },
+    {
+      "start": 287.583,
+      "text": "My apologies, get rid of that, boom."
+    },
+    {
+      "start": 290.586,
+      "text": "Cool, there we go."
+    },
+    {
+      "start": 292.021,
+      "text": "That's what I was looking for."
+    },
+    {
+      "start": 293.956,
+      "text": "So we got our buttons, we got our text."
+    },
+    {
+      "start": 296.726,
+      "text": "Now what I want to do is"
+    },
+    {
+      "start": 297.56,
+      "text": "just align these in the middle."
+    },
+    {
+      "start": 299.262,
+      "text": "So I can do items, center like that."
+    },
+    {
+      "start": 302.698,
+      "text": "Cool, and text align, text center as well"
+    },
+    {
+      "start": 305.835,
+      "text": "because I want to get that paragraph"
+    },
+    {
+      "start": 307.536,
+      "text": "to show up nicely in the middle."
+    },
+    {
+      "start": 308.838,
+      "text": "There we go, nice."
+    },
+    {
+      "start": 311.173,
+      "text": "Let's start adding some sizes as well."
+    },
+    {
+      "start": 313.075,
+      "text": "So we can go here and say class name"
+    },
+    {
+      "start": 315.811,
+      "text": "and we'll do something big,"
+    },
+    {
+      "start": 317.947,
+      "text": "text for Excel or something."
+    },
+    {
+      "start": 320.216,
+      "text": "There you go, just so we"
+    },
+    {
+      "start": 321.617,
+      "text": "have it like that, nice."
+    },
+    {
+      "start": 325.288,
+      "text": "Maybe a foam bowl to it like that."
+    },
+    {
+      "start": 328.057,
+      "text": "And then for my P tag,"
+    },
+    {
+      "start": 329.191,
+      "text": "we'll do a class name of text"
+    },
+    {
+      "start": 332.495,
+      "text": "to Excel maybe like"
+    },
+    {
+      "start": 333.963,
+      "text": "that, that looks good."
+    },
+    {
+      "start": 335.498,
+      "text": "And then we can do a"
+    },
+    {
+      "start": 336.732,
+      "text": "text of muted, for example."
+    },
+    {
+      "start": 340.136,
+      "text": "Ooh, where is that coming from?"
+    },
+    {
+      "start": 342.571,
+      "text": "Or we can do a text of"
+    },
+    {
+      "start": 343.973,
+      "text": "primary, hit save and look at that."
+    },
+    {
+      "start": 346.976,
+      "text": "So this is what you're"
+    },
+    {
+      "start": 347.943,
+      "text": "using essentially for teaming."
+    },
+    {
+      "start": 350.413,
+      "text": "If we head over to"
+    },
+    {
+      "start": 351.781,
+      "text": "teams here, as you can see,"
+    },
+    {
+      "start": 356.419,
+      "text": "I can quickly go here and customize it"
+    },
+    {
+      "start": 358.788,
+      "text": "and select any team I want."
+    },
+    {
+      "start": 361.857,
+      "text": "So boom, boom, boom."
+    },
+    {
+      "start": 364.994,
+      "text": "So essentially ChatZee"
+    },
+    {
+      "start": 366.228,
+      "text": "and is generating you"
+    },
+    {
+      "start": 367.196,
+      "text": "all these different shades of colors"
+    },
+    {
+      "start": 369.532,
+      "text": "and background colors that you can use"
+    },
+    {
+      "start": 371.133,
+      "text": "throughout your app."
+    },
+    {
+      "start": 372.468,
+      "text": "And the cool thing is once you add it"
+    },
+    {
+      "start": 374.57,
+      "text": "throughout your project,"
+    },
+    {
+      "start": 375.404,
+      "text": "you can just quickly go here"
+    },
+    {
+      "start": 376.672,
+      "text": "and choose maybe a"
+    },
+    {
+      "start": 377.44,
+      "text": "different color like that."
+    },
+    {
+      "start": 379.241,
+      "text": "And then you can quickly go and customize"
+    },
+    {
+      "start": 381.21,
+      "text": "and copy the code."
+    },
+    {
+      "start": 382.678,
+      "text": "So as you can see, those are all the"
+    },
+    {
+      "start": 384.28,
+      "text": "different variables."
+    },
+    {
+      "start": 385.181,
+      "text": "So you have the"
+    },
+    {
+      "start": 385.614,
+      "text": "background for background color,"
+    },
+    {
+      "start": 387.45,
+      "text": "foreground for your text, and then a"
+    },
+    {
+      "start": 390.019,
+      "text": "couple of other ones."
+    },
+    {
+      "start": 391.22,
+      "text": "But the nice thing is"
+    },
+    {
+      "start": 392.221,
+      "text": "the buttons that you import"
+    },
+    {
+      "start": 394.49,
+      "text": "and your cards that you import already"
+    },
+    {
+      "start": 397.093,
+      "text": "have it style for you."
+    },
+    {
+      "start": 399.061,
+      "text": "So you don't even need"
+    },
+    {
+      "start": 399.695,
+      "text": "to do anything there."
+    },
+    {
+      "start": 400.93,
+      "text": "Here for our text, we're gonna use a"
+    },
+    {
+      "start": 403.399,
+      "text": "muted one like that."
+    },
+    {
+      "start": 405.735,
+      "text": "And as you can see, that's"
+    },
+    {
+      "start": 406.569,
+      "text": "kind of for a background."
+    },
+    {
+      "start": 408.07,
+      "text": "So what we can do is do foreground,"
+    },
+    {
+      "start": 410.74,
+      "text": "align these buttons as well,"
+    },
+    {
+      "start": 412.808,
+      "text": "item center, justify center,"
+    },
+    {
+      "start": 416.045,
+      "text": "boom, boom, boom,"
+    },
+    {
+      "start": 416.879,
+      "text": "that's all nice and done."
+    },
+    {
+      "start": 418.881,
+      "text": "I don't like this extra space."
+    },
+    {
+      "start": 420.916,
+      "text": "So let's get rid of that"
+    },
+    {
+      "start": 422.785,
+      "text": "and maybe make this a bit smaller,"
+    },
+    {
+      "start": 425.554,
+      "text": "maybe 12 or something like that."
+    },
+    {
+      "start": 427.656,
+      "text": "So let's add dark mode,"
+    },
+    {
+      "start": 428.724,
+      "text": "head over to dark mode here."
+    },
+    {
+      "start": 430.292,
+      "text": "And we're gonna need to run this command,"
+    },
+    {
+      "start": 432.161,
+      "text": "npm install next themes."
+    },
+    {
+      "start": 434.897,
+      "text": "So let's head over,"
+    },
+    {
+      "start": 435.831,
+      "text": "close this up, install that."
+    },
+    {
+      "start": 438.434,
+      "text": "And then what we're gonna"
+    },
+    {
+      "start": 439.301,
+      "text": "need to do is create a provider."
+    },
+    {
+      "start": 441.637,
+      "text": "So we're gonna copy this over from here."
+    },
+    {
+      "start": 443.773,
+      "text": "And so we can head over to our layout,"
+    },
+    {
+      "start": 446.409,
+      "text": "import it here, theme provider like that."
+    },
+    {
+      "start": 450.513,
+      "text": "And then we'll just"
+    },
+    {
+      "start": 451.313,
+      "text": "wrap our children here"
+    },
+    {
+      "start": 453.516,
+      "text": "in that provider."
+    },
+    {
+      "start": 454.784,
+      "text": "There's two more options"
+    },
+    {
+      "start": 455.684,
+      "text": "that we can pass down here."
+    },
+    {
+      "start": 457.42,
+      "text": "One is called attribute"
+    },
+    {
+      "start": 458.454,
+      "text": "and that's gonna be class."
+    },
+    {
+      "start": 460.256,
+      "text": "So we're essentially saying"
+    },
+    {
+      "start": 461.29,
+      "text": "we wanna toggle this theme"
+    },
+    {
+      "start": 463.759,
+      "text": "using classes."
+    },
+    {
+      "start": 465.428,
+      "text": "So add class and also"
+    },
+    {
+      "start": 467.496,
+      "text": "the default theme here"
+    },
+    {
+      "start": 468.864,
+      "text": "is gonna be system."
+    },
+    {
+      "start": 470.399,
+      "text": "So if on Windows or on Mac,"
+    },
+    {
+      "start": 472.601,
+      "text": "if you have it set to"
+    },
+    {
+      "start": 473.803,
+      "text": "always be on dark mode,"
+    },
+    {
+      "start": 475.771,
+      "text": "this is gonna do that, cool."
+    },
+    {
+      "start": 477.84,
+      "text": "And then we finally have the button here."
+    },
+    {
+      "start": 479.909,
+      "text": "So again, we can just go to code"
+    },
+    {
+      "start": 481.377,
+      "text": "or you can install it manually."
+    },
+    {
+      "start": 483.579,
+      "text": "Let's just copy it manually."
+    },
+    {
+      "start": 485.214,
+      "text": "We'll go here, go to the UI, new file,"
+    },
+    {
+      "start": 489.652,
+      "text": "and I'll call this toggle mode.tsx."
+    },
+    {
+      "start": 494.69,
+      "text": "There we go."
+    },
+    {
+      "start": 495.624,
+      "text": "Let's make a bit more"
+    },
+    {
+      "start": 496.192,
+      "text": "space and then pop this in"
+    },
+    {
+      "start": 499.295,
+      "text": "and hit save."
+    },
+    {
+      "start": 500.162,
+      "text": "But as you can see, it's"
+    },
+    {
+      "start": 500.863,
+      "text": "missing one component here."
+    },
+    {
+      "start": 502.832,
+      "text": "It's missing the dropdown menu."
+    },
+    {
+      "start": 505.935,
+      "text": "So we can head over here and install"
+    },
+    {
+      "start": 509.638,
+      "text": "dropdown menu like that."
+    },
+    {
+      "start": 513.042,
+      "text": "And that's that."
+    },
+    {
+      "start": 515.01,
+      "text": "And now what we can do, as you can see,"
+    },
+    {
+      "start": 516.412,
+      "text": "it's all set up here for us."
+    },
+    {
+      "start": 518.981,
+      "text": "It uses two icons that's imported from,"
+    },
+    {
+      "start": 522.518,
+      "text": "I think they're using something else."
+    },
+    {
+      "start": 524.153,
+      "text": "No, Lucid React."
+    },
+    {
+      "start": 525.454,
+      "text": "Okay, cool."
+    },
+    {
+      "start": 526.188,
+      "text": "And then you're just"
+    },
+    {
+      "start": 527.223,
+      "text": "using a bit of state here"
+    },
+    {
+      "start": 528.691,
+      "text": "to select the right text here for you."
+    },
+    {
+      "start": 532.995,
+      "text": "Okay, now that we have that,"
+    },
+    {
+      "start": 534.263,
+      "text": "we can pop it into our nav."
+    },
+    {
+      "start": 536.532,
+      "text": "So let's go into our nav"
+    },
+    {
+      "start": 537.8,
+      "text": "and import it right here."
+    },
+    {
+      "start": 541.637,
+      "text": "Remove this toggle button text and say,"
+    },
+    {
+      "start": 545.407,
+      "text": "toggle mode toggle."
+    },
+    {
+      "start": 547.243,
+      "text": "I think that's what it's named."
+    },
+    {
+      "start": 548.978,
+      "text": "Save, cool."
+    },
+    {
+      "start": 550.713,
+      "text": "Let's head over here and have a look."
+    },
+    {
+      "start": 552.448,
+      "text": "Does it work?"
+    },
+    {
+      "start": 553.616,
+      "text": "I don't see it."
+    },
+    {
+      "start": 555.15,
+      "text": "Why not?"
+    },
+    {
+      "start": 556.552,
+      "text": "Oh, I need to run my server."
+    },
+    {
+      "start": 558.821,
+      "text": "NPM run dev."
+    },
+    {
+      "start": 561.323,
+      "text": "Look at that."
+    },
+    {
+      "start": 562.391,
+      "text": "Do we already have dark mode?"
+    },
+    {
+      "start": 563.893,
+      "text": "Isn't that crazy?"
+    },
+    {
+      "start": 565.094,
+      "text": "So let's have a look."
+    },
+    {
+      "start": 566.162,
+      "text": "Switch the light."
+    },
+    {
+      "start": 567.196,
+      "text": "Boom, done."
+    },
+    {
+      "start": 569.298,
+      "text": "Okay, so let's have a"
+    },
+    {
+      "start": 569.999,
+      "text": "look at what's going on here."
+    },
+    {
+      "start": 571.6,
+      "text": "So by default, if we head"
+    },
+    {
+      "start": 573.602,
+      "text": "over to our tailwind config,"
+    },
+    {
+      "start": 578.707,
+      "text": "again, you're gonna see"
+    },
+    {
+      "start": 579.308,
+      "text": "that all of these different"
+    },
+    {
+      "start": 582.211,
+      "text": "variables were set up for us."
+    },
+    {
+      "start": 584.78,
+      "text": "So as you can see with"
+    },
+    {
+      "start": 585.614,
+      "text": "the buttons, for example,"
+    },
+    {
+      "start": 587.049,
+      "text": "we haven't really done anything."
+    },
+    {
+      "start": 589.885,
+      "text": "And if I go to the button again,"
+    },
+    {
+      "start": 591.687,
+      "text": "I can pick a different style easily."
+    },
+    {
+      "start": 594.023,
+      "text": "So I can do a variant here,"
+    },
+    {
+      "start": 596.725,
+      "text": "and maybe I want this to"
+    },
+    {
+      "start": 597.56,
+      "text": "be like a secondary button."
+    },
+    {
+      "start": 599.395,
+      "text": "So boom, secondary, done."
+    },
+    {
+      "start": 601.83,
+      "text": "But when I change it to"
+    },
+    {
+      "start": 603.199,
+      "text": "dark mode, it still looks good."
+    },
+    {
+      "start": 605.1,
+      "text": "So that's the amazing thing about this."
+    },
+    {
+      "start": 607.469,
+      "text": "But we haven't added"
+    },
+    {
+      "start": 608.37,
+      "text": "the text color, right?"
+    },
+    {
+      "start": 610.573,
+      "text": "So where does it get that from?"
+    },
+    {
+      "start": 612.141,
+      "text": "Like how does it know"
+    },
+    {
+      "start": 612.808,
+      "text": "to switch to white here?"
+    },
+    {
+      "start": 614.276,
+      "text": "Well, if we head over to our global CSS,"
+    },
+    {
+      "start": 616.412,
+      "text": "you're gonna see that on the body,"
+    },
+    {
+      "start": 618.213,
+      "text": "it automatically set up a BG background"
+    },
+    {
+      "start": 620.382,
+      "text": "and it texts the foreground for you."
+    },
+    {
+      "start": 622.718,
+      "text": "Now, what if I wanna"
+    },
+    {
+      "start": 623.419,
+      "text": "pick a different style?"
+    },
+    {
+      "start": 625.287,
+      "text": "So actually let's pick"
+    },
+    {
+      "start": 626.755,
+      "text": "this red one down here, rows."
+    },
+    {
+      "start": 628.657,
+      "text": "We'll do rows."
+    },
+    {
+      "start": 629.558,
+      "text": "We'll do copy code, copy that."
+    },
+    {
+      "start": 632.161,
+      "text": "And all you need to do is"
+    },
+    {
+      "start": 633.862,
+      "text": "head over to your global CSS,"
+    },
+    {
+      "start": 636.265,
+      "text": "layer base, and get rid of"
+    },
+    {
+      "start": 637.933,
+      "text": "that and paste this new one in."
+    },
+    {
+      "start": 639.802,
+      "text": "And when you head"
+    },
+    {
+      "start": 640.302,
+      "text": "back, boom, look at that."
+    },
+    {
+      "start": 642.504,
+      "text": "It applied a theme already for you."
+    },
+    {
+      "start": 645.474,
+      "text": "Let me also show you how I added this"
+    },
+    {
+      "start": 647.042,
+      "text": "form to the website."
+    },
+    {
+      "start": 648.611,
+      "text": "So we are, again, I've just copied the"
+    },
+    {
+      "start": 650.746,
+      "text": "example pretty much,"
+    },
+    {
+      "start": 651.914,
+      "text": "but I'll walk you through it."
+    },
+    {
+      "start": 653.882,
+      "text": "We'll head over to user form here."
+    },
+    {
+      "start": 655.985,
+      "text": "And this uses"
+    },
+    {
+      "start": 656.752,
+      "text": "essentially React use hook form."
+    },
+    {
+      "start": 661.89,
+      "text": "No, it's just React hook form, not use."
+    },
+    {
+      "start": 664.326,
+      "text": "We're using use too much."
+    },
+    {
+      "start": 665.928,
+      "text": "It's not okay."
+    },
+    {
+      "start": 667.596,
+      "text": "And then I install through the CLI,"
+    },
+    {
+      "start": 670.266,
+      "text": "chat cn form and chat cn input."
+    },
+    {
+      "start": 674.503,
+      "text": "Okay, so we're importing all of this."
+    },
+    {
+      "start": 677.406,
+      "text": "And down here, essentially"
+    },
+    {
+      "start": 678.774,
+      "text": "we're creating a form schema"
+    },
+    {
+      "start": 681.01,
+      "text": "to define what types, this"
+    },
+    {
+      "start": 683.078,
+      "text": "is our validation, right?"
+    },
+    {
+      "start": 684.813,
+      "text": "And we're creating a Z"
+    },
+    {
+      "start": 685.614,
+      "text": "object here using ZOD"
+    },
+    {
+      "start": 687.149,
+      "text": "and saying, hey, the name"
+    },
+    {
+      "start": 688.45,
+      "text": "should be a type of string."
+    },
+    {
+      "start": 689.985,
+      "text": "And also it shouldn't have"
+    },
+    {
+      "start": 691.22,
+      "text": "more than five characters."
+    },
+    {
+      "start": 692.454,
+      "text": "And if it does, you can"
+    },
+    {
+      "start": 693.622,
+      "text": "output an error message for that."
+    },
+    {
+      "start": 695.491,
+      "text": "The cool thing about ZOD is you can"
+    },
+    {
+      "start": 696.959,
+      "text": "output two error messages"
+    },
+    {
+      "start": 698.36,
+      "text": "depending on the situation."
+    },
+    {
+      "start": 699.795,
+      "text": "For example, here on the email,"
+    },
+    {
+      "start": 701.73,
+      "text": "as you can see I'm outputting five"
+    },
+    {
+      "start": 703.866,
+      "text": "if the characters are"
+    },
+    {
+      "start": 704.8,
+      "text": "not long enough like that."
+    },
+    {
+      "start": 706.835,
+      "text": "But if there's more than"
+    },
+    {
+      "start": 708.404,
+      "text": "five, it's just not a valid email."
+    },
+    {
+      "start": 710.739,
+      "text": "So that's super cool."
+    },
+    {
+      "start": 712.341,
+      "text": "And then here on the form"
+    },
+    {
+      "start": 713.909,
+      "text": "where you're calling use form,"
+    },
+    {
+      "start": 716.412,
+      "text": "we're essentially just"
+    },
+    {
+      "start": 717.112,
+      "text": "inferring the type of the form schema"
+    },
+    {
+      "start": 719.014,
+      "text": "that we made up here."
+    },
+    {
+      "start": 720.382,
+      "text": "All right, so you're passing that in here"
+    },
+    {
+      "start": 722.918,
+      "text": "and you can also get that on submit."
+    },
+    {
+      "start": 724.653,
+      "text": "So you can infer that as well."
+    },
+    {
+      "start": 726.355,
+      "text": "And the values here are"
+    },
+    {
+      "start": 727.523,
+      "text": "the values that you get"
+    },
+    {
+      "start": 728.691,
+      "text": "from the form."
+    },
+    {
+      "start": 729.892,
+      "text": "And look at that, you"
+    },
+    {
+      "start": 730.626,
+      "text": "get the nice auto complete"
+    },
+    {
+      "start": 731.727,
+      "text": "because you're inferring everything."
+    },
+    {
+      "start": 733.495,
+      "text": "Nice."
+    },
+    {
+      "start": 734.063,
+      "text": "And then down here,"
+    },
+    {
+      "start": 735.064,
+      "text": "you're spreading your props"
+    },
+    {
+      "start": 736.498,
+      "text": "into this form that's from chat cn."
+    },
+    {
+      "start": 739.201,
+      "text": "And down here, we're just attaching again"
+    },
+    {
+      "start": 741.07,
+      "text": "the on submit to it."
+    },
+    {
+      "start": 742.771,
+      "text": "And here we're running"
+    },
+    {
+      "start": 743.872,
+      "text": "this special render prop here"
+    },
+    {
+      "start": 746.108,
+      "text": "where we get to create"
+    },
+    {
+      "start": 747.142,
+      "text": "our labels and controls"
+    },
+    {
+      "start": 748.811,
+      "text": "and all of that."
+    },
+    {
+      "start": 749.678,
+      "text": "And you can just customize this after."
+    },
+    {
+      "start": 751.647,
+      "text": "So if you wanna do dev add like that,"
+    },
+    {
+      "start": 754.717,
+      "text": "the old name that I had,"
+    },
+    {
+      "start": 756.885,
+      "text": "it's now developed by add."
+    },
+    {
+      "start": 758.454,
+      "text": "We upgraded, bitch."
+    },
+    {
+      "start": 760.989,
+      "text": "Yeah, that's it."
+    },
+    {
+      "start": 762.024,
+      "text": "How cool is that?"
+    },
+    {
+      "start": 763.258,
+      "text": "And then I just made a"
+    },
+    {
+      "start": 764.293,
+      "text": "couple more form fields here."
+    },
+    {
+      "start": 765.728,
+      "text": "I made another one and that's it."
+    },
+    {
+      "start": 767.93,
+      "text": "And yeah, look at that."
+    },
+    {
+      "start": 769.398,
+      "text": "How easy it is to add components,"
+    },
+    {
+      "start": 772.334,
+      "text": "style them up any way you"
+    },
+    {
+      "start": 773.302,
+      "text": "want and create a team around it."
+    },
+    {
+      "start": 776.038,
+      "text": "And again, please have a"
+    },
+    {
+      "start": 777.139,
+      "text": "look at the teams here."
+    },
+    {
+      "start": 778.44,
+      "text": "You can create your own as well."
+    },
+    {
+      "start": 780.275,
+      "text": "So this is entirely customizable."
+    },
+    {
+      "start": 782.044,
+      "text": "I mean, you can just head"
+    },
+    {
+      "start": 782.711,
+      "text": "over to the, where is it?"
+    },
+    {
+      "start": 785.514,
+      "text": "Where is the goddamn thing?"
+    },
+    {
+      "start": 787.282,
+      "text": "To the style, here we go."
+    },
+    {
+      "start": 789.051,
+      "text": "Global styles, right?"
+    },
+    {
+      "start": 789.885,
+      "text": "You can just head here"
+    },
+    {
+      "start": 790.753,
+      "text": "and change these colors up"
+    },
+    {
+      "start": 792.121,
+      "text": "if you wanna do a different one."
+    },
+    {
+      "start": 794.056,
+      "text": "But yeah, that's it."
+    },
+    {
+      "start": 795.09,
+      "text": "Hope you enjoyed this episode."
+    },
+    {
+      "start": 796.992,
+      "text": "I love to make it."
+    },
+    {
+      "start": 798.46,
+      "text": "Super fun."
+    },
+    {
+      "start": 799.895,
+      "text": "Highly recommend Shatsian."
+    },
+    {
+      "start": 801.396,
+      "text": "Drop a like, drop a"
+    },
+    {
+      "start": 802.331,
+      "text": "sub, all the good stuff."
+    },
+    {
+      "start": 803.565,
+      "text": "Anyway, see ya."
+    }
+  ],
+  "text": "How to do my gorgeous friends on the internet. I'm so excited today. We're finally going to talk about Chat Cn. That's the package name and the guy's name, actually. So we're going to take a look at how we can use it the next 13, how we can add different components and teaming as well, and dark mode and light mode, all the good jazz. So hope you're excited. You want to see it? I'll show you now. What does this button do? [STATIC] So let's get started, shall we? I have a new installation of Next.js 13 here. So yeah, we get to basically install these reusable components straight into our app and we can customize them as well. So that's the nice thing about Shat-CN is that they have a CLI and then you can just import the button that you need or the input that you need, et cetera. You need to be a tad bit careful here what you select. So we'll use TypeScript for sure. We'll keep the default style here. You can have a look at these if you prefer another base color. We'll keep Slate. Our global CSS is in our app folder, so we're going to keep that. Would you like to use CSS variables for colors? We're going to hit yes, because this also applies to teaming as well. So you could either use CSS utility classes with a prefix of dark, or you could use these variables that they added. So if we have a look here at teaming, as you can see, this is like just something standard. You can do in Tailwind, add the BG, the dark prefix, and then that's going to apply when you're in dark mode. It's going to ask you also to give the Tailwind config JS file, but since we used TypeScript with our next JS, we're going to have to hit tab here and modify this to TS like that. Import alias, this is where your components are going to get imported to. Utils, don't worry about that. Just hit enter a couple of more times and that's it. This is going to do some merging of classes here for you, basically, that's all it does. Anyway, let's close that and that should be it. NPM run dev, we are good to go. And as you can see, actually, if we have a look here in the page, you're going to see that they use dark mode here as well. So they're using it on an SVG, which is quite clever, because then you can just invert the color of the SVG. Anyway, so we'll keep that just as a reference so I can show you how it works on utility classes as well. But let's create a quick nav here and add that toggle button. So we're going to head over to, yeah, let's just do it here in components, make a new one called nav.tsx. Cool, I'm going to copy this over because essentially what I did was I took this bit here, just this image, and I copied it over in my nav layout. So for that, it's just a use client component here. We have the image imported and then just a nav with a UL, and then we have the image there. And this can be some toggle button here and hit save. Cool, so let's pop that in. We'll go here into our homepage, banish, destroy everything, clear everything out. There you go. I'm going to pop it in here. You could do it in your layouts if you want, but for this one, let's just pop it in here to keep it nice and easy to see everything. So there we go, for sale and a toggle button right there. Let's start adding some text and maybe a button as well. So head over here and the main tag, create a section for this. So let's add some padding here, a flex, a flex of call, and a gap of eight, because I'm going to keep adding some text here. Rather than doing a normal button, we can import the button from chat CN. So how can we do that? Let's close this up. You're going to run the command, MPX chat CN, I forgot it. I forgot it, I'm not going to lie. Yeah, let's search it up, button, button, where is it? Here we go. Okay, so you just add and button, chat CN at latest. So let's go back, pop that sucker in, and then as you can see in our folder structure here, look, I made a new folder called UI and I added that button there. So yes, good start. So now we can go here, add a div, and we'll just create the two new buttons and I'm going to import it like that. All right, let's go back to our view here and we're going to say learn more. And then we'll add another one right below, we'll keep it the same. We'll say enroll now. Oh, what did I do? I added this here. Let me just copy and move that down here. My apologies, get rid of that, boom. Cool, there we go. That's what I was looking for. So we got our buttons, we got our text. Now what I want to do is just align these in the middle. So I can do items, center like that. Cool, and text align, text center as well because I want to get that paragraph to show up nicely in the middle. There we go, nice. Let's start adding some sizes as well. So we can go here and say class name and we'll do something big, text for Excel or something. There you go, just so we have it like that, nice. Maybe a foam bowl to it like that. And then for my P tag, we'll do a class name of text to Excel maybe like that, that looks good. And then we can do a text of muted, for example. Ooh, where is that coming from? Or we can do a text of primary, hit save and look at that. So this is what you're using essentially for teaming. If we head over to teams here, as you can see, I can quickly go here and customize it and select any team I want. So boom, boom, boom. So essentially ChatZee and is generating you all these different shades of colors and background colors that you can use throughout your app. And the cool thing is once you add it throughout your project, you can just quickly go here and choose maybe a different color like that. And then you can quickly go and customize and copy the code. So as you can see, those are all the different variables. So you have the background for background color, foreground for your text, and then a couple of other ones. But the nice thing is the buttons that you import and your cards that you import already have it style for you. So you don't even need to do anything there. Here for our text, we're gonna use a muted one like that. And as you can see, that's kind of for a background. So what we can do is do foreground, align these buttons as well, item center, justify center, boom, boom, boom, that's all nice and done. I don't like this extra space. So let's get rid of that and maybe make this a bit smaller, maybe 12 or something like that. So let's add dark mode, head over to dark mode here. And we're gonna need to run this command, npm install next themes. So let's head over, close this up, install that. And then what we're gonna need to do is create a provider. So we're gonna copy this over from here. And so we can head over to our layout, import it here, theme provider like that. And then we'll just wrap our children here in that provider. There's two more options that we can pass down here. One is called attribute and that's gonna be class. So we're essentially saying we wanna toggle this theme using classes. So add class and also the default theme here is gonna be system. So if on Windows or on Mac, if you have it set to always be on dark mode, this is gonna do that, cool. And then we finally have the button here. So again, we can just go to code or you can install it manually. Let's just copy it manually. We'll go here, go to the UI, new file, and I'll call this toggle mode.tsx. There we go. Let's make a bit more space and then pop this in and hit save. But as you can see, it's missing one component here. It's missing the dropdown menu. So we can head over here and install dropdown menu like that. And that's that. And now what we can do, as you can see, it's all set up here for us. It uses two icons that's imported from, I think they're using something else. No, Lucid React. Okay, cool. And then you're just using a bit of state here to select the right text here for you. Okay, now that we have that, we can pop it into our nav. So let's go into our nav and import it right here. Remove this toggle button text and say, toggle mode toggle. I think that's what it's named. Save, cool. Let's head over here and have a look. Does it work? I don't see it. Why not? Oh, I need to run my server. NPM run dev. Look at that. Do we already have dark mode? Isn't that crazy? So let's have a look. Switch the light. Boom, done. Okay, so let's have a look at what's going on here. So by default, if we head over to our tailwind config, again, you're gonna see that all of these different variables were set up for us. So as you can see with the buttons, for example, we haven't really done anything. And if I go to the button again, I can pick a different style easily. So I can do a variant here, and maybe I want this to be like a secondary button. So boom, secondary, done. But when I change it to dark mode, it still looks good. So that's the amazing thing about this. But we haven't added the text color, right? So where does it get that from? Like how does it know to switch to white here? Well, if we head over to our global CSS, you're gonna see that on the body, it automatically set up a BG background and it texts the foreground for you. Now, what if I wanna pick a different style? So actually let's pick this red one down here, rows. We'll do rows. We'll do copy code, copy that. And all you need to do is head over to your global CSS, layer base, and get rid of that and paste this new one in. And when you head back, boom, look at that. It applied a theme already for you. Let me also show you how I added this form to the website. So we are, again, I've just copied the example pretty much, but I'll walk you through it. We'll head over to user form here. And this uses essentially React use hook form. No, it's just React hook form, not use. We're using use too much. It's not okay. And then I install through the CLI, chat cn form and chat cn input. Okay, so we're importing all of this. And down here, essentially we're creating a form schema to define what types, this is our validation, right? And we're creating a Z object here using ZOD and saying, hey, the name should be a type of string. And also it shouldn't have more than five characters. And if it does, you can output an error message for that. The cool thing about ZOD is you can output two error messages depending on the situation. For example, here on the email, as you can see I'm outputting five if the characters are not long enough like that. But if there's more than five, it's just not a valid email. So that's super cool. And then here on the form where you're calling use form, we're essentially just inferring the type of the form schema that we made up here. All right, so you're passing that in here and you can also get that on submit. So you can infer that as well. And the values here are the values that you get from the form. And look at that, you get the nice auto complete because you're inferring everything. Nice. And then down here, you're spreading your props into this form that's from chat cn. And down here, we're just attaching again the on submit to it. And here we're running this special render prop here where we get to create our labels and controls and all of that. And you can just customize this after. So if you wanna do dev add like that, the old name that I had, it's now developed by add. We upgraded, bitch. Yeah, that's it. How cool is that? And then I just made a couple more form fields here. I made another one and that's it. And yeah, look at that. How easy it is to add components, style them up any way you want and create a team around it. And again, please have a look at the teams here. You can create your own as well. So this is entirely customizable. I mean, you can just head over to the, where is it? Where is the goddamn thing? To the style, here we go. Global styles, right? You can just head here and change these colors up if you wanna do a different one. But yeah, that's it. Hope you enjoyed this episode. I love to make it. Super fun. Highly recommend Shatsian. Drop a like, drop a sub, all the good stuff. Anyway, see ya."
+}

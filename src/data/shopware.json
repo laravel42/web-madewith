@@ -1,8 +1,8 @@
 {
   "slug": "shopware",
-  "scrapedAt": "2026-07-13T07:30:50.245580+00:00",
+  "scrapedAt": "2026-07-14T02:48:07.940052+00:00",
   "source": "scrapy-github",
-  "totalRepos": 99,
+  "totalRepos": 81,
   "projects": [
     {
       "slug": "vue-storefront",
@@ -11,17 +11,17 @@
       "category": "E-commerce",
       "stars": 10931,
       "author": "vuestorefront",
-      "avatar": "https://avatars.githubusercontent.com/u/37238315?v=4",
+      "avatar": null,
       "desc": "Alokai is a Frontend as a Service solution that simplifies composable commerce. It connects all the technologies needed to build and deploy fast & scalable ecommerce frontends. It guides merchants to deliver exceptional customer experiences quickly and easily.",
-      "demo": "https://www.alokai.com",
+      "demo": null,
       "repoUrl": "https://github.com/vuestorefront/vue-storefront",
       "long1": "Alokai is a Frontend as a Service solution that simplifies composable commerce. It connects all the technologies needed to build and deploy fast & scalable ecommerce frontends. It guides merchants to deliver exceptional customer experiences quickly and easily. Maintained by vuestorefront on GitHub, where it has earned 10,931 stars from the community.",
-      "long2": "It's actively developed around vue-storefront, pwa, headless, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around commercetools, e-commerce, ecommerce, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "Vue Storefront",
-        "Pwa",
-        "Headless",
-        "Vue"
+        "Commercetools",
+        "E Commerce",
+        "Ecommerce",
+        "Ecommerce Platform"
       ],
       "updated": "1 month ago",
       "license": "\u2014",
@@ -39,41 +39,28 @@
           "pct": 8
         }
       ],
-      "versions": [
-        {
-          "url": "https://github.com/vuestorefront/vue-storefront/releases/tag/%40vue-storefront/middleware%405.4.0",
-          "name": "@vue-storefront/middleware@5.4.0"
-        },
-        {
-          "url": "https://github.com/vuestorefront/vue-storefront/releases/tag/%40vue-storefront/sdk-axios-request-sender%403.0.0",
-          "name": "@vue-storefront/sdk-axios-request-sender@3.0.0"
-        },
-        {
-          "url": "https://github.com/vuestorefront/vue-storefront/releases/tag/%40vue-storefront/changesets%403.0.0",
-          "name": "@vue-storefront/changesets@3.0.0"
-        },
-        {
-          "url": "https://github.com/vuestorefront/vue-storefront/releases/tag/%40vue-storefront/sdk-axios-request-sender%402.1.0",
-          "name": "@vue-storefront/sdk-axios-request-sender@2.1.0"
-        },
-        {
-          "url": "https://github.com/vuestorefront/vue-storefront/releases/tag/%40vue-storefront/sdk-axios-request-sender%402.0.1",
-          "name": "@vue-storefront/sdk-axios-request-sender@2.0.1"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "vue-storefront",
-        "pwa",
-        "headless",
-        "vue",
-        "ecommerce",
-        "magento",
-        "storefront",
-        "mobile",
+        "commercetools",
         "e-commerce",
-        "nuxt",
+        "ecommerce",
+        "ecommerce-platform",
+        "headless",
+        "headless-commerce",
+        "integrations-team",
+        "magento",
         "magento2",
-        "shopware"
+        "mobile",
+        "nuxt",
+        "open-source",
+        "pwa",
+        "shopify",
+        "shopware",
+        "storefront",
+        "typescript",
+        "vue",
+        "vue-storefront",
+        "vue3"
       ]
     },
     {
@@ -83,53 +70,33 @@
       "category": "E-commerce",
       "stars": 177,
       "author": "shopware",
-      "avatar": "https://avatars.githubusercontent.com/u/612628?v=4",
+      "avatar": null,
       "desc": "Shopware 6 project template",
-      "demo": "https://shopware.com",
+      "demo": null,
       "repoUrl": "https://github.com/shopware/template",
       "long1": "Shopware 6 project template. Maintained by shopware on GitHub, where it has earned 177 stars from the community.",
-      "long2": "It's actively developed around shopware, shopware6, ecommerce, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around ecommerce, hacktoberfest, shopware, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
+        "Ecommerce",
         "Shopware",
-        "Shopware6",
-        "Ecommerce"
+        "Shopware6"
       ],
-      "updated": "5 days ago",
+      "updated": "6 days ago",
       "license": "MIT",
       "langs": [
         {
-          "pct": 100,
-          "name": "JavaScript"
+          "pct": 100.0,
+          "name": "JavaScript",
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "url": "https://github.com/shopware/template/releases/tag/v6.4.20.2",
-          "name": "v6.4.20.2"
-        },
-        {
-          "url": "https://github.com/shopware/template/releases/tag/v6.5.0.0",
-          "name": "v6.5.0.0"
-        },
-        {
-          "url": "https://github.com/shopware/template/releases/tag/v6.4.20.1",
-          "name": "v6.4.20.1"
-        },
-        {
-          "url": "https://github.com/shopware/template/releases/tag/v6.4.20.0",
-          "name": "v6.4.20.0"
-        },
-        {
-          "url": "https://github.com/shopware/template/releases/tag/v6.4.19.0",
-          "name": "v6.4.19.0"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "shopware",
-        "shopware6",
         "ecommerce",
-        "hacktoberfest"
+        "hacktoberfest",
+        "shopware",
+        "shopware6"
       ]
     },
     {
@@ -139,62 +106,34 @@
       "category": "E-commerce",
       "stars": 170,
       "author": "dockware",
-      "avatar": "https://avatars.githubusercontent.com/u/77007631?v=4",
+      "avatar": null,
       "desc": "Managed Shopware 6 Docker setups with dockware. Run any Shopware 6 version within minutes (locally) in Docker",
-      "demo": "https://dockware.io",
+      "demo": null,
       "repoUrl": "https://github.com/dockware/dockware",
       "long1": "Managed Shopware 6 Docker setups with dockware. Run any Shopware 6 version within minutes (locally) in Docker. Maintained by dockware on GitHub, where it has earned 170 stars from the community.",
-      "long2": "It's actively developed around docker, shopware, devops, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around developer-tools, devops, docker, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Docker",
-        "Shopware",
+        "Developer Tools",
         "Devops",
-        "Developer Tools"
+        "Docker",
+        "Shopware"
       ],
       "updated": "6 months ago",
       "license": "MIT",
       "langs": [
         {
-          "pct": 54,
-          "name": "PHP"
-        },
-        {
-          "pct": 29,
-          "name": "Dockerfile"
-        },
-        {
-          "pct": 17,
-          "name": "Shell"
+          "pct": 100.0,
+          "name": "PHP",
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "url": "https://github.com/dockware/dockware/releases/tag/v1.5.4",
-          "name": "v1.5.4"
-        },
-        {
-          "url": "https://github.com/dockware/dockware/releases/tag/v1.5.3",
-          "name": "v1.5.3"
-        },
-        {
-          "url": "https://github.com/dockware/dockware/releases/tag/v1.4.3",
-          "name": "v1.4.3"
-        },
-        {
-          "url": "https://github.com/dockware/dockware/releases/tag/v1.4.2",
-          "name": "v1.4.2"
-        },
-        {
-          "url": "https://github.com/dockware/dockware/releases/tag/v1.4.0",
-          "name": "v1.4.0"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "docker",
-        "shopware",
+        "developer-tools",
         "devops",
-        "developer-tools"
+        "docker",
+        "shopware"
       ]
     },
     {
@@ -204,16 +143,16 @@
       "category": "E-commerce",
       "stars": 122,
       "author": "vienthuong",
-      "avatar": "https://avatars.githubusercontent.com/u/22548423?u=e47bc382b2de83dba3c58f5635825618438f06c7&v=4",
+      "avatar": null,
       "desc": "A PHP SDK for Shopware 6 Admin API",
       "demo": null,
       "repoUrl": "https://github.com/vienthuong/shopware-php-sdk",
       "long1": "A PHP SDK for Shopware 6 Admin API. Maintained by vienthuong on GitHub, where it has earned 122 stars from the community.",
-      "long2": "It's actively developed around shopware, shopware-sdk, shopware-6, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around php-sdk, shopware, shopware-6, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
+        "Php Sdk",
         "Shopware",
-        "Shopware Sdk",
         "Shopware 6",
         "Shopware 6 Sdk"
       ],
@@ -221,39 +160,19 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100,
-          "name": "PHP"
+          "pct": 100.0,
+          "name": "PHP",
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "url": "https://github.com/vienthuong/shopware-php-sdk/releases/tag/2.4.0",
-          "name": "2.4.0"
-        },
-        {
-          "url": "https://github.com/vienthuong/shopware-php-sdk/releases/tag/2.3.0",
-          "name": "2.3.0"
-        },
-        {
-          "url": "https://github.com/vienthuong/shopware-php-sdk/releases/tag/2.2.0",
-          "name": "2.2.0"
-        },
-        {
-          "url": "https://github.com/vienthuong/shopware-php-sdk/releases/tag/2.0.0",
-          "name": "2.0.0"
-        },
-        {
-          "url": "https://github.com/vienthuong/shopware-php-sdk/releases/tag/1.7.3",
-          "name": "1.7.3"
-        }
-      ],
+      "versions": [],
       "topics": [
+        "php-sdk",
         "shopware",
-        "shopware-sdk",
         "shopware-6",
         "shopware-6-sdk",
-        "php-sdk",
-        "shopware-php-sdk"
+        "shopware-php-sdk",
+        "shopware-sdk"
       ]
     },
     {
@@ -263,12 +182,12 @@
       "category": "E-commerce",
       "stars": 116,
       "author": "shopware",
-      "avatar": "https://avatars.githubusercontent.com/u/612628?v=4",
+      "avatar": null,
       "desc": "CLI for Shopware Account and Shopware 6",
       "demo": null,
       "repoUrl": "https://github.com/shopware/shopware-cli",
       "long1": "CLI for Shopware Account and Shopware 6. Maintained by shopware on GitHub, where it has earned 116 stars from the community.",
-      "long2": "It's actively developed around hacktoberfest, cli, developer-tools, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around cli, developer-tools, ecommerce, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Go",
         "Cli",
@@ -276,51 +195,23 @@
         "Ecommerce",
         "Extensions"
       ],
-      "updated": "3 days ago",
+      "updated": "today",
       "license": "MIT",
       "langs": [
         {
-          "pct": 99,
-          "name": "Go"
-        },
-        {
-          "pct": 1,
-          "name": "SCSS"
-        },
-        {
-          "pct": 0,
-          "name": "JavaScript"
+          "pct": 100.0,
+          "name": "Go",
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "url": "https://github.com/shopware/shopware-cli/releases/tag/0.15.12",
-          "name": "0.15.12"
-        },
-        {
-          "url": "https://github.com/shopware/shopware-cli/releases/tag/0.15.11",
-          "name": "0.15.11"
-        },
-        {
-          "url": "https://github.com/shopware/shopware-cli/releases/tag/0.16.0-alpha-4",
-          "name": "0.16.0-alpha-4"
-        },
-        {
-          "url": "https://github.com/shopware/shopware-cli/releases/tag/0.15.10",
-          "name": "0.15.10"
-        },
-        {
-          "url": "https://github.com/shopware/shopware-cli/releases/tag/0.15.9",
-          "name": "0.15.9"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "hacktoberfest",
         "cli",
         "developer-tools",
         "ecommerce",
         "extensions",
         "golang",
+        "hacktoberfest",
         "php",
         "shopware",
         "shopware6"
@@ -333,15 +224,15 @@
       "category": "E-commerce",
       "stars": 94,
       "author": "bcremer",
-      "avatar": "https://avatars.githubusercontent.com/u/55820?u=169a7b9e9c25ee14be670c0fb8e42dbebb7714a2&v=4",
+      "avatar": null,
       "desc": "Running shopware using NGINX",
-      "demo": "http://shopware.com",
+      "demo": null,
       "repoUrl": "https://github.com/bcremer/shopware-with-nginx",
       "long1": "Running shopware using NGINX. Maintained by bcremer on GitHub, where it has earned 94 stars from the community.",
-      "long2": "It's actively developed around shopware, nginx, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around nginx, shopware, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "Shopware",
-        "Nginx"
+        "Nginx",
+        "Shopware"
       ],
       "updated": "7 years ago",
       "license": "BSD-2-Clause",
@@ -361,8 +252,8 @@
       ],
       "versions": [],
       "topics": [
-        "shopware",
-        "nginx"
+        "nginx",
+        "shopware"
       ]
     },
     {
@@ -372,63 +263,35 @@
       "category": "E-commerce",
       "stars": 93,
       "author": "andrich-software",
-      "avatar": "https://avatars.githubusercontent.com/u/103992987?v=4",
+      "avatar": null,
       "desc": "OpenSource, self-hosted, client/server-based ERP system with multiplatform GUI written in C#",
-      "demo": "https://www.as-ERP.de",
+      "demo": null,
       "repoUrl": "https://github.com/andrich-software/asERP",
       "long1": "OpenSource, self-hosted, client/server-based ERP system with multiplatform GUI written in C#. Maintained by andrich-software on GitHub, where it has earned 93 stars from the community.",
-      "long2": "It's actively developed around erp, opensource, shopware, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around client-server, erp, opensource, and is a solid reference for anyone building with these tools.",
       "stack": [
         "C#",
+        "Client Server",
         "Erp",
         "Opensource",
-        "Shopware",
         "Self Hosted"
       ],
-      "updated": "today",
+      "updated": "yesterday",
       "license": "GPL-3.0",
       "langs": [
         {
-          "pct": 100,
-          "name": "C#"
-        },
-        {
-          "pct": 0,
-          "name": "Shell"
-        },
-        {
-          "pct": 0,
-          "name": "JavaScript"
+          "pct": 100.0,
+          "name": "C#",
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "url": "https://github.com/andrich-software/asERP/releases/tag/setup-v2026.07.12.2",
-          "name": "setup-v2026.07.12.2"
-        },
-        {
-          "url": "https://github.com/andrich-software/asERP/releases/tag/v2026.07.12.13",
-          "name": "v2026.07.12.13"
-        },
-        {
-          "url": "https://github.com/andrich-software/asERP/releases/tag/server-v2026.07.12.14",
-          "name": "server-v2026.07.12.14"
-        },
-        {
-          "url": "https://github.com/andrich-software/asERP/releases/tag/setup-v2026.07.12.1",
-          "name": "setup-v2026.07.12.1"
-        },
-        {
-          "url": "https://github.com/andrich-software/asERP/releases/tag/v2026.07.12.12",
-          "name": "v2026.07.12.12"
-        }
-      ],
+      "versions": [],
       "topics": [
+        "client-server",
         "erp",
         "opensource",
-        "shopware",
         "self-hosted",
-        "client-server"
+        "shopware"
       ]
     },
     {
@@ -438,7 +301,7 @@
       "category": "E-commerce",
       "stars": 83,
       "author": "shopware5",
-      "avatar": "https://avatars.githubusercontent.com/u/122545688?v=4",
+      "avatar": null,
       "desc": "The shopware CLI tools are your console helpers for all kind of shopware tasks",
       "demo": null,
       "repoUrl": "https://github.com/shopware5/sw-cli-tools",
@@ -453,40 +316,12 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 81,
-          "name": "PHP"
-        },
-        {
-          "pct": 19,
-          "name": "Smarty"
-        },
-        {
-          "pct": 0,
-          "name": "Go Template"
+          "pct": 100.0,
+          "name": "PHP",
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "url": "https://github.com/shopware5/sw-cli-tools/releases/tag/0.5.3",
-          "name": "0.5.3"
-        },
-        {
-          "url": "https://github.com/shopware5/sw-cli-tools/releases/tag/0.5.2",
-          "name": "0.5.2"
-        },
-        {
-          "url": "https://github.com/shopware5/sw-cli-tools/releases/tag/0.5.1",
-          "name": "0.5.1"
-        },
-        {
-          "url": "https://github.com/shopware5/sw-cli-tools/releases/tag/0.5.0",
-          "name": "0.5.0"
-        },
-        {
-          "url": "https://github.com/shopware5/sw-cli-tools/releases/tag/0.4.3",
-          "name": "0.4.3"
-        }
-      ],
+      "versions": [],
       "topics": [
         "shopware",
         "shopware-cli"
@@ -499,38 +334,35 @@
       "category": "E-commerce",
       "stars": 66,
       "author": "shopware5",
-      "avatar": "https://avatars.githubusercontent.com/u/122545688?v=4",
+      "avatar": null,
       "desc": "Skeleton for Shopware projects with composer",
       "demo": null,
       "repoUrl": "https://github.com/shopware5/composer-project",
       "long1": "Skeleton for Shopware projects with composer. Maintained by shopware5 on GitHub, where it has earned 66 stars from the community.",
-      "long2": "It's actively developed around shopware, composer-project, php, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around composer-project, ecommerce, ecommerce-platform, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "Shopware",
         "Composer Project",
-        "Php",
-        "Ecommerce"
+        "Ecommerce",
+        "Ecommerce Platform",
+        "Php"
       ],
       "updated": "3 years ago",
       "license": "\u2014",
       "langs": [
         {
-          "pct": 53,
-          "name": "PHP"
-        },
-        {
-          "pct": 47,
-          "name": "Shell"
+          "pct": 100.0,
+          "name": "PHP",
+          "size": 0
         }
       ],
       "versions": [],
       "topics": [
-        "shopware",
         "composer-project",
-        "php",
         "ecommerce",
         "ecommerce-platform",
-        "hacktoberfest"
+        "hacktoberfest",
+        "php",
+        "shopware"
       ]
     },
     {
@@ -540,64 +372,36 @@
       "category": "E-commerce",
       "stars": 65,
       "author": "Space48",
-      "avatar": "https://avatars.githubusercontent.com/u/4761011?v=4",
+      "avatar": null,
       "desc": "\ud83d\udcbe A Database Backup Manager (originally designed for Magento 2.x)",
       "demo": null,
       "repoUrl": "https://github.com/Space48/magedbm2",
       "long1": "\ud83d\udcbe A Database Backup Manager (originally designed for Magento 2.x). Maintained by Space48 on GitHub, where it has earned 65 stars from the community.",
-      "long2": "It's actively developed around magento-2, database-management, magento-1, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around database-backups, database-management, magento-1, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Magento 2",
+        "Database Backups",
         "Database Management",
         "Magento 1",
-        "Shopware"
+        "Magento 2"
       ],
       "updated": "4 months ago",
       "license": "OSL-3.0",
       "langs": [
         {
-          "pct": 99,
-          "name": "PHP"
-        },
-        {
-          "pct": 1,
-          "name": "Makefile"
-        },
-        {
-          "pct": 0,
-          "name": "Dockerfile"
+          "pct": 100.0,
+          "name": "PHP",
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "url": "https://github.com/Space48/magedbm2/releases/tag/5.2.1",
-          "name": "5.2.1"
-        },
-        {
-          "url": "https://github.com/Space48/magedbm2/releases/tag/6.0.1",
-          "name": "6.0.1"
-        },
-        {
-          "url": "https://github.com/Space48/magedbm2/releases/tag/6.0.0",
-          "name": "6.0.0"
-        },
-        {
-          "url": "https://github.com/Space48/magedbm2/releases/tag/5.2.0",
-          "name": "5.2.0"
-        },
-        {
-          "url": "https://github.com/Space48/magedbm2/releases/tag/5.1.0",
-          "name": "5.1.0"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "magento-2",
+        "database-backups",
         "database-management",
         "magento-1",
-        "shopware",
-        "database-backups",
-        "sensitive-data"
+        "magento-2",
+        "sensitive-data",
+        "shopware"
       ]
     },
     {
@@ -607,70 +411,50 @@
       "category": "E-commerce",
       "stars": 60,
       "author": "hubblecommerce",
-      "avatar": "https://avatars.githubusercontent.com/u/47628076?v=4",
+      "avatar": null,
       "desc": "E-Commerce PWA Storefront - Shopware 6 Nuxt.JS Storefront",
-      "demo": "https://www.hubblecommerce.io",
+      "demo": null,
       "repoUrl": "https://github.com/hubblecommerce/hubble-frontend-pwa",
       "long1": "E-Commerce PWA Storefront - Shopware 6 Nuxt.JS Storefront. Maintained by hubblecommerce on GitHub, where it has earned 60 stars from the community.",
-      "long2": "It's actively developed around pwa, vuejs, nuxtjs, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around ecommerce, ecommerce-platform, headless, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Pwa",
-        "Vue",
-        "Nuxt",
-        "Magento2"
+        "Ecommerce",
+        "Ecommerce Platform",
+        "Headless",
+        "Magento"
       ],
       "updated": "5 months ago",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "TypeScript",
-          "pct": 61
-        },
-        {
-          "name": "Vue",
-          "pct": 35
-        },
-        {
-          "name": "JavaScript",
-          "pct": 4
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "v3.0.1",
-          "url": "https://github.com/hubblecommerce/hubble-frontend-pwa/releases/tag/v3.0.1"
-        },
-        {
-          "name": "v3.0.0",
-          "url": "https://github.com/hubblecommerce/hubble-frontend-pwa/releases/tag/v3.0.0"
-        },
-        {
-          "name": "v2.15.0",
-          "url": "https://github.com/hubblecommerce/hubble-frontend-pwa/releases/tag/v2.15.0"
-        },
-        {
-          "name": "v2.14.0",
-          "url": "https://github.com/hubblecommerce/hubble-frontend-pwa/releases/tag/v2.14.0"
-        },
-        {
-          "name": "v2.13.0",
-          "url": "https://github.com/hubblecommerce/hubble-frontend-pwa/releases/tag/v2.13.0"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "pwa",
-        "vuejs",
-        "nuxtjs",
-        "magento2",
-        "magento",
-        "shopware",
-        "performance",
-        "shopping-cart",
-        "headless",
-        "vue",
         "ecommerce",
-        "ecommerce-platform"
+        "ecommerce-platform",
+        "headless",
+        "javascript",
+        "magento",
+        "magento2",
+        "nuxt",
+        "nuxt3",
+        "nuxt3-module",
+        "nuxtjs",
+        "performance",
+        "pwa",
+        "shopping-cart",
+        "shopware",
+        "shopware6",
+        "storefront",
+        "typescript",
+        "vue",
+        "vue3",
+        "vuejs"
       ]
     },
     {
@@ -680,55 +464,35 @@
       "category": "E-commerce",
       "stars": 58,
       "author": "shopware",
-      "avatar": "https://avatars.githubusercontent.com/u/612628?v=4",
+      "avatar": null,
       "desc": "Shopware 6 developer docs",
-      "demo": "https://developer.shopware.com",
+      "demo": null,
       "repoUrl": "https://github.com/shopware/docs",
       "long1": "Shopware 6 developer docs. Maintained by shopware on GitHub, where it has earned 58 stars from the community.",
-      "long2": "It's actively developed around documentation, shopware6, shopware, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around docs, documentation, hacktoberfest, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Mermaid",
+        "Docs",
         "Documentation",
-        "Shopware6",
         "Shopware",
-        "Docs"
+        "Shopware6"
       ],
-      "updated": "3 days ago",
+      "updated": "today",
       "license": "\u2014",
       "langs": [
         {
+          "pct": 100.0,
           "name": "Mermaid",
-          "pct": 84
-        },
-        {
-          "name": "Makefile",
-          "pct": 14
-        },
-        {
-          "name": "Shell",
-          "pct": 2
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "0.5.17",
-          "url": "https://github.com/shopware/docs/releases/tag/0.5.17"
-        },
-        {
-          "name": "v6.5-gitbook",
-          "url": "https://github.com/shopware/docs/releases/tag/v6.5-gitbook"
-        },
-        {
-          "name": "v6.4-gitbook",
-          "url": "https://github.com/shopware/docs/releases/tag/v6.4-gitbook"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "documentation",
-        "shopware6",
-        "shopware",
         "docs",
-        "hacktoberfest"
+        "documentation",
+        "hacktoberfest",
+        "shopware",
+        "shopware6"
       ]
     },
     {
@@ -738,59 +502,31 @@
       "category": "E-commerce",
       "stars": 58,
       "author": "shopware",
-      "avatar": "https://avatars.githubusercontent.com/u/612628?v=4",
+      "avatar": null,
       "desc": "A project worth exploring.",
       "demo": null,
       "repoUrl": "https://github.com/shopware/core",
       "long1": "A project worth exploring. Maintained by shopware on GitHub, where it has earned 58 stars from the community.",
-      "long2": "It's actively developed around shopware, php, ecommerce, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around ecommerce, php, shopware, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "Shopware",
+        "Ecommerce",
         "Php",
-        "Ecommerce"
+        "Shopware"
       ],
-      "updated": "2 days ago",
+      "updated": "3 days ago",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "PHP",
-          "pct": 97
-        },
-        {
-          "name": "Twig",
-          "pct": 3
-        },
-        {
-          "name": "CSS",
-          "pct": 0
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "v6.7.12.1",
-          "url": "https://github.com/shopware/core/releases/tag/v6.7.12.1"
-        },
-        {
-          "name": "v6.6.10.20",
-          "url": "https://github.com/shopware/core/releases/tag/v6.6.10.20"
-        },
-        {
-          "name": "v6.7.12.0",
-          "url": "https://github.com/shopware/core/releases/tag/v6.7.12.0"
-        },
-        {
-          "name": "v6.7.11.1",
-          "url": "https://github.com/shopware/core/releases/tag/v6.7.11.1"
-        },
-        {
-          "name": "v6.7.11.0",
-          "url": "https://github.com/shopware/core/releases/tag/v6.7.11.0"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "shopware",
+        "ecommerce",
         "php",
-        "ecommerce"
+        "shopware"
       ]
     },
     {
@@ -800,68 +536,39 @@
       "category": "E-commerce",
       "stars": 56,
       "author": "Haehnchen",
-      "avatar": "https://avatars.githubusercontent.com/u/1011712?u=5d159327ef130f9f0f08d9e9b3cbedd85dcbe81d&v=4",
+      "avatar": null,
       "desc": "Shopware Plugin for PhpStorm which extends Symfony Plugin",
       "demo": null,
       "repoUrl": "https://github.com/Haehnchen/idea-php-shopware-plugin",
       "long1": "Shopware Plugin for PhpStorm which extends Symfony Plugin. Maintained by Haehnchen on GitHub, where it has earned 56 stars from the community.",
-      "long2": "It's actively developed around shopware, phpstorm-plugin, symfony, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around doctrine, intellij, intellij-plugin, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "Java",
-        "Shopware",
-        "Phpstorm Plugin",
-        "Symfony",
-        "Intellij"
+        "Doctrine",
+        "Intellij",
+        "Intellij Plugin",
+        "Java"
       ],
       "updated": "2 weeks ago",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "Java",
-          "pct": 99
-        },
-        {
-          "name": "PHP",
-          "pct": 1
-        },
-        {
-          "name": "HTML",
-          "pct": 0
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "3.3.0",
-          "url": "https://github.com/Haehnchen/idea-php-shopware-plugin/releases/tag/3.3.0"
-        },
-        {
-          "name": "3.2.0",
-          "url": "https://github.com/Haehnchen/idea-php-shopware-plugin/releases/tag/3.2.0"
-        },
-        {
-          "name": "3.1.1",
-          "url": "https://github.com/Haehnchen/idea-php-shopware-plugin/releases/tag/3.1.1"
-        },
-        {
-          "name": "3.1",
-          "url": "https://github.com/Haehnchen/idea-php-shopware-plugin/releases/tag/3.1"
-        },
-        {
-          "name": "3.0.1",
-          "url": "https://github.com/Haehnchen/idea-php-shopware-plugin/releases/tag/3.0.1"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "shopware",
-        "phpstorm-plugin",
-        "symfony",
+        "doctrine",
         "intellij",
         "intellij-plugin",
         "java",
-        "doctrine",
-        "smarty",
         "phpstorm",
-        "shopware-plugin"
+        "phpstorm-plugin",
+        "shopware",
+        "shopware-plugin",
+        "smarty",
+        "symfony"
       ]
     },
     {
@@ -871,68 +578,40 @@
       "category": "E-commerce",
       "stars": 44,
       "author": "Elastic-Suite",
-      "avatar": "https://avatars.githubusercontent.com/u/78020936?v=4",
+      "avatar": null,
       "desc": "Manage your searchandising, easily create GraphQL API for E-Commerce, on top of Elasticsearch.",
       "demo": null,
       "repoUrl": "https://github.com/Elastic-Suite/gally",
       "long1": "Manage your searchandising, easily create GraphQL API for E-Commerce, on top of Elasticsearch. Maintained by Elastic-Suite on GitHub, where it has earned 44 stars from the community.",
-      "long2": "It's actively developed around e-commerce, graphql, searchandising, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around api, api-platform, e-commerce, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
+        "Api",
+        "Api Platform",
         "E Commerce",
-        "GraphQL",
-        "Searchandising",
-        "Api"
+        "Elasticsearch"
       ],
       "updated": "2 weeks ago",
       "license": "OSL-3.0",
       "langs": [
         {
+          "pct": 100.0,
           "name": "TypeScript",
-          "pct": 82
-        },
-        {
-          "name": "PHP",
-          "pct": 14
-        },
-        {
-          "name": "Shell",
-          "pct": 4
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "v2.2.1",
-          "url": "https://github.com/Elastic-Suite/gally/releases/tag/v2.2.1"
-        },
-        {
-          "name": "v2.2.0",
-          "url": "https://github.com/Elastic-Suite/gally/releases/tag/v2.2.0"
-        },
-        {
-          "name": "v2.1.0",
-          "url": "https://github.com/Elastic-Suite/gally/releases/tag/v2.1.0"
-        },
-        {
-          "name": "2.0.0",
-          "url": "https://github.com/Elastic-Suite/gally/releases/tag/2.0.0"
-        },
-        {
-          "name": "1.3.1",
-          "url": "https://github.com/Elastic-Suite/gally/releases/tag/1.3.1"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "e-commerce",
-        "graphql",
-        "searchandising",
         "api",
         "api-platform",
+        "e-commerce",
         "elasticsearch",
         "elasticsuite",
+        "graphql",
         "magento",
         "magento2",
         "php",
+        "searchandising",
         "shopware",
         "sylius"
       ]
@@ -944,114 +623,34 @@
       "category": "E-commerce",
       "stars": 43,
       "author": "Shape-and-Shift",
-      "avatar": "https://avatars.githubusercontent.com/u/55768240?v=4",
+      "avatar": null,
       "desc": "Generate a CMS element scaffolding within seconds.",
       "demo": null,
       "repoUrl": "https://github.com/Shape-and-Shift/shopware-cms-generator",
       "long1": "Generate a CMS element scaffolding within seconds. Maintained by Shape-and-Shift on GitHub, where it has earned 43 stars from the community.",
-      "long2": "It's actively developed around shopware, shopware-plugin, shopware6-plugin, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around shopware, shopware-plugin, shopware6, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
         "Shopware",
         "Shopware Plugin",
-        "Shopware6 Plugin",
-        "Shopware6"
+        "Shopware6",
+        "Shopware6 Plugin"
       ],
       "updated": "3 years ago",
       "license": "\u2014",
       "langs": [
         {
+          "pct": 100.0,
           "name": "PHP",
-          "pct": 100
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "1.0.2",
-          "url": "https://github.com/Shape-and-Shift/shopware-cms-generator/releases/tag/1.0.2"
-        },
-        {
-          "name": "1.0.1",
-          "url": "https://github.com/Shape-and-Shift/shopware-cms-generator/releases/tag/1.0.1"
-        },
-        {
-          "name": "1.0.0",
-          "url": "https://github.com/Shape-and-Shift/shopware-cms-generator/releases/tag/1.0.0"
-        }
-      ],
+      "versions": [],
       "topics": [
         "shopware",
         "shopware-plugin",
-        "shopware6-plugin",
-        "shopware6"
-      ]
-    },
-    {
-      "slug": "shopware6-two-factor-auth",
-      "name": "shopware6-two-factor-auth",
-      "fullName": "runelaenen/shopware6-two-factor-auth",
-      "category": "E-commerce",
-      "stars": 43,
-      "author": "runelaenen",
-      "avatar": "https://avatars.githubusercontent.com/u/3930922?u=d22bbbbe45ff3d1255a09a3a7936aa30ea6447bf&v=4",
-      "desc": "Two Factor Authentication for Shopware 6 \ud83d\udc99",
-      "demo": null,
-      "repoUrl": "https://github.com/runelaenen/shopware6-two-factor-auth",
-      "long1": "Two Factor Authentication for Shopware 6 \ud83d\udc99. Maintained by runelaenen on GitHub, where it has earned 43 stars from the community.",
-      "long2": "It's actively developed around shopware, shopware6, shopware-plugins, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Shopware",
-        "Shopware6",
-        "Shopware Plugins",
-        "Shopware Plugin"
-      ],
-      "updated": "9 months ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 48
-        },
-        {
-          "name": "Twig",
-          "pct": 32
-        },
-        {
-          "name": "JavaScript",
-          "pct": 20
-        }
-      ],
-      "versions": [
-        {
-          "name": "v7.0.0",
-          "url": "https://github.com/runelaenen/shopware6-two-factor-auth/releases/tag/v7.0.0"
-        },
-        {
-          "name": "v6.0.1",
-          "url": "https://github.com/runelaenen/shopware6-two-factor-auth/releases/tag/v6.0.1"
-        },
-        {
-          "name": "v6.0.0",
-          "url": "https://github.com/runelaenen/shopware6-two-factor-auth/releases/tag/v6.0.0"
-        },
-        {
-          "name": "v1.4.0",
-          "url": "https://github.com/runelaenen/shopware6-two-factor-auth/releases/tag/v1.4.0"
-        },
-        {
-          "name": "1.3.3",
-          "url": "https://github.com/runelaenen/shopware6-two-factor-auth/releases/tag/1.3.3"
-        }
-      ],
-      "topics": [
-        "shopware",
         "shopware6",
-        "shopware-plugins",
-        "shopware-plugin",
-        "shopware-platform-plugin",
-        "shopware6-plugin",
-        "hacktoberfest"
+        "shopware6-plugin"
       ]
     },
     {
@@ -1061,7 +660,7 @@
       "category": "E-commerce",
       "stars": 43,
       "author": "Werkstattl",
-      "avatar": "https://avatars.githubusercontent.com/u/177934084?v=4",
+      "avatar": null,
       "desc": "Shopware 6 plugin that adds a blog functionality",
       "demo": null,
       "repoUrl": "https://github.com/Werkstattl/OpenBlogware",
@@ -1078,40 +677,12 @@
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "PHP",
-          "pct": 58
-        },
-        {
-          "name": "Twig",
-          "pct": 23
-        },
-        {
-          "name": "JavaScript",
-          "pct": 19
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "5.3.0",
-          "url": "https://github.com/Werkstattl/OpenBlogware/releases/tag/5.3.0"
-        },
-        {
-          "name": "v5.2.1",
-          "url": "https://github.com/Werkstattl/OpenBlogware/releases/tag/v5.2.1"
-        },
-        {
-          "name": "v5.2.0",
-          "url": "https://github.com/Werkstattl/OpenBlogware/releases/tag/v5.2.0"
-        },
-        {
-          "name": "v5.1.3",
-          "url": "https://github.com/Werkstattl/OpenBlogware/releases/tag/v5.1.3"
-        },
-        {
-          "name": "v5.1.2",
-          "url": "https://github.com/Werkstattl/OpenBlogware/releases/tag/v5.1.2"
-        }
-      ],
+      "versions": [],
       "topics": [
         "blog",
         "shopware",
@@ -1121,38 +692,43 @@
       ]
     },
     {
-      "slug": "candy",
-      "name": "candy",
-      "fullName": "aosfather/candy",
+      "slug": "shopware6-two-factor-auth",
+      "name": "shopware6-two-factor-auth",
+      "fullName": "runelaenen/shopware6-two-factor-auth",
       "category": "E-commerce",
-      "stars": 42,
-      "author": "aosfather",
-      "avatar": "https://avatars.githubusercontent.com/u/3126191?v=4",
-      "desc": "\u4e00\u4e2a\u901a\u7528\u63a8\u8350\u5f15\u64ce\uff0c\u652f\u6301\u591a\u79cd\u7b97\u6cd5\uff0c\u8f7b\u677e\u642d\u5efa\u7535\u5546\u7684\u63a8\u8350\u7cfb\u7edf\u3001\u54a8\u8be2\u7c7b\uff08\u5982\u4eca\u65e5\u5934\u6761)\u63a8\u8350\u7cfb\u7edf\u3001\u65c5\u6e38\u7b49\u3002",
+      "stars": 43,
+      "author": "runelaenen",
+      "avatar": null,
+      "desc": "Two Factor Authentication for Shopware 6 \ud83d\udc99",
       "demo": null,
-      "repoUrl": "https://github.com/aosfather/candy",
-      "long1": "\u4e00\u4e2a\u901a\u7528\u63a8\u8350\u5f15\u64ce\uff0c\u652f\u6301\u591a\u79cd\u7b97\u6cd5\uff0c\u8f7b\u677e\u642d\u5efa\u7535\u5546\u7684\u63a8\u8350\u7cfb\u7edf\u3001\u54a8\u8be2\u7c7b\uff08\u5982\u4eca\u65e5\u5934\u6761)\u63a8\u8350\u7cfb\u7edf\u3001\u65c5\u6e38\u7b49\u3002. Maintained by aosfather on GitHub, where it has earned 42 stars from the community.",
-      "long2": "It's actively developed around recommendation-system, go, shopware, and is a solid reference for anyone building with these tools.",
+      "repoUrl": "https://github.com/runelaenen/shopware6-two-factor-auth",
+      "long1": "Two Factor Authentication for Shopware 6 \ud83d\udc99. Maintained by runelaenen on GitHub, where it has earned 43 stars from the community.",
+      "long2": "It's actively developed around hacktoberfest, shopware, shopware-platform-plugin, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "Recommendation System",
-        "Go",
+        "PHP",
         "Shopware",
-        "Information"
+        "Shopware Platform Plugin",
+        "Shopware Plugin",
+        "Shopware Plugins"
       ],
-      "updated": "8 years ago",
+      "updated": "9 months ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "Go",
-          "pct": 100
+          "pct": 100.0,
+          "name": "PHP",
+          "size": 0
         }
       ],
       "versions": [],
       "topics": [
-        "recommendation-system",
-        "go",
+        "hacktoberfest",
         "shopware",
-        "information"
+        "shopware-platform-plugin",
+        "shopware-plugin",
+        "shopware-plugins",
+        "shopware6",
+        "shopware6-plugin"
       ]
     },
     {
@@ -1162,57 +738,65 @@
       "category": "E-commerce",
       "stars": 42,
       "author": "digitalmanufaktur",
-      "avatar": "https://avatars.githubusercontent.com/u/155832?v=4",
+      "avatar": null,
       "desc": "Shopware 6 Theme",
-      "demo": "https://www.digitalmanufaktur.com/shopware-6-theme-manu/",
+      "demo": null,
       "repoUrl": "https://github.com/digitalmanufaktur/shopware6-manu-theme",
       "long1": "Shopware 6 Theme. Maintained by digitalmanufaktur on GitHub, where it has earned 42 stars from the community.",
-      "long2": "It's actively developed around shopware6, shopware, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around shopware, shopware6, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Twig",
-        "Shopware6",
-        "Shopware"
+        "Shopware",
+        "Shopware6"
       ],
       "updated": "3 years ago",
       "license": "\u2014",
       "langs": [
         {
+          "pct": 100.0,
           "name": "Twig",
-          "pct": 62
-        },
-        {
-          "name": "SCSS",
-          "pct": 36
-        },
-        {
-          "name": "JavaScript",
-          "pct": 2
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "v2.0.6",
-          "url": "https://github.com/digitalmanufaktur/shopware6-manu-theme/releases/tag/v2.0.6"
-        },
-        {
-          "name": "v2.0.5",
-          "url": "https://github.com/digitalmanufaktur/shopware6-manu-theme/releases/tag/v2.0.5"
-        },
-        {
-          "name": "v2.0.4",
-          "url": "https://github.com/digitalmanufaktur/shopware6-manu-theme/releases/tag/v2.0.4"
-        },
-        {
-          "name": "v2.0.3",
-          "url": "https://github.com/digitalmanufaktur/shopware6-manu-theme/releases/tag/v2.0.3"
-        },
-        {
-          "name": "v2.0.2",
-          "url": "https://github.com/digitalmanufaktur/shopware6-manu-theme/releases/tag/v2.0.2"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "shopware6",
+        "shopware",
+        "shopware6"
+      ]
+    },
+    {
+      "slug": "candy",
+      "name": "candy",
+      "fullName": "aosfather/candy",
+      "category": "E-commerce",
+      "stars": 42,
+      "author": "aosfather",
+      "avatar": null,
+      "desc": "\u4e00\u4e2a\u901a\u7528\u63a8\u8350\u5f15\u64ce\uff0c\u652f\u6301\u591a\u79cd\u7b97\u6cd5\uff0c\u8f7b\u677e\u642d\u5efa\u7535\u5546\u7684\u63a8\u8350\u7cfb\u7edf\u3001\u54a8\u8be2\u7c7b\uff08\u5982\u4eca\u65e5\u5934\u6761)\u63a8\u8350\u7cfb\u7edf\u3001\u65c5\u6e38\u7b49\u3002",
+      "demo": null,
+      "repoUrl": "https://github.com/aosfather/candy",
+      "long1": "\u4e00\u4e2a\u901a\u7528\u63a8\u8350\u5f15\u64ce\uff0c\u652f\u6301\u591a\u79cd\u7b97\u6cd5\uff0c\u8f7b\u677e\u642d\u5efa\u7535\u5546\u7684\u63a8\u8350\u7cfb\u7edf\u3001\u54a8\u8be2\u7c7b\uff08\u5982\u4eca\u65e5\u5934\u6761)\u63a8\u8350\u7cfb\u7edf\u3001\u65c5\u6e38\u7b49\u3002. Maintained by aosfather on GitHub, where it has earned 42 stars from the community.",
+      "long2": "It's actively developed around go, information, recommendation-system, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Go",
+        "Information",
+        "Recommendation System",
+        "Shopware"
+      ],
+      "updated": "8 years ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 100.0,
+          "name": "Go",
+          "size": 0
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "go",
+        "information",
+        "recommendation-system",
         "shopware"
       ]
     },
@@ -1223,7 +807,7 @@
       "category": "E-commerce",
       "stars": 41,
       "author": "shopwareLabs",
-      "avatar": "https://avatars.githubusercontent.com/u/9987738?v=4",
+      "avatar": null,
       "desc": "Claude Code plugin marketplace for Shopware development. Provides MCP servers, skills, agents, hooks, and commands to integrate development tools directly into your AI coding workflow.",
       "demo": null,
       "repoUrl": "https://github.com/shopwareLabs/ai-coding-tools",
@@ -1234,102 +818,28 @@
         "Anthropic",
         "Claude",
         "Claude Code",
-        "Marketplace"
+        "Code Quality"
       ],
-      "updated": "today",
+      "updated": "yesterday",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "Shell",
-          "pct": 86
-        },
-        {
-          "name": "JavaScript",
-          "pct": 8
-        },
-        {
-          "name": "Python",
-          "pct": 6
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "agent-skills-latest",
-          "url": "https://github.com/shopwareLabs/ai-coding-tools/releases/tag/agent-skills-latest"
-        }
-      ],
+      "versions": [],
       "topics": [
         "anthropic",
         "claude",
         "claude-code",
+        "code-quality",
         "marketplace",
         "plugins",
-        "shopware",
-        "code-quality",
         "productivity",
-        "tooling"
-      ]
-    },
-    {
-      "slug": "administration",
-      "name": "administration",
-      "fullName": "shopware/administration",
-      "category": "E-commerce",
-      "stars": 40,
-      "author": "shopware",
-      "avatar": "https://avatars.githubusercontent.com/u/612628?v=4",
-      "desc": "A project worth exploring.",
-      "demo": null,
-      "repoUrl": "https://github.com/shopware/administration",
-      "long1": "A project worth exploring. Maintained by shopware on GitHub, where it has earned 40 stars from the community.",
-      "long2": "It's actively developed around shopware, vuejs, javascript, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "JavaScript",
-        "Shopware",
-        "Vue"
-      ],
-      "updated": "today",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "JavaScript",
-          "pct": 69
-        },
-        {
-          "name": "Twig",
-          "pct": 17
-        },
-        {
-          "name": "TypeScript",
-          "pct": 14
-        }
-      ],
-      "versions": [
-        {
-          "name": "v6.7.12.1",
-          "url": "https://github.com/shopware/administration/releases/tag/v6.7.12.1"
-        },
-        {
-          "name": "v6.6.10.20",
-          "url": "https://github.com/shopware/administration/releases/tag/v6.6.10.20"
-        },
-        {
-          "name": "v6.7.12.0",
-          "url": "https://github.com/shopware/administration/releases/tag/v6.7.12.0"
-        },
-        {
-          "name": "v6.7.11.1",
-          "url": "https://github.com/shopware/administration/releases/tag/v6.7.11.1"
-        },
-        {
-          "name": "v6.7.11.0",
-          "url": "https://github.com/shopware/administration/releases/tag/v6.7.11.0"
-        }
-      ],
-      "topics": [
         "shopware",
-        "vuejs",
-        "javascript"
+        "tooling"
       ]
     },
     {
@@ -1339,66 +849,72 @@
       "category": "E-commerce",
       "stars": 40,
       "author": "vienthuong",
-      "avatar": "https://avatars.githubusercontent.com/u/22548423?u=e47bc382b2de83dba3c58f5635825618438f06c7&v=4",
+      "avatar": null,
       "desc": "Recently viewed products plugin for SW6",
       "demo": null,
       "repoUrl": "https://github.com/vienthuong/RecentlyViewedProduct",
       "long1": "Recently viewed products plugin for SW6. Maintained by vienthuong on GitHub, where it has earned 40 stars from the community.",
-      "long2": "It's actively developed around shopware, shopware-plugin, shopware6, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around recently-viewed-product, recently-viewed-product-plugin, shopware, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
+        "Recently Viewed Product",
+        "Recently Viewed Product Plugin",
         "Shopware",
-        "Shopware Plugin",
-        "Shopware6",
-        "Shopware Plugins"
+        "Shopware Platform Plugin"
       ],
       "updated": "2 years ago",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "PHP",
-          "pct": 52
-        },
-        {
-          "name": "Twig",
-          "pct": 30
-        },
-        {
-          "name": "JavaScript",
-          "pct": 18
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "v3.0.0",
-          "url": "https://github.com/vienthuong/RecentlyViewedProduct/releases/tag/v3.0.0"
-        },
-        {
-          "name": "1.2.0",
-          "url": "https://github.com/vienthuong/RecentlyViewedProduct/releases/tag/1.2.0"
-        },
-        {
-          "name": "1.1.1",
-          "url": "https://github.com/vienthuong/RecentlyViewedProduct/releases/tag/1.1.1"
-        },
-        {
-          "name": "1.1.0",
-          "url": "https://github.com/vienthuong/RecentlyViewedProduct/releases/tag/1.1.0"
-        },
-        {
-          "name": "v1.0.2",
-          "url": "https://github.com/vienthuong/RecentlyViewedProduct/releases/tag/v1.0.2"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "shopware",
-        "shopware-plugin",
-        "shopware6",
-        "shopware-plugins",
-        "shopware6-plugin",
         "recently-viewed-product",
         "recently-viewed-product-plugin",
-        "shopware-platform-plugin"
+        "shopware",
+        "shopware-platform-plugin",
+        "shopware-plugin",
+        "shopware-plugins",
+        "shopware6",
+        "shopware6-plugin"
+      ]
+    },
+    {
+      "slug": "administration",
+      "name": "administration",
+      "fullName": "shopware/administration",
+      "category": "E-commerce",
+      "stars": 40,
+      "author": "shopware",
+      "avatar": null,
+      "desc": "A project worth exploring.",
+      "demo": null,
+      "repoUrl": "https://github.com/shopware/administration",
+      "long1": "A project worth exploring. Maintained by shopware on GitHub, where it has earned 40 stars from the community.",
+      "long2": "It's actively developed around javascript, shopware, vuejs, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "JavaScript",
+        "Shopware",
+        "Vue"
+      ],
+      "updated": "yesterday",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 100.0,
+          "name": "JavaScript",
+          "size": 0
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "javascript",
+        "shopware",
+        "vuejs"
       ]
     },
     {
@@ -1408,63 +924,35 @@
       "category": "E-commerce",
       "stars": 36,
       "author": "HEPTACOM",
-      "avatar": "https://avatars.githubusercontent.com/u/59258961?v=4",
+      "avatar": null,
       "desc": "Shopware plugin to allow open auth logins in the administration",
-      "demo": "https://www.heptacom.de/",
+      "demo": null,
       "repoUrl": "https://github.com/HEPTACOM/HeptacomShopwarePlatformAdminOpenAuth",
       "long1": "Shopware plugin to allow open auth logins in the administration. Maintained by HEPTACOM on GitHub, where it has earned 36 stars from the community.",
-      "long2": "It's actively developed around ecommerce, shopware, shopware-plugin, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around ecommerce, oauth, shopware, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
         "Ecommerce",
+        "Oauth",
         "Shopware",
-        "Shopware Plugin",
-        "Oauth"
+        "Shopware Platform Plugin"
       ],
       "updated": "3 weeks ago",
       "license": "Apache-2.0",
       "langs": [
         {
+          "pct": 100.0,
           "name": "PHP",
-          "pct": 62
-        },
-        {
-          "name": "JavaScript",
-          "pct": 25
-        },
-        {
-          "name": "Twig",
-          "pct": 13
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "8.1.0",
-          "url": "https://github.com/HEPTACOM/HeptacomShopwarePlatformAdminOpenAuth/releases/tag/8.1.0"
-        },
-        {
-          "name": "7.1.1",
-          "url": "https://github.com/HEPTACOM/HeptacomShopwarePlatformAdminOpenAuth/releases/tag/7.1.1"
-        },
-        {
-          "name": "7.1.0",
-          "url": "https://github.com/HEPTACOM/HeptacomShopwarePlatformAdminOpenAuth/releases/tag/7.1.0"
-        },
-        {
-          "name": "9.0.0",
-          "url": "https://github.com/HEPTACOM/HeptacomShopwarePlatformAdminOpenAuth/releases/tag/9.0.0"
-        },
-        {
-          "name": "9.0.0-rc.2",
-          "url": "https://github.com/HEPTACOM/HeptacomShopwarePlatformAdminOpenAuth/releases/tag/9.0.0-rc.2"
-        }
-      ],
+      "versions": [],
       "topics": [
         "ecommerce",
-        "shopware",
-        "shopware-plugin",
         "oauth",
-        "shopware-platform-plugin"
+        "shopware",
+        "shopware-platform-plugin",
+        "shopware-plugin"
       ]
     },
     {
@@ -1474,33 +962,34 @@
       "category": "E-commerce",
       "stars": 35,
       "author": "kellerkinderDE",
-      "avatar": "https://avatars.githubusercontent.com/u/26060117?v=4",
+      "avatar": null,
       "desc": "Dump a Shopware 6 database for your local environments (and filter GDPR data)",
       "demo": null,
       "repoUrl": "https://github.com/kellerkinderDE/shopware6-database-dump",
       "long1": "Dump a Shopware 6 database for your local environments (and filter GDPR data). Maintained by kellerkinderDE on GitHub, where it has earned 35 stars from the community.",
-      "long2": "It's actively developed around shopware, shopware6, database, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around database, gdpr, shopware, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Shell",
-        "Shopware",
-        "Shopware6",
         "Database",
-        "Gdpr"
+        "Gdpr",
+        "Shopware",
+        "Shopware6"
       ],
       "updated": "2 years ago",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "Shell",
-          "pct": 100
+          "size": 0
         }
       ],
       "versions": [],
       "topics": [
-        "shopware",
-        "shopware6",
         "database",
-        "gdpr"
+        "gdpr",
+        "shopware",
+        "shopware6"
       ]
     },
     {
@@ -1510,38 +999,31 @@
       "category": "E-commerce",
       "stars": 33,
       "author": "shopware",
-      "avatar": "https://avatars.githubusercontent.com/u/612628?v=4",
+      "avatar": null,
       "desc": "Flex Recipes",
       "demo": null,
       "repoUrl": "https://github.com/shopware/recipes",
       "long1": "Flex Recipes. Maintained by shopware on GitHub, where it has earned 33 stars from the community.",
-      "long2": "It's actively developed around shopware, symfony, hacktoberfest, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around hacktoberfest, shopware, symfony, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Shell",
         "Shopware",
         "Symfony"
       ],
-      "updated": "4 days ago",
+      "updated": "yesterday",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "Shell",
-          "pct": 50
-        },
-        {
-          "name": "PHP",
-          "pct": 32
-        },
-        {
-          "name": "HTML",
-          "pct": 18
+          "size": 0
         }
       ],
       "versions": [],
       "topics": [
+        "hacktoberfest",
         "shopware",
-        "symfony",
-        "hacktoberfest"
+        "symfony"
       ]
     },
     {
@@ -1551,54 +1033,34 @@
       "category": "E-commerce",
       "stars": 32,
       "author": "apertureless",
-      "avatar": "https://avatars.githubusercontent.com/u/4975917?u=9073ba2d93afd31403ed25f0f3560bd9ff920128&v=4",
+      "avatar": null,
       "desc": "\ud83d\udecd Javascript API Client for Shopware",
       "demo": null,
       "repoUrl": "https://github.com/apertureless/shopware-api-client",
       "long1": "\ud83d\udecd Javascript API Client for Shopware. Maintained by apertureless on GitHub, where it has earned 32 stars from the community.",
-      "long2": "It's actively developed around api, shopware, api-client, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around api, api-client, rest-api, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
         "Api",
-        "Shopware",
         "Api Client",
-        "Rest Api"
+        "Rest Api",
+        "Shopware"
       ],
       "updated": "3 years ago",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "JavaScript",
-          "pct": 100
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "v1.6.0",
-          "url": "https://github.com/apertureless/shopware-api-client/releases/tag/v1.6.0"
-        },
-        {
-          "name": "v1.5.0",
-          "url": "https://github.com/apertureless/shopware-api-client/releases/tag/v1.5.0"
-        },
-        {
-          "name": "v1.4.0",
-          "url": "https://github.com/apertureless/shopware-api-client/releases/tag/v1.4.0"
-        },
-        {
-          "name": "v1.3.0",
-          "url": "https://github.com/apertureless/shopware-api-client/releases/tag/v1.3.0"
-        },
-        {
-          "name": "v1.2.0",
-          "url": "https://github.com/apertureless/shopware-api-client/releases/tag/v1.2.0"
-        }
-      ],
+      "versions": [],
       "topics": [
         "api",
-        "shopware",
         "api-client",
-        "rest-api"
+        "rest-api",
+        "shopware"
       ]
     },
     {
@@ -1608,7 +1070,7 @@
       "category": "E-commerce",
       "stars": 32,
       "author": "shopware",
-      "avatar": "https://avatars.githubusercontent.com/u/612628?v=4",
+      "avatar": null,
       "desc": "PayPal integration for shopware/platform",
       "demo": null,
       "repoUrl": "https://github.com/shopware/SwagPayPal",
@@ -1621,44 +1083,16 @@
         "Shopware6",
         "Shopware6 Plugin"
       ],
-      "updated": "3 days ago",
+      "updated": "today",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "PHP",
-          "pct": 86
-        },
-        {
-          "name": "TypeScript",
-          "pct": 8
-        },
-        {
-          "name": "Twig",
-          "pct": 6
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "10.7.0",
-          "url": "https://github.com/shopware/SwagPayPal/releases/tag/10.7.0"
-        },
-        {
-          "name": "8.11.4",
-          "url": "https://github.com/shopware/SwagPayPal/releases/tag/8.11.4"
-        },
-        {
-          "name": "9.12.4",
-          "url": "https://github.com/shopware/SwagPayPal/releases/tag/9.12.4"
-        },
-        {
-          "name": "10.6.4",
-          "url": "https://github.com/shopware/SwagPayPal/releases/tag/10.6.4"
-        },
-        {
-          "name": "8.11.3",
-          "url": "https://github.com/shopware/SwagPayPal/releases/tag/8.11.3"
-        }
-      ],
+      "versions": [],
       "topics": [
         "hacktoberfest",
         "paypal",
@@ -1674,16 +1108,16 @@
       "category": "E-commerce",
       "stars": 31,
       "author": "runelaenen",
-      "avatar": "https://avatars.githubusercontent.com/u/3930922?u=d22bbbbe45ff3d1255a09a3a7936aa30ea6447bf&v=4",
+      "avatar": null,
       "desc": "Image Optimizer for Shopware 6 \ud83d\udc99",
       "demo": null,
       "repoUrl": "https://github.com/runelaenen/sw6-media-optimizer",
       "long1": "Image Optimizer for Shopware 6 \ud83d\udc99. Maintained by runelaenen on GitHub, where it has earned 31 stars from the community.",
-      "long2": "It's actively developed around shopware, shopware6, shopware-plugin, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around shopware, shopware-platform-plugin, shopware-plugin, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
         "Shopware",
-        "Shopware6",
+        "Shopware Platform Plugin",
         "Shopware Plugin",
         "Shopware Plugins"
       ],
@@ -1691,26 +1125,57 @@
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "PHP",
-          "pct": 100
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "1.0.1",
-          "url": "https://github.com/runelaenen/sw6-media-optimizer/releases/tag/1.0.1"
-        },
-        {
-          "name": "v1.0.0",
-          "url": "https://github.com/runelaenen/sw6-media-optimizer/releases/tag/v1.0.0"
-        }
-      ],
+      "versions": [],
       "topics": [
         "shopware",
-        "shopware6",
+        "shopware-platform-plugin",
         "shopware-plugin",
         "shopware-plugins",
-        "shopware-platform-plugin",
+        "shopware6",
+        "shopware6-plugin"
+      ]
+    },
+    {
+      "slug": "shopware-esd",
+      "name": "shopware-esd",
+      "fullName": "Shape-and-Shift/shopware-esd",
+      "category": "E-commerce",
+      "stars": 30,
+      "author": "Shape-and-Shift",
+      "avatar": null,
+      "desc": "Digital products & ESD plugin for Shopware 6.",
+      "demo": null,
+      "repoUrl": "https://github.com/Shape-and-Shift/shopware-esd",
+      "long1": "Digital products & ESD plugin for Shopware 6. Maintained by Shape-and-Shift on GitHub, where it has earned 30 stars from the community.",
+      "long2": "It's actively developed around digital-download, esd, shopware, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "JavaScript",
+        "Digital Download",
+        "Esd",
+        "Shopware",
+        "Shopware Plugin"
+      ],
+      "updated": "3 weeks ago",
+      "license": "\u2014",
+      "langs": [
+        {
+          "pct": 100.0,
+          "name": "JavaScript",
+          "size": 0
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "digital-download",
+        "esd",
+        "shopware",
+        "shopware-plugin",
+        "shopware6",
         "shopware6-plugin"
       ]
     },
@@ -1721,125 +1186,34 @@
       "category": "E-commerce",
       "stars": 30,
       "author": "plentymarkets",
-      "avatar": "https://avatars.githubusercontent.com/u/3379035?v=4",
+      "avatar": null,
       "desc": "plentymarkets shopware connector plugin",
-      "demo": "http://www.plentymarkets.eu/shopware/",
+      "demo": null,
       "repoUrl": "https://github.com/plentymarkets/plentymarkets-shopware-connector",
       "long1": "plentymarkets shopware connector plugin. Maintained by plentymarkets on GitHub, where it has earned 30 stars from the community.",
-      "long2": "It's actively developed around plentymarkets-shopware-connector, plentymarkets, php, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around php, plentymarkets, plentymarkets-shopware-connector, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "Plentymarkets Shopware Connector",
-        "Plentymarkets",
         "Php",
-        "Shopware Plugin"
+        "Plentymarkets",
+        "Plentymarkets Shopware Connector",
+        "Shopware"
       ],
       "updated": "5 years ago",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "PHP",
-          "pct": 96
-        },
-        {
-          "name": "JavaScript",
-          "pct": 4
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "5.3.3",
-          "url": "https://github.com/plentymarkets/plentymarkets-shopware-connector/releases/tag/5.3.3"
-        },
-        {
-          "name": "5.3.2",
-          "url": "https://github.com/plentymarkets/plentymarkets-shopware-connector/releases/tag/5.3.2"
-        },
-        {
-          "name": "5.3.1",
-          "url": "https://github.com/plentymarkets/plentymarkets-shopware-connector/releases/tag/5.3.1"
-        },
-        {
-          "name": "v5.3.0",
-          "url": "https://github.com/plentymarkets/plentymarkets-shopware-connector/releases/tag/v5.3.0"
-        },
-        {
-          "name": "5.2.1",
-          "url": "https://github.com/plentymarkets/plentymarkets-shopware-connector/releases/tag/5.2.1"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "plentymarkets-shopware-connector",
-        "plentymarkets",
         "php",
-        "shopware-plugin",
-        "shopware"
-      ]
-    },
-    {
-      "slug": "shopware-esd",
-      "name": "shopware-esd",
-      "fullName": "Shape-and-Shift/shopware-esd",
-      "category": "E-commerce",
-      "stars": 30,
-      "author": "Shape-and-Shift",
-      "avatar": "https://avatars.githubusercontent.com/u/55768240?v=4",
-      "desc": "Digital products & ESD plugin for Shopware 6.",
-      "demo": null,
-      "repoUrl": "https://github.com/Shape-and-Shift/shopware-esd",
-      "long1": "Digital products & ESD plugin for Shopware 6. Maintained by Shape-and-Shift on GitHub, where it has earned 30 stars from the community.",
-      "long2": "It's actively developed around shopware, shopware-plugin, shopware6, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "JavaScript",
-        "Shopware",
-        "Shopware Plugin",
-        "Shopware6",
-        "Shopware6 Plugin"
-      ],
-      "updated": "3 weeks ago",
-      "license": "\u2014",
-      "langs": [
-        {
-          "name": "JavaScript",
-          "pct": 62
-        },
-        {
-          "name": "PHP",
-          "pct": 28
-        },
-        {
-          "name": "Twig",
-          "pct": 10
-        }
-      ],
-      "versions": [
-        {
-          "name": "2.0.0",
-          "url": "https://github.com/Shape-and-Shift/shopware-esd/releases/tag/2.0.0"
-        },
-        {
-          "name": "1.6.3",
-          "url": "https://github.com/Shape-and-Shift/shopware-esd/releases/tag/1.6.3"
-        },
-        {
-          "name": "1.6.2",
-          "url": "https://github.com/Shape-and-Shift/shopware-esd/releases/tag/1.6.2"
-        },
-        {
-          "name": "1.6.1",
-          "url": "https://github.com/Shape-and-Shift/shopware-esd/releases/tag/1.6.1"
-        },
-        {
-          "name": "1.6.0",
-          "url": "https://github.com/Shape-and-Shift/shopware-esd/releases/tag/1.6.0"
-        }
-      ],
-      "topics": [
+        "plentymarkets",
+        "plentymarkets-shopware-connector",
         "shopware",
-        "shopware-plugin",
-        "shopware6",
-        "shopware6-plugin",
-        "esd",
-        "digital-download"
+        "shopware-plugin"
       ]
     },
     {
@@ -1849,56 +1223,36 @@
       "category": "E-commerce",
       "stars": 27,
       "author": "Shape-and-Shift",
-      "avatar": "https://avatars.githubusercontent.com/u/55768240?v=4",
+      "avatar": null,
       "desc": "A beautifully simple map element for Shopware 6.",
       "demo": null,
       "repoUrl": "https://github.com/Shape-and-Shift/shopware-maps",
       "long1": "A beautifully simple map element for Shopware 6. Maintained by Shape-and-Shift on GitHub, where it has earned 27 stars from the community.",
-      "long2": "It's actively developed around shopware, shopware-plugin, shopware6-plugin, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around mapbox, shopware, shopware-plugin, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
+        "Mapbox",
         "Shopware",
         "Shopware Plugin",
-        "Shopware6 Plugin",
-        "Shopware6"
+        "Shopware Plugins"
       ],
       "updated": "3 years ago",
       "license": "\u2014",
       "langs": [
         {
+          "pct": 100.0,
           "name": "JavaScript",
-          "pct": 57
-        },
-        {
-          "name": "HTML",
-          "pct": 36
-        },
-        {
-          "name": "CSS",
-          "pct": 7
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "1.0.3",
-          "url": "https://github.com/Shape-and-Shift/shopware-maps/releases/tag/1.0.3"
-        },
-        {
-          "name": "1.0.2",
-          "url": "https://github.com/Shape-and-Shift/shopware-maps/releases/tag/1.0.2"
-        },
-        {
-          "name": "1.0.1",
-          "url": "https://github.com/Shape-and-Shift/shopware-maps/releases/tag/1.0.1"
-        }
-      ],
+      "versions": [],
       "topics": [
+        "mapbox",
         "shopware",
         "shopware-plugin",
-        "shopware6-plugin",
-        "shopware6",
         "shopware-plugins",
-        "mapbox"
+        "shopware6",
+        "shopware6-plugin"
       ]
     },
     {
@@ -1908,39 +1262,37 @@
       "category": "E-commerce",
       "stars": 26,
       "author": "7underlines",
-      "avatar": "https://avatars.githubusercontent.com/u/17121556?u=2b8ea63f92feb7b66b0888dff4e0c8c1deebbb44&v=4",
+      "avatar": null,
       "desc": "The reliable way to import/update/export a bazillion products of your Shopware 6 shop.",
       "demo": null,
       "repoUrl": "https://github.com/7underlines/v-shopware-api-client",
       "long1": "The reliable way to import/update/export a bazillion products of your Shopware 6 shop. Maintained by 7underlines on GitHub, where it has earned 26 stars from the community.",
-      "long2": "It's actively developed around v, ecommerce, shopware, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around api, api-client, ecommerce, and is a solid reference for anyone building with these tools.",
       "stack": [
         "V",
+        "Api",
+        "Api Client",
         "Ecommerce",
-        "Shopware",
-        "Shopware6"
+        "Rest Api"
       ],
       "updated": "3 months ago",
       "license": "AGPL-3.0",
       "langs": [
         {
+          "pct": 100.0,
           "name": "V",
-          "pct": 99
-        },
-        {
-          "name": "AMPL",
-          "pct": 1
+          "size": 0
         }
       ],
       "versions": [],
       "topics": [
-        "v",
+        "api",
+        "api-client",
         "ecommerce",
+        "rest-api",
         "shopware",
         "shopware6",
-        "api-client",
-        "api",
-        "rest-api"
+        "v"
       ]
     },
     {
@@ -1950,63 +1302,35 @@
       "category": "E-commerce",
       "stars": 25,
       "author": "runelaenen",
-      "avatar": "https://avatars.githubusercontent.com/u/3930922?u=d22bbbbe45ff3d1255a09a3a7936aa30ea6447bf&v=4",
+      "avatar": null,
       "desc": "301/302 redirect management plugin for Shopware 6 \ud83d\udc99",
       "demo": null,
       "repoUrl": "https://github.com/runelaenen/sw6-redirects",
       "long1": "301/302 redirect management plugin for Shopware 6 \ud83d\udc99. Maintained by runelaenen on GitHub, where it has earned 25 stars from the community.",
-      "long2": "It's actively developed around shopware, shopware-plugin, shopware6, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around shopware, shopware-platform-plugin, shopware-plugin, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
         "Shopware",
+        "Shopware Platform Plugin",
         "Shopware Plugin",
-        "Shopware6",
-        "Shopware6 Plugin"
+        "Shopware6"
       ],
       "updated": "3 years ago",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "PHP",
-          "pct": 61
-        },
-        {
-          "name": "JavaScript",
-          "pct": 28
-        },
-        {
-          "name": "Twig",
-          "pct": 11
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "1.3.1",
-          "url": "https://github.com/runelaenen/sw6-redirects/releases/tag/1.3.1"
-        },
-        {
-          "name": "1.3.0",
-          "url": "https://github.com/runelaenen/sw6-redirects/releases/tag/1.3.0"
-        },
-        {
-          "name": "1.2.0",
-          "url": "https://github.com/runelaenen/sw6-redirects/releases/tag/1.2.0"
-        },
-        {
-          "name": "1.1.0",
-          "url": "https://github.com/runelaenen/sw6-redirects/releases/tag/1.1.0"
-        },
-        {
-          "name": "1.0.0",
-          "url": "https://github.com/runelaenen/sw6-redirects/releases/tag/1.0.0"
-        }
-      ],
+      "versions": [],
       "topics": [
         "shopware",
+        "shopware-platform-plugin",
         "shopware-plugin",
         "shopware6",
-        "shopware6-plugin",
-        "shopware-platform-plugin"
+        "shopware6-plugin"
       ]
     },
     {
@@ -2016,63 +1340,35 @@
       "category": "E-commerce",
       "stars": 25,
       "author": "webmatch",
-      "avatar": "https://avatars.githubusercontent.com/u/25250263?v=4",
+      "avatar": null,
       "desc": "Shopware 5 Plugin for Google Tag Manager integration and dataLayer configuration",
       "demo": null,
       "repoUrl": "https://github.com/webmatch/WbmTagManager",
       "long1": "Shopware 5 Plugin for Google Tag Manager integration and dataLayer configuration. Maintained by webmatch on GitHub, where it has earned 25 stars from the community.",
-      "long2": "It's actively developed around shopware, shopware-plugin, google-tag-manager, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around datalayer, datalayer-configuration, google-tag-manager, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Shopware",
-        "Shopware Plugin",
+        "Datalayer",
+        "Datalayer Configuration",
         "Google Tag Manager",
-        "Datalayer"
+        "Shopware"
       ],
       "updated": "3 years ago",
       "license": "\u2014",
       "langs": [
         {
+          "pct": 100.0,
           "name": "PHP",
-          "pct": 60
-        },
-        {
-          "name": "JavaScript",
-          "pct": 38
-        },
-        {
-          "name": "Smarty",
-          "pct": 2
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "3.5.6",
-          "url": "https://github.com/webmatch/WbmTagManager/releases/tag/3.5.6"
-        },
-        {
-          "name": "3.5.4",
-          "url": "https://github.com/webmatch/WbmTagManager/releases/tag/3.5.4"
-        },
-        {
-          "name": "3.5.3",
-          "url": "https://github.com/webmatch/WbmTagManager/releases/tag/3.5.3"
-        },
-        {
-          "name": "3.5.2",
-          "url": "https://github.com/webmatch/WbmTagManager/releases/tag/3.5.2"
-        },
-        {
-          "name": "3.5.1",
-          "url": "https://github.com/webmatch/WbmTagManager/releases/tag/3.5.1"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "shopware",
-        "shopware-plugin",
-        "google-tag-manager",
         "datalayer",
-        "datalayer-configuration"
+        "datalayer-configuration",
+        "google-tag-manager",
+        "shopware",
+        "shopware-plugin"
       ]
     },
     {
@@ -2082,97 +1378,34 @@
       "category": "E-commerce",
       "stars": 23,
       "author": "shopware5",
-      "avatar": "https://avatars.githubusercontent.com/u/122545688?v=4",
+      "avatar": null,
       "desc": "A project worth exploring.",
       "demo": null,
       "repoUrl": "https://github.com/shopware5/SwagThreeSixtyViewer",
       "long1": "A project worth exploring. Maintained by shopware5 on GitHub, where it has earned 23 stars from the community.",
-      "long2": "It's actively developed around shopware, shopware-plugin, 3d-viewer, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around 3d-viewer, babylonjs, shopware, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
-        "Shopware",
-        "Shopware Plugin",
         "3D Viewer",
-        "Babylonjs"
+        "Babylonjs",
+        "Shopware",
+        "Shopware Plugin"
       ],
       "updated": "9 years ago",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "JavaScript",
-          "pct": 87
-        },
-        {
-          "name": "PHP",
-          "pct": 12
-        },
-        {
-          "name": "Smarty",
-          "pct": 1
+          "size": 0
         }
       ],
       "versions": [],
       "topics": [
-        "shopware",
-        "shopware-plugin",
         "3d-viewer",
-        "babylonjs"
-      ]
-    },
-    {
-      "slug": "shopware-advanced-generator",
-      "name": "shopware-advanced-generator",
-      "fullName": "rherwig/shopware-advanced-generator",
-      "category": "E-commerce",
-      "stars": 23,
-      "author": "rherwig",
-      "avatar": "https://avatars.githubusercontent.com/u/12065150?u=407d545d7a8c197a077eb2c7950936dc99950658&v=4",
-      "desc": "Scaffolding CLI for Shopware 6 that creates plugins, elements and much more.",
-      "demo": null,
-      "repoUrl": "https://github.com/rherwig/shopware-advanced-generator",
-      "long1": "Scaffolding CLI for Shopware 6 that creates plugins, elements and much more. Maintained by rherwig on GitHub, where it has earned 23 stars from the community.",
-      "long2": "It's actively developed around shopware, shopware6, shopware-cli, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "JavaScript",
-        "Shopware",
-        "Shopware6",
-        "Shopware Cli",
-        "Generator"
-      ],
-      "updated": "3 years ago",
-      "license": "\u2014",
-      "langs": [
-        {
-          "name": "JavaScript",
-          "pct": 100
-        }
-      ],
-      "versions": [
-        {
-          "name": "1.1.0",
-          "url": "https://github.com/rherwig/shopware-advanced-generator/releases/tag/1.1.0"
-        },
-        {
-          "name": "1.0.3",
-          "url": "https://github.com/rherwig/shopware-advanced-generator/releases/tag/1.0.3"
-        },
-        {
-          "name": "1.0.2",
-          "url": "https://github.com/rherwig/shopware-advanced-generator/releases/tag/1.0.2"
-        },
-        {
-          "name": "1.0.1",
-          "url": "https://github.com/rherwig/shopware-advanced-generator/releases/tag/1.0.1"
-        }
-      ],
-      "topics": [
+        "babylonjs",
         "shopware",
-        "shopware6",
-        "shopware-cli",
-        "generator",
-        "nodejs",
-        "scaffolding",
-        "boilerplate"
+        "shopware-plugin"
       ]
     },
     {
@@ -2182,52 +1415,153 @@
       "category": "E-commerce",
       "stars": 23,
       "author": "KiweeEu",
-      "avatar": "https://avatars.githubusercontent.com/u/21020508?v=4",
+      "avatar": null,
       "desc": "Shopware 6 on Kubernetes Dev Setup",
-      "demo": "https://kiwee.eu/blog/shopware-6-development-on-kubernetes/",
+      "demo": null,
       "repoUrl": "https://github.com/KiweeEu/shopware-kubernetes-dev",
       "long1": "Shopware 6 on Kubernetes Dev Setup. Maintained by KiweeEu on GitHub, where it has earned 23 stars from the community.",
-      "long2": "It's actively developed around shopware, kubernetes, xdebug, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around frankenphp, kubernetes, minikube, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Dockerfile",
-        "Shopware",
+        "Frankenphp",
         "Kubernetes",
-        "Xdebug",
-        "Minikube"
+        "Minikube",
+        "Playwright Tests"
       ],
       "updated": "1 year ago",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "Dockerfile",
-          "pct": 70
-        },
-        {
-          "name": "TypeScript",
-          "pct": 25
-        },
-        {
-          "name": "Shell",
-          "pct": 5
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "0.1.0",
-          "url": "https://github.com/KiweeEu/shopware-kubernetes-dev/releases/tag/0.1.0"
-        },
-        {
-          "name": "0.0.1",
-          "url": "https://github.com/KiweeEu/shopware-kubernetes-dev/releases/tag/0.0.1"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "shopware",
-        "kubernetes",
-        "xdebug",
-        "minikube",
         "frankenphp",
-        "playwright-tests"
+        "kubernetes",
+        "minikube",
+        "playwright-tests",
+        "shopware",
+        "xdebug"
+      ]
+    },
+    {
+      "slug": "shopware-advanced-generator",
+      "name": "shopware-advanced-generator",
+      "fullName": "rherwig/shopware-advanced-generator",
+      "category": "E-commerce",
+      "stars": 23,
+      "author": "rherwig",
+      "avatar": null,
+      "desc": "Scaffolding CLI for Shopware 6 that creates plugins, elements and much more.",
+      "demo": null,
+      "repoUrl": "https://github.com/rherwig/shopware-advanced-generator",
+      "long1": "Scaffolding CLI for Shopware 6 that creates plugins, elements and much more. Maintained by rherwig on GitHub, where it has earned 23 stars from the community.",
+      "long2": "It's actively developed around boilerplate, generator, nodejs, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "JavaScript",
+        "Boilerplate",
+        "Generator",
+        "Node",
+        "Scaffolding"
+      ],
+      "updated": "3 years ago",
+      "license": "\u2014",
+      "langs": [
+        {
+          "pct": 100.0,
+          "name": "JavaScript",
+          "size": 0
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "boilerplate",
+        "generator",
+        "nodejs",
+        "scaffolding",
+        "shopware",
+        "shopware-cli",
+        "shopware6"
+      ]
+    },
+    {
+      "slug": "swagmedias3",
+      "name": "SwagMediaS3",
+      "fullName": "shopware5/SwagMediaS3",
+      "category": "E-commerce",
+      "stars": 21,
+      "author": "shopware5",
+      "avatar": null,
+      "desc": "A project worth exploring.",
+      "demo": null,
+      "repoUrl": "https://github.com/shopware5/SwagMediaS3",
+      "long1": "A project worth exploring. Maintained by shopware5 on GitHub, where it has earned 21 stars from the community.",
+      "long2": "It's actively developed around s3, shopware, shopware-plugin, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "S3",
+        "Shopware",
+        "Shopware Plugin"
+      ],
+      "updated": "8 years ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 100.0,
+          "name": "PHP",
+          "size": 0
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "s3",
+        "shopware",
+        "shopware-plugin"
+      ]
+    },
+    {
+      "slug": "shopware-6",
+      "name": "shopware-6",
+      "fullName": "PAYONE-GmbH/shopware-6",
+      "category": "E-commerce",
+      "stars": 21,
+      "author": "PAYONE-GmbH",
+      "avatar": null,
+      "desc": "PAYONE Payment Plugin for Shopware 6",
+      "demo": null,
+      "repoUrl": "https://github.com/PAYONE-GmbH/shopware-6",
+      "long1": "PAYONE Payment Plugin for Shopware 6. Maintained by PAYONE-GmbH on GitHub, where it has earned 21 stars from the community.",
+      "long2": "It's actively developed around payment, payment-gateway, payment-processing, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Payment",
+        "Payment Gateway",
+        "Payment Processing",
+        "Payment Service"
+      ],
+      "updated": "5 days ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 100.0,
+          "name": "PHP",
+          "size": 0
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "payment",
+        "payment-gateway",
+        "payment-processing",
+        "payment-service",
+        "payment-solution",
+        "payone",
+        "shopware",
+        "shopware-plugin",
+        "shopware6"
       ]
     },
     {
@@ -2237,7 +1571,7 @@
       "category": "E-commerce",
       "stars": 21,
       "author": "Shape-and-Shift",
-      "avatar": "https://avatars.githubusercontent.com/u/55768240?v=4",
+      "avatar": null,
       "desc": "Shopware 6 plugin to add hotspots with a title and text popover to an image",
       "demo": null,
       "repoUrl": "https://github.com/Shape-and-Shift/shopware-image-hotspot",
@@ -2254,24 +1588,12 @@
       "license": "\u2014",
       "langs": [
         {
+          "pct": 100.0,
           "name": "PHP",
-          "pct": 60
-        },
-        {
-          "name": "Twig",
-          "pct": 24
-        },
-        {
-          "name": "SCSS",
-          "pct": 16
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "1.0.0",
-          "url": "https://github.com/Shape-and-Shift/shopware-image-hotspot/releases/tag/1.0.0"
-        }
-      ],
+      "versions": [],
       "topics": [
         "shopware",
         "shopware-plugin",
@@ -2280,128 +1602,80 @@
       ]
     },
     {
-      "slug": "shopware-6",
-      "name": "shopware-6",
-      "fullName": "PAYONE-GmbH/shopware-6",
+      "slug": "docker-mate",
+      "name": "docker-mate",
+      "fullName": "docker-mate/docker-mate",
       "category": "E-commerce",
-      "stars": 21,
-      "author": "PAYONE-GmbH",
-      "avatar": "https://avatars.githubusercontent.com/u/19286286?v=4",
-      "desc": "PAYONE Payment Plugin for Shopware 6",
+      "stars": 20,
+      "author": "docker-mate",
+      "avatar": null,
+      "desc": "Local PHP development made easy",
       "demo": null,
-      "repoUrl": "https://github.com/PAYONE-GmbH/shopware-6",
-      "long1": "PAYONE Payment Plugin for Shopware 6. Maintained by PAYONE-GmbH on GitHub, where it has earned 21 stars from the community.",
-      "long2": "It's actively developed around payment-processing, payone, payment-solution, and is a solid reference for anyone building with these tools.",
+      "repoUrl": "https://github.com/docker-mate/docker-mate",
+      "long1": "Local PHP development made easy. Maintained by docker-mate on GitHub, where it has earned 20 stars from the community.",
+      "long2": "It's actively developed around bedrock, docker, docker-compose, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "PHP",
-        "Payment Processing",
-        "Payone",
-        "Payment Solution",
-        "Payment Service"
+        "Shell",
+        "Bedrock",
+        "Docker",
+        "Docker Compose",
+        "Docker Mate"
       ],
-      "updated": "4 days ago",
+      "updated": "1 year ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 81
-        },
-        {
-          "name": "Twig",
-          "pct": 10
-        },
-        {
-          "name": "JavaScript",
-          "pct": 9
+          "pct": 100.0,
+          "name": "Shell",
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "v7.4.0",
-          "url": "https://github.com/PAYONE-GmbH/shopware-6/releases/tag/v7.4.0"
-        },
-        {
-          "name": "v7.3.3",
-          "url": "https://github.com/PAYONE-GmbH/shopware-6/releases/tag/v7.3.3"
-        },
-        {
-          "name": "v7.3.2",
-          "url": "https://github.com/PAYONE-GmbH/shopware-6/releases/tag/v7.3.2"
-        },
-        {
-          "name": "v7.3.1",
-          "url": "https://github.com/PAYONE-GmbH/shopware-6/releases/tag/v7.3.1"
-        },
-        {
-          "name": "v7.3.0",
-          "url": "https://github.com/PAYONE-GmbH/shopware-6/releases/tag/v7.3.0"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "payment-processing",
-        "payone",
-        "payment-solution",
-        "payment-service",
-        "payment-gateway",
-        "payment",
+        "bedrock",
+        "docker",
+        "docker-compose",
+        "docker-mate",
+        "grav",
+        "php",
         "shopware",
-        "shopware6",
-        "shopware-plugin"
+        "symfony",
+        "wordpress"
       ]
     },
     {
-      "slug": "swagmedias3",
-      "name": "SwagMediaS3",
-      "fullName": "shopware5/SwagMediaS3",
+      "slug": "shopware-sentry",
+      "name": "shopware-sentry",
+      "fullName": "1drop/shopware-sentry",
       "category": "E-commerce",
-      "stars": 21,
-      "author": "shopware5",
-      "avatar": "https://avatars.githubusercontent.com/u/122545688?v=4",
-      "desc": "A project worth exploring.",
+      "stars": 20,
+      "author": "1drop",
+      "avatar": null,
+      "desc": "Sentry plugin for Shopware",
       "demo": null,
-      "repoUrl": "https://github.com/shopware5/SwagMediaS3",
-      "long1": "A project worth exploring. Maintained by shopware5 on GitHub, where it has earned 21 stars from the community.",
-      "long2": "It's actively developed around shopware-plugin, shopware, s3, and is a solid reference for anyone building with these tools.",
+      "repoUrl": "https://github.com/1drop/shopware-sentry",
+      "long1": "Sentry plugin for Shopware. Maintained by 1drop on GitHub, where it has earned 20 stars from the community.",
+      "long2": "It's actively developed around sentry, shopware, shopware-plugin, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Shopware Plugin",
+        "Sentry",
         "Shopware",
-        "S3"
+        "Shopware Plugin"
       ],
-      "updated": "8 years ago",
+      "updated": "3 weeks ago",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "PHP",
-          "pct": 81
-        },
-        {
-          "name": "Shell",
-          "pct": 19
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "v2.0.0",
-          "url": "https://github.com/shopware5/SwagMediaS3/releases/tag/v2.0.0"
-        },
-        {
-          "name": "v1.0.2",
-          "url": "https://github.com/shopware5/SwagMediaS3/releases/tag/v1.0.2"
-        },
-        {
-          "name": "v1.0.1",
-          "url": "https://github.com/shopware5/SwagMediaS3/releases/tag/v1.0.1"
-        },
-        {
-          "name": "v1.0.0",
-          "url": "https://github.com/shopware5/SwagMediaS3/releases/tag/v1.0.0"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "shopware-plugin",
+        "sentry",
         "shopware",
-        "s3"
+        "shopware-plugin"
       ]
     },
     {
@@ -2411,7 +1685,7 @@
       "category": "E-commerce",
       "stars": 20,
       "author": "shopware",
-      "avatar": "https://avatars.githubusercontent.com/u/612628?v=4",
+      "avatar": null,
       "desc": "Plugin for migrating data to Shopware 6.",
       "demo": null,
       "repoUrl": "https://github.com/shopware/SwagMigrationAssistant",
@@ -2423,160 +1697,20 @@
         "Plugin",
         "Shopware"
       ],
-      "updated": "today",
+      "updated": "yesterday",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "PHP",
-          "pct": 90
-        },
-        {
-          "name": "TypeScript",
-          "pct": 5
-        },
-        {
-          "name": "JavaScript",
-          "pct": 5
-        }
-      ],
-      "versions": [
-        {
-          "name": "18.0.0",
-          "url": "https://github.com/shopware/SwagMigrationAssistant/releases/tag/18.0.0"
-        },
-        {
-          "name": "17.0.0",
-          "url": "https://github.com/shopware/SwagMigrationAssistant/releases/tag/17.0.0"
-        },
-        {
-          "name": "16.2.0",
-          "url": "https://github.com/shopware/SwagMigrationAssistant/releases/tag/16.2.0"
-        },
-        {
-          "name": "16.1.1",
-          "url": "https://github.com/shopware/SwagMigrationAssistant/releases/tag/16.1.1"
-        },
-        {
-          "name": "16.1.0",
-          "url": "https://github.com/shopware/SwagMigrationAssistant/releases/tag/16.1.0"
-        }
-      ],
-      "topics": [
-        "migration",
-        "plugin",
-        "shopware"
-      ]
-    },
-    {
-      "slug": "shopware-sentry",
-      "name": "shopware-sentry",
-      "fullName": "1drop/shopware-sentry",
-      "category": "E-commerce",
-      "stars": 20,
-      "author": "1drop",
-      "avatar": "https://avatars.githubusercontent.com/u/7813952?v=4",
-      "desc": "Sentry plugin for Shopware",
-      "demo": null,
-      "repoUrl": "https://github.com/1drop/shopware-sentry",
-      "long1": "Sentry plugin for Shopware. Maintained by 1drop on GitHub, where it has earned 20 stars from the community.",
-      "long2": "It's actively developed around shopware, shopware-plugin, sentry, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Shopware",
-        "Shopware Plugin",
-        "Sentry"
-      ],
-      "updated": "3 weeks ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 90
-        },
-        {
-          "name": "Smarty",
-          "pct": 10
-        },
-        {
-          "name": "Less",
-          "pct": 0
-        }
-      ],
-      "versions": [
-        {
-          "name": "2.2.0",
-          "url": "https://github.com/1drop/shopware-sentry/releases/tag/2.2.0"
-        },
-        {
-          "name": "2.1.0",
-          "url": "https://github.com/1drop/shopware-sentry/releases/tag/2.1.0"
-        },
-        {
-          "name": "2.0.5",
-          "url": "https://github.com/1drop/shopware-sentry/releases/tag/2.0.5"
-        },
-        {
-          "name": "2.0.4",
-          "url": "https://github.com/1drop/shopware-sentry/releases/tag/2.0.4"
-        },
-        {
-          "name": "2.0.3",
-          "url": "https://github.com/1drop/shopware-sentry/releases/tag/2.0.3"
-        }
-      ],
-      "topics": [
-        "shopware",
-        "shopware-plugin",
-        "sentry"
-      ]
-    },
-    {
-      "slug": "docker-mate",
-      "name": "docker-mate",
-      "fullName": "docker-mate/docker-mate",
-      "category": "E-commerce",
-      "stars": 20,
-      "author": "docker-mate",
-      "avatar": "https://avatars.githubusercontent.com/u/65373298?v=4",
-      "desc": "Local PHP development made easy",
-      "demo": "https://docker-mate.dev",
-      "repoUrl": "https://github.com/docker-mate/docker-mate",
-      "long1": "Local PHP development made easy. Maintained by docker-mate on GitHub, where it has earned 20 stars from the community.",
-      "long2": "It's actively developed around docker, php, docker-compose, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Shell",
-        "Docker",
-        "Php",
-        "Docker Compose",
-        "Docker Mate"
-      ],
-      "updated": "1 year ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "Shell",
-          "pct": 58
-        },
-        {
-          "name": "Makefile",
-          "pct": 41
-        },
-        {
-          "name": "Dockerfile",
-          "pct": 1
+          "size": 0
         }
       ],
       "versions": [],
       "topics": [
-        "docker",
-        "php",
-        "docker-compose",
-        "docker-mate",
-        "shopware",
-        "grav",
-        "wordpress",
-        "symfony",
-        "bedrock"
+        "migration",
+        "plugin",
+        "shopware"
       ]
     },
     {
@@ -2586,9 +1720,9 @@
       "category": "E-commerce",
       "stars": 20,
       "author": "MagePsycho",
-      "avatar": "https://avatars.githubusercontent.com/u/1205071?u=68b472658b8a2db2512112015fd2db537f44ba77&v=4",
+      "avatar": null,
       "desc": "PHP Composer Patch Creator",
-      "demo": "https://www.magepsycho.com/",
+      "demo": null,
       "repoUrl": "https://github.com/MagePsycho/composer-patch-creator",
       "long1": "PHP Composer Patch Creator. Maintained by MagePsycho on GitHub, where it has earned 20 stars from the community.",
       "long2": "It's actively developed around bash, laravel, magento, and is a solid reference for anyone building with these tools.",
@@ -2603,8 +1737,9 @@
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "Shell",
-          "pct": 100
+          "size": 0
         }
       ],
       "versions": [],
@@ -2626,52 +1761,32 @@
       "category": "E-commerce",
       "stars": 19,
       "author": "leduc92",
-      "avatar": "https://avatars.githubusercontent.com/u/5572854?u=7474dccbdd5064b774ec878c052ea4497dd54557&v=4",
+      "avatar": null,
       "desc": "A Shopware 6 Plugin that allows Administrators to filter Order listing be defined criteria",
       "demo": null,
       "repoUrl": "https://github.com/leduc92/sbuorderadvancedfilter",
       "long1": "A Shopware 6 Plugin that allows Administrators to filter Order listing be defined criteria. Maintained by leduc92 on GitHub, where it has earned 19 stars from the community.",
-      "long2": "It's actively developed around shopware, shopware-plugin, shopware-platform-plugin, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around shopware, shopware-platform-plugin, shopware-plugin, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Twig",
         "Shopware",
-        "Shopware Plugin",
-        "Shopware Platform Plugin"
+        "Shopware Platform Plugin",
+        "Shopware Plugin"
       ],
       "updated": "5 years ago",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "Twig",
-          "pct": 56
-        },
-        {
-          "name": "JavaScript",
-          "pct": 40
-        },
-        {
-          "name": "SCSS",
-          "pct": 4
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "1.0.2",
-          "url": "https://github.com/leduc92/sbuorderadvancedfilter/releases/tag/1.0.2"
-        },
-        {
-          "name": "1.0.1",
-          "url": "https://github.com/leduc92/sbuorderadvancedfilter/releases/tag/1.0.1"
-        },
-        {
-          "name": "v0.1.0",
-          "url": "https://github.com/leduc92/sbuorderadvancedfilter/releases/tag/v0.1.0"
-        }
-      ],
+      "versions": [],
       "topics": [
         "shopware",
-        "shopware-plugin",
-        "shopware-platform-plugin"
+        "shopware-platform-plugin",
+        "shopware-plugin"
       ]
     },
     {
@@ -2681,94 +1796,32 @@
       "category": "E-commerce",
       "stars": 19,
       "author": "shopware",
-      "avatar": "https://avatars.githubusercontent.com/u/612628?v=4",
+      "avatar": null,
       "desc": "Simplify Shopware Deployments",
-      "demo": "https://developer.shopware.com/docs/guides/hosting/installation-updates/deployments/deployment-helper.html",
+      "demo": null,
       "repoUrl": "https://github.com/shopware/deployment-helper",
       "long1": "Simplify Shopware Deployments. Maintained by shopware on GitHub, where it has earned 19 stars from the community.",
-      "long2": "It's actively developed around deployment, deployment-automation, shopware, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around deployment, deployment-automation, hacktoberfest, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
         "Deployment",
         "Deployment Automation",
         "Shopware"
       ],
-      "updated": "2 weeks ago",
+      "updated": "yesterday",
       "license": "\u2014",
       "langs": [
         {
+          "pct": 100.0,
           "name": "PHP",
-          "pct": 100
-        }
-      ],
-      "versions": [
-        {
-          "name": "0.1.2",
-          "url": "https://github.com/shopware/deployment-helper/releases/tag/0.1.2"
-        },
-        {
-          "name": "0.1.1",
-          "url": "https://github.com/shopware/deployment-helper/releases/tag/0.1.1"
-        },
-        {
-          "name": "0.1.0",
-          "url": "https://github.com/shopware/deployment-helper/releases/tag/0.1.0"
-        },
-        {
-          "name": "0.0.33",
-          "url": "https://github.com/shopware/deployment-helper/releases/tag/0.0.33"
-        },
-        {
-          "name": "0.0.32",
-          "url": "https://github.com/shopware/deployment-helper/releases/tag/0.0.32"
-        }
-      ],
-      "topics": [
-        "deployment",
-        "deployment-automation",
-        "shopware",
-        "hacktoberfest"
-      ]
-    },
-    {
-      "slug": "k6-shopware",
-      "name": "k6-shopware",
-      "fullName": "shopware/k6-shopware",
-      "category": "E-commerce",
-      "stars": 18,
-      "author": "shopware",
-      "avatar": "https://avatars.githubusercontent.com/u/612628?v=4",
-      "desc": "E2E Performance Testing with Grafana K6",
-      "demo": "https://developer.shopware.com/docs/guides/hosting/performance/k6.html",
-      "repoUrl": "https://github.com/shopware/k6-shopware",
-      "long1": "E2E Performance Testing with Grafana K6. Maintained by shopware on GitHub, where it has earned 18 stars from the community.",
-      "long2": "It's actively developed around k6, performance, shopware, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "JavaScript",
-        "K6",
-        "Performance",
-        "Shopware"
-      ],
-      "updated": "4 months ago",
-      "license": "\u2014",
-      "langs": [
-        {
-          "name": "JavaScript",
-          "pct": 92
-        },
-        {
-          "name": "TypeScript",
-          "pct": 7
-        },
-        {
-          "name": "Makefile",
-          "pct": 1
+          "size": 0
         }
       ],
       "versions": [],
       "topics": [
-        "k6",
-        "performance",
+        "deployment",
+        "deployment-automation",
+        "hacktoberfest",
         "shopware"
       ]
     },
@@ -2779,61 +1832,37 @@
       "category": "E-commerce",
       "stars": 18,
       "author": "sschreier",
-      "avatar": "https://avatars.githubusercontent.com/u/20040508?v=4",
+      "avatar": null,
       "desc": "A shopware 6 extension for tabs for the product detail page, which can be displayed before or after the reviews tab.",
-      "demo": "https://www.web-solutions-dresden.de/ein-tab-fuer-die-produkt-detailseite",
+      "demo": null,
       "repoUrl": "https://github.com/sschreier/SschreierTabProductDetailPage",
       "long1": "A shopware 6 extension for tabs for the product detail page, which can be displayed before or after the reviews tab. Maintained by sschreier on GitHub, where it has earned 18 stars from the community.",
-      "long2": "It's actively developed around tabs, tab, shopware, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around shopware, shopware-platform-plugin, shopware-plugin, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Twig",
-        "Tabs",
-        "Tab",
         "Shopware",
+        "Shopware Platform Plugin",
+        "Shopware Plugin",
         "Shopware6"
       ],
       "updated": "9 months ago",
       "license": "GPL-3.0",
       "langs": [
         {
+          "pct": 100.0,
           "name": "Twig",
-          "pct": 72
-        },
-        {
-          "name": "PHP",
-          "pct": 28
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "1.3.1",
-          "url": "https://github.com/sschreier/SschreierTabProductDetailPage/releases/tag/1.3.1"
-        },
-        {
-          "name": "1.3.0",
-          "url": "https://github.com/sschreier/SschreierTabProductDetailPage/releases/tag/1.3.0"
-        },
-        {
-          "name": "1.2.4",
-          "url": "https://github.com/sschreier/SschreierTabProductDetailPage/releases/tag/1.2.4"
-        },
-        {
-          "name": "1.2.3",
-          "url": "https://github.com/sschreier/SschreierTabProductDetailPage/releases/tag/1.2.3"
-        },
-        {
-          "name": "1.2.2",
-          "url": "https://github.com/sschreier/SschreierTabProductDetailPage/releases/tag/1.2.2"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "tabs",
-        "tab",
         "shopware",
-        "shopware6",
+        "shopware-platform-plugin",
         "shopware-plugin",
+        "shopware6",
         "shopware6-plugin",
-        "shopware-platform-plugin"
+        "tab",
+        "tabs"
       ]
     },
     {
@@ -2843,62 +1872,34 @@
       "category": "E-commerce",
       "stars": 18,
       "author": "MultiSafepay",
-      "avatar": "https://avatars.githubusercontent.com/u/11031368?v=4",
+      "avatar": null,
       "desc": "MultiSafepay plugin for Shopware 6",
       "demo": null,
       "repoUrl": "https://github.com/MultiSafepay/shopware6",
       "long1": "MultiSafepay plugin for Shopware 6. Maintained by MultiSafepay on GitHub, where it has earned 18 stars from the community.",
-      "long2": "It's actively developed around shopware6, shopware, multisafepay, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around multisafepay, payments, shopware, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Shopware6",
-        "Shopware",
         "Multisafepay",
-        "Payments"
+        "Payments",
+        "Shopware",
+        "Shopware6"
       ],
       "updated": "3 weeks ago",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "PHP",
-          "pct": 96
-        },
-        {
-          "name": "JavaScript",
-          "pct": 3
-        },
-        {
-          "name": "Twig",
-          "pct": 1
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "4.3.0",
-          "url": "https://github.com/MultiSafepay/shopware6/releases/tag/4.3.0"
-        },
-        {
-          "name": "3.6.0",
-          "url": "https://github.com/MultiSafepay/shopware6/releases/tag/3.6.0"
-        },
-        {
-          "name": "3.5.0",
-          "url": "https://github.com/MultiSafepay/shopware6/releases/tag/3.5.0"
-        },
-        {
-          "name": "4.2.0",
-          "url": "https://github.com/MultiSafepay/shopware6/releases/tag/4.2.0"
-        },
-        {
-          "name": "4.1.0",
-          "url": "https://github.com/MultiSafepay/shopware6/releases/tag/4.1.0"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "shopware6",
-        "shopware",
         "multisafepay",
-        "payments"
+        "payments",
+        "shopware",
+        "shopware6"
       ]
     },
     {
@@ -2908,66 +1909,38 @@
       "category": "E-commerce",
       "stars": 18,
       "author": "sschreier",
-      "avatar": "https://avatars.githubusercontent.com/u/20040508?v=4",
+      "avatar": null,
       "desc": "A shopware 6 extension for a dropdown menu from 992 pixels.",
-      "demo": "https://www.web-solutions-dresden.de/dropdown-menue",
+      "demo": null,
       "repoUrl": "https://github.com/sschreier/SschreierDropdownMenu",
       "long1": "A shopware 6 extension for a dropdown menu from 992 pixels. Maintained by sschreier on GitHub, where it has earned 18 stars from the community.",
-      "long2": "It's actively developed around shopware, shopware6, shopware-plugin, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around dropdown, dropdown-menu, dropdownmenu, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
-        "Shopware",
-        "Shopware6",
-        "Shopware Plugin",
-        "Shopware6 Plugin"
+        "Dropdown",
+        "Dropdown Menu",
+        "Dropdownmenu",
+        "Shopware"
       ],
       "updated": "4 months ago",
       "license": "GPL-3.0",
       "langs": [
         {
+          "pct": 100.0,
           "name": "JavaScript",
-          "pct": 53
-        },
-        {
-          "name": "Twig",
-          "pct": 27
-        },
-        {
-          "name": "SCSS",
-          "pct": 20
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "1.3.4",
-          "url": "https://github.com/sschreier/SschreierDropdownMenu/releases/tag/1.3.4"
-        },
-        {
-          "name": "1.3.3",
-          "url": "https://github.com/sschreier/SschreierDropdownMenu/releases/tag/1.3.3"
-        },
-        {
-          "name": "1.3.2",
-          "url": "https://github.com/sschreier/SschreierDropdownMenu/releases/tag/1.3.2"
-        },
-        {
-          "name": "1.3.1",
-          "url": "https://github.com/sschreier/SschreierDropdownMenu/releases/tag/1.3.1"
-        },
-        {
-          "name": "1.3.0",
-          "url": "https://github.com/sschreier/SschreierDropdownMenu/releases/tag/1.3.0"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "shopware",
-        "shopware6",
-        "shopware-plugin",
-        "shopware6-plugin",
-        "shopware-platform-plugin",
         "dropdown",
-        "dropdownmenu",
         "dropdown-menu",
+        "dropdownmenu",
+        "shopware",
+        "shopware-platform-plugin",
+        "shopware-plugin",
+        "shopware6",
+        "shopware6-plugin",
         "sticky-menu",
         "sticky-navigation-bar"
       ]
@@ -2979,7 +1952,7 @@
       "category": "E-commerce",
       "stars": 18,
       "author": "Shape-and-Shift",
-      "avatar": "https://avatars.githubusercontent.com/u/55768240?v=4",
+      "avatar": null,
       "desc": "Shopware plugin to show a variant switch on the product listing and within the (checkout) cart.",
       "demo": null,
       "repoUrl": "https://github.com/Shape-and-Shift/shopware-variant-switch",
@@ -2995,28 +1968,12 @@
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "PHP",
-          "pct": 55
-        },
-        {
-          "name": "Twig",
-          "pct": 31
-        },
-        {
-          "name": "JavaScript",
-          "pct": 14
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "1.1.1",
-          "url": "https://github.com/Shape-and-Shift/shopware-variant-switch/releases/tag/1.1.1"
-        },
-        {
-          "name": "1.0.0",
-          "url": "https://github.com/Shape-and-Shift/shopware-variant-switch/releases/tag/1.0.0"
-        }
-      ],
+      "versions": [],
       "topics": [
         "shopware",
         "shopware6",
@@ -3030,7 +1987,7 @@
       "category": "E-commerce",
       "stars": 18,
       "author": "Shopelfen",
-      "avatar": "https://avatars.githubusercontent.com/u/202372283?v=4",
+      "avatar": null,
       "desc": "Unabh\u00e4ngiger Shopware Plugin Store",
       "demo": null,
       "repoUrl": "https://github.com/Shopelfen/docs",
@@ -3071,58 +2028,77 @@
       ]
     },
     {
+      "slug": "k6-shopware",
+      "name": "k6-shopware",
+      "fullName": "shopware/k6-shopware",
+      "category": "E-commerce",
+      "stars": 18,
+      "author": "shopware",
+      "avatar": null,
+      "desc": "E2E Performance Testing with Grafana K6",
+      "demo": null,
+      "repoUrl": "https://github.com/shopware/k6-shopware",
+      "long1": "E2E Performance Testing with Grafana K6. Maintained by shopware on GitHub, where it has earned 18 stars from the community.",
+      "long2": "It's actively developed around k6, performance, shopware, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "JavaScript",
+        "K6",
+        "Performance",
+        "Shopware"
+      ],
+      "updated": "4 months ago",
+      "license": "\u2014",
+      "langs": [
+        {
+          "pct": 100.0,
+          "name": "JavaScript",
+          "size": 0
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "k6",
+        "performance",
+        "shopware"
+      ]
+    },
+    {
       "slug": "shopware-login-required",
       "name": "shopware-login-required",
       "fullName": "Shape-and-Shift/shopware-login-required",
       "category": "E-commerce",
       "stars": 18,
       "author": "Shape-and-Shift",
-      "avatar": "https://avatars.githubusercontent.com/u/55768240?v=4",
+      "avatar": null,
       "desc": "Restrict a category to login and/or restrict a category based on a customer group.",
       "demo": null,
       "repoUrl": "https://github.com/Shape-and-Shift/shopware-login-required",
       "long1": "Restrict a category to login and/or restrict a category based on a customer group. Maintained by Shape-and-Shift on GitHub, where it has earned 18 stars from the community.",
-      "long2": "It's actively developed around shopware, login, category, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around category, login, shopware, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Shopware",
-        "Login",
         "Category",
-        "Shopware6"
+        "Login",
+        "Shopware",
+        "Shopware Plugin"
       ],
       "updated": "5 years ago",
       "license": "\u2014",
       "langs": [
         {
+          "pct": 100.0,
           "name": "PHP",
-          "pct": 70
-        },
-        {
-          "name": "JavaScript",
-          "pct": 19
-        },
-        {
-          "name": "Twig",
-          "pct": 11
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "1.0.1",
-          "url": "https://github.com/Shape-and-Shift/shopware-login-required/releases/tag/1.0.1"
-        },
-        {
-          "name": "1.0.0",
-          "url": "https://github.com/Shape-and-Shift/shopware-login-required/releases/tag/1.0.0"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "shopware",
-        "login",
         "category",
+        "login",
+        "shopware",
+        "shopware-plugin",
         "shopware6",
-        "shopware6-plugin",
-        "shopware-plugin"
+        "shopware6-plugin"
       ]
     },
     {
@@ -3132,63 +2108,35 @@
       "category": "E-commerce",
       "stars": 17,
       "author": "Shape-and-Shift",
-      "avatar": "https://avatars.githubusercontent.com/u/55768240?v=4",
+      "avatar": null,
       "desc": "Shopware CMS grid blocks",
       "demo": null,
       "repoUrl": "https://github.com/Shape-and-Shift/shopware-cms-grid-blocks",
       "long1": "Shopware CMS grid blocks. Maintained by Shape-and-Shift on GitHub, where it has earned 17 stars from the community.",
-      "long2": "It's actively developed around shopware, shopware-plugin, shopware6, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around shopware, shopware-plugin, shopware-plugins, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Twig",
         "Shopware",
         "Shopware Plugin",
-        "Shopware6",
-        "Shopware6 Plugin"
+        "Shopware Plugins",
+        "Shopware6"
       ],
       "updated": "5 months ago",
       "license": "\u2014",
       "langs": [
         {
+          "pct": 100.0,
           "name": "Twig",
-          "pct": 55
-        },
-        {
-          "name": "JavaScript",
-          "pct": 29
-        },
-        {
-          "name": "SCSS",
-          "pct": 16
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "2.0.1",
-          "url": "https://github.com/Shape-and-Shift/shopware-cms-grid-blocks/releases/tag/2.0.1"
-        },
-        {
-          "name": "v1.1.0",
-          "url": "https://github.com/Shape-and-Shift/shopware-cms-grid-blocks/releases/tag/v1.1.0"
-        },
-        {
-          "name": "1.0.7",
-          "url": "https://github.com/Shape-and-Shift/shopware-cms-grid-blocks/releases/tag/1.0.7"
-        },
-        {
-          "name": "1.0.6",
-          "url": "https://github.com/Shape-and-Shift/shopware-cms-grid-blocks/releases/tag/1.0.6"
-        },
-        {
-          "name": "1.0.5",
-          "url": "https://github.com/Shape-and-Shift/shopware-cms-grid-blocks/releases/tag/1.0.5"
-        }
-      ],
+      "versions": [],
       "topics": [
         "shopware",
         "shopware-plugin",
+        "shopware-plugins",
         "shopware6",
-        "shopware6-plugin",
-        "shopware-plugins"
+        "shopware6-plugin"
       ]
     },
     {
@@ -3198,42 +2146,35 @@
       "category": "E-commerce",
       "stars": 16,
       "author": "brianvarskonst",
-      "avatar": "https://avatars.githubusercontent.com/u/53712359?u=3961033b1b65d576051319199d7a9803fa21b979&v=4",
+      "avatar": null,
       "desc": "A Boilerplate Plugin for Shopware 6 Plugin Development",
       "demo": null,
       "repoUrl": "https://github.com/brianvarskonst/BvskPluginBoilerplate",
       "long1": "A Boilerplate Plugin for Shopware 6 Plugin Development. Maintained by brianvarskonst on GitHub, where it has earned 16 stars from the community.",
-      "long2": "It's actively developed around shopware, shopware-plugin, shopware6, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around boilerplate-plugin, shopware, shopware-platform-plugin, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
+        "Boilerplate Plugin",
         "Shopware",
-        "Shopware Plugin",
-        "Shopware6",
-        "Shopware Platform Plugin"
+        "Shopware Platform Plugin",
+        "Shopware Plugin"
       ],
       "updated": "7 years ago",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "PHP",
-          "pct": 97
-        },
-        {
-          "name": "Shell",
-          "pct": 2
-        },
-        {
-          "name": "HTML",
-          "pct": 1
+          "size": 0
         }
       ],
       "versions": [],
       "topics": [
+        "boilerplate-plugin",
         "shopware",
-        "shopware-plugin",
-        "shopware6",
         "shopware-platform-plugin",
-        "boilerplate-plugin"
+        "shopware-plugin",
+        "shopware6"
       ]
     },
     {
@@ -3243,7 +2184,7 @@
       "category": "E-commerce",
       "stars": 16,
       "author": "shopware",
-      "avatar": "https://avatars.githubusercontent.com/u/612628?v=4",
+      "avatar": null,
       "desc": "Magento 1 & 2 profiles for Shopware Migration Assistant.",
       "demo": null,
       "repoUrl": "https://github.com/shopware/SwagMigrationMagento",
@@ -3256,40 +2197,16 @@
         "Plugin",
         "Shopware"
       ],
-      "updated": "5 days ago",
+      "updated": "6 days ago",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "PHP",
-          "pct": 99
-        },
-        {
-          "name": "Twig",
-          "pct": 1
-        },
-        {
-          "name": "JavaScript",
-          "pct": 0
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "13.0.0",
-          "url": "https://github.com/shopware/SwagMigrationMagento/releases/tag/13.0.0"
-        },
-        {
-          "name": "12.0.0",
-          "url": "https://github.com/shopware/SwagMigrationMagento/releases/tag/12.0.0"
-        },
-        {
-          "name": "11.0.0",
-          "url": "https://github.com/shopware/SwagMigrationMagento/releases/tag/11.0.0"
-        },
-        {
-          "name": "10.0.0",
-          "url": "https://github.com/shopware/SwagMigrationMagento/releases/tag/10.0.0"
-        }
-      ],
+      "versions": [],
       "topics": [
         "magento",
         "migration",
@@ -3304,47 +2221,35 @@
       "category": "E-commerce",
       "stars": 15,
       "author": "Shape-and-Shift",
-      "avatar": "https://avatars.githubusercontent.com/u/55768240?v=4",
+      "avatar": null,
       "desc": "Use Wordpress like Shortcodes in Shopware 6",
       "demo": null,
       "repoUrl": "https://github.com/Shape-and-Shift/shopware-shortcode",
       "long1": "Use Wordpress like Shortcodes in Shopware 6. Maintained by Shape-and-Shift on GitHub, where it has earned 15 stars from the community.",
-      "long2": "It's actively developed around shopware, shopware-plugin, shopware6, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around shopware, shopware-plugin, shopware-plugins, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
         "Shopware",
         "Shopware Plugin",
-        "Shopware6",
-        "Shopware6 Plugin"
+        "Shopware Plugins",
+        "Shopware6"
       ],
       "updated": "5 years ago",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "PHP",
-          "pct": 69
-        },
-        {
-          "name": "Twig",
-          "pct": 31
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "1.0.2",
-          "url": "https://github.com/Shape-and-Shift/shopware-shortcode/releases/tag/1.0.2"
-        },
-        {
-          "name": "1.0.0",
-          "url": "https://github.com/Shape-and-Shift/shopware-shortcode/releases/tag/1.0.0"
-        }
-      ],
+      "versions": [],
       "topics": [
         "shopware",
         "shopware-plugin",
+        "shopware-plugins",
         "shopware6",
-        "shopware6-plugin",
-        "shopware-plugins"
+        "shopware6-plugin"
       ]
     },
     {
@@ -3354,65 +2259,37 @@
       "category": "E-commerce",
       "stars": 15,
       "author": "sschreier",
-      "avatar": "https://avatars.githubusercontent.com/u/20040508?v=4",
+      "avatar": null,
       "desc": "A shopware 6 extension for badges for the navigation and the product detail page.",
-      "demo": "https://www.web-solutions-dresden.de/ein-badge-fuer-die-kategorielisten-und-die-produkt-detailseite",
+      "demo": null,
       "repoUrl": "https://github.com/sschreier/SschreierBadgeNavigationProductDetailPage",
       "long1": "A shopware 6 extension for badges for the navigation and the product detail page. Maintained by sschreier on GitHub, where it has earned 15 stars from the community.",
-      "long2": "It's actively developed around shopware, shopware-plugin, shopware6, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around badge, badges, shopware, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Twig",
+        "Badge",
+        "Badges",
         "Shopware",
-        "Shopware Plugin",
-        "Shopware6",
-        "Shopware6 Plugin"
+        "Shopware Platform Plugin"
       ],
       "updated": "9 months ago",
       "license": "GPL-3.0",
       "langs": [
         {
+          "pct": 100.0,
           "name": "Twig",
-          "pct": 64
-        },
-        {
-          "name": "PHP",
-          "pct": 33
-        },
-        {
-          "name": "SCSS",
-          "pct": 3
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "1.3.1",
-          "url": "https://github.com/sschreier/SschreierBadgeNavigationProductDetailPage/releases/tag/1.3.1"
-        },
-        {
-          "name": "1.3.0",
-          "url": "https://github.com/sschreier/SschreierBadgeNavigationProductDetailPage/releases/tag/1.3.0"
-        },
-        {
-          "name": "1.2.3",
-          "url": "https://github.com/sschreier/SschreierBadgeNavigationProductDetailPage/releases/tag/1.2.3"
-        },
-        {
-          "name": "1.2.2",
-          "url": "https://github.com/sschreier/SschreierBadgeNavigationProductDetailPage/releases/tag/1.2.2"
-        },
-        {
-          "name": "1.2.1",
-          "url": "https://github.com/sschreier/SschreierBadgeNavigationProductDetailPage/releases/tag/1.2.1"
-        }
-      ],
+      "versions": [],
       "topics": [
+        "badge",
+        "badges",
         "shopware",
+        "shopware-platform-plugin",
         "shopware-plugin",
         "shopware6",
-        "shopware6-plugin",
-        "shopware-platform-plugin",
-        "badge",
-        "badges"
+        "shopware6-plugin"
       ]
     },
     {
@@ -3422,7 +2299,7 @@
       "category": "E-commerce",
       "stars": 15,
       "author": "shopware",
-      "avatar": "https://avatars.githubusercontent.com/u/612628?v=4",
+      "avatar": null,
       "desc": "CLI for fast and flexible data transfer between shopware and (CSV) files over API.",
       "demo": null,
       "repoUrl": "https://github.com/shopware/sw-sync-cli",
@@ -3438,24 +2315,12 @@
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "Rust",
-          "pct": 100
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "v0.9.0",
-          "url": "https://github.com/shopware/sw-sync-cli/releases/tag/v0.9.0"
-        },
-        {
-          "name": "v0.8.0",
-          "url": "https://github.com/shopware/sw-sync-cli/releases/tag/v0.8.0"
-        },
-        {
-          "name": "v0.7.1",
-          "url": "https://github.com/shopware/sw-sync-cli/releases/tag/v0.7.1"
-        }
-      ],
+      "versions": [],
       "topics": [
         "cli",
         "export",
@@ -3471,32 +2336,33 @@
       "category": "E-commerce",
       "stars": 14,
       "author": "shyim",
-      "avatar": "https://avatars.githubusercontent.com/u/6224096?u=18be3a2d46f07dd42fc2b6dee9b4b9b68bca28d2&v=4",
+      "avatar": null,
       "desc": "My personal Knowledgebase for Shopware",
-      "demo": "https://shyim.me",
+      "demo": null,
       "repoUrl": "https://github.com/shyim/shyim.me",
       "long1": "My personal Knowledgebase for Shopware. Maintained by shyim on GitHub, where it has earned 14 stars from the community.",
-      "long2": "It's actively developed around shopware, knowledge, faq, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around faq, hacktoberfest, knowledge, and is a solid reference for anyone building with these tools.",
       "stack": [
         "HTML",
-        "Shopware",
+        "Faq",
         "Knowledge",
-        "Faq"
+        "Shopware"
       ],
       "updated": "1 month ago",
       "license": "Apache-2.0",
       "langs": [
         {
+          "pct": 100.0,
           "name": "HTML",
-          "pct": 100
+          "size": 0
         }
       ],
       "versions": [],
       "topics": [
-        "shopware",
-        "knowledge",
         "faq",
-        "hacktoberfest"
+        "hacktoberfest",
+        "knowledge",
+        "shopware"
       ]
     },
     {
@@ -3506,41 +2372,37 @@
       "category": "E-commerce",
       "stars": 14,
       "author": "vienthuong",
-      "avatar": "https://avatars.githubusercontent.com/u/22548423?u=e47bc382b2de83dba3c58f5635825618438f06c7&v=4",
+      "avatar": null,
       "desc": "A Psysh integration for Shopware",
       "demo": null,
       "repoUrl": "https://github.com/vienthuong/ShopwarePsysh",
       "long1": "A Psysh integration for Shopware. Maintained by vienthuong on GitHub, where it has earned 14 stars from the community.",
-      "long2": "It's actively developed around shopware, shopware-psysh, psysh, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around psysh, shopware, shopware-6, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Shopware",
-        "Shopware Psysh",
         "Psysh",
-        "Shopware Tinker"
+        "Shopware",
+        "Shopware 6",
+        "Shopware Plugin"
       ],
       "updated": "6 years ago",
       "license": "\u2014",
       "langs": [
         {
+          "pct": 100.0,
           "name": "PHP",
-          "pct": 100
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "1.0.0",
-          "url": "https://github.com/vienthuong/ShopwarePsysh/releases/tag/1.0.0"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "shopware",
-        "shopware-psysh",
         "psysh",
-        "shopware-tinker",
+        "shopware",
+        "shopware-6",
         "shopware-plugin",
-        "shopware6-plugin",
-        "shopware-6"
+        "shopware-psysh",
+        "shopware-tinker",
+        "shopware6-plugin"
       ]
     },
     {
@@ -3550,16 +2412,16 @@
       "category": "E-commerce",
       "stars": 14,
       "author": "shyim",
-      "avatar": "https://avatars.githubusercontent.com/u/6224096?u=18be3a2d46f07dd42fc2b6dee9b4b9b68bca28d2&v=4",
+      "avatar": null,
       "desc": "Shopware Live Templates for PhpStorm",
       "demo": null,
       "repoUrl": "https://github.com/shyim/shopware5-live-templates",
       "long1": "Shopware Live Templates for PhpStorm. Maintained by shyim on GitHub, where it has earned 14 stars from the community.",
-      "long2": "It's actively developed around shopware, phpstorm, phpstorm-settings, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around phpstorm, phpstorm-settings, shopware, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "Shopware",
         "Phpstorm",
-        "Phpstorm Settings"
+        "Phpstorm Settings",
+        "Shopware"
       ],
       "updated": "5 years ago",
       "license": "\u2014",
@@ -3579,9 +2441,9 @@
       ],
       "versions": [],
       "topics": [
-        "shopware",
         "phpstorm",
-        "phpstorm-settings"
+        "phpstorm-settings",
+        "shopware"
       ]
     },
     {
@@ -3591,59 +2453,31 @@
       "category": "E-commerce",
       "stars": 14,
       "author": "shopware",
-      "avatar": "https://avatars.githubusercontent.com/u/612628?v=4",
+      "avatar": null,
       "desc": "Elasticsearch implementation for Shopware 6",
       "demo": null,
       "repoUrl": "https://github.com/shopware/elasticsearch",
       "long1": "Elasticsearch implementation for Shopware 6. Maintained by shopware on GitHub, where it has earned 14 stars from the community.",
-      "long2": "It's actively developed around shopware, php, elasticsearch, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around elasticsearch, php, shopware, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "Shopware",
+        "Elasticsearch",
         "Php",
-        "Elasticsearch"
+        "Shopware"
       ],
-      "updated": "today",
+      "updated": "yesterday",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "PHP",
-          "pct": 98
-        },
-        {
-          "name": "Twig",
-          "pct": 1
-        },
-        {
-          "name": "Groovy",
-          "pct": 1
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "v6.7.12.1",
-          "url": "https://github.com/shopware/elasticsearch/releases/tag/v6.7.12.1"
-        },
-        {
-          "name": "v6.6.10.20",
-          "url": "https://github.com/shopware/elasticsearch/releases/tag/v6.6.10.20"
-        },
-        {
-          "name": "v6.7.12.0",
-          "url": "https://github.com/shopware/elasticsearch/releases/tag/v6.7.12.0"
-        },
-        {
-          "name": "v6.7.11.1",
-          "url": "https://github.com/shopware/elasticsearch/releases/tag/v6.7.11.1"
-        },
-        {
-          "name": "v6.7.11.0",
-          "url": "https://github.com/shopware/elasticsearch/releases/tag/v6.7.11.0"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "shopware",
+        "elasticsearch",
         "php",
-        "elasticsearch"
+        "shopware"
       ]
     },
     {
@@ -3653,9 +2487,9 @@
       "category": "E-commerce",
       "stars": 12,
       "author": "sschreier",
-      "avatar": "https://avatars.githubusercontent.com/u/20040508?v=4",
+      "avatar": null,
       "desc": "A shopware 6 extension which customizing the administration dashboard of Shopware 6.",
-      "demo": "https://www.web-solutions-dresden.de/individualisieren-des-dashboards-der-administration",
+      "demo": null,
       "repoUrl": "https://github.com/sschreier/SschreierAdministrationDashboard",
       "long1": "A shopware 6 extension which customizing the administration dashboard of Shopware 6. Maintained by sschreier on GitHub, where it has earned 12 stars from the community.",
       "long2": "It's actively developed around administration, dashboard, shopware, and is a solid reference for anyone building with these tools.",
@@ -3664,53 +2498,25 @@
         "Administration",
         "Dashboard",
         "Shopware",
-        "Shopware Plugin"
+        "Shopware Platform Plugin"
       ],
       "updated": "9 months ago",
       "license": "GPL-3.0",
       "langs": [
         {
+          "pct": 100.0,
           "name": "Twig",
-          "pct": 70
-        },
-        {
-          "name": "JavaScript",
-          "pct": 22
-        },
-        {
-          "name": "PHP",
-          "pct": 8
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "1.3.1",
-          "url": "https://github.com/sschreier/SschreierAdministrationDashboard/releases/tag/1.3.1"
-        },
-        {
-          "name": "1.3.0",
-          "url": "https://github.com/sschreier/SschreierAdministrationDashboard/releases/tag/1.3.0"
-        },
-        {
-          "name": "1.2.3",
-          "url": "https://github.com/sschreier/SschreierAdministrationDashboard/releases/tag/1.2.3"
-        },
-        {
-          "name": "1.2.2",
-          "url": "https://github.com/sschreier/SschreierAdministrationDashboard/releases/tag/1.2.2"
-        },
-        {
-          "name": "1.2.1",
-          "url": "https://github.com/sschreier/SschreierAdministrationDashboard/releases/tag/1.2.1"
-        }
-      ],
+      "versions": [],
       "topics": [
         "administration",
         "dashboard",
         "shopware",
+        "shopware-platform-plugin",
         "shopware-plugin",
         "shopware6",
-        "shopware-platform-plugin",
         "shopware6-plugin"
       ]
     },
@@ -3721,78 +2527,50 @@
       "category": "E-commerce",
       "stars": 12,
       "author": "vienthuong",
-      "avatar": "https://avatars.githubusercontent.com/u/22548423?u=e47bc382b2de83dba3c58f5635825618438f06c7&v=4",
+      "avatar": null,
       "desc": "A Shopware 6 Plugin that allows Administrators to impersonate other users",
       "demo": null,
       "repoUrl": "https://github.com/vienthuong/impersonation",
       "long1": "A Shopware 6 Plugin that allows Administrators to impersonate other users. Maintained by vienthuong on GitHub, where it has earned 12 stars from the community.",
-      "long2": "It's actively developed around shopware, shopware-plugin, shopware6, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around impersonate, shopware, shopware-6, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
+        "Impersonate",
         "Shopware",
-        "Shopware Plugin",
-        "Shopware6",
-        "Shopware 6"
+        "Shopware 6",
+        "Shopware Impersonation"
       ],
       "updated": "7 months ago",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "JavaScript",
-          "pct": 53
-        },
-        {
-          "name": "PHP",
-          "pct": 37
-        },
-        {
-          "name": "Twig",
-          "pct": 10
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "4.0.0",
-          "url": "https://github.com/vienthuong/impersonation/releases/tag/4.0.0"
-        },
-        {
-          "name": "3.0.0",
-          "url": "https://github.com/vienthuong/impersonation/releases/tag/3.0.0"
-        },
-        {
-          "name": "2.0.0",
-          "url": "https://github.com/vienthuong/impersonation/releases/tag/2.0.0"
-        },
-        {
-          "name": "v1.2",
-          "url": "https://github.com/vienthuong/impersonation/releases/tag/v1.2"
-        },
-        {
-          "name": "1.1.0",
-          "url": "https://github.com/vienthuong/impersonation/releases/tag/1.1.0"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "shopware",
-        "shopware-plugin",
-        "shopware6",
-        "shopware-6",
-        "shopware-plugins",
         "impersonate",
-        "shopware6-plugin",
-        "shopware-impersonation"
+        "shopware",
+        "shopware-6",
+        "shopware-impersonation",
+        "shopware-plugin",
+        "shopware-plugins",
+        "shopware6",
+        "shopware6-plugin"
       ]
     },
     {
       "slug": "govard",
       "name": "govard",
       "fullName": "ddtcorex/govard",
-      "category": "AI & ML",
+      "category": "E-commerce",
       "stars": 12,
       "author": "ddtcorex",
-      "avatar": "https://avatars.githubusercontent.com/u/103315997?u=ad490aaef0b858ff4645437082eba607ea6fe7e2&v=4",
+      "avatar": null,
       "desc": "Go-based local development orchestrator for Magento, Laravel, Symfony, Next.js, WordPress, and more. Docker stacks, SSL, Xdebug, and a desktop dashboard.",
-      "demo": "https://govard.ddtcorex.com",
+      "demo": null,
       "repoUrl": "https://github.com/ddtcorex/govard",
       "long1": "Go-based local development orchestrator for Magento, Laravel, Symfony, Next.js, WordPress, and more. Docker stacks, SSL, Xdebug, and a desktop dashboard. Maintained by ddtcorex on GitHub, where it has earned 12 stars from the community.",
       "long2": "It's actively developed around cakephp, cli, dev-tools, and is a solid reference for anyone building with these tools.",
@@ -3803,44 +2581,16 @@
         "Dev Tools",
         "Docker"
       ],
-      "updated": "today",
+      "updated": "yesterday",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "Go",
-          "pct": 84
-        },
-        {
-          "name": "JavaScript",
-          "pct": 14
-        },
-        {
-          "name": "HTML",
-          "pct": 2
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "v1.54.7",
-          "url": "https://github.com/ddtcorex/govard/releases/tag/v1.54.7"
-        },
-        {
-          "name": "v1.54.6",
-          "url": "https://github.com/ddtcorex/govard/releases/tag/v1.54.6"
-        },
-        {
-          "name": "v1.54.5",
-          "url": "https://github.com/ddtcorex/govard/releases/tag/v1.54.5"
-        },
-        {
-          "name": "v1.54.4",
-          "url": "https://github.com/ddtcorex/govard/releases/tag/v1.54.4"
-        },
-        {
-          "name": "v1.54.3",
-          "url": "https://github.com/ddtcorex/govard/releases/tag/v1.54.3"
-        }
-      ],
+      "versions": [],
       "topics": [
         "cakephp",
         "cli",
@@ -3848,12 +2598,18 @@
         "docker",
         "docker-compose",
         "drupal",
+        "emdash",
         "go",
         "golang",
         "laravel",
         "local-development",
         "magento",
-        "magento2"
+        "magento2",
+        "nextjs",
+        "shopware",
+        "symfony",
+        "wordpress",
+        "xdebug"
       ]
     },
     {
@@ -3863,9 +2619,9 @@
       "category": "E-commerce",
       "stars": 12,
       "author": "shopware5",
-      "avatar": "https://avatars.githubusercontent.com/u/122545688?v=4",
+      "avatar": null,
       "desc": "Shopware integration for Google Analytics, Universal Analytics and Google Adwords services",
-      "demo": "http://shopware.com  ",
+      "demo": null,
       "repoUrl": "https://github.com/shopware5/SwagGoogle",
       "long1": "Shopware integration for Google Analytics, Universal Analytics and Google Adwords services. Maintained by shopware5 on GitHub, where it has earned 12 stars from the community.",
       "long2": "It's actively developed around shopware, shopware-plugin, and is a solid reference for anyone building with these tools.",
@@ -3878,40 +2634,12 @@
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "PHP",
-          "pct": 51
-        },
-        {
-          "name": "JavaScript",
-          "pct": 37
-        },
-        {
-          "name": "Smarty",
-          "pct": 12
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "3.1.7",
-          "url": "https://github.com/shopware5/SwagGoogle/releases/tag/3.1.7"
-        },
-        {
-          "name": "3.1.6",
-          "url": "https://github.com/shopware5/SwagGoogle/releases/tag/3.1.6"
-        },
-        {
-          "name": "3.1.5",
-          "url": "https://github.com/shopware5/SwagGoogle/releases/tag/3.1.5"
-        },
-        {
-          "name": "3.1.4",
-          "url": "https://github.com/shopware5/SwagGoogle/releases/tag/3.1.4"
-        },
-        {
-          "name": "3.1.3",
-          "url": "https://github.com/shopware5/SwagGoogle/releases/tag/3.1.3"
-        }
-      ],
+      "versions": [],
       "topics": [
         "shopware",
         "shopware-plugin"
@@ -3924,7 +2652,7 @@
       "category": "E-commerce",
       "stars": 12,
       "author": "shopware",
-      "avatar": "https://avatars.githubusercontent.com/u/612628?v=4",
+      "avatar": null,
       "desc": "Shopware 6 Demo Data Plugin.",
       "demo": null,
       "repoUrl": "https://github.com/shopware/SwagPlatformDemoData",
@@ -3936,24 +2664,16 @@
         "Plugin",
         "Shopware"
       ],
-      "updated": "3 days ago",
+      "updated": "4 days ago",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "PHP",
-          "pct": 100
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "2.1.0",
-          "url": "https://github.com/shopware/SwagPlatformDemoData/releases/tag/2.1.0"
-        },
-        {
-          "name": "2.0.1",
-          "url": "https://github.com/shopware/SwagPlatformDemoData/releases/tag/2.0.1"
-        }
-      ],
+      "versions": [],
       "topics": [
         "demo-data",
         "plugin",
@@ -3967,9 +2687,9 @@
       "category": "E-commerce",
       "stars": 12,
       "author": "shopware",
-      "avatar": "https://avatars.githubusercontent.com/u/612628?v=4",
+      "avatar": null,
       "desc": "With the Braintree app, you can now easily integrate one of the most popular solutions for credit card payments into your Shopware store. This repository includes the Shopware app and the app infrastructure. Use this as a real-live example of a capable payment app integration.",
-      "demo": "https://store.shopware.com/en/swag930601467972f/braintree-by-paypal.html",
+      "demo": null,
       "repoUrl": "https://github.com/shopware/braintree-app",
       "long1": "With the Braintree app, you can now easily integrate one of the most popular solutions for credit card payments into your Shopware store. This repository includes the Shopware app and the app infrastructure. Use this as a real-live example of a capable payment app integration. Maintained by shopware on GitHub, where it has earned 12 stars from the community.",
       "long2": "It's actively developed around app, braintree, payment, and is a solid reference for anyone building with these tools.",
@@ -3984,40 +2704,12 @@
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "PHP",
-          "pct": 82
-        },
-        {
-          "name": "Vue",
-          "pct": 12
-        },
-        {
-          "name": "JavaScript",
-          "pct": 6
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "2.3.3",
-          "url": "https://github.com/shopware/braintree-app/releases/tag/2.3.3"
-        },
-        {
-          "name": "3.1.2",
-          "url": "https://github.com/shopware/braintree-app/releases/tag/3.1.2"
-        },
-        {
-          "name": "3.1.1",
-          "url": "https://github.com/shopware/braintree-app/releases/tag/3.1.1"
-        },
-        {
-          "name": "2.3.2",
-          "url": "https://github.com/shopware/braintree-app/releases/tag/2.3.2"
-        },
-        {
-          "name": "2.3.1",
-          "url": "https://github.com/shopware/braintree-app/releases/tag/2.3.1"
-        }
-      ],
+      "versions": [],
       "topics": [
         "app",
         "braintree",
@@ -4032,41 +2724,34 @@
       "category": "E-commerce",
       "stars": 11,
       "author": "crehler",
-      "avatar": "https://avatars.githubusercontent.com/u/51157582?u=3ed8b64c8e1a1fb3f7fac115a11e1e81c5bf661b&v=4",
+      "avatar": null,
       "desc": "BaseLinker Integration Plugin for Shopware 6",
-      "demo": "https://store.shopware.com/en/crehl97816915330f/baselinker-integration.html",
+      "demo": null,
       "repoUrl": "https://github.com/crehler/CrehlerBaseLinker",
       "long1": "BaseLinker Integration Plugin for Shopware 6. Maintained by crehler on GitHub, where it has earned 11 stars from the community.",
-      "long2": "It's actively developed around shopware, shopware6, ecommerce, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around baselinker, ecommerce, shopware, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Shopware",
-        "Shopware6",
+        "Baselinker",
         "Ecommerce",
-        "Baselinker"
+        "Shopware",
+        "Shopware6"
       ],
       "updated": "2 years ago",
       "license": "\u2014",
       "langs": [
         {
+          "pct": 100.0,
           "name": "PHP",
-          "pct": 98
-        },
-        {
-          "name": "Shell",
-          "pct": 2
-        },
-        {
-          "name": "JavaScript",
-          "pct": 0
+          "size": 0
         }
       ],
       "versions": [],
       "topics": [
-        "shopware",
-        "shopware6",
+        "baselinker",
         "ecommerce",
-        "baselinker"
+        "shopware",
+        "shopware6"
       ]
     },
     {
@@ -4076,38 +2761,31 @@
       "category": "E-commerce",
       "stars": 11,
       "author": "shopware5",
-      "avatar": "https://avatars.githubusercontent.com/u/122545688?v=4",
+      "avatar": null,
       "desc": "A project worth exploring.",
       "demo": null,
       "repoUrl": "https://github.com/shopware5/SwagVariantFilter",
       "long1": "A project worth exploring. Maintained by shopware5 on GitHub, where it has earned 11 stars from the community.",
-      "long2": "It's actively developed around shopware-plugin, shopware, shopware-plugins, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around shopware, shopware-plugin, shopware-plugins, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Shopware Plugin",
         "Shopware",
+        "Shopware Plugin",
         "Shopware Plugins"
       ],
       "updated": "9 years ago",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "PHP",
-          "pct": 98
-        },
-        {
-          "name": "Smarty",
-          "pct": 2
-        },
-        {
-          "name": "CSS",
-          "pct": 0
+          "size": 0
         }
       ],
       "versions": [],
       "topics": [
-        "shopware-plugin",
         "shopware",
+        "shopware-plugin",
         "shopware-plugins"
       ]
     },
@@ -4118,56 +2796,32 @@
       "category": "E-commerce",
       "stars": 11,
       "author": "shopware5",
-      "avatar": "https://avatars.githubusercontent.com/u/122545688?v=4",
+      "avatar": null,
       "desc": "A project worth exploring.",
       "demo": null,
       "repoUrl": "https://github.com/shopware5/SwagMediaSftp",
       "long1": "A project worth exploring. Maintained by shopware5 on GitHub, where it has earned 11 stars from the community.",
-      "long2": "It's actively developed around shopware, shopware-plugin, sftp, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around sftp, shopware, shopware-plugin, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
+        "Sftp",
         "Shopware",
-        "Shopware Plugin",
-        "Sftp"
+        "Shopware Plugin"
       ],
       "updated": "2 years ago",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "PHP",
-          "pct": 86
-        },
-        {
-          "name": "Shell",
-          "pct": 14
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "1.0.4",
-          "url": "https://github.com/shopware5/SwagMediaSftp/releases/tag/1.0.4"
-        },
-        {
-          "name": "1.0.3",
-          "url": "https://github.com/shopware5/SwagMediaSftp/releases/tag/1.0.3"
-        },
-        {
-          "name": "1.0.2",
-          "url": "https://github.com/shopware5/SwagMediaSftp/releases/tag/1.0.2"
-        },
-        {
-          "name": "1.0.1",
-          "url": "https://github.com/shopware5/SwagMediaSftp/releases/tag/1.0.1"
-        },
-        {
-          "name": "1.0.0",
-          "url": "https://github.com/shopware5/SwagMediaSftp/releases/tag/1.0.0"
-        }
-      ],
+      "versions": [],
       "topics": [
+        "sftp",
         "shopware",
-        "shopware-plugin",
-        "sftp"
+        "shopware-plugin"
       ]
     },
     {
@@ -4177,59 +2831,35 @@
       "category": "E-commerce",
       "stars": 10,
       "author": "HEPTACOM",
-      "avatar": "https://avatars.githubusercontent.com/u/59258961?v=4",
+      "avatar": null,
       "desc": "HEPTAconnect package to support a runtime in a shopware platform project",
-      "demo": "https://heptaconnect.io",
+      "demo": null,
       "repoUrl": "https://github.com/HEPTACOM/heptaconnect-bridge-shopware-platform",
       "long1": "HEPTAconnect package to support a runtime in a shopware platform project. Maintained by HEPTACOM on GitHub, where it has earned 10 stars from the community.",
-      "long2": "It's actively developed around heptaconnect, shopware, shopware-platform, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around ecommerce, hacktoberfest, heptaconnect, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
+        "Ecommerce",
         "Heptaconnect",
         "Shopware",
-        "Shopware Platform",
-        "Ecommerce"
+        "Shopware Platform"
       ],
       "updated": "2 months ago",
       "license": "AGPL-3.0",
       "langs": [
         {
+          "pct": 100.0,
           "name": "PHP",
-          "pct": 96
-        },
-        {
-          "name": "Makefile",
-          "pct": 4
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "0.9.8.2",
-          "url": "https://github.com/HEPTACOM/heptaconnect-bridge-shopware-platform/releases/tag/0.9.8.2"
-        },
-        {
-          "name": "0.9.8.1",
-          "url": "https://github.com/HEPTACOM/heptaconnect-bridge-shopware-platform/releases/tag/0.9.8.1"
-        },
-        {
-          "name": "0.9.8.0",
-          "url": "https://github.com/HEPTACOM/heptaconnect-bridge-shopware-platform/releases/tag/0.9.8.0"
-        },
-        {
-          "name": "0.9.7.0",
-          "url": "https://github.com/HEPTACOM/heptaconnect-bridge-shopware-platform/releases/tag/0.9.7.0"
-        },
-        {
-          "name": "0.9.6.0",
-          "url": "https://github.com/HEPTACOM/heptaconnect-bridge-shopware-platform/releases/tag/0.9.6.0"
-        }
-      ],
+      "versions": [],
       "topics": [
+        "ecommerce",
+        "hacktoberfest",
         "heptaconnect",
         "shopware",
-        "shopware-platform",
-        "ecommerce",
-        "hacktoberfest"
+        "shopware-platform"
       ]
     },
     {
@@ -4239,106 +2869,45 @@
       "category": "E-commerce",
       "stars": 10,
       "author": "MagePsycho",
-      "avatar": "https://avatars.githubusercontent.com/u/1205071?u=68b472658b8a2db2512112015fd2db537f44ba77&v=4",
+      "avatar": null,
       "desc": "Magento 2 Warden Aliases for Productivity",
-      "demo": "https://www.magepsycho.com/extensions/magento-2.html",
+      "demo": null,
       "repoUrl": "https://github.com/MagePsycho/magento2-warden-aliases",
       "long1": "Magento 2 Warden Aliases for Productivity. Maintained by MagePsycho on GitHub, where it has earned 10 stars from the community.",
-      "long2": "It's actively developed around warden, docker, container, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around container, docker, laravel, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Shell",
-        "Warden",
-        "Docker",
         "Container",
+        "Docker",
+        "Laravel",
         "Magento"
       ],
       "updated": "2 years ago",
       "license": "\u2014",
       "langs": [
         {
+          "pct": 100.0,
           "name": "Shell",
-          "pct": 100
+          "size": 0
         }
       ],
       "versions": [],
       "topics": [
-        "warden",
-        "docker",
         "container",
+        "docker",
+        "laravel",
         "magento",
         "magento2",
-        "shopware",
-        "laravel",
-        "symfony",
-        "php",
-        "redis",
+        "magerun",
+        "mailhog",
         "nginx",
-        "rabbitmq"
-      ]
-    },
-    {
-      "slug": "wbmquerymanager",
-      "name": "WbmQueryManager",
-      "fullName": "webmatch/WbmQueryManager",
-      "category": "E-commerce",
-      "stars": 10,
-      "author": "webmatch",
-      "avatar": "https://avatars.githubusercontent.com/u/25250263?v=4",
-      "desc": "Database-Management Plugin for Shopware 5",
-      "demo": null,
-      "repoUrl": "https://github.com/webmatch/WbmQueryManager",
-      "long1": "Database-Management Plugin for Shopware 5. Maintained by webmatch on GitHub, where it has earned 10 stars from the community.",
-      "long2": "It's actively developed around shopware, shopware-plugin, database, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Shopware",
-        "Shopware Plugin",
-        "Database",
-        "Query"
-      ],
-      "updated": "5 years ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 58
-        },
-        {
-          "name": "JavaScript",
-          "pct": 39
-        },
-        {
-          "name": "TSQL",
-          "pct": 3
-        }
-      ],
-      "versions": [
-        {
-          "name": "2.0.4",
-          "url": "https://github.com/webmatch/WbmQueryManager/releases/tag/2.0.4"
-        },
-        {
-          "name": "2.0.3",
-          "url": "https://github.com/webmatch/WbmQueryManager/releases/tag/2.0.3"
-        },
-        {
-          "name": "2.0.2",
-          "url": "https://github.com/webmatch/WbmQueryManager/releases/tag/2.0.2"
-        },
-        {
-          "name": "2.0.1",
-          "url": "https://github.com/webmatch/WbmQueryManager/releases/tag/2.0.1"
-        },
-        {
-          "name": "2.0.0",
-          "url": "https://github.com/webmatch/WbmQueryManager/releases/tag/2.0.0"
-        }
-      ],
-      "topics": [
+        "php",
+        "rabbitmq",
+        "redis",
         "shopware",
-        "shopware-plugin",
-        "database",
-        "query"
+        "symfony",
+        "traefik",
+        "warden"
       ]
     },
     {
@@ -4348,9 +2917,9 @@
       "category": "E-commerce",
       "stars": 10,
       "author": "FriendsOfShopware",
-      "avatar": "https://avatars.githubusercontent.com/u/36633261?v=4",
+      "avatar": null,
       "desc": "Jetpack is a rapid development framework for Shopware 6 administration",
-      "demo": "https://friendsofshopware.github.io/jetpack/",
+      "demo": null,
       "repoUrl": "https://github.com/FriendsOfShopware/jetpack",
       "long1": "Jetpack is a rapid development framework for Shopware 6 administration. Maintained by FriendsOfShopware on GitHub, where it has earned 10 stars from the community.",
       "long2": "It's actively developed around boilerplate, crud, shopware, and is a solid reference for anyone building with these tools.",
@@ -4365,25 +2934,54 @@
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "TypeScript",
-          "pct": 80
-        },
-        {
-          "name": "Twig",
-          "pct": 20
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "0.0.2",
-          "url": "https://github.com/FriendsOfShopware/jetpack/releases/tag/0.0.2"
-        }
-      ],
+      "versions": [],
       "topics": [
         "boilerplate",
         "crud",
         "shopware",
         "shopware6"
+      ]
+    },
+    {
+      "slug": "wbmquerymanager",
+      "name": "WbmQueryManager",
+      "fullName": "webmatch/WbmQueryManager",
+      "category": "E-commerce",
+      "stars": 10,
+      "author": "webmatch",
+      "avatar": null,
+      "desc": "Database-Management Plugin for Shopware 5",
+      "demo": null,
+      "repoUrl": "https://github.com/webmatch/WbmQueryManager",
+      "long1": "Database-Management Plugin for Shopware 5. Maintained by webmatch on GitHub, where it has earned 10 stars from the community.",
+      "long2": "It's actively developed around database, query, shopware, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Database",
+        "Query",
+        "Shopware",
+        "Shopware Plugin"
+      ],
+      "updated": "5 years ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 100.0,
+          "name": "PHP",
+          "size": 0
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "database",
+        "query",
+        "shopware",
+        "shopware-plugin"
       ]
     }
   ]

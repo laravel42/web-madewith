@@ -1,0 +1,1396 @@
+{
+  "videoId": "zsYIw6RXjfM",
+  "language": "en",
+  "source": "auto",
+  "segments": [
+    {
+      "start": 0.0,
+      "text": "what is an API well API stands for"
+    },
+    {
+      "start": 2.82,
+      "text": "application programming interface and"
+    },
+    {
+      "start": 4.98,
+      "text": "really this is a set of rules that allow"
+    },
+    {
+      "start": 6.6,
+      "text": "different software systems to"
+    },
+    {
+      "start": 8.16,
+      "text": "communicate with each other an API"
+    },
+    {
+      "start": 10.139,
+      "text": "typically lives on some type of server"
+    },
+    {
+      "start": 11.82,
+      "text": "and will manipulate some kind of"
+    },
+    {
+      "start": 13.32,
+      "text": "database it can handle different"
+    },
+    {
+      "start": 15.12,
+      "text": "requests so if I'm a user utilizing the"
+    },
+    {
+      "start": 17.76,
+      "text": "API I send a request to it my request"
+    },
+    {
+      "start": 20.279,
+      "text": "may contain some different data then the"
+    },
+    {
+      "start": 22.68,
+      "text": "API is going to process this request and"
+    },
+    {
+      "start": 24.72,
+      "text": "return to me a response that response"
+    },
+    {
+      "start": 27.3,
+      "text": "will typically contain data that I was"
+    },
+    {
+      "start": 28.92,
+      "text": "requesting from the API typically your"
+    },
+    {
+      "start": 31.56,
+      "text": "API will manipulate some type of"
+    },
+    {
+      "start": 33.18,
+      "text": "database and allow different access to"
+    },
+    {
+      "start": 35.399,
+      "text": "the database values depending on the set"
+    },
+    {
+      "start": 37.5,
+      "text": "of rules that you set up in this video"
+    },
+    {
+      "start": 39.18,
+      "text": "I'll show you how to set up a simple API"
+    },
+    {
+      "start": 41.28,
+      "text": "using Python and flask in under 10"
+    },
+    {
+      "start": 43.98,
+      "text": "minutes so that said let's go ahead and"
+    },
+    {
+      "start": 46.02,
+      "text": "get started after a quick word from our"
+    },
+    {
+      "start": 48.36,
+      "text": "sponsor if you're interested in rapidly"
+    },
+    {
+      "start": 50.52,
+      "text": "creating apis then today's sponsored"
+    },
+    {
+      "start": 52.62,
+      "text": "Dream Factory has you covered with Dream"
+    },
+    {
+      "start": 55.079,
+      "text": "Factory you can create fully featured"
+    },
+    {
+      "start": 57.059,
+      "text": "apis in seconds by simply connecting to"
+    },
+    {
+      "start": 59.82,
+      "text": "an a data source Let Me Show You Begin"
+    },
+    {
+      "start": 62.219,
+      "text": "by starting your dream Factory instance"
+    },
+    {
+      "start": 64.26,
+      "text": "logging in and then connecting to a data"
+    },
+    {
+      "start": 66.72,
+      "text": "source for this demo I'll use mongodb"
+    },
+    {
+      "start": 69.18,
+      "text": "I'll fill in my connection details press"
+    },
+    {
+      "start": 71.64,
+      "text": "save and in seconds Dream Factory has"
+    },
+    {
+      "start": 73.92,
+      "text": "created a fully customizable and fully"
+    },
+    {
+      "start": 76.5,
+      "text": "documented rest API that I can now use"
+    },
+    {
+      "start": 78.96,
+      "text": "to access my data look I can query my"
+    },
+    {
+      "start": 81.72,
+      "text": "reviews collection and view a result in"
+    },
+    {
+      "start": 83.64,
+      "text": "a matter of seconds now that my API is"
+    },
+    {
+      "start": 86.52,
+      "text": "created I can go ahead and add"
+    },
+    {
+      "start": 87.96,
+      "text": "authentication by making a new rule"
+    },
+    {
+      "start": 89.88,
+      "text": "connecting that rule to a new"
+    },
+    {
+      "start": 91.74,
+      "text": "application and generating a unique API"
+    },
+    {
+      "start": 94.32,
+      "text": "token now that I have this token I can"
+    },
+    {
+      "start": 96.72,
+      "text": "access my API securely from anywhere"
+    },
+    {
+      "start": 99.24,
+      "text": "look at me doing it here right in"
+    },
+    {
+      "start": 101.22,
+      "text": "Postman now best of all Dream Factory"
+    },
+    {
+      "start": 103.5,
+      "text": "apis are fully customizable can run"
+    },
+    {
+      "start": 106.2,
+      "text": "anywhere and connect to your existing"
+    },
+    {
+      "start": 108.0,
+      "text": "authentication systems like oauth spend"
+    },
+    {
+      "start": 110.46,
+      "text": "less time writing back ends and more"
+    },
+    {
+      "start": 112.14,
+      "text": "time developing beautiful applications"
+    },
+    {
+      "start": 113.759,
+      "text": "by clicking the link in the description"
+    },
+    {
+      "start": 115.439,
+      "text": "and getting started with Dream Factory"
+    },
+    {
+      "start": 117.24,
+      "text": "today thanks again to Dream Factory for"
+    },
+    {
+      "start": 119.579,
+      "text": "sponsor during this video alright so"
+    },
+    {
+      "start": 121.799,
+      "text": "let's begin with our project setup for"
+    },
+    {
+      "start": 123.84,
+      "text": "this video we're going to use flask this"
+    },
+    {
+      "start": 125.46,
+      "text": "is a micro web framework for python"
+    },
+    {
+      "start": 127.439,
+      "text": "that's very popular for doing web"
+    },
+    {
+      "start": 129.06,
+      "text": "development and for creating apis to set"
+    },
+    {
+      "start": 131.76,
+      "text": "up flask we first need to open some kind"
+    },
+    {
+      "start": 133.56,
+      "text": "of terminal window in this case I'm in"
+    },
+    {
+      "start": 135.18,
+      "text": "command prompt if you're on Mac or Linux"
+    },
+    {
+      "start": 137.099,
+      "text": "open your terminal and we're going to"
+    },
+    {
+      "start": 138.72,
+      "text": "type the following command which is PIP"
+    },
+    {
+      "start": 140.52,
+      "text": "install and then flask now this should"
+    },
+    {
+      "start": 143.28,
+      "text": "install the flask framework for you if"
+    },
+    {
+      "start": 145.44,
+      "text": "you're on Mac or Linux you may want to"
+    },
+    {
+      "start": 147.239,
+      "text": "try the PIP 3 command if pip was not"
+    },
+    {
+      "start": 149.58,
+      "text": "working for you and if neither of those"
+    },
+    {
+      "start": 151.14,
+      "text": "commands work I'll leave two videos on"
+    },
+    {
+      "start": 153.06,
+      "text": "the screen that will show you how to fix"
+    },
+    {
+      "start": 154.44,
+      "text": "that pip command now that we have flask"
+    },
+    {
+      "start": 156.78,
+      "text": "installed we're just going to open a"
+    },
+    {
+      "start": 158.04,
+      "text": "python file which I already have here in"
+    },
+    {
+      "start": 160.5,
+      "text": "some kind of directory and we're going"
+    },
+    {
+      "start": 161.94,
+      "text": "to create a basic flask application"
+    },
+    {
+      "start": 163.739,
+      "text": "flask will be the server that's running"
+    },
+    {
+      "start": 165.72,
+      "text": "our API we're going to begin by"
+    },
+    {
+      "start": 167.819,
+      "text": "importing our dependencies we'll say"
+    },
+    {
+      "start": 169.5,
+      "text": "from flask import and then we're going"
+    },
+    {
+      "start": 171.84,
+      "text": "to import flask with a capital request"
+    },
+    {
+      "start": 174.54,
+      "text": "and then the function jsonify which"
+    },
+    {
+      "start": 177.48,
+      "text": "we're going to use to create a Json"
+    },
+    {
+      "start": 178.92,
+      "text": "response now we need to create our flask"
+    },
+    {
+      "start": 181.379,
+      "text": "application so we're going to say app is"
+    },
+    {
+      "start": 183.959,
+      "text": "equal to flask and then underscore"
+    },
+    {
+      "start": 186.18,
+      "text": "underscore name underscore underscore"
+    },
+    {
+      "start": 187.86,
+      "text": "like that and then we're going to run"
+    },
+    {
+      "start": 189.48,
+      "text": "our flask application by saying if"
+    },
+    {
+      "start": 191.34,
+      "text": "underscore underscore name"
+    },
+    {
+      "start": 193.2,
+      "text": "is equal to underscore and square Main"
+    },
+    {
+      "start": 196.56,
+      "text": "app dot run and then debug equal true"
+    },
+    {
+      "start": 200.7,
+      "text": "this will run our flask server now that"
+    },
+    {
+      "start": 203.459,
+      "text": "our flask server is set up and we have"
+    },
+    {
+      "start": 205.14,
+      "text": "the basic initialization what we need to"
+    },
+    {
+      "start": 207.0,
+      "text": "do is create something known as a root"
+    },
+    {
+      "start": 208.68,
+      "text": "now a root is essentially an endpoint"
+    },
+    {
+      "start": 210.84,
+      "text": "this is kind of a location on our API"
+    },
+    {
+      "start": 213.3,
+      "text": "that we can go to to get some kind of"
+    },
+    {
+      "start": 215.519,
+      "text": "data we have different kinds of routes"
+    },
+    {
+      "start": 217.319,
+      "text": "which I'll talk about in a second but"
+    },
+    {
+      "start": 218.879,
+      "text": "for now let's create a simple one and"
+    },
+    {
+      "start": 220.319,
+      "text": "test this out so you can see how it"
+    },
+    {
+      "start": 221.7,
+      "text": "works so to create a root we're going to"
+    },
+    {
+      "start": 223.44,
+      "text": "define a python function we're going to"
+    },
+    {
+      "start": 225.239,
+      "text": "say Define in this case we'll go with"
+    },
+    {
+      "start": 226.92,
+      "text": "something like home inside of our"
+    },
+    {
+      "start": 228.9,
+      "text": "function we'll just return some data"
+    },
+    {
+      "start": 230.459,
+      "text": "that we want the user to have access to"
+    },
+    {
+      "start": 232.08,
+      "text": "when they reach this route so we'll say"
+    },
+    {
+      "start": 234.299,
+      "text": "return and then in this case go with"
+    },
+    {
+      "start": 236.64,
+      "text": "something like home now to make this"
+    },
+    {
+      "start": 238.92,
+      "text": "accessible what we need to do is add a"
+    },
+    {
+      "start": 240.599,
+      "text": "decorators we're going to use an at"
+    },
+    {
+      "start": 241.98,
+      "text": "symbol and say app which is the name of"
+    },
+    {
+      "start": 244.379,
+      "text": "our flask application here so use the"
+    },
+    {
+      "start": 246.12,
+      "text": "same variable name dot root and then"
+    },
+    {
+      "start": 248.58,
+      "text": "we're going to put the path that we want"
+    },
+    {
+      "start": 249.959,
+      "text": "to access in this case we're just going"
+    },
+    {
+      "start": 251.519,
+      "text": "to do slash which will be the default"
+    },
+    {
+      "start": 253.379,
+      "text": "route now the root is really what comes"
+    },
+    {
+      "start": 255.54,
+      "text": "after the slash in your URL address bar"
+    },
+    {
+      "start": 258.12,
+      "text": "so that's what we're setting up here"
+    },
+    {
+      "start": 259.62,
+      "text": "okay let's save our code and let's go"
+    },
+    {
+      "start": 261.66,
+      "text": "ahead and run this to run this we're"
+    },
+    {
+      "start": 263.52,
+      "text": "going to type Python and then main.pi"
+    },
+    {
+      "start": 266.4,
+      "text": "which is the name of my python file if"
+    },
+    {
+      "start": 268.139,
+      "text": "you're on Mac or Linux you're going to"
+    },
+    {
+      "start": 269.46,
+      "text": "use Python 3. okay so let's run that you"
+    },
+    {
+      "start": 272.52,
+      "text": "can see that it's now created a"
+    },
+    {
+      "start": 273.72,
+      "text": "development server for us and I can open"
+    },
+    {
+      "start": 275.58,
+      "text": "this URL by just right clicking on it"
+    },
+    {
+      "start": 277.5,
+      "text": "here in Visual Studio code when I do"
+    },
+    {
+      "start": 279.72,
+      "text": "that you can see that I get home"
+    },
+    {
+      "start": 280.86,
+      "text": "appearing on my screen there you go you"
+    },
+    {
+      "start": 283.02,
+      "text": "just created your first root inside of"
+    },
+    {
+      "start": 284.94,
+      "text": "flask so now that we've created this"
+    },
+    {
+      "start": 286.8,
+      "text": "demo route let's have a look at some"
+    },
+    {
+      "start": 288.54,
+      "text": "other routes that we can create with"
+    },
+    {
+      "start": 290.04,
+      "text": "different HTTP methods now whenever"
+    },
+    {
+      "start": 292.32,
+      "text": "we're writing an API we're working with"
+    },
+    {
+      "start": 293.94,
+      "text": "something known as HTTP which is"
+    },
+    {
+      "start": 295.74,
+      "text": "essentially the way we communicate data"
+    },
+    {
+      "start": 297.479,
+      "text": "over the internet now when we create"
+    },
+    {
+      "start": 299.1,
+      "text": "different API routes we can mark them"
+    },
+    {
+      "start": 300.9,
+      "text": "with different methods now the methods"
+    },
+    {
+      "start": 302.94,
+      "text": "we can use are get post put and delete"
+    },
+    {
+      "start": 306.96,
+      "text": "we have access to a bunch of other ones"
+    },
+    {
+      "start": 308.639,
+      "text": "as well but these are the most common"
+    },
+    {
+      "start": 309.9,
+      "text": "ones now get is used when we want to"
+    },
+    {
+      "start": 312.36,
+      "text": "retrieve some value from the server post"
+    },
+    {
+      "start": 314.699,
+      "text": "is used when we want to create something"
+    },
+    {
+      "start": 316.44,
+      "text": "something new put is used when we want"
+    },
+    {
+      "start": 318.66,
+      "text": "to alter or modify some existing data"
+    },
+    {
+      "start": 321.12,
+      "text": "and delete is used we want to remove or"
+    },
+    {
+      "start": 323.22,
+      "text": "delete data from a database or from"
+    },
+    {
+      "start": 325.08,
+      "text": "whatever resource it is that we're"
+    },
+    {
+      "start": 326.639,
+      "text": "accessing so let's create a more"
+    },
+    {
+      "start": 328.38,
+      "text": "complicated get route here and see how"
+    },
+    {
+      "start": 330.3,
+      "text": "that works so we're going to say at app"
+    },
+    {
+      "start": 332.34,
+      "text": "dot root for this we're going to say"
+    },
+    {
+      "start": 334.8,
+      "text": "slash get Dash user and then I'm going"
+    },
+    {
+      "start": 338.28,
+      "text": "to implement something known as a path"
+    },
+    {
+      "start": 339.84,
+      "text": "parameter now a path parameter is a"
+    },
+    {
+      "start": 342.24,
+      "text": "dynamic value that you can pass in the"
+    },
+    {
+      "start": 344.28,
+      "text": "path of a URL that will be able to"
+    },
+    {
+      "start": 346.68,
+      "text": "access inside of our root so in this"
+    },
+    {
+      "start": 348.9,
+      "text": "case I'm going to say user underscore ID"
+    },
+    {
+      "start": 350.94,
+      "text": "then I'm going to make my function get"
+    },
+    {
+      "start": 353.22,
+      "text": "underscore user and I'm going to accept"
+    },
+    {
+      "start": 355.38,
+      "text": "a variable inside of my function"
+    },
+    {
+      "start": 357.479,
+      "text": "parameters here that's the same as the"
+    },
+    {
+      "start": 359.759,
+      "text": "path parameter I put here now when we do"
+    },
+    {
+      "start": 362.1,
+      "text": "this this essentially means that I can"
+    },
+    {
+      "start": 363.78,
+      "text": "do something like get user slash and"
+    },
+    {
+      "start": 366.479,
+      "text": "then any value I want and this value"
+    },
+    {
+      "start": 368.58,
+      "text": "will be the ID of the user that we're"
+    },
+    {
+      "start": 370.32,
+      "text": "attempting to retrieve right so if I"
+    },
+    {
+      "start": 372.78,
+      "text": "have something like 6226 then that's"
+    },
+    {
+      "start": 374.58,
+      "text": "indicating that I want to retrieve the"
+    },
+    {
+      "start": 376.02,
+      "text": "user with the AI with the ID story of"
+    },
+    {
+      "start": 378.139,
+      "text": "6226 okay that's a path parameter so how"
+    },
+    {
+      "start": 381.72,
+      "text": "do we access the path parameter well we"
+    },
+    {
+      "start": 383.22,
+      "text": "can just access it directly from here so"
+    },
+    {
+      "start": 385.259,
+      "text": "what I'm going to do is essentially mock"
+    },
+    {
+      "start": 386.819,
+      "text": "some data that we want to return to our"
+    },
+    {
+      "start": 388.44,
+      "text": "user so I can paste this in user data is"
+    },
+    {
+      "start": 390.9,
+      "text": "equal to the following and now I want to"
+    },
+    {
+      "start": 393.06,
+      "text": "talk to you about something known as a"
+    },
+    {
+      "start": 394.259,
+      "text": "query parameter now whenever we are"
+    },
+    {
+      "start": 395.94,
+      "text": "accessing a root we have the ability to"
+    },
+    {
+      "start": 397.86,
+      "text": "pass something known as a query"
+    },
+    {
+      "start": 399.06,
+      "text": "parameter which is essentially an extra"
+    },
+    {
+      "start": 400.86,
+      "text": "value that is included after the main"
+    },
+    {
+      "start": 403.44,
+      "text": "path so if I have my path get Dash user"
+    },
+    {
+      "start": 406.74,
+      "text": "slash one two three if I put a question"
+    },
+    {
+      "start": 409.38,
+      "text": "mark here now I can pass different query"
+    },
+    {
+      "start": 411.539,
+      "text": "parameters so something like extra is"
+    },
+    {
+      "start": 414.06,
+      "text": "equal to hello world okay this is an"
+    },
+    {
+      "start": 416.88,
+      "text": "additional variable that I can pass"
+    },
+    {
+      "start": 418.5,
+      "text": "along to my root so how do I access that"
+    },
+    {
+      "start": 420.96,
+      "text": "from flask well I can do the following I"
+    },
+    {
+      "start": 423.06,
+      "text": "can say extra is equal to request"
+    },
+    {
+      "start": 425.639,
+      "text": "request is the variable I imported up"
+    },
+    {
+      "start": 427.74,
+      "text": "here dot orgs which stores all of my"
+    },
+    {
+      "start": 430.02,
+      "text": "query parameters in a dictionary and"
+    },
+    {
+      "start": 432.12,
+      "text": "then I can use dot get and try to access"
+    },
+    {
+      "start": 433.979,
+      "text": "a parameter or sorry a value like extra"
+    },
+    {
+      "start": 436.979,
+      "text": "okay now that I have extra I can check"
+    },
+    {
+      "start": 439.5,
+      "text": "if this exists so I can say something"
+    },
+    {
+      "start": 440.94,
+      "text": "like if extra then user data add to the"
+    },
+    {
+      "start": 445.56,
+      "text": "extra key is equal"
+    },
+    {
+      "start": 448.44,
+      "text": "2 extra then I can return my data so I"
+    },
+    {
+      "start": 451.56,
+      "text": "can say return jsonify and then this"
+    },
+    {
+      "start": 454.56,
+      "text": "will be my user underscore data"
+    },
+    {
+      "start": 457.68,
+      "text": "I'll pass the Response Code of 200. so"
+    },
+    {
+      "start": 460.5,
+      "text": "whenever we are returning data from an"
+    },
+    {
+      "start": 462.12,
+      "text": "API we're going to use Json now Json"
+    },
+    {
+      "start": 464.34,
+      "text": "stands for JavaScript object notation"
+    },
+    {
+      "start": 466.38,
+      "text": "which is essentially a collection of key"
+    },
+    {
+      "start": 468.479,
+      "text": "value pairs very similar to a python"
+    },
+    {
+      "start": 470.88,
+      "text": "dictionary so in flask we create a"
+    },
+    {
+      "start": 473.46,
+      "text": "dictionary and then we jsonify that"
+    },
+    {
+      "start": 475.44,
+      "text": "dictionary and that's what we can return"
+    },
+    {
+      "start": 477.3,
+      "text": "to the user this allows flask to"
+    },
+    {
+      "start": 479.58,
+      "text": "actually parse this value and return it"
+    },
+    {
+      "start": 481.62,
+      "text": "as Json data the next value that we pass"
+    },
+    {
+      "start": 484.5,
+      "text": "here is the status code 200 is the"
+    },
+    {
+      "start": 487.139,
+      "text": "default status code of success you can"
+    },
+    {
+      "start": 489.24,
+      "text": "pass other HTTP status codes here as"
+    },
+    {
+      "start": 491.58,
+      "text": "well I won't go through all of them so"
+    },
+    {
+      "start": 493.8,
+      "text": "now that we have this get root let's"
+    },
+    {
+      "start": 495.18,
+      "text": "make sure our server is running so let"
+    },
+    {
+      "start": 497.28,
+      "text": "me just bring up my terminal here and"
+    },
+    {
+      "start": 498.9,
+      "text": "run my server and now we can actually"
+    },
+    {
+      "start": 500.699,
+      "text": "test our get route from the browser by"
+    },
+    {
+      "start": 503.34,
+      "text": "default when you actually type in a URL"
+    },
+    {
+      "start": 506.34,
+      "text": "here in your browser you're going to be"
+    },
+    {
+      "start": 507.66,
+      "text": "sending a get request so notice here"
+    },
+    {
+      "start": 510.06,
+      "text": "that I have the URL of get user and then"
+    },
+    {
+      "start": 512.459,
+      "text": "slash 123 question mark extra equals"
+    },
+    {
+      "start": 515.159,
+      "text": "hello and then it returns to me the Json"
+    },
+    {
+      "start": 517.14,
+      "text": "data of this which has my user ID and"
+    },
+    {
+      "start": 519.599,
+      "text": "then what I passed here inside of the"
+    },
+    {
+      "start": 521.159,
+      "text": "query parameter now that we've had a"
+    },
+    {
+      "start": 522.599,
+      "text": "look at how to make a get root let's"
+    },
+    {
+      "start": 524.219,
+      "text": "have a look at making a post root so to"
+    },
+    {
+      "start": 526.38,
+      "text": "create a post request we'll do a very"
+    },
+    {
+      "start": 527.76,
+      "text": "similar thing to what we did before"
+    },
+    {
+      "start": 528.959,
+      "text": "we'll have an at app dot root we'll go"
+    },
+    {
+      "start": 532.74,
+      "text": "here and we'll say slash and then this"
+    },
+    {
+      "start": 534.48,
+      "text": "can be something like create Dash user"
+    },
+    {
+      "start": 537.0,
+      "text": "however this time since we're not using"
+    },
+    {
+      "start": 539.22,
+      "text": "the default get request we have to"
+    },
+    {
+      "start": 541.2,
+      "text": "actually specify the accepted method for"
+    },
+    {
+      "start": 543.42,
+      "text": "this root so in this case I'm going to"
+    },
+    {
+      "start": 545.22,
+      "text": "put inside of an array here post now"
+    },
+    {
+      "start": 547.74,
+      "text": "this means that I can accept a post"
+    },
+    {
+      "start": 549.24,
+      "text": "request if I wanted to accept both a"
+    },
+    {
+      "start": 551.16,
+      "text": "post request and a get request that I"
+    },
+    {
+      "start": 553.44,
+      "text": "would put both of them inside of here"
+    },
+    {
+      "start": 554.88,
+      "text": "for now all I want to accept is post"
+    },
+    {
+      "start": 557.04,
+      "text": "that will Define my function create"
+    },
+    {
+      "start": 558.959,
+      "text": "underscore user and if I wanted to check"
+    },
+    {
+      "start": 561.06,
+      "text": "inside of this function what the method"
+    },
+    {
+      "start": 563.04,
+      "text": "was that was being used I could do the"
+    },
+    {
+      "start": 564.899,
+      "text": "following I could say if request dot"
+    },
+    {
+      "start": 567.779,
+      "text": "method is equal to post and I would only"
+    },
+    {
+      "start": 571.38,
+      "text": "do this if I had multiple methods but I"
+    },
+    {
+      "start": 573.24,
+      "text": "just wanted to show you you can use"
+    },
+    {
+      "start": 574.459,
+      "text": "request.method which is from this"
+    },
+    {
+      "start": 576.54,
+      "text": "variable right here and it tells you if"
+    },
+    {
+      "start": 578.22,
+      "text": "you're using post get Etc regardless we"
+    },
+    {
+      "start": 580.92,
+      "text": "know it's going to be post what we want"
+    },
+    {
+      "start": 582.66,
+      "text": "to do here is actually receive some data"
+    },
+    {
+      "start": 584.94,
+      "text": "from the request that's in Json format"
+    },
+    {
+      "start": 587.64,
+      "text": "so the user is going to submit us some"
+    },
+    {
+      "start": 589.26,
+      "text": "Json which is kind of the user that want"
+    },
+    {
+      "start": 591.48,
+      "text": "to create so how do we get that well I'm"
+    },
+    {
+      "start": 593.64,
+      "text": "going to say data is equal to"
+    },
+    {
+      "start": 596.18,
+      "text": "request.get underscore Json this is"
+    },
+    {
+      "start": 598.92,
+      "text": "going to give me all the Json data that"
+    },
+    {
+      "start": 600.6,
+      "text": "was passed in the body of the request"
+    },
+    {
+      "start": 602.519,
+      "text": "I'm going to show you how we look at"
+    },
+    {
+      "start": 603.72,
+      "text": "this in a second and what I can do is"
+    },
+    {
+      "start": 605.58,
+      "text": "simply return this back to the user to"
+    },
+    {
+      "start": 607.92,
+      "text": "indicate that this was created"
+    },
+    {
+      "start": 609.0,
+      "text": "successfully so I can say return"
+    },
+    {
+      "start": 611.7,
+      "text": "and then I need to jsonify the data and"
+    },
+    {
+      "start": 615.6,
+      "text": "then I can return the status request of"
+    },
+    {
+      "start": 617.399,
+      "text": "201 and now we have successfully"
+    },
+    {
+      "start": 619.44,
+      "text": "implemented a post request where we are"
+    },
+    {
+      "start": 621.48,
+      "text": "receiving some Json data from the user"
+    },
+    {
+      "start": 623.339,
+      "text": "obviously I'd probably do something more"
+    },
+    {
+      "start": 624.839,
+      "text": "here like add this to a database but"
+    },
+    {
+      "start": 626.64,
+      "text": "this is just a simple demo okay so now"
+    },
+    {
+      "start": 629.04,
+      "text": "we've created this post request however"
+    },
+    {
+      "start": 630.839,
+      "text": "I can't demo the post request for you in"
+    },
+    {
+      "start": 632.76,
+      "text": "the browser so now we're going to"
+    },
+    {
+      "start": 634.08,
+      "text": "quickly talk about how we can test our"
+    },
+    {
+      "start": 635.7,
+      "text": "apis now there's a variety of different"
+    },
+    {
+      "start": 637.32,
+      "text": "ways we can test our apis but I'm going"
+    },
+    {
+      "start": 639.36,
+      "text": "to recommend we use a tool called"
+    },
+    {
+      "start": 640.86,
+      "text": "Postman so please download this from the"
+    },
+    {
+      "start": 642.839,
+      "text": "link in the description and then open up"
+    },
+    {
+      "start": 644.7,
+      "text": "that software and let's look at how we"
+    },
+    {
+      "start": 646.26,
+      "text": "can call this API alright so my python"
+    },
+    {
+      "start": 648.899,
+      "text": "server is running so I'm going to copy"
+    },
+    {
+      "start": 650.519,
+      "text": "the URL that it's running on right here"
+    },
+    {
+      "start": 652.5,
+      "text": "which is localhost Port 5000 I'm going"
+    },
+    {
+      "start": 655.2,
+      "text": "to open up my Postman software I'm going"
+    },
+    {
+      "start": 657.3,
+      "text": "to click plus here to create a new"
+    },
+    {
+      "start": 658.74,
+      "text": "request I'm going to paste this in"
+    },
+    {
+      "start": 660.54,
+      "text": "change the url to create Dash user"
+    },
+    {
+      "start": 663.6,
+      "text": "change the method here to be post and"
+    },
+    {
+      "start": 666.18,
+      "text": "then I'm going to go to where it says"
+    },
+    {
+      "start": 667.32,
+      "text": "body because this is where I'm going to"
+    },
+    {
+      "start": 668.88,
+      "text": "include my Json data I'm going to change"
+    },
+    {
+      "start": 671.16,
+      "text": "this to say raw data I'm going to go"
+    },
+    {
+      "start": 673.2,
+      "text": "here to text and change this to not"
+    },
+    {
+      "start": 675.06,
+      "text": "JavaScript but Json I'm going to pass a"
+    },
+    {
+      "start": 677.339,
+      "text": "Json object so the way I do that is have"
+    },
+    {
+      "start": 679.62,
+      "text": "a set of curly braces just like my"
+    },
+    {
+      "start": 681.24,
+      "text": "python dictionary I'm then going to go"
+    },
+    {
+      "start": 683.04,
+      "text": "and make a key my key will be username"
+    },
+    {
+      "start": 685.32,
+      "text": "and I'll have this associated with the"
+    },
+    {
+      "start": 687.839,
+      "text": "key or with the value sorry Tim now if I"
+    },
+    {
+      "start": 690.42,
+      "text": "hit send you can see that we get this"
+    },
+    {
+      "start": 692.279,
+      "text": "exact same data back with the status"
+    },
+    {
+      "start": 693.899,
+      "text": "code of 201 and that means that this is"
+    },
+    {
+      "start": 696.48,
+      "text": "working successfully so this is a great"
+    },
+    {
+      "start": 698.339,
+      "text": "tool that you can use to test out your"
+    },
+    {
+      "start": 699.899,
+      "text": "apis as you continue to do more"
+    },
+    {
+      "start": 701.88,
+      "text": "development so with that said that will"
+    },
+    {
+      "start": 703.44,
+      "text": "wrap up this video but I will encourage"
+    },
+    {
+      "start": 705.06,
+      "text": "you to learn more by checking out this"
+    },
+    {
+      "start": 706.74,
+      "text": "video here which is on Fast API or this"
+    },
+    {
+      "start": 709.5,
+      "text": "video here which is creating a more"
+    },
+    {
+      "start": 711.0,
+      "text": "advanced API in flask that uses"
+    },
+    {
+      "start": 713.459,
+      "text": "authentication really The Next Step here"
+    },
+    {
+      "start": 715.56,
+      "text": "is to authenticate your apis and connect"
+    },
+    {
+      "start": 717.54,
+      "text": "them to a database obviously I didn't"
+    },
+    {
+      "start": 719.459,
+      "text": "have time here with that said I hope you"
+    },
+    {
+      "start": 721.62,
+      "text": "enjoyed and I look forward to seeing you"
+    },
+    {
+      "start": 723.06,
+      "text": "in another one"
+    }
+  ],
+  "text": "what is an API well API stands for application programming interface and really this is a set of rules that allow different software systems to communicate with each other an API typically lives on some type of server and will manipulate some kind of database it can handle different requests so if I'm a user utilizing the API I send a request to it my request may contain some different data then the API is going to process this request and return to me a response that response will typically contain data that I was requesting from the API typically your API will manipulate some type of database and allow different access to the database values depending on the set of rules that you set up in this video I'll show you how to set up a simple API using Python and flask in under 10 minutes so that said let's go ahead and get started after a quick word from our sponsor if you're interested in rapidly creating apis then today's sponsored Dream Factory has you covered with Dream Factory you can create fully featured apis in seconds by simply connecting to an a data source Let Me Show You Begin by starting your dream Factory instance logging in and then connecting to a data source for this demo I'll use mongodb I'll fill in my connection details press save and in seconds Dream Factory has created a fully customizable and fully documented rest API that I can now use to access my data look I can query my reviews collection and view a result in a matter of seconds now that my API is created I can go ahead and add authentication by making a new rule connecting that rule to a new application and generating a unique API token now that I have this token I can access my API securely from anywhere look at me doing it here right in Postman now best of all Dream Factory apis are fully customizable can run anywhere and connect to your existing authentication systems like oauth spend less time writing back ends and more time developing beautiful applications by clicking the link in the description and getting started with Dream Factory today thanks again to Dream Factory for sponsor during this video alright so let's begin with our project setup for this video we're going to use flask this is a micro web framework for python that's very popular for doing web development and for creating apis to set up flask we first need to open some kind of terminal window in this case I'm in command prompt if you're on Mac or Linux open your terminal and we're going to type the following command which is PIP install and then flask now this should install the flask framework for you if you're on Mac or Linux you may want to try the PIP 3 command if pip was not working for you and if neither of those commands work I'll leave two videos on the screen that will show you how to fix that pip command now that we have flask installed we're just going to open a python file which I already have here in some kind of directory and we're going to create a basic flask application flask will be the server that's running our API we're going to begin by importing our dependencies we'll say from flask import and then we're going to import flask with a capital request and then the function jsonify which we're going to use to create a Json response now we need to create our flask application so we're going to say app is equal to flask and then underscore underscore name underscore underscore like that and then we're going to run our flask application by saying if underscore underscore name is equal to underscore and square Main app dot run and then debug equal true this will run our flask server now that our flask server is set up and we have the basic initialization what we need to do is create something known as a root now a root is essentially an endpoint this is kind of a location on our API that we can go to to get some kind of data we have different kinds of routes which I'll talk about in a second but for now let's create a simple one and test this out so you can see how it works so to create a root we're going to define a python function we're going to say Define in this case we'll go with something like home inside of our function we'll just return some data that we want the user to have access to when they reach this route so we'll say return and then in this case go with something like home now to make this accessible what we need to do is add a decorators we're going to use an at symbol and say app which is the name of our flask application here so use the same variable name dot root and then we're going to put the path that we want to access in this case we're just going to do slash which will be the default route now the root is really what comes after the slash in your URL address bar so that's what we're setting up here okay let's save our code and let's go ahead and run this to run this we're going to type Python and then main.pi which is the name of my python file if you're on Mac or Linux you're going to use Python 3. okay so let's run that you can see that it's now created a development server for us and I can open this URL by just right clicking on it here in Visual Studio code when I do that you can see that I get home appearing on my screen there you go you just created your first root inside of flask so now that we've created this demo route let's have a look at some other routes that we can create with different HTTP methods now whenever we're writing an API we're working with something known as HTTP which is essentially the way we communicate data over the internet now when we create different API routes we can mark them with different methods now the methods we can use are get post put and delete we have access to a bunch of other ones as well but these are the most common ones now get is used when we want to retrieve some value from the server post is used when we want to create something something new put is used when we want to alter or modify some existing data and delete is used we want to remove or delete data from a database or from whatever resource it is that we're accessing so let's create a more complicated get route here and see how that works so we're going to say at app dot root for this we're going to say slash get Dash user and then I'm going to implement something known as a path parameter now a path parameter is a dynamic value that you can pass in the path of a URL that will be able to access inside of our root so in this case I'm going to say user underscore ID then I'm going to make my function get underscore user and I'm going to accept a variable inside of my function parameters here that's the same as the path parameter I put here now when we do this this essentially means that I can do something like get user slash and then any value I want and this value will be the ID of the user that we're attempting to retrieve right so if I have something like 6226 then that's indicating that I want to retrieve the user with the AI with the ID story of 6226 okay that's a path parameter so how do we access the path parameter well we can just access it directly from here so what I'm going to do is essentially mock some data that we want to return to our user so I can paste this in user data is equal to the following and now I want to talk to you about something known as a query parameter now whenever we are accessing a root we have the ability to pass something known as a query parameter which is essentially an extra value that is included after the main path so if I have my path get Dash user slash one two three if I put a question mark here now I can pass different query parameters so something like extra is equal to hello world okay this is an additional variable that I can pass along to my root so how do I access that from flask well I can do the following I can say extra is equal to request request is the variable I imported up here dot orgs which stores all of my query parameters in a dictionary and then I can use dot get and try to access a parameter or sorry a value like extra okay now that I have extra I can check if this exists so I can say something like if extra then user data add to the extra key is equal 2 extra then I can return my data so I can say return jsonify and then this will be my user underscore data I'll pass the Response Code of 200. so whenever we are returning data from an API we're going to use Json now Json stands for JavaScript object notation which is essentially a collection of key value pairs very similar to a python dictionary so in flask we create a dictionary and then we jsonify that dictionary and that's what we can return to the user this allows flask to actually parse this value and return it as Json data the next value that we pass here is the status code 200 is the default status code of success you can pass other HTTP status codes here as well I won't go through all of them so now that we have this get root let's make sure our server is running so let me just bring up my terminal here and run my server and now we can actually test our get route from the browser by default when you actually type in a URL here in your browser you're going to be sending a get request so notice here that I have the URL of get user and then slash 123 question mark extra equals hello and then it returns to me the Json data of this which has my user ID and then what I passed here inside of the query parameter now that we've had a look at how to make a get root let's have a look at making a post root so to create a post request we'll do a very similar thing to what we did before we'll have an at app dot root we'll go here and we'll say slash and then this can be something like create Dash user however this time since we're not using the default get request we have to actually specify the accepted method for this root so in this case I'm going to put inside of an array here post now this means that I can accept a post request if I wanted to accept both a post request and a get request that I would put both of them inside of here for now all I want to accept is post that will Define my function create underscore user and if I wanted to check inside of this function what the method was that was being used I could do the following I could say if request dot method is equal to post and I would only do this if I had multiple methods but I just wanted to show you you can use request.method which is from this variable right here and it tells you if you're using post get Etc regardless we know it's going to be post what we want to do here is actually receive some data from the request that's in Json format so the user is going to submit us some Json which is kind of the user that want to create so how do we get that well I'm going to say data is equal to request.get underscore Json this is going to give me all the Json data that was passed in the body of the request I'm going to show you how we look at this in a second and what I can do is simply return this back to the user to indicate that this was created successfully so I can say return and then I need to jsonify the data and then I can return the status request of 201 and now we have successfully implemented a post request where we are receiving some Json data from the user obviously I'd probably do something more here like add this to a database but this is just a simple demo okay so now we've created this post request however I can't demo the post request for you in the browser so now we're going to quickly talk about how we can test our apis now there's a variety of different ways we can test our apis but I'm going to recommend we use a tool called Postman so please download this from the link in the description and then open up that software and let's look at how we can call this API alright so my python server is running so I'm going to copy the URL that it's running on right here which is localhost Port 5000 I'm going to open up my Postman software I'm going to click plus here to create a new request I'm going to paste this in change the url to create Dash user change the method here to be post and then I'm going to go to where it says body because this is where I'm going to include my Json data I'm going to change this to say raw data I'm going to go here to text and change this to not JavaScript but Json I'm going to pass a Json object so the way I do that is have a set of curly braces just like my python dictionary I'm then going to go and make a key my key will be username and I'll have this associated with the key or with the value sorry Tim now if I hit send you can see that we get this exact same data back with the status code of 201 and that means that this is working successfully so this is a great tool that you can use to test out your apis as you continue to do more development so with that said that will wrap up this video but I will encourage you to learn more by checking out this video here which is on Fast API or this video here which is creating a more advanced API in flask that uses authentication really The Next Step here is to authenticate your apis and connect them to a database obviously I didn't have time here with that said I hope you enjoyed and I look forward to seeing you in another one"
+}

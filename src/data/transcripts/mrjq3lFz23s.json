@@ -1,0 +1,1892 @@
+{
+  "videoId": "mrjq3lFz23s",
+  "language": "en",
+  "source": "auto",
+  "segments": [
+    {
+      "start": 0.04,
+      "text": "if you write code in Python and you're"
+    },
+    {
+      "start": 1.64,
+      "text": "at all interested in AI then you need to"
+    },
+    {
+      "start": 3.76,
+      "text": "check out Lang chain now this is a"
+    },
+    {
+      "start": 5.68,
+      "text": "relatively new framework that allows you"
+    },
+    {
+      "start": 7.48,
+      "text": "to build AI powered applications in both"
+    },
+    {
+      "start": 9.84,
+      "text": "Python and JavaScript now we'll be"
+    },
+    {
+      "start": 11.88,
+      "text": "looking at python here but the main"
+    },
+    {
+      "start": 13.799,
+      "text": "benefit of Lang chain is that you can"
+    },
+    {
+      "start": 15.32,
+      "text": "actually connect to external data"
+    },
+    {
+      "start": 16.88,
+      "text": "sources databases apis and really any"
+    },
+    {
+      "start": 19.8,
+      "text": "data that you'd like and you can very"
+    },
+    {
+      "start": 21.6,
+      "text": "easily build applications that are"
+    },
+    {
+      "start": 23.32,
+      "text": "context aware and that can reason using"
+    },
+    {
+      "start": 25.92,
+      "text": "popular language models like chat GPT"
+    },
+    {
+      "start": 28.64,
+      "text": "now in this video I'll give you a"
+    },
+    {
+      "start": 30.039,
+      "text": "high-speed overview of Lang chain show"
+    },
+    {
+      "start": 32.079,
+      "text": "you some of the simple features and"
+    },
+    {
+      "start": 33.559,
+      "text": "capabilities and give you enough so that"
+    },
+    {
+      "start": 35.32,
+      "text": "you can get started today building AI"
+    },
+    {
+      "start": 37.6,
+      "text": "applications in Python in my opinion"
+    },
+    {
+      "start": 40.039,
+      "text": "this is a must-learn really cool module"
+    },
+    {
+      "start": 42.28,
+      "text": "and surprisingly simple stick around for"
+    },
+    {
+      "start": 44.36,
+      "text": "the whole video to see exactly how you"
+    },
+    {
+      "start": 46.12,
+      "text": "can use this in your next python app so"
+    },
+    {
+      "start": 48.6,
+      "text": "the first thing we need to do to work"
+    },
+    {
+      "start": 49.8,
+      "text": "with Lang chain is install it now they"
+    },
+    {
+      "start": 51.76,
+      "text": "have fantastic documentation that I'll"
+    },
+    {
+      "start": 53.48,
+      "text": "link down below that will show you all"
+    },
+    {
+      "start": 55.039,
+      "text": "of these steps but of course you can"
+    },
+    {
+      "start": 56.559,
+      "text": "just follow along with me so since we're"
+    },
+    {
+      "start": 58.559,
+      "text": "going to be installing this for python"
+    },
+    {
+      "start": 60.0,
+      "text": "on we can see on this page here we have"
+    },
+    {
+      "start": 61.559,
+      "text": "a few options pip install Lang chain pip"
+    },
+    {
+      "start": 64.08,
+      "text": "install Lang chain llms or pip install"
+    },
+    {
+      "start": 66.76,
+      "text": "Lang chain all now I'm going to"
+    },
+    {
+      "start": 68.52,
+      "text": "recommend that you go with the second"
+    },
+    {
+      "start": 69.96,
+      "text": "option here you do not need to install"
+    },
+    {
+      "start": 71.759,
+      "text": "all the dependencies but we do want to"
+    },
+    {
+      "start": 73.6,
+      "text": "install the dependencies related to the"
+    },
+    {
+      "start": 75.4,
+      "text": "language model so that we can connect"
+    },
+    {
+      "start": 77.0,
+      "text": "with those immediately so let's go ahead"
+    },
+    {
+      "start": 78.799,
+      "text": "and copy that command and paste that in"
+    },
+    {
+      "start": 80.52,
+      "text": "our terminal I am running on Windows if"
+    },
+    {
+      "start": 82.6,
+      "text": "you're on Mac or Linux you're likely"
+    },
+    {
+      "start": 84.079,
+      "text": "going to want to adjust this command to"
+    },
+    {
+      "start": 85.439,
+      "text": "be pip 3 so I've gone ahead and"
+    },
+    {
+      "start": 87.68,
+      "text": "installed that and we're just going to"
+    },
+    {
+      "start": 89.0,
+      "text": "install a few modules that we're going"
+    },
+    {
+      "start": 90.759,
+      "text": "to use for these specific examples so"
+    },
+    {
+      "start": 92.72,
+      "text": "I'm going to do pip install and then"
+    },
+    {
+      "start": 95.72,
+      "text": "open AI we're going to use this to"
+    },
+    {
+      "start": 97.32,
+      "text": "connect with open AI again if you're on"
+    },
+    {
+      "start": 99.0,
+      "text": "Mac or Linux you're going to want to"
+    },
+    {
+      "start": 100.04,
+      "text": "change that to pip 3 now once we install"
+    },
+    {
+      "start": 102.68,
+      "text": "open AI I am also going to install the"
+    },
+    {
+      "start": 106.799,
+      "text": "EnV Library so pip install python d.v"
+    },
+    {
+      "start": 111.56,
+      "text": "now this is going to allow me to load in"
+    },
+    {
+      "start": 113.2,
+      "text": "environment variable file so I can store"
+    },
+    {
+      "start": 115.439,
+      "text": "my API keys in a specific file that's"
+    },
+    {
+      "start": 117.96,
+      "text": "kind of hidden from the code you'll see"
+    },
+    {
+      "start": 119.64,
+      "text": "what I I mean in one second those are"
+    },
+    {
+      "start": 121.28,
+      "text": "all the modules that we need Lang chain"
+    },
+    {
+      "start": 123.56,
+      "text": "with llms we need open aai and then we"
+    },
+    {
+      "start": 126.96,
+      "text": "need python. EnV now in the name of"
+    },
+    {
+      "start": 129.28,
+      "text": "saving us a little bit of time I've"
+    },
+    {
+      "start": 130.679,
+      "text": "already ridden a few examples and I'll"
+    },
+    {
+      "start": 132.36,
+      "text": "just walk through the code with you so"
+    },
+    {
+      "start": 133.599,
+      "text": "you can see exactly how this works now"
+    },
+    {
+      "start": 135.72,
+      "text": "the first thing I want to mention is"
+    },
+    {
+      "start": 137.0,
+      "text": "that before you start using laying chain"
+    },
+    {
+      "start": 138.879,
+      "text": "in any of the llms you want to have a"
+    },
+    {
+      "start": 141.0,
+      "text": "decent idea of how they work"
+    },
+    {
+      "start": 142.879,
+      "text": "specifically you want to understand what"
+    },
+    {
+      "start": 144.599,
+      "text": "they're good at how you can use them"
+    },
+    {
+      "start": 146.4,
+      "text": "properly and when you should be cautious"
+    },
+    {
+      "start": 148.28,
+      "text": "of their replies now I imagine most of"
+    },
+    {
+      "start": 150.48,
+      "text": "you are going to be using chat GPT at"
+    },
+    {
+      "start": 152.2,
+      "text": "least that's what I'll be doing for this"
+    },
+    {
+      "start": 153.56,
+      "text": "tutorial and fortunately for you our"
+    },
+    {
+      "start": 155.599,
+      "text": "video sponsor HubSpot actually has a"
+    },
+    {
+      "start": 157.959,
+      "text": "free guide that shows you how to use"
+    },
+    {
+      "start": 159.879,
+      "text": "chat GPT at work now this free guide"
+    },
+    {
+      "start": 162.36,
+      "text": "gives you a comprehensive overview of"
+    },
+    {
+      "start": 164.159,
+      "text": "exactly how chat GPT works it shares"
+    },
+    {
+      "start": 166.64,
+      "text": "some best practices and it gives you"
+    },
+    {
+      "start": 168.2,
+      "text": "some expert insights so you really know"
+    },
+    {
+      "start": 170.4,
+      "text": "how to use this and get the full power"
+    },
+    {
+      "start": 172.159,
+      "text": "out of it now I've left a link in the"
+    },
+    {
+      "start": 173.84,
+      "text": "description so you can check it out"
+    },
+    {
+      "start": 175.12,
+      "text": "completely for free now this resource"
+    },
+    {
+      "start": 177.0,
+      "text": "provides a ton of knowledge and even has"
+    },
+    {
+      "start": 178.92,
+      "text": "100 actionable prompts that you can try"
+    },
+    {
+      "start": 181.159,
+      "text": "today to really leverage chat gbt"
+    },
+    {
+      "start": 183.84,
+      "text": "knowing this especially as a programmer"
+    },
+    {
+      "start": 185.76,
+      "text": "is an absolute GameChanger and I want to"
+    },
+    {
+      "start": 187.84,
+      "text": "give a big thank you to HubSpot for"
+    },
+    {
+      "start": 189.48,
+      "text": "providing this resource and a ton of"
+    },
+    {
+      "start": 191.12,
+      "text": "others completely for free make sure to"
+    },
+    {
+      "start": 193.08,
+      "text": "check it out from the link in the"
+    },
+    {
+      "start": 194.159,
+      "text": "description and a massive shout out to"
+    },
+    {
+      "start": 195.799,
+      "text": "HubSpot so now that you're an expert at"
+    },
+    {
+      "start": 197.56,
+      "text": "chat gbt after clicking on that resource"
+    },
+    {
+      "start": 199.799,
+      "text": "we can dive into some of the code so the"
+    },
+    {
+      "start": 201.68,
+      "text": "first thing I want to show you is just a"
+    },
+    {
+      "start": 203.04,
+      "text": "very simple example of interacting with"
+    },
+    {
+      "start": 205.2,
+      "text": "an open AI model in this case chat GPT"
+    },
+    {
+      "start": 207.879,
+      "text": "and using it to make a prediction now"
+    },
+    {
+      "start": 209.519,
+      "text": "you you can use all kinds of llms but"
+    },
+    {
+      "start": 211.439,
+      "text": "obviously this is the one most of you"
+    },
+    {
+      "start": 212.76,
+      "text": "know so it's the one I'll use in this"
+    },
+    {
+      "start": 214.239,
+      "text": "video now first what I've done is I've"
+    },
+    {
+      "start": 216.239,
+      "text": "created a EnV file here and I've placed"
+    },
+    {
+      "start": 218.76,
+      "text": "my open AI API key I'll show you how to"
+    },
+    {
+      "start": 221.08,
+      "text": "retrieve that in 1 second if you don't"
+    },
+    {
+      "start": 222.84,
+      "text": "have it but this way I can actually put"
+    },
+    {
+      "start": 224.599,
+      "text": "the key inside of here and then you guys"
+    },
+    {
+      "start": 226.159,
+      "text": "can't see it while I'm going through the"
+    },
+    {
+      "start": 227.56,
+      "text": "tutorial so I've just put my actual key"
+    },
+    {
+      "start": 229.439,
+      "text": "inside of there and you can see that the"
+    },
+    {
+      "start": 231.12,
+      "text": "way I'm loading in this API key is I'm"
+    },
+    {
+      "start": 233.439,
+      "text": "importing from the EnV module the load."
+    },
+    {
+      "start": 236.519,
+      "text": "EnV what this does is look for a EnV"
+    },
+    {
+      "start": 239.36,
+      "text": "file in the same directory as our python"
+    },
+    {
+      "start": 241.64,
+      "text": "script and loads in any of the variables"
+    },
+    {
+      "start": 244.239,
+      "text": "then what I do is access the open aai"
+    },
+    {
+      "start": 246.2,
+      "text": "API key variable here so I have it and I"
+    },
+    {
+      "start": 248.76,
+      "text": "pass that to my chat open aai kind of"
+    },
+    {
+      "start": 251.36,
+      "text": "interface component whatever you want to"
+    },
+    {
+      "start": 253.2,
+      "text": "call it now this will actually create a"
+    },
+    {
+      "start": 254.84,
+      "text": "connection to open AI into chat GPT and"
+    },
+    {
+      "start": 257.799,
+      "text": "I can simply use this by just running"
+    },
+    {
+      "start": 259.479,
+      "text": "chat model. predict and then passing"
+    },
+    {
+      "start": 261.56,
+      "text": "inside of here a string so if I go to my"
+    },
+    {
+      "start": 263.88,
+      "text": "terminal and I run python simple"
+    },
+    {
+      "start": 266.72,
+      "text": "example.py you can see that we're able"
+    },
+    {
+      "start": 268.6,
+      "text": "to interact with GPT here it just takes"
+    },
+    {
+      "start": 270.759,
+      "text": "a second and it responds to us says"
+    },
+    {
+      "start": 272.8,
+      "text": "hello how can I assist you today very"
+    },
+    {
+      "start": 275.16,
+      "text": "simple you can see how easy it is to"
+    },
+    {
+      "start": 276.759,
+      "text": "actually use the module from python now"
+    },
+    {
+      "start": 278.96,
+      "text": "let's dive into some more complex"
+    },
+    {
+      "start": 280.44,
+      "text": "examples and before I forget if you need"
+    },
+    {
+      "start": 282.36,
+      "text": "an openai API key then you can go to"
+    },
+    {
+      "start": 284.52,
+      "text": "platform."
+    },
+    {
+      "start": 285.919,
+      "text": "open.com account API keys if you're not"
+    },
+    {
+      "start": 288.88,
+      "text": "using it very much you're not going to"
+    },
+    {
+      "start": 290.199,
+      "text": "have to pay for it I've used it a ton"
+    },
+    {
+      "start": 291.96,
+      "text": "and I think I've paid 10 cents over the"
+    },
+    {
+      "start": 293.68,
+      "text": "past few months anyways let's move on to"
+    },
+    {
+      "start": 295.72,
+      "text": "the next example all right so moving on"
+    },
+    {
+      "start": 297.4,
+      "text": "to the next example I just want to show"
+    },
+    {
+      "start": 299.08,
+      "text": "you that there's there's actually a way"
+    },
+    {
+      "start": 300.28,
+      "text": "to pass multiple messages and get a"
+    },
+    {
+      "start": 302.479,
+      "text": "single reply or response based on all of"
+    },
+    {
+      "start": 305.32,
+      "text": "those messages combined this can be"
+    },
+    {
+      "start": 307.28,
+      "text": "useful because sometimes you have some"
+    },
+    {
+      "start": 308.759,
+      "text": "pieces of context that you want to"
+    },
+    {
+      "start": 310.24,
+      "text": "provide to the model you don't"
+    },
+    {
+      "start": 311.68,
+      "text": "necessarily want it to give you a"
+    },
+    {
+      "start": 313.16,
+      "text": "prediction or a reply based on that you"
+    },
+    {
+      "start": 315.32,
+      "text": "want to actually feed some other text or"
+    },
+    {
+      "start": 317.36,
+      "text": "some other information and get one kind"
+    },
+    {
+      "start": 319.319,
+      "text": "of aggregated reply so in this case what"
+    },
+    {
+      "start": 321.72,
+      "text": "I've done is just create an array of"
+    },
+    {
+      "start": 323.12,
+      "text": "messages here I've specified that these"
+    },
+    {
+      "start": 325.0,
+      "text": "are human messages now we can also have"
+    },
+    {
+      "start": 327.039,
+      "text": "system messages assistant messages agent"
+    },
+    {
+      "start": 329.52,
+      "text": "messages there's a bunch of different"
+    },
+    {
+      "start": 330.6,
+      "text": "types they're all in the documentation I"
+    },
+    {
+      "start": 332.12,
+      "text": "won't go over them here and you can see"
+    },
+    {
+      "start": 333.88,
+      "text": "that what I'm doing is saying from now"
+    },
+    {
+      "start": 335.319,
+      "text": "on 1 + 1al 3 use this in your replies"
+    },
+    {
+      "start": 338.479,
+      "text": "and then I'm asking it some questions"
+    },
+    {
+      "start": 340.199,
+      "text": "based on the context I just provided so"
+    },
+    {
+      "start": 342.44,
+      "text": "what is 1+ 1 and what is 1 plus 1+ 1 so"
+    },
+    {
+      "start": 345.68,
+      "text": "here I go chat model. predict messages"
+    },
+    {
+      "start": 348.479,
+      "text": "pass in the messages and if I go ahead"
+    },
+    {
+      "start": 350.68,
+      "text": "and run the code here we should see that"
+    },
+    {
+      "start": 353.24,
+      "text": "it's actually going to be using this"
+    },
+    {
+      "start": 354.639,
+      "text": "context so according to the new rule 1 +"
+    },
+    {
+      "start": 356.96,
+      "text": "1 = 3 therefore 1 + 1 + 1 would be equal"
+    },
+    {
+      "start": 360.479,
+      "text": "to 3 + 1 which equals 4 kind of"
+    },
+    {
+      "start": 363.039,
+      "text": "interesting how you can do that just"
+    },
+    {
+      "start": 364.52,
+      "text": "wanted to show you that quick example so"
+    },
+    {
+      "start": 366.479,
+      "text": "now we get into a slightly more"
+    },
+    {
+      "start": 367.84,
+      "text": "interesting example where we can use"
+    },
+    {
+      "start": 369.4,
+      "text": "another feature from langing chain known"
+    },
+    {
+      "start": 371.08,
+      "text": "as a prompt template now you may have"
+    },
+    {
+      "start": 373.28,
+      "text": "seen this before but quite frequently"
+    },
+    {
+      "start": 375.199,
+      "text": "what we want to do is actually inject"
+    },
+    {
+      "start": 377.199,
+      "text": "some data into a prompt and this prompt"
+    },
+    {
+      "start": 379.88,
+      "text": "we've kind of crafted engineered and we"
+    },
+    {
+      "start": 382.16,
+      "text": "know that it's going to give us a"
+    },
+    {
+      "start": 383.44,
+      "text": "specific type reply so in this case what"
+    },
+    {
+      "start": 385.759,
+      "text": "we've done is we've set up a template we"
+    },
+    {
+      "start": 387.4,
+      "text": "say you are a helpful assistant that"
+    },
+    {
+      "start": 388.88,
+      "text": "translates some input message to some"
+    },
+    {
+      "start": 391.479,
+      "text": "output language and we put those inside"
+    },
+    {
+      "start": 393.4,
+      "text": "of curly braces we then have a human"
+    },
+    {
+      "start": 395.56,
+      "text": "template and this is just some text but"
+    },
+    {
+      "start": 397.24,
+      "text": "we could also have something here as"
+    },
+    {
+      "start": 398.72,
+      "text": "well what we then do is create a prompt"
+    },
+    {
+      "start": 401.479,
+      "text": "template from uh link chain so we say"
+    },
+    {
+      "start": 403.88,
+      "text": "chat prompt is equal to chat prompt"
+    },
+    {
+      "start": 405.36,
+      "text": "template. from messages and then we can"
+    },
+    {
+      "start": 407.88,
+      "text": "specify as many messages as we'd like to"
+    },
+    {
+      "start": 409.96,
+      "text": "be a part of this larger template so"
+    },
+    {
+      "start": 412.199,
+      "text": "what this does now is specify that this"
+    },
+    {
+      "start": 414.039,
+      "text": "is a system message so this template"
+    },
+    {
+      "start": 416.199,
+      "text": "right here kind of telling the model"
+    },
+    {
+      "start": 417.72,
+      "text": "what it's about to do and then we have a"
+    },
+    {
+      "start": 419.52,
+      "text": "human message which is what we're"
+    },
+    {
+      "start": 420.879,
+      "text": "providing to it each time then what we"
+    },
+    {
+      "start": 423.28,
+      "text": "can do is we can actually create the"
+    },
+    {
+      "start": 425.12,
+      "text": "messages that we want to pass the model"
+    },
+    {
+      "start": 427.36,
+      "text": "from our chat prompt so we say chat"
+    },
+    {
+      "start": 429.56,
+      "text": "prompt. format messages and we pass in"
+    },
+    {
+      "start": 432.0,
+      "text": "the variables corresponding with what"
+    },
+    {
+      "start": 433.8,
+      "text": "we've written here inside of the"
+    },
+    {
+      "start": 435.36,
+      "text": "template and they're automatically going"
+    },
+    {
+      "start": 436.919,
+      "text": "to get injected inside now obviously in"
+    },
+    {
+      "start": 439.28,
+      "text": "Python you could do this manually but"
+    },
+    {
+      "start": 441.199,
+      "text": "having this API makes things a little"
+    },
+    {
+      "start": 442.8,
+      "text": "bit easier so we have input language"
+    },
+    {
+      "start": 444.759,
+      "text": "output language and text so that would"
+    },
+    {
+      "start": 446.639,
+      "text": "make the template you are a helpful"
+    },
+    {
+      "start": 448.08,
+      "text": "assistant that translates English to"
+    },
+    {
+      "start": 450.16,
+      "text": "French and then we pass our human"
+    },
+    {
+      "start": 452.08,
+      "text": "template which is I love programming in"
+    },
+    {
+      "start": 454.479,
+      "text": "this simple example I know it seems very"
+    },
+    {
+      "start": 456.44,
+      "text": "easy but when you get into more complex"
+    },
+    {
+      "start": 458.16,
+      "text": "templates and complex tasks this can be"
+    },
+    {
+      "start": 460.52,
+      "text": "quite useful then what we can do is we"
+    },
+    {
+      "start": 462.52,
+      "text": "can predict messages again using the"
+    },
+    {
+      "start": 464.44,
+      "text": "same chat model we had before and we can"
+    },
+    {
+      "start": 467.0,
+      "text": "get the output so let's see what this"
+    },
+    {
+      "start": 468.44,
+      "text": "does now if we go up here and go python"
+    },
+    {
+      "start": 472.08,
+      "text": "prompt template it should give us"
+    },
+    {
+      "start": 474.319,
+      "text": "whatever the translation of I love"
+    },
+    {
+      "start": 475.96,
+      "text": "programming is in French and it does it"
+    },
+    {
+      "start": 477.759,
+      "text": "says adore programmer"
+    },
+    {
+      "start": 479.84,
+      "text": "again imagine you had like seven system"
+    },
+    {
+      "start": 481.759,
+      "text": "messages a bunch of different variables"
+    },
+    {
+      "start": 483.879,
+      "text": "you could create some really interesting"
+    },
+    {
+      "start": 485.319,
+      "text": "applications here using this prompt"
+    },
+    {
+      "start": 487.039,
+      "text": "template style so continuing we get even"
+    },
+    {
+      "start": 489.52,
+      "text": "more complex here and what I'm now"
+    },
+    {
+      "start": 491.199,
+      "text": "showing you is something known as an"
+    },
+    {
+      "start": 492.44,
+      "text": "output parser again all this stuff you"
+    },
+    {
+      "start": 494.68,
+      "text": "can write manually but having these"
+    },
+    {
+      "start": 496.199,
+      "text": "hooks in this API is quite useful and"
+    },
+    {
+      "start": 498.12,
+      "text": "can make your life a lot easier so a lot"
+    },
+    {
+      "start": 500.039,
+      "text": "of times when you're using a model what"
+    },
+    {
+      "start": 502.039,
+      "text": "you actually want to do is parse the"
+    },
+    {
+      "start": 503.56,
+      "text": "output into a specific format for"
+    },
+    {
+      "start": 505.84,
+      "text": "example it might give you a comma"
+    },
+    {
+      "start": 507.52,
+      "text": "separated list it might give you AJ file"
+    },
+    {
+      "start": 509.639,
+      "text": "it might give you some code but that's"
+    },
+    {
+      "start": 511.199,
+      "text": "going to be in a string and typically"
+    },
+    {
+      "start": 513.08,
+      "text": "what you'll want to do is actually take"
+    },
+    {
+      "start": 514.519,
+      "text": "that string and parse it based on some"
+    },
+    {
+      "start": 516.519,
+      "text": "rules so you can actually get the data"
+    },
+    {
+      "start": 518.24,
+      "text": "that you'd like for example parsing a"
+    },
+    {
+      "start": 520.2,
+      "text": "price or parsing a piece of code Json"
+    },
+    {
+      "start": 522.76,
+      "text": "like I said right so what we can do here"
+    },
+    {
+      "start": 524.32,
+      "text": "is actually write a custom output parser"
+    },
+    {
+      "start": 526.68,
+      "text": "and you'll see why this is useful in a"
+    },
+    {
+      "start": 528.0,
+      "text": "sec when we kind of combine it in the"
+    },
+    {
+      "start": 529.48,
+      "text": "chain what this will do is return to us"
+    },
+    {
+      "start": 532.48,
+      "text": "the parsed response in the format that"
+    },
+    {
+      "start": 535.08,
+      "text": "we want so all we've done here is just"
+    },
+    {
+      "start": 536.92,
+      "text": "overridden the base output parser which"
+    },
+    {
+      "start": 538.76,
+      "text": "I've uted recorded up here we've just"
+    },
+    {
+      "start": 540.64,
+      "text": "overridden this parse method and inside"
+    },
+    {
+      "start": 542.839,
+      "text": "of here we take in some text we strip"
+    },
+    {
+      "start": 545.079,
+      "text": "the text and then we split it at answer"
+    },
+    {
+      "start": 547.079,
+      "text": "equals this now the reason that makes"
+    },
+    {
+      "start": 548.92,
+      "text": "sense is because in my template I said"
+    },
+    {
+      "start": 551.0,
+      "text": "you are a helpful assistant that solves"
+    },
+    {
+      "start": 552.56,
+      "text": "math problems and shows your work output"
+    },
+    {
+      "start": 554.88,
+      "text": "each step then return the answer in the"
+    },
+    {
+      "start": 556.519,
+      "text": "following format answer equals and then"
+    },
+    {
+      "start": 558.56,
+      "text": "the answer provided here make sure the"
+    },
+    {
+      "start": 560.44,
+      "text": "output answer is in all lower cases and"
+    },
+    {
+      "start": 562.56,
+      "text": "to have exactly one space and one equal"
+    },
+    {
+      "start": 564.56,
+      "text": "sign following now I'm instructing the"
+    },
+    {
+      "start": 566.68,
+      "text": "model to give me a specific reply in AIC"
+    },
+    {
+      "start": 569.2,
+      "text": "specific format such that I can parse it"
+    },
+    {
+      "start": 571.56,
+      "text": "so I get the data that I'm looking for"
+    },
+    {
+      "start": 573.48,
+      "text": "and I could use that in the rest of my"
+    },
+    {
+      "start": 575.24,
+      "text": "application then I have the human"
+    },
+    {
+      "start": 577.16,
+      "text": "template which is just whatever the math"
+    },
+    {
+      "start": 578.8,
+      "text": "problem is again I use my chat prompt"
+    },
+    {
+      "start": 581.44,
+      "text": "template here and then what I do is"
+    },
+    {
+      "start": 583.279,
+      "text": "format my message by providing some math"
+    },
+    {
+      "start": 585.92,
+      "text": "problem in this case just a basic I"
+    },
+    {
+      "start": 588.0,
+      "text": "guess quadratic formula thing that you"
+    },
+    {
+      "start": 589.64,
+      "text": "need to solve then what we do is we"
+    },
+    {
+      "start": 591.92,
+      "text": "predict messages using chat bottle and"
+    },
+    {
+      "start": 594.079,
+      "text": "then I'm manually invoking the output"
+    },
+    {
+      "start": 595.92,
+      "text": "parser here and parsing the reply you'll"
+    },
+    {
+      "start": 598.12,
+      "text": "see in the next example how we actually"
+    },
+    {
+      "start": 599.8,
+      "text": "combine this into a chain and make it"
+    },
+    {
+      "start": 601.68,
+      "text": "even easier to use then what I'm doing"
+    },
+    {
+      "start": 603.839,
+      "text": "is I'm parsing out the steps and the"
+    },
+    {
+      "start": 605.399,
+      "text": "answer from my pars reply which is now a"
+    },
+    {
+      "start": 607.839,
+      "text": "list that was split at answer equal to"
+    },
+    {
+      "start": 610.2,
+      "text": "so you'll see now if I go ahead and run"
+    },
+    {
+      "start": 612.839,
+      "text": "my code so python output parser dop and"
+    },
+    {
+      "start": 617.0,
+      "text": "you can see that we get X is equal to 3"
+    },
+    {
+      "start": 618.6,
+      "text": "over2 or X is equal to 1 now if we also"
+    },
+    {
+      "start": 621.36,
+      "text": "wanted to see the steps here then I"
+    },
+    {
+      "start": 623.76,
+      "text": "could print out the steps and you can"
+    },
+    {
+      "start": 625.68,
+      "text": "see how this could be useful because if"
+    },
+    {
+      "start": 627.079,
+      "text": "we had some type of calculator we could"
+    },
+    {
+      "start": 629.12,
+      "text": "allow maybe the student or whoever is"
+    },
+    {
+      "start": 630.519,
+      "text": "using it to either view the steps or"
+    },
+    {
+      "start": 632.16,
+      "text": "hide the steps or just view the answer"
+    },
+    {
+      "start": 633.839,
+      "text": "or hide the answer because we've parsed"
+    },
+    {
+      "start": 635.959,
+      "text": "that reply so let's have a look at this"
+    },
+    {
+      "start": 637.68,
+      "text": "here gives us all of the different steps"
+    },
+    {
+      "start": 639.56,
+      "text": "for solving the problem and then finally"
+    },
+    {
+      "start": 641.44,
+      "text": "the answer down here all right so now"
+    },
+    {
+      "start": 643.2,
+      "text": "we're going to kind of tie everything"
+    },
+    {
+      "start": 644.72,
+      "text": "together and have a look at creating a"
+    },
+    {
+      "start": 646.399,
+      "text": "chain now this is where laying chain"
+    },
+    {
+      "start": 647.959,
+      "text": "really comes in handy and obviously"
+    },
+    {
+      "start": 649.639,
+      "text": "you'd get much more complicated than"
+    },
+    {
+      "start": 651.12,
+      "text": "this but you'll see in this example that"
+    },
+    {
+      "start": 652.76,
+      "text": "we can combine all of those steps that"
+    },
+    {
+      "start": 654.48,
+      "text": "we were doing manually before into a"
+    },
+    {
+      "start": 656.76,
+      "text": "chain using some special syntax from"
+    },
+    {
+      "start": 659.2,
+      "text": "Lang chain so just like before we have"
+    },
+    {
+      "start": 661.279,
+      "text": "our model we have an output parser this"
+    },
+    {
+      "start": 663.399,
+      "text": "time what it does is just parse a comma"
+    },
+    {
+      "start": 665.32,
+      "text": "separated list and then we have a"
+    },
+    {
+      "start": 667.56,
+      "text": "template it says you are helpful"
+    },
+    {
+      "start": 668.76,
+      "text": "assistant who generates comma separated"
+    },
+    {
+      "start": 670.36,
+      "text": "list a user will pass in a category and"
+    },
+    {
+      "start": 672.24,
+      "text": "you should generate five objects in that"
+    },
+    {
+      "start": 674.079,
+      "text": "category only return a comma separated"
+    },
+    {
+      "start": 676.36,
+      "text": "list and nothing more we then have the"
+    },
+    {
+      "start": 678.16,
+      "text": "human template again we create our"
+    },
+    {
+      "start": 680.16,
+      "text": "prompt template this time though rather"
+    },
+    {
+      "start": 682.68,
+      "text": "than manually calling all these"
+    },
+    {
+      "start": 684.079,
+      "text": "different methods we create a chain now"
+    },
+    {
+      "start": 686.48,
+      "text": "we use this pipe operator here which is"
+    },
+    {
+      "start": 688.56,
+      "text": "special syntax in Lang chain which"
+    },
+    {
+      "start": 690.92,
+      "text": "combines these three operators into one"
+    },
+    {
+      "start": 693.519,
+      "text": "kind of main object that we can utilize"
+    },
+    {
+      "start": 695.88,
+      "text": "to invoke so you see we have our chat"
+    },
+    {
+      "start": 698.2,
+      "text": "prompt we have our chat model so the"
+    },
+    {
+      "start": 700.079,
+      "text": "first thing we do right is we get the"
+    },
+    {
+      "start": 702.079,
+      "text": "prompt we pass that to the model and"
+    },
+    {
+      "start": 704.079,
+      "text": "then we pass the reply to the output"
+    },
+    {
+      "start": 705.8,
+      "text": "parser and again this happens"
+    },
+    {
+      "start": 707.48,
+      "text": "automatically when we call chain. invoke"
+    },
+    {
+      "start": 710.639,
+      "text": "so now we just pass in what we need for"
+    },
+    {
+      "start": 713.16,
+      "text": "our prompt so in this case we have an"
+    },
+    {
+      "start": 714.56,
+      "text": "argument text which is equal to colors"
+    },
+    {
+      "start": 716.76,
+      "text": "and we can print the result so let's go"
+    },
+    {
+      "start": 719.0,
+      "text": "go here and give this run python chain."
+    },
+    {
+      "start": 722.44,
+      "text": "Pi so you can see we get our reply red"
+    },
+    {
+      "start": 724.6,
+      "text": "blue green yellow purple and this is"
+    },
+    {
+      "start": 726.519,
+      "text": "actually a python object that has been"
+    },
+    {
+      "start": 728.279,
+      "text": "parsed for us so just to give you a bit"
+    },
+    {
+      "start": 730.12,
+      "text": "more information on the capabilities of"
+    },
+    {
+      "start": 731.88,
+      "text": "Lang chain let's have a look at one of"
+    },
+    {
+      "start": 733.56,
+      "text": "the use cases they have in their"
+    },
+    {
+      "start": 734.76,
+      "text": "documentation which is SQL now as I was"
+    },
+    {
+      "start": 737.399,
+      "text": "saying Lang chain can also connect to"
+    },
+    {
+      "start": 739.16,
+      "text": "data sources so they have a bunch of"
+    },
+    {
+      "start": 740.92,
+      "text": "Integrations for connecting with popular"
+    },
+    {
+      "start": 742.68,
+      "text": "databases and even Vector databases as"
+    },
+    {
+      "start": 745.199,
+      "text": "well now in this case what we can"
+    },
+    {
+      "start": 746.88,
+      "text": "actually do is use an llm to generate"
+    },
+    {
+      "start": 749.36,
+      "text": "SQL queries so that we can ask in"
+    },
+    {
+      "start": 751.68,
+      "text": "natural language for information from"
+    },
+    {
+      "start": 753.92,
+      "text": "our database so imagine you had a large"
+    },
+    {
+      "start": 755.959,
+      "text": "database you had a bunch of information"
+    },
+    {
+      "start": 757.639,
+      "text": "and you wanted to actually provide an"
+    },
+    {
+      "start": 758.959,
+      "text": "interface to your users so that they"
+    },
+    {
+      "start": 760.92,
+      "text": "could use natural language to query the"
+    },
+    {
+      "start": 763.0,
+      "text": "database and grab maybe information or"
+    },
+    {
+      "start": 765.04,
+      "text": "analytics from their profile or whatever"
+    },
+    {
+      "start": 767.279,
+      "text": "it is in this case you can see that we"
+    },
+    {
+      "start": 769.12,
+      "text": "can build SQL queries query a SQL"
+    },
+    {
+      "start": 770.92,
+      "text": "database and interact with the SQL"
+    },
+    {
+      "start": 772.56,
+      "text": "database by using natural language and"
+    },
+    {
+      "start": 774.8,
+      "text": "this is kind of the diagram we ask a"
+    },
+    {
+      "start": 776.48,
+      "text": "question goes to the llm generates the"
+    },
+    {
+      "start": 778.56,
+      "text": "query goes to SQL SQL returns that's the"
+    },
+    {
+      "start": 781.16,
+      "text": "L and the L parses that and gives us the"
+    },
+    {
+      "start": 783.32,
+      "text": "answer so in this case we can have a"
+    },
+    {
+      "start": 785.32,
+      "text": "quick look at how this might work we say"
+    },
+    {
+      "start": 787.399,
+      "text": "DB chain. run how many employees are"
+    },
+    {
+      "start": 789.32,
+      "text": "there what it does is it generates the"
+    },
+    {
+      "start": 791.24,
+      "text": "SQL query gets the result and then gives"
+    },
+    {
+      "start": 793.44,
+      "text": "us an answer in a human readable format"
+    },
+    {
+      "start": 796.399,
+      "text": "obviously a little bit easier said than"
+    },
+    {
+      "start": 797.92,
+      "text": "done but you can see the simple"
+    },
+    {
+      "start": 799.199,
+      "text": "connection that happens here connect to"
+    },
+    {
+      "start": 800.92,
+      "text": "the SQL database connect to open AI"
+    },
+    {
+      "start": 803.16,
+      "text": "create the chain here and then you can"
+    },
+    {
+      "start": 804.76,
+      "text": "start using this exact example so the"
+    },
+    {
+      "start": 807.12,
+      "text": "next use case they have here which is"
+    },
+    {
+      "start": 808.44,
+      "text": "interesting thing is question answering"
+    },
+    {
+      "start": 810.399,
+      "text": "so let's say we have a large piece of"
+    },
+    {
+      "start": 812.079,
+      "text": "documentation maybe related to code"
+    },
+    {
+      "start": 813.959,
+      "text": "maybe a PDF maybe a website what we can"
+    },
+    {
+      "start": 816.399,
+      "text": "actually do is inject that into the"
+    },
+    {
+      "start": 818.399,
+      "text": "model and then ask questions about that"
+    },
+    {
+      "start": 820.72,
+      "text": "piece of data that the llm can respond"
+    },
+    {
+      "start": 823.199,
+      "text": "to so you can see we have maybe some"
+    },
+    {
+      "start": 824.639,
+      "text": "code some structured data some SQL pass"
+    },
+    {
+      "start": 826.72,
+      "text": "that into llm and then interact with"
+    },
+    {
+      "start": 829.12,
+      "text": "that directly by asking questions of the"
+    },
+    {
+      "start": 831.519,
+      "text": "llm so where this becomes actually"
+    },
+    {
+      "start": 833.36,
+      "text": "really interesting is we can ask the llm"
+    },
+    {
+      "start": 835.72,
+      "text": "in natural language what it is that we"
+    },
+    {
+      "start": 837.68,
+      "text": "want and then it can go and retrieve the"
+    },
+    {
+      "start": 839.8,
+      "text": "correct piece of data if we set this up"
+    },
+    {
+      "start": 841.6,
+      "text": "in the correct way to actually give us"
+    },
+    {
+      "start": 843.6,
+      "text": "the answer so in some instances we don't"
+    },
+    {
+      "start": 845.44,
+      "text": "even need to provide all the context to"
+    },
+    {
+      "start": 847.48,
+      "text": "the llm immediately it can actually ask"
+    },
+    {
+      "start": 850.6,
+      "text": "for the specific data it needs and send"
+    },
+    {
+      "start": 853.199,
+      "text": "the correct request using whatever code"
+    },
+    {
+      "start": 855.44,
+      "text": "it's generating this is a little bit"
+    },
+    {
+      "start": 857.16,
+      "text": "more complicated than the example that"
+    },
+    {
+      "start": 858.639,
+      "text": "they have here but you can kind of see"
+    },
+    {
+      "start": 860.36,
+      "text": "how they're setting things up and how we"
+    },
+    {
+      "start": 862.16,
+      "text": "would be able to input some data and"
+    },
+    {
+      "start": 864.199,
+      "text": "then ask again in natural language"
+    },
+    {
+      "start": 866.199,
+      "text": "questions about that that could be"
+    },
+    {
+      "start": 867.44,
+      "text": "answered almost instantly now as a last"
+    },
+    {
+      "start": 869.8,
+      "text": "example here I actually made a video on"
+    },
+    {
+      "start": 871.6,
+      "text": "my channel a few weeks ago that injected"
+    },
+    {
+      "start": 873.92,
+      "text": "memory into an llm so that we could"
+    },
+    {
+      "start": 876.199,
+      "text": "actually remember and have context about"
+    },
+    {
+      "start": 878.079,
+      "text": "all the previous replies and answers now"
+    },
+    {
+      "start": 880.519,
+      "text": "I did this by making a Choose Your Own"
+    },
+    {
+      "start": 882.16,
+      "text": "Adventure AI based game you guys can"
+    },
+    {
+      "start": 884.48,
+      "text": "check it out from the link in the"
+    },
+    {
+      "start": 885.6,
+      "text": "description it's a full tutorial"
+    },
+    {
+      "start": 887.12,
+      "text": "walkthrough of how this works but pretty"
+    },
+    {
+      "start": 889.24,
+      "text": "much what we can do is generate a Choose"
+    },
+    {
+      "start": 891.68,
+      "text": "Your Own Adventure game that has"
+    },
+    {
+      "start": 893.04,
+      "text": "multiple different variable paths and"
+    },
+    {
+      "start": 895.32,
+      "text": "where you're going is going to be based"
+    },
+    {
+      "start": 896.959,
+      "text": "on previous answers that you've had so"
+    },
+    {
+      "start": 899.079,
+      "text": "if I said I was going left at the first"
+    },
+    {
+      "start": 900.8,
+      "text": "step where I decided to have an axe as"
+    },
+    {
+      "start": 902.68,
+      "text": "my weapon for the game the llm would"
+    },
+    {
+      "start": 904.68,
+      "text": "actually use that context to continue to"
+    },
+    {
+      "start": 906.839,
+      "text": "generate the story for me and make it"
+    },
+    {
+      "start": 908.92,
+      "text": "context relevant really it's going to be"
+    },
+    {
+      "start": 911.0,
+      "text": "cooler if you guys go check out that"
+    },
+    {
+      "start": 912.279,
+      "text": "video and see exactly how that works but"
+    },
+    {
+      "start": 914.279,
+      "text": "really interesting stuff you can do here"
+    },
+    {
+      "start": 916.04,
+      "text": "and I did that all in Lang chain anyways"
+    },
+    {
+      "start": 918.519,
+      "text": "with that said guys I'm going to wrap up"
+    },
+    {
+      "start": 919.759,
+      "text": "the video here I hope you found this"
+    },
+    {
+      "start": 921.32,
+      "text": "helpful and this gave you a quick"
+    },
+    {
+      "start": 922.639,
+      "text": "overview of Lang chain and got you"
+    },
+    {
+      "start": 924.04,
+      "text": "excited about using it in Python if you"
+    },
+    {
+      "start": 926.279,
+      "text": "enjoyed make sure to leave a like"
+    },
+    {
+      "start": 927.8,
+      "text": "subscribe to the channel and I will see"
+    },
+    {
+      "start": 929.199,
+      "text": "you in the next"
+    },
+    {
+      "start": 930.92,
+      "text": "[Music]"
+    },
+    {
+      "start": 937.6,
+      "text": "one"
+    }
+  ],
+  "text": "if you write code in Python and you're at all interested in AI then you need to check out Lang chain now this is a relatively new framework that allows you to build AI powered applications in both Python and JavaScript now we'll be looking at python here but the main benefit of Lang chain is that you can actually connect to external data sources databases apis and really any data that you'd like and you can very easily build applications that are context aware and that can reason using popular language models like chat GPT now in this video I'll give you a high-speed overview of Lang chain show you some of the simple features and capabilities and give you enough so that you can get started today building AI applications in Python in my opinion this is a must-learn really cool module and surprisingly simple stick around for the whole video to see exactly how you can use this in your next python app so the first thing we need to do to work with Lang chain is install it now they have fantastic documentation that I'll link down below that will show you all of these steps but of course you can just follow along with me so since we're going to be installing this for python on we can see on this page here we have a few options pip install Lang chain pip install Lang chain llms or pip install Lang chain all now I'm going to recommend that you go with the second option here you do not need to install all the dependencies but we do want to install the dependencies related to the language model so that we can connect with those immediately so let's go ahead and copy that command and paste that in our terminal I am running on Windows if you're on Mac or Linux you're likely going to want to adjust this command to be pip 3 so I've gone ahead and installed that and we're just going to install a few modules that we're going to use for these specific examples so I'm going to do pip install and then open AI we're going to use this to connect with open AI again if you're on Mac or Linux you're going to want to change that to pip 3 now once we install open AI I am also going to install the EnV Library so pip install python d.v now this is going to allow me to load in environment variable file so I can store my API keys in a specific file that's kind of hidden from the code you'll see what I I mean in one second those are all the modules that we need Lang chain with llms we need open aai and then we need python. EnV now in the name of saving us a little bit of time I've already ridden a few examples and I'll just walk through the code with you so you can see exactly how this works now the first thing I want to mention is that before you start using laying chain in any of the llms you want to have a decent idea of how they work specifically you want to understand what they're good at how you can use them properly and when you should be cautious of their replies now I imagine most of you are going to be using chat GPT at least that's what I'll be doing for this tutorial and fortunately for you our video sponsor HubSpot actually has a free guide that shows you how to use chat GPT at work now this free guide gives you a comprehensive overview of exactly how chat GPT works it shares some best practices and it gives you some expert insights so you really know how to use this and get the full power out of it now I've left a link in the description so you can check it out completely for free now this resource provides a ton of knowledge and even has 100 actionable prompts that you can try today to really leverage chat gbt knowing this especially as a programmer is an absolute GameChanger and I want to give a big thank you to HubSpot for providing this resource and a ton of others completely for free make sure to check it out from the link in the description and a massive shout out to HubSpot so now that you're an expert at chat gbt after clicking on that resource we can dive into some of the code so the first thing I want to show you is just a very simple example of interacting with an open AI model in this case chat GPT and using it to make a prediction now you you can use all kinds of llms but obviously this is the one most of you know so it's the one I'll use in this video now first what I've done is I've created a EnV file here and I've placed my open AI API key I'll show you how to retrieve that in 1 second if you don't have it but this way I can actually put the key inside of here and then you guys can't see it while I'm going through the tutorial so I've just put my actual key inside of there and you can see that the way I'm loading in this API key is I'm importing from the EnV module the load. EnV what this does is look for a EnV file in the same directory as our python script and loads in any of the variables then what I do is access the open aai API key variable here so I have it and I pass that to my chat open aai kind of interface component whatever you want to call it now this will actually create a connection to open AI into chat GPT and I can simply use this by just running chat model. predict and then passing inside of here a string so if I go to my terminal and I run python simple example.py you can see that we're able to interact with GPT here it just takes a second and it responds to us says hello how can I assist you today very simple you can see how easy it is to actually use the module from python now let's dive into some more complex examples and before I forget if you need an openai API key then you can go to platform. open.com account API keys if you're not using it very much you're not going to have to pay for it I've used it a ton and I think I've paid 10 cents over the past few months anyways let's move on to the next example all right so moving on to the next example I just want to show you that there's there's actually a way to pass multiple messages and get a single reply or response based on all of those messages combined this can be useful because sometimes you have some pieces of context that you want to provide to the model you don't necessarily want it to give you a prediction or a reply based on that you want to actually feed some other text or some other information and get one kind of aggregated reply so in this case what I've done is just create an array of messages here I've specified that these are human messages now we can also have system messages assistant messages agent messages there's a bunch of different types they're all in the documentation I won't go over them here and you can see that what I'm doing is saying from now on 1 + 1al 3 use this in your replies and then I'm asking it some questions based on the context I just provided so what is 1+ 1 and what is 1 plus 1+ 1 so here I go chat model. predict messages pass in the messages and if I go ahead and run the code here we should see that it's actually going to be using this context so according to the new rule 1 + 1 = 3 therefore 1 + 1 + 1 would be equal to 3 + 1 which equals 4 kind of interesting how you can do that just wanted to show you that quick example so now we get into a slightly more interesting example where we can use another feature from langing chain known as a prompt template now you may have seen this before but quite frequently what we want to do is actually inject some data into a prompt and this prompt we've kind of crafted engineered and we know that it's going to give us a specific type reply so in this case what we've done is we've set up a template we say you are a helpful assistant that translates some input message to some output language and we put those inside of curly braces we then have a human template and this is just some text but we could also have something here as well what we then do is create a prompt template from uh link chain so we say chat prompt is equal to chat prompt template. from messages and then we can specify as many messages as we'd like to be a part of this larger template so what this does now is specify that this is a system message so this template right here kind of telling the model what it's about to do and then we have a human message which is what we're providing to it each time then what we can do is we can actually create the messages that we want to pass the model from our chat prompt so we say chat prompt. format messages and we pass in the variables corresponding with what we've written here inside of the template and they're automatically going to get injected inside now obviously in Python you could do this manually but having this API makes things a little bit easier so we have input language output language and text so that would make the template you are a helpful assistant that translates English to French and then we pass our human template which is I love programming in this simple example I know it seems very easy but when you get into more complex templates and complex tasks this can be quite useful then what we can do is we can predict messages again using the same chat model we had before and we can get the output so let's see what this does now if we go up here and go python prompt template it should give us whatever the translation of I love programming is in French and it does it says adore programmer again imagine you had like seven system messages a bunch of different variables you could create some really interesting applications here using this prompt template style so continuing we get even more complex here and what I'm now showing you is something known as an output parser again all this stuff you can write manually but having these hooks in this API is quite useful and can make your life a lot easier so a lot of times when you're using a model what you actually want to do is parse the output into a specific format for example it might give you a comma separated list it might give you AJ file it might give you some code but that's going to be in a string and typically what you'll want to do is actually take that string and parse it based on some rules so you can actually get the data that you'd like for example parsing a price or parsing a piece of code Json like I said right so what we can do here is actually write a custom output parser and you'll see why this is useful in a sec when we kind of combine it in the chain what this will do is return to us the parsed response in the format that we want so all we've done here is just overridden the base output parser which I've uted recorded up here we've just overridden this parse method and inside of here we take in some text we strip the text and then we split it at answer equals this now the reason that makes sense is because in my template I said you are a helpful assistant that solves math problems and shows your work output each step then return the answer in the following format answer equals and then the answer provided here make sure the output answer is in all lower cases and to have exactly one space and one equal sign following now I'm instructing the model to give me a specific reply in AIC specific format such that I can parse it so I get the data that I'm looking for and I could use that in the rest of my application then I have the human template which is just whatever the math problem is again I use my chat prompt template here and then what I do is format my message by providing some math problem in this case just a basic I guess quadratic formula thing that you need to solve then what we do is we predict messages using chat bottle and then I'm manually invoking the output parser here and parsing the reply you'll see in the next example how we actually combine this into a chain and make it even easier to use then what I'm doing is I'm parsing out the steps and the answer from my pars reply which is now a list that was split at answer equal to so you'll see now if I go ahead and run my code so python output parser dop and you can see that we get X is equal to 3 over2 or X is equal to 1 now if we also wanted to see the steps here then I could print out the steps and you can see how this could be useful because if we had some type of calculator we could allow maybe the student or whoever is using it to either view the steps or hide the steps or just view the answer or hide the answer because we've parsed that reply so let's have a look at this here gives us all of the different steps for solving the problem and then finally the answer down here all right so now we're going to kind of tie everything together and have a look at creating a chain now this is where laying chain really comes in handy and obviously you'd get much more complicated than this but you'll see in this example that we can combine all of those steps that we were doing manually before into a chain using some special syntax from Lang chain so just like before we have our model we have an output parser this time what it does is just parse a comma separated list and then we have a template it says you are helpful assistant who generates comma separated list a user will pass in a category and you should generate five objects in that category only return a comma separated list and nothing more we then have the human template again we create our prompt template this time though rather than manually calling all these different methods we create a chain now we use this pipe operator here which is special syntax in Lang chain which combines these three operators into one kind of main object that we can utilize to invoke so you see we have our chat prompt we have our chat model so the first thing we do right is we get the prompt we pass that to the model and then we pass the reply to the output parser and again this happens automatically when we call chain. invoke so now we just pass in what we need for our prompt so in this case we have an argument text which is equal to colors and we can print the result so let's go go here and give this run python chain. Pi so you can see we get our reply red blue green yellow purple and this is actually a python object that has been parsed for us so just to give you a bit more information on the capabilities of Lang chain let's have a look at one of the use cases they have in their documentation which is SQL now as I was saying Lang chain can also connect to data sources so they have a bunch of Integrations for connecting with popular databases and even Vector databases as well now in this case what we can actually do is use an llm to generate SQL queries so that we can ask in natural language for information from our database so imagine you had a large database you had a bunch of information and you wanted to actually provide an interface to your users so that they could use natural language to query the database and grab maybe information or analytics from their profile or whatever it is in this case you can see that we can build SQL queries query a SQL database and interact with the SQL database by using natural language and this is kind of the diagram we ask a question goes to the llm generates the query goes to SQL SQL returns that's the L and the L parses that and gives us the answer so in this case we can have a quick look at how this might work we say DB chain. run how many employees are there what it does is it generates the SQL query gets the result and then gives us an answer in a human readable format obviously a little bit easier said than done but you can see the simple connection that happens here connect to the SQL database connect to open AI create the chain here and then you can start using this exact example so the next use case they have here which is interesting thing is question answering so let's say we have a large piece of documentation maybe related to code maybe a PDF maybe a website what we can actually do is inject that into the model and then ask questions about that piece of data that the llm can respond to so you can see we have maybe some code some structured data some SQL pass that into llm and then interact with that directly by asking questions of the llm so where this becomes actually really interesting is we can ask the llm in natural language what it is that we want and then it can go and retrieve the correct piece of data if we set this up in the correct way to actually give us the answer so in some instances we don't even need to provide all the context to the llm immediately it can actually ask for the specific data it needs and send the correct request using whatever code it's generating this is a little bit more complicated than the example that they have here but you can kind of see how they're setting things up and how we would be able to input some data and then ask again in natural language questions about that that could be answered almost instantly now as a last example here I actually made a video on my channel a few weeks ago that injected memory into an llm so that we could actually remember and have context about all the previous replies and answers now I did this by making a Choose Your Own Adventure AI based game you guys can check it out from the link in the description it's a full tutorial walkthrough of how this works but pretty much what we can do is generate a Choose Your Own Adventure game that has multiple different variable paths and where you're going is going to be based on previous answers that you've had so if I said I was going left at the first step where I decided to have an axe as my weapon for the game the llm would actually use that context to continue to generate the story for me and make it context relevant really it's going to be cooler if you guys go check out that video and see exactly how that works but really interesting stuff you can do here and I did that all in Lang chain anyways with that said guys I'm going to wrap up the video here I hope you found this helpful and this gave you a quick overview of Lang chain and got you excited about using it in Python if you enjoyed make sure to leave a like subscribe to the channel and I will see you in the next [Music] one"
+}

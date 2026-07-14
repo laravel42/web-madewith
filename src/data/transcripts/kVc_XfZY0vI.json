@@ -1,0 +1,1164 @@
+{
+  "videoId": "kVc_XfZY0vI",
+  "language": "en",
+  "source": "auto",
+  "segments": [
+    {
+      "start": 0.919,
+      "text": "all right so in this video we're going"
+    },
+    {
+      "start": 2.12,
+      "text": "to get into effects and animation in"
+    },
+    {
+      "start": 5.08,
+      "text": "jQuery now we're not going to create any"
+    },
+    {
+      "start": 7.08,
+      "text": "spectacular animations I just want to"
+    },
+    {
+      "start": 9.48,
+      "text": "introduce you to um the fade fade out"
+    },
+    {
+      "start": 12.679,
+      "text": "fade in slide up slide down and then the"
+    },
+    {
+      "start": 15.799,
+      "text": "animate function okay and maybe a couple"
+    },
+    {
+      "start": 18.16,
+      "text": "other small things so we have our"
+    },
+    {
+      "start": 21.199,
+      "text": "starter interface here and what I'm"
+    },
+    {
+      "start": 23.599,
+      "text": "going to do is I'm going to create a"
+    },
+    {
+      "start": 26.96,
+      "text": "couple buttons in the container"
+    },
+    {
+      "start": 31.08,
+      "text": "so we'll say button we'll give us an ID"
+    },
+    {
+      "start": 33.36,
+      "text": "of"
+    },
+    {
+      "start": 35.2,
+      "text": "BTN Fade"
+    },
+    {
+      "start": 42.079,
+      "text": "Out okay and then let's just copy"
+    },
+    {
+      "start": 46.8,
+      "text": "that paste in two more this one's going"
+    },
+    {
+      "start": 49.48,
+      "text": "to be fade"
+    },
+    {
+      "start": 52.68,
+      "text": "in and then this one's going to be fade"
+    },
+    {
+      "start": 55.199,
+      "text": "tog"
+    },
+    {
+      "start": 60.039,
+      "text": "all right so we have our buttons now"
+    },
+    {
+      "start": 62.559,
+      "text": "we're also going"
+    },
+    {
+      "start": 64.799,
+      "text": "to uh let's see we're going to create a"
+    },
+    {
+      "start": 68.479,
+      "text": "div we'll put an HR here and then a div"
+    },
+    {
+      "start": 73.119,
+      "text": "and we're going to give this an"
+    },
+    {
+      "start": 76.2,
+      "text": "ID of"
+    },
+    {
+      "start": 79.32,
+      "text": "box and inside the Box we're going to"
+    },
+    {
+      "start": 82.4,
+      "text": "say we'll just put an"
+    },
+    {
+      "start": 84.119,
+      "text": "H1 it says hello"
+    },
+    {
+      "start": 87.0,
+      "text": "world and then up in the style"
+    },
+    {
+      "start": 90.56,
+      "text": "we're going to say"
+    },
+    {
+      "start": 92.24,
+      "text": "dotbox or actually it's an ID so we're"
+    },
+    {
+      "start": 94.799,
+      "text": "going to say number sign"
+    },
+    {
+      "start": 97.119,
+      "text": "box and let's give it a"
+    },
+    {
+      "start": 100.32,
+      "text": "background of dark"
+    },
+    {
+      "start": 102.68,
+      "text": "gray color will"
+    },
+    {
+      "start": 105.719,
+      "text": "be"
+    },
+    {
+      "start": 108.2,
+      "text": "white and let's see we're going to set"
+    },
+    {
+      "start": 110.52,
+      "text": "the"
+    },
+    {
+      "start": 112.399,
+      "text": "width what do I want the width too we'll"
+    },
+    {
+      "start": 114.96,
+      "text": "set the width to 500"
+    },
+    {
+      "start": 121.6,
+      "text": "okay 500 pixels and then the"
+    },
+    {
+      "start": 125.2,
+      "text": "height I'm going to set to 90"
+    },
+    {
+      "start": 129.2,
+      "text": "pixels I'm going to set padding to 40"
+    },
+    {
+      "start": 133.319,
+      "text": "pixels and let's text a"
+    },
+    {
+      "start": 136.8,
+      "text": "line to the"
+    },
+    {
+      "start": 139.08,
+      "text": "center all right so let's go ahead and"
+    },
+    {
+      "start": 141.2,
+      "text": "load that so now we have our buttons and"
+    },
+    {
+      "start": 144.36,
+      "text": "we have this element here which is a box"
+    },
+    {
+      "start": 147.48,
+      "text": "with the Texs hello world so what I want"
+    },
+    {
+      "start": 150.44,
+      "text": "to do first is take this Fade Out button"
+    },
+    {
+      "start": 154.08,
+      "text": "and add an event to it so we're going to"
+    },
+    {
+      "start": 156.92,
+      "text": "say"
+    },
+    {
+      "start": 158.239,
+      "text": "jQuery ID"
+    },
+    {
+      "start": 161.72,
+      "text": "BTN Fade"
+    },
+    {
+      "start": 163.879,
+      "text": "Out it's going to be a click"
+    },
+    {
+      "start": 167.239,
+      "text": "event when it's clicked it's going to"
+    },
+    {
+      "start": 169.599,
+      "text": "run this"
+    },
+    {
+      "start": 171.04,
+      "text": "function and then what we're going to do"
+    },
+    {
+      "start": 172.92,
+      "text": "is take that"
+    },
+    {
+      "start": 175.28,
+      "text": "box okay so it has an ID of box and"
+    },
+    {
+      "start": 179.04,
+      "text": "we're going to say"
+    },
+    {
+      "start": 181.44,
+      "text": "dot Fade"
+    },
+    {
+      "start": 183.76,
+      "text": "Out okay so let's see what that"
+    },
+    {
+      "start": 186.72,
+      "text": "does and it just nicely fades it right"
+    },
+    {
+      "start": 190.72,
+      "text": "out okay so if you want that to"
+    },
+    {
+      "start": 194.799,
+      "text": "go fast you can actually pass in a"
+    },
+    {
+      "start": 197.4,
+      "text": "parameter here called Fast click it it"
+    },
+    {
+      "start": 201.68,
+      "text": "goes fast if we change this to"
+    },
+    {
+      "start": 206.08,
+      "text": "slow and then it goes a little slower"
+    },
+    {
+      "start": 208.48,
+      "text": "now that's that's set some pretty uh"
+    },
+    {
+      "start": 211.239,
+      "text": "High limitations so instead of doing"
+    },
+    {
+      "start": 213.72,
+      "text": "fast or slow you can actually do it in"
+    },
+    {
+      "start": 216.08,
+      "text": "milliseconds so let's say 3000 which"
+    },
+    {
+      "start": 219.0,
+      "text": "would be 3 seconds click it and you'll"
+    },
+    {
+      "start": 222.159,
+      "text": "see it takes 3 seconds to fade out now"
+    },
+    {
+      "start": 225.48,
+      "text": "this also takes in a callback function"
+    },
+    {
+      "start": 228.28,
+      "text": "an optional"
+    },
+    {
+      "start": 230.04,
+      "text": "function that can do something when it's"
+    },
+    {
+      "start": 233.12,
+      "text": "done all right so what I'm going to do"
+    },
+    {
+      "start": 235.12,
+      "text": "is I'm going to"
+    },
+    {
+      "start": 237.0,
+      "text": "take um"
+    },
+    {
+      "start": 240.64,
+      "text": "the button Fade"
+    },
+    {
+      "start": 242.959,
+      "text": "Out so"
+    },
+    {
+      "start": 244.92,
+      "text": "ID button Fade Out and I'm going to"
+    },
+    {
+      "start": 247.36,
+      "text": "change the"
+    },
+    {
+      "start": 250.2,
+      "text": "text we'll change it"
+    },
+    {
+      "start": 253.68,
+      "text": "to or we'll say it's"
+    },
+    {
+      "start": 259.16,
+      "text": "gone okay so reload click it and then"
+    },
+    {
+      "start": 262.639,
+      "text": "when it's"
+    },
+    {
+      "start": 264.0,
+      "text": "done you'll see the text changes to it's"
+    },
+    {
+      "start": 266.84,
+      "text": "gone okay but that function is optional"
+    },
+    {
+      "start": 270.52,
+      "text": "so we have fade out and then we"
+    },
+    {
+      "start": 272.0,
+      "text": "obviously also have fade in so I'm going"
+    },
+    {
+      "start": 274.199,
+      "text": "to copy this"
+    },
+    {
+      "start": 275.8,
+      "text": "here and we'll change this to"
+    },
+    {
+      "start": 279.4,
+      "text": "in change the actual function or method"
+    },
+    {
+      "start": 282.8,
+      "text": "to fade"
+    },
+    {
+      "start": 284.44,
+      "text": "in and I'm going to get rid of the"
+    },
+    {
+      "start": 287.4,
+      "text": "second callback function we don't need"
+    },
+    {
+      "start": 292.44,
+      "text": "it all right so fade it"
+    },
+    {
+      "start": 296.24,
+      "text": "out okay it's gone click fade in and it"
+    },
+    {
+      "start": 300.039,
+      "text": "comes back"
+    },
+    {
+      "start": 301.479,
+      "text": "in now we also have fade toggle which"
+    },
+    {
+      "start": 304.4,
+      "text": "does both so we'll go ahead and copy"
+    },
+    {
+      "start": 307.44,
+      "text": "that and let's say fade tog which is"
+    },
+    {
+      "start": 311.919,
+      "text": "going to call fade"
+    },
+    {
+      "start": 314.16,
+      "text": "toggle and we'll just change this to one"
+    },
+    {
+      "start": 317.319,
+      "text": "second okay so now if I click that goes"
+    },
+    {
+      "start": 320.36,
+      "text": "out click it again comes back in so you"
+    },
+    {
+      "start": 322.44,
+      "text": "can keep doing"
+    },
+    {
+      "start": 324.0,
+      "text": "it all right so those are the fade"
+    },
+    {
+      "start": 326.72,
+      "text": "effects now we also have slide up and"
+    },
+    {
+      "start": 329.24,
+      "text": "slide down and slide toggle so what I'm"
+    },
+    {
+      "start": 332.12,
+      "text": "going to do is copy the these all the"
+    },
+    {
+      "start": 335.639,
+      "text": "buttons and let's change this to"
+    },
+    {
+      "start": 339.56,
+      "text": "button uh let me see I want to change"
+    },
+    {
+      "start": 341.96,
+      "text": "this to slide"
+    },
+    {
+      "start": 344.0,
+      "text": "up okay so"
+    },
+    {
+      "start": 346.199,
+      "text": "button slide"
+    },
+    {
+      "start": 352.4,
+      "text": "up this one will be slide down"
+    },
+    {
+      "start": 361.72,
+      "text": "and this one will"
+    },
+    {
+      "start": 363.08,
+      "text": "be uh slide"
+    },
+    {
+      "start": 370.4,
+      "text": "tog okay and then we're going to go down"
+    },
+    {
+      "start": 372.639,
+      "text": "here"
+    },
+    {
+      "start": 374.36,
+      "text": "and let's just grab"
+    },
+    {
+      "start": 378.56,
+      "text": "this okay we'll change this to button"
+    },
+    {
+      "start": 382.24,
+      "text": "slide"
+    },
+    {
+      "start": 384.599,
+      "text": "down and then this will be changed to"
+    },
+    {
+      "start": 387.28,
+      "text": "slide down"
+    },
+    {
+      "start": 391.4,
+      "text": "okay then I'll copy"
+    },
+    {
+      "start": 393.199,
+      "text": "that this one will be"
+    },
+    {
+      "start": 399.8,
+      "text": "up this one will be"
+    },
+    {
+      "start": 403.199,
+      "text": "togg and"
+    },
+    {
+      "start": 406.24,
+      "text": "toggle all right so let's reload click"
+    },
+    {
+      "start": 408.88,
+      "text": "slide up you can see it slides up and"
+    },
+    {
+      "start": 411.319,
+      "text": "disappears and slide"
+    },
+    {
+      "start": 414.12,
+      "text": "down and slide"
+    },
+    {
+      "start": 418.52,
+      "text": "toggle all right now we can also stop it"
+    },
+    {
+      "start": 421.44,
+      "text": "in the middle of the effect if we want"
+    },
+    {
+      "start": 424.0,
+      "text": "so what I'm going to do is put another"
+    },
+    {
+      "start": 425.599,
+      "text": "button right"
+    },
+    {
+      "start": 427.12,
+      "text": "here give it an ID of"
+    },
+    {
+      "start": 431.639,
+      "text": "BTN"
+    },
+    {
+      "start": 436.08,
+      "text": "stop and then down here we're going to"
+    },
+    {
+      "start": 442.36,
+      "text": "say BTN"
+    },
+    {
+      "start": 445.36,
+      "text": "stop and then we're going to"
+    },
+    {
+      "start": 448.08,
+      "text": "Simply uh actually so we need to do our"
+    },
+    {
+      "start": 457.4,
+      "text": "click okay and then we'll take that"
+    },
+    {
+      "start": 462.599,
+      "text": "box"
+    },
+    {
+      "start": 466.199,
+      "text": "and and we're just going to call Dot"
+    },
+    {
+      "start": 470.8,
+      "text": "stop all right so now we'll go ahead and"
+    },
+    {
+      "start": 473.96,
+      "text": "click slide up stop and you'll see it"
+    },
+    {
+      "start": 477.599,
+      "text": "stops dead in its tracks"
+    },
+    {
+      "start": 480.199,
+      "text": "and then we can continue"
+    },
+    {
+      "start": 482.36,
+      "text": "it all right so that is fade and slide"
+    },
+    {
+      "start": 486.12,
+      "text": "now let's get into animate all right now"
+    },
+    {
+      "start": 489.68,
+      "text": "what I'm going to do is create another"
+    },
+    {
+      "start": 493.52,
+      "text": "box uh let's see we're going to go let's"
+    },
+    {
+      "start": 497.039,
+      "text": "put an HR right"
+    },
+    {
+      "start": 501.159,
+      "text": "here and then I'm going to put a couple"
+    },
+    {
+      "start": 504.0,
+      "text": "more"
+    },
+    {
+      "start": 505.159,
+      "text": "buttons I need three buttons so I'm"
+    },
+    {
+      "start": 509.039,
+      "text": "going to C Cy"
+    },
+    {
+      "start": 510.84,
+      "text": "those okay this first one will"
+    },
+    {
+      "start": 514.599,
+      "text": "be uh we'll just call"
+    },
+    {
+      "start": 517.64,
+      "text": "it move"
+    },
+    {
+      "start": 523.839,
+      "text": "left this one will be move"
+    },
+    {
+      "start": 532.279,
+      "text": "right this one will be move around"
+    },
+    {
+      "start": 543.04,
+      "text": "all right and then under that we're"
+    },
+    {
+      "start": 544.399,
+      "text": "going to have another div with a ID of"
+    },
+    {
+      "start": 548.56,
+      "text": "box"
+    },
+    {
+      "start": 550.64,
+      "text": "two okay we're just going to add a"
+    },
+    {
+      "start": 552.6,
+      "text": "little bit of style up here to box"
+    },
+    {
+      "start": 558.16,
+      "text": "two so we're going to give it a"
+    },
+    {
+      "start": 560.32,
+      "text": "background of"
+    },
+    {
+      "start": 561.959,
+      "text": "red give it a width of 100"
+    },
+    {
+      "start": 566.0,
+      "text": "pixels a height of 100 pixels"
+    },
+    {
+      "start": 570.76,
+      "text": "and we're also going to set the position"
+    },
+    {
+      "start": 573.279,
+      "text": "to be"
+    },
+    {
+      "start": 576.519,
+      "text": "relative all right and then let's save"
+    },
+    {
+      "start": 579.56,
+      "text": "that okay so there's our"
+    },
+    {
+      "start": 582.72,
+      "text": "square and we're going to go down into"
+    },
+    {
+      "start": 584.8,
+      "text": "our"
+    },
+    {
+      "start": 586.56,
+      "text": "script and we're going to take that move"
+    },
+    {
+      "start": 588.959,
+      "text": "right"
+    },
+    {
+      "start": 590.56,
+      "text": "button so it has an ID of move"
+    },
+    {
+      "start": 595.04,
+      "text": "right and we're going to set a click"
+    },
+    {
+      "start": 597.36,
+      "text": "event"
+    },
+    {
+      "start": 603.68,
+      "text": "okay and then in here we're going to"
+    },
+    {
+      "start": 605.0,
+      "text": "take box"
+    },
+    {
+      "start": 610.12,
+      "text": "two and we're going to apply the animate"
+    },
+    {
+      "start": 615.36,
+      "text": "method okay and then in here we're going"
+    },
+    {
+      "start": 617.8,
+      "text": "to pass in an object with some options"
+    },
+    {
+      "start": 620.959,
+      "text": "so I want to say"
+    },
+    {
+      "start": 623.32,
+      "text": "left"
+    },
+    {
+      "start": 625.64,
+      "text": "500 all right now what this is going to"
+    },
+    {
+      "start": 627.88,
+      "text": "do is it's going to add add this CSS"
+    },
+    {
+      "start": 630.44,
+      "text": "property left 500 now if you have to"
+    },
+    {
+      "start": 633.079,
+      "text": "make sure it's relative or that the top"
+    },
+    {
+      "start": 635.68,
+      "text": "right left those those values won't work"
+    },
+    {
+      "start": 638.56,
+      "text": "unless it's position relative so what"
+    },
+    {
+      "start": 640.959,
+      "text": "we're saying is when we click it we want"
+    },
+    {
+      "start": 643.12,
+      "text": "it to be 500 from the left okay this is"
+    },
+    {
+      "start": 645.8,
+      "text": "where that the left is we want it to go"
+    },
+    {
+      "start": 648.32,
+      "text": "500 from the left which would be towards"
+    },
+    {
+      "start": 650.92,
+      "text": "the right so if we go ahead and reload"
+    },
+    {
+      "start": 653.16,
+      "text": "and I click move"
+    },
+    {
+      "start": 654.959,
+      "text": "left nothing's"
+    },
+    {
+      "start": 657.88,
+      "text": "happening um"
+    },
+    {
+      "start": 661.399,
+      "text": "oh it's move right d all right so you"
+    },
+    {
+      "start": 663.76,
+      "text": "can see that it moved right now we want"
+    },
+    {
+      "start": 665.88,
+      "text": "to be able to move it"
+    },
+    {
+      "start": 667.639,
+      "text": "back so we'll copy"
+    },
+    {
+      "start": 671.68,
+      "text": "that we'll take the move left button and"
+    },
+    {
+      "start": 675.56,
+      "text": "we'll say left"
+    },
+    {
+      "start": 678.639,
+      "text": "zero so now move right move left and now"
+    },
+    {
+      "start": 683.279,
+      "text": "I can move that around which is pretty"
+    },
+    {
+      "start": 685.959,
+      "text": "cool now we can add some other values"
+    },
+    {
+      "start": 688.04,
+      "text": "here if we want let's say we want change"
+    },
+    {
+      "start": 689.88,
+      "text": "the the size of the box as it moves to"
+    },
+    {
+      "start": 692.24,
+      "text": "the left or to the right so right here"
+    },
+    {
+      "start": 695.44,
+      "text": "we'll say height and you can basically"
+    },
+    {
+      "start": 697.839,
+      "text": "animate anything that has either a"
+    },
+    {
+      "start": 700.56,
+      "text": "numeric value or a string that is like"
+    },
+    {
+      "start": 704.079,
+      "text": "is numeric like so something like 500"
+    },
+    {
+      "start": 706.639,
+      "text": "pixels um which is what we're going to"
+    },
+    {
+      "start": 708.639,
+      "text": "have here it's a string that'll will"
+    },
+    {
+      "start": 711.24,
+      "text": "make it um 300"
+    },
+    {
+      "start": 715.639,
+      "text": "pixels all right and then we'll set the"
+    },
+    {
+      "start": 717.8,
+      "text": "width also to 300 pixels okay we can"
+    },
+    {
+      "start": 722.6,
+      "text": "also set the"
+    },
+    {
+      "start": 724.32,
+      "text": "opacity because that's numeric so we'll"
+    },
+    {
+      "start": 726.76,
+      "text": "set that to"
+    },
+    {
+      "start": 731.88,
+      "text": "0.5 all right now when it comes back we"
+    },
+    {
+      "start": 735.199,
+      "text": "want to bring that stuff back so let's"
+    },
+    {
+      "start": 738.24,
+      "text": "do"
+    },
+    {
+      "start": 740.44,
+      "text": "height we'll bring it back to 100"
+    },
+    {
+      "start": 744.0,
+      "text": "pixels and width same thing"
+    },
+    {
+      "start": 750.0,
+      "text": "and opacity we'll set that to one so"
+    },
+    {
+      "start": 754.72,
+      "text": "let's try that I'm going to close that"
+    },
+    {
+      "start": 758.16,
+      "text": "and you can see it gets bigger and it"
+    },
+    {
+      "start": 760.12,
+      "text": "also gets more transparent and then move"
+    },
+    {
+      "start": 763.0,
+      "text": "left and it goes back to how it"
+    },
+    {
+      "start": 766.24,
+      "text": "was all right so that's animate now we"
+    },
+    {
+      "start": 769.279,
+      "text": "can also use a que where we can do"
+    },
+    {
+      "start": 771.959,
+      "text": "multiple animations at once so what"
+    },
+    {
+      "start": 774.72,
+      "text": "we're going to do is grab that move"
+    },
+    {
+      "start": 777.68,
+      "text": "around button"
+    },
+    {
+      "start": 783.44,
+      "text": "okay do"
+    },
+    {
+      "start": 786.16,
+      "text": "click"
+    },
+    {
+      "start": 789.199,
+      "text": "function and we're going to um we're"
+    },
+    {
+      "start": 792.04,
+      "text": "going to put that box two value into a"
+    },
+    {
+      "start": 794.839,
+      "text": "variable because we're using it uh"
+    },
+    {
+      "start": 797.32,
+      "text": "multiple times so we don't want to have"
+    },
+    {
+      "start": 800.0,
+      "text": "to keep reaching into the"
+    },
+    {
+      "start": 801.8,
+      "text": "Dom so set that to box two and then what"
+    },
+    {
+      "start": 806.279,
+      "text": "we'll do is say box"
+    },
+    {
+      "start": 809.8,
+      "text": "do"
+    },
+    {
+      "start": 814.079,
+      "text": "animate and we'll pass"
+    },
+    {
+      "start": 816.76,
+      "text": "in uh let's say"
+    },
+    {
+      "start": 820.12,
+      "text": "left"
+    },
+    {
+      "start": 826.44,
+      "text": "300 okay we'll copy that and we can keep"
+    },
+    {
+      "start": 830.639,
+      "text": "doing animat so that'll be left 300 this"
+    },
+    {
+      "start": 833.279,
+      "text": "one will"
+    },
+    {
+      "start": 835.04,
+      "text": "be let's"
+    },
+    {
+      "start": 837.44,
+      "text": "do top three 300 okay first one's going"
+    },
+    {
+      "start": 840.639,
+      "text": "to be over and then we want top 300 so"
+    },
+    {
+      "start": 844.0,
+      "text": "that's going to go down then we want it"
+    },
+    {
+      "start": 846.0,
+      "text": "to go back over so for that one we'll"
+    },
+    {
+      "start": 851.279,
+      "text": "set top"
+    },
+    {
+      "start": 854.759,
+      "text": "300 and left"
+    },
+    {
+      "start": 858.16,
+      "text": "zero all right and then the last one's"
+    },
+    {
+      "start": 860.399,
+      "text": "going to be left"
+    },
+    {
+      "start": 862.399,
+      "text": "zero top zero okay back to where it"
+    },
+    {
+      "start": 865.8,
+      "text": "started so let's go ahead and try that"
+    },
+    {
+      "start": 869.36,
+      "text": "click the move"
+    },
+    {
+      "start": 870.72,
+      "text": "around and it goes around in a"
+    },
+    {
+      "start": 873.519,
+      "text": "circle or a"
+    },
+    {
+      "start": 875.88,
+      "text": "square okay so like I said I mean we're"
+    },
+    {
+      "start": 878.6,
+      "text": "not going to do any really extensive"
+    },
+    {
+      "start": 881.6,
+      "text": "stuff with animation I just want to show"
+    },
+    {
+      "start": 883.32,
+      "text": "you how these methods work and um you"
+    },
+    {
+      "start": 886.04,
+      "text": "can use that to go and create your own"
+    },
+    {
+      "start": 889.24,
+      "text": "whatever slideshows or whatever you want"
+    },
+    {
+      "start": 891.24,
+      "text": "to build that uses animation all right"
+    },
+    {
+      "start": 894.399,
+      "text": "so hopefully you guys like this video in"
+    },
+    {
+      "start": 896.44,
+      "text": "the next video we're going to start to"
+    },
+    {
+      "start": 899.079,
+      "text": "look at some Ajax methods so that we can"
+    },
+    {
+      "start": 901.6,
+      "text": "use Ajax with jQuery"
+    }
+  ],
+  "text": "all right so in this video we're going to get into effects and animation in jQuery now we're not going to create any spectacular animations I just want to introduce you to um the fade fade out fade in slide up slide down and then the animate function okay and maybe a couple other small things so we have our starter interface here and what I'm going to do is I'm going to create a couple buttons in the container so we'll say button we'll give us an ID of BTN Fade Out okay and then let's just copy that paste in two more this one's going to be fade in and then this one's going to be fade tog all right so we have our buttons now we're also going to uh let's see we're going to create a div we'll put an HR here and then a div and we're going to give this an ID of box and inside the Box we're going to say we'll just put an H1 it says hello world and then up in the style we're going to say dotbox or actually it's an ID so we're going to say number sign box and let's give it a background of dark gray color will be white and let's see we're going to set the width what do I want the width too we'll set the width to 500 okay 500 pixels and then the height I'm going to set to 90 pixels I'm going to set padding to 40 pixels and let's text a line to the center all right so let's go ahead and load that so now we have our buttons and we have this element here which is a box with the Texs hello world so what I want to do first is take this Fade Out button and add an event to it so we're going to say jQuery ID BTN Fade Out it's going to be a click event when it's clicked it's going to run this function and then what we're going to do is take that box okay so it has an ID of box and we're going to say dot Fade Out okay so let's see what that does and it just nicely fades it right out okay so if you want that to go fast you can actually pass in a parameter here called Fast click it it goes fast if we change this to slow and then it goes a little slower now that's that's set some pretty uh High limitations so instead of doing fast or slow you can actually do it in milliseconds so let's say 3000 which would be 3 seconds click it and you'll see it takes 3 seconds to fade out now this also takes in a callback function an optional function that can do something when it's done all right so what I'm going to do is I'm going to take um the button Fade Out so ID button Fade Out and I'm going to change the text we'll change it to or we'll say it's gone okay so reload click it and then when it's done you'll see the text changes to it's gone okay but that function is optional so we have fade out and then we obviously also have fade in so I'm going to copy this here and we'll change this to in change the actual function or method to fade in and I'm going to get rid of the second callback function we don't need it all right so fade it out okay it's gone click fade in and it comes back in now we also have fade toggle which does both so we'll go ahead and copy that and let's say fade tog which is going to call fade toggle and we'll just change this to one second okay so now if I click that goes out click it again comes back in so you can keep doing it all right so those are the fade effects now we also have slide up and slide down and slide toggle so what I'm going to do is copy the these all the buttons and let's change this to button uh let me see I want to change this to slide up okay so button slide up this one will be slide down and this one will be uh slide tog okay and then we're going to go down here and let's just grab this okay we'll change this to button slide down and then this will be changed to slide down okay then I'll copy that this one will be up this one will be togg and toggle all right so let's reload click slide up you can see it slides up and disappears and slide down and slide toggle all right now we can also stop it in the middle of the effect if we want so what I'm going to do is put another button right here give it an ID of BTN stop and then down here we're going to say BTN stop and then we're going to Simply uh actually so we need to do our click okay and then we'll take that box and and we're just going to call Dot stop all right so now we'll go ahead and click slide up stop and you'll see it stops dead in its tracks and then we can continue it all right so that is fade and slide now let's get into animate all right now what I'm going to do is create another box uh let's see we're going to go let's put an HR right here and then I'm going to put a couple more buttons I need three buttons so I'm going to C Cy those okay this first one will be uh we'll just call it move left this one will be move right this one will be move around all right and then under that we're going to have another div with a ID of box two okay we're just going to add a little bit of style up here to box two so we're going to give it a background of red give it a width of 100 pixels a height of 100 pixels and we're also going to set the position to be relative all right and then let's save that okay so there's our square and we're going to go down into our script and we're going to take that move right button so it has an ID of move right and we're going to set a click event okay and then in here we're going to take box two and we're going to apply the animate method okay and then in here we're going to pass in an object with some options so I want to say left 500 all right now what this is going to do is it's going to add add this CSS property left 500 now if you have to make sure it's relative or that the top right left those those values won't work unless it's position relative so what we're saying is when we click it we want it to be 500 from the left okay this is where that the left is we want it to go 500 from the left which would be towards the right so if we go ahead and reload and I click move left nothing's happening um oh it's move right d all right so you can see that it moved right now we want to be able to move it back so we'll copy that we'll take the move left button and we'll say left zero so now move right move left and now I can move that around which is pretty cool now we can add some other values here if we want let's say we want change the the size of the box as it moves to the left or to the right so right here we'll say height and you can basically animate anything that has either a numeric value or a string that is like is numeric like so something like 500 pixels um which is what we're going to have here it's a string that'll will make it um 300 pixels all right and then we'll set the width also to 300 pixels okay we can also set the opacity because that's numeric so we'll set that to 0.5 all right now when it comes back we want to bring that stuff back so let's do height we'll bring it back to 100 pixels and width same thing and opacity we'll set that to one so let's try that I'm going to close that and you can see it gets bigger and it also gets more transparent and then move left and it goes back to how it was all right so that's animate now we can also use a que where we can do multiple animations at once so what we're going to do is grab that move around button okay do click function and we're going to um we're going to put that box two value into a variable because we're using it uh multiple times so we don't want to have to keep reaching into the Dom so set that to box two and then what we'll do is say box do animate and we'll pass in uh let's say left 300 okay we'll copy that and we can keep doing animat so that'll be left 300 this one will be let's do top three 300 okay first one's going to be over and then we want top 300 so that's going to go down then we want it to go back over so for that one we'll set top 300 and left zero all right and then the last one's going to be left zero top zero okay back to where it started so let's go ahead and try that click the move around and it goes around in a circle or a square okay so like I said I mean we're not going to do any really extensive stuff with animation I just want to show you how these methods work and um you can use that to go and create your own whatever slideshows or whatever you want to build that uses animation all right so hopefully you guys like this video in the next video we're going to start to look at some Ajax methods so that we can use Ajax with jQuery"
+}

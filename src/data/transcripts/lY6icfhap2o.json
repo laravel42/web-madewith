@@ -1,0 +1,1676 @@
+{
+  "videoId": "lY6icfhap2o",
+  "language": "en",
+  "source": "auto",
+  "segments": [
+    {
+      "start": 0.03,
+      "text": "in this video I'm gonna be talking all"
+    },
+    {
+      "start": 2.31,
+      "text": "about Express middleware and teaching"
+    },
+    {
+      "start": 4.89,
+      "text": "you everything you need to know and at"
+    },
+    {
+      "start": 7.77,
+      "text": "the end of this video I'm gonna go over"
+    },
+    {
+      "start": 9.75,
+      "text": "all of the common problems people run"
+    },
+    {
+      "start": 12.33,
+      "text": "into with Express middleware so you will"
+    },
+    {
+      "start": 15.03,
+      "text": "make sure that you don't run into these"
+    },
+    {
+      "start": 16.47,
+      "text": "same problems let's get started now now"
+    },
+    {
+      "start": 22.83,
+      "text": "with all of the middl work that you're"
+    },
+    {
+      "start": 24.21,
+      "text": "gonna be writing after this video you're"
+    },
+    {
+      "start": 26.22,
+      "text": "gonna need somewhere to host your"
+    },
+    {
+      "start": 27.689,
+      "text": "website and that's where today's video"
+    },
+    {
+      "start": 29.67,
+      "text": "sponsor atlanticnet hosting comes in"
+    },
+    {
+      "start": 32.64,
+      "text": "perfectly they have an entire year long"
+    },
+    {
+      "start": 35.28,
+      "text": "free trial that you can take advantage"
+    },
+    {
+      "start": 36.93,
+      "text": "of where you can try out their servers"
+    },
+    {
+      "start": 39.03,
+      "text": "completely for free for an entire year"
+    },
+    {
+      "start": 41.61,
+      "text": "and if you use the code Kyl when you"
+    },
+    {
+      "start": 43.59,
+      "text": "check out you're gonna get an additional"
+    },
+    {
+      "start": 45.45,
+      "text": "$50 of credit you can use towards"
+    },
+    {
+      "start": 47.789,
+      "text": "hosting on top of the entire year of"
+    },
+    {
+      "start": 50.399,
+      "text": "free hosting so make sure you check out"
+    },
+    {
+      "start": 52.8,
+      "text": "atlanticnet link down in the description"
+    },
+    {
+      "start": 54.809,
+      "text": "below and use the code kyle when you"
+    },
+    {
+      "start": 57.12,
+      "text": "sign up welcome back to web dev"
+    },
+    {
+      "start": 59.34,
+      "text": "simplified my name is Kyle and my job is"
+    },
+    {
+      "start": 62.16,
+      "text": "to simplify the web for you so you can"
+    },
+    {
+      "start": 64.53,
+      "text": "start building your dream project sooner"
+    },
+    {
+      "start": 66.24,
+      "text": "so if that sounds interesting make sure"
+    },
+    {
+      "start": 68.25,
+      "text": "you subscribe to the channel for more"
+    },
+    {
+      "start": 70.08,
+      "text": "videos just like this and for this video"
+    },
+    {
+      "start": 73.08,
+      "text": "to get started I have a just a little"
+    },
+    {
+      "start": 74.67,
+      "text": "bit of code written ahead of time to"
+    },
+    {
+      "start": 76.83,
+      "text": "save you from watching the boilerplate"
+    },
+    {
+      "start": 78.27,
+      "text": "all I have is a simple Express server"
+    },
+    {
+      "start": 81.06,
+      "text": "setup and I'm running it using node"
+    },
+    {
+      "start": 83.28,
+      "text": "month so that we get Auto refresh every"
+    },
+    {
+      "start": 85.65,
+      "text": "time we make a change for example if I"
+    },
+    {
+      "start": 87.81,
+      "text": "save and refresh I don't need to restart"
+    },
+    {
+      "start": 90.09,
+      "text": "my entire server and as you can see I"
+    },
+    {
+      "start": 92.49,
+      "text": "just have some really simple routes"
+    },
+    {
+      "start": 93.93,
+      "text": "right now we have a home page route and"
+    },
+    {
+      "start": 95.64,
+      "text": "a user's route which all they do is send"
+    },
+    {
+      "start": 97.77,
+      "text": "out the text home page or the text users"
+    },
+    {
+      "start": 100.14,
+      "text": "page if we go to that users page as you"
+    },
+    {
+      "start": 103.2,
+      "text": "can see here and we're gonna use this to"
+    },
+    {
+      "start": 105.509,
+      "text": "explain everything you need to know"
+    },
+    {
+      "start": 107.13,
+      "text": "about middleware but before I get"
+    },
+    {
+      "start": 109.11,
+      "text": "started if you enjoy reading instead of"
+    },
+    {
+      "start": 111.18,
+      "text": "watching I have an entire blog article"
+    },
+    {
+      "start": 113.399,
+      "text": "that goes over middleware in-depth which"
+    },
+    {
+      "start": 115.5,
+      "text": "you can check out as well if you want to"
+    },
+    {
+      "start": 117.329,
+      "text": "I'll have that linked down in the"
+    },
+    {
+      "start": 118.649,
+      "text": "description below so getting started"
+    },
+    {
+      "start": 121.049,
+      "text": "with middleware I want to talk about the"
+    },
+    {
+      "start": 122.939,
+      "text": "most basic form of middleware and"
+    },
+    {
+      "start": 124.92,
+      "text": "exactly what middleware is because you"
+    },
+    {
+      "start": 127.259,
+      "text": "may not be familiar with the exact"
+    },
+    {
+      "start": 128.849,
+      "text": "definition of middleware essentially all"
+    },
+    {
+      "start": 132.12,
+      "text": "that middleware is is the"
+    },
+    {
+      "start": 133.59,
+      "text": "a function or program or something that"
+    },
+    {
+      "start": 136.26,
+      "text": "is going to run between the time that"
+    },
+    {
+      "start": 138.15,
+      "text": "the server gets the request and the time"
+    },
+    {
+      "start": 140.64,
+      "text": "that the server sends the request out to"
+    },
+    {
+      "start": 142.83,
+      "text": "the client so when I click refresh here"
+    },
+    {
+      "start": 145.11,
+      "text": "I'm sending a request to the server and"
+    },
+    {
+      "start": 147.54,
+      "text": "that gets to the server and this app get"
+    },
+    {
+      "start": 149.97,
+      "text": "processes it and middleware is anything"
+    },
+    {
+      "start": 152.22,
+      "text": "that happens between the time the server"
+    },
+    {
+      "start": 154.05,
+      "text": "gets the request and the time that the"
+    },
+    {
+      "start": 156.269,
+      "text": "server sends out a response so in"
+    },
+    {
+      "start": 158.91,
+      "text": "definition this function right here for"
+    },
+    {
+      "start": 161.01,
+      "text": "our app get users is actually a"
+    },
+    {
+      "start": 163.29,
+      "text": "middleware because it's happening in"
+    },
+    {
+      "start": 164.91,
+      "text": "between beginning of the response and"
+    },
+    {
+      "start": 167.19,
+      "text": "the sending of the response and that is"
+    },
+    {
+      "start": 169.89,
+      "text": "something really important to understand"
+    },
+    {
+      "start": 171.69,
+      "text": "with express is that every single thing"
+    },
+    {
+      "start": 173.97,
+      "text": "you write in relation to actions such as"
+    },
+    {
+      "start": 176.37,
+      "text": "app get for these different actions is"
+    },
+    {
+      "start": 178.319,
+      "text": "going to be middleware when you have"
+    },
+    {
+      "start": 180.48,
+      "text": "your request and response variable that"
+    },
+    {
+      "start": 182.459,
+      "text": "is a middleware that you are writing"
+    },
+    {
+      "start": 184.2,
+      "text": "that is going to be acting in between"
+    },
+    {
+      "start": 186.09,
+      "text": "the response sending and getting so this"
+    },
+    {
+      "start": 189.54,
+      "text": "is the most basic form of middleware but"
+    },
+    {
+      "start": 191.519,
+      "text": "really when you think of middleware you"
+    },
+    {
+      "start": 193.049,
+      "text": "don't think of the actions such as these"
+    },
+    {
+      "start": 195.12,
+      "text": "request response actions here you think"
+    },
+    {
+      "start": 197.25,
+      "text": "of things that happen either before or"
+    },
+    {
+      "start": 199.049,
+      "text": "after those actions so to get started I"
+    },
+    {
+      "start": 201.72,
+      "text": "want to write a very simple login"
+    },
+    {
+      "start": 203.7,
+      "text": "middleware and the easiest way to get"
+    },
+    {
+      "start": 205.92,
+      "text": "started with a middleware is just to"
+    },
+    {
+      "start": 207.42,
+      "text": "create a function so we're just going to"
+    },
+    {
+      "start": 209.459,
+      "text": "create a function called logger and in"
+    },
+    {
+      "start": 212.4,
+      "text": "here what we're gonna do is just console"
+    },
+    {
+      "start": 214.079,
+      "text": "dot log log just like that we're just"
+    },
+    {
+      "start": 217.53,
+      "text": "gonna be logging out some information"
+    },
+    {
+      "start": 219.0,
+      "text": "whatever it is that you want to log out"
+    },
+    {
+      "start": 220.65,
+      "text": "and this is going to take in a few"
+    },
+    {
+      "start": 222.51,
+      "text": "different properties we have our request"
+    },
+    {
+      "start": 224.16,
+      "text": "we have a response and we have a third"
+    },
+    {
+      "start": 226.56,
+      "text": "variable which is called next so"
+    },
+    {
+      "start": 228.66,
+      "text": "requests in response those are"
+    },
+    {
+      "start": 230.04,
+      "text": "self-explanatory"
+    },
+    {
+      "start": 231.0,
+      "text": "they are the requests that's getting"
+    },
+    {
+      "start": 232.41,
+      "text": "sent to you and the response that you're"
+    },
+    {
+      "start": 234.12,
+      "text": "sending back but next this is actually"
+    },
+    {
+      "start": 236.88,
+      "text": "just a function and all you need to do"
+    },
+    {
+      "start": 238.95,
+      "text": "with the next function is just call it"
+    },
+    {
+      "start": 240.66,
+      "text": "so for example we can call next like"
+    },
+    {
+      "start": 242.489,
+      "text": "this and what's going to happen is the"
+    },
+    {
+      "start": 244.59,
+      "text": "next piece of middleware in line is"
+    },
+    {
+      "start": 246.66,
+      "text": "going to be run when you call this next"
+    },
+    {
+      "start": 248.459,
+      "text": "function all of these different"
+    },
+    {
+      "start": 250.41,
+      "text": "parameters up here also take in a next"
+    },
+    {
+      "start": 253.44,
+      "text": "just like this and we can call next"
+    },
+    {
+      "start": 256.109,
+      "text": "inside of here but since this is the"
+    },
+    {
+      "start": 258.09,
+      "text": "last piece of middleware there's really"
+    },
+    {
+      "start": 259.769,
+      "text": "no point in calling next because there"
+    },
+    {
+      "start": 261.599,
+      "text": "is no other middleware to call after"
+    },
+    {
+      "start": 263.729,
+      "text": "this so that is why you almost never see"
+    },
+    {
+      "start": 265.77,
+      "text": "this"
+    },
+    {
+      "start": 266.53,
+      "text": "next inside of your middleware for your"
+    },
+    {
+      "start": 269.05,
+      "text": "control their actions but here we have"
+    },
+    {
+      "start": 271.12,
+      "text": "this logger it's logging out just the"
+    },
+    {
+      "start": 272.92,
+      "text": "text log and we're calling next properly"
+    },
+    {
+      "start": 275.11,
+      "text": "so in order to use this middleware we"
+    },
+    {
+      "start": 277.24,
+      "text": "have a few different ways we can do it"
+    },
+    {
+      "start": 278.71,
+      "text": "the first way is we can say we want this"
+    },
+    {
+      "start": 280.96,
+      "text": "to be global middle winner so if we say"
+    },
+    {
+      "start": 283.3,
+      "text": "F dot use and we put in our logger here"
+    },
+    {
+      "start": 285.73,
+      "text": "we just pass it the name of the function"
+    },
+    {
+      "start": 287.77,
+      "text": "we want we don't actually call this"
+    },
+    {
+      "start": 289.6,
+      "text": "function we just pass it the name of the"
+    },
+    {
+      "start": 291.4,
+      "text": "function because app dot use here it"
+    },
+    {
+      "start": 294.01,
+      "text": "accepts a function that takes in these"
+    },
+    {
+      "start": 296.889,
+      "text": "three different parameters so it's"
+    },
+    {
+      "start": 298.12,
+      "text": "expecting a function that takes request"
+    },
+    {
+      "start": 299.95,
+      "text": "response and next so we're passing it a"
+    },
+    {
+      "start": 302.169,
+      "text": "function that takes those and if we save"
+    },
+    {
+      "start": 304.3,
+      "text": "here and i refresh my page you'll notice"
+    },
+    {
+      "start": 306.25,
+      "text": "this text log gets printed out and"
+    },
+    {
+      "start": 308.08,
+      "text": "that's because this middleware is being"
+    },
+    {
+      "start": 309.97,
+      "text": "ran and then we're calling next and then"
+    },
+    {
+      "start": 312.64,
+      "text": "it's running our next piece of"
+    },
+    {
+      "start": 313.63,
+      "text": "middleware which is here sending out our"
+    },
+    {
+      "start": 315.49,
+      "text": "user's page we can even put a simple log"
+    },
+    {
+      "start": 318.07,
+      "text": "in here just as users page and now if i"
+    },
+    {
+      "start": 322.09,
+      "text": "refresh you can see it logs and then it"
+    },
+    {
+      "start": 324.04,
+      "text": "prints out users page just like that and"
+    },
+    {
+      "start": 326.26,
+      "text": "we'll also put the same thing inside of"
+    },
+    {
+      "start": 328.3,
+      "text": "our home page as well so when we define"
+    },
+    {
+      "start": 330.82,
+      "text": "a logger up here for our middleware"
+    },
+    {
+      "start": 332.83,
+      "text": "inside of this app at use at the global"
+    },
+    {
+      "start": 335.229,
+      "text": "level this is going to be run before"
+    },
+    {
+      "start": 336.52,
+      "text": "every single one of our other requests"
+    },
+    {
+      "start": 338.53,
+      "text": "so if we go to the home page you can see"
+    },
+    {
+      "start": 340.9,
+      "text": "we get our log being ran here as well"
+    },
+    {
+      "start": 342.789,
+      "text": "and if I save this and refresh you'll"
+    },
+    {
+      "start": 345.22,
+      "text": "notice we get our home page being"
+    },
+    {
+      "start": 346.33,
+      "text": "printed after our lock so this is going"
+    },
+    {
+      "start": 348.7,
+      "text": "to be global to our entire application"
+    },
+    {
+      "start": 350.46,
+      "text": "but something really really important to"
+    },
+    {
+      "start": 353.14,
+      "text": "note about middleware is it runs in"
+    },
+    {
+      "start": 355.0,
+      "text": "order that you define it so right now we"
+    },
+    {
+      "start": 357.55,
+      "text": "have our logger being defined first and"
+    },
+    {
+      "start": 359.289,
+      "text": "then our actions if we tell our logger"
+    },
+    {
+      "start": 361.81,
+      "text": "to run after our actions you're going to"
+    },
+    {
+      "start": 364.75,
+      "text": "notice something interesting if we"
+    },
+    {
+      "start": 366.22,
+      "text": "refresh our page we only get home page"
+    },
+    {
+      "start": 368.59,
+      "text": "being printed out and this logger is"
+    },
+    {
+      "start": 370.479,
+      "text": "never being printed and that's because"
+    },
+    {
+      "start": 372.4,
+      "text": "inside of these actions we're never"
+    },
+    {
+      "start": 374.919,
+      "text": "actually calling next if we were to call"
+    },
+    {
+      "start": 377.59,
+      "text": "next inside of here and now save and"
+    },
+    {
+      "start": 379.69,
+      "text": "refresh you'll see it calls home page"
+    },
+    {
+      "start": 381.789,
+      "text": "and then prints out our logger because"
+    },
+    {
+      "start": 384.07,
+      "text": "in order our app get happens first and"
+    },
+    {
+      "start": 386.74,
+      "text": "then our logger happens next"
+    },
+    {
+      "start": 388.45,
+      "text": "and since we're never calling next from"
+    },
+    {
+      "start": 390.58,
+      "text": "our action up here we're never actually"
+    },
+    {
+      "start": 392.59,
+      "text": "getting in to this logger down here this"
+    },
+    {
+      "start": 395.77,
+      "text": "is why in general when you're creating"
+    },
+    {
+      "start": 397.36,
+      "text": "global actions such as this logger"
+    },
+    {
+      "start": 400.36,
+      "text": "always want to put these at the very top"
+    },
+    {
+      "start": 402.729,
+      "text": "of your file so that they happen before"
+    },
+    {
+      "start": 404.77,
+      "text": "all of your different controller actions"
+    },
+    {
+      "start": 406.81,
+      "text": "so the next type of middleware that I"
+    },
+    {
+      "start": 409.06,
+      "text": "want to talk about is going to be"
+    },
+    {
+      "start": 410.11,
+      "text": "middleware that is specific to a single"
+    },
+    {
+      "start": 412.09,
+      "text": "action and you can define this type of"
+    },
+    {
+      "start": 414.52,
+      "text": "middleware by just putting it inside of"
+    },
+    {
+      "start": 416.62,
+      "text": "this apt-get function this function"
+    },
+    {
+      "start": 418.659,
+      "text": "actually accepts essentially two things"
+    },
+    {
+      "start": 420.46,
+      "text": "it accepts your path here which in our"
+    },
+    {
+      "start": 422.59,
+      "text": "case is just the home path and then it"
+    },
+    {
+      "start": 424.389,
+      "text": "accepts a list of different middleware"
+    },
+    {
+      "start": 426.28,
+      "text": "right now we're passing it one single"
+    },
+    {
+      "start": 428.199,
+      "text": "middleware which is our normal request"
+    },
+    {
+      "start": 429.879,
+      "text": "but if we wanted to pass another"
+    },
+    {
+      "start": 432.009,
+      "text": "middleware we're just gonna copy this"
+    },
+    {
+      "start": 434.49,
+      "text": "paste this down and we're just gonna"
+    },
+    {
+      "start": 436.33,
+      "text": "call this off and we want to"
+    },
+    {
+      "start": 438.31,
+      "text": "authenticate people that go to our users"
+    },
+    {
+      "start": 439.99,
+      "text": "page here it's gonna take a request"
+    },
+    {
+      "start": 441.58,
+      "text": "response there next we're gonna log off"
+    },
+    {
+      "start": 444.039,
+      "text": "out of here so what we do is we just"
+    },
+    {
+      "start": 446.139,
+      "text": "pass this middleware to our function"
+    },
+    {
+      "start": 447.659,
+      "text": "just like this so we have now two"
+    },
+    {
+      "start": 449.919,
+      "text": "middleware being passed our off"
+    },
+    {
+      "start": 451.479,
+      "text": "middleware and then our actual action"
+    },
+    {
+      "start": 453.34,
+      "text": "middleware here and if we save refresh"
+    },
+    {
+      "start": 456.25,
+      "text": "our page on the users version you can"
+    },
+    {
+      "start": 458.86,
+      "text": "see we have our log being printed"
+    },
+    {
+      "start": 460.21,
+      "text": "because that's our very first middleware"
+    },
+    {
+      "start": 461.77,
+      "text": "then our auth is being printed next"
+    },
+    {
+      "start": 463.719,
+      "text": "because it's the first in this list and"
+    },
+    {
+      "start": 465.55,
+      "text": "then lastly our users page is being"
+    },
+    {
+      "start": 467.71,
+      "text": "printed because it is the next in line"
+    },
+    {
+      "start": 469.3,
+      "text": "of our list of middleware now something"
+    },
+    {
+      "start": 472.21,
+      "text": "else that's really amazing about"
+    },
+    {
+      "start": 474.039,
+      "text": "middleware is the ability for you to"
+    },
+    {
+      "start": 475.75,
+      "text": "access the request and response"
+    },
+    {
+      "start": 477.61,
+      "text": "parameters so what if we wanted to check"
+    },
+    {
+      "start": 479.71,
+      "text": "to see if our user is actually"
+    },
+    {
+      "start": 481.599,
+      "text": "authenticated instead of just logging"
+    },
+    {
+      "start": 483.37,
+      "text": "out or off well we can do that by just"
+    },
+    {
+      "start": 485.83,
+      "text": "putting in if in here insane if our"
+    },
+    {
+      "start": 487.449,
+      "text": "request dot query dot admin so if it has"
+    },
+    {
+      "start": 490.93,
+      "text": "the admin query parameter set equal to"
+    },
+    {
+      "start": 493.24,
+      "text": "the string of true so that means that we"
+    },
+    {
+      "start": 496.18,
+      "text": "have an admin user so we can just call"
+    },
+    {
+      "start": 498.069,
+      "text": "next and go on to the next portion of"
+    },
+    {
+      "start": 500.259,
+      "text": "our function otherwise if for some"
+    },
+    {
+      "start": 502.509,
+      "text": "reason we don't we can exit out early"
+    },
+    {
+      "start": 504.61,
+      "text": "and just send something along the lines"
+    },
+    {
+      "start": 506.169,
+      "text": "of no auth and we'll send that down to"
+    },
+    {
+      "start": 509.44,
+      "text": "our user and now we'll just delete these"
+    },
+    {
+      "start": 511.829,
+      "text": "save again and when i refresh I'm not"
+    },
+    {
+      "start": 514.57,
+      "text": "passing anything in our query string"
+    },
+    {
+      "start": 516.25,
+      "text": "that says admin is true"
+    },
+    {
+      "start": 517.539,
+      "text": "so we're should fail this authentication"
+    },
+    {
+      "start": 519.969,
+      "text": "check and if we refresh you see we get"
+    },
+    {
+      "start": 522.279,
+      "text": "this no auth being printed out just like"
+    },
+    {
+      "start": 524.47,
+      "text": "this but if I come up here and I just"
+    },
+    {
+      "start": 526.75,
+      "text": "say admin equals true now you can see"
+    },
+    {
+      "start": 529.779,
+      "text": "I'm getting through to the users page so"
+    },
+    {
+      "start": 532.029,
+      "text": "this is a super important"
+    },
+    {
+      "start": 533.41,
+      "text": "inside of your middle where you're able"
+    },
+    {
+      "start": 534.91,
+      "text": "to access your request and response in"
+    },
+    {
+      "start": 537.19,
+      "text": "order to either exit out so we never"
+    },
+    {
+      "start": 539.139,
+      "text": "actually got to this function because we"
+    },
+    {
+      "start": 540.639,
+      "text": "sent to the server and never called next"
+    },
+    {
+      "start": 542.92,
+      "text": "or you can just off people like this by"
+    },
+    {
+      "start": 545.139,
+      "text": "checking your query parameters and then"
+    },
+    {
+      "start": 547.12,
+      "text": "calling next in this example same thing"
+    },
+    {
+      "start": 549.61,
+      "text": "with our logger we could print out"
+    },
+    {
+      "start": 550.839,
+      "text": "something based on a request we could"
+    },
+    {
+      "start": 552.97,
+      "text": "print out for example the original URL"
+    },
+    {
+      "start": 554.769,
+      "text": "and now when we save and refresh over"
+    },
+    {
+      "start": 557.98,
+      "text": "here you can see our URL gets printed"
+    },
+    {
+      "start": 559.75,
+      "text": "out down here inside of our logger so"
+    },
+    {
+      "start": 562.12,
+      "text": "that's another great use case for these"
+    },
+    {
+      "start": 563.949,
+      "text": "different types of middleware but what"
+    },
+    {
+      "start": 565.959,
+      "text": "if inside of our users controller action"
+    },
+    {
+      "start": 568.54,
+      "text": "here we wanted access to whether or not"
+    },
+    {
+      "start": 570.67,
+      "text": "the user was an admin or not all we need"
+    },
+    {
+      "start": 573.73,
+      "text": "to do is pass information to the"
+    },
+    {
+      "start": 576.16,
+      "text": "function for our users but we can't"
+    },
+    {
+      "start": 578.86,
+      "text": "actually pass this inside of our next we"
+    },
+    {
+      "start": 580.779,
+      "text": "can't come in here and say it true that"
+    },
+    {
+      "start": 582.699,
+      "text": "their user is an admin because if we"
+    },
+    {
+      "start": 584.86,
+      "text": "save this there's no way we can access"
+    },
+    {
+      "start": 586.779,
+      "text": "this inside of here this should always"
+    },
+    {
+      "start": 588.279,
+      "text": "takes request response and next it's"
+    },
+    {
+      "start": 590.649,
+      "text": "never going to take this true parameter"
+    },
+    {
+      "start": 592.269,
+      "text": "that we pass in here so in order to get"
+    },
+    {
+      "start": 594.55,
+      "text": "around this what you need to do is set"
+    },
+    {
+      "start": 596.74,
+      "text": "variables on either your request or"
+    },
+    {
+      "start": 598.839,
+      "text": "response because this function has"
+    },
+    {
+      "start": 601.12,
+      "text": "access to the request and response"
+    },
+    {
+      "start": 602.8,
+      "text": "variable"
+    },
+    {
+      "start": 603.579,
+      "text": "so if we say request dot admin is equal"
+    },
+    {
+      "start": 606.97,
+      "text": "to true now we're actually setting this"
+    },
+    {
+      "start": 609.67,
+      "text": "advan true variable for our request and"
+    },
+    {
+      "start": 612.639,
+      "text": "up here inside of this function we can"
+    },
+    {
+      "start": 615.069,
+      "text": "just console dot log and come in here"
+    },
+    {
+      "start": 618.519,
+      "text": "and just say user is admin equals and we"
+    },
+    {
+      "start": 622.66,
+      "text": "just want to say request dot admin now"
+    },
+    {
+      "start": 625.839,
+      "text": "if we save and refresh you can see user"
+    },
+    {
+      "start": 628.54,
+      "text": "as admin equals true but if we don't"
+    },
+    {
+      "start": 631.029,
+      "text": "have that admin section in there and we"
+    },
+    {
+      "start": 633.55,
+      "text": "save you see that we're just getting"
+    },
+    {
+      "start": 635.259,
+      "text": "this slash users being printed out and"
+    },
+    {
+      "start": 637.36,
+      "text": "then no auth and this is never being"
+    },
+    {
+      "start": 639.399,
+      "text": "called because again we're never calling"
+    },
+    {
+      "start": 641.62,
+      "text": "next inside of the failure case of our"
+    },
+    {
+      "start": 643.66,
+      "text": "authentication so we're able to now pass"
+    },
+    {
+      "start": 645.939,
+      "text": "variables from our middleware to other"
+    },
+    {
+      "start": 648.43,
+      "text": "sections of our controller actions"
+    },
+    {
+      "start": 650.11,
+      "text": "whether it's other middleware or the"
+    },
+    {
+      "start": 652.089,
+      "text": "final result of our action here now that"
+    },
+    {
+      "start": 654.699,
+      "text": "is the basics of what middleware does"
+    },
+    {
+      "start": 656.559,
+      "text": "but the biggest biggest problem that I"
+    },
+    {
+      "start": 659.17,
+      "text": "see people run into with middleware is"
+    },
+    {
+      "start": 661.059,
+      "text": "the fact that they misinterpret exactly"
+    },
+    {
+      "start": 663.519,
+      "text": "how this next function call works"
+    },
+    {
+      "start": 666.17,
+      "text": "they assume that next essentially works"
+    },
+    {
+      "start": 668.18,
+      "text": "the same as returning from a function so"
+    },
+    {
+      "start": 671.06,
+      "text": "instead of having our function set up"
+    },
+    {
+      "start": 672.77,
+      "text": "like this let's say that our function"
+    },
+    {
+      "start": 674.63,
+      "text": "instead was set up like this or what"
+    },
+    {
+      "start": 677.39,
+      "text": "we're doing is we're calling our if and"
+    },
+    {
+      "start": 678.8,
+      "text": "if this is true or saying request outta"
+    },
+    {
+      "start": 680.84,
+      "text": "demand equals true and we call next"
+    },
+    {
+      "start": 682.7,
+      "text": "otherwise if this isn't true we're just"
+    },
+    {
+      "start": 684.65,
+      "text": "going to be calling this function down"
+    },
+    {
+      "start": 685.73,
+      "text": "here this red send no auth and if we"
+    },
+    {
+      "start": 688.97,
+      "text": "save this and we come in here and we"
+    },
+    {
+      "start": 690.77,
+      "text": "pass admin equals true and we hit enter"
+    },
+    {
+      "start": 694.04,
+      "text": "you're gonna notice immediately a"
+    },
+    {
+      "start": 695.63,
+      "text": "problem we're getting an error down here"
+    },
+    {
+      "start": 698.27,
+      "text": "and essentially of saying cannot set"
+    },
+    {
+      "start": 699.74,
+      "text": "headers after they are sent to the"
+    },
+    {
+      "start": 700.85,
+      "text": "client what's happening is we're coming"
+    },
+    {
+      "start": 703.58,
+      "text": "in here saying admin equals true okay"
+    },
+    {
+      "start": 705.56,
+      "text": "then we call this next function up here"
+    },
+    {
+      "start": 707.63,
+      "text": "we call all of this code which is great"
+    },
+    {
+      "start": 710.06,
+      "text": "this finishes executing and then our"
+    },
+    {
+      "start": 712.52,
+      "text": "function comes back down here we"
+    },
+    {
+      "start": 713.84,
+      "text": "finished executing next so we continue"
+    },
+    {
+      "start": 716.0,
+      "text": "executing our code and call Res send no"
+    },
+    {
+      "start": 718.73,
+      "text": "auth which is why we're getting this"
+    },
+    {
+      "start": 720.44,
+      "text": "error we need to make sure that if we"
+    },
+    {
+      "start": 722.63,
+      "text": "want to exit out of our function we need"
+    },
+    {
+      "start": 724.79,
+      "text": "to call return to stop this from"
+    },
+    {
+      "start": 726.77,
+      "text": "executing any further because next is"
+    },
+    {
+      "start": 728.9,
+      "text": "going to come back and execute again as"
+    },
+    {
+      "start": 731.24,
+      "text": "soon as the function that next calls is"
+    },
+    {
+      "start": 733.25,
+      "text": "done executing now if we save this and"
+    },
+    {
+      "start": 735.47,
+      "text": "refresh you can see everything works as"
+    },
+    {
+      "start": 737.51,
+      "text": "before with no more errors and a great"
+    },
+    {
+      "start": 739.88,
+      "text": "way to illustrate this a little bit more"
+    },
+    {
+      "start": 741.59,
+      "text": "in depth is inside of our logger let's"
+    },
+    {
+      "start": 743.9,
+      "text": "just come in here and log out the text"
+    },
+    {
+      "start": 745.76,
+      "text": "of before and we're gonna log out the"
+    },
+    {
+      "start": 748.25,
+      "text": "text of after and this is going to be"
+    },
+    {
+      "start": 750.89,
+      "text": "before our next and then after our next"
+    },
+    {
+      "start": 752.87,
+      "text": "and let's just for now remove this off"
+    },
+    {
+      "start": 755.45,
+      "text": "logging just like this so we just have"
+    },
+    {
+      "start": 757.67,
+      "text": "users page and we have before and after"
+    },
+    {
+      "start": 760.42,
+      "text": "so if i refresh over here you see I get"
+    },
+    {
+      "start": 763.31,
+      "text": "the text before being printed out so"
+    },
+    {
+      "start": 765.14,
+      "text": "it's coming into the logger calling"
+    },
+    {
+      "start": 766.61,
+      "text": "before and then it calls next and this"
+    },
+    {
+      "start": 768.62,
+      "text": "next calls the next middleware which in"
+    },
+    {
+      "start": 770.3,
+      "text": "our case is this function here which"
+    },
+    {
+      "start": 772.07,
+      "text": "logs out user and then sends our user"
+    },
+    {
+      "start": 774.2,
+      "text": "and then after that's done it comes back"
+    },
+    {
+      "start": 776.6,
+      "text": "here and executes everything after our"
+    },
+    {
+      "start": 778.82,
+      "text": "next which in our case is after so it's"
+    },
+    {
+      "start": 781.16,
+      "text": "going to in order before and then users"
+    },
+    {
+      "start": 782.99,
+      "text": "page and then after and this is super"
+    },
+    {
+      "start": 785.54,
+      "text": "super important to understand because"
+    },
+    {
+      "start": 787.7,
+      "text": "it's really easy to write code and"
+    },
+    {
+      "start": 789.26,
+      "text": "forget to include a return and then you"
+    },
+    {
+      "start": 791.57,
+      "text": "have problems where you don't actually"
+    },
+    {
+      "start": 793.01,
+      "text": "want to call this code down here but"
+    },
+    {
+      "start": 795.29,
+      "text": "you're accidentally calling it because"
+    },
+    {
+      "start": 797.0,
+      "text": "you're never Xing it out of this"
+    },
+    {
+      "start": 798.41,
+      "text": "function after the"
+    },
+    {
+      "start": 799.97,
+      "text": "- finishes executing this can be a"
+    },
+    {
+      "start": 802.579,
+      "text": "really great trick though because if you"
+    },
+    {
+      "start": 804.23,
+      "text": "want to run some form of middleware"
+    },
+    {
+      "start": 805.97,
+      "text": "after every single one of your functions"
+    },
+    {
+      "start": 808.37,
+      "text": "executes it's really hard to do because"
+    },
+    {
+      "start": 810.41,
+      "text": "we already know we can't just move our"
+    },
+    {
+      "start": 812.72,
+      "text": "logger to the bottom because that's"
+    },
+    {
+      "start": 814.37,
+      "text": "going to run into problems where we're"
+    },
+    {
+      "start": 816.35,
+      "text": "not calling necks inside of our"
+    },
+    {
+      "start": 817.73,
+      "text": "controller actions so what you can do"
+    },
+    {
+      "start": 819.68,
+      "text": "instead is put your logger up at the top"
+    },
+    {
+      "start": 821.48,
+      "text": "and then just call next immediately and"
+    },
+    {
+      "start": 823.91,
+      "text": "then after all of your controller"
+    },
+    {
+      "start": 825.98,
+      "text": "actions in middleware finish this is"
+    },
+    {
+      "start": 828.139,
+      "text": "going to call after your next is"
+    },
+    {
+      "start": 829.939,
+      "text": "finished so we're able to essentially"
+    },
+    {
+      "start": 831.74,
+      "text": "use a middleware that's defined at the"
+    },
+    {
+      "start": 833.6,
+      "text": "very top and have it execute after every"
+    },
+    {
+      "start": 836.36,
+      "text": "single thing and our entire chain of"
+    },
+    {
+      "start": 838.279,
+      "text": "middleware finishes executing which is"
+    },
+    {
+      "start": 840.56,
+      "text": "again really useful for certain logging"
+    },
+    {
+      "start": 842.509,
+      "text": "situations where you want to log that a"
+    },
+    {
+      "start": 844.699,
+      "text": "request finished executing so you can"
+    },
+    {
+      "start": 847.04,
+      "text": "maybe log out what the response is going"
+    },
+    {
+      "start": 848.779,
+      "text": "to the user the most important takeaway"
+    },
+    {
+      "start": 851.569,
+      "text": "from this video though is that"
+    },
+    {
+      "start": 852.92,
+      "text": "middleware is essentially just a"
+    },
+    {
+      "start": 854.75,
+      "text": "function which takes a request a"
+    },
+    {
+      "start": 856.519,
+      "text": "response and a next and it will call"
+    },
+    {
+      "start": 859.129,
+      "text": "next whenever it wants to move on to the"
+    },
+    {
+      "start": 861.139,
+      "text": "next form of middleware and in between"
+    },
+    {
+      "start": 863.18,
+      "text": "there it can modify the request in"
+    },
+    {
+      "start": 865.1,
+      "text": "response however it sees fit that is"
+    },
+    {
+      "start": 867.8,
+      "text": "essentially all middleware is but that"
+    },
+    {
+      "start": 869.87,
+      "text": "doesn't mean that it's not powerful"
+    },
+    {
+      "start": 871.459,
+      "text": "because you can do so much with these"
+    },
+    {
+      "start": 873.529,
+      "text": "simple set of tools for middleware and"
+    },
+    {
+      "start": 875.48,
+      "text": "with that said I really hope you enjoyed"
+    },
+    {
+      "start": 877.61,
+      "text": "this video and if you did you should"
+    },
+    {
+      "start": 879.559,
+      "text": "check out some of my other videos linked"
+    },
+    {
+      "start": 881.329,
+      "text": "over here and subscribe to the channel"
+    },
+    {
+      "start": 883.279,
+      "text": "for more videos just like this one thank"
+    },
+    {
+      "start": 885.769,
+      "text": "you very much for watching and have a"
+    },
+    {
+      "start": 887.269,
+      "text": "good day"
+    }
+  ],
+  "text": "in this video I'm gonna be talking all about Express middleware and teaching you everything you need to know and at the end of this video I'm gonna go over all of the common problems people run into with Express middleware so you will make sure that you don't run into these same problems let's get started now now with all of the middl work that you're gonna be writing after this video you're gonna need somewhere to host your website and that's where today's video sponsor atlanticnet hosting comes in perfectly they have an entire year long free trial that you can take advantage of where you can try out their servers completely for free for an entire year and if you use the code Kyl when you check out you're gonna get an additional $50 of credit you can use towards hosting on top of the entire year of free hosting so make sure you check out atlanticnet link down in the description below and use the code kyle when you sign up welcome back to web dev simplified my name is Kyle and my job is to simplify the web for you so you can start building your dream project sooner so if that sounds interesting make sure you subscribe to the channel for more videos just like this and for this video to get started I have a just a little bit of code written ahead of time to save you from watching the boilerplate all I have is a simple Express server setup and I'm running it using node month so that we get Auto refresh every time we make a change for example if I save and refresh I don't need to restart my entire server and as you can see I just have some really simple routes right now we have a home page route and a user's route which all they do is send out the text home page or the text users page if we go to that users page as you can see here and we're gonna use this to explain everything you need to know about middleware but before I get started if you enjoy reading instead of watching I have an entire blog article that goes over middleware in-depth which you can check out as well if you want to I'll have that linked down in the description below so getting started with middleware I want to talk about the most basic form of middleware and exactly what middleware is because you may not be familiar with the exact definition of middleware essentially all that middleware is is the a function or program or something that is going to run between the time that the server gets the request and the time that the server sends the request out to the client so when I click refresh here I'm sending a request to the server and that gets to the server and this app get processes it and middleware is anything that happens between the time the server gets the request and the time that the server sends out a response so in definition this function right here for our app get users is actually a middleware because it's happening in between beginning of the response and the sending of the response and that is something really important to understand with express is that every single thing you write in relation to actions such as app get for these different actions is going to be middleware when you have your request and response variable that is a middleware that you are writing that is going to be acting in between the response sending and getting so this is the most basic form of middleware but really when you think of middleware you don't think of the actions such as these request response actions here you think of things that happen either before or after those actions so to get started I want to write a very simple login middleware and the easiest way to get started with a middleware is just to create a function so we're just going to create a function called logger and in here what we're gonna do is just console dot log log just like that we're just gonna be logging out some information whatever it is that you want to log out and this is going to take in a few different properties we have our request we have a response and we have a third variable which is called next so requests in response those are self-explanatory they are the requests that's getting sent to you and the response that you're sending back but next this is actually just a function and all you need to do with the next function is just call it so for example we can call next like this and what's going to happen is the next piece of middleware in line is going to be run when you call this next function all of these different parameters up here also take in a next just like this and we can call next inside of here but since this is the last piece of middleware there's really no point in calling next because there is no other middleware to call after this so that is why you almost never see this next inside of your middleware for your control their actions but here we have this logger it's logging out just the text log and we're calling next properly so in order to use this middleware we have a few different ways we can do it the first way is we can say we want this to be global middle winner so if we say F dot use and we put in our logger here we just pass it the name of the function we want we don't actually call this function we just pass it the name of the function because app dot use here it accepts a function that takes in these three different parameters so it's expecting a function that takes request response and next so we're passing it a function that takes those and if we save here and i refresh my page you'll notice this text log gets printed out and that's because this middleware is being ran and then we're calling next and then it's running our next piece of middleware which is here sending out our user's page we can even put a simple log in here just as users page and now if i refresh you can see it logs and then it prints out users page just like that and we'll also put the same thing inside of our home page as well so when we define a logger up here for our middleware inside of this app at use at the global level this is going to be run before every single one of our other requests so if we go to the home page you can see we get our log being ran here as well and if I save this and refresh you'll notice we get our home page being printed after our lock so this is going to be global to our entire application but something really really important to note about middleware is it runs in order that you define it so right now we have our logger being defined first and then our actions if we tell our logger to run after our actions you're going to notice something interesting if we refresh our page we only get home page being printed out and this logger is never being printed and that's because inside of these actions we're never actually calling next if we were to call next inside of here and now save and refresh you'll see it calls home page and then prints out our logger because in order our app get happens first and then our logger happens next and since we're never calling next from our action up here we're never actually getting in to this logger down here this is why in general when you're creating global actions such as this logger always want to put these at the very top of your file so that they happen before all of your different controller actions so the next type of middleware that I want to talk about is going to be middleware that is specific to a single action and you can define this type of middleware by just putting it inside of this apt-get function this function actually accepts essentially two things it accepts your path here which in our case is just the home path and then it accepts a list of different middleware right now we're passing it one single middleware which is our normal request but if we wanted to pass another middleware we're just gonna copy this paste this down and we're just gonna call this off and we want to authenticate people that go to our users page here it's gonna take a request response there next we're gonna log off out of here so what we do is we just pass this middleware to our function just like this so we have now two middleware being passed our off middleware and then our actual action middleware here and if we save refresh our page on the users version you can see we have our log being printed because that's our very first middleware then our auth is being printed next because it's the first in this list and then lastly our users page is being printed because it is the next in line of our list of middleware now something else that's really amazing about middleware is the ability for you to access the request and response parameters so what if we wanted to check to see if our user is actually authenticated instead of just logging out or off well we can do that by just putting in if in here insane if our request dot query dot admin so if it has the admin query parameter set equal to the string of true so that means that we have an admin user so we can just call next and go on to the next portion of our function otherwise if for some reason we don't we can exit out early and just send something along the lines of no auth and we'll send that down to our user and now we'll just delete these save again and when i refresh I'm not passing anything in our query string that says admin is true so we're should fail this authentication check and if we refresh you see we get this no auth being printed out just like this but if I come up here and I just say admin equals true now you can see I'm getting through to the users page so this is a super important inside of your middle where you're able to access your request and response in order to either exit out so we never actually got to this function because we sent to the server and never called next or you can just off people like this by checking your query parameters and then calling next in this example same thing with our logger we could print out something based on a request we could print out for example the original URL and now when we save and refresh over here you can see our URL gets printed out down here inside of our logger so that's another great use case for these different types of middleware but what if inside of our users controller action here we wanted access to whether or not the user was an admin or not all we need to do is pass information to the function for our users but we can't actually pass this inside of our next we can't come in here and say it true that their user is an admin because if we save this there's no way we can access this inside of here this should always takes request response and next it's never going to take this true parameter that we pass in here so in order to get around this what you need to do is set variables on either your request or response because this function has access to the request and response variable so if we say request dot admin is equal to true now we're actually setting this advan true variable for our request and up here inside of this function we can just console dot log and come in here and just say user is admin equals and we just want to say request dot admin now if we save and refresh you can see user as admin equals true but if we don't have that admin section in there and we save you see that we're just getting this slash users being printed out and then no auth and this is never being called because again we're never calling next inside of the failure case of our authentication so we're able to now pass variables from our middleware to other sections of our controller actions whether it's other middleware or the final result of our action here now that is the basics of what middleware does but the biggest biggest problem that I see people run into with middleware is the fact that they misinterpret exactly how this next function call works they assume that next essentially works the same as returning from a function so instead of having our function set up like this let's say that our function instead was set up like this or what we're doing is we're calling our if and if this is true or saying request outta demand equals true and we call next otherwise if this isn't true we're just going to be calling this function down here this red send no auth and if we save this and we come in here and we pass admin equals true and we hit enter you're gonna notice immediately a problem we're getting an error down here and essentially of saying cannot set headers after they are sent to the client what's happening is we're coming in here saying admin equals true okay then we call this next function up here we call all of this code which is great this finishes executing and then our function comes back down here we finished executing next so we continue executing our code and call Res send no auth which is why we're getting this error we need to make sure that if we want to exit out of our function we need to call return to stop this from executing any further because next is going to come back and execute again as soon as the function that next calls is done executing now if we save this and refresh you can see everything works as before with no more errors and a great way to illustrate this a little bit more in depth is inside of our logger let's just come in here and log out the text of before and we're gonna log out the text of after and this is going to be before our next and then after our next and let's just for now remove this off logging just like this so we just have users page and we have before and after so if i refresh over here you see I get the text before being printed out so it's coming into the logger calling before and then it calls next and this next calls the next middleware which in our case is this function here which logs out user and then sends our user and then after that's done it comes back here and executes everything after our next which in our case is after so it's going to in order before and then users page and then after and this is super super important to understand because it's really easy to write code and forget to include a return and then you have problems where you don't actually want to call this code down here but you're accidentally calling it because you're never Xing it out of this function after the - finishes executing this can be a really great trick though because if you want to run some form of middleware after every single one of your functions executes it's really hard to do because we already know we can't just move our logger to the bottom because that's going to run into problems where we're not calling necks inside of our controller actions so what you can do instead is put your logger up at the top and then just call next immediately and then after all of your controller actions in middleware finish this is going to call after your next is finished so we're able to essentially use a middleware that's defined at the very top and have it execute after every single thing and our entire chain of middleware finishes executing which is again really useful for certain logging situations where you want to log that a request finished executing so you can maybe log out what the response is going to the user the most important takeaway from this video though is that middleware is essentially just a function which takes a request a response and a next and it will call next whenever it wants to move on to the next form of middleware and in between there it can modify the request in response however it sees fit that is essentially all middleware is but that doesn't mean that it's not powerful because you can do so much with these simple set of tools for middleware and with that said I really hope you enjoyed this video and if you did you should check out some of my other videos linked over here and subscribe to the channel for more videos just like this one thank you very much for watching and have a good day"
+}

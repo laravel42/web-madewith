@@ -1,0 +1,2028 @@
+{
+  "videoId": "ENrzD9HAZK4",
+  "language": "en",
+  "source": "auto",
+  "segments": [
+    {
+      "start": 0.28,
+      "text": "one of the most valuable skills to have"
+    },
+    {
+      "start": 1.8,
+      "text": "as a full stack web developer is without"
+    },
+    {
+      "start": 3.6,
+      "text": "a doubt node.js and that's not going to"
+    },
+    {
+      "start": 5.64,
+      "text": "change anytime soon but you might be"
+    },
+    {
+      "start": 7.16,
+      "text": "wondering why I'm making a node tutorial"
+    },
+    {
+      "start": 8.8,
+      "text": "in 2020 because if you've been watching"
+    },
+    {
+      "start": 10.44,
+      "text": "the news you may have heard that node"
+    },
+    {
+      "start": 11.759,
+      "text": "was killed last week by Deno when I lay"
+    },
+    {
+      "start": 14.36,
+      "text": "my vengance upon making the extremely"
+    },
+    {
+      "start": 17.16,
+      "text": "chaotic JavaScript world even more"
+    },
+    {
+      "start": 18.76,
+      "text": "convoluted if you're just starting to"
+    },
+    {
+      "start": 20.4,
+      "text": "learn JavaScript this can be very"
+    },
+    {
+      "start": 21.8,
+      "text": "confusing and you might be wondering"
+    },
+    {
+      "start": 23.279,
+      "text": "should I learn node or Deno the answer"
+    },
+    {
+      "start": 25.24,
+      "text": "is node especially if you want to get a"
+    },
+    {
+      "start": 26.88,
+      "text": "job or build a product when something"
+    },
+    {
+      "start": 28.84,
+      "text": "becomes as established as node it"
+    },
+    {
+      "start": 30.439,
+      "text": "doesn't get replaced you'll see things"
+    },
+    {
+      "start": 32.0,
+      "text": "like this happen all the time a few"
+    },
+    {
+      "start": 33.36,
+      "text": "years ago everybody was saying graphql"
+    },
+    {
+      "start": 35.16,
+      "text": "would replace rest and 10 years ago"
+    },
+    {
+      "start": 37.0,
+      "text": "people were saying no. JS would replace"
+    },
+    {
+      "start": 38.64,
+      "text": "PHP these predictions never pan out and"
+    },
+    {
+      "start": 40.68,
+      "text": "are just built on top of hype that being"
+    },
+    {
+      "start": 42.64,
+      "text": "said I do think Deno is awesome and has"
+    },
+    {
+      "start": 44.32,
+      "text": "a bright future both both both is good"
+    },
+    {
+      "start": 48.68,
+      "text": "and if you learn node today those skills"
+    },
+    {
+      "start": 50.28,
+      "text": "will mostly transfer to Deno tomorrow in"
+    },
+    {
+      "start": 52.719,
+      "text": "today's video you'll learn the basics of"
+    },
+    {
+      "start": 54.28,
+      "text": "nodejs in seven easy steps then we'll"
+    },
+    {
+      "start": 56.6,
+      "text": "put those steps together to build a full"
+    },
+    {
+      "start": 58.239,
+      "text": "stack web application because in my"
+    },
+    {
+      "start": 60.079,
+      "text": "opinion the best way to learn how to"
+    },
+    {
+      "start": 61.359,
+      "text": "code is to build something meaningful"
+    },
+    {
+      "start": 63.079,
+      "text": "from scratch by the end of the video"
+    },
+    {
+      "start": 64.76,
+      "text": "we'll deploy our code to the cloud so"
+    },
+    {
+      "start": 66.36,
+      "text": "you can show off your API to your"
+    },
+    {
+      "start": 67.56,
+      "text": "friends and family if you're new here"
+    },
+    {
+      "start": 69.119,
+      "text": "like And subscribe and head over to"
+    },
+    {
+      "start": 70.56,
+      "text": "fireship iio to follow along with the"
+    },
+    {
+      "start": 72.24,
+      "text": "full write up to this video step one is"
+    },
+    {
+      "start": 74.72,
+      "text": "to understand what no. JS is and why you"
+    },
+    {
+      "start": 76.72,
+      "text": "would want to use it node.js itself is"
+    },
+    {
+      "start": 78.68,
+      "text": "not a programming language but rather a"
+    },
+    {
+      "start": 80.52,
+      "text": "runtime that allows you to run"
+    },
+    {
+      "start": 82.159,
+      "text": "JavaScript on a server you see when"
+    },
+    {
+      "start": 84.32,
+      "text": "JavaScript first came around in the"
+    },
+    {
+      "start": 85.68,
+      "text": "1990s it was designed as a simple"
+    },
+    {
+      "start": 87.88,
+      "text": "scripting language to run in the browser"
+    },
+    {
+      "start": 89.92,
+      "text": "as the web platform evolved JavaScript"
+    },
+    {
+      "start": 91.88,
+      "text": "became more and more powerful and in"
+    },
+    {
+      "start": 93.64,
+      "text": "2009 we saw the initial release of"
+    },
+    {
+      "start": 95.479,
+      "text": "nodejs now up until this time it was"
+    },
+    {
+      "start": 97.88,
+      "text": "impossible to write JavaScript code on"
+    },
+    {
+      "start": 99.479,
+      "text": "the server most servers were written in"
+    },
+    {
+      "start": 101.119,
+      "text": "languages like Java or PHP it"
+    },
+    {
+      "start": 103.479,
+      "text": "revolutionized web development because"
+    },
+    {
+      "start": 105.159,
+      "text": "now a web developer could write a full"
+    },
+    {
+      "start": 106.96,
+      "text": "stack application in a single language"
+    },
+    {
+      "start": 109.24,
+      "text": "so that's all node.js is it's a way for"
+    },
+    {
+      "start": 111.119,
+      "text": "developers to write JavaScript on the"
+    },
+    {
+      "start": 112.64,
+      "text": "server when it could previously only be"
+    },
+    {
+      "start": 114.399,
+      "text": "written in a web browser now there are a"
+    },
+    {
+      "start": 116.719,
+      "text": "lot of low-level implementation details"
+    },
+    {
+      "start": 118.56,
+      "text": "here that you don't need to know about"
+    },
+    {
+      "start": 119.92,
+      "text": "as a beginner but if you really want to"
+    },
+    {
+      "start": 121.32,
+      "text": "dive into how nodejs Works check out my"
+    },
+    {
+      "start": 123.399,
+      "text": "How It's Made video but what kind of"
+    },
+    {
+      "start": 125.2,
+      "text": "problems can node.js actually solve"
+    },
+    {
+      "start": 127.079,
+      "text": "node.js can do a lot so instead of"
+    },
+    {
+      "start": 128.84,
+      "text": "listing out a bunch of use cases I'll"
+    },
+    {
+      "start": 130.479,
+      "text": "show you how to build a full stack web"
+    },
+    {
+      "start": 131.879,
+      "text": "application from scratch this is how"
+    },
+    {
+      "start": 133.599,
+      "text": "it'll work you visit a URL on the"
+    },
+    {
+      "start": 135.56,
+      "text": "internet that points to your server when"
+    },
+    {
+      "start": 137.76,
+      "text": "the request is received we can use node"
+    },
+    {
+      "start": 139.64,
+      "text": "to handle the request and read a file"
+    },
+    {
+      "start": 141.519,
+      "text": "from the server's file system and then"
+    },
+    {
+      "start": 143.64,
+      "text": "respond back to the client so they can"
+    },
+    {
+      "start": 145.28,
+      "text": "view the HTML in the browser step two"
+    },
+    {
+      "start": 148.08,
+      "text": "how to install node.js"
+    },
+    {
+      "start": 149.92,
+      "text": "node can be installed on Windows Mac or"
+    },
+    {
+      "start": 151.56,
+      "text": "Linux and is probably already installed"
+    },
+    {
+      "start": 153.319,
+      "text": "on your system in this tutorial I'll be"
+    },
+    {
+      "start": 155.12,
+      "text": "using Ubuntu via the windows subsystem"
+    },
+    {
+      "start": 157.28,
+      "text": "for Linux at this point I've just opened"
+    },
+    {
+      "start": 159.519,
+      "text": "up an empty directory in vs code and"
+    },
+    {
+      "start": 161.519,
+      "text": "then pulled up a terminal session you"
+    },
+    {
+      "start": 163.239,
+      "text": "can find out if node is installed on"
+    },
+    {
+      "start": 164.56,
+      "text": "your system by running node flag V from"
+    },
+    {
+      "start": 166.92,
+      "text": "the command line as you can see here I'm"
+    },
+    {
+      "start": 168.84,
+      "text": "running version 12.16 which is the"
+    },
+    {
+      "start": 171.12,
+      "text": "current long-term support version if you"
+    },
+    {
+      "start": 173.2,
+      "text": "get an error at this point it means that"
+    },
+    {
+      "start": 174.64,
+      "text": "you don't have node installed and even"
+    },
+    {
+      "start": 176.48,
+      "text": "if you do have node installed it'd be a"
+    },
+    {
+      "start": 178.04,
+      "text": "very good idea to use a package called"
+    },
+    {
+      "start": 179.84,
+      "text": "called node version manager to manage"
+    },
+    {
+      "start": 181.68,
+      "text": "the installation of different node"
+    },
+    {
+      "start": 183.239,
+      "text": "versions on your system there's an NVM"
+    },
+    {
+      "start": 185.56,
+      "text": "package for mac and Linux or a separate"
+    },
+    {
+      "start": 187.56,
+      "text": "package for Windows go ahead and follow"
+    },
+    {
+      "start": 189.599,
+      "text": "the instructions to install NVM on your"
+    },
+    {
+      "start": 191.36,
+      "text": "system and that will give you the"
+    },
+    {
+      "start": 192.72,
+      "text": "ability to install any version of"
+    },
+    {
+      "start": 194.28,
+      "text": "node.js that you want for example you"
+    },
+    {
+      "start": 196.319,
+      "text": "could run NVM install"
+    },
+    {
+      "start": 198.599,
+      "text": "12163 then run NVM use to use that"
+    },
+    {
+      "start": 201.72,
+      "text": "specific version as your runtime and now"
+    },
+    {
+      "start": 203.959,
+      "text": "that we have node.js installed we can"
+    },
+    {
+      "start": 205.36,
+      "text": "move on to step three hello world but"
+    },
+    {
+      "start": 207.76,
+      "text": "first if you're serious about node.js"
+    },
+    {
+      "start": 209.2,
+      "text": "consider becoming a pro member at fir"
+    },
+    {
+      "start": 211.28,
+      "text": "ship. it'll give you access to my full"
+    },
+    {
+      "start": 213.28,
+      "text": "length courses almost all of which cover"
+    },
+    {
+      "start": 215.12,
+      "text": "Advanced use cases for nodejs but we"
+    },
+    {
+      "start": 217.319,
+      "text": "need to walk before we can run so how do"
+    },
+    {
+      "start": 219.239,
+      "text": "we actually use this thing one way to"
+    },
+    {
+      "start": 221.12,
+      "text": "mess around with node is in repel mode"
+    },
+    {
+      "start": 223.04,
+      "text": "which stands for read of Al print Loop"
+    },
+    {
+      "start": 225.2,
+      "text": "when you type node into the command line"
+    },
+    {
+      "start": 227.159,
+      "text": "it allows you to run JavaScript code and"
+    },
+    {
+      "start": 229.0,
+      "text": "will print out the results for example"
+    },
+    {
+      "start": 231.159,
+      "text": "we can type console log hello world and"
+    },
+    {
+      "start": 233.4,
+      "text": "it will log that value out this is nice"
+    },
+    {
+      "start": 235.239,
+      "text": "for messing around but go ahead and hit"
+    },
+    {
+      "start": 236.879,
+      "text": "contrl C twice to shut it down because"
+    },
+    {
+      "start": 239.12,
+      "text": "in most cases we want to execute"
+    },
+    {
+      "start": 240.879,
+      "text": "JavaScript code that lives in an actual"
+    },
+    {
+      "start": 242.76,
+      "text": "file the default entry point into a"
+    },
+    {
+      "start": 244.519,
+      "text": "node.js app is the index.js file go"
+    },
+    {
+      "start": 247.72,
+      "text": "ahead and create an index.js file"
+    },
+    {
+      "start": 249.4,
+      "text": "manually in VSS code then inside that"
+    },
+    {
+      "start": 251.959,
+      "text": "file add console log hello world you can"
+    },
+    {
+      "start": 254.64,
+      "text": "now run the code inside this file with"
+    },
+    {
+      "start": 256.4,
+      "text": "the node command followed by the path to"
+    },
+    {
+      "start": 258.4,
+      "text": "this file and because it's an index file"
+    },
+    {
+      "start": 260.56,
+      "text": "you can actually just point to The"
+    },
+    {
+      "start": 261.84,
+      "text": "Parent Directory congratulations you"
+    },
+    {
+      "start": 264.0,
+      "text": "just built a node"
+    },
+    {
+      "start": 266.919,
+      "text": "app step four understand the node run"
+    },
+    {
+      "start": 269.56,
+      "text": "time"
+    },
+    {
+      "start": 270.24,
+      "text": "in most ways JavaScript works the same"
+    },
+    {
+      "start": 272.16,
+      "text": "way it does in the browser as it does in"
+    },
+    {
+      "start": 273.919,
+      "text": "node.js but there are some very"
+    },
+    {
+      "start": 276.0,
+      "text": "important differences you should know"
+    },
+    {
+      "start": 277.199,
+      "text": "about first node has a handful of"
+    },
+    {
+      "start": 279.56,
+      "text": "buil-in identifiers one of those globals"
+    },
+    {
+      "start": 281.88,
+      "text": "is console which we've already been"
+    },
+    {
+      "start": 283.28,
+      "text": "using to log out values to the terminal"
+    },
+    {
+      "start": 285.8,
+      "text": "there's another Global with a name of"
+    },
+    {
+      "start": 287.4,
+      "text": "global this object is a name space that"
+    },
+    {
+      "start": 289.84,
+      "text": "is available throughout the entire node"
+    },
+    {
+      "start": 291.56,
+      "text": "process for example if we assigned a"
+    },
+    {
+      "start": 294.0,
+      "text": "lucky number property to Global we could"
+    },
+    {
+      "start": 296.0,
+      "text": "then access it anywhere else in our code"
+    },
+    {
+      "start": 297.919,
+      "text": "if you're a front-end web developer you"
+    },
+    {
+      "start": 299.28,
+      "text": "can compare Global to the window object"
+    },
+    {
+      "start": 301.52,
+      "text": "in the browser now I think the most"
+    },
+    {
+      "start": 303.08,
+      "text": "important Global to be familiar with is"
+    },
+    {
+      "start": 305.039,
+      "text": "process which gives you access to the"
+    },
+    {
+      "start": 307.0,
+      "text": "currently running node process you might"
+    },
+    {
+      "start": 308.919,
+      "text": "use it to check the current platform or"
+    },
+    {
+      "start": 310.72,
+      "text": "operating system which in my case is"
+    },
+    {
+      "start": 312.44,
+      "text": "Linux or grab an environment variable"
+    },
+    {
+      "start": 314.4,
+      "text": "from your server but this gives us a"
+    },
+    {
+      "start": 316.44,
+      "text": "great opportunity to segue into step"
+    },
+    {
+      "start": 318.4,
+      "text": "five how do events work in node.js"
+    },
+    {
+      "start": 320.36,
+      "text": "you'll often hear people describe it as"
+    },
+    {
+      "start": 322.479,
+      "text": "an asynchronous event driven JavaScript"
+    },
+    {
+      "start": 324.52,
+      "text": "runtime the runtime implements a thing"
+    },
+    {
+      "start": 326.52,
+      "text": "called an event Loop just like a web"
+    },
+    {
+      "start": 328.08,
+      "text": "browser does and it allows not to push"
+    },
+    {
+      "start": 330.12,
+      "text": "intensive operations off to a separate"
+    },
+    {
+      "start": 331.96,
+      "text": "thread so only very fast non-blocking"
+    },
+    {
+      "start": 334.199,
+      "text": "operations happen on the main thread and"
+    },
+    {
+      "start": 336.24,
+      "text": "this is why people often call node"
+    },
+    {
+      "start": 337.8,
+      "text": "non-blocking it's a design choice that"
+    },
+    {
+      "start": 339.68,
+      "text": "makes node.js very suitable for things"
+    },
+    {
+      "start": 341.44,
+      "text": "that require high throughput like"
+    },
+    {
+      "start": 342.96,
+      "text": "real-time applications web servers and"
+    },
+    {
+      "start": 345.4,
+      "text": "things like that okay so how does that"
+    },
+    {
+      "start": 347.72,
+      "text": "affect me as a coder Well normally you"
+    },
+    {
+      "start": 349.88,
+      "text": "won't have to think about the low-level"
+    },
+    {
+      "start": 351.199,
+      "text": "details you just need to know how events"
+    },
+    {
+      "start": 353.08,
+      "text": "and callbacks work in most cases you'll"
+    },
+    {
+      "start": 355.4,
+      "text": "listen to events events can come in many"
+    },
+    {
+      "start": 357.44,
+      "text": "forms but one example is on the process"
+    },
+    {
+      "start": 359.639,
+      "text": "proc Global that we looked at earlier"
+    },
+    {
+      "start": 361.52,
+      "text": "before a node process finishes it emits"
+    },
+    {
+      "start": 363.4,
+      "text": "an event named exit we can listen to"
+    },
+    {
+      "start": 365.52,
+      "text": "this event using on and then register a"
+    },
+    {
+      "start": 367.8,
+      "text": "callback function as the second argument"
+    },
+    {
+      "start": 370.12,
+      "text": "when the exit event occurs node.js will"
+    },
+    {
+      "start": 372.36,
+      "text": "run this function and that's where it"
+    },
+    {
+      "start": 373.68,
+      "text": "gets the name callback because the"
+    },
+    {
+      "start": 375.199,
+      "text": "function isn't called the first time"
+    },
+    {
+      "start": 376.599,
+      "text": "nodejs sees it it's only called after"
+    },
+    {
+      "start": 378.8,
+      "text": "the exit event occurs at some point in"
+    },
+    {
+      "start": 380.639,
+      "text": "the future this event is built into node"
+    },
+    {
+      "start": 382.919,
+      "text": "but you can also create your own from"
+    },
+    {
+      "start": 384.36,
+      "text": "scratch we'll import an event emitter"
+    },
+    {
+      "start": 386.759,
+      "text": "from the events module that is built"
+    },
+    {
+      "start": 388.24,
+      "text": "into node and we'll look at modules in"
+    },
+    {
+      "start": 390.08,
+      "text": "more detail in just a minute we can"
+    },
+    {
+      "start": 391.919,
+      "text": "create a custom event emitter by"
+    },
+    {
+      "start": 393.52,
+      "text": "instantiating the class and then we'll"
+    },
+    {
+      "start": 395.319,
+      "text": "register a call back that fires on the"
+    },
+    {
+      "start": 397.12,
+      "text": "lunch event now that the call back is"
+    },
+    {
+      "start": 398.919,
+      "text": "registered you can simply call event"
+    },
+    {
+      "start": 400.84,
+      "text": "emitter emit with that event name and"
+    },
+    {
+      "start": 403.639,
+      "text": "that triggers your call back function to"
+    },
+    {
+      "start": 405.08,
+      "text": "run as you can see here we emit the"
+    },
+    {
+      "start": 407.28,
+      "text": "event twice which will run the Callback"
+    },
+    {
+      "start": 409.24,
+      "text": "function twice this event driven style"
+    },
+    {
+      "start": 411.56,
+      "text": "of programming is extremely useful when"
+    },
+    {
+      "start": 413.319,
+      "text": "you have something that is CPU intensive"
+    },
+    {
+      "start": 415.68,
+      "text": "and with that we can move on to step six"
+    },
+    {
+      "start": 417.599,
+      "text": "the file system node has a built-in file"
+    },
+    {
+      "start": 419.84,
+      "text": "system module called FS it can read"
+    },
+    {
+      "start": 422.08,
+      "text": "write and delete files on the file"
+    },
+    {
+      "start": 423.599,
+      "text": "system among other things and it can"
+    },
+    {
+      "start": 425.52,
+      "text": "also do things in a blocking or"
+    },
+    {
+      "start": 427.199,
+      "text": "non-blocking way allow me to explain"
+    },
+    {
+      "start": 429.479,
+      "text": "that by showing you an example first"
+    },
+    {
+      "start": 431.56,
+      "text": "create a file on the file system called"
+    },
+    {
+      "start": 433.96,
+      "text": "hello.txt and then add whatever text you"
+    },
+    {
+      "start": 436.08,
+      "text": "want inside of it in our JavaScript code"
+    },
+    {
+      "start": 438.52,
+      "text": "we'll import two functions from the file"
+    },
+    {
+      "start": 440.28,
+      "text": "system module called read file and read"
+    },
+    {
+      "start": 442.56,
+      "text": "file sync anytime you see a function"
+    },
+    {
+      "start": 444.68,
+      "text": "that ends in sync think blocking or in"
+    },
+    {
+      "start": 447.12,
+      "text": "other words it will need to finish all"
+    },
+    {
+      "start": 448.479,
+      "text": "of its work before any any of your other"
+    },
+    {
+      "start": 450.12,
+      "text": "code can run we can read a text file in"
+    },
+    {
+      "start": 452.12,
+      "text": "node by simply passing the path to that"
+    },
+    {
+      "start": 454.199,
+      "text": "file and we'll specify the encoding as"
+    },
+    {
+      "start": 456.879,
+      "text": "utf8 now reading a file might take a"
+    },
+    {
+      "start": 459.12,
+      "text": "while especially if it's a very large"
+    },
+    {
+      "start": 460.72,
+      "text": "file and what you'll notice here when we"
+    },
+    {
+      "start": 462.199,
+      "text": "run our code is that the second console"
+    },
+    {
+      "start": 464.199,
+      "text": "log won't run until after that file has"
+    },
+    {
+      "start": 466.039,
+      "text": "been read luckily you can make your code"
+    },
+    {
+      "start": 468.12,
+      "text": "non-blocking by refactoring this to a"
+    },
+    {
+      "start": 470.12,
+      "text": "callback with read file we pass the same"
+    },
+    {
+      "start": 472.44,
+      "text": "first two arguments and then add a"
+    },
+    {
+      "start": 474.199,
+      "text": "callback function as the third argument"
+    },
+    {
+      "start": 476.199,
+      "text": "inside the function we can access an"
+    },
+    {
+      "start": 477.8,
+      "text": "error object if the operation fails"
+    },
+    {
+      "start": 480.199,
+      "text": "or when successful the actual text from"
+    },
+    {
+      "start": 482.08,
+      "text": "the file the super cool thing about this"
+    },
+    {
+      "start": 484.159,
+      "text": "is that even though the console log to"
+    },
+    {
+      "start": 485.879,
+      "text": "the text file comes first in our script"
+    },
+    {
+      "start": 487.8,
+      "text": "it's not the thing that gets executed"
+    },
+    {
+      "start": 489.28,
+      "text": "first node registers the call back"
+    },
+    {
+      "start": 491.12,
+      "text": "executes the rest of the script and then"
+    },
+    {
+      "start": 492.879,
+      "text": "finally runs the call back when the file"
+    },
+    {
+      "start": 494.44,
+      "text": "has been read so that gives us two"
+    },
+    {
+      "start": 496.36,
+      "text": "different ways to read a file but"
+    },
+    {
+      "start": 497.72,
+      "text": "there's actually one other way we could"
+    },
+    {
+      "start": 498.96,
+      "text": "go about this and that's using a promise"
+    },
+    {
+      "start": 500.84,
+      "text": "based solution promises are also"
+    },
+    {
+      "start": 502.8,
+      "text": "asynchronous and non-blocking and they"
+    },
+    {
+      "start": 504.68,
+      "text": "tend to produce much cleaner code when"
+    },
+    {
+      "start": 506.24,
+      "text": "compared to callbacks notice how in this"
+    },
+    {
+      "start": 508.159,
+      "text": "example we're importing file from the"
+    },
+    {
+      "start": 510.28,
+      "text": "promises namespace this gives us a"
+    },
+    {
+      "start": 512.2,
+      "text": "function that returns a promise when"
+    },
+    {
+      "start": 513.76,
+      "text": "called if you're using the latest"
+    },
+    {
+      "start": 515.519,
+      "text": "bleeding edge version of node you could"
+    },
+    {
+      "start": 517.08,
+      "text": "potentially use this function with top"
+    },
+    {
+      "start": 518.76,
+      "text": "level a weight which means you can use a"
+    },
+    {
+      "start": 520.32,
+      "text": "weight to resolve the promise here at"
+    },
+    {
+      "start": 522.08,
+      "text": "the top of the script however since"
+    },
+    {
+      "start": 524.159,
+      "text": "we're currently using node version 12"
+    },
+    {
+      "start": 525.88,
+      "text": "we'll go ahead and wrap this in an async"
+    },
+    {
+      "start": 527.56,
+      "text": "function and this async await syntax"
+    },
+    {
+      "start": 529.72,
+      "text": "will make your code much easier to read"
+    },
+    {
+      "start": 531.32,
+      "text": "especially when you have multiple async"
+    },
+    {
+      "start": 533.0,
+      "text": "calls in the same function okay so now"
+    },
+    {
+      "start": 535.2,
+      "text": "that you know how to read files I want"
+    },
+    {
+      "start": 536.6,
+      "text": "to backtrack a little bit and talk about"
+    },
+    {
+      "start": 538.48,
+      "text": "this require function that you've seen"
+    },
+    {
+      "start": 540.0,
+      "text": "me use in the past couple examples step"
+    },
+    {
+      "start": 542.56,
+      "text": "seven modules a module is nothing more"
+    },
+    {
+      "start": 545.2,
+      "text": "than a Javascript file that exports its"
+    },
+    {
+      "start": 547.12,
+      "text": "code note has a bunch of built-in"
+    },
+    {
+      "start": 548.92,
+      "text": "modules like fs and events that we've"
+    },
+    {
+      "start": 551.079,
+      "text": "already looked at and there's a long"
+    },
+    {
+      "start": 552.48,
+      "text": "list of other modules beyond that the"
+    },
+    {
+      "start": 554.44,
+      "text": "traditional way to import a module in"
+    },
+    {
+      "start": 556.04,
+      "text": "node is to use this require function but"
+    },
+    {
+      "start": 558.079,
+      "text": "a quick side note on that first because"
+    },
+    {
+      "start": 559.959,
+      "text": "node recently added support for ES"
+    },
+    {
+      "start": 562.12,
+      "text": "modules which Ed the import export"
+    },
+    {
+      "start": 564.44,
+      "text": "syntax most node.js code out there"
+    },
+    {
+      "start": 566.64,
+      "text": "written in vanilla JavaScript still uses"
+    },
+    {
+      "start": 568.519,
+      "text": "require so it's very important for you"
+    },
+    {
+      "start": 570.12,
+      "text": "to know as a node.js developer and if"
+    },
+    {
+      "start": 572.399,
+      "text": "all that's confusing to you well all I"
+    },
+    {
+      "start": 574.36,
+      "text": "can say is welcome to the JavaScript"
+    },
+    {
+      "start": 576.079,
+      "text": "world let's look at how we can use"
+    },
+    {
+      "start": 577.68,
+      "text": "modules in our own codebase create a new"
+    },
+    {
+      "start": 579.56,
+      "text": "file to serve as your module then go"
+    },
+    {
+      "start": 581.64,
+      "text": "into your index.js file create a"
+    },
+    {
+      "start": 583.56,
+      "text": "variable for the module and then import"
+    },
+    {
+      "start": 585.56,
+      "text": "it using require when you console log it"
+    },
+    {
+      "start": 587.76,
+      "text": "you'll notice that it's currently just"
+    },
+    {
+      "start": 589.079,
+      "text": "an empty object in order to make a"
+    },
+    {
+      "start": 590.88,
+      "text": "module useful you need to export some"
+    },
+    {
+      "start": 592.92,
+      "text": "code from it in the modules file you can"
+    },
+    {
+      "start": 595.2,
+      "text": "reference this object with module."
+    },
+    {
+      "start": 597.32,
+      "text": "exorts you can add new properties to the"
+    },
+    {
+      "start": 599.56,
+      "text": "object or redefine it as a new object in"
+    },
+    {
+      "start": 601.88,
+      "text": "either case whatever you add here will"
+    },
+    {
+      "start": 603.68,
+      "text": "now be available to use in the other"
+    },
+    {
+      "start": 605.399,
+      "text": "file and as you can see the object is no"
+    },
+    {
+      "start": 607.6,
+      "text": "longer empty when we console log it but"
+    },
+    {
+      "start": 609.76,
+      "text": "at some point you'll very likely want to"
+    },
+    {
+      "start": 611.2,
+      "text": "use somebody else's code out there in"
+    },
+    {
+      "start": 612.64,
+      "text": "the world and the primary place to do"
+    },
+    {
+      "start": 614.32,
+      "text": "that is via node package manager or npm"
+    },
+    {
+      "start": 617.24,
+      "text": "which was recently acquired by GitHub"
+    },
+    {
+      "start": 618.959,
+      "text": "which itself was recently acquired by"
+    },
+    {
+      "start": 620.48,
+      "text": "Microsoft when you installed node"
+    },
+    {
+      "start": 622.32,
+      "text": "earlier in the video it also installed"
+    },
+    {
+      "start": 624.36,
+      "text": "npm which is a tool you can use to"
+    },
+    {
+      "start": 626.56,
+      "text": "install remote packages to use in your"
+    },
+    {
+      "start": 628.519,
+      "text": "own code the first step we'll want to"
+    },
+    {
+      "start": 630.279,
+      "text": "take is to open the command line and run"
+    },
+    {
+      "start": 632.279,
+      "text": "npm and nit we'll use the Y flag to use"
+    },
+    {
+      "start": 634.64,
+      "text": "the default options and what you'll"
+    },
+    {
+      "start": 636.56,
+      "text": "notice is that it creates a package Json"
+    },
+    {
+      "start": 638.639,
+      "text": "file here in the root of the application"
+    },
+    {
+      "start": 640.839,
+      "text": "this file can contain metadata about"
+    },
+    {
+      "start": 642.56,
+      "text": "your project but most importantly it"
+    },
+    {
+      "start": 644.56,
+      "text": "keeps track of the dependencies that you"
+    },
+    {
+      "start": 646.16,
+      "text": "use here at this point we haven't"
+    },
+    {
+      "start": 647.8,
+      "text": "installed anything yet so let's go ahead"
+    },
+    {
+      "start": 649.519,
+      "text": "and change that by opening the command"
+    },
+    {
+      "start": 651.16,
+      "text": "line again and running npm install"
+    },
+    {
+      "start": 653.44,
+      "text": "Express Express is a minimal web"
+    },
+    {
+      "start": 655.68,
+      "text": "application framework and one of the"
+    },
+    {
+      "start": 657.279,
+      "text": "most popular third party node modules"
+    },
+    {
+      "start": 659.279,
+      "text": "after running the command you'll notice"
+    },
+    {
+      "start": 660.56,
+      "text": "a few things happened here in the"
+    },
+    {
+      "start": 662.32,
+      "text": "package Json file it added Express to"
+    },
+    {
+      "start": 664.639,
+      "text": "the dependencies and pegged it to a"
+    },
+    {
+      "start": 666.44,
+      "text": "specific version this dependencies"
+    },
+    {
+      "start": 668.12,
+      "text": "object allows you to manage multiple"
+    },
+    {
+      "start": 669.88,
+      "text": "dependencies in a project and then"
+    },
+    {
+      "start": 671.44,
+      "text": "reinstall them all at once on a"
+    },
+    {
+      "start": 672.8,
+      "text": "different system now the actual raw"
+    },
+    {
+      "start": 674.56,
+      "text": "source code for the dependency lives in"
+    },
+    {
+      "start": 676.279,
+      "text": "this node modules directory you should"
+    },
+    {
+      "start": 678.16,
+      "text": "never have to modify code in the node"
+    },
+    {
+      "start": 679.76,
+      "text": "modules directory if you find yourself"
+    },
+    {
+      "start": 681.48,
+      "text": "writing code in here you're probably"
+    },
+    {
+      "start": 682.92,
+      "text": "doing it wrong that's because the"
+    },
+    {
+      "start": 684.36,
+      "text": "package Json controls how this directory"
+    },
+    {
+      "start": 686.24,
+      "text": "is built it fetches your remote packages"
+    },
+    {
+      "start": 688.519,
+      "text": "Saves The Source here and that process"
+    },
+    {
+      "start": 690.6,
+      "text": "should be able to be repeated on any"
+    },
+    {
+      "start": 692.32,
+      "text": "system now that we have this package"
+    },
+    {
+      "start": 693.92,
+      "text": "installed we can import it by name in"
+    },
+    {
+      "start": 695.8,
+      "text": "our JavaScript code in this case we"
+    },
+    {
+      "start": 697.76,
+      "text": "simply require Express and now we've"
+    },
+    {
+      "start": 699.92,
+      "text": "reached the point where we're ready to"
+    },
+    {
+      "start": 701.12,
+      "text": "put these seven steps together to build"
+    },
+    {
+      "start": 702.92,
+      "text": "a real full stack application and deploy"
+    },
+    {
+      "start": 705.0,
+      "text": "it to the cloud what we're building here"
+    },
+    {
+      "start": 706.959,
+      "text": "is actually just your typical full stack"
+    },
+    {
+      "start": 708.8,
+      "text": "web application our server will live on"
+    },
+    {
+      "start": 711.0,
+      "text": "a URL and when a user makes a request to"
+    },
+    {
+      "start": 713.399,
+      "text": "this URL in the browser the server will"
+    },
+    {
+      "start": 715.639,
+      "text": "respond with some HTML in our code we'll"
+    },
+    {
+      "start": 718.079,
+      "text": "first create an instance of an Express"
+    },
+    {
+      "start": 720.04,
+      "text": "app an Express app allows us to create"
+    },
+    {
+      "start": 722.279,
+      "text": "different URLs and endpoints that a user"
+    },
+    {
+      "start": 724.399,
+      "text": "can navigate to in the browser and then"
+    },
+    {
+      "start": 726.2,
+      "text": "we Define code for the server to handle"
+    },
+    {
+      "start": 728.2,
+      "text": "those requests now I don't want to get"
+    },
+    {
+      "start": 729.8,
+      "text": "too deep into HTTP but when the user"
+    },
+    {
+      "start": 731.839,
+      "text": "navigates to a URL in the browser it's"
+    },
+    {
+      "start": 733.839,
+      "text": "what's known as a git request which"
+    },
+    {
+      "start": 735.6,
+      "text": "means they're requesting some data on"
+    },
+    {
+      "start": 737.12,
+      "text": "the server and not trying to modify or"
+    },
+    {
+      "start": 739.399,
+      "text": "update anything on the server with"
+    },
+    {
+      "start": 741.079,
+      "text": "Express we can set up an endpoint like"
+    },
+    {
+      "start": 742.839,
+      "text": "that by calling app.get and then the"
+    },
+    {
+      "start": 745.279,
+      "text": "first argument is the URL that the user"
+    },
+    {
+      "start": 747.399,
+      "text": "will navigate to in this case we just"
+    },
+    {
+      "start": 749.32,
+      "text": "use a forward slash for the root URL but"
+    },
+    {
+      "start": 751.72,
+      "text": "feel free to create multiple Pages for"
+    },
+    {
+      "start": 753.399,
+      "text": "your web app by creating different URLs"
+    },
+    {
+      "start": 755.639,
+      "text": "the second argument here is our callback"
+    },
+    {
+      "start": 757.36,
+      "text": "function you can think of every request"
+    },
+    {
+      "start": 759.0,
+      "text": "to this URL as an event and then you"
+    },
+    {
+      "start": 761.16,
+      "text": "handle that event with this function an"
+    },
+    {
+      "start": 763.199,
+      "text": "Express gives us two parameters to make"
+    },
+    {
+      "start": 764.92,
+      "text": "use of the request and the response the"
+    },
+    {
+      "start": 767.76,
+      "text": "request is the incoming data from the"
+    },
+    {
+      "start": 769.519,
+      "text": "user in this example we don't really"
+    },
+    {
+      "start": 771.6,
+      "text": "need to parse any data from the request"
+    },
+    {
+      "start": 773.8,
+      "text": "however in many cases you might want to"
+    },
+    {
+      "start": 775.0,
+      "text": "look at the headers or the body of the"
+    },
+    {
+      "start": 776.76,
+      "text": "request to authenticate a user or"
+    },
+    {
+      "start": 779.32,
+      "text": "understand what the user is trying to do"
+    },
+    {
+      "start": 780.959,
+      "text": "at this point we need to implement the"
+    },
+    {
+      "start": 782.519,
+      "text": "code to handle the request what we want"
+    },
+    {
+      "start": 784.6,
+      "text": "to do is read some HTML from our file"
+    },
+    {
+      "start": 786.88,
+      "text": "system and then send it back down to the"
+    },
+    {
+      "start": 789.0,
+      "text": "browser as you can see here I'm creating"
+    },
+    {
+      "start": 790.92,
+      "text": "a file called home.html with just some"
+    },
+    {
+      "start": 793.639,
+      "text": "generic HTML markup inside in our source"
+    },
+    {
+      "start": 796.959,
+      "text": "code we can then import read file from"
+    },
+    {
+      "start": 799.04,
+      "text": "node's file system module just like we"
+    },
+    {
+      "start": 801.24,
+      "text": "did earlier we'll read the file use utf8"
+    },
+    {
+      "start": 804.44,
+      "text": "encoding then in our callback function"
+    },
+    {
+      "start": 806.6,
+      "text": "here we'll have access to the HTML"
+    },
+    {
+      "start": 808.44,
+      "text": "string and we can send a response back"
+    },
+    {
+      "start": 810.76,
+      "text": "down to the client by calling response."
+    },
+    {
+      "start": 813.079,
+      "text": "send and also if there's an error in the"
+    },
+    {
+      "start": 815.44,
+      "text": "call back we can handle that by sending"
+    },
+    {
+      "start": 817.32,
+      "text": "a response with a status code of 500"
+    },
+    {
+      "start": 819.8,
+      "text": "which means a server error so the user"
+    },
+    {
+      "start": 822.32,
+      "text": "knows that something went wrong on the"
+    },
+    {
+      "start": 823.6,
+      "text": "server and that's all there is to it we"
+    },
+    {
+      "start": 825.68,
+      "text": "now have a way to send HTML from the"
+    },
+    {
+      "start": 827.839,
+      "text": "server to the client now we just need to"
+    },
+    {
+      "start": 829.92,
+      "text": "tell our Express app to start listening"
+    },
+    {
+      "start": 831.68,
+      "text": "to incoming requests we do that by"
+    },
+    {
+      "start": 833.839,
+      "text": "defining a port which will normally come"
+    },
+    {
+      "start": 835.839,
+      "text": "from a node environment variable then we"
+    },
+    {
+      "start": 838.0,
+      "text": "call app. listen with that port and when"
+    },
+    {
+      "start": 840.44,
+      "text": "it starts up we console log that the app"
+    },
+    {
+      "start": 842.32,
+      "text": "is available on Local Host 3000 you can"
+    },
+    {
+      "start": 844.92,
+      "text": "start it up by opening the command line"
+    },
+    {
+      "start": 846.68,
+      "text": "and running node with the current"
+    },
+    {
+      "start": 848.079,
+      "text": "working directory if you go ahead and"
+    },
+    {
+      "start": 850.199,
+      "text": "open it in the browser you should see"
+    },
+    {
+      "start": 851.68,
+      "text": "your HTML return back to you now there"
+    },
+    {
+      "start": 854.36,
+      "text": "is one important thing you should know"
+    },
+    {
+      "start": 855.56,
+      "text": "at this point and that's that callbacks"
+    },
+    {
+      "start": 857.199,
+      "text": "can be very difficult to work with"
+    },
+    {
+      "start": 858.68,
+      "text": "especially as your app grows in"
+    },
+    {
+      "start": 860.12,
+      "text": "complexity it often leads to a state"
+    },
+    {
+      "start": 862.32,
+      "text": "known as callback hell where you have a"
+    },
+    {
+      "start": 864.12,
+      "text": "bunch of callbacks nested within"
+    },
+    {
+      "start": 865.48,
+      "text": "callbacks within more callbacks and so"
+    },
+    {
+      "start": 867.44,
+      "text": "on a great way toid code like this is to"
+    },
+    {
+      "start": 870.16,
+      "text": "use promises instead of callbacks and"
+    },
+    {
+      "start": 872.24,
+      "text": "that's very easy to do in node.js"
+    },
+    {
+      "start": 873.839,
+      "text": "instead of importing read file from FS"
+    },
+    {
+      "start": 876.92,
+      "text": "we'll import it from fs. promises we can"
+    },
+    {
+      "start": 879.839,
+      "text": "make our callback function async and"
+    },
+    {
+      "start": 881.8,
+      "text": "then we can write the response in a"
+    },
+    {
+      "start": 883.079,
+      "text": "single line of Code by saying response"
+    },
+    {
+      "start": 884.88,
+      "text": "send and then await the operation to"
+    },
+    {
+      "start": 887.04,
+      "text": "read file that's much more concise and"
+    },
+    {
+      "start": 889.04,
+      "text": "readable but it's especially useful when"
+    },
+    {
+      "start": 890.839,
+      "text": "you have multiple async operations to"
+    },
+    {
+      "start": 892.72,
+      "text": "handle in a single request so now that"
+    },
+    {
+      "start": 894.92,
+      "text": "we've built a nodejs app how do we"
+    },
+    {
+      "start": 896.6,
+      "text": "deploy it to the cloud so people can"
+    },
+    {
+      "start": 898.24,
+      "text": "actually use it there's a bunch of"
+    },
+    {
+      "start": 899.72,
+      "text": "different ways we could do it but an"
+    },
+    {
+      "start": 901.079,
+      "text": "easy and free way is with Google app"
+    },
+    {
+      "start": 902.959,
+      "text": "engine app engine has what's known as a"
+    },
+    {
+      "start": 904.959,
+      "text": "standard environment for node.js up to"
+    },
+    {
+      "start": 907.12,
+      "text": "version 12 and what that does is provide"
+    },
+    {
+      "start": 909.48,
+      "text": "you with a server in the cloud that"
+    },
+    {
+      "start": 911.199,
+      "text": "scales automatically based on the"
+    },
+    {
+      "start": 912.959,
+      "text": "incoming traffic to your app it's"
+    },
+    {
+      "start": 914.839,
+      "text": "incredibly easy to set up but you first"
+    },
+    {
+      "start": 916.6,
+      "text": "need to have a Google Cloud platform"
+    },
+    {
+      "start": 918.399,
+      "text": "account and also the Google Cloud"
+    },
+    {
+      "start": 920.639,
+      "text": "command line tools installed on your"
+    },
+    {
+      "start": 922.279,
+      "text": "local system once you have that done you"
+    },
+    {
+      "start": 924.44,
+      "text": "can simply go into your source code and"
+    },
+    {
+      "start": 926.16,
+      "text": "create an app.yaml file this file is to"
+    },
+    {
+      "start": 929.319,
+      "text": "configure your Cloud Server the only"
+    },
+    {
+      "start": 931.0,
+      "text": "thing we need at this point is to"
+    },
+    {
+      "start": 932.24,
+      "text": "specify a runtime of node.js version 12"
+    },
+    {
+      "start": 935.48,
+      "text": "app engine will run your code by looking"
+    },
+    {
+      "start": 937.199,
+      "text": "in the package Json file for a start"
+    },
+    {
+      "start": 939.24,
+      "text": "script so let's go in there and Define a"
+    },
+    {
+      "start": 941.48,
+      "text": "start script that runs node in the"
+    },
+    {
+      "start": 943.279,
+      "text": "current working directory to start our"
+    },
+    {
+      "start": 944.959,
+      "text": "Express app from there we can simply"
+    },
+    {
+      "start": 947.04,
+      "text": "open the command line and run gcloud app"
+    },
+    {
+      "start": 949.36,
+      "text": "deploy that'll take a minute and then it"
+    },
+    {
+      "start": 951.279,
+      "text": "will give you a URL where you can access"
+    },
+    {
+      "start": 953.16,
+      "text": "your app publicly on the web"
+    },
+    {
+      "start": 954.759,
+      "text": "congratulations you're now a full stack"
+    },
+    {
+      "start": 956.8,
+      "text": "Cloud architect"
+    },
+    {
+      "start": 960.079,
+      "text": "if this video helped you please like And"
+    },
+    {
+      "start": 961.639,
+      "text": "subscribe and if you really want to dive"
+    },
+    {
+      "start": 963.199,
+      "text": "deep into node.js and express consider"
+    },
+    {
+      "start": 965.12,
+      "text": "becoming a pro member at fireship iio I"
+    },
+    {
+      "start": 967.44,
+      "text": "have a whole bunch of advanced content"
+    },
+    {
+      "start": 968.839,
+      "text": "covering real world use cases with these"
+    },
+    {
+      "start": 970.56,
+      "text": "Technologies thanks for watching and I"
+    },
+    {
+      "start": 972.639,
+      "text": "will see you in the next one"
+    },
+    {
+      "start": 975.96,
+      "text": "[Music]"
+    }
+  ],
+  "text": "one of the most valuable skills to have as a full stack web developer is without a doubt node.js and that's not going to change anytime soon but you might be wondering why I'm making a node tutorial in 2020 because if you've been watching the news you may have heard that node was killed last week by Deno when I lay my vengance upon making the extremely chaotic JavaScript world even more convoluted if you're just starting to learn JavaScript this can be very confusing and you might be wondering should I learn node or Deno the answer is node especially if you want to get a job or build a product when something becomes as established as node it doesn't get replaced you'll see things like this happen all the time a few years ago everybody was saying graphql would replace rest and 10 years ago people were saying no. JS would replace PHP these predictions never pan out and are just built on top of hype that being said I do think Deno is awesome and has a bright future both both both is good and if you learn node today those skills will mostly transfer to Deno tomorrow in today's video you'll learn the basics of nodejs in seven easy steps then we'll put those steps together to build a full stack web application because in my opinion the best way to learn how to code is to build something meaningful from scratch by the end of the video we'll deploy our code to the cloud so you can show off your API to your friends and family if you're new here like And subscribe and head over to fireship iio to follow along with the full write up to this video step one is to understand what no. JS is and why you would want to use it node.js itself is not a programming language but rather a runtime that allows you to run JavaScript on a server you see when JavaScript first came around in the 1990s it was designed as a simple scripting language to run in the browser as the web platform evolved JavaScript became more and more powerful and in 2009 we saw the initial release of nodejs now up until this time it was impossible to write JavaScript code on the server most servers were written in languages like Java or PHP it revolutionized web development because now a web developer could write a full stack application in a single language so that's all node.js is it's a way for developers to write JavaScript on the server when it could previously only be written in a web browser now there are a lot of low-level implementation details here that you don't need to know about as a beginner but if you really want to dive into how nodejs Works check out my How It's Made video but what kind of problems can node.js actually solve node.js can do a lot so instead of listing out a bunch of use cases I'll show you how to build a full stack web application from scratch this is how it'll work you visit a URL on the internet that points to your server when the request is received we can use node to handle the request and read a file from the server's file system and then respond back to the client so they can view the HTML in the browser step two how to install node.js node can be installed on Windows Mac or Linux and is probably already installed on your system in this tutorial I'll be using Ubuntu via the windows subsystem for Linux at this point I've just opened up an empty directory in vs code and then pulled up a terminal session you can find out if node is installed on your system by running node flag V from the command line as you can see here I'm running version 12.16 which is the current long-term support version if you get an error at this point it means that you don't have node installed and even if you do have node installed it'd be a very good idea to use a package called called node version manager to manage the installation of different node versions on your system there's an NVM package for mac and Linux or a separate package for Windows go ahead and follow the instructions to install NVM on your system and that will give you the ability to install any version of node.js that you want for example you could run NVM install 12163 then run NVM use to use that specific version as your runtime and now that we have node.js installed we can move on to step three hello world but first if you're serious about node.js consider becoming a pro member at fir ship. it'll give you access to my full length courses almost all of which cover Advanced use cases for nodejs but we need to walk before we can run so how do we actually use this thing one way to mess around with node is in repel mode which stands for read of Al print Loop when you type node into the command line it allows you to run JavaScript code and will print out the results for example we can type console log hello world and it will log that value out this is nice for messing around but go ahead and hit contrl C twice to shut it down because in most cases we want to execute JavaScript code that lives in an actual file the default entry point into a node.js app is the index.js file go ahead and create an index.js file manually in VSS code then inside that file add console log hello world you can now run the code inside this file with the node command followed by the path to this file and because it's an index file you can actually just point to The Parent Directory congratulations you just built a node app step four understand the node run time in most ways JavaScript works the same way it does in the browser as it does in node.js but there are some very important differences you should know about first node has a handful of buil-in identifiers one of those globals is console which we've already been using to log out values to the terminal there's another Global with a name of global this object is a name space that is available throughout the entire node process for example if we assigned a lucky number property to Global we could then access it anywhere else in our code if you're a front-end web developer you can compare Global to the window object in the browser now I think the most important Global to be familiar with is process which gives you access to the currently running node process you might use it to check the current platform or operating system which in my case is Linux or grab an environment variable from your server but this gives us a great opportunity to segue into step five how do events work in node.js you'll often hear people describe it as an asynchronous event driven JavaScript runtime the runtime implements a thing called an event Loop just like a web browser does and it allows not to push intensive operations off to a separate thread so only very fast non-blocking operations happen on the main thread and this is why people often call node non-blocking it's a design choice that makes node.js very suitable for things that require high throughput like real-time applications web servers and things like that okay so how does that affect me as a coder Well normally you won't have to think about the low-level details you just need to know how events and callbacks work in most cases you'll listen to events events can come in many forms but one example is on the process proc Global that we looked at earlier before a node process finishes it emits an event named exit we can listen to this event using on and then register a callback function as the second argument when the exit event occurs node.js will run this function and that's where it gets the name callback because the function isn't called the first time nodejs sees it it's only called after the exit event occurs at some point in the future this event is built into node but you can also create your own from scratch we'll import an event emitter from the events module that is built into node and we'll look at modules in more detail in just a minute we can create a custom event emitter by instantiating the class and then we'll register a call back that fires on the lunch event now that the call back is registered you can simply call event emitter emit with that event name and that triggers your call back function to run as you can see here we emit the event twice which will run the Callback function twice this event driven style of programming is extremely useful when you have something that is CPU intensive and with that we can move on to step six the file system node has a built-in file system module called FS it can read write and delete files on the file system among other things and it can also do things in a blocking or non-blocking way allow me to explain that by showing you an example first create a file on the file system called hello.txt and then add whatever text you want inside of it in our JavaScript code we'll import two functions from the file system module called read file and read file sync anytime you see a function that ends in sync think blocking or in other words it will need to finish all of its work before any any of your other code can run we can read a text file in node by simply passing the path to that file and we'll specify the encoding as utf8 now reading a file might take a while especially if it's a very large file and what you'll notice here when we run our code is that the second console log won't run until after that file has been read luckily you can make your code non-blocking by refactoring this to a callback with read file we pass the same first two arguments and then add a callback function as the third argument inside the function we can access an error object if the operation fails or when successful the actual text from the file the super cool thing about this is that even though the console log to the text file comes first in our script it's not the thing that gets executed first node registers the call back executes the rest of the script and then finally runs the call back when the file has been read so that gives us two different ways to read a file but there's actually one other way we could go about this and that's using a promise based solution promises are also asynchronous and non-blocking and they tend to produce much cleaner code when compared to callbacks notice how in this example we're importing file from the promises namespace this gives us a function that returns a promise when called if you're using the latest bleeding edge version of node you could potentially use this function with top level a weight which means you can use a weight to resolve the promise here at the top of the script however since we're currently using node version 12 we'll go ahead and wrap this in an async function and this async await syntax will make your code much easier to read especially when you have multiple async calls in the same function okay so now that you know how to read files I want to backtrack a little bit and talk about this require function that you've seen me use in the past couple examples step seven modules a module is nothing more than a Javascript file that exports its code note has a bunch of built-in modules like fs and events that we've already looked at and there's a long list of other modules beyond that the traditional way to import a module in node is to use this require function but a quick side note on that first because node recently added support for ES modules which Ed the import export syntax most node.js code out there written in vanilla JavaScript still uses require so it's very important for you to know as a node.js developer and if all that's confusing to you well all I can say is welcome to the JavaScript world let's look at how we can use modules in our own codebase create a new file to serve as your module then go into your index.js file create a variable for the module and then import it using require when you console log it you'll notice that it's currently just an empty object in order to make a module useful you need to export some code from it in the modules file you can reference this object with module. exorts you can add new properties to the object or redefine it as a new object in either case whatever you add here will now be available to use in the other file and as you can see the object is no longer empty when we console log it but at some point you'll very likely want to use somebody else's code out there in the world and the primary place to do that is via node package manager or npm which was recently acquired by GitHub which itself was recently acquired by Microsoft when you installed node earlier in the video it also installed npm which is a tool you can use to install remote packages to use in your own code the first step we'll want to take is to open the command line and run npm and nit we'll use the Y flag to use the default options and what you'll notice is that it creates a package Json file here in the root of the application this file can contain metadata about your project but most importantly it keeps track of the dependencies that you use here at this point we haven't installed anything yet so let's go ahead and change that by opening the command line again and running npm install Express Express is a minimal web application framework and one of the most popular third party node modules after running the command you'll notice a few things happened here in the package Json file it added Express to the dependencies and pegged it to a specific version this dependencies object allows you to manage multiple dependencies in a project and then reinstall them all at once on a different system now the actual raw source code for the dependency lives in this node modules directory you should never have to modify code in the node modules directory if you find yourself writing code in here you're probably doing it wrong that's because the package Json controls how this directory is built it fetches your remote packages Saves The Source here and that process should be able to be repeated on any system now that we have this package installed we can import it by name in our JavaScript code in this case we simply require Express and now we've reached the point where we're ready to put these seven steps together to build a real full stack application and deploy it to the cloud what we're building here is actually just your typical full stack web application our server will live on a URL and when a user makes a request to this URL in the browser the server will respond with some HTML in our code we'll first create an instance of an Express app an Express app allows us to create different URLs and endpoints that a user can navigate to in the browser and then we Define code for the server to handle those requests now I don't want to get too deep into HTTP but when the user navigates to a URL in the browser it's what's known as a git request which means they're requesting some data on the server and not trying to modify or update anything on the server with Express we can set up an endpoint like that by calling app.get and then the first argument is the URL that the user will navigate to in this case we just use a forward slash for the root URL but feel free to create multiple Pages for your web app by creating different URLs the second argument here is our callback function you can think of every request to this URL as an event and then you handle that event with this function an Express gives us two parameters to make use of the request and the response the request is the incoming data from the user in this example we don't really need to parse any data from the request however in many cases you might want to look at the headers or the body of the request to authenticate a user or understand what the user is trying to do at this point we need to implement the code to handle the request what we want to do is read some HTML from our file system and then send it back down to the browser as you can see here I'm creating a file called home.html with just some generic HTML markup inside in our source code we can then import read file from node's file system module just like we did earlier we'll read the file use utf8 encoding then in our callback function here we'll have access to the HTML string and we can send a response back down to the client by calling response. send and also if there's an error in the call back we can handle that by sending a response with a status code of 500 which means a server error so the user knows that something went wrong on the server and that's all there is to it we now have a way to send HTML from the server to the client now we just need to tell our Express app to start listening to incoming requests we do that by defining a port which will normally come from a node environment variable then we call app. listen with that port and when it starts up we console log that the app is available on Local Host 3000 you can start it up by opening the command line and running node with the current working directory if you go ahead and open it in the browser you should see your HTML return back to you now there is one important thing you should know at this point and that's that callbacks can be very difficult to work with especially as your app grows in complexity it often leads to a state known as callback hell where you have a bunch of callbacks nested within callbacks within more callbacks and so on a great way toid code like this is to use promises instead of callbacks and that's very easy to do in node.js instead of importing read file from FS we'll import it from fs. promises we can make our callback function async and then we can write the response in a single line of Code by saying response send and then await the operation to read file that's much more concise and readable but it's especially useful when you have multiple async operations to handle in a single request so now that we've built a nodejs app how do we deploy it to the cloud so people can actually use it there's a bunch of different ways we could do it but an easy and free way is with Google app engine app engine has what's known as a standard environment for node.js up to version 12 and what that does is provide you with a server in the cloud that scales automatically based on the incoming traffic to your app it's incredibly easy to set up but you first need to have a Google Cloud platform account and also the Google Cloud command line tools installed on your local system once you have that done you can simply go into your source code and create an app.yaml file this file is to configure your Cloud Server the only thing we need at this point is to specify a runtime of node.js version 12 app engine will run your code by looking in the package Json file for a start script so let's go in there and Define a start script that runs node in the current working directory to start our Express app from there we can simply open the command line and run gcloud app deploy that'll take a minute and then it will give you a URL where you can access your app publicly on the web congratulations you're now a full stack Cloud architect if this video helped you please like And subscribe and if you really want to dive deep into node.js and express consider becoming a pro member at fireship iio I have a whole bunch of advanced content covering real world use cases with these Technologies thanks for watching and I will see you in the next one [Music]"
+}

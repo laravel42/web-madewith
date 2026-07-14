@@ -1,0 +1,844 @@
+{
+  "videoId": "Y-SvIFS4J8o",
+  "language": "en",
+  "source": "auto",
+  "segments": [
+    {
+      "start": 1.599,
+      "text": "hi welcome back time for a new Lal"
+    },
+    {
+      "start": 3.92,
+      "text": "project um what I also read a lot in the"
+    },
+    {
+      "start": 6.399,
+      "text": "comments is that a lot of you guys"
+    },
+    {
+      "start": 8.96,
+      "text": "wanted to see how we can integrate um"
+    },
+    {
+      "start": 11.96,
+      "text": "and what you see is what you get editor"
+    },
+    {
+      "start": 14.12,
+      "text": "in our larable application so this is"
+    },
+    {
+      "start": 16.48,
+      "text": "what we're going to do here and this"
+    },
+    {
+      "start": 18.72,
+      "text": "also includes image upload of course"
+    },
+    {
+      "start": 21.039,
+      "text": "because that is probably the most"
+    },
+    {
+      "start": 22.4,
+      "text": "interesting thing about it right but"
+    },
+    {
+      "start": 24.519,
+      "text": "let's start with the the basics um what"
+    },
+    {
+      "start": 27.16,
+      "text": "we will use in this video is Tiny MC"
+    },
+    {
+      "start": 29.439,
+      "text": "because I think it's a great editor but"
+    },
+    {
+      "start": 31.96,
+      "text": "integration kind of works similar for"
+    },
+    {
+      "start": 34.6,
+      "text": "most of these editors so the first thing"
+    },
+    {
+      "start": 37.52,
+      "text": "I will do is I'll head over to Tiny"
+    },
+    {
+      "start": 43.44,
+      "text": "MC and then just click"
+    },
+    {
+      "start": 45.8,
+      "text": "download and then I will well simply hit"
+    },
+    {
+      "start": 48.44,
+      "text": "the download"
+    },
+    {
+      "start": 49.68,
+      "text": "button and make sure to save it in my"
+    },
+    {
+      "start": 53.28,
+      "text": "project so I will store it in my source"
+    },
+    {
+      "start": 57.719,
+      "text": "JavaScript vendor folder here"
+    },
+    {
+      "start": 61.6,
+      "text": "and as you can see I already got it"
+    },
+    {
+      "start": 63.879,
+      "text": "there so let"
+    },
+    {
+      "start": 65.76,
+      "text": "me to get uh to get it exactly the same"
+    },
+    {
+      "start": 69.88,
+      "text": "way as you have it"
+    },
+    {
+      "start": 71.84,
+      "text": "deleted and now I'll will extract this"
+    },
+    {
+      "start": 76.24,
+      "text": "file get rid of the Z"
+    },
+    {
+      "start": 79.28,
+      "text": "file and well here it is uh kind"
+    },
+    {
+      "start": 85.28,
+      "text": "of multi-layered here but that's fine so"
+    },
+    {
+      "start": 90.28,
+      "text": "this is the project I'll add this to"
+    },
+    {
+      "start": 92.439,
+      "text": "Source control and now I got my well"
+    },
+    {
+      "start": 97.6,
+      "text": "tiny MC editor imported next thing is in"
+    },
+    {
+      "start": 101.52,
+      "text": "my welcome to BL view I already prepared"
+    },
+    {
+      "start": 105.799,
+      "text": "something which you will paste into it"
+    },
+    {
+      "start": 108.92,
+      "text": "now this is basically a plain setup"
+    },
+    {
+      "start": 112.36,
+      "text": "which has a form in the middle here with"
+    },
+    {
+      "start": 114.96,
+      "text": "our hidden session token field and with"
+    },
+    {
+      "start": 119.2,
+      "text": "a text area and this text area is what"
+    },
+    {
+      "start": 121.88,
+      "text": "we want to replace with this tiny MC"
+    },
+    {
+      "start": 125.52,
+      "text": "editor we're doing this with the code"
+    },
+    {
+      "start": 127.759,
+      "text": "here at the bottom and wao this looks"
+    },
+    {
+      "start": 130.52,
+      "text": "extremely frightening but let's start at"
+    },
+    {
+      "start": 133.28,
+      "text": "the top and move through"
+    },
+    {
+      "start": 135.36,
+      "text": "it so first I'm importing this well tiny"
+    },
+    {
+      "start": 139.56,
+      "text": "MCE script and well this is just the"
+    },
+    {
+      "start": 143.28,
+      "text": "path"
+    },
+    {
+      "start": 148.2,
+      "text": "tues script 5 here tiny mc. min.js which"
+    },
+    {
+      "start": 153.2,
+      "text": "we just imported or just added here so"
+    },
+    {
+      "start": 156.319,
+      "text": "this is the path I add here and then I"
+    },
+    {
+      "start": 160.599,
+      "text": "well configure it before I then"
+    },
+    {
+      "start": 163.599,
+      "text": "initialize it this here this at the very"
+    },
+    {
+      "start": 165.519,
+      "text": "bottom will initialize our our what you"
+    },
+    {
+      "start": 169.28,
+      "text": "what you get editor here and it will"
+    },
+    {
+      "start": 172.04,
+      "text": "initialize it with the configuration we"
+    },
+    {
+      "start": 174.239,
+      "text": "pass as an argument now the first thing"
+    },
+    {
+      "start": 177.84,
+      "text": "here is we're defining a path and this"
+    },
+    {
+      "start": 180.8,
+      "text": "really is just so the base path of our"
+    },
+    {
+      "start": 184.04,
+      "text": "app which comes in important when we"
+    },
+    {
+      "start": 186.64,
+      "text": "come to things like image download and"
+    },
+    {
+      "start": 190.72,
+      "text": "well everything this has to do with"
+    },
+    {
+      "start": 193.04,
+      "text": "accessing files on our server then so"
+    },
+    {
+      "start": 196.48,
+      "text": "this is where we need this path absolute"
+    },
+    {
+      "start": 198.76,
+      "text": "thing there for the next one is the"
+    },
+    {
+      "start": 200.959,
+      "text": "selector this is very important this"
+    },
+    {
+      "start": 203.519,
+      "text": "defines what should be replaced with"
+    },
+    {
+      "start": 206.64,
+      "text": "this Rich featured editor with this what"
+    },
+    {
+      "start": 209.48,
+      "text": "you see what you get editor and we of"
+    },
+    {
+      "start": 211.879,
+      "text": "course want to replace this text area"
+    },
+    {
+      "start": 213.879,
+      "text": "therefore I'm using this text area tag"
+    },
+    {
+      "start": 215.76,
+      "text": "here as a selector and you use the"
+    },
+    {
+      "start": 218.08,
+      "text": "selector here like you use like you know"
+    },
+    {
+      "start": 220.64,
+      "text": "it from CSS selectors so passing a name"
+    },
+    {
+      "start": 223.799,
+      "text": "like this will refer to a tag a DOT at"
+    },
+    {
+      "start": 225.959,
+      "text": "the beginning will refer to a class of"
+    },
+    {
+      "start": 228.799,
+      "text": "course and a hashtag to an ID and so on"
+    },
+    {
+      "start": 232.959,
+      "text": "next thing is which plugins do we want"
+    },
+    {
+      "start": 235.2,
+      "text": "to use in this editor because you can"
+    },
+    {
+      "start": 237.36,
+      "text": "dynamically configure in tiny m"
+    },
+    {
+      "start": 240.439,
+      "text": "which features you want and which you"
+    },
+    {
+      "start": 242.12,
+      "text": "don't want and this really isn't a"
+    },
+    {
+      "start": 244.799,
+      "text": "detailed video about configuring tiny"
+    },
+    {
+      "start": 247.0,
+      "text": "MCE but this is how you do it you just"
+    },
+    {
+      "start": 249.56,
+      "text": "add well a a string an array of strings"
+    },
+    {
+      "start": 255.239,
+      "text": "which contains all the plugins you want"
+    },
+    {
+      "start": 257.479,
+      "text": "like for example allowing printing image"
+    },
+    {
+      "start": 260.919,
+      "text": "and so on and yeah this how you do this"
+    },
+    {
+      "start": 263.84,
+      "text": "then you can configure the toolbar as"
+    },
+    {
+      "start": 266.0,
+      "text": "will be displayed so how your options"
+    },
+    {
+      "start": 268.919,
+      "text": "will be grouped and well in the first"
+    },
+    {
+      "start": 271.24,
+      "text": "place available in this toolbar and I"
+    },
+    {
+      "start": 274.039,
+      "text": "recommend checking out the description"
+    },
+    {
+      "start": 276.24,
+      "text": "for more information about this uh"
+    },
+    {
+      "start": 278.84,
+      "text": "because there you will find a link to"
+    },
+    {
+      "start": 280.4,
+      "text": "the tiny MC documentation which well is"
+    },
+    {
+      "start": 283.199,
+      "text": "the best place to get started learning"
+    },
+    {
+      "start": 285.28,
+      "text": "the configuration of tiny MC well then"
+    },
+    {
+      "start": 288.36,
+      "text": "I'm disabling relative URLs because I"
+    },
+    {
+      "start": 290.68,
+      "text": "want to do all the routing absolute from"
+    },
+    {
+      "start": 294.32,
+      "text": "this path again important for working"
+    },
+    {
+      "start": 296.919,
+      "text": "with files later on"
+    },
+    {
+      "start": 299.84,
+      "text": "now this part here is important later"
+    },
+    {
+      "start": 304.56,
+      "text": "when we come to managing files and"
+    },
+    {
+      "start": 306.4,
+      "text": "images and I will explain it then the"
+    },
+    {
+      "start": 309.12,
+      "text": "same is true for this so this whole part"
+    },
+    {
+      "start": 311.8,
+      "text": "basically what this does is it just"
+    },
+    {
+      "start": 314.52,
+      "text": "configures um our file manager which we"
+    },
+    {
+      "start": 317.32,
+      "text": "will later use to well manage our"
+    },
+    {
+      "start": 320.319,
+      "text": "uploads our files we have on the server"
+    },
+    {
+      "start": 322.36,
+      "text": "and so on well that again this starts it"
+    },
+    {
+      "start": 325.28,
+      "text": "with the configuration the most"
+    },
+    {
+      "start": 326.6,
+      "text": "important part being for this part here"
+    },
+    {
+      "start": 328.8,
+      "text": "the selector"
+    },
+    {
+      "start": 331.4,
+      "text": "now before we actually see something"
+    },
+    {
+      "start": 333.56,
+      "text": "I'll add one more thing here we'll call"
+    },
+    {
+      "start": 336.199,
+      "text": "this output. plate. PHP file so a new"
+    },
+    {
+      "start": 340.759,
+      "text": "view and I also get some code for this"
+    },
+    {
+      "start": 344.199,
+      "text": "View and this is very simple it will"
+    },
+    {
+      "start": 346.84,
+      "text": "basically we'll just output whatever"
+    },
+    {
+      "start": 348.919,
+      "text": "whichever content we're submitting in"
+    },
+    {
+      "start": 351.84,
+      "text": "our editor in our what you see is what"
+    },
+    {
+      "start": 354.319,
+      "text": "you get one important thing though here"
+    },
+    {
+      "start": 357.36,
+      "text": "where we output this content variable"
+    },
+    {
+      "start": 359.479,
+      "text": "and I'm using coal braces and then"
+    },
+    {
+      "start": 362.24,
+      "text": "double exclamation marks why am I doing"
+    },
+    {
+      "start": 364.96,
+      "text": "this and not well the normal syntax of"
+    },
+    {
+      "start": 367.919,
+      "text": "double call braces the reason is using"
+    },
+    {
+      "start": 371.8,
+      "text": "this syntax here will not escape the"
+    },
+    {
+      "start": 374.8,
+      "text": "HTML code if there is any so using"
+    },
+    {
+      "start": 378.319,
+      "text": "double exclamation marks will print or"
+    },
+    {
+      "start": 382.52,
+      "text": "will render the HTML code instead of"
+    },
+    {
+      "start": 385.479,
+      "text": "printing it as text and this is of"
+    },
+    {
+      "start": 387.639,
+      "text": "course important because what will what"
+    },
+    {
+      "start": 390.0,
+      "text": "you see is what you get editor do it"
+    },
+    {
+      "start": 392.319,
+      "text": "will add HTML tags this is how it Styles"
+    },
+    {
+      "start": 395.08,
+      "text": "it and how it saves the styling you"
+    },
+    {
+      "start": 397.12,
+      "text": "apply in the editor now all the styling"
+    },
+    {
+      "start": 399.96,
+      "text": "would be gone and we would have all"
+    },
+    {
+      "start": 401.56,
+      "text": "these nasty tags as plain text if we"
+    },
+    {
+      "start": 404.84,
+      "text": "were to use normal col braces here which"
+    },
+    {
+      "start": 407.84,
+      "text": "again Escape HTML tags and this is the"
+    },
+    {
+      "start": 411.16,
+      "text": "default because normally you don't"
+    },
+    {
+      "start": 413.12,
+      "text": "really want to Output rendered HTML in"
+    },
+    {
+      "start": 416.24,
+      "text": "your view because this might pose a"
+    },
+    {
+      "start": 418.44,
+      "text": "security issue"
+    },
+    {
+      "start": 420.08,
+      "text": "so you have to kind of check that"
+    },
+    {
+      "start": 422.96,
+      "text": "everything is find there and in this"
+    },
+    {
+      "start": 425.759,
+      "text": "case well we're just making this easy"
+    },
+    {
+      "start": 427.8,
+      "text": "and say yeah it will be fine and we're"
+    },
+    {
+      "start": 429.68,
+      "text": "just rendering"
+    },
+    {
+      "start": 431.12,
+      "text": "it very last thing before we really see"
+    },
+    {
+      "start": 434.36,
+      "text": "something is setting up some"
+    },
+    {
+      "start": 437.319,
+      "text": "routes and I already got my first route"
+    },
+    {
+      "start": 440.199,
+      "text": "which is fine I will just give it a name"
+    },
+    {
+      "start": 442.56,
+      "text": "of welcome and then I will add a new"
+    },
+    {
+      "start": 445.879,
+      "text": "route which will be a post route will"
+    },
+    {
+      "start": 448.759,
+      "text": "call SL submit or give a pa/ submit then"
+    },
+    {
+      "start": 452.4,
+      "text": "this will have a"
+    },
+    {
+      "start": 453.56,
+      "text": "function which will take a"
+    },
+    {
+      "start": 456.919,
+      "text": "request of this one here illuminate HTTP"
+    },
+    {
+      "start": 461.28,
+      "text": "and make sure to get this path right"
+    },
+    {
+      "start": 464.479,
+      "text": "back SL illuminate back/ HTTP back SL"
+    },
+    {
+      "start": 468.0,
+      "text": "request which will of course hold the"
+    },
+    {
+      "start": 471.08,
+      "text": "input field or the text area we"
+    },
+    {
+      "start": 473.879,
+      "text": "submit and in here I will ret retrieve"
+    },
+    {
+      "start": 476.639,
+      "text": "the content and save it in a variable so"
+    },
+    {
+      "start": 479.0,
+      "text": "just add access"
+    },
+    {
+      "start": 480.56,
+      "text": "request content"
+    },
+    {
+      "start": 482.759,
+      "text": "here and then I will return a"
+    },
+    {
+      "start": 486.52,
+      "text": "view the output view view here of course"
+    },
+    {
+      "start": 490.08,
+      "text": "and I will pass the content to the"
+    },
+    {
+      "start": 492.72,
+      "text": "content variable I use in this"
+    },
+    {
+      "start": 498.12,
+      "text": "View and I will also give this route a"
+    },
+    {
+      "start": 501.36,
+      "text": "name of submit now every everything"
+    },
+    {
+      "start": 504.919,
+      "text": "should work and if I go to my page here"
+    },
+    {
+      "start": 508.0,
+      "text": "and reload you can see we got our what"
+    },
+    {
+      "start": 511.0,
+      "text": "you see is what you get at editori right"
+    },
+    {
+      "start": 512.959,
+      "text": "out of the box this is all tiny MC which"
+    },
+    {
+      "start": 516.0,
+      "text": "we plugged in then we told it to replace"
+    },
+    {
+      "start": 518.839,
+      "text": "this text area with well the tiny MCE"
+    },
+    {
+      "start": 521.88,
+      "text": "editor and now we can use this and type"
+    },
+    {
+      "start": 525.48,
+      "text": "some text type it"
+    },
+    {
+      "start": 529.279,
+      "text": "in bold as well you might uh then use"
+    },
+    {
+      "start": 533.76,
+      "text": "some bullets"
+    },
+    {
+      "start": 536.72,
+      "text": "here and yeah note this image related"
+    },
+    {
+      "start": 541.48,
+      "text": "thing here won't work as of now we need"
+    },
+    {
+      "start": 544.279,
+      "text": "to implement some additional"
+    },
+    {
+      "start": 545.64,
+      "text": "functionality for this to work so only"
+    },
+    {
+      "start": 547.959,
+      "text": "the basic text formatting works if I now"
+    },
+    {
+      "start": 550.8,
+      "text": "hit submit you can see well yeah this"
+    },
+    {
+      "start": 554.68,
+      "text": "was saved and as you can see the"
+    },
+    {
+      "start": 556.399,
+      "text": "boldness was saved that we got a list"
+    },
+    {
+      "start": 558.44,
+      "text": "here was saved and this is how you use"
+    },
+    {
+      "start": 561.04,
+      "text": "your Rich editor what you see is what"
+    },
+    {
+      "start": 564.2,
+      "text": "you get it will basically just generate"
+    },
+    {
+      "start": 567.92,
+      "text": "HTML behind the scenes and then send"
+    },
+    {
+      "start": 570.12,
+      "text": "this to your server and there of course"
+    },
+    {
+      "start": 572.48,
+      "text": "you have to handle it save it and in"
+    },
+    {
+      "start": 574.44,
+      "text": "this case then output it with this"
+    },
+    {
+      "start": 575.959,
+      "text": "double exclamation mark thing to render"
+    },
+    {
+      "start": 578.48,
+      "text": "render it to the"
+    },
+    {
+      "start": 579.88,
+      "text": "screen so this is the basics of throwing"
+    },
+    {
+      "start": 584.279,
+      "text": "in a wizzywig editor into your lateral"
+    },
+    {
+      "start": 588.16,
+      "text": "application in the next video we'll come"
+    },
+    {
+      "start": 590.399,
+      "text": "to the very interesting part of using a"
+    },
+    {
+      "start": 593.76,
+      "text": "file manager to actually be able to"
+    },
+    {
+      "start": 597.0,
+      "text": "upload and store well imag mainly but"
+    },
+    {
+      "start": 600.079,
+      "text": "any files would work here see you in the"
+    },
+    {
+      "start": 602.04,
+      "text": "next videos bye"
+    }
+  ],
+  "text": "hi welcome back time for a new Lal project um what I also read a lot in the comments is that a lot of you guys wanted to see how we can integrate um and what you see is what you get editor in our larable application so this is what we're going to do here and this also includes image upload of course because that is probably the most interesting thing about it right but let's start with the the basics um what we will use in this video is Tiny MC because I think it's a great editor but integration kind of works similar for most of these editors so the first thing I will do is I'll head over to Tiny MC and then just click download and then I will well simply hit the download button and make sure to save it in my project so I will store it in my source JavaScript vendor folder here and as you can see I already got it there so let me to get uh to get it exactly the same way as you have it deleted and now I'll will extract this file get rid of the Z file and well here it is uh kind of multi-layered here but that's fine so this is the project I'll add this to Source control and now I got my well tiny MC editor imported next thing is in my welcome to BL view I already prepared something which you will paste into it now this is basically a plain setup which has a form in the middle here with our hidden session token field and with a text area and this text area is what we want to replace with this tiny MC editor we're doing this with the code here at the bottom and wao this looks extremely frightening but let's start at the top and move through it so first I'm importing this well tiny MCE script and well this is just the path tues script 5 here tiny mc. min.js which we just imported or just added here so this is the path I add here and then I well configure it before I then initialize it this here this at the very bottom will initialize our our what you what you get editor here and it will initialize it with the configuration we pass as an argument now the first thing here is we're defining a path and this really is just so the base path of our app which comes in important when we come to things like image download and well everything this has to do with accessing files on our server then so this is where we need this path absolute thing there for the next one is the selector this is very important this defines what should be replaced with this Rich featured editor with this what you see what you get editor and we of course want to replace this text area therefore I'm using this text area tag here as a selector and you use the selector here like you use like you know it from CSS selectors so passing a name like this will refer to a tag a DOT at the beginning will refer to a class of course and a hashtag to an ID and so on next thing is which plugins do we want to use in this editor because you can dynamically configure in tiny m which features you want and which you don't want and this really isn't a detailed video about configuring tiny MCE but this is how you do it you just add well a a string an array of strings which contains all the plugins you want like for example allowing printing image and so on and yeah this how you do this then you can configure the toolbar as will be displayed so how your options will be grouped and well in the first place available in this toolbar and I recommend checking out the description for more information about this uh because there you will find a link to the tiny MC documentation which well is the best place to get started learning the configuration of tiny MC well then I'm disabling relative URLs because I want to do all the routing absolute from this path again important for working with files later on now this part here is important later when we come to managing files and images and I will explain it then the same is true for this so this whole part basically what this does is it just configures um our file manager which we will later use to well manage our uploads our files we have on the server and so on well that again this starts it with the configuration the most important part being for this part here the selector now before we actually see something I'll add one more thing here we'll call this output. plate. PHP file so a new view and I also get some code for this View and this is very simple it will basically we'll just output whatever whichever content we're submitting in our editor in our what you see is what you get one important thing though here where we output this content variable and I'm using coal braces and then double exclamation marks why am I doing this and not well the normal syntax of double call braces the reason is using this syntax here will not escape the HTML code if there is any so using double exclamation marks will print or will render the HTML code instead of printing it as text and this is of course important because what will what you see is what you get editor do it will add HTML tags this is how it Styles it and how it saves the styling you apply in the editor now all the styling would be gone and we would have all these nasty tags as plain text if we were to use normal col braces here which again Escape HTML tags and this is the default because normally you don't really want to Output rendered HTML in your view because this might pose a security issue so you have to kind of check that everything is find there and in this case well we're just making this easy and say yeah it will be fine and we're just rendering it very last thing before we really see something is setting up some routes and I already got my first route which is fine I will just give it a name of welcome and then I will add a new route which will be a post route will call SL submit or give a pa/ submit then this will have a function which will take a request of this one here illuminate HTTP and make sure to get this path right back SL illuminate back/ HTTP back SL request which will of course hold the input field or the text area we submit and in here I will ret retrieve the content and save it in a variable so just add access request content here and then I will return a view the output view view here of course and I will pass the content to the content variable I use in this View and I will also give this route a name of submit now every everything should work and if I go to my page here and reload you can see we got our what you see is what you get at editori right out of the box this is all tiny MC which we plugged in then we told it to replace this text area with well the tiny MCE editor and now we can use this and type some text type it in bold as well you might uh then use some bullets here and yeah note this image related thing here won't work as of now we need to implement some additional functionality for this to work so only the basic text formatting works if I now hit submit you can see well yeah this was saved and as you can see the boldness was saved that we got a list here was saved and this is how you use your Rich editor what you see is what you get it will basically just generate HTML behind the scenes and then send this to your server and there of course you have to handle it save it and in this case then output it with this double exclamation mark thing to render render it to the screen so this is the basics of throwing in a wizzywig editor into your lateral application in the next video we'll come to the very interesting part of using a file manager to actually be able to upload and store well imag mainly but any files would work here see you in the next videos bye"
+}

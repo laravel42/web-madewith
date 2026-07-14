@@ -1,0 +1,1596 @@
+{
+  "videoId": "iIhAfX4iek0",
+  "language": "en",
+  "source": "auto",
+  "segments": [
+    {
+      "start": 0.03,
+      "text": "hello everyone and welcome back to their"
+    },
+    {
+      "start": 1.89,
+      "text": "flats tutorial so in today's video what"
+    },
+    {
+      "start": 3.81,
+      "text": "I'm gonna be doing is talking about"
+    },
+    {
+      "start": 5.009,
+      "text": "sessions now to try to explain you guys"
+    },
+    {
+      "start": 7.62,
+      "text": "what sessions are I'm gonna give you an"
+    },
+    {
+      "start": 9.42,
+      "text": "example of what we did in the previous"
+    },
+    {
+      "start": 10.86,
+      "text": "video and talk about a way in which we"
+    },
+    {
+      "start": 12.509,
+      "text": "could do this better so essentially we"
+    },
+    {
+      "start": 14.639,
+      "text": "had this login page and once we logged"
+    },
+    {
+      "start": 16.92,
+      "text": "in we get got the users name and then we"
+    },
+    {
+      "start": 19.109,
+      "text": "redirected them to a page that showed"
+    },
+    {
+      "start": 21.33,
+      "text": "them their name just pretty much pop"
+    },
+    {
+      "start": 23.22,
+      "text": "that up on the screen now this is great"
+    },
+    {
+      "start": 25.41,
+      "text": "that's fine but every time that we want"
+    },
+    {
+      "start": 27.689,
+      "text": "to see the users name we need to log in"
+    },
+    {
+      "start": 29.49,
+      "text": "again and again and again and if we ever"
+    },
+    {
+      "start": 32.279,
+      "text": "want to keep seeing the user's name we"
+    },
+    {
+      "start": 33.69,
+      "text": "need to continue to log in now what if"
+    },
+    {
+      "start": 35.94,
+      "text": "we want to direct to another page and"
+    },
+    {
+      "start": 37.62,
+      "text": "that page wants the users name as well"
+    },
+    {
+      "start": 39.45,
+      "text": "well that means we have to set up a way"
+    },
+    {
+      "start": 41.25,
+      "text": "to pass to that page the users name we"
+    },
+    {
+      "start": 44.579,
+      "text": "got to use a parameter we have to set up"
+    },
+    {
+      "start": 46.32,
+      "text": "this link it's just really not the best"
+    },
+    {
+      "start": 48.27,
+      "text": "way to do things and sometimes you know"
+    },
+    {
+      "start": 50.039,
+      "text": "you don't want to redirect to a page it"
+    },
+    {
+      "start": 51.75,
+      "text": "says slash Tim or slash Jo or slash bill"
+    },
+    {
+      "start": 55.079,
+      "text": "so what we're gonna do to actually pass"
+    },
+    {
+      "start": 57.36,
+      "text": "around information through our you know"
+    },
+    {
+      "start": 59.55,
+      "text": "back-end here and through our different"
+    },
+    {
+      "start": 61.26,
+      "text": "web pages is use something called"
+    },
+    {
+      "start": 62.82,
+      "text": "sessions now sessions are great because"
+    },
+    {
+      "start": 65.189,
+      "text": "they're temporary they're stored on the"
+    },
+    {
+      "start": 67.26,
+      "text": "web server and they're just simply there"
+    },
+    {
+      "start": 68.97,
+      "text": "for quick access of information between"
+    },
+    {
+      "start": 70.74,
+      "text": "all the different pages of your website"
+    },
+    {
+      "start": 72.619,
+      "text": "think of a session as something that"
+    },
+    {
+      "start": 74.79,
+      "text": "you're gonna load in your going to use"
+    },
+    {
+      "start": 76.77,
+      "text": "while the user is on your website so"
+    },
+    {
+      "start": 78.81,
+      "text": "while they're browsing on the website"
+    },
+    {
+      "start": 80.22,
+      "text": "and then as soon as they leave it's"
+    },
+    {
+      "start": 81.479,
+      "text": "gonna disappear so essentially if we're"
+    },
+    {
+      "start": 83.4,
+      "text": "doing an example let's say you know of"
+    },
+    {
+      "start": 84.84,
+      "text": "Instagram or Facebook when someone logs"
+    },
+    {
+      "start": 86.88,
+      "text": "in there's gonna be a new session"
+    },
+    {
+      "start": 88.32,
+      "text": "created it's gonna store their username"
+    },
+    {
+      "start": 90.45,
+      "text": "probably some other information as well"
+    },
+    {
+      "start": 92.22,
+      "text": "about what they're doing on the website"
+    },
+    {
+      "start": 93.869,
+      "text": "at the current time and then as they can"
+    },
+    {
+      "start": 96.06,
+      "text": "go between different pages those pages"
+    },
+    {
+      "start": 98.07,
+      "text": "can access that session data so it can"
+    },
+    {
+      "start": 100.56,
+      "text": "say okay so I moved to you know my"
+    },
+    {
+      "start": 102.45,
+      "text": "profile page this is the profile of Tim"
+    },
+    {
+      "start": 105.06,
+      "text": "I know that because I stored that in a"
+    },
+    {
+      "start": 106.619,
+      "text": "session so let's show all this different"
+    },
+    {
+      "start": 108.39,
+      "text": "information that I have stored in the"
+    },
+    {
+      "start": 109.92,
+      "text": "session as well or whatever it is right"
+    },
+    {
+      "start": 111.689,
+      "text": "and then as soon as that usually leaves"
+    },
+    {
+      "start": 113.79,
+      "text": "the web page or logs out of the web page"
+    },
+    {
+      "start": 116.04,
+      "text": "all of that session data is erased it"
+    },
+    {
+      "start": 118.079,
+      "text": "disappears and the next time they log in"
+    },
+    {
+      "start": 120.18,
+      "text": "that session data will be reloaded into"
+    },
+    {
+      "start": 122.43,
+      "text": "the session where it can be used for the"
+    },
+    {
+      "start": 123.93,
+      "text": "rest of the pages now this is very"
+    },
+    {
+      "start": 125.79,
+      "text": "useful I'm gonna show you guys kind of"
+    },
+    {
+      "start": 127.409,
+      "text": "how this works it should start to make a"
+    },
+    {
+      "start": 128.759,
+      "text": "bit more sense but that is kind of the"
+    },
+    {
+      "start": 130.349,
+      "text": "basics of sessions just for my"
+    },
+    {
+      "start": 132.85,
+      "text": "they're temporary they're stored on the"
+    },
+    {
+      "start": 135.07,
+      "text": "server they're actually not stored on"
+    },
+    {
+      "start": 136.93,
+      "text": "the client side and they're kind of"
+    },
+    {
+      "start": 138.4,
+      "text": "designed for just quick access of"
+    },
+    {
+      "start": 139.93,
+      "text": "information and a way to pass stuff"
+    },
+    {
+      "start": 142.06,
+      "text": "around our server okay so what I want to"
+    },
+    {
+      "start": 145.33,
+      "text": "do essentially is I want to do an"
+    },
+    {
+      "start": 146.95,
+      "text": "example where the user logs in we create"
+    },
+    {
+      "start": 149.74,
+      "text": "a session for them that stores the name"
+    },
+    {
+      "start": 151.39,
+      "text": "and then we can redirect to another page"
+    },
+    {
+      "start": 153.61,
+      "text": "that doesn't have this you know slash"
+    },
+    {
+      "start": 155.56,
+      "text": "user so I'm actually just gonna get rid"
+    },
+    {
+      "start": 157.18,
+      "text": "of this and make this slash user here we"
+    },
+    {
+      "start": 160.24,
+      "text": "don't have any parameters here and we"
+    },
+    {
+      "start": 161.86,
+      "text": "can still access that person's name and"
+    },
+    {
+      "start": 163.75,
+      "text": "display that on the screen so let's"
+    },
+    {
+      "start": 166.03,
+      "text": "start with that what we need to do is"
+    },
+    {
+      "start": 167.8,
+      "text": "actually start by importing session here"
+    },
+    {
+      "start": 170.11,
+      "text": "I'm going to show you how easy this is"
+    },
+    {
+      "start": 171.64,
+      "text": "to actually do so what we can do is"
+    },
+    {
+      "start": 174.43,
+      "text": "inside a request stop post so when the"
+    },
+    {
+      "start": 176.26,
+      "text": "user presses login or submit or whatever"
+    },
+    {
+      "start": 178.57,
+      "text": "on that login page what we're going to"
+    },
+    {
+      "start": 180.52,
+      "text": "do is set up some session data based on"
+    },
+    {
+      "start": 182.83,
+      "text": "whatever information they typed in so"
+    },
+    {
+      "start": 185.05,
+      "text": "I'm going to say session and in this"
+    },
+    {
+      "start": 187.69,
+      "text": "case user equals user and this is"
+    },
+    {
+      "start": 191.5,
+      "text": "actually as easy as it is to set up some"
+    },
+    {
+      "start": 193.69,
+      "text": "data for our session so this session"
+    },
+    {
+      "start": 195.91,
+      "text": "stores data as a dictionary just like"
+    },
+    {
+      "start": 198.37,
+      "text": "we've seen this requests top form"
+    },
+    {
+      "start": 199.81,
+      "text": "working so if I want to create a new you"
+    },
+    {
+      "start": 202.09,
+      "text": "know piece of information information in"
+    },
+    {
+      "start": 203.98,
+      "text": "my session what I can do is simply type"
+    },
+    {
+      "start": 205.72,
+      "text": "session the name of whatever I want that"
+    },
+    {
+      "start": 208.36,
+      "text": "dictionary key to be and then set it"
+    },
+    {
+      "start": 209.769,
+      "text": "equal to some specific value in this"
+    },
+    {
+      "start": 211.69,
+      "text": "case this is the user that click Submit"
+    },
+    {
+      "start": 213.61,
+      "text": "and you know submitted their name to"
+    },
+    {
+      "start": 215.68,
+      "text": "this form so that's it that's literally"
+    },
+    {
+      "start": 218.29,
+      "text": "how we store information in the session"
+    },
+    {
+      "start": 219.97,
+      "text": "now how do we get that information so"
+    },
+    {
+      "start": 222.1,
+      "text": "what I want to do is I'm going to change"
+    },
+    {
+      "start": 223.18,
+      "text": "this redirect here to redirect to user"
+    },
+    {
+      "start": 225.19,
+      "text": "but I'm not gonna pass the user as an"
+    },
+    {
+      "start": 227.41,
+      "text": "argument I'm actually just gonna"
+    },
+    {
+      "start": 228.88,
+      "text": "redirect that I'm not gonna pass any"
+    },
+    {
+      "start": 230.38,
+      "text": "information and from this user function"
+    },
+    {
+      "start": 232.39,
+      "text": "I'm gonna get the session information"
+    },
+    {
+      "start": 234.34,
+      "text": "now the way that I do this is I first"
+    },
+    {
+      "start": 236.8,
+      "text": "check if there's any information in the"
+    },
+    {
+      "start": 239.23,
+      "text": "session so I want to make sure that"
+    },
+    {
+      "start": 240.64,
+      "text": "before I reference that dictionary key"
+    },
+    {
+      "start": 242.41,
+      "text": "that we've actually you know logged in"
+    },
+    {
+      "start": 244.209,
+      "text": "because technically someone could just"
+    },
+    {
+      "start": 245.62,
+      "text": "type slash user and access this page"
+    },
+    {
+      "start": 247.84,
+      "text": "without being logged in right so what"
+    },
+    {
+      "start": 249.97,
+      "text": "I'm gonna do is say if user which is the"
+    },
+    {
+      "start": 253.239,
+      "text": "name of that session key right in"
+    },
+    {
+      "start": 256.44,
+      "text": "session then what I'll do is return an F"
+    },
+    {
+      "start": 260.019,
+      "text": "string and I'm actually going to get"
+    },
+    {
+      "start": 261.31,
+      "text": "this user so I set user equals session"
+    },
+    {
+      "start": 264.789,
+      "text": "user and we know this is"
+    },
+    {
+      "start": 266.52,
+      "text": "valid because we just checked if user"
+    },
+    {
+      "start": 268.02,
+      "text": "was in session and then I'll simply"
+    },
+    {
+      "start": 270.0,
+      "text": "display the user like that and put this"
+    },
+    {
+      "start": 272.55,
+      "text": "inside the brackets so it shows up so"
+    },
+    {
+      "start": 275.28,
+      "text": "that is as easy as it is to store and"
+    },
+    {
+      "start": 277.409,
+      "text": "retrieve session data just remember all"
+    },
+    {
+      "start": 280.139,
+      "text": "you do is literally make a dictionary"
+    },
+    {
+      "start": 281.639,
+      "text": "key put it aside session I've imported"
+    },
+    {
+      "start": 283.83,
+      "text": "session up here set it equal to a value"
+    },
+    {
+      "start": 285.659,
+      "text": "and then you can access it after you've"
+    },
+    {
+      "start": 287.28,
+      "text": "checked if it exists now what I'm gonna"
+    },
+    {
+      "start": 289.05,
+      "text": "do if this session does not exist so if"
+    },
+    {
+      "start": 291.96,
+      "text": "there's no user in my session that means"
+    },
+    {
+      "start": 294.24,
+      "text": "that I haven't logged in yet or I've"
+    },
+    {
+      "start": 295.77,
+      "text": "left the browser and I need to log in"
+    },
+    {
+      "start": 297.449,
+      "text": "again so what I'm gonna do is actually"
+    },
+    {
+      "start": 299.28,
+      "text": "redirect back to the login page and say"
+    },
+    {
+      "start": 301.83,
+      "text": "hey you need to login or whatever it is"
+    },
+    {
+      "start": 303.659,
+      "text": "so I'm just gonna say return redirect"
+    },
+    {
+      "start": 306.169,
+      "text": "URL for in this case login and then"
+    },
+    {
+      "start": 310.38,
+      "text": "since we have a get method when we're"
+    },
+    {
+      "start": 311.97,
+      "text": "returning over here we will return this"
+    },
+    {
+      "start": 314.34,
+      "text": "render template for login dot HTML they"
+    },
+    {
+      "start": 316.62,
+      "text": "can hit submit and they can redirect"
+    },
+    {
+      "start": 318.03,
+      "text": "back to the user page so let's start"
+    },
+    {
+      "start": 320.009,
+      "text": "with that and then we'll get into some"
+    },
+    {
+      "start": 320.909,
+      "text": "other more complicated things so to run"
+    },
+    {
+      "start": 323.58,
+      "text": "this I'm just gonna go python tutorial v"
+    },
+    {
+      "start": 327.9,
+      "text": "dot pi okay so let's go copy this link"
+    },
+    {
+      "start": 331.469,
+      "text": "here and we'll head to the slash login"
+    },
+    {
+      "start": 333.539,
+      "text": "page and see what we get okay so this is"
+    },
+    {
+      "start": 336.84,
+      "text": "our home page so sorry slash login name"
+    },
+    {
+      "start": 339.87,
+      "text": "let's try Tim if I hit submit and if I"
+    },
+    {
+      "start": 343.62,
+      "text": "hit submit we get an error because I"
+    },
+    {
+      "start": 345.15,
+      "text": "just remember that I need to add"
+    },
+    {
+      "start": 346.409,
+      "text": "something to my file here so essentially"
+    },
+    {
+      "start": 350.009,
+      "text": "all of this session data that we store"
+    },
+    {
+      "start": 352.05,
+      "text": "is actually encrypted on the server and"
+    },
+    {
+      "start": 354.24,
+      "text": "that means we actually need to define"
+    },
+    {
+      "start": 355.71,
+      "text": "something called a secret key which will"
+    },
+    {
+      "start": 357.719,
+      "text": "be the way that we decrypt and encrypt"
+    },
+    {
+      "start": 359.789,
+      "text": "this data so to do that I'm gonna type"
+    },
+    {
+      "start": 362.699,
+      "text": "at the beginning of my program app dot"
+    },
+    {
+      "start": 364.8,
+      "text": "secret key equals and then you can"
+    },
+    {
+      "start": 367.02,
+      "text": "literally just type any string in here"
+    },
+    {
+      "start": 368.759,
+      "text": "that you want I mean it would be wise to"
+    },
+    {
+      "start": 370.65,
+      "text": "make this something somewhat complicated"
+    },
+    {
+      "start": 372.87,
+      "text": "but I'm just gonna make mine hello as my"
+    },
+    {
+      "start": 375.3,
+      "text": "secret key but we do just need to set a"
+    },
+    {
+      "start": 376.979,
+      "text": "secret key I completely forgot that that"
+    },
+    {
+      "start": 378.99,
+      "text": "was actually a necessary step in doing"
+    },
+    {
+      "start": 380.699,
+      "text": "this okay so let me refresh this page"
+    },
+    {
+      "start": 382.889,
+      "text": "now and see what we get actually I got"
+    },
+    {
+      "start": 385.5,
+      "text": "to go back to slash login so let's go to"
+    },
+    {
+      "start": 387.509,
+      "text": "slash login this hopefully should be"
+    },
+    {
+      "start": 389.31,
+      "text": "good now I'm gonna type Tim hit submit"
+    },
+    {
+      "start": 391.65,
+      "text": "and then you can see we're redirected to"
+    },
+    {
+      "start": 393.24,
+      "text": "a page that says Tim and notice again"
+    },
+    {
+      "start": 395.49,
+      "text": "right that I don't pass any information"
+    },
+    {
+      "start": 397.56,
+      "text": "to here about the user we're getting it"
+    },
+    {
+      "start": 399.36,
+      "text": "this session variable so let's go back"
+    },
+    {
+      "start": 401.759,
+      "text": "and let's do something else now so if I"
+    },
+    {
+      "start": 404.4,
+      "text": "close this browser and I open it back up"
+    },
+    {
+      "start": 406.979,
+      "text": "and I go to whatever that link is and"
+    },
+    {
+      "start": 410.55,
+      "text": "then I go to slash user you'll see that"
+    },
+    {
+      "start": 413.28,
+      "text": "it redirects me back to logging well why"
+    },
+    {
+      "start": 415.439,
+      "text": "does it do that"
+    },
+    {
+      "start": 416.219,
+      "text": "because when I close the web browser my"
+    },
+    {
+      "start": 418.349,
+      "text": "session data is actually deleted from"
+    },
+    {
+      "start": 420.689,
+      "text": "the server which means that if I want to"
+    },
+    {
+      "start": 422.669,
+      "text": "go back to the user page I need to"
+    },
+    {
+      "start": 424.319,
+      "text": "create a new session and logging again"
+    },
+    {
+      "start": 425.729,
+      "text": "in this case we'll login with Joe and we"
+    },
+    {
+      "start": 428.55,
+      "text": "see we are redirected to Joe I can go"
+    },
+    {
+      "start": 431.069,
+      "text": "you know to slash home and that will"
+    },
+    {
+      "start": 433.62,
+      "text": "slash home isn't a page but if I go to"
+    },
+    {
+      "start": 435.06,
+      "text": "slash and then I go back to slash user"
+    },
+    {
+      "start": 438.599,
+      "text": "you'll see that it brings me back to Joe"
+    },
+    {
+      "start": 440.46,
+      "text": "because it stored that information in"
+    },
+    {
+      "start": 442.02,
+      "text": "the session so again very useful that is"
+    },
+    {
+      "start": 445.229,
+      "text": "how that works now it's talking about"
+    },
+    {
+      "start": 447.629,
+      "text": "actually clearing a session and logging"
+    },
+    {
+      "start": 450.18,
+      "text": "out so we'll leave that up for now but"
+    },
+    {
+      "start": 452.61,
+      "text": "what I want to do is actually create a"
+    },
+    {
+      "start": 453.69,
+      "text": "login page and show you how you can"
+    },
+    {
+      "start": 455.25,
+      "text": "manually clear session DAP because"
+    },
+    {
+      "start": 457.379,
+      "text": "essentially if someone logs out you"
+    },
+    {
+      "start": 459.029,
+      "text": "probably want to delete all the"
+    },
+    {
+      "start": 460.68,
+      "text": "information associated with their"
+    },
+    {
+      "start": 462.27,
+      "text": "session or at least some of that"
+    },
+    {
+      "start": 463.529,
+      "text": "information so what I'm going to do is"
+    },
+    {
+      "start": 465.36,
+      "text": "set up a new function here so a new page"
+    },
+    {
+      "start": 467.909,
+      "text": "we'll just call this one slash logout"
+    },
+    {
+      "start": 470.4,
+      "text": "like that it's defined logout and all"
+    },
+    {
+      "start": 474.27,
+      "text": "we're gonna do in here is actually"
+    },
+    {
+      "start": 476.46,
+      "text": "remove some data from our session what"
+    },
+    {
+      "start": 478.8,
+      "text": "I'm going to do is say session dot pop"
+    },
+    {
+      "start": 481.199,
+      "text": "and then I'm gonna say user none now"
+    },
+    {
+      "start": 485.729,
+      "text": "what this is gonna do is actually remove"
+    },
+    {
+      "start": 487.529,
+      "text": "the user data from my sessions this is"
+    },
+    {
+      "start": 490.11,
+      "text": "just how you remove it from the"
+    },
+    {
+      "start": 491.279,
+      "text": "dictionary and then this none is just a"
+    },
+    {
+      "start": 493.139,
+      "text": "message that's associated with removing"
+    },
+    {
+      "start": 495.27,
+      "text": "that data I'm not really gonna talk"
+    },
+    {
+      "start": 497.159,
+      "text": "about that because I don't fully"
+    },
+    {
+      "start": 498.18,
+      "text": "understand why we have none here but"
+    },
+    {
+      "start": 499.83,
+      "text": "that's anyways it's not that important"
+    },
+    {
+      "start": 501.75,
+      "text": "so once we log out we will actually"
+    },
+    {
+      "start": 503.819,
+      "text": "return a your redirect to the login page"
+    },
+    {
+      "start": 507.479,
+      "text": "so we'll say URL for in this case login"
+    },
+    {
+      "start": 511.82,
+      "text": "ok awesome now what I want to do is add"
+    },
+    {
+      "start": 514.709,
+      "text": "one more thing to login here we're"
+    },
+    {
+      "start": 516.479,
+      "text": "essentially I check if when we redirect"
+    },
+    {
+      "start": 519.329,
+      "text": "to login here if we're already logged in"
+    },
+    {
+      "start": 521.31,
+      "text": "I just redirect us to the user page"
+    },
+    {
+      "start": 523.32,
+      "text": "otherwise I'm gonna actually redirect us"
+    },
+    {
+      "start": 525.81,
+      "text": "to this login dot HTML form so to do"
+    },
+    {
+      "start": 528.48,
+      "text": "that is pretty easy all I'm gonna say is"
+    },
+    {
+      "start": 529.92,
+      "text": "if"
+    },
+    {
+      "start": 531.53,
+      "text": "user in session which essentially means"
+    },
+    {
+      "start": 535.07,
+      "text": "you know we've signed in then all I need"
+    },
+    {
+      "start": 536.96,
+      "text": "to do is return a redirect to the URL"
+    },
+    {
+      "start": 540.26,
+      "text": "for in this case user and that is as"
+    },
+    {
+      "start": 543.8,
+      "text": "easy as it says"
+    },
+    {
+      "start": 544.88,
+      "text": "so essentially what I've done here is"
+    },
+    {
+      "start": 546.32,
+      "text": "set up a way that we can log in using a"
+    },
+    {
+      "start": 548.72,
+      "text": "session and then we can be redirected to"
+    },
+    {
+      "start": 551.15,
+      "text": "a specific page without sending that"
+    },
+    {
+      "start": 552.71,
+      "text": "information directly to it through a"
+    },
+    {
+      "start": 554.12,
+      "text": "parameter we can display that"
+    },
+    {
+      "start": 555.83,
+      "text": "information we can log out now by"
+    },
+    {
+      "start": 557.66,
+      "text": "popping that session data and then if we"
+    },
+    {
+      "start": 559.55,
+      "text": "go to the login page of our already"
+    },
+    {
+      "start": 560.75,
+      "text": "logged in it's actually going to"
+    },
+    {
+      "start": 562.01,
+      "text": "redirect us to this user page and just"
+    },
+    {
+      "start": 563.78,
+      "text": "show us that information so let's do"
+    },
+    {
+      "start": 566.06,
+      "text": "that now um if I go to slash long out"
+    },
+    {
+      "start": 570.86,
+      "text": "you can see that it redirects us to the"
+    },
+    {
+      "start": 572.93,
+      "text": "login page"
+    },
+    {
+      "start": 573.44,
+      "text": "and now if I were to try to go to back"
+    },
+    {
+      "start": 575.27,
+      "text": "back to slash user we get redirected"
+    },
+    {
+      "start": 578.12,
+      "text": "immediately back to the login page"
+    },
+    {
+      "start": 579.62,
+      "text": "because we're not signed in yet"
+    },
+    {
+      "start": 581.27,
+      "text": "so if we sign in with say Tim there we"
+    },
+    {
+      "start": 583.94,
+      "text": "go we're on the user page and now if I"
+    },
+    {
+      "start": 585.5,
+      "text": "go to slash login you can see it"
+    },
+    {
+      "start": 588.47,
+      "text": "actually just redirects us back to this"
+    },
+    {
+      "start": 590.42,
+      "text": "same page because we're already logged"
+    },
+    {
+      "start": 591.8,
+      "text": "in and then again we can log out brings"
+    },
+    {
+      "start": 595.1,
+      "text": "us the login page and if I go to slash"
+    },
+    {
+      "start": 596.75,
+      "text": "user that's not going to work and that"
+    },
+    {
+      "start": 598.16,
+      "text": "is kind of how we do that now remember"
+    },
+    {
+      "start": 600.83,
+      "text": "that this session dad is actually"
+    },
+    {
+      "start": 602.09,
+      "text": "deleted when I close my browser so I'm"
+    },
+    {
+      "start": 604.61,
+      "text": "gonna show you quickly a way that we can"
+    },
+    {
+      "start": 605.96,
+      "text": "store our session data for longer"
+    },
+    {
+      "start": 607.55,
+      "text": "because what actually happens is this"
+    },
+    {
+      "start": 608.9,
+      "text": "session data is stored in a temporary"
+    },
+    {
+      "start": 610.64,
+      "text": "directory on the server and we can set"
+    },
+    {
+      "start": 613.01,
+      "text": "how long we want that information to be"
+    },
+    {
+      "start": 614.75,
+      "text": "stored for by using something called"
+    },
+    {
+      "start": 616.28,
+      "text": "permanent sessions now what I'm gonna do"
+    },
+    {
+      "start": 619.4,
+      "text": "to set up the permanent session here is"
+    },
+    {
+      "start": 621.05,
+      "text": "define first of all how long I want a"
+    },
+    {
+      "start": 623.48,
+      "text": "permanent session to last so you may"
+    },
+    {
+      "start": 625.34,
+      "text": "have noticed sometimes you know you"
+    },
+    {
+      "start": 626.54,
+      "text": "revisit a website a few days later and"
+    },
+    {
+      "start": 628.55,
+      "text": "you just log in immediately you don't"
+    },
+    {
+      "start": 630.32,
+      "text": "actually have to you know go through the"
+    },
+    {
+      "start": 631.7,
+      "text": "process or maybe your informations"
+    },
+    {
+      "start": 633.41,
+      "text": "already typed in and you just hit login"
+    },
+    {
+      "start": 634.94,
+      "text": "we're gonna some of this information is"
+    },
+    {
+      "start": 637.04,
+      "text": "stored in permanent sessions which means"
+    },
+    {
+      "start": 638.84,
+      "text": "it's storing it for longer than you know"
+    },
+    {
+      "start": 640.76,
+      "text": "however long you're in the web browser"
+    },
+    {
+      "start": 642.38,
+      "text": "so that every time you go back to that"
+    },
+    {
+      "start": 643.91,
+      "text": "web page you can quickly access"
+    },
+    {
+      "start": 645.62,
+      "text": "information that you need and you don't"
+    },
+    {
+      "start": 647.09,
+      "text": "need to log back in so what I'm gonna do"
+    },
+    {
+      "start": 649.25,
+      "text": "is actually just import something here"
+    },
+    {
+      "start": 652.82,
+      "text": "so I'm gonna say from date time import"
+    },
+    {
+      "start": 655.97,
+      "text": "time Delta now the reason I'm doing this"
+    },
+    {
+      "start": 658.22,
+      "text": "is because I want to set up the max time"
+    },
+    {
+      "start": 660.59,
+      "text": "that our session could last for and the"
+    },
+    {
+      "start": 662.36,
+      "text": "way that I do that is app dot and I"
+    },
+    {
+      "start": 664.7,
+      "text": "gotta look up my other screen because I"
+    },
+    {
+      "start": 665.96,
+      "text": "forget what it is permanent session"
+    },
+    {
+      "start": 667.9,
+      "text": "lifetime like that and then it's gonna"
+    },
+    {
+      "start": 670.31,
+      "text": "be equal to time Delta and then you can"
+    },
+    {
+      "start": 673.43,
+      "text": "say days equals and how many days you"
+    },
+    {
+      "start": 675.68,
+      "text": "want this to actually last for let me"
+    },
+    {
+      "start": 677.54,
+      "text": "make sure this is correct so I could say"
+    },
+    {
+      "start": 679.07,
+      "text": "days and I could say five days and if I"
+    },
+    {
+      "start": 681.62,
+      "text": "do this what this means is we're gonna"
+    },
+    {
+      "start": 683.24,
+      "text": "store our permanent session data for"
+    },
+    {
+      "start": 686.03,
+      "text": "five days I can also do something like"
+    },
+    {
+      "start": 688.69,
+      "text": "minutes equals five and if I do that"
+    },
+    {
+      "start": 691.82,
+      "text": "that means we're gonna store our"
+    },
+    {
+      "start": 693.08,
+      "text": "permanent session data for five minutes"
+    },
+    {
+      "start": 695.27,
+      "text": "and then delete it after that now how do"
+    },
+    {
+      "start": 697.37,
+      "text": "we make a session permanent well this is"
+    },
+    {
+      "start": 700.25,
+      "text": "actually pretty easy all we're gonna do"
+    },
+    {
+      "start": 702.53,
+      "text": "is when we log in and we actually have"
+    },
+    {
+      "start": 705.14,
+      "text": "we've got this information we've logged"
+    },
+    {
+      "start": 707.18,
+      "text": "in everything's valid say we've checked"
+    },
+    {
+      "start": 709.19,
+      "text": "this against the database then we can"
+    },
+    {
+      "start": 710.87,
+      "text": "make the session permanent by saying"
+    },
+    {
+      "start": 712.19,
+      "text": "session dot permanent if I could spell"
+    },
+    {
+      "start": 716.3,
+      "text": "this correctly equals true I don't know"
+    },
+    {
+      "start": 719.93,
+      "text": "why that was such a struggle okay so"
+    },
+    {
+      "start": 721.31,
+      "text": "session dot permanent equals true and"
+    },
+    {
+      "start": 723.29,
+      "text": "now this is going to define this"
+    },
+    {
+      "start": 724.7,
+      "text": "specific session as a permanent session"
+    },
+    {
+      "start": 726.47,
+      "text": "which means it's gonna last as long as"
+    },
+    {
+      "start": 728.03,
+      "text": "we've defined up here by default don't"
+    },
+    {
+      "start": 731.27,
+      "text": "do this it sets our session to not"
+    },
+    {
+      "start": 733.79,
+      "text": "permanent so false here and that means"
+    },
+    {
+      "start": 735.65,
+      "text": "it's gonna last for as long as you're"
+    },
+    {
+      "start": 736.82,
+      "text": "actually on the webpage or sorry in your"
+    },
+    {
+      "start": 738.56,
+      "text": "browser so let's see if this is working"
+    },
+    {
+      "start": 741.83,
+      "text": "now believe it is so let's go back to"
+    },
+    {
+      "start": 744.92,
+      "text": "that web page um give it a second here"
+    },
+    {
+      "start": 748.55,
+      "text": "what's our air I guess got a hit enter"
+    },
+    {
+      "start": 750.71,
+      "text": "in the command prompt okay so let's go"
+    },
+    {
+      "start": 752.57,
+      "text": "slash login let's do our name so Tim and"
+    },
+    {
+      "start": 756.38,
+      "text": "then let's actually close this and let's"
+    },
+    {
+      "start": 758.39,
+      "text": "go back to it so paste that in here why"
+    },
+    {
+      "start": 763.52,
+      "text": "is this not working okay and then we'll"
+    },
+    {
+      "start": 766.34,
+      "text": "go to slash login and you can see we are"
+    },
+    {
+      "start": 768.92,
+      "text": "redirected back to this user page"
+    },
+    {
+      "start": 770.9,
+      "text": "because our session data was actually"
+    },
+    {
+      "start": 772.91,
+      "text": "saved permanently so when I actually"
+    },
+    {
+      "start": 774.5,
+      "text": "closed this window it didn't do anything"
+    },
+    {
+      "start": 776.33,
+      "text": "so now let's say logout we've logged out"
+    },
+    {
+      "start": 779.84,
+      "text": "and then obviously now our session data"
+    },
+    {
+      "start": 781.34,
+      "text": "has been removed because we had this"
+    },
+    {
+      "start": 783.32,
+      "text": "session being removed from the logout so"
+    },
+    {
+      "start": 785.48,
+      "text": "that is kind of everything about"
+    },
+    {
+      "start": 786.74,
+      "text": "sessions there's obviously some more"
+    },
+    {
+      "start": 788.21,
+      "text": "stuff that you guys can do with this but"
+    },
+    {
+      "start": 789.47,
+      "text": "this is the basics and just remember"
+    },
+    {
+      "start": 791.48,
+      "text": "sessions are something that you're using"
+    },
+    {
+      "start": 792.77,
+      "text": "temporarily you should never be storing"
+    },
+    {
+      "start": 794.42,
+      "text": "perm"
+    },
+    {
+      "start": 794.889,
+      "text": "data in a session and typically what"
+    },
+    {
+      "start": 797.019,
+      "text": "ends up happening is you'll log in"
+    },
+    {
+      "start": 798.489,
+      "text": "you'll validate some stuff with the"
+    },
+    {
+      "start": 799.989,
+      "text": "database you'll actually grab some"
+    },
+    {
+      "start": 801.549,
+      "text": "information from the database and store"
+    },
+    {
+      "start": 803.29,
+      "text": "that in a session and then whenever you"
+    },
+    {
+      "start": 805.449,
+      "text": "log out you'll remove that information"
+    },
+    {
+      "start": 807.1,
+      "text": "and when you log in again you can load"
+    },
+    {
+      "start": 808.359,
+      "text": "it back in so this is information that"
+    },
+    {
+      "start": 809.98,
+      "text": "you don't really care about but it's"
+    },
+    {
+      "start": 811.779,
+      "text": "just there for quick retrieval and for"
+    },
+    {
+      "start": 813.97,
+      "text": "easy access from different web pages so"
+    },
+    {
+      "start": 815.589,
+      "text": "you don't have to continually read from"
+    },
+    {
+      "start": 817.329,
+      "text": "the database and you also just know some"
+    },
+    {
+      "start": 819.73,
+      "text": "of this information passing between the"
+    },
+    {
+      "start": 821.169,
+      "text": "pages you don't have to send them"
+    },
+    {
+      "start": 822.429,
+      "text": "through you know the URL which is not a"
+    },
+    {
+      "start": 824.109,
+      "text": "secure way to send information so that"
+    },
+    {
+      "start": 826.029,
+      "text": "has been it for this video if you guys"
+    },
+    {
+      "start": 827.139,
+      "text": "enjoyed make sure you leave a like and"
+    },
+    {
+      "start": 828.609,
+      "text": "subscribe and I will see you guys in"
+    },
+    {
+      "start": 829.959,
+      "text": "another one"
+    }
+  ],
+  "text": "hello everyone and welcome back to their flats tutorial so in today's video what I'm gonna be doing is talking about sessions now to try to explain you guys what sessions are I'm gonna give you an example of what we did in the previous video and talk about a way in which we could do this better so essentially we had this login page and once we logged in we get got the users name and then we redirected them to a page that showed them their name just pretty much pop that up on the screen now this is great that's fine but every time that we want to see the users name we need to log in again and again and again and if we ever want to keep seeing the user's name we need to continue to log in now what if we want to direct to another page and that page wants the users name as well well that means we have to set up a way to pass to that page the users name we got to use a parameter we have to set up this link it's just really not the best way to do things and sometimes you know you don't want to redirect to a page it says slash Tim or slash Jo or slash bill so what we're gonna do to actually pass around information through our you know back-end here and through our different web pages is use something called sessions now sessions are great because they're temporary they're stored on the web server and they're just simply there for quick access of information between all the different pages of your website think of a session as something that you're gonna load in your going to use while the user is on your website so while they're browsing on the website and then as soon as they leave it's gonna disappear so essentially if we're doing an example let's say you know of Instagram or Facebook when someone logs in there's gonna be a new session created it's gonna store their username probably some other information as well about what they're doing on the website at the current time and then as they can go between different pages those pages can access that session data so it can say okay so I moved to you know my profile page this is the profile of Tim I know that because I stored that in a session so let's show all this different information that I have stored in the session as well or whatever it is right and then as soon as that usually leaves the web page or logs out of the web page all of that session data is erased it disappears and the next time they log in that session data will be reloaded into the session where it can be used for the rest of the pages now this is very useful I'm gonna show you guys kind of how this works it should start to make a bit more sense but that is kind of the basics of sessions just for my they're temporary they're stored on the server they're actually not stored on the client side and they're kind of designed for just quick access of information and a way to pass stuff around our server okay so what I want to do essentially is I want to do an example where the user logs in we create a session for them that stores the name and then we can redirect to another page that doesn't have this you know slash user so I'm actually just gonna get rid of this and make this slash user here we don't have any parameters here and we can still access that person's name and display that on the screen so let's start with that what we need to do is actually start by importing session here I'm going to show you how easy this is to actually do so what we can do is inside a request stop post so when the user presses login or submit or whatever on that login page what we're going to do is set up some session data based on whatever information they typed in so I'm going to say session and in this case user equals user and this is actually as easy as it is to set up some data for our session so this session stores data as a dictionary just like we've seen this requests top form working so if I want to create a new you know piece of information information in my session what I can do is simply type session the name of whatever I want that dictionary key to be and then set it equal to some specific value in this case this is the user that click Submit and you know submitted their name to this form so that's it that's literally how we store information in the session now how do we get that information so what I want to do is I'm going to change this redirect here to redirect to user but I'm not gonna pass the user as an argument I'm actually just gonna redirect that I'm not gonna pass any information and from this user function I'm gonna get the session information now the way that I do this is I first check if there's any information in the session so I want to make sure that before I reference that dictionary key that we've actually you know logged in because technically someone could just type slash user and access this page without being logged in right so what I'm gonna do is say if user which is the name of that session key right in session then what I'll do is return an F string and I'm actually going to get this user so I set user equals session user and we know this is valid because we just checked if user was in session and then I'll simply display the user like that and put this inside the brackets so it shows up so that is as easy as it is to store and retrieve session data just remember all you do is literally make a dictionary key put it aside session I've imported session up here set it equal to a value and then you can access it after you've checked if it exists now what I'm gonna do if this session does not exist so if there's no user in my session that means that I haven't logged in yet or I've left the browser and I need to log in again so what I'm gonna do is actually redirect back to the login page and say hey you need to login or whatever it is so I'm just gonna say return redirect URL for in this case login and then since we have a get method when we're returning over here we will return this render template for login dot HTML they can hit submit and they can redirect back to the user page so let's start with that and then we'll get into some other more complicated things so to run this I'm just gonna go python tutorial v dot pi okay so let's go copy this link here and we'll head to the slash login page and see what we get okay so this is our home page so sorry slash login name let's try Tim if I hit submit and if I hit submit we get an error because I just remember that I need to add something to my file here so essentially all of this session data that we store is actually encrypted on the server and that means we actually need to define something called a secret key which will be the way that we decrypt and encrypt this data so to do that I'm gonna type at the beginning of my program app dot secret key equals and then you can literally just type any string in here that you want I mean it would be wise to make this something somewhat complicated but I'm just gonna make mine hello as my secret key but we do just need to set a secret key I completely forgot that that was actually a necessary step in doing this okay so let me refresh this page now and see what we get actually I got to go back to slash login so let's go to slash login this hopefully should be good now I'm gonna type Tim hit submit and then you can see we're redirected to a page that says Tim and notice again right that I don't pass any information to here about the user we're getting it this session variable so let's go back and let's do something else now so if I close this browser and I open it back up and I go to whatever that link is and then I go to slash user you'll see that it redirects me back to logging well why does it do that because when I close the web browser my session data is actually deleted from the server which means that if I want to go back to the user page I need to create a new session and logging again in this case we'll login with Joe and we see we are redirected to Joe I can go you know to slash home and that will slash home isn't a page but if I go to slash and then I go back to slash user you'll see that it brings me back to Joe because it stored that information in the session so again very useful that is how that works now it's talking about actually clearing a session and logging out so we'll leave that up for now but what I want to do is actually create a login page and show you how you can manually clear session DAP because essentially if someone logs out you probably want to delete all the information associated with their session or at least some of that information so what I'm going to do is set up a new function here so a new page we'll just call this one slash logout like that it's defined logout and all we're gonna do in here is actually remove some data from our session what I'm going to do is say session dot pop and then I'm gonna say user none now what this is gonna do is actually remove the user data from my sessions this is just how you remove it from the dictionary and then this none is just a message that's associated with removing that data I'm not really gonna talk about that because I don't fully understand why we have none here but that's anyways it's not that important so once we log out we will actually return a your redirect to the login page so we'll say URL for in this case login ok awesome now what I want to do is add one more thing to login here we're essentially I check if when we redirect to login here if we're already logged in I just redirect us to the user page otherwise I'm gonna actually redirect us to this login dot HTML form so to do that is pretty easy all I'm gonna say is if user in session which essentially means you know we've signed in then all I need to do is return a redirect to the URL for in this case user and that is as easy as it says so essentially what I've done here is set up a way that we can log in using a session and then we can be redirected to a specific page without sending that information directly to it through a parameter we can display that information we can log out now by popping that session data and then if we go to the login page of our already logged in it's actually going to redirect us to this user page and just show us that information so let's do that now um if I go to slash long out you can see that it redirects us to the login page and now if I were to try to go to back back to slash user we get redirected immediately back to the login page because we're not signed in yet so if we sign in with say Tim there we go we're on the user page and now if I go to slash login you can see it actually just redirects us back to this same page because we're already logged in and then again we can log out brings us the login page and if I go to slash user that's not going to work and that is kind of how we do that now remember that this session dad is actually deleted when I close my browser so I'm gonna show you quickly a way that we can store our session data for longer because what actually happens is this session data is stored in a temporary directory on the server and we can set how long we want that information to be stored for by using something called permanent sessions now what I'm gonna do to set up the permanent session here is define first of all how long I want a permanent session to last so you may have noticed sometimes you know you revisit a website a few days later and you just log in immediately you don't actually have to you know go through the process or maybe your informations already typed in and you just hit login we're gonna some of this information is stored in permanent sessions which means it's storing it for longer than you know however long you're in the web browser so that every time you go back to that web page you can quickly access information that you need and you don't need to log back in so what I'm gonna do is actually just import something here so I'm gonna say from date time import time Delta now the reason I'm doing this is because I want to set up the max time that our session could last for and the way that I do that is app dot and I gotta look up my other screen because I forget what it is permanent session lifetime like that and then it's gonna be equal to time Delta and then you can say days equals and how many days you want this to actually last for let me make sure this is correct so I could say days and I could say five days and if I do this what this means is we're gonna store our permanent session data for five days I can also do something like minutes equals five and if I do that that means we're gonna store our permanent session data for five minutes and then delete it after that now how do we make a session permanent well this is actually pretty easy all we're gonna do is when we log in and we actually have we've got this information we've logged in everything's valid say we've checked this against the database then we can make the session permanent by saying session dot permanent if I could spell this correctly equals true I don't know why that was such a struggle okay so session dot permanent equals true and now this is going to define this specific session as a permanent session which means it's gonna last as long as we've defined up here by default don't do this it sets our session to not permanent so false here and that means it's gonna last for as long as you're actually on the webpage or sorry in your browser so let's see if this is working now believe it is so let's go back to that web page um give it a second here what's our air I guess got a hit enter in the command prompt okay so let's go slash login let's do our name so Tim and then let's actually close this and let's go back to it so paste that in here why is this not working okay and then we'll go to slash login and you can see we are redirected back to this user page because our session data was actually saved permanently so when I actually closed this window it didn't do anything so now let's say logout we've logged out and then obviously now our session data has been removed because we had this session being removed from the logout so that is kind of everything about sessions there's obviously some more stuff that you guys can do with this but this is the basics and just remember sessions are something that you're using temporarily you should never be storing perm data in a session and typically what ends up happening is you'll log in you'll validate some stuff with the database you'll actually grab some information from the database and store that in a session and then whenever you log out you'll remove that information and when you log in again you can load it back in so this is information that you don't really care about but it's just there for quick retrieval and for easy access from different web pages so you don't have to continually read from the database and you also just know some of this information passing between the pages you don't have to send them through you know the URL which is not a secure way to send information so that has been it for this video if you guys enjoyed make sure you leave a like and subscribe and I will see you guys in another one"
+}

@@ -1,0 +1,1892 @@
+{
+  "videoId": "bkyjiXSx6WE",
+  "language": "en",
+  "source": "auto",
+  "segments": [
+    {
+      "start": 0.81,
+      "text": "[Music]"
+    },
+    {
+      "start": 10.13,
+      "text": "hello all and welcome to this webinar on"
+    },
+    {
+      "start": 13.11,
+      "text": "larvell in this session we shall be"
+    },
+    {
+      "start": 15.69,
+      "text": "discussing the fundamental school"
+    },
+    {
+      "start": 17.49,
+      "text": "concepts and pretty much all you need to"
+    },
+    {
+      "start": 19.859,
+      "text": "build projects in larvae will also"
+    },
+    {
+      "start": 22.68,
+      "text": "understand various concepts of"
+    },
+    {
+      "start": 24.39,
+      "text": "prototyping databases and api along with"
+    },
+    {
+      "start": 27.81,
+      "text": "some larval specific projects our"
+    },
+    {
+      "start": 30.5,
+      "text": "attendees here are a well rounded"
+    },
+    {
+      "start": 32.719,
+      "text": "representation of the globe we have mr."
+    },
+    {
+      "start": 35.79,
+      "text": "Neil row here who has years of valuable"
+    },
+    {
+      "start": 38.91,
+      "text": "experience in this field and he shall be"
+    },
+    {
+      "start": 41.79,
+      "text": "taking us through this module welcome"
+    },
+    {
+      "start": 44.16,
+      "text": "name over to you"
+    },
+    {
+      "start": 46.379,
+      "text": "hey so welcome to the first part of a"
+    },
+    {
+      "start": 48.719,
+      "text": "new series this is the laravel series"
+    },
+    {
+      "start": 51.12,
+      "text": "and it's effectively going to teach you"
+    },
+    {
+      "start": 52.589,
+      "text": "pretty much everything you need to know"
+    },
+    {
+      "start": 54.059,
+      "text": "to get started building products with"
+    },
+    {
+      "start": 56.1,
+      "text": "laravel so if you never heard of laravel"
+    },
+    {
+      "start": 58.589,
+      "text": "or you've kind of heard of it but don't"
+    },
+    {
+      "start": 60.21,
+      "text": "really know what it does laravel is a"
+    },
+    {
+      "start": 61.98,
+      "text": "framework and a framework is essentially"
+    },
+    {
+      "start": 64.049,
+      "text": "the starting code to building your"
+    },
+    {
+      "start": 66.81,
+      "text": "project so instead of you having to"
+    },
+    {
+      "start": 69.0,
+      "text": "write out all of these functions and all"
+    },
+    {
+      "start": 71.159,
+      "text": "of these methods and controllers and"
+    },
+    {
+      "start": 72.75,
+      "text": "things the same code for all your"
+    },
+    {
+      "start": 74.88,
+      "text": "projects laravel is like this starter"
+    },
+    {
+      "start": 77.43,
+      "text": "kit it kind of includes almost"
+    },
+    {
+      "start": 79.289,
+      "text": "everything you need so it makes a"
+    },
+    {
+      "start": 80.97,
+      "text": "brilliant force or prototyping or"
+    },
+    {
+      "start": 82.77,
+      "text": "building projects really quickly because"
+    },
+    {
+      "start": 85.649,
+      "text": "it really has been built for so many"
+    },
+    {
+      "start": 87.36,
+      "text": "years and they've really built up this"
+    },
+    {
+      "start": 89.31,
+      "text": "whole platform where everything you"
+    },
+    {
+      "start": 91.11,
+      "text": "could really need to build a start up or"
+    },
+    {
+      "start": 93.149,
+      "text": "to build a web app is already included"
+    },
+    {
+      "start": 94.979,
+      "text": "so I'm talking like database stuff so"
+    },
+    {
+      "start": 98.31,
+      "text": "there's so much sort of stuff for"
+    },
+    {
+      "start": 99.63,
+      "text": "relationships and handling those"
+    },
+    {
+      "start": 101.369,
+      "text": "relationships it does it really neatly"
+    },
+    {
+      "start": 103.14,
+      "text": "rather than having to write out your own"
+    },
+    {
+      "start": 104.61,
+      "text": "queries and handle them yourself"
+    },
+    {
+      "start": 106.17,
+      "text": "things like sockets if you want to use"
+    },
+    {
+      "start": 108.03,
+      "text": "socket die o or pusher it's all built in"
+    },
+    {
+      "start": 110.789,
+      "text": "there's tons of API stuff so if you want"
+    },
+    {
+      "start": 112.89,
+      "text": "to take payments again there's kits for"
+    },
+    {
+      "start": 115.439,
+      "text": "that they're all built in so you can use"
+    },
+    {
+      "start": 117.509,
+      "text": "like stripe or Braintree or PayPal"
+    },
+    {
+      "start": 119.43,
+      "text": "really nicely and on top of that there's"
+    },
+    {
+      "start": 122.009,
+      "text": "a site called packages which is"
+    },
+    {
+      "start": 123.719,
+      "text": "essentially a load of packages that you"
+    },
+    {
+      "start": 125.369,
+      "text": "can include in your project these come"
+    },
+    {
+      "start": 127.35,
+      "text": "through a piece of software called"
+    },
+    {
+      "start": 128.609,
+      "text": "composer and these are packages built by"
+    },
+    {
+      "start": 131.19,
+      "text": "other people other organizations which"
+    },
+    {
+      "start": 133.32,
+      "text": "you can make use of and composer will"
+    },
+    {
+      "start": 135.57,
+      "text": "keep these up to date and to freely"
+    },
+    {
+      "start": 137.489,
+      "text": "handle it all for you so for example if"
+    },
+    {
+      "start": 139.89,
+      "text": "you want to use the Facebook API you can"
+    },
+    {
+      "start": 142.26,
+      "text": "literally just import a package which"
+    },
+    {
+      "start": 144.42,
+      "text": "will give you a load of functions in PHP"
+    },
+    {
+      "start": 146.16,
+      "text": "that you can access really nicely and if"
+    },
+    {
+      "start": 148.739,
+      "text": "you've used composer before you'll be"
+    },
+    {
+      "start": 150.15,
+      "text": "familiar with that but in laravel"
+    },
+    {
+      "start": 152.04,
+      "text": "there's tons of laravel specific"
+    },
+    {
+      "start": 153.75,
+      "text": "projects as well and you'll see those at"
+    },
+    {
+      "start": 155.79,
+      "text": "some point in the course anyways laravel"
+    },
+    {
+      "start": 158.579,
+      "text": "is a currently in version 5.7 at the"
+    },
+    {
+      "start": 160.98,
+      "text": "time I'm recording this it doesn't"
+    },
+    {
+      "start": 162.63,
+      "text": "change massively between versions so if"
+    },
+    {
+      "start": 164.7,
+      "text": "you're watching this a year later on"
+    },
+    {
+      "start": 166.5,
+      "text": "we're on 5.9 or something this should"
+    },
+    {
+      "start": 168.69,
+      "text": "all still be very relevant this course"
+    },
+    {
+      "start": 170.819,
+      "text": "is really going to teach like the"
+    },
+    {
+      "start": 172.019,
+      "text": "fundamentals rather than anything"
+    },
+    {
+      "start": 174.09,
+      "text": "actually specific it's going to teach"
+    },
+    {
+      "start": 175.949,
+      "text": "you the fundamentals to get started and"
+    },
+    {
+      "start": 177.87,
+      "text": "then go off and learn by yourself or by"
+    },
+    {
+      "start": 180.27,
+      "text": "other means it's really going to teach"
+    },
+    {
+      "start": 181.8,
+      "text": "you like this the core concepts of how"
+    },
+    {
+      "start": 183.54,
+      "text": "laravel works and how to just get set up"
+    },
+    {
+      "start": 185.67,
+      "text": "with it and those kind of things don't"
+    },
+    {
+      "start": 187.53,
+      "text": "really change between versions so there"
+    },
+    {
+      "start": 189.48,
+      "text": "should be a problem so to get started"
+    },
+    {
+      "start": 191.46,
+      "text": "with laravel you're going to need a"
+    },
+    {
+      "start": 193.11,
+      "text": "program called composer as I say"
+    },
+    {
+      "start": 195.54,
+      "text": "composer is the package manager is the"
+    },
+    {
+      "start": 197.22,
+      "text": "most common one for PHP if you're on a"
+    },
+    {
+      "start": 199.35,
+      "text": "Mac or Linux or a UNIX system we got to"
+    },
+    {
+      "start": 202.32,
+      "text": "do is copy and paste all of these lines"
+    },
+    {
+      "start": 204.3,
+      "text": "into a terminal and it will install it"
+    },
+    {
+      "start": 206.37,
+      "text": "all for you it's really easy and if"
+    },
+    {
+      "start": 208.26,
+      "text": "you're on Windows there is actually an"
+    },
+    {
+      "start": 209.91,
+      "text": "installer somewhere on here I think it's"
+    },
+    {
+      "start": 212.07,
+      "text": "in getting started you'll see here yeah"
+    },
+    {
+      "start": 213.69,
+      "text": "install the composer setup the exe and"
+    },
+    {
+      "start": 215.94,
+      "text": "it will do it all for you it's very"
+    },
+    {
+      "start": 217.56,
+      "text": "simple to get set up so I think most of"
+    },
+    {
+      "start": 219.99,
+      "text": "you shouldn't have an issue once you've"
+    },
+    {
+      "start": 221.58,
+      "text": "got composer it's really dead simple to"
+    },
+    {
+      "start": 223.59,
+      "text": "install PHP what you got to do is jump"
+    },
+    {
+      "start": 226.77,
+      "text": "over to your terminal so I'm using"
+    },
+    {
+      "start": 228.21,
+      "text": "Visual Studio code which I'd highly"
+    },
+    {
+      "start": 229.95,
+      "text": "recommend it's got a built in terminal"
+    },
+    {
+      "start": 231.81,
+      "text": "so you've got a jump over to your"
+    },
+    {
+      "start": 233.04,
+      "text": "terminal and type in composer to launch"
+    },
+    {
+      "start": 236.7,
+      "text": "the composer program create - project"
+    },
+    {
+      "start": 239.82,
+      "text": "and then the project is called laravel"
+    },
+    {
+      "start": 242.28,
+      "text": "forward slash laravel and it's named"
+    },
+    {
+      "start": 245.04,
+      "text": "this because that's the sort of github"
+    },
+    {
+      "start": 246.93,
+      "text": "organization and then laravel was the"
+    },
+    {
+      "start": 248.76,
+      "text": "project name and then after that you"
+    },
+    {
+      "start": 250.62,
+      "text": "give it a name so I'm gonna give it"
+    },
+    {
+      "start": 252.54,
+      "text": "social in this short course we're going"
+    },
+    {
+      "start": 255.209,
+      "text": "to be going through like a Twitter start"
+    },
+    {
+      "start": 256.799,
+      "text": "it will show all the fundamentals so"
+    },
+    {
+      "start": 258.78,
+      "text": "we'll be doing database stuff I'll be"
+    },
+    {
+      "start": 260.67,
+      "text": "showing your models controllers views"
+    },
+    {
+      "start": 262.32,
+      "text": "maybe a little bit of JavaScript but"
+    },
+    {
+      "start": 264.66,
+      "text": "this is not a JavaScript course so I"
+    },
+    {
+      "start": 266.28,
+      "text": "wouldn't count on that this is purely a"
+    },
+    {
+      "start": 268.62,
+      "text": "back-end course so of course it's going"
+    },
+    {
+      "start": 270.9,
+      "text": "to show you how to get set up all the"
+    },
+    {
+      "start": 272.64,
+      "text": "fundamentals and then from there you can"
+    },
+    {
+      "start": 274.5,
+      "text": "go on and expand on this so I want to"
+    },
+    {
+      "start": 276.42,
+      "text": "let that install it should just take a"
+    },
+    {
+      "start": 277.65,
+      "text": "couple of minutes"
+    },
+    {
+      "start": 281.95,
+      "text": "that's installed you will see they're"
+    },
+    {
+      "start": 283.39,
+      "text": "actually set up an application key so"
+    },
+    {
+      "start": 285.4,
+      "text": "this is like a unique hash"
+    },
+    {
+      "start": 286.84,
+      "text": "it's base64 encoded for your project and"
+    },
+    {
+      "start": 289.51,
+      "text": "that leads me into the dot env file now"
+    },
+    {
+      "start": 292.81,
+      "text": "don't you envy if you're unfamiliar is"
+    },
+    {
+      "start": 294.76,
+      "text": "effectively an environment file it"
+    },
+    {
+      "start": 297.28,
+      "text": "really specifies the environment that"
+    },
+    {
+      "start": 299.14,
+      "text": "this project is running so you'll see"
+    },
+    {
+      "start": 301.15,
+      "text": "things like the app URL the app name the"
+    },
+    {
+      "start": 303.76,
+      "text": "database credentials male drivers"
+    },
+    {
+      "start": 306.4,
+      "text": "various stuff like that you can also put"
+    },
+    {
+      "start": 308.41,
+      "text": "things at API keys in here if you want"
+    },
+    {
+      "start": 310.06,
+      "text": "to store them and effectively if you've"
+    },
+    {
+      "start": 312.07,
+      "text": "got two environments let's say you've"
+    },
+    {
+      "start": 313.69,
+      "text": "got a staging environment for testing"
+    },
+    {
+      "start": 315.67,
+      "text": "and you've got a production environment"
+    },
+    {
+      "start": 317.02,
+      "text": "you can have different database details"
+    },
+    {
+      "start": 319.42,
+      "text": "different app URLs different API keys"
+    },
+    {
+      "start": 322.87,
+      "text": "blah blah blah and these dorian view"
+    },
+    {
+      "start": 325.3,
+      "text": "files are not synced in gear so they're"
+    },
+    {
+      "start": 327.76,
+      "text": "in the gate ignore file so if you put"
+    },
+    {
+      "start": 329.41,
+      "text": "this repository on two servers they'll"
+    },
+    {
+      "start": 331.66,
+      "text": "both have separate DMD files that's how"
+    },
+    {
+      "start": 333.7,
+      "text": "we use it in my work that's how pretty"
+    },
+    {
+      "start": 335.65,
+      "text": "much everyone does it so first things"
+    },
+    {
+      "start": 337.33,
+      "text": "first is to get it set up with some"
+    },
+    {
+      "start": 338.89,
+      "text": "settings the top ones don't really"
+    },
+    {
+      "start": 340.81,
+      "text": "matter too much as long as you've got"
+    },
+    {
+      "start": 341.83,
+      "text": "debug true for testing that will just"
+    },
+    {
+      "start": 344.29,
+      "text": "show you all your error messages pretty"
+    },
+    {
+      "start": 345.7,
+      "text": "much the DB connection you'll need to"
+    },
+    {
+      "start": 347.74,
+      "text": "have that so you can add to have a my"
+    },
+    {
+      "start": 349.51,
+      "text": "sequel instance I'm not going to show"
+    },
+    {
+      "start": 351.46,
+      "text": "that in this video because it's pretty"
+    },
+    {
+      "start": 353.02,
+      "text": "basic to get set up but you're going to"
+    },
+    {
+      "start": 354.88,
+      "text": "need your login details in your port and"
+    },
+    {
+      "start": 356.59,
+      "text": "blah blah blah so my database I've got"
+    },
+    {
+      "start": 359.2,
+      "text": "it in a program called navigate you can"
+    },
+    {
+      "start": 360.64,
+      "text": "also use sequel Pro my database is"
+    },
+    {
+      "start": 362.65,
+      "text": "called there so I'm just gonna paste"
+    },
+    {
+      "start": 365.02,
+      "text": "that in here"
+    },
+    {
+      "start": 365.65,
+      "text": "my username is root and my password is"
+    },
+    {
+      "start": 368.77,
+      "text": "also root this will vary depending on"
+    },
+    {
+      "start": 371.29,
+      "text": "your my sequel setup if you're using"
+    },
+    {
+      "start": 373.12,
+      "text": "like man poor lamp or built in my sequel"
+    },
+    {
+      "start": 375.67,
+      "text": "or whatever I you just need to find out"
+    },
+    {
+      "start": 377.38,
+      "text": "what your login details are and then"
+    },
+    {
+      "start": 379.27,
+      "text": "that's it for the environment file"
+    },
+    {
+      "start": 381.19,
+      "text": "that's our database setup so in order to"
+    },
+    {
+      "start": 383.95,
+      "text": "test your project you can run a command"
+    },
+    {
+      "start": 386.74,
+      "text": "in the command line called PHP artisan"
+    },
+    {
+      "start": 388.89,
+      "text": "serve and that's literally going to"
+    },
+    {
+      "start": 391.69,
+      "text": "start up laravel built in server and"
+    },
+    {
+      "start": 394.3,
+      "text": "that failed because I need to change"
+    },
+    {
+      "start": 395.88,
+      "text": "directory into the social folder because"
+    },
+    {
+      "start": 398.77,
+      "text": "I'm currently in the laravel folder but"
+    },
+    {
+      "start": 401.17,
+      "text": "I've also created a project inside of"
+    },
+    {
+      "start": 402.82,
+      "text": "that so I'm going to CD into social and"
+    },
+    {
+      "start": 405.6,
+      "text": "PHP artisan artisan serves again and"
+    },
+    {
+      "start": 409.93,
+      "text": "there we go we've got laravel"
+    },
+    {
+      "start": 410.89,
+      "text": "development server started and that is"
+    },
+    {
+      "start": 412.87,
+      "text": "the link so I want to go over here"
+    },
+    {
+      "start": 415.54,
+      "text": "and go to my local host and there you go"
+    },
+    {
+      "start": 418.21,
+      "text": "there is the home page this is just what"
+    },
+    {
+      "start": 420.1,
+      "text": "comes out of the box you'll see it's"
+    },
+    {
+      "start": 421.84,
+      "text": "just some pretty basic HTML and some CSS"
+    },
+    {
+      "start": 424.66,
+      "text": "going on in there okay if I actually go"
+    },
+    {
+      "start": 427.45,
+      "text": "to any links you just get a 404 because"
+    },
+    {
+      "start": 429.58,
+      "text": "nothing's actually built yet all right"
+    },
+    {
+      "start": 431.29,
+      "text": "so the first thing I want to do is set"
+    },
+    {
+      "start": 433.57,
+      "text": "up a login system now if you normally"
+    },
+    {
+      "start": 436.24,
+      "text": "use PHP or some other language you'd"
+    },
+    {
+      "start": 438.43,
+      "text": "have to first of all you got to create"
+    },
+    {
+      "start": 439.99,
+      "text": "the table in your database and then"
+    },
+    {
+      "start": 441.85,
+      "text": "you've got to think about what hashing"
+    },
+    {
+      "start": 443.41,
+      "text": "method you want to use and then you've"
+    },
+    {
+      "start": 444.58,
+      "text": "got to create the register form and then"
+    },
+    {
+      "start": 446.23,
+      "text": "the login form then the forgot password"
+    },
+    {
+      "start": 447.37,
+      "text": "form it's very tedious and if you've"
+    },
+    {
+      "start": 450.25,
+      "text": "ever worked on multiple side projects"
+    },
+    {
+      "start": 451.93,
+      "text": "you're probably used to building this"
+    },
+    {
+      "start": 453.28,
+      "text": "exact same thing many times and this can"
+    },
+    {
+      "start": 455.83,
+      "text": "take you a couple of hours to build so"
+    },
+    {
+      "start": 457.78,
+      "text": "if you're doing that for lots of"
+    },
+    {
+      "start": 458.77,
+      "text": "different side projects it's totally"
+    },
+    {
+      "start": 460.57,
+      "text": "unnecessary laravel does this for you it"
+    },
+    {
+      "start": 463.33,
+      "text": "thinks about security out of the box so"
+    },
+    {
+      "start": 465.07,
+      "text": "you don't have to it's just an"
+    },
+    {
+      "start": 466.78,
+      "text": "all-around nicer environment to use so"
+    },
+    {
+      "start": 469.24,
+      "text": "to setup authentication what we're gonna"
+    },
+    {
+      "start": 470.89,
+      "text": "do is PHP artisan migrate and migrations"
+    },
+    {
+      "start": 475.15,
+      "text": "are basically schemas and it tell is the"
+    },
+    {
+      "start": 478.12,
+      "text": "script to build a database so it's not"
+    },
+    {
+      "start": 480.04,
+      "text": "my sequel it's a script telling it how"
+    },
+    {
+      "start": 482.86,
+      "text": "to build the database tables and these"
+    },
+    {
+      "start": 485.11,
+      "text": "are stored in database migrations and"
+    },
+    {
+      "start": 488.32,
+      "text": "then the migration names are here"
+    },
+    {
+      "start": 489.61,
+      "text": "they've got a timestamp and then a name"
+    },
+    {
+      "start": 491.14,
+      "text": "so the first one here is create users"
+    },
+    {
+      "start": 493.69,
+      "text": "table and you'll see it's got a public"
+    },
+    {
+      "start": 495.52,
+      "text": "function up which is to create the table"
+    },
+    {
+      "start": 498.07,
+      "text": "and the public function down is to"
+    },
+    {
+      "start": 500.05,
+      "text": "reverse it to drop it so up will create"
+    },
+    {
+      "start": 502.78,
+      "text": "a schema which is effectively the table"
+    },
+    {
+      "start": 504.76,
+      "text": "the table name is users and then it's"
+    },
+    {
+      "start": 506.68,
+      "text": "got all of these columns so it's gone ID"
+    },
+    {
+      "start": 509.11,
+      "text": "which is incrementing and it's got a"
+    },
+    {
+      "start": 511.12,
+      "text": "bunch of strings so password email name"
+    },
+    {
+      "start": 513.13,
+      "text": "a remember token which you'll see in the"
+    },
+    {
+      "start": 515.71,
+      "text": "database is effectively a token for if"
+    },
+    {
+      "start": 517.96,
+      "text": "the user decides to remember themselves"
+    },
+    {
+      "start": 519.64,
+      "text": "and time stamps these are created at and"
+    },
+    {
+      "start": 522.01,
+      "text": "updated at and laravel handles those"
+    },
+    {
+      "start": 523.84,
+      "text": "automatically so this migration comes up"
+    },
+    {
+      "start": 526.3,
+      "text": "the box but you can make your own which"
+    },
+    {
+      "start": 527.92,
+      "text": "I'll show you that this one is"
+    },
+    {
+      "start": 529.57,
+      "text": "specifically for authentication so I'll"
+    },
+    {
+      "start": 532.06,
+      "text": "hit my green so I go an error which"
+    },
+    {
+      "start": 534.43,
+      "text": "looks like it's because yep my login is"
+    },
+    {
+      "start": 536.5,
+      "text": "incorrect for my database so I'm gonna"
+    },
+    {
+      "start": 537.94,
+      "text": "just go check on that now that's in the"
+    },
+    {
+      "start": 539.71,
+      "text": "DNV far if you see anything like access"
+    },
+    {
+      "start": 542.23,
+      "text": "denied for user check your database"
+    },
+    {
+      "start": 544.48,
+      "text": "settings and it turns out the reason"
+    },
+    {
+      "start": 546.55,
+      "text": "here why mine did not work is because my"
+    },
+    {
+      "start": 548.29,
+      "text": "password is actually root"
+    },
+    {
+      "start": 549.66,
+      "text": "but again that really varies based on"
+    },
+    {
+      "start": 552.03,
+      "text": "however you set up your database so I'm"
+    },
+    {
+      "start": 554.7,
+      "text": "gonna go ahead now and run PHP artisan"
+    },
+    {
+      "start": 556.56,
+      "text": "migrate again and see if that does the"
+    },
+    {
+      "start": 558.87,
+      "text": "trick"
+    },
+    {
+      "start": 559.38,
+      "text": "there we go migration table create"
+    },
+    {
+      "start": 561.12,
+      "text": "successfully so it creates a table that"
+    },
+    {
+      "start": 563.28,
+      "text": "keeps track of the migrations and then"
+    },
+    {
+      "start": 565.44,
+      "text": "it migrates these two tables so create"
+    },
+    {
+      "start": 567.48,
+      "text": "user's table and create the password"
+    },
+    {
+      "start": 569.52,
+      "text": "reset table so back in my database now I"
+    },
+    {
+      "start": 572.4,
+      "text": "go ahead and refresh sure enough we've"
+    },
+    {
+      "start": 574.35,
+      "text": "got three tables the user's table is the"
+    },
+    {
+      "start": 576.57,
+      "text": "one that we want right now so we've got"
+    },
+    {
+      "start": 577.92,
+      "text": "name email password remember created and"
+    },
+    {
+      "start": 580.23,
+      "text": "updated at the benefit of doing this in"
+    },
+    {
+      "start": 582.3,
+      "text": "your code rather than just making tables"
+    },
+    {
+      "start": 584.4,
+      "text": "it might not make sense for just one"
+    },
+    {
+      "start": 586.02,
+      "text": "person but when you've got a team of"
+    },
+    {
+      "start": 587.55,
+      "text": "people the fact that they can just run"
+    },
+    {
+      "start": 589.59,
+      "text": "PHP artisan migrate to get their"
+    },
+    {
+      "start": 591.63,
+      "text": "development environment set up um is so"
+    },
+    {
+      "start": 594.06,
+      "text": "helpful it means you can keep your"
+    },
+    {
+      "start": 595.47,
+      "text": "database in your version control whether"
+    },
+    {
+      "start": 597.78,
+      "text": "that's get or whatever it just makes a"
+    },
+    {
+      "start": 600.63,
+      "text": "lot more sense you can also use things"
+    },
+    {
+      "start": 602.46,
+      "text": "called seeders which can populate the"
+    },
+    {
+      "start": 604.68,
+      "text": "table with dummy data so let's say you"
+    },
+    {
+      "start": 606.93,
+      "text": "want to populate it with some dummy"
+    },
+    {
+      "start": 608.64,
+      "text": "customers you can do that too and that"
+    },
+    {
+      "start": 610.77,
+      "text": "can be really useful for getting other"
+    },
+    {
+      "start": 612.27,
+      "text": "developers on board but I'm not gonna go"
+    },
+    {
+      "start": 614.25,
+      "text": "into that in this because this is really"
+    },
+    {
+      "start": 615.6,
+      "text": "just a getting started guide okay"
+    },
+    {
+      "start": 618.21,
+      "text": "we're now ready to really get set up"
+    },
+    {
+      "start": 619.86,
+      "text": "with our authentication so to do this"
+    },
+    {
+      "start": 622.17,
+      "text": "PHP artisan make : auth and you can find"
+    },
+    {
+      "start": 625.77,
+      "text": "all of this in the laravel documentation"
+    },
+    {
+      "start": 627.54,
+      "text": "this command literally sets up all of"
+    },
+    {
+      "start": 630.06,
+      "text": "the PHP functions the views the"
+    },
+    {
+      "start": 632.37,
+      "text": "controller's it resets them all up to"
+    },
+    {
+      "start": 635.01,
+      "text": "set up a whole login system this"
+    },
+    {
+      "start": 636.39,
+      "text": "includes login and registration so if I"
+    },
+    {
+      "start": 638.58,
+      "text": "run that authentication scaffolding"
+    },
+    {
+      "start": 640.53,
+      "text": "generated successfully so as I say this"
+    },
+    {
+      "start": 642.69,
+      "text": "comes out the box and then I need to run"
+    },
+    {
+      "start": 645.12,
+      "text": "PHP PHP artisan serve to get my web"
+    },
+    {
+      "start": 649.35,
+      "text": "server running again when i refresh"
+    },
+    {
+      "start": 651.39,
+      "text": "you'll see login and register suddenly"
+    },
+    {
+      "start": 653.64,
+      "text": "appear so we're going to go ahead and"
+    },
+    {
+      "start": 655.65,
+      "text": "register so I'm going to register with"
+    },
+    {
+      "start": 658.44,
+      "text": "some details I'm gonna go test at test"
+    },
+    {
+      "start": 661.38,
+      "text": "com I'm gonna set it a password I'm"
+    },
+    {
+      "start": 664.65,
+      "text": "going to forget password and password"
+    },
+    {
+      "start": 666.45,
+      "text": "and you're now logged in so this is also"
+    },
+    {
+      "start": 670.89,
+      "text": "by laravel as you can tell we're only"
+    },
+    {
+      "start": 672.87,
+      "text": "like five ten minutes in and we've"
+    },
+    {
+      "start": 674.55,
+      "text": "already got authentication we've got our"
+    },
+    {
+      "start": 676.5,
+      "text": "database set up it's doing it all for us"
+    },
+    {
+      "start": 678.87,
+      "text": "we've already got like some scaffolding"
+    },
+    {
+      "start": 680.73,
+      "text": "so a logout button etc"
+    },
+    {
+      "start": 683.13,
+      "text": "and we can log-in again using tests at"
+    },
+    {
+      "start": 685.29,
+      "text": "test comm password and we're in it's"
+    },
+    {
+      "start": 689.88,
+      "text": "also got some forgotten password"
+    },
+    {
+      "start": 691.47,
+      "text": "scaffolding that's already done right"
+    },
+    {
+      "start": 693.96,
+      "text": "out of the box so it's really neat it"
+    },
+    {
+      "start": 695.58,
+      "text": "really saves you like many hours if"
+    },
+    {
+      "start": 697.95,
+      "text": "you're someone like me who comes up with"
+    },
+    {
+      "start": 699.57,
+      "text": "side projects and then ditches them very"
+    },
+    {
+      "start": 701.07,
+      "text": "quickly this can be really useful"
+    },
+    {
+      "start": 702.69,
+      "text": "because you can build things so quickly"
+    },
+    {
+      "start": 704.52,
+      "text": "it's great for prototyping it's great"
+    },
+    {
+      "start": 706.8,
+      "text": "for building projects quickly I use this"
+    },
+    {
+      "start": 709.53,
+      "text": "where I work and it saves us so much"
+    },
+    {
+      "start": 711.06,
+      "text": "time"
+    },
+    {
+      "start": 711.6,
+      "text": "a couple more bits I want to round up in"
+    },
+    {
+      "start": 714.24,
+      "text": "this video is the whole MVC architecture"
+    },
+    {
+      "start": 717.26,
+      "text": "behind laravel and behind pretty much"
+    },
+    {
+      "start": 719.97,
+      "text": "any framework nowadays MVC stands for"
+    },
+    {
+      "start": 722.52,
+      "text": "model view controller and these are the"
+    },
+    {
+      "start": 725.07,
+      "text": "three main things that make up an"
+    },
+    {
+      "start": 726.69,
+      "text": "application so starting off with model"
+    },
+    {
+      "start": 729.12,
+      "text": "models are effectively your data stores"
+    },
+    {
+      "start": 731.52,
+      "text": "so in this case of my sequel database a"
+    },
+    {
+      "start": 733.77,
+      "text": "model represents a table in the database"
+    },
+    {
+      "start": 735.9,
+      "text": "and these models can be related to each"
+    },
+    {
+      "start": 738.78,
+      "text": "other using relationships just like you"
+    },
+    {
+      "start": 741.12,
+      "text": "would use in Lara in normal my sequel"
+    },
+    {
+      "start": 743.82,
+      "text": "using a join query you can have multiple"
+    },
+    {
+      "start": 746.1,
+      "text": "models that's a collection and then you"
+    },
+    {
+      "start": 748.8,
+      "text": "would loop through a collection to"
+    },
+    {
+      "start": 750.87,
+      "text": "retrieve individual models so that's"
+    },
+    {
+      "start": 753.09,
+      "text": "really it so each model usually doesn't"
+    },
+    {
+      "start": 755.49,
+      "text": "always but usually represents a table"
+    },
+    {
+      "start": 758.94,
+      "text": "that's related to it model can also"
+    },
+    {
+      "start": 760.38,
+      "text": "represent API lookups and all sorts of"
+    },
+    {
+      "start": 762.48,
+      "text": "other things but I'm not going to get"
+    },
+    {
+      "start": 763.77,
+      "text": "into that it's just too confusing a"
+    },
+    {
+      "start": 765.24,
+      "text": "model generally represents a table with"
+    },
+    {
+      "start": 767.91,
+      "text": "a similar name the next part is views"
+    },
+    {
+      "start": 770.91,
+      "text": "now a view is literally pretty much as"
+    },
+    {
+      "start": 773.55,
+      "text": "HTML"
+    },
+    {
+      "start": 774.36,
+      "text": "so it's deals with the outputting of"
+    },
+    {
+      "start": 776.67,
+      "text": "data on the screen or in emails so if"
+    },
+    {
+      "start": 780.33,
+      "text": "you literally deals with outputting on"
+    },
+    {
+      "start": 782.28,
+      "text": "the screen or emails and things like"
+    },
+    {
+      "start": 784.38,
+      "text": "that so most of the time this is just"
+    },
+    {
+      "start": 786.3,
+      "text": "HTML but peter laravel comes with"
+    },
+    {
+      "start": 789.57,
+      "text": "something called blade blade is the"
+    },
+    {
+      "start": 791.49,
+      "text": "templating engine and if I go on the"
+    },
+    {
+      "start": 793.68,
+      "text": "documentation you can see some examples"
+    },
+    {
+      "start": 795.06,
+      "text": "there so it's effectively HTML but you"
+    },
+    {
+      "start": 798.72,
+      "text": "can insert these smart little snippet so"
+    },
+    {
+      "start": 800.85,
+      "text": "you can have sections if you want to"
+    },
+    {
+      "start": 802.59,
+      "text": "master page with the header and the"
+    },
+    {
+      "start": 804.42,
+      "text": "footer and all your JavaScript and then"
+    },
+    {
+      "start": 806.37,
+      "text": "you can have the content separate it"
+    },
+    {
+      "start": 808.29,
+      "text": "means you've only got to ever edit one"
+    },
+    {
+      "start": 809.55,
+      "text": "file if you've done a regular old PHP"
+    },
+    {
+      "start": 812.49,
+      "text": "you probably included a master page but"
+    },
+    {
+      "start": 815.76,
+      "text": "it gets really funny if you"
+    },
+    {
+      "start": 816.78,
+      "text": "want to set titles and things like that"
+    },
+    {
+      "start": 818.34,
+      "text": "laravel has really thought of everything"
+    },
+    {
+      "start": 820.26,
+      "text": "so you can't go wrong you can also do"
+    },
+    {
+      "start": 822.54,
+      "text": "things like if statements within the"
+    },
+    {
+      "start": 823.89,
+      "text": "HTML loops so you can echo variables"
+    },
+    {
+      "start": 826.95,
+      "text": "components"
+    },
+    {
+      "start": 827.97,
+      "text": "came out and a few versions ago that's"
+    },
+    {
+      "start": 829.74,
+      "text": "quite recent there's just so much stuff"
+    },
+    {
+      "start": 831.69,
+      "text": "slotting components there's really tons"
+    },
+    {
+      "start": 834.87,
+      "text": "of stuff and really for most people it's"
+    },
+    {
+      "start": 837.27,
+      "text": "going to be perfect it saves you so much"
+    },
+    {
+      "start": 838.92,
+      "text": "time"
+    },
+    {
+      "start": 839.4,
+      "text": "if you've ever done regular PHP you"
+    },
+    {
+      "start": 841.56,
+      "text": "might also have done string replaces"
+    },
+    {
+      "start": 844.14,
+      "text": "where you import a HTML file using file"
+    },
+    {
+      "start": 847.26,
+      "text": "get contents and then you string replace"
+    },
+    {
+      "start": 849.47,
+      "text": "various tags within that file I know we"
+    },
+    {
+      "start": 852.42,
+      "text": "used to do it where I work and it's a"
+    },
+    {
+      "start": 854.4,
+      "text": "nightmare after a while so blade really"
+    },
+    {
+      "start": 857.13,
+      "text": "kills it is all for you you might have"
+    },
+    {
+      "start": 858.78,
+      "text": "also used something like smarty"
+    },
+    {
+      "start": 859.89,
+      "text": "templates which are pretty good but"
+    },
+    {
+      "start": 861.84,
+      "text": "blade is really awesome anyway the final"
+    },
+    {
+      "start": 864.39,
+      "text": "bit is controllers and this is where the"
+    },
+    {
+      "start": 866.19,
+      "text": "actual logic happens so this is where"
+    },
+    {
+      "start": 868.35,
+      "text": "you might process data you might have to"
+    },
+    {
+      "start": 870.75,
+      "text": "do calculations effectively your"
+    },
+    {
+      "start": 873.12,
+      "text": "controller is what links your models to"
+    },
+    {
+      "start": 875.25,
+      "text": "your views it really is what handles the"
+    },
+    {
+      "start": 877.44,
+      "text": "logic and it goes and gets data from"
+    },
+    {
+      "start": 879.42,
+      "text": "your model as it pushes data to your"
+    },
+    {
+      "start": 880.89,
+      "text": "models and then it goes and outputs that"
+    },
+    {
+      "start": 882.69,
+      "text": "view it's really like the middleman of"
+    },
+    {
+      "start": 884.85,
+      "text": "your project and that's it for MVC"
+    },
+    {
+      "start": 887.25,
+      "text": "really one final thing I want to talk"
+    },
+    {
+      "start": 889.14,
+      "text": "about in this episode before we actually"
+    },
+    {
+      "start": 890.7,
+      "text": "get started is roots so there's a file"
+    },
+    {
+      "start": 893.94,
+      "text": "called web dot PHP by the way using a"
+    },
+    {
+      "start": 896.79,
+      "text": "text editor like vs code is brilliant"
+    },
+    {
+      "start": 899.49,
+      "text": "because of the search when you got"
+    },
+    {
+      "start": 900.99,
+      "text": "laravel with so many files it's so handy"
+    },
+    {
+      "start": 903.21,
+      "text": "but web dot PHP is in this folder called"
+    },
+    {
+      "start": 905.58,
+      "text": "roots along with console channels and"
+    },
+    {
+      "start": 908.16,
+      "text": "API so what this file is is it's"
+    },
+    {
+      "start": 911.16,
+      "text": "effectively a list almost of URLs on"
+    },
+    {
+      "start": 915.27,
+      "text": "your site so for example /home will take"
+    },
+    {
+      "start": 918.6,
+      "text": "you so this controller the home"
+    },
+    {
+      "start": 920.7,
+      "text": "controller and the function or the"
+    },
+    {
+      "start": 923.07,
+      "text": "method inside of it is called index and"
+    },
+    {
+      "start": 925.05,
+      "text": "then we also name that root so that we"
+    },
+    {
+      "start": 926.94,
+      "text": "can retrieve it later this last part is"
+    },
+    {
+      "start": 929.19,
+      "text": "optional you can also create a route"
+    },
+    {
+      "start": 931.35,
+      "text": "like this so root colon colon and then"
+    },
+    {
+      "start": 933.54,
+      "text": "the either gear or post"
+    },
+    {
+      "start": 935.52,
+      "text": "so I'm gonna go to get and then you can"
+    },
+    {
+      "start": 937.86,
+      "text": "have slash test and then you can put an"
+    },
+    {
+      "start": 940.5,
+      "text": "inline function in here or anonymous"
+    },
+    {
+      "start": 942.27,
+      "text": "function I think that's called where you"
+    },
+    {
+      "start": 943.8,
+      "text": "go echo whatever so you don't actually"
+    },
+    {
+      "start": 948.21,
+      "text": "have to reference a"
+    },
+    {
+      "start": 950.339,
+      "text": "control on a function you can also put a"
+    },
+    {
+      "start": 952.559,
+      "text": "function right inside there but"
+    },
+    {
+      "start": 954.66,
+      "text": "generally for organizations sake you"
+    },
+    {
+      "start": 956.79,
+      "text": "want to do it like this there's also"
+    },
+    {
+      "start": 958.439,
+      "text": "tons of things like route groups"
+    },
+    {
+      "start": 959.73,
+      "text": "middleware tons of other stuff to go"
+    },
+    {
+      "start": 962.279,
+      "text": "with it through but that's going to be"
+    },
+    {
+      "start": 964.35,
+      "text": "too much for this episode I'll quickly"
+    },
+    {
+      "start": 966.389,
+      "text": "touch on middleware though middleware is"
+    },
+    {
+      "start": 968.04,
+      "text": "like a middleman between the base layer"
+    },
+    {
+      "start": 971.16,
+      "text": "of your project and actually getting to"
+    },
+    {
+      "start": 973.589,
+      "text": "those controllers it's like a security"
+    },
+    {
+      "start": 975.779,
+      "text": "guard standing at the door before your"
+    },
+    {
+      "start": 977.639,
+      "text": "controllers and it checks you out and"
+    },
+    {
+      "start": 979.62,
+      "text": "decides if you logged in and then lets"
+    },
+    {
+      "start": 981.149,
+      "text": "you in or pushes your way so for example"
+    },
+    {
+      "start": 983.759,
+      "text": "if you've got a page that only"
+    },
+    {
+      "start": 985.29,
+      "text": "authenticated users can go to you might"
+    },
+    {
+      "start": 987.6,
+      "text": "have a middleware that checks they're"
+    },
+    {
+      "start": 989.009,
+      "text": "logged in and if they're not says kebaya"
+    },
+    {
+      "start": 991.62,
+      "text": "and if they are logged in it lets them"
+    },
+    {
+      "start": 993.749,
+      "text": "come through to the controller but yet"
+    },
+    {
+      "start": 995.91,
+      "text": "I'm going to leave this video here thank"
+    },
+    {
+      "start": 997.529,
+      "text": "you so much for watching and I hope to"
+    },
+    {
+      "start": 999.089,
+      "text": "see you in the next one"
+    },
+    {
+      "start": 1000.199,
+      "text": "I hope you have enjoyed listening to"
+    },
+    {
+      "start": 1002.089,
+      "text": "this video please be kind enough to like"
+    },
+    {
+      "start": 1004.579,
+      "text": "it and you can comment any of your"
+    },
+    {
+      "start": 1006.86,
+      "text": "doubts and queries and we will reply"
+    },
+    {
+      "start": 1009.41,
+      "text": "them at the earliest do look out for"
+    },
+    {
+      "start": 1011.809,
+      "text": "more videos in our playlist and"
+    },
+    {
+      "start": 1013.519,
+      "text": "subscribe to any rekha channel to learn"
+    },
+    {
+      "start": 1016.22,
+      "text": "more happy learning"
+    }
+  ],
+  "text": "[Music] hello all and welcome to this webinar on larvell in this session we shall be discussing the fundamental school concepts and pretty much all you need to build projects in larvae will also understand various concepts of prototyping databases and api along with some larval specific projects our attendees here are a well rounded representation of the globe we have mr. Neil row here who has years of valuable experience in this field and he shall be taking us through this module welcome name over to you hey so welcome to the first part of a new series this is the laravel series and it's effectively going to teach you pretty much everything you need to know to get started building products with laravel so if you never heard of laravel or you've kind of heard of it but don't really know what it does laravel is a framework and a framework is essentially the starting code to building your project so instead of you having to write out all of these functions and all of these methods and controllers and things the same code for all your projects laravel is like this starter kit it kind of includes almost everything you need so it makes a brilliant force or prototyping or building projects really quickly because it really has been built for so many years and they've really built up this whole platform where everything you could really need to build a start up or to build a web app is already included so I'm talking like database stuff so there's so much sort of stuff for relationships and handling those relationships it does it really neatly rather than having to write out your own queries and handle them yourself things like sockets if you want to use socket die o or pusher it's all built in there's tons of API stuff so if you want to take payments again there's kits for that they're all built in so you can use like stripe or Braintree or PayPal really nicely and on top of that there's a site called packages which is essentially a load of packages that you can include in your project these come through a piece of software called composer and these are packages built by other people other organizations which you can make use of and composer will keep these up to date and to freely handle it all for you so for example if you want to use the Facebook API you can literally just import a package which will give you a load of functions in PHP that you can access really nicely and if you've used composer before you'll be familiar with that but in laravel there's tons of laravel specific projects as well and you'll see those at some point in the course anyways laravel is a currently in version 5.7 at the time I'm recording this it doesn't change massively between versions so if you're watching this a year later on we're on 5.9 or something this should all still be very relevant this course is really going to teach like the fundamentals rather than anything actually specific it's going to teach you the fundamentals to get started and then go off and learn by yourself or by other means it's really going to teach you like this the core concepts of how laravel works and how to just get set up with it and those kind of things don't really change between versions so there should be a problem so to get started with laravel you're going to need a program called composer as I say composer is the package manager is the most common one for PHP if you're on a Mac or Linux or a UNIX system we got to do is copy and paste all of these lines into a terminal and it will install it all for you it's really easy and if you're on Windows there is actually an installer somewhere on here I think it's in getting started you'll see here yeah install the composer setup the exe and it will do it all for you it's very simple to get set up so I think most of you shouldn't have an issue once you've got composer it's really dead simple to install PHP what you got to do is jump over to your terminal so I'm using Visual Studio code which I'd highly recommend it's got a built in terminal so you've got a jump over to your terminal and type in composer to launch the composer program create - project and then the project is called laravel forward slash laravel and it's named this because that's the sort of github organization and then laravel was the project name and then after that you give it a name so I'm gonna give it social in this short course we're going to be going through like a Twitter start it will show all the fundamentals so we'll be doing database stuff I'll be showing your models controllers views maybe a little bit of JavaScript but this is not a JavaScript course so I wouldn't count on that this is purely a back-end course so of course it's going to show you how to get set up all the fundamentals and then from there you can go on and expand on this so I want to let that install it should just take a couple of minutes that's installed you will see they're actually set up an application key so this is like a unique hash it's base64 encoded for your project and that leads me into the dot env file now don't you envy if you're unfamiliar is effectively an environment file it really specifies the environment that this project is running so you'll see things like the app URL the app name the database credentials male drivers various stuff like that you can also put things at API keys in here if you want to store them and effectively if you've got two environments let's say you've got a staging environment for testing and you've got a production environment you can have different database details different app URLs different API keys blah blah blah and these dorian view files are not synced in gear so they're in the gate ignore file so if you put this repository on two servers they'll both have separate DMD files that's how we use it in my work that's how pretty much everyone does it so first things first is to get it set up with some settings the top ones don't really matter too much as long as you've got debug true for testing that will just show you all your error messages pretty much the DB connection you'll need to have that so you can add to have a my sequel instance I'm not going to show that in this video because it's pretty basic to get set up but you're going to need your login details in your port and blah blah blah so my database I've got it in a program called navigate you can also use sequel Pro my database is called there so I'm just gonna paste that in here my username is root and my password is also root this will vary depending on your my sequel setup if you're using like man poor lamp or built in my sequel or whatever I you just need to find out what your login details are and then that's it for the environment file that's our database setup so in order to test your project you can run a command in the command line called PHP artisan serve and that's literally going to start up laravel built in server and that failed because I need to change directory into the social folder because I'm currently in the laravel folder but I've also created a project inside of that so I'm going to CD into social and PHP artisan artisan serves again and there we go we've got laravel development server started and that is the link so I want to go over here and go to my local host and there you go there is the home page this is just what comes out of the box you'll see it's just some pretty basic HTML and some CSS going on in there okay if I actually go to any links you just get a 404 because nothing's actually built yet all right so the first thing I want to do is set up a login system now if you normally use PHP or some other language you'd have to first of all you got to create the table in your database and then you've got to think about what hashing method you want to use and then you've got to create the register form and then the login form then the forgot password form it's very tedious and if you've ever worked on multiple side projects you're probably used to building this exact same thing many times and this can take you a couple of hours to build so if you're doing that for lots of different side projects it's totally unnecessary laravel does this for you it thinks about security out of the box so you don't have to it's just an all-around nicer environment to use so to setup authentication what we're gonna do is PHP artisan migrate and migrations are basically schemas and it tell is the script to build a database so it's not my sequel it's a script telling it how to build the database tables and these are stored in database migrations and then the migration names are here they've got a timestamp and then a name so the first one here is create users table and you'll see it's got a public function up which is to create the table and the public function down is to reverse it to drop it so up will create a schema which is effectively the table the table name is users and then it's got all of these columns so it's gone ID which is incrementing and it's got a bunch of strings so password email name a remember token which you'll see in the database is effectively a token for if the user decides to remember themselves and time stamps these are created at and updated at and laravel handles those automatically so this migration comes up the box but you can make your own which I'll show you that this one is specifically for authentication so I'll hit my green so I go an error which looks like it's because yep my login is incorrect for my database so I'm gonna just go check on that now that's in the DNV far if you see anything like access denied for user check your database settings and it turns out the reason here why mine did not work is because my password is actually root but again that really varies based on however you set up your database so I'm gonna go ahead now and run PHP artisan migrate again and see if that does the trick there we go migration table create successfully so it creates a table that keeps track of the migrations and then it migrates these two tables so create user's table and create the password reset table so back in my database now I go ahead and refresh sure enough we've got three tables the user's table is the one that we want right now so we've got name email password remember created and updated at the benefit of doing this in your code rather than just making tables it might not make sense for just one person but when you've got a team of people the fact that they can just run PHP artisan migrate to get their development environment set up um is so helpful it means you can keep your database in your version control whether that's get or whatever it just makes a lot more sense you can also use things called seeders which can populate the table with dummy data so let's say you want to populate it with some dummy customers you can do that too and that can be really useful for getting other developers on board but I'm not gonna go into that in this because this is really just a getting started guide okay we're now ready to really get set up with our authentication so to do this PHP artisan make : auth and you can find all of this in the laravel documentation this command literally sets up all of the PHP functions the views the controller's it resets them all up to set up a whole login system this includes login and registration so if I run that authentication scaffolding generated successfully so as I say this comes out the box and then I need to run PHP PHP artisan serve to get my web server running again when i refresh you'll see login and register suddenly appear so we're going to go ahead and register so I'm going to register with some details I'm gonna go test at test com I'm gonna set it a password I'm going to forget password and password and you're now logged in so this is also by laravel as you can tell we're only like five ten minutes in and we've already got authentication we've got our database set up it's doing it all for us we've already got like some scaffolding so a logout button etc and we can log-in again using tests at test comm password and we're in it's also got some forgotten password scaffolding that's already done right out of the box so it's really neat it really saves you like many hours if you're someone like me who comes up with side projects and then ditches them very quickly this can be really useful because you can build things so quickly it's great for prototyping it's great for building projects quickly I use this where I work and it saves us so much time a couple more bits I want to round up in this video is the whole MVC architecture behind laravel and behind pretty much any framework nowadays MVC stands for model view controller and these are the three main things that make up an application so starting off with model models are effectively your data stores so in this case of my sequel database a model represents a table in the database and these models can be related to each other using relationships just like you would use in Lara in normal my sequel using a join query you can have multiple models that's a collection and then you would loop through a collection to retrieve individual models so that's really it so each model usually doesn't always but usually represents a table that's related to it model can also represent API lookups and all sorts of other things but I'm not going to get into that it's just too confusing a model generally represents a table with a similar name the next part is views now a view is literally pretty much as HTML so it's deals with the outputting of data on the screen or in emails so if you literally deals with outputting on the screen or emails and things like that so most of the time this is just HTML but peter laravel comes with something called blade blade is the templating engine and if I go on the documentation you can see some examples there so it's effectively HTML but you can insert these smart little snippet so you can have sections if you want to master page with the header and the footer and all your JavaScript and then you can have the content separate it means you've only got to ever edit one file if you've done a regular old PHP you probably included a master page but it gets really funny if you want to set titles and things like that laravel has really thought of everything so you can't go wrong you can also do things like if statements within the HTML loops so you can echo variables components came out and a few versions ago that's quite recent there's just so much stuff slotting components there's really tons of stuff and really for most people it's going to be perfect it saves you so much time if you've ever done regular PHP you might also have done string replaces where you import a HTML file using file get contents and then you string replace various tags within that file I know we used to do it where I work and it's a nightmare after a while so blade really kills it is all for you you might have also used something like smarty templates which are pretty good but blade is really awesome anyway the final bit is controllers and this is where the actual logic happens so this is where you might process data you might have to do calculations effectively your controller is what links your models to your views it really is what handles the logic and it goes and gets data from your model as it pushes data to your models and then it goes and outputs that view it's really like the middleman of your project and that's it for MVC really one final thing I want to talk about in this episode before we actually get started is roots so there's a file called web dot PHP by the way using a text editor like vs code is brilliant because of the search when you got laravel with so many files it's so handy but web dot PHP is in this folder called roots along with console channels and API so what this file is is it's effectively a list almost of URLs on your site so for example /home will take you so this controller the home controller and the function or the method inside of it is called index and then we also name that root so that we can retrieve it later this last part is optional you can also create a route like this so root colon colon and then the either gear or post so I'm gonna go to get and then you can have slash test and then you can put an inline function in here or anonymous function I think that's called where you go echo whatever so you don't actually have to reference a control on a function you can also put a function right inside there but generally for organizations sake you want to do it like this there's also tons of things like route groups middleware tons of other stuff to go with it through but that's going to be too much for this episode I'll quickly touch on middleware though middleware is like a middleman between the base layer of your project and actually getting to those controllers it's like a security guard standing at the door before your controllers and it checks you out and decides if you logged in and then lets you in or pushes your way so for example if you've got a page that only authenticated users can go to you might have a middleware that checks they're logged in and if they're not says kebaya and if they are logged in it lets them come through to the controller but yet I'm going to leave this video here thank you so much for watching and I hope to see you in the next one I hope you have enjoyed listening to this video please be kind enough to like it and you can comment any of your doubts and queries and we will reply them at the earliest do look out for more videos in our playlist and subscribe to any rekha channel to learn more happy learning"
+}

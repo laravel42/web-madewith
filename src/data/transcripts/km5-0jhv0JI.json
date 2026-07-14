@@ -1,0 +1,1956 @@
+{
+  "videoId": "km5-0jhv0JI",
+  "language": "en",
+  "source": "auto",
+  "segments": [
+    {
+      "start": 0.44,
+      "text": "If you're not running LLMs locally, then"
+    },
+    {
+      "start": 2.52,
+      "text": "you're missing out. Sure, ChatGPT and"
+    },
+    {
+      "start": 5.24,
+      "text": "other hosted solutions are great, but if"
+    },
+    {
+      "start": 7.48,
+      "text": "you care about speed, privacy, and cost,"
+    },
+    {
+      "start": 10.36,
+      "text": "then you'll want to learn how to run"
+    },
+    {
+      "start": 11.6,
+      "text": "them on your own machine. That's why in"
+    },
+    {
+      "start": 14.08,
+      "text": "this video, I'll show you two methods of"
+    },
+    {
+      "start": 16.28,
+      "text": "running LLMs locally from a developer"
+    },
+    {
+      "start": 18.8,
+      "text": "perspective. I'll show you how to"
+    },
+    {
+      "start": 20.36,
+      "text": "download various models, run them"
+    },
+    {
+      "start": 22.32,
+      "text": "interactively, and integrate them into"
+    },
+    {
+      "start": 24.52,
+      "text": "your code to replace something like the"
+    },
+    {
+      "start": 26.6,
+      "text": "OpenAI API. The two methods that I'm"
+    },
+    {
+      "start": 29.08,
+      "text": "going to show you are Ollama and Docker"
+    },
+    {
+      "start": 31.28,
+      "text": "Model Runner. Both are free, highly"
+    },
+    {
+      "start": 33.68,
+      "text": "performant, and you'll learn the"
+    },
+    {
+      "start": 34.84,
+      "text": "differences between them as I go through"
+    },
+    {
+      "start": 36.64,
+      "text": "this video. Let's get started. So, the"
+    },
+    {
+      "start": 39.0,
+      "text": "first method to show you is Ollama. Now,"
+    },
+    {
+      "start": 41.56,
+      "text": "Ollama is a popular open-source software"
+    },
+    {
+      "start": 43.92,
+      "text": "that allows you to download and run"
+    },
+    {
+      "start": 45.84,
+      "text": "models locally on your own computer."
+    },
+    {
+      "start": 48.04,
+      "text": "Now, the models that you can run do"
+    },
+    {
+      "start": 49.48,
+      "text": "depend on the hardware and the specs of"
+    },
+    {
+      "start": 51.76,
+      "text": "that computer, but generally speaking,"
+    },
+    {
+      "start": 53.96,
+      "text": "you can run models, you can manage them,"
+    },
+    {
+      "start": 55.84,
+      "text": "delete them, etc., and then access those"
+    },
+    {
+      "start": 58.08,
+      "text": "same models from code. So, let me give"
+    },
+    {
+      "start": 60.32,
+      "text": "you a quick overview into how Ollama"
+    },
+    {
+      "start": 62.28,
+      "text": "works. Let's get started. So, first"
+    },
+    {
+      "start": 64.44,
+      "text": "things first, go to ollama.com and"
+    },
+    {
+      "start": 67.12,
+      "text": "simply download Ollama for Mac, Windows,"
+    },
+    {
+      "start": 69.84,
+      "text": "or Linux. Once it's downloaded, what"
+    },
+    {
+      "start": 72.2,
+      "text": "you'll want to do is make sure it's"
+    },
+    {
+      "start": 73.32,
+      "text": "running, so you can go to something like"
+    },
+    {
+      "start": 74.84,
+      "text": "your spotlight search, search for"
+    },
+    {
+      "start": 76.56,
+      "text": "Ollama, and simply run it and just make"
+    },
+    {
+      "start": 78.8,
+      "text": "sure it's loaded on your computer. If"
+    },
+    {
+      "start": 80.84,
+      "text": "you're on Windows, usually you can see"
+    },
+    {
+      "start": 82.36,
+      "text": "if it's running by looking in the bottom"
+    },
+    {
+      "start": 83.96,
+      "text": "right-hand corner in kind of the"
+    },
+    {
+      "start": 85.48,
+      "text": "activity bar and seeing if that Ollama"
+    },
+    {
+      "start": 88.16,
+      "text": "icon is appearing. Same thing, you can"
+    },
+    {
+      "start": 89.72,
+      "text": "also kind of go to the explorer search,"
+    },
+    {
+      "start": 91.44,
+      "text": "search for Ollama, just double press it,"
+    },
+    {
+      "start": 93.04,
+      "text": "make sure it's running on your computer."
+    },
+    {
+      "start": 95.04,
+      "text": "Now, once Ollama is running, what you're"
+    },
+    {
+      "start": 96.6,
+      "text": "going to want to do is head over to your"
+    },
+    {
+      "start": 98.16,
+      "text": "terminal. So, open up a terminal or a"
+    },
+    {
+      "start": 100.0,
+      "text": "command prompt, and simply type in the"
+    },
+    {
+      "start": 101.84,
+      "text": "command Ollama. If you do that and the"
+    },
+    {
+      "start": 104.2,
+      "text": "command works, it means Ollama is"
+    },
+    {
+      "start": 105.64,
+      "text": "running and you're good to go. Now, from"
+    },
+    {
+      "start": 107.68,
+      "text": "here, it's very straightforward on how"
+    },
+    {
+      "start": 109.08,
+      "text": "to use this tool, but what you're able"
+    },
+    {
+      "start": 111.0,
+      "text": "to do is download and manage various"
+    },
+    {
+      "start": 113.08,
+      "text": "different models. So, before you can"
+    },
+    {
+      "start": 114.72,
+      "text": "start using this from code, you need to"
+    },
+    {
+      "start": 116.88,
+      "text": "actually pull a model. So, the command"
+    },
+    {
+      "start": 119.04,
+      "text": "to pull a model is Ollama pull and then"
+    },
+    {
+      "start": 121.84,
+      "text": "the name of the model. Now, if you're"
+    },
+    {
+      "start": 123.6,
+      "text": "looking for the names of the models, you"
+    },
+    {
+      "start": 125.28,
+      "text": "can find them from this Ollama kind of"
+    },
+    {
+      "start": 127.52,
+      "text": "search page, which I'll link in the"
+    },
+    {
+      "start": 128.88,
+      "text": "description. You'll see there's a ton of"
+    },
+    {
+      "start": 130.8,
+      "text": "different options that you can download,"
+    },
+    {
+      "start": 132.52,
+      "text": "right? You can go through all of them."
+    },
+    {
+      "start": 134.24,
+      "text": "And if you want to see which ones you're"
+    },
+    {
+      "start": 135.36,
+      "text": "actually able to run, you can click into"
+    },
+    {
+      "start": 137.8,
+      "text": "one of them, for example, and you'll see"
+    },
+    {
+      "start": 139.4,
+      "text": "the size of these various different"
+    },
+    {
+      "start": 141.44,
+      "text": "models. Now, for extremely large models,"
+    },
+    {
+      "start": 144.0,
+      "text": "you're going to want to have a GPU and a"
+    },
+    {
+      "start": 145.68,
+      "text": "lot of RAM on your computer. And if"
+    },
+    {
+      "start": 147.76,
+      "text": "you're not sure, you can go to something"
+    },
+    {
+      "start": 148.8,
+      "text": "like ChatGPT and just ask it based on"
+    },
+    {
+      "start": 150.88,
+      "text": "the specs of your machine if you would"
+    },
+    {
+      "start": 152.36,
+      "text": "be able to run this model. So, I suggest"
+    },
+    {
+      "start": 154.52,
+      "text": "when you're testing out just to go with"
+    },
+    {
+      "start": 155.88,
+      "text": "a small one. So, what I'm going to do is"
+    },
+    {
+      "start": 157.52,
+      "text": "just search for one called small M2."
+    },
+    {
+      "start": 160.72,
+      "text": "This is a pretty small model that should"
+    },
+    {
+      "start": 162.28,
+      "text": "run locally whether you have a GPU, a"
+    },
+    {
+      "start": 164.16,
+      "text": "lot of RAM, CPU, it doesn't matter. And"
+    },
+    {
+      "start": 166.36,
+      "text": "you can see that in order to actually"
+    },
+    {
+      "start": 167.96,
+      "text": "run it or to pull it, use Ollama run and"
+    },
+    {
+      "start": 170.28,
+      "text": "the name of the model, which is this"
+    },
+    {
+      "start": 171.6,
+      "text": "right here. So, what I'll do is I'll"
+    },
+    {
+      "start": 172.88,
+      "text": "just copy this name here of the one"
+    },
+    {
+      "start": 174.44,
+      "text": "that's only 271 megabytes. I'm going to"
+    },
+    {
+      "start": 176.68,
+      "text": "go to my terminal, and I'm going to"
+    },
+    {
+      "start": 178.52,
+      "text": "paste it. So, Ollama pull small M2 :"
+    },
+    {
+      "start": 182.0,
+      "text": "135M. When I do that, it's going to"
+    },
+    {
+      "start": 184.48,
+      "text": "start downloading the model to my"
+    },
+    {
+      "start": 186.32,
+      "text": "machine. Once that's finished, I'll be"
+    },
+    {
+      "start": 188.32,
+      "text": "right back and we can continue. So, the"
+    },
+    {
+      "start": 190.04,
+      "text": "model has just finished downloading"
+    },
+    {
+      "start": 191.44,
+      "text": "here, and now if I want to start using"
+    },
+    {
+      "start": 193.32,
+      "text": "it, what I can do is I can start by"
+    },
+    {
+      "start": 195.16,
+      "text": "typing Ollama LS. That's going to show"
+    },
+    {
+      "start": 197.72,
+      "text": "me a list of all of the different models"
+    },
+    {
+      "start": 199.52,
+      "text": "that I have on my computer. You can see"
+    },
+    {
+      "start": 200.92,
+      "text": "I have a bunch of them here, a lot of"
+    },
+    {
+      "start": 202.36,
+      "text": "them that I was testing with many months"
+    },
+    {
+      "start": 203.92,
+      "text": "ago. And if I want to run a particular"
+    },
+    {
+      "start": 205.88,
+      "text": "model, then I can type Ollama run and"
+    },
+    {
+      "start": 208.8,
+      "text": "then simply specify the name of the"
+    },
+    {
+      "start": 210.68,
+      "text": "model that you see here. So, I'm going"
+    },
+    {
+      "start": 212.16,
+      "text": "to go small M2 : 135M"
+    },
+    {
+      "start": 216.2,
+      "text": "and then run that, and you'll see that"
+    },
+    {
+      "start": 217.68,
+      "text": "now it brings me into an interactive"
+    },
+    {
+      "start": 219.44,
+      "text": "chat where I can start typing directly"
+    },
+    {
+      "start": 221.56,
+      "text": "with the model, and you'll notice that"
+    },
+    {
+      "start": 223.16,
+      "text": "it's quite fast because it's running on"
+    },
+    {
+      "start": 224.92,
+      "text": "my own computer and we have no network"
+    },
+    {
+      "start": 226.84,
+      "text": "latency. So, I'll say, \"What is\" let's"
+    },
+    {
+      "start": 229.44,
+      "text": "do this, \"the capital of"
+    },
+    {
+      "start": 232.48,
+      "text": "Canada?\" For example, and you can see"
+    },
+    {
+      "start": 234.64,
+      "text": "that it says the capital of Canada is"
+    },
+    {
+      "start": 236.16,
+      "text": "Paris. Okay, so that obviously got that"
+    },
+    {
+      "start": 238.16,
+      "text": "wrong. Now, that's the thing with these"
+    },
+    {
+      "start": 239.6,
+      "text": "super small models, they don't have"
+    },
+    {
+      "start": 241.24,
+      "text": "access to the internet, they're running"
+    },
+    {
+      "start": 242.6,
+      "text": "locally on your own computer. They can"
+    },
+    {
+      "start": 244.68,
+      "text": "make mistakes, and this particular one"
+    },
+    {
+      "start": 246.16,
+      "text": "is a super small one that's just meant"
+    },
+    {
+      "start": 247.52,
+      "text": "to do small predictive text, so don't"
+    },
+    {
+      "start": 249.52,
+      "text": "expect it to be perfect. Now, if you"
+    },
+    {
+      "start": 251.12,
+      "text": "want to exit this particular window, you"
+    },
+    {
+      "start": 253.44,
+      "text": "can type /bye. If you do that, it's"
+    },
+    {
+      "start": 255.92,
+      "text": "going to bring you out of this, and then"
+    },
+    {
+      "start": 257.32,
+      "text": "you can continue using Ollama. That's"
+    },
+    {
+      "start": 259.16,
+      "text": "pretty much all you need to do from the"
+    },
+    {
+      "start": 260.56,
+      "text": "command line, and now what I'll do is"
+    },
+    {
+      "start": 262.32,
+      "text": "show you how you can run Ollama models"
+    },
+    {
+      "start": 264.48,
+      "text": "from code, because that's where they"
+    },
+    {
+      "start": 266.12,
+      "text": "actually become useful. After a quick"
+    },
+    {
+      "start": 268.36,
+      "text": "word from our sponsor, boot.dev. It's an"
+    },
+    {
+      "start": 271.48,
+      "text": "online learning platform designed"
+    },
+    {
+      "start": 273.08,
+      "text": "specifically for back-end development,"
+    },
+    {
+      "start": 275.36,
+      "text": "and it approaches learning in a way"
+    },
+    {
+      "start": 276.8,
+      "text": "that's far more interactive than the"
+    },
+    {
+      "start": 278.6,
+      "text": "usual video-based courses. Rather than"
+    },
+    {
+      "start": 281.44,
+      "text": "having you sit through hours of"
+    },
+    {
+      "start": 282.72,
+      "text": "lectures, boot.dev puts you straight"
+    },
+    {
+      "start": 284.96,
+      "text": "into hands-on coding. You'll work"
+    },
+    {
+      "start": 286.76,
+      "text": "directly in your browser, building real"
+    },
+    {
+      "start": 288.8,
+      "text": "projects while learning back-end"
+    },
+    {
+      "start": 290.44,
+      "text": "fundamentals like APIs, databases, and"
+    },
+    {
+      "start": 293.44,
+      "text": "server-side logic using Python and Go."
+    },
+    {
+      "start": 296.84,
+      "text": "Now, what makes it stand out is the way"
+    },
+    {
+      "start": 298.48,
+      "text": "that it borrows from game design. You'll"
+    },
+    {
+      "start": 300.4,
+      "text": "progress through levels, unlock new"
+    },
+    {
+      "start": 302.04,
+      "text": "content, and keep your momentum up as"
+    },
+    {
+      "start": 304.2,
+      "text": "you go. The platform is filled with"
+    },
+    {
+      "start": 306.16,
+      "text": "exercises and practical challenges, so"
+    },
+    {
+      "start": 308.4,
+      "text": "you'll end up writing a lot of code,"
+    },
+    {
+      "start": 310.24,
+      "text": "which is exactly what helps you improve."
+    },
+    {
+      "start": 312.72,
+      "text": "Now, all of the core content is free to"
+    },
+    {
+      "start": 314.4,
+      "text": "access, and if you decide to commit to"
+    },
+    {
+      "start": 316.16,
+      "text": "the annual plan, you can use the code"
+    },
+    {
+      "start": 318.16,
+      "text": "TechWithTim to get 25% off your first"
+    },
+    {
+      "start": 320.92,
+      "text": "year. I've been going through it myself"
+    },
+    {
+      "start": 322.76,
+      "text": "lately, and honestly, it's surprisingly"
+    },
+    {
+      "start": 324.68,
+      "text": "addictive. Thanks to boot.dev, now let's"
+    },
+    {
+      "start": 326.92,
+      "text": "get back into it. So, at this point, I'm"
+    },
+    {
+      "start": 328.72,
+      "text": "assuming that you've downloaded Ollama,"
+    },
+    {
+      "start": 330.4,
+      "text": "you've pulled at least one model, you're"
+    },
+    {
+      "start": 332.2,
+      "text": "kind of familiar with running it, and"
+    },
+    {
+      "start": 333.84,
+      "text": "now you probably want to actually use"
+    },
+    {
+      "start": 335.64,
+      "text": "this from some type of application,"
+    },
+    {
+      "start": 337.4,
+      "text": "right? So, from code. So, in order to do"
+    },
+    {
+      "start": 339.8,
+      "text": "that, there's a few different ways. I'm"
+    },
+    {
+      "start": 341.08,
+      "text": "going to show them to you directly here"
+    },
+    {
+      "start": 342.56,
+      "text": "inside of Python. However, this works in"
+    },
+    {
+      "start": 344.48,
+      "text": "pretty much every programming language,"
+    },
+    {
+      "start": 346.32,
+      "text": "just make a few small adjustments. So,"
+    },
+    {
+      "start": 348.44,
+      "text": "whenever you have Ollama running on your"
+    },
+    {
+      "start": 350.36,
+      "text": "computer, it's going to expose an HTTP"
+    },
+    {
+      "start": 353.44,
+      "text": "server or a REST API that allows you to"
+    },
+    {
+      "start": 356.28,
+      "text": "just directly call the REST API and get"
+    },
+    {
+      "start": 359.12,
+      "text": "a response. So, you don't need to use"
+    },
+    {
+      "start": 360.6,
+      "text": "any fancy modules, you can just send a"
+    },
+    {
+      "start": 362.44,
+      "text": "normal HTTP request directly to that"
+    },
+    {
+      "start": 365.52,
+      "text": "server, and it will give you a response"
+    },
+    {
+      "start": 367.16,
+      "text": "from the AI model. So, for example, this"
+    },
+    {
+      "start": 369.68,
+      "text": "is the URL, so HTTP localhost port, and"
+    },
+    {
+      "start": 372.4,
+      "text": "then by default, Ollama will run on port"
+    },
+    {
+      "start": 374.96,
+      "text": "11434."
+    },
+    {
+      "start": 376.88,
+      "text": "You can go to the /api/chat."
+    },
+    {
+      "start": 379.44,
+      "text": "You can pass some data, so in this case,"
+    },
+    {
+      "start": 381.2,
+      "text": "I'm passing the model I want to use is"
+    },
+    {
+      "start": 382.64,
+      "text": "small M2."
+    },
+    {
+      "start": 384.24,
+      "text": "I want to stream this? No, I don't. And"
+    },
+    {
+      "start": 386.08,
+      "text": "then I'm passing a few messages that I"
+    },
+    {
+      "start": 387.6,
+      "text": "want this to respond to. So, the first"
+    },
+    {
+      "start": 389.52,
+      "text": "message is the system message saying"
+    },
+    {
+      "start": 390.88,
+      "text": "you're a helpful assistant. The next"
+    },
+    {
+      "start": 392.44,
+      "text": "one, \"Please write me 500 words about"
+    },
+    {
+      "start": 394.0,
+      "text": "the fall of Rome.\" Now, system messages"
+    },
+    {
+      "start": 396.08,
+      "text": "are ones that tell the model what it"
+    },
+    {
+      "start": 398.12,
+      "text": "should be doing and give it additional"
+    },
+    {
+      "start": 399.6,
+      "text": "context, whereas user messages are ones"
+    },
+    {
+      "start": 401.68,
+      "text": "that will actually be responded to"
+    },
+    {
+      "start": 403.32,
+      "text": "directly. I then send a post request to"
+    },
+    {
+      "start": 405.48,
+      "text": "this endpoint, and then I'm able to get"
+    },
+    {
+      "start": 407.08,
+      "text": "the response and grab the message and"
+    },
+    {
+      "start": 408.68,
+      "text": "the content. So, if I come here and I"
+    },
+    {
+      "start": 410.52,
+      "text": "type"
+    },
+    {
+      "start": 411.64,
+      "text": "UV run and now this is in Ollama local"
+    },
+    {
+      "start": 413.88,
+      "text": "and then main.py, it will take a second"
+    },
+    {
+      "start": 416.36,
+      "text": "here because it is sending the network"
+    },
+    {
+      "start": 417.76,
+      "text": "request, and then we should get the"
+    },
+    {
+      "start": 419.36,
+      "text": "response. Okay, and you can see that we"
+    },
+    {
+      "start": 421.24,
+      "text": "get the response here, 500 words about"
+    },
+    {
+      "start": 423.2,
+      "text": "the fall of Rome directly inside my"
+    },
+    {
+      "start": 425.52,
+      "text": "terminal. Awesome. So, that is the first"
+    },
+    {
+      "start": 427.56,
+      "text": "way. Now, the second way to use Ollama"
+    },
+    {
+      "start": 429.6,
+      "text": "from code is to simply import the Ollama"
+    },
+    {
+      "start": 431.84,
+      "text": "module. Now, in order to use this"
+    },
+    {
+      "start": 433.56,
+      "text": "module, you need to install it, so you"
+    },
+    {
+      "start": 435.08,
+      "text": "would simply type pip"
+    },
+    {
+      "start": 436.8,
+      "text": "install Ollama if you're using something"
+    },
+    {
+      "start": 439.0,
+      "text": "like Python, and then you would be able"
+    },
+    {
+      "start": 440.72,
+      "text": "to actually import this module and use"
+    },
+    {
+      "start": 442.44,
+      "text": "it from code. So, assuming you've"
+    },
+    {
+      "start": 443.8,
+      "text": "installed that module, you'll be able to"
+    },
+    {
+      "start": 445.4,
+      "text": "import it. Same thing, you can reference"
+    },
+    {
+      "start": 447.36,
+      "text": "the model name, pass any messages you"
+    },
+    {
+      "start": 449.16,
+      "text": "want, and this time, rather than"
+    },
+    {
+      "start": 450.72,
+      "text": "manually calling the HTTP server, you"
+    },
+    {
+      "start": 452.8,
+      "text": "can simply use the Ollama.chat"
+    },
+    {
+      "start": 455.28,
+      "text": "function or method. You can pass the"
+    },
+    {
+      "start": 457.4,
+      "text": "model and the messages, and then you can"
+    },
+    {
+      "start": 458.88,
+      "text": "get the response. This works effectively"
+    },
+    {
+      "start": 461.0,
+      "text": "the exact same way as the code you saw"
+    },
+    {
+      "start": 462.56,
+      "text": "before, just wrapped in this nice Ollama"
+    },
+    {
+      "start": 464.56,
+      "text": "module. So, if I run the commands here,"
+    },
+    {
+      "start": 466.72,
+      "text": "you can see same thing, it will take a"
+    },
+    {
+      "start": 468.04,
+      "text": "second, and then it will give me the"
+    },
+    {
+      "start": 469.16,
+      "text": "response. And there you go, you can see"
+    },
+    {
+      "start": 470.96,
+      "text": "we get our 500 words, same as before,"
+    },
+    {
+      "start": 472.88,
+      "text": "showing up inside of the terminal. So,"
+    },
+    {
+      "start": 475.48,
+      "text": "to recap, if you want to use Ollama, you"
+    },
+    {
+      "start": 477.44,
+      "text": "simply install it, pull a particular"
+    },
+    {
+      "start": 479.68,
+      "text": "model, and then you can call the HTTP"
+    },
+    {
+      "start": 482.0,
+      "text": "REST API if you want to get a response,"
+    },
+    {
+      "start": 484.32,
+      "text": "or you can use something like the Ollama"
+    },
+    {
+      "start": 485.96,
+      "text": "module if you're working in a language"
+    },
+    {
+      "start": 487.44,
+      "text": "like Python to directly get the reply"
+    },
+    {
+      "start": 489.48,
+      "text": "from code. This is the first way to run"
+    },
+    {
+      "start": 491.88,
+      "text": "LLMs locally. It's very good, it's very"
+    },
+    {
+      "start": 494.32,
+      "text": "popular, and you can use this inside of"
+    },
+    {
+      "start": 496.0,
+      "text": "frameworks like LangChain, for example,"
+    },
+    {
+      "start": 498.04,
+      "text": "or really any other AI framework that"
+    },
+    {
+      "start": 499.76,
+      "text": "you want. But now, I want to move on to"
+    },
+    {
+      "start": 501.44,
+      "text": "the next method, which is a newer one"
+    },
+    {
+      "start": 503.36,
+      "text": "that many people don't know about, which"
+    },
+    {
+      "start": 505.04,
+      "text": "is the Docker Model Runner. Now, the"
+    },
+    {
+      "start": 507.32,
+      "text": "next method of running LLMs locally is"
+    },
+    {
+      "start": 509.28,
+      "text": "actually my preferred choice, and that"
+    },
+    {
+      "start": 511.04,
+      "text": "is to use the Docker Model Runner."
+    },
+    {
+      "start": 513.4,
+      "text": "Strictly speaking, this is a better,"
+    },
+    {
+      "start": 515.24,
+      "text": "more efficient way to run models than"
+    },
+    {
+      "start": 517.479,
+      "text": "using Ollama. It works with more"
+    },
+    {
+      "start": 519.64,
+      "text": "systems, it has better GPU acceleration"
+    },
+    {
+      "start": 522.4,
+      "text": "and support, and it works inside of"
+    },
+    {
+      "start": 524.12,
+      "text": "containerized applications, especially"
+    },
+    {
+      "start": 526.28,
+      "text": "when you're moving to deployment. I'm"
+    },
+    {
+      "start": 527.84,
+      "text": "not going to cover the entire setup and"
+    },
+    {
+      "start": 529.68,
+      "text": "all of the configuration in this video."
+    },
+    {
+      "start": 531.6,
+      "text": "I'll give you a quick intro so you can"
+    },
+    {
+      "start": 533.04,
+      "text": "see how it works, but I do have a longer"
+    },
+    {
+      "start": 535.0,
+      "text": "video, which I'll link in the"
+    },
+    {
+      "start": 535.92,
+      "text": "description, which explains how to use"
+    },
+    {
+      "start": 537.68,
+      "text": "this inside of things like containerized"
+    },
+    {
+      "start": 539.72,
+      "text": "applications that really gets the"
+    },
+    {
+      "start": 541.68,
+      "text": "benefit of using Docker Model Runner."
+    },
+    {
+      "start": 544.4,
+      "text": "So, anyways, just understand this is a"
+    },
+    {
+      "start": 546.6,
+      "text": "better solution in almost every single"
+    },
+    {
+      "start": 548.48,
+      "text": "way. You don't need to know why or all"
+    },
+    {
+      "start": 550.0,
+      "text": "of the specific details, so I would"
+    },
+    {
+      "start": 551.76,
+      "text": "suggest using this one, and I'll show"
+    },
+    {
+      "start": 553.64,
+      "text": "you how to set it up. Okay. So, Docker"
+    },
+    {
+      "start": 556.44,
+      "text": "Model Runner allows you to simply run"
+    },
+    {
+      "start": 558.76,
+      "text": "models using Docker. So, in order to use"
+    },
+    {
+      "start": 561.16,
+      "text": "this, you do need to have Docker Desktop"
+    },
+    {
+      "start": 563.0,
+      "text": "installed. If you don't already have it,"
+    },
+    {
+      "start": 564.68,
+      "text": "it is completely free to download, and"
+    },
+    {
+      "start": 566.24,
+      "text": "you can simply just download it by going"
+    },
+    {
+      "start": 568.08,
+      "text": "to Docker Desktop, right? Search for it,"
+    },
+    {
+      "start": 570.44,
+      "text": "and then finding the download link like"
+    },
+    {
+      "start": 572.0,
+      "text": "this. So, you can download it for your"
+    },
+    {
+      "start": 573.52,
+      "text": "operating system. Now, once you have"
+    },
+    {
+      "start": 575.12,
+      "text": "Docker Desktop downloaded, make sure"
+    },
+    {
+      "start": 576.8,
+      "text": "that you have the newest version on your"
+    },
+    {
+      "start": 578.4,
+      "text": "computer, and simply open it up."
+    },
+    {
+      "start": 580.68,
+      "text": "Similarly to before, you can go to your"
+    },
+    {
+      "start": 582.12,
+      "text": "spotlight search and just search for"
+    },
+    {
+      "start": 584.12,
+      "text": "Docker Desktop, right? And then open the"
+    },
+    {
+      "start": 586.28,
+      "text": "application. Same thing if you're on"
+    },
+    {
+      "start": 587.84,
+      "text": "Windows. Now, once you open the"
+    },
+    {
+      "start": 589.4,
+      "text": "application, what you're going to want"
+    },
+    {
+      "start": 590.48,
+      "text": "to navigate to here is the settings"
+    },
+    {
+      "start": 592.44,
+      "text": "window. You're going to want to go to AI"
+    },
+    {
+      "start": 595.08,
+      "text": "and make sure that you enable the Docker"
+    },
+    {
+      "start": 597.4,
+      "text": "model runner, okay? So, settings, AI,"
+    },
+    {
+      "start": 599.92,
+      "text": "enable Docker Docker model runner, and"
+    },
+    {
+      "start": 602.08,
+      "text": "then enable the host side TCP support,"
+    },
+    {
+      "start": 604.84,
+      "text": "and change cores to say all. Now, if for"
+    },
+    {
+      "start": 607.88,
+      "text": "some reason you're not seeing this, you"
+    },
+    {
+      "start": 609.64,
+      "text": "can go into beta features and make sure"
+    },
+    {
+      "start": 611.6,
+      "text": "that you enable the Docker MCP toolkit."
+    },
+    {
+      "start": 614.24,
+      "text": "Once you do that, all of this should be"
+    },
+    {
+      "start": 615.8,
+      "text": "good. You can enable this setting, and"
+    },
+    {
+      "start": 618.24,
+      "text": "you're good to go to run the model"
+    },
+    {
+      "start": 620.0,
+      "text": "runner. Now, once you've enabled that,"
+    },
+    {
+      "start": 621.84,
+      "text": "you can actually go directly inside of"
+    },
+    {
+      "start": 623.24,
+      "text": "Docker Desktop, go to models, and from"
+    },
+    {
+      "start": 625.96,
+      "text": "here you can actually pull models and"
+    },
+    {
+      "start": 628.0,
+      "text": "start using them directly inside of"
+    },
+    {
+      "start": 629.76,
+      "text": "Docker. So, right now we're looking at"
+    },
+    {
+      "start": 631.16,
+      "text": "my local models. You can see that I have"
+    },
+    {
+      "start": 632.76,
+      "text": "one here called small two, but if I"
+    },
+    {
+      "start": 634.68,
+      "text": "change over to Docker Hub, then there's"
+    },
+    {
+      "start": 636.96,
+      "text": "a list of models that I can download"
+    },
+    {
+      "start": 638.52,
+      "text": "simply from this UI. So, same thing as"
+    },
+    {
+      "start": 640.72,
+      "text": "before, I'll just use that small two"
+    },
+    {
+      "start": 642.2,
+      "text": "model, so I can just type small, and you"
+    },
+    {
+      "start": 643.8,
+      "text": "can see there's a bunch of options here."
+    },
+    {
+      "start": 645.64,
+      "text": "Maybe we want to go small three now"
+    },
+    {
+      "start": 646.96,
+      "text": "because this is the updated version."
+    },
+    {
+      "start": 648.72,
+      "text": "I'll just find the smallest one, which"
+    },
+    {
+      "start": 650.6,
+      "text": "is latest, and then I can just press"
+    },
+    {
+      "start": 652.16,
+      "text": "download here to pull. So, I can do this"
+    },
+    {
+      "start": 654.24,
+      "text": "directly from the user interface, and"
+    },
+    {
+      "start": 656.08,
+      "text": "then I'll be able to run the model right"
+    },
+    {
+      "start": 657.88,
+      "text": "inside of Docker Desktop. For example,"
+    },
+    {
+      "start": 659.8,
+      "text": "this model that's already downloaded, I"
+    },
+    {
+      "start": 661.52,
+      "text": "can just go here to run, and I can start"
+    },
+    {
+      "start": 663.8,
+      "text": "chatting with it directly inside of this"
+    },
+    {
+      "start": 665.4,
+      "text": "UI. You can see if I say hello, it just"
+    },
+    {
+      "start": 667.48,
+      "text": "gives me the response. Now, I can also"
+    },
+    {
+      "start": 669.2,
+      "text": "go into inspect. I can see all the"
+    },
+    {
+      "start": 670.68,
+      "text": "information, and I can view all of the"
+    },
+    {
+      "start": 672.36,
+      "text": "requests that have been sent, the"
+    },
+    {
+      "start": 673.64,
+      "text": "context usage, duration, etc., etc. So,"
+    },
+    {
+      "start": 677.0,
+      "text": "that's great. We can do that directly"
+    },
+    {
+      "start": 678.32,
+      "text": "from the UI, which in my opinion is a"
+    },
+    {
+      "start": 680.0,
+      "text": "little bit easier than Ollama, or we can"
+    },
+    {
+      "start": 682.08,
+      "text": "do it directly from the command line."
+    },
+    {
+      "start": 684.0,
+      "text": "So, same thing as before, if you have"
+    },
+    {
+      "start": 685.48,
+      "text": "Docker model runner enabled, you can"
+    },
+    {
+      "start": 687.28,
+      "text": "simply type the command Docker model."
+    },
+    {
+      "start": 689.92,
+      "text": "When you do this, it will give you a"
+    },
+    {
+      "start": 690.96,
+      "text": "very similar UI to Ollama. From here,"
+    },
+    {
+      "start": 693.72,
+      "text": "you can type Docker model pull, and then"
+    },
+    {
+      "start": 696.24,
+      "text": "you can pull a particular model. So,"
+    },
+    {
+      "start": 697.76,
+      "text": "again, same thing, small M2 if we wanted"
+    },
+    {
+      "start": 699.76,
+      "text": "to pull that, and then it would start"
+    },
+    {
+      "start": 701.24,
+      "text": "downloading it. You can see in my case,"
+    },
+    {
+      "start": 702.8,
+      "text": "it's cached. I already have it. We can"
+    },
+    {
+      "start": 704.88,
+      "text": "type Docker model list. If we do that,"
+    },
+    {
+      "start": 708.08,
+      "text": "it gives us a list of the local models"
+    },
+    {
+      "start": 709.8,
+      "text": "that we have available, and then there's"
+    },
+    {
+      "start": 711.32,
+      "text": "a few other ones that we can look at"
+    },
+    {
+      "start": 712.56,
+      "text": "here, right? Like packaging models,"
+    },
+    {
+      "start": 714.28,
+      "text": "listing them, inspecting, running,"
+    },
+    {
+      "start": 716.28,
+      "text": "deleting, etc., etc. So, also from here,"
+    },
+    {
+      "start": 719.2,
+      "text": "we can go Docker model run small M2."
+    },
+    {
+      "start": 722.48,
+      "text": "When we do that, brings us to the"
+    },
+    {
+      "start": 723.64,
+      "text": "interactive terminal. Same thing, we can"
+    },
+    {
+      "start": 725.44,
+      "text": "type hello, and if we want to escape, we"
+    },
+    {
+      "start": 727.16,
+      "text": "can type {slash} bye, and it will remove"
+    },
+    {
+      "start": 729.12,
+      "text": "us from there. Okay. So, effectively,"
+    },
+    {
+      "start": 731.56,
+      "text": "same thing as Ollama, just a slightly"
+    },
+    {
+      "start": 733.24,
+      "text": "better user interface in my opinion. If"
+    },
+    {
+      "start": 735.28,
+      "text": "you're looking for all of the different"
+    },
+    {
+      "start": 736.44,
+      "text": "models, you can find them directly from"
+    },
+    {
+      "start": 737.92,
+      "text": "the UI here, or you can go to the"
+    },
+    {
+      "start": 740.72,
+      "text": "hub.docker.com,"
+    },
+    {
+      "start": 742.28,
+      "text": "which I'll link in the description, and"
+    },
+    {
+      "start": 743.92,
+      "text": "search for all of the available models"
+    },
+    {
+      "start": 745.8,
+      "text": "on this page. Cool. So, with that said,"
+    },
+    {
+      "start": 747.8,
+      "text": "similarly to before, let me show you how"
+    },
+    {
+      "start": 749.56,
+      "text": "you can use the Docker model runner"
+    },
+    {
+      "start": 751.44,
+      "text": "directly from code. So, what you're"
+    },
+    {
+      "start": 753.2,
+      "text": "seeing on my screen is an example of"
+    },
+    {
+      "start": 754.839,
+      "text": "Python code that sends a request to"
+    },
+    {
+      "start": 757.04,
+      "text": "Docker model runner to use the same"
+    },
+    {
+      "start": 759.4,
+      "text": "model as before, the small M2 model,"
+    },
+    {
+      "start": 761.48,
+      "text": "this time from Docker model runner as"
+    },
+    {
+      "start": 763.64,
+      "text": "opposed to Ollama. Now, you'll notice"
+    },
+    {
+      "start": 766.04,
+      "text": "that the only thing that's changed about"
+    },
+    {
+      "start": 767.68,
+      "text": "this code is simply the port that I am"
+    },
+    {
+      "start": 770.28,
+      "text": "calling. Now, Ollama, if you remember"
+    },
+    {
+      "start": 772.48,
+      "text": "before, runs an HTTP REST API on port"
+    },
+    {
+      "start": 775.92,
+      "text": "11434."
+    },
+    {
+      "start": 777.839,
+      "text": "Docker model runner runs it on port"
+    },
+    {
+      "start": 780.56,
+      "text": "12434."
+    },
+    {
+      "start": 782.16,
+      "text": "So, the only change is that it's 12"
+    },
+    {
+      "start": 783.68,
+      "text": "versus 11. So, all I have to do is"
+    },
+    {
+      "start": 786.08,
+      "text": "simply change my URL here to be 12434,"
+    },
+    {
+      "start": 789.96,
+      "text": "and slightly change the endpoint or path"
+    },
+    {
+      "start": 793.12,
+      "text": "that you can see, and similarly to"
+    },
+    {
+      "start": 794.88,
+      "text": "before, I can send a request directly to"
+    },
+    {
+      "start": 797.24,
+      "text": "Docker model runner and get a response."
+    },
+    {
+      "start": 799.88,
+      "text": "That is because, just like Ollama,"
+    },
+    {
+      "start": 801.44,
+      "text": "Docker model runner runs its own REST"
+    },
+    {
+      "start": 803.52,
+      "text": "API that you can call. So, what I can do"
+    },
+    {
+      "start": 806.16,
+      "text": "here is type UV run"
+    },
+    {
+      "start": 808.04,
+      "text": "docker local/main.py,"
+    },
+    {
+      "start": 811.0,
+      "text": "and you'll see that it will just take a"
+    },
+    {
+      "start": 812.32,
+      "text": "second here, and it will give me the"
+    },
+    {
+      "start": 813.6,
+      "text": "response."
+    },
+    {
+      "start": 814.8,
+      "text": "Okay, and there we go. You can see I get"
+    },
+    {
+      "start": 816.28,
+      "text": "the 500-word response popping up"
+    },
+    {
+      "start": 818.68,
+      "text": "directly here. Now, similarly to that,"
+    },
+    {
+      "start": 821.36,
+      "text": "we also can directly use modules like"
+    },
+    {
+      "start": 823.6,
+      "text": "the OpenAI module. So, previously I used"
+    },
+    {
+      "start": 826.04,
+      "text": "the Ollama module. Obviously, we're not"
+    },
+    {
+      "start": 827.76,
+      "text": "going to use the Ollama module when"
+    },
+    {
+      "start": 829.08,
+      "text": "we're working with Docker model runner."
+    },
+    {
+      "start": 831.28,
+      "text": "However, there are modules like OpenAI"
+    },
+    {
+      "start": 833.64,
+      "text": "or LangChain. Now, those by default are"
+    },
+    {
+      "start": 836.08,
+      "text": "going to use something like OpenAI's"
+    },
+    {
+      "start": 838.16,
+      "text": "public API. However, they have the"
+    },
+    {
+      "start": 841.04,
+      "text": "ability to actually override the base"
+    },
+    {
+      "start": 843.64,
+      "text": "URL, so we can actually change the base"
+    },
+    {
+      "start": 845.92,
+      "text": "URL to be the Docker model runner, which"
+    },
+    {
+      "start": 848.4,
+      "text": "is running locally on our own computer,"
+    },
+    {
+      "start": 850.6,
+      "text": "and now we can use this module just like"
+    },
+    {
+      "start": 853.079,
+      "text": "we would before with all of the nice"
+    },
+    {
+      "start": 854.839,
+      "text": "completions and methods, except instead"
+    },
+    {
+      "start": 857.64,
+      "text": "of it sending a request to OpenAI, which"
+    },
+    {
+      "start": 859.44,
+      "text": "we would need to pay for, we can send it"
+    },
+    {
+      "start": 861.4,
+      "text": "locally to our own machine. So, you can"
+    },
+    {
+      "start": 863.959,
+      "text": "see that if I want to specify the model"
+    },
+    {
+      "start": 865.76,
+      "text": "name, I do AI {slash} and then the name"
+    },
+    {
+      "start": 868.24,
+      "text": "of the model, so in this case, small M2."
+    },
+    {
+      "start": 870.6,
+      "text": "I can specify a prompt, and then I can"
+    },
+    {
+      "start": 872.36,
+      "text": "use the OpenAI module just like I would"
+    },
+    {
+      "start": 874.36,
+      "text": "for any OpenAI request. So, for example,"
+    },
+    {
+      "start": 877.2,
+      "text": "UV run"
+    },
+    {
+      "start": 878.56,
+      "text": "docker local/this"
+    },
+    {
+      "start": 880.68,
+      "text": "OpenAI module. Same thing, just wait a"
+    },
+    {
+      "start": 882.92,
+      "text": "second, and you can see it explains how"
+    },
+    {
+      "start": 884.92,
+      "text": "transformers work. Boom. So, there you"
+    },
+    {
+      "start": 887.4,
+      "text": "go. That is how you use it directly from"
+    },
+    {
+      "start": 889.48,
+      "text": "code. Now, a lot of you at this point"
+    },
+    {
+      "start": 891.12,
+      "text": "might be asking, \"Okay, well, what's the"
+    },
+    {
+      "start": 892.6,
+      "text": "difference between the Docker model"
+    },
+    {
+      "start": 893.959,
+      "text": "runner and Ollama?\" Strictly speaking,"
+    },
+    {
+      "start": 896.24,
+      "text": "the Docker model runner is more"
+    },
+    {
+      "start": 897.72,
+      "text": "optimized, works better with GPUs, has"
+    },
+    {
+      "start": 900.079,
+      "text": "more support, and also works for"
+    },
+    {
+      "start": 901.92,
+      "text": "containerized applications. So, right"
+    },
+    {
+      "start": 904.36,
+      "text": "now I'm just showing you a very basic"
+    },
+    {
+      "start": 906.2,
+      "text": "app. However, if I had this wrapped"
+    },
+    {
+      "start": 908.24,
+      "text": "inside of a Docker container, I can"
+    },
+    {
+      "start": 910.0,
+      "text": "actually expose the Docker model runner"
+    },
+    {
+      "start": 912.16,
+      "text": "directly inside of that container. I can"
+    },
+    {
+      "start": 914.76,
+      "text": "have the model actually wrapped in the"
+    },
+    {
+      "start": 917.12,
+      "text": "container so that it doesn't take up a"
+    },
+    {
+      "start": 918.68,
+      "text": "massive amount of space, and then I can"
+    },
+    {
+      "start": 920.72,
+      "text": "run the model directly inside of the"
+    },
+    {
+      "start": 922.88,
+      "text": "containerized app. Now, I'm not going to"
+    },
+    {
+      "start": 924.72,
+      "text": "explain that in this video because I"
+    },
+    {
+      "start": 926.04,
+      "text": "know a lot of you won't find that that"
+    },
+    {
+      "start": 927.52,
+      "text": "useful. However, I do have a video on"
+    },
+    {
+      "start": 929.44,
+      "text": "YouTube. I'll link it in the description"
+    },
+    {
+      "start": 931.079,
+      "text": "that explains how to do this, where"
+    },
+    {
+      "start": 932.72,
+      "text": "essentially you can expose an LLM"
+    },
+    {
+      "start": 934.48,
+      "text": "service to your Docker container in"
+    },
+    {
+      "start": 936.64,
+      "text": "something like a Docker Compose file"
+    },
+    {
+      "start": 938.839,
+      "text": "that allows you to specify what model"
+    },
+    {
+      "start": 940.68,
+      "text": "you want to run, on what port, etc.,"
+    },
+    {
+      "start": 942.839,
+      "text": "etc., and that will allow it to ingest"
+    },
+    {
+      "start": 944.959,
+      "text": "the AI model in just a much better way,"
+    },
+    {
+      "start": 946.8,
+      "text": "especially when it comes to deploying"
+    },
+    {
+      "start": 948.52,
+      "text": "this application out. So, with that"
+    },
+    {
+      "start": 950.52,
+      "text": "said, that's going to wrap up this"
+    },
+    {
+      "start": 951.92,
+      "text": "video. I hope that you found this"
+    },
+    {
+      "start": 953.68,
+      "text": "useful. If you did, actually leave a"
+    },
+    {
+      "start": 955.44,
+      "text": "like, subscribe, and I will see you in"
+    },
+    {
+      "start": 957.72,
+      "text": "the next one."
+    },
+    {
+      "start": 960.24,
+      "text": ">> [music]"
+    }
+  ],
+  "text": "If you're not running LLMs locally, then you're missing out. Sure, ChatGPT and other hosted solutions are great, but if you care about speed, privacy, and cost, then you'll want to learn how to run them on your own machine. That's why in this video, I'll show you two methods of running LLMs locally from a developer perspective. I'll show you how to download various models, run them interactively, and integrate them into your code to replace something like the OpenAI API. The two methods that I'm going to show you are Ollama and Docker Model Runner. Both are free, highly performant, and you'll learn the differences between them as I go through this video. Let's get started. So, the first method to show you is Ollama. Now, Ollama is a popular open-source software that allows you to download and run models locally on your own computer. Now, the models that you can run do depend on the hardware and the specs of that computer, but generally speaking, you can run models, you can manage them, delete them, etc., and then access those same models from code. So, let me give you a quick overview into how Ollama works. Let's get started. So, first things first, go to ollama.com and simply download Ollama for Mac, Windows, or Linux. Once it's downloaded, what you'll want to do is make sure it's running, so you can go to something like your spotlight search, search for Ollama, and simply run it and just make sure it's loaded on your computer. If you're on Windows, usually you can see if it's running by looking in the bottom right-hand corner in kind of the activity bar and seeing if that Ollama icon is appearing. Same thing, you can also kind of go to the explorer search, search for Ollama, just double press it, make sure it's running on your computer. Now, once Ollama is running, what you're going to want to do is head over to your terminal. So, open up a terminal or a command prompt, and simply type in the command Ollama. If you do that and the command works, it means Ollama is running and you're good to go. Now, from here, it's very straightforward on how to use this tool, but what you're able to do is download and manage various different models. So, before you can start using this from code, you need to actually pull a model. So, the command to pull a model is Ollama pull and then the name of the model. Now, if you're looking for the names of the models, you can find them from this Ollama kind of search page, which I'll link in the description. You'll see there's a ton of different options that you can download, right? You can go through all of them. And if you want to see which ones you're actually able to run, you can click into one of them, for example, and you'll see the size of these various different models. Now, for extremely large models, you're going to want to have a GPU and a lot of RAM on your computer. And if you're not sure, you can go to something like ChatGPT and just ask it based on the specs of your machine if you would be able to run this model. So, I suggest when you're testing out just to go with a small one. So, what I'm going to do is just search for one called small M2. This is a pretty small model that should run locally whether you have a GPU, a lot of RAM, CPU, it doesn't matter. And you can see that in order to actually run it or to pull it, use Ollama run and the name of the model, which is this right here. So, what I'll do is I'll just copy this name here of the one that's only 271 megabytes. I'm going to go to my terminal, and I'm going to paste it. So, Ollama pull small M2 : 135M. When I do that, it's going to start downloading the model to my machine. Once that's finished, I'll be right back and we can continue. So, the model has just finished downloading here, and now if I want to start using it, what I can do is I can start by typing Ollama LS. That's going to show me a list of all of the different models that I have on my computer. You can see I have a bunch of them here, a lot of them that I was testing with many months ago. And if I want to run a particular model, then I can type Ollama run and then simply specify the name of the model that you see here. So, I'm going to go small M2 : 135M and then run that, and you'll see that now it brings me into an interactive chat where I can start typing directly with the model, and you'll notice that it's quite fast because it's running on my own computer and we have no network latency. So, I'll say, \"What is\" let's do this, \"the capital of Canada?\" For example, and you can see that it says the capital of Canada is Paris. Okay, so that obviously got that wrong. Now, that's the thing with these super small models, they don't have access to the internet, they're running locally on your own computer. They can make mistakes, and this particular one is a super small one that's just meant to do small predictive text, so don't expect it to be perfect. Now, if you want to exit this particular window, you can type /bye. If you do that, it's going to bring you out of this, and then you can continue using Ollama. That's pretty much all you need to do from the command line, and now what I'll do is show you how you can run Ollama models from code, because that's where they actually become useful. After a quick word from our sponsor, boot.dev. It's an online learning platform designed specifically for back-end development, and it approaches learning in a way that's far more interactive than the usual video-based courses. Rather than having you sit through hours of lectures, boot.dev puts you straight into hands-on coding. You'll work directly in your browser, building real projects while learning back-end fundamentals like APIs, databases, and server-side logic using Python and Go. Now, what makes it stand out is the way that it borrows from game design. You'll progress through levels, unlock new content, and keep your momentum up as you go. The platform is filled with exercises and practical challenges, so you'll end up writing a lot of code, which is exactly what helps you improve. Now, all of the core content is free to access, and if you decide to commit to the annual plan, you can use the code TechWithTim to get 25% off your first year. I've been going through it myself lately, and honestly, it's surprisingly addictive. Thanks to boot.dev, now let's get back into it. So, at this point, I'm assuming that you've downloaded Ollama, you've pulled at least one model, you're kind of familiar with running it, and now you probably want to actually use this from some type of application, right? So, from code. So, in order to do that, there's a few different ways. I'm going to show them to you directly here inside of Python. However, this works in pretty much every programming language, just make a few small adjustments. So, whenever you have Ollama running on your computer, it's going to expose an HTTP server or a REST API that allows you to just directly call the REST API and get a response. So, you don't need to use any fancy modules, you can just send a normal HTTP request directly to that server, and it will give you a response from the AI model. So, for example, this is the URL, so HTTP localhost port, and then by default, Ollama will run on port 11434. You can go to the /api/chat. You can pass some data, so in this case, I'm passing the model I want to use is small M2. I want to stream this? No, I don't. And then I'm passing a few messages that I want this to respond to. So, the first message is the system message saying you're a helpful assistant. The next one, \"Please write me 500 words about the fall of Rome.\" Now, system messages are ones that tell the model what it should be doing and give it additional context, whereas user messages are ones that will actually be responded to directly. I then send a post request to this endpoint, and then I'm able to get the response and grab the message and the content. So, if I come here and I type UV run and now this is in Ollama local and then main.py, it will take a second here because it is sending the network request, and then we should get the response. Okay, and you can see that we get the response here, 500 words about the fall of Rome directly inside my terminal. Awesome. So, that is the first way. Now, the second way to use Ollama from code is to simply import the Ollama module. Now, in order to use this module, you need to install it, so you would simply type pip install Ollama if you're using something like Python, and then you would be able to actually import this module and use it from code. So, assuming you've installed that module, you'll be able to import it. Same thing, you can reference the model name, pass any messages you want, and this time, rather than manually calling the HTTP server, you can simply use the Ollama.chat function or method. You can pass the model and the messages, and then you can get the response. This works effectively the exact same way as the code you saw before, just wrapped in this nice Ollama module. So, if I run the commands here, you can see same thing, it will take a second, and then it will give me the response. And there you go, you can see we get our 500 words, same as before, showing up inside of the terminal. So, to recap, if you want to use Ollama, you simply install it, pull a particular model, and then you can call the HTTP REST API if you want to get a response, or you can use something like the Ollama module if you're working in a language like Python to directly get the reply from code. This is the first way to run LLMs locally. It's very good, it's very popular, and you can use this inside of frameworks like LangChain, for example, or really any other AI framework that you want. But now, I want to move on to the next method, which is a newer one that many people don't know about, which is the Docker Model Runner. Now, the next method of running LLMs locally is actually my preferred choice, and that is to use the Docker Model Runner. Strictly speaking, this is a better, more efficient way to run models than using Ollama. It works with more systems, it has better GPU acceleration and support, and it works inside of containerized applications, especially when you're moving to deployment. I'm not going to cover the entire setup and all of the configuration in this video. I'll give you a quick intro so you can see how it works, but I do have a longer video, which I'll link in the description, which explains how to use this inside of things like containerized applications that really gets the benefit of using Docker Model Runner. So, anyways, just understand this is a better solution in almost every single way. You don't need to know why or all of the specific details, so I would suggest using this one, and I'll show you how to set it up. Okay. So, Docker Model Runner allows you to simply run models using Docker. So, in order to use this, you do need to have Docker Desktop installed. If you don't already have it, it is completely free to download, and you can simply just download it by going to Docker Desktop, right? Search for it, and then finding the download link like this. So, you can download it for your operating system. Now, once you have Docker Desktop downloaded, make sure that you have the newest version on your computer, and simply open it up. Similarly to before, you can go to your spotlight search and just search for Docker Desktop, right? And then open the application. Same thing if you're on Windows. Now, once you open the application, what you're going to want to navigate to here is the settings window. You're going to want to go to AI and make sure that you enable the Docker model runner, okay? So, settings, AI, enable Docker Docker model runner, and then enable the host side TCP support, and change cores to say all. Now, if for some reason you're not seeing this, you can go into beta features and make sure that you enable the Docker MCP toolkit. Once you do that, all of this should be good. You can enable this setting, and you're good to go to run the model runner. Now, once you've enabled that, you can actually go directly inside of Docker Desktop, go to models, and from here you can actually pull models and start using them directly inside of Docker. So, right now we're looking at my local models. You can see that I have one here called small two, but if I change over to Docker Hub, then there's a list of models that I can download simply from this UI. So, same thing as before, I'll just use that small two model, so I can just type small, and you can see there's a bunch of options here. Maybe we want to go small three now because this is the updated version. I'll just find the smallest one, which is latest, and then I can just press download here to pull. So, I can do this directly from the user interface, and then I'll be able to run the model right inside of Docker Desktop. For example, this model that's already downloaded, I can just go here to run, and I can start chatting with it directly inside of this UI. You can see if I say hello, it just gives me the response. Now, I can also go into inspect. I can see all the information, and I can view all of the requests that have been sent, the context usage, duration, etc., etc. So, that's great. We can do that directly from the UI, which in my opinion is a little bit easier than Ollama, or we can do it directly from the command line. So, same thing as before, if you have Docker model runner enabled, you can simply type the command Docker model. When you do this, it will give you a very similar UI to Ollama. From here, you can type Docker model pull, and then you can pull a particular model. So, again, same thing, small M2 if we wanted to pull that, and then it would start downloading it. You can see in my case, it's cached. I already have it. We can type Docker model list. If we do that, it gives us a list of the local models that we have available, and then there's a few other ones that we can look at here, right? Like packaging models, listing them, inspecting, running, deleting, etc., etc. So, also from here, we can go Docker model run small M2. When we do that, brings us to the interactive terminal. Same thing, we can type hello, and if we want to escape, we can type {slash} bye, and it will remove us from there. Okay. So, effectively, same thing as Ollama, just a slightly better user interface in my opinion. If you're looking for all of the different models, you can find them directly from the UI here, or you can go to the hub.docker.com, which I'll link in the description, and search for all of the available models on this page. Cool. So, with that said, similarly to before, let me show you how you can use the Docker model runner directly from code. So, what you're seeing on my screen is an example of Python code that sends a request to Docker model runner to use the same model as before, the small M2 model, this time from Docker model runner as opposed to Ollama. Now, you'll notice that the only thing that's changed about this code is simply the port that I am calling. Now, Ollama, if you remember before, runs an HTTP REST API on port 11434. Docker model runner runs it on port 12434. So, the only change is that it's 12 versus 11. So, all I have to do is simply change my URL here to be 12434, and slightly change the endpoint or path that you can see, and similarly to before, I can send a request directly to Docker model runner and get a response. That is because, just like Ollama, Docker model runner runs its own REST API that you can call. So, what I can do here is type UV run docker local/main.py, and you'll see that it will just take a second here, and it will give me the response. Okay, and there we go. You can see I get the 500-word response popping up directly here. Now, similarly to that, we also can directly use modules like the OpenAI module. So, previously I used the Ollama module. Obviously, we're not going to use the Ollama module when we're working with Docker model runner. However, there are modules like OpenAI or LangChain. Now, those by default are going to use something like OpenAI's public API. However, they have the ability to actually override the base URL, so we can actually change the base URL to be the Docker model runner, which is running locally on our own computer, and now we can use this module just like we would before with all of the nice completions and methods, except instead of it sending a request to OpenAI, which we would need to pay for, we can send it locally to our own machine. So, you can see that if I want to specify the model name, I do AI {slash} and then the name of the model, so in this case, small M2. I can specify a prompt, and then I can use the OpenAI module just like I would for any OpenAI request. So, for example, UV run docker local/this OpenAI module. Same thing, just wait a second, and you can see it explains how transformers work. Boom. So, there you go. That is how you use it directly from code. Now, a lot of you at this point might be asking, \"Okay, well, what's the difference between the Docker model runner and Ollama?\" Strictly speaking, the Docker model runner is more optimized, works better with GPUs, has more support, and also works for containerized applications. So, right now I'm just showing you a very basic app. However, if I had this wrapped inside of a Docker container, I can actually expose the Docker model runner directly inside of that container. I can have the model actually wrapped in the container so that it doesn't take up a massive amount of space, and then I can run the model directly inside of the containerized app. Now, I'm not going to explain that in this video because I know a lot of you won't find that that useful. However, I do have a video on YouTube. I'll link it in the description that explains how to do this, where essentially you can expose an LLM service to your Docker container in something like a Docker Compose file that allows you to specify what model you want to run, on what port, etc., etc., and that will allow it to ingest the AI model in just a much better way, especially when it comes to deploying this application out. So, with that said, that's going to wrap up this video. I hope that you found this useful. If you did, actually leave a like, subscribe, and I will see you in the next one. >> [music]"
+}

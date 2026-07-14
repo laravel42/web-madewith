@@ -1,0 +1,1064 @@
+{
+  "videoId": "qbnqNWXf_tU",
+  "language": "en",
+  "source": "auto",
+  "segments": [
+    {
+      "start": 0.03,
+      "text": "hello everybody and welcome back so in"
+    },
+    {
+      "start": 1.86,
+      "text": "this last tutorial what we're gonna be"
+    },
+    {
+      "start": 3.179,
+      "text": "doing is talking about message flashing"
+    },
+    {
+      "start": 5.25,
+      "text": "now essentially message flashing is"
+    },
+    {
+      "start": 7.2,
+      "text": "showing some kind of information from a"
+    },
+    {
+      "start": 9.0,
+      "text": "previous page on the next page when"
+    },
+    {
+      "start": 10.889,
+      "text": "something happens on the GUI so for"
+    },
+    {
+      "start": 12.96,
+      "text": "example say I login it redirects me to"
+    },
+    {
+      "start": 15.24,
+      "text": "another page and then maybe on the top"
+    },
+    {
+      "start": 16.56,
+      "text": "of that page it says logged in"
+    },
+    {
+      "start": 17.789,
+      "text": "successfully or if I log out maybe I'm"
+    },
+    {
+      "start": 20.85,
+      "text": "gonna get redirected to another page but"
+    },
+    {
+      "start": 22.5,
+      "text": "I want to show on that other page that I"
+    },
+    {
+      "start": 24.0,
+      "text": "logged out successfully so I'll flash a"
+    },
+    {
+      "start": 26.279,
+      "text": "message in a certain part of that page"
+    },
+    {
+      "start": 28.289,
+      "text": "so that the user has some idea what they"
+    },
+    {
+      "start": 31.05,
+      "text": "actually did so it's to give them a"
+    },
+    {
+      "start": 32.43,
+      "text": "little bit more interaction with the"
+    },
+    {
+      "start": 33.809,
+      "text": "page some feedback for things that they"
+    },
+    {
+      "start": 35.46,
+      "text": "do so they have an idea what's going on"
+    },
+    {
+      "start": 37.559,
+      "text": "and that rather than having to change"
+    },
+    {
+      "start": 39.09,
+      "text": "the whole page entirely or passing"
+    },
+    {
+      "start": 40.86,
+      "text": "through some other variables to show on"
+    },
+    {
+      "start": 42.54,
+      "text": "the screen you can just flash a message"
+    },
+    {
+      "start": 44.64,
+      "text": "and it makes it really easy to do this"
+    },
+    {
+      "start": 46.05,
+      "text": "in flask so to actually flash a message"
+    },
+    {
+      "start": 48.78,
+      "text": "all you need to do is to import flash"
+    },
+    {
+      "start": 50.489,
+      "text": "and then you can use this function to"
+    },
+    {
+      "start": 53.28,
+      "text": "display or kind of like post the"
+    },
+    {
+      "start": 55.02,
+      "text": "messages that are to be flashed and then"
+    },
+    {
+      "start": 56.76,
+      "text": "from the different pages we can decide"
+    },
+    {
+      "start": 58.739,
+      "text": "where we want to flash those and we'll"
+    },
+    {
+      "start": 60.059,
+      "text": "do that in a second so a basic example"
+    },
+    {
+      "start": 62.19,
+      "text": "of when you might want to flash a"
+    },
+    {
+      "start": 63.39,
+      "text": "message in our kind of script here and"
+    },
+    {
+      "start": 65.729,
+      "text": "this is where we left off in the last"
+    },
+    {
+      "start": 67.049,
+      "text": "tutorial is when we log out because what"
+    },
+    {
+      "start": 69.03,
+      "text": "happens when we log out is we go to this"
+    },
+    {
+      "start": 71.31,
+      "text": "page but then it pops our session and"
+    },
+    {
+      "start": 73.38,
+      "text": "redirects us back to the login page so"
+    },
+    {
+      "start": 75.84,
+      "text": "on the login page we probably want to"
+    },
+    {
+      "start": 77.88,
+      "text": "show logged out successful so that they"
+    },
+    {
+      "start": 79.92,
+      "text": "know there wasn't an error and they"
+    },
+    {
+      "start": 81.27,
+      "text": "didn't you know they're not still logged"
+    },
+    {
+      "start": 82.74,
+      "text": "in they know that they logged out so to"
+    },
+    {
+      "start": 84.659,
+      "text": "do this I'm gonna say flash and then"
+    },
+    {
+      "start": 86.49,
+      "text": "here I'll just put the message that I"
+    },
+    {
+      "start": 87.689,
+      "text": "want to show which is you have been"
+    },
+    {
+      "start": 90.57,
+      "text": "logged out like that and then the next"
+    },
+    {
+      "start": 94.409,
+      "text": "actual parameter for this is the"
+    },
+    {
+      "start": 96.09,
+      "text": "category now this is optional but I'm"
+    },
+    {
+      "start": 98.189,
+      "text": "just gonna put info as the category as"
+    },
+    {
+      "start": 100.619,
+      "text": "that's one of the built-in one so I"
+    },
+    {
+      "start": 102.06,
+      "text": "believe that warning info and air and"
+    },
+    {
+      "start": 103.95,
+      "text": "that's just if you want to show some"
+    },
+    {
+      "start": 105.689,
+      "text": "icons and stuff beside it you could use"
+    },
+    {
+      "start": 107.579,
+      "text": "the category to do that so that is"
+    },
+    {
+      "start": 110.43,
+      "text": "pretty much it for flashing a message"
+    },
+    {
+      "start": 112.59,
+      "text": "now we actually need to display the"
+    },
+    {
+      "start": 114.24,
+      "text": "message from our different pages so what"
+    },
+    {
+      "start": 116.49,
+      "text": "I'm gonna do is go to the login page and"
+    },
+    {
+      "start": 118.439,
+      "text": "inside my block content I'm gonna write"
+    },
+    {
+      "start": 120.659,
+      "text": "a few kind of templated code here to"
+    },
+    {
+      "start": 123.659,
+      "text": "display all of the flashed messages that"
+    },
+    {
+      "start": 125.52,
+      "text": "come up so to do this I'm going to say"
+    },
+    {
+      "start": 128.95,
+      "text": "with oops if I could spell with"
+    },
+    {
+      "start": 130.63,
+      "text": "correctly messages equals gets punished"
+    },
+    {
+      "start": 133.569,
+      "text": "or flashed hundred square messages makes"
+    },
+    {
+      "start": 137.53,
+      "text": "you add the brackets and then I will end"
+    },
+    {
+      "start": 139.45,
+      "text": "my with so do % % and wit then what I'm"
+    },
+    {
+      "start": 143.62,
+      "text": "gonna do is an if statement inside of"
+    },
+    {
+      "start": 145.12,
+      "text": "here this if statement will just check"
+    },
+    {
+      "start": 146.92,
+      "text": "if we actually have any messages to"
+    },
+    {
+      "start": 148.36,
+      "text": "display so if messages like that we will"
+    },
+    {
+      "start": 153.25,
+      "text": "end the if statement and then if we do"
+    },
+    {
+      "start": 154.959,
+      "text": "have any messages to display we will"
+    },
+    {
+      "start": 156.88,
+      "text": "loop through them and actually display"
+    },
+    {
+      "start": 158.65,
+      "text": "them so now what I'm gonna do is go"
+    },
+    {
+      "start": 161.26,
+      "text": "percent percent for in this case MSG in"
+    },
+    {
+      "start": 166.44,
+      "text": "messages making sure we're spelling"
+    },
+    {
+      "start": 168.76,
+      "text": "everything correctly then we'll end the"
+    },
+    {
+      "start": 171.069,
+      "text": "for loop and then what I can do is"
+    },
+    {
+      "start": 172.72,
+      "text": "display all these messages so to do that"
+    },
+    {
+      "start": 175.0,
+      "text": "we'll just add a piece AG we'll put two"
+    },
+    {
+      "start": 177.549,
+      "text": "of these curly braces will put MSG and"
+    },
+    {
+      "start": 179.739,
+      "text": "then we'll end the P tag now I kind of"
+    },
+    {
+      "start": 181.84,
+      "text": "zip through this cuz we've seen this"
+    },
+    {
+      "start": 182.95,
+      "text": "before but essentially the width is just"
+    },
+    {
+      "start": 184.84,
+      "text": "another Python syntax you can use in"
+    },
+    {
+      "start": 186.64,
+      "text": "here we're gonna say messages equals"
+    },
+    {
+      "start": 188.319,
+      "text": "whatever these get flashed messages are"
+    },
+    {
+      "start": 190.09,
+      "text": "check if there's any to display if there"
+    },
+    {
+      "start": 192.19,
+      "text": "is we'll loop through them we'll display"
+    },
+    {
+      "start": 193.72,
+      "text": "them and that will be it now notice that"
+    },
+    {
+      "start": 195.64,
+      "text": "we can actually have more than one flash"
+    },
+    {
+      "start": 197.23,
+      "text": "message which means if we go between a"
+    },
+    {
+      "start": 198.85,
+      "text": "few different pages maybe we'll show two"
+    },
+    {
+      "start": 200.89,
+      "text": "or three flash messages on a specific"
+    },
+    {
+      "start": 202.66,
+      "text": "page so I'm gonna leave that like this"
+    },
+    {
+      "start": 204.82,
+      "text": "for now and we'll do a quick test and"
+    },
+    {
+      "start": 206.38,
+      "text": "then we'll talk about some issues with"
+    },
+    {
+      "start": 207.7,
+      "text": "what we have right now and adding some"
+    },
+    {
+      "start": 209.5,
+      "text": "different flashes and some different"
+    },
+    {
+      "start": 210.91,
+      "text": "ways of handling it so I'm gonna run"
+    },
+    {
+      "start": 212.65,
+      "text": "this script so python tutorial 6.2 pi"
+    },
+    {
+      "start": 215.859,
+      "text": "open this up in my browser you can see i"
+    },
+    {
+      "start": 218.019,
+      "text": "had it running before so let's refresh"
+    },
+    {
+      "start": 219.43,
+      "text": "that i'm on the home page i've also"
+    },
+    {
+      "start": 221.829,
+      "text": "modified this navbar so that i have log"
+    },
+    {
+      "start": 224.32,
+      "text": "in and log out as direct links here"
+    },
+    {
+      "start": 226.12,
+      "text": "pretty basic you guys could probably"
+    },
+    {
+      "start": 227.5,
+      "text": "figure out how to do that so i'll go to"
+    },
+    {
+      "start": 229.09,
+      "text": "login will go like you know hello submit"
+    },
+    {
+      "start": 232.66,
+      "text": "there we go around the user page now if"
+    },
+    {
+      "start": 234.79,
+      "text": "we go to slash log out you can see that"
+    },
+    {
+      "start": 237.94,
+      "text": "we get the message you have been logged"
+    },
+    {
+      "start": 239.38,
+      "text": "out and it still shows our name now"
+    },
+    {
+      "start": 241.75,
+      "text": "notice though if I go to like let's say"
+    },
+    {
+      "start": 243.97,
+      "text": "the slash and then I go to slash logout"
+    },
+    {
+      "start": 246.88,
+      "text": "again it says you have been logged out"
+    },
+    {
+      "start": 248.889,
+      "text": "once more now maybe we only want to show"
+    },
+    {
+      "start": 251.139,
+      "text": "that you have been logged out if you"
+    },
+    {
+      "start": 252.79,
+      "text": "actually were logged in so in that case"
+    },
+    {
+      "start": 254.56,
+      "text": "what we could do is we could check if we"
+    },
+    {
+      "start": 257.14,
+      "text": "have a user in the session and only if"
+    },
+    {
+      "start": 258.909,
+      "text": "we do then we will say you've been"
+    },
+    {
+      "start": 260.68,
+      "text": "locked out so we could say"
+    },
+    {
+      "start": 262.9,
+      "text": "we'll actually just copy this so if user"
+    },
+    {
+      "start": 266.08,
+      "text": "in session user equals session user and"
+    },
+    {
+      "start": 269.08,
+      "text": "then maybe we actually display like"
+    },
+    {
+      "start": 270.669,
+      "text": "whatever their name is that they've been"
+    },
+    {
+      "start": 272.05,
+      "text": "logged out so in this case we can say"
+    },
+    {
+      "start": 274.21,
+      "text": "flash you have been logged out comma and"
+    },
+    {
+      "start": 277.18,
+      "text": "then maybe we'll put their name so in"
+    },
+    {
+      "start": 279.16,
+      "text": "this case I'll actually just use an F"
+    },
+    {
+      "start": 280.36,
+      "text": "string like that and put user so now"
+    },
+    {
+      "start": 285.25,
+      "text": "this way we actually display their name"
+    },
+    {
+      "start": 286.99,
+      "text": "and tell them they've been logged out"
+    },
+    {
+      "start": 288.19,
+      "text": "but only if we actually had a user in"
+    },
+    {
+      "start": 290.59,
+      "text": "the session ok so that is pretty much it"
+    },
+    {
+      "start": 293.5,
+      "text": "for that so now I'm going to show you"
+    },
+    {
+      "start": 294.52,
+      "text": "how we can flash a few different"
+    },
+    {
+      "start": 295.87,
+      "text": "messages I also want to change the page"
+    },
+    {
+      "start": 297.94,
+      "text": "for this because we're gonna be using"
+    },
+    {
+      "start": 298.96,
+      "text": "something different so let's start by"
+    },
+    {
+      "start": 300.669,
+      "text": "actually creating a new HTML file which"
+    },
+    {
+      "start": 302.71,
+      "text": "we'll use to render the user page"
+    },
+    {
+      "start": 304.389,
+      "text": "because right now we just have these h1"
+    },
+    {
+      "start": 306.13,
+      "text": "tags and I'd like to make something that"
+    },
+    {
+      "start": 308.139,
+      "text": "looks a little bit nicer so I'm gonna"
+    },
+    {
+      "start": 309.729,
+      "text": "say user dot HTML new file we will"
+    },
+    {
+      "start": 312.729,
+      "text": "simply extend that base template so"
+    },
+    {
+      "start": 315.28,
+      "text": "extends in quotes face dot HTML and then"
+    },
+    {
+      "start": 320.26,
+      "text": "we can add our blocks"
+    },
+    {
+      "start": 321.88,
+      "text": "so we'll say block in this case title I"
+    },
+    {
+      "start": 325.9,
+      "text": "don't really know what to call this one"
+    },
+    {
+      "start": 327.58,
+      "text": "so I'll just call it oops what am I"
+    },
+    {
+      "start": 330.31,
+      "text": "doing here"
+    },
+    {
+      "start": 330.76,
+      "text": "and block we'll just call it like user"
+    },
+    {
+      "start": 333.419,
+      "text": "because why not and then we'll add the"
+    },
+    {
+      "start": 335.919,
+      "text": "blocks for content we'll set up our"
+    },
+    {
+      "start": 337.84,
+      "text": "message flashing and we'll be good to go"
+    },
+    {
+      "start": 339.7,
+      "text": "so block content and then and block I'm"
+    },
+    {
+      "start": 344.71,
+      "text": "actually gonna make it so it displace"
+    },
+    {
+      "start": 346.09,
+      "text": "like hello like welcome user whatever it"
+    },
+    {
+      "start": 348.099,
+      "text": "is so to do that I'll just add a P tag"
+    },
+    {
+      "start": 350.28,
+      "text": "and I'll just say welcome comma and then"
+    },
+    {
+      "start": 355.75,
+      "text": "we'll just pass in actually like a user"
+    },
+    {
+      "start": 358.63,
+      "text": "so we'll say user like that and then we"
+    },
+    {
+      "start": 360.34,
+      "text": "can display that message flashing which"
+    },
+    {
+      "start": 361.9,
+      "text": "all I'm gonna do to do that is copy this"
+    },
+    {
+      "start": 363.61,
+      "text": "from the login page and put that at the"
+    },
+    {
+      "start": 365.86,
+      "text": "top of the user page like that so now I"
+    },
+    {
+      "start": 368.74,
+      "text": "think I missed one of the things from"
+    },
+    {
+      "start": 370.81,
+      "text": "here I did I missed this with so let's"
+    },
+    {
+      "start": 372.49,
+      "text": "grab that put that back in here top that"
+    },
+    {
+      "start": 376.21,
+      "text": "in and now we'll display the message"
+    },
+    {
+      "start": 377.47,
+      "text": "flashing and then this so now what we"
+    },
+    {
+      "start": 379.45,
+      "text": "need to do is simply render this from"
+    },
+    {
+      "start": 381.19,
+      "text": "our other page here so what I'm gonna do"
+    },
+    {
+      "start": 382.66,
+      "text": "is go back to where we have user rather"
+    },
+    {
+      "start": 384.91,
+      "text": "than just rendering the user's name will"
+    },
+    {
+      "start": 386.83,
+      "text": "actually render the template so we'll"
+    },
+    {
+      "start": 388.24,
+      "text": "say render template believe I've called"
+    },
+    {
+      "start": 390.94,
+      "text": "this users HTML and then we'll pass user"
+    },
+    {
+      "start": 394.45,
+      "text": "equal"
+    },
+    {
+      "start": 395.27,
+      "text": "user like that and that should display"
+    },
+    {
+      "start": 397.64,
+      "text": "it for us now let's see where else we"
+    },
+    {
+      "start": 399.47,
+      "text": "might want to flash a few more messages"
+    },
+    {
+      "start": 401.12,
+      "text": "before we end here so let's grab a flash"
+    },
+    {
+      "start": 403.61,
+      "text": "here actually I don't need to copy the"
+    },
+    {
+      "start": 405.44,
+      "text": "I'll just type it out so for example"
+    },
+    {
+      "start": 406.97,
+      "text": "when they login we probably want to tell"
+    },
+    {
+      "start": 409.01,
+      "text": "them that they logged in so to do that"
+    },
+    {
+      "start": 410.87,
+      "text": "we can flash a message in here so we'll"
+    },
+    {
+      "start": 413.63,
+      "text": "say flash and then login successful like"
+    },
+    {
+      "start": 419.45,
+      "text": "that so we'll flash that one there we'll"
+    },
+    {
+      "start": 421.28,
+      "text": "also flash that one hmm you know what"
+    },
+    {
+      "start": 425.57,
+      "text": "what what I'm gonna do here is what this"
+    },
+    {
+      "start": 427.64,
+      "text": "is doing right is saying if you go to"
+    },
+    {
+      "start": 429.14,
+      "text": "the login page but you're already logged"
+    },
+    {
+      "start": 430.61,
+      "text": "in it just brings you to the user page"
+    },
+    {
+      "start": 434.93,
+      "text": "it just redirects you there"
+    },
+    {
+      "start": 436.13,
+      "text": "so what I'll do is say if they go to the"
+    },
+    {
+      "start": 438.05,
+      "text": "login page and they get redirected"
+    },
+    {
+      "start": 439.6,
+      "text": "already logged in so that way when they"
+    },
+    {
+      "start": 442.97,
+      "text": "go back to the user page they know that"
+    },
+    {
+      "start": 444.47,
+      "text": "no nothing went wrong they actually just"
+    },
+    {
+      "start": 446.3,
+      "text": "are already logged in so that's why they"
+    },
+    {
+      "start": 447.8,
+      "text": "got redirected there okay so I think"
+    },
+    {
+      "start": 450.02,
+      "text": "that is pretty much good for now when I"
+    },
+    {
+      "start": 452.75,
+      "text": "go to this user page I'm actually gonna"
+    },
+    {
+      "start": 454.13,
+      "text": "flash a message - that says you are not"
+    },
+    {
+      "start": 456.71,
+      "text": "logged in because that means that if"
+    },
+    {
+      "start": 460.22,
+      "text": "they try to go to the user page and"
+    },
+    {
+      "start": 461.39,
+      "text": "they're not logged in they shouldn't be"
+    },
+    {
+      "start": 462.5,
+      "text": "able to see anything so we'll redirect"
+    },
+    {
+      "start": 464.57,
+      "text": "them back to the login page so anyways"
+    },
+    {
+      "start": 466.76,
+      "text": "this might not be perfect but this will"
+    },
+    {
+      "start": 468.26,
+      "text": "do for now so let's test it out and see"
+    },
+    {
+      "start": 469.91,
+      "text": "if I made any errors which I likely did"
+    },
+    {
+      "start": 471.95,
+      "text": "so let's go back to the home page so"
+    },
+    {
+      "start": 475.01,
+      "text": "I'll just go home like that you have"
+    },
+    {
+      "start": 478.28,
+      "text": "been logged out okay I think that was"
+    },
+    {
+      "start": 479.84,
+      "text": "just the last message to show so let's"
+    },
+    {
+      "start": 481.61,
+      "text": "go to slash login there we go let's"
+    },
+    {
+      "start": 485.06,
+      "text": "login as Tim submit long and successful"
+    },
+    {
+      "start": 488.15,
+      "text": "welcome Tim okay looks like that's"
+    },
+    {
+      "start": 489.92,
+      "text": "working right now let's go back to the"
+    },
+    {
+      "start": 491.66,
+      "text": "home page no messages to display"
+    },
+    {
+      "start": 493.61,
+      "text": "let's go login already logged in welcome"
+    },
+    {
+      "start": 496.25,
+      "text": "Tim and then last we will check out"
+    },
+    {
+      "start": 498.82,
+      "text": "logout and when we did that he didn't"
+    },
+    {
+      "start": 501.89,
+      "text": "flash the message back on this page let"
+    },
+    {
+      "start": 503.66,
+      "text": "me check if this is actually correct"
+    },
+    {
+      "start": 506.12,
+      "text": "here what I'm gonna do is just honestly"
+    },
+    {
+      "start": 508.22,
+      "text": "rather than checking this session here"
+    },
+    {
+      "start": 510.32,
+      "text": "let's just always flash that you've been"
+    },
+    {
+      "start": 512.03,
+      "text": "logged out because regardless of what"
+    },
+    {
+      "start": 513.65,
+      "text": "they do they probably should be told"
+    },
+    {
+      "start": 515.18,
+      "text": "that they were logged out so let's just"
+    },
+    {
+      "start": 517.49,
+      "text": "do this now again login you know H"
+    },
+    {
+      "start": 521.24,
+      "text": "submit oh what's going on here let's see"
+    },
+    {
+      "start": 524.72,
+      "text": "here okay successful login now if we go"
+    },
+    {
+      "start": 527.03,
+      "text": "to back to slash law"
+    },
+    {
+      "start": 529.16,
+      "text": "you've been logged out function user at"
+    },
+    {
+      "start": 531.41,
+      "text": "blah blah okay that's interesting why"
+    },
+    {
+      "start": 533.989,
+      "text": "that showed that um user Oh oops"
+    },
+    {
+      "start": 537.499,
+      "text": "this is displaying a function I need to"
+    },
+    {
+      "start": 538.819,
+      "text": "get rid of f string my apologies guys"
+    },
+    {
+      "start": 540.29,
+      "text": "okay but that is essentially how we"
+    },
+    {
+      "start": 542.689,
+      "text": "flash the messages don't worry about"
+    },
+    {
+      "start": 544.55,
+      "text": "that last error just because I was"
+    },
+    {
+      "start": 545.72,
+      "text": "passing the user function so displayed"
+    },
+    {
+      "start": 548.42,
+      "text": "this weird string of text but that is"
+    },
+    {
+      "start": 550.519,
+      "text": "message flashing so with that if you"
+    },
+    {
+      "start": 552.709,
+      "text": "guys enjoyed the video make sure you"
+    },
+    {
+      "start": 553.91,
+      "text": "leave a like and subscribe in the next"
+    },
+    {
+      "start": 556.069,
+      "text": "video I think we're gonna get into some"
+    },
+    {
+      "start": 557.089,
+      "text": "database stuff and start getting a bit"
+    },
+    {
+      "start": 558.589,
+      "text": "more complicated and talk about how to"
+    },
+    {
+      "start": 560.149,
+      "text": "set up an actual scalable web server so"
+    },
+    {
+      "start": 562.699,
+      "text": "anyways that has been it and I will see"
+    },
+    {
+      "start": 563.989,
+      "text": "you guys in the next flasks tutorial"
+    }
+  ],
+  "text": "hello everybody and welcome back so in this last tutorial what we're gonna be doing is talking about message flashing now essentially message flashing is showing some kind of information from a previous page on the next page when something happens on the GUI so for example say I login it redirects me to another page and then maybe on the top of that page it says logged in successfully or if I log out maybe I'm gonna get redirected to another page but I want to show on that other page that I logged out successfully so I'll flash a message in a certain part of that page so that the user has some idea what they actually did so it's to give them a little bit more interaction with the page some feedback for things that they do so they have an idea what's going on and that rather than having to change the whole page entirely or passing through some other variables to show on the screen you can just flash a message and it makes it really easy to do this in flask so to actually flash a message all you need to do is to import flash and then you can use this function to display or kind of like post the messages that are to be flashed and then from the different pages we can decide where we want to flash those and we'll do that in a second so a basic example of when you might want to flash a message in our kind of script here and this is where we left off in the last tutorial is when we log out because what happens when we log out is we go to this page but then it pops our session and redirects us back to the login page so on the login page we probably want to show logged out successful so that they know there wasn't an error and they didn't you know they're not still logged in they know that they logged out so to do this I'm gonna say flash and then here I'll just put the message that I want to show which is you have been logged out like that and then the next actual parameter for this is the category now this is optional but I'm just gonna put info as the category as that's one of the built-in one so I believe that warning info and air and that's just if you want to show some icons and stuff beside it you could use the category to do that so that is pretty much it for flashing a message now we actually need to display the message from our different pages so what I'm gonna do is go to the login page and inside my block content I'm gonna write a few kind of templated code here to display all of the flashed messages that come up so to do this I'm going to say with oops if I could spell with correctly messages equals gets punished or flashed hundred square messages makes you add the brackets and then I will end my with so do % % and wit then what I'm gonna do is an if statement inside of here this if statement will just check if we actually have any messages to display so if messages like that we will end the if statement and then if we do have any messages to display we will loop through them and actually display them so now what I'm gonna do is go percent percent for in this case MSG in messages making sure we're spelling everything correctly then we'll end the for loop and then what I can do is display all these messages so to do that we'll just add a piece AG we'll put two of these curly braces will put MSG and then we'll end the P tag now I kind of zip through this cuz we've seen this before but essentially the width is just another Python syntax you can use in here we're gonna say messages equals whatever these get flashed messages are check if there's any to display if there is we'll loop through them we'll display them and that will be it now notice that we can actually have more than one flash message which means if we go between a few different pages maybe we'll show two or three flash messages on a specific page so I'm gonna leave that like this for now and we'll do a quick test and then we'll talk about some issues with what we have right now and adding some different flashes and some different ways of handling it so I'm gonna run this script so python tutorial 6.2 pi open this up in my browser you can see i had it running before so let's refresh that i'm on the home page i've also modified this navbar so that i have log in and log out as direct links here pretty basic you guys could probably figure out how to do that so i'll go to login will go like you know hello submit there we go around the user page now if we go to slash log out you can see that we get the message you have been logged out and it still shows our name now notice though if I go to like let's say the slash and then I go to slash logout again it says you have been logged out once more now maybe we only want to show that you have been logged out if you actually were logged in so in that case what we could do is we could check if we have a user in the session and only if we do then we will say you've been locked out so we could say we'll actually just copy this so if user in session user equals session user and then maybe we actually display like whatever their name is that they've been logged out so in this case we can say flash you have been logged out comma and then maybe we'll put their name so in this case I'll actually just use an F string like that and put user so now this way we actually display their name and tell them they've been logged out but only if we actually had a user in the session ok so that is pretty much it for that so now I'm going to show you how we can flash a few different messages I also want to change the page for this because we're gonna be using something different so let's start by actually creating a new HTML file which we'll use to render the user page because right now we just have these h1 tags and I'd like to make something that looks a little bit nicer so I'm gonna say user dot HTML new file we will simply extend that base template so extends in quotes face dot HTML and then we can add our blocks so we'll say block in this case title I don't really know what to call this one so I'll just call it oops what am I doing here and block we'll just call it like user because why not and then we'll add the blocks for content we'll set up our message flashing and we'll be good to go so block content and then and block I'm actually gonna make it so it displace like hello like welcome user whatever it is so to do that I'll just add a P tag and I'll just say welcome comma and then we'll just pass in actually like a user so we'll say user like that and then we can display that message flashing which all I'm gonna do to do that is copy this from the login page and put that at the top of the user page like that so now I think I missed one of the things from here I did I missed this with so let's grab that put that back in here top that in and now we'll display the message flashing and then this so now what we need to do is simply render this from our other page here so what I'm gonna do is go back to where we have user rather than just rendering the user's name will actually render the template so we'll say render template believe I've called this users HTML and then we'll pass user equal user like that and that should display it for us now let's see where else we might want to flash a few more messages before we end here so let's grab a flash here actually I don't need to copy the I'll just type it out so for example when they login we probably want to tell them that they logged in so to do that we can flash a message in here so we'll say flash and then login successful like that so we'll flash that one there we'll also flash that one hmm you know what what what I'm gonna do here is what this is doing right is saying if you go to the login page but you're already logged in it just brings you to the user page it just redirects you there so what I'll do is say if they go to the login page and they get redirected already logged in so that way when they go back to the user page they know that no nothing went wrong they actually just are already logged in so that's why they got redirected there okay so I think that is pretty much good for now when I go to this user page I'm actually gonna flash a message - that says you are not logged in because that means that if they try to go to the user page and they're not logged in they shouldn't be able to see anything so we'll redirect them back to the login page so anyways this might not be perfect but this will do for now so let's test it out and see if I made any errors which I likely did so let's go back to the home page so I'll just go home like that you have been logged out okay I think that was just the last message to show so let's go to slash login there we go let's login as Tim submit long and successful welcome Tim okay looks like that's working right now let's go back to the home page no messages to display let's go login already logged in welcome Tim and then last we will check out logout and when we did that he didn't flash the message back on this page let me check if this is actually correct here what I'm gonna do is just honestly rather than checking this session here let's just always flash that you've been logged out because regardless of what they do they probably should be told that they were logged out so let's just do this now again login you know H submit oh what's going on here let's see here okay successful login now if we go to back to slash law you've been logged out function user at blah blah okay that's interesting why that showed that um user Oh oops this is displaying a function I need to get rid of f string my apologies guys okay but that is essentially how we flash the messages don't worry about that last error just because I was passing the user function so displayed this weird string of text but that is message flashing so with that if you guys enjoyed the video make sure you leave a like and subscribe in the next video I think we're gonna get into some database stuff and start getting a bit more complicated and talk about how to set up an actual scalable web server so anyways that has been it and I will see you guys in the next flasks tutorial"
+}

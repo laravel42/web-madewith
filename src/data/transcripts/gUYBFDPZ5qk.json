@@ -1,0 +1,1656 @@
+{
+  "videoId": "gUYBFDPZ5qk",
+  "language": "en",
+  "source": "auto",
+  "segments": [
+    {
+      "start": 0.06,
+      "text": "what you're looking at is the actual"
+    },
+    {
+      "start": 2.1,
+      "text": "side projects directory on my computer"
+    },
+    {
+      "start": 4.08,
+      "text": "none of these side projects have gone on"
+    },
+    {
+      "start": 6.06,
+      "text": "to become the next Facebook yet but I"
+    },
+    {
+      "start": 7.859,
+      "text": "have not failed I've just found hundreds"
+    },
+    {
+      "start": 9.48,
+      "text": "of apps that don't work if you're a"
+    },
+    {
+      "start": 11.219,
+      "text": "developer entrepreneur it's extremely"
+    },
+    {
+      "start": 13.5,
+      "text": "important not to over engineer things"
+    },
+    {
+      "start": 15.42,
+      "text": "Andy jassy once said invention requires"
+    },
+    {
+      "start": 18.06,
+      "text": "two things one the ability to try lots"
+    },
+    {
+      "start": 20.58,
+      "text": "of experiments and two not having to"
+    },
+    {
+      "start": 22.74,
+      "text": "live with the collateral damage of"
+    },
+    {
+      "start": 24.24,
+      "text": "failed experiments in today's video"
+    },
+    {
+      "start": 25.98,
+      "text": "we'll build a full stack chat app using"
+    },
+    {
+      "start": 28.26,
+      "text": "pocket base and svelte then deploy it to"
+    },
+    {
+      "start": 30.359,
+      "text": "a Linux server on the Node for just five"
+    },
+    {
+      "start": 32.399,
+      "text": "dollars I call this the Spock stack and"
+    },
+    {
+      "start": 34.62,
+      "text": "prepare to be amazed at how quickly it"
+    },
+    {
+      "start": 36.18,
+      "text": "can get things done stupidly I made this"
+    },
+    {
+      "start": 38.28,
+      "text": "demo public so you can actually try it"
+    },
+    {
+      "start": 40.26,
+      "text": "out on the internet right now this is"
+    },
+    {
+      "start": 42.0,
+      "text": "not my first rodeo and I know you guys"
+    },
+    {
+      "start": 43.68,
+      "text": "will spam it with the most horrific"
+    },
+    {
+      "start": 45.0,
+      "text": "comments imaginable but this time"
+    },
+    {
+      "start": 46.8,
+      "text": "messages can be moderated with Community"
+    },
+    {
+      "start": 48.66,
+      "text": "reactions if a comment gets pooped on"
+    },
+    {
+      "start": 50.94,
+      "text": "five times it disappears from the UI the"
+    },
+    {
+      "start": 53.399,
+      "text": "back end magic behind this application"
+    },
+    {
+      "start": 55.199,
+      "text": "is a relatively new tool called pocket"
+    },
+    {
+      "start": 57.36,
+      "text": "base which is like a free and open"
+    },
+    {
+      "start": 58.98,
+      "text": "source Firebase written and go that"
+    },
+    {
+      "start": 61.14,
+      "text": "provides user authentication along with"
+    },
+    {
+      "start": 63.0,
+      "text": "a real-time database powered by SQL Lite"
+    },
+    {
+      "start": 65.46,
+      "text": "but unlike any other base out there it"
+    },
+    {
+      "start": 67.56,
+      "text": "compiles everything to a single"
+    },
+    {
+      "start": 69.24,
+      "text": "executable and that means to self-host"
+    },
+    {
+      "start": 71.22,
+      "text": "it all you need is one little server"
+    },
+    {
+      "start": 73.26,
+      "text": "which costs less than your Grande soy"
+    },
+    {
+      "start": 75.119,
+      "text": "milk macchiato Simplicity is the"
+    },
+    {
+      "start": 77.1,
+      "text": "ultimate sophistication but today we'll"
+    },
+    {
+      "start": 79.08,
+      "text": "find out if the Simplicity of pocket"
+    },
+    {
+      "start": 80.58,
+      "text": "base can actually scale to kick things"
+    },
+    {
+      "start": 82.38,
+      "text": "off we're going to start things in"
+    },
+    {
+      "start": 83.759,
+      "text": "Reverse by deploying pocket base to a"
+    },
+    {
+      "start": 85.799,
+      "text": "Linux server in the cloud luckily for us"
+    },
+    {
+      "start": 87.9,
+      "text": "lenode has sponsored this video which"
+    },
+    {
+      "start": 89.939,
+      "text": "means I get to Make It Rain with a"
+    },
+    {
+      "start": 91.56,
+      "text": "hundred dollars in free credits for"
+    },
+    {
+      "start": 93.119,
+      "text": "everyone watching this video for those"
+    },
+    {
+      "start": 94.86,
+      "text": "that don't know lenode is one of the"
+    },
+    {
+      "start": 96.42,
+      "text": "original cloud providers that's been"
+    },
+    {
+      "start": 97.979,
+      "text": "around since 2003. their platform is a"
+    },
+    {
+      "start": 100.5,
+      "text": "perfect fit for this project because"
+    },
+    {
+      "start": 102.119,
+      "text": "like spelled and pocketbase it's famous"
+    },
+    {
+      "start": 104.22,
+      "text": "for Simplicity unlike big cloud"
+    },
+    {
+      "start": 106.02,
+      "text": "providers you can get a Linux server up"
+    },
+    {
+      "start": 108.0,
+      "text": "and running with a few clicks with flat"
+    },
+    {
+      "start": 109.92,
+      "text": "predictable pricing that won't cause"
+    },
+    {
+      "start": 111.54,
+      "text": "collateral damage later after you"
+    },
+    {
+      "start": 113.46,
+      "text": "register go to the dashboard and click"
+    },
+    {
+      "start": 115.56,
+      "text": "the button to create a new node then"
+    },
+    {
+      "start": 117.54,
+      "text": "choose an image with your preferred"
+    },
+    {
+      "start": 118.86,
+      "text": "Linux distro I'm going going with Debian"
+    },
+    {
+      "start": 120.84,
+      "text": "but the real Chads out there will use"
+    },
+    {
+      "start": 122.579,
+      "text": "Arch by the way then choose a region and"
+    },
+    {
+      "start": 124.799,
+      "text": "the size of your machine and finally"
+    },
+    {
+      "start": 126.42,
+      "text": "give it a password and click create Step"
+    },
+    {
+      "start": 128.759,
+      "text": "One is complete we now have a Linux"
+    },
+    {
+      "start": 130.739,
+      "text": "server running in the cloud I told you"
+    },
+    {
+      "start": 132.3,
+      "text": "that would be easy let's go ahead and"
+    },
+    {
+      "start": 133.62,
+      "text": "make a note of its IP address to access"
+    },
+    {
+      "start": 135.42,
+      "text": "it on the internet now in Step 2 let's"
+    },
+    {
+      "start": 137.7,
+      "text": "deploy pocket base to it first download"
+    },
+    {
+      "start": 140.04,
+      "text": "and unzip pocket base from the website"
+    },
+    {
+      "start": 141.959,
+      "text": "I'm also using Debian on my local"
+    },
+    {
+      "start": 143.819,
+      "text": "machine so we'll download the Linux"
+    },
+    {
+      "start": 145.5,
+      "text": "version unzip it to get this single"
+    },
+    {
+      "start": 147.42,
+      "text": "pocket base executable you can run it"
+    },
+    {
+      "start": 149.28,
+      "text": "locally by running pocket based serve"
+    },
+    {
+      "start": 151.26,
+      "text": "but I want to run it in the cloud on my"
+    },
+    {
+      "start": 152.94,
+      "text": "lenode server so I can access it from"
+    },
+    {
+      "start": 154.8,
+      "text": "anywhere just like a platform like"
+    },
+    {
+      "start": 156.48,
+      "text": "Firebase let's open up the terminal and"
+    },
+    {
+      "start": 158.76,
+      "text": "use secure shell to access the lenode IP"
+    },
+    {
+      "start": 161.34,
+      "text": "address as a root user it'll require the"
+    },
+    {
+      "start": 163.56,
+      "text": "password you created earlier and now we"
+    },
+    {
+      "start": 165.3,
+      "text": "have access to the Mainframe we're"
+    },
+    {
+      "start": 166.98,
+      "text": "currently in the root directory so let's"
+    },
+    {
+      "start": 168.72,
+      "text": "go ahead and create another directory"
+    },
+    {
+      "start": 170.099,
+      "text": "called PB and now we just need to upload"
+    },
+    {
+      "start": 172.319,
+      "text": "the pocket base executable to this"
+    },
+    {
+      "start": 174.0,
+      "text": "directory we could do it with rsync or"
+    },
+    {
+      "start": 176.099,
+      "text": "an application like filezilla but I"
+    },
+    {
+      "start": 178.019,
+      "text": "think the easiest approach is to use"
+    },
+    {
+      "start": 179.519,
+      "text": "secure copy which will simply copy the"
+    },
+    {
+      "start": 181.68,
+      "text": "local file over to the remote directory"
+    },
+    {
+      "start": 183.599,
+      "text": "we just created run this command from a"
+    },
+    {
+      "start": 185.4,
+      "text": "separate terminal on your local machine"
+    },
+    {
+      "start": 186.9,
+      "text": "once that's done we can go back to the"
+    },
+    {
+      "start": 188.819,
+      "text": "terminal on the lenode machine and run"
+    },
+    {
+      "start": 190.68,
+      "text": "the pocket-based serve command and to"
+    },
+    {
+      "start": 192.599,
+      "text": "make it accessible over the Internet"
+    },
+    {
+      "start": 193.739,
+      "text": "we'll use the HTTP flag followed by our"
+    },
+    {
+      "start": 196.2,
+      "text": "IP address and Port 80. congratulations"
+    },
+    {
+      "start": 198.659,
+      "text": "you just self-hosted your own back end"
+    },
+    {
+      "start": 200.7,
+      "text": "that you can now access over HTTP with"
+    },
+    {
+      "start": 203.099,
+      "text": "the IP address it serves a rest API as"
+    },
+    {
+      "start": 205.86,
+      "text": "well as an admin dashboard that you can"
+    },
+    {
+      "start": 207.84,
+      "text": "access with the underscore URL however"
+    },
+    {
+      "start": 210.239,
+      "text": "there's a few more things I want to show"
+    },
+    {
+      "start": 211.739,
+      "text": "you to make it fully production ready"
+    },
+    {
+      "start": 213.36,
+      "text": "the first thing I would do is bring my"
+    },
+    {
+      "start": 215.28,
+      "text": "domain over to lenode it has a fully"
+    },
+    {
+      "start": 217.44,
+      "text": "featured DNS manager and pocketbase uses"
+    },
+    {
+      "start": 219.959,
+      "text": "let's encrypt to automatically generate"
+    },
+    {
+      "start": 221.94,
+      "text": "an SSL certificate to serve your backend"
+    },
+    {
+      "start": 224.159,
+      "text": "over https all you have to do is add"
+    },
+    {
+      "start": 226.68,
+      "text": "this extra flag to the serve command now"
+    },
+    {
+      "start": 228.9,
+      "text": "the next thing I would consider doing is"
+    },
+    {
+      "start": 230.519,
+      "text": "mounting a volume to the PB data"
+    },
+    {
+      "start": 232.92,
+      "text": "directory this is where pocketbase"
+    },
+    {
+      "start": 234.659,
+      "text": "stores all of your data a volume is just"
+    },
+    {
+      "start": 236.58,
+      "text": "its own file system that can be moved"
+    },
+    {
+      "start": 238.56,
+      "text": "around to different servers on node we"
+    },
+    {
+      "start": 240.72,
+      "text": "can easily attach an extra 20 Gigabytes"
+    },
+    {
+      "start": 242.7,
+      "text": "for Just Two Dollars and then finally I"
+    },
+    {
+      "start": 244.86,
+      "text": "would recommend setting up a systemd"
+    },
+    {
+      "start": 246.48,
+      "text": "service to automatically restart pocket"
+    },
+    {
+      "start": 248.519,
+      "text": "base whenever the server reboots and now"
+    },
+    {
+      "start": 250.62,
+      "text": "it's time for step 3 where we model the"
+    },
+    {
+      "start": 252.48,
+      "text": "data for our chat app navigate to your"
+    },
+    {
+      "start": 254.4,
+      "text": "pocket-based dashboard and create an"
+    },
+    {
+      "start": 256.26,
+      "text": "admin user from here we can go to the"
+    },
+    {
+      "start": 257.82,
+      "text": "database and by default it has a"
+    },
+    {
+      "start": 259.68,
+      "text": "collection for users these are the users"
+    },
+    {
+      "start": 261.78,
+      "text": "of your application which contain Fields"
+    },
+    {
+      "start": 263.88,
+      "text": "like username email password and so on"
+    },
+    {
+      "start": 266.34,
+      "text": "what we need is a way to create a"
+    },
+    {
+      "start": 268.259,
+      "text": "one-to-many relationship between users"
+    },
+    {
+      "start": 270.479,
+      "text": "and chat messages create a second"
+    },
+    {
+      "start": 272.4,
+      "text": "collection called messages and give it"
+    },
+    {
+      "start": 274.62,
+      "text": "two Fields the first field is text for"
+    },
+    {
+      "start": 276.9,
+      "text": "the message content itself and you can"
+    },
+    {
+      "start": 278.82,
+      "text": "add some optional server-side"
+    },
+    {
+      "start": 280.139,
+      "text": "validations here like Min length and max"
+    },
+    {
+      "start": 282.479,
+      "text": "length while the second field user"
+    },
+    {
+      "start": 284.4,
+      "text": "creates a relationship that says a"
+    },
+    {
+      "start": 286.44,
+      "text": "message belongs to a user under the hood"
+    },
+    {
+      "start": 288.78,
+      "text": "pocketbase creates a foreign key for the"
+    },
+    {
+      "start": 290.82,
+      "text": "user ID on the messages table in the"
+    },
+    {
+      "start": 293.04,
+      "text": "sqlite database go ahead and click"
+    },
+    {
+      "start": 294.9,
+      "text": "create to update the schema and now you"
+    },
+    {
+      "start": 297.36,
+      "text": "should be able to create new records in"
+    },
+    {
+      "start": 299.1,
+      "text": "the database the that takes care of our"
+    },
+    {
+      "start": 300.72,
+      "text": "data modeling now let's make it secure"
+    },
+    {
+      "start": 302.46,
+      "text": "every collection in Pocket base can have"
+    },
+    {
+      "start": 304.38,
+      "text": "API rules these rules determine who can"
+    },
+    {
+      "start": 306.6,
+      "text": "access your data from a front-end"
+    },
+    {
+      "start": 308.16,
+      "text": "application by default the messages"
+    },
+    {
+      "start": 310.02,
+      "text": "collection can only be accessed by admin"
+    },
+    {
+      "start": 312.3,
+      "text": "users however we want anybody to be able"
+    },
+    {
+      "start": 314.52,
+      "text": "to view the messages so let's go ahead"
+    },
+    {
+      "start": 316.32,
+      "text": "and hit the unlock button for list and"
+    },
+    {
+      "start": 318.419,
+      "text": "view users also need the ability to"
+    },
+    {
+      "start": 320.52,
+      "text": "create new messages but it's critical"
+    },
+    {
+      "start": 322.259,
+      "text": "that they only create messages"
+    },
+    {
+      "start": 323.46,
+      "text": "Associated to their own user ID we can"
+    },
+    {
+      "start": 326.22,
+      "text": "enforce that rule by ensuring that the"
+    },
+    {
+      "start": 328.08,
+      "text": "user property is equal to the request"
+    },
+    {
+      "start": 330.66,
+      "text": "auth user ID and just like that we've"
+    },
+    {
+      "start": 333.36,
+      "text": "eliminated tons of complexity that we"
+    },
+    {
+      "start": 335.1,
+      "text": "would need in our backend code otherwise"
+    },
+    {
+      "start": 336.78,
+      "text": "save the changes then head over to the"
+    },
+    {
+      "start": 338.82,
+      "text": "users collection for users we already"
+    },
+    {
+      "start": 340.919,
+      "text": "have a bunch of rules built in but we"
+    },
+    {
+      "start": 342.96,
+      "text": "want to give users the ability to view"
+    },
+    {
+      "start": 344.52,
+      "text": "each other's profiles so let's go ahead"
+    },
+    {
+      "start": 346.32,
+      "text": "and remove the rules for View and list"
+    },
+    {
+      "start": 348.3,
+      "text": "to make this data public now that we're"
+    },
+    {
+      "start": 350.46,
+      "text": "somewhat secure we can start building"
+    },
+    {
+      "start": 352.08,
+      "text": "out the front end with svelte as you may"
+    },
+    {
+      "start": 354.12,
+      "text": "know I use spell to build the fireship i"
+    },
+    {
+      "start": 355.979,
+      "text": "o website but it's also been used by the"
+    },
+    {
+      "start": 358.02,
+      "text": "pocket-based developers to build their"
+    },
+    {
+      "start": 359.52,
+      "text": "admin and UI as well it's a great fit"
+    },
+    {
+      "start": 361.68,
+      "text": "for this project because it's really"
+    },
+    {
+      "start": 363.06,
+      "text": "good at building real-time uis thanks to"
+    },
+    {
+      "start": 365.34,
+      "text": "its built-in reactive stores generate a"
+    },
+    {
+      "start": 367.68,
+      "text": "new project with Veet then select the"
+    },
+    {
+      "start": 369.539,
+      "text": "spelled option and we'll also go with"
+    },
+    {
+      "start": 371.28,
+      "text": "typescript open the project run npm"
+    },
+    {
+      "start": 373.56,
+      "text": "install then npm run Dev to serve it"
+    },
+    {
+      "start": 376.199,
+      "text": "locally then in the code delete all the"
+    },
+    {
+      "start": 378.479,
+      "text": "boilerplate and create a new file called"
+    },
+    {
+      "start": 380.58,
+      "text": "pocket base in the lib directory"
+    },
+    {
+      "start": 382.44,
+      "text": "whenever building a new app I usually"
+    },
+    {
+      "start": 384.24,
+      "text": "start by thinking about user"
+    },
+    {
+      "start": 385.8,
+      "text": "authentication what we'll do in this"
+    },
+    {
+      "start": 387.539,
+      "text": "file is provide a way to listen to that"
+    },
+    {
+      "start": 389.639,
+      "text": "current user in real time from anywhere"
+    },
+    {
+      "start": 391.86,
+      "text": "in the application to handle that we'll"
+    },
+    {
+      "start": 393.78,
+      "text": "install the pocket-based JavaScript SDK"
+    },
+    {
+      "start": 395.88,
+      "text": "with npm Once installed we can then"
+    },
+    {
+      "start": 398.16,
+      "text": "import it in this file as well as"
+    },
+    {
+      "start": 399.96,
+      "text": "writable from svelt store now to connect"
+    },
+    {
+      "start": 402.36,
+      "text": "to our backend all we have to do is"
+    },
+    {
+      "start": 403.979,
+      "text": "initialize pocket base with the URL it's"
+    },
+    {
+      "start": 406.08,
+      "text": "hosted at which in this case would be"
+    },
+    {
+      "start": 407.639,
+      "text": "the lenode IP address from there I'm"
+    },
+    {
+      "start": 409.8,
+      "text": "creating a variable for current user"
+    },
+    {
+      "start": 411.78,
+      "text": "that's equal to a writable store its"
+    },
+    {
+      "start": 414.3,
+      "text": "default value is the pocket base off"
+    },
+    {
+      "start": 416.4,
+      "text": "store model which is equal to null when"
+    },
+    {
+      "start": 418.62,
+      "text": "the user is not logged in n or equal to"
+    },
+    {
+      "start": 420.84,
+      "text": "the database record of the currently"
+    },
+    {
+      "start": 422.639,
+      "text": "logged in user that contains Fields like"
+    },
+    {
+      "start": 424.68,
+      "text": "the user ID username and so on now the"
+    },
+    {
+      "start": 427.139,
+      "text": "value of this model will change when the"
+    },
+    {
+      "start": 428.759,
+      "text": "user signs in and signs out and we can"
+    },
+    {
+      "start": 430.74,
+      "text": "listen to those changes by registering a"
+    },
+    {
+      "start": 432.72,
+      "text": "callback for the on change event when"
+    },
+    {
+      "start": 434.699,
+      "text": "this event fires we can update the"
+    },
+    {
+      "start": 436.319,
+      "text": "spelled store with the current model"
+    },
+    {
+      "start": 438.06,
+      "text": "that gives us a way to subscribe to the"
+    },
+    {
+      "start": 439.919,
+      "text": "current user let's put it to use by"
+    },
+    {
+      "start": 441.96,
+      "text": "creating a login.spel component inside"
+    },
+    {
+      "start": 444.599,
+      "text": "this component we'll log in a user with"
+    },
+    {
+      "start": 446.639,
+      "text": "email and password what's awesome about"
+    },
+    {
+      "start": 448.62,
+      "text": "that store we just created is that we"
+    },
+    {
+      "start": 450.479,
+      "text": "can subscribe to the current value"
+    },
+    {
+      "start": 451.919,
+      "text": "anywhere in the application reactively"
+    },
+    {
+      "start": 453.84,
+      "text": "by putting a dollar sign in front of it"
+    },
+    {
+      "start": 455.88,
+      "text": "for example we might say if current user"
+    },
+    {
+      "start": 458.4,
+      "text": "render the text signed in as current"
+    },
+    {
+      "start": 460.86,
+      "text": "user dot username now the question"
+    },
+    {
+      "start": 462.96,
+      "text": "becomes how do we sign in a user well"
+    },
+    {
+      "start": 464.88,
+      "text": "let's start by creating variables for"
+    },
+    {
+      "start": 466.5,
+      "text": "username and password then create an"
+    },
+    {
+      "start": 468.419,
+      "text": "HTML form that has two inputs for those"
+    },
+    {
+      "start": 471.24,
+      "text": "values and it's felt we can easily bind"
+    },
+    {
+      "start": 473.58,
+      "text": "the variable to the form value with the"
+    },
+    {
+      "start": 476.039,
+      "text": "bind value directive now we can access"
+    },
+    {
+      "start": 478.319,
+      "text": "the current form value in our script"
+    },
+    {
+      "start": 480.24,
+      "text": "let's create an async function called"
+    },
+    {
+      "start": 482.46,
+      "text": "login that awaits a call to the"
+    },
+    {
+      "start": 484.8,
+      "text": "pocket-based collection of users then"
+    },
+    {
+      "start": 487.319,
+      "text": "calls the auth with password method"
+    },
+    {
+      "start": 489.36,
+      "text": "using the username and password as"
+    },
+    {
+      "start": 491.52,
+      "text": "arguments and that's all the code it"
+    },
+    {
+      "start": 493.139,
+      "text": "takes to authenticate a user however we"
+    },
+    {
+      "start": 495.479,
+      "text": "don't have a user yet which means we'll"
+    },
+    {
+      "start": 497.22,
+      "text": "also need another function named sign"
+    },
+    {
+      "start": 499.139,
+      "text": "out and this function we'll set up some"
+    },
+    {
+      "start": 500.819,
+      "text": "initial data for a new user like the"
+    },
+    {
+      "start": 502.919,
+      "text": "username password and we could also pass"
+    },
+    {
+      "start": 505.08,
+      "text": "a name and email address here as well or"
+    },
+    {
+      "start": 507.12,
+      "text": "whatever custom Fields you configured in"
+    },
+    {
+      "start": 508.86,
+      "text": "Pocket base we can then take that data"
+    },
+    {
+      "start": 510.66,
+      "text": "and create a new record in the users"
+    },
+    {
+      "start": 512.76,
+      "text": "collection once created we call login"
+    },
+    {
+      "start": 514.74,
+      "text": "with that same user data and that's all"
+    },
+    {
+      "start": 516.959,
+      "text": "it takes to sign up but it'd be a good"
+    },
+    {
+      "start": 518.64,
+      "text": "idea to wrap this in a try catch block"
+    },
+    {
+      "start": 520.38,
+      "text": "and render an error message if a bad"
+    },
+    {
+      "start": 522.479,
+      "text": "username or password is used we also"
+    },
+    {
+      "start": 524.88,
+      "text": "need a sign out function which is"
+    },
+    {
+      "start": 526.44,
+      "text": "accomplished by calling auth store clear"
+    },
+    {
+      "start": 528.42,
+      "text": "now let's go into the HTML and bind"
+    },
+    {
+      "start": 530.82,
+      "text": "these functions to buttons which is"
+    },
+    {
+      "start": 532.8,
+      "text": "accomplished and spelled with on click"
+    },
+    {
+      "start": 534.839,
+      "text": "and as one final touch I'm also going to"
+    },
+    {
+      "start": 537.06,
+      "text": "listen to the on submit event on the"
+    },
+    {
+      "start": 538.92,
+      "text": "form and prove prevent the default"
+    },
+    {
+      "start": 540.54,
+      "text": "action so it doesn't refresh the page"
+    },
+    {
+      "start": 542.459,
+      "text": "when submitted now let's open the"
+    },
+    {
+      "start": 544.14,
+      "text": "app.spel file and declare the login"
+    },
+    {
+      "start": 546.36,
+      "text": "component there if we view the app in"
+    },
+    {
+      "start": 548.64,
+      "text": "the browser we should now see this login"
+    },
+    {
+      "start": 550.5,
+      "text": "form and when you enter a username and"
+    },
+    {
+      "start": 552.959,
+      "text": "password and click sign up the UI should"
+    },
+    {
+      "start": 555.36,
+      "text": "automatically re-render to show the"
+    },
+    {
+      "start": 557.279,
+      "text": "current user's username and now we're"
+    },
+    {
+      "start": 559.14,
+      "text": "finally ready to build the fun part the"
+    },
+    {
+      "start": 561.06,
+      "text": "real-time chat messages feature let's go"
+    },
+    {
+      "start": 563.22,
+      "text": "ahead and create a new component called"
+    },
+    {
+      "start": 564.54,
+      "text": "messages we can import the on Mount and"
+    },
+    {
+      "start": 566.82,
+      "text": "on destroyed lifecycle hooks from"
+    },
+    {
+      "start": 568.32,
+      "text": "spelled as well as pocket base our first"
+    },
+    {
+      "start": 570.36,
+      "text": "goal here is to fetch the most recent"
+    },
+    {
+      "start": 572.339,
+      "text": "messages which we can represent"
+    },
+    {
+      "start": 573.899,
+      "text": "initially as an empty array from there"
+    },
+    {
+      "start": 576.18,
+      "text": "we can fetch the messages when the"
+    },
+    {
+      "start": 578.04,
+      "text": "component is first initialized with on"
+    },
+    {
+      "start": 579.959,
+      "text": "Mount and this code will run once at the"
+    },
+    {
+      "start": 582.18,
+      "text": "beginning of the component lifecycle to"
+    },
+    {
+      "start": 584.16,
+      "text": "make a query to the messages collection"
+    },
+    {
+      "start": 586.019,
+      "text": "use get list to fetch a paginated list"
+    },
+    {
+      "start": 588.779,
+      "text": "of messages that starts on page 1 and"
+    },
+    {
+      "start": 591.12,
+      "text": "has 50 messages per page it also takes"
+    },
+    {
+      "start": 593.459,
+      "text": "an object where you can do things like"
+    },
+    {
+      "start": 595.26,
+      "text": "sort and filter the query in our case we"
+    },
+    {
+      "start": 597.6,
+      "text": "want it sorted by that created field"
+    },
+    {
+      "start": 599.459,
+      "text": "what's really cool though is how easy it"
+    },
+    {
+      "start": 601.44,
+      "text": "is to join in relational data remember"
+    },
+    {
+      "start": 603.779,
+      "text": "every message has a user field that"
+    },
+    {
+      "start": 606.12,
+      "text": "points to a user record if we want to"
+    },
+    {
+      "start": 608.04,
+      "text": "also include the user data on every"
+    },
+    {
+      "start": 609.899,
+      "text": "message we can do that with the expand"
+    },
+    {
+      "start": 611.94,
+      "text": "option and that means we get all the"
+    },
+    {
+      "start": 613.5,
+      "text": "data we need without any complex SQL"
+    },
+    {
+      "start": 615.779,
+      "text": "joins now the return value is a result"
+    },
+    {
+      "start": 617.76,
+      "text": "list and we can set our messages array"
+    },
+    {
+      "start": 620.04,
+      "text": "as the result list items from there we"
+    },
+    {
+      "start": 622.38,
+      "text": "can go into our HTML and loop over the"
+    },
+    {
+      "start": 624.66,
+      "text": "messages with a spelled each block"
+    },
+    {
+      "start": 626.64,
+      "text": "notice how for each message I have the"
+    },
+    {
+      "start": 628.68,
+      "text": "message ID in parentheses this creates a"
+    },
+    {
+      "start": 630.959,
+      "text": "keyed Loop so svelte can keep track of"
+    },
+    {
+      "start": 632.94,
+      "text": "all the items in the list to render them"
+    },
+    {
+      "start": 634.8,
+      "text": "more efficiently for each message I'm"
+    },
+    {
+      "start": 636.72,
+      "text": "going to render out the message text in"
+    },
+    {
+      "start": 638.76,
+      "text": "the database and also because we join in"
+    },
+    {
+      "start": 640.86,
+      "text": "the user I'm going to render out the"
+    },
+    {
+      "start": 642.779,
+      "text": "user's username and also generate a"
+    },
+    {
+      "start": 645.06,
+      "text": "unique avatar for each user using an"
+    },
+    {
+      "start": 647.1,
+      "text": "awesome little service called dicepair"
+    },
+    {
+      "start": 648.839,
+      "text": "let's go ahead and try it out in the"
+    },
+    {
+      "start": 650.339,
+      "text": "browser I also have the pocket based"
+    },
+    {
+      "start": 652.14,
+      "text": "admin UI side by side and as you can see"
+    },
+    {
+      "start": 654.42,
+      "text": "here it fetches all the messages from"
+    },
+    {
+      "start": 656.399,
+      "text": "the database that's pretty cool but how"
+    },
+    {
+      "start": 658.5,
+      "text": "do we create a new message message let's"
+    },
+    {
+      "start": 660.24,
+      "text": "go back into the code and set up a"
+    },
+    {
+      "start": 661.98,
+      "text": "variable for a new message then Define a"
+    },
+    {
+      "start": 664.56,
+      "text": "function called send message for a data"
+    },
+    {
+      "start": 666.839,
+      "text": "we'll need the text of the new message"
+    },
+    {
+      "start": 668.279,
+      "text": "and also that current user's user ID"
+    },
+    {
+      "start": 670.68,
+      "text": "remember we can always get that by"
+    },
+    {
+      "start": 672.48,
+      "text": "putting a dollar sign in front of it"
+    },
+    {
+      "start": 673.86,
+      "text": "because spelled is awesome and now we"
+    },
+    {
+      "start": 675.66,
+      "text": "just tell pocketbase to create a new"
+    },
+    {
+      "start": 677.279,
+      "text": "message let's go ahead and take this"
+    },
+    {
+      "start": 678.839,
+      "text": "function and bind it to the on submit"
+    },
+    {
+      "start": 681.06,
+      "text": "event on a form that also prevents the"
+    },
+    {
+      "start": 683.339,
+      "text": "default action and binds the value of"
+    },
+    {
+      "start": 685.38,
+      "text": "the text to that new message variable"
+    },
+    {
+      "start": 687.0,
+      "text": "let's go ahead and open it up in the"
+    },
+    {
+      "start": 688.62,
+      "text": "browser again and try to create a new"
+    },
+    {
+      "start": 690.66,
+      "text": "message as you can see here it creates a"
+    },
+    {
+      "start": 692.76,
+      "text": "new message but we need to refresh the"
+    },
+    {
+      "start": 694.86,
+      "text": "entire page to actually see the message"
+    },
+    {
+      "start": 696.72,
+      "text": "and that's not going to fly for a"
+    },
+    {
+      "start": 698.88,
+      "text": "real-time chat app the final thing we'll"
+    },
+    {
+      "start": 700.68,
+      "text": "do here is make these messages update in"
+    },
+    {
+      "start": 702.779,
+      "text": "real time let's go back into the on"
+    },
+    {
+      "start": 704.88,
+      "text": "Mount callback and then we'll call"
+    },
+    {
+      "start": 706.5,
+      "text": "pocket base collection messages and"
+    },
+    {
+      "start": 708.899,
+      "text": "subscribe to the entire collection with"
+    },
+    {
+      "start": 711.06,
+      "text": "the star symbol this allows us to run a"
+    },
+    {
+      "start": 713.04,
+      "text": "callback anytime a message is created"
+    },
+    {
+      "start": 715.2,
+      "text": "updated or deleted the action tells us"
+    },
+    {
+      "start": 717.66,
+      "text": "what happened in our case we want to"
+    },
+    {
+      "start": 719.04,
+      "text": "update the UI if a new message was"
+    },
+    {
+      "start": 721.14,
+      "text": "created or deleted when created we can"
+    },
+    {
+      "start": 723.42,
+      "text": "update the messages array with that new"
+    },
+    {
+      "start": 725.339,
+      "text": "record one caveat with real time though"
+    },
+    {
+      "start": 727.32,
+      "text": "is that it won't include that expanded"
+    },
+    {
+      "start": 729.06,
+      "text": "user record although we can easily fetch"
+    },
+    {
+      "start": 731.04,
+      "text": "it with a get one query if needed then"
+    },
+    {
+      "start": 733.079,
+      "text": "for the delete action we can filter out"
+    },
+    {
+      "start": 735.18,
+      "text": "the ID of the message that was removed"
+    },
+    {
+      "start": 737.339,
+      "text": "that gives us a real-time listener but"
+    },
+    {
+      "start": 739.26,
+      "text": "whenever working with real time it's a"
+    },
+    {
+      "start": 741.18,
+      "text": "good practice to unsubscribe when the"
+    },
+    {
+      "start": 743.16,
+      "text": "data is no longer needed because"
+    },
+    {
+      "start": 744.48,
+      "text": "otherwise you could end up with memory"
+    },
+    {
+      "start": 746.16,
+      "text": "leaks and unnecessary reads on the"
+    },
+    {
+      "start": 748.14,
+      "text": "database create a variable to represent"
+    },
+    {
+      "start": 750.18,
+      "text": "a function named unsubscribe we obtain"
+    },
+    {
+      "start": 752.82,
+      "text": "this function from pocketbase when"
+    },
+    {
+      "start": 754.5,
+      "text": "making the call to subscribe once we"
+    },
+    {
+      "start": 756.54,
+      "text": "have that function as state we can then"
+    },
+    {
+      "start": 758.22,
+      "text": "call it on the on Destroy lifecycle hook"
+    },
+    {
+      "start": 760.2,
+      "text": "to end the subscription when the user"
+    },
+    {
+      "start": 762.0,
+      "text": "logs out or if they navigate to a"
+    },
+    {
+      "start": 763.8,
+      "text": "different page let's open up the browser"
+    },
+    {
+      "start": 765.54,
+      "text": "and try it out you should now have a"
+    },
+    {
+      "start": 767.22,
+      "text": "chat application that updates the"
+    },
+    {
+      "start": 768.899,
+      "text": "messages feed in real time and now we"
+    },
+    {
+      "start": 771.06,
+      "text": "can run npm build to build our site for"
+    },
+    {
+      "start": 773.16,
+      "text": "production and deploy it somewhere on"
+    },
+    {
+      "start": 774.959,
+      "text": "the internet in fact because we have a"
+    },
+    {
+      "start": 776.88,
+      "text": "single page application we could"
+    },
+    {
+      "start": 778.5,
+      "text": "actually do this online node by"
+    },
+    {
+      "start": 780.24,
+      "text": "uploading the generated files to a"
+    },
+    {
+      "start": 781.86,
+      "text": "storage bucket then configuring it as a"
+    },
+    {
+      "start": 783.959,
+      "text": "static website host the final thing you"
+    },
+    {
+      "start": 785.88,
+      "text": "want to know is that as your website"
+    },
+    {
+      "start": 787.32,
+      "text": "grows pocketbase will need to scale"
+    },
+    {
+      "start": 789.3,
+      "text": "vertically with more CPU and RAM to"
+    },
+    {
+      "start": 791.399,
+      "text": "handle more and more traffic this can be"
+    },
+    {
+      "start": 793.2,
+      "text": "easily accomplished by simply resizing"
+    },
+    {
+      "start": 795.3,
+      "text": "your lanode a bigger server can handle"
+    },
+    {
+      "start": 797.579,
+      "text": "more traffic it can easily handle tens"
+    },
+    {
+      "start": 799.56,
+      "text": "of thousands of concurrent users and"
+    },
+    {
+      "start": 801.42,
+      "text": "should be more than adequate for the"
+    },
+    {
+      "start": 803.04,
+      "text": "vast majority of projects out there this"
+    },
+    {
+      "start": 805.139,
+      "text": "allows you to fail over and over again"
+    },
+    {
+      "start": 806.88,
+      "text": "as a developer without a bunch of wasted"
+    },
+    {
+      "start": 809.1,
+      "text": "time and money as collateral damage"
+    },
+    {
+      "start": 810.899,
+      "text": "thanks for watching and I will see you"
+    },
+    {
+      "start": 812.88,
+      "text": "in the next one"
+    }
+  ],
+  "text": "what you're looking at is the actual side projects directory on my computer none of these side projects have gone on to become the next Facebook yet but I have not failed I've just found hundreds of apps that don't work if you're a developer entrepreneur it's extremely important not to over engineer things Andy jassy once said invention requires two things one the ability to try lots of experiments and two not having to live with the collateral damage of failed experiments in today's video we'll build a full stack chat app using pocket base and svelte then deploy it to a Linux server on the Node for just five dollars I call this the Spock stack and prepare to be amazed at how quickly it can get things done stupidly I made this demo public so you can actually try it out on the internet right now this is not my first rodeo and I know you guys will spam it with the most horrific comments imaginable but this time messages can be moderated with Community reactions if a comment gets pooped on five times it disappears from the UI the back end magic behind this application is a relatively new tool called pocket base which is like a free and open source Firebase written and go that provides user authentication along with a real-time database powered by SQL Lite but unlike any other base out there it compiles everything to a single executable and that means to self-host it all you need is one little server which costs less than your Grande soy milk macchiato Simplicity is the ultimate sophistication but today we'll find out if the Simplicity of pocket base can actually scale to kick things off we're going to start things in Reverse by deploying pocket base to a Linux server in the cloud luckily for us lenode has sponsored this video which means I get to Make It Rain with a hundred dollars in free credits for everyone watching this video for those that don't know lenode is one of the original cloud providers that's been around since 2003. their platform is a perfect fit for this project because like spelled and pocketbase it's famous for Simplicity unlike big cloud providers you can get a Linux server up and running with a few clicks with flat predictable pricing that won't cause collateral damage later after you register go to the dashboard and click the button to create a new node then choose an image with your preferred Linux distro I'm going going with Debian but the real Chads out there will use Arch by the way then choose a region and the size of your machine and finally give it a password and click create Step One is complete we now have a Linux server running in the cloud I told you that would be easy let's go ahead and make a note of its IP address to access it on the internet now in Step 2 let's deploy pocket base to it first download and unzip pocket base from the website I'm also using Debian on my local machine so we'll download the Linux version unzip it to get this single pocket base executable you can run it locally by running pocket based serve but I want to run it in the cloud on my lenode server so I can access it from anywhere just like a platform like Firebase let's open up the terminal and use secure shell to access the lenode IP address as a root user it'll require the password you created earlier and now we have access to the Mainframe we're currently in the root directory so let's go ahead and create another directory called PB and now we just need to upload the pocket base executable to this directory we could do it with rsync or an application like filezilla but I think the easiest approach is to use secure copy which will simply copy the local file over to the remote directory we just created run this command from a separate terminal on your local machine once that's done we can go back to the terminal on the lenode machine and run the pocket-based serve command and to make it accessible over the Internet we'll use the HTTP flag followed by our IP address and Port 80. congratulations you just self-hosted your own back end that you can now access over HTTP with the IP address it serves a rest API as well as an admin dashboard that you can access with the underscore URL however there's a few more things I want to show you to make it fully production ready the first thing I would do is bring my domain over to lenode it has a fully featured DNS manager and pocketbase uses let's encrypt to automatically generate an SSL certificate to serve your backend over https all you have to do is add this extra flag to the serve command now the next thing I would consider doing is mounting a volume to the PB data directory this is where pocketbase stores all of your data a volume is just its own file system that can be moved around to different servers on node we can easily attach an extra 20 Gigabytes for Just Two Dollars and then finally I would recommend setting up a systemd service to automatically restart pocket base whenever the server reboots and now it's time for step 3 where we model the data for our chat app navigate to your pocket-based dashboard and create an admin user from here we can go to the database and by default it has a collection for users these are the users of your application which contain Fields like username email password and so on what we need is a way to create a one-to-many relationship between users and chat messages create a second collection called messages and give it two Fields the first field is text for the message content itself and you can add some optional server-side validations here like Min length and max length while the second field user creates a relationship that says a message belongs to a user under the hood pocketbase creates a foreign key for the user ID on the messages table in the sqlite database go ahead and click create to update the schema and now you should be able to create new records in the database the that takes care of our data modeling now let's make it secure every collection in Pocket base can have API rules these rules determine who can access your data from a front-end application by default the messages collection can only be accessed by admin users however we want anybody to be able to view the messages so let's go ahead and hit the unlock button for list and view users also need the ability to create new messages but it's critical that they only create messages Associated to their own user ID we can enforce that rule by ensuring that the user property is equal to the request auth user ID and just like that we've eliminated tons of complexity that we would need in our backend code otherwise save the changes then head over to the users collection for users we already have a bunch of rules built in but we want to give users the ability to view each other's profiles so let's go ahead and remove the rules for View and list to make this data public now that we're somewhat secure we can start building out the front end with svelte as you may know I use spell to build the fireship i o website but it's also been used by the pocket-based developers to build their admin and UI as well it's a great fit for this project because it's really good at building real-time uis thanks to its built-in reactive stores generate a new project with Veet then select the spelled option and we'll also go with typescript open the project run npm install then npm run Dev to serve it locally then in the code delete all the boilerplate and create a new file called pocket base in the lib directory whenever building a new app I usually start by thinking about user authentication what we'll do in this file is provide a way to listen to that current user in real time from anywhere in the application to handle that we'll install the pocket-based JavaScript SDK with npm Once installed we can then import it in this file as well as writable from svelt store now to connect to our backend all we have to do is initialize pocket base with the URL it's hosted at which in this case would be the lenode IP address from there I'm creating a variable for current user that's equal to a writable store its default value is the pocket base off store model which is equal to null when the user is not logged in n or equal to the database record of the currently logged in user that contains Fields like the user ID username and so on now the value of this model will change when the user signs in and signs out and we can listen to those changes by registering a callback for the on change event when this event fires we can update the spelled store with the current model that gives us a way to subscribe to the current user let's put it to use by creating a login.spel component inside this component we'll log in a user with email and password what's awesome about that store we just created is that we can subscribe to the current value anywhere in the application reactively by putting a dollar sign in front of it for example we might say if current user render the text signed in as current user dot username now the question becomes how do we sign in a user well let's start by creating variables for username and password then create an HTML form that has two inputs for those values and it's felt we can easily bind the variable to the form value with the bind value directive now we can access the current form value in our script let's create an async function called login that awaits a call to the pocket-based collection of users then calls the auth with password method using the username and password as arguments and that's all the code it takes to authenticate a user however we don't have a user yet which means we'll also need another function named sign out and this function we'll set up some initial data for a new user like the username password and we could also pass a name and email address here as well or whatever custom Fields you configured in Pocket base we can then take that data and create a new record in the users collection once created we call login with that same user data and that's all it takes to sign up but it'd be a good idea to wrap this in a try catch block and render an error message if a bad username or password is used we also need a sign out function which is accomplished by calling auth store clear now let's go into the HTML and bind these functions to buttons which is accomplished and spelled with on click and as one final touch I'm also going to listen to the on submit event on the form and prove prevent the default action so it doesn't refresh the page when submitted now let's open the app.spel file and declare the login component there if we view the app in the browser we should now see this login form and when you enter a username and password and click sign up the UI should automatically re-render to show the current user's username and now we're finally ready to build the fun part the real-time chat messages feature let's go ahead and create a new component called messages we can import the on Mount and on destroyed lifecycle hooks from spelled as well as pocket base our first goal here is to fetch the most recent messages which we can represent initially as an empty array from there we can fetch the messages when the component is first initialized with on Mount and this code will run once at the beginning of the component lifecycle to make a query to the messages collection use get list to fetch a paginated list of messages that starts on page 1 and has 50 messages per page it also takes an object where you can do things like sort and filter the query in our case we want it sorted by that created field what's really cool though is how easy it is to join in relational data remember every message has a user field that points to a user record if we want to also include the user data on every message we can do that with the expand option and that means we get all the data we need without any complex SQL joins now the return value is a result list and we can set our messages array as the result list items from there we can go into our HTML and loop over the messages with a spelled each block notice how for each message I have the message ID in parentheses this creates a keyed Loop so svelte can keep track of all the items in the list to render them more efficiently for each message I'm going to render out the message text in the database and also because we join in the user I'm going to render out the user's username and also generate a unique avatar for each user using an awesome little service called dicepair let's go ahead and try it out in the browser I also have the pocket based admin UI side by side and as you can see here it fetches all the messages from the database that's pretty cool but how do we create a new message message let's go back into the code and set up a variable for a new message then Define a function called send message for a data we'll need the text of the new message and also that current user's user ID remember we can always get that by putting a dollar sign in front of it because spelled is awesome and now we just tell pocketbase to create a new message let's go ahead and take this function and bind it to the on submit event on a form that also prevents the default action and binds the value of the text to that new message variable let's go ahead and open it up in the browser again and try to create a new message as you can see here it creates a new message but we need to refresh the entire page to actually see the message and that's not going to fly for a real-time chat app the final thing we'll do here is make these messages update in real time let's go back into the on Mount callback and then we'll call pocket base collection messages and subscribe to the entire collection with the star symbol this allows us to run a callback anytime a message is created updated or deleted the action tells us what happened in our case we want to update the UI if a new message was created or deleted when created we can update the messages array with that new record one caveat with real time though is that it won't include that expanded user record although we can easily fetch it with a get one query if needed then for the delete action we can filter out the ID of the message that was removed that gives us a real-time listener but whenever working with real time it's a good practice to unsubscribe when the data is no longer needed because otherwise you could end up with memory leaks and unnecessary reads on the database create a variable to represent a function named unsubscribe we obtain this function from pocketbase when making the call to subscribe once we have that function as state we can then call it on the on Destroy lifecycle hook to end the subscription when the user logs out or if they navigate to a different page let's open up the browser and try it out you should now have a chat application that updates the messages feed in real time and now we can run npm build to build our site for production and deploy it somewhere on the internet in fact because we have a single page application we could actually do this online node by uploading the generated files to a storage bucket then configuring it as a static website host the final thing you want to know is that as your website grows pocketbase will need to scale vertically with more CPU and RAM to handle more and more traffic this can be easily accomplished by simply resizing your lanode a bigger server can handle more traffic it can easily handle tens of thousands of concurrent users and should be more than adequate for the vast majority of projects out there this allows you to fail over and over again as a developer without a bunch of wasted time and money as collateral damage thanks for watching and I will see you in the next one"
+}

@@ -1,153 +1,112 @@
 {
   "slug": "medusa",
-  "scrapedAt": "2026-07-13T07:30:50.637192+00:00",
+  "scrapedAt": "2026-07-14T02:48:07.955990+00:00",
   "source": "scrapy-github",
-  "totalRepos": 58,
+  "totalRepos": 55,
   "projects": [
     {
       "slug": "jackett",
       "name": "Jackett",
       "fullName": "Jackett/Jackett",
       "category": "AI & ML",
-      "stars": 15720,
+      "stars": 15723,
       "author": "Jackett",
-      "avatar": "https://avatars.githubusercontent.com/u/15383019?v=4",
+      "avatar": null,
       "desc": "API Support for your favorite torrent trackers",
       "demo": null,
       "repoUrl": "https://github.com/Jackett/Jackett",
-      "long1": "API Support for your favorite torrent trackers. Maintained by Jackett on GitHub, where it has earned 15,720 stars from the community.",
-      "long2": "It's actively developed around torrent, torznab, newznab, and is a solid reference for anyone building with these tools.",
+      "long1": "API Support for your favorite torrent trackers. Maintained by Jackett on GitHub, where it has earned 15,723 stars from the community.",
+      "long2": "It's actively developed around api, couchpotato, duckietv, and is a solid reference for anyone building with these tools.",
       "stack": [
         "C#",
-        "Torrent",
-        "Torznab",
-        "Newznab",
-        "Rss"
+        "Api",
+        "Couchpotato",
+        "Duckietv",
+        "Indexer"
       ],
-      "updated": "today",
+      "updated": "yesterday",
       "license": "GPL-2.0",
       "langs": [
         {
-          "pct": 91,
-          "name": "C#"
-        },
-        {
-          "pct": 6,
-          "name": "HTML"
-        },
-        {
-          "pct": 3,
-          "name": "JavaScript"
+          "pct": 100.0,
+          "name": "C#",
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "url": "https://github.com/Jackett/Jackett/releases/tag/v0.24.2206",
-          "name": "v0.24.2206"
-        },
-        {
-          "url": "https://github.com/Jackett/Jackett/releases/tag/v0.24.2205",
-          "name": "v0.24.2205"
-        },
-        {
-          "url": "https://github.com/Jackett/Jackett/releases/tag/v0.24.2200",
-          "name": "v0.24.2200"
-        },
-        {
-          "url": "https://github.com/Jackett/Jackett/releases/tag/v0.24.2196",
-          "name": "v0.24.2196"
-        },
-        {
-          "url": "https://github.com/Jackett/Jackett/releases/tag/v0.24.2187",
-          "name": "v0.24.2187"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "torrent",
-        "torznab",
+        "api",
+        "couchpotato",
+        "duckietv",
+        "hacktoberfest",
+        "indexer",
+        "jackett",
+        "lidarr",
+        "medusa",
+        "mylar3",
+        "nefarious",
         "newznab",
+        "proxy",
+        "radarr",
         "rss",
         "rss-proxy",
         "sickrage",
-        "couchpotato",
         "sonarr",
-        "indexer",
-        "radarr",
-        "medusa",
-        "lidarr"
+        "torrent",
+        "torznab",
+        "trackers"
       ]
     },
     {
       "slug": "swizzin",
       "name": "swizzin",
       "fullName": "swizzin/swizzin",
-      "category": "Templates",
-      "stars": 2371,
+      "category": "AI & ML",
+      "stars": 2370,
       "author": "swizzin",
-      "avatar": "https://avatars.githubusercontent.com/u/73674165?v=4",
+      "avatar": null,
       "desc": "A simple, modular seedbox solution",
-      "demo": "https://swizzin.ltd",
+      "demo": null,
       "repoUrl": "https://github.com/swizzin/swizzin",
-      "long1": "A simple, modular seedbox solution. Maintained by swizzin on GitHub, where it has earned 2,371 stars from the community.",
-      "long2": "It's actively developed around seedbox, debian, ubuntu, and is a solid reference for anyone building with these tools.",
+      "long1": "A simple, modular seedbox solution. Maintained by swizzin on GitHub, where it has earned 2,370 stars from the community.",
+      "long2": "It's actively developed around debian, deluge, installer, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Shell",
-        "Seedbox",
         "Debian",
-        "Ubuntu",
-        "Nginx"
+        "Deluge",
+        "Installer",
+        "Medusa"
       ],
       "updated": "2 months ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "pct": 99,
-          "name": "Shell"
-        },
-        {
-          "pct": 1,
-          "name": "Python"
-        },
-        {
-          "pct": 0,
-          "name": "JavaScript"
+          "pct": 100.0,
+          "name": "Shell",
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "url": "https://github.com/swizzin/swizzin/releases/tag/eol-buster",
-          "name": "eol-buster"
-        },
-        {
-          "url": "https://github.com/swizzin/swizzin/releases/tag/eol-stretch",
-          "name": "eol-stretch"
-        },
-        {
-          "url": "https://github.com/swizzin/swizzin/releases/tag/eol-bionic",
-          "name": "eol-bionic"
-        },
-        {
-          "url": "https://github.com/swizzin/swizzin/releases/tag/old-master",
-          "name": "old-master"
-        },
-        {
-          "url": "https://github.com/swizzin/swizzin/releases/tag/eol-xenial",
-          "name": "eol-xenial"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "seedbox",
         "debian",
-        "ubuntu",
-        "nginx",
-        "swizzin",
+        "deluge",
         "installer",
-        "script",
-        "seedbox-install-script",
+        "medusa",
+        "modular",
+        "nginx",
+        "qbittorrent",
+        "radarr",
         "rtorrent",
         "rutorrent",
-        "deluge",
-        "sonarr"
+        "script",
+        "seedbox",
+        "seedbox-install-script",
+        "sickgear",
+        "sickrage",
+        "sonarr",
+        "swizzin",
+        "transmission",
+        "ubuntu"
       ]
     },
     {
@@ -157,143 +116,90 @@
       "category": "E-commerce",
       "stars": 1647,
       "author": "mercurjs",
-      "avatar": "https://avatars.githubusercontent.com/u/167892246?v=4",
+      "avatar": null,
       "desc": "Open-source multi-vendor marketplace platform for B2B & B2C. Built on top of MedusaJS. Create your own custom marketplace. \ud83d\udecd\ufe0f",
-      "demo": "https://www.mercurjs.com",
+      "demo": null,
       "repoUrl": "https://github.com/mercurjs/mercur",
       "long1": "Open-source multi-vendor marketplace platform for B2B & B2C. Built on top of MedusaJS. Create your own custom marketplace. \ud83d\udecd\ufe0f. Maintained by mercurjs on GitHub, where it has earned 1,647 stars from the community.",
-      "long2": "It's actively developed around marketplace, multivendor-ecommerce, marketplace-solution, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around commerce, e-commerce, javascript, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
+        "Commerce",
+        "E Commerce",
         "Marketplace",
-        "Multivendor Ecommerce",
-        "Marketplace Solution",
-        "Commerce"
+        "Marketplace Solution"
       ],
-      "updated": "3 days ago",
+      "updated": "4 days ago",
       "license": "MIT",
       "langs": [
         {
-          "pct": 78,
-          "name": "TypeScript"
-        },
-        {
-          "pct": 22,
-          "name": "MDX"
-        },
-        {
-          "pct": 0,
-          "name": "Shell"
+          "pct": 100.0,
+          "name": "TypeScript",
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "url": "https://github.com/mercurjs/mercur/releases/tag/2.2.0",
-          "name": "2.2.0"
-        },
-        {
-          "url": "https://github.com/mercurjs/mercur/releases/tag/v2.2.0",
-          "name": "v2.2.0"
-        },
-        {
-          "url": "https://github.com/mercurjs/mercur/releases/tag/v2.2.0-rc.3",
-          "name": "v2.2.0-rc.3"
-        },
-        {
-          "url": "https://github.com/mercurjs/mercur/releases/tag/v2.2.0-rc.2",
-          "name": "v2.2.0-rc.2"
-        },
-        {
-          "url": "https://github.com/mercurjs/mercur/releases/tag/v2.2.0-canary.53",
-          "name": "v2.2.0-canary.53"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "marketplace",
-        "multivendor-ecommerce",
-        "marketplace-solution",
         "commerce",
         "e-commerce",
         "javascript",
+        "marketplace",
+        "marketplace-solution",
         "medusa",
         "medusajs",
         "medusajs-v2",
         "multi-vendor",
         "multi-vendor-ecommerce",
-        "nodejs"
+        "multivendor-ecommerce",
+        "nodejs",
+        "open-source",
+        "shopping-cart"
       ]
     },
     {
       "slug": "seccubus",
       "name": "seccubus",
       "fullName": "seccubus/seccubus",
-      "category": "DevTools",
+      "category": "Testing",
       "stars": 712,
       "author": "seccubus",
-      "avatar": "https://avatars.githubusercontent.com/u/50734570?v=4",
+      "avatar": null,
       "desc": "Easy automated vulnerability scanning, reporting and analysis",
       "demo": null,
       "repoUrl": "https://github.com/seccubus/seccubus",
       "long1": "Easy automated vulnerability scanning, reporting and analysis. Maintained by seccubus on GitHub, where it has earned 712 stars from the community.",
-      "long2": "It's actively developed around seccubus, repeated-scans, nikto, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around analysis, filters, medusa, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
-        "Seccubus",
-        "Repeated Scans",
-        "Nikto",
-        "Ssllabs"
+        "Analysis",
+        "Filters",
+        "Medusa",
+        "Nessus"
       ],
       "updated": "7 years ago",
       "license": "Apache-2.0",
       "langs": [
         {
-          "pct": 71,
-          "name": "JavaScript"
-        },
-        {
-          "pct": 17,
-          "name": "Perl"
-        },
-        {
-          "pct": 12,
-          "name": "HTML"
+          "pct": 100.0,
+          "name": "JavaScript",
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "url": "https://github.com/seccubus/seccubus/releases/tag/2.52",
-          "name": "2.52"
-        },
-        {
-          "url": "https://github.com/seccubus/seccubus/releases/tag/2.50",
-          "name": "2.50"
-        },
-        {
-          "url": "https://github.com/seccubus/seccubus/releases/tag/2.48",
-          "name": "2.48"
-        },
-        {
-          "url": "https://github.com/seccubus/seccubus/releases/tag/2.46",
-          "name": "2.46"
-        },
-        {
-          "url": "https://github.com/seccubus/seccubus/releases/tag/2.44",
-          "name": "2.44"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "seccubus",
-        "repeated-scans",
-        "nikto",
-        "ssllabs",
-        "security",
-        "filters",
         "analysis",
-        "vulnerability-detection",
-        "vulnerability-management",
+        "filters",
         "medusa",
         "nessus",
-        "nmap"
+        "nikto",
+        "nmap",
+        "repeated-scans",
+        "seccubus",
+        "security",
+        "ssllabs",
+        "testssl",
+        "vulnerability-detection",
+        "vulnerability-management"
       ]
     },
     {
@@ -303,116 +209,93 @@
       "category": "DevTools",
       "stars": 461,
       "author": "k8ssandra",
-      "avatar": "https://avatars.githubusercontent.com/u/72995074?v=4",
+      "avatar": null,
       "desc": "K8ssandra is an open-source distribution of Apache Cassandra for Kubernetes including API services and operational tooling.",
-      "demo": "https://k8ssandra.io/",
+      "demo": null,
       "repoUrl": "https://github.com/k8ssandra/k8ssandra",
       "long1": "K8ssandra is an open-source distribution of Apache Cassandra for Kubernetes including API services and operational tooling. Maintained by k8ssandra on GitHub, where it has earned 461 stars from the community.",
-      "long2": "It's actively developed around kubernetes, cassandra, nosql, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around cassandra, grafana, hacktoberfest, and is a solid reference for anyone building with these tools.",
       "stack": [
         "YAML",
-        "Kubernetes",
         "Cassandra",
-        "Nosql",
-        "Helm"
+        "Grafana",
+        "Helm",
+        "Kubernetes"
       ],
       "updated": "2 weeks ago",
       "license": "Apache-2.0",
       "langs": [
         {
-          "pct": 87,
-          "name": "YAML"
-        },
-        {
-          "pct": 12,
-          "name": "Go"
-        },
-        {
-          "pct": 1,
-          "name": "Mustache"
+          "pct": 100.0,
+          "name": "YAML",
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "url": "https://github.com/k8ssandra/k8ssandra/releases/tag/v1.5.2",
-          "name": "v1.5.2"
-        },
-        {
-          "url": "https://github.com/k8ssandra/k8ssandra/releases/tag/docs-v1.5.1",
-          "name": "docs-v1.5.1"
-        },
-        {
-          "url": "https://github.com/k8ssandra/k8ssandra/releases/tag/v1.5.1",
-          "name": "v1.5.1"
-        },
-        {
-          "url": "https://github.com/k8ssandra/k8ssandra/releases/tag/v1.5.0",
-          "name": "v1.5.0"
-        },
-        {
-          "url": "https://github.com/k8ssandra/k8ssandra/releases/tag/v1.4.1",
-          "name": "v1.4.1"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "kubernetes",
         "cassandra",
-        "nosql",
-        "helm",
-        "stargate",
-        "medusa",
-        "reaper",
-        "prometheus",
         "grafana",
-        "hacktoberfest"
+        "hacktoberfest",
+        "helm",
+        "kubernetes",
+        "medusa",
+        "nosql",
+        "prometheus",
+        "reaper",
+        "stargate"
       ]
     },
     {
       "slug": "ransomware-notes",
       "name": "ransomware_notes",
       "fullName": "ThreatLabz/ransomware_notes",
-      "category": "DevTools",
+      "category": "UI Kits",
       "stars": 424,
       "author": "ThreatLabz",
-      "avatar": "https://avatars.githubusercontent.com/u/47122457?u=7ae43fbcd1cda70e6d9418c9029b720f3f4a03ce&v=4",
+      "avatar": null,
       "desc": "An Archive of Ransomware Notes Past and Present Collected by Zscaler ThreatLabz",
       "demo": null,
       "repoUrl": "https://github.com/ThreatLabz/ransomware_notes",
       "long1": "An Archive of Ransomware Notes Past and Present Collected by Zscaler ThreatLabz. Maintained by ThreatLabz on GitHub, where it has earned 424 stars from the community.",
-      "long2": "It's actively developed around malware, malware-research, notes, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around akira, alphv, blackbasta, and is a solid reference for anyone building with these tools.",
       "stack": [
         "HTML",
-        "Malware",
-        "Malware Research",
-        "Notes",
-        "Ransomware"
+        "Akira",
+        "Alphv",
+        "Blackbasta",
+        "Blackcat"
       ],
       "updated": "2 weeks ago",
       "license": "MIT",
       "langs": [
         {
-          "pct": 98,
-          "name": "HTML"
-        },
-        {
-          "pct": 2,
-          "name": "Roff"
+          "pct": 100.0,
+          "name": "HTML",
+          "size": 0
         }
       ],
       "versions": [],
       "topics": [
+        "akira",
+        "alphv",
+        "blackbasta",
+        "blackcat",
+        "blacksuit",
+        "cactus",
+        "clop",
+        "darkangels",
+        "hive",
+        "karakurt",
+        "lockbit",
+        "mallox",
         "malware",
         "malware-research",
+        "medusa",
         "notes",
+        "qilin",
+        "ransomhub",
         "ransomware",
-        "alphv",
-        "blackcat",
-        "clop",
-        "lockbit",
-        "blackbasta",
-        "hive",
-        "akira",
-        "cactus"
+        "revil"
       ]
     },
     {
@@ -422,70 +305,49 @@
       "category": "E-commerce",
       "stars": 348,
       "author": "adrien2p",
-      "avatar": "https://avatars.githubusercontent.com/u/25098370?u=c90098c89c81bc60cd35bd274ca7f5f1fa749bb9&v=4",
+      "avatar": null,
       "desc": ":syringe: Medusa on steroid, take your medusa project to the next level with some badass features :rocket:",
-      "demo": "https://adrien2p.github.io/medusa-extender/",
+      "demo": null,
       "repoUrl": "https://github.com/adrien2p/medusa-extender",
       "long1": ":syringe: Medusa on steroid, take your medusa project to the next level with some badass features :rocket:. Maintained by adrien2p on GitHub, where it has earned 348 stars from the community.",
-      "long2": "It's actively developed around medusa, medusajs, e-commerce, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around architecture, cli, dynamic-module, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Medusa",
-        "Medusajs",
-        "E Commerce",
-        "Ecommerce"
+        "Architecture",
+        "Cli",
+        "Dynamic Module",
+        "E Commerce"
       ],
       "updated": "3 years ago",
       "license": "MIT",
       "langs": [
         {
-          "pct": 94,
-          "name": "TypeScript"
-        },
-        {
-          "pct": 6,
-          "name": "JavaScript"
-        },
-        {
-          "pct": 0,
-          "name": "Shell"
+          "pct": 100.0,
+          "name": "TypeScript",
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "url": "https://github.com/adrien2p/medusa-extender/releases/tag/v1.8.8",
-          "name": "v1.8.8"
-        },
-        {
-          "url": "https://github.com/adrien2p/medusa-extender/releases/tag/v1.8.3",
-          "name": "v1.8.3"
-        },
-        {
-          "url": "https://github.com/adrien2p/medusa-extender/releases/tag/v1.8.2",
-          "name": "v1.8.2"
-        },
-        {
-          "url": "https://github.com/adrien2p/medusa-extender/releases/tag/v1.8.0",
-          "name": "v1.8.0"
-        },
-        {
-          "url": "https://github.com/adrien2p/medusa-extender/releases/tag/v1.7.8",
-          "name": "v1.7.8"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "medusa",
-        "medusajs",
+        "architecture",
+        "cli",
+        "dynamic-module",
         "e-commerce",
         "ecommerce",
-        "headless",
         "extension",
+        "headless",
+        "javascript",
+        "medusa",
+        "medusa-plugin",
+        "medusa-plugins",
+        "medusajs",
+        "monitoring",
+        "multi-tenancy",
         "nodejs",
-        "typescript",
-        "typeorm",
-        "cli",
         "open-source",
-        "javascript"
+        "prometheus",
+        "typeorm",
+        "typescript"
       ]
     },
     {
@@ -495,44 +357,37 @@
       "category": "E-commerce",
       "stars": 251,
       "author": "medusajs",
-      "avatar": "https://avatars.githubusercontent.com/u/62591822?v=4",
+      "avatar": null,
       "desc": "An Uber Eats-style food delivery platform, running Medusa 2.0 and Next.js 14.",
       "demo": null,
       "repoUrl": "https://github.com/medusajs/medusa-eats",
       "long1": "An Uber Eats-style food delivery platform, running Medusa 2.0 and Next.js 14. Maintained by medusajs on GitHub, where it has earned 251 stars from the community.",
-      "long2": "It's actively developed around oss, ecommerce, food-delivery, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around ecommerce, food-delivery, medusa, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Oss",
         "Ecommerce",
         "Food Delivery",
-        "Medusa"
+        "Medusa",
+        "Medusajs"
       ],
       "updated": "10 months ago",
       "license": "MIT",
       "langs": [
         {
-          "pct": 99,
-          "name": "TypeScript"
-        },
-        {
-          "pct": 1,
-          "name": "JavaScript"
-        },
-        {
-          "pct": 0,
-          "name": "CSS"
+          "pct": 100.0,
+          "name": "TypeScript",
+          "size": 0
         }
       ],
       "versions": [],
       "topics": [
-        "oss",
         "ecommerce",
         "food-delivery",
         "medusa",
         "medusajs",
         "open-source",
         "opensource",
+        "oss",
         "platform"
       ]
     },
@@ -543,17 +398,17 @@
       "category": "DevTools",
       "stars": 248,
       "author": "thoradia",
-      "avatar": "https://avatars.githubusercontent.com/u/22841905?u=5b8d46200e0385c8ddac284b0dd64cdbda4395b0&v=4",
+      "avatar": null,
       "desc": "Thoradia Add-ons Repository",
       "demo": null,
       "repoUrl": "https://github.com/thoradia/thoradia",
       "long1": "Thoradia Add-ons Repository. Maintained by thoradia on GitHub, where it has earned 248 stars from the community.",
-      "long2": "It's actively developed around aria2, couchpotato, deluge, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around aria2, btfs, couchpotato, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Aria2",
+        "Btfs",
         "Couchpotato",
-        "Deluge",
-        "Headphones"
+        "Deluge"
       ],
       "updated": "5 years ago",
       "license": "\u2014",
@@ -571,33 +426,26 @@
           "pct": 8
         }
       ],
-      "versions": [
-        {
-          "url": "https://github.com/thoradia/thoradia/releases/tag/9.80.6.25",
-          "name": "9.80.6.25"
-        },
-        {
-          "url": "https://github.com/thoradia/thoradia/releases/tag/9.80.5.24",
-          "name": "9.80.5.24"
-        },
-        {
-          "url": "https://github.com/thoradia/thoradia/releases/tag/9.2.0.23",
-          "name": "9.2.0.23"
-        }
-      ],
+      "versions": [],
       "topics": [
         "aria2",
+        "btfs",
         "couchpotato",
         "deluge",
+        "flexget",
         "headphones",
         "jackett",
+        "lidarr",
         "medusa",
         "nzbget",
         "nzbhydra",
         "qbittorrent",
         "radarr",
         "rtorrent",
-        "rutorrent"
+        "rutorrent",
+        "sabnzbd",
+        "thoradia",
+        "transmission"
       ]
     },
     {
@@ -607,9 +455,9 @@
       "category": "E-commerce",
       "stars": 197,
       "author": "medusajs",
-      "avatar": "https://avatars.githubusercontent.com/u/62591822?v=4",
+      "avatar": null,
       "desc": "Agent skills and commands for Medusa best practices and conventions.",
-      "demo": "https://medusajs.com",
+      "demo": null,
       "repoUrl": "https://github.com/medusajs/medusa-agent-skills",
       "long1": "Agent skills and commands for Medusa best practices and conventions. Maintained by medusajs on GitHub, where it has earned 197 stars from the community.",
       "long2": "It's actively developed around agentic-commerce, claude, claude-code, and is a solid reference for anyone building with these tools.",
@@ -635,28 +483,7 @@
           "pct": 8
         }
       ],
-      "versions": [
-        {
-          "url": "https://github.com/medusajs/medusa-agent-skills/releases/tag/1.0.7",
-          "name": "1.0.7"
-        },
-        {
-          "url": "https://github.com/medusajs/medusa-agent-skills/releases/tag/1.0.4",
-          "name": "1.0.4"
-        },
-        {
-          "url": "https://github.com/medusajs/medusa-agent-skills/releases/tag/1.0.3",
-          "name": "1.0.3"
-        },
-        {
-          "url": "https://github.com/medusajs/medusa-agent-skills/releases/tag/1.0.2",
-          "name": "1.0.2"
-        },
-        {
-          "url": "https://github.com/medusajs/medusa-agent-skills/releases/tag/1.0.1",
-          "name": "1.0.1"
-        }
-      ],
+      "versions": [],
       "topics": [
         "agentic-commerce",
         "claude",
@@ -673,7 +500,7 @@
       "category": "Testing",
       "stars": 161,
       "author": "Recon-Fuzz",
-      "avatar": "https://avatars.githubusercontent.com/u/152159338?v=4",
+      "avatar": null,
       "desc": "Smart Contract Property-Based Testing Framework",
       "demo": null,
       "repoUrl": "https://github.com/Recon-Fuzz/chimera",
@@ -684,41 +511,72 @@
         "Echidna",
         "Foundry",
         "Fuzzer",
-        "Medusa"
+        "Halmos"
       ],
       "updated": "3 months ago",
       "license": "\u2014",
       "langs": [
         {
+          "pct": 100.0,
           "name": "Solidity",
-          "pct": 100
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "0.1.4",
-          "url": "https://github.com/Recon-Fuzz/chimera/releases/tag/0.1.4"
-        },
-        {
-          "name": "0.1.3",
-          "url": "https://github.com/Recon-Fuzz/chimera/releases/tag/0.1.3"
-        },
-        {
-          "name": "0.1.2",
-          "url": "https://github.com/Recon-Fuzz/chimera/releases/tag/0.1.2"
-        },
-        {
-          "name": "0.1.1",
-          "url": "https://github.com/Recon-Fuzz/chimera/releases/tag/0.1.1"
-        }
-      ],
+      "versions": [],
       "topics": [
         "echidna",
         "foundry",
         "fuzzer",
+        "halmos",
         "medusa",
-        "smart-contracts",
-        "halmos"
+        "smart-contracts"
+      ]
+    },
+    {
+      "slug": "django-freeze",
+      "name": "django-freeze",
+      "fullName": "fabiocaccamo/django-freeze",
+      "category": "AI & ML",
+      "stars": 128,
+      "author": "fabiocaccamo",
+      "avatar": null,
+      "desc": ":ice_cube: convert your dynamic django site to a static one with one line of code.",
+      "demo": null,
+      "repoUrl": "https://github.com/fabiocaccamo/django-freeze",
+      "long1": ":ice_cube: convert your dynamic django site to a static one with one line of code. Maintained by fabiocaccamo on GitHub, where it has earned 128 stars from the community.",
+      "long2": "It's actively developed around django, download, freeze, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Python",
+        "Django",
+        "Download",
+        "Freeze",
+        "Generate"
+      ],
+      "updated": "2 weeks ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 100.0,
+          "name": "Python",
+          "size": 0
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "django",
+        "download",
+        "freeze",
+        "generate",
+        "generator",
+        "html",
+        "medusa",
+        "offline",
+        "pypi",
+        "python",
+        "site",
+        "static",
+        "website",
+        "zip"
       ]
     },
     {
@@ -728,7 +586,7 @@
       "category": "AI & ML",
       "stars": 128,
       "author": "perimetersec",
-      "avatar": "https://avatars.githubusercontent.com/u/154093728?v=4",
+      "avatar": null,
       "desc": "A list of public fuzzing campaigns",
       "demo": null,
       "repoUrl": "https://github.com/perimetersec/public-fuzzing-campaigns-list",
@@ -767,85 +625,13 @@
       ]
     },
     {
-      "slug": "django-freeze",
-      "name": "django-freeze",
-      "fullName": "fabiocaccamo/django-freeze",
-      "category": "DevTools",
-      "stars": 128,
-      "author": "fabiocaccamo",
-      "avatar": "https://avatars.githubusercontent.com/u/1035294?u=adcc2a9bed0eee2a11d59079e5e4136d1ed0b0a3&v=4",
-      "desc": ":ice_cube: convert your dynamic django site to a static one with one line of code.",
-      "demo": null,
-      "repoUrl": "https://github.com/fabiocaccamo/django-freeze",
-      "long1": ":ice_cube: convert your dynamic django site to a static one with one line of code. Maintained by fabiocaccamo on GitHub, where it has earned 128 stars from the community.",
-      "long2": "It's actively developed around django, python, pypi, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Django",
-        "Python",
-        "Pypi",
-        "Freeze"
-      ],
-      "updated": "2 weeks ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "Python",
-          "pct": 98
-        },
-        {
-          "name": "HTML",
-          "pct": 1
-        },
-        {
-          "name": "JavaScript",
-          "pct": 1
-        }
-      ],
-      "versions": [
-        {
-          "name": "0.13.0",
-          "url": "https://github.com/fabiocaccamo/django-freeze/releases/tag/0.13.0"
-        },
-        {
-          "name": "0.12.0",
-          "url": "https://github.com/fabiocaccamo/django-freeze/releases/tag/0.12.0"
-        },
-        {
-          "name": "0.11.1",
-          "url": "https://github.com/fabiocaccamo/django-freeze/releases/tag/0.11.1"
-        },
-        {
-          "name": "0.10.0",
-          "url": "https://github.com/fabiocaccamo/django-freeze/releases/tag/0.10.0"
-        },
-        {
-          "name": "0.9.0",
-          "url": "https://github.com/fabiocaccamo/django-freeze/releases/tag/0.9.0"
-        }
-      ],
-      "topics": [
-        "django",
-        "python",
-        "pypi",
-        "freeze",
-        "static",
-        "site",
-        "generator",
-        "medusa",
-        "zip",
-        "download",
-        "generate",
-        "offline"
-      ]
-    },
-    {
       "slug": "medusa-mobile-react-native",
       "name": "medusa-mobile-react-native",
       "fullName": "bloomsynth/medusa-mobile-react-native",
       "category": "E-commerce",
       "stars": 93,
       "author": "bloomsynth",
-      "avatar": "https://avatars.githubusercontent.com/u/197286910?v=4",
+      "avatar": null,
       "desc": "Open source react native mobile app for your medusa ecommerce store with custom themes and plugins",
       "demo": null,
       "repoUrl": "https://github.com/bloomsynth/medusa-mobile-react-native",
@@ -862,16 +648,9 @@
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "TypeScript",
-          "pct": 98
-        },
-        {
-          "name": "JavaScript",
-          "pct": 1
-        },
-        {
-          "name": "Kotlin",
-          "pct": 1
+          "size": 0
         }
       ],
       "versions": [],
@@ -897,9 +676,9 @@
       "category": "E-commerce",
       "stars": 83,
       "author": "Bystrol",
-      "avatar": "https://avatars.githubusercontent.com/u/96250636?u=626bbc23aca39d934bcc2168e53d4a9b6cc6daf7&v=4",
+      "avatar": null,
       "desc": "Astro + Medusa starter for e-commerce. Optimized to the core.",
-      "demo": "https://astro-medusa-starter.bystrol.workers.dev",
+      "demo": null,
       "repoUrl": "https://github.com/Bystrol/astro-medusa-starter",
       "long1": "Astro + Medusa starter for e-commerce. Optimized to the core. Maintained by Bystrol on GitHub, where it has earned 83 stars from the community.",
       "long2": "It's actively developed around astro, astrojs, ecommerce, and is a solid reference for anyone building with these tools.",
@@ -914,32 +693,12 @@
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "TypeScript",
-          "pct": 76
-        },
-        {
-          "name": "Astro",
-          "pct": 22
-        },
-        {
-          "name": "JavaScript",
-          "pct": 2
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "v1.2.0",
-          "url": "https://github.com/Bystrol/astro-medusa-starter/releases/tag/v1.2.0"
-        },
-        {
-          "name": "v1.1.0",
-          "url": "https://github.com/Bystrol/astro-medusa-starter/releases/tag/v1.1.0"
-        },
-        {
-          "name": "v1.0.0",
-          "url": "https://github.com/Bystrol/astro-medusa-starter/releases/tag/v1.0.0"
-        }
-      ],
+      "versions": [],
       "topics": [
         "astro",
         "astrojs",
@@ -958,9 +717,9 @@
       "category": "E-commerce",
       "stars": 64,
       "author": "VariableVic",
-      "avatar": "https://avatars.githubusercontent.com/u/42065266?u=bf1aaca72cb2af16e84af5dd8c9cb07dd2028896&v=4",
+      "avatar": null,
       "desc": "Medusa AI Assistant admin widget that turns human language into returns within seconds.",
-      "demo": "https://twitter.com/VariableVic",
+      "demo": null,
       "repoUrl": "https://github.com/VariableVic/medusa-ai-assistant",
       "long1": "Medusa AI Assistant admin widget that turns human language into returns within seconds. Maintained by VariableVic on GitHub, where it has earned 64 stars from the community.",
       "long2": "It's actively developed around ai, ecommerce, gpt-3-5-turbo, and is a solid reference for anyone building with these tools.",
@@ -975,12 +734,9 @@
       "license": "\u2014",
       "langs": [
         {
+          "pct": 100.0,
           "name": "TypeScript",
-          "pct": 90
-        },
-        {
-          "name": "JavaScript",
-          "pct": 10
+          "size": 0
         }
       ],
       "versions": [],
@@ -989,11 +745,11 @@
         "ecommerce",
         "gpt-3-5-turbo",
         "medusa",
+        "medusa-admin",
+        "medusa-ui",
         "medusajs",
         "openai",
-        "vercel-ai-sdk",
-        "medusa-admin",
-        "medusa-ui"
+        "vercel-ai-sdk"
       ]
     },
     {
@@ -1003,9 +759,9 @@
       "category": "E-commerce",
       "stars": 62,
       "author": "OlivierBelaud",
-      "avatar": "https://avatars.githubusercontent.com/u/11722066?u=e0bc9c550f3dc22c11b03ba8fa5d926c8085aada&v=4",
+      "avatar": null,
       "desc": "A performant frontend ecommerce starter template with Nuxt 3 and Medusa V2.",
-      "demo": "https://nuxt-starter-medusa.pages.dev",
+      "demo": null,
       "repoUrl": "https://github.com/OlivierBelaud/nuxt-starter-medusa",
       "long1": "A performant frontend ecommerce starter template with Nuxt 3 and Medusa V2. Maintained by OlivierBelaud on GitHub, where it has earned 62 stars from the community.",
       "long2": "It's actively developed around ecommerce, medusa, nuxt, and is a solid reference for anyone building with these tools.",
@@ -1020,16 +776,9 @@
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "Vue",
-          "pct": 74
-        },
-        {
-          "name": "TypeScript",
-          "pct": 25
-        },
-        {
-          "name": "CSS",
-          "pct": 1
+          "size": 0
         }
       ],
       "versions": [],
@@ -1051,9 +800,9 @@
       "category": "DevTools",
       "stars": 59,
       "author": "perimetersec",
-      "avatar": "https://avatars.githubusercontent.com/u/154093728?v=4",
+      "avatar": null,
       "desc": "General purpose unopinionated Solidity fuzzing library for stateful and stateless fuzzing",
-      "demo": "https://www.perimetersec.io",
+      "demo": null,
       "repoUrl": "https://github.com/perimetersec/fuzzlib",
       "long1": "General purpose unopinionated Solidity fuzzing library for stateful and stateless fuzzing. Maintained by perimetersec on GitHub, where it has earned 59 stars from the community.",
       "long2": "It's actively developed around echidna, evm, foundry, and is a solid reference for anyone building with these tools.",
@@ -1068,36 +817,12 @@
       "license": "GPL-3.0",
       "langs": [
         {
+          "pct": 100.0,
           "name": "Solidity",
-          "pct": 98
-        },
-        {
-          "name": "Python",
-          "pct": 2
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "v1.1.0",
-          "url": "https://github.com/perimetersec/fuzzlib/releases/tag/v1.1.0"
-        },
-        {
-          "name": "v1.0.0",
-          "url": "https://github.com/perimetersec/fuzzlib/releases/tag/v1.0.0"
-        },
-        {
-          "name": "v0.3.1",
-          "url": "https://github.com/perimetersec/fuzzlib/releases/tag/v0.3.1"
-        },
-        {
-          "name": "v0.3.0",
-          "url": "https://github.com/perimetersec/fuzzlib/releases/tag/v0.3.0"
-        },
-        {
-          "name": "v0.2.2",
-          "url": "https://github.com/perimetersec/fuzzlib/releases/tag/v0.2.2"
-        }
-      ],
+      "versions": [],
       "topics": [
         "echidna",
         "evm",
@@ -1115,9 +840,9 @@
       "category": "AI & ML",
       "stars": 47,
       "author": "nexthis",
-      "avatar": "https://avatars.githubusercontent.com/u/45048369?u=31db12170ef609e04e311f89058c23d841d99ee5&v=4",
+      "avatar": null,
       "desc": "\ud83d\ude80 Seamless deployment of Medusa v2 using Coolify",
-      "demo": "https://www.youtube.com/watch?v=w_4wjA3ZRBw",
+      "demo": null,
       "repoUrl": "https://github.com/nexthis/medusa-coolify",
       "long1": "\ud83d\ude80 Seamless deployment of Medusa v2 using Coolify. Maintained by nexthis on GitHub, where it has earned 47 stars from the community.",
       "long2": "It's actively developed around coolify, devops-tools, medusa, and is a solid reference for anyone building with these tools.",
@@ -1132,16 +857,9 @@
       "license": "\u2014",
       "langs": [
         {
+          "pct": 100.0,
           "name": "TypeScript",
-          "pct": 93
-        },
-        {
-          "name": "Dockerfile",
-          "pct": 4
-        },
-        {
-          "name": "JavaScript",
-          "pct": 3
+          "size": 0
         }
       ],
       "versions": [],
@@ -1159,7 +877,7 @@
       "category": "E-commerce",
       "stars": 40,
       "author": "u11d-com",
-      "avatar": "https://avatars.githubusercontent.com/u/196634420?v=4",
+      "avatar": null,
       "desc": "medusa-starter - Starter templates for Medusa.js e-commerce development with Docker and Docker Compose.",
       "demo": null,
       "repoUrl": "https://github.com/u11d-com/medusa-starter",
@@ -1176,53 +894,28 @@
       "license": "Apache-2.0",
       "langs": [
         {
+          "pct": 100.0,
           "name": "TypeScript",
-          "pct": 57
-        },
-        {
-          "name": "Dockerfile",
-          "pct": 23
-        },
-        {
-          "name": "Shell",
-          "pct": 20
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "v2.10.3",
-          "url": "https://github.com/u11d-com/medusa-starter/releases/tag/v2.10.3"
-        },
-        {
-          "name": "v2.10.0",
-          "url": "https://github.com/u11d-com/medusa-starter/releases/tag/v2.10.0"
-        },
-        {
-          "name": "v2.6.1",
-          "url": "https://github.com/u11d-com/medusa-starter/releases/tag/v2.6.1"
-        },
-        {
-          "name": "v2.6.0",
-          "url": "https://github.com/u11d-com/medusa-starter/releases/tag/v2.6.0"
-        },
-        {
-          "name": "v1.20.10",
-          "url": "https://github.com/u11d-com/medusa-starter/releases/tag/v1.20.10"
-        }
-      ],
+      "versions": [],
       "topics": [
         "cicd",
         "docker",
         "docker-compose",
         "dockerfile",
-        "medusa",
+        "e-commerce",
         "ecommerce",
+        "local-development",
+        "medusa",
+        "medusajs",
+        "nextjs",
+        "nodejs",
+        "open-source",
         "starter-kit",
         "starter-template",
-        "e-commerce",
-        "medusajs",
-        "local-development",
-        "nextjs"
+        "typescript"
       ]
     },
     {
@@ -1232,7 +925,7 @@
       "category": "E-commerce",
       "stars": 32,
       "author": "medusajs",
-      "avatar": "https://avatars.githubusercontent.com/u/62591822?v=4",
+      "avatar": null,
       "desc": "Official Medusa B2B Starter template. Features common B2B ecommerce requirements and can be easily adapted and extended.",
       "demo": null,
       "repoUrl": "https://github.com/medusajs/b2b-starter",
@@ -1244,20 +937,13 @@
         "Ecommerce",
         "Medusa"
       ],
-      "updated": "4 days ago",
+      "updated": "5 days ago",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "TypeScript",
-          "pct": 100
-        },
-        {
-          "name": "JavaScript",
-          "pct": 0
-        },
-        {
-          "name": "CSS",
-          "pct": 0
+          "size": 0
         }
       ],
       "versions": [],
@@ -1274,9 +960,9 @@
       "category": "DevTools",
       "stars": 30,
       "author": "raideno",
-      "avatar": "https://avatars.githubusercontent.com/u/67718820?u=b0905a304453f19e4d178e96a380ba14be33d4d8&v=4",
+      "avatar": null,
       "desc": "Medusa Plugin Ultimate is a plugin made for medusa that give super powers to your entities.",
-      "demo": "https://medusa-plugin-ultimate.raideno.xyz",
+      "demo": null,
       "repoUrl": "https://github.com/raideno/medusa-plugin-ultimate",
       "long1": "Medusa Plugin Ultimate is a plugin made for medusa that give super powers to your entities. Maintained by raideno on GitHub, where it has earned 30 stars from the community.",
       "long2": "It's actively developed around medusa, medusa-plugin, medusa-plugin-ultimate, and is a solid reference for anyone building with these tools.",
@@ -1290,8 +976,9 @@
       "license": "\u2014",
       "langs": [
         {
+          "pct": 100.0,
           "name": "TypeScript",
-          "pct": 100
+          "size": 0
         }
       ],
       "versions": [],
@@ -1308,7 +995,7 @@
       "category": "DevTools",
       "stars": 28,
       "author": "perimetersec",
-      "avatar": "https://avatars.githubusercontent.com/u/154093728?v=4",
+      "avatar": null,
       "desc": "Public resources on fuzzing services, methodologies, and benefits for protocol security.",
       "demo": null,
       "repoUrl": "https://github.com/perimetersec/resources",
@@ -1347,82 +1034,15 @@
       ]
     },
     {
-      "slug": "medusa-analytics-plugin",
-      "name": "medusa-analytics-plugin",
-      "fullName": "Agilo/medusa-analytics-plugin",
-      "category": "E-commerce",
-      "stars": 27,
-      "author": "Agilo",
-      "avatar": "https://avatars.githubusercontent.com/u/7579624?v=4",
-      "desc": "Get actionable insights into your store's performance and make data-driven decisions right from the Medusa Admin dashboard.",
-      "demo": null,
-      "repoUrl": "https://github.com/Agilo/medusa-analytics-plugin",
-      "long1": "Get actionable insights into your store's performance and make data-driven decisions right from the Medusa Admin dashboard. Maintained by Agilo on GitHub, where it has earned 27 stars from the community.",
-      "long2": "It's actively developed around analytics, medusa, medusa-plugin, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Analytics",
-        "Medusa",
-        "Medusa Plugin",
-        "Medusa V2"
-      ],
-      "updated": "today",
-      "license": "\u2014",
-      "langs": [
-        {
-          "name": "TypeScript",
-          "pct": 97
-        },
-        {
-          "name": "CSS",
-          "pct": 2
-        },
-        {
-          "name": "JavaScript",
-          "pct": 1
-        }
-      ],
-      "versions": [
-        {
-          "name": "v1.4.0",
-          "url": "https://github.com/Agilo/medusa-analytics-plugin/releases/tag/v1.4.0"
-        },
-        {
-          "name": "v1.3.5",
-          "url": "https://github.com/Agilo/medusa-analytics-plugin/releases/tag/v1.3.5"
-        },
-        {
-          "name": "v1.3.4",
-          "url": "https://github.com/Agilo/medusa-analytics-plugin/releases/tag/v1.3.4"
-        },
-        {
-          "name": "v1.3.3",
-          "url": "https://github.com/Agilo/medusa-analytics-plugin/releases/tag/v1.3.3"
-        },
-        {
-          "name": "v1.3.2",
-          "url": "https://github.com/Agilo/medusa-analytics-plugin/releases/tag/v1.3.2"
-        }
-      ],
-      "topics": [
-        "analytics",
-        "medusa",
-        "medusa-plugin",
-        "medusa-v2",
-        "medusajs",
-        "medusajs-v2"
-      ]
-    },
-    {
       "slug": "medusa-plugin-rate-limit",
       "name": "medusa-plugin-rate-limit",
       "fullName": "perseidesjs/medusa-plugin-rate-limit",
       "category": "DevTools",
       "stars": 27,
       "author": "perseidesjs",
-      "avatar": "https://avatars.githubusercontent.com/u/167565631?v=4",
+      "avatar": null,
       "desc": "A simple rate-limit utility for your Medusa app",
-      "demo": "https://npmjs.com/package/@perseidesjs/medusa-plugin-rate-limit",
+      "demo": null,
       "repoUrl": "https://github.com/perseidesjs/medusa-plugin-rate-limit",
       "long1": "A simple rate-limit utility for your Medusa app. Maintained by perseidesjs on GitHub, where it has earned 27 stars from the community.",
       "long2": "It's actively developed around medusa, medusa-js, medusa-plugin, and is a solid reference for anyone building with these tools.",
@@ -1437,44 +1057,105 @@
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "TypeScript",
-          "pct": 100
-        },
-        {
-          "name": "JavaScript",
-          "pct": 0
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "v3.2.1",
-          "url": "https://github.com/perseidesjs/medusa-plugin-rate-limit/releases/tag/v3.2.1"
-        },
-        {
-          "name": "v3.2.0",
-          "url": "https://github.com/perseidesjs/medusa-plugin-rate-limit/releases/tag/v3.2.0"
-        },
-        {
-          "name": "v3.1.0",
-          "url": "https://github.com/perseidesjs/medusa-plugin-rate-limit/releases/tag/v3.1.0"
-        },
-        {
-          "name": "v3.0.0",
-          "url": "https://github.com/perseidesjs/medusa-plugin-rate-limit/releases/tag/v3.0.0"
-        },
-        {
-          "name": "v2.2.0",
-          "url": "https://github.com/perseidesjs/medusa-plugin-rate-limit/releases/tag/v2.2.0"
-        }
-      ],
+      "versions": [],
       "topics": [
         "medusa",
         "medusa-js",
         "medusa-plugin",
         "medusajs",
+        "perseidesjs",
         "rate-limiter",
-        "rate-limiting",
-        "perseidesjs"
+        "rate-limiting"
+      ]
+    },
+    {
+      "slug": "medusa-analytics-plugin",
+      "name": "medusa-analytics-plugin",
+      "fullName": "Agilo/medusa-analytics-plugin",
+      "category": "E-commerce",
+      "stars": 27,
+      "author": "Agilo",
+      "avatar": null,
+      "desc": "Get actionable insights into your store's performance and make data-driven decisions right from the Medusa Admin dashboard.",
+      "demo": null,
+      "repoUrl": "https://github.com/Agilo/medusa-analytics-plugin",
+      "long1": "Get actionable insights into your store's performance and make data-driven decisions right from the Medusa Admin dashboard. Maintained by Agilo on GitHub, where it has earned 27 stars from the community.",
+      "long2": "It's actively developed around analytics, medusa, medusa-plugin, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Analytics",
+        "Medusa",
+        "Medusa Plugin",
+        "Medusa V2"
+      ],
+      "updated": "yesterday",
+      "license": "\u2014",
+      "langs": [
+        {
+          "pct": 100.0,
+          "name": "TypeScript",
+          "size": 0
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "analytics",
+        "medusa",
+        "medusa-plugin",
+        "medusa-v2",
+        "medusajs",
+        "medusajs-v2"
+      ]
+    },
+    {
+      "slug": "medusa-payload-cloudflare",
+      "name": "medusa-payload-cloudflare",
+      "fullName": "casualchic/medusa-payload-cloudflare",
+      "category": "E-commerce",
+      "stars": 26,
+      "author": "casualchic",
+      "avatar": null,
+      "desc": "Meridian: Production-ready Medusa + Payload CMS + Next.js 16 on Cloudflare Workers. Run a full e-commerce stack for $5/month.",
+      "demo": null,
+      "repoUrl": "https://github.com/casualchic/medusa-payload-cloudflare",
+      "long1": "Meridian: Production-ready Medusa + Payload CMS + Next.js 16 on Cloudflare Workers. Run a full e-commerce stack for $5/month. Maintained by casualchic on GitHub, where it has earned 26 stars from the community.",
+      "long2": "It's actively developed around cloudflare, cloudflare-workers, d1-database, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Cloudflare",
+        "Cloudflare Workers",
+        "D1 Database",
+        "Medusa"
+      ],
+      "updated": "9 months ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 100.0,
+          "name": "TypeScript",
+          "size": 0
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "cloudflare",
+        "cloudflare-workers",
+        "d1-database",
+        "medusa",
+        "medusa-v2",
+        "medusajs",
+        "medusajs-v2",
+        "nextjs",
+        "opennext",
+        "opennext-template",
+        "opennextjs",
+        "payloadcms",
+        "r2"
       ]
     },
     {
@@ -1484,9 +1165,9 @@
       "category": "E-commerce",
       "stars": 25,
       "author": "reorder-js",
-      "avatar": "https://avatars.githubusercontent.com/u/274479199?v=4",
+      "avatar": null,
       "desc": "Open Source Medusa.js Subscription Plugin",
-      "demo": "https://reorderjs.com",
+      "demo": null,
       "repoUrl": "https://github.com/reorder-js/reorder",
       "long1": "Open Source Medusa.js Subscription Plugin. Maintained by reorder-js on GitHub, where it has earned 25 stars from the community.",
       "long2": "It's actively developed around commerce, e-commerce, javascript, and is a solid reference for anyone building with these tools.",
@@ -1501,20 +1182,12 @@
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "TypeScript",
-          "pct": 100
-        },
-        {
-          "name": "JavaScript",
-          "pct": 0
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "v1.0.3",
-          "url": "https://github.com/reorder-js/reorder/releases/tag/v1.0.3"
-        }
-      ],
+      "versions": [],
       "topics": [
         "commerce",
         "e-commerce",
@@ -1533,49 +1206,47 @@
       "category": "AI & ML",
       "stars": 25,
       "author": "ahuh",
-      "avatar": "https://avatars.githubusercontent.com/u/3817174?u=faef519806880079861fa051dd80ebe5086d278c&v=4",
+      "avatar": null,
       "desc": "Docker compose dedicated to ARM / x86 / x64 processors, hosting a complete torrent factory, or seedbox.",
       "demo": null,
       "repoUrl": "https://github.com/ahuh/docker-torrent-factory",
       "long1": "Docker compose dedicated to ARM / x86 / x64 processors, hosting a complete torrent factory, or seedbox. Maintained by ahuh on GitHub, where it has earned 25 stars from the community.",
-      "long2": "It's actively developed around medusa, joal, radarr, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around armhf, docker-compose-files, joal, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Python",
-        "Medusa",
+        "Armhf",
+        "Docker Compose Files",
         "Joal",
-        "Radarr",
-        "Torrent Client"
+        "Mariadb Server"
       ],
       "updated": "2 months ago",
       "license": "\u2014",
       "langs": [
         {
+          "pct": 100.0,
           "name": "Python",
-          "pct": 54
-        },
-        {
-          "name": "Shell",
-          "pct": 39
-        },
-        {
-          "name": "Dockerfile",
-          "pct": 7
+          "size": 0
         }
       ],
       "versions": [],
       "topics": [
-        "medusa",
+        "armhf",
+        "docker-compose-files",
         "joal",
+        "mariadb-server",
+        "medusa",
+        "minidlna-docker",
+        "nginx-docker",
+        "openvpn-client",
+        "portainer-ce",
+        "qnap",
         "radarr",
+        "self-hosting",
         "torrent-client",
         "transmission-torrent-client",
-        "openvpn-client",
-        "minidlna-docker",
-        "mariadb-server",
-        "nginx-docker",
-        "portainer-ce",
         "watchtower",
-        "docker-compose-files"
+        "wd-mycloud",
+        "x86-x64"
       ]
     },
     {
@@ -1585,9 +1256,9 @@
       "category": "E-commerce",
       "stars": 24,
       "author": "narisolutions",
-      "avatar": "https://avatars.githubusercontent.com/u/88160083?v=4",
+      "avatar": null,
       "desc": "Cross-platform Point of Sale desktop app built on Medusa and Tauri 2",
-      "demo": "https://pos.nari.ge",
+      "demo": null,
       "repoUrl": "https://github.com/narisolutions/medusa-pos",
       "long1": "Cross-platform Point of Sale desktop app built on Medusa and Tauri 2. Maintained by narisolutions on GitHub, where it has earned 24 stars from the community.",
       "long2": "It's actively developed around desktop-app, ecommerce, medusa, and is a solid reference for anyone building with these tools.",
@@ -1598,44 +1269,16 @@
         "Medusa",
         "Medusajs"
       ],
-      "updated": "2 days ago",
+      "updated": "3 days ago",
       "license": "Apache-2.0",
       "langs": [
         {
+          "pct": 100.0,
           "name": "TypeScript",
-          "pct": 91
-        },
-        {
-          "name": "Rust",
-          "pct": 8
-        },
-        {
-          "name": "CSS",
-          "pct": 1
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "v0.3.0",
-          "url": "https://github.com/narisolutions/medusa-pos/releases/tag/v0.3.0"
-        },
-        {
-          "name": "v0.2.0",
-          "url": "https://github.com/narisolutions/medusa-pos/releases/tag/v0.2.0"
-        },
-        {
-          "name": "v0.1.1",
-          "url": "https://github.com/narisolutions/medusa-pos/releases/tag/v0.1.1"
-        },
-        {
-          "name": "v0.1.0",
-          "url": "https://github.com/narisolutions/medusa-pos/releases/tag/v0.1.0"
-        },
-        {
-          "name": "v0.0.20",
-          "url": "https://github.com/narisolutions/medusa-pos/releases/tag/v0.0.20"
-        }
-      ],
+      "versions": [],
       "topics": [
         "desktop-app",
         "ecommerce",
@@ -1658,63 +1301,78 @@
       "category": "E-commerce",
       "stars": 22,
       "author": "codee-sh",
-      "avatar": "https://avatars.githubusercontent.com/u/243764513?v=4",
+      "avatar": null,
       "desc": "Native automation engine for Medusa.js that allows you to create event-driven automations using triggers, conditions, and actions - directly inside the Medusa runtime.",
       "demo": null,
       "repoUrl": "https://github.com/codee-sh/medusa-plugin-automations",
       "long1": "Native automation engine for Medusa.js that allows you to create event-driven automations using triggers, conditions, and actions - directly inside the Medusa runtime. Maintained by codee-sh on GitHub, where it has earned 22 stars from the community.",
-      "long2": "It's actively developed around commerce, eccomerce, medusa, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around automations, commerce, eccomerce, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
+        "Automations",
         "Commerce",
         "Eccomerce",
-        "Medusa",
-        "Medusa Plugin"
+        "Medusa"
       ],
       "updated": "5 months ago",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "TypeScript",
-          "pct": 99
-        },
-        {
-          "name": "Shell",
-          "pct": 1
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "v1.0.11",
-          "url": "https://github.com/codee-sh/medusa-plugin-automations/releases/tag/v1.0.11"
-        },
-        {
-          "name": "v1.0.10",
-          "url": "https://github.com/codee-sh/medusa-plugin-automations/releases/tag/v1.0.10"
-        },
-        {
-          "name": "v1.0.9",
-          "url": "https://github.com/codee-sh/medusa-plugin-automations/releases/tag/v1.0.9"
-        },
-        {
-          "name": "v1.0.8",
-          "url": "https://github.com/codee-sh/medusa-plugin-automations/releases/tag/v1.0.8"
-        },
-        {
-          "name": "v1.0.7",
-          "url": "https://github.com/codee-sh/medusa-plugin-automations/releases/tag/v1.0.7"
-        }
-      ],
+      "versions": [],
       "topics": [
+        "automations",
         "commerce",
         "eccomerce",
         "medusa",
-        "medusa-plugin",
         "medusa-automations",
+        "medusa-plugin",
         "medusa-plugin-v2",
-        "automations",
-        "native",
-        "medusajs"
+        "medusajs",
+        "native"
+      ]
+    },
+    {
+      "slug": "auth-otp",
+      "name": "auth-otp",
+      "fullName": "perseidesjs/auth-otp",
+      "category": "Authentication",
+      "stars": 20,
+      "author": "perseidesjs",
+      "avatar": null,
+      "desc": "An OTP Auth Provider for Medusa 2.x",
+      "demo": null,
+      "repoUrl": "https://github.com/perseidesjs/auth-otp",
+      "long1": "An OTP Auth Provider for Medusa 2.x. Maintained by perseidesjs on GitHub, where it has earned 20 stars from the community.",
+      "long2": "It's actively developed around medusa, medusa-plugin, medusa-plugins, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Medusa",
+        "Medusa Plugin",
+        "Medusa Plugins",
+        "Medusa V2"
+      ],
+      "updated": "2 weeks ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 100.0,
+          "name": "TypeScript",
+          "size": 0
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "medusa",
+        "medusa-plugin",
+        "medusa-plugins",
+        "medusa-v2",
+        "medusajs",
+        "medusajs-v2"
       ]
     },
     {
@@ -1724,17 +1382,17 @@
       "category": "UI Kits",
       "stars": 20,
       "author": "medusajs",
-      "avatar": "https://avatars.githubusercontent.com/u/62591822?v=4",
+      "avatar": null,
       "desc": "Guidelines to Participate in Medusa's 2022 Hackathon",
-      "demo": "https://medusajs.com/blog/medusa-hackathon-warming-up-for-hacktoberfest/",
+      "demo": null,
       "repoUrl": "https://github.com/medusajs/hackathon-oct2022-guidelines",
       "long1": "Guidelines to Participate in Medusa's 2022 Hackathon. Maintained by medusajs on GitHub, where it has earned 20 stars from the community.",
-      "long2": "It's actively developed around medusa, medusa-js, medusajs, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around medusa, medusa-hackathon, medusa-js, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Medusa",
+        "Medusa Hackathon",
         "Medusa Js",
-        "Medusajs",
-        "Medusa Hackathon"
+        "Medusajs"
       ],
       "updated": "4 years ago",
       "license": "\u2014",
@@ -1755,72 +1413,9 @@
       "versions": [],
       "topics": [
         "medusa",
+        "medusa-hackathon",
         "medusa-js",
-        "medusajs",
-        "medusa-hackathon"
-      ]
-    },
-    {
-      "slug": "auth-otp",
-      "name": "auth-otp",
-      "fullName": "perseidesjs/auth-otp",
-      "category": "Authentication",
-      "stars": 20,
-      "author": "perseidesjs",
-      "avatar": "https://avatars.githubusercontent.com/u/167565631?v=4",
-      "desc": "An OTP Auth Provider for Medusa 2.x",
-      "demo": "https://docs.perseides.org/docs/plugins/auth-otp/getting-started",
-      "repoUrl": "https://github.com/perseidesjs/auth-otp",
-      "long1": "An OTP Auth Provider for Medusa 2.x. Maintained by perseidesjs on GitHub, where it has earned 20 stars from the community.",
-      "long2": "It's actively developed around medusa, medusajs, medusajs-v2, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Medusa",
-        "Medusajs",
-        "Medusajs V2",
-        "Medusa V2"
-      ],
-      "updated": "2 weeks ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "TypeScript",
-          "pct": 98
-        },
-        {
-          "name": "JavaScript",
-          "pct": 2
-        }
-      ],
-      "versions": [
-        {
-          "name": "v3.3.0",
-          "url": "https://github.com/perseidesjs/auth-otp/releases/tag/v3.3.0"
-        },
-        {
-          "name": "v3.2.0",
-          "url": "https://github.com/perseidesjs/auth-otp/releases/tag/v3.2.0"
-        },
-        {
-          "name": "v3.1.0",
-          "url": "https://github.com/perseidesjs/auth-otp/releases/tag/v3.1.0"
-        },
-        {
-          "name": "v3.0.0",
-          "url": "https://github.com/perseidesjs/auth-otp/releases/tag/v3.0.0"
-        },
-        {
-          "name": "v2.1.2",
-          "url": "https://github.com/perseidesjs/auth-otp/releases/tag/v2.1.2"
-        }
-      ],
-      "topics": [
-        "medusa",
-        "medusajs",
-        "medusajs-v2",
-        "medusa-v2",
-        "medusa-plugin",
-        "medusa-plugins"
+        "medusajs"
       ]
     },
     {
@@ -1830,55 +1425,39 @@
       "category": "E-commerce",
       "stars": 17,
       "author": "u11d-com",
-      "avatar": "https://avatars.githubusercontent.com/u/196634420?v=4",
+      "avatar": null,
       "desc": "Terraform module to deploy Medusa.js e-commerce platform on AWS.",
-      "demo": "https://registry.terraform.io/modules/u11d-com/medusajs/aws",
+      "demo": null,
       "repoUrl": "https://github.com/u11d-com/terraform-aws-medusajs",
       "long1": "Terraform module to deploy Medusa.js e-commerce platform on AWS. Maintained by u11d-com on GitHub, where it has earned 17 stars from the community.",
-      "long2": "It's actively developed around terraform-module, medusa, aws, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around aws, e-commerce, ecommerce, and is a solid reference for anyone building with these tools.",
       "stack": [
         "HCL",
-        "Terraform Module",
-        "Medusa",
         "Aws",
-        "E Commerce"
+        "E Commerce",
+        "Ecommerce",
+        "Iac"
       ],
       "updated": "2 months ago",
       "license": "Apache-2.0",
       "langs": [
         {
+          "pct": 100.0,
           "name": "HCL",
-          "pct": 82
-        },
-        {
-          "name": "JavaScript",
-          "pct": 18
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "v2.1.0",
-          "url": "https://github.com/u11d-com/terraform-aws-medusajs/releases/tag/v2.1.0"
-        },
-        {
-          "name": "v2.0.0",
-          "url": "https://github.com/u11d-com/terraform-aws-medusajs/releases/tag/v2.0.0"
-        },
-        {
-          "name": "v1.0.0",
-          "url": "https://github.com/u11d-com/terraform-aws-medusajs/releases/tag/v1.0.0"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "terraform-module",
-        "medusa",
         "aws",
         "e-commerce",
         "ecommerce",
         "iac",
         "infrastructure-as-code",
+        "medusa",
         "medusajs",
-        "terraform"
+        "terraform",
+        "terraform-module"
       ]
     },
     {
@@ -1888,41 +1467,43 @@
       "category": "UI Kits",
       "stars": 16,
       "author": "tolgaakkapulu",
-      "avatar": "https://avatars.githubusercontent.com/u/17112998?u=e032624d2a7563577e6b61353ceac79c6adadceb&v=4",
+      "avatar": null,
       "desc": "It has been developed in order to facilitate the use of ready-made Brute Force tools in Kali-Linux operating systems and is written in Python language.",
       "demo": null,
       "repoUrl": "https://github.com/tolgaakkapulu/BrutForT-BRUTE-FORCE-TOOLKIT-v1.0",
       "long1": "It has been developed in order to facilitate the use of ready-made Brute Force tools in Kali-Linux operating systems and is written in Python language. Maintained by tolgaakkapulu on GitHub, where it has earned 16 stars from the community.",
-      "long2": "It's actively developed around hash-identifier, findmyhash, john, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around bruteforce-tools, brutfort, crunch, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Python",
-        "Hash Identifier",
-        "Findmyhash",
-        "John",
-        "Truecrack"
+        "Bruteforce Tools",
+        "Brutfort",
+        "Crunch",
+        "Findmyhash"
       ],
       "updated": "6 years ago",
       "license": "\u2014",
       "langs": [
         {
+          "pct": 100.0,
           "name": "Python",
-          "pct": 100
+          "size": 0
         }
       ],
       "versions": [],
       "topics": [
-        "hash-identifier",
-        "findmyhash",
-        "john",
-        "truecrack",
-        "pth-winexe",
-        "medusa",
-        "hydra",
-        "ncrack",
-        "pyrit",
+        "bruteforce-tools",
+        "brutfort",
         "crunch",
+        "findmyhash",
+        "hash-identifier",
+        "hydra",
+        "john",
+        "medusa",
+        "ncrack",
+        "pth-winexe",
+        "pyrit",
         "python",
-        "brutfort"
+        "truecrack"
       ]
     },
     {
@@ -1932,7 +1513,7 @@
       "category": "DevTools",
       "stars": 14,
       "author": "redcode-labs",
-      "avatar": "https://avatars.githubusercontent.com/u/72229880?v=4",
+      "avatar": null,
       "desc": "Medusa combo files, Hashcat rules and dictionaries, JRT rules",
       "demo": null,
       "repoUrl": "https://github.com/redcode-labs/RedHash",
@@ -1966,9 +1547,9 @@
         "hashcat-dictionaries",
         "john-the-ripper",
         "jrt",
+        "jrt-rules",
         "medusa",
-        "medusa-combo-files",
-        "jrt-rules"
+        "medusa-combo-files"
       ]
     },
     {
@@ -1978,7 +1559,7 @@
       "category": "E-commerce",
       "stars": 13,
       "author": "earthcomfy",
-      "avatar": "https://avatars.githubusercontent.com/u/66206865?u=8744b38af87babfdaf4400292e7736b33eb77201&v=4",
+      "avatar": null,
       "desc": "An e-commerce web storefront for Habesha clothing. Winner of the best shop category at Medusa Hackthon 2022. https://medusajs.com/blog/hackathon-winners/",
       "demo": null,
       "repoUrl": "https://github.com/earthcomfy/shop-habesha",
@@ -1995,12 +1576,9 @@
       "license": "\u2014",
       "langs": [
         {
+          "pct": 100.0,
           "name": "JavaScript",
-          "pct": 88
-        },
-        {
-          "name": "CSS",
-          "pct": 12
+          "size": 0
         }
       ],
       "versions": [],
@@ -2019,7 +1597,7 @@
       "category": "E-commerce",
       "stars": 12,
       "author": "codee-sh",
-      "avatar": "https://avatars.githubusercontent.com/u/243764513?v=4",
+      "avatar": null,
       "desc": "A complete notification plugin for Medusa.js - React Email templates, Slack Block Kit. Configurable blocks.",
       "demo": null,
       "repoUrl": "https://github.com/codee-sh/medusa-plugin-notification-emails",
@@ -2030,97 +1608,27 @@
         "Commerce",
         "Eccomerce",
         "Medusa",
-        "Medusa Plugin"
+        "Medusa Emails"
       ],
       "updated": "4 months ago",
       "license": "\u2014",
       "langs": [
         {
+          "pct": 100.0,
           "name": "TypeScript",
-          "pct": 99
-        },
-        {
-          "name": "Shell",
-          "pct": 1
-        },
-        {
-          "name": "JavaScript",
-          "pct": 0
-        }
-      ],
-      "versions": [
-        {
-          "name": "v1.0.2",
-          "url": "https://github.com/codee-sh/medusa-plugin-notification-emails/releases/tag/v1.0.2"
-        },
-        {
-          "name": "v1.0.1",
-          "url": "https://github.com/codee-sh/medusa-plugin-notification-emails/releases/tag/v1.0.1"
-        },
-        {
-          "name": "v1.0.0",
-          "url": "https://github.com/codee-sh/medusa-plugin-notification-emails/releases/tag/v1.0.0"
-        },
-        {
-          "name": "v0.2.1",
-          "url": "https://github.com/codee-sh/medusa-plugin-notification-emails/releases/tag/v0.2.1"
-        },
-        {
-          "name": "v0.2.0",
-          "url": "https://github.com/codee-sh/medusa-plugin-notification-emails/releases/tag/v0.2.0"
-        }
-      ],
-      "topics": [
-        "commerce",
-        "eccomerce",
-        "medusa",
-        "medusa-plugin",
-        "medusa-plugin-v2",
-        "medusa-emails",
-        "medusa-slack",
-        "slack-block-kit"
-      ]
-    },
-    {
-      "slug": "marion-shop",
-      "name": "marion-shop",
-      "fullName": "abdrhxyii/marion-shop",
-      "category": "E-commerce",
-      "stars": 11,
-      "author": "abdrhxyii",
-      "avatar": "https://avatars.githubusercontent.com/u/108976320?u=d34624d9ae1a655af3b52fc985dce787268a2d46&v=4",
-      "desc": "This is a medusa's new storefront kit built on top of medusa's official next starter kit",
-      "demo": null,
-      "repoUrl": "https://github.com/abdrhxyii/marion-shop",
-      "long1": "This is a medusa's new storefront kit built on top of medusa's official next starter kit. Maintained by abdrhxyii on GitHub, where it has earned 11 stars from the community.",
-      "long2": "It's actively developed around medusa, medusajs, nextjs, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Medusa",
-        "Medusajs",
-        "Next.js"
-      ],
-      "updated": "7 months ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "TypeScript",
-          "pct": 97
-        },
-        {
-          "name": "JavaScript",
-          "pct": 2
-        },
-        {
-          "name": "CSS",
-          "pct": 1
+          "size": 0
         }
       ],
       "versions": [],
       "topics": [
+        "commerce",
+        "eccomerce",
         "medusa",
-        "medusajs",
-        "nextjs"
+        "medusa-emails",
+        "medusa-plugin",
+        "medusa-plugin-v2",
+        "medusa-slack",
+        "slack-block-kit"
       ]
     },
     {
@@ -2130,7 +1638,7 @@
       "category": "E-commerce",
       "stars": 11,
       "author": "ikhvost",
-      "avatar": "https://avatars.githubusercontent.com/u/37882343?u=e3568d47fc0667fb5f077554d33f0a187765455e&v=4",
+      "avatar": null,
       "desc": "A Medusa v2.x module for seamless integration with AWS EventBridge, enabling real-time event handling in headless e-commerce applications",
       "demo": null,
       "repoUrl": "https://github.com/ikhvost/medusa-event-bus-aws",
@@ -2147,37 +1655,21 @@
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "TypeScript",
-          "pct": 100
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "v2.0.0",
-          "url": "https://github.com/ikhvost/medusa-event-bus-aws/releases/tag/v2.0.0"
-        },
-        {
-          "name": "v1.0.2",
-          "url": "https://github.com/ikhvost/medusa-event-bus-aws/releases/tag/v1.0.2"
-        },
-        {
-          "name": "v1.0.1",
-          "url": "https://github.com/ikhvost/medusa-event-bus-aws/releases/tag/v1.0.1"
-        },
-        {
-          "name": "v1.0.0",
-          "url": "https://github.com/ikhvost/medusa-event-bus-aws/releases/tag/v1.0.0"
-        }
-      ],
+      "versions": [],
       "topics": [
         "aws",
         "ecommerce",
         "eventbridge",
         "headless-ecommerce",
         "medusa",
+        "medusa-module",
         "medusa-plugin",
-        "serverless",
-        "medusa-module"
+        "serverless"
       ]
     },
     {
@@ -2187,7 +1679,7 @@
       "category": "E-commerce",
       "stars": 11,
       "author": "RSC-Labs",
-      "avatar": "https://avatars.githubusercontent.com/u/146464373?v=4",
+      "avatar": null,
       "desc": "Booking system plugin for Medusa.",
       "demo": null,
       "repoUrl": "https://github.com/RSC-Labs/medusa-booking-system",
@@ -2204,8 +1696,9 @@
       "license": "Apache-2.0",
       "langs": [
         {
+          "pct": 100.0,
           "name": "TypeScript",
-          "pct": 100
+          "size": 0
         }
       ],
       "versions": [],
@@ -2225,9 +1718,9 @@
       "category": "Dashboards",
       "stars": 11,
       "author": "raideno",
-      "avatar": "https://avatars.githubusercontent.com/u/67718820?u=b0905a304453f19e4d178e96a380ba14be33d4d8&v=4",
+      "avatar": null,
       "desc": "Medusa Plugin Settings is a plugin made for medusa that will make it easier to add new settings with ui to your admin dashboard.",
-      "demo": "https://medusa-plugin-settings.raideno.xyz",
+      "demo": null,
       "repoUrl": "https://github.com/raideno/medusa-plugin-settings",
       "long1": "Medusa Plugin Settings is a plugin made for medusa that will make it easier to add new settings with ui to your admin dashboard. Maintained by raideno on GitHub, where it has earned 11 stars from the community.",
       "long2": "It's actively developed around medusa, medusa-plugin, medusa-plugin-settings, and is a solid reference for anyone building with these tools.",
@@ -2241,8 +1734,9 @@
       "license": "\u2014",
       "langs": [
         {
+          "pct": 100.0,
           "name": "TypeScript",
-          "pct": 100
+          "size": 0
         }
       ],
       "versions": [],
@@ -2253,66 +1747,77 @@
       ]
     },
     {
+      "slug": "marion-shop",
+      "name": "marion-shop",
+      "fullName": "abdrhxyii/marion-shop",
+      "category": "E-commerce",
+      "stars": 11,
+      "author": "abdrhxyii",
+      "avatar": null,
+      "desc": "This is a medusa's new storefront kit built on top of medusa's official next starter kit",
+      "demo": null,
+      "repoUrl": "https://github.com/abdrhxyii/marion-shop",
+      "long1": "This is a medusa's new storefront kit built on top of medusa's official next starter kit. Maintained by abdrhxyii on GitHub, where it has earned 11 stars from the community.",
+      "long2": "It's actively developed around medusa, medusajs, nextjs, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Medusa",
+        "Medusajs",
+        "Next.js"
+      ],
+      "updated": "7 months ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 100.0,
+          "name": "TypeScript",
+          "size": 0
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "medusa",
+        "medusajs",
+        "nextjs"
+      ]
+    },
+    {
       "slug": "medusa-plugin-abandoned-cart",
       "name": "medusa-plugin-abandoned-cart",
       "fullName": "luluhoc/medusa-plugin-abandoned-cart",
       "category": "E-commerce",
       "stars": 11,
       "author": "luluhoc",
-      "avatar": "https://avatars.githubusercontent.com/u/22813220?u=4fdf82971e8f7970072018e94b630dbb90b5e67d&v=4",
+      "avatar": null,
       "desc": "Medusa Abandoned Cart Plugin",
       "demo": null,
       "repoUrl": "https://github.com/luluhoc/medusa-plugin-abandoned-cart",
       "long1": "Medusa Abandoned Cart Plugin. Maintained by luluhoc on GitHub, where it has earned 11 stars from the community.",
-      "long2": "It's actively developed around medusa, medusa-plugin, medusajs, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around abandoned-cart, cart, e-commerce, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Medusa",
-        "Medusa Plugin",
-        "Medusajs",
-        "Abandoned Cart"
+        "Abandoned Cart",
+        "Cart",
+        "E Commerce",
+        "Medusa"
       ],
       "updated": "4 weeks ago",
       "license": "\u2014",
       "langs": [
         {
+          "pct": 100.0,
           "name": "TypeScript",
-          "pct": 93
-        },
-        {
-          "name": "JavaScript",
-          "pct": 7
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "v2.1.1",
-          "url": "https://github.com/luluhoc/medusa-plugin-abandoned-cart/releases/tag/v2.1.1"
-        },
-        {
-          "name": "v2.1.0",
-          "url": "https://github.com/luluhoc/medusa-plugin-abandoned-cart/releases/tag/v2.1.0"
-        },
-        {
-          "name": "v2.0.56",
-          "url": "https://github.com/luluhoc/medusa-plugin-abandoned-cart/releases/tag/v2.0.56"
-        },
-        {
-          "name": "v2.0.55",
-          "url": "https://github.com/luluhoc/medusa-plugin-abandoned-cart/releases/tag/v2.0.55"
-        },
-        {
-          "name": "v2.0.54",
-          "url": "https://github.com/luluhoc/medusa-plugin-abandoned-cart/releases/tag/v2.0.54"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "medusa",
-        "medusa-plugin",
-        "medusajs",
         "abandoned-cart",
         "cart",
-        "e-commerce"
+        "e-commerce",
+        "medusa",
+        "medusa-plugin",
+        "medusajs"
       ]
     },
     {
@@ -2322,9 +1827,9 @@
       "category": "E-commerce",
       "stars": 11,
       "author": "shahednasser",
-      "avatar": "https://avatars.githubusercontent.com/u/27354907?u=53c265544f3c54ef3f49a7abf04daed37b7bc3d6&v=4",
+      "avatar": null,
       "desc": "Code for How to Add Product Reviews to Your Medusa Server and Next.js Storefront",
-      "demo": "https://github.com/medusajs/medusa",
+      "demo": null,
       "repoUrl": "https://github.com/shahednasser/medusa-reviews-tutorial",
       "long1": "Code for How to Add Product Reviews to Your Medusa Server and Next.js Storefront. Maintained by shahednasser on GitHub, where it has earned 11 stars from the community.",
       "long2": "It's actively developed around medusa, and is a solid reference for anyone building with these tools.",
@@ -2336,16 +1841,40 @@
       "license": "\u2014",
       "langs": [
         {
+          "pct": 100.0,
           "name": "TypeScript",
-          "pct": 71
-        },
+          "size": 0
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "medusa"
+      ]
+    },
+    {
+      "slug": "medusa-comic-store",
+      "name": "medusa-comic-store",
+      "fullName": "shahednasser/medusa-comic-store",
+      "category": "E-commerce",
+      "stars": 10,
+      "author": "shahednasser",
+      "avatar": null,
+      "desc": "A tutorial to build a comic store with Medusa",
+      "demo": null,
+      "repoUrl": "https://github.com/shahednasser/medusa-comic-store",
+      "long1": "A tutorial to build a comic store with Medusa. Maintained by shahednasser on GitHub, where it has earned 10 stars from the community.",
+      "long2": "It's actively developed around medusa, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Medusa"
+      ],
+      "updated": "3 years ago",
+      "license": "\u2014",
+      "langs": [
         {
-          "name": "JavaScript",
-          "pct": 27
-        },
-        {
-          "name": "CSS",
-          "pct": 2
+          "pct": 100.0,
+          "name": "TypeScript",
+          "size": 0
         }
       ],
       "versions": [],
@@ -2360,7 +1889,7 @@
       "category": "DevTools",
       "stars": 10,
       "author": "luluhoc",
-      "avatar": "https://avatars.githubusercontent.com/u/22813220?u=4fdf82971e8f7970072018e94b630dbb90b5e67d&v=4",
+      "avatar": null,
       "desc": "Modified version of the original SendGrid plugin with Typescript and with extra features.",
       "demo": null,
       "repoUrl": "https://github.com/luluhoc/medusa-plugin-sendgrid-typescript",
@@ -2377,71 +1906,17 @@
       "license": "\u2014",
       "langs": [
         {
+          "pct": 100.0,
           "name": "TypeScript",
-          "pct": 100
-        },
-        {
-          "name": "JavaScript",
-          "pct": 0
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "v2.2.2",
-          "url": "https://github.com/luluhoc/medusa-plugin-sendgrid-typescript/releases/tag/v2.2.2"
-        },
-        {
-          "name": "v2.2.1",
-          "url": "https://github.com/luluhoc/medusa-plugin-sendgrid-typescript/releases/tag/v2.2.1"
-        },
-        {
-          "name": "v2.2.0",
-          "url": "https://github.com/luluhoc/medusa-plugin-sendgrid-typescript/releases/tag/v2.2.0"
-        }
-      ],
+      "versions": [],
       "topics": [
         "medusa",
         "medusa-js",
         "medusa-plugin",
         "medusajs"
-      ]
-    },
-    {
-      "slug": "medusa-comic-store",
-      "name": "medusa-comic-store",
-      "fullName": "shahednasser/medusa-comic-store",
-      "category": "E-commerce",
-      "stars": 10,
-      "author": "shahednasser",
-      "avatar": "https://avatars.githubusercontent.com/u/27354907?u=53c265544f3c54ef3f49a7abf04daed37b7bc3d6&v=4",
-      "desc": "A tutorial to build a comic store with Medusa",
-      "demo": "https://github.com/medusajs/medusa",
-      "repoUrl": "https://github.com/shahednasser/medusa-comic-store",
-      "long1": "A tutorial to build a comic store with Medusa. Maintained by shahednasser on GitHub, where it has earned 10 stars from the community.",
-      "long2": "It's actively developed around medusa, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Medusa"
-      ],
-      "updated": "3 years ago",
-      "license": "\u2014",
-      "langs": [
-        {
-          "name": "TypeScript",
-          "pct": 70
-        },
-        {
-          "name": "JavaScript",
-          "pct": 29
-        },
-        {
-          "name": "CSS",
-          "pct": 1
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "medusa"
       ]
     },
     {
@@ -2451,7 +1926,7 @@
       "category": "E-commerce",
       "stars": 10,
       "author": "VariableVic",
-      "avatar": "https://avatars.githubusercontent.com/u/42065266?u=bf1aaca72cb2af16e84af5dd8c9cb07dd2028896&v=4",
+      "avatar": null,
       "desc": "AI Powered Generative Storefront built with Next.js, Medusa and Vercel AI SDK.",
       "demo": null,
       "repoUrl": "https://github.com/VariableVic/zion",
@@ -2468,16 +1943,9 @@
       "license": "\u2014",
       "langs": [
         {
+          "pct": 100.0,
           "name": "TypeScript",
-          "pct": 98
-        },
-        {
-          "name": "CSS",
-          "pct": 1
-        },
-        {
-          "name": "JavaScript",
-          "pct": 1
+          "size": 0
         }
       ],
       "versions": [],

@@ -1,80 +1,58 @@
 {
   "slug": "librechat",
-  "scrapedAt": "2026-07-13T07:30:52.930891+00:00",
+  "scrapedAt": "2026-07-14T02:48:08.162855+00:00",
   "source": "scrapy-github",
-  "totalRepos": 19,
+  "totalRepos": 18,
   "projects": [
     {
       "slug": "big-agi",
       "name": "big-AGI",
       "fullName": "enricoros/big-AGI",
       "category": "AI & ML",
-      "stars": 7047,
+      "stars": 7048,
       "author": "enricoros",
-      "avatar": "https://avatars.githubusercontent.com/u/32999?u=a1321c15b67f0f7de57813ba20be8562e8ffd67b&v=4",
+      "avatar": null,
       "desc": "AI suite powered by state-of-the-art models and providing advanced AI/AGI functions. Includes AI personas, AGI functions, world-class Beam multi-model chats, text-to-image, voice, response streaming, code highlighting and execution, PDF import, presets for developers, much more. Deploy on-prem or in the cloud.",
-      "demo": "https://big-agi.com",
+      "demo": null,
       "repoUrl": "https://github.com/enricoros/big-AGI",
-      "long1": "AI suite powered by state-of-the-art models and providing advanced AI/AGI functions. Includes AI personas, AGI functions, world-class Beam multi-model chats, text-to-image, voice, response streaming, code highlighting and execution, PDF import, presets for developers, much more. Deploy on-prem or in the cloud. Maintained by enricoros on GitHub, where it has earned 7,047 stars from the community.",
-      "long2": "It's actively developed around agi, gpt, ai-agents, and is a solid reference for anyone building with these tools.",
+      "long1": "AI suite powered by state-of-the-art models and providing advanced AI/AGI functions. Includes AI personas, AGI functions, world-class Beam multi-model chats, text-to-image, voice, response streaming, code highlighting and execution, PDF import, presets for developers, much more. Deploy on-prem or in the cloud. Maintained by enricoros on GitHub, where it has earned 7,048 stars from the community.",
+      "long2": "It's actively developed around agi, ai-agents, ai-suite, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
         "Agi",
-        "Gpt",
         "Ai Agents",
-        "Ai Suite"
+        "Ai Suite",
+        "Ai Workspace"
       ],
-      "updated": "today",
+      "updated": "yesterday",
       "license": "MIT",
       "langs": [
         {
-          "pct": 83,
-          "name": "TypeScript"
-        },
-        {
-          "pct": 16,
-          "name": "JavaScript"
-        },
-        {
-          "pct": 1,
-          "name": "HTML"
+          "pct": 100.0,
+          "name": "TypeScript",
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "url": "https://github.com/enricoros/big-AGI/releases/tag/v2.0.5",
-          "name": "v2.0.5"
-        },
-        {
-          "url": "https://github.com/enricoros/big-AGI/releases/tag/v2.0.4",
-          "name": "v2.0.4"
-        },
-        {
-          "url": "https://github.com/enricoros/big-AGI/releases/tag/v2.0.3",
-          "name": "v2.0.3"
-        },
-        {
-          "url": "https://github.com/enricoros/big-AGI/releases/tag/v2.0.2",
-          "name": "v2.0.2"
-        },
-        {
-          "url": "https://github.com/enricoros/big-AGI/releases/tag/v2.0.1",
-          "name": "v2.0.1"
-        }
-      ],
+      "versions": [],
       "topics": [
         "agi",
-        "gpt",
         "ai-agents",
         "ai-suite",
         "ai-workspace",
         "anthropic-api",
         "deepseek-api",
         "gemini-api",
+        "gpt",
         "gpt-5",
+        "librechat",
         "multi-modal",
         "multi-model",
-        "nano-banana"
+        "nano-banana",
+        "openai-responses-api",
+        "openwebui",
+        "perplexity-api",
+        "sonnet-4-5",
+        "xai-api"
       ]
     },
     {
@@ -82,51 +60,47 @@
       "name": "librechat.ai",
       "fullName": "LibreChat-AI/librechat.ai",
       "category": "AI & ML",
-      "stars": 593,
+      "stars": 595,
       "author": "LibreChat-AI",
-      "avatar": "https://avatars.githubusercontent.com/u/169401942?v=4",
+      "avatar": null,
       "desc": "Official documentation, blog, and changelog for LibreChat. Built with Next.js and Fumadocs. Live at librechat.ai",
-      "demo": "https://www.librechat.ai",
+      "demo": null,
       "repoUrl": "https://github.com/LibreChat-AI/librechat.ai",
-      "long1": "Official documentation, blog, and changelog for LibreChat. Built with Next.js and Fumadocs. Live at librechat.ai. Maintained by LibreChat-AI on GitHub, where it has earned 593 stars from the community.",
-      "long2": "It's actively developed around docs, librechat, ai, and is a solid reference for anyone building with these tools.",
+      "long1": "Official documentation, blog, and changelog for LibreChat. Built with Next.js and Fumadocs. Live at librechat.ai. Maintained by LibreChat-AI on GitHub, where it has earned 595 stars from the community.",
+      "long2": "It's actively developed around ai, chatbot, docs, and is a solid reference for anyone building with these tools.",
       "stack": [
         "MDX",
-        "Docs",
-        "Librechat",
         "Ai",
-        "Chatbot"
+        "Chatbot",
+        "Docs",
+        "Documentation"
       ],
       "updated": "1 week ago",
       "license": "MIT",
       "langs": [
         {
-          "pct": 95,
-          "name": "MDX"
-        },
-        {
-          "pct": 5,
-          "name": "TypeScript"
-        },
-        {
-          "pct": 0,
-          "name": "JavaScript"
+          "pct": 100.0,
+          "name": "MDX",
+          "size": 0
         }
       ],
       "versions": [],
       "topics": [
-        "docs",
-        "librechat",
         "ai",
         "chatbot",
+        "docs",
         "documentation",
         "documentation-site",
         "fumadocs",
         "i18n",
+        "librechat",
         "mdx",
         "nextjs",
         "open-source",
-        "orama"
+        "orama",
+        "react",
+        "tailwindcss",
+        "typescript"
       ]
     },
     {
@@ -136,9 +110,9 @@
       "category": "AI & ML",
       "stars": 127,
       "author": "galaxyapi",
-      "avatar": "https://avatars.githubusercontent.com/u/146201481?u=5dc9212d1a83fb8def84e4f3dbc1f3dddf5a9d50&v=4",
+      "avatar": null,
       "desc": "Free Proxy to access Claude-3 API. Anthropic key not required \ud83d\udd10. It uses OpenAI format api to easily integrate on any Openai supported frontend.",
-      "demo": "https://discord.com/invite/HGdtHgCMua",
+      "demo": null,
       "repoUrl": "https://github.com/galaxyapi/claude-3",
       "long1": "Free Proxy to access Claude-3 API. Anthropic key not required \ud83d\udd10. It uses OpenAI format api to easily integrate on any Openai supported frontend. Maintained by galaxyapi on GitHub, where it has earned 127 stars from the community.",
       "long2": "It's actively developed around anthropic, chatgpt, chatgpt-proxy, and is a solid reference for anyone building with these tools.",
@@ -171,12 +145,12 @@
         "chatgpt-proxy",
         "claude-3",
         "claude-api",
+        "galaxyai",
         "gpt-4",
         "librechat",
+        "midjourney",
         "openai",
-        "galaxyai",
-        "sillytavern",
-        "midjourney"
+        "sillytavern"
       ]
     },
     {
@@ -186,9 +160,9 @@
       "category": "AI & ML",
       "stars": 84,
       "author": "LibreChat-AI",
-      "avatar": "https://avatars.githubusercontent.com/u/169401942?v=4",
+      "avatar": null,
       "desc": "LibreChat Config Files aka librechat.yaml Collection",
-      "demo": "https://chat.librechat.ai",
+      "demo": null,
       "repoUrl": "https://github.com/LibreChat-AI/librechat-config-yaml",
       "long1": "LibreChat Config Files aka librechat.yaml Collection. Maintained by LibreChat-AI on GitHub, where it has earned 84 stars from the community.",
       "long2": "It's actively developed around librechat, and is a solid reference for anyone building with these tools.",
@@ -196,16 +170,13 @@
         "Python",
         "Librechat"
       ],
-      "updated": "today",
+      "updated": "yesterday",
       "license": "\u2014",
       "langs": [
         {
-          "pct": 96,
-          "name": "Python"
-        },
-        {
-          "pct": 4,
-          "name": "JavaScript"
+          "pct": 100.0,
+          "name": "Python",
+          "size": 0
         }
       ],
       "versions": [],
@@ -218,13 +189,13 @@
       "name": "Librechat-Mobile",
       "fullName": "garfiec/Librechat-Mobile",
       "category": "Mobile",
-      "stars": 56,
+      "stars": 57,
       "author": "garfiec",
-      "avatar": "https://avatars.githubusercontent.com/u/25524401?v=4",
+      "avatar": null,
       "desc": "Native Android & iOS client for LibreChat, built with Kotlin Multiplatform and Compose Multiplatform",
       "demo": null,
       "repoUrl": "https://github.com/garfiec/Librechat-Mobile",
-      "long1": "Native Android & iOS client for LibreChat, built with Kotlin Multiplatform and Compose Multiplatform. Maintained by garfiec on GitHub, where it has earned 56 stars from the community.",
+      "long1": "Native Android & iOS client for LibreChat, built with Kotlin Multiplatform and Compose Multiplatform. Maintained by garfiec on GitHub, where it has earned 57 stars from the community.",
       "long2": "It's actively developed around ai-assistant, ai-chat, android, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Kotlin",
@@ -233,44 +204,16 @@
         "Android",
         "Anthropic"
       ],
-      "updated": "today",
+      "updated": "yesterday",
       "license": "MIT",
       "langs": [
         {
-          "pct": 100,
-          "name": "Kotlin"
-        },
-        {
-          "pct": 0,
-          "name": "Swift"
-        },
-        {
-          "pct": 0,
-          "name": "Shell"
+          "pct": 100.0,
+          "name": "Kotlin",
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "url": "https://github.com/garfiec/Librechat-Mobile/releases/tag/v2026.07.3",
-          "name": "v2026.07.3"
-        },
-        {
-          "url": "https://github.com/garfiec/Librechat-Mobile/releases/tag/v2026.07.2",
-          "name": "v2026.07.2"
-        },
-        {
-          "url": "https://github.com/garfiec/Librechat-Mobile/releases/tag/v2026.07.1",
-          "name": "v2026.07.1"
-        },
-        {
-          "url": "https://github.com/garfiec/Librechat-Mobile/releases/tag/v2026.07.0",
-          "name": "v2026.07.0"
-        },
-        {
-          "url": "https://github.com/garfiec/Librechat-Mobile/releases/tag/v2026.06.8",
-          "name": "v2026.06.8"
-        }
-      ],
+      "versions": [],
       "topics": [
         "ai-assistant",
         "ai-chat",
@@ -283,7 +226,15 @@
         "compose-multiplatform",
         "gemini",
         "ios",
-        "kotlin-multiplaform"
+        "kotlin-multiplaform",
+        "librechat",
+        "librechat-client",
+        "llm",
+        "mcp",
+        "mobile-client",
+        "openai",
+        "self-hosted",
+        "third-party-clients"
       ]
     },
     {
@@ -293,7 +244,7 @@
       "category": "Real-time",
       "stars": 52,
       "author": "thunderbug1",
-      "avatar": "https://avatars.githubusercontent.com/u/1395321?v=4",
+      "avatar": null,
       "desc": "A Terraform setup to deploy LibreChat to Azure and setup all the necessary services.",
       "demo": null,
       "repoUrl": "https://github.com/thunderbug1/LibreChatAzureDeployment",
@@ -309,8 +260,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100,
-          "name": "HCL"
+          "pct": 100.0,
+          "name": "HCL",
+          "size": 0
         }
       ],
       "versions": [],
@@ -327,9 +279,9 @@
       "category": "Mobile",
       "stars": 48,
       "author": "pamosima",
-      "avatar": "https://avatars.githubusercontent.com/u/16715420?u=3b6581a2f146da1a68cc21564346de7a3cf918f5&v=4",
+      "avatar": null,
       "desc": "Docker-based MCP server suite for AIOps - Cisco Meraki, Catalyst Center, IOS XE, ISE, ThousandEyes, Splunk & NetBox. AI-ready with LibreChat integration.",
-      "demo": "https://gblogs.cisco.com/ch-tech/mcp-protocol-ai-network-operations/",
+      "demo": null,
       "repoUrl": "https://github.com/pamosima/network-mcp-docker-suite",
       "long1": "Docker-based MCP server suite for AIOps - Cisco Meraki, Catalyst Center, IOS XE, ISE, ThousandEyes, Splunk & NetBox. AI-ready with LibreChat integration. Maintained by pamosima on GitHub, where it has earned 48 stars from the community.",
       "long2": "It's actively developed around aiops, catalyst, center, and is a solid reference for anyone building with these tools.",
@@ -340,44 +292,16 @@
         "Center",
         "Cisco"
       ],
-      "updated": "5 days ago",
+      "updated": "6 days ago",
       "license": "\u2014",
       "langs": [
         {
-          "pct": 90,
-          "name": "Python"
-        },
-        {
-          "pct": 6,
-          "name": "Shell"
-        },
-        {
-          "pct": 4,
-          "name": "Dockerfile"
+          "pct": 100.0,
+          "name": "Python",
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "url": "https://github.com/pamosima/network-mcp-docker-suite/releases/tag/v1.4.3",
-          "name": "v1.4.3"
-        },
-        {
-          "url": "https://github.com/pamosima/network-mcp-docker-suite/releases/tag/v1.4.2",
-          "name": "v1.4.2"
-        },
-        {
-          "url": "https://github.com/pamosima/network-mcp-docker-suite/releases/tag/v1.4.1",
-          "name": "v1.4.1"
-        },
-        {
-          "url": "https://github.com/pamosima/network-mcp-docker-suite/releases/tag/v1.4.0",
-          "name": "v1.4.0"
-        },
-        {
-          "url": "https://github.com/pamosima/network-mcp-docker-suite/releases/tag/v1.3.0",
-          "name": "v1.3.0"
-        }
-      ],
+      "versions": [],
       "topics": [
         "aiops",
         "catalyst",
@@ -400,9 +324,9 @@
       "category": "Mobile",
       "stars": 37,
       "author": "rubentalstra",
-      "avatar": "https://avatars.githubusercontent.com/u/14235001?u=ed70680705490da1c0590797603121dd6bf7ae10&v=4",
+      "avatar": null,
       "desc": "A lightweight Node.js service built with Express, Mongoose, and prom-client that collects metrics from your LibreChat MongoDB database and exposes them on a \"/metrics\" endpoint for Prometheus scraping. Easily integrate with Grafana dashboards for comprehensive monitoring and visualization.",
-      "demo": "https://rubentalstra.github.io/librechat-prom-exporter/",
+      "demo": null,
       "repoUrl": "https://github.com/rubentalstra/librechat-prom-exporter",
       "long1": "A lightweight Node.js service built with Express, Mongoose, and prom-client that collects metrics from your LibreChat MongoDB database and exposes them on a \"/metrics\" endpoint for Prometheus scraping. Easily integrate with Grafana dashboards for comprehensive monitoring and visualization. Maintained by rubentalstra on GitHub, where it has earned 37 stars from the community.",
       "long2": "It's actively developed around exporter, librechat, prometheus, and is a solid reference for anyone building with these tools.",
@@ -416,40 +340,12 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 54,
-          "name": "MDX"
-        },
-        {
-          "pct": 45,
-          "name": "TypeScript"
-        },
-        {
-          "pct": 1,
-          "name": "Dockerfile"
+          "pct": 100.0,
+          "name": "MDX",
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "url": "https://github.com/rubentalstra/librechat-prom-exporter/releases/tag/v0.10.1",
-          "name": "v0.10.1"
-        },
-        {
-          "url": "https://github.com/rubentalstra/librechat-prom-exporter/releases/tag/v0.10.0",
-          "name": "v0.10.0"
-        },
-        {
-          "url": "https://github.com/rubentalstra/librechat-prom-exporter/releases/tag/v0.9.0",
-          "name": "v0.9.0"
-        },
-        {
-          "url": "https://github.com/rubentalstra/librechat-prom-exporter/releases/tag/v0.8.0",
-          "name": "v0.8.0"
-        },
-        {
-          "url": "https://github.com/rubentalstra/librechat-prom-exporter/releases/tag/v0.7.0",
-          "name": "v0.7.0"
-        }
-      ],
+      "versions": [],
       "topics": [
         "exporter",
         "librechat",
@@ -463,34 +359,35 @@
       "category": "AI & ML",
       "stars": 36,
       "author": "izzoa",
-      "avatar": "https://avatars.githubusercontent.com/u/5224781?u=18064e2582d22f70f970d87d2d7ad18e8c3cf1b0&v=4",
+      "avatar": null,
       "desc": "Repository of (most, [if not all?]) ChatGPT manifest files of plugins.",
       "demo": null,
       "repoUrl": "https://github.com/izzoa/chatgpt-plugins",
       "long1": "Repository of (most, [if not all?]) ChatGPT manifest files of plugins. Maintained by izzoa on GitHub, where it has earned 36 stars from the community.",
-      "long2": "It's actively developed around chatgpt, librechat, plugins, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around chatgpt, chatgpt-plugins, librechat, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
         "Chatgpt",
+        "Chatgpt Plugins",
         "Librechat",
-        "Plugins",
         "Openai"
       ],
       "updated": "2 years ago",
       "license": "\u2014",
       "langs": [
         {
-          "pct": 100,
-          "name": "JavaScript"
+          "pct": 100.0,
+          "name": "JavaScript",
+          "size": 0
         }
       ],
       "versions": [],
       "topics": [
         "chatgpt",
+        "chatgpt-plugins",
         "librechat",
-        "plugins",
         "openai",
-        "chatgpt-plugins"
+        "plugins"
       ]
     },
     {
@@ -500,46 +397,38 @@
       "category": "AI & ML",
       "stars": 35,
       "author": "martvaha",
-      "avatar": "https://avatars.githubusercontent.com/u/8341598?u=be6f58647550c3261b3db0aca4cf833b26f53406&v=4",
+      "avatar": null,
       "desc": "LibreChat compatible code interpreter",
       "demo": null,
       "repoUrl": "https://github.com/martvaha/code-interpreter",
       "long1": "LibreChat compatible code interpreter. Maintained by martvaha on GitHub, where it has earned 35 stars from the community.",
-      "long2": "It's actively developed around codeinterpreter, librechat, code-interpreter, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around bash, code-interpreter, codeinterpreter, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Python",
-        "Codeinterpreter",
-        "Librechat",
+        "Bash",
         "Code Interpreter",
-        "Llm"
+        "Codeinterpreter",
+        "Librechat"
       ],
       "updated": "1 month ago",
       "license": "\u2014",
       "langs": [
         {
-          "pct": 100,
-          "name": "Python"
-        },
-        {
-          "pct": 0,
-          "name": "Dockerfile"
+          "pct": 100.0,
+          "name": "Python",
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "url": "https://github.com/martvaha/code-interpreter/releases/tag/librechat-v0.8.6",
-          "name": "librechat-v0.8.6"
-        }
-      ],
+      "versions": [],
       "topics": [
-        "codeinterpreter",
-        "librechat",
+        "bash",
         "code-interpreter",
+        "codeinterpreter",
+        "javascript",
+        "librechat",
         "llm",
         "python",
         "r",
-        "bash",
-        "javascript",
         "typescript"
       ]
     },
@@ -550,7 +439,7 @@
       "category": "AI & ML",
       "stars": 33,
       "author": "agigante80",
-      "avatar": "https://avatars.githubusercontent.com/u/6804522?u=676fe7fdfd9f9daf6db12a5a2c2ceeaac660d4aa&v=4",
+      "avatar": null,
       "desc": "Talk to your self-hosted Actual Budget from any MCP client: a remote HTTP server for LibreChat/LobeChat or a local stdio process for Claude Desktop, with 71 tools for transactions, budgets, rules, and bank sync. No Docker needed for local use.",
       "demo": null,
       "repoUrl": "https://github.com/agigante80/actual-mcp-server",
@@ -563,44 +452,16 @@
         "Api Server",
         "Budget Management"
       ],
-      "updated": "2 days ago",
+      "updated": "yesterday",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "JavaScript",
-          "pct": 55
-        },
-        {
-          "name": "TypeScript",
-          "pct": 43
-        },
-        {
-          "name": "Shell",
-          "pct": 2
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "v0.8.15",
-          "url": "https://github.com/agigante80/actual-mcp-server/releases/tag/v0.8.15"
-        },
-        {
-          "name": "v0.8.13",
-          "url": "https://github.com/agigante80/actual-mcp-server/releases/tag/v0.8.13"
-        },
-        {
-          "name": "v0.8.11",
-          "url": "https://github.com/agigante80/actual-mcp-server/releases/tag/v0.8.11"
-        },
-        {
-          "name": "v0.8.10",
-          "url": "https://github.com/agigante80/actual-mcp-server/releases/tag/v0.8.10"
-        },
-        {
-          "name": "v0.8.9",
-          "url": "https://github.com/agigante80/actual-mcp-server/releases/tag/v0.8.9"
-        }
-      ],
+      "versions": [],
       "topics": [
         "actual-budget",
         "ai-assistant",
@@ -613,7 +474,10 @@
         "financial-management",
         "librechat",
         "mcp",
-        "model-context-protocol"
+        "model-context-protocol",
+        "nodejs",
+        "personal-finance",
+        "typescript"
       ]
     },
     {
@@ -623,9 +487,9 @@
       "category": "AI & ML",
       "stars": 29,
       "author": "Fritsl",
-      "avatar": "https://avatars.githubusercontent.com/u/15021408?v=4",
+      "avatar": null,
       "desc": "A configuration tool for LibreChat",
-      "demo": "https://fritslyneborg.dk/",
+      "demo": null,
       "repoUrl": "https://github.com/Fritsl/LibreChatConfigurator",
       "long1": "A configuration tool for LibreChat. Maintained by Fritsl on GitHub, where it has earned 29 stars from the community.",
       "long2": "It's actively developed around config, gui, librechat, and is a solid reference for anyone building with these tools.",
@@ -640,16 +504,9 @@
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "TypeScript",
-          "pct": 100
-        },
-        {
-          "name": "HTML",
-          "pct": 0
-        },
-        {
-          "name": "JavaScript",
-          "pct": 0
+          "size": 0
         }
       ],
       "versions": [],
@@ -669,60 +526,86 @@
       "category": "AI & ML",
       "stars": 26,
       "author": "Pwd9000-ML",
-      "avatar": "https://avatars.githubusercontent.com/u/44137582?u=019a7cbcd5c0281e4c19e46018763a40fa2a53e0&v=4",
+      "avatar": null,
       "desc": "Terraform module to deploy a private ChatBot/ChatGPT-like solution (LibreChat) hosted on Azure OpenAI",
-      "demo": "https://registry.terraform.io/modules/Pwd9000-ML/openai-private-chatgpt/azurerm/latest",
+      "demo": null,
       "repoUrl": "https://github.com/Pwd9000-ML/terraform-azurerm-openai-private-chatgpt",
       "long1": "Terraform module to deploy a private ChatBot/ChatGPT-like solution (LibreChat) hosted on Azure OpenAI. Maintained by Pwd9000-ML on GitHub, where it has earned 26 stars from the community.",
-      "long2": "It's actively developed around chatgpt, iac, openai, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around chatgpt, dall-e-3, gpt-4, and is a solid reference for anyone building with these tools.",
       "stack": [
         "HCL",
         "Chatgpt",
-        "Iac",
-        "Openai",
-        "Openai Chatgpt"
+        "Dall E 3",
+        "Gpt 4",
+        "Gpt 4 Vision Preview"
       ],
       "updated": "1 year ago",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "HCL",
-          "pct": 100
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "2.6.4",
-          "url": "https://github.com/Pwd9000-ML/terraform-azurerm-openai-private-chatgpt/releases/tag/2.6.4"
-        },
-        {
-          "name": "2.6.3",
-          "url": "https://github.com/Pwd9000-ML/terraform-azurerm-openai-private-chatgpt/releases/tag/2.6.3"
-        },
-        {
-          "name": "2.6.2",
-          "url": "https://github.com/Pwd9000-ML/terraform-azurerm-openai-private-chatgpt/releases/tag/2.6.2"
-        },
-        {
-          "name": "2.6.1",
-          "url": "https://github.com/Pwd9000-ML/terraform-azurerm-openai-private-chatgpt/releases/tag/2.6.1"
-        },
-        {
-          "name": "2.6.0",
-          "url": "https://github.com/Pwd9000-ML/terraform-azurerm-openai-private-chatgpt/releases/tag/2.6.0"
-        }
-      ],
+      "versions": [],
       "topics": [
         "chatgpt",
-        "iac",
-        "openai",
-        "openai-chatgpt",
-        "terraform",
-        "terraform-module",
         "dall-e-3",
         "gpt-4",
         "gpt-4-vision-preview",
-        "librechat"
+        "iac",
+        "librechat",
+        "openai",
+        "openai-chatgpt",
+        "terraform",
+        "terraform-module"
+      ]
+    },
+    {
+      "slug": "kyns",
+      "name": "kyns",
+      "fullName": "Kyns-ai/kyns",
+      "category": "AI & ML",
+      "stars": 20,
+      "author": "Kyns-ai",
+      "avatar": null,
+      "desc": "Uncensored AI platform \u2014 chat, roleplay, image generation. Built on open-source models.",
+      "demo": null,
+      "repoUrl": "https://github.com/Kyns-ai/kyns",
+      "long1": "Uncensored AI platform \u2014 chat, roleplay, image generation. Built on open-source models. Maintained by Kyns-ai on GitHub, where it has earned 20 stars from the community.",
+      "long2": "It's actively developed around ai, chatbot, image-generation, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Ai",
+        "Chatbot",
+        "Image Generation",
+        "Librechat"
+      ],
+      "updated": "3 weeks ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 100.0,
+          "name": "TypeScript",
+          "size": 0
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "ai",
+        "chatbot",
+        "image-generation",
+        "librechat",
+        "llm",
+        "opensource",
+        "privacy",
+        "react",
+        "roleplay",
+        "self-hosted",
+        "typescript",
+        "uncensored",
+        "vllm"
       ]
     },
     {
@@ -732,7 +615,7 @@
       "category": "Real-time",
       "stars": 16,
       "author": "LibreChat-AI",
-      "avatar": "https://avatars.githubusercontent.com/u/169401942?v=4",
+      "avatar": null,
       "desc": "This Discord bot allows users to trigger an update process for the LibreChat server directly from a Discord server. The bot provides a convenient way to perform server updates without the need for direct server access.",
       "demo": null,
       "repoUrl": "https://github.com/LibreChat-AI/LibreChat-DiscordBot",
@@ -746,71 +629,14 @@
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "Python",
-          "pct": 100
+          "size": 0
         }
       ],
       "versions": [],
       "topics": [
         "librechat"
-      ]
-    },
-    {
-      "slug": "librechat-admin-dashboard",
-      "name": "librechat-admin-dashboard",
-      "fullName": "innFactory/librechat-admin-dashboard",
-      "category": "AI & ML",
-      "stars": 13,
-      "author": "innFactory",
-      "avatar": "https://avatars.githubusercontent.com/u/24720191?v=4",
-      "desc": "CompanyGPT Admin Tools - Usage Metrics for the librechat component of the stack.",
-      "demo": "https://company-gpt.com",
-      "repoUrl": "https://github.com/innFactory/librechat-admin-dashboard",
-      "long1": "CompanyGPT Admin Tools - Usage Metrics for the librechat component of the stack. Maintained by innFactory on GitHub, where it has earned 13 stars from the community.",
-      "long2": "It's actively developed around chatgpt, gemini, librechat, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Chatgpt",
-        "Gemini",
-        "Librechat",
-        "Claude"
-      ],
-      "updated": "4 months ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "TypeScript",
-          "pct": 99
-        },
-        {
-          "name": "CSS",
-          "pct": 1
-        },
-        {
-          "name": "Dockerfile",
-          "pct": 0
-        }
-      ],
-      "versions": [
-        {
-          "name": "v1.1.1",
-          "url": "https://github.com/innFactory/librechat-admin-dashboard/releases/tag/v1.1.1"
-        },
-        {
-          "name": "v1.0.6",
-          "url": "https://github.com/innFactory/librechat-admin-dashboard/releases/tag/v1.0.6"
-        },
-        {
-          "name": "v1.0.3",
-          "url": "https://github.com/innFactory/librechat-admin-dashboard/releases/tag/v1.0.3"
-        }
-      ],
-      "topics": [
-        "chatgpt",
-        "gemini",
-        "librechat",
-        "claude",
-        "gpt"
       ]
     },
     {
@@ -820,54 +646,88 @@
       "category": "AI & ML",
       "stars": 13,
       "author": "teremterem",
-      "avatar": "https://avatars.githubusercontent.com/u/5508002?u=4cf123c622391d4b382447ea3f15a001e48c2e83&v=4",
+      "avatar": null,
       "desc": "A lightweight LiteLLM server boilerplate pre-configured with uv and Docker for hosting your own OpenAI- and Anthropic-compatible endpoints. Includes LibreChat as an optional web UI.",
       "demo": null,
       "repoUrl": "https://github.com/teremterem/litellm-server-boilerplate",
       "long1": "A lightweight LiteLLM server boilerplate pre-configured with uv and Docker for hosting your own OpenAI- and Anthropic-compatible endpoints. Includes LibreChat as an optional web UI. Maintained by teremterem on GitHub, where it has earned 13 stars from the community.",
-      "long2": "It's actively developed around agentic-ai, ai-assistant, anthropic, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around agentic-ai, ai, ai-assistant, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Python",
         "Agentic Ai",
+        "Ai",
         "Ai Assistant",
-        "Anthropic",
-        "Gemini"
+        "Ai Chatbot"
       ],
       "updated": "7 months ago",
       "license": "MIT",
       "langs": [
         {
+          "pct": 100.0,
           "name": "Python",
-          "pct": 87
-        },
-        {
-          "name": "Shell",
-          "pct": 8
-        },
-        {
-          "name": "Dockerfile",
-          "pct": 5
+          "size": 0
         }
       ],
-      "versions": [
-        {
-          "name": "1.0.0b4",
-          "url": "https://github.com/teremterem/litellm-server-boilerplate/releases/tag/1.0.0b4"
-        }
-      ],
+      "versions": [],
       "topics": [
         "agentic-ai",
+        "ai",
         "ai-assistant",
+        "ai-chatbot",
         "anthropic",
+        "boilerplate",
+        "chatgpt",
         "gemini",
         "genai",
         "generative-ai",
+        "librechat",
         "litellm",
         "litellm-proxy",
-        "openai",
+        "llm",
         "llm-server",
         "llm-serving",
-        "chatgpt"
+        "openai",
+        "python",
+        "setup",
+        "webchat"
+      ]
+    },
+    {
+      "slug": "librechat-admin-dashboard",
+      "name": "librechat-admin-dashboard",
+      "fullName": "innFactory/librechat-admin-dashboard",
+      "category": "AI & ML",
+      "stars": 13,
+      "author": "innFactory",
+      "avatar": null,
+      "desc": "CompanyGPT Admin Tools - Usage Metrics for the librechat component of the stack.",
+      "demo": null,
+      "repoUrl": "https://github.com/innFactory/librechat-admin-dashboard",
+      "long1": "CompanyGPT Admin Tools - Usage Metrics for the librechat component of the stack. Maintained by innFactory on GitHub, where it has earned 13 stars from the community.",
+      "long2": "It's actively developed around chatgpt, claude, gemini, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Chatgpt",
+        "Claude",
+        "Gemini",
+        "Gpt"
+      ],
+      "updated": "4 months ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 100.0,
+          "name": "TypeScript",
+          "size": 0
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "chatgpt",
+        "claude",
+        "gemini",
+        "gpt",
+        "librechat"
       ]
     }
   ]

@@ -1,0 +1,1256 @@
+{
+  "videoId": "-MTSQjw5DrM",
+  "language": "en",
+  "source": "auto",
+  "segments": [
+    {
+      "start": 0.24,
+      "text": "an application programming interface or"
+    },
+    {
+      "start": 2.56,
+      "text": "api is a way for two computers to talk"
+    },
+    {
+      "start": 5.279,
+      "text": "to each other using an api is just like"
+    },
+    {
+      "start": 7.839,
+      "text": "using a website in your browser but"
+    },
+    {
+      "start": 9.92,
+      "text": "instead of clicking buttons and filling"
+    },
+    {
+      "start": 11.599,
+      "text": "out forms you write code to explicitly"
+    },
+    {
+      "start": 13.84,
+      "text": "request data from a server for example"
+    },
+    {
+      "start": 16.16,
+      "text": "we could visit the nasa website to look"
+    },
+    {
+      "start": 18.16,
+      "text": "at asteroids or we could use their rest"
+    },
+    {
+      "start": 20.4,
+      "text": "api to request the raw json data that is"
+    },
+    {
+      "start": 23.039,
+      "text": "shown on the screen now most apis in the"
+    },
+    {
+      "start": 25.439,
+      "text": "world are restful which means they"
+    },
+    {
+      "start": 27.199,
+      "text": "follow a set of rules or constraints"
+    },
+    {
+      "start": 29.359,
+      "text": "known as representational state transfer"
+    },
+    {
+      "start": 31.76,
+      "text": "which has been the de facto standard for"
+    },
+    {
+      "start": 33.6,
+      "text": "api development since the early 2000s a"
+    },
+    {
+      "start": 36.32,
+      "text": "restful api organizes data entities or"
+    },
+    {
+      "start": 39.2,
+      "text": "resources into a bunch of unique urls"
+    },
+    {
+      "start": 41.92,
+      "text": "well technically not urls but uris or"
+    },
+    {
+      "start": 44.719,
+      "text": "uniform resource identifiers that"
+    },
+    {
+      "start": 46.8,
+      "text": "differentiate different types of data"
+    },
+    {
+      "start": 48.64,
+      "text": "resources on a server a client can get"
+    },
+    {
+      "start": 51.199,
+      "text": "data about a resource by making a"
+    },
+    {
+      "start": 53.28,
+      "text": "request to that endpoint over http the"
+    },
+    {
+      "start": 56.079,
+      "text": "request message has a very specific"
+    },
+    {
+      "start": 58.079,
+      "text": "format most importantly the start line"
+    },
+    {
+      "start": 60.399,
+      "text": "contains the uri that you wish to access"
+    },
+    {
+      "start": 62.719,
+      "text": "which is preceded by an http verb or"
+    },
+    {
+      "start": 65.28,
+      "text": "request method which signal your intent"
+    },
+    {
+      "start": 67.6,
+      "text": "with the resource a get request means"
+    },
+    {
+      "start": 69.68,
+      "text": "you just want to read the data while"
+    },
+    {
+      "start": 71.36,
+      "text": "post means you want to create a new"
+    },
+    {
+      "start": 72.88,
+      "text": "resource patch is for updates delete is"
+    },
+    {
+      "start": 75.28,
+      "text": "for removing data along with a few other"
+    },
+    {
+      "start": 77.36,
+      "text": "methods beyond those below the start"
+    },
+    {
+      "start": 79.28,
+      "text": "line we have headers which contain"
+    },
+    {
+      "start": 80.96,
+      "text": "metadata about the request the accept"
+    },
+    {
+      "start": 82.96,
+      "text": "header can tell the server you want the"
+    },
+    {
+      "start": 84.4,
+      "text": "data in a specific format or the"
+    },
+    {
+      "start": 86.24,
+      "text": "authorization header can be used to tell"
+    },
+    {
+      "start": 88.24,
+      "text": "the server that you're actually allowed"
+    },
+    {
+      "start": 89.84,
+      "text": "to make that request then following the"
+    },
+    {
+      "start": 91.759,
+      "text": "headers we have the body which contains"
+    },
+    {
+      "start": 93.92,
+      "text": "a custom payload of data the server will"
+    },
+    {
+      "start": 96.079,
+      "text": "receive the request message then execute"
+    },
+    {
+      "start": 98.079,
+      "text": "some code usually to read from a"
+    },
+    {
+      "start": 99.759,
+      "text": "database that can then be formatted into"
+    },
+    {
+      "start": 101.84,
+      "text": "a response message the top of the"
+    },
+    {
+      "start": 103.68,
+      "text": "message contains a status code to tell"
+    },
+    {
+      "start": 105.759,
+      "text": "the client what happened to their"
+    },
+    {
+      "start": 107.119,
+      "text": "request codes at the 200 level mean that"
+    },
+    {
+      "start": 109.36,
+      "text": "things went well at the 400 level it"
+    },
+    {
+      "start": 111.6,
+      "text": "means something was wrong with your"
+    },
+    {
+      "start": 112.96,
+      "text": "request and at the 500 level it means"
+    },
+    {
+      "start": 115.28,
+      "text": "that the server failed after the status"
+    },
+    {
+      "start": 117.36,
+      "text": "code we then have the response headers"
+    },
+    {
+      "start": 119.2,
+      "text": "which contain information about the"
+    },
+    {
+      "start": 120.799,
+      "text": "server that's followed by the response"
+    },
+    {
+      "start": 122.719,
+      "text": "body which contains the data payload and"
+    },
+    {
+      "start": 124.96,
+      "text": "is usually formatted in json when"
+    },
+    {
+      "start": 127.04,
+      "text": "talking about apis now an important part"
+    },
+    {
+      "start": 129.36,
+      "text": "of this architecture is that it's"
+    },
+    {
+      "start": 130.8,
+      "text": "stateless which means that the two"
+    },
+    {
+      "start": 132.56,
+      "text": "parties don't need to store any"
+    },
+    {
+      "start": 134.08,
+      "text": "information about each other and every"
+    },
+    {
+      "start": 136.08,
+      "text": "request response cycle is independent"
+    },
+    {
+      "start": 138.56,
+      "text": "from all other communication and this"
+    },
+    {
+      "start": 140.56,
+      "text": "leads to well-behaved web applications"
+    },
+    {
+      "start": 142.48,
+      "text": "that are predictable and reliable this"
+    },
+    {
+      "start": 144.56,
+      "text": "has been restful apis in 100 seconds if"
+    },
+    {
+      "start": 147.28,
+      "text": "you enjoyed it leave a comment below"
+    },
+    {
+      "start": 148.8,
+      "text": "then next week i'll pick out the best"
+    },
+    {
+      "start": 150.239,
+      "text": "one to win this free t-shirt and now"
+    },
+    {
+      "start": 152.48,
+      "text": "it's time to go beyond 100 seconds to"
+    },
+    {
+      "start": 154.64,
+      "text": "build a restful api from scratch the"
+    },
+    {
+      "start": 157.28,
+      "text": "most popular framework for building"
+    },
+    {
+      "start": 158.8,
+      "text": "restful apis in node is express.js it's"
+    },
+    {
+      "start": 162.0,
+      "text": "been around forever and it's very"
+    },
+    {
+      "start": 163.599,
+      "text": "minimal and easy to learn if you know a"
+    },
+    {
+      "start": 165.68,
+      "text": "little bit of javascript over the next"
+    },
+    {
+      "start": 167.519,
+      "text": "few minutes we'll use express to build"
+    },
+    {
+      "start": 169.519,
+      "text": "our own restful api from scratch you'll"
+    },
+    {
+      "start": 171.76,
+      "text": "learn how to create different endpoints"
+    },
+    {
+      "start": 173.36,
+      "text": "for your api we'll also look at slightly"
+    },
+    {
+      "start": 175.599,
+      "text": "more advanced concepts like middleware"
+    },
+    {
+      "start": 177.519,
+      "text": "and tools in the cloud for deploying"
+    },
+    {
+      "start": 179.12,
+      "text": "your api like api gateways to get"
+    },
+    {
+      "start": 181.84,
+      "text": "started you'll want to open up vs code"
+    },
+    {
+      "start": 183.92,
+      "text": "to an empty directory you'll need to"
+    },
+    {
+      "start": 185.92,
+      "text": "have node.js installed and i'm using"
+    },
+    {
+      "start": 188.0,
+      "text": "version 12 for this video to start a new"
+    },
+    {
+      "start": 190.56,
+      "text": "node project let's run npm init y from"
+    },
+    {
+      "start": 193.44,
+      "text": "the command line"
+    },
+    {
+      "start": 194.8,
+      "text": "this will create a package json and give"
+    },
+    {
+      "start": 197.04,
+      "text": "us a context for installing packages"
+    },
+    {
+      "start": 199.12,
+      "text": "that we can use in node like express"
+    },
+    {
+      "start": 201.84,
+      "text": "let's go ahead and install express using"
+    },
+    {
+      "start": 204.0,
+      "text": "npm install you'll notice that adds"
+    },
+    {
+      "start": 206.08,
+      "text": "express to our dependencies in the"
+    },
+    {
+      "start": 208.0,
+      "text": "package.json file from there we'll need"
+    },
+    {
+      "start": 210.4,
+      "text": "a file to write our code in so let's"
+    },
+    {
+      "start": 212.239,
+      "text": "create an index.js file at the top of"
+    },
+    {
+      "start": 215.04,
+      "text": "that file we'll declare a variable for"
+    },
+    {
+      "start": 217.12,
+      "text": "app which represents the actual api that"
+    },
+    {
+      "start": 219.68,
+      "text": "we're building and its value is an"
+    },
+    {
+      "start": 221.92,
+      "text": "import of the express package which"
+    },
+    {
+      "start": 224.4,
+      "text": "itself is a function so we'll add"
+    },
+    {
+      "start": 225.92,
+      "text": "parentheses after it to initialize it"
+    },
+    {
+      "start": 228.48,
+      "text": "now at this point our api hasn't defined"
+    },
+    {
+      "start": 231.04,
+      "text": "any endpoints but let's go ahead and run"
+    },
+    {
+      "start": 233.36,
+      "text": "it anyway the way you fire up your api"
+    },
+    {
+      "start": 235.84,
+      "text": "on the server is by calling app.listen"
+    },
+    {
+      "start": 238.56,
+      "text": "that tells it to listen on a specific"
+    },
+    {
+      "start": 240.56,
+      "text": "port which we've defined as its own"
+    },
+    {
+      "start": 242.4,
+      "text": "separate variable as 8080. then as an"
+    },
+    {
+      "start": 245.36,
+      "text": "optional second argument to listen we"
+    },
+    {
+      "start": 247.28,
+      "text": "can fire a callback to let us know when"
+    },
+    {
+      "start": 249.519,
+      "text": "the api is ready and we'll just have it"
+    },
+    {
+      "start": 251.439,
+      "text": "console log the main url we can now run"
+    },
+    {
+      "start": 253.68,
+      "text": "the api by going to the terminal and"
+    },
+    {
+      "start": 255.68,
+      "text": "running node period to run that index.js"
+    },
+    {
+      "start": 258.72,
+      "text": "file and it should console.log it's live"
+    },
+    {
+      "start": 261.359,
+      "text": "on localhost 8080. if we paste the url"
+    },
+    {
+      "start": 264.08,
+      "text": "into the browser you can see we get a"
+    },
+    {
+      "start": 265.68,
+      "text": "message of cannot get that's because we"
+    },
+    {
+      "start": 268.24,
+      "text": "don't have any api endpoints set up yet"
+    },
+    {
+      "start": 270.4,
+      "text": "but express is still responding with an"
+    },
+    {
+      "start": 272.56,
+      "text": "error message in fact you can open up"
+    },
+    {
+      "start": 274.8,
+      "text": "the network tab in chrome if we look"
+    },
+    {
+      "start": 276.88,
+      "text": "closely we can see that our server"
+    },
+    {
+      "start": 278.8,
+      "text": "responded with a 404 status code meaning"
+    },
+    {
+      "start": 281.44,
+      "text": "that page was not found at this point we"
+    },
+    {
+      "start": 283.6,
+      "text": "know our api is working but debugging it"
+    },
+    {
+      "start": 286.0,
+      "text": "in the browser is usually not the best"
+    },
+    {
+      "start": 287.84,
+      "text": "option there are many different ways we"
+    },
+    {
+      "start": 289.44,
+      "text": "can access our api we could use curl"
+    },
+    {
+      "start": 291.6,
+      "text": "from the command line we could install a"
+    },
+    {
+      "start": 293.199,
+      "text": "vs code extension or we could use a rest"
+    },
+    {
+      "start": 295.919,
+      "text": "client like insomnia or postman i'm"
+    },
+    {
+      "start": 298.479,
+      "text": "going to be using insomnia throughout"
+    },
+    {
+      "start": 300.08,
+      "text": "the rest of this video because it"
+    },
+    {
+      "start": 301.52,
+      "text": "provides a really nice way to format"
+    },
+    {
+      "start": 303.12,
+      "text": "your requests and also view a history of"
+    },
+    {
+      "start": 305.039,
+      "text": "all your interactions from insomnia we"
+    },
+    {
+      "start": 307.199,
+      "text": "can create a new request then simply"
+    },
+    {
+      "start": 309.199,
+      "text": "paste in our url"
+    },
+    {
+      "start": 310.56,
+      "text": "we can easily change the http verb from"
+    },
+    {
+      "start": 313.12,
+      "text": "the drop down menu here click send and"
+    },
+    {
+      "start": 315.52,
+      "text": "then get the response in a nicely"
+    },
+    {
+      "start": 317.12,
+      "text": "formatted developer friendly way we can"
+    },
+    {
+      "start": 319.28,
+      "text": "even see the timeline here with our"
+    },
+    {
+      "start": 320.8,
+      "text": "request in yellow and the response in"
+    },
+    {
+      "start": 322.88,
+      "text": "green but now we need to get back to our"
+    },
+    {
+      "start": 324.56,
+      "text": "javascript and add an endpoint to the"
+    },
+    {
+      "start": 326.56,
+      "text": "api we can do that by changing an http"
+    },
+    {
+      "start": 329.44,
+      "text": "verb to the app instance if you type a"
+    },
+    {
+      "start": 332.08,
+      "text": "period after app you'll get intellisense"
+    },
+    {
+      "start": 334.24,
+      "text": "on a bunch of different methods that"
+    },
+    {
+      "start": 336.0,
+      "text": "live on this object and you'll notice"
+    },
+    {
+      "start": 337.68,
+      "text": "methods for git post patch etc which"
+    },
+    {
+      "start": 340.96,
+      "text": "represent different http verbs if we"
+    },
+    {
+      "start": 343.52,
+      "text": "want to add a get endpoint to the"
+    },
+    {
+      "start": 345.28,
+      "text": "t-shirt uri we can do that by passing"
+    },
+    {
+      "start": 348.8,
+      "text": "t-shirt as its first argument"
+    },
+    {
+      "start": 351.199,
+      "text": "that'll automatically set up our server"
+    },
+    {
+      "start": 352.96,
+      "text": "with that endpoint then it's our job to"
+    },
+    {
+      "start": 355.44,
+      "text": "handle a request to it which we do by"
+    },
+    {
+      "start": 358.08,
+      "text": "passing a callback function as the"
+    },
+    {
+      "start": 359.84,
+      "text": "second argument whenever a client or end"
+    },
+    {
+      "start": 362.8,
+      "text": "user requests that url it will fire this"
+    },
+    {
+      "start": 365.44,
+      "text": "callback function to handle the request"
+    },
+    {
+      "start": 367.919,
+      "text": "the function itself provides access to"
+    },
+    {
+      "start": 370.0,
+      "text": "two different objects the request object"
+    },
+    {
+      "start": 372.4,
+      "text": "and the response object the request is"
+    },
+    {
+      "start": 374.72,
+      "text": "the incoming data while the response is"
+    },
+    {
+      "start": 377.039,
+      "text": "the data we want to send back to the"
+    },
+    {
+      "start": 378.639,
+      "text": "client the most important thing it does"
+    },
+    {
+      "start": 380.56,
+      "text": "is allow us to send a response back to"
+    },
+    {
+      "start": 382.479,
+      "text": "the client that response can have a"
+    },
+    {
+      "start": 384.16,
+      "text": "status code like 200 for an ok response"
+    },
+    {
+      "start": 387.52,
+      "text": "then we can send a data payload along"
+    },
+    {
+      "start": 389.759,
+      "text": "with it if we pass a javascript object"
+    },
+    {
+      "start": 392.08,
+      "text": "as the argument then it will send that"
+    },
+    {
+      "start": 393.84,
+      "text": "data back as json by default let's go"
+    },
+    {
+      "start": 396.72,
+      "text": "ahead and save the file then restart the"
+    },
+    {
+      "start": 398.96,
+      "text": "server from the terminal from insomnia"
+    },
+    {
+      "start": 401.199,
+      "text": "we can then make a get request to"
+    },
+    {
+      "start": 403.199,
+      "text": "localhost 8080 t-shirt when we do that"
+    },
+    {
+      "start": 406.4,
+      "text": "we get a json object back as the"
+    },
+    {
+      "start": 408.56,
+      "text": "response body with a status code of 200."
+    },
+    {
+      "start": 411.68,
+      "text": "that's pretty cool but now let's go back"
+    },
+    {
+      "start": 413.44,
+      "text": "to our code and add a second endpoint"
+    },
+    {
+      "start": 415.919,
+      "text": "this time a post endpoint followed by a"
+    },
+    {
+      "start": 418.4,
+      "text": "slash and a dynamic url parameter that"
+    },
+    {
+      "start": 421.44,
+      "text": "represents the id of that t-shirt there"
+    },
+    {
+      "start": 424.0,
+      "text": "might be millions of different t-shirts"
+    },
+    {
+      "start": 425.68,
+      "text": "on this api and a dynamic url allows us"
+    },
+    {
+      "start": 428.56,
+      "text": "to handle all of them from a single"
+    },
+    {
+      "start": 430.56,
+      "text": "function when dealing with a post"
+    },
+    {
+      "start": 432.24,
+      "text": "request it means that the user is trying"
+    },
+    {
+      "start": 434.56,
+      "text": "to create new data on the server or"
+    },
+    {
+      "start": 436.72,
+      "text": "create a new t-shirt in this case first"
+    },
+    {
+      "start": 438.72,
+      "text": "we need the id which we can get from the"
+    },
+    {
+      "start": 440.88,
+      "text": "url and its value is made available to"
+    },
+    {
+      "start": 443.36,
+      "text": "us on the request parameters object"
+    },
+    {
+      "start": 445.919,
+      "text": "second we also need a logo for the"
+    },
+    {
+      "start": 447.759,
+      "text": "t-shirt but the logo is contained in the"
+    },
+    {
+      "start": 450.479,
+      "text": "request body which if you remember from"
+    },
+    {
+      "start": 452.72,
+      "text": "earlier is a custom data payload"
+    },
+    {
+      "start": 454.96,
+      "text": "contained in the incoming request in"
+    },
+    {
+      "start": 456.88,
+      "text": "other words the request object in"
+    },
+    {
+      "start": 458.639,
+      "text": "express allows us to access information"
+    },
+    {
+      "start": 461.52,
+      "text": "from the request message like the url"
+    },
+    {
+      "start": 463.919,
+      "text": "parameters the body the headers etc and"
+    },
+    {
+      "start": 467.36,
+      "text": "now that we have that information we"
+    },
+    {
+      "start": 468.96,
+      "text": "could use it to save a new record to the"
+    },
+    {
+      "start": 470.72,
+      "text": "database or something along those lines"
+    },
+    {
+      "start": 472.879,
+      "text": "that's beyond the scope of this video"
+    },
+    {
+      "start": 474.56,
+      "text": "what we'll do for right now is check to"
+    },
+    {
+      "start": 476.4,
+      "text": "make sure that we have a logo in the"
+    },
+    {
+      "start": 478.08,
+      "text": "request body and if we don't then we'll"
+    },
+    {
+      "start": 480.8,
+      "text": "send an error response with a 418 status"
+    },
+    {
+      "start": 483.919,
+      "text": "code and an error message that we need a"
+    },
+    {
+      "start": 486.16,
+      "text": "logo"
+    },
+    {
+      "start": 487.28,
+      "text": "but assuming we do have a valid logo we"
+    },
+    {
+      "start": 489.28,
+      "text": "can just send a response with a t-shirt"
+    },
+    {
+      "start": 491.28,
+      "text": "that contains that logo and id now let's"
+    },
+    {
+      "start": 493.84,
+      "text": "go back to insomnia and we'll make a"
+    },
+    {
+      "start": 495.68,
+      "text": "post request to that t-shirt endpoint"
+    },
+    {
+      "start": 498.0,
+      "text": "followed by a unique id that can be"
+    },
+    {
+      "start": 500.16,
+      "text": "whatever you want then in the body"
+    },
+    {
+      "start": 502.08,
+      "text": "section we'll go ahead and add a request"
+    },
+    {
+      "start": 504.4,
+      "text": "body with a format of json and it's just"
+    },
+    {
+      "start": 507.199,
+      "text": "a json object that contains a logo with"
+    },
+    {
+      "start": 509.84,
+      "text": "a string value if we send that request"
+    },
+    {
+      "start": 512.08,
+      "text": "you'll notice we get a 500 error"
+    },
+    {
+      "start": 514.32,
+      "text": "response which means our api code is"
+    },
+    {
+      "start": 516.399,
+      "text": "broken so what's going on here it's"
+    },
+    {
+      "start": 518.399,
+      "text": "telling us we have a runtime error"
+    },
+    {
+      "start": 520.159,
+      "text": "because we can't destructure the"
+    },
+    {
+      "start": 521.68,
+      "text": "property logo from the request body the"
+    },
+    {
+      "start": 524.08,
+      "text": "reason for that is that express does not"
+    },
+    {
+      "start": 526.399,
+      "text": "parse json in the body by default not"
+    },
+    {
+      "start": 529.2,
+      "text": "everybody uses express to build a json"
+    },
+    {
+      "start": 531.279,
+      "text": "api so that's not the default behavior"
+    },
+    {
+      "start": 533.68,
+      "text": "what we need to do here is set up"
+    },
+    {
+      "start": 535.36,
+      "text": "middleware that tells express to parse"
+    },
+    {
+      "start": 538.0,
+      "text": "json before the actual data hits the"
+    },
+    {
+      "start": 541.12,
+      "text": "function that we're using here to handle"
+    },
+    {
+      "start": 542.8,
+      "text": "the request when you hear the term"
+    },
+    {
+      "start": 544.399,
+      "text": "middleware think of shared code that"
+    },
+    {
+      "start": 546.16,
+      "text": "runs before every endpoint callback that"
+    },
+    {
+      "start": 548.24,
+      "text": "you've defined very common middleware is"
+    },
+    {
+      "start": 550.64,
+      "text": "built into express itself we can"
+    },
+    {
+      "start": 552.48,
+      "text": "refactor our code here a little bit to"
+    },
+    {
+      "start": 554.399,
+      "text": "make a variable for express and then we"
+    },
+    {
+      "start": 556.56,
+      "text": "can call app.use to apply middleware in"
+    },
+    {
+      "start": 559.68,
+      "text": "this case the middleware we want to"
+    },
+    {
+      "start": 561.36,
+      "text": "apply is the express.json middleware now"
+    },
+    {
+      "start": 564.56,
+      "text": "every request that comes in will first"
+    },
+    {
+      "start": 566.48,
+      "text": "go through this express json middleware"
+    },
+    {
+      "start": 568.72,
+      "text": "which will convert the body to json"
+    },
+    {
+      "start": 570.959,
+      "text": "therefore making it available in our"
+    },
+    {
+      "start": 572.8,
+      "text": "post callback let's go ahead and save"
+    },
+    {
+      "start": 574.959,
+      "text": "restart our server and then go back to"
+    },
+    {
+      "start": 576.959,
+      "text": "insomnia and if we send the same exact"
+    },
+    {
+      "start": 579.2,
+      "text": "request you'll notice this time we get"
+    },
+    {
+      "start": 581.44,
+      "text": "back a successful response"
+    },
+    {
+      "start": 583.6,
+      "text": "in addition if we make the logo an empty"
+    },
+    {
+      "start": 585.839,
+      "text": "string and try to send the same request"
+    },
+    {
+      "start": 588.24,
+      "text": "we get a 418 response along with a"
+    },
+    {
+      "start": 590.64,
+      "text": "message that we need a logo"
+    },
+    {
+      "start": 592.72,
+      "text": "congratulations you just built a restful"
+    },
+    {
+      "start": 594.88,
+      "text": "api from scratch with node.js and"
+    },
+    {
+      "start": 597.2,
+      "text": "express but before we wrap up the video"
+    },
+    {
+      "start": 599.44,
+      "text": "there's one more thing you should"
+    },
+    {
+      "start": 600.56,
+      "text": "definitely know about when it comes to"
+    },
+    {
+      "start": 602.16,
+      "text": "restful apis and that is the open api"
+    },
+    {
+      "start": 604.88,
+      "text": "spec which provides a standard way to"
+    },
+    {
+      "start": 606.88,
+      "text": "describe an api in yaml it originally"
+    },
+    {
+      "start": 609.279,
+      "text": "came about in something called the"
+    },
+    {
+      "start": 610.8,
+      "text": "swagger framework and what it allows you"
+    },
+    {
+      "start": 612.8,
+      "text": "to do is describe your api in a way that"
+    },
+    {
+      "start": 615.2,
+      "text": "can be understood by both humans and"
+    },
+    {
+      "start": 617.2,
+      "text": "machines and if you're building a"
+    },
+    {
+      "start": 618.959,
+      "text": "serious api you get all kinds of awesome"
+    },
+    {
+      "start": 621.2,
+      "text": "benefits in the process your api will be"
+    },
+    {
+      "start": 623.6,
+      "text": "fully documented making it much easier"
+    },
+    {
+      "start": 625.76,
+      "text": "for the end user to work with and"
+    },
+    {
+      "start": 627.68,
+      "text": "because it follows a standard format you"
+    },
+    {
+      "start": 629.519,
+      "text": "can actually just automatically generate"
+    },
+    {
+      "start": 631.519,
+      "text": "all of your client-side or server-side"
+    },
+    {
+      "start": 633.44,
+      "text": "code what i'm using right now is a free"
+    },
+    {
+      "start": 635.44,
+      "text": "tool called swaggerhub and i can come up"
+    },
+    {
+      "start": 637.44,
+      "text": "here and hit the export button to"
+    },
+    {
+      "start": 639.279,
+      "text": "automatically generate a bunch of"
+    },
+    {
+      "start": 640.88,
+      "text": "boilerplate code now i'm usually not a"
+    },
+    {
+      "start": 642.88,
+      "text": "huge fan of code generators but there's"
+    },
+    {
+      "start": 644.88,
+      "text": "a more powerful reason to use open api"
+    },
+    {
+      "start": 647.44,
+      "text": "when you describe your api with the open"
+    },
+    {
+      "start": 649.2,
+      "text": "api spec you can then upload the"
+    },
+    {
+      "start": 651.04,
+      "text": "configuration to tools like api gateway"
+    },
+    {
+      "start": 653.76,
+      "text": "on aws or google cloud where it can be"
+    },
+    {
+      "start": 656.32,
+      "text": "secured monitored and connected to"
+    },
+    {
+      "start": 658.48,
+      "text": "backend infrastructure let me know if"
+    },
+    {
+      "start": 660.24,
+      "text": "you want to see a full tutorial on that"
+    },
+    {
+      "start": 661.76,
+      "text": "topic but i'm going to go ahead and wrap"
+    },
+    {
+      "start": 663.76,
+      "text": "things up there and if you want access"
+    },
+    {
+      "start": 665.2,
+      "text": "to even more advanced content consider"
+    },
+    {
+      "start": 667.12,
+      "text": "becoming a pro member at fireship io"
+    },
+    {
+      "start": 669.68,
+      "text": "thanks for watching and i will see you"
+    },
+    {
+      "start": 671.519,
+      "text": "in the next one"
+    }
+  ],
+  "text": "an application programming interface or api is a way for two computers to talk to each other using an api is just like using a website in your browser but instead of clicking buttons and filling out forms you write code to explicitly request data from a server for example we could visit the nasa website to look at asteroids or we could use their rest api to request the raw json data that is shown on the screen now most apis in the world are restful which means they follow a set of rules or constraints known as representational state transfer which has been the de facto standard for api development since the early 2000s a restful api organizes data entities or resources into a bunch of unique urls well technically not urls but uris or uniform resource identifiers that differentiate different types of data resources on a server a client can get data about a resource by making a request to that endpoint over http the request message has a very specific format most importantly the start line contains the uri that you wish to access which is preceded by an http verb or request method which signal your intent with the resource a get request means you just want to read the data while post means you want to create a new resource patch is for updates delete is for removing data along with a few other methods beyond those below the start line we have headers which contain metadata about the request the accept header can tell the server you want the data in a specific format or the authorization header can be used to tell the server that you're actually allowed to make that request then following the headers we have the body which contains a custom payload of data the server will receive the request message then execute some code usually to read from a database that can then be formatted into a response message the top of the message contains a status code to tell the client what happened to their request codes at the 200 level mean that things went well at the 400 level it means something was wrong with your request and at the 500 level it means that the server failed after the status code we then have the response headers which contain information about the server that's followed by the response body which contains the data payload and is usually formatted in json when talking about apis now an important part of this architecture is that it's stateless which means that the two parties don't need to store any information about each other and every request response cycle is independent from all other communication and this leads to well-behaved web applications that are predictable and reliable this has been restful apis in 100 seconds if you enjoyed it leave a comment below then next week i'll pick out the best one to win this free t-shirt and now it's time to go beyond 100 seconds to build a restful api from scratch the most popular framework for building restful apis in node is express.js it's been around forever and it's very minimal and easy to learn if you know a little bit of javascript over the next few minutes we'll use express to build our own restful api from scratch you'll learn how to create different endpoints for your api we'll also look at slightly more advanced concepts like middleware and tools in the cloud for deploying your api like api gateways to get started you'll want to open up vs code to an empty directory you'll need to have node.js installed and i'm using version 12 for this video to start a new node project let's run npm init y from the command line this will create a package json and give us a context for installing packages that we can use in node like express let's go ahead and install express using npm install you'll notice that adds express to our dependencies in the package.json file from there we'll need a file to write our code in so let's create an index.js file at the top of that file we'll declare a variable for app which represents the actual api that we're building and its value is an import of the express package which itself is a function so we'll add parentheses after it to initialize it now at this point our api hasn't defined any endpoints but let's go ahead and run it anyway the way you fire up your api on the server is by calling app.listen that tells it to listen on a specific port which we've defined as its own separate variable as 8080. then as an optional second argument to listen we can fire a callback to let us know when the api is ready and we'll just have it console log the main url we can now run the api by going to the terminal and running node period to run that index.js file and it should console.log it's live on localhost 8080. if we paste the url into the browser you can see we get a message of cannot get that's because we don't have any api endpoints set up yet but express is still responding with an error message in fact you can open up the network tab in chrome if we look closely we can see that our server responded with a 404 status code meaning that page was not found at this point we know our api is working but debugging it in the browser is usually not the best option there are many different ways we can access our api we could use curl from the command line we could install a vs code extension or we could use a rest client like insomnia or postman i'm going to be using insomnia throughout the rest of this video because it provides a really nice way to format your requests and also view a history of all your interactions from insomnia we can create a new request then simply paste in our url we can easily change the http verb from the drop down menu here click send and then get the response in a nicely formatted developer friendly way we can even see the timeline here with our request in yellow and the response in green but now we need to get back to our javascript and add an endpoint to the api we can do that by changing an http verb to the app instance if you type a period after app you'll get intellisense on a bunch of different methods that live on this object and you'll notice methods for git post patch etc which represent different http verbs if we want to add a get endpoint to the t-shirt uri we can do that by passing t-shirt as its first argument that'll automatically set up our server with that endpoint then it's our job to handle a request to it which we do by passing a callback function as the second argument whenever a client or end user requests that url it will fire this callback function to handle the request the function itself provides access to two different objects the request object and the response object the request is the incoming data while the response is the data we want to send back to the client the most important thing it does is allow us to send a response back to the client that response can have a status code like 200 for an ok response then we can send a data payload along with it if we pass a javascript object as the argument then it will send that data back as json by default let's go ahead and save the file then restart the server from the terminal from insomnia we can then make a get request to localhost 8080 t-shirt when we do that we get a json object back as the response body with a status code of 200. that's pretty cool but now let's go back to our code and add a second endpoint this time a post endpoint followed by a slash and a dynamic url parameter that represents the id of that t-shirt there might be millions of different t-shirts on this api and a dynamic url allows us to handle all of them from a single function when dealing with a post request it means that the user is trying to create new data on the server or create a new t-shirt in this case first we need the id which we can get from the url and its value is made available to us on the request parameters object second we also need a logo for the t-shirt but the logo is contained in the request body which if you remember from earlier is a custom data payload contained in the incoming request in other words the request object in express allows us to access information from the request message like the url parameters the body the headers etc and now that we have that information we could use it to save a new record to the database or something along those lines that's beyond the scope of this video what we'll do for right now is check to make sure that we have a logo in the request body and if we don't then we'll send an error response with a 418 status code and an error message that we need a logo but assuming we do have a valid logo we can just send a response with a t-shirt that contains that logo and id now let's go back to insomnia and we'll make a post request to that t-shirt endpoint followed by a unique id that can be whatever you want then in the body section we'll go ahead and add a request body with a format of json and it's just a json object that contains a logo with a string value if we send that request you'll notice we get a 500 error response which means our api code is broken so what's going on here it's telling us we have a runtime error because we can't destructure the property logo from the request body the reason for that is that express does not parse json in the body by default not everybody uses express to build a json api so that's not the default behavior what we need to do here is set up middleware that tells express to parse json before the actual data hits the function that we're using here to handle the request when you hear the term middleware think of shared code that runs before every endpoint callback that you've defined very common middleware is built into express itself we can refactor our code here a little bit to make a variable for express and then we can call app.use to apply middleware in this case the middleware we want to apply is the express.json middleware now every request that comes in will first go through this express json middleware which will convert the body to json therefore making it available in our post callback let's go ahead and save restart our server and then go back to insomnia and if we send the same exact request you'll notice this time we get back a successful response in addition if we make the logo an empty string and try to send the same request we get a 418 response along with a message that we need a logo congratulations you just built a restful api from scratch with node.js and express but before we wrap up the video there's one more thing you should definitely know about when it comes to restful apis and that is the open api spec which provides a standard way to describe an api in yaml it originally came about in something called the swagger framework and what it allows you to do is describe your api in a way that can be understood by both humans and machines and if you're building a serious api you get all kinds of awesome benefits in the process your api will be fully documented making it much easier for the end user to work with and because it follows a standard format you can actually just automatically generate all of your client-side or server-side code what i'm using right now is a free tool called swaggerhub and i can come up here and hit the export button to automatically generate a bunch of boilerplate code now i'm usually not a huge fan of code generators but there's a more powerful reason to use open api when you describe your api with the open api spec you can then upload the configuration to tools like api gateway on aws or google cloud where it can be secured monitored and connected to backend infrastructure let me know if you want to see a full tutorial on that topic but i'm going to go ahead and wrap things up there and if you want access to even more advanced content consider becoming a pro member at fireship io thanks for watching and i will see you in the next one"
+}

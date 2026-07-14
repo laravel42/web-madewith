@@ -1,0 +1,1352 @@
+{
+  "videoId": "CW7kvEJlNys",
+  "language": "en",
+  "source": "auto",
+  "segments": [
+    {
+      "start": 0.1,
+      "text": "[Music]"
+    },
+    {
+      "start": 2.27,
+      "text": "hey all Gary Simon of course cetera"
+    },
+    {
+      "start": 5.339,
+      "text": "today we're going to talk about how to"
+    },
+    {
+      "start": 7.44,
+      "text": "properly theme your ionic app and this"
+    },
+    {
+      "start": 10.98,
+      "text": "involves using SAS variables and also"
+    },
+    {
+      "start": 13.2,
+      "text": "understanding how to use the official"
+    },
+    {
+      "start": 14.91,
+      "text": "documentation so we're going to run"
+    },
+    {
+      "start": 16.65,
+      "text": "through a quick project from scratch so"
+    },
+    {
+      "start": 18.869,
+      "text": "I can show you and then you can gain"
+    },
+    {
+      "start": 20.13,
+      "text": "confidence going forward with really any"
+    },
+    {
+      "start": 22.41,
+      "text": "type of layout dreaming options or"
+    },
+    {
+      "start": 25.4,
+      "text": "component issues in terms of coloring"
+    },
+    {
+      "start": 27.63,
+      "text": "and positioning and all of that all"
+    },
+    {
+      "start": 29.279,
+      "text": "right so I'm gonna switch to my desktop"
+    },
+    {
+      "start": 30.66,
+      "text": "and the first thing we're gonna do is"
+    },
+    {
+      "start": 33.059,
+      "text": "bring up for consul here yeah"
+    },
+    {
+      "start": 35.94,
+      "text": "oh but real quick before we begin make"
+    },
+    {
+      "start": 38.52,
+      "text": "sure you check out my site course cetera"
+    },
+    {
+      "start": 40.23,
+      "text": "comm where you're gonna find a bunch of"
+    },
+    {
+      "start": 42.27,
+      "text": "courses on modern design and development"
+    },
+    {
+      "start": 44.55,
+      "text": "a lot are free and others you can access"
+    },
+    {
+      "start": 47.64,
+      "text": "for the cost of buying me like a six"
+    },
+    {
+      "start": 49.5,
+      "text": "pack each month that's it now also it"
+    },
+    {
+      "start": 51.989,
+      "text": "probably wouldn't hurt to subscribe here"
+    },
+    {
+      "start": 53.76,
+      "text": "on YouTube and be sure to make sure the"
+    },
+    {
+      "start": 55.649,
+      "text": "notifications are turned on all right"
+    },
+    {
+      "start": 58.05,
+      "text": "let's get back to it we're just gonna"
+    },
+    {
+      "start": 59.76,
+      "text": "start a new project now I'm going to"
+    },
+    {
+      "start": 62.25,
+      "text": "assume that you already have the"
+    },
+    {
+      "start": 65.159,
+      "text": "prerequisites installed nodejs NPM and"
+    },
+    {
+      "start": 67.65,
+      "text": "the ionic command line interface tool so"
+    },
+    {
+      "start": 70.95,
+      "text": "we're just going to put I on ik will do"
+    },
+    {
+      "start": 74.549,
+      "text": "start you name the project ionic theming"
+    },
+    {
+      "start": 78.27,
+      "text": "and we'll create the side menu template"
+    },
+    {
+      "start": 83.659,
+      "text": "just real quickly and I'm going to hit Y"
+    },
+    {
+      "start": 86.759,
+      "text": "for yes to target iOS and Android and so"
+    },
+    {
+      "start": 90.99,
+      "text": "the reason I'm putting the the side menu"
+    },
+    {
+      "start": 94.35,
+      "text": "template is simply because I wanted to"
+    },
+    {
+      "start": 96.72,
+      "text": "set up the top navigation bar with a"
+    },
+    {
+      "start": 100.29,
+      "text": "little menu there just to give us"
+    },
+    {
+      "start": 102.119,
+      "text": "something interesting unique to look at"
+    },
+    {
+      "start": 104.46,
+      "text": "all right so I was just waiting for this"
+    },
+    {
+      "start": 106.649,
+      "text": "to load alright so now let's hop into it"
+    },
+    {
+      "start": 110.7,
+      "text": "with CD ionic theming and then we'll put"
+    },
+    {
+      "start": 116.1,
+      "text": "in ionic serve - L now before I hit"
+    },
+    {
+      "start": 119.759,
+      "text": "enter I just wanted to let you know that"
+    },
+    {
+      "start": 121.35,
+      "text": "there's this really cool new app from"
+    },
+    {
+      "start": 123.0,
+      "text": "the ionic scheme called dev app search"
+    },
+    {
+      "start": 125.07,
+      "text": "for it in the Play Store apps were for"
+    },
+    {
+      "start": 126.6,
+      "text": "Android or iOS and it allow you to live"
+    },
+    {
+      "start": 129.569,
+      "text": "reload and show exactly you know as you"
+    },
+    {
+      "start": 133.17,
+      "text": "may"
+    },
+    {
+      "start": 133.38,
+      "text": "changes as you're developing your app on"
+    },
+    {
+      "start": 135.54,
+      "text": "your phone which is really cool it's"
+    },
+    {
+      "start": 137.28,
+      "text": "just really like I think within the past"
+    },
+    {
+      "start": 139.23,
+      "text": "month here all right so it's gonna load"
+    },
+    {
+      "start": 146.0,
+      "text": "alright so let me drag us over here okay"
+    },
+    {
+      "start": 150.63,
+      "text": "so I think it's CIF by both iOS and"
+    },
+    {
+      "start": 153.21,
+      "text": "Android here in the lab view and you can"
+    },
+    {
+      "start": 155.76,
+      "text": "see under platforms I have both of these"
+    },
+    {
+      "start": 157.62,
+      "text": "toggled on alright so the first thing"
+    },
+    {
+      "start": 160.74,
+      "text": "that we'll consider is how do we change"
+    },
+    {
+      "start": 163.56,
+      "text": "the theme from light to dark right now"
+    },
+    {
+      "start": 166.29,
+      "text": "we have the light theme so to do that"
+    },
+    {
+      "start": 168.93,
+      "text": "very very simple of course let's open up"
+    },
+    {
+      "start": 171.51,
+      "text": "here Visual Studio code I'm gonna open"
+    },
+    {
+      "start": 173.91,
+      "text": "up the project here I'm off screen for a"
+    },
+    {
+      "start": 176.19,
+      "text": "second alright okay so to do that we're"
+    },
+    {
+      "start": 181.5,
+      "text": "first going to go to source and then"
+    },
+    {
+      "start": 183.03,
+      "text": "theme and then variables dot sass right"
+    },
+    {
+      "start": 185.97,
+      "text": "here so we're gonna be working within"
+    },
+    {
+      "start": 188.61,
+      "text": "this file quite a bit and if we scroll"
+    },
+    {
+      "start": 192.33,
+      "text": "to the bottom to change to the dark"
+    },
+    {
+      "start": 194.1,
+      "text": "theme you can see where here we have"
+    },
+    {
+      "start": 196.14,
+      "text": "import ionic theme default change"
+    },
+    {
+      "start": 198.81,
+      "text": "default to dark and then save and as you"
+    },
+    {
+      "start": 203.49,
+      "text": "can see we now have our dark theme very"
+    },
+    {
+      "start": 206.37,
+      "text": "very very very simple stuff okay so when"
+    },
+    {
+      "start": 210.09,
+      "text": "it comes to theming one of the I would"
+    },
+    {
+      "start": 212.7,
+      "text": "say the most important aspect to"
+    },
+    {
+      "start": 214.53,
+      "text": "understand is right here the colors SAS"
+    },
+    {
+      "start": 219.63,
+      "text": "map so this is called a SAS map you see"
+    },
+    {
+      "start": 222.75,
+      "text": "that it's just normal variable called"
+    },
+    {
+      "start": 224.49,
+      "text": "colors then it's opened up into this"
+    },
+    {
+      "start": 227.49,
+      "text": "parentheses which upon with a bunch of"
+    },
+    {
+      "start": 229.83,
+      "text": "colors with their property in value"
+    },
+    {
+      "start": 232.59,
+      "text": "specified here okay so for instance I"
+    },
+    {
+      "start": 236.79,
+      "text": "let's change our primary color and by"
+    },
+    {
+      "start": 239.94,
+      "text": "the way let me split this up real"
+    },
+    {
+      "start": 242.37,
+      "text": "quickly so that we can see on the left"
+    },
+    {
+      "start": 244.35,
+      "text": "and write our code editor along with our"
+    },
+    {
+      "start": 250.16,
+      "text": "project here okay so this right here"
+    },
+    {
+      "start": 254.19,
+      "text": "primary is what this buttons using this"
+    },
+    {
+      "start": 256.859,
+      "text": "is that blue and essentially this is"
+    },
+    {
+      "start": 259.59,
+      "text": "what most components will use as the"
+    },
+    {
+      "start": 261.9,
+      "text": "primary color so let's say for instance"
+    },
+    {
+      "start": 264.33,
+      "text": "we want to change this to a pink"
+    },
+    {
+      "start": 267.24,
+      "text": "type of color so I'm gonna put EC 1 for"
+    },
+    {
+      "start": 270.87,
+      "text": "B e will save it and there you go as you"
+    },
+    {
+      "start": 276.69,
+      "text": "can see very very very simple but what"
+    },
+    {
+      "start": 279.24,
+      "text": "if we wanted to change our navbar"
+    },
+    {
+      "start": 281.31,
+      "text": "background color up here as well as we"
+    },
+    {
+      "start": 284.28,
+      "text": "can see it's pretty much just dark gray"
+    },
+    {
+      "start": 286.139,
+      "text": "or black color well to do that let's hop"
+    },
+    {
+      "start": 289.86,
+      "text": "over here to our pages home and home"
+    },
+    {
+      "start": 294.69,
+      "text": "HTML and we can see that this is the"
+    },
+    {
+      "start": 298.47,
+      "text": "HTML that structures this section right"
+    },
+    {
+      "start": 301.47,
+      "text": "here we have the menu icon and we have"
+    },
+    {
+      "start": 303.12,
+      "text": "the home title right here so what we"
+    },
+    {
+      "start": 305.88,
+      "text": "want to do is add a color attribute"
+    },
+    {
+      "start": 309.11,
+      "text": "equals oops primary alright so we'll"
+    },
+    {
+      "start": 315.0,
+      "text": "save that and voila"
+    },
+    {
+      "start": 318.81,
+      "text": "berry there you go nice something thing"
+    },
+    {
+      "start": 320.88,
+      "text": "to note is that not every single"
+    },
+    {
+      "start": 323.61,
+      "text": "component and this is a component here I"
+    },
+    {
+      "start": 326.31,
+      "text": "on - and the name of the component"
+    },
+    {
+      "start": 328.25,
+      "text": "allows you to specify the color"
+    },
+    {
+      "start": 330.63,
+      "text": "attribute so just know that going"
+    },
+    {
+      "start": 332.25,
+      "text": "forward and you can really check that"
+    },
+    {
+      "start": 333.69,
+      "text": "out in the documentation and we'll be"
+    },
+    {
+      "start": 335.28,
+      "text": "checking that out momentarily so let's"
+    },
+    {
+      "start": 338.34,
+      "text": "also talk about how to add custom colors"
+    },
+    {
+      "start": 341.639,
+      "text": "to the colors sass map that we were"
+    },
+    {
+      "start": 343.8,
+      "text": "looking at so to do that go back to our"
+    },
+    {
+      "start": 346.59,
+      "text": "variables and we simply put in a comma"
+    },
+    {
+      "start": 349.139,
+      "text": "and let's create one called light-dark"
+    },
+    {
+      "start": 351.63,
+      "text": "which will kind of be an in-between"
+    },
+    {
+      "start": 353.699,
+      "text": "value and we'll put a color value of"
+    },
+    {
+      "start": 357.69,
+      "text": "three six three six three six alright"
+    },
+    {
+      "start": 362.25,
+      "text": "we'll save that and now this has been"
+    },
+    {
+      "start": 364.77,
+      "text": "added as a new color in the color sass"
+    },
+    {
+      "start": 367.71,
+      "text": "map but one thing to be aware of is you"
+    },
+    {
+      "start": 371.46,
+      "text": "every time you add a new color to it it"
+    },
+    {
+      "start": 373.74,
+      "text": "will increase pretty significantly the"
+    },
+    {
+      "start": 376.289,
+      "text": "file size of the CSS because it will"
+    },
+    {
+      "start": 378.599,
+      "text": "generate a rule set for each one of"
+    },
+    {
+      "start": 381.36,
+      "text": "those components with that color alright"
+    },
+    {
+      "start": 385.289,
+      "text": "so let's also talk about customizing"
+    },
+    {
+      "start": 387.99,
+      "text": "components based on the actual device"
+    },
+    {
+      "start": 391.039,
+      "text": "right here we have iOS versus Android"
+    },
+    {
+      "start": 394.289,
+      "text": "and we could see that there are slight"
+    },
+    {
+      "start": 396.36,
+      "text": "differences but you will notice even"
+    },
+    {
+      "start": 397.889,
+      "text": "more diff"
+    },
+    {
+      "start": 398.7,
+      "text": "if we were to start integrating some"
+    },
+    {
+      "start": 400.59,
+      "text": "different components so to do that let's"
+    },
+    {
+      "start": 404.25,
+      "text": "go to our home HTML I'm gonna hit ctrl B"
+    },
+    {
+      "start": 409.62,
+      "text": "by the way to get rid of the sidebar"
+    },
+    {
+      "start": 411.09,
+      "text": "you're in Visual Studio code and we're"
+    },
+    {
+      "start": 413.25,
+      "text": "gonna add a toolbar with a search bar"
+    },
+    {
+      "start": 415.68,
+      "text": "inside of it so to come right here paste"
+    },
+    {
+      "start": 419.22,
+      "text": "this in and we'll see it just has an ion"
+    },
+    {
+      "start": 423.09,
+      "text": "tool bar ion search bar and by the way"
+    },
+    {
+      "start": 426.18,
+      "text": "make sure that you know if I'm sitting"
+    },
+    {
+      "start": 429.9,
+      "text": "here pasting in code pretty much with"
+    },
+    {
+      "start": 432.12,
+      "text": "all my video tutorials here on YouTube"
+    },
+    {
+      "start": 434.58,
+      "text": "I have a written version so in the"
+    },
+    {
+      "start": 436.71,
+      "text": "description you can click on that"
+    },
+    {
+      "start": 438.27,
+      "text": "written version you can see all the code"
+    },
+    {
+      "start": 440.1,
+      "text": "that I'm copying and pasting that way"
+    },
+    {
+      "start": 442.44,
+      "text": "you know it's not so unfair that I'm"
+    },
+    {
+      "start": 444.69,
+      "text": "just that you're pasting you have to"
+    },
+    {
+      "start": 445.77,
+      "text": "pause or whatever so even though this"
+    },
+    {
+      "start": 447.96,
+      "text": "isn't much HTML but um so we have this"
+    },
+    {
+      "start": 450.51,
+      "text": "here to save that okay so now we can see"
+    },
+    {
+      "start": 455.34,
+      "text": "that significant difference right off"
+    },
+    {
+      "start": 457.32,
+      "text": "the bat iOS can't see anything when it"
+    },
+    {
+      "start": 461.94,
+      "text": "comes our Android yeah this actually"
+    },
+    {
+      "start": 463.65,
+      "text": "looks okay so how do we solve for some"
+    },
+    {
+      "start": 466.68,
+      "text": "of these discrepancies well the first"
+    },
+    {
+      "start": 469.56,
+      "text": "thing that we can try is if we can add"
+    },
+    {
+      "start": 471.57,
+      "text": "the color attribute here to our toolbar"
+    },
+    {
+      "start": 476.54,
+      "text": "we'll say color dark let's go ahead and"
+    },
+    {
+      "start": 479.88,
+      "text": "save that and now that has fixed this we"
+    },
+    {
+      "start": 483.75,
+      "text": "can actually see what's happening here"
+    },
+    {
+      "start": 486.42,
+      "text": "now however the Android version didn't"
+    },
+    {
+      "start": 491.34,
+      "text": "update at all so why is that well what"
+    },
+    {
+      "start": 497.52,
+      "text": "we want to do in this case is we want to"
+    },
+    {
+      "start": 500.64,
+      "text": "check out the search bar documentation"
+    },
+    {
+      "start": 504.15,
+      "text": "because that's what this is we're trying"
+    },
+    {
+      "start": 505.47,
+      "text": "to change the search bar what if I want"
+    },
+    {
+      "start": 507.0,
+      "text": "this search bar to look like this one"
+    },
+    {
+      "start": 508.41,
+      "text": "over here well let's look at the"
+    },
+    {
+      "start": 510.27,
+      "text": "documentation real quick for search bar"
+    },
+    {
+      "start": 512.1,
+      "text": "and here's the URL again this is linked"
+    },
+    {
+      "start": 514.35,
+      "text": "in a written tutorial if we go all the"
+    },
+    {
+      "start": 517.229,
+      "text": "way down"
+    },
+    {
+      "start": 518.0,
+      "text": "we'll see sass variables so let me back"
+    },
+    {
+      "start": 522.6,
+      "text": "up real quick right now we're in the API"
+    },
+    {
+      "start": 525.57,
+      "text": "section so if I go to back to main Doc's"
+    },
+    {
+      "start": 527.76,
+      "text": "for instance and I click on API that's"
+    },
+    {
+      "start": 529.71,
+      "text": "going to take this where we were"
+    },
+    {
+      "start": 531.88,
+      "text": "and then we just scroll down and click"
+    },
+    {
+      "start": 533.38,
+      "text": "on search bar as you can see there's"
+    },
+    {
+      "start": 535.24,
+      "text": "very there's a lot of different"
+    },
+    {
+      "start": 536.65,
+      "text": "components and they're all pretty much"
+    },
+    {
+      "start": 538.12,
+      "text": "structured the same they have SAS virial"
+    },
+    {
+      "start": 540.91,
+      "text": "variables section right here with a few"
+    },
+    {
+      "start": 544.12,
+      "text": "different tabs of iOS material design"
+    },
+    {
+      "start": 546.37,
+      "text": "and Windows platform that shows the"
+    },
+    {
+      "start": 549.67,
+      "text": "appropriate SAS variables and so the one"
+    },
+    {
+      "start": 552.88,
+      "text": "that we would want to find is because"
+    },
+    {
+      "start": 555.58,
+      "text": "the thing that we want to change going"
+    },
+    {
+      "start": 557.77,
+      "text": "back to our example is this search bar"
+    },
+    {
+      "start": 561.25,
+      "text": "input so if we scroll down if we click"
+    },
+    {
+      "start": 565.75,
+      "text": "on material design for instance that's"
+    },
+    {
+      "start": 567.43,
+      "text": "the one we want to change material"
+    },
+    {
+      "start": 568.99,
+      "text": "design is applicable to android we'll"
+    },
+    {
+      "start": 573.31,
+      "text": "see that we have or if we hit ctrl F and"
+    },
+    {
+      "start": 577.32,
+      "text": "hit on a background there it is we can"
+    },
+    {
+      "start": 580.99,
+      "text": "see right here by default it's colored"
+    },
+    {
+      "start": 582.94,
+      "text": "that way so all we have to do is copy"
+    },
+    {
+      "start": 586.27,
+      "text": "this and we'll go back to our variables"
+    },
+    {
+      "start": 589.87,
+      "text": "and under app material design variables"
+    },
+    {
+      "start": 593.89,
+      "text": "this is where we would paste that and"
+    },
+    {
+      "start": 596.23,
+      "text": "redefine it all right so what if we"
+    },
+    {
+      "start": 599.5,
+      "text": "wanted to make our light dark our custom"
+    },
+    {
+      "start": 602.23,
+      "text": "color in the colors SAS map I'm very"
+    },
+    {
+      "start": 605.35,
+      "text": "simple we simply put color and then"
+    },
+    {
+      "start": 608.71,
+      "text": "inside of it it accepts two parameters"
+    },
+    {
+      "start": 610.9,
+      "text": "it's going to be the name of the color"
+    },
+    {
+      "start": 612.64,
+      "text": "SAS map colors and then also the actual"
+    },
+    {
+      "start": 616.81,
+      "text": "color that's defined within light dark"
+    },
+    {
+      "start": 619.11,
+      "text": "so let's save it and now you'll see"
+    },
+    {
+      "start": 622.53,
+      "text": "perfect now they're much more consistent"
+    },
+    {
+      "start": 626.31,
+      "text": "all right"
+    },
+    {
+      "start": 627.58,
+      "text": "so let's practice a little bit more with"
+    },
+    {
+      "start": 629.95,
+      "text": "this so you can get more muscle memory"
+    },
+    {
+      "start": 631.86,
+      "text": "trying to figure out how to change"
+    },
+    {
+      "start": 633.88,
+      "text": "different aspects and it's not just"
+    },
+    {
+      "start": 636.01,
+      "text": "colors you can also change padding"
+    },
+    {
+      "start": 638.25,
+      "text": "margin sizing all that stuff so what"
+    },
+    {
+      "start": 642.64,
+      "text": "we'll do is I'm going to and by the way"
+    },
+    {
+      "start": 645.49,
+      "text": "this is one of the points where you're"
+    },
+    {
+      "start": 646.75,
+      "text": "going to want to refer to the written"
+    },
+    {
+      "start": 649.0,
+      "text": "tutorial because there's a lot of HTML"
+    },
+    {
+      "start": 651.55,
+      "text": "am about to paste in so do that real"
+    },
+    {
+      "start": 655.03,
+      "text": "quick and I'll show you which part we're"
+    },
+    {
+      "start": 656.29,
+      "text": "gonna be pasting in we're gonna go to"
+    },
+    {
+      "start": 657.79,
+      "text": "our home HTML and I'm going to copy and"
+    },
+    {
+      "start": 660.58,
+      "text": "then replace all of this stuff right"
+    },
+    {
+      "start": 663.04,
+      "text": "here in ion content so"
+    },
+    {
+      "start": 665.78,
+      "text": "paste this so what I just pasted was"
+    },
+    {
+      "start": 669.5,
+      "text": "this ion content class equals card"
+    },
+    {
+      "start": 671.57,
+      "text": "background page so we're gonna have"
+    },
+    {
+      "start": 673.52,
+      "text": "several cards from the components and"
+    },
+    {
+      "start": 676.61,
+      "text": "then we're also going to have our ion"
+    },
+    {
+      "start": 680.18,
+      "text": "fab a fab button which is a floating"
+    },
+    {
+      "start": 682.88,
+      "text": "action button alright so by default if I"
+    },
+    {
+      "start": 687.62,
+      "text": "just save this we're going to see that"
+    },
+    {
+      "start": 691.52,
+      "text": "we have some broken images so we have"
+    },
+    {
+      "start": 693.68,
+      "text": "this assets images there's four"
+    },
+    {
+      "start": 695.18,
+      "text": "different images and again all this HTML"
+    },
+    {
+      "start": 697.07,
+      "text": "is coming from that documentation so"
+    },
+    {
+      "start": 700.52,
+      "text": "what you want to do in order to get"
+    },
+    {
+      "start": 702.14,
+      "text": "these images to work is refer to the"
+    },
+    {
+      "start": 705.05,
+      "text": "documentation"
+    },
+    {
+      "start": 706.07,
+      "text": "all right background cards with images"
+    },
+    {
+      "start": 708.56,
+      "text": "we can just take this we can go and save"
+    },
+    {
+      "start": 712.25,
+      "text": "image as first I'm going to refer back"
+    },
+    {
+      "start": 715.04,
+      "text": "here"
+    },
+    {
+      "start": 715.64,
+      "text": "hit ctrl B go to assets right click and"
+    },
+    {
+      "start": 719.35,
+      "text": "reveal an explorer because II just"
+    },
+    {
+      "start": 722.24,
+      "text": "showing up right here and then the"
+    },
+    {
+      "start": 727.58,
+      "text": "section that we want to go in is and"
+    },
+    {
+      "start": 729.65,
+      "text": "assets IMG s we're going to simply save"
+    },
+    {
+      "start": 733.94,
+      "text": "them right in this folder so I'm going"
+    },
+    {
+      "start": 735.32,
+      "text": "to copy this location and then"
+    },
+    {
+      "start": 738.17,
+      "text": "right-click on each one of these save"
+    },
+    {
+      "start": 739.76,
+      "text": "image as and as you can see I was"
+    },
+    {
+      "start": 744.2,
+      "text": "working on the same thing previously so"
+    },
+    {
+      "start": 749.3,
+      "text": "we're gonna save that there save image"
+    },
+    {
+      "start": 752.0,
+      "text": "as there save image as there and then"
+    },
+    {
+      "start": 757.43,
+      "text": "one more time save image as okay all"
+    },
+    {
+      "start": 763.16,
+      "text": "right great so now going back we refresh"
+    },
+    {
+      "start": 767.81,
+      "text": "this we now have our images now of"
+    },
+    {
+      "start": 771.65,
+      "text": "course it still looks like garbage"
+    },
+    {
+      "start": 772.82,
+      "text": "because we have a little bit of CSS to"
+    },
+    {
+      "start": 774.56,
+      "text": "paste in as well so that's the SS once"
+    },
+    {
+      "start": 777.589,
+      "text": "again it comes from the official"
+    },
+    {
+      "start": 778.88,
+      "text": "documentation for cards and we're gonna"
+    },
+    {
+      "start": 781.7,
+      "text": "go to home a CSS and just paste this in"
+    },
+    {
+      "start": 784.58,
+      "text": "and save okay now it's looking pretty"
+    },
+    {
+      "start": 788.9,
+      "text": "decent let me drag this up so we can"
+    },
+    {
+      "start": 792.35,
+      "text": "actually see the whole layout"
+    },
+    {
+      "start": 795.52,
+      "text": "okay so now at this point let's say for"
+    },
+    {
+      "start": 800.83,
+      "text": "instance we want to give ourselves more"
+    },
+    {
+      "start": 802.779,
+      "text": "margin for where this floating action"
+    },
+    {
+      "start": 805.149,
+      "text": "button is like we think it's maybe a"
+    },
+    {
+      "start": 807.55,
+      "text": "little bit a little bit too close to the"
+    },
+    {
+      "start": 809.68,
+      "text": "top and right well referring back to the"
+    },
+    {
+      "start": 813.22,
+      "text": "documentation if we go to floating API"
+    },
+    {
+      "start": 818.35,
+      "text": "floating action button API right here"
+    },
+    {
+      "start": 821.29,
+      "text": "scroll down we can see under sass"
+    },
+    {
+      "start": 824.14,
+      "text": "variables this time we have an all which"
+    },
+    {
+      "start": 826.0,
+      "text": "means there pretty much global sass"
+    },
+    {
+      "start": 828.04,
+      "text": "variables that will apply to all three"
+    },
+    {
+      "start": 830.08,
+      "text": "of the platforms we can see right here"
+    },
+    {
+      "start": 831.67,
+      "text": "fab content margin alright by default"
+    },
+    {
+      "start": 835.12,
+      "text": "it's at ten pixels so let's say we want"
+    },
+    {
+      "start": 836.86,
+      "text": "to double that to 20 all right we'll go"
+    },
+    {
+      "start": 839.35,
+      "text": "back let's close this out and we'll go"
+    },
+    {
+      "start": 842.56,
+      "text": "back to our variable sass and we'll just"
+    },
+    {
+      "start": 845.68,
+      "text": "put this right here and we'll say 20"
+    },
+    {
+      "start": 848.92,
+      "text": "pixels so we'll save it and watch it and"
+    },
+    {
+      "start": 851.38,
+      "text": "there it goes it moves in on both of"
+    },
+    {
+      "start": 853.72,
+      "text": "them all right so let's also notice I"
+    },
+    {
+      "start": 858.51,
+      "text": "once we click this let's say for"
+    },
+    {
+      "start": 861.61,
+      "text": "instance we want to change the"
+    },
+    {
+      "start": 862.99,
+      "text": "background color of each of these sub"
+    },
+    {
+      "start": 865.06,
+      "text": "buttons right here that come from this"
+    },
+    {
+      "start": 867.22,
+      "text": "fab button well let's go back to that"
+    },
+    {
+      "start": 870.7,
+      "text": "same page that we were at and we'll see"
+    },
+    {
+      "start": 873.79,
+      "text": "fab list button background color so by"
+    },
+    {
+      "start": 878.32,
+      "text": "default it's at that real light white or"
+    },
+    {
+      "start": 880.959,
+      "text": "gray color let's copy that"
+    },
+    {
+      "start": 883.51,
+      "text": "we'll go underneath it put in a new"
+    },
+    {
+      "start": 887.14,
+      "text": "color let's just say color colors dark"
+    },
+    {
+      "start": 890.8,
+      "text": "this time save it and there you go"
+    },
+    {
+      "start": 899.88,
+      "text": "all right so hopefully you learned quite"
+    },
+    {
+      "start": 903.04,
+      "text": "a bit throughout this and really"
+    },
+    {
+      "start": 905.62,
+      "text": "understanding how to work with those SAS"
+    },
+    {
+      "start": 907.57,
+      "text": "variables is that that's the most"
+    },
+    {
+      "start": 908.98,
+      "text": "important part and also understanding"
+    },
+    {
+      "start": 911.5,
+      "text": "that you use the the official"
+    },
+    {
+      "start": 912.88,
+      "text": "documentation for the components in the"
+    },
+    {
+      "start": 915.46,
+      "text": "API section and that's what's going to"
+    },
+    {
+      "start": 918.01,
+      "text": "tell you exactly what you can change"
+    },
+    {
+      "start": 920.23,
+      "text": "alright so I'm Gary Simon of course"
+    },
+    {
+      "start": 921.82,
+      "text": "Tetro has always make sure you subscribe"
+    },
+    {
+      "start": 924.31,
+      "text": "here and like later coming very shortly"
+    },
+    {
+      "start": 927.4,
+      "text": "we're going to be started focusing on"
+    },
+    {
+      "start": 929.29,
+      "text": "creating desktop apps with electron"
+    },
+    {
+      "start": 931.48,
+      "text": "which is basically doing that with"
+    },
+    {
+      "start": 933.16,
+      "text": "JavaScript and it's really cool I'm"
+    },
+    {
+      "start": 935.29,
+      "text": "excited about that all right so I'll"
+    },
+    {
+      "start": 937.33,
+      "text": "talk to you guys soon"
+    }
+  ],
+  "text": "[Music] hey all Gary Simon of course cetera today we're going to talk about how to properly theme your ionic app and this involves using SAS variables and also understanding how to use the official documentation so we're going to run through a quick project from scratch so I can show you and then you can gain confidence going forward with really any type of layout dreaming options or component issues in terms of coloring and positioning and all of that all right so I'm gonna switch to my desktop and the first thing we're gonna do is bring up for consul here yeah oh but real quick before we begin make sure you check out my site course cetera comm where you're gonna find a bunch of courses on modern design and development a lot are free and others you can access for the cost of buying me like a six pack each month that's it now also it probably wouldn't hurt to subscribe here on YouTube and be sure to make sure the notifications are turned on all right let's get back to it we're just gonna start a new project now I'm going to assume that you already have the prerequisites installed nodejs NPM and the ionic command line interface tool so we're just going to put I on ik will do start you name the project ionic theming and we'll create the side menu template just real quickly and I'm going to hit Y for yes to target iOS and Android and so the reason I'm putting the the side menu template is simply because I wanted to set up the top navigation bar with a little menu there just to give us something interesting unique to look at all right so I was just waiting for this to load alright so now let's hop into it with CD ionic theming and then we'll put in ionic serve - L now before I hit enter I just wanted to let you know that there's this really cool new app from the ionic scheme called dev app search for it in the Play Store apps were for Android or iOS and it allow you to live reload and show exactly you know as you may changes as you're developing your app on your phone which is really cool it's just really like I think within the past month here all right so it's gonna load alright so let me drag us over here okay so I think it's CIF by both iOS and Android here in the lab view and you can see under platforms I have both of these toggled on alright so the first thing that we'll consider is how do we change the theme from light to dark right now we have the light theme so to do that very very simple of course let's open up here Visual Studio code I'm gonna open up the project here I'm off screen for a second alright okay so to do that we're first going to go to source and then theme and then variables dot sass right here so we're gonna be working within this file quite a bit and if we scroll to the bottom to change to the dark theme you can see where here we have import ionic theme default change default to dark and then save and as you can see we now have our dark theme very very very very simple stuff okay so when it comes to theming one of the I would say the most important aspect to understand is right here the colors SAS map so this is called a SAS map you see that it's just normal variable called colors then it's opened up into this parentheses which upon with a bunch of colors with their property in value specified here okay so for instance I let's change our primary color and by the way let me split this up real quickly so that we can see on the left and write our code editor along with our project here okay so this right here primary is what this buttons using this is that blue and essentially this is what most components will use as the primary color so let's say for instance we want to change this to a pink type of color so I'm gonna put EC 1 for B e will save it and there you go as you can see very very very simple but what if we wanted to change our navbar background color up here as well as we can see it's pretty much just dark gray or black color well to do that let's hop over here to our pages home and home HTML and we can see that this is the HTML that structures this section right here we have the menu icon and we have the home title right here so what we want to do is add a color attribute equals oops primary alright so we'll save that and voila berry there you go nice something thing to note is that not every single component and this is a component here I on - and the name of the component allows you to specify the color attribute so just know that going forward and you can really check that out in the documentation and we'll be checking that out momentarily so let's also talk about how to add custom colors to the colors sass map that we were looking at so to do that go back to our variables and we simply put in a comma and let's create one called light-dark which will kind of be an in-between value and we'll put a color value of three six three six three six alright we'll save that and now this has been added as a new color in the color sass map but one thing to be aware of is you every time you add a new color to it it will increase pretty significantly the file size of the CSS because it will generate a rule set for each one of those components with that color alright so let's also talk about customizing components based on the actual device right here we have iOS versus Android and we could see that there are slight differences but you will notice even more diff if we were to start integrating some different components so to do that let's go to our home HTML I'm gonna hit ctrl B by the way to get rid of the sidebar you're in Visual Studio code and we're gonna add a toolbar with a search bar inside of it so to come right here paste this in and we'll see it just has an ion tool bar ion search bar and by the way make sure that you know if I'm sitting here pasting in code pretty much with all my video tutorials here on YouTube I have a written version so in the description you can click on that written version you can see all the code that I'm copying and pasting that way you know it's not so unfair that I'm just that you're pasting you have to pause or whatever so even though this isn't much HTML but um so we have this here to save that okay so now we can see that significant difference right off the bat iOS can't see anything when it comes our Android yeah this actually looks okay so how do we solve for some of these discrepancies well the first thing that we can try is if we can add the color attribute here to our toolbar we'll say color dark let's go ahead and save that and now that has fixed this we can actually see what's happening here now however the Android version didn't update at all so why is that well what we want to do in this case is we want to check out the search bar documentation because that's what this is we're trying to change the search bar what if I want this search bar to look like this one over here well let's look at the documentation real quick for search bar and here's the URL again this is linked in a written tutorial if we go all the way down we'll see sass variables so let me back up real quick right now we're in the API section so if I go to back to main Doc's for instance and I click on API that's going to take this where we were and then we just scroll down and click on search bar as you can see there's very there's a lot of different components and they're all pretty much structured the same they have SAS virial variables section right here with a few different tabs of iOS material design and Windows platform that shows the appropriate SAS variables and so the one that we would want to find is because the thing that we want to change going back to our example is this search bar input so if we scroll down if we click on material design for instance that's the one we want to change material design is applicable to android we'll see that we have or if we hit ctrl F and hit on a background there it is we can see right here by default it's colored that way so all we have to do is copy this and we'll go back to our variables and under app material design variables this is where we would paste that and redefine it all right so what if we wanted to make our light dark our custom color in the colors SAS map I'm very simple we simply put color and then inside of it it accepts two parameters it's going to be the name of the color SAS map colors and then also the actual color that's defined within light dark so let's save it and now you'll see perfect now they're much more consistent all right so let's practice a little bit more with this so you can get more muscle memory trying to figure out how to change different aspects and it's not just colors you can also change padding margin sizing all that stuff so what we'll do is I'm going to and by the way this is one of the points where you're going to want to refer to the written tutorial because there's a lot of HTML am about to paste in so do that real quick and I'll show you which part we're gonna be pasting in we're gonna go to our home HTML and I'm going to copy and then replace all of this stuff right here in ion content so paste this so what I just pasted was this ion content class equals card background page so we're gonna have several cards from the components and then we're also going to have our ion fab a fab button which is a floating action button alright so by default if I just save this we're going to see that we have some broken images so we have this assets images there's four different images and again all this HTML is coming from that documentation so what you want to do in order to get these images to work is refer to the documentation all right background cards with images we can just take this we can go and save image as first I'm going to refer back here hit ctrl B go to assets right click and reveal an explorer because II just showing up right here and then the section that we want to go in is and assets IMG s we're going to simply save them right in this folder so I'm going to copy this location and then right-click on each one of these save image as and as you can see I was working on the same thing previously so we're gonna save that there save image as there save image as there and then one more time save image as okay all right great so now going back we refresh this we now have our images now of course it still looks like garbage because we have a little bit of CSS to paste in as well so that's the SS once again it comes from the official documentation for cards and we're gonna go to home a CSS and just paste this in and save okay now it's looking pretty decent let me drag this up so we can actually see the whole layout okay so now at this point let's say for instance we want to give ourselves more margin for where this floating action button is like we think it's maybe a little bit a little bit too close to the top and right well referring back to the documentation if we go to floating API floating action button API right here scroll down we can see under sass variables this time we have an all which means there pretty much global sass variables that will apply to all three of the platforms we can see right here fab content margin alright by default it's at ten pixels so let's say we want to double that to 20 all right we'll go back let's close this out and we'll go back to our variable sass and we'll just put this right here and we'll say 20 pixels so we'll save it and watch it and there it goes it moves in on both of them all right so let's also notice I once we click this let's say for instance we want to change the background color of each of these sub buttons right here that come from this fab button well let's go back to that same page that we were at and we'll see fab list button background color so by default it's at that real light white or gray color let's copy that we'll go underneath it put in a new color let's just say color colors dark this time save it and there you go all right so hopefully you learned quite a bit throughout this and really understanding how to work with those SAS variables is that that's the most important part and also understanding that you use the the official documentation for the components in the API section and that's what's going to tell you exactly what you can change alright so I'm Gary Simon of course Tetro has always make sure you subscribe here and like later coming very shortly we're going to be started focusing on creating desktop apps with electron which is basically doing that with JavaScript and it's really cool I'm excited about that all right so I'll talk to you guys soon"
+}
