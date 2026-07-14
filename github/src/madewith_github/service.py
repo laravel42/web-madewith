@@ -1,6 +1,7 @@
 from __future__ import annotations
 import asyncio,json,logging,uuid
 from datetime import datetime,timedelta,timezone
+from itertools import zip_longest
 from .classifier import classify
 from .config import Settings
 from .db import Database
@@ -41,34 +42,47 @@ class DiscoveryService:
         correlation=str(uuid.uuid4())
         # One global, deduplicated search plan across every technology's own
         # search config; qualification is cross-technology, so we never re-scan
-        # the same repo per domain.
-        plan=[(tech,q) for tech in techs for q in self._queries(tech,start,end)]
+        # the same repo per domain. Round-robin across technologies (every
+        # technology's primary query first, then the second queries, ...) so a
+        # partial or rate-limited run still gets breadth across the whole
+        # catalog instead of only the first slugs alphabetically.
+        per_tech=[(tech,self._queries(tech,start,end)) for tech in techs]
+        plan=[(tech,q) for rnd in zip_longest(*[qs for _,qs in per_tech])
+              for (tech,_),q in zip(per_tech,rnd) if q]
         summary=f"{len(techs)} technologies · {len(plan)} queries · pushed {start.date()}..{end.date()}"
         log.info("▶ discovery across %d technologies: %d search queries, up to %d page(s) each, pushed %s..%s%s",
                  len(techs),len(plan),max_pages,start.date(),end.date(),f", max {max_repos} repos" if max_repos else "")
         run_id=self.db.start_run(None,correlation,summary,{"pushed_from":start.isoformat(),"pushed_to":end.isoformat(),"page":1})
         log.debug("run_id=%s correlation=%s",run_id,correlation)
         seen=accepted=results=pages=0; skipped_fresh=dupes=0; seen_ids:set[int]=set(); by_tech:dict[str,int]={}
+        # Page-level round-robin: fetch page 1 of every query before any page 2,
+        # so breadth across the catalog comes first even if the run is cut short.
+        active=[(tech,q,1) for tech,q in plan]
         try:
-            for tech,q in plan:
+            while active:
                 if max_repos and seen>=max_repos:
                     log.info("  repo cap reached (%d); stopping",max_repos);break
-                log.info("[%s] %s",tech.slug,q)
-                async for page,item in self.gh.search(q,max_pages=max_pages):
-                    pages=max(pages,page)
-                    full=item.get("full_name","?"); stars=item.get("stargazers_count","?")
-                    if item["id"] in seen_ids:
-                        dupes+=1; log.debug("  · dup %s (already seen this run)",full);continue
-                    seen_ids.add(item["id"]);results+=1
+                nxt=[]
+                for tech,q,page in active:
                     if max_repos and seen>=max_repos:break
-                    if self.db.repository_is_fresh(item["id"],self.settings.refresh_after_days):
-                        skipped_fresh+=1; log.debug("  · skip %s (fresh, enriched < %dd ago)",full,self.settings.refresh_after_days);continue
-                    seen+=1
-                    log.info("  → [%d] processing %s (★%s)",seen,full,stars)
-                    hits=await self._process(item,techs,rules_by,allowed)
-                    if hits:
-                        accepted+=1
-                        for slug in hits: by_tech[slug]=by_tech.get(slug,0)+1
+                    log.info("[%s p%d] %s",tech.slug,page,q)
+                    items=await self.gh.search_page(q,page); pages=max(pages,page)
+                    for item in items:
+                        full=item.get("full_name","?"); stars=item.get("stargazers_count","?")
+                        if item["id"] in seen_ids:
+                            dupes+=1; log.debug("  · dup %s (already seen this run)",full);continue
+                        seen_ids.add(item["id"]);results+=1
+                        if max_repos and seen>=max_repos:break
+                        if self.db.repository_is_fresh(item["id"],self.settings.refresh_after_days):
+                            skipped_fresh+=1; log.debug("  · skip %s (fresh, enriched < %dd ago)",full,self.settings.refresh_after_days);continue
+                        seen+=1
+                        log.info("  → [%d] processing %s (★%s) via %s",seen,full,stars,tech.slug)
+                        hits=await self._process(item,techs,rules_by,allowed)
+                        if hits:
+                            accepted+=1
+                            for slug in hits: by_tech[slug]=by_tech.get(slug,0)+1
+                    if len(items)==100 and page<max_pages: nxt.append((tech,q,page+1))
+                active=nxt
             log.info("✓ done: %d results, %d processed, %d assigned to a domain (%d dup, %d fresh) across %d page(s); rate limit %s/%s remaining",
                      results,seen,accepted,dupes,skipped_fresh,pages,self.gh.rate.get("remaining"),self.gh.rate.get("limit"))
             self.db.finish_run(run_id,status="completed",page_count=pages,result_count=results,candidate_count=seen,

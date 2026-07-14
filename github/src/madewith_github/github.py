@@ -28,11 +28,15 @@ class GitHubClient:
 
     async def search(self,query:str,start_page:int=1,max_pages:int=10)->AsyncIterator[tuple[int,dict[str,Any]]]:
         for page in range(start_page,max_pages+1):
-            r=await self.get("/search/repositories",{"q":query,"sort":"updated","order":"desc","per_page":100,"page":page})
-            data=r.json(); items=data.get("items",[])
-            log.info("    page %d: %d result(s) (total_count=%s, rate %s/%s)",page,len(items),data.get("total_count"),self.rate.get("remaining"),self.rate.get("limit"))
+            items=await self.search_page(query,page)
             for item in items: yield page,item
             if len(items)<100:return
+
+    async def search_page(self,query:str,page:int)->list[dict[str,Any]]:
+        r=await self.get("/search/repositories",{"q":query,"sort":"updated","order":"desc","per_page":100,"page":page})
+        data=r.json(); items=data.get("items",[])
+        log.debug("    page %d: %d result(s) (total_count=%s, rate %s/%s)",page,len(items),data.get("total_count"),self.rate.get("remaining"),self.rate.get("limit"))
+        return items
 
     async def repository(self,full_name:str)->dict[str,Any]:
         r=await self.get(f"/repos/{full_name}"); data=r.json(); data["_etag"]=r.headers.get("etag"); return data
