@@ -83,6 +83,21 @@ As a side effect (except under `--dry-run`) it also backfills
 repository from the columns already on `repositories`, so those tables stay
 populated even for repos enriched before metric capture was wired in.
 
+### Monitor progress
+
+While `discover` (or `qualify`) runs, tail the repo-per-domain counts live:
+
+```bash
+python scripts/tail_domains.py                 # verified assignments, 2s refresh
+python scripts/tail_domains.py --interval 1    # faster refresh
+python scripts/tail_domains.py --status all    # count every assignment, not just verified
+python scripts/tail_domains.py --top 25        # only the 25 biggest domains
+```
+
+It reads `DATABASE_URL` from the environment or `github/.env`, redraws a ranked
+table of assignments per technology plus totals (repos / assigned / no-domain),
+and exits on `Ctrl-C`.
+
 ## Develop
 
 ```bash
