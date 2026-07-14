@@ -1,78 +1,77 @@
-# MadeWith… scraper — Cloudflare Worker
+# MadeWithWhat Cloudflare Worker
 
-Scrapes GitHub on a **Cron Trigger** and refreshes the catalog data, replacing
-scheduled GitHub Actions (which bill by the minute). A full 6-domain refresh is
-a handful of GraphQL requests, so it runs comfortably on the Workers free tier.
+The Worker is the optional scheduled/R2/admin backend. The main local and build-time data path prefers PostgreSQL whenever `DATABASE_URL` is configured; `scripts/pull-data.mjs` uses the Worker only when PostgreSQL is unset and `MADEWITH_DATA_BASE_URL` is present.
 
 ## What it does
 
-- **`scheduled()`** (cron, daily): scrape every domain → write datasets to **R2**
-  → append metric **snapshots** → POST the **Pages deploy hook** so the static
-  site rebuilds with fresh data.
-- **`fetch()`**:
-  - `GET /health` — liveness + domain list
-  - `GET /data/<slug>.json` — current dataset (the site's build hydrates from this)
-  - `POST /refresh[?slug=nuxt]` — manual run, gated by `REFRESH_SECRET`
+- `scheduled()` runs the configured catalog on a cron trigger, writes datasets to R2, appends metric snapshots, and invokes the Pages deploy hook.
+- `GET /health` returns liveness and the domain list.
+- `GET /data/<slug>.json` serves the current project dataset.
+- `POST /refresh[?slug=nuxt]` starts a manual refresh and requires `REFRESH_SECRET`.
+- `POST /submit` accepts validated public project submissions into D1.
+- `/admin/api/*` provides Access-gated moderation, overrides, run status, refresh, and republish operations.
 
-## Insights applied (from the reference pipeline)
+Publishing merges raw scrape data, approved entries, and overrides into `data/<slug>.json`; raw datasets remain in R2 so republishing does not require GitHub calls.
 
-- **Partitioned discovery** by star range (`>=1000`, `100..999`, `20..99`) so each
-  search stays under GitHub's 1,000-result ceiling; largest partition first, stop
-  once enough candidates exist.
-- **Dedupe by GitHub database id** — the stable external identifier.
-- **ETag conditional requests** (KV-backed) — the ecosystem count returns a free
-  `304` on most runs and burns no quota.
-- **Explicit status handling**: 401 stop, 403/429 inspect rate-limit headers +
-  secondary-limit backoff, 404 unavailable, 422 bad query, 5xx exponential retry.
-- **Quality scoring + penalties** to rank candidates (log-damped stars + recency
-  + completeness; penalties for stale/undocumented) before keeping the top N.
-- **Append-only snapshots** in R2 (`snapshots/<slug>/<iso>.json`) — metrics are
-  never overwritten.
-- **Security**: token/secret via `wrangler secret` (never logged); GitHub API
-  only — no HTML scraping, no cloning, no executing repo code.
+## Discovery behavior
+
+- Partitioned GitHub Search by star range keeps each query below GitHub’s 1,000-result ceiling.
+- Repositories are deduplicated by stable GitHub database ID.
+- KV-backed ETags allow unchanged requests to return quota-free `304` responses.
+- HTTP handling distinguishes authentication failures, rate/secondary limits, unavailable resources, malformed queries, and retryable server failures.
+- Quality scoring applies completeness/recency signals and penalties before retaining the top projects.
+- R2 snapshots are append-only.
+- Secrets are never logged; repository code is never cloned or executed.
+
+The Worker is not currently responsible for YouTube video discovery or transcript fetching. Those run through the Python scraper and PostgreSQL pipeline documented in [`../scraper/README.md`](../scraper/README.md).
 
 ## One-time setup
 
 ```bash
 cd worker
-npm install
+pnpm install
 
-wrangler r2 bucket create madewith-data
-wrangler kv namespace create STATE          # paste the id into wrangler.jsonc
-wrangler secret put GITHUB_TOKEN             # read-only PAT (public repos)
-wrangler secret put REFRESH_SECRET           # gates POST /refresh
-wrangler secret put PAGES_DEPLOY_HOOK        # Cloudflare Pages → deploy hook URL
+pnpm exec wrangler r2 bucket create madewith-data
+pnpm exec wrangler kv namespace create STATE
+pnpm exec wrangler d1 create madewith-admin
+pnpm exec wrangler d1 migrations apply madewith-admin
 
-wrangler deploy
+pnpm exec wrangler secret put GITHUB_TOKEN
+pnpm exec wrangler secret put REFRESH_SECRET
+pnpm exec wrangler secret put PAGES_DEPLOY_HOOK
+pnpm exec wrangler secret put ACCESS_TEAM_DOMAIN
+pnpm exec wrangler secret put ACCESS_AUD
+
+pnpm exec wrangler deploy
 ```
 
-Then point the site build at the Worker by setting `MADEWITH_DATA_BASE_URL` in the
-Cloudflare Pages project to the Worker's URL (e.g.
-`https://madewith-scraper.<account>.workers.dev`). The build's `pull-data` step
-reads `/data/<slug>.json` from there, falling back to the committed seed data.
+Copy generated binding IDs into `worker/wrangler.jsonc` as required.
+
+To hydrate a Pages build from R2 instead of PostgreSQL, set `MADEWITH_DATA_BASE_URL` to the deployed Worker URL. The build requests `/data/<slug>.json` and falls back to committed JSON when a remote dataset is unavailable.
 
 ## Admin API
 
-Beyond scraping, the Worker also serves the admin backend (see `../docs/admin.md`):
+See [`../docs/admin.md`](../docs/admin.md) for the full architecture and Access setup.
 
-- `POST /submit` — public project submission (validated, per-IP daily cap) → D1 `pending`.
-- `/admin/api/*` — Cloudflare Access-gated: overview stats, submission moderation
-  (approve/reject), per-entry overrides (hide/feature/edit), and refresh/republish.
-  Requires the `DB` (D1) binding and `ACCESS_TEAM_DOMAIN` / `ACCESS_AUD`.
+Required bindings/secrets include D1 `DB`, R2 storage, KV state, `ACCESS_TEAM_DOMAIN`, and `ACCESS_AUD`. In production, never enable `ADMIN_DEV_BYPASS`.
 
-Publishing merges **raw scrape + approved entries + overrides** into
-`data/<slug>.json` (`src/merge.ts`); raw scrape is kept in R2 so republish needs no
-GitHub calls.
-
-## Develop & test
+## Develop and test
 
 ```bash
-npm run typecheck
-npm test          # unit tests: discovery/dedupe/noise/scoring + ETag 304 (mocked GitHub)
-npm run dev       # local Worker; POST http://localhost:8787/refresh?slug=nuxt
+cd worker
+pnpm install
+pnpm run typecheck
+pnpm test
+pnpm run dev
 ```
 
-## Cost model
+Local refresh example:
 
-Workers cron + a few GraphQL calls per day sit inside the free tier. R2 stores a
-few KB of JSON per domain plus small daily snapshots. No per-minute CI billing.
+```bash
+curl -X POST 'http://localhost:8787/refresh?slug=nuxt' \
+  -H 'authorization: Bearer <REFRESH_SECRET>'
+```
+
+## Cost notes
+
+Actual cost depends on the current catalog size, query partitions, cron frequency, R2 history, and Pages builds. The original six-domain assumptions no longer apply to the 69-entry catalog; verify Cloudflare usage before relying on free-tier estimates.

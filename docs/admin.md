@@ -78,12 +78,12 @@ proxy. The Astro config forwards those requests to the Worker (default
    cd worker
    cp .dev.vars.example .dev.vars    # ADMIN_DEV_BYPASS=true
    wrangler d1 migrations apply madewith-admin --local
-   npm run dev                       # http://127.0.0.1:8787
+   pnpm run dev                      # http://127.0.0.1:8787
    ```
 
 2. **Site** (terminal 2):
    ```bash
-   npm run dev                       # http://localhost:4321/admin
+   pnpm dev                          # http://localhost:4321/admin
    ```
 
 With `ADMIN_DEV_BYPASS=true` in `worker/.dev.vars` and Access vars left empty,

@@ -1,186 +1,189 @@
-# MadeWithWhat — a replicable multi-domain showcase catalog
+# MadeWithWhat — multi-domain open-source technology catalogs
 
-A network of "Made with [Tech]" showcase sites — one catalog engine, themed per
-domain, fed by **real GitHub data**. Each site is a daily-updatable gallery of
-the best open-source projects for a technology, ranked by stars, built for SEO
-and traffic. Cloning a site to a new domain is a **one-config-entry** change.
+MadeWithWhat is a static, SEO-first network of “Made with [technology]” catalogs. One Astro application serves every configured domain, while PostgreSQL stores repository and YouTube metadata and generated JSON snapshots hydrate the static site.
 
-Built with [Astro](https://astro.build) (static output, zero client JS except a
-tiny catalog-filter script). Implemented from the Claude Design handoff in
-[`chats/`](./chats) and [`project/`](./project).
-
-## The six sites
-
-| Domain | Slug | Accent | Identity |
-| --- | --- | --- | --- |
-| madewithnuxt.com | `nuxt` | green | Sora display, aurora-glow hero + floating browser mockup, rounded cards |
-| madewithnode.com | `node` | green | terminal: JetBrains Mono, dark, `$` prompt, `#tag` filters, `~/author/repo` cards |
-| madewithnext.com | `next` | black | editorial masthead, oversized Bricolage headline, ranked borderless grid |
-| madewithionic.com | `ionic` | blue | Poppins, iOS phone mockup hero, pill controls, extra-rounded cards |
-| madewithstatamic.com | `statamic` | violet | Instrument Serif, dark-violet luxe hero band |
-| madewithtwill.com | `twill` | coral | Newsreader serif, cream paper, masthead rule |
-
-Every site has the same four screens: **home gallery** (search + sort + tag
-filter), **project detail**, **category browse**, and **submit**.
-
-Locally the whole network builds under one site so it's browsable at once:
-`/` is the network index, and each domain lives at `/<slug>/…`. In production
-each entry maps to its own domain.
+The catalog currently covers **69 technologies** across frameworks, frontend, backend, CMS/CRM, commerce, and AI/LLM. The authoritative list is [`src/config/domain-catalog.json`](src/config/domain-catalog.json).
 
 ## Quick start
 
-```bash
-npm install
-npm run scrape      # pull fresh data from GitHub into src/data/*.json
-npm run scrape:spawn  # parallel shards — publishes each domain as results land
-npm run dev         # http://localhost:4321
-npm run build       # static site → dist/
-```
+Requirements:
 
-`npm run scrape` works without credentials, but a token is strongly recommended.
-
-If a domain fails mid-scrape (rate limit, network), it keeps the last-good
-`src/data/<slug>.json` — or falls back to the committed snapshots in
-`scripts/seed/` — so `npm run build` never breaks.
-
-### Beating GitHub's rate limits
-
-The scraper is built to stay well under GitHub's limits, three ways:
-
-1. **Authenticate.** A token lifts you from 60 → 5,000 requests/hr (and search
-   10 → 30/min). Just set it:
-   ```bash
-   cp .env.example .env   # add GITHUB_TOKEN, then:
-   npm run scrape
-   ```
-2. **GraphQL (automatic with a token).** One request returns a domain's repos
-   *and* their real language breakdowns, so the whole 6-site network refreshes
-   in **~6 requests** (vs ~78 REST calls). Anonymous falls back to REST search
-   and synthesises languages from the primary language.
-3. **Self-healing throttle + ETag cache.** The client honours
-   `x-ratelimit-remaining`/`reset` (pre-emptive wait), backs off on
-   secondary-limit `403/429`, and sends `If-None-Match` so unchanged endpoints
-   return a **free `304`** that costs no quota (`scripts/.cache/etags.json`).
-
-`scripts/scrape.mjs` is the **local** scraper (writes `src/data/*.json` for dev).
-For large catalogs, `scripts/spawn-scrape-jobs.mjs` runs **parallel star-partition
-shards** across every domain and publishes each dataset incrementally as shards
-complete (`GITHUB_TOKEN` is read from `.env`):
+- Node.js with **pnpm 11**
+- Python 3.11+
+- PostgreSQL
+- GitHub token for authenticated discovery
+- YouTube Data API key for video discovery
 
 ```bash
-npm run scrape:spawn -- --jobs 8 --keep 1000
-npm run scrape:spawn -- --domains laravel,react --dry-run
+pnpm install
+
+cd scraper
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+cd ..
+
+cp .env.example .env
+# Fill in DATABASE_URL, GITHUB_TOKEN, and optionally YOUTUBE_API_KEY.
+
+pnpm dev                    # http://localhost:4321
+pnpm run build              # canonical full validation → dist/
 ```
 
-Production scheduling runs on Cloudflare — see below.
+> `pnpm run build` is the canonical end-to-end check. Its `prebuild` runs `scripts/pull-data.mjs` and `scripts/hydrate-blog.mjs` before Astro compiles the static site.
 
-### Scheduled refresh — Cloudflare Worker (not GitHub Actions)
+## Current data flow
 
-Scheduled scraping runs in a **Cloudflare Worker on a Cron Trigger** (`worker/`),
-not GitHub Actions (which bill per minute). Daily it scrapes every domain, writes
-datasets to **R2**, appends metric snapshots, and pings the Pages **deploy hook**
-so the static site rebuilds with fresh data.
-
-The Worker applies the reference pipeline's insights: **star-range partitioned
-discovery**, **dedupe by GitHub repo id**, **ETag `304` caching** in KV, explicit
-`401/403/404/422/429/5xx` handling with secondary-limit backoff, a **weighted
-quality score** for ranking, and append-only snapshots. See
-[`worker/README.md`](worker/README.md). At build time `scripts/pull-data.mjs`
-hydrates `src/data/` from the Worker's `/data/<slug>.json` (R2), and
-`scripts/hydrate-blog.mjs` syncs `factory/output/` into `src/content/blog/` and
-`public/assets/`.
-
-```
-GitHub  ──scrape──▶  Worker (cron)  ──▶  R2 datasets  ──deploy hook──▶  Pages build
-                          │                                                  │
-                          └── KV: ETags + last-run meta      pull-data.mjs ──┘ (hydrates src/data)
+```text
+GitHub API ── Scrapy discovery ──▶ PostgreSQL
+                                      │
+YouTube Data API ── discovery ────────┤
+YouTube transcript endpoint ──────────┤
+                                      ▼
+                           scripts/pull-data.mjs
+                            ├─ scraper/publish.py
+                            └─ scraper/publish_videos.py
+                                      │
+                         src/data/*.json
+                         src/data/videos/*.json
+                         src/data/transcripts/*.json
+                                      │
+                          Astro static build → dist/
 ```
 
-## Architecture
+PostgreSQL is the primary repository store when `DATABASE_URL` is configured. `scripts/pull-data.mjs` publishes projects and video catalogs from PostgreSQL. If PostgreSQL is unavailable, it can use the optional Cloudflare Worker/R2 source configured by `MADEWITH_DATA_BASE_URL`; otherwise committed JSON remains in place.
 
+Editorial content is separate. `scripts/hydrate-blog.mjs` copies `factory/output/articles/**` and `factory/output/assets/**` when present. If factory output is absent, it intentionally keeps committed `src/content/blog` and exits successfully.
+
+## GitHub repository pipeline
+
+Configure `.env`:
+
+```dotenv
+GITHUB_TOKEN=
+DATABASE_URL=
 ```
+
+Run discovery and publishing from the repository root:
+
+```bash
+pnpm scrape                          # all catalog domains
+pnpm scrape -- -a domains=laravel   # one domain
+pnpm scrape:status                  # inspect shard progress
+pnpm scrape:publish                 # PostgreSQL → src/data/*.json
+```
+
+The Scrapy pipeline writes repository metadata, topics, languages, technology links, metric snapshots, and daily star snapshots to the existing PostgreSQL schema. Raw GitHub search-result metadata is preserved so the publisher can reconstruct the generated JSON shape.
+
+GitHub Search exposes at most **1,000 results per individual query**. Authentication improves the request limit but does not remove that cap. Broad discovery therefore needs bounded queries such as star ranges; increasing a single query past 1,000 returns HTTP 422.
+
+GitHub topics are candidate-discovery signals, not final proof of membership. Technology-specific categorization belongs in `src/config/domain-catalog.json` and `scraper/madewith_scraper/normalize.py`. Laravel currently has a dedicated classifier that keeps Laravel projects, packages/plugins, and Laravel-specific tools while rejecting generic integrations and content-only repositories.
+
+CSV imports are auxiliary replay tools, not the primary scraper:
+
+```bash
+scraper/.venv/bin/python scraper/load_csv_to_pg.py \
+  /path/to/github_laravel.csv laravel --ensure-tech --min-stars 50
+
+scraper/.venv/bin/python scraper/load_all_csv_to_pg.py \
+  /path/to/csv-directory --ensure-tech
+```
+
+See [`scraper/README.md`](scraper/README.md) for schema behavior, idempotency, tests, and operational details.
+
+## YouTube videos and transcripts
+
+Discover and publish curated English tutorial videos:
+
+```bash
+pnpm scrape:youtube -- -a domains=laravel
+pnpm scrape:youtube:publish -- laravel
+```
+
+Video metadata is stored in `youtube_videos` and published to `src/data/videos/<slug>.json`. `/video/` and `/video/<generated-slug>/` render the catalog and individual video pages.
+
+Fetch raw caption segments for discovered videos, then structure them with AI:
+
+```bash
+scraper/.venv/bin/python scraper/transcribe_youtube.py --slug laravel --limit 20
+scraper/.venv/bin/python scraper/transcribe_youtube.py --limit 1200 --sleep 1
+scraper/.venv/bin/python scraper/enrich_transcripts.py --limit 100
+```
+
+Raw captions are cached locally at `scraper/data/transcripts/<youtube-video-id>.json`. `enrich_transcripts.py` sends timestamped captions to the configured OpenAI model and publishes schema-v2 files at `src/data/transcripts/<youtube-video-id>.json`. Each published file contains AI-generated chapters (`title`, `description`, `startTime`, `endTime`), a Markdown `summary`, and a literal, AI-formatted Markdown `transcription`. `src/lib/transcripts.ts` includes those files at build time.
+
+`youtube-transcript-api` uses YouTube’s transcript endpoint rather than the official Data API and may return `IpBlocked` or `RequestBlocked` during bulk runs. Those are transient failures and must remain retryable; they do not mean the video lacks captions. Use a cooldown, a slower `--sleep`, or a supported rotating proxy. Permanent no-caption cases are recorded as `unavailable`.
+
+The first full 1,121-video batch on 2026-07-13 fetched 40 transcripts before YouTube blocked the host IP; together with the smoke test, 43 transcript JSON files were produced. Treat this as an observed run result, not expected coverage.
+
+## Generated data and pages
+
+```text
 src/
   config/
-    domains.ts        ← the whole per-domain theme model (colour, fonts, hero, chrome, SEO)
-    categories.ts     ← the six shared catalog categories
-  data/*.json         ← scraped GitHub data, one file per domain (generated)
-  lib/catalog.ts      ← load + rank + filter/relate helpers (build-time)
-  layouts/CatalogLayout.astro   ← <head>, SEO/OG, fonts, global themed CSS (CSS vars per domain)
-  components/
-    Header / Footer               ← 3 chrome variants (minimal · editorial · terminal)
-    Hero.astro + heroes/*         ← one bespoke hero per domain
-    ProjectGrid / ProjectCard     ← 3 card systems; client filter/sort script lives here
-    CategoryBrowse / ProjectDetail / SubmitForm
-    TagRow.astro
+    domain-catalog.json         technology list, scrape queries, thresholds, categorization
+    domains.ts                  theme/domain presentation config
+  data/
+    <slug>.json                 generated project catalogs
+    videos/<slug>.json          generated video catalogs
+    transcripts/<video-id>.json AI chapters, summary, and Markdown transcription
+  lib/
+    catalog.ts                  build-time project loading/ranking helpers
+    videos.ts                   build-time video catalog loader
+    transcripts.ts              transcript loader
+    video-view.ts               video card/detail view model
   pages/
-    index.astro                   ← network landing
-    [domain]/index.astro          ← home
-    [domain]/categories.astro
-    [domain]/submit.astro
-    [domain]/project/[slug].astro
+    [domain]/                   domain catalog routes
+    video/                      video index, detail pages, RSS
+    blog/                       editorial index, detail pages, RSS
+scraper/
+  madewith_scraper/             Scrapy spiders, PostgreSQL persistence, normalization
+  publish.py                    PostgreSQL → project JSON
+  publish_videos.py             PostgreSQL → video JSON
+  transcribe_youtube.py         raw caption fetcher and status tracker
+  enrich_transcripts.py         raw captions → AI-structured transcript JSON
 scripts/
-  scrape.mjs          ← local GitHub scraper (search → classify → normalise → write)
-  pull-data.mjs       ← build-time hydration of src/data from R2 (fallback to committed)
-  hydrate-blog.mjs    ← sync factory/output articles + assets into src/content/blog, public/assets
-  seed/*.json         ← committed fallback snapshots
-worker/               ← Cloudflare Worker: scheduled scraping → R2 → deploy hook
-  src/{index,github,scrape,classify,score,storage,domains}.ts
-  test/scrape.test.ts ← unit tests (discovery/dedupe/noise/scoring + ETag 304)
+  pull-data.mjs                 build-time project/video hydration
+  hydrate-blog.mjs              optional factory-output hydration
+worker/                         optional Cloudflare Worker/R2/admin backend
+factory/                        editorial content generator
 ```
 
-The **home gallery is interactive without a framework**: SSR renders every card
-sorted by stars, and one small script (`ProjectGrid.astro`) wires the hero's
-search box, sort toggle and tag pills to show/hide/reorder cards via `data-*`
-hooks. Category cards deep-link to `/<slug>/?tag=Category`, which the script
-reads on load. This keeps every project URL crawlable for SEO.
+Generated JSON can change substantially after a scrape or publish run. Review source-code changes separately from generated data before committing.
 
-## Adding a new domain (the replication workflow)
+## Adding a technology
 
-1. Add one entry to `DOMAINS` in `src/config/domains.ts` (name, accent, fonts,
-   hero id, chrome, SEO copy). Reuse an existing `heroId`/`variant` or add a
-   bespoke hero in `src/components/heroes/`.
-2. Add the domain's GitHub query to `DOMAINS` in `scripts/scrape.mjs` **and**
-   `worker/src/domains.ts` (production scraper).
-3. `npm run scrape && npm run build`.
-
-Colour, logo letter, shape language and data are all config — the engine is shared.
-
-## Deploy (Cloudflare Pages)
-
-The site is fully static, so Cloudflare Pages just serves `./dist` — no SSR
-adapter or Worker runtime. Config lives in `wrangler.jsonc`
-(project `madewith-catalog`) and `public/_headers` sets edge caching.
-
-**Option A — from your machine (one-off):**
+1. Add the technology to `src/config/domain-catalog.json` with its slug, display name, domain, group, GitHub query, minimum stars, and exclusions.
+2. Add or reuse presentation settings in `src/config/domains.ts`.
+3. Add technology-specific categorization when a topic or name is ambiguous.
+4. Run discovery for the slug, publish JSON, and build:
 
 ```bash
-npx wrangler login          # opens Cloudflare auth in your browser
-npm run deploy              # astro build && wrangler pages deploy
+pnpm scrape -- -a domains=<slug>
+pnpm scrape:publish -- <slug>
+pnpm run build
 ```
 
-**Option B — Cloudflare Pages Git integration (recommended).** Connect the repo
-in the Cloudflare dashboard (build command `npm run build`, output `dist`). Set
-`MADEWITH_DATA_BASE_URL` to the scraper Worker's URL so each build hydrates the
-latest data from R2. No GitHub Actions, no per-minute CI billing — builds are
-triggered by pushes and by the Worker's daily deploy hook. See
-[`worker/README.md`](worker/README.md) for the scraper setup.
+## Validation
 
-**Custom domains.** In the Pages project, map each production domain
-(`madewithnuxt.com`, `madewithnode.com`, …) and, if you want each to serve only
-its own site at the root, add a redirect/route from `/` to `/<slug>/`. Update
-`site` in `astro.config.mjs` to the canonical host so `sitemap`/canonical tags
-match.
+```bash
+scraper/.venv/bin/python scraper/tests/test_categorize_laravel.py
+node scripts/pull-data.mjs
+node scripts/hydrate-blog.mjs
+pnpm run build
+```
 
-## SEO
+- `node scripts/pull-data.mjs` validates PostgreSQL → project/video JSON hydration.
+- `node scripts/hydrate-blog.mjs` validates editorial hydration; “factory/output/articles not found” is a successful fallback to committed blog content.
+- `pnpm run build` validates the complete hydration and Astro generation pipeline.
 
-Per-domain `<title>`, meta description, canonical, Open Graph + Twitter tags,
-per-domain SVG favicons, `sitemap-index.xml` (via `@astrojs/sitemap`) and
-`robots.txt`. Data is designed to refresh on a schedule (re-run `scrape` in CI)
-so the galleries stay fresh — the traffic hook from the original brief.
+## Optional Cloudflare backend
 
-## Data & attribution
+The Cloudflare Worker remains an optional scheduled/R2/admin path. It can scrape to R2, retain snapshots, serve `/data/<slug>.json`, and trigger a Pages deploy. When `DATABASE_URL` exists, local/build-time hydration prefers PostgreSQL instead.
 
-All project data (names, stars, owners, avatars, descriptions, demo links,
-topics, languages, licenses) is fetched live from the public GitHub API. The
-long-form "about" copy on detail pages is composed from that real metadata.
-`scrapedAt` is stamped into each dataset.
+See [`worker/README.md`](worker/README.md), [`docs/data-pipeline.md`](docs/data-pipeline.md), and [`docs/admin.md`](docs/admin.md).
+
+## Security
+
+- Never commit `.env` or print credential values.
+- Keep `GITHUB_TOKEN`, `DATABASE_URL`, `YOUTUBE_API_KEY`, Cloudflare secrets, and proxy credentials out of generated logs and documentation.
+- The repository scraper uses GitHub APIs; it does not clone or execute discovered repositories.

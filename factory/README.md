@@ -98,7 +98,7 @@ output/
 After generating articles, sync factory output into the site content tree:
 
 ```bash
-npm run hydrate-blog
+pnpm run hydrate-blog
 ```
 
 This copies:
@@ -106,7 +106,7 @@ This copies:
 - `factory/output/articles/**` → `src/content/blog/**`
 - `factory/output/assets/**` → `public/assets/**`
 
-`hydrate-blog` runs automatically before `npm run dev` and `npm run build`.
+`hydrate-blog` runs automatically before `pnpm dev` and `pnpm run build`. If `factory/output/articles` is absent, the command exits successfully and keeps committed `src/content/blog` content.
 
 Each article contains:
 
