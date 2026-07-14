@@ -130,8 +130,13 @@ class DiscoveryService:
         self.db.record_metrics(repo_id,detail)
         log.debug("    upserted repo_id=%s (%d topics, %d languages)",repo_id,len(topics),len(languages))
         root_paths={x.get("path","") for x in root}
-        wanted=set(DEFAULT_MANIFESTS); wanted.update(r.manifest_path for rules in rules_by.values() for r in rules if r.manifest_path)
-        log.debug("    fetching %d candidate manifest file(s)",len(wanted))
+        candidates=set(DEFAULT_MANIFESTS); candidates.update(r.manifest_path for rules in rules_by.values() for r in rules if r.manifest_path)
+        # Only fetch manifests that actually exist in the repo root. The root
+        # listing we just fetched tells us which do, so we skip a ~15-call burst
+        # of 404s per repo — the dominant cost when probing every technology's
+        # config file against every repo.
+        wanted=candidates & root_paths
+        log.debug("    fetching %d of %d candidate manifest file(s) present in root",len(wanted),len(candidates))
         fetched=await asyncio.gather(*(self.gh.file(full,p) for p in sorted(wanted)))
         manifests={}; text=[]
         for f in fetched:
