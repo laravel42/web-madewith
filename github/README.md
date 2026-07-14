@@ -39,6 +39,7 @@ Settings are read from environment variables (or `.env`); see `.env.example`.
 | `GITHUB_TOKEN` | — | GitHub PAT for the search/enrichment API (required) |
 | `GITHUB_API_VERSION` | `2022-11-28` | GitHub REST API version header |
 | `REQUEST_TIMEOUT_SECONDS` | `30` | Per-request HTTP timeout |
+| `RATE_LIMIT_MAX_WAIT_SECONDS` | `120` | Terminate `discover` if a rate-limit reset is further away than this (see below) |
 | `REFRESH_AFTER_DAYS` | `14` | Skip repos enriched within this many days |
 | `CLASSIFIER_LLM_ENABLED` | `false` | Enable the LLM classifier fallback |
 | `OPENAI_API_KEY` | — | Required when `CLASSIFIER_LLM_ENABLED=true` (install `.[llm]`) |
@@ -62,6 +63,15 @@ madewith-github discover --max-repos 200        # bound a run for testing
 | `--window-days` | `30` | Size of each `pushed:` search window |
 | `--max-pages` | `10` | Max result pages per query (GitHub caps search at 1,000 results) |
 | `--max-repos` | — | Stop after processing this many unique repositories |
+
+**Rate-limit auto-termination:** when the primary GitHub quota (e.g. the
+5,000/hour core limit) is exhausted and its reset is further away than
+`RATE_LIMIT_MAX_WAIT_SECONDS` (default 120s), `discover` stops cleanly — it
+finishes the `github_search_runs` row as `completed`, keeps everything processed
+so far, and exits (the result includes `"rate_limited": true`) rather than
+sleeping for the reset. The short per-minute search quota still gets a brief
+sleep + retry. Because already-enriched repos are skipped as fresh, just rerun
+`madewith-github discover` after the quota resets to continue.
 
 ### Re-qualify already-scraped repositories
 

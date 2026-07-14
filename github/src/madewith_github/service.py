@@ -6,7 +6,7 @@ from .classifier import classify
 from .config import Settings
 from .db import Database
 from .detection import qualify
-from .github import GitHubClient
+from .github import GitHubClient, RateLimitExceeded
 
 log=logging.getLogger("madewith_github.service")
 
@@ -14,7 +14,7 @@ DEFAULT_MANIFESTS=["package.json","composer.json","pyproject.toml","requirements
 
 class DiscoveryService:
     def __init__(self,settings:Settings):
-        self.settings=settings; self.db=Database(settings.database_url); self.gh=GitHubClient(settings.github_token,settings.github_api_version,settings.request_timeout_seconds)
+        self.settings=settings; self.db=Database(settings.database_url); self.gh=GitHubClient(settings.github_token,settings.github_api_version,settings.request_timeout_seconds,settings.rate_limit_max_wait_seconds)
     async def close(self): await self.gh.close(); self.db.close()
 
     def _queries(self,tech,frm,to):
@@ -58,37 +58,44 @@ class DiscoveryService:
         # Page-level round-robin: fetch page 1 of every query before any page 2,
         # so breadth across the catalog comes first even if the run is cut short.
         active=[(tech,q,1) for tech,q in plan]
+        rate_limited=False
         try:
-            while active:
-                if max_repos and seen>=max_repos:
-                    log.info("  repo cap reached (%d); stopping",max_repos);break
-                nxt=[]
-                for tech,q,page in active:
-                    if max_repos and seen>=max_repos:break
-                    log.info("[%s p%d] %s",tech.slug,page,q)
-                    items=await self.gh.search_page(q,page); pages=max(pages,page)
-                    for item in items:
-                        full=item.get("full_name","?"); stars=item.get("stargazers_count","?")
-                        if item["id"] in seen_ids:
-                            dupes+=1; log.debug("  · dup %s (already seen this run)",full);continue
-                        seen_ids.add(item["id"]);results+=1
+            try:
+                while active:
+                    if max_repos and seen>=max_repos:
+                        log.info("  repo cap reached (%d); stopping",max_repos);break
+                    nxt=[]
+                    for tech,q,page in active:
                         if max_repos and seen>=max_repos:break
-                        if self.db.repository_is_fresh(item["id"],self.settings.refresh_after_days):
-                            skipped_fresh+=1; log.debug("  · skip %s (fresh, enriched < %dd ago)",full,self.settings.refresh_after_days);continue
-                        seen+=1
-                        log.info("  → [%d] processing %s (★%s) via %s",seen,full,stars,tech.slug)
-                        hits=await self._process(item,techs,rules_by,allowed)
-                        if hits:
-                            accepted+=1
-                            for slug in hits: by_tech[slug]=by_tech.get(slug,0)+1
-                    if len(items)==100 and page<max_pages: nxt.append((tech,q,page+1))
-                active=nxt
-            log.info("✓ done: %d results, %d processed, %d assigned to a domain (%d dup, %d fresh) across %d page(s); rate limit %s/%s remaining",
-                     results,seen,accepted,dupes,skipped_fresh,pages,self.gh.rate.get("remaining"),self.gh.rate.get("limit"))
+                        log.info("[%s p%d] %s",tech.slug,page,q)
+                        items=await self.gh.search_page(q,page); pages=max(pages,page)
+                        for item in items:
+                            full=item.get("full_name","?"); stars=item.get("stargazers_count","?")
+                            if item["id"] in seen_ids:
+                                dupes+=1; log.debug("  · dup %s (already seen this run)",full);continue
+                            seen_ids.add(item["id"]);results+=1
+                            if max_repos and seen>=max_repos:break
+                            if self.db.repository_is_fresh(item["id"],self.settings.refresh_after_days):
+                                skipped_fresh+=1; log.debug("  · skip %s (fresh, enriched < %dd ago)",full,self.settings.refresh_after_days);continue
+                            seen+=1
+                            log.info("  → [%d] processing %s (★%s) via %s",seen,full,stars,tech.slug)
+                            hits=await self._process(item,techs,rules_by,allowed)
+                            if hits:
+                                accepted+=1
+                                for slug in hits: by_tech[slug]=by_tech.get(slug,0)+1
+                        if len(items)==100 and page<max_pages: nxt.append((tech,q,page+1))
+                    active=nxt
+            except RateLimitExceeded as e:
+                # Auto-terminate: stop cleanly and keep the progress so far
+                # instead of sleeping for the (long) reset. Rerun once it resets.
+                rate_limited=True
+                log.warning("■ GitHub rate limit reached — terminating discover early: %s",e)
+            log.info("%s done: %d results, %d processed, %d assigned to a domain (%d dup, %d fresh) across %d page(s); rate limit %s/%s remaining",
+                     "■ stopped (rate limit) —" if rate_limited else "✓",results,seen,accepted,dupes,skipped_fresh,pages,self.gh.rate.get("remaining"),self.gh.rate.get("limit"))
             self.db.finish_run(run_id,status="completed",page_count=pages,result_count=results,candidate_count=seen,
                 rate_limit_limit=self.gh.rate.get("limit"),rate_limit_remaining=self.gh.rate.get("remaining"),rate_limit_used=self.gh.rate.get("used"))
             return {"correlation_id":correlation,"technologies":len(techs),"queries":len(plan),"results":results,"processed":seen,
-                    "assigned_repos":accepted,"by_technology":dict(sorted(by_tech.items(),key=lambda x:-x[1]))}
+                    "assigned_repos":accepted,"rate_limited":rate_limited,"by_technology":dict(sorted(by_tech.items(),key=lambda x:-x[1]))}
         except Exception as e:
             log.error("✗ run failed after %d processed: %s: %s",seen,type(e).__name__,e)
             self.db.finish_run(run_id,status="failed",page_count=pages,result_count=results,candidate_count=seen,error={"type":type(e).__name__,"message":str(e)})

@@ -1,5 +1,5 @@
 from __future__ import annotations
-import asyncio, base64, logging
+import asyncio, base64, logging, time
 from typing import Any, AsyncIterator
 import httpx
 from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
@@ -7,11 +7,16 @@ from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_excep
 log=logging.getLogger("madewith_github.github")
 
 class GitHubError(RuntimeError): pass
+# Raised when the primary GitHub rate limit is exhausted with a long reset. It is
+# deliberately NOT a GitHubError, so tenacity does not retry it — it propagates
+# straight up so the caller can terminate the run instead of sleeping for minutes.
+class RateLimitExceeded(RuntimeError): pass
 
 class GitHubClient:
-    def __init__(self, token:str, api_version:str, timeout:float=30):
+    def __init__(self, token:str, api_version:str, timeout:float=30, rate_limit_max_wait:float=120):
         self.client=httpx.AsyncClient(base_url="https://api.github.com", timeout=timeout, headers={"Accept":"application/vnd.github+json","Authorization":f"Bearer {token}","X-GitHub-Api-Version":api_version,"User-Agent":"madewith-github-discovery/0.1"})
         self.rate:dict[str,Any]={}
+        self.max_rate_wait=rate_limit_max_wait
     async def close(self): await self.client.aclose()
 
     @retry(stop=stop_after_attempt(5),wait=wait_exponential(min=1,max=30),retry=retry_if_exception_type((httpx.TransportError,httpx.TimeoutException,GitHubError)))
@@ -20,8 +25,14 @@ class GitHubClient:
         self.rate={"limit":r.headers.get("x-ratelimit-limit"),"remaining":r.headers.get("x-ratelimit-remaining"),"used":r.headers.get("x-ratelimit-used"),"reset":r.headers.get("x-ratelimit-reset")}
         if r.status_code==404 and allow_404:return r
         if r.status_code in (403,429):
-            reset=r.headers.get("x-ratelimit-reset")
-            if reset: await asyncio.sleep(min(60,max(1,int(reset)-int(__import__('time').time()))))
+            remaining=r.headers.get("x-ratelimit-remaining"); reset=r.headers.get("x-ratelimit-reset")
+            wait=max(0,int(reset)-int(time.time())) if reset else 0
+            # Exhausted primary limit with a long reset (e.g. the 5,000/hr core
+            # quota): stop the run rather than sleep for minutes. A short reset
+            # (the per-minute search quota) still gets a brief sleep + retry.
+            if remaining=="0" and wait>self.max_rate_wait:
+                raise RateLimitExceeded(f"GitHub rate limit exhausted; resets in {wait}s")
+            if reset: await asyncio.sleep(min(60,max(1,wait)))
             raise GitHubError(f"Rate limited: {r.text[:200]}")
         if r.status_code>=500: raise GitHubError(f"GitHub {r.status_code}")
         r.raise_for_status(); return r

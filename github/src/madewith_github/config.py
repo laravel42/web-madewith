@@ -8,6 +8,7 @@ class Settings(BaseSettings):
     github_api_version: str = "2022-11-28"
     github_concurrency: int = Field(default=4, ge=1, le=12)
     request_timeout_seconds: float = 30
+    rate_limit_max_wait_seconds: int = 120  # stop discover if a rate-limit reset is further away than this
     refresh_after_days: int = 14
     classifier_llm_enabled: bool = False
     openai_api_key: str | None = None
