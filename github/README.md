@@ -38,7 +38,6 @@ Settings are read from environment variables (or `.env`); see `.env.example`.
 | `DATABASE_URL` | — | PostgreSQL connection string (required) |
 | `GITHUB_TOKEN` | — | GitHub PAT for the search/enrichment API (required) |
 | `GITHUB_API_VERSION` | `2022-11-28` | GitHub REST API version header |
-| `GITHUB_CONCURRENCY` | `4` | Max concurrent enrichment requests |
 | `REQUEST_TIMEOUT_SECONDS` | `30` | Per-request HTTP timeout |
 | `REFRESH_AFTER_DAYS` | `14` | Skip repos enriched within this many days |
 | `CLASSIFIER_LLM_ENABLED` | `false` | Enable the LLM classifier fallback |
@@ -64,13 +63,14 @@ madewith-github discover --max-repos 200        # bound a run for testing
 | `--max-pages` | `10` | Max result pages per query (GitHub caps search at 1,000 results) |
 | `--max-repos` | — | Stop after processing this many unique repositories |
 
-### Qualify already-scraped repositories
+### Re-qualify already-scraped repositories
 
-Once repositories are in the database, assign each one to the technology
-domain(s) it belongs to. This is repo-centric — it scores every stored
-repository against **all** enabled technologies in a single pass and writes a
-`repository_technologies` row for each qualifying match. It makes **no** GitHub
-calls, so it is cheap to re-run whenever rules or technologies change:
+`discover` already qualifies at runtime, so you only need `qualify` to **re-run
+the assignment** over repositories already in the database — for example after
+editing `technology_rules` or adding a technology. It scores every stored
+repository against **all** enabled technologies and writes a
+`repository_technologies` row for each qualifying match, with **no** GitHub
+calls, so it is cheap to re-run:
 
 ```bash
 madewith-github qualify                 # assign every stored repo
@@ -90,15 +90,15 @@ pip install -e ".[dev]"
 pytest
 ```
 
-## Preventing repeated cycles
+## Preventing repeated work
 
 There are three layers:
 
-1. GitHub's immutable numeric repository ID is unique in `repositories`.
+1. GitHub's immutable numeric repository ID is unique in `repositories`, and every repo is de-duplicated **within a run** — a repo surfaced by several technologies' queries is enriched only once.
 2. Fresh repositories (`enriched_at` within `REFRESH_AFTER_DAYS`) are skipped before expensive enrichment calls.
-3. Every search window/page is recorded in `github_search_runs.partition`, permitting a scheduler to rotate date/star partitions instead of always querying page one.
+3. Each discovery is recorded in `github_search_runs` (with a null `technology_id`, since one run spans the whole catalog) so a scheduler can rotate `pushed:` windows instead of always querying page one.
 
-For exhaustive catalogs, schedule non-overlapping `pushed:` windows (for example 30 days each) and split any window returning near GitHub's 1,000-result search ceiling into narrower date or star ranges.
+For exhaustive catalogs, schedule non-overlapping `pushed:` windows (for example 30 days each) and split any query returning near GitHub's 1,000-result search ceiling into narrower date or star ranges.
 
 ## How qualification works
 
