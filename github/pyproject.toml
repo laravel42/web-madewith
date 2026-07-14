@@ -1,0 +1,29 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "madewith-github-discovery"
+version = "0.1.0"
+description = "Idempotent GitHub repository discovery, enrichment, technology detection, and domain classification for MadeWithWhat."
+requires-python = ">=3.11"
+dependencies = [
+  "httpx>=0.27,<1",
+  "psycopg[binary,pool]>=3.2,<4",
+  "pydantic>=2.8,<3",
+  "pydantic-settings>=2.4,<3",
+  "python-dateutil>=2.9,<3",
+  "typer>=0.12,<1",
+  "tenacity>=9,<10",
+  "orjson>=3.10,<4",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-asyncio>=0.23", "respx>=0.21", "ruff>=0.6", "mypy>=1.11"]
+llm = ["openai>=1.40,<2"]
+
+[project.scripts]
+madewith-github = "madewith_github.cli:app"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/madewith_github"]
