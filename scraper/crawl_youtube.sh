@@ -7,4 +7,4 @@ for arg in "$@"; do
     args+=("$arg")
   fi
 done
-exec .venv/bin/scrapy crawl youtube "${args[@]}"
+exec .venv/bin/scrapy crawl youtube ${args[@]+"${args[@]}"}

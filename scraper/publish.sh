@@ -7,4 +7,4 @@ for arg in "$@"; do
     args+=("$arg")
   fi
 done
-exec .venv/bin/python publish.py "${args[@]}"
+exec .venv/bin/python publish.py ${args[@]+"${args[@]}"}

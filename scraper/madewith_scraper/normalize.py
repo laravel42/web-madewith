@@ -89,16 +89,83 @@ def is_noise(repo: dict, domain: dict) -> bool:
     )
 
 
+# Built-in categorizers. A tech opts in by adding a "categorize": { "kind": ... }
+# block to its entry in src/config/domain-catalog.json. If a tech has no
+# categorize block, every repo is accepted (legacy behavior).
+def _categorize_laravel(repo: dict, rule: dict) -> bool:
+    """Laravel-specific categorization. See domain-catalog.json#laravel for rule."""
+    lang = repo.get("primary_language") or repo.get("language")
+    full_name_lower = (repo.get("full_name") or "").lower()
+    desc = (repo.get("description") or "").lower()
+    topics = {t.lower() for t in (repo.get("topics") or [])}
+    owner = (repo.get("owner_login") or (repo.get("owner") or {}).get("login") or "").lower()
+
+    # (a) Required language gate: PHP/Blade is the framework, always a project
+    if lang in rule.get("required_languages", []):
+        return True
+    # (b) First-party Laravel org
+    if owner == "laravel":
+        return True
+    # (c) Explicitly tagged as a Laravel package
+    plugin_topics = {t.lower() for t in rule.get("plugin_topics", [])}
+    if topics & plugin_topics:
+        return True
+    # (d) Negative-owner hard reject
+    if owner in {o.lower() for o in rule.get("negative_owners", [])}:
+        return False
+    # (e) Content-only repo name (awesome lists, tips, interview Q&A, ...)
+    name_only = full_name_lower.split("/")[-1] if "/" in full_name_lower else full_name_lower
+    if any(p in name_only for p in rule.get("content_name_patterns", [])):
+        return False
+
+    purpose_langs = {p.lower() for p in rule.get("purpose_languages", [])}
+    purpose_words = {w.lower() for w in rule.get("purpose_words", [])}
+    name_has_laravel = "laravel" in full_name_lower
+    desc_mentions_purpose = any(w in desc for w in purpose_words)
+    purpose_signal = (lang in purpose_langs) or (bool(topics & {"php", "blade"})) or any(w in desc for w in {"php", "blade", "eloquent", "artisan"})
+
+    if name_has_laravel and purpose_signal:
+        return True
+    if desc_mentions_purpose and purpose_signal:
+        return True
+
+    # Trust ecosystem owners: if they're tagged with Laravel anywhere, accept
+    ecosystem = {o.lower() for o in rule.get("ecosystem_owners", [])}
+    if owner in ecosystem and ("laravel" in desc or "laravel" in topics or "laravel" in full_name_lower):
+        return True
+    return False
+
+
+CATEGORIZERS = {
+    "laravel": _categorize_laravel,
+}
+
+
+def categorize_repo(repo: dict, domain: dict) -> bool:
+    """Apply the per-tech categorizer if configured. Default: accept all."""
+    rule = domain.get("categorize")
+    if not rule:
+        return True
+    kind = rule.get("kind")
+    fn = CATEGORIZERS.get(kind)
+    if fn is None:
+        return True
+    return fn(repo, rule)
+
+
 def filter_repos(domain: dict, repos: list[dict], relax_noise: bool = False) -> list[dict]:
     min_stars = domain["scrape"].get("minStars", 0)
     base = [
         r for r in repos
         if not r.get("fork") and not r.get("archived") and (r.get("stargazers_count") or 0) >= min_stars
     ]
-    curated = [r for r in base if not is_noise(r, domain)]
+    # Per-tech categorization: drop repos that are not actually built with the tech
+    # even though they carry the topic tag (e.g. shadcn-ui/ui tagged 'laravel').
+    categorized = [r for r in base if categorize_repo(r, domain)]
+    curated = [r for r in categorized if not is_noise(r, domain)]
     if relax_noise or len(curated) >= 6:
         return curated
-    return base
+    return categorized
 
 
 def dedupe_repos(repos: list[dict]) -> list[dict]:

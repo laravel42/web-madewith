@@ -20,6 +20,10 @@ CREATE TABLE IF NOT EXISTS youtube_videos (
   video_url TEXT NOT NULL,
   quality_score NUMERIC(6, 2) DEFAULT 0,
   metadata JSONB DEFAULT '{}'::jsonb,
+  transcript_status VARCHAR(16) NOT NULL DEFAULT 'pending',
+  transcript_fetched_at TIMESTAMPTZ,
+  transcript_language VARCHAR(16),
+  transcript_segment_count INTEGER,
   discovered_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
@@ -28,6 +32,16 @@ CREATE TABLE IF NOT EXISTS youtube_videos (
 CREATE INDEX IF NOT EXISTS idx_youtube_videos_catalog_slug ON youtube_videos(catalog_slug);
 CREATE INDEX IF NOT EXISTS idx_youtube_videos_technology_id ON youtube_videos(technology_id);
 CREATE INDEX IF NOT EXISTS idx_youtube_videos_quality_score ON youtube_videos(catalog_slug, quality_score DESC);
+
+-- CREATE TABLE IF NOT EXISTS does not add columns to an existing installation.
+-- Keep transcript tracking upgrades idempotent for databases created before the
+-- transcript worker was introduced.
+ALTER TABLE youtube_videos ADD COLUMN IF NOT EXISTS transcript_status VARCHAR(16) NOT NULL DEFAULT 'pending';
+ALTER TABLE youtube_videos ADD COLUMN IF NOT EXISTS transcript_fetched_at TIMESTAMPTZ;
+ALTER TABLE youtube_videos ADD COLUMN IF NOT EXISTS transcript_language VARCHAR(16);
+ALTER TABLE youtube_videos ADD COLUMN IF NOT EXISTS transcript_segment_count INTEGER;
+
+CREATE INDEX IF NOT EXISTS idx_youtube_videos_transcript_status ON youtube_videos(catalog_slug, transcript_status);
 
 CREATE TABLE IF NOT EXISTS youtube_search_runs (
   id BIGSERIAL PRIMARY KEY,

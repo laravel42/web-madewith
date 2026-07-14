@@ -7,4 +7,4 @@ for arg in "$@"; do
     args+=("$arg")
   fi
 done
-exec .venv/bin/python migrate_json_to_pg.py "${args[@]}"
+exec .venv/bin/python migrate_json_to_pg.py ${args[@]+"${args[@]}"}
