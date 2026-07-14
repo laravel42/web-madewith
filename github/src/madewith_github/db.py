@@ -134,6 +134,42 @@ class Database:
             cur.execute("DELETE FROM repository_languages WHERE repository_id=%s",(repo_id,))
             cur.executemany("INSERT INTO repository_languages(repository_id,language,bytes,percentage,created_at,updated_at) VALUES(%s,%s,%s,%s,now(),now())",[(repo_id,k,v,round(v*100/total,3)) for k,v in languages.items()])
 
+    def record_metrics(self, repo_id:int, item:dict[str,Any])->None:
+        """One repository_metrics snapshot + one daily repository_star_snapshot
+        from a freshly fetched GitHub payload (bucketed to the second so repeated
+        enrichment in the same second updates in place)."""
+        captured=datetime.now(timezone.utc).replace(microsecond=0)
+        stars=item.get("stargazers_count",0) or 0; forks=item.get("forks_count",0) or 0
+        watchers=item.get("subscribers_count",item.get("watchers_count",0)) or 0; open_issues=item.get("open_issues_count")
+        payload=json.dumps({"stars":stars,"forks":forks,"watchers":watchers,"open_issues":open_issues,
+                            "open_pull_requests":item.get("open_pull_requests"),"search_score":item.get("score")})
+        with self.connection() as conn, conn.cursor() as cur:
+            cur.execute("""INSERT INTO repository_metrics(repository_id,captured_at,stars,forks,watchers,open_issues,source_payload,created_at,updated_at)
+              VALUES(%s,%s,%s,%s,%s,%s,%s,now(),now())
+              ON CONFLICT(repository_id,captured_at) DO UPDATE SET stars=EXCLUDED.stars,forks=EXCLUDED.forks,watchers=EXCLUDED.watchers,open_issues=EXCLUDED.open_issues,source_payload=EXCLUDED.source_payload,updated_at=now()""",
+              (repo_id,captured,stars,forks,watchers,open_issues,payload))
+            cur.execute("""INSERT INTO repository_star_snapshots(repository_id,snapshot_date,stars,created_at)
+              VALUES(%s,CURRENT_DATE,%s,now()) ON CONFLICT(repository_id,snapshot_date) DO UPDATE SET stars=EXCLUDED.stars""",
+              (repo_id,stars))
+
+    def backfill_metrics(self)->tuple[int,int]:
+        """Populate repository_metrics and repository_star_snapshots for every
+        already-scraped repository from the columns stored on `repositories`,
+        without any GitHub calls. Idempotent: keyed on enriched_at so re-runs
+        update the same snapshot rather than piling up duplicates."""
+        with self.connection() as conn, conn.cursor() as cur:
+            cur.execute("""INSERT INTO repository_metrics(repository_id,captured_at,stars,forks,watchers,open_issues,source_payload,created_at,updated_at)
+              SELECT id,date_trunc('second',COALESCE(enriched_at,discovered_at,now())),COALESCE(stars,0),COALESCE(forks,0),COALESCE(watchers,0),open_issues,
+                     json_build_object('stars',stars,'forks',forks,'watchers',watchers,'open_issues',open_issues,'backfilled',true),now(),now()
+              FROM repositories
+              ON CONFLICT(repository_id,captured_at) DO UPDATE SET stars=EXCLUDED.stars,forks=EXCLUDED.forks,watchers=EXCLUDED.watchers,open_issues=EXCLUDED.open_issues,source_payload=EXCLUDED.source_payload,updated_at=now()""")
+            metrics=cur.rowcount
+            cur.execute("""INSERT INTO repository_star_snapshots(repository_id,snapshot_date,stars,created_at)
+              SELECT id,COALESCE(enriched_at::date,discovered_at::date,CURRENT_DATE),COALESCE(stars,0),now()
+              FROM repositories
+              ON CONFLICT(repository_id,snapshot_date) DO UPDATE SET stars=EXCLUDED.stars""")
+            return metrics,cur.rowcount
+
     def upsert_manifest(self, repo_id:int, path:str, sha:str|None, etag:str|None, size:int|None, content:Any, raw_excerpt:str|None, error:dict|None=None)->None:
         with self.connection() as conn, conn.cursor() as cur:
             cur.execute("""INSERT INTO repository_manifests(repository_id,path,sha,etag,size,status,content,raw_excerpt,fetched_at,error,created_at,updated_at)

@@ -8,7 +8,7 @@ Production-oriented Python library tailored to the supplied PostgreSQL schema.
 - **`qualify`** scores every already-scraped repository against *all* technologies and assigns each to the domain(s) it belongs to — no GitHub calls, so it can be re-run cheaply.
 - Records every query and partition in `github_search_runs`.
 - Avoids repeatedly enriching the same repository using `github_repository_id` plus `enriched_at` freshness.
-- Upserts complete repository metadata, topics, languages, manifests, and metric-ready fields.
+- Upserts complete repository metadata, topics, languages, manifests, metric snapshots (`repository_metrics`), and daily star snapshots (`repository_star_snapshots`).
 - Qualifies a repository from auto-derived signals (dependency, config file, topic, keyword) plus any hand-authored `technology_rules`, persisting auditable evidence/confidence.
 - Separately classifies project type and business domain with deterministic confidence.
 - Uses bounded pagination, rate-limit awareness, retries, and idempotent database writes.
@@ -72,6 +72,11 @@ madewith-github qualify                 # assign every stored repo
 madewith-github qualify --dry-run       # score and report without writing
 madewith-github qualify --limit 50      # only the 50 most-starred repos
 ```
+
+As a side effect (except under `--dry-run`) it also backfills
+`repository_metrics` and `repository_star_snapshots` for every stored
+repository from the columns already on `repositories`, so those tables stay
+populated even for repos enriched before metric capture was wired in.
 
 ## Develop
 

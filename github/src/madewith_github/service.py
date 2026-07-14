@@ -98,9 +98,14 @@ class DiscoveryService:
                 log.info("  ✓ %s → %s",repo["full_name"],", ".join(f"{t.slug}({d.confidence:.0f})" for t,d in sorted(hits,key=lambda h:-h[1].confidence)))
             else:
                 log.debug("  · %s → no domain",repo["full_name"])
+        metrics=stars=0
+        if not dry_run:
+            metrics,stars=self.db.backfill_metrics()
+            log.info("  backfilled %d metric snapshot(s) and %d star snapshot(s) from stored data",metrics,stars)
         log.info("✓ done: %d/%d repos assigned, %d total assignment(s) across %d technolog%s%s",
                  matched_repos,len(repos),assignments,len(by_tech),"y" if len(by_tech)==1 else "ies"," (dry run — nothing written)" if dry_run else "")
-        return {"repositories":len(repos),"assigned_repos":matched_repos,"assignments":assignments,"by_technology":dict(sorted(by_tech.items(),key=lambda x:-x[1]))}
+        return {"repositories":len(repos),"assigned_repos":matched_repos,"assignments":assignments,
+                "metrics_snapshots":metrics,"star_snapshots":stars,"by_technology":dict(sorted(by_tech.items(),key=lambda x:-x[1]))}
 
     def _excluded(self,item,tech):
         blob=((item.get("name") or "")+" "+(item.get("description") or "")).lower()
@@ -111,6 +116,7 @@ class DiscoveryService:
         log.debug("    fetching repo detail, topics, languages, contents for %s",full)
         detail,topics,languages,root=await asyncio.gather(self.gh.repository(full),self.gh.topics(full),self.gh.languages(full),self.gh.root(full))
         repo_id=self.db.upsert_repository(detail); self.db.replace_topics(repo_id,topics); self.db.replace_languages(repo_id,languages)
+        self.db.record_metrics(repo_id,detail)
         log.debug("    upserted repo_id=%s (%d topics, %d languages)",repo_id,len(topics),len(languages))
         root_paths={x.get("path","") for x in root}; wanted=set(DEFAULT_MANIFESTS)
         wanted.update(r.manifest_path for r in rules if r.manifest_path)
