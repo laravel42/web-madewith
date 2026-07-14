@@ -15,13 +15,15 @@ def _setup_logging(verbose:bool)->None:
 
 
 @app.command()
-def discover(technology:str,window_days:int=30,max_pages:int=10,
+def discover(window_days:int=30,max_pages:int=10,
+             max_repos:int=typer.Option(None,"--max-repos",help="Stop after processing this many unique repositories."),
              verbose:bool=typer.Option(True,"--verbose/--quiet","-v/-q",help="Log progress to stderr as it runs.")):
-    """Discover and classify repositories for one configured technology slug."""
+    """Discover repositories across all enabled technologies and qualify each at
+    runtime — every repo is assigned to the domain(s) it belongs to in one pass."""
     _setup_logging(verbose)
     async def main():
         svc=DiscoveryService(Settings())
-        try: print(json.dumps(await svc.run(technology,window_days,max_pages),indent=2,default=str))
+        try: print(json.dumps(await svc.run(window_days,max_pages,max_repos),indent=2,default=str))
         finally: await svc.close()
     asyncio.run(main())
 

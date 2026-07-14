@@ -4,8 +4,8 @@ Production-oriented Python library tailored to the supplied PostgreSQL schema.
 
 ## What it does
 
-- **`discover`** builds technology-specific GitHub search queries from `technologies`, enriches each repository, and stores metadata, topics, languages, and manifests.
-- **`qualify`** scores every already-scraped repository against *all* technologies and assigns each to the domain(s) it belongs to — no GitHub calls, so it can be re-run cheaply.
+- **`discover`** searches GitHub across *all* enabled technologies (no per-technology argument), enriches each unique repository once, and qualifies it at runtime against every technology — assigning it to the domain(s) it belongs to and classifying it in a single pass.
+- **`qualify`** re-runs that same cross-technology assignment over already-scraped repositories with no GitHub calls, so it is cheap to re-run whenever rules or technologies change.
 - Records every query and partition in `github_search_runs`.
 - Avoids repeatedly enriching the same repository using `github_repository_id` plus `enriched_at` freshness.
 - Upserts complete repository metadata, topics, languages, manifests, metric snapshots (`repository_metrics`), and daily star snapshots (`repository_star_snapshots`).
@@ -47,17 +47,22 @@ Settings are read from environment variables (or `.env`); see `.env.example`.
 
 ## Run
 
-Discover and classify repositories for one configured technology slug. The slug
-is a positional argument (it must exist in the `technologies` table):
+Discover repositories across **all** enabled technologies and qualify each one
+at runtime. There is no per-technology argument: the search plan is the union of
+every technology's own search config, each unique repo is enriched exactly once,
+and it is scored against every technology — so a repo is assigned to all the
+domains it belongs to (and classified) in a single pass.
 
 ```bash
-madewith-github nextjs --window-days 30 --max-pages 10
+madewith-github discover --window-days 30 --max-pages 10
+madewith-github discover --max-repos 200        # bound a run for testing
 ```
 
 | Option | Default | Purpose |
 | --- | --- | --- |
 | `--window-days` | `30` | Size of each `pushed:` search window |
-| `--max-pages` | `10` | Max result pages per window (GitHub caps search at 1,000 results) |
+| `--max-pages` | `10` | Max result pages per query (GitHub caps search at 1,000 results) |
+| `--max-repos` | — | Stop after processing this many unique repositories |
 
 ### Qualify already-scraped repositories
 
