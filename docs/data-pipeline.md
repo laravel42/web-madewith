@@ -36,7 +36,7 @@ src/config/domain-catalog.json
 2. **Cloudflare Worker/R2** when `MADEWITH_DATA_BASE_URL` is set and PostgreSQL is not.
 3. **Committed JSON** when neither source is configured or publishing/fetching fails.
 
-Raw captions and published transcript JSON are produced separately. `scraper/transcribe_youtube.py` fetches captions, and `scraper/enrich_transcripts.py` generates the published schema consumed by Astro. `pull-data.mjs` does not run either step.
+Raw captions and published transcript JSON are produced separately. `youtube/transcribe_youtube.py` fetches captions, and `youtube/enrich_transcripts.py` generates the published schema consumed by Astro. `pull-data.mjs` does not run either step.
 
 Editorial hydration is also separate. `scripts/hydrate-blog.mjs` copies factory output when available and otherwise keeps committed blog content. The message `factory/output/articles not found — using committed src/content/blog` is a successful fallback, not a failed catalog publish.
 
@@ -99,7 +99,7 @@ Ambiguous names need strong relevance rules. Examples include Astro, Fiber, Gin,
 
 ## YouTube transcripts
 
-`transcribe_youtube.py` selects `pending` rows from `youtube_videos`, fetches caption segments into the ignored local cache `scraper/data/transcripts/<video-id>.json`, and updates transcript status metadata.
+`transcribe_youtube.py` selects `pending` rows from `youtube_videos`, fetches caption segments into the ignored local cache `youtube/data/transcripts/<video-id>.json`, and updates transcript status metadata.
 
 ```text
 pending ── success ───────▶ fetched

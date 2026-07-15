@@ -1,8 +1,10 @@
 # MadeWithWhat data scraper
 
-The scraper discovers GitHub repositories and YouTube tutorials, stores normalized records in PostgreSQL, and publishes build-time JSON for the Astro site.
+The scraper discovers GitHub repositories, stores normalized records in PostgreSQL, and publishes build-time JSON for the Astro site.
 
-PostgreSQL is authoritative for repository and video metadata. Generated files under `src/data/` are publishing artifacts.
+PostgreSQL is authoritative for repository metadata. Generated files under `src/data/` are publishing artifacts.
+
+> YouTube tutorial discovery, transcripts, and video publishing have moved to a standalone project at [`../youtube`](../youtube/README.md).
 
 ## Setup
 
@@ -19,12 +21,10 @@ Required `.env` entries:
 ```dotenv
 GITHUB_TOKEN=
 DATABASE_URL=
-YOUTUBE_API_KEY=
 ```
 
 - `GITHUB_TOKEN`: strongly recommended; GitHub Search rises from 10 to 30 requests/minute and core API access rises to 5,000 requests/hour.
-- `DATABASE_URL`: PostgreSQL used by discovery, loaders, publishing, status tracking, and transcript status.
-- `YOUTUBE_API_KEY`: required only for YouTube Data API discovery.
+- `DATABASE_URL`: PostgreSQL used by discovery, loaders, publishing, and status tracking.
 
 Never put real credential values in documentation or logs.
 
@@ -114,103 +114,9 @@ node scripts/pull-data.mjs
 `node scripts/pull-data.mjs` is the build-time hydration command. With `DATABASE_URL`, it runs both:
 
 1. `scraper/publish.py` → `src/data/*.json`
-2. `scraper/publish_videos.py` → `src/data/videos/*.json`
+2. `youtube/publish_videos.py` → `src/data/videos/*.json` (see [`../youtube`](../youtube/README.md))
 
 If PostgreSQL publishing fails, committed JSON is kept. If PostgreSQL is unset, the script can fetch legacy datasets from `MADEWITH_DATA_BASE_URL`; otherwise it uses committed files.
-
-## YouTube tutorial discovery
-
-YouTube discovery uses the official YouTube Data API v3, then applies quality and relevance gates.
-
-```bash
-pnpm scrape:youtube -- -a domains=laravel
-pnpm scrape:youtube -- -a domains=laravel -a refresh_days=0
-pnpm scrape:youtube:publish -- laravel
-```
-
-Spider arguments:
-
-| Argument | Default | Description |
-| --- | --- | --- |
-| `domains` | all | Comma-separated catalog slugs |
-| `clean` | 0 | `1` clears YouTube search-run state |
-| `refresh_days` | 14 | Skip recently searched domains; `0` disables cooldown |
-
-Quality thresholds are configured by the `YOUTUBE_*` variables in `.env.example`. Relevance rules live in `src/config/video-relevance.json` and are especially important for ambiguous terms such as Astro, Fiber, Gin, Ghost, Haystack, Medusa, Monica, Phoenix, and Rocket.
-
-Tables:
-
-- `youtube_videos`
-- `youtube_search_runs`
-
-Published output: `src/data/videos/<slug>.json`.
-
-## YouTube transcripts
-
-`transcribe_youtube.py` reads pending videos from PostgreSQL and writes raw caption files to a local cache:
-
-```bash
-scraper/.venv/bin/python scraper/transcribe_youtube.py --slug laravel --limit 20
-scraper/.venv/bin/python scraper/transcribe_youtube.py --limit 1200 --sleep 1
-```
-
-Arguments:
-
-| Argument | Default | Description |
-| --- | --- | --- |
-| `--slug` | all | Restrict work to one catalog slug |
-| `--limit` | 100 | Maximum pending videos selected |
-| `--lang` | `en` | Preferred transcript language |
-| `--sleep` | `0.5` | Delay between requests; increase for bulk runs |
-| `--force` | off | Replace an existing transcript file |
-| `--out` | `scraper/data/transcripts` | Raw-caption output directory |
-
-The raw shape preserves timestamped source data for deterministic reprocessing:
-
-```json
-{
-  "videoId": "DKnn8TlJ4MA",
-  "language": "en",
-  "source": "auto",
-  "segments": [{ "start": 0.399, "text": "…" }],
-  "text": "…"
-}
-```
-
-Raw cache files are ignored by Git. Convert them to the published schema with:
-
-```bash
-scraper/.venv/bin/python scraper/enrich_transcripts.py --video-id DKnn8TlJ4MA
-scraper/.venv/bin/python scraper/enrich_transcripts.py --limit 100
-```
-
-`OPENAI_API_KEY` is required. `OPENAI_MODEL` defaults to `gpt-5-mini`. Existing schema-v2 outputs are skipped unless `--force` is supplied.
-
-Published output at `src/data/transcripts/<video-id>.json` contains:
-
-- `chapters[]`: meaningful AI-generated `title` and `description`, plus numeric `startTime` and `endTime` seconds
-- `summary`: Markdown résumé of the video's most relevant concepts
-- `transcription`: literal speech-to-text content, AI-formatted into readable Markdown without summarizing or inventing content
-- provenance fields: `schemaVersion`, `videoId`, `language`, and `source`
-
-Status columns on `youtube_videos`:
-
-- `pending`: eligible for the next run
-- `fetched`: JSON written successfully
-- `unavailable`: permanent no-caption/unplayable condition
-- `failed`: transient block/network/unknown failure; reset to `pending` before retrying
-
-Bulk fetching is not the official YouTube Data API. `youtube-transcript-api` can trigger `IpBlocked` or `RequestBlocked`. These are transient and must not be treated as evidence that captions are absent. Stop the run, allow a cooldown, increase `--sleep`, or configure a supported rotating proxy before retrying.
-
-Reset retryable failures:
-
-```sql
-UPDATE youtube_videos
-SET transcript_status = 'pending'
-WHERE transcript_status = 'failed';
-```
-
-The observed 2026-07-13 full batch processed 1,121 videos in 3,429 seconds and reported 40 fetched, 583 unavailable, and 498 failed after the host IP was blocked. The statuses were subsequently corrected so ambiguous non-fetched records could be retried. Together with the three-video smoke test, 43 transcript JSON files were verified.
 
 ## Legacy JSON migration
 

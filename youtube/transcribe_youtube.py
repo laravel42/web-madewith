@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Fetch raw YouTube captions into scraper/data/transcripts/<videoId>.json.
+"""Fetch raw YouTube captions into youtube/data/transcripts/<videoId>.json.
 
 Idempotent: skips videos that already have a transcript file on disk.
 Tracks status in youtube_videos.transcript_status (pending → fetched | failed | unavailable).
@@ -23,9 +23,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]  # /Users/secret/Code/web-madewith
-sys.path.insert(0, str(ROOT / "scraper"))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-OUT_DIR = ROOT / "scraper" / "data" / "transcripts"
+OUT_DIR = Path(__file__).resolve().parent / "data" / "transcripts"
 LANG_PRIORITY = ["en", "en-US", "en-GB"]
 USER_AGENT = "Mozilla/5.0 (compatible; madewithwhat-transcribe/1.0)"
 
@@ -78,10 +78,38 @@ def mark_status(conn, video_db_id: int, status: str, language: str | None = None
     conn.commit()
 
 
-def fetch_one(video_id: str, langs: list[str]) -> dict:
-    """Fetch a transcript and normalize to the project's Transcript shape."""
+def proxy_config():
+    """Optional proxy for youtube-transcript-api, configured from env. YouTube
+    IP-blocks datacenter ranges, so bulk runs often need a residential proxy.
+    Webshare (WEBSHARE_PROXY_USERNAME/WEBSHARE_PROXY_PASSWORD) is the most
+    reliable; a generic proxy (YT_PROXY_HTTP/YT_PROXY_HTTPS, or YT_PROXY_URL for
+    both) also works. Returns None when nothing is configured."""
+    import os
+
+    user = os.environ.get("WEBSHARE_PROXY_USERNAME")
+    password = os.environ.get("WEBSHARE_PROXY_PASSWORD")
+    if user and password:
+        from youtube_transcript_api.proxies import WebshareProxyConfig
+        return WebshareProxyConfig(proxy_username=user, proxy_password=password)
+    http = os.environ.get("YT_PROXY_HTTP") or os.environ.get("YT_PROXY_URL")
+    https = os.environ.get("YT_PROXY_HTTPS") or os.environ.get("YT_PROXY_URL")
+    if http or https:
+        from youtube_transcript_api.proxies import GenericProxyConfig
+        return GenericProxyConfig(http_url=http, https_url=https)
+    return None
+
+
+def build_api():
     from youtube_transcript_api import YouTubeTranscriptApi
-    api = YouTubeTranscriptApi()
+    proxy = proxy_config()
+    if proxy:
+        print(f"Using proxy: {type(proxy).__name__}")
+        return YouTubeTranscriptApi(proxy_config=proxy)
+    return YouTubeTranscriptApi()
+
+
+def fetch_one(api, video_id: str, langs: list[str]) -> dict:
+    """Fetch a transcript and normalize to the project's Transcript shape."""
     # Try preferred languages in order
     fetched = None
     last_error: Exception | None = None
@@ -135,6 +163,7 @@ def main() -> int:
         if fallback not in langs:
             langs.append(fallback)
 
+    api = build_api()
     conn = db_connect()
     try:
         videos = get_videos(conn, args.slug, args.limit)
@@ -149,7 +178,7 @@ def main() -> int:
                 skipped += 1
                 continue
             try:
-                tr = fetch_one(vid, langs)
+                tr = fetch_one(api, vid, langs)
                 write_transcript(out_dir, vid, tr)
                 mark_status(conn, v["id"], "fetched", tr.get("language"), len(tr["segments"]))
                 print(f"  [{i:>3}/{len(videos)}] {vid:<12}  ok   {len(tr['segments']):>4} segments  {v['catalog_slug']:<14} {v['title'][:50]}")

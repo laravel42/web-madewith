@@ -18,6 +18,7 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const DATA_DIR = join(ROOT, "src", "data");
 const CONFIG_DIR = join(DATA_DIR, "config");
 const SCRAPER_DIR = join(ROOT, "scraper");
+const YOUTUBE_DIR = join(ROOT, "youtube");
 
 function databaseUrl() {
   return process.env.SCRAPE_DATABASE_URL || process.env.DATABASE_URL || "";
@@ -66,7 +67,7 @@ async function hydrateFromPostgres() {
 
 async function hydrateVideosFromPostgres() {
   console.log("pull-data: hydrating src/data/videos/*.json from Postgres");
-  const ok = await runPythonScript(join(SCRAPER_DIR, "publish_videos.py"), "videos");
+  const ok = await runPythonScript(join(YOUTUBE_DIR, "publish_videos.py"), "videos");
   if (ok) console.log("pull-data: video hydration complete");
   else console.log("pull-data: video hydration skipped or failed");
   return ok;

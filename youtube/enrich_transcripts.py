@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Turn raw YouTube captions into the published transcript v2 JSON schema.
 
-Raw caption files live in scraper/data/transcripts/<videoId>.json. Published,
+Raw caption files live in youtube/data/transcripts/<videoId>.json. Published,
 AI-structured files live in src/data/transcripts/<videoId>.json.
 """
 from __future__ import annotations
@@ -17,7 +17,7 @@ from typing import Any
 from dotenv import load_dotenv
 
 ROOT = Path(__file__).resolve().parents[1]
-RAW_DIR = ROOT / "scraper" / "data" / "transcripts"
+RAW_DIR = Path(__file__).resolve().parent / "data" / "transcripts"
 OUT_DIR = ROOT / "src" / "data" / "transcripts"
 
 

@@ -41,7 +41,7 @@ YouTube transcript endpoint ──────────┤
                                       ▼
                            scripts/pull-data.mjs
                             ├─ scraper/publish.py
-                            └─ scraper/publish_videos.py
+                            └─ youtube/publish_videos.py
                                       │
                          src/data/*.json
                          src/data/videos/*.json
@@ -104,12 +104,12 @@ Video metadata is stored in `youtube_videos` and published to `src/data/videos/<
 Fetch raw caption segments for discovered videos, then structure them with AI:
 
 ```bash
-scraper/.venv/bin/python scraper/transcribe_youtube.py --slug laravel --limit 20
-scraper/.venv/bin/python scraper/transcribe_youtube.py --limit 1200 --sleep 1
-scraper/.venv/bin/python scraper/enrich_transcripts.py --limit 100
+youtube/.venv/bin/python youtube/transcribe_youtube.py --slug laravel --limit 20
+youtube/.venv/bin/python youtube/transcribe_youtube.py --limit 1200 --sleep 1
+youtube/.venv/bin/python youtube/enrich_transcripts.py --limit 100
 ```
 
-Raw captions are cached locally at `scraper/data/transcripts/<youtube-video-id>.json`. `enrich_transcripts.py` sends timestamped captions to the configured OpenAI model and publishes schema-v2 files at `src/data/transcripts/<youtube-video-id>.json`. Each published file contains AI-generated chapters (`title`, `description`, `startTime`, `endTime`), a Markdown `summary`, and a literal, AI-formatted Markdown `transcription`. `src/lib/transcripts.ts` includes those files at build time.
+Raw captions are cached locally at `youtube/data/transcripts/<youtube-video-id>.json`. `enrich_transcripts.py` sends timestamped captions to the configured OpenAI model and publishes schema-v2 files at `src/data/transcripts/<youtube-video-id>.json`. Each published file contains AI-generated chapters (`title`, `description`, `startTime`, `endTime`), a Markdown `summary`, and a literal, AI-formatted Markdown `transcription`. `src/lib/transcripts.ts` includes those files at build time.
 
 `youtube-transcript-api` uses YouTube’s transcript endpoint rather than the official Data API and may return `IpBlocked` or `RequestBlocked` during bulk runs. Those are transient failures and must remain retryable; they do not mean the video lacks captions. Use a cooldown, a slower `--sleep`, or a supported rotating proxy. Permanent no-caption cases are recorded as `unavailable`.
 

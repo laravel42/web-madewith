@@ -11,12 +11,12 @@ from dotenv import load_dotenv
 
 ROOT = Path(__file__).resolve().parents[1]
 load_dotenv(ROOT / ".env")
-sys.path.insert(0, str(ROOT / "scraper"))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from madewith_scraper import youtube_db  # noqa: E402
-from madewith_scraper.domains import load_domains  # noqa: E402
-from madewith_scraper.youtube_quality import format_duration  # noqa: E402
-from madewith_scraper.youtube_relevance import passes_relevance_gate  # noqa: E402
+from madewith_youtube import youtube_db  # noqa: E402
+from madewith_youtube.domains import load_domains  # noqa: E402
+from madewith_youtube.youtube_quality import format_duration  # noqa: E402
+from madewith_youtube.youtube_relevance import passes_relevance_gate  # noqa: E402
 
 OUT_DIR = ROOT / "src" / "data" / "videos"
 KEEP = int(__import__("os").environ.get("YOUTUBE_PUBLISH_KEEP", "24"))

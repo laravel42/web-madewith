@@ -7,20 +7,20 @@ from urllib.parse import urlencode
 
 import scrapy
 
-from madewith_scraper import youtube_db
-from madewith_scraper.domains import (
+from madewith_youtube import youtube_db
+from madewith_youtube.domains import (
     load_domains,
     sort_domains_by_projects,
     youtube_search_query,
 )
-from madewith_scraper.items import YoutubeRunCompleteItem, YoutubeRunFailedItem, YoutubeVideoItem
-from madewith_scraper.youtube_quality import (
+from madewith_youtube.items import YoutubeRunCompleteItem, YoutubeRunFailedItem, YoutubeVideoItem
+from madewith_youtube.youtube_quality import (
     load_config,
     parse_iso8601_duration,
     passes_quality_gate,
     quality_score,
 )
-from madewith_scraper.youtube_relevance import passes_relevance_gate
+from madewith_youtube.youtube_relevance import passes_relevance_gate
 
 API_BASE = "https://www.googleapis.com/youtube/v3"
 
@@ -32,7 +32,7 @@ class YoutubeSpider(scrapy.Spider):
         "CONCURRENT_REQUESTS": 1,
         "DOWNLOAD_DELAY": 1,
         "ITEM_PIPELINES": {
-            "madewith_scraper.pipelines.YoutubePipeline": 300,
+            "madewith_youtube.pipelines.YoutubePipeline": 300,
         },
         "DEFAULT_REQUEST_HEADERS": {
             "Accept": "application/json",
