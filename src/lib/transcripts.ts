@@ -3,13 +3,17 @@ export interface TranscriptChapter {
   description: string;
   startTime: number;
   endTime: number;
+  /** Anchor slug for the transcription section (v3). */
+  slug?: string;
 }
 
 export interface Transcript {
-  schemaVersion: 2;
+  schemaVersion: 2 | 3;
   videoId: string;
   language: string;
   source?: string;
+  /** Cohesive ~500-char SEO description of the video topics (v3). */
+  seoDescription?: string;
   chapters: TranscriptChapter[];
   summary: string;
   transcription: string;

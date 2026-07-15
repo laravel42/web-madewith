@@ -1,6 +1,6 @@
 ---
 import NetworkLayout from "../../layouts/NetworkLayout.astro";
-import { allVideoCards, getVideoDetail, isoDuration } from "../../lib/video-view";
+import { allVideoCards, getVideoDetail, isoDuration, slugifyVideo } from "../../lib/video-view";
 import { getTranscript, segmentTime } from "../../lib/transcripts";
 import { renderArticle } from "../../lib/markdown";
 
@@ -14,25 +14,42 @@ if (!detail) return Astro.redirect("/video/");
 const { item, related } = detail;
 
 const transcript = getTranscript(item.videoId);
+// Transcript chapters carry an anchor slug (v3); fall back to slugifying the
+// title for older records so the floating nav still links into the transcript.
+const transcriptChapters = (transcript?.chapters ?? []).map((c) => ({
+  ...c,
+  slug: c.slug ?? slugifyVideo(c.title),
+}));
+
 // Prefer transcript-derived chapters (full-video coverage) over the ones parsed
 // from the YouTube description; fall back to the description parse.
-const chapters = transcript?.chapters?.length
-  ? transcript.chapters.map((c) => ({
+const chapters = transcriptChapters.length
+  ? transcriptChapters.map((c) => ({
       time: segmentTime(c.startTime),
       seconds: Math.floor(c.startTime),
       label: c.title,
       description: c.description,
+      slug: c.slug,
     }))
-  : item.chapters;
+  : item.chapters.map((c) => ({ ...c, slug: undefined as string | undefined, description: "" }));
 
 const summaryHtml = renderArticle(transcript?.summary ?? "");
-const transcriptionHtml = renderArticle(transcript?.transcription ?? "");
+// The transcription is one `## <chapter>` section per chapter, in order. Inject
+// each chapter's anchor id into its H2 so the floating nav links straight in.
+let transcriptionHtml = renderArticle(transcript?.transcription ?? "");
+let h2Index = 0;
+transcriptionHtml = transcriptionHtml.replace(/<h2>/g, () => {
+  const slug = transcriptChapters[h2Index]?.slug ?? `section-${h2Index + 1}`;
+  h2Index += 1;
+  return `<h2 id="${slug}" class="vd-tx-h">`;
+});
 
 const site = Astro.site ?? new URL(Astro.url.origin);
 const canonical = new URL(item.href, site).href;
 const embedUrl = `https://www.youtube-nocookie.com/embed/${item.videoId}`;
 const title = `${item.title} — ${item.techName} video`;
-const description = item.excerpt;
+// Prefer the AI-written SEO description (~500 chars) over the raw excerpt.
+const description = transcript?.seoDescription ?? item.excerpt;
 const topics = [item.techName, item.kind, item.groupLabel];
 
 const playerCover = `linear-gradient(135deg, color-mix(in srgb, ${item.accent} 55%, #000) 0%, ${item.accent} 100%)`;
@@ -44,7 +61,7 @@ const jsonLd = {
       "@type": "VideoObject",
       "@id": canonical,
       name: item.title,
-      description: item.excerpt,
+      description,
       thumbnailUrl: item.thumbnail ? [item.thumbnail] : undefined,
       uploadDate: item.dateIso,
       duration: isoDuration(item.durationSeconds),
@@ -136,12 +153,29 @@ const jsonLd = {
           )}
 
           {transcriptionHtml && (
-            <details class="vd-transcript">
+            <details class="vd-transcript" open>
               <summary class="vd-transcript-head">
-                <span>Transcription</span>
-                <span class="vd-transcript-meta">AI-formatted literal speech</span>
+                <span>Full transcription</span>
+                <span class="vd-transcript-meta">AI-formatted, organised by chapter</span>
               </summary>
-              <div class="vd-transcript-body vd-article-body" set:html={transcriptionHtml} />
+              <div class="vd-transcript-layout">
+                {transcriptChapters.length > 1 && (
+                  <nav class="vd-toc" aria-label="Transcript chapters">
+                    <div class="vd-toc-head">On this page</div>
+                    <ol class="vd-toc-list">
+                      {transcriptChapters.map((c) => (
+                        <li>
+                          <a href={`#${c.slug}`} class="vd-toc-link">
+                            <span class="vd-toc-time" style={`color:${item.accent};`}>{segmentTime(c.startTime)}</span>
+                            <span>{c.title}</span>
+                          </a>
+                        </li>
+                      ))}
+                    </ol>
+                  </nav>
+                )}
+                <div class="vd-transcript-body vd-article-body" set:html={transcriptionHtml} />
+              </div>
             </details>
           )}
 
@@ -253,7 +287,24 @@ const jsonLd = {
     .vd-transcript-head::before { content: "▸"; display: inline-block; transition: transform 0.15s ease; color: #c7ccd2; }
     .vd-transcript[open] .vd-transcript-head::before { transform: rotate(90deg); }
     .vd-transcript-meta { font-weight: 600; letter-spacing: 0; text-transform: none; color: #b5bac0; }
-    .vd-transcript-body { margin-top: 14px; max-height: 560px; overflow-y: auto; padding-right: 10px; }
+    /* Two-column: floating chapter nav + full transcript flowing in the page. */
+    .vd-transcript-layout { margin-top: 16px; display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 28px; align-items: start; }
+    .vd-toc { position: sticky; top: 84px; max-height: calc(100vh - 108px); overflow-y: auto; padding-right: 6px; }
+    .vd-toc-head { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: #9aa0a6; text-transform: uppercase; margin-bottom: 10px; }
+    .vd-toc-list { list-style: none; margin: 0; padding: 0; border-left: 1px solid #eef0f2; }
+    .vd-toc-list li { margin: 0; }
+    .vd-toc-link { display: flex; gap: 8px; padding: 5px 0 5px 12px; margin-left: -1px; border-left: 2px solid transparent; font-size: 12.5px; line-height: 1.4; color: #6a7078; text-decoration: none; transition: color 0.12s ease, border-color 0.12s ease; }
+    .vd-toc-link:hover, .vd-toc-link[aria-current="true"] { color: #12161a; border-left-color: currentColor; }
+    .vd-toc-time { font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-variant-numeric: tabular-nums; flex-shrink: 0; }
+    .vd-transcript-body { min-width: 0; }
+    .vd-transcript-body :global(.vd-tx-h) { scroll-margin-top: 84px; padding-top: 6px; border-top: 1px solid #f1f2f4; }
+    .vd-transcript-body :global(.vd-tx-h:first-child) { border-top: 0; padding-top: 0; }
+    @media (max-width: 720px) {
+      .vd-transcript-layout { grid-template-columns: 1fr; gap: 8px; }
+      .vd-toc { position: static; max-height: none; margin-bottom: 8px; }
+      .vd-toc-list { display: flex; flex-wrap: wrap; gap: 4px 14px; border-left: 0; }
+      .vd-toc-link { padding: 2px 0; border-left: 0; }
+    }
 
     .vd-topics { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; padding-top: 18px; border-top: 1px solid #eef0f2; }
     .vd-topic { font-size: 12.5px; font-weight: 600; color: #5c6169; background: #f2f4f6; padding: 6px 12px; border-radius: 20px; transition: background 0.15s ease, color 0.15s ease; }

@@ -1,8 +1,18 @@
 #!/usr/bin/env python3
-"""Turn raw YouTube captions into the published transcript v2 JSON schema.
+"""Turn raw YouTube captions into the published transcript v3 JSON schema.
 
 Raw caption files live in youtube/data/transcripts/<videoId>.json. Published,
-AI-structured files live in src/data/transcripts/<videoId>.json.
+AI-structured files live in src/data/transcripts/<videoId>.json. Each published
+file carries four artifacts generated from the raw speech:
+
+  1. `chapters`   — intelligent topic segmentation (title, description, start/end
+                    seconds, anchor slug) so viewers can skip to relevant parts.
+  2. `seoDescription` — a cohesive, SEO-focused ~500-character summary of the
+                    video's topics.
+  3. `summary`    — an elegant, scannable Markdown "key concepts" document.
+  4. `transcription` — the full literal speech, reorganised as Markdown split
+                    into one `## <chapter>` section per chapter (anchors align
+                    with `chapters[].slug`, so a floating nav links straight in).
 """
 from __future__ import annotations
 
@@ -11,6 +21,7 @@ import json
 import os
 import re
 import time
+import unicodedata
 from pathlib import Path
 from typing import Any
 
@@ -20,12 +31,47 @@ ROOT = Path(__file__).resolve().parents[1]
 RAW_DIR = Path(__file__).resolve().parent / "data" / "transcripts"
 OUT_DIR = ROOT / "src" / "data" / "transcripts"
 
+SCHEMA_VERSION = 3
+# Output-token reservation. Kept modest: tutorial transcriptions need ~6-10k
+# tokens, and providers like OpenRouter reserve credits up-front against this
+# value, so an over-large cap can 402 on a credit-limited account.
+MAX_OUTPUT_TOKENS = 16_000
+SEO_MIN, SEO_TARGET, SEO_MAX = 300, 500, 560
+
 
 def clock(seconds: float) -> str:
     total = max(0, int(seconds))
     hours, rem = divmod(total, 3600)
     minutes, secs = divmod(rem, 60)
     return f"{hours:02d}:{minutes:02d}:{secs:02d}" if hours else f"{minutes:02d}:{secs:02d}"
+
+
+def slugify(text: str) -> str:
+    text = unicodedata.normalize("NFKD", text or "").encode("ascii", "ignore").decode()
+    return re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", text.lower())).strip("-") or "section"
+
+
+def unique_slugs(titles: list[str]) -> list[str]:
+    seen: dict[str, int] = {}
+    out: list[str] = []
+    for title in titles:
+        base = slugify(title)
+        n = seen.get(base, 0) + 1
+        seen[base] = n
+        out.append(base if n == 1 else f"{base}-{n}")
+    return out
+
+
+def raw_text_for_range(raw: dict[str, Any], start: float, end: float) -> str:
+    """Literal caption text whose segments fall in [start, end) — used as a
+    fallback when the model leaves a chapter's transcript empty (which happens
+    on long videos where one response can't hold the whole cleaned transcript)."""
+    parts = [
+        str(seg.get("text", "")).strip()
+        for seg in raw.get("segments", [])
+        if start <= float(seg.get("start", -1)) < end and str(seg.get("text", "")).strip()
+    ]
+    return re.sub(r"\s+", " ", " ".join(parts)).strip()
 
 
 def timestamped_source(raw: dict[str, Any]) -> str:
@@ -45,24 +91,40 @@ def parse_model_json(raw: str) -> dict[str, Any]:
     return result
 
 
+def trim_seo(text: str) -> str:
+    """Tidy the SEO description to ~500 chars, cutting on a sentence/word edge."""
+    text = re.sub(r"\s+", " ", str(text or "")).strip()
+    if len(text) <= SEO_MAX:
+        return text
+    window = text[:SEO_MAX]
+    cut = max(window.rfind(". "), window.rfind("! "), window.rfind("? "))
+    if cut >= SEO_MIN:
+        return window[: cut + 1].strip()
+    cut = window.rfind(" ")
+    return (window[:cut] if cut >= SEO_MIN else window).strip().rstrip(",;:") + "…"
+
+
 def normalize_result(raw: dict[str, Any], generated: dict[str, Any], duration_seconds: float) -> dict[str, Any]:
     chapters = generated.get("chapters")
     summary = generated.get("summary")
-    transcription = generated.get("transcription")
+    seo = generated.get("seoDescription")
     if not isinstance(chapters, list) or not chapters:
         raise ValueError("chapters must be a non-empty array")
     if not isinstance(summary, str) or len(summary.strip()) < 20:
         raise ValueError("summary must be meaningful Markdown")
-    if not isinstance(transcription, str) or len(transcription.strip()) < 20:
-        raise ValueError("transcription must be meaningful Markdown")
+    if not isinstance(seo, str) or len(seo.strip()) < 40:
+        raise ValueError("seoDescription must be a meaningful sentence")
 
+    slugs = unique_slugs([str(c.get("title", "")).strip() for c in chapters])
     normalized: list[dict[str, Any]] = []
+    body_sections: list[str] = []
     previous_end = 0.0
     for index, chapter in enumerate(chapters):
         if not isinstance(chapter, dict):
             raise ValueError(f"chapter {index} must be an object")
         title = str(chapter.get("title", "")).strip()
         description = str(chapter.get("description", "")).strip()
+        transcript = str(chapter.get("transcript", "")).strip()
         try:
             start = float(chapter["startTime"])
             end = float(chapter["endTime"])
@@ -70,6 +132,10 @@ def normalize_result(raw: dict[str, Any], generated: dict[str, Any], duration_se
             raise ValueError(f"chapter {index} requires numeric startTime and endTime") from exc
         if not title or not description:
             raise ValueError(f"chapter {index} requires title and description")
+        if len(transcript) < 20:
+            # Model returned an empty/stub transcript for this chapter (common on
+            # long videos) — rebuild it from the raw captions in its time window.
+            transcript = raw_text_for_range(raw, start, end) or transcript or f"_{description}_"
         if start < 0 or end <= start:
             raise ValueError(f"chapter {index} endTime must be greater than startTime")
         if start < previous_end - 1:
@@ -79,7 +145,9 @@ def normalize_result(raw: dict[str, Any], generated: dict[str, Any], duration_se
             "description": description,
             "startTime": round(start, 3),
             "endTime": round(min(end, duration_seconds), 3),
+            "slug": slugs[index],
         })
+        body_sections.append(f"## {title}\n\n{transcript}")
         previous_end = end
 
     if normalized[-1]["startTime"] >= duration_seconds:
@@ -87,34 +155,48 @@ def normalize_result(raw: dict[str, Any], generated: dict[str, Any], duration_se
     normalized[-1]["endTime"] = round(duration_seconds, 3)
 
     return {
-        "schemaVersion": 2,
+        "schemaVersion": SCHEMA_VERSION,
         "videoId": str(raw["videoId"]),
         "language": str(raw.get("language") or "unknown"),
         "source": str(raw.get("source") or "unknown"),
+        "seoDescription": trim_seo(seo),
         "chapters": normalized,
         "summary": summary.strip(),
-        "transcription": transcription.strip(),
+        "transcription": "\n\n".join(body_sections),
     }
 
 
 def prompt_for(raw: dict[str, Any], title: str, duration_seconds: float) -> str:
-    return f"""You are an expert transcript editor. Return JSON only, with exactly these keys:
+    return f"""You are an expert technical video editor and SEO writer. Read the timestamped
+transcript and return JSON ONLY (no prose, no code fence) with exactly these keys:
+
 {{
-  "chapters": [{{"title": "Meaningful chapter title", "description": "What is taught or argued in this chapter.", "startTime": 0, "endTime": 60.5}}],
-  "summary": "Markdown summary",
-  "transcription": "Structured Markdown transcript"
+  "seoDescription": "One cohesive paragraph.",
+  "chapters": [
+    {{"title": "Chapter title", "description": "One sentence on what this chapter covers.",
+      "startTime": 0, "endTime": 60.5, "transcript": "Markdown of the literal speech in this chapter."}}
+  ],
+  "summary": "Markdown key-concepts document."
 }}
 
 Requirements:
-- Chapters divide the entire video into coherent argument/topic chunks in chronological order.
-- Every chapter needs a specific AI-written title and useful one- or two-sentence description.
-- startTime and endTime are numeric seconds. Cover the full {duration_seconds:.3f}-second runtime without overlaps.
-- summary is a concise Markdown résumé of the video's most relevant concepts, decisions, examples, and takeaways. Do not add facts absent from the speech.
-- transcription is the literal speech-to-text content, reorganized as readable Markdown with headings and paragraphs. Preserve every substantive claim, instruction, example, warning, and conclusion. Fix punctuation, capitalization, paragraph breaks, and obvious caption mistakes, but do not summarize, invent, or silently omit content.
-- Remove only non-speech caption noise such as isolated [Music] markers and accidental duplicated fragments.
+- chapters: segment the ENTIRE video into coherent topic/argument chunks in chronological
+  order. Each needs a specific, descriptive title, a useful one-sentence description, numeric
+  startTime and endTime in seconds, and a `transcript` field. Cover the full {duration_seconds:.0f}-second
+  runtime with no gaps or overlaps (first startTime 0; each startTime equals the previous endTime).
+- chapter `transcript`: the literal speech-to-text for that chapter as clean, readable Markdown
+  (short paragraphs). Fix punctuation, capitalization, and obvious caption errors, and drop non-speech
+  noise like isolated [Music] markers and duplicated fragments — but do NOT summarize, invent, reorder,
+  or omit substantive content. Together the chapter transcripts are the complete transcription.
+- seoDescription: a single cohesive, natural paragraph of ~450-520 characters describing what the
+  video teaches and its value. Weave in the core topics/technologies as keywords. No clickbait, no
+  "in this video", no hashtags, no emojis.
+- summary: an elegant, scannable Markdown "key concepts" document. Use `##` section headings, **bold**
+  for key terms, bullet lists, and GitHub-style callouts (> [!TIP], > [!NOTE], > [!IMPORTANT]) where
+  they add value. Capture the most important concepts, decisions, examples, warnings, and takeaways.
+  Be substantive but do not pad; add no facts absent from the speech.
 
 Video title: {title}
-Video ID: {raw['videoId']}
 Language: {raw.get('language', 'unknown')}
 
 TIMESTAMPED RAW CAPTIONS
@@ -122,10 +204,10 @@ TIMESTAMPED RAW CAPTIONS
 """.strip()
 
 
-def generate(client: Any, model: str, prompt: str) -> dict[str, Any]:
+def generate(client: Any, model: str, prompt: str, max_output_tokens: int = MAX_OUTPUT_TOKENS) -> dict[str, Any]:
     for attempt in range(5):
         try:
-            response = client.responses.create(model=model, input=prompt)
+            response = client.responses.create(model=model, input=prompt, max_output_tokens=max_output_tokens)
             return parse_model_json(response.output_text)
         except Exception:
             if attempt == 4:
@@ -143,13 +225,15 @@ def metadata() -> dict[str, tuple[str, float]]:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", default=str(RAW_DIR), help="Raw-caption directory")
     parser.add_argument("--out", default=str(OUT_DIR), help="Published transcript directory")
     parser.add_argument("--video-id", help="Process one YouTube video ID")
     parser.add_argument("--limit", type=int, default=100)
     parser.add_argument("--model", help="OpenAI model; defaults to OPENAI_MODEL or gpt-5-mini")
-    parser.add_argument("--force", action="store_true", help="Replace an existing v2 output")
+    parser.add_argument("--max-output-tokens", type=int, default=MAX_OUTPUT_TOKENS,
+                        help=f"Output-token reservation per request (default {MAX_OUTPUT_TOKENS})")
+    parser.add_argument("--force", action="store_true", help="Replace an existing up-to-date output")
     parser.add_argument("--dry-run", action="store_true", help="Validate inputs without calling OpenAI")
     args = parser.parse_args()
 
@@ -158,7 +242,7 @@ def main() -> int:
     candidates = sorted(input_dir.glob("*.json"))
     if args.video_id:
         candidates = [input_dir / f"{args.video_id}.json"]
-    candidates = [path for path in candidates if path.exists()][:args.limit]
+    candidates = [path for path in candidates if path.exists()][: args.limit]
     if args.dry_run:
         for path in candidates:
             raw = json.loads(path.read_text())
@@ -180,9 +264,9 @@ def main() -> int:
         output = out_dir / f"{video_id}.json"
         if output.exists() and not args.force:
             try:
-                if json.loads(output.read_text()).get("schemaVersion") == 2:
+                if json.loads(output.read_text()).get("schemaVersion") == SCHEMA_VERSION:
                     skipped += 1
-                    print(f"[{index}/{len(candidates)}] {video_id} skip (v2 exists)")
+                    print(f"[{index}/{len(candidates)}] {video_id} skip (v{SCHEMA_VERSION} exists)")
                     continue
             except (OSError, json.JSONDecodeError):
                 pass
@@ -191,11 +275,12 @@ def main() -> int:
         inferred_duration = float(segments[-1]["start"]) + 5 if segments else 0.0
         duration = max(db_duration, inferred_duration)
         try:
-            generated = generate(client, model, prompt_for(raw, title, duration))
+            generated = generate(client, model, prompt_for(raw, title, duration), args.max_output_tokens)
             result = normalize_result(raw, generated, duration)
             output.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n")
             written += 1
-            print(f"[{index}/{len(candidates)}] {video_id} ok ({len(result['chapters'])} chapters)")
+            print(f"[{index}/{len(candidates)}] {video_id} ok ({len(result['chapters'])} chapters, "
+                  f"seo {len(result['seoDescription'])} chars)")
         except Exception as exc:
             failed += 1
             print(f"[{index}/{len(candidates)}] {video_id} FAIL {type(exc).__name__}: {exc}")
