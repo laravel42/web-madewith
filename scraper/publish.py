@@ -19,7 +19,9 @@ from madewith_scraper.domains import load_domains  # noqa: E402
 from madewith_scraper.normalize import rank_and_keep  # noqa: E402
 
 DATA_DIR = ROOT / "src" / "data"
-KEEP = int(__import__("os").environ.get("SCRAPE_KEEP", "1000"))
+# Keep every ranked project by default; SCRAPE_KEEP can still impose a cap.
+_KEEP_ENV = __import__("os").environ.get("SCRAPE_KEEP")
+KEEP = int(_KEEP_ENV) if _KEEP_ENV else None
 
 
 def main() -> None:

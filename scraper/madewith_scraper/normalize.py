@@ -215,7 +215,9 @@ def normalise(repo: dict) -> dict:
     }
 
 
-def rank_and_keep(domain: dict, repos: list[dict], keep: int = 1000) -> list[dict]:
+def rank_and_keep(domain: dict, repos: list[dict], keep: int | None = None) -> list[dict]:
     filtered = filter_repos(domain, dedupe_repos(repos))
     filtered.sort(key=lambda r: r.get("stargazers_count") or 0, reverse=True)
-    return [normalise(r) for r in filtered[:keep]]
+    if keep is not None:
+        filtered = filtered[:keep]
+    return [normalise(r) for r in filtered]

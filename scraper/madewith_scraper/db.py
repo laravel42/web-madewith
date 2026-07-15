@@ -625,41 +625,80 @@ def repo_counts_by_slug(conn) -> dict[str, int]:
     return by_catalog
 
 
+# Columns needed to rebuild a GitHub-API-shaped dict for publishing when the
+# repository was ingested by the madewith_github package (which stores fields as
+# columns rather than under metadata.raw). Topics and languages are aggregated
+# from their child tables.
+_PUBLISH_COLUMNS = """
+    r.metadata, r.name, r.full_name, r.description, r.stars, r.owner_login, r.owner_avatar_url,
+    r.homepage_url, r.repository_url, r.license_spdx, r.pushed_at, r.primary_language, r.fork, r.archived,
+    COALESCE((SELECT array_agg(tp.topic) FROM repository_topics tp WHERE tp.repository_id = r.id), '{}') AS topics,
+    COALESCE((SELECT json_agg(json_build_object('name', l.language, 'pct', l.percentage, 'size', l.bytes)
+              ORDER BY l.bytes DESC NULLS LAST) FROM repository_languages l WHERE l.repository_id = r.id), '[]') AS langs
+"""
+
+
+def _row_to_raw(row: dict) -> dict | None:
+    """Return the legacy full GitHub payload (metadata.raw) if present, else
+    synthesise the same shape from the repository columns + topics/languages."""
+    meta = row.get("metadata")
+    if isinstance(meta, str):
+        try:
+            meta = json.loads(meta)
+        except json.JSONDecodeError:
+            meta = None
+    if meta and meta.get("raw"):
+        return meta["raw"]
+    if not row.get("full_name"):
+        return None
+    pushed = row.get("pushed_at")
+    return {
+        "name": row.get("name"),
+        "full_name": row.get("full_name"),
+        "description": row.get("description"),
+        "stargazers_count": row.get("stars") or 0,
+        "owner": {"login": row.get("owner_login"), "avatar_url": row.get("owner_avatar_url")},
+        "owner_login": row.get("owner_login"),
+        "language": row.get("primary_language"),
+        "primary_language": row.get("primary_language"),
+        "topics": list(row.get("topics") or []),
+        "license": {"spdx_id": row["license_spdx"]} if row.get("license_spdx") else None,
+        "homepage": row.get("homepage_url"),
+        "html_url": row.get("repository_url"),
+        "pushed_at": pushed.isoformat() if hasattr(pushed, "isoformat") else pushed,
+        "fork": bool(row.get("fork")),
+        "archived": bool(row.get("archived")),
+        "_langs": list(row.get("langs") or []),
+    }
+
+
 def load_repos_for_slug(conn, slug: str) -> list[dict]:
     tech_slug = technology_slug(slug)
     with conn.cursor() as cur:
         cur.execute(
-            """
-            SELECT r.metadata, r.stars
+            f"""
+            SELECT {_PUBLISH_COLUMNS}
             FROM repositories r
             JOIN repository_technologies rt ON rt.repository_id = r.id
             JOIN technologies t ON t.id = rt.technology_id
             WHERE t.slug = %s
-            ORDER BY r.stars DESC
+            ORDER BY r.stars DESC NULLS LAST
             """,
             (tech_slug,),
         )
         rows = cur.fetchall()
         if not rows:
             cur.execute(
-                """
-                SELECT metadata, stars FROM repositories
-                WHERE metadata->>'catalog_slug' = %s
-                   OR (metadata::jsonb->'catalog_slugs') ? %s
-                ORDER BY stars DESC
+                f"""
+                SELECT {_PUBLISH_COLUMNS} FROM repositories r
+                WHERE r.metadata->>'catalog_slug' = %s
+                   OR (r.metadata::jsonb->'catalog_slugs') ? %s
+                ORDER BY r.stars DESC NULLS LAST
                 """,
                 (slug, slug),
             )
             rows = cur.fetchall()
-    repos = []
-    for row in rows:
-        meta = row["metadata"]
-        if isinstance(meta, str):
-            meta = json.loads(meta)
-        raw = meta.get("raw") if meta else None
-        if raw:
-            repos.append(raw)
-    return repos
+    return [raw for row in rows if (raw := _row_to_raw(row))]
 
 
 def record_publish(conn, slug: str, count: int, ecosystem: int) -> None:
