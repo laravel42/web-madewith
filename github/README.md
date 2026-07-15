@@ -136,15 +136,15 @@ confidence scale. Signals and their weights:
 | `dependency` | 70 | yes | exact package name in a manifest — from `technologies.metadata.dependencies`, a `dependency` rule, or the slug itself (`react` → the `react` package, `laravel` → `laravel/*`) |
 | `dependency_prefix` | 70 | yes | scoped-package family, e.g. `@nuxt/` |
 | `config_file` | 68 | yes | a framework config file is present, e.g. `next.config.js` |
+| `topic` | 66 | yes | the repo self-declares the technology's GitHub topic (how it was discovered) |
 | `manifest_value` | 58 | yes | any other manifest selector rule matched |
 | `runtime_signal` | 40 | no | code-level hint in the README/manifests |
-| `topic` | 30 | no | the repo self-declares a matching topic |
 | `text` | 14 | no | the technology name/keyword appears in the text |
 
 A repository is assigned to a technology when the summed confidence clears the
 technology's `quality_threshold` (default 65) **and** at least one *strong*
-signal is present — so a single real dependency (70) qualifies, while a bare
-topic (30) does not. Because the strongest signals are auto-derived from each
+signal is present — so a single real dependency (70) or a matching GitHub topic
+(66) qualifies, while a bare name mention in the text (14) does not. Because the strongest signals are auto-derived from each
 technology's own slug/name/topics/metadata, technologies **without** any
 `technology_rules` still qualify repositories out of the box; rules refine and
 extend that baseline.

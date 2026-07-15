@@ -5,7 +5,7 @@ from itertools import zip_longest
 from .classifier import classify
 from .config import Settings
 from .db import Database
-from .detection import qualify
+from .detection import qualify, is_non_project
 from .github import GitHubClient, RateLimitExceeded
 
 log=logging.getLogger("madewith_github.service")
@@ -120,11 +120,21 @@ class DiscoveryService:
         repos=self.db.fetch_repositories(limit=limit)
         log.info("▶ qualifying %d repositor%s against %d technolog%s%s",
                  len(repos),"y" if len(repos)==1 else "ies",len(techs),"y" if len(techs)==1 else "ies"," (dry run)" if dry_run else "")
-        assignments=matched_repos=0; by_tech:dict[str,int]={}
+        assignments=matched_repos=non_project=0; by_tech:dict[str,int]={}
         for repo in repos:
             manifests=repo["manifests"]; topics=repo["topics"]
             blob="\n".join([repo.get("description") or ""," ".join(topics)]
                            +[ (m.get("raw") or "")[:15000] for m in manifests.values() ])
+            # Curated lists / learning resources are not projects — never assign
+            # them a domain, and drop any assignment a looser pass wrote earlier.
+            # Judge on name/description/topics only (READMEs mention "awesome"
+            # etc. incidentally and would false-reject real libraries).
+            meta=(repo.get("description") or "")+" "+" ".join(topics)
+            if is_non_project(repo["full_name"],meta):
+                non_project+=1
+                if not dry_run: self.db.clear_verified(repo["id"])
+                log.debug("  · %s → non-project (skipped)",repo["full_name"])
+                continue
             paths=set(manifests)
             hits=self._qualify_all(repo["id"],manifests,paths,topics,blob,techs,rules_by,dry_run=dry_run)
             if hits:
@@ -137,9 +147,9 @@ class DiscoveryService:
         if not dry_run:
             metrics,stars=self.db.backfill_metrics()
             log.info("  backfilled %d metric snapshot(s) and %d star snapshot(s) from stored data",metrics,stars)
-        log.info("✓ done: %d/%d repos assigned, %d total assignment(s) across %d technolog%s%s",
-                 matched_repos,len(repos),assignments,len(by_tech),"y" if len(by_tech)==1 else "ies"," (dry run — nothing written)" if dry_run else "")
-        return {"repositories":len(repos),"assigned_repos":matched_repos,"assignments":assignments,
+        log.info("✓ done: %d/%d repos assigned, %d total assignment(s), %d non-project skipped across %d technolog%s%s",
+                 matched_repos,len(repos),assignments,non_project,len(by_tech),"y" if len(by_tech)==1 else "ies"," (dry run — nothing written)" if dry_run else "")
+        return {"repositories":len(repos),"assigned_repos":matched_repos,"assignments":assignments,"non_project":non_project,
                 "metrics_snapshots":metrics,"star_snapshots":stars,"by_technology":dict(sorted(by_tech.items(),key=lambda x:-x[1]))}
 
     async def _process(self,item,techs,rules_by,allowed)->list[str]:
@@ -170,7 +180,10 @@ class DiscoveryService:
             self.db.upsert_manifest(repo_id,f["path"],f["sha"],f["etag"],f["size"],parsed,raw[:5000])
         log.debug("    found %d manifest(s): %s",len(manifests),", ".join(sorted(manifests)) or "none")
         blob="\n".join(text+[detail.get("description") or ""," ".join(topics)])
-        hits=self._qualify_all(repo_id,manifests,root_paths|set(manifests),topics,blob,techs,rules_by)
+        # Curated lists / learning resources carry topics but aren't projects.
+        # Judge on name/description/topics only (not the README-laden blob).
+        meta=(detail.get("description") or "")+" "+" ".join(topics)
+        hits=[] if is_non_project(full,meta) else self._qualify_all(repo_id,manifests,root_paths|set(manifests),topics,blob,techs,rules_by)
         c=classify(detail,topics,blob,allowed); self.db.save_classification(repo_id,c)
         log.info("    %s%s · type=%s",full,
                  " → "+", ".join(f"{t.slug}({d.confidence:.0f})" for t,d in sorted(hits,key=lambda h:-h[1].confidence)) if hits else " → no domain",

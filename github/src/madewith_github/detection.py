@@ -17,8 +17,8 @@ SIGNALS:dict[str,tuple[float,bool]]={
  "dependency_prefix":(70.0,True),   # scoped-package family, e.g. "@nuxt/"
  "config_file":      (68.0,True),   # framework config file present (next.config.js, ...)
  "manifest_value":   (58.0,True),   # some other manifest selector matched
+ "topic":            (66.0,True),   # repo self-declares the technology's GitHub topic — strong catalog evidence
  "runtime_signal":   (40.0,False),  # code-level hint in README/manifests
- "topic":            (30.0,False),  # repo self-declared this topic (corroborating only)
  "text":             (14.0,False),  # technology name/keyword mentioned in text (weak)
 }
 # Legacy technology_rules.rule_type values mapped onto the signal kinds above,
@@ -37,6 +37,26 @@ DEP_SECTIONS={"dependencies","devdependencies","peerdependencies","optionaldepen
 # the token-based dependency fallback — matching against a README (also stored
 # as a "manifest") would spuriously match common words like "next" or "react".
 DEP_MANIFESTS_NONJSON={"requirements.txt","pyproject.toml","go.mod","gemfile","cargo.toml","pom.xml","build.gradle","build.gradle.kts","setup.py","pipfile"}
+
+# Curated lists / learning resources are not projects "made with" a technology,
+# even when they carry its topic. Patterns are deliberately tight so real
+# libraries (e.g. "Collection of essential Vue utilities") are NOT matched.
+NON_PROJECT=[re.compile(p,re.I) for p in (
+    r"\bawesome[-\s]\w",
+    r"\binterview\s+questions?\b",
+    r"\bcheat[-\s]?sheets?\b",
+    r"\bfree[-\s]programming[-\s]books?\b",
+    r"\bcurated\s+(list|collection)\b",
+    r"\b(developer|frontend|back[-\s]?end|web|coding)\s+roadmap\b",
+    r"\blist\s+of\s+(payloads?|useful|awesome|resources|links|tools|libraries|frameworks|tutorials?|books|examples|cheat)",
+    r"\bcollection\s+of\s+(resources|links|awesome|tutorials?|examples|cheat\w*)",
+)]
+
+def is_non_project(name:str,text:str)->bool:
+    """True for curated lists / learning resources that shouldn't be assigned a
+    domain even if they carry the topic (awesome lists, interview questions, ...)."""
+    hay=f"{name or ''} {text or ''}"
+    return any(p.search(hay) for p in NON_PROJECT)
 
 def _ev(kind:str,location:str)->Evidence:
     score,strong=SIGNALS[kind]

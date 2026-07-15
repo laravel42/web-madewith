@@ -1,4 +1,4 @@
-from madewith_github.detection import qualify
+from madewith_github.detection import is_non_project, qualify
 from madewith_github.models import Rule, Technology
 
 
@@ -70,12 +70,34 @@ def test_dependency_prefix_qualifies():
     assert d.accepted
 
 
-def test_topic_only_does_not_qualify():
-    # A repo merely tagged "nextjs" with no code evidence is corroboration, not proof.
+def test_matching_topic_qualifies():
+    # A repo self-declaring the technology's GitHub topic is strong catalog
+    # evidence (it is how the repo was discovered), so a topic match qualifies.
     tech = _tech("nextjs", "Next.js", topics=["nextjs"], metadata={"dependencies": ["next"]})
     d = qualify(tech, [], _pkg({"vue": "3"}), {"package.json"}, ["nextjs"], "")
+    assert d.accepted
+    assert any(e.kind == "topic" for e in d.evidence)
+
+
+def test_unrelated_topic_does_not_qualify():
+    # A repo tagged only with other technologies stays out.
+    tech = _tech("nextjs", "Next.js", topics=["nextjs"], metadata={"dependencies": ["next"]})
+    d = qualify(tech, [], _pkg({"vue": "3"}), {"package.json"}, ["vue", "svelte"], "")
     assert not d.accepted
-    assert d.confidence < 65
+
+
+def test_non_project_detection():
+    # Curated lists / learning resources are rejected...
+    assert is_non_project("sindresorhus/awesome-nodejs", "A curated list of awesome Node.js packages")
+    assert is_non_project("mjhea0/awesome-fastapi", "A curated list of awesome things related to FastAPI")
+    assert is_non_project("swisskyrepo/PayloadsAllTheThings", "A list of useful payloads for web app security")
+    assert is_non_project("sudheerj/reactjs-interview-questions", "List of top React interview questions")
+    assert is_non_project("kamranahmedse/developer-roadmap", "Community driven developer roadmap")
+    # ...but real libraries with topics are NOT.
+    assert not is_non_project("vueuse/vueuse", "Collection of essential Vue Composition Utilities")
+    assert not is_non_project("SBoudrias/Inquirer.js", "A collection of common interactive command line user interfaces")
+    assert not is_non_project("adobe/react-spectrum", "A collection of libraries and tools for building UIs")
+    assert not is_non_project("nestjs/nest", "A progressive Node.js framework for building server-side apps")
 
 
 def test_no_signal_does_not_qualify():

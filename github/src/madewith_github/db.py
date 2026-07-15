@@ -176,6 +176,13 @@ class Database:
             VALUES(%s,%s,%s,%s,%s,%s,%s,%s,now(),%s,now(),now()) ON CONFLICT(repository_id,path) DO UPDATE SET sha=EXCLUDED.sha,etag=EXCLUDED.etag,size=EXCLUDED.size,status=EXCLUDED.status,content=EXCLUDED.content,raw_excerpt=EXCLUDED.raw_excerpt,fetched_at=now(),error=EXCLUDED.error,updated_at=now()""",
             (repo_id,path,sha,etag,size,"error" if error else "fetched",json.dumps(content) if content is not None else None,raw_excerpt,json.dumps(error) if error else None))
 
+    def clear_verified(self, repo_id:int)->int:
+        """Drop auto-verified technology links for a repository (e.g. once it is
+        recognised as a curated list rather than a project)."""
+        with self.connection() as conn, conn.cursor() as cur:
+            cur.execute("DELETE FROM repository_technologies WHERE repository_id=%s AND status='verified'",(repo_id,))
+            return cur.rowcount
+
     def save_detection(self, repo_id:int, technology_id:int, d:TechDetection)->None:
         evidence=[asdict(e) for e in d.evidence]
         with self.connection() as conn, conn.cursor() as cur:
