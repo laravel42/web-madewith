@@ -1,8 +1,8 @@
 {
   "slug": "bagisto",
-  "scrapedAt": "2026-07-14T02:48:07.945770+00:00",
+  "scrapedAt": "2026-07-15T22:28:32.976092+00:00",
   "source": "scrapy-github",
-  "totalRepos": 16,
+  "totalRepos": 17,
   "projects": [
     {
       "slug": "headless-ecommerce",
@@ -11,9 +11,9 @@
       "category": "E-commerce",
       "stars": 111,
       "author": "bagisto",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/43133047?v=4",
       "desc": "Laravel Headless eCommerce APIs allow you to experience seamless and easily scalable storefront performance. An open-source and GraphQL based Rest API Laravel platform delivering ultra-fast, dynamic, and personalized shopping experiences.",
-      "demo": null,
+      "demo": "https://bagisto.com/en/headless-ecommerce/",
       "repoUrl": "https://github.com/bagisto/headless-ecommerce",
       "long1": "Laravel Headless eCommerce APIs allow you to experience seamless and easily scalable storefront performance. An open-source and GraphQL based Rest API Laravel platform delivering ultra-fast, dynamic, and personalized shopping experiences. Maintained by bagisto on GitHub, where it has earned 111 stars from the community.",
       "long2": "It's actively developed around bagisto, cart, ecommerce, and is a solid reference for anyone building with these tools.",
@@ -28,9 +28,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "PHP",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -55,9 +55,9 @@
       "category": "E-commerce",
       "stars": 73,
       "author": "bagistoplus",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/128164685?v=4",
       "desc": "A modern theme framework & visual editor for Bagisto",
-      "demo": null,
+      "demo": "https://visual.bagistoplus.com",
       "repoUrl": "https://github.com/bagistoplus/visual",
       "long1": "A modern theme framework & visual editor for Bagisto. Maintained by bagistoplus on GitHub, where it has earned 73 stars from the community.",
       "long2": "It's actively developed around bagisto, bagisto-extension, bagisto-package, and is a solid reference for anyone building with these tools.",
@@ -68,13 +68,33 @@
         "Bagisto Package",
         "Bagisto Theme"
       ],
-      "updated": "1 week ago",
+      "updated": "2 weeks ago",
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "PHP",
-          "size": 0
+          "pct": 60.13,
+          "size": 610195
+        },
+        {
+          "name": "TypeScript",
+          "pct": 19.333,
+          "size": 196191
+        },
+        {
+          "name": "Vue",
+          "pct": 18.599,
+          "size": 188741
+        },
+        {
+          "name": "Blade",
+          "pct": 1.785,
+          "size": 18119
+        },
+        {
+          "name": "CSS",
+          "pct": 0.153,
+          "size": 1551
         }
       ],
       "versions": [],
@@ -100,9 +120,9 @@
       "category": "E-commerce",
       "stars": 29,
       "author": "cagartner",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/4007696?v=4",
       "desc": "M\u00e9todo de entrega Correios para o Laravel eCommerce",
-      "demo": null,
+      "demo": "https://bagisto.com/en/extensions/laravel-ecommerce-correios-shipping/",
       "repoUrl": "https://github.com/cagartner/bagisto-correios",
       "long1": "M\u00e9todo de entrega Correios para o Laravel eCommerce. Maintained by cagartner on GitHub, where it has earned 29 stars from the community.",
       "long2": "It's actively developed around bagisto, bagisto-correios, correios, and is a solid reference for anyone building with these tools.",
@@ -117,9 +137,9 @@
       "license": "\u2014",
       "langs": [
         {
-          "pct": 100.0,
           "name": "PHP",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -139,9 +159,9 @@
       "category": "E-commerce",
       "stars": 23,
       "author": "codenteq",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/101526211?v=4",
       "desc": "The Laravel eCommerce Stripe Payment Gateway",
-      "demo": null,
+      "demo": "https://opensource.codenteq.com",
       "repoUrl": "https://github.com/codenteq/stripe-payment-gateway",
       "long1": "The Laravel eCommerce Stripe Payment Gateway. Maintained by codenteq on GitHub, where it has earned 23 stars from the community.",
       "long2": "It's actively developed around acikkaynak, bagisto, codenteq, and is a solid reference for anyone building with these tools.",
@@ -156,9 +176,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "PHP",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -173,52 +193,15 @@
       ]
     },
     {
-      "slug": "bagisto-pickup",
-      "name": "bagisto-pickup",
-      "fullName": "ghermans/bagisto-pickup",
-      "category": "E-commerce",
-      "stars": 17,
-      "author": "ghermans",
-      "avatar": null,
-      "desc": "This extension allows your customers to collect their orders from your physical stores.",
-      "demo": null,
-      "repoUrl": "https://github.com/ghermans/bagisto-pickup",
-      "long1": "This extension allows your customers to collect their orders from your physical stores. Maintained by ghermans on GitHub, where it has earned 17 stars from the community.",
-      "long2": "It's actively developed around bagisto, ecommerce, laravel, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Bagisto",
-        "Ecommerce",
-        "Laravel",
-        "Shipping Methods"
-      ],
-      "updated": "1 year ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "pct": 100.0,
-          "name": "PHP",
-          "size": 0
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "bagisto",
-        "ecommerce",
-        "laravel",
-        "shipping-methods"
-      ]
-    },
-    {
       "slug": "visual",
       "name": "visual",
       "fullName": "kaizen108/visual",
       "category": "E-commerce",
       "stars": 17,
       "author": "kaizen108",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/29435070?v=4",
       "desc": "A modern theme framework & visual editor for Bagisto",
-      "demo": null,
+      "demo": "https://visual.bagistoplus.com",
       "repoUrl": "https://github.com/kaizen108/visual",
       "long1": "A modern theme framework & visual editor for Bagisto. Maintained by kaizen108 on GitHub, where it has earned 17 stars from the community.",
       "long2": "It's actively developed around bagisto, bagisto-extension, bagisto-package, and is a solid reference for anyone building with these tools.",
@@ -233,9 +216,29 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "PHP",
-          "size": 0
+          "pct": 58.341,
+          "size": 411936
+        },
+        {
+          "name": "Vue",
+          "pct": 21.797,
+          "size": 153908
+        },
+        {
+          "name": "TypeScript",
+          "pct": 17.076,
+          "size": 120568
+        },
+        {
+          "name": "Blade",
+          "pct": 2.566,
+          "size": 18118
+        },
+        {
+          "name": "CSS",
+          "pct": 0.22,
+          "size": 1551
         }
       ],
       "versions": [],
@@ -253,17 +256,54 @@
       ]
     },
     {
+      "slug": "bagisto-pickup",
+      "name": "bagisto-pickup",
+      "fullName": "ghermans/bagisto-pickup",
+      "category": "E-commerce",
+      "stars": 17,
+      "author": "ghermans",
+      "avatar": "https://avatars.githubusercontent.com/u/1594411?v=4",
+      "desc": "This extension allows your customers to collect their orders from your physical stores.",
+      "demo": null,
+      "repoUrl": "https://github.com/ghermans/bagisto-pickup",
+      "long1": "This extension allows your customers to collect their orders from your physical stores. Maintained by ghermans on GitHub, where it has earned 17 stars from the community.",
+      "long2": "It's actively developed around bagisto, ecommerce, laravel, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Bagisto",
+        "Ecommerce",
+        "Laravel",
+        "Shipping Methods"
+      ],
+      "updated": "1 year ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "PHP",
+          "pct": 100.0,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "bagisto",
+        "ecommerce",
+        "laravel",
+        "shipping-methods"
+      ]
+    },
+    {
       "slug": "booking-product",
       "name": "booking-product",
       "fullName": "bagisto/booking-product",
       "category": "DevTools",
-      "stars": 12,
+      "stars": 13,
       "author": "bagisto",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/43133047?v=4",
       "desc": "Bagisto Booking Product",
       "demo": null,
       "repoUrl": "https://github.com/bagisto/booking-product",
-      "long1": "Bagisto Booking Product. Maintained by bagisto on GitHub, where it has earned 12 stars from the community.",
+      "long1": "Bagisto Booking Product. Maintained by bagisto on GitHub, where it has earned 13 stars from the community.",
       "long2": "It's actively developed around bagisto, booking-app, booking-engine, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
@@ -276,9 +316,9 @@
       "license": "\u2014",
       "langs": [
         {
-          "pct": 100.0,
           "name": "PHP",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -300,9 +340,9 @@
       "category": "E-commerce",
       "stars": 11,
       "author": "codenteq",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/101526211?v=4",
       "desc": "The Laravel eCommerce Iyzico Payment Gateway",
-      "demo": null,
+      "demo": "https://opensource.codenteq.com",
       "repoUrl": "https://github.com/codenteq/iyzico-payment-gateway",
       "long1": "The Laravel eCommerce Iyzico Payment Gateway. Maintained by codenteq on GitHub, where it has earned 11 stars from the community.",
       "long2": "It's actively developed around acikkaynak, bagisto, codenteq, and is a solid reference for anyone building with these tools.",
@@ -317,9 +357,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "PHP",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -340,7 +380,7 @@
       "category": "E-commerce",
       "stars": 9,
       "author": "bagisto-europe",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/116433598?v=4",
       "desc": "MultiSafepay payment plugin for Bagisto",
       "demo": null,
       "repoUrl": "https://github.com/bagisto-europe/multisafepay",
@@ -357,9 +397,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "PHP",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -378,7 +418,7 @@
       "category": "DevTools",
       "stars": 7,
       "author": "bagisto-europe",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/116433598?v=4",
       "desc": "This extensions helps you to import all tax rates in your Bagisto instance.",
       "demo": null,
       "repoUrl": "https://github.com/bagisto-europe/tax-rates",
@@ -392,9 +432,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "PHP",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -410,9 +450,9 @@
       "category": "E-commerce",
       "stars": 7,
       "author": "wontonee",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/112187926?v=4",
       "desc": "Laravel bagisto stripe payment gateway from wontonee",
-      "demo": null,
+      "demo": "https://www.wontonee.com",
       "repoUrl": "https://github.com/wontonee/Bagisto-Stripe-Payment-Gateway",
       "long1": "Laravel bagisto stripe payment gateway from wontonee. Maintained by wontonee on GitHub, where it has earned 7 stars from the community.",
       "long2": "It's actively developed around bagisto, bagisto-package, bagisto-payment, and is a solid reference for anyone building with these tools.",
@@ -427,9 +467,9 @@
       "license": "\u2014",
       "langs": [
         {
-          "pct": 100.0,
           "name": "PHP",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -444,40 +484,38 @@
       ]
     },
     {
-      "slug": "bagisto-product-social-share",
-      "name": "bagisto-product-social-share",
-      "fullName": "bagistobrasil/bagisto-product-social-share",
-      "category": "DevTools",
+      "slug": "printful-bagisto",
+      "name": "Printful-Bagisto",
+      "fullName": "SamiXSous/Printful-Bagisto",
+      "category": "E-commerce",
       "stars": 6,
-      "author": "bagistobrasil",
-      "avatar": null,
-      "desc": "Bagisto product social share extension",
+      "author": "SamiXSous",
+      "avatar": "https://avatars.githubusercontent.com/u/10419603?v=4",
+      "desc": "A Printful plugin for the Bagisto e-commerce framework",
       "demo": null,
-      "repoUrl": "https://github.com/bagistobrasil/bagisto-product-social-share",
-      "long1": "Bagisto product social share extension. Maintained by bagistobrasil on GitHub, where it has earned 6 stars from the community.",
-      "long2": "It's actively developed around bagisto, bagisto-package, laravel, and is a solid reference for anyone building with these tools.",
+      "repoUrl": "https://github.com/SamiXSous/Printful-Bagisto",
+      "long1": "A Printful plugin for the Bagisto e-commerce framework. Maintained by SamiXSous on GitHub, where it has earned 6 stars from the community.",
+      "long2": "It's actively developed around bagisto, laravel, printful, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "Blade",
+        "PHP",
         "Bagisto",
-        "Bagisto Package",
         "Laravel",
-        "Laravel Extension"
+        "Printful"
       ],
-      "updated": "3 years ago",
+      "updated": "4 years ago",
       "license": "\u2014",
       "langs": [
         {
+          "name": "PHP",
           "pct": 100.0,
-          "name": "Blade",
-          "size": 0
+          "size": 100
         }
       ],
       "versions": [],
       "topics": [
         "bagisto",
-        "bagisto-package",
         "laravel",
-        "laravel-extension"
+        "printful"
       ]
     },
     {
@@ -487,7 +525,7 @@
       "category": "E-commerce",
       "stars": 6,
       "author": "cagartner",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/4007696?v=4",
       "desc": "Bagisto Payment Method PicPay",
       "demo": null,
       "repoUrl": "https://github.com/cagartner/bagisto-picpay",
@@ -504,9 +542,9 @@
       "license": "\u2014",
       "langs": [
         {
-          "pct": 100.0,
           "name": "PHP",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -519,38 +557,40 @@
       ]
     },
     {
-      "slug": "printful-bagisto",
-      "name": "Printful-Bagisto",
-      "fullName": "SamiXSous/Printful-Bagisto",
-      "category": "E-commerce",
+      "slug": "bagisto-product-social-share",
+      "name": "bagisto-product-social-share",
+      "fullName": "bagistobrasil/bagisto-product-social-share",
+      "category": "DevTools",
       "stars": 6,
-      "author": "SamiXSous",
-      "avatar": null,
-      "desc": "A Printful plugin for the Bagisto e-commerce framework",
-      "demo": null,
-      "repoUrl": "https://github.com/SamiXSous/Printful-Bagisto",
-      "long1": "A Printful plugin for the Bagisto e-commerce framework. Maintained by SamiXSous on GitHub, where it has earned 6 stars from the community.",
-      "long2": "It's actively developed around bagisto, laravel, printful, and is a solid reference for anyone building with these tools.",
+      "author": "bagistobrasil",
+      "avatar": "https://avatars.githubusercontent.com/u/64536067?v=4",
+      "desc": "Bagisto product social share extension",
+      "demo": "http://bagisto.com.br",
+      "repoUrl": "https://github.com/bagistobrasil/bagisto-product-social-share",
+      "long1": "Bagisto product social share extension. Maintained by bagistobrasil on GitHub, where it has earned 6 stars from the community.",
+      "long2": "It's actively developed around bagisto, bagisto-package, laravel, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "PHP",
+        "Blade",
         "Bagisto",
+        "Bagisto Package",
         "Laravel",
-        "Printful"
+        "Laravel Extension"
       ],
-      "updated": "4 years ago",
+      "updated": "3 years ago",
       "license": "\u2014",
       "langs": [
         {
+          "name": "Blade",
           "pct": 100.0,
-          "name": "PHP",
-          "size": 0
+          "size": 100
         }
       ],
       "versions": [],
       "topics": [
         "bagisto",
+        "bagisto-package",
         "laravel",
-        "printful"
+        "laravel-extension"
       ]
     },
     {
@@ -560,9 +600,9 @@
       "category": "E-commerce",
       "stars": 5,
       "author": "ahmetarsiv",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/101526596?v=4",
       "desc": "The Laravel eCommerce Blog Extension",
-      "demo": null,
+      "demo": "https://www.arsivpro.com",
       "repoUrl": "https://github.com/ahmetarsiv/ecommerce-blog-extension",
       "long1": "The Laravel eCommerce Blog Extension. Maintained by ahmetarsiv on GitHub, where it has earned 5 stars from the community.",
       "long2": "It's actively developed around bagisto, blog, ecommerce, and is a solid reference for anyone building with these tools.",
@@ -576,9 +616,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "PHP",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -595,9 +635,9 @@
       "category": "E-commerce",
       "stars": 5,
       "author": "codenteq",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/101526211?v=4",
       "desc": "The Laravel eCommerce PayTR Payment Gateway",
-      "demo": null,
+      "demo": "https://opensource.codenteq.com",
       "repoUrl": "https://github.com/codenteq/paytr-payment-gateway",
       "long1": "The Laravel eCommerce PayTR Payment Gateway. Maintained by codenteq on GitHub, where it has earned 5 stars from the community.",
       "long2": "It's actively developed around acikkaynak, bagisto, codenteq, and is a solid reference for anyone building with these tools.",
@@ -612,9 +652,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "PHP",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],

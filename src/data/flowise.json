@@ -1,6 +1,6 @@
 {
   "slug": "flowise",
-  "scrapedAt": "2026-07-14T02:48:08.146094+00:00",
+  "scrapedAt": "2026-07-15T22:28:33.160990+00:00",
   "source": "scrapy-github",
   "totalRepos": 6,
   "projects": [
@@ -9,13 +9,13 @@
       "name": "selfhost-ai",
       "fullName": "kossakovsky/selfhost-ai",
       "category": "AI & ML",
-      "stars": 897,
+      "stars": 898,
       "author": "kossakovsky",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/11432603?v=4",
       "desc": "\ud83d\ude80 Self-hosted AI automation platform. Deploy n8n, Ollama, Flowise, RAG, Supabase & 30+ tools with one command. Auto HTTPS. Free Zapier/Make alternative.",
-      "demo": null,
+      "demo": "https://github.com/kossakovsky/selfhost-ai#readme",
       "repoUrl": "https://github.com/kossakovsky/selfhost-ai",
-      "long1": "\ud83d\ude80 Self-hosted AI automation platform. Deploy n8n, Ollama, Flowise, RAG, Supabase & 30+ tools with one command. Auto HTTPS. Free Zapier/Make alternative. Maintained by kossakovsky on GitHub, where it has earned 897 stars from the community.",
+      "long1": "\ud83d\ude80 Self-hosted AI automation platform. Deploy n8n, Ollama, Flowise, RAG, Supabase & 30+ tools with one command. Auto HTTPS. Free Zapier/Make alternative. Maintained by kossakovsky on GitHub, where it has earned 898 stars from the community.",
       "long2": "It's actively developed around ai, ai-agents, automation, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Shell",
@@ -24,13 +24,33 @@
         "Automation",
         "Chatgpt Alternative"
       ],
-      "updated": "4 days ago",
+      "updated": "2 days ago",
       "license": "Apache-2.0",
       "langs": [
         {
-          "pct": 100.0,
           "name": "Shell",
-          "size": 0
+          "pct": 68.881,
+          "size": 191097
+        },
+        {
+          "name": "JavaScript",
+          "pct": 15.71,
+          "size": 43583
+        },
+        {
+          "name": "Python",
+          "pct": 9.405,
+          "size": 26091
+        },
+        {
+          "name": "HTML",
+          "pct": 4.887,
+          "size": 13557
+        },
+        {
+          "name": "Makefile",
+          "pct": 1.118,
+          "size": 3101
         }
       ],
       "versions": [],
@@ -64,9 +84,9 @@
       "category": "AI & ML",
       "stars": 142,
       "author": "montevive",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/156530650?v=4",
       "desc": "\ud83d\ude80 Autocache - Intelligent Anthropic API Cache Proxy   Automatically inject cache-control fields into Claude API requests to reduce costs by up to 90% and latency by up to 85%. Works as a transparent drop-in replacement for popular AI platforms like n8n, Flowise, Make.com, LangChain,  and LlamaIndex\u2014no code changes required",
-      "demo": null,
+      "demo": "https://montevive.ai",
       "repoUrl": "https://github.com/montevive/autocache",
       "long1": "\ud83d\ude80 Autocache - Intelligent Anthropic API Cache Proxy   Automatically inject cache-control fields into Claude API requests to reduce costs by up to 90% and latency by up to 85%. Works as a transparent drop-in replacement for popular AI platforms like n8n, Flowise, Make.com, LangChain,  and LlamaIndex\u2014no code changes required. Maintained by montevive on GitHub, where it has earned 142 stars from the community.",
       "long2": "It's actively developed around agent, agentic-ai, ai, and is a solid reference for anyone building with these tools.",
@@ -81,9 +101,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "Go",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -106,7 +126,7 @@
       "category": "AI & ML",
       "stars": 39,
       "author": "toi500",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/138339291?v=4",
       "desc": "ToiBot is a chatbot application built with Node.js that showcases the capabilities of the Flowise SDK.",
       "demo": null,
       "repoUrl": "https://github.com/toi500/toibot",
@@ -123,9 +143,9 @@
       "license": "\u2014",
       "langs": [
         {
-          "pct": 100.0,
           "name": "JavaScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -147,9 +167,9 @@
       "category": "AI & ML",
       "stars": 12,
       "author": "youraichat",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/134012551?v=4",
       "desc": "YourAICHAT",
-      "demo": null,
+      "demo": "https://youraichat.com/",
       "repoUrl": "https://github.com/youraichat/youraichatbot",
       "long1": "YourAICHAT. Maintained by youraichat on GitHub, where it has earned 12 stars from the community.",
       "long2": "It's actively developed around aichatbot, chatbot, flowise, and is a solid reference for anyone building with these tools.",
@@ -163,9 +183,9 @@
       "license": "\u2014",
       "langs": [
         {
-          "pct": 100.0,
           "name": "HTML",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -176,54 +196,13 @@
       ]
     },
     {
-      "slug": "flowise-api-frontend",
-      "name": "flowise-api-frontend",
-      "fullName": "AsharibAli/flowise-api-frontend",
-      "category": "AI & ML",
-      "stars": 10,
-      "author": "AsharibAli",
-      "avatar": null,
-      "desc": "Custom frontend for the Flowise Chatbot.",
-      "demo": null,
-      "repoUrl": "https://github.com/AsharibAli/flowise-api-frontend",
-      "long1": "Custom frontend for the Flowise Chatbot. Maintained by AsharibAli on GitHub, where it has earned 10 stars from the community.",
-      "long2": "It's actively developed around api, end-point, flowise, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "JavaScript",
-        "Api",
-        "End Point",
-        "Flowise",
-        "Flowise Ai"
-      ],
-      "updated": "3 years ago",
-      "license": "\u2014",
-      "langs": [
-        {
-          "pct": 100.0,
-          "name": "JavaScript",
-          "size": 0
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "api",
-        "end-point",
-        "flowise",
-        "flowise-ai",
-        "html",
-        "javascript",
-        "nodejs",
-        "tailwindcss"
-      ]
-    },
-    {
       "slug": "toiflow",
       "name": "toiflow",
       "fullName": "toi500/toiflow",
       "category": "AI & ML",
       "stars": 10,
       "author": "toi500",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/138339291?v=4",
       "desc": "ToiFlow provides a secure proxy for hosting the Flowise embed chatbot, allowing users to maintain all features of the native Flowise chatbot while enhancing security for the public embed chatbot.",
       "demo": null,
       "repoUrl": "https://github.com/toi500/toiflow",
@@ -240,9 +219,9 @@
       "license": "\u2014",
       "langs": [
         {
-          "pct": 100.0,
           "name": "JavaScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -252,6 +231,47 @@
         "javascript",
         "langchain-js",
         "langgraph-js"
+      ]
+    },
+    {
+      "slug": "flowise-api-frontend",
+      "name": "flowise-api-frontend",
+      "fullName": "AsharibAli/flowise-api-frontend",
+      "category": "AI & ML",
+      "stars": 10,
+      "author": "AsharibAli",
+      "avatar": "https://avatars.githubusercontent.com/u/102221198?v=4",
+      "desc": "Custom frontend for the Flowise Chatbot.",
+      "demo": null,
+      "repoUrl": "https://github.com/AsharibAli/flowise-api-frontend",
+      "long1": "Custom frontend for the Flowise Chatbot. Maintained by AsharibAli on GitHub, where it has earned 10 stars from the community.",
+      "long2": "It's actively developed around api, end-point, flowise, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "JavaScript",
+        "Api",
+        "End Point",
+        "Flowise",
+        "Flowise Ai"
+      ],
+      "updated": "3 years ago",
+      "license": "\u2014",
+      "langs": [
+        {
+          "name": "JavaScript",
+          "pct": 100.0,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "api",
+        "end-point",
+        "flowise",
+        "flowise-ai",
+        "html",
+        "javascript",
+        "nodejs",
+        "tailwindcss"
       ]
     }
   ]

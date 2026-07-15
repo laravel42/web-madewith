@@ -1,9 +1,120 @@
 {
   "slug": "lit",
-  "scrapedAt": "2026-07-14T02:48:07.420136+00:00",
+  "scrapedAt": "2026-07-15T22:28:32.290247+00:00",
   "source": "scrapy-github",
-  "totalRepos": 86,
+  "totalRepos": 94,
   "projects": [
+    {
+      "slug": "clients",
+      "name": "clients",
+      "fullName": "bitwarden/clients",
+      "category": "DevTools",
+      "stars": 13268,
+      "author": "bitwarden",
+      "avatar": "https://avatars.githubusercontent.com/u/15990069?v=4",
+      "desc": "Bitwarden client apps (web, browser extension, desktop, and cli).",
+      "demo": "https://bitwarden.com",
+      "repoUrl": "https://github.com/bitwarden/clients",
+      "long1": "Bitwarden client apps (web, browser extension, desktop, and cli). Maintained by bitwarden on GitHub, where it has earned 13,268 stars from the community.",
+      "long2": "It's actively developed around angular, bitwarden, browser-extension, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Angular",
+        "Bitwarden",
+        "Browser Extension",
+        "Chrome"
+      ],
+      "updated": "2 days ago",
+      "license": "\u2014",
+      "langs": [
+        {
+          "name": "TypeScript",
+          "pct": 88.255,
+          "size": 27606734
+        },
+        {
+          "name": "HTML",
+          "pct": 4.97,
+          "size": 1554640
+        },
+        {
+          "name": "Rust",
+          "pct": 2.855,
+          "size": 893036
+        },
+        {
+          "name": "SCSS",
+          "pct": 1.553,
+          "size": 485814
+        },
+        {
+          "name": "MDX",
+          "pct": 0.983,
+          "size": 307447
+        },
+        {
+          "name": "JavaScript",
+          "pct": 0.793,
+          "size": 248117
+        },
+        {
+          "name": "CSS",
+          "pct": 0.208,
+          "size": 65031
+        },
+        {
+          "name": "Swift",
+          "pct": 0.137,
+          "size": 43001
+        },
+        {
+          "name": "PowerShell",
+          "pct": 0.091,
+          "size": 28607
+        },
+        {
+          "name": "Objective-C",
+          "pct": 0.088,
+          "size": 27675
+        },
+        {
+          "name": "Shell",
+          "pct": 0.052,
+          "size": 16274
+        },
+        {
+          "name": "Dockerfile",
+          "pct": 0.01,
+          "size": 3129
+        },
+        {
+          "name": "NSIS",
+          "pct": 0.003,
+          "size": 858
+        },
+        {
+          "name": "EJS",
+          "pct": 0.001,
+          "size": 408
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "angular",
+        "bitwarden",
+        "browser-extension",
+        "chrome",
+        "cli",
+        "desktop",
+        "electron",
+        "firefox",
+        "javascript",
+        "nodejs",
+        "safari",
+        "typescript",
+        "webextension"
+      ]
+    },
     {
       "slug": "material-web",
       "name": "material-web",
@@ -11,9 +122,9 @@
       "category": "AI & ML",
       "stars": 11091,
       "author": "material-components",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/19478152?v=4",
       "desc": "Material Design Web Components",
-      "demo": null,
+      "demo": "https://material-web.dev",
       "repoUrl": "https://github.com/material-components/material-web",
       "long1": "Material Design Web Components. Maintained by material-components on GitHub, where it has earned 11,091 stars from the community.",
       "long2": "It's actively developed around component-, design-system, lit, and is a solid reference for anyone building with these tools.",
@@ -24,13 +135,33 @@
         "Lit",
         "Lit Element"
       ],
-      "updated": "3 days ago",
+      "updated": "5 days ago",
       "license": "Apache-2.0",
       "langs": [
         {
-          "pct": 100.0,
           "name": "SCSS",
-          "size": 0
+          "pct": 59.852,
+          "size": 2396829
+        },
+        {
+          "name": "TypeScript",
+          "pct": 38.655,
+          "size": 1548002
+        },
+        {
+          "name": "JavaScript",
+          "pct": 0.799,
+          "size": 31985
+        },
+        {
+          "name": "CSS",
+          "pct": 0.432,
+          "size": 17307
+        },
+        {
+          "name": "HTML",
+          "pct": 0.262,
+          "size": 10488
         }
       ],
       "versions": [],
@@ -55,9 +186,9 @@
       "category": "DevTools",
       "stars": 7699,
       "author": "ColinLeung-NiloCat",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/7102676?v=4",
       "desc": "A very simple toon lit shader example, for you to learn writing custom lit shader in Unity URP",
-      "demo": null,
+      "demo": "https://www.youtube.com/channel/UCsvlGOZyqjd68ZUUmgqwj0g",
       "repoUrl": "https://github.com/ColinLeung-NiloCat/UnityURPToonLitShaderExample",
       "long1": "A very simple toon lit shader example, for you to learn writing custom lit shader in Unity URP. Maintained by ColinLeung-NiloCat on GitHub, where it has earned 7,699 stars from the community.",
       "long2": "It's actively developed around character, hlsl, lit, and is a solid reference for anyone building with these tools.",
@@ -72,9 +203,14 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "ShaderLab",
-          "size": 0
+          "pct": 52.53,
+          "size": 34001
+        },
+        {
+          "name": "HLSL",
+          "pct": 47.47,
+          "size": 30726
         }
       ],
       "versions": [],
@@ -96,9 +232,9 @@
       "category": "DevTools",
       "stars": 6604,
       "author": "TanStack",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/72518640?v=4",
       "desc": "\ud83e\udd16 Headless, performant, and type-safe form state management for TS/JS, React, Vue, Angular, Solid, and Lit.",
-      "demo": null,
+      "demo": "https://tanstack.com/form",
       "repoUrl": "https://github.com/TanStack/form",
       "long1": "\ud83e\udd16 Headless, performant, and type-safe form state management for TS/JS, React, Vue, Angular, Solid, and Lit. Maintained by TanStack on GitHub, where it has earned 6,604 stars from the community.",
       "long2": "It's actively developed around angular, form, forms, and is a solid reference for anyone building with these tools.",
@@ -109,13 +245,23 @@
         "Forms",
         "Hooks"
       ],
-      "updated": "yesterday",
+      "updated": "2 days ago",
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 97.707,
+          "size": 1651826
+        },
+        {
+          "name": "Svelte",
+          "pct": 1.952,
+          "size": 32996
+        },
+        {
+          "name": "JavaScript",
+          "pct": 0.341,
+          "size": 5772
         }
       ],
       "versions": [],
@@ -141,9 +287,9 @@
       "category": "UI Kits",
       "stars": 3329,
       "author": "matschik",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/34612598?v=4",
       "desc": "\ud83c\udf89 Web component JS frameworks overview by their syntax and features",
-      "demo": null,
+      "demo": "https://component-party.dev",
       "repoUrl": "https://github.com/matschik/component-party.dev",
       "long1": "\ud83c\udf89 Web component JS frameworks overview by their syntax and features. Maintained by matschik on GitHub, where it has earned 3,329 stars from the community.",
       "long2": "It's actively developed around alpine, angular, aurelia, and is a solid reference for anyone building with these tools.",
@@ -154,13 +300,48 @@
         "Aurelia",
         "Ember"
       ],
-      "updated": "1 week ago",
+      "updated": "2 weeks ago",
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 53.7,
+          "size": 192152
+        },
+        {
+          "name": "JavaScript",
+          "pct": 17.518,
+          "size": 62684
+        },
+        {
+          "name": "Svelte",
+          "pct": 16.47,
+          "size": 58935
+        },
+        {
+          "name": "HTML",
+          "pct": 5.116,
+          "size": 18308
+        },
+        {
+          "name": "Vue",
+          "pct": 4.632,
+          "size": 16574
+        },
+        {
+          "name": "Marko",
+          "pct": 1.323,
+          "size": 4734
+        },
+        {
+          "name": "Handlebars",
+          "pct": 1.03,
+          "size": 3684
+        },
+        {
+          "name": "CSS",
+          "pct": 0.21,
+          "size": 752
         }
       ],
       "versions": [],
@@ -184,13 +365,13 @@
       "name": "converse.js",
       "fullName": "conversejs/converse.js",
       "category": "Real-time",
-      "stars": 3276,
+      "stars": 3277,
       "author": "conversejs",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/37398988?v=4",
       "desc": "Web-based XMPP/Jabber chat written in JavaScript",
-      "demo": null,
+      "demo": "http://conversejs.org",
       "repoUrl": "https://github.com/conversejs/converse.js",
-      "long1": "Web-based XMPP/Jabber chat written in JavaScript. Maintained by conversejs on GitHub, where it has earned 3,276 stars from the community.",
+      "long1": "Web-based XMPP/Jabber chat written in JavaScript. Maintained by conversejs on GitHub, where it has earned 3,277 stars from the community.",
       "long2": "It's actively developed around chat, jabber, lit, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
@@ -199,13 +380,43 @@
         "Lit",
         "Omemo"
       ],
-      "updated": "yesterday",
+      "updated": "2 days ago",
       "license": "MPL-2.0",
       "langs": [
         {
-          "pct": 100.0,
           "name": "JavaScript",
-          "size": 0
+          "pct": 93.955,
+          "size": 4485237
+        },
+        {
+          "name": "SCSS",
+          "pct": 4.482,
+          "size": 213985
+        },
+        {
+          "name": "TypeScript",
+          "pct": 0.779,
+          "size": 37188
+        },
+        {
+          "name": "HTML",
+          "pct": 0.587,
+          "size": 28003
+        },
+        {
+          "name": "Makefile",
+          "pct": 0.187,
+          "size": 8938
+        },
+        {
+          "name": "Shell",
+          "pct": 0.009,
+          "size": 426
+        },
+        {
+          "name": "CSS",
+          "pct": 0.001,
+          "size": 59
         }
       ],
       "versions": [],
@@ -219,17 +430,179 @@
       ]
     },
     {
+      "slug": "silex",
+      "name": "Silex",
+      "fullName": "silexlabs/Silex",
+      "category": "SaaS",
+      "stars": 2892,
+      "author": "silexlabs",
+      "avatar": "https://avatars.githubusercontent.com/u/803706?v=4",
+      "desc": "Silex is an online tool for visually creating static sites with dynamic data. With the free/libre spirit of internet, together.",
+      "demo": "https://www.silex.me",
+      "repoUrl": "https://github.com/silexlabs/Silex",
+      "long1": "Silex is an online tool for visually creating static sites with dynamic data. With the free/libre spirit of internet, together. Maintained by silexlabs on GitHub, where it has earned 2,892 stars from the community.",
+      "long2": "It's actively developed around composable, design, grapesjs, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Composable",
+        "Design",
+        "Grapesjs",
+        "Jamstack"
+      ],
+      "updated": "2 days ago",
+      "license": "AGPL-3.0",
+      "langs": [
+        {
+          "name": "TypeScript",
+          "pct": 67.894,
+          "size": 1394943
+        },
+        {
+          "name": "JavaScript",
+          "pct": 12.644,
+          "size": 259774
+        },
+        {
+          "name": "Rust",
+          "pct": 8.567,
+          "size": 176025
+        },
+        {
+          "name": "HTML",
+          "pct": 6.736,
+          "size": 138405
+        },
+        {
+          "name": "SCSS",
+          "pct": 3.319,
+          "size": 68201
+        },
+        {
+          "name": "Shell",
+          "pct": 0.643,
+          "size": 13205
+        },
+        {
+          "name": "Dockerfile",
+          "pct": 0.083,
+          "size": 1714
+        },
+        {
+          "name": "Pug",
+          "pct": 0.082,
+          "size": 1680
+        },
+        {
+          "name": "Makefile",
+          "pct": 0.031,
+          "size": 630
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "composable",
+        "design",
+        "grapesjs",
+        "jamstack",
+        "javascript",
+        "no-code",
+        "nocode",
+        "nodejs",
+        "saas",
+        "silex",
+        "visual",
+        "visual-programming",
+        "webdesign",
+        "website-builder"
+      ]
+    },
+    {
+      "slug": "covalent",
+      "name": "covalent",
+      "fullName": "Teradata/covalent",
+      "category": "UI Kits",
+      "stars": 2225,
+      "author": "Teradata",
+      "avatar": "https://avatars.githubusercontent.com/u/1615979?v=4",
+      "desc": "Covalent - A Design System for Teradata",
+      "demo": "https://design.teradata.com",
+      "repoUrl": "https://github.com/Teradata/covalent",
+      "long1": "Covalent - A Design System for Teradata. Maintained by Teradata on GitHub, where it has earned 2,225 stars from the community.",
+      "long2": "It's actively developed around angular, angular-material, angular2, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Angular",
+        "Angular Material",
+        "Angular2",
+        "Material"
+      ],
+      "updated": "2 days ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "TypeScript",
+          "pct": 61.408,
+          "size": 1922647
+        },
+        {
+          "name": "SCSS",
+          "pct": 14.81,
+          "size": 463680
+        },
+        {
+          "name": "HTML",
+          "pct": 14.186,
+          "size": 444158
+        },
+        {
+          "name": "JavaScript",
+          "pct": 5.928,
+          "size": 185605
+        },
+        {
+          "name": "CSS",
+          "pct": 3.265,
+          "size": 102224
+        },
+        {
+          "name": "MDX",
+          "pct": 0.359,
+          "size": 11237
+        },
+        {
+          "name": "Shell",
+          "pct": 0.044,
+          "size": 1377
+        },
+        {
+          "name": "Procfile",
+          "pct": 0.001,
+          "size": 27
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "angular",
+        "angular-material",
+        "angular2",
+        "material",
+        "material-design",
+        "teradata",
+        "typescript"
+      ]
+    },
+    {
       "slug": "selecto",
       "name": "selecto",
       "fullName": "daybrush/selecto",
       "category": "AI & ML",
-      "stars": 2215,
+      "stars": 2216,
       "author": "daybrush",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/3433062?v=4",
       "desc": "Selecto.js is a component that allows you to select elements in the drag area using the mouse or touch.",
-      "demo": null,
+      "demo": "https://daybrush.com/selecto",
       "repoUrl": "https://github.com/daybrush/selecto",
-      "long1": "Selecto.js is a component that allows you to select elements in the drag area using the mouse or touch. Maintained by daybrush on GitHub, where it has earned 2,215 stars from the community.",
+      "long1": "Selecto.js is a component that allows you to select elements in the drag area using the mouse or touch. Maintained by daybrush on GitHub, where it has earned 2,216 stars from the community.",
       "long2": "It's actively developed around angular, lit, moveable, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
@@ -242,9 +615,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -270,9 +643,9 @@
       "category": "UI Kits",
       "stars": 2062,
       "author": "ascorbic",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/213306?v=4",
       "desc": "Multi-framework responsive image component",
-      "demo": null,
+      "demo": "https://unpic.pics",
       "repoUrl": "https://github.com/ascorbic/unpic-img",
       "long1": "Multi-framework responsive image component. Maintained by ascorbic on GitHub, where it has earned 2,062 stars from the community.",
       "long2": "It's actively developed around angular, astro, images, and is a solid reference for anyone building with these tools.",
@@ -283,13 +656,38 @@
         "Images",
         "Lit"
       ],
-      "updated": "yesterday",
+      "updated": "2 days ago",
       "license": "\u2014",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 86.337,
+          "size": 91639
+        },
+        {
+          "name": "Astro",
+          "pct": 5.105,
+          "size": 5418
+        },
+        {
+          "name": "Vue",
+          "pct": 3.73,
+          "size": 3959
+        },
+        {
+          "name": "Svelte",
+          "pct": 3.107,
+          "size": 3298
+        },
+        {
+          "name": "JavaScript",
+          "pct": 1.441,
+          "size": 1529
+        },
+        {
+          "name": "HTML",
+          "pct": 0.281,
+          "size": 298
         }
       ],
       "versions": [],
@@ -312,13 +710,13 @@
       "name": "gramps-web",
       "fullName": "gramps-project/gramps-web",
       "category": "AI & ML",
-      "stars": 1526,
+      "stars": 1527,
       "author": "gramps-project",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/10428818?v=4",
       "desc": "Open Source Online Genealogy System",
-      "demo": null,
+      "demo": "https://www.grampsweb.org",
       "repoUrl": "https://github.com/gramps-project/gramps-web",
-      "long1": "Open Source Online Genealogy System. Maintained by gramps-project on GitHub, where it has earned 1,526 stars from the community.",
+      "long1": "Open Source Online Genealogy System. Maintained by gramps-project on GitHub, where it has earned 1,527 stars from the community.",
       "long2": "It's actively developed around family-history, family-tree, gedcom, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
@@ -327,13 +725,28 @@
         "Gedcom",
         "Genealogy"
       ],
-      "updated": "today",
+      "updated": "2 days ago",
       "license": "AGPL-3.0",
       "langs": [
         {
-          "pct": 100.0,
           "name": "JavaScript",
-          "size": 0
+          "pct": 98.92,
+          "size": 1700274
+        },
+        {
+          "name": "CSS",
+          "pct": 1.001,
+          "size": 17212
+        },
+        {
+          "name": "HTML",
+          "pct": 0.067,
+          "size": 1157
+        },
+        {
+          "name": "Dockerfile",
+          "pct": 0.012,
+          "size": 198
         }
       ],
       "versions": [],
@@ -357,9 +770,9 @@
       "category": "UI Kits",
       "stars": 1385,
       "author": "Trendyol",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/13857072?v=4",
       "desc": "Baklava is a design system provided by Trendyol to create a consistent UI/UX for app users.",
-      "demo": null,
+      "demo": "https://baklava.design/",
       "repoUrl": "https://github.com/Trendyol/baklava",
       "long1": "Baklava is a design system provided by Trendyol to create a consistent UI/UX for app users. Maintained by Trendyol on GitHub, where it has earned 1,385 stars from the community.",
       "long2": "It's actively developed around components, design-system, frontend, and is a solid reference for anyone building with these tools.",
@@ -374,9 +787,34 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 61.842,
+          "size": 760476
+        },
+        {
+          "name": "MDX",
+          "pct": 26.567,
+          "size": 326696
+        },
+        {
+          "name": "CSS",
+          "pct": 8.695,
+          "size": 106924
+        },
+        {
+          "name": "JavaScript",
+          "pct": 2.573,
+          "size": 31636
+        },
+        {
+          "name": "HTML",
+          "pct": 0.311,
+          "size": 3825
+        },
+        {
+          "name": "Shell",
+          "pct": 0.012,
+          "size": 142
         }
       ],
       "versions": [],
@@ -397,7 +835,7 @@
       "category": "Mobile",
       "stars": 1321,
       "author": "pwa-builder",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/11843769?v=4",
       "desc": "Welcome to the PWABuilder pwa-starter! Looking to build a new Progressive Web App and not sure where to get started? This is what you are looking for!",
       "demo": null,
       "repoUrl": "https://github.com/pwa-builder/pwa-starter",
@@ -414,9 +852,9 @@
       "license": "\u2014",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -434,9 +872,9 @@
       "category": "AI & ML",
       "stars": 984,
       "author": "vaadin",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/1171922?v=4",
       "desc": "Build better business applications, faster. No more juggling REST endpoints or deciphering GraphQL queries. Hilla seamlessly connects Spring Boot and React to accelerate application development.",
-      "demo": null,
+      "demo": "https://hilla.dev",
       "repoUrl": "https://github.com/vaadin/hilla",
       "long1": "Build better business applications, faster. No more juggling REST endpoints or deciphering GraphQL queries. Hilla seamlessly connects Spring Boot and React to accelerate application development. Maintained by vaadin on GitHub, where it has earned 984 stars from the community.",
       "long2": "It's actively developed around client-side, frontend, java, and is a solid reference for anyone building with these tools.",
@@ -446,13 +884,43 @@
         "Java",
         "Lit"
       ],
-      "updated": "today",
+      "updated": "2 days ago",
       "license": "Apache-2.0",
       "langs": [
         {
-          "pct": 100.0,
           "name": "Java",
-          "size": 0
+          "pct": 55.308,
+          "size": 2153046
+        },
+        {
+          "name": "TypeScript",
+          "pct": 41.461,
+          "size": 1613992
+        },
+        {
+          "name": "Kotlin",
+          "pct": 2.296,
+          "size": 89389
+        },
+        {
+          "name": "JavaScript",
+          "pct": 0.581,
+          "size": 22611
+        },
+        {
+          "name": "HTML",
+          "pct": 0.194,
+          "size": 7535
+        },
+        {
+          "name": "CSS",
+          "pct": 0.151,
+          "size": 5881
+        },
+        {
+          "name": "Shell",
+          "pct": 0.009,
+          "size": 367
         }
       ],
       "versions": [],
@@ -477,9 +945,9 @@
       "category": "Mobile",
       "stars": 872,
       "author": "khmyznikov",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/6115884?v=4",
       "desc": "Installation dialog for Progressive Web Application. Provides a more convenient user experience and fixes the lack of native dialogs in some browsers.",
-      "demo": null,
+      "demo": "https://khmyznikov.com/pwa-install/",
       "repoUrl": "https://github.com/khmyznikov/pwa-install",
       "long1": "Installation dialog for Progressive Web Application. Provides a more convenient user experience and fixes the lack of native dialogs in some browsers. Maintained by khmyznikov on GitHub, where it has earned 872 stars from the community.",
       "long2": "It's actively developed around chrome, component, ios, and is a solid reference for anyone building with these tools.",
@@ -490,13 +958,23 @@
         "Ios",
         "Lit"
       ],
-      "updated": "2 weeks ago",
+      "updated": "3 weeks ago",
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 63.348,
+          "size": 100872
+        },
+        {
+          "name": "SCSS",
+          "pct": 28.894,
+          "size": 46009
+        },
+        {
+          "name": "JavaScript",
+          "pct": 7.758,
+          "size": 12353
         }
       ],
       "versions": [],
@@ -520,9 +998,9 @@
       "category": "AI & ML",
       "stars": 820,
       "author": "AgnosticUI",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/70919102?v=4",
       "desc": "AgnosticUI Local (v2) is a CLI-based UI component library that copies components directly into your project. Works with AI tools, agent-driven UIs, and prompt-ready workflows.",
-      "demo": null,
+      "demo": "https://agnosticui.com",
       "repoUrl": "https://github.com/AgnosticUI/agnosticui",
       "long1": "AgnosticUI Local (v2) is a CLI-based UI component library that copies components directly into your project. Works with AI tools, agent-driven UIs, and prompt-ready workflows. Maintained by AgnosticUI on GitHub, where it has earned 820 stars from the community.",
       "long2": "It's actively developed around accessibility, agent-skills, ai-agents, and is a solid reference for anyone building with these tools.",
@@ -537,9 +1015,39 @@
       "license": "Apache-2.0",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 69.93,
+          "size": 16489633
+        },
+        {
+          "name": "CSS",
+          "pct": 16.103,
+          "size": 3797069
+        },
+        {
+          "name": "Vue",
+          "pct": 6.841,
+          "size": 1613216
+        },
+        {
+          "name": "JavaScript",
+          "pct": 6.817,
+          "size": 1607351
+        },
+        {
+          "name": "HTML",
+          "pct": 0.197,
+          "size": 46390
+        },
+        {
+          "name": "Shell",
+          "pct": 0.073,
+          "size": 17311
+        },
+        {
+          "name": "Svelte",
+          "pct": 0.039,
+          "size": 9112
         }
       ],
       "versions": [],
@@ -567,9 +1075,9 @@
       "category": "AI & ML",
       "stars": 785,
       "author": "treefarmstudio",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/110701278?v=4",
       "desc": "A modern business marketing website theme/starter built with Astro \ud83d\ude80",
-      "demo": null,
+      "demo": "https://odyssey-theme.sapling.supply",
       "repoUrl": "https://github.com/treefarmstudio/odyssey-theme",
       "long1": "A modern business marketing website theme/starter built with Astro \ud83d\ude80. Maintained by treefarmstudio on GitHub, where it has earned 785 stars from the community.",
       "long2": "It's actively developed around astro, astro-template, buildwithastro, and is a solid reference for anyone building with these tools.",
@@ -583,9 +1091,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "Astro",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -612,13 +1120,13 @@
       "name": "GenshinCelShaderURP",
       "fullName": "Gaolingx/GenshinCelShaderURP",
       "category": "DevTools",
-      "stars": 752,
+      "stars": 753,
       "author": "Gaolingx",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/122193477?v=4",
       "desc": "\u8fd9\u662f\u4e00\u4e2a\u57fa\u4e8eURP\u7684\u5f00\u6e90\u4eff\u539f\u795e\u5361\u901a\u6e32\u67d3\u9879\u76ee",
       "demo": null,
       "repoUrl": "https://github.com/Gaolingx/GenshinCelShaderURP",
-      "long1": "\u8fd9\u662f\u4e00\u4e2a\u57fa\u4e8eURP\u7684\u5f00\u6e90\u4eff\u539f\u795e\u5361\u901a\u6e32\u67d3\u9879\u76ee. Maintained by Gaolingx on GitHub, where it has earned 752 stars from the community.",
+      "long1": "\u8fd9\u662f\u4e00\u4e2a\u57fa\u4e8eURP\u7684\u5f00\u6e90\u4eff\u539f\u795e\u5361\u901a\u6e32\u67d3\u9879\u76ee. Maintained by Gaolingx on GitHub, where it has earned 753 stars from the community.",
       "long2": "It's actively developed around character, genshin, genshin-impact, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Character",
@@ -630,9 +1138,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "HLSL",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -660,9 +1168,9 @@
       "category": "UI Kits",
       "stars": 735,
       "author": "Aejkatappaja",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/119339477?v=4",
       "desc": "Structure-aware skeleton loader. One Web Component, every framework.",
-      "demo": null,
+      "demo": "https://aejkatappaja.github.io/phantom-ui/demo",
       "repoUrl": "https://github.com/Aejkatappaja/phantom-ui",
       "long1": "Structure-aware skeleton loader. One Web Component, every framework. Maintained by Aejkatappaja on GitHub, where it has earned 735 stars from the community.",
       "long2": "It's actively developed around angular, custom-element, lit, and is a solid reference for anyone building with these tools.",
@@ -677,9 +1185,24 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 73.815,
+          "size": 92112
+        },
+        {
+          "name": "JavaScript",
+          "pct": 16.913,
+          "size": 21105
+        },
+        {
+          "name": "HTML",
+          "pct": 8.005,
+          "size": 9989
+        },
+        {
+          "name": "CSS",
+          "pct": 1.268,
+          "size": 1582
         }
       ],
       "versions": [],
@@ -706,9 +1229,9 @@
       "category": "Mobile",
       "stars": 600,
       "author": "ihtml5",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/6822604?v=4",
       "desc": "50weekly \u53d1\u73b0\u9ad8\u8d28\u91cf\u7684\u524d\u7aef\u8d44\u6e90",
-      "demo": null,
+      "demo": "http://ihtml5.github.io/50weekly",
       "repoUrl": "https://github.com/ihtml5/50weekly",
       "long1": "50weekly \u53d1\u73b0\u9ad8\u8d28\u91cf\u7684\u524d\u7aef\u8d44\u6e90. Maintained by ihtml5 on GitHub, where it has earned 600 stars from the community.",
       "long2": "It's actively developed around css, es6, javascript, and is a solid reference for anyone building with these tools.",
@@ -723,15 +1246,13 @@
       "langs": [
         {
           "name": "JavaScript",
-          "pct": 72
-        },
-        {
-          "name": "JavaScript",
-          "pct": 20
+          "pct": 71.429,
+          "size": 20
         },
         {
           "name": "Other",
-          "pct": 8
+          "pct": 28.571,
+          "size": 8
         }
       ],
       "versions": [],
@@ -752,13 +1273,13 @@
       "name": "material-theme-builder",
       "fullName": "material-foundation/material-theme-builder",
       "category": "Mobile",
-      "stars": 594,
+      "stars": 595,
       "author": "material-foundation",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/19556314?v=4",
       "desc": "Visualize dynamic color and create a custom Material Theme.",
-      "demo": null,
+      "demo": "https://material-foundation.github.io/material-theme-builder/",
       "repoUrl": "https://github.com/material-foundation/material-theme-builder",
-      "long1": "Visualize dynamic color and create a custom Material Theme. Maintained by material-foundation on GitHub, where it has earned 594 stars from the community.",
+      "long1": "Visualize dynamic color and create a custom Material Theme. Maintained by material-foundation on GitHub, where it has earned 595 stars from the community.",
       "long2": "It's actively developed around android, colors, dynamic-color, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Android",
@@ -771,15 +1292,13 @@
       "langs": [
         {
           "name": "JavaScript",
-          "pct": 72
-        },
-        {
-          "name": "JavaScript",
-          "pct": 20
+          "pct": 71.429,
+          "size": 20
         },
         {
           "name": "Other",
-          "pct": 8
+          "pct": 28.571,
+          "size": 8
         }
       ],
       "versions": [],
@@ -807,9 +1326,9 @@
       "category": "DevTools",
       "stars": 581,
       "author": "cartesiancs",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/63484669?v=4",
       "desc": "\ud83d\udcf7 \ud83d\udda5\ufe0f Electron based video editing software. Focusing on adding motion effects using a layered editing system.",
-      "demo": null,
+      "demo": "https://nugget.framer.website",
       "repoUrl": "https://github.com/cartesiancs/nugget-app",
       "long1": "\ud83d\udcf7 \ud83d\udda5\ufe0f Electron based video editing software. Focusing on adding motion effects using a layered editing system. Maintained by cartesiancs on GitHub, where it has earned 581 stars from the community.",
       "long2": "It's actively developed around editor, electron, ffmpeg, and is a solid reference for anyone building with these tools.",
@@ -824,9 +1343,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -840,15 +1359,65 @@
       ]
     },
     {
+      "slug": "mangaonlineviewer",
+      "name": "MangaOnlineViewer",
+      "fullName": "TagoDR/MangaOnlineViewer",
+      "category": "DevTools",
+      "stars": 506,
+      "author": "TagoDR",
+      "avatar": "https://avatars.githubusercontent.com/u/9999209?v=4",
+      "desc": "This scripts loads all pages(images) from the current chapter of the manga showing them in one page in a list type structure, witch helps reading faster.",
+      "demo": null,
+      "repoUrl": "https://github.com/TagoDR/MangaOnlineViewer",
+      "long1": "This scripts loads all pages(images) from the current chapter of the manga showing them in one page in a list type structure, witch helps reading faster. Maintained by TagoDR on GitHub, where it has earned 506 stars from the community.",
+      "long2": "It's actively developed around javascript, manga, nodejs, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Manga",
+        "Node",
+        "Reader",
+        "Tampermonkey"
+      ],
+      "updated": "5 days ago",
+      "license": "\u2014",
+      "langs": [
+        {
+          "name": "TypeScript",
+          "pct": 95.036,
+          "size": 722177
+        },
+        {
+          "name": "CSS",
+          "pct": 4.925,
+          "size": 37423
+        },
+        {
+          "name": "HTML",
+          "pct": 0.039,
+          "size": 300
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "javascript",
+        "manga",
+        "nodejs",
+        "reader",
+        "tampermonkey",
+        "userscript",
+        "viewer"
+      ]
+    },
+    {
       "slug": "elements",
       "name": "elements",
       "fullName": "vscode-elements/elements",
       "category": "AI & ML",
       "stars": 454,
       "author": "vscode-elements",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/145812216?v=4",
       "desc": "Web component library for developing Visual Studio Code extensions",
-      "demo": null,
+      "demo": "https://vscode-elements.github.io",
       "repoUrl": "https://github.com/vscode-elements/elements",
       "long1": "Web component library for developing Visual Studio Code extensions. Maintained by vscode-elements on GitHub, where it has earned 454 stars from the community.",
       "long2": "It's actively developed around lit, lit-element, lit-html, and is a solid reference for anyone building with these tools.",
@@ -863,9 +1432,19 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "HTML",
-          "size": 0
+          "pct": 74.624,
+          "size": 1666686
+        },
+        {
+          "name": "TypeScript",
+          "pct": 25.041,
+          "size": 559269
+        },
+        {
+          "name": "JavaScript",
+          "pct": 0.335,
+          "size": 7485
         }
       ],
       "versions": [],
@@ -887,9 +1466,9 @@
       "category": "UI Kits",
       "stars": 435,
       "author": "giscus",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/81452695?v=4",
       "desc": "Component library for giscus, a comment system powered by GitHub Discussions.",
-      "demo": null,
+      "demo": "https://giscus-component.vercel.app",
       "repoUrl": "https://github.com/giscus/giscus-component",
       "long1": "Component library for giscus, a comment system powered by GitHub Discussions. Maintained by giscus on GitHub, where it has earned 435 stars from the community.",
       "long2": "It's actively developed around comment-system, giscus, github-discussions, and is a solid reference for anyone building with these tools.",
@@ -904,9 +1483,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -930,9 +1509,9 @@
       "category": "AI & ML",
       "stars": 405,
       "author": "lastsunday",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/5588354?v=4",
       "desc": "\u804c\u4f4d\u730e\u4eba - \u534f\u52a9\u627e\u5de5\u4f5c\u7684\u5de5\u5177",
-      "demo": null,
+      "demo": "https://lastsunday.github.io/job-hunting/",
       "repoUrl": "https://github.com/lastsunday/job-hunting",
       "long1": "\u804c\u4f4d\u730e\u4eba - \u534f\u52a9\u627e\u5de5\u4f5c\u7684\u5de5\u5177. Maintained by lastsunday on GitHub, where it has earned 405 stars from the community.",
       "long2": "It's actively developed around ai, bdd, chrome-extension, and is a solid reference for anyone building with these tools.",
@@ -943,13 +1522,53 @@
         "Chrome Extension",
         "Git Cliff"
       ],
-      "updated": "1 week ago",
+      "updated": "2 days ago",
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "JavaScript",
-          "size": 0
+          "pct": 36.411,
+          "size": 886383
+        },
+        {
+          "name": "TypeScript",
+          "pct": 35.032,
+          "size": 852823
+        },
+        {
+          "name": "Rust",
+          "pct": 26.36,
+          "size": 641702
+        },
+        {
+          "name": "CSS",
+          "pct": 1.249,
+          "size": 30401
+        },
+        {
+          "name": "Gherkin",
+          "pct": 0.505,
+          "size": 12288
+        },
+        {
+          "name": "Shell",
+          "pct": 0.167,
+          "size": 4071
+        },
+        {
+          "name": "Nix",
+          "pct": 0.163,
+          "size": 3977
+        },
+        {
+          "name": "HTML",
+          "pct": 0.106,
+          "size": 2588
+        },
+        {
+          "name": "Dockerfile",
+          "pct": 0.006,
+          "size": 145
         }
       ],
       "versions": [],
@@ -973,9 +1592,9 @@
       "category": "UI Kits",
       "stars": 343,
       "author": "skyra-project",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/59655788?v=4",
       "desc": "Discord Webcomponents for real looking messages on the web",
-      "demo": null,
+      "demo": "https://discord-components.js.org",
       "repoUrl": "https://github.com/skyra-project/discord-components",
       "long1": "Discord Webcomponents for real looking messages on the web. Maintained by skyra-project on GitHub, where it has earned 343 stars from the community.",
       "long2": "It's actively developed around angular, astro, discord, and is a solid reference for anyone building with these tools.",
@@ -986,13 +1605,13 @@
         "Discord",
         "Docusaurus"
       ],
-      "updated": "1 month ago",
+      "updated": "2 months ago",
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -1015,15 +1634,80 @@
       ]
     },
     {
+      "slug": "consumerfinance-gov",
+      "name": "consumerfinance.gov",
+      "fullName": "cfpb/consumerfinance.gov",
+      "category": "AI & ML",
+      "stars": 330,
+      "author": "cfpb",
+      "avatar": "https://avatars.githubusercontent.com/u/1071563?v=4",
+      "desc": "Django project protecting American consumers",
+      "demo": "https://www.consumerfinance.gov/",
+      "repoUrl": "https://github.com/cfpb/consumerfinance.gov",
+      "long1": "Django project protecting American consumers. Maintained by cfpb on GitHub, where it has earned 330 stars from the community.",
+      "long2": "It's actively developed around django, hacktoberfest, python, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Django",
+        "Python",
+        "Wagtail"
+      ],
+      "updated": "2 days ago",
+      "license": "CC0-1.0",
+      "langs": [
+        {
+          "name": "Python",
+          "pct": 54.559,
+          "size": 4470855
+        },
+        {
+          "name": "JavaScript",
+          "pct": 24.052,
+          "size": 1970943
+        },
+        {
+          "name": "HTML",
+          "pct": 17.39,
+          "size": 1424994
+        },
+        {
+          "name": "SCSS",
+          "pct": 3.697,
+          "size": 302932
+        },
+        {
+          "name": "Shell",
+          "pct": 0.134,
+          "size": 11020
+        },
+        {
+          "name": "CSS",
+          "pct": 0.085,
+          "size": 7003
+        },
+        {
+          "name": "Dockerfile",
+          "pct": 0.082,
+          "size": 6720
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "django",
+        "hacktoberfest",
+        "python",
+        "wagtail"
+      ]
+    },
+    {
       "slug": "carbon-for-ibm-dotcom",
       "name": "carbon-for-ibm-dotcom",
       "fullName": "carbon-design-system/carbon-for-ibm-dotcom",
       "category": "AI & ML",
       "stars": 293,
       "author": "carbon-design-system",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/25179978?v=4",
       "desc": "Carbon for IBM.com is based on the Carbon Design System for IBM",
-      "demo": null,
+      "demo": "https://www.ibm.com/standards/carbon/",
       "repoUrl": "https://github.com/carbon-design-system/carbon-for-ibm-dotcom",
       "long1": "Carbon for IBM.com is based on the Carbon Design System for IBM. Maintained by carbon-design-system on GitHub, where it has earned 293 stars from the community.",
       "long2": "It's actively developed around carbon-design-system, css, html, and is a solid reference for anyone building with these tools.",
@@ -1034,13 +1718,48 @@
         "Html",
         "Lit"
       ],
-      "updated": "4 days ago",
+      "updated": "5 days ago",
       "license": "Apache-2.0",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 52.105,
+          "size": 2681963
+        },
+        {
+          "name": "JavaScript",
+          "pct": 18.906,
+          "size": 973155
+        },
+        {
+          "name": "HTML",
+          "pct": 14.24,
+          "size": 732980
+        },
+        {
+          "name": "SCSS",
+          "pct": 12.173,
+          "size": 626585
+        },
+        {
+          "name": "CSS",
+          "pct": 1.412,
+          "size": 72673
+        },
+        {
+          "name": "Handlebars",
+          "pct": 0.967,
+          "size": 49753
+        },
+        {
+          "name": "Shell",
+          "pct": 0.145,
+          "size": 7445
+        },
+        {
+          "name": "MDX",
+          "pct": 0.052,
+          "size": 2686
         }
       ],
       "versions": [],
@@ -1059,13 +1778,13 @@
       "name": "devtool-plus",
       "fullName": "fuzionix/devtool-plus",
       "category": "DevTools",
-      "stars": 283,
+      "stars": 284,
       "author": "fuzionix",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/85094335?v=4",
       "desc": "A VSCode extension that provides common developer tools directly in code editor",
-      "demo": null,
+      "demo": "https://fuzionix.github.io/devtool-plus",
       "repoUrl": "https://github.com/fuzionix/devtool-plus",
-      "long1": "A VSCode extension that provides common developer tools directly in code editor. Maintained by fuzionix on GitHub, where it has earned 283 stars from the community.",
+      "long1": "A VSCode extension that provides common developer tools directly in code editor. Maintained by fuzionix on GitHub, where it has earned 284 stars from the community.",
       "long2": "It's actively developed around all-in-one, converter, developer, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
@@ -1078,9 +1797,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -1104,9 +1823,9 @@
       "category": "Docs",
       "stars": 227,
       "author": "mdn",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/7565578?v=4",
       "desc": "MDN's frontend since late 2025, built with Web Components, Lit, and SSR for a fast, clean documentation experience. Fred = /fr(ont)e(n)d/.",
-      "demo": null,
+      "demo": "https://developer.mozilla.org",
       "repoUrl": "https://github.com/mdn/fred",
       "long1": "MDN's frontend since late 2025, built with Web Components, Lit, and SSR for a fast, clean documentation experience. Fred = /fr(ont)e(n)d/. Maintained by mdn on GitHub, where it has earned 227 stars from the community.",
       "long2": "It's actively developed around lit, ssr, web-components, and is a solid reference for anyone building with these tools.",
@@ -1116,13 +1835,38 @@
         "Ssr",
         "Web Components"
       ],
-      "updated": "today",
+      "updated": "2 days ago",
       "license": "MPL-2.0",
       "langs": [
         {
-          "pct": 100.0,
           "name": "JavaScript",
-          "size": 0
+          "pct": 61.543,
+          "size": 639660
+        },
+        {
+          "name": "CSS",
+          "pct": 28.301,
+          "size": 294155
+        },
+        {
+          "name": "Fluent",
+          "pct": 9.169,
+          "size": 95298
+        },
+        {
+          "name": "TypeScript",
+          "pct": 0.884,
+          "size": 9186
+        },
+        {
+          "name": "Shell",
+          "pct": 0.084,
+          "size": 868
+        },
+        {
+          "name": "HTML",
+          "pct": 0.02,
+          "size": 207
         }
       ],
       "versions": [],
@@ -1139,9 +1883,9 @@
       "category": "UI Kits",
       "stars": 222,
       "author": "micro-lc",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/92730708?v=4",
       "desc": "An open source micro-frontend orchestrator",
-      "demo": null,
+      "demo": "https://micro-lc.io",
       "repoUrl": "https://github.com/micro-lc/micro-lc",
       "long1": "An open source micro-frontend orchestrator. Maintained by micro-lc on GitHub, where it has earned 222 stars from the community.",
       "long2": "It's actively developed around hacktoberfest, js, lit, and is a solid reference for anyone building with these tools.",
@@ -1156,9 +1900,9 @@
       "license": "Apache-2.0",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -1180,9 +1924,9 @@
       "category": "UI Kits",
       "stars": 208,
       "author": "simonihmig",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/1325249?v=4",
       "desc": "The multi-framework JavaScript library for responsive images.",
-      "demo": null,
+      "demo": "https://responsive-image.dev",
       "repoUrl": "https://github.com/simonihmig/responsive-image",
       "long1": "The multi-framework JavaScript library for responsive images. Maintained by simonihmig on GitHub, where it has earned 208 stars from the community.",
       "long2": "It's actively developed around ember, image-cdn, image-optimization, and is a solid reference for anyone building with these tools.",
@@ -1193,13 +1937,43 @@
         "Image Optimization",
         "Image Processing"
       ],
-      "updated": "yesterday",
+      "updated": "2 days ago",
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 82.998,
+          "size": 350230
+        },
+        {
+          "name": "JavaScript",
+          "pct": 9.752,
+          "size": 41151
+        },
+        {
+          "name": "Vue",
+          "pct": 2.276,
+          "size": 9603
+        },
+        {
+          "name": "Svelte",
+          "pct": 1.978,
+          "size": 8348
+        },
+        {
+          "name": "CSS",
+          "pct": 1.18,
+          "size": 4978
+        },
+        {
+          "name": "HTML",
+          "pct": 1.104,
+          "size": 4660
+        },
+        {
+          "name": "Handlebars",
+          "pct": 0.712,
+          "size": 3005
         }
       ],
       "versions": [],
@@ -1226,7 +2000,7 @@
       "category": "AI & ML",
       "stars": 201,
       "author": "steeze-ui",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/96270489?v=4",
       "desc": "Effortless Icon Packs & Components for Svelte, React, Vue and more..",
       "demo": null,
       "repoUrl": "https://github.com/steeze-ui/icons",
@@ -1243,9 +2017,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -1273,17 +2047,87 @@
       ]
     },
     {
+      "slug": "atomium",
+      "name": "atomium",
+      "fullName": "juntossomosmais/atomium",
+      "category": "Mobile",
+      "stars": 181,
+      "author": "juntossomosmais",
+      "avatar": "https://avatars.githubusercontent.com/u/45012983?v=4",
+      "desc": "Atomium is an internal design system for 'Juntos Somos Mais' using Web Components",
+      "demo": "https://juntossomosmais.github.io/atomium/",
+      "repoUrl": "https://github.com/juntossomosmais/atomium",
+      "long1": "Atomium is an internal design system for 'Juntos Somos Mais' using Web Components. Maintained by juntossomosmais on GitHub, where it has earned 181 stars from the community.",
+      "long2": "It's actively developed around custom-elements, design-system, design-systems, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Custom Elements",
+        "Design System",
+        "Design Systems",
+        "Design Tokens"
+      ],
+      "updated": "2 days ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "TypeScript",
+          "pct": 79.009,
+          "size": 522252
+        },
+        {
+          "name": "MDX",
+          "pct": 9.103,
+          "size": 60169
+        },
+        {
+          "name": "SCSS",
+          "pct": 8.674,
+          "size": 57333
+        },
+        {
+          "name": "JavaScript",
+          "pct": 2.799,
+          "size": 18501
+        },
+        {
+          "name": "CSS",
+          "pct": 0.304,
+          "size": 2011
+        },
+        {
+          "name": "HTML",
+          "pct": 0.111,
+          "size": 733
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "custom-elements",
+        "design-system",
+        "design-systems",
+        "design-tokens",
+        "designsystem",
+        "ionic",
+        "nx",
+        "stenciljs",
+        "storybook",
+        "typescript",
+        "web-components",
+        "webcomponents"
+      ]
+    },
+    {
       "slug": "jsfe",
       "name": "jsfe",
       "fullName": "json-schema-form-element/jsfe",
       "category": "UI Kits",
-      "stars": 179,
+      "stars": 180,
       "author": "json-schema-form-element",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/145659762?v=4",
       "desc": "A Custom Element that auto-generates forms, declaratively. Works with Lit, Solid, Vue, Svelte, React, Astro, vanilla\u2026",
-      "demo": null,
+      "demo": "https://jsfe.js.org",
       "repoUrl": "https://github.com/json-schema-form-element/jsfe",
-      "long1": "A Custom Element that auto-generates forms, declaratively. Works with Lit, Solid, Vue, Svelte, React, Astro, vanilla\u2026. Maintained by json-schema-form-element on GitHub, where it has earned 179 stars from the community.",
+      "long1": "A Custom Element that auto-generates forms, declaratively. Works with Lit, Solid, Vue, Svelte, React, Astro, vanilla\u2026. Maintained by json-schema-form-element on GitHub, where it has earned 180 stars from the community.",
       "long2": "It's actively developed around form, form-builder, form-generator, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
@@ -1296,9 +2140,9 @@
       "license": "ISC",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -1326,9 +2170,9 @@
       "category": "DevTools",
       "stars": 169,
       "author": "suttacentral",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/4515841?v=4",
       "desc": "SuttaCentral website application",
-      "demo": null,
+      "demo": "https://suttacentral.net",
       "repoUrl": "https://github.com/suttacentral/suttacentral",
       "long1": "SuttaCentral website application. Maintained by suttacentral on GitHub, where it has earned 169 stars from the community.",
       "long2": "It's actively developed around api, arangodb, docker, and is a solid reference for anyone building with these tools.",
@@ -1339,13 +2183,33 @@
         "Docker",
         "Flask"
       ],
-      "updated": "3 days ago",
+      "updated": "2 days ago",
       "license": "\u2014",
       "langs": [
         {
-          "pct": 100.0,
           "name": "JavaScript",
-          "size": 0
+          "pct": 92.961,
+          "size": 7615595
+        },
+        {
+          "name": "Python",
+          "pct": 6.845,
+          "size": 560792
+        },
+        {
+          "name": "HTML",
+          "pct": 0.118,
+          "size": 9635
+        },
+        {
+          "name": "Makefile",
+          "pct": 0.05,
+          "size": 4104
+        },
+        {
+          "name": "Shell",
+          "pct": 0.026,
+          "size": 2152
         }
       ],
       "versions": [],
@@ -1365,9 +2229,9 @@
       "category": "UI Kits",
       "stars": 167,
       "author": "matraic",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/224686995?v=4",
       "desc": "Material 3 Expressive Web Components",
-      "demo": null,
+      "demo": "https://matraic.github.io/m3e/",
       "repoUrl": "https://github.com/matraic/m3e",
       "long1": "Material 3 Expressive Web Components. Maintained by matraic on GitHub, where it has earned 167 stars from the community.",
       "long2": "It's actively developed around lit, material-3-expressive, material-design, and is a solid reference for anyone building with these tools.",
@@ -1382,9 +2246,14 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 99.598,
+          "size": 2379019
+        },
+        {
+          "name": "JavaScript",
+          "pct": 0.402,
+          "size": 9599
         }
       ],
       "versions": [],
@@ -1405,9 +2274,9 @@
       "category": "UI Kits",
       "stars": 156,
       "author": "Matsuuu",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/16068444?v=4",
       "desc": "Web Component DevTools is a Browser Extension enhancing the development experience of Web Component developers",
-      "demo": null,
+      "demo": "https://matsuuu.github.io/web-component-devtools/",
       "repoUrl": "https://github.com/Matsuuu/web-component-devtools",
       "long1": "Web Component DevTools is a Browser Extension enhancing the development experience of Web Component developers. Maintained by Matsuuu on GitHub, where it has earned 156 stars from the community.",
       "long2": "It's actively developed around chrome, custom-elements, extension, and is a solid reference for anyone building with these tools.",
@@ -1422,9 +2291,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -1447,9 +2316,9 @@
       "category": "UI Kits",
       "stars": 146,
       "author": "tinijs",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/121411913?v=4",
       "desc": "The TiniJS Framework \ud83e\udd5a",
-      "demo": null,
+      "demo": "https://tinijs.dev",
       "repoUrl": "https://github.com/tinijs/tinijs",
       "long1": "The TiniJS Framework \ud83e\udd5a. Maintained by tinijs on GitHub, where it has earned 146 stars from the community.",
       "long2": "It's actively developed around angular, javascript, lit, and is a solid reference for anyone building with these tools.",
@@ -1464,9 +2333,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -1487,7 +2356,7 @@
       "category": "AI & ML",
       "stars": 137,
       "author": "43081j",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/5677153?v=4",
       "desc": "lit-html support for ESLint",
       "demo": null,
       "repoUrl": "https://github.com/43081j/eslint-plugin-lit",
@@ -1504,9 +2373,14 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 99.448,
+          "size": 215401
+        },
+        {
+          "name": "JavaScript",
+          "pct": 0.552,
+          "size": 1196
         }
       ],
       "versions": [],
@@ -1526,9 +2400,9 @@
       "category": "Mobile",
       "stars": 136,
       "author": "andreasbm",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/6267397?v=4",
       "desc": "A blazing-fast and lightweight internationalization (i18n) library for your next web-based project",
-      "demo": null,
+      "demo": "https://codepen.io/andreasbm/pen/MWWXPNO?editors=1010",
       "repoUrl": "https://github.com/andreasbm/lit-translate",
       "long1": "A blazing-fast and lightweight internationalization (i18n) library for your next web-based project. Maintained by andreasbm on GitHub, where it has earned 136 stars from the community.",
       "long2": "It's actively developed around i18n, internationalization, lit, and is a solid reference for anyone building with these tools.",
@@ -1543,9 +2417,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -1569,9 +2443,9 @@
       "category": "AI & ML",
       "stars": 132,
       "author": "ProjectEvergreen",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/39494909?v=4",
       "desc": "Greenwood is your workbench for the web, embracing web standards from the ground up to empower your stack from front to back.",
-      "demo": null,
+      "demo": "https://greenwoodjs.dev",
       "repoUrl": "https://github.com/ProjectEvergreen/greenwood",
       "long1": "Greenwood is your workbench for the web, embracing web standards from the ground up to empower your stack from front to back. Maintained by ProjectEvergreen on GitHub, where it has earned 132 stars from the community.",
       "long2": "It's actively developed around css, esm, hacktoberfest, and is a solid reference for anyone building with these tools.",
@@ -1582,13 +2456,33 @@
         "Html",
         "Jamstack"
       ],
-      "updated": "2 days ago",
+      "updated": "4 days ago",
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "JavaScript",
-          "size": 0
+          "pct": 91.14,
+          "size": 1550701
+        },
+        {
+          "name": "HTML",
+          "pct": 5.421,
+          "size": 92236
+        },
+        {
+          "name": "CSS",
+          "pct": 1.82,
+          "size": 30970
+        },
+        {
+          "name": "TypeScript",
+          "pct": 1.615,
+          "size": 27485
+        },
+        {
+          "name": "SCSS",
+          "pct": 0.003,
+          "size": 56
         }
       ],
       "versions": [],
@@ -1614,9 +2508,9 @@
       "category": "AI & ML",
       "stars": 131,
       "author": "ithaka",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/74469?v=4",
       "desc": "JSTOR's design system",
-      "demo": null,
+      "demo": "https://pharos.jstor.org",
       "repoUrl": "https://github.com/ithaka/pharos",
       "long1": "JSTOR's design system. Maintained by ithaka on GitHub, where it has earned 131 stars from the community.",
       "long2": "It's actively developed around ithaka-owner-pharos, jstor, lit, and is a solid reference for anyone building with these tools.",
@@ -1627,13 +2521,43 @@
         "Lit",
         "Lit Element"
       ],
-      "updated": "yesterday",
+      "updated": "3 days ago",
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 90.075,
+          "size": 1900052
+        },
+        {
+          "name": "SCSS",
+          "pct": 6.91,
+          "size": 145764
+        },
+        {
+          "name": "JavaScript",
+          "pct": 1.727,
+          "size": 36432
+        },
+        {
+          "name": "CSS",
+          "pct": 0.883,
+          "size": 18622
+        },
+        {
+          "name": "HTML",
+          "pct": 0.345,
+          "size": 7275
+        },
+        {
+          "name": "MDX",
+          "pct": 0.036,
+          "size": 758
+        },
+        {
+          "name": "Shell",
+          "pct": 0.025,
+          "size": 517
         }
       ],
       "versions": [],
@@ -1654,9 +2578,9 @@
       "category": "AI & ML",
       "stars": 130,
       "author": "phase2",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/148441?v=4",
       "desc": "Tooling infrastructure for modern web component development.",
-      "demo": null,
+      "demo": "https://outline.phase2tech.com",
       "repoUrl": "https://github.com/phase2/outline",
       "long1": "Tooling infrastructure for modern web component development. Maintained by phase2 on GitHub, where it has earned 130 stars from the community.",
       "long2": "It's actively developed around components, components-library, design-system, and is a solid reference for anyone building with these tools.",
@@ -1671,9 +2595,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -1699,7 +2623,7 @@
       "category": "Mobile",
       "stars": 124,
       "author": "fernandopasik",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/1301335?v=4",
       "desc": "Declarative way of routing for lit-html powered by pwa-helpers, redux and lit-element",
       "demo": null,
       "repoUrl": "https://github.com/fernandopasik/lit-redux-router",
@@ -1712,13 +2636,13 @@
         "Lit Elements",
         "Redux"
       ],
-      "updated": "2 months ago",
+      "updated": "yesterday",
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -1735,15 +2659,85 @@
       ]
     },
     {
+      "slug": "quarkus-quinoa",
+      "name": "quarkus-quinoa",
+      "fullName": "quarkiverse/quarkus-quinoa",
+      "category": "UI Kits",
+      "stars": 120,
+      "author": "quarkiverse",
+      "avatar": "https://avatars.githubusercontent.com/u/69191779?v=4",
+      "desc": "Quinoa is a Quarkus extension which eases the development, the build and serving of single page apps (built with NodeJS: React, Angular, \u2026) alongside Quarkus . It is possible to use it with a Quarkus backend in a single project",
+      "demo": null,
+      "repoUrl": "https://github.com/quarkiverse/quarkus-quinoa",
+      "long1": "Quinoa is a Quarkus extension which eases the development, the build and serving of single page apps (built with NodeJS: React, Angular, \u2026) alongside Quarkus . It is possible to use it with a Quarkus backend in a single project. Maintained by quarkiverse on GitHub, where it has earned 120 stars from the community.",
+      "long2": "It's actively developed around angular, frontend, quarkus, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Java",
+        "Angular",
+        "Frontend",
+        "Quarkus",
+        "Quarkus Extension"
+      ],
+      "updated": "1 week ago",
+      "license": "Apache-2.0",
+      "langs": [
+        {
+          "name": "Java",
+          "pct": 77.685,
+          "size": 301693
+        },
+        {
+          "name": "HTML",
+          "pct": 12.059,
+          "size": 46831
+        },
+        {
+          "name": "JavaScript",
+          "pct": 3.384,
+          "size": 13143
+        },
+        {
+          "name": "Vue",
+          "pct": 3.296,
+          "size": 12802
+        },
+        {
+          "name": "TypeScript",
+          "pct": 2.245,
+          "size": 8719
+        },
+        {
+          "name": "CSS",
+          "pct": 1.309,
+          "size": 5084
+        },
+        {
+          "name": "SCSS",
+          "pct": 0.021,
+          "size": 80
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "angular",
+        "frontend",
+        "quarkus",
+        "quarkus-extension",
+        "react",
+        "vue",
+        "web"
+      ]
+    },
+    {
       "slug": "bui",
       "name": "bui",
       "fullName": "kjantzer/bui",
       "category": "Mobile",
       "stars": 111,
       "author": "kjantzer",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/467487?v=4",
       "desc": "\u2039B\u203a Web components, classes, and utilities for creating single-page PWAs \u2013 built with Lit by Blackstone Publishing",
-      "demo": null,
+      "demo": "https://bui.js.org",
       "repoUrl": "https://github.com/kjantzer/bui",
       "long1": "\u2039B\u203a Web components, classes, and utilities for creating single-page PWAs \u2013 built with Lit by Blackstone Publishing. Maintained by kjantzer on GitHub, where it has earned 111 stars from the community.",
       "long2": "It's actively developed around buildwithlit, custom-elements, design-system, and is a solid reference for anyone building with these tools.",
@@ -1758,9 +2752,29 @@
       "license": "\u2014",
       "langs": [
         {
-          "pct": 100.0,
           "name": "JavaScript",
-          "size": 0
+          "pct": 92.875,
+          "size": 3097638
+        },
+        {
+          "name": "HTML",
+          "pct": 6.201,
+          "size": 206820
+        },
+        {
+          "name": "Less",
+          "pct": 0.893,
+          "size": 29788
+        },
+        {
+          "name": "Dockerfile",
+          "pct": 0.019,
+          "size": 646
+        },
+        {
+          "name": "Shell",
+          "pct": 0.011,
+          "size": 369
         }
       ],
       "versions": [],
@@ -1787,9 +2801,9 @@
       "category": "AI & ML",
       "stars": 109,
       "author": "FriedRiceNoodles",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/53017934?v=4",
       "desc": "\u57fa\u4e8eWeb Components\uff0c\u8de8\u6846\u67b6\u53ef\u7528\u7684\u73b0\u4ee3\u5316\u7ec4\u4ef6\u5e93\u3002https://banana-ui.com",
-      "demo": null,
+      "demo": "https://banana-ui.com",
       "repoUrl": "https://github.com/FriedRiceNoodles/banana-ui",
       "long1": "\u57fa\u4e8eWeb Components\uff0c\u8de8\u6846\u67b6\u53ef\u7528\u7684\u73b0\u4ee3\u5316\u7ec4\u4ef6\u5e93\u3002https://banana-ui.com. Maintained by FriedRiceNoodles on GitHub, where it has earned 109 stars from the community.",
       "long2": "It's actively developed around components, html, javascript, and is a solid reference for anyone building with these tools.",
@@ -1804,9 +2818,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -1829,9 +2843,9 @@
       "category": "AI & ML",
       "stars": 106,
       "author": "Polydile",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/34108498?v=4",
       "desc": "Custom elements catalog for all kind of projects and frameworks.",
-      "demo": null,
+      "demo": "https://dile-components.com",
       "repoUrl": "https://github.com/Polydile/dile-components",
       "long1": "Custom elements catalog for all kind of projects and frameworks. Maintained by Polydile on GitHub, where it has earned 106 stars from the community.",
       "long2": "It's actively developed around agent-skills, app, app-components, and is a solid reference for anyone building with these tools.",
@@ -1842,13 +2856,23 @@
         "App Components",
         "Catalog"
       ],
-      "updated": "today",
+      "updated": "2 days ago",
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "JavaScript",
-          "size": 0
+          "pct": 99.843,
+          "size": 3218301
+        },
+        {
+          "name": "HTML",
+          "pct": 0.08,
+          "size": 2593
+        },
+        {
+          "name": "CSS",
+          "pct": 0.076,
+          "size": 2452
         }
       ],
       "versions": [],
@@ -1874,9 +2898,9 @@
       "category": "UI Kits",
       "stars": 106,
       "author": "lissy93",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/1862727?v=4",
       "desc": "\ud83c\udf08 The same app built in 10 different frontend frameworks. For automated performance benchmarking",
-      "demo": null,
+      "demo": "https://framework-benchmarks.as93.net",
       "repoUrl": "https://github.com/lissy93/framework-benchmarks",
       "long1": "\ud83c\udf08 The same app built in 10 different frontend frameworks. For automated performance benchmarking. Maintained by lissy93 on GitHub, where it has earned 106 stars from the community.",
       "long2": "It's actively developed around alpinejs, angular, benchmark, and is a solid reference for anyone building with these tools.",
@@ -1887,13 +2911,48 @@
         "Benchmark",
         "Comparison"
       ],
-      "updated": "yesterday",
+      "updated": "3 days ago",
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "Python",
-          "size": 0
+          "pct": 41.646,
+          "size": 429095
+        },
+        {
+          "name": "JavaScript",
+          "pct": 31.791,
+          "size": 327559
+        },
+        {
+          "name": "HTML",
+          "pct": 10.48,
+          "size": 107976
+        },
+        {
+          "name": "CSS",
+          "pct": 7.523,
+          "size": 77514
+        },
+        {
+          "name": "TypeScript",
+          "pct": 5.719,
+          "size": 58926
+        },
+        {
+          "name": "Vue",
+          "pct": 1.233,
+          "size": 12700
+        },
+        {
+          "name": "Svelte",
+          "pct": 1.222,
+          "size": 12592
+        },
+        {
+          "name": "Dockerfile",
+          "pct": 0.386,
+          "size": 3977
         }
       ],
       "versions": [],
@@ -1922,9 +2981,9 @@
       "category": "AI & ML",
       "stars": 98,
       "author": "gustavonline",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/8681157?v=4",
       "desc": "Native desktop shell for Pi Coding Agent (Tauri + Lit), extension-first and multi-session aware",
-      "demo": null,
+      "demo": "https://github.com/gustavonline/pi-desktop",
       "repoUrl": "https://github.com/gustavonline/pi-desktop",
       "long1": "Native desktop shell for Pi Coding Agent (Tauri + Lit), extension-first and multi-session aware. Maintained by gustavonline on GitHub, where it has earned 98 stars from the community.",
       "long2": "It's actively developed around coding-agent, desktop-app, lit, and is a solid reference for anyone building with these tools.",
@@ -1939,9 +2998,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -1962,9 +3021,9 @@
       "category": "UI Kits",
       "stars": 95,
       "author": "andrico1234",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/17087167?v=4",
       "desc": "Capture the feel of the early web with A2k, the Windows2000 inspired web component library",
-      "demo": null,
+      "demo": "https://a2000.netlify.app/",
       "repoUrl": "https://github.com/andrico1234/a2k",
       "long1": "Capture the feel of the early web with A2k, the Windows2000 inspired web component library. Maintained by andrico1234 on GitHub, where it has earned 95 stars from the community.",
       "long2": "It's actively developed around css, javascript, lit, and is a solid reference for anyone building with these tools.",
@@ -1979,9 +3038,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -2000,9 +3059,9 @@
       "category": "DevTools",
       "stars": 94,
       "author": "fable-compiler",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/21062526?v=4",
       "desc": "Write Fable Elmish apps with Lit",
-      "demo": null,
+      "demo": "https://fable.io/Fable.Lit/",
       "repoUrl": "https://github.com/fable-compiler/Fable.Lit",
       "long1": "Write Fable Elmish apps with Lit. Maintained by fable-compiler on GitHub, where it has earned 94 stars from the community.",
       "long2": "It's actively developed around elmish, fable, fsharp, and is a solid reference for anyone building with these tools.",
@@ -2017,9 +3076,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "F#",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -2035,13 +3094,13 @@
       "name": "openbridge-webcomponents",
       "fullName": "Ocean-Industries-Concept-Lab/openbridge-webcomponents",
       "category": "UI Kits",
-      "stars": 83,
+      "stars": 84,
       "author": "Ocean-Industries-Concept-Lab",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/160855999?v=4",
       "desc": "OpenBridge design system implemented as Lit-based web components with support for all major frontend frameworks.",
-      "demo": null,
+      "demo": "https://www.openbridge.no/",
       "repoUrl": "https://github.com/Ocean-Industries-Concept-Lab/openbridge-webcomponents",
-      "long1": "OpenBridge design system implemented as Lit-based web components with support for all major frontend frameworks. Maintained by Ocean-Industries-Concept-Lab on GitHub, where it has earned 83 stars from the community.",
+      "long1": "OpenBridge design system implemented as Lit-based web components with support for all major frontend frameworks. Maintained by Ocean-Industries-Concept-Lab on GitHub, where it has earned 84 stars from the community.",
       "long2": "It's actively developed around angular, automation, design-system, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
@@ -2050,13 +3109,43 @@
         "Design System",
         "Lit"
       ],
-      "updated": "3 days ago",
+      "updated": "5 days ago",
       "license": "Apache-2.0",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 88.565,
+          "size": 12912286
+        },
+        {
+          "name": "CSS",
+          "pct": 9.466,
+          "size": 1380023
+        },
+        {
+          "name": "Vue",
+          "pct": 1.653,
+          "size": 240970
+        },
+        {
+          "name": "JavaScript",
+          "pct": 0.251,
+          "size": 36607
+        },
+        {
+          "name": "MDX",
+          "pct": 0.051,
+          "size": 7484
+        },
+        {
+          "name": "HTML",
+          "pct": 0.009,
+          "size": 1277
+        },
+        {
+          "name": "Dockerfile",
+          "pct": 0.006,
+          "size": 814
         }
       ],
       "versions": [],
@@ -2074,13 +3163,149 @@
       ]
     },
     {
+      "slug": "djangofmt",
+      "name": "djangofmt",
+      "fullName": "UnknownPlatypus/djangofmt",
+      "category": "AI & ML",
+      "stars": 81,
+      "author": "UnknownPlatypus",
+      "avatar": "https://avatars.githubusercontent.com/u/68703331?v=4",
+      "desc": "A fast, HTML aware, Django template formatter, written in Rust.",
+      "demo": "https://unknownplatypus.github.io/djangofmt/",
+      "repoUrl": "https://github.com/UnknownPlatypus/djangofmt",
+      "long1": "A fast, HTML aware, Django template formatter, written in Rust. Maintained by UnknownPlatypus on GitHub, where it has earned 81 stars from the community.",
+      "long2": "It's actively developed around django, formatter, html, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Django",
+        "Formatter",
+        "Html"
+      ],
+      "updated": "2 days ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "HTML",
+          "pct": 47.076,
+          "size": 404508
+        },
+        {
+          "name": "Rust",
+          "pct": 39.428,
+          "size": 338793
+        },
+        {
+          "name": "Python",
+          "pct": 8.514,
+          "size": 73158
+        },
+        {
+          "name": "Astro",
+          "pct": 2.541,
+          "size": 21835
+        },
+        {
+          "name": "Just",
+          "pct": 0.732,
+          "size": 6294
+        },
+        {
+          "name": "TypeScript",
+          "pct": 0.726,
+          "size": 6235
+        },
+        {
+          "name": "CSS",
+          "pct": 0.385,
+          "size": 3307
+        },
+        {
+          "name": "Shell",
+          "pct": 0.376,
+          "size": 3232
+        },
+        {
+          "name": "JavaScript",
+          "pct": 0.221,
+          "size": 1900
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "django",
+        "formatter",
+        "html"
+      ]
+    },
+    {
+      "slug": "maptiler-geocoding-control",
+      "name": "maptiler-geocoding-control",
+      "fullName": "maptiler/maptiler-geocoding-control",
+      "category": "UI Kits",
+      "stars": 80,
+      "author": "maptiler",
+      "avatar": "https://avatars.githubusercontent.com/u/19489331?v=4",
+      "desc": "The Javascript & TypeScript Map Control component for MapTiler Geocoding service! Easy to be integrated into any JavaScript mapping application.",
+      "demo": "https://maptiler.com/cloud/geocoding",
+      "repoUrl": "https://github.com/maptiler/maptiler-geocoding-control",
+      "long1": "The Javascript & TypeScript Map Control component for MapTiler Geocoding service! Easy to be integrated into any JavaScript mapping application. Maintained by maptiler on GitHub, where it has earned 80 stars from the community.",
+      "long2": "It's actively developed around esm, geocoding, geocoding-api, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Esm",
+        "Geocoding",
+        "Geocoding Api",
+        "Leaflet"
+      ],
+      "updated": "2 weeks ago",
+      "license": "BSD-3-Clause",
+      "langs": [
+        {
+          "name": "TypeScript",
+          "pct": 92.49,
+          "size": 187526
+        },
+        {
+          "name": "JavaScript",
+          "pct": 4.544,
+          "size": 9213
+        },
+        {
+          "name": "CSS",
+          "pct": 2.966,
+          "size": 6014
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "esm",
+        "geocoding",
+        "geocoding-api",
+        "javascript",
+        "leaflet",
+        "leaflet-plugin",
+        "leaflet-plugins",
+        "leafletjs",
+        "maplibre",
+        "maplibre-gl-js",
+        "maplibre-plugins",
+        "maptiler",
+        "maptiler-sdk-plugin",
+        "openlayers",
+        "openlayers-plugins",
+        "react",
+        "reactjs",
+        "svelte",
+        "umd"
+      ]
+    },
+    {
       "slug": "storybook-addon-pseudo-states",
       "name": "storybook-addon-pseudo-states",
       "fullName": "Ergosign/storybook-addon-pseudo-states",
       "category": "AI & ML",
       "stars": 79,
       "author": "Ergosign",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/12492523?v=4",
       "desc": "Storybook Add-on to enable automatic generation and displaying of CSS pseudo states for components.",
       "demo": null,
       "repoUrl": "https://github.com/Ergosign/storybook-addon-pseudo-states",
@@ -2097,9 +3322,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -2133,7 +3358,7 @@
       "category": "AI & ML",
       "stars": 74,
       "author": "e111077",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/5981958?v=4",
       "desc": "Vite + Lit + TS + SASS = Super easy!",
       "demo": null,
       "repoUrl": "https://github.com/e111077/vite-lit-element-ts-sass",
@@ -2150,9 +3375,9 @@
       "license": "\u2014",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -2173,7 +3398,7 @@
       "category": "AI & ML",
       "stars": 71,
       "author": "Azure-Samples",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/1844662?v=4",
       "desc": "The Chat App Protocol compliant user-interface building block, for your chat-gpt like RAG pattern applications built with Azure OpenAI and Azure AI Search.",
       "demo": null,
       "repoUrl": "https://github.com/Azure-Samples/azure-openai-chat-frontend",
@@ -2190,9 +3415,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -2215,9 +3440,9 @@
       "category": "UI Kits",
       "stars": 70,
       "author": "Refinitiv",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/41797105?v=4",
       "desc": "Element Framework is a set of web components based on LSEG Workspace design system, Halo.",
-      "demo": null,
+      "demo": "https://ui.refinitiv.com",
       "repoUrl": "https://github.com/Refinitiv/refinitiv-ui",
       "long1": "Element Framework is a set of web components based on LSEG Workspace design system, Halo. Maintained by Refinitiv on GitHub, where it has earned 70 stars from the community.",
       "long2": "It's actively developed around accessibility, design-system, lit, and is a solid reference for anyone building with these tools.",
@@ -2228,13 +3453,13 @@
         "Lit",
         "Monorepo"
       ],
-      "updated": "6 days ago",
+      "updated": "1 week ago",
       "license": "\u2014",
       "langs": [
         {
-          "pct": 100.0,
           "name": "JavaScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -2249,15 +3474,70 @@
       ]
     },
     {
+      "slug": "flow-spring-examples",
+      "name": "flow-spring-examples",
+      "fullName": "vaadin/flow-spring-examples",
+      "category": "DevTools",
+      "stars": 66,
+      "author": "vaadin",
+      "avatar": "https://avatars.githubusercontent.com/u/1171922?v=4",
+      "desc": "Examples for Vaadin and Spring Boot",
+      "demo": "https://vaadin.com/docs/flow/spring/tutorial-spring-basic.html",
+      "repoUrl": "https://github.com/vaadin/flow-spring-examples",
+      "long1": "Examples for Vaadin and Spring Boot. Maintained by vaadin on GitHub, where it has earned 66 stars from the community.",
+      "long2": "It's actively developed around flow, java, open-source, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Flow",
+        "Java",
+        "Open Source",
+        "Spring Application"
+      ],
+      "updated": "2 days ago",
+      "license": "\u2014",
+      "langs": [
+        {
+          "name": "Java",
+          "pct": 79.9,
+          "size": 7970
+        },
+        {
+          "name": "JavaScript",
+          "pct": 10.075,
+          "size": 1005
+        },
+        {
+          "name": "HTML",
+          "pct": 5.083,
+          "size": 507
+        },
+        {
+          "name": "TypeScript",
+          "pct": 4.942,
+          "size": 493
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "flow",
+        "java",
+        "open-source",
+        "spring-application",
+        "spring-boot",
+        "tutorial",
+        "vaadin-spring",
+        "webapp"
+      ]
+    },
+    {
       "slug": "trendchart-elements",
       "name": "trendchart-elements",
       "fullName": "WebLogin/trendchart-elements",
       "category": "UI Kits",
       "stars": 64,
       "author": "WebLogin",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/22761958?v=4",
       "desc": "Web components to generate simple charts representing trends",
-      "demo": null,
+      "demo": "https://weblogin.github.io/trendchart-elements/demo/",
       "repoUrl": "https://github.com/WebLogin/trendchart-elements",
       "long1": "Web components to generate simple charts representing trends. Maintained by WebLogin on GitHub, where it has earned 64 stars from the community.",
       "long2": "It's actively developed around chart, lit, responsive, and is a solid reference for anyone building with these tools.",
@@ -2272,9 +3552,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -2293,9 +3573,9 @@
       "category": "UI Kits",
       "stars": 58,
       "author": "seb-oss",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/10566608?v=4",
       "desc": "Green is an open-source design system built by SEB.",
-      "demo": null,
+      "demo": "https://storybook.seb.io/",
       "repoUrl": "https://github.com/seb-oss/green",
       "long1": "Green is an open-source design system built by SEB. Maintained by seb-oss on GitHub, where it has earned 58 stars from the community.",
       "long2": "It's actively developed around angular, lit, react, and is a solid reference for anyone building with these tools.",
@@ -2306,13 +3586,13 @@
         "React",
         "Storybook"
       ],
-      "updated": "4 days ago",
+      "updated": "5 days ago",
       "license": "Apache-2.0",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -2330,9 +3610,9 @@
       "category": "UI Kits",
       "stars": 55,
       "author": "limettejs",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/166303521?v=4",
       "desc": "The full-stack framework for Web Components (Lit) and Deno.",
-      "demo": null,
+      "demo": "https://limette.dev",
       "repoUrl": "https://github.com/limettejs/limette",
       "long1": "The full-stack framework for Web Components (Lit) and Deno. Maintained by limettejs on GitHub, where it has earned 55 stars from the community.",
       "long2": "It's actively developed around deno, full-stack-framwework, javascript, and is a solid reference for anyone building with these tools.",
@@ -2347,9 +3627,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -2370,9 +3650,9 @@
       "category": "AI & ML",
       "stars": 53,
       "author": "spider-hand",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/35469843?v=4",
       "desc": "A highly customizable chat Web Component that integrates easily with shadcn - works with any framework (React, Vue, Angular, Svelte, etc.)",
-      "demo": null,
+      "demo": "https://main--6810a95e2c6e78e3e3be0658.chromatic.com",
       "repoUrl": "https://github.com/spider-hand/advanced-chat-kai",
       "long1": "A highly customizable chat Web Component that integrates easily with shadcn - works with any framework (React, Vue, Angular, Svelte, etc.). Maintained by spider-hand on GitHub, where it has earned 53 stars from the community.",
       "long2": "It's actively developed around chat, chat-application, chatbot, and is a solid reference for anyone building with these tools.",
@@ -2387,9 +3667,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -2412,7 +3692,7 @@
       "category": "UI Kits",
       "stars": 52,
       "author": "bennypowers",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/1466420?v=4",
       "desc": "Build Plugins for CSS tagged-template-literals",
       "demo": null,
       "repoUrl": "https://github.com/bennypowers/lit-css",
@@ -2428,9 +3708,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "JavaScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -2448,9 +3728,9 @@
       "category": "Blogs",
       "stars": 51,
       "author": "gracile-web",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/162529232?v=4",
       "desc": "A thin, full-stack, web framework \u2014 Powered by Vite and Lit SSR. Works with Node's HTTP or WHATWG Fetch.",
-      "demo": null,
+      "demo": "https://gracile.js.org",
       "repoUrl": "https://github.com/gracile-web/gracile",
       "long1": "A thin, full-stack, web framework \u2014 Powered by Vite and Lit SSR. Works with Node's HTTP or WHATWG Fetch. Maintained by gracile-web on GitHub, where it has earned 51 stars from the community.",
       "long2": "It's actively developed around lit, markdown, meta-framework, and is a solid reference for anyone building with these tools.",
@@ -2461,13 +3741,58 @@
         "Meta Framework",
         "Mpa"
       ],
-      "updated": "4 weeks ago",
+      "updated": "1 month ago",
       "license": "ISC",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 92.034,
+          "size": 1699074
+        },
+        {
+          "name": "JavaScript",
+          "pct": 4.668,
+          "size": 86173
+        },
+        {
+          "name": "Astro",
+          "pct": 1.113,
+          "size": 20555
+        },
+        {
+          "name": "SCSS",
+          "pct": 1.004,
+          "size": 18532
+        },
+        {
+          "name": "HTML",
+          "pct": 0.506,
+          "size": 9333
+        },
+        {
+          "name": "CSS",
+          "pct": 0.48,
+          "size": 8862
+        },
+        {
+          "name": "MDX",
+          "pct": 0.086,
+          "size": 1590
+        },
+        {
+          "name": "Shell",
+          "pct": 0.069,
+          "size": 1271
+        },
+        {
+          "name": "Vue",
+          "pct": 0.029,
+          "size": 539
+        },
+        {
+          "name": "Svelte",
+          "pct": 0.012,
+          "size": 213
         }
       ],
       "versions": [],
@@ -2490,9 +3815,9 @@
       "category": "Real-time",
       "stars": 51,
       "author": "takuma-ru",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/49429291?v=4",
       "desc": "Automatic real-time story file generation from React, Vue, and Lit component files",
-      "demo": null,
+      "demo": "https://auto-story-generator.takumaru.dev",
       "repoUrl": "https://github.com/takuma-ru/auto-story-generator",
       "long1": "Automatic real-time story file generation from React, Vue, and Lit component files. Maintained by takuma-ru on GitHub, where it has earned 51 stars from the community.",
       "long2": "It's actively developed around auto, generator, lit, and is a solid reference for anyone building with these tools.",
@@ -2507,9 +3832,9 @@
       "license": "ISC",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -2530,9 +3855,9 @@
       "category": "DevTools",
       "stars": 50,
       "author": "lissy93",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/1862727?v=4",
       "desc": "\ud83d\ude0c Find the perfect frontend framework, based on what matters most for your project",
-      "demo": null,
+      "demo": "https://stack-match.as93.net",
       "repoUrl": "https://github.com/lissy93/stack-match",
       "long1": "\ud83d\ude0c Find the perfect frontend framework, based on what matters most for your project. Maintained by lissy93 on GitHub, where it has earned 50 stars from the community.",
       "long2": "It's actively developed around alpinejs, angular, backbone, and is a solid reference for anyone building with these tools.",
@@ -2547,9 +3872,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "Svelte",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -2573,13 +3898,50 @@
       ]
     },
     {
+      "slug": "wc-context",
+      "name": "wc-context",
+      "fullName": "blikblum/wc-context",
+      "category": "UI Kits",
+      "stars": 48,
+      "author": "blikblum",
+      "avatar": "https://avatars.githubusercontent.com/u/3047126?v=4",
+      "desc": "Context for Web Components",
+      "demo": "https://blikblum.github.io/wc-context/",
+      "repoUrl": "https://github.com/blikblum/wc-context",
+      "long1": "Context for Web Components. Maintained by blikblum on GitHub, where it has earned 48 stars from the community.",
+      "long2": "It's actively developed around context, lit, lit-element, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "JavaScript",
+        "Context",
+        "Lit",
+        "Lit Element",
+        "Web Components"
+      ],
+      "updated": "3 years ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "JavaScript",
+          "pct": 100.0,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "context",
+        "lit",
+        "lit-element",
+        "web-components"
+      ]
+    },
+    {
       "slug": "ziko-wrapper",
       "name": "ziko-wrapper",
       "fullName": "zikojs/ziko-wrapper",
       "category": "Mobile",
       "stars": 48,
       "author": "zikojs",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/199463649?v=4",
       "desc": "render zikojs elements within other frameworks",
       "demo": null,
       "repoUrl": "https://github.com/zikojs/ziko-wrapper",
@@ -2596,9 +3958,19 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "JavaScript",
-          "size": 0
+          "pct": 86.782,
+          "size": 39519
+        },
+        {
+          "name": "Vue",
+          "pct": 8.263,
+          "size": 3763
+        },
+        {
+          "name": "Svelte",
+          "pct": 4.954,
+          "size": 2256
         }
       ],
       "versions": [],
@@ -2619,40 +3991,58 @@
       ]
     },
     {
-      "slug": "wc-context",
-      "name": "wc-context",
-      "fullName": "blikblum/wc-context",
-      "category": "UI Kits",
-      "stars": 48,
-      "author": "blikblum",
-      "avatar": null,
-      "desc": "Context for Web Components",
-      "demo": null,
-      "repoUrl": "https://github.com/blikblum/wc-context",
-      "long1": "Context for Web Components. Maintained by blikblum on GitHub, where it has earned 48 stars from the community.",
-      "long2": "It's actively developed around context, lit, lit-element, and is a solid reference for anyone building with these tools.",
+      "slug": "playwright-ct-web",
+      "name": "playwright-ct-web",
+      "fullName": "sand4rt/playwright-ct-web",
+      "category": "Testing",
+      "stars": 47,
+      "author": "sand4rt",
+      "avatar": "https://avatars.githubusercontent.com/u/17591696?v=4",
+      "desc": "Playwright Lit / web component testing",
+      "demo": "https://www.npmjs.com/package/@sand4rt/experimental-ct-web",
+      "repoUrl": "https://github.com/sand4rt/playwright-ct-web",
+      "long1": "Playwright Lit / web component testing. Maintained by sand4rt on GitHub, where it has earned 47 stars from the community.",
+      "long2": "It's actively developed around component-testing, lit, test, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "JavaScript",
-        "Context",
+        "TypeScript",
+        "Component Testing",
         "Lit",
-        "Lit Element",
-        "Web Components"
+        "Test",
+        "Testing"
       ],
-      "updated": "3 years ago",
+      "updated": "2 days ago",
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
+          "name": "TypeScript",
+          "pct": 58.518,
+          "size": 24385
+        },
+        {
           "name": "JavaScript",
-          "size": 0
+          "pct": 36.894,
+          "size": 15374
+        },
+        {
+          "name": "HTML",
+          "pct": 3.484,
+          "size": 1452
+        },
+        {
+          "name": "CSS",
+          "pct": 1.104,
+          "size": 460
         }
       ],
       "versions": [],
       "topics": [
-        "context",
+        "component-testing",
         "lit",
-        "lit-element",
-        "web-components"
+        "test",
+        "testing",
+        "web",
+        "web-component",
+        "webcomponent"
       ]
     },
     {
@@ -2662,9 +4052,9 @@
       "category": "AI & ML",
       "stars": 47,
       "author": "mantech-oss",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/112445475?v=4",
       "desc": "\"Jira Search Helper\" is a project to search more detail view and support highlight than original jira search",
-      "demo": null,
+      "demo": "https://chrome.google.com/webstore/detail/jira-search-helper/olnmjaambapibigibfnajgcphdfpeddn",
       "repoUrl": "https://github.com/mantech-oss/jira-search-helper",
       "long1": "\"Jira Search Helper\" is a project to search more detail view and support highlight than original jira search. Maintained by mantech-oss on GitHub, where it has earned 47 stars from the community.",
       "long2": "It's actively developed around chrome-extension, daisyui, jira, and is a solid reference for anyone building with these tools.",
@@ -2679,9 +4069,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -2699,55 +4089,15 @@
       ]
     },
     {
-      "slug": "playwright-ct-web",
-      "name": "playwright-ct-web",
-      "fullName": "sand4rt/playwright-ct-web",
-      "category": "Testing",
-      "stars": 47,
-      "author": "sand4rt",
-      "avatar": null,
-      "desc": "Playwright Lit / web component testing",
-      "demo": null,
-      "repoUrl": "https://github.com/sand4rt/playwright-ct-web",
-      "long1": "Playwright Lit / web component testing. Maintained by sand4rt on GitHub, where it has earned 47 stars from the community.",
-      "long2": "It's actively developed around component-testing, lit, test, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Component Testing",
-        "Lit",
-        "Test",
-        "Testing"
-      ],
-      "updated": "yesterday",
-      "license": "MIT",
-      "langs": [
-        {
-          "pct": 100.0,
-          "name": "TypeScript",
-          "size": 0
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "component-testing",
-        "lit",
-        "test",
-        "testing",
-        "web",
-        "web-component",
-        "webcomponent"
-      ]
-    },
-    {
       "slug": "material-web-components-react",
       "name": "material-web-components-react",
       "fullName": "grayhatdevelopers/material-web-components-react",
       "category": "AI & ML",
       "stars": 45,
       "author": "grayhatdevelopers",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/49579903?v=4",
       "desc": "Material Web Components for React \u269b",
-      "demo": null,
+      "demo": "https://material-web-components-react.grayhat.studio",
       "repoUrl": "https://github.com/grayhatdevelopers/material-web-components-react",
       "long1": "Material Web Components for React \u269b. Maintained by grayhatdevelopers on GitHub, where it has earned 45 stars from the community.",
       "long2": "It's actively developed around design-system, lit, lit-element, and is a solid reference for anyone building with these tools.",
@@ -2762,9 +4112,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -2786,15 +4136,97 @@
       ]
     },
     {
+      "slug": "wm-project-astro-components",
+      "name": "wm-project-astro-components",
+      "fullName": "arnoldwender/wm-project-astro-components",
+      "category": "UI Kits",
+      "stars": 44,
+      "author": "arnoldwender",
+      "avatar": "https://avatars.githubusercontent.com/u/443812?v=4",
+      "desc": "150+ production-ready, accessible, GDPR-compliant Astro components",
+      "demo": "https://www.wendermedia.com",
+      "repoUrl": "https://github.com/arnoldwender/wm-project-astro-components",
+      "long1": "150+ production-ready, accessible, GDPR-compliant Astro components. Maintained by arnoldwender on GitHub, where it has earned 44 stars from the community.",
+      "long2": "It's actively developed around accessibility, astro, astro-components, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Accessibility",
+        "Astro",
+        "Astro Components",
+        "Component Library"
+      ],
+      "updated": "2 weeks ago",
+      "license": "\u2014",
+      "langs": [
+        {
+          "name": "Astro",
+          "pct": 58.076,
+          "size": 2124689
+        },
+        {
+          "name": "TypeScript",
+          "pct": 35.027,
+          "size": 1281428
+        },
+        {
+          "name": "JavaScript",
+          "pct": 3.067,
+          "size": 112217
+        },
+        {
+          "name": "CSS",
+          "pct": 3.063,
+          "size": 112072
+        },
+        {
+          "name": "Vue",
+          "pct": 0.207,
+          "size": 7558
+        },
+        {
+          "name": "HTML",
+          "pct": 0.196,
+          "size": 7164
+        },
+        {
+          "name": "MDX",
+          "pct": 0.191,
+          "size": 6999
+        },
+        {
+          "name": "Svelte",
+          "pct": 0.172,
+          "size": 6306
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "accessibility",
+        "astro",
+        "astro-components",
+        "component-library",
+        "components",
+        "design-system",
+        "design-tokens",
+        "gdpr",
+        "react",
+        "seo",
+        "storybook",
+        "svelte",
+        "typescript",
+        "vue",
+        "wcag"
+      ]
+    },
+    {
       "slug": "wc-github-corners",
       "name": "wc-github-corners",
       "fullName": "YunYouJun/wc-github-corners",
       "category": "UI Kits",
       "stars": 44,
       "author": "YunYouJun",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/25154432?v=4",
       "desc": ":octocat: A web component for github corners. Can be used anywhere.",
-      "demo": null,
+      "demo": "https://yunyoujun.github.io/wc-github-corners/",
       "repoUrl": "https://github.com/YunYouJun/wc-github-corners",
       "long1": ":octocat: A web component for github corners. Can be used anywhere. Maintained by YunYouJun on GitHub, where it has earned 44 stars from the community.",
       "long2": "It's actively developed around github-corners, lit, web-components, and is a solid reference for anyone building with these tools.",
@@ -2808,9 +4240,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -2827,9 +4259,9 @@
       "category": "AI & ML",
       "stars": 35,
       "author": "holochain-open-dev",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/61094618?v=4",
       "desc": "Profile management zome for Holochain hApps with at least a nickname",
-      "demo": null,
+      "demo": "https://holochain-open-dev.github.io/profiles",
       "repoUrl": "https://github.com/holochain-open-dev/profiles",
       "long1": "Profile management zome for Holochain hApps with at least a nickname. Maintained by holochain-open-dev on GitHub, where it has earned 35 stars from the community.",
       "long2": "It's actively developed around holochain, lit, module, and is a solid reference for anyone building with these tools.",
@@ -2844,9 +4276,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -2864,7 +4296,7 @@
       "category": "DevTools",
       "stars": 34,
       "author": "lit-illumination-technology",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/68673028?v=4",
       "desc": "Control LED strips with a Raspberry Pi",
       "demo": null,
       "repoUrl": "https://github.com/lit-illumination-technology/lit_core",
@@ -2881,9 +4313,9 @@
       "license": "GPL-3.0",
       "langs": [
         {
-          "pct": 100.0,
           "name": "Python",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -2912,7 +4344,7 @@
       "category": "AI & ML",
       "stars": 33,
       "author": "running-grass",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/17241154?v=4",
       "desc": "A boilerplate using Vite, Lit and Tailwind CSS.",
       "demo": null,
       "repoUrl": "https://github.com/running-grass/starter-lit-with-tailwind",
@@ -2929,9 +4361,9 @@
       "license": "\u2014",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -2957,7 +4389,7 @@
       "category": "AI & ML",
       "stars": 32,
       "author": "plantnet",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/2690110?v=4",
       "desc": "WebComponent for identification using AI-taxonomist from Cos4Cloud",
       "demo": null,
       "repoUrl": "https://github.com/plantnet/ai-taxonomist-webcomponent",
@@ -2973,9 +4405,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -2992,9 +4424,9 @@
       "category": "AI & ML",
       "stars": 32,
       "author": "fernandopasik",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/1301335?v=4",
       "desc": "A simple starter <hello-world /> web component written in typescript, using lit. Unit tested with jest and e2e tested with playwright.",
-      "demo": null,
+      "demo": "https://fernandopasik.com/hello-web-components/",
       "repoUrl": "https://github.com/fernandopasik/hello-web-components",
       "long1": "A simple starter <hello-world /> web component written in typescript, using lit. Unit tested with jest and e2e tested with playwright. Maintained by fernandopasik on GitHub, where it has earned 32 stars from the community.",
       "long2": "It's actively developed around hello-world, lit, lit-component, and is a solid reference for anyone building with these tools.",
@@ -3009,9 +4441,19 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 52.34,
+          "size": 3915
+        },
+        {
+          "name": "JavaScript",
+          "pct": 43.89,
+          "size": 3283
+        },
+        {
+          "name": "HTML",
+          "pct": 3.77,
+          "size": 282
         }
       ],
       "versions": [],
@@ -3036,7 +4478,7 @@
       "category": "UI Kits",
       "stars": 26,
       "author": "brtheo",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/18089767?v=4",
       "desc": "A proof of concept mixing Lit and HTMX using the power of Bun under the hood",
       "demo": null,
       "repoUrl": "https://github.com/brtheo/ServerWebComponent-htmx-lit-bun-elysia",
@@ -3053,9 +4495,9 @@
       "license": "\u2014",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -3075,9 +4517,9 @@
       "category": "AI & ML",
       "stars": 25,
       "author": "MatthiasKainer",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/2781095?v=4",
       "desc": "Register your lit-elements as a pure functions.",
-      "demo": null,
+      "demo": "https://pure-lit.org",
       "repoUrl": "https://github.com/MatthiasKainer/pure-lit",
       "long1": "Register your lit-elements as a pure functions. Maintained by MatthiasKainer on GitHub, where it has earned 25 stars from the community.",
       "long2": "It's actively developed around html, javascript, lit, and is a solid reference for anyone building with these tools.",
@@ -3092,9 +4534,14 @@
       "license": "ISC",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 94.504,
+          "size": 29748
+        },
+        {
+          "name": "JavaScript",
+          "pct": 5.496,
+          "size": 1730
         }
       ],
       "versions": [],
@@ -3114,9 +4561,9 @@
       "category": "AI & ML",
       "stars": 24,
       "author": "kingcc",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/9780973?v=4",
       "desc": "<message-box/> is a Web component implemented on Lit-Element library.",
-      "demo": null,
+      "demo": "https://codepen.io/kingcc/pen/Pojwrgr",
       "repoUrl": "https://github.com/kingcc/message-box",
       "long1": "<message-box/> is a Web component implemented on Lit-Element library. Maintained by kingcc on GitHub, where it has earned 24 stars from the community.",
       "long2": "It's actively developed around lit, lit-component, lit-element, and is a solid reference for anyone building with these tools.",
@@ -3131,9 +4578,9 @@
       "license": "BSD-3-Clause",
       "langs": [
         {
-          "pct": 100.0,
           "name": "JavaScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -3154,7 +4601,7 @@
       "category": "AI & ML",
       "stars": 24,
       "author": "e111077",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/5981958?v=4",
       "desc": "Get started with lit sass and ts real quick",
       "demo": null,
       "repoUrl": "https://github.com/e111077/lit-sass-ts-starter",
@@ -3171,9 +4618,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "JavaScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -3194,9 +4641,9 @@
       "category": "AI & ML",
       "stars": 23,
       "author": "luixaviles",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/3485075?v=4",
       "desc": "ArionTalk lets users talk to any webpage. It listens to the user, understands the page content and images, responds with voice, and scrolls to highlight the exact section it's discussing.",
-      "demo": null,
+      "demo": "https://ariontalk.com/",
       "repoUrl": "https://github.com/luixaviles/ariontalk",
       "long1": "ArionTalk lets users talk to any webpage. It listens to the user, understands the page content and images, responds with voice, and scrolls to highlight the exact section it's discussing. Maintained by luixaviles on GitHub, where it has earned 23 stars from the community.",
       "long2": "It's actively developed around gemini, gemini-live, gemini-nano, and is a solid reference for anyone building with these tools.",
@@ -3207,13 +4654,13 @@
         "Gemini Nano",
         "Lit"
       ],
-      "updated": "2 months ago",
+      "updated": "3 months ago",
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -3239,9 +4686,9 @@
       "category": "E-commerce",
       "stars": 23,
       "author": "GetOvert",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/97070799?v=4",
       "desc": "Open app store / package manager GUI client",
-      "demo": null,
+      "demo": "https://getovert.app",
       "repoUrl": "https://github.com/GetOvert/Overt",
       "long1": "Open app store / package manager GUI client. Maintained by GetOvert on GitHub, where it has earned 23 stars from the community.",
       "long2": "It's actively developed around electron, gui, homebrew, and is a solid reference for anyone building with these tools.",
@@ -3256,9 +4703,9 @@
       "license": "\u2014",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -3272,15 +4719,52 @@
       ]
     },
     {
+      "slug": "astro-collaborative-starter",
+      "name": "astro-collaborative-starter",
+      "fullName": "CTNicholas/astro-collaborative-starter",
+      "category": "AI & ML",
+      "stars": 22,
+      "author": "CTNicholas",
+      "avatar": "https://avatars.githubusercontent.com/u/33033422?v=4",
+      "desc": "Looking to add collaboration to Astro? \ud83d\ude80  You've come to the right spot, Astronaut! \ud83d\udc69\u200d\ud83d\ude80 This starter kit contains a set of quick and easy elements for adding multiplayer presence to your app.",
+      "demo": "https://astro-collaborative-starter.ctnicholas.dev",
+      "repoUrl": "https://github.com/CTNicholas/astro-collaborative-starter",
+      "long1": "Looking to add collaboration to Astro? \ud83d\ude80  You've come to the right spot, Astronaut! \ud83d\udc69\u200d\ud83d\ude80 This starter kit contains a set of quick and easy elements for adding multiplayer presence to your app. Maintained by CTNicholas on GitHub, where it has earned 22 stars from the community.",
+      "long2": "It's actively developed around astro, collaboration, lit, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Astro",
+        "Collaboration",
+        "Lit",
+        "Liveblocks"
+      ],
+      "updated": "3 years ago",
+      "license": "\u2014",
+      "langs": [
+        {
+          "name": "Astro",
+          "pct": 100.0,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "astro",
+        "collaboration",
+        "lit",
+        "liveblocks",
+        "realtime"
+      ]
+    },
+    {
       "slug": "lit-line",
       "name": "lit-line",
       "fullName": "apinet/lit-line",
       "category": "AI & ML",
       "stars": 22,
       "author": "apinet",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/4949848?v=4",
       "desc": "lit-line is a minimal line chart web component for modern websites.",
-      "demo": null,
+      "demo": "https://apinet.github.io",
       "repoUrl": "https://github.com/apinet/lit-line",
       "long1": "lit-line is a minimal line chart web component for modern websites. Maintained by apinet on GitHub, where it has earned 22 stars from the community.",
       "long2": "It's actively developed around chart, charting-library, dataviz, and is a solid reference for anyone building with these tools.",
@@ -3295,9 +4779,9 @@
       "license": "\u2014",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -3319,9 +4803,9 @@
       "category": "UI Kits",
       "stars": 22,
       "author": "Tap30",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/28356467?v=4",
       "desc": "A monorepo for the core libraries of our Design System.",
-      "demo": null,
+      "demo": "https://tap30.github.io/web-components/",
       "repoUrl": "https://github.com/Tap30/web-components",
       "long1": "A monorepo for the core libraries of our Design System. Maintained by Tap30 on GitHub, where it has earned 22 stars from the community.",
       "long2": "It's actively developed around design-system, lit, web-components, and is a solid reference for anyone building with these tools.",
@@ -3335,9 +4819,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -3348,52 +4832,15 @@
       ]
     },
     {
-      "slug": "astro-collaborative-starter",
-      "name": "astro-collaborative-starter",
-      "fullName": "CTNicholas/astro-collaborative-starter",
-      "category": "AI & ML",
-      "stars": 22,
-      "author": "CTNicholas",
-      "avatar": null,
-      "desc": "Looking to add collaboration to Astro? \ud83d\ude80  You've come to the right spot, Astronaut! \ud83d\udc69\u200d\ud83d\ude80 This starter kit contains a set of quick and easy elements for adding multiplayer presence to your app.",
-      "demo": null,
-      "repoUrl": "https://github.com/CTNicholas/astro-collaborative-starter",
-      "long1": "Looking to add collaboration to Astro? \ud83d\ude80  You've come to the right spot, Astronaut! \ud83d\udc69\u200d\ud83d\ude80 This starter kit contains a set of quick and easy elements for adding multiplayer presence to your app. Maintained by CTNicholas on GitHub, where it has earned 22 stars from the community.",
-      "long2": "It's actively developed around astro, collaboration, lit, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Astro",
-        "Collaboration",
-        "Lit",
-        "Liveblocks"
-      ],
-      "updated": "3 years ago",
-      "license": "\u2014",
-      "langs": [
-        {
-          "pct": 100.0,
-          "name": "Astro",
-          "size": 0
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "astro",
-        "collaboration",
-        "lit",
-        "liveblocks",
-        "realtime"
-      ]
-    },
-    {
       "slug": "gravitee-ui-components",
       "name": "gravitee-ui-components",
       "fullName": "gravitee-io/gravitee-ui-components",
       "category": "UI Kits",
       "stars": 20,
       "author": "gravitee-io",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/12655666?v=4",
       "desc": "\ud83e\uddf1 Set of UI components used across the Gravitee.io ecosystem.",
-      "demo": null,
+      "demo": "https://components.gravitee.io",
       "repoUrl": "https://github.com/gravitee-io/gravitee-ui-components",
       "long1": "\ud83e\uddf1 Set of UI components used across the Gravitee.io ecosystem. Maintained by gravitee-io on GitHub, where it has earned 20 stars from the community.",
       "long2": "It's actively developed around gravitee, lit, security-scan, and is a solid reference for anyone building with these tools.",
@@ -3404,13 +4851,38 @@
         "Security Scan",
         "Web Components"
       ],
-      "updated": "2 days ago",
+      "updated": "4 days ago",
       "license": "Apache-2.0",
       "langs": [
         {
-          "pct": 100.0,
           "name": "JavaScript",
-          "size": 0
+          "pct": 90.364,
+          "size": 1229451
+        },
+        {
+          "name": "TypeScript",
+          "pct": 5.484,
+          "size": 74610
+        },
+        {
+          "name": "CSS",
+          "pct": 4.009,
+          "size": 54538
+        },
+        {
+          "name": "Dockerfile",
+          "pct": 0.07,
+          "size": 954
+        },
+        {
+          "name": "HTML",
+          "pct": 0.062,
+          "size": 847
+        },
+        {
+          "name": "Shell",
+          "pct": 0.011,
+          "size": 151
         }
       ],
       "versions": [],
@@ -3428,7 +4900,7 @@
       "category": "DevTools",
       "stars": 20,
       "author": "iptv-app",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/176643766?v=4",
       "desc": "IPTV-ORG Desktop Electron App",
       "demo": null,
       "repoUrl": "https://github.com/iptv-app/iptv-desktop",
@@ -3445,9 +4917,9 @@
       "license": "\u2014",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],

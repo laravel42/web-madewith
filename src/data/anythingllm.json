@@ -1,21 +1,21 @@
 {
   "slug": "anythingllm",
-  "scrapedAt": "2026-07-14T02:48:08.166875+00:00",
+  "scrapedAt": "2026-07-15T22:28:33.185107+00:00",
   "source": "scrapy-github",
-  "totalRepos": 6,
+  "totalRepos": 5,
   "projects": [
     {
       "slug": "anythingllm-docs",
       "name": "anythingllm-docs",
       "fullName": "Mintplex-Labs/anythingllm-docs",
       "category": "AI & ML",
-      "stars": 364,
+      "stars": 365,
       "author": "Mintplex-Labs",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/134426827?v=4",
       "desc": "Documentation of AnythingLLM by Mintplex Labs Inc.",
-      "demo": null,
+      "demo": "https://docs.anythingllm.com",
       "repoUrl": "https://github.com/Mintplex-Labs/anythingllm-docs",
-      "long1": "Documentation of AnythingLLM by Mintplex Labs Inc. Maintained by Mintplex-Labs on GitHub, where it has earned 364 stars from the community.",
+      "long1": "Documentation of AnythingLLM by Mintplex Labs Inc. Maintained by Mintplex-Labs on GitHub, where it has earned 365 stars from the community.",
       "long2": "It's actively developed around ai, ai-agents, anythingllm, and is a solid reference for anyone building with these tools.",
       "stack": [
         "MDX",
@@ -24,13 +24,28 @@
         "Anythingllm",
         "Desktop App"
       ],
-      "updated": "3 days ago",
+      "updated": "2 days ago",
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "MDX",
-          "size": 0
+          "pct": 97.824,
+          "size": 685783
+        },
+        {
+          "name": "TypeScript",
+          "pct": 1.199,
+          "size": 8403
+        },
+        {
+          "name": "JavaScript",
+          "pct": 0.922,
+          "size": 6461
+        },
+        {
+          "name": "CSS",
+          "pct": 0.056,
+          "size": 394
         }
       ],
       "versions": [],
@@ -51,13 +66,13 @@
       "name": "anythingllm-extension",
       "fullName": "Mintplex-Labs/anythingllm-extension",
       "category": "AI & ML",
-      "stars": 204,
+      "stars": 205,
       "author": "Mintplex-Labs",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/134426827?v=4",
       "desc": "Browser extension for AnythingLLM Docker & Desktop application",
-      "demo": null,
+      "demo": "https://anythingllm.com",
       "repoUrl": "https://github.com/Mintplex-Labs/anythingllm-extension",
-      "long1": "Browser extension for AnythingLLM Docker & Desktop application. Maintained by Mintplex-Labs on GitHub, where it has earned 204 stars from the community.",
+      "long1": "Browser extension for AnythingLLM Docker & Desktop application. Maintained by Mintplex-Labs on GitHub, where it has earned 205 stars from the community.",
       "long2": "It's actively developed around ai, ai-assistant, ai-browser-extension, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
@@ -70,9 +85,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "JavaScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -94,9 +109,9 @@
       "category": "AI & ML",
       "stars": 177,
       "author": "Mintplex-Labs",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/134426827?v=4",
       "desc": "AnythingLLM Embed widget submodule for the main AnythingLLM application",
-      "demo": null,
+      "demo": "https://anythingllm.com",
       "repoUrl": "https://github.com/Mintplex-Labs/anythingllm-embed",
       "long1": "AnythingLLM Embed widget submodule for the main AnythingLLM application. Maintained by Mintplex-Labs on GitHub, where it has earned 177 stars from the community.",
       "long2": "It's actively developed around ai-assistant, ai-chatbot, anythingllm, and is a solid reference for anyone building with these tools.",
@@ -111,9 +126,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "JavaScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -134,60 +149,15 @@
       ]
     },
     {
-      "slug": "megamem",
-      "name": "MegaMem",
-      "fullName": "C-Bjorn/MegaMem",
-      "category": "AI & ML",
-      "stars": 57,
-      "author": "C-Bjorn",
-      "avatar": null,
-      "desc": "Transform your Obsidian vault into a powerful knowledge graph with MCP support",
-      "demo": null,
-      "repoUrl": "https://github.com/C-Bjorn/MegaMem",
-      "long1": "Transform your Obsidian vault into a powerful knowledge graph with MCP support. Maintained by C-Bjorn on GitHub, where it has earned 57 stars from the community.",
-      "long2": "It's actively developed around anythingllm, awesome, claude-desktop, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Python",
-        "Anythingllm",
-        "Awesome",
-        "Claude Desktop",
-        "Falkordb"
-      ],
-      "updated": "4 days ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "pct": 100.0,
-          "name": "Python",
-          "size": 0
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "anythingllm",
-        "awesome",
-        "claude-desktop",
-        "falkordb",
-        "graphiti",
-        "graphrag",
-        "neo4j",
-        "obsidian-mcp",
-        "obsidian-plugin",
-        "obsidian-vault",
-        "pkm",
-        "roo-code"
-      ]
-    },
-    {
       "slug": "anythingllm-mobile",
       "name": "anythingllm-mobile",
       "fullName": "Mintplex-Labs/anythingllm-mobile",
       "category": "Mobile",
       "stars": 53,
       "author": "Mintplex-Labs",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/134426827?v=4",
       "desc": "Bring local AI intelligence to your device. No rate limits & local first.",
-      "demo": null,
+      "demo": "https://anythingllm.com/mobile",
       "repoUrl": "https://github.com/Mintplex-Labs/anythingllm-mobile",
       "long1": "Bring local AI intelligence to your device. No rate limits & local first. Maintained by Mintplex-Labs on GitHub, where it has earned 53 stars from the community.",
       "long2": "It's actively developed around agent-harness, agentic-ai, agents, and is a solid reference for anyone building with these tools.",
@@ -202,9 +172,9 @@
       "license": "MIT",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
@@ -229,9 +199,9 @@
       "category": "AI & ML",
       "stars": 24,
       "author": "Mintplex-Labs",
-      "avatar": null,
+      "avatar": "https://avatars.githubusercontent.com/u/134426827?v=4",
       "desc": "Interact with your instance of AnythingLLM from the terminal.",
-      "demo": null,
+      "demo": "https://anythingllm.com",
       "repoUrl": "https://github.com/Mintplex-Labs/anything-llm-cli",
       "long1": "Interact with your instance of AnythingLLM from the terminal. Maintained by Mintplex-Labs on GitHub, where it has earned 24 stars from the community.",
       "long2": "It's actively developed around agent, ai, anythingllm, and is a solid reference for anyone building with these tools.",
@@ -246,9 +216,9 @@
       "license": "\u2014",
       "langs": [
         {
-          "pct": 100.0,
           "name": "TypeScript",
-          "size": 0
+          "pct": 100.0,
+          "size": 100
         }
       ],
       "versions": [],
