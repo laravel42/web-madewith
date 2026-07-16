@@ -1,14 +1,14 @@
 {
   "slug": "vllm",
   "techName": "vLLM",
-  "scrapedAt": "2026-07-13T23:31:43.144810+00:00",
+  "scrapedAt": "2026-07-15T23:20:36.144432+00:00",
   "source": "youtube-api",
-  "videoCount": 10,
+  "videoCount": 14,
   "videos": [
     {
       "id": "q5IF2PHA5SA",
       "title": "vLLM: Easily Deploying & Serving LLMs",
-      "description": "Today we learn about vLLM, a Python library that allows for easy and fast deployment and inference of LLMs.\n\n\u25fe\u25fe\u25fe\u25fe\u25fe\u25fe\u25fe\u25fe\u25fe\u25fe\u25fe\u25fe\u25fe\u25fe\u25fe\u25fe\u25fe\n\ud83d\udcda Programming Books & Merch \ud83d\udcda\n\ud83d\udc0d The Python Bible Book: https://www.neuralnine.com/books/\n\ud83d\udcbb The Algorithm Bible Book: https://www.neuralnine.com/books/\n\ud83d\udc55 ",
+      "description": "Today we learn about vLLM, a Python library that allows for easy and fast deployment and inference of LLMs.\n\n\u25fe\u25fe\u25fe\u25fe\u25fe\u25fe\u25fe\u25fe\u25fe\u25fe\u25fe\u25fe\u25fe\u25fe\u25fe\u25fe\u25fe\n\ud83d\udcda Programming Books & Merch \ud83d\udcda\n\ud83d\udc0d The Python Bible Book: https://www.neuralnine.com/books/\n\ud83d\udcbb The Algorithm Bible Book: https://www.neuralnine.com/books/\n\ud83d\udc55 Programming Merch: https://www.neuralnine.com/shop\n\n\ud83d\udcbc Services \ud83d\udcbc\n\ud83d\udcbb Freelancing & Tutoring: https://www.neuralnine.com/services\n\n\ud83d\udda5\ufe0f Setup & Gear \ud83d\udda5\ufe0f: https://neuralnine.com/extras/\n\n\ud83c\udf10 Social Media & Contact \ud83c\udf10 \n\ud83d\udcf1 Website: https://www.neuralnine.com/\n\ud83d\udcf7 Instagram: https://www.instagram.com/neuralnine\n\ud83d\udc26 Twitter: https://twitter.com/neuralnine\n\ud83e\udd35 LinkedIn: https://www.linkedin.com/company/neuralnine/\n\ud83d\udcc1 GitHub: https://github.com/NeuralNine \n\ud83c\udf99 Discord: https://discord.gg/JU4xr8U3dm",
       "channel": "NeuralNine",
       "channelUrl": "https://www.youtube.com/channel/UC8wZnXYK_CGKlBcZp-GxYPA",
       "url": "https://www.youtube.com/watch?v=q5IF2PHA5SA",
@@ -22,9 +22,25 @@
       "definition": "hd"
     },
     {
+      "id": "XwL_cRuXM2E",
+      "title": "All You Need To Know About Running LLMs Locally",
+      "description": "my latest project: Intuitive AI Academy, learn modern AI/LLMs Intuitively\nhttps://intuitiveai.academy/\ncode \"NYNM\" for 50% off forever (limited to 50)\n\n\nTensorRT LLM\n[Code] https://github.com/NVIDIA/TensorRT-LLM\n[Getting Started Blog] https://nvda.ws/3O7f8up\n[Dev Blog]  https://nvda.ws/490uadi\n\nChat with RTX\n[Download] https://nvda.ws/3OHPRHE\n[Blog] https://nvda.ws/3whKZTb\n\nLinks:\n[Oobabooga] https://github.com/oobabooga/text-generation-webui\n[SillyTavern] https://github.com/SillyTavern/SillyTavern\n[LM Studio] https://lmstudio.ai/\n[Axolotl] https://github.com/OpenAccess-AI-Collective/axolotl\n[Llama Factory] https://github.com/hiyouga/LLaMA-Factory\n[HuggingFace] https://huggingface.co/models\n[AWQ] https://github.com/mit-han-lab/llm-awq\n[ExLlamav2] https://github.com/turboderp/exllamav2\n[GGUF] https://github.com/ggerganov/ggml/blob/master/docs/gguf.md\n[GPTQ] https://github.com/IST-DASLab/gptq\n[LlamaCpp] https://github.com/ggerganov/llama.cpp\n[vllm] https://github.com/vllm-project/vllm\n[TensorRT LLM] https://github.com/NVIDIA/TensorRT-LLM\n[Chat with RTX] https://www.nvidia.com/en-us/ai-on-rtx/chat-with-rtx-generative-ai/\n[LlamaIndex] https://github.com/run-llama/llama_index\n[Continue.dev] https://continue.dev/\n\nModel recommendations (I know you are here after DeepSeek):\n[All DeepSeek Models] https://huggingface.co/collections/deepseek-ai/deepseek-r1-678e1e131c0169c0bc89728d\n[Easily Download with Ollama] https://ollama.com/library/deepseek-r1\nHere's the rule of thumb to know if you can run it:\nIf your VRAM is larger than the model GB size * 1.2, than you can run that model size locally.\nEg. DeepSeek-7B = 4.7GB then 4.7*1.2=5.64, so if your GPU has 8GB VRAM, since 8GB is bigger than 5.64, you can run DeepSeek-7B.\nCheck out my latest video on DeepSeek-R1 to understand the context better!\n\n(the following are all outdated)\nJust use Llama-3.1 instead for everything.\n[Llama-3.1] https://huggingface.co/collections/meta-llama/llama-31-669fc079a0c406a149a5738f\nTranslation can try Aya 23\n[Aya 23] https://huggingface.co/CohereForAI/aya-23-8B\n\n(the following are all outdated)\n[Nous-Hermes-llama-2-7b] https://huggingface.co/NousResearch/Nous-Hermes-llama-2-7b\n[Openchat-3.5-0106] https://huggingface.co/openchat/openchat-3.5-0106\n[SOLAR-10.7B-Instruct-v1.0] https://huggingface.co/upstage/SOLAR-10.7B-Instruct-v1.0\n[Google Gemma] https://huggingface.co/google/gemma-7b\n[Mixtral-8x7B-Instruct-v0.1] https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1\n[Deepseek-coder-33b-instruct] https://huggingface.co/deepseek-ai/deepseek-coder-33b-instruct\n[Colbertv2.0] https://huggingface.co/colbert-ir/colbertv2.0\n\n\nThis video is supported by the kind Patrons & YouTube Members: \n\ud83d\ude4fAndrew Lescelius, alex j, Chris LeDoux, Alex Maurice, Miguilim, Deagan, FiFa\u0141, Daddy Wen, Tony Jimenez, Panther Modern, Jake Disco, Demilson Quintao, Shuhong Chen, Hongbo Men, happi nyuu nyaa, Carol Lo, Mose Sakashita, Miguel, Bandera, Gennaro Schiano, gunwoo, Ravid Freedman, Mert Seftali, Mrityunjay, Rich\u00e1rd Nagyfi, Timo Steiner, Henrik G Sundt, projectAnthony,  Brigham Hall, Kyle Hudson, Kalila, Jef Come, Jvari Williams, Tien Tien, BIll Mangrum, owned, Janne Kyt\u00f6l\u00e4, SO, Rich\u00e1rd Nagyfi, Hector, Drexon \n\n[Discord] https://discord.gg/NhJZGtH\n[Twitter] https://twitter.com/bycloudai\n[Patreon] https://www.patreon.com/bycloud\n\n[Music] massobeats - magic carousel\n[Profile & Banner Art] https://twitter.com/pygm7\n[Video Editor] maikadihaika",
+      "channel": "bycloud",
+      "channelUrl": "https://www.youtube.com/channel/UCgfe2ooZD3VJPB6aJAnuQng",
+      "url": "https://www.youtube.com/watch?v=XwL_cRuXM2E",
+      "thumbnail": "https://i.ytimg.com/vi/XwL_cRuXM2E/mqdefault.jpg",
+      "publishedAt": "2024-02-26T09:42:17-06:00",
+      "duration": "10:30",
+      "durationSeconds": 630,
+      "views": 326133,
+      "likes": 10696,
+      "qualityScore": 92.23,
+      "definition": "hd"
+    },
+    {
       "id": "qdPkA5mxLhg",
       "title": "Understanding vLLM with a Hands On Demo",
-      "description": "\ud83e\uddea vLLMs Labs for FREE \u2014 https://kode.wiki/4toLSl7\n\nMost people can use an LLM. Very few know how to serve one at scale.\nThis video breaks down vLLM, the inference engine transforming production AI deployments, and shows you exactly why it dominates when it comes to throughput, co",
+      "description": "\ud83e\uddea vLLMs Labs for FREE \u2014 https://kode.wiki/4toLSl7\n\nMost people can use an LLM. Very few know how to serve one at scale.\nThis video breaks down vLLM, the inference engine transforming production AI deployments, and shows you exactly why it dominates when it comes to throughput, concurrency, and KV cache efficiency.\n\nNo fluff. No theory overload. Just clear, hands-on learning starting from why your LLM is slow, all the way to launching a production-ready API server with a live monitoring dashboard.\n\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\ud83d\udccc WHAT YOU'LL LEARN IN THIS VIDEO\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\n\u2705 What LLM inference is and why tokens per second varies across platforms like ChatGPT & Gemini\n\u2705 Comparison of different inference engines\n\u2705 The KV Cache problem \n\u2705 How PagedAttention works \u2014 inspired by OS virtual memory paging\n\u2705 Demo - Build a monitoring dashboard to track throughput, latency & concurrency live\n\n\ud83e\uddea FREE HANDS-ON LABS INCLUDED \u2014 https://kode.wiki/4toLSl7\nPractice everything in a real sandbox environment with no local setup, no credit card, no surprises.\nGPU environment, model weights, and all dependencies are already configured and ready to go.\n\n\u23f1\ufe0f TIMESTAMPS\n00:00 \u2013 Overview of LLM Inference Engines\n00:52 \u2013 What Makes vLLM Stand Out\n01:48 \u2013 How PagedAttention Works\n02:31 \u2013  Other Inference Engine\n03:44 \u2013 Lab Intro & Environment Setup\n05:21 \u2013 Task 1 - Naive HuggingFace Inference\n05:58 \u2013 Task 2 - vLLM Offline Interference\n07:04 \u2013 Task 3 - The K Cache problem\n07:52 \u2013 Task 4 - PageAttention\n09:11 \u2013 Task 5 - Launch vLLM as an OpenAI-compatible API server\n10:08 \u2013 Task 6 - Multi-user Throughput under load\n11:29 \u2013 Task 7 - Tuning vLLM Parameters for Production\n12:21 \u2013 Task 8 - Capstone (Building a Monitoring Dashboard)\n13:54 \u2013 Key Takeaways & When to Use vLLM vs Other Engines\n\n#vLLM #LLMInference #PagedAttention #KVCache #LLMDeployment #LLMServing #AIEngineering #MLOps #LLMPerformance #HuggingFace #GPUOptimization #LLMTuning #GenAI #AIInfrastructure #LargeLanguageModels #DeepLearning #AIProduction #KodeKloud #LLMOps #MachineLearning  #DevOps #CloudAI #AIDevelopment #OpenAI",
       "channel": "KodeKloud",
       "channelUrl": "https://www.youtube.com/channel/UCSWj8mqQCcrcBlXPi4ThRDQ",
       "url": "https://www.youtube.com/watch?v=qdPkA5mxLhg",
@@ -40,7 +56,7 @@
     {
       "id": "3bupWUq9Ems",
       "title": "Qwen3.5 9B: China's Master Stroke - Runs Locally for Video, Image, Coding and Text",
-      "description": "Run the brand new Qwen3.5 0.8B model locally using vLLM \u2014 a tiny but powerful multimodal AI from Alibaba that supports text, images, and video with 262K context window.\n\n\ud83d\udd25 Get 50% Discount on any A6000 or A5000 GPU rental, use following link and coupon:\n\nhttps://bit.ly/fahd-mirza",
+      "description": "Run the brand new Qwen3.5 0.8B model locally using vLLM \u2014 a tiny but powerful multimodal AI from Alibaba that supports text, images, and video with 262K context window.\n\n\ud83d\udd25 Get 50% Discount on any A6000 or A5000 GPU rental, use following link and coupon:\n\nhttps://bit.ly/fahd-mirza\nCoupon code: FahdMirza\n\n\ud83d\udd25 Buy Me a Coffee to support the channel: https://ko-fi.com/fahdmirza\n\n#qwen35 #qwen35small \n\nPLEASE FOLLOW ME: \n\u25b6 LinkedIn:  https://www.linkedin.com/in/fahdmirza/\n\u25b6 YouTube: https://www.youtube.com/@fahdmirza\n\u25b6 Blog: https://www.fahdmirza.com\n\nRESOURCES:\n\n\u25b6 https://huggingface.co/Qwen/Qwen3.5-9B\n\nAll rights reserved \u00a9 Fahd Mirza",
       "channel": "Fahd Mirza",
       "channelUrl": "https://www.youtube.com/channel/UCPix8N6PMRI4KzgyjuZeF0g",
       "url": "https://www.youtube.com/watch?v=3bupWUq9Ems",
@@ -56,7 +72,7 @@
     {
       "id": "nnB8a3OHS2E",
       "title": "Low-Latency Strix Halo Cluster with RDMA (RoCE/Intel E810) and vLLM, Framework Desktop Boards",
-      "description": "In this video, I move beyond Ethernet and llama.cpp and show a 2-node Strix Halo cluster using RDMA and vLLM tensor parallelism. The setup uses two Framework Desktop motherboards with 128 GB of unified memory each, connected directly via Intel E810 cards configured for RoCE.\n\nI c",
+      "description": "In this video, I move beyond Ethernet and llama.cpp and show a 2-node Strix Halo cluster using RDMA and vLLM tensor parallelism. The setup uses two Framework Desktop motherboards with 128 GB of unified memory each, connected directly via Intel E810 cards configured for RoCE.\n\nI cover the hardware details that matter for this build: direct-attached RDMA, custom cooling for the E810, and why running a x16 NIC in a PCIe x4 slot isn\u2019t a real problem for inference. I also compare RDMA latency to standard Ethernet and explain why low latency is the key enabler for tensor parallelism here.\n\nOn the software side, I walk through vLLM with Ray and the main blocker I hit along the way: missing RCCL support for gfx1151 in upstream ROCm. I explain what broke, how I patched RCCL to make multi-node tensor parallelism work on Strix Halo, and how to reproduce the setup using my toolboxes.\n\nTimestamps\n00:00 \u2013 Introduction\n01:14 \u2013 The Hardware\n02:09 \u2013 RDMA / RoCE Network Card\n03:28 \u2013 Custom Cooling for Intel E810\n06:22 \u2013 PCIe Lane Caveat (x16 to x4)\n08:32 \u2013 ROCm / RCCL gfx1151 Support\n10:31 \u2013 Configuration Tutorial\n13:06 \u2013 Benchmarks\n14:03 \u2013 Conclusion\n\nLinks & Resources\n- Strix Halo Toolboxes & Guides: https://strix-halo-toolboxes\n- vLLM Strix Halo Toolboxes (patched RCCL): https://github.com/kyuz0/amd-strix-halo-vllm-toolboxes\n- vLLM Benchmarks: https://kyuz0.github.io/amd-strix-halo-vllm-toolboxes/\n- vLLM Tensor Parallelism: https://developers.redhat.com/articles/2025/02/06/distributed-inference-with-vllm#gpu_parallelism_techniques_in_vllm",
       "channel": "Donato Capitella",
       "channelUrl": "https://www.youtube.com/channel/UCP0QFok6EimQYTMj5qOLNow",
       "url": "https://www.youtube.com/watch?v=nnB8a3OHS2E",
@@ -72,7 +88,7 @@
     {
       "id": "wAIzlGwEAO0",
       "title": "Running vLLM on Strix Halo (AMD Ryzen AI MAX) + ROCm Performance Updates",
-      "description": "This video is divided into two parts: a technical guide on running vLLM on the AMD Ryzen AI MAX (Strix Halo) and an update on the local AI ecosystem four months after launch.\n\nPart 1: vLLM on Strix Halo I demonstrate how to use my new Fedora-based toolboxes to run vLLM on the Fra",
+      "description": "This video is divided into two parts: a technical guide on running vLLM on the AMD Ryzen AI MAX (Strix Halo) and an update on the local AI ecosystem four months after launch.\n\nPart 1: vLLM on Strix Halo I demonstrate how to use my new Fedora-based toolboxes to run vLLM on the Framework Desktop and other Strix Halo systems. I compare the Triton and ROCm Attention backends and provide throughput benchmarks for Large Language Models using unified system memory.\n\nPart 2: Strix Halo Ecosystem Update A look at the progress of the Strix Halo platform since August. This includes performance gains in llama.cpp, the current state of image generation with Qwen Image, and video generation with WAN 2.2. I also discuss ongoing ROCm 7 stability work and how to contribute kernel logs to help AMD optimize RDNA 3.5.\n\nTimestamps\n00:00 \u2013 Intro: vLLM and the Strix Halo AI Update\n02:15 \u2013 PART 1: vLLM on AMD Strix Halo \n04:05 \u2013 Setting up the vLLM Fedora Toolbox\n07:07 \u2013 Triton vs. ROCm Attention: Backend Differences\n09:10 \u2013 Model Support\n11:25 \u2013 vLLM Benchmarks & Performance Results\n12:58 \u2013 PART 2: Strix Halo 4-Month Progress Update \n13:58 \u2013 llama.cpp Improvements\n15:30 \u2013 Local Image Generation: Qwen Image Performance\n\nLinks & Resources\n\ud83d\udcc1 vLLM Strix Halo Toolboxes: https://github.com/kyuz0/amd-strix-halo-vllm-toolboxes/\n\n\ud83d\udcca vLLM Benchmark Logs: https://kyuz0.github.io/amd-strix-halo-vllm-toolboxes/\n\n\ud83d\uddbc\ufe0f Strix Halo Image & Video Toolbox (Qwen/WAN): https://github.com/kyuz0/amd-strix-halo-image-video-toolboxes\n\n\ud83d\udc1b ROCm Stability Tracking & Kernel Logs: https://github.com/ROCm/TheRock/issues/2591\n\n\ud83d\udcda Strix Halo Homelab Guide (deseven): https://strixhalo-homelab.d7.wtf/",
       "channel": "Donato Capitella",
       "channelUrl": "https://www.youtube.com/channel/UCP0QFok6EimQYTMj5qOLNow",
       "url": "https://www.youtube.com/watch?v=wAIzlGwEAO0",
@@ -88,7 +104,7 @@
     {
       "id": "9gX5bgtvuUU",
       "title": "How-to Install vLLM and Serve AI Models Locally \u2013 Step by Step Easy Guide",
-      "description": "Learn how to easily install vLLM and locally serve powerful AI models on your own GPU!\n\n\ud83d\udd25 Buy Me a Coffee to support the channel: https://ko-fi.com/fahdmirza\n\n\ud83d\udd25 Get 50% Discount on any A6000 or A5000 GPU rental, use following link and coupon:\n\nhttps://bit.ly/fahd-mirza\nCoupon cod",
+      "description": "Learn how to easily install vLLM and locally serve powerful AI models on your own GPU!\n\n\ud83d\udd25 Buy Me a Coffee to support the channel: https://ko-fi.com/fahdmirza\n\n\ud83d\udd25 Get 50% Discount on any A6000 or A5000 GPU rental, use following link and coupon:\n\nhttps://bit.ly/fahd-mirza\nCoupon code: FahdMirza\n\n\ud83d\ude80 This video is sponsored by https://camel-ai.org/ which is an open-source community focused on building multi-agent infrastructures.\n\n#vllm \n\nPLEASE FOLLOW ME: \n\u25b6 LinkedIn:  https://www.linkedin.com/in/fahdmirza/\n\u25b6 YouTube: https://www.youtube.com/@fahdmirza\n\u25b6 Blog: https://www.fahdmirza.com\n\nRELATED VIDEOS:\n\n\u25b6 Resource https://github.com/vllm-project/vllm\n\nAll rights reserved \u00a9 Fahd Mirza",
       "channel": "Fahd Mirza",
       "channelUrl": "https://www.youtube.com/channel/UCPix8N6PMRI4KzgyjuZeF0g",
       "url": "https://www.youtube.com/watch?v=9gX5bgtvuUU",
@@ -102,9 +118,41 @@
       "definition": "hd"
     },
     {
+      "id": "k1kl6xPb_HU",
+      "title": "NVIDIA NemoClaw + OpenShell: OpenClaw Agent in a Secure Sandbox - Local vLLM Setup",
+      "description": "This video locally installs NemoClaw with OpenShell and vllm Qwen3.5 9B.\n\n\ud83d\udd25 Buy Me a Coffee to support the channel: https://ko-fi.com/fahdmirza\n\n\ud83d\udd25 Get 50% Discount on any A6000 or A5000 GPU rental, use following link and coupon:\n\nhttps://bit.ly/fahd-mirza\nCoupon code: FahdMirza\n\n#nemoclaw #openshell \n\nPLEASE FOLLOW ME: \n\u25b6 LinkedIn:  https://www.linkedin.com/in/fahdmirza/\n\u25b6 YouTube: https://www.youtube.com/@fahdmirza\n\u25b6 Blog: https://www.fahdmirza.com\n\nRELATED VIDEOS:\n\n\u25b6 https://github.com/NVIDIA/NemoClaw\n\nAll rights reserved \u00a9 Fahd Mirza",
+      "channel": "Fahd Mirza",
+      "channelUrl": "https://www.youtube.com/channel/UCPix8N6PMRI4KzgyjuZeF0g",
+      "url": "https://www.youtube.com/watch?v=k1kl6xPb_HU",
+      "thumbnail": "https://i.ytimg.com/vi/k1kl6xPb_HU/mqdefault.jpg",
+      "publishedAt": "2026-03-17T00:00:36-06:00",
+      "duration": "8:53",
+      "durationSeconds": 533,
+      "views": 15210,
+      "likes": 288,
+      "qualityScore": 80.43,
+      "definition": "hd"
+    },
+    {
+      "id": "O9HtT4nvWHI",
+      "title": "DeepSeek Guys Releases Nano-vLLM - An Instant Hit - Install and Test",
+      "description": "This video locally installs Nano-vLLM, which is a lightweight vLLM implementation built from scratch.\n\n\ud83d\udd25 Buy Me a Coffee to support the channel: https://ko-fi.com/fahdmirza\n\n\ud83d\udd25 Get 50% Discount on any A6000 or A5000 GPU rental, use following link and coupon:\n\nhttps://bit.ly/fahd-mirza\nCoupon code: FahdMirza\n\n\ud83d\ude80 This video is sponsored by https://camel-ai.org/ which is an open-source community focused on building multi-agent infrastructures.\n\n#nanovllm \n\nPLEASE FOLLOW ME: \n\u25b6 LinkedIn:  https://www.linkedin.com/in/fahdmirza/\n\u25b6 YouTube: https://www.youtube.com/@fahdmirza\n\u25b6 Blog: https://www.fahdmirza.com\n\nRELATED VIDEOS:\n\n\u25b6 Resource https://github.com/GeeeekExplorer/nano-vllm\n\nAll rights reserved \u00a9 Fahd Mirza",
+      "channel": "Fahd Mirza",
+      "channelUrl": "https://www.youtube.com/channel/UCPix8N6PMRI4KzgyjuZeF0g",
+      "url": "https://www.youtube.com/watch?v=O9HtT4nvWHI",
+      "thumbnail": "https://i.ytimg.com/vi/O9HtT4nvWHI/mqdefault.jpg",
+      "publishedAt": "2025-06-22T14:40:51-06:00",
+      "duration": "9:54",
+      "durationSeconds": 594,
+      "views": 14033,
+      "likes": 346,
+      "qualityScore": 79.94,
+      "definition": "hd"
+    },
+    {
       "id": "1RxOYLa69Vw",
       "title": "vLLM - Turbo Charge your LLM Inference",
-      "description": "vLLM - Turbo Charge your LLM Inference\n\nBlog post: https://vllm.ai/\nGithub: https://github.com/vllm-project/vllm\nDocs: https://vllm.readthedocs.io/en/latest/getting_started/quickstart.html\n\nColab: https://drp.li/5ugU2\n\nFor more tutorials on using LLMs and building Agents, check o",
+      "description": "vLLM - Turbo Charge your LLM Inference\n\nBlog post: https://vllm.ai/\nGithub: https://github.com/vllm-project/vllm\nDocs: https://vllm.readthedocs.io/en/latest/getting_started/quickstart.html\n\nColab: https://drp.li/5ugU2\n\nFor more tutorials on using LLMs and building Agents, check out my Patreon:\nPatreon: https://www.patreon.com/SamWitteveen\nTwitter: https://twitter.com/Sam_Witteveen\n\nMy Links:\nLinkedin: https://www.linkedin.com/in/samwitteveen/\n\nGithub:\nhttps://github.com/samwit/langchain-tutorials\nhttps://github.com/samwit/llm-tutorials\n\nTimestamps:\n00:00 Intro\n01:17 vLLM Blog\n04:27 vLLM Github\n05:40 Code Time",
       "channel": "Sam Witteveen",
       "channelUrl": "https://www.youtube.com/channel/UC55ODQSvARtgSyc8ThfiepQ",
       "url": "https://www.youtube.com/watch?v=1RxOYLa69Vw",
@@ -118,9 +166,25 @@
       "definition": "hd"
     },
     {
+      "id": "LCJJwDjJYqI",
+      "title": "How to run Deepseek OCR on Cloud GPU? (Hands-on Deepseek OCR Tutorial)",
+      "description": "\ud83d\udd25 Sign up here - https://cloud.datacrunch.io/signin \ud83d\udd25\nCoupon Code - 1littlecoder-ds-ocr (Validity 2 weeks)\n\nhttps://docs.datacrunch.io/resources/obtaining-free-credits/how-to-redeem-credits\n\nDeepseek OCR is the hottest thing in the LLM world. This step-by-step guide teaches how to run Deepseek OCR at scale - This is one the best tradeoff between Speed and Accuracy in the OCR world! \n\nDeepseek OCR comes with a great innovation and this can be much more than OCR use-cases. \n\nThe notebook used in the video - https://github.com/amrrs/deepseek-ocr-vllm/blob/main/deepseek-ocr-vllm.ipynb\n\n\u2764\ufe0f If you want to support the channel \u2764\ufe0f\nSupport here:\nPatreon - https://www.patreon.com/1littlecoder/\nKo-Fi - https://ko-fi.com/1littlecoder\n\n\ud83e\udded Follow me on \ud83e\udded\nTwitter - https://twitter.com/1littlecoder",
+      "channel": "1littlecoder",
+      "channelUrl": "https://www.youtube.com/channel/UCpV_X0VrL8-jg3t6wYGS-1g",
+      "url": "https://www.youtube.com/watch?v=LCJJwDjJYqI",
+      "thumbnail": "https://i.ytimg.com/vi/LCJJwDjJYqI/mqdefault.jpg",
+      "publishedAt": "2025-10-27T11:03:21-06:00",
+      "duration": "8:44",
+      "durationSeconds": 524,
+      "views": 17918,
+      "likes": 209,
+      "qualityScore": 74.8,
+      "definition": "hd"
+    },
+    {
       "id": "u-XfRqJCWLo",
       "title": "Deploy LLMs using Serverless vLLM on RunPod in 5 Minutes",
-      "description": "In this video, I will show you how to deploy serverless vLLM on RunPod, step-by-step. \n\n\ud83d\udd11 Key Takeaways:\n\u2705 Set up your environment.\n\u2705 Choose and deploy your Hugging Face model with ease.\n\u2705 Customize settings for optimal performance.\n\u2705 Integrate seamlessly with OpenAI's API. Examp",
+      "description": "In this video, I will show you how to deploy serverless vLLM on RunPod, step-by-step. \n\n\ud83d\udd11 Key Takeaways:\n\u2705 Set up your environment.\n\u2705 Choose and deploy your Hugging Face model with ease.\n\u2705 Customize settings for optimal performance.\n\u2705 Integrate seamlessly with OpenAI's API. Example in Colab.\n\n\n\ud83d\udee0 Steps Covered:\n\u2611\ufe0f Choose Your Model - Select from Hugging Face and configure your settings.\n\u2611\ufe0f Deploy and Customize - Set up your endpoint with vLLM Worker image.\n\u2611\ufe0f Test and Integrate - Ensure everything works perfectly and integrate with OpenAI API and testing on Google Colab.\n\n\n\ud83d\udd0d Watch the full tutorial and follow along!\n\n\ud83d\udce2 Don't forget to:\n\ud83d\udc4d Like the video\n\ud83d\udcac Comment your thoughts and questions\n\ud83d\udd14 Subscribe for more AI tutorials\n\ud83d\udce2 Share with your friends\n\n\ud83d\udcac Join the discussion: Let me know if you have any questions or if there's anything specific you'd like to see in future videos!\n\nJoin DISCORD: https://discord.com/invite/aianytime\n\nTry Here: https://www.runpod.io/console/serverless\n\nJoin this channel to get access to perks:\nhttps://www.youtube.com/channel/UC-zVytOQB62OwMhKRi0TDvg/join\n\nTo further support the channel, you can contribute via the following methods:\n\nBitcoin Address: 32zhmo5T9jvu8gJDGW3LTuKBM1KPMHoCsW\nUPI: sonu1000raw@ybl\n\n#llmops #aiops #runpod #vllm",
       "channel": "AI Anytime",
       "channelUrl": "https://www.youtube.com/channel/UC-zVytOQB62OwMhKRi0TDvg",
       "url": "https://www.youtube.com/watch?v=u-XfRqJCWLo",
@@ -136,7 +200,7 @@
     {
       "id": "APBpBFZIVEk",
       "title": "Local Ai Server Setup Guides Proxmox 9 - vLLM in LXC w/ GPU Passthrough",
-      "description": "Setting up vLLM in our Proxmox 9 LXC host is actually a breeze in this video which follows on the prior 2 guides to give us a very full suite of Local Ai Server runners. We have covered in the first video setting up Proxmox 9, Ollama and OpenWEBUI in an LXC. In the second guide w",
+      "description": "Setting up vLLM in our Proxmox 9 LXC host is actually a breeze in this video which follows on the prior 2 guides to give us a very full suite of Local Ai Server runners. We have covered in the first video setting up Proxmox 9, Ollama and OpenWEBUI in an LXC. In the second guide we setup Llama.cpp and used unsloth. We also created a base level backup LXC container which we use to rapidly deploy vLLM in this video. \n\nIF YOU HAVE BLACKWELL 50x0 series Nvidia GPU's Use MIT Drivers and not Proprietary version during installation. The same package is downloaded, but MIT option selected during installation process.\n\nThese guides are meant to be followed in this order:\n\u25b6\ufe0f Ollama Openwebui Video https://youtu.be/Met9pEfxsF8\n\ud83d\udcdd Ollama Openwebui Article https://digitalspaceport.com/how-to-setup-an-ai-server-homelab-beginners-guides-ollama-and-openwebui-on-proxmox-lxc/\n\u25b6\ufe0f Llamacpp Unsloth Video https://youtu.be/CBNbM-RZgIQ\n\ud83d\udcdd Llamacpp Unsloth Article https://digitalspaceport.com/how-to-setup-an-ai-server-homelab-beginners-guides-llama-cpp-on-proxmox-9-lxc/\n\u25b6\ufe0f \ud83d\udccdYOU ARE HERE\ud83d\udccd vLLM Video \n\ud83d\udcdd vLLM Article https://digitalspaceport.com/how-to-setup-vllm-local-ai-homelab-ai-server-beginners-guides/\n(Optional Guides)\n\u25b6\ufe0f VibeVoice 7b TTS Video https://youtu.be/t7WH-86Jtn0\n\ud83d\udcdd VibeVoice Article https://digitalspaceport.com/how-to-setup-vibevoice-ai-podcast-tts-podcast-engine/\n\nQuad 3090 Ryzen AI Rig Build 2025 Video w/cheaper components vs EPYC Build https://youtu.be/So7tqRSZ0s8 \nWritten Build Guide with all the Updated AI Rig Component Options and Benchmarks https://digitalspaceport.com/local-ai-home-server-build-at-high-end-3500-5000-price/\n\nQUAD 3090 AI HOME SERVER BUILD \nGPU Rack Frame https://geni.us/GPU_Rack_Frame\nSupermicro H12ssl-i MOBO (better option vs mz32-ar0) https://geni.us/MBD_H12SSL-I-O\nGigabyte MZ32-AR0 MOBO https://geni.us/mz32-ar0_motherboard\nAMD 7V13 (newer, faster vs 7702) https://geni.us/EPYC_7V13_CPU\nRTX 3090 24GB GPU (x4) https://geni.us/GPU3090\n256GB (8x32GB) DDR4 2400 RAM https://geni.us/256GB_DDR4_RAM\nPCIe4 Risers (x4) https://geni.us/PCIe4_Riser_Cable\nAMD SP3 Air Cooler (easier vs water cooler) https://geni.us/EPYC_SP3_COOLER\niCUE H170i water cooler https://geni.us/iCUE_H170i_Capellix\n(sTRX4 fits SP3 and retention kit comes with the CAPELLIX)\nCORSAIR HX1500i PSU https://geni.us/Corsair_HX1500iPSU\n4i SFF-8654 to 4i SFF-8654 (x4, not needed for H12SSL-i) https://geni.us/SFF8654_to_SFF8654\nARCTIC MX4 Thermal Paste https://geni.us/Arctic_ThermalPaste\nThermal GPU Pads https://geni.us/Kritical-Thermal-Pads\nHDD Rack Screws for Fans https://geni.us/HDD_RackScrews\n\nWays to Support:\n\ud83d\ude80 Join as a member for members-only content and extra perks https://www.youtube.com/c/digitalspaceport/join\n\u2615 Buy Me a Coffee https://www.buymeacoffee.com/digitalspaceport\n\ud83d\udd33 Patreon https://www.patreon.com/digitalspaceport\n\ud83d\udc4d Subscribe youtube.com/c/digitalspaceport?sub_confirmation=1\n\ud83c\udf10 Check out the Website https://digitalspaceport.com\n\n\n*****\nAs an Amazon Associate I earn from qualifying purchases. \nWhen you click on links to various merchants on this site and make a purchase, this can result in this site earning a commission. Affiliate programs and affiliations include, but are not limited to, the eBay Partner Network. \n*****",
       "channel": "Digital Spaceport",
       "channelUrl": "https://www.youtube.com/channel/UCiaQzXI5528Il6r2NNkrkJA",
       "url": "https://www.youtube.com/watch?v=APBpBFZIVEk",
@@ -152,7 +216,7 @@
     {
       "id": "APUDwZvcdYs",
       "title": "Install and Run Locally LLMs using vLLM library on Windows",
-      "description": "#vllm #llm #machinelearning #ai #llamasgemelas #wsl #windows\nIt takes a significant amount of time and energy to create these free video tutorials. You can support my efforts in this way:\n- Buy me a Coffee: https://www.buymeacoffee.com/AleksandarHaber\n- PayPal: https://www.paypal",
+      "description": "#vllm #llm #machinelearning #ai #llamasgemelas #wsl #windows\nIt takes a significant amount of time and energy to create these free video tutorials. You can support my efforts in this way:\n- Buy me a Coffee: https://www.buymeacoffee.com/AleksandarHaber\n- PayPal: https://www.paypal.me/AleksandarHaber\n- Patreon: https://www.patreon.com/user?u=32080176&fan_landing=true\n- You Can also press the Thanks YouTube Dollar button\n\nIn this tutorial, we explain how to install and run locally the vLLM library and how to run Large Language Models (LLMs) using vLLM and Python on Windows. We explain how to correctly install vLLM on Windows by using WSL. We also explain how to run the Qwen model by using vLLM.",
       "channel": "Aleksandar Haber PhD",
       "channelUrl": "https://www.youtube.com/channel/UCJb75Ftt5VukFioxk5OocFQ",
       "url": "https://www.youtube.com/watch?v=APUDwZvcdYs",

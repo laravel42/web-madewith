@@ -1,14 +1,30 @@
 {
   "slug": "preact",
   "techName": "Preact",
-  "scrapedAt": "2026-07-13T23:31:43.018475+00:00",
+  "scrapedAt": "2026-07-15T23:20:35.840487+00:00",
   "source": "youtube-api",
-  "videoCount": 4,
+  "videoCount": 6,
   "videos": [
+    {
+      "id": "SO8lBVWF2Y8",
+      "title": "Why Signals Are Better Than React Hooks",
+      "description": "Hooks in React are tricky to use correctly and even harder to use in a performant way. This has left many applications with poor code quality and bad performance, but that doesn\u2019t have to be the case anymore. Signals is a technique that has been around for decades, but only recently has made its way to React and it makes creating performant clean code in React much easier. In this video I explain exactly how signals work and why they are so great.\n\n\n\ud83d\udcda Materials/References:\n\nPreact Signals Library: https://preactjs.com/blog/introducing-signals/\n\n\n\ud83c\udf0e Find Me Here:\n\nMy Blog: https://blog.webdevsimplified.com\nMy Courses: https://courses.webdevsimplified.com\nPatreon: https://www.patreon.com/WebDevSimplified\nTwitter: https://twitter.com/DevSimplified\nDiscord: https://discord.gg/7StTjnR\nGitHub: https://github.com/WebDevSimplified\nCodePen: https://codepen.io/WebDevSimplified\n\n\n\u23f1\ufe0f Timestamps:\n\n00:00 - Introduction\n00:57 - Demo\n02:18 - The Problem With Hooks\n04:12 - Why Signals Are Great\n05:40 - Basic Signals\n11:15 - Advanced Signals\n\n\n#ReactSignals #WDS #ReactJS",
+      "channel": "Web Dev Simplified",
+      "channelUrl": "https://www.youtube.com/channel/UCFbNIlppjAuEX4znoulh0Cw",
+      "url": "https://www.youtube.com/watch?v=SO8lBVWF2Y8",
+      "thumbnail": "https://i.ytimg.com/vi/SO8lBVWF2Y8/mqdefault.jpg",
+      "publishedAt": "2023-10-31T10:00:18-06:00",
+      "duration": "16:30",
+      "durationSeconds": 990,
+      "views": 546165,
+      "likes": 19206,
+      "qualityScore": 117.0,
+      "definition": "hd"
+    },
     {
       "id": "Diy4XRSFTiA",
       "title": "Should You Use Signals with React?",
-      "description": "00:00 intro\n00:56 useState Example\n01:39 useState re-renders\n02:45 how react data flows\n03:54 @preact/signals-react Example\n04:47 fine-grained reactivity\n05:37 @preact/signals-react code walkthrough\n08:03 React Compiler Example\n09:23 Signals for global state management\n10:43 Sign",
+      "description": "00:00 intro\n00:56 useState Example\n01:39 useState re-renders\n02:45 how react data flows\n03:54 @preact/signals-react Example\n04:47 fine-grained reactivity\n05:37 @preact/signals-react code walkthrough\n08:03 React Compiler Example\n09:23 Signals for global state management\n10:43 Signals Proposal\n13:09 use-signals hook + polyfill\n14:59 signals from scratch\n18:17 how to use signals in React today\n18:44 thanks!\n\nView the code here: https://github.com/w3cj/react-signal-examples\n\nPreact Signals - https://www.npmjs.com/package/@preact/signals-react\nSignals Proposal - https://github.com/tc39/proposal-signals\nSignals Polyfill - https://github.com/proposal-signals/signal-polyfill/\nuse-signals - https://github.com/dai-shi/use-signals\n\nA Hands-on Introduction to Fine-Grained Reactivity - https://dev.to/ryansolid/a-hands-on-introduction-to-fine-grained-reactivity-3ndf\n\n\ud83d\udd25 Be the ~14,700th person to join our super tasty newsletter bit.ly/syntax_snackpack\n\nAll links available at https://syntax.fm/870\n------------------------------------------------------------------------------\nHit us up on Socials!\nSyntax: https://x.com/syntaxfm\nScott: https://x.com/stolinski\nWes: https://x.com/wesbos\nCJ: https://x.com/CodingGarden\nRandy: https://www.youtube.com/@randyrektor\n\nhttp://www.syntax.fm\n\nBrought to you by Sentry.io\n\n#webdevelopment #webdeveloper #javascript #syntax #syntaxfm #webdev",
       "channel": "Syntax",
       "channelUrl": "https://www.youtube.com/channel/UCyU5wkjgQYGRB0hIHMwm2Sg",
       "url": "https://www.youtube.com/watch?v=Diy4XRSFTiA",
@@ -24,7 +40,7 @@
     {
       "id": "qJyKZ6txShU",
       "title": "Switching from React to Preact (Server-side Rendering with JavaScript Frameworks)",
-      "description": "Serve Dynamic Content with Cloud Functions: https://goo.gl/kCEuPd\nPreact: https://preactjs.com\n\nPreact is a really small React alternative coming in around 3kb. Reducing the size of the library can give us some performance benefits since we don't have to load as much JavaScript t",
+      "description": "Serve Dynamic Content with Cloud Functions: https://goo.gl/kCEuPd\nPreact: https://preactjs.com\n\nPreact is a really small React alternative coming in around 3kb. Reducing the size of the library can give us some performance benefits since we don't have to load as much JavaScript to take over our server-side rendered app. We'll also cancel out any redundant HTTP requests for JSON data to give the app a bigger performance boost.\n\nWatch more Server-side Rendering with Javascript Frameworks: https://goo.gl/yaYkHX\n\nSubscribe to the Firebase Channel to never miss a Server-side Rendering episode: https://goo.gl/9giPHG",
       "channel": "Firebase",
       "channelUrl": "https://www.youtube.com/channel/UCP4bf6IHJJQehibu6ai__cg",
       "url": "https://www.youtube.com/watch?v=qJyKZ6txShU",
@@ -40,7 +56,7 @@
     {
       "id": "mKb8_GAfdi8",
       "title": "What is Preact? (the best small React alternative)",
-      "description": "Preact has been around for a while so I'm surprised I haven't talked about it before. It's a super cool library that is great for mobile or embedded environments and the best part of all is that it has the exact same API as React. Super cool!\n\nAlso I forgot to pull up my green sc",
+      "description": "Preact has been around for a while so I'm surprised I haven't talked about it before. It's a super cool library that is great for mobile or embedded environments and the best part of all is that it has the exact same API as React. Super cool!\n\nAlso I forgot to pull up my green screen in this video so apologies for the ever-present background \ud83d\ude2c\n\nLinks from video:\nhttps://preactjs.com/\nhttps://preactjs.com/about/project-goals/\nhttps://preactjs.com/guide/v10/whats-new/#hooks\nhttps://preactjs.com/guide/v10/getting-started/#integrating-into-an-existing-pipeline\nhttps://preactjs.com/guide/v10/api-reference/\n\n\u2014\u2014\n\nDISCORD: https://discord.gg/evSQXj2rxj\n\nVOTE ON VIDEOS: https://votey-uppy.vercel.app/\n\nNEWSLETTER: https://hswolff.com/newsletter/\n\nPATREON: https://www.patreon.com/hswolff\n\nTWITCH: https://twitch.tv/hswolff11\n\nTWITTER: https://twitter.com/hswolff\n\nSITE: https://hswolff.com/",
       "channel": "Harry Wolff",
       "channelUrl": "https://www.youtube.com/channel/UCgdeMp2ZBnovi12THmLc47g",
       "url": "https://www.youtube.com/watch?v=mKb8_GAfdi8",
@@ -54,9 +70,25 @@
       "definition": "hd"
     },
     {
+      "id": "wnUJqJmh33E",
+      "title": "JS frameworks are replaceable",
+      "description": "A quick look at Preact.\n\n\ud83d\udcac Topics:\n- React vs Preact;\n- Routing and managing state;\n- JSX, Virtual DOM and rendering;\n- Working with Preact.\n\n\ud83d\udd25 The \"First Impressions\" series:\n- VueJS - https://youtu.be/gMxfQ40UQ-s\n- Fresh - https://youtu.be/dTLHwIocvbU\n- Astro - https://youtu.be/npmalb821gc\n\n\ud83c\udf88Other links:\nGithub project - https://github.com/awesome-club/awesome-preact\nLingua Robot API - https://www.linguarobot.io/\nNews Data API - https://newsdata.io/",
+      "channel": "Awesome",
+      "channelUrl": "https://www.youtube.com/channel/UCXzw-OdotBUcNA9yhuYQBwA",
+      "url": "https://www.youtube.com/watch?v=wnUJqJmh33E",
+      "thumbnail": "https://i.ytimg.com/vi/wnUJqJmh33E/mqdefault.jpg",
+      "publishedAt": "2022-09-14T04:24:29-05:00",
+      "duration": "8:24",
+      "durationSeconds": 504,
+      "views": 10799,
+      "likes": 241,
+      "qualityScore": 72.45,
+      "definition": "hd"
+    },
+    {
       "id": "U9-sBEAuAPA",
       "title": "Preact Vs React JS",
-      "description": "Preact JS offers more power and speed than the regular React JS framework. The idea behind Preact is that it's much faster and smaller. But when I compared the minified file sizes of React and Preact, they seemed similar.\n\nIt's a bit tricky, but to my eyes, it does seem like both",
+      "description": "Preact JS offers more power and speed than the regular React JS framework. The idea behind Preact is that it's much faster and smaller. But when I compared the minified file sizes of React and Preact, they seemed similar.\n\nIt's a bit tricky, but to my eyes, it does seem like both minified JavaScript files appear almost the same. That's, however, more than three kilobytes of JavaScript. The gzipped version of both files even looks identical, and when unzipped, Preact is slightly larger.\n\nI haven't been able to validate the claim of Preact being just three kilobytes. I've tried looking from various perspectives, but I always ended up with 11 kilobytes, which is more than what React.js measures. Despite not seeing a notable decrease in file size while using Preact, there are still advantages in terms of virtual DOM use.\n\nUnlike heavy-handed React and other frameworks, Preact strikes the right balance by using the exact amount of virtual DOM, which is beneficial as overuse can cause performance hits. Preact is also advertised as one of the fastest virtual DOM libraries available, and it doesn't skimp on portability, functioning almost everywhere React works, save for a few exceptions. Analyzing example codes of Preact, it's functionally similar to React but supposedly faster.\n\nReact tends to have one common flaw: it lets you create a slow-running web app and a bulky payload. While it's great for facilitating teamwork, the output often involves a sluggish render that paves the way for poor user experience, especially on battery-operated devices or even high-performance desktops. You could adopt some patterns to enhance user experience, but the difficulty lies in the extra work you will need to put into optimizing your app.\n\nEnter Preact, a faster alternative to React. Preact aims to resolve the problems stemming from the cumbersome React framework. The concept behind Preact was to minimize its footprint while dealing with the troublesome aspects of virtual DOM. If you're struggling with React\u2019s slowness and an oversized footprint, it's better to switch to a more efficient framework rather than waste time trying to optimize the existing app.\n\nAnother standout aspect of Preact is its synthetic events feature, a part of React that Preact has avoided, opting for browser's event listeners instead. This feature simplifies the coding process. It reduces the amount of code you have to write, depending more on the browser. while comparing Preact.js and React.js, some issues have sprung up.\n\nI've discovered that both Preact and React have the same file size, despite the latter\u2019s claims of being three kilobytes. Tackling this problem, I've considered tree shaking or eliminating redundant parts of the libraries. Preact also lacks certain components present in React, like hooks, which have to be imported separately.\n\nThis move can lead to the negation of Preact\u2019s claim of having a small library footprint, as extra parts need to be imported. Although Preact still remains one of the quickest virtual DOM libraries for rendering, it'd be appreciable if Preact could incorporate these advancements, which might just be in the works. In terms of usability, Preact takes the edge as it does not require extra steps for setting up your app as React does.\n\nWith Preact, you don't need to create different attribute names like in React. Preact also goes easy on the SVG, supporting its native attribute styles, unlike React, which insists on camel-casing. So while exploring Preact versus React, their similarities are apparent, and Preact offers a few extra benefits and a slightly smaller file size.\n\nWhichever framework you choose, React or Preact, you are investing in a solid framework that allows you to provide a great user experience. If you're looking at enhancing the performance of your existing of React app, Preact could be a good option for you. The transition is generally smooth, with minor changes here and there.\n\nIf you\u2019re starting afresh and need a framework to build an advanced UI, Preact is a great place to commence. With React being a popular choice, it is expected to see performance upgrades baked into its core, which makes it a worthwhile contender as well. Being fundamentally the same, choosing either Preact or React won't make much of a difference.\n\nPreact looks to be a good choice, but in time, React may catch up and even incorporate these advancements by default.",
       "channel": "Stephen Blum",
       "channelUrl": "https://www.youtube.com/channel/UC8wHV61oXuNCyKuDFOi_cwQ",
       "url": "https://www.youtube.com/watch?v=U9-sBEAuAPA",

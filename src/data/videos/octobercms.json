@@ -1,14 +1,14 @@
 {
   "slug": "octobercms",
   "techName": "October CMS",
-  "scrapedAt": "2026-07-13T23:31:43.083742+00:00",
+  "scrapedAt": "2026-07-15T23:20:36.002492+00:00",
   "source": "youtube-api",
-  "videoCount": 18,
+  "videoCount": 23,
   "videos": [
     {
       "id": "O8f_MZS4E0I",
       "title": "Making Websites With October CMS - Part 05 - Builder Plugin Overview",
-      "description": "In this episode we are going to create our first plugin with Builder for October CMS. This plugin is going to act as a custom content type for our site, with custom fields and everything.\n\nIn WordPress you have something called \"Custom Post Types\" and \"Custom Fields\". Of course O",
+      "description": "In this episode we are going to create our first plugin with Builder for October CMS. This plugin is going to act as a custom content type for our site, with custom fields and everything.\n\nIn WordPress you have something called \"Custom Post Types\" and \"Custom Fields\". Of course October CMS gives you the ability to create custom content types, just a little bit differently. To create our first custom content type we are going to be using the Builder plugin for October CMS. \n\nThis plugin let's you scaffold your own plugins for October. Since everything in October is done via plugins, this is the way you would create your own content type and your own custom fields. Of course, plugins in October are used for more than just creating custom content types. You can create pretty much any kind of functionality with them that you want using powerful Laravel framework.\n\nIn this episode we are going to do quick overview of the Builder plugin, and create our first plugin and content type.\n\n\n\n### Code used in this tutorial\n\nhttps://goo.gl/UcjqD9\n\nhttp://watch-learn.com/video-tutorials/making-websites-with-october-cms-part-05-builder-plugin-overview",
       "channel": "Watch and Learn",
       "channelUrl": "https://www.youtube.com/channel/UCXQC_GB5hG6PkzIhSMZ-hWA",
       "url": "https://www.youtube.com/watch?v=O8f_MZS4E0I",
@@ -22,9 +22,41 @@
       "definition": "hd"
     },
     {
+      "id": "OXgRSPfqxOU",
+      "title": "Making Websites With October CMS - Part 10 - Relations",
+      "description": "In this episode we are going to be talking about relations in October CMS, this is one of the most important things you have to understand in October to be able to successfully link your content together.\n\nIn the previous episode we had a little taste of relations when we linked our poster image with the Movie model, and also when creating our movie gallery. We are going to continue with that in this episode with movie genres. You can look at movie genres like categories for our movies.\n\nWe are going to create pivot table in this episode which will serve as a link between our Movie model and our Genre model, and this is the way we will be able to know which movie belongs to which genre and vice versa. \n\n\n\n### Code used in this tutorial\n\nhttps://goo.gl/UyZI2K\n\nhttp://watch-learn.com/video-tutorials/making-websites-with-october-cms-part-10-relations",
+      "channel": "Watch and Learn",
+      "channelUrl": "https://www.youtube.com/channel/UCXQC_GB5hG6PkzIhSMZ-hWA",
+      "url": "https://www.youtube.com/watch?v=OXgRSPfqxOU",
+      "thumbnail": "https://i.ytimg.com/vi/OXgRSPfqxOU/mqdefault.jpg",
+      "publishedAt": "2016-08-12T12:22:48-05:00",
+      "duration": "17:25",
+      "durationSeconds": 1045,
+      "views": 42498,
+      "likes": 423,
+      "qualityScore": 82.94,
+      "definition": "hd"
+    },
+    {
+      "id": "FMKMZqALISI",
+      "title": "Making Websites With October CMS - Part 04 - Setting Up Laravel Elixir",
+      "description": "In this episode we are going to set up Laravel Elixir to with our October CMS installation. Also we are going to enable Livereload, so that we can see the changes on our site whenever we save a file.\n\nSince October CMS is based on Laravel I thought it would be fitting to set it up with our installation of October CMS, since Laravel itself uses it out of the box. Laravel Elixir is a kind of a wrapper over Gulp task runner and it lets you write much less code to do your basic compilation of Sass and JavaScript files then you would write using vanilla Gulp.\n\nIn this episode we are going to set it up so that it compiles our ```.scss``` files and our ```.js`` files, and it is also going to watch them an compile them every time we hit save. And on top of that it's going to automatically refresh our page when ever we do so using Livereload plugin.\n\n\n\n### Code used in this tutorial\n\nhttps://goo.gl/iJ32Qu\n\nhttp://watch-learn.com/video-tutorials/making-websites-with-october-cms-part-04-setting-up-laravel-elixir",
+      "channel": "Watch and Learn",
+      "channelUrl": "https://www.youtube.com/channel/UCXQC_GB5hG6PkzIhSMZ-hWA",
+      "url": "https://www.youtube.com/watch?v=FMKMZqALISI",
+      "thumbnail": "https://i.ytimg.com/vi/FMKMZqALISI/mqdefault.jpg",
+      "publishedAt": "2016-08-03T13:25:38-05:00",
+      "duration": "16:57",
+      "durationSeconds": 1017,
+      "views": 37882,
+      "likes": 340,
+      "qualityScore": 80.09,
+      "definition": "hd"
+    },
+    {
       "id": "9A-obKktlYw",
       "title": "Creating Vue, Vuex and October CMS App - 01 - Setup October CMS Setup",
-      "description": "In this first episode of Creating Rent-a-Car we are going to setup #OctoberCMS side of things.\n\nI'm going to show you how to setup this project by firstly installing #OctoberCMS in subdirectory. After that we are going to update October and install #Builder plugin. We are going t",
+      "description": "In this first episode of Creating Rent-a-Car we are going to setup #OctoberCMS side of things.\n\nI'm going to show you how to setup this project by firstly installing #OctoberCMS in subdirectory. After that we are going to update October and install #Builder plugin. We are going to use Builder to create our API plugin. And then we are going to create our first endpoint using #PHP.\n\n\n\n### Code used in this video\n\nhttps://goo.gl/sJP3aV\n\n### Consider buying me a beer, thanks ;) ! \n\nhttps://goo.gl/H0YAVK",
       "channel": "Watch and Learn",
       "channelUrl": "https://www.youtube.com/channel/UCXQC_GB5hG6PkzIhSMZ-hWA",
       "url": "https://www.youtube.com/watch?v=9A-obKktlYw",
@@ -40,7 +72,7 @@
     {
       "id": "2Fr3zKpMX7Q",
       "title": "Making Websites With October CMS - Part 21 - Users",
-      "description": "In this episode we are going to setup User plugin for October CMS, and learn how to register and login users and also how to protect our pages from unauthorized  access.\n\nIn the last episode I told you that it would be a good idea to protect our contact form, so that only registe",
+      "description": "In this episode we are going to setup User plugin for October CMS, and learn how to register and login users and also how to protect our pages from unauthorized  access.\n\nIn the last episode I told you that it would be a good idea to protect our contact form, so that only registered can input data into our database. In this episode I'm going to show you how to do exactly that, using the *User* plugin for October CMS.\n\nI'm also going to show you how you can create *Register*, *Login* and *Profile* pages for your site and how to setup a sign out link.\n\n\n\n### Code used in this tutorial\n\nhttps://goo.gl/jaII3h\n\nhttp://watch-learn.com/video-tutorials/making-websites-with-october-cms-part-21-users",
       "channel": "Watch and Learn",
       "channelUrl": "https://www.youtube.com/channel/UCXQC_GB5hG6PkzIhSMZ-hWA",
       "url": "https://www.youtube.com/watch?v=2Fr3zKpMX7Q",
@@ -56,7 +88,7 @@
     {
       "id": "_STBANlmtoM",
       "title": "Making Websites With October CMS - Part 13 - Creating Custom Form Widgets",
-      "description": "In this episode I'm going to show you how to create custom form widgets for October CMS.\n\nYou will probably find your self in the situation where you would need a specific input field in your October CMS backend, and that field will not be available through October or Builder plu",
+      "description": "In this episode I'm going to show you how to create custom form widgets for October CMS.\n\nYou will probably find your self in the situation where you would need a specific input field in your October CMS backend, and that field will not be available through October or Builder plugin.\n\nIn those situations it is best to create your own custom form widget. That is what I'm going to show you how to do in this episode. And in the next episode we will connect that widget with our models, and save the data that is loaded from the widget.\n\n\n\n### Code used in this tutorial\n\nhttps://goo.gl/13WaWQ\n\nhttp://watch-learn.com/video-tutorials/making-websites-with-october-cms-part-13-creating-custom-form-widgets",
       "channel": "Watch and Learn",
       "channelUrl": "https://www.youtube.com/channel/UCXQC_GB5hG6PkzIhSMZ-hWA",
       "url": "https://www.youtube.com/watch?v=_STBANlmtoM",
@@ -70,9 +102,25 @@
       "definition": "hd"
     },
     {
+      "id": "8_qwhfI5VxI",
+      "title": "Let's Checkout... #Strapi CMS",
+      "description": "In this episode we are going to take a look at a #headless #CMS called Strapi.\n\nIf you have been following my channel or website lately you could see that there are a lot of series where we use CMSs like WordPress or October CMS to create the data store and administration for our our frontend applications. This is an okay approach, but this means that we are not using most of the functionalities of those systems, like their frontend systems, because we create the frontend ourselves, using technologies like Vue or Svelte.\n\nSo wouldn't it be great if we used a CMS that is actually made for this type of usage. There are a few on the market, and they are usually sold as a service. However Strapi is fully open sourced, self hosted CMS for this exact purpose. And we are going to check it out in this episode.\n\n\n\n### You can support my work on Patreon \n\nhttps://patreon.com/watchlearn\n\n### Follow me on Social Media\n\nGithub:  https://github.com/ivandoric\nTwitter:  https://twitter.com/ivan_doric\nInstagram:  https://www.instagram.com/ivan_doric/\nFacebook:  https://facebook.com/watchlearntutorials",
+      "channel": "Watch and Learn",
+      "channelUrl": "https://www.youtube.com/channel/UCXQC_GB5hG6PkzIhSMZ-hWA",
+      "url": "https://www.youtube.com/watch?v=8_qwhfI5VxI",
+      "thumbnail": "https://i.ytimg.com/vi/8_qwhfI5VxI/mqdefault.jpg",
+      "publishedAt": "2019-12-24T03:28:55-06:00",
+      "duration": "15:46",
+      "durationSeconds": 946,
+      "views": 20730,
+      "likes": 408,
+      "qualityScore": 77.84,
+      "definition": "hd"
+    },
+    {
       "id": "To2HbfQVxz4",
       "title": "Making Websites With October CMS - Part 03 - Creating Themes",
-      "description": "In this episode of Making Websites With October CMS I''m quickly going to show you how you can create your own theme using this CMS.\n\nThere are two ways in which you can create themes for October, you can do it manually or create a blank theme through the backend of October. In t",
+      "description": "In this episode of Making Websites With October CMS I''m quickly going to show you how you can create your own theme using this CMS.\n\nThere are two ways in which you can create themes for October, you can do it manually or create a blank theme through the backend of October. In this episode we are going to use the backend way.\n\nWe will also create a default layout for our theme and I'm going to explain how you can compile and combine your css and javascript files.\n\nhttp://watch-learn.com/video-tutorials/making-websites-with-october-cms-part-03-creating-themes",
       "channel": "Watch and Learn",
       "channelUrl": "https://www.youtube.com/channel/UCXQC_GB5hG6PkzIhSMZ-hWA",
       "url": "https://www.youtube.com/watch?v=To2HbfQVxz4",
@@ -88,7 +136,7 @@
     {
       "id": "6R1O5jAL85U",
       "title": "Projects In Laravel | Build A Website With October CMS | Part 1",
-      "description": "Laravel often called the 'The Web Framework for Artisans' is a PHP framework used for developing web applications which follow the MVC architectural pattern. In this new series, we will be creating a website with October CMS right from scratch.\n\nWe will be building a custom theme",
+      "description": "Laravel often called the 'The Web Framework for Artisans' is a PHP framework used for developing web applications which follow the MVC architectural pattern. In this new series, we will be creating a website with October CMS right from scratch.\n\nWe will be building a custom theme as well as plugins. An additional blog page is also included while creating the website. This is going to be an unconventional project and will involve coding. \n\nOur first part will cover 2 important tasks which are: \n1. Installing October CMS\n2. Working with Backend\n\nWe're positive that you will love this new series! \n\nWould you like to build 10 projects with Laravel along with this one and get certified at just $10? Use coupon code - edu19onix and Click here: http://bit.ly/2ILPIil\n\nThank you for watching! We\u2019d love to know your thoughts in the comments section below. Also,  don\u2019t forget to hit the \u2018like\u2019 button and \u2018subscribe\u2019 to \u2018Eduonix Learning Solutions\u2019 for regular updates. https://goo.gl/BCmVLG\n \nFollow Eduonix on other social networks:\n\u25a0 Facebook: https://goo.gl/ZqRVjS\n\u25a0 Twitter: https://goo.gl/oRDaji\n\u25a0 Google+: https://goo.gl/mfPaxx\n\u25a0 Instagram: https://goo.gl/7f5DUC | @eduonix\n\u25a0 Linkedin: https://goo.gl/9LLmmJ\n\u25a0 Pinterest: https://goo.gl/PczPjp",
       "channel": "Eduonix Learning Solutions",
       "channelUrl": "https://www.youtube.com/channel/UCAQjmY2DJqwU3Eqz0oN83aw",
       "url": "https://www.youtube.com/watch?v=6R1O5jAL85U",
@@ -104,7 +152,7 @@
     {
       "id": "3SmnExVW0Ag",
       "title": "Making websites with October CMS - Part 01 - Installing October CMS",
-      "description": "In this video series we are going to take a look at October CMS and make a website with it. In this first episode I''m going to show you how to install October on your machine.\n\nOctober CMS is relatively new on the CMS scene, it's first stable version was released very recently. ",
+      "description": "In this video series we are going to take a look at October CMS and make a website with it. In this first episode I''m going to show you how to install October on your machine.\n\nOctober CMS is relatively new on the CMS scene, it's first stable version was released very recently. But it has been in development for at least two years now. Although it's new, it already has nice community around it, and it has gotten pretty good reviews on the CMS scene. It is based on Laravel framework, so there is one more reason to get into it.\n\nIn this series we are gonna go step by step in creating a functional website using October CMS. We are going to learn about themes, plugins, components and all other good stuff that October CMS comes with. \n\nIn this episode we are going to install October CMS on our local machine.\n\n\n\nhttp://watch-learn.com/video-tutorials/making-websites-with-october-cms-part-01-installing-october-cms",
       "channel": "Watch and Learn",
       "channelUrl": "https://www.youtube.com/channel/UCXQC_GB5hG6PkzIhSMZ-hWA",
       "url": "https://www.youtube.com/watch?v=3SmnExVW0Ag",
@@ -120,7 +168,7 @@
     {
       "id": "uCR0VV6N5FE",
       "title": "Making Websites With October CMS - Part 09 - Images And Galleries",
-      "description": "In this episode I'm going to show you how to add a single image to your model and also how to create gallery of images for your model. Of course we are going to learn how to display those images on our front-end and also resize and crop them.\n\nOctober CMS already has the systems ",
+      "description": "In this episode I'm going to show you how to add a single image to your model and also how to create gallery of images for your model. Of course we are going to learn how to display those images on our front-end and also resize and crop them.\n\nOctober CMS already has the systems for dealing with your images. You just have to enable them by adding small pieces of code to your models. These are called relations and we are going to be talking about them through out this video series. \n\nIn this episode we are going to add movie poster to our movies, and display that poster on the front-end. After that we are going to be creating gallery for our movie, and display that gallery on the front-end also. As you will see it's not difficult at all to do something like that in October CMS.\n\n\n\n### Code used in this video\n\nhttps://goo.gl/xeEMFx\n\nhttp://watch-learn.com/video-tutorials/making-websites-with-october-cms-part-09-images-and-galleries",
       "channel": "Watch and Learn",
       "channelUrl": "https://www.youtube.com/channel/UCXQC_GB5hG6PkzIhSMZ-hWA",
       "url": "https://www.youtube.com/watch?v=uCR0VV6N5FE",
@@ -136,7 +184,7 @@
     {
       "id": "iOt8_SkuEo4",
       "title": "Making Websites With October CMS - Part 06 - Basic Templating",
-      "description": "In this episode we are going to take a quick brake from the builder plugin and just make our theme a bit prettier. An of course we are going to learn a few things in the process.\n\nWe are going to take a just a few minutes to make our October CMS theme look just a bit prettier. I'",
+      "description": "In this episode we are going to take a quick brake from the builder plugin and just make our theme a bit prettier. An of course we are going to learn a few things in the process.\n\nWe are going to take a just a few minutes to make our October CMS theme look just a bit prettier. I'm going to show you how you can create partials for your theme that are going to serve as header and footer for our theme. Also we are going to be creating main navigation for our site, and you will learn ho to make navigation items active when you are on their respective pages.\n\n\n\n### Code used in this tutorial\n\nhttps://goo.gl/hvnBJ0\n\nhttp://watch-learn.com/video-tutorials/making-websites-with-october-cms-part-06-basic-templating",
       "channel": "Watch and Learn",
       "channelUrl": "https://www.youtube.com/channel/UCXQC_GB5hG6PkzIhSMZ-hWA",
       "url": "https://www.youtube.com/watch?v=iOt8_SkuEo4",
@@ -152,7 +200,7 @@
     {
       "id": "AomK1eYAq78",
       "title": "Making Websites With October CMS - Part 23 - Extending User Plugin",
-      "description": "In this episode we are going to extend User plugin for October CMS with two additional fields.\n\nNow that we know how to work with user plugin we can extend it to save a bit more information about our users.\n\nWe are going to add facebook and biography fields to our users. To do th",
+      "description": "In this episode we are going to extend User plugin for October CMS with two additional fields.\n\nNow that we know how to work with user plugin we can extend it to save a bit more information about our users.\n\nWe are going to add facebook and biography fields to our users. To do that we are going to have to get at least a little bit familiar with Laravel migrations to add those two fields to our database. Once that is done we will use extendFormFields function to add new fields to the form on the backend.\n\n\n\n### Code used in this video\n\nhttps://goo.gl/rY9zBV",
       "channel": "Watch and Learn",
       "channelUrl": "https://www.youtube.com/channel/UCXQC_GB5hG6PkzIhSMZ-hWA",
       "url": "https://www.youtube.com/watch?v=AomK1eYAq78",
@@ -166,9 +214,41 @@
       "definition": "hd"
     },
     {
+      "id": "GbAvLAtDS_0",
+      "title": "Making Websites With October CMS - Part 33 - Static Pages and Menus",
+      "description": "In this video we are going to learn about static pages, and static menus feature that you get from the static pages plugin.\n\nOne viewer pointed out to me that I did \"hard stuff\" for October CMS, but I didn't do some of the basics. One of those basics is Static Pages (http://octobercms.com/plugin/rainlab-pages) plugin for October CMS.\n\nThis plugin, at least in my opinion, would be used for allowing your users or clients to easily edit static pages of their web site, without the need to know HTML and other web technologies.\n\nSo as the name says this plugin is used for creating static pages, but it also has a great feature for creating menus that you can edit in your back-end and display them on your site. Something similar to what you would get with WordPress.\n\nI'm going to cover creation of static pages and menus in this video tutorial.\n\n\n\n### Code used in this video\n\nhttps://goo.gl/Cc8Enn\n\n\n### Consider buying me a beer, thanks ;) ! \n\nhttps://goo.gl/H0YAVK\n\nhttp://watch-learn.com/video-tutorials/making-websites-october-cms-part-33-static-pages-menus",
+      "channel": "Watch and Learn",
+      "channelUrl": "https://www.youtube.com/channel/UCXQC_GB5hG6PkzIhSMZ-hWA",
+      "url": "https://www.youtube.com/watch?v=GbAvLAtDS_0",
+      "thumbnail": "https://i.ytimg.com/vi/GbAvLAtDS_0/mqdefault.jpg",
+      "publishedAt": "2017-03-18T09:40:47-06:00",
+      "duration": "16:42",
+      "durationSeconds": 1002,
+      "views": 16231,
+      "likes": 227,
+      "qualityScore": 76.28,
+      "definition": "hd"
+    },
+    {
+      "id": "PbCovQzsmYU",
+      "title": "Making Websites With October CMS - Part 17 - Adding Options to Components",
+      "description": "Now that we have created our first simple component for October CMS we will add some options to it so that we can control output of our component better.\n\nIn this episode we are going to add options to our `Actors` component so that we control the output of actor list a bit better. First I'm going to show you how to limit the number of items that get displayed. After that we are going to create options for sorting our list. The list will be sorted by name.\n\n\n\n### Code used in this tutorial\n\nhttps://goo.gl/UnATYI\n\nhttp://watch-learn.com/video-tutorials/making-websites-with-october-cms-part-17-adding-options-to-components",
+      "channel": "Watch and Learn",
+      "channelUrl": "https://www.youtube.com/channel/UCXQC_GB5hG6PkzIhSMZ-hWA",
+      "url": "https://www.youtube.com/watch?v=PbCovQzsmYU",
+      "thumbnail": "https://i.ytimg.com/vi/PbCovQzsmYU/mqdefault.jpg",
+      "publishedAt": "2016-10-24T10:17:14-05:00",
+      "duration": "15:49",
+      "durationSeconds": 949,
+      "views": 14314,
+      "likes": 193,
+      "qualityScore": 75.51,
+      "definition": "hd"
+    },
+    {
       "id": "xIpf218NTuI",
       "title": "Making Websites With October CMS - Part 15 - Creating New Data via Form Widget",
-      "description": "In this episode I'm going to show you how to create new model instance via October CMS form widget that we created in the previous two episodes.\n\nFirst we created our form widget and then we made it work. And in this episode I'm going to show you how to create new Actor model ins",
+      "description": "In this episode I'm going to show you how to create new model instance via October CMS form widget that we created in the previous two episodes.\n\nFirst we created our form widget and then we made it work. And in this episode I'm going to show you how to create new Actor model instance when user types in the name of the actor that doesn't already exists in our Actors table.\n\nAlso in this episode I'm going to show you how to debug AJAX requests that October CMS uses when saving data from the backend.\n\n\n\n### Code used in this tutorial\n\nhttps://goo.gl/wZkfpy\n\nhttp://watch-learn.com/video-tutorials/making-websites-with-october-cms-part-15-creating-new-data-via-form-widget",
       "channel": "Watch and Learn",
       "channelUrl": "https://www.youtube.com/channel/UCXQC_GB5hG6PkzIhSMZ-hWA",
       "url": "https://www.youtube.com/watch?v=xIpf218NTuI",
@@ -184,7 +264,7 @@
     {
       "id": "qc4atYnHcPc",
       "title": "Making Websites With October CMS - Part 07 - Displaying Lists and Details",
-      "description": "Now we are going to continue working with the Builder plugin for October CMS and learn how to display our lists and create and display details page for our movies.\n\nIn this episode we are continuing work with Builder plugin for October CMS and I'm going to show you how you can co",
+      "description": "Now we are going to continue working with the Builder plugin for October CMS and learn how to display our lists and create and display details page for our movies.\n\nIn this episode we are continuing work with Builder plugin for October CMS and I'm going to show you how you can control the output of your details page, how to limit the text coming from your fields and also how to link items on your list page to the details page of your item.\n\nWe are also going to learn about the ```raw``` filter and ```html_``` function which will help us limit the output of our description field from our Movie model.\n\n\n\n### Code used in this tutorial\n\nhttps://goo.gl/I2fVH5\n\nhttp://watch-learn.com/video-tutorials/making-websites-with-october-cms-part-07-displaying-lists-and-details",
       "channel": "Watch and Learn",
       "channelUrl": "https://www.youtube.com/channel/UCXQC_GB5hG6PkzIhSMZ-hWA",
       "url": "https://www.youtube.com/watch?v=qc4atYnHcPc",
@@ -200,7 +280,7 @@
     {
       "id": "LIoPccDMSRE",
       "title": "Making Websites With October CMS - Part 34 - Backend Lists",
-      "description": "In this episode of Making Websites With October CMS we are going to take a bit deeper look at backend lists.\n\nWe already did used back-end lists while creating our website. But we didn't cover some of the cool stuff that you can do with them. So in this episode we are going to ta",
+      "description": "In this episode of Making Websites With October CMS we are going to take a bit deeper look at backend lists.\n\nWe already did used back-end lists while creating our website. But we didn't cover some of the cool stuff that you can do with them. So in this episode we are going to take a closer look at lists.\n\nI'm going to show you how you can use partials to display image for your posts, then we are going to display relationship between two different models and also I'm going to show you how you can use SQL statements in your list to display some data.\n\n\n\n### Code used in this video\n\nhttps://goo.gl/mDZTnK\n\n### Consider buying me a beer, thanks ;) ! \n\nhttps://goo.gl/H0YAVK",
       "channel": "Watch and Learn",
       "channelUrl": "https://www.youtube.com/channel/UCXQC_GB5hG6PkzIhSMZ-hWA",
       "url": "https://www.youtube.com/watch?v=LIoPccDMSRE",
@@ -216,7 +296,7 @@
     {
       "id": "X4dUpskpXlg",
       "title": "Making Websites With October CMS - Part 22 - Ajax Form Validation",
-      "description": "In this episode we are quickly going back to forms and validation, but this time we are going to do it with Ajax na October CMSs Ajax framework.\n\nAlthough I planned to continue doing what we did in the last episode, I decided to make this quick video about validating our forms wi",
+      "description": "In this episode we are quickly going back to forms and validation, but this time we are going to do it with Ajax na October CMSs Ajax framework.\n\nAlthough I planned to continue doing what we did in the last episode, I decided to make this quick video about validating our forms with Ajax. \n\nOur previous version of validation, validated our form by refreshing the page and displaying errors. And this had a nasty side effect - it would clear all the forms input fields, which is not good from the UX perspective, as that would aggravate the user. \n\nSo in this episode I'm going to show you how to validate your form without page refresh and that way keep the data in our fields. This is good for the users, but it's also cool that the page doesn't refresh.\n\nWe are going to do that by using Octobers Ajax framework and a bit of jQuery.\n\n\n\n### Code used in this tutorial\n\nhttps://goo.gl/wHG7F8\n\nhttp://watch-learn.com/video-tutorials/making-websites-with-october-cms-part-22-ajax-form-validation",
       "channel": "Watch and Learn",
       "channelUrl": "https://www.youtube.com/channel/UCXQC_GB5hG6PkzIhSMZ-hWA",
       "url": "https://www.youtube.com/watch?v=X4dUpskpXlg",
@@ -232,7 +312,7 @@
     {
       "id": "LwzHhE0hA_Y",
       "title": "Making Websites With October CMS - Part 08 - Slugs And Pagination",
-      "description": "In this episode of Making Web Sites With October CMS I''m going to show you how to link up to the details page via slugs and also how to create pagination for your list pages.\n\nFirst we are going to create new field in our database and I'm going to show you how to link up your ``",
+      "description": "In this episode of Making Web Sites With October CMS I''m going to show you how to link up to the details page via slugs and also how to create pagination for your list pages.\n\nFirst we are going to create new field in our database and I'm going to show you how to link up your ```name``` field with your slug field so that it automatically fills up when you add a title to your to your name field. And then we are going to link up our list with the details page via slug instead of id like we did in the previous episode.\n\nAfter that I'm going to show you how to set up pagination for your list page and how to use optional URL parameters.\n\n\n\nhttp://watch-learn.com/video-tutorials/making-websites-with-october-cms-part-08-slugs-and-pagination",
       "channel": "Watch and Learn",
       "channelUrl": "https://www.youtube.com/channel/UCXQC_GB5hG6PkzIhSMZ-hWA",
       "url": "https://www.youtube.com/watch?v=LwzHhE0hA_Y",
@@ -248,7 +328,7 @@
     {
       "id": "AFgIftl355g",
       "title": "Vue 2 and October CMS Todo App - Part 02 - Creating The API",
-      "description": "Before we start using Vue.js 2 to create our application we have to create the API for it using October CMS.\n\nIn this episode we are going to be using Builderto create our plugin which is going to be a base for our Todo list.\n\nAfter that we will create some example data using the",
+      "description": "Before we start using Vue.js 2 to create our application we have to create the API for it using October CMS.\n\nIn this episode we are going to be using Builderto create our plugin which is going to be a base for our Todo list.\n\nAfter that we will create some example data using the Faker plugin, we will pull in this data in the future episodes.\n\nAnd the last thing is going to be creating the of the actual first part of our API, which is just going to be the list of all our todos.\n\n\n\n### Code used in this video\n\nhttps://goo.gl/1fdEu0\n\n### Consider buying me a beer, thanks ;) ! \n\nhttps://goo.gl/H0YAVK",
       "channel": "Watch and Learn",
       "channelUrl": "https://www.youtube.com/channel/UCXQC_GB5hG6PkzIhSMZ-hWA",
       "url": "https://www.youtube.com/watch?v=AFgIftl355g",
@@ -264,7 +344,7 @@
     {
       "id": "m9AA59IVo-I",
       "title": "Making Websites With October CMS - Part 12 - Repeater field",
-      "description": "In this episode of Making Websites With October CMS I''m going to show you how to use and create repeater fields for your models.\n\nRepeater fields are actually sets of fields that you can use in your model do add some sort of data that requires multiple instances with multiple fi",
+      "description": "In this episode of Making Websites With October CMS I''m going to show you how to use and create repeater fields for your models.\n\nRepeater fields are actually sets of fields that you can use in your model do add some sort of data that requires multiple instances with multiple fields. For example in our case we are going to be using repeater fields to add actors to our movie model.\n\nThe actor would have a name and an age, and also there are at least few actors for every movie. So this should be a perfect example for using repeater fields.\n\n\n\n### Code used in this tutorial\n\nhttp://goo.gl/EdR6un\n\nhttp://watch-learn.com/video-tutorials/making-websites-with-october-cms-part-12-repeater-field",
       "channel": "Watch and Learn",
       "channelUrl": "https://www.youtube.com/channel/UCXQC_GB5hG6PkzIhSMZ-hWA",
       "url": "https://www.youtube.com/watch?v=m9AA59IVo-I",
@@ -280,7 +360,7 @@
     {
       "id": "8nMaNuOEaMI",
       "title": "Making Websites With October CMS - Part 20 - Frontend Forms",
-      "description": "In this episode we are going to be creating frontend form for October CMS so that the users can enter data directly into our database. I'm also going to show you how to use Flash messages to give feedback to the user.\n\nIn the last twoepisodes you learned how to create and validat",
+      "description": "In this episode we are going to be creating frontend form for October CMS so that the users can enter data directly into our database. I'm also going to show you how to use Flash messages to give feedback to the user.\n\nIn the last twoepisodes you learned how to create and validate contact form. In this episode we are going to do pretty much the same thing, but instead of sending emails to us, or our users we are going to take the data from our form and save it directly to our database.\n\nI'm also going to show you how to use `Flash` messages to give feedback to your users.\n\n\n\n### Code used in this tutorial\n\nhttps://goo.gl/MUfzgN\n\nhttp://watch-learn.com/video-tutorials/making-websites-with-october-cms-part-20-frontend-forms",
       "channel": "Watch and Learn",
       "channelUrl": "https://www.youtube.com/channel/UCXQC_GB5hG6PkzIhSMZ-hWA",
       "url": "https://www.youtube.com/watch?v=8nMaNuOEaMI",
