@@ -22,6 +22,19 @@ export function stripIcons(text: string): string {
     .trim();
 }
 
+/** Like stripIcons, but keeps newlines so callers can split paragraphs first. */
+function stripIconsKeepBreaks(text: string): string {
+  return text
+    .replace(SHORTCODE, "")
+    .replace(ZERO_WIDTH, "")
+    .replace(DECORATIVE_SYMBOLS, "")
+    .replace(EMOJI, "")
+    .replace(/[^\S\n]+/g, " ")
+    .replace(/ *\n */g, "\n")
+    .replace(/\s+([,.;:!?])/g, "$1")
+    .trim();
+}
+
 /** Drop parenthetical/bracketed non-Latin fragments and inline non-Latin runs. */
 export function stripNonLatinText(text: string): string {
   return text
@@ -93,6 +106,26 @@ export function videoDisplayTitle(title: string, description = "", stack = ""): 
 
 export function videoDisplayDescription(description: string, title = ""): string {
   return englishDisplayText(description, title);
+}
+
+/**
+ * Split a YouTube description into cleaned display paragraphs.
+ * Blank lines become paragraph breaks; single newlines within a block collapse to spaces.
+ */
+export function videoDescriptionParagraphs(description: string, title = ""): string[] {
+  const source = (description || "").trim() || (title || "").trim();
+  if (!source) return [];
+
+  const blocks = stripIconsKeepBreaks(source).split(/\n(?:\s*\n)+/);
+  const paragraphs: string[] = [];
+  for (const block of blocks) {
+    const cleaned = stripNonLatinText(block.replace(/\n+/g, " "));
+    if (cleaned && /[A-Za-z0-9]/.test(cleaned)) paragraphs.push(cleaned);
+  }
+  if (paragraphs.length) return paragraphs;
+
+  const fallback = videoDisplayDescription(description, title);
+  return fallback ? [fallback] : [];
 }
 
 export function truncatePreviewText(text: string, max = 120): string {

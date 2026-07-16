@@ -3,6 +3,7 @@ import NetworkLayout from "../../layouts/NetworkLayout.astro";
 import { allVideoCards, getVideoDetail, isoDuration, slugifyVideo } from "../../lib/video-view";
 import { getTranscript, segmentTime } from "../../lib/transcripts";
 import { renderArticle } from "../../lib/markdown";
+import { MW_LOGOS } from "../../lib/logos";
 
 export function getStaticPaths() {
   return allVideoCards().map((item) => ({ params: { slug: item.slug } }));
@@ -53,6 +54,8 @@ const description = transcript?.seoDescription ?? item.excerpt;
 const topics = [item.techName, item.kind, item.groupLabel];
 
 const playerCover = `linear-gradient(135deg, color-mix(in srgb, ${item.accent} 55%, #000) 0%, ${item.accent} 100%)`;
+const logoPath = MW_LOGOS[item.techName] ?? "";
+const hasLogo = !!logoPath;
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -94,18 +97,42 @@ const jsonLd = {
 
   <main class="vd">
     <div class="vd-grid">
-      <!-- LEFT: player + meta -->
+      <!-- LEFT: hero + player + meta -->
       <div class="vd-main">
+        <header class="vd-hero" style={`--cover-accent:${item.accent}; --cover-ink:${item.accentInk};`}>
+          <div class="vd-hero-top">
+            <a href={item.galleryHref} class="vd-hero-tech">
+              <span class="vd-hero-logo" aria-hidden="true">
+                {hasLogo ? (
+                  <svg viewBox="0 0 24 24" width="16" height="16">
+                    <path d={logoPath} fill="currentColor" />
+                  </svg>
+                ) : (
+                  <span class="vd-hero-logo-fallback">{item.techName.charAt(0)}</span>
+                )}
+              </span>
+              <span class="vd-hero-tech-copy">
+                <span class="vd-hero-eyebrow">Made with</span>
+                <span class="vd-hero-tech-name">{item.techName}</span>
+              </span>
+            </a>
+            <span class="vd-hero-kind">{item.kind}</span>
+          </div>
+          <h1 class="vd-hero-title">{item.title}</h1>
+          {hasLogo && (
+            <svg class="vd-hero-watermark" viewBox="0 0 24 24" aria-hidden="true">
+              <path d={logoPath} fill="currentColor" />
+            </svg>
+          )}
+        </header>
+
         <div class="vd-player" data-role="player" data-embed={`${embedUrl}?autoplay=1&rel=0`} style={`background:${playerCover};`}>
           {item.thumbnail && <img class="vd-poster-img" src={item.thumbnail} alt="" width="1280" height="720" fetchpriority="high" decoding="async" onerror="this.remove()" />}
           <button type="button" class="vd-play-btn" data-role="play" aria-label="Play video">
-            <span class="vd-play-tag">{item.kind} · {item.techName}</span>
             <span class="vd-play-dur">{item.duration}</span>
             <span class="vd-play-circle"><span class="vd-play-tri" style={`border-color:transparent transparent transparent ${item.accent};`}></span></span>
           </button>
         </div>
-
-        <h1 class="vd-title">{item.title}</h1>
 
         <div class="vd-byline">
           <span class="vd-avatar" style={`background:${item.accent}; color:${item.accentInk};`}>{item.channelInitial}</span>
@@ -122,66 +149,104 @@ const jsonLd = {
           <span><strong>{item.viewsLabel}</strong> views</span>
           <span><time datetime={item.dateIso}>{item.dateLabel}</time></span>
           <span>{item.duration} runtime</span>
-          <a href={item.galleryHref} class="mw-link vd-gallery-link">Made with {item.techName} →</a>
         </div>
 
-        <div class="vd-desc">
-          <p>{item.description}</p>
+        <div class="vd-panel" data-role="tabs" style={`--tab-accent:${item.accent};`}>
+          <div class="vd-tabs" role="tablist" aria-label="Video content">
+            <button type="button" class="vd-tab" role="tab" id="tab-overview" aria-controls="panel-overview" aria-selected="true" data-tab="overview">Overview</button>
+            {summaryHtml && (
+              <button type="button" class="vd-tab" role="tab" id="tab-summary" aria-controls="panel-summary" aria-selected="false" data-tab="summary">Summary</button>
+            )}
+            {transcriptionHtml && (
+              <button type="button" class="vd-tab" role="tab" id="tab-transcript" aria-controls="panel-transcript" aria-selected="false" data-tab="transcript">Transcript</button>
+            )}
+          </div>
 
-          {chapters.length > 0 && (
-            <div class="vd-chapters">
-              <div class="vd-chapters-head">Chapters</div>
-              <div class="vd-chapters-list">
-                {chapters.map((ch) => (
-                  <button type="button" class="vd-chapter" data-chapter data-seconds={ch.seconds}>
-                    <span class="vd-chapter-time" style={`color:${item.accent};`}>{ch.time}</span>
-                    <span class="vd-chapter-copy">
-                      <span class="vd-chapter-label">{ch.label}</span>
-                      {"description" in ch && ch.description && <span class="vd-chapter-description">{ch.description}</span>}
-                    </span>
-                  </button>
-                ))}
-              </div>
+          <div class="vd-tab-panel" role="tabpanel" id="panel-overview" aria-labelledby="tab-overview" data-panel="overview" data-active>
+            <div class="vd-overview-desc">
+              {item.descriptionParagraphs.map((para) => <p>{para}</p>)}
             </div>
-          )}
+
+            {chapters.length > 0 && (
+              <div class="vd-chapters">
+                <div class="vd-chapters-head">Chapters</div>
+                <div class="vd-chapters-list">
+                  {chapters.map((ch) => (
+                    <button type="button" class="vd-chapter" data-chapter data-seconds={ch.seconds}>
+                      <span class="vd-chapter-time" style={`color:${item.accent};`}>{ch.time}</span>
+                      <span class="vd-chapter-copy">
+                        <span class="vd-chapter-label">{ch.label}</span>
+                        {"description" in ch && ch.description && <span class="vd-chapter-description">{ch.description}</span>}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div class="vd-topics">
+              {topics.map((t) => <span class="vd-topic">#{t.replace(/[^A-Za-z0-9]+/g, "").toLowerCase()}</span>)}
+            </div>
+          </div>
 
           {summaryHtml && (
-            <div class="vd-article">
-              <div class="vd-article-head">Summary</div>
+            <div class="vd-tab-panel" role="tabpanel" id="panel-summary" aria-labelledby="tab-summary" data-panel="summary" hidden>
               <div class="vd-article-body" set:html={summaryHtml} />
             </div>
           )}
 
           {transcriptionHtml && (
-            <details class="vd-transcript" open>
-              <summary class="vd-transcript-head">
-                <span>Full transcription</span>
-                <span class="vd-transcript-meta">AI-formatted, organised by chapter</span>
-              </summary>
-              <div class="vd-transcript-layout">
-                {transcriptChapters.length > 1 && (
-                  <nav class="vd-toc" aria-label="Transcript chapters">
-                    <div class="vd-toc-head">On this page</div>
-                    <ol class="vd-toc-list">
+            <div
+              class="vd-tab-panel"
+              role="tabpanel"
+              id="panel-transcript"
+              aria-labelledby="tab-transcript"
+              data-panel="transcript"
+              data-toc-mode="chips"
+              hidden
+            >
+              {/*
+                TOC modes (set data-toc-mode on this panel):
+                  - chips  (default / option A): horizontal scrollable chapter chips above the body
+                  - float  (option B): floating "Chapters" button with dropdown overlay
+              */}
+              {transcriptChapters.length > 1 && (
+                <>
+                  <nav class="vd-toc vd-toc--chips" aria-label="Transcript chapters">
+                    <div class="vd-toc-chips" style={`--chip-accent:${item.accent};`}>
                       {transcriptChapters.map((c) => (
-                        <li>
-                          <a href={`#${c.slug}`} class="vd-toc-link">
-                            <span class="vd-toc-time" style={`color:${item.accent};`}>{segmentTime(c.startTime)}</span>
-                            <span>{c.title}</span>
-                          </a>
-                        </li>
+                        <a href={`#${c.slug}`} class="vd-toc-chip">
+                          <span class="vd-toc-chip-time">{segmentTime(c.startTime)}</span>
+                          <span class="vd-toc-chip-title">{c.title}</span>
+                        </a>
                       ))}
-                    </ol>
+                    </div>
                   </nav>
-                )}
-                <div class="vd-transcript-body vd-article-body" set:html={transcriptionHtml} />
-              </div>
-            </details>
-          )}
 
-          <div class="vd-topics">
-            {topics.map((t) => <span class="vd-topic">#{t.replace(/[^A-Za-z0-9]+/g, "").toLowerCase()}</span>)}
-          </div>
+                  <div class="vd-toc vd-toc--float" data-role="toc-float">
+                    <button type="button" class="vd-toc-float-btn" data-role="toc-float-toggle" aria-expanded="false" aria-controls="vd-toc-float-menu">
+                      Chapters
+                      <span class="vd-toc-float-count">{transcriptChapters.length}</span>
+                    </button>
+                    <nav id="vd-toc-float-menu" class="vd-toc-float-menu" hidden aria-label="Transcript chapters">
+                      <div class="vd-toc-float-head">On this page</div>
+                      <ol class="vd-toc-float-list">
+                        {transcriptChapters.map((c) => (
+                          <li>
+                            <a href={`#${c.slug}`} class="vd-toc-float-link">
+                              <span class="vd-toc-float-time" style={`color:${item.accent};`}>{segmentTime(c.startTime)}</span>
+                              <span>{c.title}</span>
+                            </a>
+                          </li>
+                        ))}
+                      </ol>
+                    </nav>
+                  </div>
+                </>
+              )}
+              <div class="vd-transcript-body vd-article-body" set:html={transcriptionHtml} />
+            </div>
+          )}
         </div>
       </div>
 
@@ -209,20 +274,89 @@ const jsonLd = {
   </main>
 
   <style>
-    .vd { max-width: 1180px; margin: 0 auto; padding: 26px 28px 20px; width: 100%; }
-    .vd-grid { display: grid; grid-template-columns: 1fr 348px; gap: 34px; align-items: start; }
+    .vd { max-width: 1180px; margin: 0 auto; padding: 22px 24px 20px; width: 100%; }
+    /* minmax(0,…) so long transcript/chip content can't blow out the page width */
+    .vd-grid { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 22px; align-items: start; }
+    .vd-main { min-width: 0; }
+
+    .vd-hero {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 14px;
+      padding: 12px 16px 14px;
+      border-radius: 14px;
+      overflow: hidden;
+      color: #fff;
+      background:
+        radial-gradient(circle at 82% 16%, rgb(255 255 255 / 24%) 0 2px, transparent 3px),
+        radial-gradient(circle at 82% 16%, transparent 0 28px, rgb(255 255 255 / 12%) 29px 30px, transparent 31px),
+        linear-gradient(135deg, color-mix(in srgb, var(--cover-accent) 76%, #111) 0%, var(--cover-accent) 100%);
+      box-shadow: 0 1px 0 rgb(255 255 255 / 45%) inset, 0 18px 40px -22px rgb(20 20 40 / 40%);
+    }
+    .vd-hero::before,
+    .vd-hero::after { content: ""; position: absolute; pointer-events: none; }
+    .vd-hero::before {
+      width: 72px; height: 72px; top: -34px; right: -14px;
+      border: 1px solid rgb(255 255 255 / 20%); border-radius: 18px; transform: rotate(24deg);
+    }
+    .vd-hero::after {
+      inset: 0; opacity: 0.12;
+      background-image:
+        linear-gradient(rgb(255 255 255 / 35%) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(255 255 255 / 35%) 1px, transparent 1px);
+      background-size: 20px 20px;
+      mask-image: linear-gradient(90deg, transparent 25%, #000);
+    }
+    .vd-hero-top {
+      position: relative; z-index: 1;
+      display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;
+    }
+    .vd-hero-tech {
+      display: inline-flex; align-items: center; gap: 8px; color: #fff; text-decoration: none;
+    }
+    .vd-hero-tech:hover .vd-hero-tech-name { text-decoration: underline; text-underline-offset: 3px; }
+    .vd-hero-logo {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 28px; height: 28px; border-radius: 8px;
+      background: rgb(255 255 255 / 16%); border: 1px solid rgb(255 255 255 / 22%);
+      backdrop-filter: blur(6px); color: #fff; flex-shrink: 0;
+    }
+    .vd-hero-logo-fallback {
+      font-family: "Bricolage Grotesque", sans-serif; font-size: 13px; font-weight: 800; line-height: 1;
+    }
+    .vd-hero-tech-copy { display: flex; flex-direction: column; gap: 0; }
+    .vd-hero-eyebrow {
+      font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.78; line-height: 1.2;
+    }
+    .vd-hero-tech-name {
+      font-family: "Bricolage Grotesque", sans-serif; font-size: 13.5px; font-weight: 800;
+      letter-spacing: -0.02em; line-height: 1.15;
+    }
+    .vd-hero-kind {
+      position: relative; z-index: 1;
+      font-size: 10.5px; font-weight: 700; padding: 3px 9px; border-radius: 999px; white-space: nowrap;
+      border: 1px solid rgb(255 255 255 / 28%); background: rgb(0 0 0 / 22%); backdrop-filter: blur(6px);
+    }
+    .vd-hero-title {
+      position: relative; z-index: 1; margin: 0; max-width: 92%;
+      font-family: "Bricolage Grotesque", sans-serif; font-size: 20px; font-weight: 800;
+      line-height: 1.15; letter-spacing: -0.03em;
+    }
+    .vd-hero-watermark {
+      position: absolute; right: 10px; bottom: -8px; width: 64px; height: 64px;
+      opacity: 0.12; pointer-events: none; color: #fff;
+    }
 
     .vd-player { position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 20px; overflow: hidden; box-shadow: 0 1px 0 rgb(255 255 255 / 60%) inset, 0 26px 64px -20px rgb(20 20 40 / 32%); }
     .vd-poster-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
     .vd-player :global(iframe) { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
     .vd-play-btn { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: transparent; cursor: pointer; padding: 0; }
-    .vd-play-tag { position: absolute; top: 20px; left: 20px; font-size: 12.5px; font-weight: 700; color: #fff; background: rgb(0 0 0 / 30%); padding: 6px 13px; border-radius: 20px; backdrop-filter: blur(4px); }
     .vd-play-dur { position: absolute; bottom: 20px; right: 20px; font-size: 13px; font-weight: 700; color: #fff; background: rgb(0 0 0 / 55%); padding: 5px 11px; border-radius: 8px; font-variant-numeric: tabular-nums; }
     .vd-play-circle { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 88px; height: 88px; border-radius: 50%; background: rgb(255 255 255 / 94%); display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 34px rgb(0 0 0 / 32%); transition: transform 0.15s ease; }
     .vd-play-btn:hover .vd-play-circle { transform: translate(-50%, -50%) scale(1.05); }
     .vd-play-tri { width: 0; height: 0; border-style: solid; border-width: 16px 0 16px 26px; margin-left: 5px; }
-
-    .vd-title { font-family: "Bricolage Grotesque", sans-serif; font-size: 31px; font-weight: 800; letter-spacing: -0.025em; line-height: 1.12; margin: 26px 0 0; color: #12161a; }
 
     .vd-byline { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; margin-top: 18px; padding: 14px 16px; background: #fff; border: 1px solid #e9ebee; border-radius: 16px; box-shadow: 0 6px 18px -14px rgb(20 20 40 / 30%); }
     .vd-avatar { width: 44px; height: 44px; border-radius: 50%; font-weight: 700; font-size: 17px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 4px 12px -4px rgb(0 0 0 / 30%); }
@@ -230,30 +364,47 @@ const jsonLd = {
     .vd-creator { font-size: 15px; font-weight: 700; color: #12161a; }
     .vd-creator-sub { font-size: 12.5px; color: #9aa0a6; margin-top: 1px; }
     .vd-byline-end { flex: 1; display: flex; justify-content: flex-end; }
-    .vd-watch-btn { font-size: 13px; font-weight: 700; padding: 10px 16px; border-radius: 22px; white-space: nowrap; box-shadow: 0 8px 20px -10px rgb(20 20 40 / 45%); transition: transform 0.15s ease, box-shadow 0.15s ease; }
-    .vd-watch-btn:hover { transform: translateY(-1px); box-shadow: 0 12px 26px -10px rgb(20 20 40 / 50%); }
+    .vd-watch-btn { font-size: 13px; font-weight: 700; padding: 10px 16px; border-radius: 22px; white-space: nowrap; text-decoration: none; box-shadow: 0 8px 20px -10px rgb(20 20 40 / 45%); transition: transform 0.15s ease, box-shadow 0.15s ease; }
+    .vd-watch-btn:hover { transform: translateY(-1px); box-shadow: 0 12px 26px -10px rgb(20 20 40 / 50%); text-decoration: none; }
 
     .vd-stats { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin-top: 16px; font-size: 13px; color: #5c6169; }
     .vd-stats > span { display: inline-flex; align-items: center; gap: 5px; background: #f2f4f6; border: 1px solid #e9ebee; padding: 6px 12px; border-radius: 20px; }
     .vd-stats strong { color: #12161a; font-variant-numeric: tabular-nums; }
-    .vd-gallery-link { font-weight: 700; margin-left: auto; }
 
-    .vd-desc { margin-top: 20px; background: #fff; border: 1px solid #e9ebee; border-radius: 16px; padding: 22px 24px; box-shadow: 0 6px 20px -16px rgb(20 20 40 / 30%); }
-    .vd-desc p { font-size: 15px; color: #3a4048; line-height: 1.7; margin: 0; }
+    .vd-panel { margin-top: 20px; background: #fff; border: 1px solid #e9ebee; border-radius: 16px; box-shadow: 0 6px 20px -16px rgb(20 20 40 / 30%); overflow: hidden; }
+    .vd-tabs {
+      display: flex; flex-wrap: wrap; gap: 2px; padding: 8px 10px 0;
+      border-bottom: 1px solid #eef0f2; background: #fafbfc;
+    }
+    .vd-tab {
+      appearance: none; border: 0; background: transparent; cursor: pointer;
+      font-size: 13.5px; font-weight: 700; color: #737982;
+      padding: 11px 14px 12px; border-radius: 10px 10px 0 0;
+      border-bottom: 2px solid transparent; margin-bottom: -1px;
+      transition: color 0.12s ease, background 0.12s ease;
+    }
+    .vd-tab:hover { color: #12161a; background: rgb(255 255 255 / 70%); }
+    .vd-tab[aria-selected="true"] {
+      color: #12161a; background: #fff;
+      border-bottom-color: var(--tab-accent, #2f6bff);
+    }
+    .vd-tab-panel { display: none; padding: 22px 24px; }
+    .vd-tab-panel[data-active] { display: block; }
+    .vd-overview-desc { font-size: 15px; color: #3a4048; line-height: 1.7; overflow-wrap: anywhere; word-break: break-word; }
+    .vd-overview-desc p { margin: 0 0 14px; }
+    .vd-overview-desc p:last-child { margin-bottom: 0; }
 
     .vd-chapters { margin-top: 20px; padding-top: 18px; border-top: 1px solid #eef0f2; }
     .vd-chapters-head { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: #9aa0a6; text-transform: uppercase; margin-bottom: 12px; }
     .vd-chapters-list { display: flex; flex-direction: column; gap: 2px; }
-    .vd-chapter { display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; padding: 9px 10px; border: 0; background: transparent; border-radius: 10px; cursor: pointer; transition: background 0.12s ease; }
+    .vd-chapter { display: flex; align-items: flex-start; gap: 14px; width: 100%; text-align: left; padding: 9px 10px; border: 0; background: transparent; border-radius: 10px; cursor: pointer; transition: background 0.12s ease; }
     .vd-chapter:hover, .vd-chapter[data-active] { background: #f4f5f7; }
-    .vd-chapter-time { font-family: "Bricolage Grotesque", sans-serif; font-size: 13px; font-weight: 700; min-width: 52px; flex-shrink: 0; font-variant-numeric: tabular-nums; }
-    .vd-chapter-copy { display: flex; flex-direction: column; gap: 2px; }
+    .vd-chapter-time { font-family: "Bricolage Grotesque", sans-serif; font-size: 13px; font-weight: 700; min-width: 52px; flex-shrink: 0; font-variant-numeric: tabular-nums; padding-top: 1px; }
+    .vd-chapter-copy { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
     .vd-chapter-label { font-size: 14px; color: #12161a; line-height: 1.4; }
     .vd-chapter-description { font-size: 12.5px; color: #737982; line-height: 1.45; }
 
-    .vd-article { margin-top: 20px; padding-top: 18px; border-top: 1px solid #eef0f2; }
-    .vd-article-head { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: #9aa0a6; text-transform: uppercase; margin-bottom: 14px; }
-    .vd-article-body { font-size: 15.5px; color: #2b3138; line-height: 1.75; }
+    .vd-article-body { font-size: 15.5px; color: #2b3138; line-height: 1.75; overflow-wrap: anywhere; word-break: break-word; }
     .vd-article-body :global(h2) { font-family: "Bricolage Grotesque", sans-serif; font-size: 22px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; color: #12161a; margin: 30px 0 12px; }
     .vd-article-body :global(h3) { font-family: "Bricolage Grotesque", sans-serif; font-size: 17px; font-weight: 700; line-height: 1.3; color: #12161a; margin: 24px 0 10px; }
     .vd-article-body :global(h2:first-child), .vd-article-body :global(h3:first-child) { margin-top: 0; }
@@ -281,48 +432,105 @@ const jsonLd = {
     .vd-article-body :global(.callout-warning), .vd-article-body :global(.callout-caution) { border-left-color: #f0a020; background: #fff6e8; }
     .vd-article-body :global(.callout-warning .callout-title), .vd-article-body :global(.callout-caution .callout-title) { color: #c47a0a; }
 
-    .vd-transcript { margin-top: 20px; padding-top: 18px; border-top: 1px solid #eef0f2; }
-    .vd-transcript-head { display: flex; align-items: baseline; gap: 10px; cursor: pointer; list-style: none; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: #9aa0a6; text-transform: uppercase; }
-    .vd-transcript-head::-webkit-details-marker { display: none; }
-    .vd-transcript-head::before { content: "▸"; display: inline-block; transition: transform 0.15s ease; color: #c7ccd2; }
-    .vd-transcript[open] .vd-transcript-head::before { transform: rotate(90deg); }
-    .vd-transcript-meta { font-weight: 600; letter-spacing: 0; text-transform: none; color: #b5bac0; }
-    /* Two-column: floating chapter nav + full transcript flowing in the page. */
-    .vd-transcript-layout { margin-top: 16px; display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 28px; align-items: start; }
-    .vd-toc { position: sticky; top: 84px; max-height: calc(100vh - 108px); overflow-y: auto; padding-right: 6px; }
-    .vd-toc-head { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: #9aa0a6; text-transform: uppercase; margin-bottom: 10px; }
-    .vd-toc-list { list-style: none; margin: 0; padding: 0; border-left: 1px solid #eef0f2; }
-    .vd-toc-list li { margin: 0; }
-    .vd-toc-link { display: flex; gap: 8px; padding: 5px 0 5px 12px; margin-left: -1px; border-left: 2px solid transparent; font-size: 12.5px; line-height: 1.4; color: #6a7078; text-decoration: none; transition: color 0.12s ease, border-color 0.12s ease; }
-    .vd-toc-link:hover, .vd-toc-link[aria-current="true"] { color: #12161a; border-left-color: currentColor; }
-    .vd-toc-time { font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-variant-numeric: tabular-nums; flex-shrink: 0; }
-    .vd-transcript-body { min-width: 0; }
-    .vd-transcript-body :global(.vd-tx-h) { scroll-margin-top: 84px; padding-top: 6px; border-top: 1px solid #f1f2f4; }
-    .vd-transcript-body :global(.vd-tx-h:first-child) { border-top: 0; padding-top: 0; }
-    @media (max-width: 720px) {
-      .vd-transcript-layout { grid-template-columns: 1fr; gap: 8px; }
-      .vd-toc { position: static; max-height: none; margin-bottom: 8px; }
-      .vd-toc-list { display: flex; flex-wrap: wrap; gap: 4px 14px; border-left: 0; }
-      .vd-toc-link { padding: 2px 0; border-left: 0; }
+    /* Default A: chips. Alternate B: float. Toggle via data-toc-mode on #panel-transcript. */
+    .vd-toc--chips,
+    .vd-toc--float { display: none; }
+    #panel-transcript[data-toc-mode="chips"] .vd-toc--chips { display: block; }
+    #panel-transcript[data-toc-mode="float"] .vd-toc--float { display: block; }
+
+    .vd-toc--chips { margin: 0 0 18px; min-width: 0; max-width: 100%; }
+    .vd-toc-chips {
+      display: flex; gap: 8px; overflow-x: auto; padding: 2px 2px 10px;
+      min-width: 0; max-width: 100%;
+      scroll-snap-type: x proximity; -webkit-overflow-scrolling: touch;
+      mask-image: linear-gradient(90deg, #000 0%, #000 calc(100% - 28px), transparent);
     }
+    .vd-toc-chips::-webkit-scrollbar { height: 4px; }
+    .vd-toc-chips::-webkit-scrollbar-thumb { background: #d7dbe0; border-radius: 4px; }
+    .vd-toc-chip {
+      display: inline-flex; align-items: center; gap: 7px; flex: 0 0 auto;
+      max-width: 220px; padding: 7px 12px; border-radius: 999px;
+      background: #f2f4f6; border: 1px solid #e9ebee; color: #3a4048;
+      font-size: 12.5px; line-height: 1.25; text-decoration: none; scroll-snap-align: start;
+      transition: background 0.12s ease, border-color 0.12s ease, color 0.12s ease;
+    }
+    .vd-toc-chip:hover,
+    .vd-toc-chip[aria-current="true"] {
+      background: color-mix(in srgb, var(--chip-accent, #2f6bff) 12%, #fff);
+      border-color: color-mix(in srgb, var(--chip-accent, #2f6bff) 35%, #e9ebee);
+      color: #12161a;
+    }
+    .vd-toc-chip-time {
+      font-family: "Bricolage Grotesque", sans-serif; font-weight: 700;
+      font-variant-numeric: tabular-nums; color: var(--chip-accent, #2f6bff); flex-shrink: 0;
+    }
+    .vd-toc-chip-title {
+      overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+
+    .vd-toc--float { position: sticky; top: 18px; z-index: 5; height: 0; margin: 0; }
+    .vd-toc-float-btn {
+      position: absolute; right: 0; top: 0; display: inline-flex; align-items: center; gap: 8px;
+      appearance: none; border: 1px solid #e6e8eb; background: #fff; color: #12161a;
+      font-size: 13px; font-weight: 700; padding: 9px 13px; border-radius: 999px; cursor: pointer;
+      box-shadow: 0 8px 22px -12px rgb(20 20 40 / 40%);
+    }
+    .vd-toc-float-btn[aria-expanded="true"] { border-color: #cfd4da; }
+    .vd-toc-float-count {
+      font-size: 11px; font-weight: 700; min-width: 20px; height: 20px; padding: 0 6px;
+      border-radius: 999px; background: #f2f4f6; color: #5c6169;
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+    .vd-toc-float-menu {
+      position: absolute; right: 0; top: 46px; width: min(300px, calc(100vw - 48px));
+      max-height: min(60vh, 420px); overflow-y: auto;
+      background: #fff; border: 1px solid #e6e8eb; border-radius: 14px;
+      box-shadow: 0 18px 40px -18px rgb(20 20 40 / 40%); padding: 12px 10px;
+    }
+    .vd-toc-float-head {
+      font-size: 11px; font-weight: 700; letter-spacing: 0.1em; color: #9aa0a6;
+      text-transform: uppercase; padding: 0 8px 8px;
+    }
+    .vd-toc-float-list { list-style: none; margin: 0; padding: 0; }
+    .vd-toc-float-list li { margin: 0; }
+    .vd-toc-float-link {
+      display: flex; gap: 10px; padding: 8px; border-radius: 10px;
+      font-size: 13px; line-height: 1.35; color: #3a4048; text-decoration: none;
+    }
+    .vd-toc-float-link:hover,
+    .vd-toc-float-link[aria-current="true"] { background: #f4f5f7; color: #12161a; }
+    .vd-toc-float-time {
+      font-family: "Bricolage Grotesque", sans-serif; font-weight: 700;
+      font-variant-numeric: tabular-nums; flex-shrink: 0; min-width: 36px;
+    }
+
+    .vd-transcript-body,
+    .vd-tab-panel { min-width: 0; }
+    .vd-transcript-body :global(.vd-tx-h) { scroll-margin-top: 96px; padding-top: 6px; border-top: 1px solid #f1f2f4; }
+    .vd-transcript-body :global(.vd-tx-h:first-child) { border-top: 0; padding-top: 0; }
 
     .vd-topics { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; padding-top: 18px; border-top: 1px solid #eef0f2; }
     .vd-topic { font-size: 12.5px; font-weight: 600; color: #5c6169; background: #f2f4f6; padding: 6px 12px; border-radius: 20px; transition: background 0.15s ease, color 0.15s ease; }
     .vd-topic:hover { background: #e9edf1; color: #12161a; }
 
-    .vd-related-head { font-family: "Bricolage Grotesque", sans-serif; font-size: 16px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 14px; }
-    .vd-related-list { display: flex; flex-direction: column; gap: 14px; }
-    .vd-related-item { display: grid; grid-template-columns: 150px 1fr; gap: 12px; align-items: start; color: inherit; text-decoration: none; }
-    .vd-related-cover { position: relative; width: 150px; height: 84px; border-radius: 11px; overflow: hidden; }
+    .vd-related { position: sticky; top: 18px; }
+    .vd-related-head { font-family: "Bricolage Grotesque", sans-serif; font-size: 15px; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 12px; }
+    .vd-related-list { display: flex; flex-direction: column; gap: 12px; }
+    .vd-related-item { display: grid; grid-template-columns: 120px 1fr; gap: 10px; align-items: start; color: inherit; text-decoration: none; }
+    .vd-related-cover { position: relative; width: 120px; height: 68px; border-radius: 10px; overflow: hidden; }
     .vd-related-cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-    .vd-related-dur { position: absolute; bottom: 6px; right: 6px; font-size: 10.5px; font-weight: 700; color: #fff; background: rgb(0 0 0 / 60%); padding: 2px 6px; border-radius: 5px; font-variant-numeric: tabular-nums; }
-    .vd-related-tech { font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
-    .vd-related-title { font-size: 13.5px; font-weight: 700; line-height: 1.32; margin-top: 4px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
-    .vd-related-sub { font-size: 12px; color: #9aa0a6; margin-top: 6px; }
-    .vd-related-all { display: block; text-align: center; margin-top: 18px; font-size: 13.5px; font-weight: 700; color: #12161a; background: #fff; border: 1px solid #e6e8eb; padding: 12px; border-radius: 12px; }
+    .vd-related-dur { position: absolute; bottom: 5px; right: 5px; font-size: 10px; font-weight: 700; color: #fff; background: rgb(0 0 0 / 60%); padding: 2px 5px; border-radius: 5px; font-variant-numeric: tabular-nums; }
+    .vd-related-tech { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em; }
+    .vd-related-title { font-size: 13px; font-weight: 700; line-height: 1.3; margin-top: 3px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+    .vd-related-sub { font-size: 11.5px; color: #9aa0a6; margin-top: 5px; }
+    .vd-related-all { display: block; text-align: center; margin-top: 14px; font-size: 13px; font-weight: 700; color: #12161a; background: #fff; border: 1px solid #e6e8eb; padding: 10px; border-radius: 12px; }
 
     @media (max-width: 940px) {
-      .vd-grid { grid-template-columns: 1fr; }
+      .vd-grid { grid-template-columns: 1fr; gap: 20px; }
+      .vd-related { position: static; }
+      .vd-hero { padding: 10px 14px 12px; }
+      .vd-hero-title { max-width: 100%; font-size: 18px; }
+      .vd-hero-watermark { width: 56px; height: 56px; right: 8px; }
     }
   </style>
 
@@ -356,7 +564,73 @@ const jsonLd = {
         });
       });
     }
-    initVideoPlayer();
-    document.addEventListener("astro:page-load", initVideoPlayer);
+
+    function initVideoTabs() {
+      const root = document.querySelector<HTMLElement>('[data-role="tabs"]');
+      if (!root || root.dataset.wired) return;
+      root.dataset.wired = "1";
+
+      const tabs = [...root.querySelectorAll<HTMLElement>("[data-tab]")];
+      const panels = [...root.querySelectorAll<HTMLElement>("[data-panel]")];
+
+      const activate = (name: string) => {
+        tabs.forEach((tab) => {
+          const on = tab.dataset.tab === name;
+          tab.setAttribute("aria-selected", on ? "true" : "false");
+        });
+        panels.forEach((panel) => {
+          const on = panel.dataset.panel === name;
+          if (on) {
+            panel.setAttribute("data-active", "");
+            panel.removeAttribute("hidden");
+          } else {
+            panel.removeAttribute("data-active");
+            panel.setAttribute("hidden", "");
+          }
+        });
+      };
+
+      tabs.forEach((tab) => {
+        tab.addEventListener("click", () => activate(tab.dataset.tab || "overview"));
+      });
+    }
+
+    function initTocFloat() {
+      const root = document.querySelector<HTMLElement>('[data-role="toc-float"]');
+      if (!root || root.dataset.wired) return;
+      root.dataset.wired = "1";
+
+      const toggle = root.querySelector<HTMLButtonElement>('[data-role="toc-float-toggle"]');
+      const menu = root.querySelector<HTMLElement>("#vd-toc-float-menu");
+      if (!toggle || !menu) return;
+
+      const setOpen = (open: boolean) => {
+        toggle.setAttribute("aria-expanded", open ? "true" : "false");
+        if (open) menu.removeAttribute("hidden");
+        else menu.setAttribute("hidden", "");
+      };
+
+      toggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        setOpen(toggle.getAttribute("aria-expanded") !== "true");
+      });
+      menu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => setOpen(false));
+      });
+      document.addEventListener("click", (e) => {
+        if (!root.contains(e.target as Node)) setOpen(false);
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") setOpen(false);
+      });
+    }
+
+    function initVideoPage() {
+      initVideoPlayer();
+      initVideoTabs();
+      initTocFloat();
+    }
+    initVideoPage();
+    document.addEventListener("astro:page-load", initVideoPage);
   </script>
 </NetworkLayout>

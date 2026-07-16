@@ -1,7 +1,7 @@
 import { GROUP_META, getResolvedTheme, type DomainGroup } from "../config/domains";
 import { blogTechFor } from "./blog-tech";
 import { formatBlogDate } from "./blog-dates";
-import { videoDisplayDescription, videoDisplayTitle, truncatePreviewText, stripIcons } from "./preview-text";
+import { videoDisplayDescription, videoDisplayTitle, truncatePreviewText, stripIcons, videoDescriptionParagraphs } from "./preview-text";
 import { allVideoEntries, type Video, type VideoEntry } from "./videos";
 
 export interface VideoCardItem {
@@ -10,6 +10,7 @@ export interface VideoCardItem {
   title: string;
   excerpt: string;
   description: string;
+  descriptionParagraphs: string[];
   chapters: VideoChapter[];
   techName: string;
   techSlug: string;
@@ -137,6 +138,7 @@ function toItem(entry: VideoEntry): VideoCardItem {
     title: videoDisplayTitle(video.title, video.description, techName),
     excerpt: truncatePreviewText(videoDisplayDescription(video.description, video.title), 130),
     description: videoDisplayDescription(video.description, video.title),
+    descriptionParagraphs: videoDescriptionParagraphs(video.description, video.title),
     chapters: parseChapters(video.description, video.durationSeconds),
     techName,
     techSlug: tech.slug,
