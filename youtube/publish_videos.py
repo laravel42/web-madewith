@@ -28,7 +28,9 @@ def serialize(row: dict) -> dict:
     return {
         "id": row["youtube_video_id"],
         "title": row["title"],
-        "description": (row.get("description") or "")[:280],
+        # Full YouTube description (API max ~5000). Card excerpts truncate later
+        # in the frontend; don't cut mid-word here for the detail Overview tab.
+        "description": row.get("description") or "",
         "channel": row.get("channel_title"),
         "channelUrl": f"https://www.youtube.com/channel/{channel_id}" if channel_id else None,
         "url": row.get("video_url"),
