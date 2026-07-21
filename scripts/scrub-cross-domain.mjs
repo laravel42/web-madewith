@@ -18,6 +18,12 @@
  * database:  node scripts/scrub-cross-domain.mjs [--dry-run]
  */
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { dirname, join } from "node:path";
+
+// Resolve paths from the repo root so the script works from any CWD
+// (scraper/publish.sh invokes it from inside scraper/).
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 
 const DRY = process.argv.includes("--dry-run");
 const TOPIC_BREADTH_LIMIT = 3;
@@ -36,7 +42,7 @@ const LANG_FAMILY = {
 /** slug → topic-tag that opposes it via a shared vendor namespace. */
 const SHARED_VENDOR_RIVALS = { symfony: "laravel" };
 
-const catalog = JSON.parse(readFileSync("src/config/domain-catalog.json", "utf8"));
+const catalog = JSON.parse(readFileSync(join(ROOT, "src/config/domain-catalog.json"), "utf8"));
 const slugs = catalog.map((d) => d.slug.toLowerCase());
 const families = Object.fromEntries(catalog.map((d) => [d.slug, d.scrape.languageFamilies ?? []]));
 
@@ -47,7 +53,7 @@ function breadth(topics) {
 
 let evicted = 0, kept = 0;
 for (const d of catalog) {
-  const path = `src/data/${d.slug}.json`;
+  const path = join(ROOT, "src", "data", `${d.slug}.json`);
   if (!existsSync(path)) continue;
   const data = JSON.parse(readFileSync(path, "utf8"));
   const before = data.projects.length;
