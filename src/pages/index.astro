@@ -1,5 +1,5 @@
 ---
-import { DOMAINS, GROUP_META, getResolvedTheme, networkMetaFor, type DomainGroup } from "../config/domains";
+import { GROUP_META, getResolvedTheme, networkMetaFor, NETWORK_DOMAINS, type DomainGroup } from "../config/domains";
 import { getCatalog } from "../lib/catalog";
 import NetworkCard from "../components/NetworkCard.astro";
 import NetworkFooter from "../components/NetworkFooter.astro";
@@ -27,14 +27,14 @@ const sections = groups
   .map((group) => ({
     group,
     meta: GROUP_META[group],
-    sites: DOMAINS.filter((d) => getResolvedTheme(d.slug).group === group).map((d) => siteCard(d.slug)),
+    sites: NETWORK_DOMAINS.filter((d) => getResolvedTheme(d.slug).group === group).map((d) => siteCard(d.slug)),
   }))
   .filter((s) => s.sites.length > 0);
 
 const site = Astro.site ?? new URL("https://madewithwhat.net");
 const canonical = new URL("/", site).href;
 const seoTitle = "MadeWithWhat — open-source project galleries for every stack";
-const seoDescription = `Browse ${DOMAINS.length} daily-updated showcase galleries across frameworks, frontends, backends, CMS/CRM, commerce, and AI/LLM — indexed from GitHub and ranked by stars.`;
+const seoDescription = `Browse ${NETWORK_DOMAINS.length} daily-updated showcase galleries across frameworks, frontends, backends, CMS/CRM, commerce, and AI/LLM — indexed from GitHub and ranked by stars.`;
 const ogImage = new URL("/favicon.svg", site).href;
 const ogCard = new URL("/og.png", site).href;
 const jsonLd = {
@@ -178,7 +178,7 @@ const FONT_HREF =
         font-size: 12px;
         font-weight: 700;
         letter-spacing: 0.14em;
-        color: #2F6FEB;
+        color: #2c68dd;
         text-transform: uppercase;
         margin-bottom: 18px;
       }

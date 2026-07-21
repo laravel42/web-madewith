@@ -287,6 +287,24 @@ export const DOMAINS: Theme[] = DOMAIN_CATALOG.map(buildTheme);
 
 export const DOMAIN_MAP: Record<string, Theme> = Object.fromEntries(DOMAINS.map((d) => [d.slug, d]));
 
+/**
+ * Temporary: hide generic madewith*.com (non-bespoke) galleries from the
+ * public network hub. Flip to false to restore them on the homepage / llms.txt.
+ * Individual /[domain]/ routes stay buildable.
+ */
+export const HIDE_SINGLE_DOMAINS = false;
+
+const BESPOKE_SLUGS = new Set(DOMAIN_CATALOG.filter((d) => d.bespoke).map((d) => d.slug));
+
+export function isBespokeDomain(slug: string): boolean {
+  return BESPOKE_SLUGS.has(slug);
+}
+
+/** Domains listed on the network landing and related public surfaces. */
+export const NETWORK_DOMAINS: Theme[] = HIDE_SINGLE_DOMAINS
+  ? DOMAINS.filter((d) => isBespokeDomain(d.slug))
+  : DOMAINS;
+
 export function getTheme(slug: string): Theme {
   const t = DOMAIN_MAP[slug];
   if (!t) throw new Error(`Unknown domain slug: ${slug}`);

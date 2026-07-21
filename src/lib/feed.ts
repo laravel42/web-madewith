@@ -1,5 +1,5 @@
 import type { Theme } from "../config/domains";
-import { DOMAINS, getResolvedTheme, GROUP_META, type DomainGroup } from "../config/domains";
+import { DOMAINS, getResolvedTheme, GROUP_META, NETWORK_DOMAINS, type DomainGroup } from "../config/domains";
 import type { CatalogData, Project } from "./catalog";
 import { getCatalog, rankedProjects } from "./catalog";
 import {
@@ -200,7 +200,7 @@ export function buildNetworkLlmsTxt(site: URL, topLimit = 30, perDomainLimit = 5
   const galleryLines: string[] = [];
 
   for (const group of groups) {
-    const sites = DOMAINS.filter((d) => getResolvedTheme(d.slug).group === group);
+    const sites = NETWORK_DOMAINS.filter((d) => getResolvedTheme(d.slug).group === group);
     if (!sites.length) continue;
     galleryLines.push(`### ${GROUP_META[group].label}`, "");
     for (const theme of sites) {
@@ -217,7 +217,7 @@ export function buildNetworkLlmsTxt(site: URL, topLimit = 30, perDomainLimit = 5
     .slice(0, topLimit);
 
   const perDomainHighlights: string[] = [];
-  for (const theme of DOMAINS) {
+  for (const theme of NETWORK_DOMAINS) {
     const resolved = getResolvedTheme(theme.slug);
     const data = getCatalog(resolved.slug);
     const top = rankedProjects(data).slice(0, perDomainLimit);
@@ -238,7 +238,7 @@ export function buildNetworkLlmsTxt(site: URL, topLimit = 30, perDomainLimit = 5
     "## About",
     "",
     `- Network home: ${base}`,
-    `- Galleries: ${DOMAINS.length} technologies`,
+    `- Galleries: ${NETWORK_DOMAINS.length} technologies`,
     `- Data source: GitHub (refreshed daily)`,
     `- Last scraped: ${networkLatestScrapedAt()}`,
     "",
