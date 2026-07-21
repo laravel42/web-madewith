@@ -4,9 +4,7 @@ from __future__ import annotations
 import re
 from datetime import datetime, timezone
 
-from .domains import load_categories
-
-CLASSIFIERS = load_categories()
+from .classify_engine import classify as _engine_classify
 
 PRETTY = {
     "nextjs": "Next.js",
@@ -30,15 +28,9 @@ def synth_langs(primary: str | None) -> list[dict]:
 
 
 def classify(repo: dict) -> str:
-    hay = " ".join([
-        " ".join(repo.get("topics") or []),
-        repo.get("description") or "",
-        repo.get("name") or "",
-    ]).lower()
-    for label, keywords in CLASSIFIERS:
-        if any(k in hay for k in keywords):
-            return label
-    return "DevTools"
+    """Category via the shared weighted engine (see classify_engine.py) —
+    replaces the substring first-match rules that misfiled ~42% of the catalog."""
+    return _engine_classify(repo)
 
 
 def relative_time(iso: str | None) -> str:
