@@ -1,5 +1,6 @@
 ---
 import type { Theme } from "../config/domains";
+import { readableOnDark, readableOnSurfaceDark, tint } from "../config/accessible-color";
 import type { Project } from "../lib/catalog";
 
 interface Props { theme: Theme; project: Project; }
@@ -16,11 +17,16 @@ const managers = isPHP
       { id: "yarn", label: "yarn", color: "#2c8ebb", cmd: `yarn add ${project.name}` },
       { id: "bun", label: "bun", color: "#fbf0df", cmd: `bun add ${project.name}` },
     ];
-// White accent (Next) would vanish on the dark widget — fall back to indigo.
-const accent = theme.editorial ? "#6366f1" : theme.accent;
+// The widget is GitHub-dark on every shell — including the light editorial and
+// default pages — so the accent has to read on #0d1117, not on the page behind
+// it. Near-black brands (Ollama/Fastify/Payload) get lightened, and the active
+// tab is measured against its own 14% tint rather than the page.
+const accentBase = readableOnDark(theme.accent);
+const pmActiveBg = tint(accentBase, 14, "#0d1117");
+const accent = readableOnSurfaceDark(accentBase, pmActiveBg);
 ---
 
-<div class="install" data-install style={`--pm-accent:${accent};`}>
+<div class="install" data-install style={`--pm-accent:${accent}; --pm-active-bg:${pmActiveBg};`}>
   <div class="row">
     <input class="fld" data-clone readonly value={clone} aria-label="Clone command" />
     <button class="cp" type="button" data-copy="[data-clone]" aria-label="Copy clone command">
@@ -64,8 +70,11 @@ const accent = theme.editorial ? "#6366f1" : theme.accent;
   .cp.copied { color: #3fb950; }
 
   .pms { display: flex; gap: 6px; margin: 12px 0; flex-wrap: wrap; }
+  /* The tabs carry the same dark fill as the fields above and below: the
+     GitHub-dark greys were 2.5:1 (label) and 1.15:1 (hover) when `transparent`
+     let a light page through. */
   .pm {
-    display: inline-flex; align-items: center; background: transparent;
+    display: inline-flex; align-items: center; background: #0d1117;
     border: 1px solid #30363d; color: #9aa3b2;
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px;
     padding: 6px 12px; border-radius: 6px; cursor: pointer; transition: border-color .12s, color .12s, background .12s;
@@ -73,7 +82,7 @@ const accent = theme.editorial ? "#6366f1" : theme.accent;
   .pm:hover { border-color: var(--pm-accent); color: #e6edf3; }
   .pm[aria-pressed="true"] {
     border-color: var(--pm-accent); color: var(--pm-accent);
-    background: color-mix(in srgb, var(--pm-accent) 14%, transparent); font-weight: 700;
+    background: var(--pm-active-bg); font-weight: 700;
   }
   .dot { width: 8px; height: 8px; border-radius: 50%; margin-right: 7px; }
 </style>

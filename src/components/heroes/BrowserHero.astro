@@ -8,6 +8,7 @@ interface Props { theme: Theme; total: string; categories: CategoryFilter[]; }
 const { theme, total, categories } = Astro.props;
 const subcopy = heroSubcopy(theme, total);
 const accent = theme.accent;
+const accentText = `color-mix(in srgb, ${accent} 45%, #16202a)`;
 const soft = `color-mix(in srgb, ${accent} 13%, #ffffff)`;
 const softBorder = theme.heroSoftBorder ?? `color-mix(in srgb, ${accent} 22%, #ffffff)`;
 const bandBg = theme.heroBandBg ?? `radial-gradient(560px 300px at 92% 6%, ${soft}, rgba(255,255,255,0) 62%), linear-gradient(135deg, ${soft} 0%, #f7fbf9 100%)`;
@@ -16,7 +17,7 @@ const shadow = `color-mix(in srgb, ${accent} 30%, transparent)`;
 ---
 <div class="hero-panel" style={`max-width:1140px; margin:22px auto 8px; padding:44px 46px; border-radius:28px; background:${bandBg}; border:1px solid ${softBorder}; display:flex; align-items:center; gap:46px; flex-wrap:wrap;`}>
   <div style="flex:1; min-width:320px;">
-    <div style={`font-size:13px; font-weight:700; color:${accent}; letter-spacing:.05em; text-transform:uppercase; margin-bottom:14px;`}>{theme.eyebrow}</div>
+    <div style={`font-size:13px; font-weight:700; color:${accentText}; letter-spacing:.05em; text-transform:uppercase; margin-bottom:14px;`}>{theme.eyebrow}</div>
     <h1 class="disp" style={`margin:0; font-size:clamp(32px, 7vw, 46px); font-weight:800; letter-spacing:-0.03em; line-height:1.04; background:linear-gradient(96deg, color-mix(in srgb, ${accent} 55%, #000), ${accent}); -webkit-background-clip:text; background-clip:text; color:transparent;`}>{theme.heroTitle}</h1>
     <div style="font-size:17px; color:#4a6157; margin-top:16px; max-width:500px; line-height:1.55;">{subcopy}</div>
 
@@ -25,7 +26,7 @@ const shadow = `color-mix(in srgb, ${accent} 30%, transparent)`;
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke={accent} stroke-width="2"/><path d="m20 20-3.5-3.5" stroke={accent} stroke-width="2" stroke-linecap="round"/></svg>
         <input data-role="search" aria-label="Search projects" placeholder="Search projects…" style="border:none; outline:none; background:transparent; font-size:15px; width:100%; color:#16201b;"/>
       </div>
-      <div data-role="sort" style={`display:flex; align-items:center; gap:8px; background:${accent}; border-radius:12px; padding:13px 18px; font-size:14px; font-weight:700; color:${theme.accentInk}; cursor:pointer; white-space:nowrap; box-shadow:0 8px 18px color-mix(in srgb, ${accent} 34%, transparent);`}>
+      <div data-role="sort" style={`display:flex; align-items:center; gap:8px; background:var(--accent-solid); border-radius:12px; padding:13px 18px; font-size:14px; font-weight:700; color:${theme.accentInk}; cursor:pointer; white-space:nowrap; box-shadow:0 8px 18px color-mix(in srgb, ${accent} 34%, transparent);`}>
         <span data-sort-label data-label-stars="Most stars" data-label-name="A–Z">Most stars</span>
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>

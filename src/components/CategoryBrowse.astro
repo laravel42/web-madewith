@@ -10,11 +10,17 @@ const base = `/${theme.slug}`;
 const catCount = cats.length;
 const radius = `${theme.radius}px`;
 const href = (label: string) => `${base}/?tag=${encodeURIComponent(label)}`;
+
+// The page chrome around the cards (breadcrumb, subcopy) sits straight on the
+// shell, and the light layout is not always on a light shell — Next runs the
+// editorial grid on black. So the muted grey has to flip: #5c665f clears AA on
+// #fbfcfb/#fff, #9aa69e on #000 and on the terminal #0c0f0e.
+const muted = theme.darkShell ? "#9aa69e" : "#5c665f";
 ---
 
 {theme.variant === "terminal" ? (
   <div style="max-width:1200px; margin:0 auto; padding:48px 32px 80px;">
-    <div style="font-size:12px; color:#5c665f; margin-bottom:14px;"><a href={`${base}/`} style="cursor:pointer; text-decoration:none; color:inherit;">~</a> / categories</div>
+    <div style={`font-size:12px; color:${muted}; margin-bottom:14px;`}><a href={`${base}/`} style="cursor:pointer; text-decoration:none; color:inherit;">~</a> / categories</div>
     <div class="disp" style="font-size:38px; font-weight:700; letter-spacing:-0.02em; color:#f1f6f2;">Browse by category</div>
     <div style="font-size:14px; color:#8b948d; margin-top:10px; max-width:560px;">ls the {theme.techName} ecosystem — {total} projects across {catCount} categories.</div>
     <div class="mw-grid3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:32px;">
@@ -23,14 +29,14 @@ const href = (label: string) => `${base}/?tag=${encodeURIComponent(label)}`;
         return (
           <a href={href(c.label)} class="card" style={`padding:20px; border-top:3px solid ${meta.color};`}>
             <div style={`width:40px; height:40px; border-radius:10px; background:color-mix(in srgb, ${meta.color} 18%, #0c0f0e); display:flex; align-items:center; justify-content:center; margin-bottom:14px;`}>
-              <Glyph name={c.label} size={20} color={meta.color} />
+              <Glyph name={c.label} size={20} color={meta.inkDark} />
             </div>
             <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
               <div class="disp" style="font-weight:600; font-size:18px; color:#e8efe9;">{c.label}</div>
-              <span style={`background:color-mix(in srgb, ${meta.color} 22%, #0c0f0e); color:${meta.color}; border:1px solid ${meta.color}; font-size:12px; padding:2px 9px; border-radius:5px;`}>{c.count}</span>
+              <span style={`background:color-mix(in srgb, ${meta.color} 22%, #0c0f0e); color:${meta.inkDark}; border:1px solid ${meta.color}; font-size:12px; padding:2px 9px; border-radius:5px;`}>{c.count}</span>
             </div>
             <div style="font-size:12.5px; color:#7c887f; margin-top:8px; line-height:1.5;">{c.blurb}</div>
-            <div style={`margin-top:15px; font-size:12px; color:${meta.color};`}>cd → </div>
+            <div style={`margin-top:15px; font-size:12px; color:${meta.inkDark};`}>cd → </div>
           </a>
         );
       })}
@@ -38,9 +44,9 @@ const href = (label: string) => `${base}/?tag=${encodeURIComponent(label)}`;
   </div>
 ) : (
   <div style="max-width:1200px; margin:0 auto; padding:48px 32px 80px;">
-    <div style="font-size:13px; color:#8b9690; margin-bottom:14px;"><a href={`${base}/`} style="cursor:pointer; text-decoration:none; color:inherit;">Home</a> &nbsp;/&nbsp; Categories</div>
+    <div style={`font-size:13px; color:${muted}; margin-bottom:14px;`}><a href={`${base}/`} style="cursor:pointer; text-decoration:none; color:inherit;">Home</a> &nbsp;/&nbsp; Categories</div>
     <div class="disp" style="font-size:40px; font-weight:800; letter-spacing:-0.03em;">Browse by category</div>
-    <div style="font-size:16px; color:#5c665f; margin-top:10px; max-width:560px;">Jump into a slice of the {theme.techName} ecosystem. {total} projects across {catCount} categories.</div>
+    <div style={`font-size:16px; color:${muted}; margin-top:10px; max-width:560px;`}>Jump into a slice of the {theme.techName} ecosystem. {total} projects across {catCount} categories.</div>
     <div class="mw-grid3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:34px;">
       {cats.map((c) => {
         const meta = CATEGORY_META[c.label];
@@ -50,11 +56,11 @@ const href = (label: string) => `${base}/?tag=${encodeURIComponent(label)}`;
               <Glyph name={c.label} size={22} color={meta.color} />
             </div>
             <div style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
-              <div class="disp" style={`font-weight:700; font-size:19px; letter-spacing:-0.01em; color:${meta.color};`}>{c.label}</div>
-              <span style={`background:color-mix(in srgb, ${meta.color} 12%, #fff); color:${meta.color}; font-weight:700; font-size:13px; padding:3px 10px; border-radius:20px;`}>{c.count}</span>
+              <div class="disp" style={`font-weight:700; font-size:19px; letter-spacing:-0.01em; color:${meta.ink};`}>{c.label}</div>
+              <span style={`background:color-mix(in srgb, ${meta.color} 12%, #fff); color:${meta.ink}; font-weight:700; font-size:13px; padding:3px 10px; border-radius:20px;`}>{c.count}</span>
             </div>
-            <div style="font-size:13.5px; color:#6b756f; margin-top:8px; line-height:1.45;">{c.blurb}</div>
-            <div style={`margin-top:16px; font-size:13px; font-weight:600; color:${meta.color};`}>Explore →</div>
+            <div style="font-size:13.5px; color:#68716c; margin-top:8px; line-height:1.45;">{c.blurb}</div>
+            <div style={`margin-top:16px; font-size:13px; font-weight:600; color:${meta.ink};`}>Explore →</div>
           </a>
         );
       })}

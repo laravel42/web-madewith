@@ -12,10 +12,15 @@ interface Props {
 const { fullName, name, variant = "default", layout = "fill", withWireframe = false, priority = false } = Astro.props;
 const src = `https://opengraph.githubassets.com/1/${fullName}`;
 
+// The placeholder always sits on the shot surface, never on the page: dark
+// (#0e120f) for terminal, light (#f4f6f5 / #f5f5f5 / #f8faf9 / #fff) for both
+// editorial and default — the editorial greys were picked as if Next's black
+// shell reached in here, and read at 1.5–2.6:1 on white. Ratios below are
+// against the darkest surface of each group; the icon only needs 3:1.
 const palette = {
-  terminal: { icon: "#3f4a43", text: "#5c665f", sub: "#3f4a43" },
-  editorial: { icon: "#d4d4d4", text: "#a1a1a1", sub: "#d4d4d4" },
-  default: { icon: "#c5ccc8", text: "#8b9690", sub: "#c5ccc8" },
+  terminal: { icon: "#5c665f", text: "#8b948d", sub: "#7c887f" }, // 3.2 / 6.0 / 5.1 on #0e120f
+  editorial: { icon: "#8a8a8a", text: "#5c5c5c", sub: "#6e6e6e" }, // 3.2 / 6.1 / 4.7 on #f5f5f5
+  default: { icon: "#7e8983", text: "#5c665f", sub: "#68726d" }, // 3.3 / 5.5 / 4.6 on #f4f6f5
 }[variant];
 
 const wrapStyle =

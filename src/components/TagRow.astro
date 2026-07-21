@@ -14,6 +14,14 @@ const { theme, gap = 8, categories } = Astro.props;
 const isTerminal = theme.variant === "terminal";
 const hash = (l: string) => "#" + l.toLowerCase().replace(/[^a-z0-9]/g, "");
 
+// Pill labels carry `meta.ink`, not `meta.color`: the raw hue only reached
+// 3.1–4.4:1 on its own pastel background (DevTools 3.07, Real-time 3.15). The
+// hue itself stays on the border and the glyph, where 3:1 is the bar.
+//
+// The inline `background` deliberately beats `.v-terminal .tag`'s transparent
+// one, so the pastel chips render on the near-black terminal pages too. Label
+// and background are derived as a pair, so that combination is AA either way.
+
 const pills = [{ label: "All", count: null as number | null }, ...categories.map((c) => ({ label: c.label, count: c.count }))];
 ---
 <div style={`display:flex; gap:${gap}px; flex-wrap:wrap;`}>
@@ -25,16 +33,18 @@ const pills = [{ label: "All", count: null as number | null }, ...categories.map
         class={`tag${active ? " is-active" : ""}`}
         data-role="tag"
         data-tag={label}
-        style={meta && !active ? `display:inline-flex; align-items:center; background:${meta.bg}; color:${meta.color}; border-color:color-mix(in srgb, ${meta.color} 25%, transparent);` : "display:inline-flex; align-items:center;"}
+        style={meta && !active ? `display:inline-flex; align-items:center; background:${meta.bg}; color:${meta.ink}; border-color:color-mix(in srgb, ${meta.color} 25%, transparent);` : "display:inline-flex; align-items:center;"}
       >
         {meta && !isTerminal && (
-          <span style="display:inline-flex; vertical-align:middle; margin-right:6px; opacity:.85;">
+          <span style="display:inline-flex; vertical-align:middle; margin-right:6px;">
             <Glyph name={label} size={14} color={active ? "var(--accentInk)" : meta.color} />
           </span>
         )}
         {isTerminal ? hash(label) : label}
         {count != null && (
-          <span style={`margin-left:6px; font-size:0.88em; font-weight:700; opacity:${active ? 0.85 : 0.7};`}>{count}</span>
+          // No opacity here: dimming the label is what pushed the count under AA
+          // (DevTools fell to 2.16:1), and the hue has no headroom to spare.
+          <span style="margin-left:6px; font-size:0.88em; font-weight:700;">{count}</span>
         )}
       </span>
     );
