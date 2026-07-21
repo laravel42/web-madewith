@@ -65,7 +65,20 @@ _db = Path(os.getenv("CONTENT_DB", "content_factory.sqlite3"))
 DB_PATH = _db if _db.is_absolute() else BASE_DIR / _db
 _out = Path(os.getenv("CONTENT_OUTPUT_DIR", "output"))
 OUTPUT_DIR = _out if _out.is_absolute() else BASE_DIR / _out
-OPENAI_MODEL = os.getenv("OPENAI_MODEL", "gpt-5-mini")
+# LLM provider: OpenRouter whenever OPENROUTER_API_KEY is set (FACTORY_BASE_URL
+# overrides the endpoint), OpenAI direct otherwise. Model precedence:
+# FACTORY_MODEL > backend default (Sonnet 4.5 on OpenRouter for long-form
+# editorial quality; legacy OPENAI_MODEL/gpt-5-mini on OpenAI).
+LLM_BASE_URL = os.getenv("FACTORY_BASE_URL") or (
+    "https://openrouter.ai/api/v1" if os.getenv("OPENROUTER_API_KEY") else None)
+LLM_USE_CHAT = bool(LLM_BASE_URL) and "api.openai.com" not in LLM_BASE_URL
+if os.getenv("FACTORY_MODEL"):
+    LLM_MODEL = os.environ["FACTORY_MODEL"]
+elif LLM_BASE_URL and "openrouter" in LLM_BASE_URL:
+    LLM_MODEL = "anthropic/claude-sonnet-4.5"
+else:
+    LLM_MODEL = os.getenv("OPENAI_MODEL", "gpt-5-mini")
+LLM_MAX_TOKENS = int(os.getenv("FACTORY_MAX_TOKENS", "32000"))
 GITHUB_API_VERSION = os.getenv("GITHUB_API_VERSION", "2022-11-28")
 SITE_NAME = os.getenv("SITE_NAME", "MadeWithWhat")
 SITE_URL = os.getenv("SITE_URL", "https://madewithwhat.com").rstrip("/")
@@ -788,11 +801,28 @@ EDITORIAL DATA
 def openai_generate(client: OpenAI, prompt: str) -> dict[str, Any]:
     for attempt in range(5):
         try:
-            response = client.responses.create(
-                model=OPENAI_MODEL,
-                input=prompt,
-            )
-            raw = response.output_text.strip()
+            if LLM_USE_CHAT:
+                # OpenRouter (and other OpenAI-compatible gateways) speak Chat
+                # Completions, not the Responses API.
+                kwargs: dict[str, Any] = {
+                    "model": LLM_MODEL,
+                    "messages": [{"role": "user", "content": prompt}],
+                    "max_tokens": LLM_MAX_TOKENS,
+                }
+                if not LLM_MODEL.startswith("anthropic/"):
+                    # Constrained JSON where the provider supports it; Claude
+                    # relies on the prompt contract + the validation/retry loop.
+                    kwargs["response_format"] = {"type": "json_object"}
+                response = client.chat.completions.create(**kwargs)
+                if response.choices[0].finish_reason == "length":
+                    raise ValueError(f"Article output cut off at max_tokens={LLM_MAX_TOKENS}")
+                raw = (response.choices[0].message.content or "").strip()
+            else:
+                response = client.responses.create(
+                    model=LLM_MODEL,
+                    input=prompt,
+                )
+                raw = response.output_text.strip()
             raw = re.sub(r"^```(?:json)?\s*", "", raw)
             raw = re.sub(r"\s*```$", "", raw)
             result = json.loads(raw)
@@ -1432,11 +1462,16 @@ def main() -> None:
         die("--count must be at least 1")
 
     github_token = os.getenv("GITHUB_TOKEN")
-    openai_key = os.getenv("OPENAI_API_KEY")
+    # Prefer the key matching the endpoint (mirrors youtube/enrich_transcripts.py):
+    # both keys can coexist in .env without hijacking each other's runs.
+    if LLM_BASE_URL and "openrouter" in LLM_BASE_URL:
+        llm_key = os.getenv("OPENROUTER_API_KEY") or os.getenv("OPENAI_API_KEY")
+    else:
+        llm_key = os.getenv("OPENAI_API_KEY") or os.getenv("OPENROUTER_API_KEY")
     if not github_token and not args.dry_run:
         die("GITHUB_TOKEN is missing from ../.env or ./.env")
-    if not openai_key and not args.dry_run:
-        die("OPENAI_API_KEY is missing from ../.env or ./.env")
+    if not llm_key and not args.dry_run:
+        die("An LLM key is missing from ../.env or ./.env: set OPENROUTER_API_KEY (or OPENAI_API_KEY)")
 
     if args.start_date:
         first_date = date.fromisoformat(args.start_date)
@@ -1458,7 +1493,8 @@ def main() -> None:
 
     conn = sqlite3.connect(DB_PATH)
     init_db(conn)
-    client = OpenAI(api_key=openai_key)
+    client = OpenAI(api_key=llm_key, base_url=LLM_BASE_URL)
+    print(f"LLM: {LLM_MODEL}" + (f" via {LLM_BASE_URL}" if LLM_BASE_URL else " via OpenAI"))
 
     required_keys = {job.primary_key for job in jobs}
     required_keys.update(job.secondary_key for job in jobs if job.secondary_key)
@@ -1590,7 +1626,7 @@ def main() -> None:
         "output_directory": str(OUTPUT_DIR.resolve()),
         "batch_index": str(index_path.resolve()),
         "database": str(DB_PATH.resolve()),
-        "model": OPENAI_MODEL,
+        "model": LLM_MODEL,
     }
     print("\n" + json.dumps(result, indent=2))
 
