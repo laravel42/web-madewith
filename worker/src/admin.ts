@@ -217,7 +217,7 @@ export async function handleAdmin(req: Request, env: Env, path: string, ctx: Exe
         const started = Date.now();
         logs.push(`[${d.slug}] scrape started`);
         try {
-          const ds = await scrapeAndPublish(gh, env.DATA, db, d, Date.now());
+          const ds = await scrapeAndPublish(gh, env.DATA, db, d, Date.now(), { ai: env.AI, kv: env.STATE });
           const ms = Date.now() - started;
           const line = `[${d.slug}] ok — ${ds.projects.length} projects, ecosystem ${ds.totalRepos} (${ms}ms)`;
           logs.push(line);

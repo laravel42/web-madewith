@@ -32,7 +32,7 @@ async function refreshAll(env: Env): Promise<Array<{ slug: string; published?: n
   const summary = [];
   for (const domain of DOMAINS) {
     try {
-      const ds = await scrapeAndPublish(gh, env.DATA, db, domain, now);
+      const ds = await scrapeAndPublish(gh, env.DATA, db, domain, now, { ai: env.AI, kv: env.STATE });
       summary.push({ slug: domain.slug, published: ds.projects.length, total: ds.totalRepos });
     } catch (e) {
       // One domain failing (GitHub hiccup, etc.) must not abort the whole run.

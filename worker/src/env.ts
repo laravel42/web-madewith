@@ -11,4 +11,6 @@ export interface Env {
   ACCESS_AUD?: string;
   /** Local dev only — set in worker/.dev.vars, never in production. */
   ADMIN_DEV_BYPASS?: string;
+  /** Workers AI (optional) — LLM second opinion for low-confidence categories. */
+  AI?: Ai;
 }

@@ -12,7 +12,8 @@ test("accepts a valid submission and trims/normalises", () => {
 });
 
 test("rejects unknown domain", () => {
-  assert.equal(validateSubmission({ ...base, slug: "svelte" }).ok, false);
+  // "svelte" became a real domain when the catalog expanded — use an impossible slug.
+  assert.equal(validateSubmission({ ...base, slug: "not-a-real-domain" }).ok, false);
 });
 
 test("rejects non-GitHub or malformed repo_url", () => {
