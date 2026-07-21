@@ -1,5 +1,6 @@
 export type BlogCardCoverInput = {
-  tech: { accent: string; accentInk: string };
+  /** `accentCover` — not the raw accent: white cover text sits on the gradient's light end. */
+  tech: { accentCover: string; accentInk: string };
   primaryTechnology: string;
   category: string;
   title: string;
@@ -22,5 +23,5 @@ export function blogCardCoverHtml(
   const tech = escapeHtmlForCard(item.primaryTechnology);
   const category = escapeHtmlForCard(item.category);
   const title = escapeHtmlForCard(item.title);
-  return `<div class="blog-card-cover${sizeClass}${variantClass}" style="--cover-accent:${item.tech.accent}; --cover-ink:${item.tech.accentInk};"><span class="blog-card-cover-tech">${tech}</span><span class="blog-card-cover-category">${category}</span><span class="blog-card-cover-title">${title}</span></div>`;
+  return `<div class="blog-card-cover${sizeClass}${variantClass}" style="--cover-accent:${item.tech.accentCover}; --cover-ink:${item.tech.accentInk};"><span class="blog-card-cover-tech">${tech}</span><span class="blog-card-cover-category">${category}</span><span class="blog-card-cover-title">${title}</span></div>`;
 }

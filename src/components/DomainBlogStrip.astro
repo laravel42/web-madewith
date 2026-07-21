@@ -2,12 +2,16 @@
 import type { Theme } from "../config/domains";
 import { articleCardMeta, getArticles, type BlogArticle } from "../lib/blog";
 import BlogCardCover from "./blog/BlogCardCover.astro";
+import { readableOnDark, readableOnLight } from "../config/accessible-color";
 
 interface Props { theme: Theme; }
 const { theme } = Astro.props;
 const dark = theme.variant === "terminal";
 const editorial = theme.editorial;
 const accent = editorial ? "#6366f1" : theme.accent;
+// Same 55%/45% tints as before, darkened or lightened further where the accent
+// still fell short of AA (near-black accents were 4.1:1 on the terminal ground).
+const accentText = dark ? readableOnDark(accent) : readableOnLight(accent);
 const cardBorder = dark ? "#1f2622" : "#eef0ef";
 const textCol = dark ? "#e8efe9" : "#12161a";
 const font = theme.dispFont;
@@ -43,19 +47,19 @@ if (!posts.length) return null;
   <div style="max-width:1200px; margin:0 auto; padding:0 32px;">
     <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:20px; margin-bottom:24px; flex-wrap:wrap;">
       <div>
-        <div style={`font-size:13px; font-weight:700; color:${accent}; letter-spacing:.05em; text-transform:uppercase; margin-bottom:8px;`}>From the blog</div>
+        <div style={`font-size:13px; font-weight:700; color:${accentText}; letter-spacing:.05em; text-transform:uppercase; margin-bottom:8px;`}>From the blog</div>
         <h2 style={`font-family:${font}; font-size:27px; font-weight:${editorial ? 500 : 800}; letter-spacing:${editorial ? "-0.01em" : "-0.02em"}; color:${textCol}; margin:0;`}>
           Latest {theme.techName} guides &amp; deep-dives
         </h2>
       </div>
-      <a href="/blog/" class="filter-link" style={`font-size:14px; font-weight:600; color:${accent}; white-space:nowrap;`}>All articles →</a>
+      <a href="/blog/" class="filter-link" style={`font-size:14px; font-weight:600; color:${accentText}; white-space:nowrap;`}>All articles →</a>
     </div>
     <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
       {posts.map((post, index) => (
         <article class="blog-index-card">
           <a href={post.href} aria-label={`Read: ${post.title}`}>
             <BlogCardCover
-              accent={post.tech.accent}
+              accent={post.tech.accentCover}
               accentInk={post.tech.accentInk}
               tech={post.primaryTechnology}
               category={post.category}
@@ -64,7 +68,7 @@ if (!posts.length) return null;
               variant={(index % 3) as 0 | 1 | 2}
             />
             <div class="blog-index-card-body">
-              <div class="blog-index-card-stack" style={`color:${post.tech.accent};`}>{post.primaryTechnology}</div>
+              <div class="blog-index-card-stack" style={`color:${post.tech.accentOnLight};`}>{post.primaryTechnology}</div>
               <p class="blog-index-card-excerpt">{post.excerpt}</p>
               <div class="blog-index-card-meta">
                 <span style={post.avatarStyle}>{post.authorInitial}</span>{post.author} · <time datetime={post.date}>{post.dateLabel}</time> · {post.readMin} min
