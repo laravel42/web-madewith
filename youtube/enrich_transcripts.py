@@ -220,26 +220,47 @@ class TruncatedOutput(RuntimeError):
     """The model ran out of output tokens before finishing the JSON."""
 
 
-def generate(client: Any, model: str, prompt: str, max_output_tokens: int = MAX_OUTPUT_TOKENS) -> dict[str, Any]:
+def generate(client: Any, model: str, prompt: str, max_output_tokens: int = MAX_OUTPUT_TOKENS,
+             use_chat: bool = False) -> dict[str, Any]:
     import openai
 
     # Misconfiguration fails the same way on every retry — surface it at once.
     fatal = (openai.AuthenticationError, openai.PermissionDeniedError, openai.NotFoundError, openai.BadRequestError)
-    kwargs: dict[str, Any] = {"model": model, "input": prompt, "max_output_tokens": max_output_tokens}
-    if model.startswith("gpt-5"):
-        # Reasoning models spend max_output_tokens on hidden reasoning *before*
-        # the visible JSON; at the default effort a long transcript exhausts the
-        # cap and the response comes back incomplete/empty.
-        kwargs["reasoning"] = {"effort": "low"}
-        # Constrained JSON decoding — long transcript fields otherwise pick up
-        # unescaped quotes/newlines that json.loads rejects.
-        kwargs["text"] = {"format": {"type": "json_object"}}
+    if use_chat:
+        # OpenAI-compatible local servers (Ollama, LM Studio, vLLM) speak the
+        # Chat Completions API, not the Responses API.
+        kwargs: dict[str, Any] = {"model": model, "messages": [{"role": "user", "content": prompt}],
+                                  "max_tokens": max_output_tokens,
+                                  "response_format": {"type": "json_object"}}
+    else:
+        kwargs = {"model": model, "input": prompt, "max_output_tokens": max_output_tokens}
+        if model.startswith("gpt-5"):
+            # Reasoning models spend max_output_tokens on hidden reasoning *before*
+            # the visible JSON; at the default effort a long transcript exhausts the
+            # cap and the response comes back incomplete/empty.
+            kwargs["reasoning"] = {"effort": "low"}
+            # Constrained JSON decoding — long transcript fields otherwise pick up
+            # unescaped quotes/newlines that json.loads rejects.
+            kwargs["text"] = {"format": {"type": "json_object"}}
     print(f"    → {model} ({len(prompt):,} chars in"
           + (", reasoning=low" if "reasoning" in kwargs else "")
+          + (", api=chat" if use_chat else "")
           + f", max_output_tokens={max_output_tokens:,})")
     for attempt in range(5):
         try:
             t0 = time.time()
+            if use_chat:
+                response = client.chat.completions.create(**kwargs)
+                dt = time.time() - t0
+                usage = getattr(response, "usage", None)
+                if usage is not None:
+                    print(f"    ← {dt:.1f}s — tokens: {usage.prompt_tokens:,} in, {usage.completion_tokens:,} out")
+                else:
+                    print(f"    ← {dt:.1f}s")
+                choice = response.choices[0]
+                if choice.finish_reason == "length":
+                    raise TruncatedOutput(f"output cut off at max_tokens={max_output_tokens}")
+                return parse_model_json(choice.message.content or "")
             response = client.responses.create(**kwargs)
             dt = time.time() - t0
             usage = getattr(response, "usage", None)
@@ -280,6 +301,9 @@ def main() -> int:
     parser.add_argument("--video-id", help="Process one YouTube video ID")
     parser.add_argument("--limit", type=int, default=100)
     parser.add_argument("--model", help="OpenAI model; defaults to OPENAI_MODEL or gpt-5-mini")
+    parser.add_argument("--base-url", default=os.getenv("OPENAI_BASE_URL"),
+                        help="OpenAI-compatible endpoint, e.g. http://localhost:11434/v1 for Ollama "
+                             "(defaults to OPENAI_BASE_URL; api.openai.com when unset)")
     parser.add_argument("--max-output-tokens", type=int, default=MAX_OUTPUT_TOKENS,
                         help=f"Output-token reservation per request (default {MAX_OUTPUT_TOKENS})")
     parser.add_argument("--force", action="store_true", help="Replace an existing up-to-date output")
@@ -318,17 +342,21 @@ def main() -> int:
             raw = json.loads(path.read_text())
             print(f"{raw['videoId']}: {len(raw.get('segments', []))} segments")
         return 0
-    if not os.getenv("OPENAI_API_KEY"):
-        raise SystemExit("OPENAI_API_KEY is required")
+    # A local OpenAI-compatible server (Ollama/LM Studio/vLLM) needs no real
+    # key and speaks Chat Completions instead of the Responses API.
+    use_chat = bool(args.base_url) and "api.openai.com" not in args.base_url
+    if not os.getenv("OPENAI_API_KEY") and not use_chat:
+        raise SystemExit("OPENAI_API_KEY is required (or point --base-url/OPENAI_BASE_URL at a local server)")
 
     from openai import OpenAI
 
     info = metadata()
     model = args.model or os.getenv("OPENAI_MODEL", "gpt-5-mini")
-    client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+    client = OpenAI(api_key=os.getenv("OPENAI_API_KEY") or "ollama", base_url=args.base_url)
     out_dir.mkdir(parents=True, exist_ok=True)
     beyond_limit = len(raw_files) - skipped - len(candidates)
-    print(f"model={model}  max_output_tokens={args.max_output_tokens:,}")
+    print(f"model={model}  max_output_tokens={args.max_output_tokens:,}"
+          + (f"  base_url={args.base_url} (chat api)" if use_chat else ""))
     print(f"raw:  {input_dir}  ({len(raw_files)} file(s): {skipped} already enriched (v{SCHEMA_VERSION}), "
           f"{len(candidates)} to process"
           + (f", {beyond_limit} beyond --limit {args.limit}" if beyond_limit > 0 else "") + ")")
@@ -349,7 +377,8 @@ def main() -> int:
         t_video = time.time()
         try:
             try:
-                generated = generate(client, model, prompt_for(raw, title, duration), args.max_output_tokens)
+                generated = generate(client, model, prompt_for(raw, title, duration),
+                                     args.max_output_tokens, use_chat=use_chat)
             except TruncatedOutput as exc:
                 # The full cleaned transcript doesn't fit in one response. Ask
                 # for structure only; normalize_result rebuilds each chapter's
@@ -357,7 +386,7 @@ def main() -> int:
                 print(f"    {exc} — retrying structure-only (transcription will be rebuilt from raw captions)")
                 generated = generate(client, model,
                                      prompt_for(raw, title, duration, include_transcripts=False),
-                                     args.max_output_tokens)
+                                     args.max_output_tokens, use_chat=use_chat)
             result = normalize_result(raw, generated, duration)
             output.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n")
             written += 1
