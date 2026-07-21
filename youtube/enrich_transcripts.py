@@ -231,9 +231,21 @@ def generate(client: Any, model: str, prompt: str, max_output_tokens: int = MAX_
         # the visible JSON; at the default effort a long transcript exhausts the
         # cap and the response comes back incomplete/empty.
         kwargs["reasoning"] = {"effort": "low"}
+    print(f"    → {model} ({len(prompt):,} chars in"
+          + (", reasoning=low" if "reasoning" in kwargs else "")
+          + f", max_output_tokens={max_output_tokens:,})")
     for attempt in range(5):
         try:
+            t0 = time.time()
             response = client.responses.create(**kwargs)
+            dt = time.time() - t0
+            usage = getattr(response, "usage", None)
+            if usage is not None:
+                reasoning = getattr(getattr(usage, "output_tokens_details", None), "reasoning_tokens", 0) or 0
+                print(f"    ← {dt:.1f}s — tokens: {usage.input_tokens:,} in, {usage.output_tokens:,} out"
+                      f" ({reasoning:,} reasoning, {usage.output_tokens - reasoning:,} visible)")
+            else:
+                print(f"    ← {dt:.1f}s")
             if getattr(response, "status", None) == "incomplete":
                 reason = getattr(getattr(response, "incomplete_details", None), "reason", None) or "unknown"
                 raise TruncatedOutput(f"response incomplete ({reason}, max_output_tokens={max_output_tokens})")
@@ -249,12 +261,13 @@ def generate(client: Any, model: str, prompt: str, max_output_tokens: int = MAX_
     raise RuntimeError("unreachable")
 
 
-def metadata() -> dict[str, tuple[str, float]]:
+def metadata() -> dict[str, tuple[str, float, str]]:
     import psycopg
 
     with psycopg.connect(os.environ["DATABASE_URL"]) as conn, conn.cursor() as cur:
-        cur.execute("SELECT youtube_video_id, title, COALESCE(duration_seconds, 0) FROM youtube_videos")
-        return {video_id: (title, float(duration)) for video_id, title, duration in cur.fetchall()}
+        cur.execute("SELECT youtube_video_id, title, COALESCE(duration_seconds, 0), COALESCE(catalog_slug, '') "
+                    "FROM youtube_videos")
+        return {video_id: (title, float(duration), slug) for video_id, title, duration, slug in cur.fetchall()}
 
 
 def main() -> int:
@@ -290,7 +303,12 @@ def main() -> int:
     model = args.model or os.getenv("OPENAI_MODEL", "gpt-5-mini")
     client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
     out_dir.mkdir(parents=True, exist_ok=True)
+    print(f"model={model}  max_output_tokens={args.max_output_tokens:,}")
+    print(f"raw:  {input_dir}  ({len(candidates)} candidate file(s), limit {args.limit})")
+    print(f"out:  {out_dir}")
+    print(f"db:   {len(info)} videos with metadata\n")
     written = skipped = failed = 0
+    t_start = time.time()
     for index, path in enumerate(candidates, 1):
         raw = json.loads(path.read_text())
         video_id = str(raw["videoId"])
@@ -299,14 +317,17 @@ def main() -> int:
             try:
                 if json.loads(output.read_text()).get("schemaVersion") == SCHEMA_VERSION:
                     skipped += 1
-                    print(f"[{index}/{len(candidates)}] {video_id} skip (v{SCHEMA_VERSION} exists)")
+                    print(f"[{index:>3}/{len(candidates)}] {video_id}  skip (v{SCHEMA_VERSION} exists)")
                     continue
             except (OSError, json.JSONDecodeError):
                 pass
-        title, db_duration = info.get(video_id, (video_id, 0.0))
+        title, db_duration, slug = info.get(video_id, (video_id, 0.0, "?"))
         segments = raw.get("segments", [])
         inferred_duration = float(segments[-1]["start"]) + 5 if segments else 0.0
         duration = max(db_duration, inferred_duration)
+        print(f"[{index:>3}/{len(candidates)}] {video_id}  {slug}  \"{title[:60]}\""
+              f"  ({clock(duration)}, {len(segments)} segments)")
+        t_video = time.time()
         try:
             try:
                 generated = generate(client, model, prompt_for(raw, title, duration), args.max_output_tokens)
@@ -314,25 +335,31 @@ def main() -> int:
                 # The full cleaned transcript doesn't fit in one response. Ask
                 # for structure only; normalize_result rebuilds each chapter's
                 # transcription from the raw captions in its time window.
-                print(f"[{index}/{len(candidates)}] {video_id} {exc} — retrying structure-only")
+                print(f"    {exc} — retrying structure-only (transcription will be rebuilt from raw captions)")
                 generated = generate(client, model,
                                      prompt_for(raw, title, duration, include_transcripts=False),
                                      args.max_output_tokens)
             result = normalize_result(raw, generated, duration)
             output.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n")
             written += 1
-            print(f"[{index}/{len(candidates)}] {video_id} ok ({len(result['chapters'])} chapters, "
-                  f"seo {len(result['seoDescription'])} chars)")
+            print(f"    ok in {time.time() - t_video:.1f}s — {len(result['chapters'])} chapters, "
+                  f"seo {len(result['seoDescription'])} chars, summary {len(result['summary']):,} chars, "
+                  f"transcription {len(result['transcription']):,} chars → {output.name}")
         except Exception as exc:
             failed += 1
-            print(f"[{index}/{len(candidates)}] {video_id} FAIL {type(exc).__name__}: {exc}")
+            print(f"    FAIL in {time.time() - t_video:.1f}s — {type(exc).__name__}: {exc}")
             import openai
             if isinstance(exc, (openai.AuthenticationError, openai.PermissionDeniedError, openai.NotFoundError)):
                 raise SystemExit(
                     f"Aborting: {type(exc).__name__} — every video would fail the same way. "
                     "Check OPENAI_API_KEY and the model name "
                     f"(model={model}; override with OPENAI_MODEL or --model).")
-    print(f"Done — written={written} skipped={skipped} failed={failed}")
+        processed = written + failed
+        remaining = len(candidates) - index
+        if processed and remaining:
+            eta = (time.time() - t_start) / processed * remaining
+            print(f"    elapsed {clock(time.time() - t_start)}, ~{clock(eta)} remaining for {remaining} video(s)")
+    print(f"\nDone in {clock(time.time() - t_start)} — written={written} skipped={skipped} failed={failed}")
     return 1 if failed else 0
 
 
