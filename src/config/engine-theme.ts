@@ -167,6 +167,8 @@ export function applyEngineTokens(theme: Theme): Theme {
     radius,
     variant,
     editorial,
+    // Next keeps a black editorial shell; every other editorial domain is light.
+    darkShell: variant === "terminal" || theme.slug === "next",
     heroArch: arch,
     heroGradient: gradient,
     heroMockHero: mockHero,
