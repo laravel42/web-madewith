@@ -235,7 +235,7 @@ const FONT_HREF =
           <a
             href={`#${group}`}
             class="filter-pill"
-            style={`color:${meta.color}; background:color-mix(in srgb, ${meta.color} 9%, #ffffff); border:1px solid color-mix(in srgb, ${meta.color} 22%, #ffffff);`}
+            style={`color:${meta.ink}; background:color-mix(in srgb, ${meta.color} 9%, #ffffff); border:1px solid color-mix(in srgb, ${meta.color} 22%, #ffffff);`}
           >
             <span aria-hidden="true">{meta.icon}</span>
             {meta.label}
@@ -248,9 +248,9 @@ const FONT_HREF =
       {sections.map(({ group, meta, sites }) => (
         <section class="section" id={group} aria-labelledby={`section-${group}`}>
           <div class="section-head">
-            <span class="section-icon" style={`background:${meta.bg}; color:${meta.color};`} aria-hidden="true">{meta.icon}</span>
+            <span class="section-icon" style={`background:${meta.bg}; color:${meta.ink};`} aria-hidden="true">{meta.icon}</span>
             <h2 class="section-label" id={`section-${group}`}>{meta.label}</h2>
-            <span class="section-count" style={`color:${meta.color}; background:color-mix(in srgb, ${meta.color} 12%, #ffffff);`}>
+            <span class="section-count" style={`color:${meta.ink}; background:color-mix(in srgb, ${meta.color} 12%, #ffffff);`}>
               {sites.length} {sites.length === 1 ? "site" : "sites"}
             </span>
             <span class="section-rule" style={`background:linear-gradient(90deg, color-mix(in srgb, ${meta.color} 30%, #ffffff), transparent);`}></span>

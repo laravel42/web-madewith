@@ -6,7 +6,13 @@ interface Props {
 const { size = "header" } = Astro.props;
 const mainSize = size === "header" ? "21px" : size === "footer" ? "16px" : "12.5px";
 const withSize = size === "header" ? "20px" : size === "footer" ? "16px" : "12.5px";
-const brand = "rgb(47, 111, 235)";
+/**
+ * The raw brand blue (#2f6feb) measures 4.44:1 on the #fbfcfb shell and 4.27:1
+ * on the terminal footer — under AA at the 12.5px/16px sizes this renders at.
+ * No single blue clears both polarities, so the light-surface value is the
+ * default and dark shells override --wordmark-brand (see Footer.astro).
+ */
+const brand = "var(--wordmark-brand, #2c68dd)";
 ---
 
 <span class="disp" style={`font-family:"Bricolage Grotesque",sans-serif; font-weight:800; font-size:${mainSize}; letter-spacing:-0.01em;`}>
