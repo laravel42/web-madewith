@@ -105,8 +105,13 @@ class DiscoveryService:
         """Score one repository against every technology and persist each
         accepted assignment. Shared by discover (runtime) and qualify (stored)."""
         hits=[]
+        topics_l={t.lower() for t in topics}
+        # how many catalog technologies this repo topic-tags — multi-tech tools
+        # (deploy platforms etc.) advertise many, and a topic alone stops being
+        # strong evidence for any of them (see detection.TOPIC_BREADTH_LIMIT).
+        breadth=sum(1 for t in techs if ({s.lower() for s in (t.search_topics or [])}|{t.slug.lower()})&topics_l)
         for tech in techs:
-            d=qualify(tech,rules_by.get(tech.id,[]),manifests,manifest_paths,topics,blob)
+            d=qualify(tech,rules_by.get(tech.id,[]),manifests,manifest_paths,topics,blob,topic_breadth=breadth)
             if d.accepted:
                 hits.append((tech,d))
                 if not dry_run: self.db.save_detection(repo_id,tech.id,d)

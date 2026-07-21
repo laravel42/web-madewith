@@ -22,6 +22,9 @@
     "crons": ["17 6 * * *"]
   },
   "observability": { "enabled": true },
+  // Workers AI (optional): LLM second opinion for low-confidence category
+  // classifications, cached in KV. Remove this block to run rules-only.
+  "ai": { "binding": "AI" },
   "vars": {
     "ACCESS_TEAM_DOMAIN": "",
     "ACCESS_AUD": ""

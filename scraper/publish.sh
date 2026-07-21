@@ -7,4 +7,10 @@ for arg in "$@"; do
     args+=("$arg")
   fi
 done
-exec .venv/bin/python publish.py ${args[@]+"${args[@]}"}
+.venv/bin/python publish.py ${args[@]+"${args[@]}"}
+
+# Post-publish guard: evict cross-domain contamination (multi-tech topic tools,
+# shared-vendor dependency artifacts) from the freshly written JSONs. Mirrors
+# the discovery-side qualification fixes; needed until the DB has been
+# requalified with the fixed engine (github: qualify pass).
+node "$(dirname "$0")/../scripts/scrub-cross-domain.mjs"
