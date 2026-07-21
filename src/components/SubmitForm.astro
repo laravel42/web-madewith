@@ -1,5 +1,6 @@
 ---
 import type { Theme } from "../config/domains";
+import { readableOnLight } from "../config/accessible-color";
 import { CATEGORY_ORDER } from "../config/categories";
 interface Props { theme: Theme; }
 const { theme } = Astro.props;
@@ -7,8 +8,15 @@ const base = `/${theme.slug}`;
 const radius = `${theme.radius}px`;
 const isTerminal = theme.variant === "terminal";
 const btnRadius = theme.editorial ? "2px" : isTerminal ? "8px" : "10px";
-// Field labels sit on the page background; lighten them on the dark editorial theme.
-const labelInk = theme.editorial ? "#b4b4b4" : "#3a443f";
+// Page-level ink. The light branch also renders on Next's black shell, so the
+// greys follow `darkShell` rather than `editorial` (which angular/rails/drupal/
+// payload share while sitting on #fbfcfb).
+const labelInk = theme.darkShell ? "#b4b4b4" : "#3a443f"; // 10.1:1 on #000 / 9.8:1 on #fbfcfb
+const bodyInk = theme.darkShell ? "#a3ada7" : "#5c665f"; // 9.1:1 on #000 / 5.8:1 on #fbfcfb
+// The dropzone keeps its white fill on every shell, so its ink is derived for a
+// light surface — the raw accent was invisible there for the near-black brands.
+const dropInk = "#5c665f"; // 6.0:1 on #fff
+const dropAccent = readableOnLight(theme.accent);
 const labels = isTerminal
   ? { repo: "repository_url", name: "project_name", desc: "description", cat: "category", demo: "demo_url", shot: "screenshot", submit: "./submit" }
   : { repo: "GitHub repository URL", name: "Project name", desc: "Short description", cat: "Category", demo: "Live demo URL", shot: "Screenshot", submit: "Submit project" };
@@ -22,10 +30,10 @@ const labels = isTerminal
       </div>
       <div class="disp" style="font-size:28px; font-weight:700; color:#f1f6f2;">✓ submission queued</div>
       <div style="font-size:14px; color:#8b948d; margin-top:12px; max-width:440px; margin-inline:auto; line-height:1.6;">We'll review your repo and merge it into the {theme.techName} index within 48h. Thanks for contributing.</div>
-      <a href={`${base}/`} style={`border:1px solid ${theme.accent}; color:${theme.accent}; background:transparent; padding:12px 22px; border-radius:8px; text-decoration:none; font-size:14px; display:inline-block; margin-top:26px;`}>cd ../gallery</a>
+      <a href={`${base}/`} style="border:1px solid var(--accent-text); color:var(--accent-text); background:transparent; padding:12px 22px; border-radius:8px; text-decoration:none; font-size:14px; display:inline-block; margin-top:26px;">cd ../gallery</a>
     </div>
     <form data-role="submit-form" data-slug={theme.slug}>
-      <div style={`font-size:13px; color:${theme.accent}; margin-bottom:16px;`}>// contribute</div>
+      <div style="font-size:13px; color:var(--accent-text); margin-bottom:16px;">// contribute</div>
       <div class="disp" style="font-size:38px; font-weight:700; letter-spacing:-0.02em; color:#f1f6f2;">Submit your project</div>
       <div style="font-size:14px; color:#8b948d; margin-top:10px; line-height:1.6;">Shipped something with {theme.techName}? Add it to the index — free, and great for backlinks.</div>
       <div style="margin-top:32px; display:flex; flex-direction:column; gap:20px;">
@@ -39,31 +47,31 @@ const labels = isTerminal
         <div>
           <label for="t-screenshot" style="display:block; cursor:pointer;">
             <span style="display:block; font-size:12px; color:#7c887f; margin-bottom:8px;">{labels.shot}</span>
-            <span style="display:block; border:1.5px dashed #2a332d; border-radius:10px; padding:34px; text-align:center; color:#5c665f; font-size:13px; background:#101410;">
+            <span style="display:block; border:1.5px dashed #2a332d; border-radius:10px; padding:34px; text-align:center; color:#8b948d; font-size:13px; background:#101410;">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" style="margin-bottom:8px;"><path d="M12 16V4m0 0L8 8m4-4 4 4" stroke="#4a554f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke="#4a554f" stroke-width="2" stroke-linecap="round"/></svg>
-              <span style="display:block;">Drop an image or <span style={`color:${theme.accent};`}>browse</span></span>
+              <span style="display:block;">Drop an image or <span style="color:var(--accent-text);">browse</span></span>
             </span>
           </label>
           <input id="t-screenshot" name="screenshot" type="file" accept="image/*" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); border:0;"/>
         </div>
-        <button type="submit" style={`background:${theme.accent}; color:#04231a; font-weight:700; padding:15px 22px; border-radius:8px; cursor:pointer; font-size:14px; text-align:center; margin-top:6px; border:none;`}>{labels.submit}</button>
+        <button type="submit" style="background:var(--accent-solid); color:var(--accentInk); font-weight:700; padding:15px 22px; border-radius:8px; cursor:pointer; font-size:14px; text-align:center; margin-top:6px; border:none;">{labels.submit}</button>
       </div>
     </form>
   </div>
 ) : (
   <div style="max-width:680px; margin:0 auto; padding:48px 32px 90px;">
     <div data-role="submit-success" hidden style="text-align:center; padding:60px 0;">
-      <div style={`width:64px; height:64px; border-radius:50%; background:${theme.accent}; display:flex; align-items:center; justify-content:center; margin:0 auto 22px;`}>
+      <div style={`width:64px; height:64px; border-radius:50%; background:var(--accent-solid); display:flex; align-items:center; justify-content:center; margin:0 auto 22px;`}>
         <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4 10-10" stroke={theme.accentInk} stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <div class="disp" style="font-size:30px; font-weight:800; letter-spacing:-0.02em;">Submission received!</div>
-      <div style="font-size:16px; color:#5c665f; margin-top:12px; max-width:420px; margin-inline:auto; line-height:1.55;">We'll review your project and add it to the {theme.techName} gallery within 48 hours. Thanks for contributing.</div>
+      <div style={`font-size:16px; color:${bodyInk}; margin-top:12px; max-width:420px; margin-inline:auto; line-height:1.55;`}>We'll review your project and add it to the {theme.techName} gallery within 48 hours. Thanks for contributing.</div>
       <a href={`${base}/`} class="btn btn-primary" style="padding:13px 22px; font-size:15px; margin-top:26px;">Back to gallery</a>
     </div>
     <form data-role="submit-form" data-slug={theme.slug}>
-      <div style={`font-size:13px; font-weight:600; color:${theme.accent}; letter-spacing:.05em; text-transform:uppercase; margin-bottom:14px;`}>Contribute</div>
+      <div style="font-size:13px; font-weight:600; color:var(--accent-text); letter-spacing:.05em; text-transform:uppercase; margin-bottom:14px;">Contribute</div>
       <div class="disp" style="font-size:40px; font-weight:800; letter-spacing:-0.03em;">Submit your project</div>
-      <div style="font-size:16px; color:#5c665f; margin-top:10px; line-height:1.55;">Built something with {theme.techName}? Add it to the gallery — free, and great for backlinks.</div>
+      <div style={`font-size:16px; color:${bodyInk}; margin-top:10px; line-height:1.55;`}>Built something with {theme.techName}? Add it to the gallery — free, and great for backlinks.</div>
       <div style="margin-top:34px; display:flex; flex-direction:column; gap:20px;">
         <div><label for="l-repo" style={`display:block; font-size:13px; font-weight:600; color:${labelInk}; margin-bottom:8px;`}>{labels.repo}</label><input id="l-repo" name="repo" type="url" required placeholder="https://github.com/you/your-project" style={`width:100%; border:1px solid #e0e5e2; border-radius:${btnRadius}; padding:13px 15px; font-size:15px; outline:none; background:#fff; color:#16201b;`}/></div>
         <div><label for="l-name" style={`display:block; font-size:13px; font-weight:600; color:${labelInk}; margin-bottom:8px;`}>{labels.name}</label><input id="l-name" name="name" required placeholder="e.g. Pulse" style={`width:100%; border:1px solid #e0e5e2; border-radius:${btnRadius}; padding:13px 15px; font-size:15px; outline:none; background:#fff; color:#16201b;`}/></div>
@@ -75,9 +83,9 @@ const labels = isTerminal
         <div>
           <label for="l-screenshot" style="display:block; cursor:pointer;">
             <span style={`display:block; font-size:13px; font-weight:600; color:${labelInk}; margin-bottom:8px;`}>{labels.shot}</span>
-            <span style={`display:block; border:1.5px dashed #d6ddd9; border-radius:${radius}; padding:34px; text-align:center; color:#8b9690; font-size:14px; background:#fff;`}>
+            <span style={`display:block; border:1.5px dashed #d6ddd9; border-radius:${radius}; padding:34px; text-align:center; color:${dropInk}; font-size:14px; background:#fff;`}>
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" style="margin-bottom:8px;"><path d="M12 16V4m0 0L8 8m4-4 4 4" stroke="#aab3ae" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke="#aab3ae" stroke-width="2" stroke-linecap="round"/></svg>
-              <span style="display:block;">Drop an image or <span style={`color:${theme.editorial ? "#0a0a0a" : theme.accent};`}>browse</span></span>
+              <span style="display:block;">Drop an image or <span style={`color:${dropAccent};`}>browse</span></span>
             </span>
           </label>
           <input id="l-screenshot" name="screenshot" type="file" accept="image/*" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); border:0;"/>

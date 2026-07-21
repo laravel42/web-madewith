@@ -7,8 +7,12 @@ interface Props { theme: Theme; data: CatalogData; llmsTxt: string; }
 const { theme, data, llmsTxt } = Astro.props;
 const base = `/${theme.slug}`;
 const isTerminal = theme.variant === "terminal";
-const muted = isTerminal ? "#8b948d" : "#5c665f";
-const faint = isTerminal ? "#7c887f" : "#8b9690";
+// Next renders the non-terminal branch on its black shell, so the page greys
+// follow `darkShell`; the code panel keeps its light fill on both, and has its
+// own ink so nothing light lands on it.
+const muted = isTerminal ? "#8b948d" : theme.darkShell ? "#a3ada7" : "#5c665f"; // 9.1:1 on #000 / 5.8:1 on #fbfcfb
+const faint = isTerminal ? "#7c887f" : theme.darkShell ? "#a3ada7" : "#5c665f";
+const panelFaint = isTerminal ? "#7c887f" : "#5c665f"; // 4.9:1 on #121614 / 5.5:1 on #f4f6f5
 const codeBg = isTerminal ? "#121614" : "#f4f6f5";
 const codeBorder = isTerminal ? "#232a26" : "#e0e5e2";
 ---
@@ -16,7 +20,7 @@ const codeBorder = isTerminal ? "#232a26" : "#e0e5e2";
 <div style="max-width:760px; margin:0 auto; padding:48px 32px 90px;">
   {isTerminal ? (
     <>
-      <div style="font-size:12px; color:#5c665f; margin-bottom:14px;"><a href={`${base}/`} style="cursor:pointer; text-decoration:none; color:inherit;">~</a> / llm</div>
+      <div style={`font-size:12px; color:${faint}; margin-bottom:14px;`}><a href={`${base}/`} style="cursor:pointer; text-decoration:none; color:inherit;">~</a> / llm</div>
       <div class="disp" style="font-size:38px; font-weight:700; letter-spacing:-0.02em; color:#f1f6f2;">LLM context</div>
     </>
   ) : (
@@ -30,12 +34,12 @@ const codeBorder = isTerminal ? "#232a26" : "#e0e5e2";
   </div>
 
   <div style={`margin-top:28px; display:flex; flex-wrap:wrap; gap:12px; font-size:${isTerminal ? "13px" : "14px"};`}>
-    <a href={`${base}/llms.txt`} class="filter-link" style={`border:1px solid ${theme.accent}; color:${theme.accent}; padding:9px 16px; border-radius:${isTerminal ? "6px" : `${theme.radius}px`}; text-decoration:none; font-weight:600;`}>llms.txt ↓</a>
+    <a href={`${base}/llms.txt`} class="filter-link" style={`border:1px solid var(--accent-text); color:var(--accent-text); padding:9px 16px; border-radius:${isTerminal ? "6px" : `${theme.radius}px`}; text-decoration:none; font-weight:600;`}>llms.txt ↓</a>
     <a href={`${base}/rss.xml`} class="filter-link" style={`color:${faint}; padding:9px 0; text-decoration:none;`}>RSS feed</a>
   </div>
 
   <div style={`margin-top:28px; border:1px solid ${codeBorder}; border-radius:${isTerminal ? "10px" : `${theme.radius}px`}; background:${codeBg}; overflow:hidden;`}>
-    <div style={`display:flex; align-items:center; justify-content:space-between; padding:12px 16px; border-bottom:1px solid ${codeBorder}; font-size:12px; color:${faint};`}>
+    <div style={`display:flex; align-items:center; justify-content:space-between; padding:12px 16px; border-bottom:1px solid ${codeBorder}; font-size:12px; color:${panelFaint};`}>
       <span>{data.projects.length.toLocaleString()} projects · updated {new Date(data.scrapedAt).toLocaleDateString()}</span>
       <button type="button" data-role="copy-llms" style={`background:transparent; border:1px solid ${codeBorder}; color:inherit; padding:5px 12px; border-radius:6px; cursor:pointer; font-size:12px;`}>Copy</button>
     </div>

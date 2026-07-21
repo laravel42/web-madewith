@@ -5,7 +5,11 @@ const { theme } = Astro.props;
 const base = `/${theme.slug}`;
 const isTerminal = theme.variant === "terminal";
 const btnRadius = theme.editorial ? "2px" : isTerminal ? "8px" : "10px";
-const labelInk = theme.editorial ? "#b4b4b4" : "#3a443f";
+// Page-level ink. The light branch also renders on Next's black shell, so the
+// greys follow `darkShell` rather than `editorial` (which angular/rails/drupal/
+// payload share while sitting on #fbfcfb).
+const labelInk = theme.darkShell ? "#b4b4b4" : "#3a443f"; // 10.1:1 on #000 / 9.8:1 on #fbfcfb
+const bodyInk = theme.darkShell ? "#a3ada7" : "#5c665f"; // 9.1:1 on #000 / 5.8:1 on #fbfcfb
 ---
 
 {isTerminal ? (
@@ -16,10 +20,10 @@ const labelInk = theme.editorial ? "#b4b4b4" : "#3a443f";
       </div>
       <div class="disp" style="font-size:28px; font-weight:700; color:#f1f6f2;">✓ subscribed</div>
       <div style="font-size:14px; color:#8b948d; margin-top:12px; max-width:440px; margin-inline:auto; line-height:1.6;">You're on the list. We'll send a digest of new {theme.techName} projects when the index updates.</div>
-      <a href={`${base}/`} style={`border:1px solid ${theme.accent}; color:${theme.accent}; background:transparent; padding:12px 22px; border-radius:8px; text-decoration:none; font-size:14px; display:inline-block; margin-top:26px;`}>cd ../gallery</a>
+      <a href={`${base}/`} style="border:1px solid var(--accent-text); color:var(--accent-text); background:transparent; padding:12px 22px; border-radius:8px; text-decoration:none; font-size:14px; display:inline-block; margin-top:26px;">cd ../gallery</a>
     </div>
     <form data-role="newsletter-form">
-      <div style={`font-size:13px; color:${theme.accent}; margin-bottom:16px;`}>// newsletter</div>
+      <div style="font-size:13px; color:var(--accent-text); margin-bottom:16px;">// newsletter</div>
       <div class="disp" style="font-size:38px; font-weight:700; letter-spacing:-0.02em; color:#f1f6f2;">Stay in the loop</div>
       <div style="font-size:14px; color:#8b948d; margin-top:10px; line-height:1.6;">Get a digest of standout {theme.techName} projects when the gallery refreshes — no spam, unsubscribe any time.</div>
       <div style="margin-top:32px; display:flex; flex-direction:column; gap:16px;">
@@ -27,24 +31,24 @@ const labelInk = theme.editorial ? "#b4b4b4" : "#3a443f";
           <label for="n-email-t" style="display:block; font-size:12px; color:#7c887f; margin-bottom:8px;">email</label>
           <input id="n-email-t" name="email" type="email" required placeholder="you@example.com" autocomplete="email" style="width:100%; border:1px solid #232a26; border-radius:8px; padding:13px 15px; font-size:14px; outline:none; background:#121614; color:#e8efe9;"/>
         </div>
-        <button type="submit" style={`background:${theme.accent}; color:#04231a; font-weight:700; padding:15px 22px; border-radius:8px; cursor:pointer; font-size:14px; text-align:center; border:none;`}>subscribe</button>
+        <button type="submit" style="background:var(--accent-solid); color:var(--accentInk); font-weight:700; padding:15px 22px; border-radius:8px; cursor:pointer; font-size:14px; text-align:center; border:none;">subscribe</button>
       </div>
     </form>
   </div>
 ) : (
   <div style="max-width:560px; margin:0 auto; padding:48px 32px 90px;">
     <div data-role="newsletter-success" hidden style="text-align:center; padding:60px 0;">
-      <div style={`width:64px; height:64px; border-radius:50%; background:${theme.accent}; display:flex; align-items:center; justify-content:center; margin:0 auto 22px;`}>
+      <div style={`width:64px; height:64px; border-radius:50%; background:var(--accent-solid); display:flex; align-items:center; justify-content:center; margin:0 auto 22px;`}>
         <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4 10-10" stroke={theme.accentInk} stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
       <div class="disp" style="font-size:30px; font-weight:800; letter-spacing:-0.02em;">You're subscribed!</div>
-      <div style="font-size:16px; color:#5c665f; margin-top:12px; max-width:420px; margin-inline:auto; line-height:1.55;">We'll send a digest of new {theme.techName} projects when the gallery refreshes.</div>
+      <div style={`font-size:16px; color:${bodyInk}; margin-top:12px; max-width:420px; margin-inline:auto; line-height:1.55;`}>We'll send a digest of new {theme.techName} projects when the gallery refreshes.</div>
       <a href={`${base}/`} class="btn btn-primary" style="padding:13px 22px; font-size:15px; margin-top:26px;">Back to gallery</a>
     </div>
     <form data-role="newsletter-form">
-      <div style={`font-size:13px; font-weight:600; color:${theme.accent}; letter-spacing:.05em; text-transform:uppercase; margin-bottom:14px;`}>Newsletter</div>
+      <div style="font-size:13px; font-weight:600; color:var(--accent-text); letter-spacing:.05em; text-transform:uppercase; margin-bottom:14px;">Newsletter</div>
       <div class="disp" style="font-size:40px; font-weight:800; letter-spacing:-0.03em;">Stay in the loop</div>
-      <div style="font-size:16px; color:#5c665f; margin-top:10px; line-height:1.55;">Get a digest of standout {theme.techName} projects when the gallery refreshes — no spam, unsubscribe any time.</div>
+      <div style={`font-size:16px; color:${bodyInk}; margin-top:10px; line-height:1.55;`}>Get a digest of standout {theme.techName} projects when the gallery refreshes — no spam, unsubscribe any time.</div>
       <div style="margin-top:34px; display:flex; flex-direction:column; gap:16px;">
         <div>
           <label for="n-email-l" style={`display:block; font-size:13px; font-weight:600; color:${labelInk}; margin-bottom:8px;`}>Email address</label>
