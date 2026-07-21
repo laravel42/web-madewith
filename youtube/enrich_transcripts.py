@@ -231,6 +231,9 @@ def generate(client: Any, model: str, prompt: str, max_output_tokens: int = MAX_
         # the visible JSON; at the default effort a long transcript exhausts the
         # cap and the response comes back incomplete/empty.
         kwargs["reasoning"] = {"effort": "low"}
+        # Constrained JSON decoding — long transcript fields otherwise pick up
+        # unescaped quotes/newlines that json.loads rejects.
+        kwargs["text"] = {"format": {"type": "json_object"}}
     print(f"    → {model} ({len(prompt):,} chars in"
           + (", reasoning=low" if "reasoning" in kwargs else "")
           + f", max_output_tokens={max_output_tokens:,})")
@@ -285,10 +288,31 @@ def main() -> int:
 
     load_dotenv(ROOT / ".env")
     input_dir, out_dir = Path(args.input), Path(args.out)
-    candidates = sorted(input_dir.glob("*.json"))
+    raw_files = sorted(input_dir.glob("*.json"))
     if args.video_id:
-        candidates = [input_dir / f"{args.video_id}.json"]
-    candidates = [path for path in candidates if path.exists()][: args.limit]
+        raw_files = [input_dir / f"{args.video_id}.json"]
+    raw_files = [path for path in raw_files if path.exists()]
+
+    def already_enriched(path: Path) -> bool:
+        """Raw and published files share the <videoId>.json name."""
+        output = out_dir / path.name
+        if not output.exists():
+            return False
+        try:
+            return json.loads(output.read_text()).get("schemaVersion") == SCHEMA_VERSION
+        except (OSError, json.JSONDecodeError):
+            return False
+
+    # Apply --limit to videos that still NEED work, not to raw files: otherwise
+    # already-enriched files consume the limit and repeated runs re-scan the
+    # same alphabetical prefix forever instead of advancing through the queue.
+    skipped = 0
+    candidates: list[Path] = []
+    for path in raw_files:
+        if not args.force and already_enriched(path):
+            skipped += 1
+        elif len(candidates) < args.limit:
+            candidates.append(path)
     if args.dry_run:
         for path in candidates:
             raw = json.loads(path.read_text())
@@ -303,24 +327,19 @@ def main() -> int:
     model = args.model or os.getenv("OPENAI_MODEL", "gpt-5-mini")
     client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
     out_dir.mkdir(parents=True, exist_ok=True)
+    beyond_limit = len(raw_files) - skipped - len(candidates)
     print(f"model={model}  max_output_tokens={args.max_output_tokens:,}")
-    print(f"raw:  {input_dir}  ({len(candidates)} candidate file(s), limit {args.limit})")
+    print(f"raw:  {input_dir}  ({len(raw_files)} file(s): {skipped} already enriched (v{SCHEMA_VERSION}), "
+          f"{len(candidates)} to process"
+          + (f", {beyond_limit} beyond --limit {args.limit}" if beyond_limit > 0 else "") + ")")
     print(f"out:  {out_dir}")
     print(f"db:   {len(info)} videos with metadata\n")
-    written = skipped = failed = 0
+    written = failed = 0
     t_start = time.time()
     for index, path in enumerate(candidates, 1):
         raw = json.loads(path.read_text())
         video_id = str(raw["videoId"])
         output = out_dir / f"{video_id}.json"
-        if output.exists() and not args.force:
-            try:
-                if json.loads(output.read_text()).get("schemaVersion") == SCHEMA_VERSION:
-                    skipped += 1
-                    print(f"[{index:>3}/{len(candidates)}] {video_id}  skip (v{SCHEMA_VERSION} exists)")
-                    continue
-            except (OSError, json.JSONDecodeError):
-                pass
         title, db_duration, slug = info.get(video_id, (video_id, 0.0, "?"))
         segments = raw.get("segments", [])
         inferred_duration = float(segments[-1]["start"]) + 5 if segments else 0.0
