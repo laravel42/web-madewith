@@ -331,7 +331,7 @@ def main() -> int:
     parser.add_argument("--video-id", help="Process one YouTube video ID")
     parser.add_argument("--limit", type=int, default=100)
     parser.add_argument("--model", help="Model id; defaults to OPENAI_MODEL, else gpt-5-mini on OpenAI "
-                                        "or google/gemini-2.5-flash on OpenRouter")
+                                        "or google/gemini-2.5-pro on OpenRouter")
     parser.add_argument("--base-url", default=os.getenv("OPENAI_BASE_URL"),
                         help="OpenAI-compatible endpoint, e.g. http://localhost:11434/v1 for Ollama "
                              "(defaults to OPENAI_BASE_URL; api.openai.com when unset)")
@@ -392,15 +392,17 @@ def main() -> int:
     from openai import OpenAI
 
     info = metadata()
-    # Default model per backend: hosted OpenAI-compatible gateways get Gemini
-    # 2.5 Flash (long context, reliable JSON, cheap for bulk enrichment);
-    # local servers must name their model explicitly.
+    # Default model per backend: OpenRouter gets Gemini 2.5 Pro — best
+    # long-document comprehension for chapter/timestamp accuracy, with
+    # enforced JSON mode (use OPENAI_MODEL=google/gemini-2.5-flash to trade
+    # quality for ~10x cheaper bulk runs); local servers must name their
+    # model explicitly.
     if args.model:
         model = args.model
     elif os.getenv("OPENAI_MODEL"):
         model = os.environ["OPENAI_MODEL"]
     elif use_chat and "openrouter" in args.base_url:
-        model = "google/gemini-2.5-flash"
+        model = "google/gemini-2.5-pro"
     elif use_chat:
         raise SystemExit("--model (or OPENAI_MODEL) is required for a local server, e.g. --model qwen3:14b")
     else:
