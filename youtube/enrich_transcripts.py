@@ -166,15 +166,31 @@ def normalize_result(raw: dict[str, Any], generated: dict[str, Any], duration_se
     }
 
 
-def prompt_for(raw: dict[str, Any], title: str, duration_seconds: float) -> str:
+def prompt_for(raw: dict[str, Any], title: str, duration_seconds: float, include_transcripts: bool = True) -> str:
+    if include_transcripts:
+        chapter_schema = """{"title": "Chapter title", "description": "One sentence on what this chapter covers.",
+      "startTime": 0, "endTime": 60.5, "transcript": "Markdown of the literal speech in this chapter."}"""
+        transcript_rule = """- chapter `transcript`: the literal speech-to-text for that chapter as clean, readable Markdown
+  (short paragraphs). Fix punctuation, capitalization, and obvious caption errors, and drop non-speech
+  noise like isolated [Music] markers and duplicated fragments — but do NOT summarize, invent, reorder,
+  or omit substantive content. Together the chapter transcripts are the complete transcription.
+"""
+        transcript_field = "and a `transcript` field"
+    else:
+        # Structure-only mode for videos whose full cleaned transcript can't fit
+        # in one response: the literal transcription is rebuilt from the raw
+        # captions per chapter window instead (see normalize_result).
+        chapter_schema = """{"title": "Chapter title", "description": "One sentence on what this chapter covers.",
+      "startTime": 0, "endTime": 60.5}"""
+        transcript_rule = ""
+        transcript_field = "and numeric times only — do NOT include the speech text"
     return f"""You are an expert technical video editor and SEO writer. Read the timestamped
 transcript and return JSON ONLY (no prose, no code fence) with exactly these keys:
 
 {{
   "seoDescription": "One cohesive paragraph.",
   "chapters": [
-    {{"title": "Chapter title", "description": "One sentence on what this chapter covers.",
-      "startTime": 0, "endTime": 60.5, "transcript": "Markdown of the literal speech in this chapter."}}
+    {chapter_schema}
   ],
   "summary": "Markdown key-concepts document."
 }}
@@ -182,13 +198,9 @@ transcript and return JSON ONLY (no prose, no code fence) with exactly these key
 Requirements:
 - chapters: segment the ENTIRE video into coherent topic/argument chunks in chronological
   order. Each needs a specific, descriptive title, a useful one-sentence description, numeric
-  startTime and endTime in seconds, and a `transcript` field. Cover the full {duration_seconds:.0f}-second
+  startTime and endTime in seconds, {transcript_field}. Cover the full {duration_seconds:.0f}-second
   runtime with no gaps or overlaps (first startTime 0; each startTime equals the previous endTime).
-- chapter `transcript`: the literal speech-to-text for that chapter as clean, readable Markdown
-  (short paragraphs). Fix punctuation, capitalization, and obvious caption errors, and drop non-speech
-  noise like isolated [Music] markers and duplicated fragments — but do NOT summarize, invent, reorder,
-  or omit substantive content. Together the chapter transcripts are the complete transcription.
-- seoDescription: a single cohesive, natural paragraph of ~450-520 characters describing what the
+{transcript_rule}- seoDescription: a single cohesive, natural paragraph of ~450-520 characters describing what the
   video teaches and its value. Weave in the core topics/technologies as keywords. No clickbait, no
   "in this video", no hashtags, no emojis.
 - summary: an elegant, scannable Markdown "key concepts" document. Use `##` section headings, **bold**
@@ -204,15 +216,36 @@ TIMESTAMPED RAW CAPTIONS
 """.strip()
 
 
+class TruncatedOutput(RuntimeError):
+    """The model ran out of output tokens before finishing the JSON."""
+
+
 def generate(client: Any, model: str, prompt: str, max_output_tokens: int = MAX_OUTPUT_TOKENS) -> dict[str, Any]:
+    import openai
+
+    # Misconfiguration fails the same way on every retry — surface it at once.
+    fatal = (openai.AuthenticationError, openai.PermissionDeniedError, openai.NotFoundError, openai.BadRequestError)
+    kwargs: dict[str, Any] = {"model": model, "input": prompt, "max_output_tokens": max_output_tokens}
+    if model.startswith("gpt-5"):
+        # Reasoning models spend max_output_tokens on hidden reasoning *before*
+        # the visible JSON; at the default effort a long transcript exhausts the
+        # cap and the response comes back incomplete/empty.
+        kwargs["reasoning"] = {"effort": "low"}
     for attempt in range(5):
         try:
-            response = client.responses.create(model=model, input=prompt, max_output_tokens=max_output_tokens)
+            response = client.responses.create(**kwargs)
+            if getattr(response, "status", None) == "incomplete":
+                reason = getattr(getattr(response, "incomplete_details", None), "reason", None) or "unknown"
+                raise TruncatedOutput(f"response incomplete ({reason}, max_output_tokens={max_output_tokens})")
             return parse_model_json(response.output_text)
-        except Exception:
+        except (TruncatedOutput, *fatal):
+            raise
+        except Exception as exc:
             if attempt == 4:
                 raise
-            time.sleep(min(30, 2 ** attempt))
+            wait = min(30, 2 ** attempt)
+            print(f"    attempt {attempt + 1}/5 {type(exc).__name__}: {str(exc)[:120]} — retrying in {wait}s")
+            time.sleep(wait)
     raise RuntimeError("unreachable")
 
 
@@ -275,7 +308,16 @@ def main() -> int:
         inferred_duration = float(segments[-1]["start"]) + 5 if segments else 0.0
         duration = max(db_duration, inferred_duration)
         try:
-            generated = generate(client, model, prompt_for(raw, title, duration), args.max_output_tokens)
+            try:
+                generated = generate(client, model, prompt_for(raw, title, duration), args.max_output_tokens)
+            except TruncatedOutput as exc:
+                # The full cleaned transcript doesn't fit in one response. Ask
+                # for structure only; normalize_result rebuilds each chapter's
+                # transcription from the raw captions in its time window.
+                print(f"[{index}/{len(candidates)}] {video_id} {exc} — retrying structure-only")
+                generated = generate(client, model,
+                                     prompt_for(raw, title, duration, include_transcripts=False),
+                                     args.max_output_tokens)
             result = normalize_result(raw, generated, duration)
             output.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n")
             written += 1
@@ -284,6 +326,12 @@ def main() -> int:
         except Exception as exc:
             failed += 1
             print(f"[{index}/{len(candidates)}] {video_id} FAIL {type(exc).__name__}: {exc}")
+            import openai
+            if isinstance(exc, (openai.AuthenticationError, openai.PermissionDeniedError, openai.NotFoundError)):
+                raise SystemExit(
+                    f"Aborting: {type(exc).__name__} — every video would fail the same way. "
+                    "Check OPENAI_API_KEY and the model name "
+                    f"(model={model}; override with OPENAI_MODEL or --model).")
     print(f"Done — written={written} skipped={skipped} failed={failed}")
     return 1 if failed else 0
 
