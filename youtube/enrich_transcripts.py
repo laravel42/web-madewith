@@ -220,35 +220,56 @@ class TruncatedOutput(RuntimeError):
     """The model ran out of output tokens before finishing the JSON."""
 
 
-def generate(client: Any, model: str, prompt: str, max_output_tokens: int = MAX_OUTPUT_TOKENS) -> dict[str, Any]:
+def generate(client: Any, model: str, prompt: str, max_output_tokens: int = MAX_OUTPUT_TOKENS,
+             use_chat: bool = False, log: Any = print) -> dict[str, Any]:
     import openai
 
     # Misconfiguration fails the same way on every retry — surface it at once.
     fatal = (openai.AuthenticationError, openai.PermissionDeniedError, openai.NotFoundError, openai.BadRequestError)
-    kwargs: dict[str, Any] = {"model": model, "input": prompt, "max_output_tokens": max_output_tokens}
-    if model.startswith("gpt-5"):
-        # Reasoning models spend max_output_tokens on hidden reasoning *before*
-        # the visible JSON; at the default effort a long transcript exhausts the
-        # cap and the response comes back incomplete/empty.
-        kwargs["reasoning"] = {"effort": "low"}
-        # Constrained JSON decoding — long transcript fields otherwise pick up
-        # unescaped quotes/newlines that json.loads rejects.
-        kwargs["text"] = {"format": {"type": "json_object"}}
-    print(f"    → {model} ({len(prompt):,} chars in"
-          + (", reasoning=low" if "reasoning" in kwargs else "")
-          + f", max_output_tokens={max_output_tokens:,})")
+    if use_chat:
+        # OpenAI-compatible local servers (Ollama, LM Studio, vLLM) speak the
+        # Chat Completions API, not the Responses API.
+        kwargs: dict[str, Any] = {"model": model, "messages": [{"role": "user", "content": prompt}],
+                                  "max_tokens": max_output_tokens,
+                                  "response_format": {"type": "json_object"}}
+    else:
+        kwargs = {"model": model, "input": prompt, "max_output_tokens": max_output_tokens}
+        if model.startswith("gpt-5"):
+            # Reasoning models spend max_output_tokens on hidden reasoning *before*
+            # the visible JSON; at the default effort a long transcript exhausts the
+            # cap and the response comes back incomplete/empty.
+            kwargs["reasoning"] = {"effort": "low"}
+            # Constrained JSON decoding — long transcript fields otherwise pick up
+            # unescaped quotes/newlines that json.loads rejects.
+            kwargs["text"] = {"format": {"type": "json_object"}}
+    log(f"    → {model} ({len(prompt):,} chars in"
+        + (", reasoning=low" if "reasoning" in kwargs else "")
+        + (", api=chat" if use_chat else "")
+        + f", max_output_tokens={max_output_tokens:,})")
     for attempt in range(5):
         try:
             t0 = time.time()
+            if use_chat:
+                response = client.chat.completions.create(**kwargs)
+                dt = time.time() - t0
+                usage = getattr(response, "usage", None)
+                if usage is not None:
+                    log(f"    ← {dt:.1f}s — tokens: {usage.prompt_tokens:,} in, {usage.completion_tokens:,} out")
+                else:
+                    log(f"    ← {dt:.1f}s")
+                choice = response.choices[0]
+                if choice.finish_reason == "length":
+                    raise TruncatedOutput(f"output cut off at max_tokens={max_output_tokens}")
+                return parse_model_json(choice.message.content or "")
             response = client.responses.create(**kwargs)
             dt = time.time() - t0
             usage = getattr(response, "usage", None)
             if usage is not None:
                 reasoning = getattr(getattr(usage, "output_tokens_details", None), "reasoning_tokens", 0) or 0
-                print(f"    ← {dt:.1f}s — tokens: {usage.input_tokens:,} in, {usage.output_tokens:,} out"
-                      f" ({reasoning:,} reasoning, {usage.output_tokens - reasoning:,} visible)")
+                log(f"    ← {dt:.1f}s — tokens: {usage.input_tokens:,} in, {usage.output_tokens:,} out"
+                    f" ({reasoning:,} reasoning, {usage.output_tokens - reasoning:,} visible)")
             else:
-                print(f"    ← {dt:.1f}s")
+                log(f"    ← {dt:.1f}s")
             if getattr(response, "status", None) == "incomplete":
                 reason = getattr(getattr(response, "incomplete_details", None), "reason", None) or "unknown"
                 raise TruncatedOutput(f"response incomplete ({reason}, max_output_tokens={max_output_tokens})")
@@ -259,9 +280,39 @@ def generate(client: Any, model: str, prompt: str, max_output_tokens: int = MAX_
             if attempt == 4:
                 raise
             wait = min(30, 2 ** attempt)
-            print(f"    attempt {attempt + 1}/5 {type(exc).__name__}: {str(exc)[:120]} — retrying in {wait}s")
+            log(f"    attempt {attempt + 1}/5 {type(exc).__name__}: {str(exc)[:120]} — retrying in {wait}s")
             time.sleep(wait)
     raise RuntimeError("unreachable")
+
+
+def enrich_one(client: Any, model: str, use_chat: bool, max_output_tokens: int,
+               info: dict[str, tuple[str, float, str]], path: Path, out_dir: Path, log: Any) -> None:
+    """Enrich a single raw transcript file. Logs progress via `log`; raises on failure."""
+    raw = json.loads(path.read_text())
+    video_id = str(raw["videoId"])
+    output = out_dir / f"{video_id}.json"
+    title, db_duration, slug = info.get(video_id, (video_id, 0.0, "?"))
+    segments = raw.get("segments", [])
+    inferred_duration = float(segments[-1]["start"]) + 5 if segments else 0.0
+    duration = max(db_duration, inferred_duration)
+    log(f"{video_id}  {slug}  \"{title[:60]}\"  ({clock(duration)}, {len(segments)} segments)")
+    t_video = time.time()
+    try:
+        generated = generate(client, model, prompt_for(raw, title, duration),
+                             max_output_tokens, use_chat=use_chat, log=log)
+    except TruncatedOutput as exc:
+        # The full cleaned transcript doesn't fit in one response. Ask for
+        # structure only; normalize_result rebuilds each chapter's
+        # transcription from the raw captions in its time window.
+        log(f"    {exc} — retrying structure-only (transcription will be rebuilt from raw captions)")
+        generated = generate(client, model,
+                             prompt_for(raw, title, duration, include_transcripts=False),
+                             max_output_tokens, use_chat=use_chat, log=log)
+    result = normalize_result(raw, generated, duration)
+    output.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n")
+    log(f"    ok in {time.time() - t_video:.1f}s — {len(result['chapters'])} chapters, "
+        f"seo {len(result['seoDescription'])} chars, summary {len(result['summary']):,} chars, "
+        f"transcription {len(result['transcription']):,} chars → {output.name}")
 
 
 def metadata() -> dict[str, tuple[str, float, str]]:
@@ -279,9 +330,15 @@ def main() -> int:
     parser.add_argument("--out", default=str(OUT_DIR), help="Published transcript directory")
     parser.add_argument("--video-id", help="Process one YouTube video ID")
     parser.add_argument("--limit", type=int, default=100)
-    parser.add_argument("--model", help="OpenAI model; defaults to OPENAI_MODEL or gpt-5-mini")
+    parser.add_argument("--model", help="Model id; defaults to OPENAI_MODEL, else gpt-5-mini on OpenAI "
+                                        "or google/gemini-2.5-pro on OpenRouter")
+    parser.add_argument("--base-url", default=os.getenv("OPENAI_BASE_URL"),
+                        help="OpenAI-compatible endpoint, e.g. http://localhost:11434/v1 for Ollama "
+                             "(defaults to OPENAI_BASE_URL; api.openai.com when unset)")
     parser.add_argument("--max-output-tokens", type=int, default=MAX_OUTPUT_TOKENS,
                         help=f"Output-token reservation per request (default {MAX_OUTPUT_TOKENS})")
+    parser.add_argument("--workers", type=int, default=4,
+                        help="Videos enriched concurrently (default 4; use 1 for sequential)")
     parser.add_argument("--force", action="store_true", help="Replace an existing up-to-date output")
     parser.add_argument("--dry-run", action="store_true", help="Validate inputs without calling OpenAI")
     args = parser.parse_args()
@@ -318,17 +375,44 @@ def main() -> int:
             raw = json.loads(path.read_text())
             print(f"{raw['videoId']}: {len(raw.get('segments', []))} segments")
         return 0
-    if not os.getenv("OPENAI_API_KEY"):
-        raise SystemExit("OPENAI_API_KEY is required")
+    # OPENROUTER_API_KEY alone is enough to route through OpenRouter (an
+    # explicit --base-url / OPENAI_BASE_URL still wins).
+    openrouter_key = os.getenv("OPENROUTER_API_KEY")
+    if openrouter_key and not args.base_url:
+        args.base_url = "https://openrouter.ai/api/v1"
+    # Non-OpenAI endpoints (OpenRouter, Ollama, LM Studio, vLLM) speak Chat
+    # Completions instead of the Responses API.
+    use_chat = bool(args.base_url) and "api.openai.com" not in args.base_url
+    api_key = os.getenv("OPENAI_API_KEY") or openrouter_key
+    is_local = use_chat and ("localhost" in args.base_url or "127.0.0.1" in args.base_url)
+    if not api_key and not is_local:
+        raise SystemExit("An API key is required: OPENAI_API_KEY or OPENROUTER_API_KEY "
+                         "(or point --base-url/OPENAI_BASE_URL at a local server)")
 
     from openai import OpenAI
 
     info = metadata()
-    model = args.model or os.getenv("OPENAI_MODEL", "gpt-5-mini")
-    client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+    # Default model per backend: OpenRouter gets Gemini 2.5 Pro — best
+    # long-document comprehension for chapter/timestamp accuracy, with
+    # enforced JSON mode (use OPENAI_MODEL=google/gemini-2.5-flash to trade
+    # quality for ~10x cheaper bulk runs); local servers must name their
+    # model explicitly.
+    if args.model:
+        model = args.model
+    elif os.getenv("OPENAI_MODEL"):
+        model = os.environ["OPENAI_MODEL"]
+    elif use_chat and "openrouter" in args.base_url:
+        model = "google/gemini-2.5-pro"
+    elif use_chat:
+        raise SystemExit("--model (or OPENAI_MODEL) is required for a local server, e.g. --model qwen3:14b")
+    else:
+        model = "gpt-5-mini"
+    client = OpenAI(api_key=api_key or "ollama", base_url=args.base_url)
     out_dir.mkdir(parents=True, exist_ok=True)
     beyond_limit = len(raw_files) - skipped - len(candidates)
-    print(f"model={model}  max_output_tokens={args.max_output_tokens:,}")
+    workers = max(1, min(args.workers, len(candidates) or 1))
+    print(f"model={model}  max_output_tokens={args.max_output_tokens:,}  workers={workers}"
+          + (f"  base_url={args.base_url} (chat api)" if use_chat else ""))
     print(f"raw:  {input_dir}  ({len(raw_files)} file(s): {skipped} already enriched (v{SCHEMA_VERSION}), "
           f"{len(candidates)} to process"
           + (f", {beyond_limit} beyond --limit {args.limit}" if beyond_limit > 0 else "") + ")")
@@ -336,48 +420,40 @@ def main() -> int:
     print(f"db:   {len(info)} videos with metadata\n")
     written = failed = 0
     t_start = time.time()
-    for index, path in enumerate(candidates, 1):
-        raw = json.loads(path.read_text())
-        video_id = str(raw["videoId"])
-        output = out_dir / f"{video_id}.json"
-        title, db_duration, slug = info.get(video_id, (video_id, 0.0, "?"))
-        segments = raw.get("segments", [])
-        inferred_duration = float(segments[-1]["start"]) + 5 if segments else 0.0
-        duration = max(db_duration, inferred_duration)
-        print(f"[{index:>3}/{len(candidates)}] {video_id}  {slug}  \"{title[:60]}\""
-              f"  ({clock(duration)}, {len(segments)} segments)")
-        t_video = time.time()
+
+    # Each video's log lines are buffered by its worker and printed as one
+    # block on completion, so parallel runs stay readable.
+    def run_video(path: Path) -> tuple[list[str], Exception | None]:
+        lines: list[str] = []
         try:
-            try:
-                generated = generate(client, model, prompt_for(raw, title, duration), args.max_output_tokens)
-            except TruncatedOutput as exc:
-                # The full cleaned transcript doesn't fit in one response. Ask
-                # for structure only; normalize_result rebuilds each chapter's
-                # transcription from the raw captions in its time window.
-                print(f"    {exc} — retrying structure-only (transcription will be rebuilt from raw captions)")
-                generated = generate(client, model,
-                                     prompt_for(raw, title, duration, include_transcripts=False),
-                                     args.max_output_tokens)
-            result = normalize_result(raw, generated, duration)
-            output.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n")
-            written += 1
-            print(f"    ok in {time.time() - t_video:.1f}s — {len(result['chapters'])} chapters, "
-                  f"seo {len(result['seoDescription'])} chars, summary {len(result['summary']):,} chars, "
-                  f"transcription {len(result['transcription']):,} chars → {output.name}")
+            enrich_one(client, model, use_chat, args.max_output_tokens, info, path, out_dir, lines.append)
+            return lines, None
         except Exception as exc:
-            failed += 1
-            print(f"    FAIL in {time.time() - t_video:.1f}s — {type(exc).__name__}: {exc}")
-            import openai
+            lines.append(f"    FAIL {type(exc).__name__}: {exc}")
+            return lines, exc
+
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
+    import openai
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        futures = [pool.submit(run_video, path) for path in candidates]
+        for done, future in enumerate(as_completed(futures), 1):
+            lines, exc = future.result()
+            written += exc is None
+            failed += exc is not None
+            first, *rest = lines or ["(no output)"]
+            print("\n".join([f"[{done:>3}/{len(candidates)}] {first}", *rest]))
+            remaining = len(candidates) - done
+            if remaining:
+                # Completions-per-second already reflects parallel throughput.
+                eta = (time.time() - t_start) / done * remaining
+                print(f"    elapsed {clock(time.time() - t_start)}, ~{clock(eta)} remaining for {remaining} video(s)")
             if isinstance(exc, (openai.AuthenticationError, openai.PermissionDeniedError, openai.NotFoundError)):
+                pool.shutdown(wait=False, cancel_futures=True)
                 raise SystemExit(
                     f"Aborting: {type(exc).__name__} — every video would fail the same way. "
                     "Check OPENAI_API_KEY and the model name "
                     f"(model={model}; override with OPENAI_MODEL or --model).")
-        processed = written + failed
-        remaining = len(candidates) - index
-        if processed and remaining:
-            eta = (time.time() - t_start) / processed * remaining
-            print(f"    elapsed {clock(time.time() - t_start)}, ~{clock(eta)} remaining for {remaining} video(s)")
     print(f"\nDone in {clock(time.time() - t_start)} — written={written} skipped={skipped} failed={failed}")
     return 1 if failed else 0
 
