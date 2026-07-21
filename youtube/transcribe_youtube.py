@@ -164,11 +164,16 @@ def main() -> int:
             langs.append(fallback)
 
     api = build_api()
+    has_proxy = proxy_config() is not None
     conn = db_connect()
     try:
         videos = get_videos(conn, args.slug, args.limit)
         print(f"Processing {len(videos)} videos (slug={args.slug or '*'}, limit={args.limit}, sleep={args.sleep}s)\n")
         fetched = failed = skipped = unavailable = 0
+        consecutive_blocks = 0
+        # A blocked IP fails every request instantly; grinding through the whole
+        # queue just prolongs the flag. Bail early — sooner without a proxy.
+        max_consecutive_blocks = 10 if has_proxy else 3
         t0 = time.time()
         for i, v in enumerate(videos, 1):
             vid = v["youtube_video_id"]
@@ -183,6 +188,7 @@ def main() -> int:
                 mark_status(conn, v["id"], "fetched", tr.get("language"), len(tr["segments"]))
                 print(f"  [{i:>3}/{len(videos)}] {vid:<12}  ok   {len(tr['segments']):>4} segments  {v['catalog_slug']:<14} {v['title'][:50]}")
                 fetched += 1
+                consecutive_blocks = 0
             except Exception as e:
                 err_name = type(e).__name__
                 err_msg = str(e)[:200]
@@ -190,15 +196,29 @@ def main() -> int:
                 if "TranscriptsDisabled" in err_name or "NoTranscriptFound" in err_name or "NotTranslatable" in err_name or "VideoUnavailable" in err_name or "VideoUnplayable" in err_name or "InvalidVideoId" in err_name:
                     mark_status(conn, v["id"], "unavailable")
                     unavailable += 1
+                    consecutive_blocks = 0
                     print(f"  [{i:>3}/{len(videos)}] {vid:<12}  unavailable  {v['catalog_slug']:<14} {v['title'][:50]}")
-                # Transient: rate-limited / IP-blocked / network — retry later
+                # Transient: rate-limited / IP-blocked / network. Leave the video
+                # 'pending' so the next run picks it up again — 'failed' would
+                # silently drop it out of the queue over an issue that isn't
+                # the video's fault.
                 elif any(s in err_name for s in ("IpBlocked", "RequestBlocked", "PoTokenRequired", "HTTPError", "YouTubeRequestFailed", "CookieError", "FailedToCreateConsentCookie", "ConnectionError", "Timeout")) or "blocked" in err_msg.lower():
-                    mark_status(conn, v["id"], "failed")
                     failed += 1
+                    consecutive_blocks += 1
                     print(f"  [{i:>3}/{len(videos)}] {vid:<12}  retry  {err_name}  {v['title'][:50]}")
+                    if consecutive_blocks >= max_consecutive_blocks:
+                        print(f"\nAborting: {consecutive_blocks} consecutive blocked/failed requests — "
+                              f"YouTube is blocking this IP{' (even through the proxy)' if has_proxy else ''}.")
+                        if not has_proxy:
+                            print("Configure a rotating residential proxy in .env and re-run:\n"
+                                  "  WEBSHARE_PROXY_USERNAME=... WEBSHARE_PROXY_PASSWORD=...   (recommended)\n"
+                                  "  or YT_PROXY_URL=http://user:pass@host:port")
+                        print("Blocked videos were left as 'pending', so a re-run resumes where this stopped.")
+                        break
                 else:
                     mark_status(conn, v["id"], "failed")
                     failed += 1
+                    consecutive_blocks = 0
                     print(f"  [{i:>3}/{len(videos)}] {vid:<12}  FAIL  {err_name}: {err_msg[:80]}")
             # Polite spacing to avoid IP bans
             if args.sleep > 0 and i < len(videos):
