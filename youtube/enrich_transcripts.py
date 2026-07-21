@@ -166,15 +166,31 @@ def normalize_result(raw: dict[str, Any], generated: dict[str, Any], duration_se
     }
 
 
-def prompt_for(raw: dict[str, Any], title: str, duration_seconds: float) -> str:
+def prompt_for(raw: dict[str, Any], title: str, duration_seconds: float, include_transcripts: bool = True) -> str:
+    if include_transcripts:
+        chapter_schema = """{"title": "Chapter title", "description": "One sentence on what this chapter covers.",
+      "startTime": 0, "endTime": 60.5, "transcript": "Markdown of the literal speech in this chapter."}"""
+        transcript_rule = """- chapter `transcript`: the literal speech-to-text for that chapter as clean, readable Markdown
+  (short paragraphs). Fix punctuation, capitalization, and obvious caption errors, and drop non-speech
+  noise like isolated [Music] markers and duplicated fragments — but do NOT summarize, invent, reorder,
+  or omit substantive content. Together the chapter transcripts are the complete transcription.
+"""
+        transcript_field = "and a `transcript` field"
+    else:
+        # Structure-only mode for videos whose full cleaned transcript can't fit
+        # in one response: the literal transcription is rebuilt from the raw
+        # captions per chapter window instead (see normalize_result).
+        chapter_schema = """{"title": "Chapter title", "description": "One sentence on what this chapter covers.",
+      "startTime": 0, "endTime": 60.5}"""
+        transcript_rule = ""
+        transcript_field = "and numeric times only — do NOT include the speech text"
     return f"""You are an expert technical video editor and SEO writer. Read the timestamped
 transcript and return JSON ONLY (no prose, no code fence) with exactly these keys:
 
 {{
   "seoDescription": "One cohesive paragraph.",
   "chapters": [
-    {{"title": "Chapter title", "description": "One sentence on what this chapter covers.",
-      "startTime": 0, "endTime": 60.5, "transcript": "Markdown of the literal speech in this chapter."}}
+    {chapter_schema}
   ],
   "summary": "Markdown key-concepts document."
 }}
@@ -182,13 +198,9 @@ transcript and return JSON ONLY (no prose, no code fence) with exactly these key
 Requirements:
 - chapters: segment the ENTIRE video into coherent topic/argument chunks in chronological
   order. Each needs a specific, descriptive title, a useful one-sentence description, numeric
-  startTime and endTime in seconds, and a `transcript` field. Cover the full {duration_seconds:.0f}-second
+  startTime and endTime in seconds, {transcript_field}. Cover the full {duration_seconds:.0f}-second
   runtime with no gaps or overlaps (first startTime 0; each startTime equals the previous endTime).
-- chapter `transcript`: the literal speech-to-text for that chapter as clean, readable Markdown
-  (short paragraphs). Fix punctuation, capitalization, and obvious caption errors, and drop non-speech
-  noise like isolated [Music] markers and duplicated fragments — but do NOT summarize, invent, reorder,
-  or omit substantive content. Together the chapter transcripts are the complete transcription.
-- seoDescription: a single cohesive, natural paragraph of ~450-520 characters describing what the
+{transcript_rule}- seoDescription: a single cohesive, natural paragraph of ~450-520 characters describing what the
   video teaches and its value. Weave in the core topics/technologies as keywords. No clickbait, no
   "in this video", no hashtags, no emojis.
 - summary: an elegant, scannable Markdown "key concepts" document. Use `##` section headings, **bold**
@@ -204,24 +216,58 @@ TIMESTAMPED RAW CAPTIONS
 """.strip()
 
 
+class TruncatedOutput(RuntimeError):
+    """The model ran out of output tokens before finishing the JSON."""
+
+
 def generate(client: Any, model: str, prompt: str, max_output_tokens: int = MAX_OUTPUT_TOKENS) -> dict[str, Any]:
+    import openai
+
+    # Misconfiguration fails the same way on every retry — surface it at once.
+    fatal = (openai.AuthenticationError, openai.PermissionDeniedError, openai.NotFoundError, openai.BadRequestError)
+    kwargs: dict[str, Any] = {"model": model, "input": prompt, "max_output_tokens": max_output_tokens}
+    if model.startswith("gpt-5"):
+        # Reasoning models spend max_output_tokens on hidden reasoning *before*
+        # the visible JSON; at the default effort a long transcript exhausts the
+        # cap and the response comes back incomplete/empty.
+        kwargs["reasoning"] = {"effort": "low"}
+    print(f"    → {model} ({len(prompt):,} chars in"
+          + (", reasoning=low" if "reasoning" in kwargs else "")
+          + f", max_output_tokens={max_output_tokens:,})")
     for attempt in range(5):
         try:
-            response = client.responses.create(model=model, input=prompt, max_output_tokens=max_output_tokens)
+            t0 = time.time()
+            response = client.responses.create(**kwargs)
+            dt = time.time() - t0
+            usage = getattr(response, "usage", None)
+            if usage is not None:
+                reasoning = getattr(getattr(usage, "output_tokens_details", None), "reasoning_tokens", 0) or 0
+                print(f"    ← {dt:.1f}s — tokens: {usage.input_tokens:,} in, {usage.output_tokens:,} out"
+                      f" ({reasoning:,} reasoning, {usage.output_tokens - reasoning:,} visible)")
+            else:
+                print(f"    ← {dt:.1f}s")
+            if getattr(response, "status", None) == "incomplete":
+                reason = getattr(getattr(response, "incomplete_details", None), "reason", None) or "unknown"
+                raise TruncatedOutput(f"response incomplete ({reason}, max_output_tokens={max_output_tokens})")
             return parse_model_json(response.output_text)
-        except Exception:
+        except (TruncatedOutput, *fatal):
+            raise
+        except Exception as exc:
             if attempt == 4:
                 raise
-            time.sleep(min(30, 2 ** attempt))
+            wait = min(30, 2 ** attempt)
+            print(f"    attempt {attempt + 1}/5 {type(exc).__name__}: {str(exc)[:120]} — retrying in {wait}s")
+            time.sleep(wait)
     raise RuntimeError("unreachable")
 
 
-def metadata() -> dict[str, tuple[str, float]]:
+def metadata() -> dict[str, tuple[str, float, str]]:
     import psycopg
 
     with psycopg.connect(os.environ["DATABASE_URL"]) as conn, conn.cursor() as cur:
-        cur.execute("SELECT youtube_video_id, title, COALESCE(duration_seconds, 0) FROM youtube_videos")
-        return {video_id: (title, float(duration)) for video_id, title, duration in cur.fetchall()}
+        cur.execute("SELECT youtube_video_id, title, COALESCE(duration_seconds, 0), COALESCE(catalog_slug, '') "
+                    "FROM youtube_videos")
+        return {video_id: (title, float(duration), slug) for video_id, title, duration, slug in cur.fetchall()}
 
 
 def main() -> int:
@@ -257,7 +303,12 @@ def main() -> int:
     model = args.model or os.getenv("OPENAI_MODEL", "gpt-5-mini")
     client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
     out_dir.mkdir(parents=True, exist_ok=True)
+    print(f"model={model}  max_output_tokens={args.max_output_tokens:,}")
+    print(f"raw:  {input_dir}  ({len(candidates)} candidate file(s), limit {args.limit})")
+    print(f"out:  {out_dir}")
+    print(f"db:   {len(info)} videos with metadata\n")
     written = skipped = failed = 0
+    t_start = time.time()
     for index, path in enumerate(candidates, 1):
         raw = json.loads(path.read_text())
         video_id = str(raw["videoId"])
@@ -266,25 +317,49 @@ def main() -> int:
             try:
                 if json.loads(output.read_text()).get("schemaVersion") == SCHEMA_VERSION:
                     skipped += 1
-                    print(f"[{index}/{len(candidates)}] {video_id} skip (v{SCHEMA_VERSION} exists)")
+                    print(f"[{index:>3}/{len(candidates)}] {video_id}  skip (v{SCHEMA_VERSION} exists)")
                     continue
             except (OSError, json.JSONDecodeError):
                 pass
-        title, db_duration = info.get(video_id, (video_id, 0.0))
+        title, db_duration, slug = info.get(video_id, (video_id, 0.0, "?"))
         segments = raw.get("segments", [])
         inferred_duration = float(segments[-1]["start"]) + 5 if segments else 0.0
         duration = max(db_duration, inferred_duration)
+        print(f"[{index:>3}/{len(candidates)}] {video_id}  {slug}  \"{title[:60]}\""
+              f"  ({clock(duration)}, {len(segments)} segments)")
+        t_video = time.time()
         try:
-            generated = generate(client, model, prompt_for(raw, title, duration), args.max_output_tokens)
+            try:
+                generated = generate(client, model, prompt_for(raw, title, duration), args.max_output_tokens)
+            except TruncatedOutput as exc:
+                # The full cleaned transcript doesn't fit in one response. Ask
+                # for structure only; normalize_result rebuilds each chapter's
+                # transcription from the raw captions in its time window.
+                print(f"    {exc} — retrying structure-only (transcription will be rebuilt from raw captions)")
+                generated = generate(client, model,
+                                     prompt_for(raw, title, duration, include_transcripts=False),
+                                     args.max_output_tokens)
             result = normalize_result(raw, generated, duration)
             output.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n")
             written += 1
-            print(f"[{index}/{len(candidates)}] {video_id} ok ({len(result['chapters'])} chapters, "
-                  f"seo {len(result['seoDescription'])} chars)")
+            print(f"    ok in {time.time() - t_video:.1f}s — {len(result['chapters'])} chapters, "
+                  f"seo {len(result['seoDescription'])} chars, summary {len(result['summary']):,} chars, "
+                  f"transcription {len(result['transcription']):,} chars → {output.name}")
         except Exception as exc:
             failed += 1
-            print(f"[{index}/{len(candidates)}] {video_id} FAIL {type(exc).__name__}: {exc}")
-    print(f"Done — written={written} skipped={skipped} failed={failed}")
+            print(f"    FAIL in {time.time() - t_video:.1f}s — {type(exc).__name__}: {exc}")
+            import openai
+            if isinstance(exc, (openai.AuthenticationError, openai.PermissionDeniedError, openai.NotFoundError)):
+                raise SystemExit(
+                    f"Aborting: {type(exc).__name__} — every video would fail the same way. "
+                    "Check OPENAI_API_KEY and the model name "
+                    f"(model={model}; override with OPENAI_MODEL or --model).")
+        processed = written + failed
+        remaining = len(candidates) - index
+        if processed and remaining:
+            eta = (time.time() - t_start) / processed * remaining
+            print(f"    elapsed {clock(time.time() - t_start)}, ~{clock(eta)} remaining for {remaining} video(s)")
+    print(f"\nDone in {clock(time.time() - t_start)} — written={written} skipped={skipped} failed={failed}")
     return 1 if failed else 0
 
 
