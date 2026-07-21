@@ -330,7 +330,8 @@ def main() -> int:
     parser.add_argument("--out", default=str(OUT_DIR), help="Published transcript directory")
     parser.add_argument("--video-id", help="Process one YouTube video ID")
     parser.add_argument("--limit", type=int, default=100)
-    parser.add_argument("--model", help="OpenAI model; defaults to OPENAI_MODEL or gpt-5-mini")
+    parser.add_argument("--model", help="Model id; defaults to OPENAI_MODEL, else gpt-5-mini on OpenAI "
+                                        "or google/gemini-2.5-flash on OpenRouter")
     parser.add_argument("--base-url", default=os.getenv("OPENAI_BASE_URL"),
                         help="OpenAI-compatible endpoint, e.g. http://localhost:11434/v1 for Ollama "
                              "(defaults to OPENAI_BASE_URL; api.openai.com when unset)")
@@ -374,17 +375,37 @@ def main() -> int:
             raw = json.loads(path.read_text())
             print(f"{raw['videoId']}: {len(raw.get('segments', []))} segments")
         return 0
-    # A local OpenAI-compatible server (Ollama/LM Studio/vLLM) needs no real
-    # key and speaks Chat Completions instead of the Responses API.
+    # OPENROUTER_API_KEY alone is enough to route through OpenRouter (an
+    # explicit --base-url / OPENAI_BASE_URL still wins).
+    openrouter_key = os.getenv("OPENROUTER_API_KEY")
+    if openrouter_key and not args.base_url:
+        args.base_url = "https://openrouter.ai/api/v1"
+    # Non-OpenAI endpoints (OpenRouter, Ollama, LM Studio, vLLM) speak Chat
+    # Completions instead of the Responses API.
     use_chat = bool(args.base_url) and "api.openai.com" not in args.base_url
-    if not os.getenv("OPENAI_API_KEY") and not use_chat:
-        raise SystemExit("OPENAI_API_KEY is required (or point --base-url/OPENAI_BASE_URL at a local server)")
+    api_key = os.getenv("OPENAI_API_KEY") or openrouter_key
+    is_local = use_chat and ("localhost" in args.base_url or "127.0.0.1" in args.base_url)
+    if not api_key and not is_local:
+        raise SystemExit("An API key is required: OPENAI_API_KEY or OPENROUTER_API_KEY "
+                         "(or point --base-url/OPENAI_BASE_URL at a local server)")
 
     from openai import OpenAI
 
     info = metadata()
-    model = args.model or os.getenv("OPENAI_MODEL", "gpt-5-mini")
-    client = OpenAI(api_key=os.getenv("OPENAI_API_KEY") or "ollama", base_url=args.base_url)
+    # Default model per backend: hosted OpenAI-compatible gateways get Gemini
+    # 2.5 Flash (long context, reliable JSON, cheap for bulk enrichment);
+    # local servers must name their model explicitly.
+    if args.model:
+        model = args.model
+    elif os.getenv("OPENAI_MODEL"):
+        model = os.environ["OPENAI_MODEL"]
+    elif use_chat and "openrouter" in args.base_url:
+        model = "google/gemini-2.5-flash"
+    elif use_chat:
+        raise SystemExit("--model (or OPENAI_MODEL) is required for a local server, e.g. --model qwen3:14b")
+    else:
+        model = "gpt-5-mini"
+    client = OpenAI(api_key=api_key or "ollama", base_url=args.base_url)
     out_dir.mkdir(parents=True, exist_ok=True)
     beyond_limit = len(raw_files) - skipped - len(candidates)
     workers = max(1, min(args.workers, len(candidates) or 1))
