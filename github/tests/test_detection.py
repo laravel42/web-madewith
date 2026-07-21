@@ -115,3 +115,50 @@ def test_runtime_technology_needs_corroboration():
     assert not one.accepted  # only one signal
     two = qualify(tech, [rule], _pkg({"express": "4"}), {"package.json"}, ["node"], "node server")
     assert two.accepted  # dependency + topic
+
+
+# --- regression: coolify-class contamination (real-world fixture) ---
+
+_COOLIFY_TOPICS = ["coolify", "databases", "deployment", "docker", "inertiajs", "laravel",
+                   "nextjs", "nodejs", "php", "postgres", "redis", "self-hosted", "svelte", "svelte5"]
+_COOLIFY_COMPOSER = {"composer.json": {"json": {"require": {
+    "laravel/framework": "^12", "laravel/horizon": "^6", "symfony/yaml": "^7", "symfony/http-client": "^7",
+}}, "raw": ""}}
+
+
+def test_symfony_components_in_a_laravel_app_do_not_qualify_symfony():
+    symfony = _tech("symfony", "Symfony", topics=["symfony"])
+    d = qualify(symfony, [], _COOLIFY_COMPOSER, {"composer.json"}, _COOLIFY_TOPICS, "", topic_breadth=5)
+    assert not d.accepted, f"symfony must not claim a Laravel app via symfony/* components: {d.evidence}"
+
+
+def test_laravel_still_qualifies_the_same_app():
+    laravel = _tech("laravel", "Laravel", topics=["laravel"])
+    d = qualify(laravel, [], _COOLIFY_COMPOSER, {"composer.json"}, _COOLIFY_TOPICS, "", topic_breadth=5)
+    assert d.accepted
+
+
+def test_real_symfony_app_still_qualifies_without_curated_metadata():
+    symfony = _tech("symfony", "Symfony", topics=["symfony"])
+    manifests = {"composer.json": {"json": {"require": {"symfony/framework-bundle": "^7"}}, "raw": ""}}
+    d = qualify(symfony, [], manifests, {"composer.json"}, [], "")
+    assert d.accepted
+
+
+def test_symfony_topic_alone_still_qualifies_a_focused_repo():
+    symfony = _tech("symfony", "Symfony", topics=["symfony"])
+    d = qualify(symfony, [], {}, set(), ["symfony", "php"], "", topic_breadth=1)
+    assert d.accepted
+
+
+def test_multi_tech_tool_topics_are_not_standalone_evidence():
+    svelte = _tech("svelte", "Svelte", topics=["svelte"])
+    d = qualify(svelte, [], _COOLIFY_COMPOSER, {"composer.json"}, _COOLIFY_TOPICS, "", topic_breadth=5)
+    assert not d.accepted, "a deploy platform tagging every tech it supports is not 'made with' each of them"
+
+
+def test_breadth_guard_spares_repos_with_corroborating_dependency():
+    svelte = _tech("svelte", "Svelte", topics=["svelte"])
+    manifests = {"package.json": {"json": {"dependencies": {"svelte": "^5"}}, "raw": ""}}
+    d = qualify(svelte, [], manifests, {"package.json"}, _COOLIFY_TOPICS, "", topic_breadth=5)
+    assert d.accepted, "real dependency evidence must still qualify even for broad-topic repos"

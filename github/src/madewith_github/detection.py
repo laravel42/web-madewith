@@ -91,6 +91,23 @@ def _dep_manifest_text(manifests:dict[str,dict[str,Any]])->str:
 def _token(text:str,needle:str)->bool:
     return bool(needle) and re.search(rf"(?<![a-z0-9]){re.escape(needle)}(?![a-z0-9])",text) is not None
 
+# Vendors whose package namespace is shared plumbing across the whole ecosystem:
+# depending on symfony/yaml does NOT make a repo a Symfony app (every large
+# Laravel/Drupal project pulls symfony/* components). For these slugs the bare
+# vendor-family match is disabled and only the canonical framework packages
+# count as the gold dependency signal.
+SHARED_COMPONENT_VENDORS:dict[str,set[str]]={
+ "symfony":{"symfony/framework-bundle","symfony/symfony"},
+}
+
+# A repo whose topics span this many catalog technologies is a multi-tech tool
+# (deploy platform, admin for many stacks, boilerplate hub) — its topics
+# advertise what it SUPPORTS, not what it's MADE WITH, so a topic alone stops
+# being strong evidence. Genuine multi-framework projects still qualify through
+# manifest dependency evidence. (Real-world case: coolify tags nextjs/nodejs/
+# svelte/laravel and was published into all four galleries.)
+TOPIC_BREADTH_LIMIT=3
+
 def _slug_candidates(tech:Technology)->set[str]:
     # Best-effort package names for technologies that carry no metadata/rules:
     # a repo whose manifest depends on a package literally named after the slug
@@ -109,7 +126,8 @@ def _match_dependency(candidates:set[str],dep_keys:set[str],dep_text:str)->str|N
     return None
 
 def qualify(tech:Technology,rules:list[Rule],manifests:dict[str,dict[str,Any]],
-            manifest_paths:set[str],topics:list[str],text_blob:str)->TechDetection:
+            manifest_paths:set[str],topics:list[str],text_blob:str,
+            topic_breadth:int=1)->TechDetection:
     """Score a single repository against a single technology, combining
     auto-derived signals (from the technology's slug/name/topics/metadata) with
     any hand-authored technology_rules. Accepts when the confidence clears the
@@ -125,6 +143,11 @@ def qualify(tech:Technology,rules:list[Rule],manifests:dict[str,dict[str,Any]],
     # dependency — exact package / vendor family
     dep_cands=set(meta.get("dependencies") or [])|_slug_candidates(tech)
     dep_cands|={r.expected_value for r in rules if RULE_KIND.get(r.rule_type)=="dependency" and r.expected_value}
+    if tech.slug.lower() in SHARED_COMPONENT_VENDORS:
+        # drop the bare-slug candidates (family match would claim every consumer
+        # of the shared components) and require the canonical framework packages
+        dep_cands-= _slug_candidates(tech)
+        dep_cands|=SHARED_COMPONENT_VENDORS[tech.slug.lower()]
     if (hit:=_match_dependency(dep_cands,dep_keys,dep_text)):
         ev.append(_ev("dependency",f"dependency:{hit}"))
 
@@ -152,7 +175,11 @@ def qualify(tech:Technology,rules:list[Rule],manifests:dict[str,dict[str,Any]],
     topic_cands={t.lower() for t in (tech.search_topics or [])}|{tech.slug.lower()}
     topic_cands|={r.expected_value.lower() for r in rules if r.rule_type=="topic" and r.expected_value}
     if (thit:=topic_cands&topics_l):
-        ev.append(_ev("topic",f"topic:{sorted(thit)[0]}"))
+        e=_ev("topic",f"topic:{sorted(thit)[0]}")
+        # Multi-tech tools (topics spanning >= TOPIC_BREADTH_LIMIT catalog techs)
+        # keep the topic's score but lose its standalone accepting power.
+        if topic_breadth>=TOPIC_BREADTH_LIMIT:e.strong=False
+        ev.append(e)
 
     # runtime-signal rules (code-level hints in the text)
     for r in rules:

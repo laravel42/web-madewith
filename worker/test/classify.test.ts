@@ -144,3 +144,31 @@ test("refineCategories keeps the rule answer on invalid AI replies or missing bi
   assert.equal(p.category, "DevTools", "contract violation → rule answer stands");
   assert.equal(await refineCategories(undefined, fakeKv(), [p]), 0, "no binding → no-op");
 });
+
+// --- domain qualification: multi-tech tools must not enter every tagged gallery ---
+import { scrapeDomain } from "../src/scrape.ts";
+import { GitHub } from "../src/github.ts";
+
+test("worker scrape drops multi-tech-topic tools from domains they merely support", async () => {
+  const coolifyish = {
+    databaseId: 42, name: "coolify", nameWithOwner: "coollabsio/coolify",
+    description: "Self-hostable PaaS", stargazerCount: 58000, homepageUrl: null, url: "u",
+    isFork: false, isArchived: false, pushedAt: "2026-07-01T00:00:00Z",
+    owner: { login: "coollabsio", avatarUrl: "" }, licenseInfo: { spdxId: "Apache-2.0" },
+    primaryLanguage: { name: "PHP" },
+    repositoryTopics: { nodes: ["laravel", "nextjs", "nodejs", "svelte", "docker", "php"].map((t) => ({ topic: { name: t } })) },
+    languages: { totalSize: 100, edges: [{ size: 90, node: { name: "PHP" } }] },
+  };
+  const real = { ...coolifyish, databaseId: 43, name: "sveltekit-app", nameWithOwner: "o/sveltekit-app",
+    repositoryTopics: { nodes: [{ topic: { name: "svelte" } }] }, primaryLanguage: { name: "TypeScript" } };
+  globalThis.fetch = (async (url: string) => {
+    if (String(url).includes("/search/repositories"))
+      return new Response(JSON.stringify({ total_count: 10 }), { status: 200, headers: { etag: 'W/"z"' } });
+    return new Response(JSON.stringify({ data: { search: { repositoryCount: 10, nodes: [coolifyish, real] } } }), { status: 200 });
+  }) as any;
+  const gh = new GitHub({ token: "x", etags: { get: async () => null, put: async () => {} } });
+  const ds = await scrapeDomain(gh, { slug: "svelte", techName: "Svelte", match: "topic:svelte", keep: 12, exclude: [], languageFamilies: ["js"] } as any, Date.now());
+  const names = ds.projects.map((p) => p.name);
+  assert.ok(!names.includes("coolify"), "multi-tech deploy platform excluded from svelte");
+  assert.ok(names.includes("sveltekit-app"), "focused repo kept");
+});

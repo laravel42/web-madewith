@@ -1,77 +1,1339 @@
 [
-  { "slug": "laravel", "techName": "Laravel", "domain": "madewithlaravel.com", "group": "frameworks", "bespoke": false, "scrape": { "query": "topic:laravel", "minStars": 50, "exclude": ["laravel/laravel"] }, "categorize": { "kind": "laravel", "required_languages": ["PHP", "Blade"], "purpose_languages": ["PHP", "Blade", "JavaScript", "TypeScript", "Vue", "CSS", "HTML", "Shell", "Makefile", "Svelte", "Dockerfile"], "ecosystem_owners": ["spatie", "tighten", "aimeos", "inovector", "botble", "akaunting", "backpack", "filament", "wireui", "livewire", "statamic", "october", "asgard", "bagisto", "serversideup", "nicoverbruggen", "krayin", "monicahq", "coollabsio", "fruitcake", "bookstackapp", "flarum", "cachet", "avored", "mtolhuys", "ucan-lab", "nativephp", "themsaid", "tmdh", "jeremykenedy", "tuandm", "summerblue", "bottelet", "microweber", "thedevdojo", "shufo", "amir9480", "laravel-mix"], "negative_owners": ["shadcn-ui", "webhooksite", "ecrmnn", "goravel", "marcj", "endoflife-date", "viest", "dreamfactorysoftware", "goforj", "robsontenorio", "justjavac", "phodal", "gohouse", "cipi-sh", "buggregator", "shipping-docker", "gaarason", "tookit", "mikeerickson", "ddev", "exaco", "tweakphp", "intentjs"], "purpose_words": ["laravel", "eloquent", "artisan", "blade", "tinker", "lumen", "inertia", "livewire", "forge", "vapor", "envoy", "spark", "horizon", "telescope", "pulse", "octane", "passport", "sanctum", "cashier", "scout", "breeze", "jetstream", "nova", "sail", "echo", "dusk", "folio", "pint", "precognition"], "plugin_topics": ["laravel-package", "laravel-framework"], "content_name_patterns": ["awesome-", "awesome_", "awesome ", "-tips", "_tips", " tips", "-best-practices", "best-practices", "-interview", "interview-questions", "-resources", "resources", "tutorial", "tutorials", "roadmap", "cheatsheet", "cheat-sheet"] } },
-  { "slug": "symfony", "techName": "Symfony", "domain": "madewithsymfony.com", "group": "frameworks", "bespoke": false, "scrape": { "query": "topic:symfony", "minStars": 20, "exclude": ["symfony/symfony"] } },
-  { "slug": "django", "techName": "Django", "domain": "madewithdjango.com", "group": "frameworks", "bespoke": false, "scrape": { "query": "topic:django", "minStars": 50, "exclude": ["django/django"] } },
-  { "slug": "rails", "techName": "Ruby on Rails", "domain": "madewithrails.com", "group": "frameworks", "bespoke": false, "scrape": { "query": "topic:ruby-on-rails", "minStars": 30, "exclude": ["rails/rails"] } },
-  { "slug": "spring-boot", "techName": "Spring Boot", "domain": "madewithspringboot.com", "group": "frameworks", "bespoke": false, "scrape": { "query": "topic:spring-boot", "minStars": 30, "exclude": ["spring-projects/spring-boot"] } },
-  { "slug": "aspnet-core", "techName": "ASP.NET Core", "domain": "madewithaspnetcore.com", "group": "frameworks", "bespoke": false, "scrape": { "query": "topic:aspnet-core", "minStars": 20, "exclude": ["dotnet/aspnetcore"] } },
-  { "slug": "next", "techName": "Next.js", "domain": "madewithnext.com", "group": "frameworks", "bespoke": true, "scrape": { "query": "topic:nextjs", "minStars": 200, "exclude": ["vercel/next.js"] } },
-  { "slug": "nuxt", "techName": "Nuxt", "domain": "madewithnuxt.com", "group": "frameworks", "bespoke": true, "scrape": { "query": "topic:nuxt", "minStars": 40, "exclude": ["nuxt/nuxt", "nuxt/framework"] } },
-  { "slug": "astro", "techName": "Astro", "domain": "madewithastro.com", "group": "frameworks", "bespoke": false, "scrape": { "query": "topic:astro", "minStars": 30, "exclude": ["withastro/astro"] } },
-  { "slug": "sveltekit", "techName": "SvelteKit", "domain": "madewithsveltekit.com", "group": "frameworks", "bespoke": false, "scrape": { "query": "topic:sveltekit", "minStars": 20, "exclude": ["sveltejs/kit"] } },
-
-  { "slug": "react", "techName": "React", "domain": "madewithreact.com", "group": "frontend", "bespoke": false, "scrape": { "query": "topic:react", "minStars": 100, "exclude": ["facebook/react"] } },
-  { "slug": "vue", "techName": "Vue.js", "domain": "madewithvue.com", "group": "frontend", "bespoke": false, "scrape": { "query": "topic:vue", "minStars": 50, "exclude": ["vuejs/core", "vuejs/vue"] } },
-  { "slug": "angular", "techName": "Angular", "domain": "madewithangular.com", "group": "frontend", "bespoke": false, "scrape": { "query": "topic:angular", "minStars": 50, "exclude": ["angular/angular"] } },
-  { "slug": "svelte", "techName": "Svelte", "domain": "madewithsvelte.com", "group": "frontend", "bespoke": false, "scrape": { "query": "topic:svelte", "minStars": 30, "exclude": ["sveltejs/svelte"] } },
-  { "slug": "solidjs", "techName": "SolidJS", "domain": "madewithsolidjs.com", "group": "frontend", "bespoke": false, "scrape": { "query": "topic:solidjs", "minStars": 20, "exclude": ["solidjs/solid"] } },
-  { "slug": "alpine", "techName": "Alpine.js", "domain": "madewithalpine.com", "group": "frontend", "bespoke": false, "scrape": { "query": "topic:alpinejs", "minStars": 10, "exclude": ["alpinejs/alpine"] } },
-  { "slug": "jquery", "techName": "jQuery", "domain": "madewithjquery.com", "group": "frontend", "bespoke": false, "scrape": { "query": "topic:jquery", "minStars": 20, "exclude": ["jquery/jquery"] } },
-  { "slug": "ionic", "techName": "Ionic", "domain": "madewithionic.com", "group": "frontend", "bespoke": true, "scrape": { "query": "topic:ionic", "minStars": 20, "exclude": ["ionic-team/ionic-framework", "ionic-team/ionic"] } },
-  { "slug": "preact", "techName": "Preact", "domain": "madewithpreact.com", "group": "frontend", "bespoke": false, "scrape": { "query": "topic:preact", "minStars": 20, "exclude": ["preactjs/preact"] } },
-  { "slug": "qwik", "techName": "Qwik", "domain": "madewithqwik.com", "group": "frontend", "bespoke": false, "scrape": { "query": "topic:qwik", "minStars": 20, "exclude": ["QwikDev/qwik"] } },
-  { "slug": "lit", "techName": "Lit", "domain": "madewithlit.com", "group": "frontend", "bespoke": false, "scrape": { "query": "topic:lit", "minStars": 20, "exclude": ["lit/lit"] } },
-
-  { "slug": "express", "techName": "Express", "domain": "madewithexpress.com", "group": "backend", "bespoke": false, "scrape": { "query": "topic:express", "minStars": 50, "exclude": ["expressjs/express"] } },
-  { "slug": "nestjs", "techName": "NestJS", "domain": "madewithnestjs.com", "group": "backend", "bespoke": false, "scrape": { "query": "topic:nestjs", "minStars": 30, "exclude": ["nestjs/nest"] } },
-  { "slug": "fastapi", "techName": "FastAPI", "domain": "madewithfastapi.com", "group": "backend", "bespoke": false, "scrape": { "query": "topic:fastapi", "minStars": 30, "exclude": ["tiangolo/fastapi"] } },
-  { "slug": "flask", "techName": "Flask", "domain": "madewithflask.com", "group": "backend", "bespoke": false, "scrape": { "query": "topic:flask", "minStars": 30, "exclude": ["pallets/flask"] } },
-  { "slug": "gin", "techName": "Gin", "domain": "madewithgin.com", "group": "backend", "bespoke": false, "scrape": { "query": "topic:gin", "minStars": 20, "exclude": ["gin-gonic/gin"] } },
-  { "slug": "fiber", "techName": "Fiber", "domain": "madewithfiber.com", "group": "backend", "bespoke": false, "scrape": { "query": "topic:fiber", "minStars": 10, "exclude": ["gofiber/fiber"] } },
-  { "slug": "fastify", "techName": "Fastify", "domain": "madewithfastify.com", "group": "backend", "bespoke": false, "scrape": { "query": "topic:fastify", "minStars": 30, "exclude": ["fastify/fastify"] } },
-  { "slug": "hono", "techName": "Hono", "domain": "madewithhono.com", "group": "backend", "bespoke": false, "scrape": { "query": "topic:hono", "minStars": 20, "exclude": ["honojs/hono"] } },
-  { "slug": "koa", "techName": "Koa", "domain": "madewithkoa.com", "group": "backend", "bespoke": false, "scrape": { "query": "topic:koa", "minStars": 20, "exclude": ["koajs/koa"] } },
-  { "slug": "actix-web", "techName": "Actix Web", "domain": "madewithactixweb.com", "group": "backend", "bespoke": false, "scrape": { "query": "topic:actix-web", "minStars": 20, "exclude": ["actix/actix-web"] } },
-  { "slug": "rocket", "techName": "Rocket", "domain": "madewithrocket.com", "group": "backend", "bespoke": false, "scrape": { "query": "topic:rocket-rs", "minStars": 10, "exclude": ["rwf2/Rocket"] } },
-  { "slug": "phoenix", "techName": "Phoenix", "domain": "madewithphoenix.com", "group": "backend", "bespoke": false, "scrape": { "query": "topic:phoenix-framework", "minStars": 20, "exclude": ["phoenixframework/phoenix"] } },
-
-  { "slug": "wordpress", "techName": "WordPress", "domain": "madewithwordpress.com", "group": "cms-crm", "bespoke": false, "scrape": { "query": "topic:wordpress", "minStars": 20, "exclude": ["WordPress/WordPress"] } },
-  { "slug": "drupal", "techName": "Drupal", "domain": "madewithdrupal.com", "group": "cms-crm", "bespoke": false, "scrape": { "query": "topic:drupal", "minStars": 10, "exclude": ["drupal/drupal"] } },
-  { "slug": "joomla", "techName": "Joomla", "domain": "madewithjoomla.com", "group": "cms-crm", "bespoke": false, "scrape": { "query": "topic:joomla", "minStars": 5, "exclude": ["joomla/joomla-cms"] } },
-  { "slug": "strapi", "techName": "Strapi", "domain": "madewithstrapi.com", "group": "cms-crm", "bespoke": false, "scrape": { "query": "topic:strapi", "minStars": 20, "exclude": ["strapi/strapi"] } },
-  { "slug": "directus", "techName": "Directus", "domain": "madewithdirectus.com", "group": "cms-crm", "bespoke": false, "scrape": { "query": "topic:directus", "minStars": 10, "exclude": ["directus/directus"] } },
-  { "slug": "ghost", "techName": "Ghost", "domain": "madewithghost.com", "group": "cms-crm", "bespoke": false, "scrape": { "query": "topic:ghost", "minStars": 20, "exclude": ["TryGhost/Ghost"] } },
-  { "slug": "octobercms", "techName": "October CMS", "domain": "madewithoctobercms.com", "group": "cms-crm", "bespoke": false, "scrape": { "query": "topic:octobercms", "minStars": 5, "exclude": ["octobercms/october"] } },
-  { "slug": "statamic", "techName": "Statamic", "domain": "madewithstatamic.com", "group": "cms-crm", "bespoke": true, "scrape": { "query": "topic:statamic", "minStars": 3, "exclude": ["statamic/cms", "statamic/statamic"] } },
-  { "slug": "payload", "techName": "Payload CMS", "domain": "madewithpayload.com", "group": "cms-crm", "bespoke": false, "scrape": { "query": "topic:payloadcms", "minStars": 10, "exclude": ["payloadcms/payload"] } },
-  { "slug": "twill", "techName": "Twill", "domain": "madewithtwill.com", "group": "cms-crm", "bespoke": true, "scrape": { "query": "twill laravel cms", "minStars": 0, "exclude": ["area17/twill"] } },
-
-  { "slug": "magento", "techName": "Magento", "domain": "madewithmagento.com", "group": "commerce", "bespoke": false, "scrape": { "query": "topic:magento", "minStars": 10, "exclude": ["magento/magento2"] } },
-  { "slug": "prestashop", "techName": "PrestaShop", "domain": "madewithprestashop.com", "group": "commerce", "bespoke": false, "scrape": { "query": "topic:prestashop", "minStars": 5, "exclude": ["PrestaShop/PrestaShop"] } },
-  { "slug": "woocommerce", "techName": "WooCommerce", "domain": "madewithwoocommerce.com", "group": "commerce", "bespoke": false, "scrape": { "query": "topic:woocommerce", "minStars": 10, "exclude": ["woocommerce/woocommerce"] } },
-  { "slug": "shopware", "techName": "Shopware", "domain": "madewithshopware.com", "group": "commerce", "bespoke": false, "scrape": { "query": "topic:shopware", "minStars": 10, "exclude": ["shopware/shopware"] } },
-  { "slug": "bagisto", "techName": "Bagisto", "domain": "madewithbagisto.com", "group": "commerce", "bespoke": false, "scrape": { "query": "bagisto", "minStars": 5, "exclude": ["bagisto/bagisto"] } },
-  { "slug": "saleor", "techName": "Saleor", "domain": "madewithsaleor.com", "group": "commerce", "bespoke": false, "scrape": { "query": "topic:saleor", "minStars": 10, "exclude": ["saleor/saleor"] } },
-  { "slug": "medusa", "techName": "Medusa", "domain": "madewithmedusa.com", "group": "commerce", "bespoke": false, "scrape": { "query": "topic:medusa", "minStars": 10, "exclude": ["medusajs/medusa"] } },
-  { "slug": "opencart", "techName": "OpenCart", "domain": "madewithopencart.com", "group": "commerce", "bespoke": false, "scrape": { "query": "topic:opencart", "minStars": 5, "exclude": ["opencart/opencart"] } },
-
-  { "slug": "odoo", "techName": "Odoo", "domain": "madewithodoo.com", "group": "cms-crm", "bespoke": false, "scrape": { "query": "topic:odoo", "minStars": 20, "exclude": ["odoo/odoo"] } },
-  { "slug": "erpnext", "techName": "ERPNext", "domain": "madewitherpnext.com", "group": "cms-crm", "bespoke": false, "scrape": { "query": "topic:erpnext", "minStars": 10, "exclude": ["frappe/erpnext"] } },
-  { "slug": "suitecrm", "techName": "SuiteCRM", "domain": "madewithsuitecrm.com", "group": "cms-crm", "bespoke": false, "scrape": { "query": "topic:suitecrm", "minStars": 5, "exclude": ["salesagility/SuiteCRM"] } },
-  { "slug": "espocrm", "techName": "EspoCRM", "domain": "madewitespocrm.com", "group": "cms-crm", "bespoke": false, "scrape": { "query": "topic:espocrm", "minStars": 5, "exclude": ["espocrm/espocrm"] } },
-  { "slug": "dolibarr", "techName": "Dolibarr", "domain": "madewithdolibarr.com", "group": "cms-crm", "bespoke": false, "scrape": { "query": "topic:dolibarr", "minStars": 5, "exclude": ["Dolibarr/dolibarr"] } },
-  { "slug": "twenty-crm", "techName": "Twenty CRM", "domain": "madewithtwentycrm.com", "group": "cms-crm", "bespoke": false, "scrape": { "query": "topic:twenty", "minStars": 10, "exclude": ["twentyhq/twenty"] } },
-  { "slug": "vtiger", "techName": "Vtiger CRM", "domain": "madewithvtiger.com", "group": "cms-crm", "bespoke": false, "scrape": { "query": "topic:vtiger", "minStars": 5, "exclude": [] } },
-  { "slug": "monica", "techName": "Monica", "domain": "madewithmonica.com", "group": "cms-crm", "bespoke": false, "scrape": { "query": "monica crm", "minStars": 5, "exclude": ["monicahq/monica"] } },
-
-  { "slug": "ollama", "techName": "Ollama", "domain": "madewithollama.com", "group": "ai-llm", "bespoke": false, "scrape": { "query": "topic:ollama", "minStars": 20, "exclude": ["ollama/ollama"] } },
-  { "slug": "langchain", "techName": "LangChain", "domain": "madewithlangchain.com", "group": "ai-llm", "bespoke": false, "scrape": { "query": "topic:langchain", "minStars": 20, "exclude": ["langchain-ai/langchain"] } },
-  { "slug": "llamaindex", "techName": "LlamaIndex", "domain": "madewithllamaindex.com", "group": "ai-llm", "bespoke": false, "scrape": { "query": "topic:llamaindex", "minStars": 10, "exclude": ["run-llama/llama_index"] } },
-  { "slug": "flowise", "techName": "Flowise", "domain": "madewithflowise.com", "group": "ai-llm", "bespoke": false, "scrape": { "query": "topic:flowise", "minStars": 10, "exclude": ["FlowiseAI/Flowise"] } },
-  { "slug": "dify", "techName": "Dify", "domain": "madewithdify.com", "group": "ai-llm", "bespoke": false, "scrape": { "query": "topic:dify", "minStars": 20, "exclude": ["langgenius/dify"] } },
-  { "slug": "open-webui", "techName": "Open WebUI", "domain": "madewithopenwebui.com", "group": "ai-llm", "bespoke": false, "scrape": { "query": "topic:open-webui", "minStars": 10, "exclude": ["open-webui/open-webui"] } },
-  { "slug": "librechat", "techName": "LibreChat", "domain": "madewithlibrechat.com", "group": "ai-llm", "bespoke": false, "scrape": { "query": "topic:librechat", "minStars": 10, "exclude": ["danny-avila/LibreChat"] } },
-  { "slug": "anythingllm", "techName": "AnythingLLM", "domain": "madewithanythingllm.com", "group": "ai-llm", "bespoke": false, "scrape": { "query": "topic:anythingllm", "minStars": 10, "exclude": ["Mintplex-Labs/anything-llm"] } },
-  { "slug": "haystack", "techName": "Haystack", "domain": "madewithhaystack.com", "group": "ai-llm", "bespoke": false, "scrape": { "query": "topic:haystack", "minStars": 10, "exclude": ["deepset-ai/haystack"] } },
-  { "slug": "vllm", "techName": "vLLM", "domain": "madewithvllm.com", "group": "ai-llm", "bespoke": false, "scrape": { "query": "topic:vllm", "minStars": 10, "exclude": ["vllm-project/vllm"] } }
+  {
+    "slug": "laravel",
+    "techName": "Laravel",
+    "domain": "madewithlaravel.com",
+    "group": "frameworks",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:laravel",
+      "minStars": 50,
+      "exclude": [
+        "laravel/laravel"
+      ],
+      "languageFamilies": [
+        "php"
+      ]
+    },
+    "categorize": {
+      "kind": "laravel",
+      "required_languages": [
+        "PHP",
+        "Blade"
+      ],
+      "purpose_languages": [
+        "PHP",
+        "Blade",
+        "JavaScript",
+        "TypeScript",
+        "Vue",
+        "CSS",
+        "HTML",
+        "Shell",
+        "Makefile",
+        "Svelte",
+        "Dockerfile"
+      ],
+      "ecosystem_owners": [
+        "spatie",
+        "tighten",
+        "aimeos",
+        "inovector",
+        "botble",
+        "akaunting",
+        "backpack",
+        "filament",
+        "wireui",
+        "livewire",
+        "statamic",
+        "october",
+        "asgard",
+        "bagisto",
+        "serversideup",
+        "nicoverbruggen",
+        "krayin",
+        "monicahq",
+        "coollabsio",
+        "fruitcake",
+        "bookstackapp",
+        "flarum",
+        "cachet",
+        "avored",
+        "mtolhuys",
+        "ucan-lab",
+        "nativephp",
+        "themsaid",
+        "tmdh",
+        "jeremykenedy",
+        "tuandm",
+        "summerblue",
+        "bottelet",
+        "microweber",
+        "thedevdojo",
+        "shufo",
+        "amir9480",
+        "laravel-mix"
+      ],
+      "negative_owners": [
+        "shadcn-ui",
+        "webhooksite",
+        "ecrmnn",
+        "goravel",
+        "marcj",
+        "endoflife-date",
+        "viest",
+        "dreamfactorysoftware",
+        "goforj",
+        "robsontenorio",
+        "justjavac",
+        "phodal",
+        "gohouse",
+        "cipi-sh",
+        "buggregator",
+        "shipping-docker",
+        "gaarason",
+        "tookit",
+        "mikeerickson",
+        "ddev",
+        "exaco",
+        "tweakphp",
+        "intentjs"
+      ],
+      "purpose_words": [
+        "laravel",
+        "eloquent",
+        "artisan",
+        "blade",
+        "tinker",
+        "lumen",
+        "inertia",
+        "livewire",
+        "forge",
+        "vapor",
+        "envoy",
+        "spark",
+        "horizon",
+        "telescope",
+        "pulse",
+        "octane",
+        "passport",
+        "sanctum",
+        "cashier",
+        "scout",
+        "breeze",
+        "jetstream",
+        "nova",
+        "sail",
+        "echo",
+        "dusk",
+        "folio",
+        "pint",
+        "precognition"
+      ],
+      "plugin_topics": [
+        "laravel-package",
+        "laravel-framework"
+      ],
+      "content_name_patterns": [
+        "awesome-",
+        "awesome_",
+        "awesome ",
+        "-tips",
+        "_tips",
+        " tips",
+        "-best-practices",
+        "best-practices",
+        "-interview",
+        "interview-questions",
+        "-resources",
+        "resources",
+        "tutorial",
+        "tutorials",
+        "roadmap",
+        "cheatsheet",
+        "cheat-sheet"
+      ]
+    }
+  },
+  {
+    "slug": "symfony",
+    "techName": "Symfony",
+    "domain": "madewithsymfony.com",
+    "group": "frameworks",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:symfony",
+      "minStars": 20,
+      "exclude": [
+        "symfony/symfony"
+      ],
+      "languageFamilies": [
+        "php"
+      ]
+    }
+  },
+  {
+    "slug": "django",
+    "techName": "Django",
+    "domain": "madewithdjango.com",
+    "group": "frameworks",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:django",
+      "minStars": 50,
+      "exclude": [
+        "django/django"
+      ],
+      "languageFamilies": [
+        "python",
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "rails",
+    "techName": "Ruby on Rails",
+    "domain": "madewithrails.com",
+    "group": "frameworks",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:ruby-on-rails",
+      "minStars": 30,
+      "exclude": [
+        "rails/rails"
+      ],
+      "languageFamilies": [
+        "ruby"
+      ]
+    }
+  },
+  {
+    "slug": "spring-boot",
+    "techName": "Spring Boot",
+    "domain": "madewithspringboot.com",
+    "group": "frameworks",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:spring-boot",
+      "minStars": 30,
+      "exclude": [
+        "spring-projects/spring-boot"
+      ],
+      "languageFamilies": [
+        "jvm"
+      ]
+    }
+  },
+  {
+    "slug": "aspnet-core",
+    "techName": "ASP.NET Core",
+    "domain": "madewithaspnetcore.com",
+    "group": "frameworks",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:aspnet-core",
+      "minStars": 20,
+      "exclude": [
+        "dotnet/aspnetcore"
+      ],
+      "languageFamilies": [
+        "dotnet"
+      ]
+    }
+  },
+  {
+    "slug": "next",
+    "techName": "Next.js",
+    "domain": "madewithnext.com",
+    "group": "frameworks",
+    "bespoke": true,
+    "scrape": {
+      "query": "topic:nextjs",
+      "minStars": 200,
+      "exclude": [
+        "vercel/next.js"
+      ],
+      "languageFamilies": [
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "nuxt",
+    "techName": "Nuxt",
+    "domain": "madewithnuxt.com",
+    "group": "frameworks",
+    "bespoke": true,
+    "scrape": {
+      "query": "topic:nuxt",
+      "minStars": 40,
+      "exclude": [
+        "nuxt/nuxt",
+        "nuxt/framework"
+      ],
+      "languageFamilies": [
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "astro",
+    "techName": "Astro",
+    "domain": "madewithastro.com",
+    "group": "frameworks",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:astro",
+      "minStars": 30,
+      "exclude": [
+        "withastro/astro"
+      ],
+      "languageFamilies": [
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "sveltekit",
+    "techName": "SvelteKit",
+    "domain": "madewithsveltekit.com",
+    "group": "frameworks",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:sveltekit",
+      "minStars": 20,
+      "exclude": [
+        "sveltejs/kit"
+      ],
+      "languageFamilies": [
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "react",
+    "techName": "React",
+    "domain": "madewithreact.com",
+    "group": "frontend",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:react",
+      "minStars": 100,
+      "exclude": [
+        "facebook/react"
+      ],
+      "languageFamilies": [
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "vue",
+    "techName": "Vue.js",
+    "domain": "madewithvue.com",
+    "group": "frontend",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:vue",
+      "minStars": 50,
+      "exclude": [
+        "vuejs/core",
+        "vuejs/vue"
+      ],
+      "languageFamilies": [
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "angular",
+    "techName": "Angular",
+    "domain": "madewithangular.com",
+    "group": "frontend",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:angular",
+      "minStars": 50,
+      "exclude": [
+        "angular/angular"
+      ],
+      "languageFamilies": [
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "svelte",
+    "techName": "Svelte",
+    "domain": "madewithsvelte.com",
+    "group": "frontend",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:svelte",
+      "minStars": 30,
+      "exclude": [
+        "sveltejs/svelte"
+      ],
+      "languageFamilies": [
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "solidjs",
+    "techName": "SolidJS",
+    "domain": "madewithsolidjs.com",
+    "group": "frontend",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:solidjs",
+      "minStars": 20,
+      "exclude": [
+        "solidjs/solid"
+      ],
+      "languageFamilies": [
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "alpine",
+    "techName": "Alpine.js",
+    "domain": "madewithalpine.com",
+    "group": "frontend",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:alpinejs",
+      "minStars": 10,
+      "exclude": [
+        "alpinejs/alpine"
+      ],
+      "languageFamilies": [
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "jquery",
+    "techName": "jQuery",
+    "domain": "madewithjquery.com",
+    "group": "frontend",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:jquery",
+      "minStars": 20,
+      "exclude": [
+        "jquery/jquery"
+      ],
+      "languageFamilies": [
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "ionic",
+    "techName": "Ionic",
+    "domain": "madewithionic.com",
+    "group": "frontend",
+    "bespoke": true,
+    "scrape": {
+      "query": "topic:ionic",
+      "minStars": 20,
+      "exclude": [
+        "ionic-team/ionic-framework",
+        "ionic-team/ionic"
+      ],
+      "languageFamilies": [
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "preact",
+    "techName": "Preact",
+    "domain": "madewithpreact.com",
+    "group": "frontend",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:preact",
+      "minStars": 20,
+      "exclude": [
+        "preactjs/preact"
+      ],
+      "languageFamilies": [
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "qwik",
+    "techName": "Qwik",
+    "domain": "madewithqwik.com",
+    "group": "frontend",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:qwik",
+      "minStars": 20,
+      "exclude": [
+        "QwikDev/qwik"
+      ],
+      "languageFamilies": [
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "lit",
+    "techName": "Lit",
+    "domain": "madewithlit.com",
+    "group": "frontend",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:lit",
+      "minStars": 20,
+      "exclude": [
+        "lit/lit"
+      ],
+      "languageFamilies": [
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "express",
+    "techName": "Express",
+    "domain": "madewithexpress.com",
+    "group": "backend",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:express",
+      "minStars": 50,
+      "exclude": [
+        "expressjs/express"
+      ],
+      "languageFamilies": [
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "nestjs",
+    "techName": "NestJS",
+    "domain": "madewithnestjs.com",
+    "group": "backend",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:nestjs",
+      "minStars": 30,
+      "exclude": [
+        "nestjs/nest"
+      ],
+      "languageFamilies": [
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "fastapi",
+    "techName": "FastAPI",
+    "domain": "madewithfastapi.com",
+    "group": "backend",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:fastapi",
+      "minStars": 30,
+      "exclude": [
+        "tiangolo/fastapi"
+      ],
+      "languageFamilies": [
+        "python"
+      ]
+    }
+  },
+  {
+    "slug": "flask",
+    "techName": "Flask",
+    "domain": "madewithflask.com",
+    "group": "backend",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:flask",
+      "minStars": 30,
+      "exclude": [
+        "pallets/flask"
+      ],
+      "languageFamilies": [
+        "python",
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "gin",
+    "techName": "Gin",
+    "domain": "madewithgin.com",
+    "group": "backend",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:gin",
+      "minStars": 20,
+      "exclude": [
+        "gin-gonic/gin"
+      ],
+      "languageFamilies": [
+        "go"
+      ]
+    }
+  },
+  {
+    "slug": "fiber",
+    "techName": "Fiber",
+    "domain": "madewithfiber.com",
+    "group": "backend",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:fiber",
+      "minStars": 10,
+      "exclude": [
+        "gofiber/fiber"
+      ],
+      "languageFamilies": [
+        "go",
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "fastify",
+    "techName": "Fastify",
+    "domain": "madewithfastify.com",
+    "group": "backend",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:fastify",
+      "minStars": 30,
+      "exclude": [
+        "fastify/fastify"
+      ],
+      "languageFamilies": [
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "hono",
+    "techName": "Hono",
+    "domain": "madewithhono.com",
+    "group": "backend",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:hono",
+      "minStars": 20,
+      "exclude": [
+        "honojs/hono"
+      ],
+      "languageFamilies": [
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "koa",
+    "techName": "Koa",
+    "domain": "madewithkoa.com",
+    "group": "backend",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:koa",
+      "minStars": 20,
+      "exclude": [
+        "koajs/koa"
+      ],
+      "languageFamilies": [
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "actix-web",
+    "techName": "Actix Web",
+    "domain": "madewithactixweb.com",
+    "group": "backend",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:actix-web",
+      "minStars": 20,
+      "exclude": [
+        "actix/actix-web"
+      ],
+      "languageFamilies": [
+        "rust"
+      ]
+    }
+  },
+  {
+    "slug": "rocket",
+    "techName": "Rocket",
+    "domain": "madewithrocket.com",
+    "group": "backend",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:rocket-rs",
+      "minStars": 10,
+      "exclude": [
+        "rwf2/Rocket"
+      ],
+      "languageFamilies": [
+        "rust",
+        "python"
+      ]
+    }
+  },
+  {
+    "slug": "phoenix",
+    "techName": "Phoenix",
+    "domain": "madewithphoenix.com",
+    "group": "backend",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:phoenix-framework",
+      "minStars": 20,
+      "exclude": [
+        "phoenixframework/phoenix"
+      ],
+      "languageFamilies": [
+        "elixir"
+      ]
+    }
+  },
+  {
+    "slug": "wordpress",
+    "techName": "WordPress",
+    "domain": "madewithwordpress.com",
+    "group": "cms-crm",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:wordpress",
+      "minStars": 20,
+      "exclude": [
+        "WordPress/WordPress"
+      ],
+      "languageFamilies": [
+        "php",
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "drupal",
+    "techName": "Drupal",
+    "domain": "madewithdrupal.com",
+    "group": "cms-crm",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:drupal",
+      "minStars": 10,
+      "exclude": [
+        "drupal/drupal"
+      ],
+      "languageFamilies": [
+        "php",
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "joomla",
+    "techName": "Joomla",
+    "domain": "madewithjoomla.com",
+    "group": "cms-crm",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:joomla",
+      "minStars": 5,
+      "exclude": [
+        "joomla/joomla-cms"
+      ],
+      "languageFamilies": [
+        "php"
+      ]
+    }
+  },
+  {
+    "slug": "strapi",
+    "techName": "Strapi",
+    "domain": "madewithstrapi.com",
+    "group": "cms-crm",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:strapi",
+      "minStars": 20,
+      "exclude": [
+        "strapi/strapi"
+      ],
+      "languageFamilies": [
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "directus",
+    "techName": "Directus",
+    "domain": "madewithdirectus.com",
+    "group": "cms-crm",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:directus",
+      "minStars": 10,
+      "exclude": [
+        "directus/directus"
+      ],
+      "languageFamilies": [
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "ghost",
+    "techName": "Ghost",
+    "domain": "madewithghost.com",
+    "group": "cms-crm",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:ghost",
+      "minStars": 20,
+      "exclude": [
+        "TryGhost/Ghost"
+      ],
+      "languageFamilies": [
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "octobercms",
+    "techName": "October CMS",
+    "domain": "madewithoctobercms.com",
+    "group": "cms-crm",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:octobercms",
+      "minStars": 5,
+      "exclude": [
+        "octobercms/october"
+      ],
+      "languageFamilies": [
+        "php"
+      ]
+    }
+  },
+  {
+    "slug": "statamic",
+    "techName": "Statamic",
+    "domain": "madewithstatamic.com",
+    "group": "cms-crm",
+    "bespoke": true,
+    "scrape": {
+      "query": "topic:statamic",
+      "minStars": 3,
+      "exclude": [
+        "statamic/cms",
+        "statamic/statamic"
+      ],
+      "languageFamilies": [
+        "php"
+      ]
+    }
+  },
+  {
+    "slug": "payload",
+    "techName": "Payload CMS",
+    "domain": "madewithpayload.com",
+    "group": "cms-crm",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:payloadcms",
+      "minStars": 10,
+      "exclude": [
+        "payloadcms/payload"
+      ],
+      "languageFamilies": [
+        "js",
+        "python"
+      ]
+    }
+  },
+  {
+    "slug": "twill",
+    "techName": "Twill",
+    "domain": "madewithtwill.com",
+    "group": "cms-crm",
+    "bespoke": true,
+    "scrape": {
+      "query": "twill laravel cms",
+      "minStars": 0,
+      "exclude": [
+        "area17/twill"
+      ],
+      "languageFamilies": [
+        "php"
+      ]
+    }
+  },
+  {
+    "slug": "magento",
+    "techName": "Magento",
+    "domain": "madewithmagento.com",
+    "group": "commerce",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:magento",
+      "minStars": 10,
+      "exclude": [
+        "magento/magento2"
+      ],
+      "languageFamilies": [
+        "php"
+      ]
+    }
+  },
+  {
+    "slug": "prestashop",
+    "techName": "PrestaShop",
+    "domain": "madewithprestashop.com",
+    "group": "commerce",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:prestashop",
+      "minStars": 5,
+      "exclude": [
+        "PrestaShop/PrestaShop"
+      ],
+      "languageFamilies": [
+        "php"
+      ]
+    }
+  },
+  {
+    "slug": "woocommerce",
+    "techName": "WooCommerce",
+    "domain": "madewithwoocommerce.com",
+    "group": "commerce",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:woocommerce",
+      "minStars": 10,
+      "exclude": [
+        "woocommerce/woocommerce"
+      ],
+      "languageFamilies": [
+        "php",
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "shopware",
+    "techName": "Shopware",
+    "domain": "madewithshopware.com",
+    "group": "commerce",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:shopware",
+      "minStars": 10,
+      "exclude": [
+        "shopware/shopware"
+      ],
+      "languageFamilies": [
+        "php",
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "bagisto",
+    "techName": "Bagisto",
+    "domain": "madewithbagisto.com",
+    "group": "commerce",
+    "bespoke": false,
+    "scrape": {
+      "query": "bagisto",
+      "minStars": 5,
+      "exclude": [
+        "bagisto/bagisto"
+      ],
+      "languageFamilies": [
+        "php"
+      ]
+    }
+  },
+  {
+    "slug": "saleor",
+    "techName": "Saleor",
+    "domain": "madewithsaleor.com",
+    "group": "commerce",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:saleor",
+      "minStars": 10,
+      "exclude": [
+        "saleor/saleor"
+      ],
+      "languageFamilies": [
+        "js",
+        "python"
+      ]
+    }
+  },
+  {
+    "slug": "medusa",
+    "techName": "Medusa",
+    "domain": "madewithmedusa.com",
+    "group": "commerce",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:medusa",
+      "minStars": 10,
+      "exclude": [
+        "medusajs/medusa"
+      ],
+      "languageFamilies": [
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "opencart",
+    "techName": "OpenCart",
+    "domain": "madewithopencart.com",
+    "group": "commerce",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:opencart",
+      "minStars": 5,
+      "exclude": [
+        "opencart/opencart"
+      ],
+      "languageFamilies": [
+        "php",
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "odoo",
+    "techName": "Odoo",
+    "domain": "madewithodoo.com",
+    "group": "cms-crm",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:odoo",
+      "minStars": 20,
+      "exclude": [
+        "odoo/odoo"
+      ],
+      "languageFamilies": [
+        "python",
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "erpnext",
+    "techName": "ERPNext",
+    "domain": "madewitherpnext.com",
+    "group": "cms-crm",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:erpnext",
+      "minStars": 10,
+      "exclude": [
+        "frappe/erpnext"
+      ],
+      "languageFamilies": [
+        "python",
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "suitecrm",
+    "techName": "SuiteCRM",
+    "domain": "madewithsuitecrm.com",
+    "group": "cms-crm",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:suitecrm",
+      "minStars": 5,
+      "exclude": [
+        "salesagility/SuiteCRM"
+      ],
+      "languageFamilies": [
+        "php",
+        "python"
+      ]
+    }
+  },
+  {
+    "slug": "espocrm",
+    "techName": "EspoCRM",
+    "domain": "madewitespocrm.com",
+    "group": "cms-crm",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:espocrm",
+      "minStars": 5,
+      "exclude": [
+        "espocrm/espocrm"
+      ],
+      "languageFamilies": [
+        "js",
+        "php"
+      ]
+    }
+  },
+  {
+    "slug": "dolibarr",
+    "techName": "Dolibarr",
+    "domain": "madewithdolibarr.com",
+    "group": "cms-crm",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:dolibarr",
+      "minStars": 5,
+      "exclude": [
+        "Dolibarr/dolibarr"
+      ],
+      "languageFamilies": [
+        "php"
+      ]
+    }
+  },
+  {
+    "slug": "twenty-crm",
+    "techName": "Twenty CRM",
+    "domain": "madewithtwentycrm.com",
+    "group": "cms-crm",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:twenty",
+      "minStars": 10,
+      "exclude": [
+        "twentyhq/twenty"
+      ],
+      "languageFamilies": [
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "vtiger",
+    "techName": "Vtiger CRM",
+    "domain": "madewithvtiger.com",
+    "group": "cms-crm",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:vtiger",
+      "minStars": 5,
+      "exclude": [],
+      "languageFamilies": [
+        "php",
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "monica",
+    "techName": "Monica",
+    "domain": "madewithmonica.com",
+    "group": "cms-crm",
+    "bespoke": false,
+    "scrape": {
+      "query": "monica crm",
+      "minStars": 5,
+      "exclude": [
+        "monicahq/monica"
+      ],
+      "languageFamilies": [
+        "js",
+        "python"
+      ]
+    }
+  },
+  {
+    "slug": "ollama",
+    "techName": "Ollama",
+    "domain": "madewithollama.com",
+    "group": "ai-llm",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:ollama",
+      "minStars": 20,
+      "exclude": [
+        "ollama/ollama"
+      ],
+      "languageFamilies": [
+        "python",
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "langchain",
+    "techName": "LangChain",
+    "domain": "madewithlangchain.com",
+    "group": "ai-llm",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:langchain",
+      "minStars": 20,
+      "exclude": [
+        "langchain-ai/langchain"
+      ],
+      "languageFamilies": [
+        "python",
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "llamaindex",
+    "techName": "LlamaIndex",
+    "domain": "madewithllamaindex.com",
+    "group": "ai-llm",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:llamaindex",
+      "minStars": 10,
+      "exclude": [
+        "run-llama/llama_index"
+      ],
+      "languageFamilies": [
+        "python"
+      ]
+    }
+  },
+  {
+    "slug": "flowise",
+    "techName": "Flowise",
+    "domain": "madewithflowise.com",
+    "group": "ai-llm",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:flowise",
+      "minStars": 10,
+      "exclude": [
+        "FlowiseAI/Flowise"
+      ],
+      "languageFamilies": [
+        "js",
+        "go"
+      ]
+    }
+  },
+  {
+    "slug": "dify",
+    "techName": "Dify",
+    "domain": "madewithdify.com",
+    "group": "ai-llm",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:dify",
+      "minStars": 20,
+      "exclude": [
+        "langgenius/dify"
+      ],
+      "languageFamilies": [
+        "python",
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "open-webui",
+    "techName": "Open WebUI",
+    "domain": "madewithopenwebui.com",
+    "group": "ai-llm",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:open-webui",
+      "minStars": 10,
+      "exclude": [
+        "open-webui/open-webui"
+      ],
+      "languageFamilies": [
+        "python",
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "librechat",
+    "techName": "LibreChat",
+    "domain": "madewithlibrechat.com",
+    "group": "ai-llm",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:librechat",
+      "minStars": 10,
+      "exclude": [
+        "danny-avila/LibreChat"
+      ],
+      "languageFamilies": [
+        "js",
+        "python"
+      ]
+    }
+  },
+  {
+    "slug": "anythingllm",
+    "techName": "AnythingLLM",
+    "domain": "madewithanythingllm.com",
+    "group": "ai-llm",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:anythingllm",
+      "minStars": 10,
+      "exclude": [
+        "Mintplex-Labs/anything-llm"
+      ],
+      "languageFamilies": [
+        "js"
+      ]
+    }
+  },
+  {
+    "slug": "haystack",
+    "techName": "Haystack",
+    "domain": "madewithhaystack.com",
+    "group": "ai-llm",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:haystack",
+      "minStars": 10,
+      "exclude": [
+        "deepset-ai/haystack"
+      ],
+      "languageFamilies": [
+        "python"
+      ]
+    }
+  },
+  {
+    "slug": "vllm",
+    "techName": "vLLM",
+    "domain": "madewithvllm.com",
+    "group": "ai-llm",
+    "bespoke": false,
+    "scrape": {
+      "query": "topic:vllm",
+      "minStars": 10,
+      "exclude": [
+        "vllm-project/vllm"
+      ],
+      "languageFamilies": [
+        "python"
+      ]
+    }
+  }
 ]

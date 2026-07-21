@@ -9,6 +9,8 @@ export interface DomainDiscovery {
   match: string;
   exclude: string[];
   keep: number;
+  /** Expected primary-language families (derived from the domain's own data). */
+  languageFamilies: string[];
 }
 
 export const STAR_PARTITIONS: Array<[number, number | null]> = [
@@ -26,6 +28,7 @@ export const DOMAINS: DomainDiscovery[] = catalog.map((d) => ({
   match: d.scrape.query,
   exclude: d.scrape.exclude,
   keep: DEFAULT_KEEP,
+  languageFamilies: (d.scrape as { languageFamilies?: string[] }).languageFamilies ?? [],
 }));
 
 export const DOMAIN_SLUGS = DOMAINS.map((d) => d.slug);

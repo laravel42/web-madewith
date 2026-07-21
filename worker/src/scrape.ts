@@ -1,7 +1,7 @@
 import { GitHub } from "./github";
 import { classify } from "./classify";
 import { qualityScore } from "./score";
-import { DOMAINS, STAR_PARTITIONS, type DomainDiscovery } from "./domains";
+import { DOMAINS, DOMAIN_SLUGS, STAR_PARTITIONS, type DomainDiscovery } from "./domains";
 
 export interface Lang { name: string; pct: number; }
 export interface Project {
@@ -120,12 +120,53 @@ function normalise(node: RepoNode, now: number): Project {
 }
 
 /** Hard noise is never acceptable — forks, archived, the framework's own core repo. */
+/**
+ * A repo whose topics span this many catalog technologies is a multi-tech tool
+ * (deploy platform, boilerplate hub) — its topics advertise what it SUPPORTS,
+ * not what it's MADE WITH. Such repos only stay in a domain when corroborated:
+ * the repo name mentions the tech, or its primary language fits the domain's
+ * expected language families. (Real-world case: coolify — a PHP/Laravel app —
+ * tags nextjs/nodejs/svelte and was published into all those galleries.)
+ */
+const TOPIC_BREADTH_LIMIT = 3;
+const CATALOG_SLUG_SET = new Set(DOMAIN_SLUGS.map((s) => s.toLowerCase()));
+
+/** language → family, mirroring the derivation of scrape.languageFamilies. */
+const LANG_FAMILY: Record<string, string> = {
+  javascript: "js", typescript: "js", vue: "js", svelte: "js", astro: "js",
+  coffeescript: "js", html: "js", css: "js", scss: "js", mdx: "js",
+  php: "php", blade: "php", hack: "php",
+  python: "python", "jupyter notebook": "python",
+  ruby: "ruby", go: "go", rust: "rust",
+  java: "jvm", kotlin: "jvm", groovy: "jvm", scala: "jvm",
+  "c#": "dotnet", "f#": "dotnet", elixir: "elixir", dart: "dart",
+  c: "c", "c++": "c", "objective-c": "c", swift: "swift",
+};
+
+function techTopicBreadth(node: RepoNode): number {
+  const topics = new Set((node.repositoryTopics?.nodes ?? []).map((t) => t.topic.name.toLowerCase()));
+  let n = 0;
+  for (const slug of CATALOG_SLUG_SET) if (topics.has(slug) || topics.has(slug + "js")) n++;
+  return n;
+}
+
+/** True when a broad-topic repo lacks any corroboration for this domain. */
+function broadTopicMismatch(node: RepoNode, domain: DomainDiscovery): boolean {
+  if (techTopicBreadth(node) < TOPIC_BREADTH_LIMIT) return false;
+  if (node.name.toLowerCase().includes(domain.slug.toLowerCase())) return false;
+  const family = LANG_FAMILY[(node.primaryLanguage?.name ?? "").toLowerCase()];
+  // Unknown/neutral language or no expectation data → give the repo the benefit of the doubt.
+  if (!family || !domain.languageFamilies.length) return false;
+  return !domain.languageFamilies.includes(family);
+}
+
 function hardNoise(node: RepoNode, domain: DomainDiscovery): boolean {
   const excl = new Set(domain.exclude.map((s) => s.toLowerCase()));
   return (
     node.isFork || node.isArchived ||
     excl.has(node.nameWithOwner.toLowerCase()) ||
-    node.name.toLowerCase() === domain.slug
+    node.name.toLowerCase() === domain.slug ||
+    broadTopicMismatch(node, domain)
   );
 }
 
