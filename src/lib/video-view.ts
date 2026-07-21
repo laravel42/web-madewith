@@ -14,8 +14,15 @@ export interface VideoCardItem {
   chapters: VideoChapter[];
   techName: string;
   techSlug: string;
+  /** Raw brand colour — fills, borders, gradient starts. Never text. */
   accent: string;
   accentInk: string;
+  /** The accent as text on a light surface (tech labels, chapter timecodes). */
+  accentOnLight: string;
+  /** The accent as a solid surface carrying `accentInk` (avatars, watch button). */
+  accentSolid: string;
+  /** Light end of a cover gradient that white text sits on. */
+  accentCover: string;
   galleryHref: string;
   group: DomainGroup;
   groupLabel: string;
@@ -144,6 +151,9 @@ function toItem(entry: VideoEntry): VideoCardItem {
     techSlug: tech.slug,
     accent: tech.accent,
     accentInk: tech.accentInk,
+    accentOnLight: tech.accentOnLight,
+    accentSolid: tech.accentSolid,
+    accentCover: tech.accentCover,
     galleryHref: tech.galleryHref,
     group,
     groupLabel: GROUP_META[group].label,
@@ -179,6 +189,8 @@ export interface VideoGroupChip {
   label: string;
   icon: string;
   color: string;
+  /** AA-safe label colour; `color` only tints the chip background. */
+  ink: string;
   count: number;
 }
 
@@ -191,6 +203,7 @@ export function videoGroupChips(items: VideoCardItem[]): VideoGroupChip[] {
       label: GROUP_META[group].label,
       icon: GROUP_META[group].icon,
       color: GROUP_META[group].color,
+      ink: GROUP_META[group].ink,
       count: items.filter((i) => i.group === group).length,
     }))
     .filter((g) => g.count > 0);

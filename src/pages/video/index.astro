@@ -11,8 +11,10 @@ const total = cards.length;
 
 const site = Astro.site ?? new URL(Astro.url.origin);
 const canonical = new URL("/video/", site).href;
+// The badges on this cover are white, so the gradient runs off the AA-safe
+// `accentCover` rather than the raw brand colour.
 const featuredCover = featured
-  ? `linear-gradient(135deg, color-mix(in srgb, ${featured.accent} 58%, #000) 0%, ${featured.accent} 100%)`
+  ? `linear-gradient(135deg, color-mix(in srgb, ${featured.accentCover} 58%, #000) 0%, ${featured.accentCover} 100%)`
   : "";
 
 const title = "MadeWithWhat Video Collection — Talks, Tutorials & Deep-Dives";
@@ -51,9 +53,9 @@ const jsonLd = {
       <p class="vid-copy">Conference talks, tutorials, course clips and performance deep-dives across {stacks} technologies in the network — curated from across YouTube, refreshed daily, and ranked so you always land on something worth watching.</p>
 
       <nav class="vid-chips" data-role="video-chips" aria-label="Filter by category">
-        <button type="button" class="vid-chip is-active" data-cat="all" style="--chip:#12161a;">All</button>
+        <button type="button" class="vid-chip is-active" data-cat="all" style="--chip:#12161a; --chip-ink:#12161a;">All</button>
         {chips.map((c) => (
-          <button type="button" class="vid-chip" data-cat={c.group} style={`--chip:${c.color};`}>
+          <button type="button" class="vid-chip" data-cat={c.group} style={`--chip:${c.color}; --chip-ink:${c.ink};`}>
             <span aria-hidden="true">{c.icon}</span> {c.label}
           </button>
         ))}
@@ -71,11 +73,11 @@ const jsonLd = {
             <span class="vid-featured-play"><span class="vid-featured-tri" style={`border-color:transparent transparent transparent ${featured.accent};`}></span></span>
           </div>
           <div class="vid-featured-body">
-            <div class="vid-featured-tech" style={`color:${featured.accent};`}>{featured.techName}</div>
+            <div class="vid-featured-tech" style={`color:${featured.accentOnLight};`}>{featured.techName}</div>
             <h2 class="vid-featured-title">{featured.title}</h2>
             <p class="vid-featured-copy">{featured.excerpt}</p>
             <div class="vid-featured-meta">
-              <span class="vid-featured-avatar" style={`background:${featured.accent}; color:${featured.accentInk};`}>{featured.channelInitial}</span>
+              <span class="vid-featured-avatar" style={`background:${featured.accentSolid}; color:${featured.accentInk};`}>{featured.channelInitial}</span>
               <div>
                 <address class="vid-featured-creator">{featured.channel}</address>
                 <div class="vid-featured-sub"><time datetime={featured.dateIso}>{featured.dateLabel}</time> · {featured.viewsLabel} views</div>
@@ -134,12 +136,14 @@ const jsonLd = {
       display: inline-flex; align-items: center; gap: 5px;
       font-size: 12px; font-weight: 600; font-family: inherit; cursor: pointer;
       padding: 6px 12px; border-radius: 18px; white-space: nowrap;
-      color: var(--chip); background: color-mix(in srgb, var(--chip) 9%, #ffffff);
+      /* --chip tints the pill and its border; --chip-ink is the AA-safe label. */
+      color: var(--chip-ink, var(--chip)); background: color-mix(in srgb, var(--chip) 9%, #ffffff);
       border: 1px solid color-mix(in srgb, var(--chip) 22%, #ffffff);
       transition: transform 0.12s ease;
     }
     .vid-chip:hover { transform: translateY(-2px); }
-    .vid-chip.is-active { font-weight: 700; background: color-mix(in srgb, var(--chip) 18%, #ffffff); border-color: color-mix(in srgb, var(--chip) 40%, #ffffff); }
+    /* 16% is the tint --chip-ink is derived against, so the active pill stays AA. */
+    .vid-chip.is-active { font-weight: 700; background: color-mix(in srgb, var(--chip) 16%, #ffffff); border-color: color-mix(in srgb, var(--chip) 40%, #ffffff); }
 
     .vid-featured-wrap { padding: 30px 0 8px; }
     .vid-featured {
@@ -160,12 +164,12 @@ const jsonLd = {
     .vid-featured-meta { display: flex; align-items: center; gap: 11px; margin-top: 22px; }
     .vid-featured-avatar { width: 38px; height: 38px; border-radius: 50%; font-weight: 700; font-size: 15px; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
     .vid-featured-creator { font-style: normal; font-size: 14px; font-weight: 600; color: #12161a; }
-    .vid-featured-sub { font-size: 12.5px; color: #9aa0a6; margin-top: 2px; }
+    .vid-featured-sub { font-size: 12.5px; color: #5c665f; margin-top: 2px; }
 
     .vid-grid-wrap { padding: 30px 0 20px; }
     .vid-grid-head { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 20px; gap: 16px; }
     .vid-grid-label { font-family: "Bricolage Grotesque", sans-serif; font-size: 22px; font-weight: 800; letter-spacing: -0.02em; margin: 0; }
-    .vid-grid-count { font-size: 13px; color: #9aa0a6; white-space: nowrap; }
+    .vid-grid-count { font-size: 13px; color: #5c665f; white-space: nowrap; }
     .vid-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; align-items: stretch; }
 
     /* Newsletter banner copied from the blog. */
@@ -178,7 +182,7 @@ const jsonLd = {
     .vid-news-form input { flex: 1; border: none; border-radius: 12px; padding: 14px 16px; font-size: 15px; outline: none; font-family: inherit; }
     .vid-news-form button { background: #2F6FEB; color: #fff; border: none; font-weight: 700; font-size: 15px; padding: 14px 22px; border-radius: 12px; cursor: pointer; font-family: inherit; white-space: nowrap; }
 
-    .vid-empty { text-align: center; padding: 64px 0; color: #9aa0a6; }
+    .vid-empty { text-align: center; padding: 64px 0; color: #5c665f; }
     .vid-empty-title { font-size: 17px; font-weight: 600; color: #5c6169; }
     .vid-empty-copy { font-size: 14px; margin-top: 6px; }
     .vid-empty-reset { margin-top: 18px; font-size: 14px; font-weight: 600; color: #fff; background: #12161a; padding: 10px 18px; border-radius: 22px; cursor: pointer; border: none; font-family: inherit; }
@@ -195,8 +199,9 @@ const jsonLd = {
     }
     .vid-pager :global(button:hover:not(:disabled):not(.is-active)) { border-color: #2F6FEB; color: #2F6FEB; }
     .vid-pager :global(button.is-active) { color: #fff; background: #2F6FEB; border-color: #2F6FEB; cursor: default; }
-    .vid-pager :global(button:disabled) { color: #c7ccd2; cursor: default; }
-    .vid-pager :global(.vid-pager-gap) { min-width: 20px; text-align: center; color: #c7ccd2; font-weight: 700; user-select: none; }
+    /* Dimmer than the enabled #3a4048, but still ~3:1 rather than invisible. */
+    .vid-pager :global(button:disabled) { color: #8b9199; cursor: default; }
+    .vid-pager :global(.vid-pager-gap) { min-width: 20px; text-align: center; color: #8b9199; font-weight: 700; user-select: none; }
 
     @media (max-width: 900px) {
       .vid-featured { grid-template-columns: 1fr; }
