@@ -28,11 +28,11 @@ const catalogGroups = Object.fromEntries(DOMAINS.map((d) => [d.slug, d.group]));
         <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-600">
           <thead class="bg-gray-100 dark:bg-gray-700">
             <tr>
-              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">Tech</th>
-              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">Category</th>
-              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">Page URL</th>
-              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">Projects</th>
-              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">Status</th>
+              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Tech</th>
+              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Category</th>
+              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Page URL</th>
+              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Projects</th>
+              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Status</th>
             </tr>
           </thead>
           <tbody id="domain-list" class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700" data-catalog-counts={JSON.stringify(catalogCounts)} data-catalog-groups={JSON.stringify(catalogGroups)}>

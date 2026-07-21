@@ -135,11 +135,11 @@ function renderTable(title: string, rows: string) {
       <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-600">
         <thead class="bg-gray-100 dark:bg-gray-700">
           <tr>
-            <th class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">Parameter</th>
-            <th class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">Purpose</th>
-            <th class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">Status</th>
-            <th class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">Preview</th>
-            <th class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">How to set</th>
+            <th class="p-4 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Parameter</th>
+            <th class="p-4 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Purpose</th>
+            <th class="p-4 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Status</th>
+            <th class="p-4 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Preview</th>
+            <th class="p-4 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">How to set</th>
           </tr>
         </thead>
         <tbody class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">${rows}</tbody>

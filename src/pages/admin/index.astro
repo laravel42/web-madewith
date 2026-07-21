@@ -27,7 +27,7 @@ const catalogStats = Object.fromEntries(
           id="republish-all"
           type="button"
           data-refresh-job
-          class="text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+          class="text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
         >
           Republish all
         </button>
@@ -73,11 +73,11 @@ const catalogStats = Object.fromEntries(
         <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-600">
           <thead class="bg-gray-100 dark:bg-gray-700">
             <tr>
-              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">Domain</th>
-              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">Published</th>
-              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">Ecosystem</th>
-              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">Last scraped</th>
-              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">Actions</th>
+              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Domain</th>
+              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Published</th>
+              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Ecosystem</th>
+              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Last scraped</th>
+              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Actions</th>
             </tr>
           </thead>
           <tbody id="domain-rows" class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700" data-catalog-stats={JSON.stringify(catalogStats)}>

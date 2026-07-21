@@ -115,7 +115,7 @@ export async function loadOverview() {
             <td class="p-4 text-sm text-gray-500 dark:text-gray-400">${scrapedAt ? new Date(scrapedAt).toLocaleString() : "never"}</td>
             <td class="p-4 space-x-2 whitespace-nowrap">
               <button type="button" class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-xs px-3 py-1.5 dark:bg-primary-600 dark:hover:bg-primary-700" data-republish="${esc(d.slug)}" data-refresh-job>Republish</button>
-              <button type="button" class="text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-xs px-3 py-1.5 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" data-refresh="${esc(d.slug)}" data-refresh-job>Refresh</button>
+              <button type="button" class="text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-xs px-3 py-1.5 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" data-refresh="${esc(d.slug)}" data-refresh-job>Refresh</button>
             </td>
           </tr>`;
         },
@@ -125,7 +125,7 @@ export async function loadOverview() {
   } catch (e) {
     const domainRows = $("#domain-rows");
     if (domainRows) {
-      domainRows.innerHTML = `<tr><td colspan="5" class="p-4 text-sm text-red-600">${esc((e as Error).message)} — are you signed in via Access?</td></tr>`;
+      domainRows.innerHTML = `<tr><td colspan="5" class="p-4 text-sm text-red-600 dark:text-red-400">${esc((e as Error).message)} — are you signed in via Access?</td></tr>`;
     }
   }
 }
@@ -146,17 +146,17 @@ export async function loadSubs() {
                   <div class="text-gray-500 dark:text-gray-400">${esc(s.description || "")}</div>
                 </td>
                 <td class="p-4 text-sm text-gray-500 dark:text-gray-400">${esc(s.slug)}</td>
-                <td class="p-4 text-sm"><a href="${esc(s.repo_url)}" target="_blank" rel="noopener" class="font-medium text-primary-700 hover:underline dark:text-primary-500">repo ↗</a></td>
+                <td class="p-4 text-sm"><a href="${esc(s.repo_url)}" target="_blank" rel="noopener" class="font-medium text-primary-700 hover:underline dark:text-primary-400">repo ↗</a></td>
                 <td class="p-4"><span class="text-xs font-medium px-2.5 py-0.5 rounded ${s.status === "pending" ? "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300" : "bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300"}">${esc(s.status)}</span></td>
                 <td class="p-4 space-x-2 whitespace-nowrap">
-                  ${s.status === "pending" ? `<button type="button" class="text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-xs px-3 py-1.5" data-approve="${s.id}">Approve</button><button type="button" class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 font-medium rounded-lg text-xs px-3 py-1.5 dark:border-red-500 dark:text-red-500" data-reject="${s.id}">Reject</button>` : `<span class="text-sm text-gray-500 dark:text-gray-400">${esc(s.decided_by || "")}</span>`}
+                  ${s.status === "pending" ? `<button type="button" class="text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-xs px-3 py-1.5" data-approve="${s.id}">Approve</button><button type="button" class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 font-medium rounded-lg text-xs px-3 py-1.5 dark:border-red-500 dark:text-red-400" data-reject="${s.id}">Reject</button>` : `<span class="text-sm text-gray-500 dark:text-gray-400">${esc(s.decided_by || "")}</span>`}
                 </td>
               </tr>`,
           )
           .join("")
       : `<tr><td colspan="5" class="p-4 text-sm text-gray-500 dark:text-gray-400">No submissions.</td></tr>`;
   } catch (e) {
-    $("#sub-rows").innerHTML = `<tr><td colspan="5" class="p-4 text-sm text-red-600">${esc((e as Error).message)}</td></tr>`;
+    $("#sub-rows").innerHTML = `<tr><td colspan="5" class="p-4 text-sm text-red-600 dark:text-red-400">${esc((e as Error).message)}</td></tr>`;
   }
 }
 
