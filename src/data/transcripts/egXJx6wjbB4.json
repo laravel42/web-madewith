@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 3,
+  "videoId": "egXJx6wjbB4",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to manage your production process from planning to execution with the ERPNext manufacturing module. This comprehensive tutorial walks you through setting up items in the Item Master, creating a detailed Bill of Materials (BOM) with operations and routing, and executing a full make-to-order workflow. Follow a practical example from creating a sales order to generating a production plan, managing work orders and job cards, and completing stock entries for finished goods, all while tracking inventory and costs.",
+  "chapters": [
+    {
+      "title": "Introduction to Manufacturing in ERPNext",
+      "description": "This chapter introduces the manufacturing module in ERPNext using a simple example of preparing a cup of tea.",
+      "startTime": 0.0,
+      "endTime": 35.0,
+      "slug": "introduction-to-manufacturing-in-erpnext"
+    },
+    {
+      "title": "Setting Up Items in the Item Master",
+      "description": "Learn how to add finished goods and raw materials, along with their stock levels and valuation rates, in the ERPNext Item Master.",
+      "startTime": 35.0,
+      "endTime": 93.0,
+      "slug": "setting-up-items-in-the-item-master"
+    },
+    {
+      "title": "Creating the Bill of Materials (BOM)",
+      "description": "This chapter explains how to create a Bill of Materials (BOM) that lists the exact items and operations required to produce a finished good.",
+      "startTime": 93.0,
+      "endTime": 133.0,
+      "slug": "creating-the-bill-of-materials-bom"
+    },
+    {
+      "title": "Defining Workstations, Operations, and Routing",
+      "description": "This section covers setting up Workstations, Operations, and Routing in ERPNext to define the complete manufacturing process flow.",
+      "startTime": 133.0,
+      "endTime": 171.0,
+      "slug": "defining-workstations-operations-and-routing"
+    },
+    {
+      "title": "Configuring the Detailed Bill of Materials",
+      "description": "Learn how to configure a detailed Bill of Materials, linking specific materials and costs to each manufacturing operation.",
+      "startTime": 171.0,
+      "endTime": 231.0,
+      "slug": "configuring-the-detailed-bill-of-materials"
+    },
+    {
+      "title": "Initiating Production with a Sales Order",
+      "description": "This chapter demonstrates how to kick off a make-to-order process by creating and configuring a sales order for a customer.",
+      "startTime": 231.0,
+      "endTime": 278.0,
+      "slug": "initiating-production-with-a-sales-order"
+    },
+    {
+      "title": "Generating a Production Plan from the Sales Order",
+      "description": "This section covers creating a production plan, pulling data from sales orders, and exploding the BOM to see material requirements.",
+      "startTime": 278.0,
+      "endTime": 358.0,
+      "slug": "generating-a-production-plan-from-the-sales-order"
+    },
+    {
+      "title": "Managing the Work Order and Job Cards",
+      "description": "Learn how to navigate from the production plan to the automatically generated work order and its corresponding job cards for each operation.",
+      "startTime": 358.0,
+      "endTime": 426.0,
+      "slug": "managing-the-work-order-and-job-cards"
+    },
+    {
+      "title": "Executing Job Cards and Material Transfers",
+      "description": "This chapter shows the process of starting a job, transferring required raw materials from stores to work-in-progress, and tracking production.",
+      "startTime": 426.0,
+      "endTime": 532.0,
+      "slug": "executing-job-cards-and-material-transfers"
+    },
+    {
+      "title": "Finalizing the Work Order and Stock Entry",
+      "description": "Learn how to complete the work order, create a stock entry to move the finished goods into the warehouse, and verify the updated inventory levels.",
+      "startTime": 532.0,
+      "endTime": 606.0,
+      "slug": "finalizing-the-work-order-and-stock-entry"
+    },
+    {
+      "title": "Reporting and Conclusion",
+      "description": "This final chapter briefly touches upon the reporting and analysis tools available in ERPNext to track and visualize production data.",
+      "startTime": 606.0,
+      "endTime": 638.86,
+      "slug": "reporting-and-conclusion"
+    }
+  ],
+  "summary": "## Core Concepts in ERPNext Manufacturing\n\nThis document outlines the key concepts and process flow for managing manufacturing and inventory in ERPNext, as demonstrated in the video.\n\n*   **Item Master**: The central repository for all items, including **Finished Goods** (products you sell) and **Raw Materials** (components you use). Each item has properties like valuation rate (cost) and stock levels.\n*   **Bill of Materials (BOM)**: A comprehensive \"recipe\" for a finished good. It details the exact quantity of raw materials required and the sequence of operations needed to produce one unit.\n*   **Workstation**: The physical location or machine where a manufacturing operation takes place (e.g., Heating Station, Mixing Area).\n*   **Operation**: A specific manufacturing task or step in the production process (e.g., Heating, Mixing, Serving). Operations have associated time and costs.\n*   **Routing**: Defines the sequence of operations and the workstations where they are performed.\n\n## The Manufacturing Process Flow\n\nThe end-to-end production cycle in ERPNext involves a series of linked documents.\n\n### 1. One-Time Setup\n\n-   **Create Items**: Define all raw materials and finished goods in the **Item Master**.\n-   **Define Manufacturing Assets**: Create **Workstations**, **Operations**, and **Routing** sequences.\n-   **Create Bill of Materials (BOM)**: For each finished good, create a detailed BOM linking raw materials to specific operations.\n\n> [!IMPORTANT]\n> Accurately setting the **Valuation Rate** for each raw material in the Item Master is crucial for the system to correctly calculate the total cost of finished goods.\n\n### 2. Production Execution\n\n1.  **Sales Order**: For a **make-to-order** process, it starts with a customer's sales order.\n2.  **Production Plan**: Aggregates demand from sales orders (or material requests for **make-to-stock**) to plan what needs to be produced.\n3.  **Work Order**: The primary document for a specific production run. It's generated from the Production Plan and contains all information from the BOM for the required quantity.\n4.  **Job Cards**: The Work Order is broken down into multiple Job Cards, one for each **Operation** in the routing. Operators use these to start and stop tasks.\n5.  **Material Transfer**: As each job (operation) starts, a **Stock Entry** is created to transfer the required raw materials from a storage warehouse (e.g., `Stores`) to a work-in-progress warehouse (e.g., `Work-in-Progress`).\n6.  **Finish Work Order**: Once all Job Cards are complete, the main Work Order is finished.\n7.  **Stock Entry for Finished Goods**: A final Stock Entry is created to move the manufactured items from the `Work-in-Progress` warehouse to a `Finished Goods` warehouse, making them available for sale.\n\n> [!TIP]\n> In the BOM, selecting **\"Material Transfer against Job Card\"** allows for just-in-time material issuance for each specific operation, providing tighter control over inventory.",
+  "transcription": "## Introduction to Manufacturing in ERPNext\n\nHello friends. Today we will go through some of the features of the manufacturing module that an ERPNext software that can ease your production process from planning to execution. For understanding the process flow, let us try to prepare a cup of tea using these items, which are tea powder, water, milk, and sugar. These items with their corresponding purchase quantities and prices are listed on screen. In ERPNext, we need to feed the same information so we can also derive the cost of preparing our finished good, that is a cup of tea.\n\n## Setting Up Items in the Item Master\n\nAs we log in to the system, we can view our items and finished goods in the item master form listed in the stock module. So click on it. As you can see, I have already added the finished good, cup of tea, and other items milk, water, sugar, and tea powder in the item master. Let's have a look at it.\n\nWe add a tea product with a unit of measurement as a cup and also clicked on 'Maintain Stock Level' so we can view a small dashboard of all stocks in different warehouses. Similarly, we added other items with a valuation rate, that is their purchase price or total cost of procuring that item. One liter of milk is available for rupees sixty-five.\n\n## Creating the Bill of Materials (BOM)\n\nAnother important step is to enter the Bill of Material in the system. Our Bill of Material will look somewhat like this. Here we have listed the exact amount of each item required to produce one unit of finished good. Also, our finished product will be required to go through three stages of operation: that is heating, mixing, and serving. So we will require these items at different stages of operation. Like for the first operation of heating, we will need tea powder and water. For mixing, we will require milk, and for serving, we will need sugar.\n\n## Defining Workstations, Operations, and Routing\n\nAll this information must be fed into the system one time only. So let's have a look at it. On the main screen, click Manufacturing. Here one can see all related forms like Item, Bill of Material, Workstation, Operation.\n\nIn Workstation, we listed these three which will be required for our process. In Operation, we listed our previously discussed stages of operation. For Routing, we entered a process called 'Tea Preparation'. Here we will completely define our process by mentioning each operation, at which particular workstation it will be processed, how much time will be required, and what will be the cost of this operation.\n\n## Configuring the Detailed Bill of Materials\n\nWith all this data, we can prepare a Bill of Material where we will mention the finished good per unit quantity of production. As we will require material at different stages, we selected 'Material Transfer against job card'. Rate of material will be based on valuation rate that we entered in the item master against each item.\n\nFor each operation, we mentioned the cost that will be incurred. In each material, we mentioned the exact amount required to produce one unit of finished good, and the system will derive its cost from the valuation rate. Also, for each material, we linked at which operation it will be required to be transferred for production. All this information needs to be fed to the system one time only for each finished good.\n\n## Initiating Production with a Sales Order\n\nNow let us start with our production process and complete one full transaction in the system. We will consider the make-to-order process, as it will also cover the make-to-stock type of manufacturing. So let us prepare one sales order and put a requirement for five cups of tea. We will mention customer name, date of delivery, P.O. number, product, quantity, rate, taxes, and payment term.\n\n## Generating a Production Plan from the Sales Order\n\nAfter preparing the sales order, let us prepare a production plan. We have the option to prepare a production plan either based on a sales order for make-to-order or with material requests for make-to-stock. We have the option to populate sales orders based on item or customer, and also we can select sales orders created within a specified period by selecting from and to dates.\n\nWe will select the customer name and the system will pull all the sales orders prepared for this particular customer. As we are considering only one sales order, we will delete the rest. Click to 'Get Items for Work Order', then click on 'Get Material for Production' to explode the Bill of Material. Here the system will show required quantities of each item for production of the complete five cups of tea as in the sales order. Also, it will show quantities available in stock. If any specific item is not available in stock, then the system can provide an option to prepare a purchase request from here for that item with required quantities. Save and confirm this production plan.\n\n## Managing the Work Order and Job Cards\n\nIn the same form, one can view the work order already created in the dashboard. Click on it. As this work order is in draft format, we can change any details if required. Check the rest of the details and confirm. The system will prepare three job cards based on the operations as listed in the Bill of Material. These job cards can be accessed from the same form by clicking this link. Here we can view only related job cards like heating, mixing, and serving.\n\n## Executing Job Cards and Material Transfers\n\nFor each job card, one needs to click 'Start' to begin the particular production process. The system will automatically record the date and time when 'Start' was clicked. The raw material required in this process is also listed. So one needs to transfer this material from central store to work-in-progress to use this material for production. Click on 'Material Transfer'. Select 'Material Transfer for Manufacturing'. If inspection is required, then click on it and set parameters for quality control. In the items list, put the actual quantity that is transferred for manufacturing. Click 'Submit' and confirm this material transfer. The status will change to completed with a green color code.\n\nIn the work order, we can track the entire production. We can see the required and transferred quantity of tea powder and water. The second stage of operation is mixing, where milk will be added to the process. So let us make a material transfer for it. Stop the job. An employee can also be added to the process who will be performing a particular operation so that his cost can be apportioned on the total cost to finish good. Submit to complete this process. Similarly, we will complete the last process, that is serving.\n\n## Finalizing the Work Order and Stock Entry\n\nOnce all jobs are completed, we can complete the entire work order. Click 'Finish' and mention quantities produced during the entire process. Click on 'Create' to make a stock entry for the finished good. In our case, it is five cups of tea. One can view the entire operating cost. Click Save and submit. Let's check the Item Master for the finished good. One can view that the finished goods warehouse is updated with five. That completes the entire production process.\n\n## Reporting and Conclusion\n\nThese are all the reports available, and one can create their own report with the report builder tool. For further analysis, required charts and graphs can be plotted based on real-time data. We covered a very simple production process. In case you have any queries, then please contact us. Thank you."
+}

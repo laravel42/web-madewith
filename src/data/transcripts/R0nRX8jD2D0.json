@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 3,
+  "videoId": "R0nRX8jD2D0",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn the fundamentals of building applications with Angular components. This guide covers the core structure of a component, including the TypeScript class for logic, the HTML template for the UI, and scoped CSS for styling. Discover how to plan and decompose an application into a hierarchy of nested components. You'll use the Angular CLI to generate new standalone components with flags like `--standalone` and `--inline-template`, and learn the essential steps for importing and integrating these components into your application.",
+  "chapters": [
+    {
+      "title": "Introduction to Angular Components",
+      "description": "This chapter introduces the three fundamental parts of an Angular component: the TypeScript class, the HTML template, and the scoped styles.",
+      "startTime": 0.0,
+      "endTime": 73.0,
+      "slug": "introduction-to-angular-components"
+    },
+    {
+      "title": "Planning the Application's Component Structure",
+      "description": "Learn how to analyze a user interface and strategically break it down into a hierarchy of reusable, nested components.",
+      "startTime": 73.0,
+      "endTime": 145.0,
+      "slug": "planning-the-application-s-component-structure"
+    },
+    {
+      "title": "Building the Header in AppComponent",
+      "description": "This chapter walks through adding the static header and logo markup directly into the main AppComponent's HTML template.",
+      "startTime": 145.0,
+      "endTime": 205.0,
+      "slug": "building-the-header-in-appcomponent"
+    },
+    {
+      "title": "Generating a Standalone Home Component",
+      "description": "Learn how to use the Angular CLI command `ng generate component` with the `--standalone` and `--inline-template` flags to create a new component.",
+      "startTime": 205.0,
+      "endTime": 269.0,
+      "slug": "generating-a-standalone-home-component"
+    },
+    {
+      "title": "Integrating the Home Component",
+      "description": "Follow the steps to add the new Home component to the AppComponent by updating the template and importing it as a dependency.",
+      "startTime": 269.0,
+      "endTime": 382.0,
+      "slug": "integrating-the-home-component"
+    },
+    {
+      "title": "Building the Home Component Template",
+      "description": "This chapter adds the HTML markup for a search form, input field, and button to the newly created Home component's inline template.",
+      "startTime": 382.0,
+      "endTime": 448.0,
+      "slug": "building-the-home-component-template"
+    },
+    {
+      "title": "Generating & Nesting the HousingLocation Component",
+      "description": "Create a second standalone component for housing listings and nest it within the Home component by updating its imports and template.",
+      "startTime": 448.0,
+      "endTime": 529.0,
+      "slug": "generating-nesting-the-housinglocation-component"
+    },
+    {
+      "title": "Conclusion and Next Steps",
+      "description": "This final chapter summarizes the components created and sets the stage for adding dynamic data in the next part of the series.",
+      "startTime": 529.0,
+      "endTime": 559.0,
+      "slug": "conclusion-and-next-steps"
+    }
+  ],
+  "summary": "## The Three Parts of an Angular Component\n\nEvery Angular component is composed of three main parts:\n\n*   **Component Class**: A TypeScript class (`.ts` file) that contains the component's data and application logic, such as event handlers and API calls.\n*   **HTML Template**: Defines the user interface (UI) for the component. It can be written inline within the component class or in a separate `.html` file for more complex UIs.\n*   **Styles**: Defines the look and feel of the component. Styles can be written in CSS, SASS, or LESS and are scoped to the component, meaning they won't leak out and affect other parts of the application.\n\n## Generating Components with the Angular CLI\n\nUse the Angular CLI to quickly create new components from the command line.\n\n```bash\nng generate component ComponentName --flag1 --flag2\n```\n\n> [!TIP]\n> Useful flags for component generation include:\n> *   `--standalone`: Creates a **standalone component**, which is a modern, simplified style that doesn't require NgModule declarations.\n> *   `--inline-template`: Places the component's HTML markup directly inside the `.ts` file's `template` property, reducing the number of files for simple components.\n\n## Using and Nesting Standalone Components\n\nTo use one standalone component (the child) inside another (the parent), you must declare it as a dependency.\n\n1.  **Import the child component**: Add an `import` statement for the child component's class at the top of the parent component's `.ts` file.\n2.  **Add to `imports` array**: In the parent component's `@Component` decorator, add the child component to the `imports` array.\n3.  **Use the selector**: Place the child component's selector tag (e.g., `<app-child-component>`) in the parent component's HTML template.\n\n> [!IMPORTANT]\n> For a component to use another component, a directive, or a pipe in its template, it must be listed in the `imports` array of the `@Component` decorator.",
+  "transcription": "## Introduction to Angular Components\n\nMARK THOMPSON: Hey, friends. Welcome back.\n\nIn Angular, the core part of any application is the use of components. Components in Angular have three parts.\n\nThe component class written in TypeScript provides developers a place to build their application logic. Consider this to be the place where one may make API calls for data or define event handlers, for example. A component also has an HTML template. The template is where we define the user interface for the component. We can write this in the component class if it's a small template, or for more complex templates, we can include them in their own HTML file. The final part of the component are the styles. The Angular CLI supports authoring styles with SAS, LESS, or plain CSS. The styles we write for our components are scoped to our components. Similar to the component template, component styles can be included in line within the component class or written in their own separate file. In this course, we'll keep the styles in a separate file.\n\n## Planning the Application's Component Structure\n\nNow, let's take what we've just learned about components and apply it to our application. This application can be built up from multiple components. First, there's the header with the Home Stash app logo that will appear on all of the pages. Now, we don't need to make this a component. We can add it to the app component template and just leave it there. Next, there's the case of the search box and the search results. Since these two parts of the application are only shown together on the home page, we're going to keep these two together in their own component called Home Components. Components can be nested and used inside one another.\n\nNow, the housing locations, which display photo, name, and location, seem like another opportunity to create a component. The styles and structure will be the same, but the data will be different. We'll create a component for this called, Housing Location Component, and use it in the Home Component. If things are a little unclear about the approach, don't worry, because we'll do this one step at a time. You got this.\n\n## Building the Header in AppComponent\n\nLet's get started with the header. In app.component.ts, we'll remove all the placeholder code that we started with and replace it with a main tag. We'll then add a header tag as a child with the class brand-name. As a sibling element, add an image tag with the class brand-logo. The source attribute's set to the value /assets/logo.svg. And we can't forget the alt text. Set that to logo. Since this is a logo and it is purely decorative, we'll also add the aria-hidden attribute and set the value to true.\n\nSaving app.componenent.ts and reviewing the content in the browser will reveal our logo, but the styles have not been applied just yet. We'll get there.\n\n## Generating a Standalone Home Component\n\nLet's move on to the Home Component that we discussed that will contain the search bar and the search results. To create a component, we'll run the following command from the command line of our project-- `ng generate component Home --standalone --inline-template`. `ng generate component` will instruct the Angular CLI to create a component for us followed by the Home, which is the name of our component. Next, we include some configuration by specifying flags. We include `--standalone` to make it a standalone component. Standalone components are Angular's new component style that reduce complexity and add some other cool features. Because the template code is going to be minimal, we'll also include `--inline-template`. This results in less files for us to manage. Since we are focusing on the styles in this course, we'll keep the styles in a separate file. Let's run this command to create our new component. The output of the command confirms which files have been created and where they are located in the project.\n\n## Integrating the Home Component\n\nLet's update app.component.ts to reference our new component in the template. First, we'll add a section element as a sibling to the header element. We'll give the section element the class content. As a child of the section element, let's add our component app-home. Our components use the app- prefix. This can be configured in your application if this is something that you'd like to change. For us, this is fine.\n\nAnd let's save the changes and review the updates in the browser. The Code Editor may have an error here. That's because the main application component, App Component, needs to know about our new home component. To fix this issue, we'll add a new property to the component decorator metadata for app component called imports. The imports property lets us list the dependencies for the component. Since we want to use home component in this template, it's a dependency now. First, let's add a file level import for home component at the top of app.component.ts. Import home component wrapped in curly braces from ./home/home.component. Next, in the component decorator metadata, add a property called imports. Set the value to be an array containing HomeComponent as the singular entry. Save all your changes. Then in the browser, the render page has our header and the text, \"home works!\"\n\nGreat. We've created a new component and incorporated it into our application. Wonderful work. You are doing great, and I'm proud of you. There are a few more steps to complete before we're done with this part, so let's get back to it.\n\n## Building the Home Component Template\n\nOur next step is to update the template of Home Component to contain the HTML markup for the search bar and results. In home.component.ts, let's add the following code to the template section of the component decorator metadata. Add a section element with a form as a child. Now, the form has two children, an input with the type set to text and the placeholder attribute set to the string \"Filter by City\" and a button with the type attribute set to button and the class set to primary. As for the button label, set it to search. Next, as a sibling to the section element, we'll add another section, but this one will have the class results. In just a few moments, we'll add our housing locations to the results section. But first, let's save this and review the output in the browser. Fantastic. We have our search and our button. Let's keep going because there's still more cool stuff they want to do in the app.\n\n## Generating & Nesting the HousingLocation Component\n\nLet's take care of the housing listing. Since we decided that it will be great to have a reusable component, let's make a new one. We'll run a similar command to the previous create component command. From the command line in your project, enter `ng generate component HousingLocation --standalone --inline-template`. All right, with that command run, we get a new component. In order to use this component, we have to import it and add it as a dependency of the home component.\n\nIn home.component.ts, add a file of import for HousingLocationComponent. Import HousingLocationComponent wrapped in curly braces from ../housing location/housing location.component. Next, update the imports array of the component decorator metadata to include a reference to HousingLocationComponent. Then, in the template section of the same file, add the app-housing-location tag as a child of the results section elements. Save your changes, and we'll be greeted with the familiar output. In the browser, the text \"housing-location works!\" will be displayed beneath the search input and button.\n\n## Conclusion and Next Steps\n\nWe have one more component to update, the housing-location component. We want to display housing locations on the screen, but this is going to require a little more work. So let's save what we've done so far, and we'll pick this one up in the next section.\n\nGreat work so far, friends. I'll catch you in the next section."
+}

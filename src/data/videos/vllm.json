@@ -1,14 +1,14 @@
 {
   "slug": "vllm",
   "techName": "vLLM",
-  "scrapedAt": "2026-07-22T00:58:56.807111+00:00",
+  "scrapedAt": "2026-07-22T04:52:19.995255+00:00",
   "source": "youtube-api",
   "videoCount": 14,
   "videos": [
     {
       "id": "q5IF2PHA5SA",
       "title": "vLLM: Easily Deploying & Serving LLMs",
-      "description": "This video covers vLLM, a Python library. It teaches about its use for deploying and serving Large Language Models efficiently, focusing on rapid inference capabilities.",
+      "description": "Learn how to easily deploy and serve large language models (LLMs) using vLLM, a fast and user-friendly Python library for LLM inference. This tutorial covers three key use cases: interacting with any Hugging Face model directly in your code, deploying a model as a local server\u2026",
       "channel": "NeuralNine",
       "channelUrl": "https://www.youtube.com/channel/UC8wZnXYK_CGKlBcZp-GxYPA",
       "url": "https://www.youtube.com/watch?v=q5IF2PHA5SA",
@@ -24,7 +24,7 @@
     {
       "id": "XwL_cRuXM2E",
       "title": "All You Need To Know About Running LLMs Locally",
-      "description": "This video details running large language models locally, covering tools like vLLM, TensorRT-LLM, and Chat with RTX. It discusses platforms such as Oobabooga, LM Studio, Axolotl, and LlamaFactory, alongside quantization techniques including AWQ, ExLlamav2, GGUF, and GPTQ.",
+      "description": "Learn how to run powerful large language models (LLMs) and AI chatbots locally on your own hardware, freeing yourself from costly subscriptions. This guide covers everything you need to know, from choosing the right user interface like oobabooga or LM Studio to understanding\u2026",
       "channel": "bycloud",
       "channelUrl": "https://www.youtube.com/channel/UCgfe2ooZD3VJPB6aJAnuQng",
       "url": "https://www.youtube.com/watch?v=XwL_cRuXM2E",
@@ -40,7 +40,7 @@
     {
       "id": "qdPkA5mxLhg",
       "title": "Understanding vLLM with a Hands On Demo",
-      "description": "This video explores vLLM, an LLM inference engine, detailing its impact on throughput, concurrency, and KV cache efficiency. It covers LLM inference, compares engines, explains the KV Cache problem and PagedAttention, and demonstrates building a live monitoring dashboard for an\u2026",
+      "description": "Discover how to optimize large language model (LLM) performance by leveraging vLLM for high-throughput inference. This hands-on guide explains the critical role of inference engines in determining generation speed, measured in tokens per second. It delves into the KV cache\u2026",
       "channel": "KodeKloud",
       "channelUrl": "https://www.youtube.com/channel/UCSWj8mqQCcrcBlXPi4ThRDQ",
       "url": "https://www.youtube.com/watch?v=qdPkA5mxLhg",
@@ -56,7 +56,7 @@
     {
       "id": "3bupWUq9Ems",
       "title": "Qwen3.5 9B: China's Master Stroke - Runs Locally for Video, Image, Coding and Text",
-      "description": "This video teaches how to run the Qwen3.5 0.8B multimodal AI model locally using vLLM. It covers the model's capabilities for processing text, images, and video, highlighting its 262K context window.",
+      "description": "Explore the capabilities of Qwen-VL 3.5 9B, a powerful 9-billion parameter multimodal model that runs locally. This guide covers local installation using VLLM on a single GPU and demonstrates its impressive performance across various tasks. See how Qwen 3.5 9B excels at coding\u2026",
       "channel": "Fahd Mirza",
       "channelUrl": "https://www.youtube.com/channel/UCPix8N6PMRI4KzgyjuZeF0g",
       "url": "https://www.youtube.com/watch?v=3bupWUq9Ems",
@@ -88,7 +88,7 @@
     {
       "id": "wAIzlGwEAO0",
       "title": "Running vLLM on Strix Halo (AMD Ryzen AI MAX) + ROCm Performance Updates",
-      "description": "This video demonstrates running vLLM on AMD Ryzen AI MAX (Strix Halo) systems using Fedora-based toolboxes, comparing Triton and ROCm Attention backends with throughput benchmarks for LLMs. It also updates on the Strix Halo AI ecosystem's progress, including llama.cpp gains\u2026",
+      "description": "Learn how to run the vLLM inference server on Strix Halo (AMD Ryzen AI MAX) systems and explore its performance characteristics. This guide covers setup, benchmarks comparing Triton and ROCm attention backends, and important model compatibility caveats for this RDNA 3.5\u2026",
       "channel": "Donato Capitella",
       "channelUrl": "https://www.youtube.com/channel/UCP0QFok6EimQYTMj5qOLNow",
       "url": "https://www.youtube.com/watch?v=wAIzlGwEAO0",
@@ -120,7 +120,7 @@
     {
       "id": "k1kl6xPb_HU",
       "title": "NVIDIA NemoClaw + OpenShell: OpenClaw Agent in a Secure Sandbox - Local vLLM Setup",
-      "description": "This video details the local installation process for NemoClaw, integrating OpenShell and a vLLM Qwen3.5 9B model. It showcases configuring an OpenClaw agent within a secure sandbox environment.",
+      "description": "Learn how to set up and run OpenClaw agents in a secure, locked sandbox using NVIDIA's newly open-sourced NemoClaw and OpenShell. This tutorial guides you through the entire process, from installation to configuration, demonstrating how to integrate the system with a local vLLM\u2026",
       "channel": "Fahd Mirza",
       "channelUrl": "https://www.youtube.com/channel/UCPix8N6PMRI4KzgyjuZeF0g",
       "url": "https://www.youtube.com/watch?v=k1kl6xPb_HU",
@@ -184,7 +184,7 @@
     {
       "id": "u-XfRqJCWLo",
       "title": "Deploy LLMs using Serverless vLLM on RunPod in 5 Minutes",
-      "description": "This video demonstrates deploying serverless vLLM on RunPod. It covers environment setup, selecting and deploying Hugging Face models, customizing settings, and integrating with the OpenAI API for large language models, including an example using Google Colab.",
+      "description": "Learn to deploy Large Language Models (LLMs) efficiently and affordably by leveraging vLLM on RunPod's serverless platform. This guide demonstrates how to set up a high-throughput, memory-efficient inference engine for models like Llama 3 in just five minutes. Discover the power\u2026",
       "channel": "AI Anytime",
       "channelUrl": "https://www.youtube.com/channel/UC-zVytOQB62OwMhKRi0TDvg",
       "url": "https://www.youtube.com/watch?v=u-XfRqJCWLo",

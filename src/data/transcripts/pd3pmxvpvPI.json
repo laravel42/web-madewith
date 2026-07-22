@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 3,
+  "videoId": "pd3pmxvpvPI",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn the complete process for installing the Laravel PHP framework on a Windows 10 or 11 system. This guide walks you through the essential prerequisites, starting with downloading and configuring PHP 8.2, including setting up the necessary environment variables. You'll then install Composer, the dependency manager for PHP, and use it to globally install the Laravel installer. Finally, discover how to create your first Laravel application and run the local development server to see your new project live.",
+  "chapters": [
+    {
+      "title": "Introduction & Prerequisites",
+      "description": "This chapter introduces Laravel as a PHP framework and outlines the necessary prerequisites for installation: PHP and Composer.",
+      "startTime": 0.0,
+      "endTime": 26.0,
+      "slug": "introduction-prerequisites"
+    },
+    {
+      "title": "Downloading & Extracting PHP",
+      "description": "This chapter covers finding, downloading, and extracting the correct thread-safe version of PHP for Windows from the official website.",
+      "startTime": 26.0,
+      "endTime": 129.0,
+      "slug": "downloading-extracting-php"
+    },
+    {
+      "title": "Configuring the PHP Environment Variable",
+      "description": "This chapter explains how to add the PHP installation directory to the system's PATH environment variable to make PHP accessible from the command line.",
+      "startTime": 129.0,
+      "endTime": 216.0,
+      "slug": "configuring-the-php-environment-variable"
+    },
+    {
+      "title": "Installing Composer for Windows",
+      "description": "This chapter demonstrates how to download and run the Composer setup wizard, which automatically detects the existing PHP installation.",
+      "startTime": 216.0,
+      "endTime": 355.0,
+      "slug": "installing-composer-for-windows"
+    },
+    {
+      "title": "Verifying Composer & Installing Laravel",
+      "description": "This chapter shows how to verify the Composer installation in the command prompt and then use Composer to globally install the Laravel installer.",
+      "startTime": 355.0,
+      "endTime": 452.0,
+      "slug": "verifying-composer-installing-laravel"
+    },
+    {
+      "title": "Creating a New Laravel Application",
+      "description": "This chapter guides you through using the Laravel command-line tool to create a new, fully functional boilerplate application.",
+      "startTime": 452.0,
+      "endTime": 592.0,
+      "slug": "creating-a-new-laravel-application"
+    },
+    {
+      "title": "Running the Laravel Development Server",
+      "description": "This chapter covers how to start Laravel's built-in development server and view the new application in a web browser.",
+      "startTime": 592.0,
+      "endTime": 660.44,
+      "slug": "running-the-laravel-development-server"
+    }
+  ],
+  "summary": "## Laravel on Windows: Key Concepts\n\nThis document outlines the steps to install the Laravel framework on a Windows 10/11 machine.\n\n### Prerequisites\n\nBefore installing Laravel, you must have the following software installed and configured:\n\n- **PHP**: A server-side scripting language.\n- **Composer**: A dependency manager for PHP.\n\n---\n\n### Step 1: Install and Configure PHP\n\n1.  **Download PHP**: Go to `php.net` and download the latest **Thread Safe** version for Windows (x64). It will be a ZIP archive.\n2.  **Extract and Place Files**: Extract the downloaded ZIP file. Rename the resulting folder for simplicity (e.g., `php-8.2.0`) and move it to `C:\\Program Files\\`.\n3.  **Set Environment Variable**: Add the full path to your PHP folder (e.g., `C:\\Program Files\\php-8.2.0`) to the system `PATH` environment variable. This allows you to run PHP from any directory in the command line.\n\n> [!TIP]\n> **Verify the PHP installation** by opening a new Command Prompt and running `php --version`. You should see the installed PHP version printed.\n\n### Step 2: Install Composer\n\n1.  **Download Composer**: Go to `getcomposer.org` and download the Windows Installer (`.exe`).\n2.  **Run the Installer**: Execute the `composer-setup.exe` file. The installer should automatically detect your PHP installation path.\n3.  **Complete Installation**: Proceed through the setup wizard with the default settings.\n\n> [!IMPORTANT]\n> **Verify the Composer installation** by opening a new Command Prompt and running `composer`. You should see the Composer logo and a list of available commands.\n\n### Step 3: Install Laravel and Create a Project\n\nWith PHP and Composer ready, you can now install Laravel.\n\n1.  **Install Laravel Globally**: Open a terminal and run the following command to make the Laravel installer available system-wide.\n    ```bash\n    composer global require laravel/installer\n    ```\n2.  **Create a New Application**: Navigate to the directory where you want to create your project and run the `laravel new` command.\n    ```bash\n    laravel new <your-app-name>\n    ```\n    For example: `laravel new demo-app`.\n\n### Step 4: Run the Development Server\n\n1.  **Navigate to Project Directory**: Change into your newly created application's directory.\n    ```bash\n    cd <your-app-name>\n    ```\n2.  **Start the Server**: Use the built-in Artisan CLI to start the local development server.\n    ```bash\n    php artisan serve\n    ```\n\n> [!NOTE]\n> The server will start, and you can access your new Laravel application by navigating to the address shown in the terminal, which is usually **http://127.0.0.1:8000**.",
+  "transcription": "## Introduction & Prerequisites\n\nHello guys, welcome to Amit Things. In this video, we will learn how to install Laravel on Windows. Laravel is a PHP framework to create complex web applications.\n\nSo, to install Laravel, first install PHP, then install Composer. So let's see first how to install PHP and Composer, then we will install the Laravel framework. Let's start.\n\n## Downloading & Extracting PHP\n\nFirst, go to the web browser. We are using Chrome; you can use any web browser. On Google search, type `PHP`. Press Enter. On pressing Enter, the official website is visible: php.net. Click on it.\n\nSo here it is, you can see 8.2 is visible. It is released. Okay. Now I'll directly click on Downloads from here. Now you can see 8.2.0 is visible. We want for Windows, so I'll click on Windows downloads from here. Now the download space is visible. It is having non-thread safe as well as thread-safe versions. Always go for the thread-safe version. So I'll just go for the thread-safe and click on the zip file because it's for x64, that is 64-bit Windows. Click on the zip file. Now download will start for the zip file. Here it is, only 30 MB. Let's wait. It's written Win32, but it hardly matters; it works for 64-bit Windows.\n\nSo we have downloaded the zip file. Right-click and click on Show in folder. Here it is. Now what I'll do, I'll just right-click. After right-clicking, I'll just extract it. Okay, extract it.\n\nWe have extracted it. I'll right-click and rename it. Here it is, rename. I'll just change it to an easier one, that is PHP 8.2.0. That's it.\n\n## Configuring the PHP Environment Variable\n\nWhen I double-click, here are our files. What I'll do, I'll just right-click and copy this. Copy this. That's it. Now go to C drive. Here it is, we have reached the drive section, C drive. Click on Program Files and right-click and paste the same file. Click on paste. Continue, allow it, because it's an admin drive. Here it is. Double-click and these are our files. Okay, what I'll do, I'll just right-click and copy this path. This is what you need to do to set the path. Minimize.\n\nNow I'll go to Start. I'll type 'environment variables'. Here it is, 'Edit the system environment variables'. Click on Open. System Properties, Advanced tab, click on Environment Variables. Here it is. Under System variables, go to Path section, the following path variable. Double-click. Click on New and right-click and paste the same path which we just copied for PHP. Here it is. That's it. Click on OK, OK, and the last OK to apply it. That's it.\n\nGo to Start, type CMD, click on Open. Here it is. PHP... `php --version` and press Enter. Here you can see PHP 8.2.0. That means we successfully installed PHP on Windows.\n\n## Installing Composer for Windows\n\nGuys, we successfully installed PHP on our system. Now let us install Composer and link them. Composer is a package manager for PHP. So go to the web browser. I'm using Chrome, you can use any web browser. Type Composer, press Enter. On pressing Enter, open the website getcomposer.org.\n\nHere, directly click on Download. Now click on Windows Installer, composer-setup.exe. This will download the setup. Downloaded the exe file, double-click on it to install.\n\nAfter minimizing, select Install for all users. Installation options, click Next. Herein, it automatically detected our PHP path. We have installed PHP here if you remember. Okay. Here it is, C, Program Files... type P, here it is, PHP 8.2.0, and here is the exe file, php.exe. So this is the path, if you can check it here. Same path. Okay, which is fine. Click Next. Leave it, leave the proxy settings, click Next. Now the Ready to install section, click Install. The summary is visible. Click Next and click Finish.\n\n## Verifying Composer & Installing Laravel\n\nGuys, we successfully installed PHP and Composer. Now we'll install Laravel. For that, let's... I'll create a project folder here. New folder. I created this folder. Double-click. Under that, create our `first-app` folder. Let's say. Open it. Right-click, Open in Terminal. Minimize.\n\nNow type `composer global require` to install globally, `laravel/installer` command, and press Enter.\n\n## Creating a New Laravel Application\n\nWe will create a new app. `laravel new demo-app`. `demo-app` and press Enter.\n\nNow guys, we have built the app. Go to the folder, go to First app, under demo app, you can see all the files are visible. Therein, you can check the controller files also.\n\n## Running the Laravel Development Server\n\nNow we need to run the server. For that, we need to go inside the app, that is, `cd demo-app`. That is inside our app. Here it is, we are now going inside here. Okay. Now I'll just type to reach inside it. Now, I'll just run the server: `php artisan serve`. This will start the inbuilt PHP server. Press Enter.\n\nNow the server started running. You can click here to verify or copy this. I'll type Ctrl+C, Ctrl+V, and press Enter. So you can see the Laravel server started. So guys, in this video we saw how we can easily download and we can install Laravel and create our first demo app. After that, we also ran the server. Thank you for watching the video."
+}

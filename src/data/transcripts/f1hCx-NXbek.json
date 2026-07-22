@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 3,
+  "videoId": "f1hCx-NXbek",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to quickly set up a complete login and registration system in your Laravel application using the Laravel Breeze starter kit. This tutorial guides you through the entire process, from installing Breeze with Composer and running Artisan commands to scaffolding the authentication views with Blade. You'll see how to handle potential PostCSS configuration errors, migrate your database, and compile front-end assets with NPM. Discover the generated controllers and views, and learn how to secure your application routes with authentication middleware.",
+  "chapters": [
+    {
+      "title": "Introduction to Laravel Authentication with Breeze",
+      "description": "This chapter introduces Laravel Breeze as a simple starter kit for implementing login and registration functionality in a Laravel project.",
+      "startTime": 0.0,
+      "endTime": 24.0,
+      "slug": "introduction-to-laravel-authentication-with-breeze"
+    },
+    {
+      "title": "Installing Laravel Breeze",
+      "description": "Follow the official documentation to install Laravel Breeze using Composer and the Artisan command-line tool, and select the Blade frontend stack.",
+      "startTime": 24.0,
+      "endTime": 92.0,
+      "slug": "installing-laravel-breeze"
+    },
+    {
+      "title": "Troubleshooting a PostCSS Configuration Error",
+      "description": "This chapter explains how to resolve a common PostCSS module loading error by modifying the package.json file.",
+      "startTime": 92.0,
+      "endTime": 141.0,
+      "slug": "troubleshooting-a-postcss-configuration-error"
+    },
+    {
+      "title": "Finalizing Installation with Migrate and NPM",
+      "description": "Complete the Breeze installation by running the database migrations, installing NPM packages, and compiling the front-end assets.",
+      "startTime": 141.0,
+      "endTime": 184.0,
+      "slug": "finalizing-installation-with-migrate-and-npm"
+    },
+    {
+      "title": "Testing User Registration and Profile Management",
+      "description": "This section demonstrates the complete user registration flow and explores the features of the generated user profile page.",
+      "startTime": 184.0,
+      "endTime": 257.0,
+      "slug": "testing-user-registration-and-profile-management"
+    },
+    {
+      "title": "Testing Login and the 'Forgot Password' Feature",
+      "description": "This part tests the user login functionality and points out that the 'Forgot Password' feature requires email server configuration in the .env file.",
+      "startTime": 257.0,
+      "endTime": 304.0,
+      "slug": "testing-login-and-the-forgot-password-feature"
+    },
+    {
+      "title": "Customizing the Generated Blade Views",
+      "description": "Learn where the authentication views are located and how to customize their appearance by editing the Blade template files.",
+      "startTime": 304.0,
+      "endTime": 412.0,
+      "slug": "customizing-the-generated-blade-views"
+    },
+    {
+      "title": "Exploring the Generated Auth Controllers",
+      "description": "Discover the backend logic by exploring the authentication and profile controllers that Laravel Breeze automatically generates.",
+      "startTime": 412.0,
+      "endTime": 487.0,
+      "slug": "exploring-the-generated-auth-controllers"
+    },
+    {
+      "title": "Re-integrating Lost Routes After Breeze Installation",
+      "description": "Address an issue where the Breeze installation overwrites existing routes and learn how to restore them in the web.php file.",
+      "startTime": 487.0,
+      "endTime": 572.0,
+      "slug": "re-integrating-lost-routes-after-breeze-installation"
+    },
+    {
+      "title": "Securing Routes with Authentication Middleware",
+      "description": "Learn the simple but powerful technique of using Laravel's 'auth' middleware to protect specific routes from unauthorized access.",
+      "startTime": 572.0,
+      "endTime": 667.0,
+      "slug": "securing-routes-with-authentication-middleware"
+    },
+    {
+      "title": "Adding a Link to a Protected Page",
+      "description": "Finalize the integration by adding a navigation link from the user dashboard to the newly secured product page.",
+      "startTime": 667.0,
+      "endTime": 758.779,
+      "slug": "adding-a-link-to-a-protected-page"
+    }
+  ],
+  "summary": "## Implementing Authentication with Laravel Breeze\n\n**Laravel Breeze** is an official starter kit that provides a minimal and simple starting point for building a Laravel application with authentication. This guide covers installing Breeze with the Blade templating engine.\n\n### Installation Process\n\nFollow these steps in your terminal to set up Breeze:\n\n1.  **Require the package via Composer:**\n    ```bash\n    composer require laravel/breeze --dev\n    ```\n2.  **Run the installation command:** This scaffolds the authentication routes, controllers, and views.\n    ```bash\n    php artisan breeze:install\n    ```\n    - When prompted, select **Blade** as your preferred stack.\n\n3.  **Run database migrations:** This creates the necessary tables, including the `users` table.\n    ```bash\n    php artisan migrate\n    ```\n\n4.  **Install frontend dependencies:**\n    ```bash\n    npm install\n    ```\n\n5.  **Compile assets:** This command compiles your CSS and JavaScript and should be kept running during development.\n    ```bash\n    npm run dev\n    ```\n\n> [!TIP]\n> After these steps, start your development server (`php artisan serve`) to see the new \"Login\" and \"Register\" links on your application's home page.\n\n### Troubleshooting\n\nIf you encounter a **PostCSS configuration error** during `breeze:install`, you can often fix it by enabling ES modules in your `package.json` file.\n\n-   **File:** `package.json`\n-   **Action:** Add the following line:\n    ```json\n    \"type\": \"module\",\n    ```\n-   Then, re-run `php artisan breeze:install`.\n\n### Exploring Generated Files\n\nBreeze generates all the necessary files for a full authentication system:\n\n-   **Views (`resources/views`):**\n    -   Login, registration, and password reset forms are in `resources/views/auth/`.\n    -   Layouts for authenticated users and guests are in `resources/views/layouts/`.\n    -   The user dashboard and profile page are also created.\n-   **Controllers (`app/Http/Controllers`):**\n    -   Authentication logic resides in the `app/Http/Controllers/Auth/` directory.\n    -   Profile management logic is handled by `app/Http/Controllers/ProfileController.php`.\n\n### Securing Routes with Middleware\n\nA crucial part of authentication is protecting routes so only logged-in users can access them. This is done using the `auth` middleware.\n\n> [!IMPORTANT]\n> The `php artisan breeze:install` command will overwrite your `routes/web.php` file. Always back up your routes before running this command on an existing project.\n\nTo protect a route or a group of routes, wrap them in a middleware group in `routes/web.php`.\n\n**Example: Protecting Product CRUD Routes**\n\n```php\n// These routes are now only accessible to authenticated users\nRoute::middleware('auth')->group(function () {\n    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');\n    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');\n    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');\n\n    // Add your protected routes here\n    Route::get('/product', [ProductController::class, 'index'])->name('product.index');\n    // ... other product routes\n});\n```\n\nAny attempt to access a protected route while unauthenticated will automatically redirect the user to the login page.",
+  "transcription": "## Introduction to Laravel Authentication with Breeze\n\nHello everyone. In this video, we are going to learn how to create a login and a register page in Laravel. We are going to learn how to set up Laravel authentication easily by using Laravel Breeze. So in the last video, we've learned how to set up Laravel CRUD, and we are going to continue from this project. Alright, let's go to Laravel documentation.\n\n## Installing Laravel Breeze\n\nThis is the Laravel official website, and then go to Starter Kits. Over here you will see Laravel Breeze. Okay, we are going to use Breeze and Blade. So you can click over there, but if you scroll up, you will see installation here. Here is how to install Laravel Breeze. Copy this command, then go back to the project.\n\nWe are going to stop our server, Ctrl+C, and then paste it over here, the command. Hit enter. Okay, the next command that we have to run is this one: `php artisan breeze:install`. And then we copy this one and paste this over here. Hit enter.\n\nAnd it's going to tell you which stack would you like to install. Over here, I'm going to choose Blade. It has React, Vue, or API, but we are going to use Blade. Hit enter, and then it's going to ask you whether you want dark mode support or not. Just hit enter, and hit enter.\n\n## Troubleshooting a PostCSS Configuration Error\n\nAnd if you see this error, the error about failed to load post CSS config or warning to load an ES module, set type to module, we go to package.json to solve this warning.\n\nIf you don't have this warning, it's okay to continue to the next step. But if you have this warning, you just go to package.json and enter type here and set type to module. Okay, and then run the previous command again: `php artisan breeze:install`. Hit enter. Choose Blade, and then hit enter, enter. Okay, there is no error right now.\n\n## Finalizing Installation with Migrate and NPM\n\nThe next command that you have to run is `php artisan migrate`. Copy it or just type it directly. Okay, the next command you have to type is `npm install`. This one will install the scaffold package, npm install. Okay.\n\nOkay, the next command you have to do is to run `npm run dev`. This command will compile front-end assets, so you have to leave it open every time you edit the project. Okay, let's create a new terminal to run `php artisan serve`.\n\n## Testing User Registration and Profile Management\n\nAnd then if you go back to this server site, localhost or localhost port 8000, you will see login and register page over here. If you click login, it will redirect you to the login page, and you can go back and go to register. Let's try to register a new user. For example, I put my name, Alex Dave to me, and my email, alex@davetomine.com. This is just only a sample email. Password, and then click on register.\n\nSee, it redirects you to the dashboard of the user page. Okay, if you go here, you can see the profiles page. And in the profiles page, you can set up your information, for example, your name. You can change it. If I don't like Alex Davetomine, I can remove it and I can save it. It's changed to Alex. And you can even update your password, and you can delete an account as well.\n\n## Testing Login and the 'Forgot Password' Feature\n\nSo let's log out. You can log out, and if you want to log in, you can log in and then just enter your email address, Alex Davetomine. Enter the password. It also includes 'Remember me'. Log in. You will see login over here. And if you log out, how about you forget password? Log in and then you 'Forgot password'. To make this feature work, you have to set up an email server in the environment files over here, .env. You have to set up a mail server over here to make this feature work. I'm going to talk about this later. Okay.\n\n## Customizing the Generated Blade Views\n\nAlright, the next thing that I want you to learn is to take a look at the code. For example, over here, if you go to `resources` and go to `view`, you will see that an `auth` folder has been created. This includes all view or GUI for a login system. If you want to edit the page over here, you can. Over here, this page, you can edit it inside here. For example, register page over here. All right, you see register page. Let's go to register page. register, over here.\n\nFor example, if you want to change this logo or remove it, you can go to this page and you can go to our guest layout. Let's go to `layout` over here, let me check. Okay, let's go to `guest.blade.php`. You will see their image over here. Here. Okay, for example, I'm going to comment it. And if I go back here, you will see that the logo has been removed. Here. You just play with this layout and the view to edit or to change the page. For example, in register page, I want to change the background of the form over here. Let's see: `class=\"bg-red-100\"`. I save it. See, it's changed the color of the form. Okay, I'm going to remove this. So this is the view.\n\n## Exploring the Generated Auth Controllers\n\nOkay, when you take a look at the Laravel architecture, you will see everything has been separated. Okay, this is view. We have talked about the view of the login page. Let's take a look at the controller. For example, if you go `app` here, `Http`, `Controllers`, and you will see an `Auth` controller has been included in our application. \n\nOkay, this is the controller that has been automatically generated by using Laravel Breeze command. Okay, if you go here, this is the feature for login; you can take a look at the code. And this one is the controller for a new password. And this one is for the verify email controller. And we even have a `ProfileController`, which is the controller of this page. Let me log in. Okay, let me log in. You will see the profiles page over here, right here. So this page belongs to `ProfileController`, which is this controller. Okay.\n\n## Re-integrating Lost Routes After Breeze Installation\n\nAnd let me close this page. Okay, in the last lesson, we learned about CRUD operation, `product` over here. Why it doesn't work? I think when we set up the authentication system, it removed our product routes, so we have to include it again. Let's go to GitHub and go to Davetomine GitHub. Okay, go to the Davetomine GitHub and go to `laravel-crud-for-beginner`, and over here, `resources`, sorry, `routes`, and `web.php`. I have included this one from the previous project, but it removed it from my project because I generated a new route by using Laravel Breeze. So I'm going to include this route over here. Okay, let's save it.\n\nSo right now I should have this route. It said as `ProductController` doesn't exist. I forget to include this one on the top of the files over here. Let's include it here. Normally, we should implement authentication before we set up CRUD operation. You can see that our products CRUD operation works right now. For example, let me create a new product over here.\n\n## Securing Routes with Authentication Middleware\n\nHow about I want only a user who's logged into the system to create this product? So I have to protect this route from unauthorized users. For example, if a user doesn't log in, they should not be able to access these product pages. It's so simple to protect the route from an unauthorized user or a user who has not logged into the page. You just use this middleware. Okay, we just go to here and you just copy this route and put it over here. Okay, let's save it.\n\nFor example, if I hit enter over here, I'm still able to access this page. But if I go back to the home and go to dashboard, and if I log out, and I want to access the product page... you see? I cannot access to the product page, and it will automatically redirect me to the login page. Okay, let's enter my email address. Okay, and then log in. You will see I'm able to access a product page.\n\n## Adding a Link to a Protected Page\n\nFor example, if I put `dashboard` over here, how about I put a link of a product page over here? See, the product page is this link, right? It's `product.index`. Let's go to `dashboard.blade.php`. You will see here, `You're logged in!`. Let's create a link over here. `a` tag, `href`, and then let's call `route`, and then `product.index`. Okay, and this one, product page. Let me add a class to this one. Class, `text-blue-500`. And let me put BR over here, and let's put hover in the mouse point, `text-blue`... it can be dark blue. Okay, save it.\n\nAnd here, product page. When I click here, it redirects to the product page, and I can edit the product. So only a user who's logged into the system can access the product page right now.\n\nAlright, this is all about this video. If you like this video, don't forget to comment, like, and subscribe."
+}

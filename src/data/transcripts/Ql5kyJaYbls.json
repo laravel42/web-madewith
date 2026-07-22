@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 3,
+  "videoId": "Ql5kyJaYbls",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to create dynamic routes in Next.js to build complex, scalable applications in this tutorial. Moving beyond predefined nested routes, you'll discover how to handle dynamic segments in your URLs, perfect for product detail pages or any list-detail pattern. This guide covers creating dynamic route files using square bracket syntax, accessing route parameters like product IDs with the `useRouter` hook from `next/router`, and understanding Next.js's routing precedence between static and dynamic paths.",
+  "chapters": [
+    {
+      "title": "Introduction & The Problem with Nested Routes",
+      "description": "Reviews nested routes and introduces the problem of handling a large number of detail pages, setting the stage for dynamic routes.",
+      "startTime": 0.0,
+      "endTime": 37.0,
+      "slug": "introduction-the-problem-with-nested-routes"
+    },
+    {
+      "title": "Scenario 4: Product List & Detail Pages",
+      "description": "Defines the tutorial's goal: building a product list page and dynamic detail pages for individual products.",
+      "startTime": 37.0,
+      "endTime": 91.0,
+      "slug": "scenario-4-product-list-detail-pages"
+    },
+    {
+      "title": "Building the Static Product List Page",
+      "description": "Shows how to create the static product list page at `/product` using an `index.js` file inside a `product` folder.",
+      "startTime": 91.0,
+      "endTime": 154.0,
+      "slug": "building-the-static-product-list-page"
+    },
+    {
+      "title": "The Need for Dynamic Routes",
+      "description": "Explains why creating individual files for each product is not scalable and introduces the concept of dynamic route segments using square brackets in filenames.",
+      "startTime": 154.0,
+      "endTime": 216.0,
+      "slug": "the-need-for-dynamic-routes"
+    },
+    {
+      "title": "Creating a Dynamic Route File",
+      "description": "Demonstrates how to create a dynamic route by creating a file named `[productId].js` and shows it working for multiple product IDs.",
+      "startTime": 216.0,
+      "endTime": 303.0,
+      "slug": "creating-a-dynamic-route-file"
+    },
+    {
+      "title": "Accessing Route Parameters with `useRouter`",
+      "description": "Teaches how to use the `useRouter` hook from `next/router` to access the value of the dynamic route parameter from the URL.",
+      "startTime": 303.0,
+      "endTime": 448.0,
+      "slug": "accessing-route-parameters-with-userouter"
+    },
+    {
+      "title": "Route Precedence: Static vs. Dynamic",
+      "description": "Explains that Next.js will match a more specific static route (e.g., `sweater.js`) before falling back to a general dynamic route (`[productId].js`).",
+      "startTime": 448.0,
+      "endTime": 552.0,
+      "slug": "route-precedence-static-vs-dynamic"
+    },
+    {
+      "title": "Summary & Conclusion",
+      "description": "Summarizes how to create dynamic routes, use the `useRouter` hook, and the rules of route matching precedence.",
+      "startTime": 552.0,
+      "endTime": 623.72,
+      "slug": "summary-conclusion"
+    }
+  ],
+  "summary": "## Dynamic Routes in Next.js\n\nThis document outlines the key concepts for creating and using dynamic routes in a Next.js application, which is essential for building pages from dynamic data, such as product detail pages.\n\n### Creating Dynamic Route Segments\n\nTo handle routes where a segment of the URL is variable (e.g., a product ID), you can create a file with a special naming convention.\n\n- **Problem**: Creating a new file like `1.js`, `2.js`, etc., for every single product is impractical and not scalable for hundreds or thousands of items.\n- **Solution**: Use **square brackets** in the filename to denote a dynamic segment. For a URL like `/products/[id]`, you would create the file `pages/products/[productId].js`.\n- The name chosen inside the brackets (`productId` in this case) becomes the key for the route parameter.\n\n### Accessing Route Parameters\n\nOnce a dynamic route is created, you need a way to access the actual value from the URL within your component to fetch data or render content specific to that value.\n\n- To do this, use the **`useRouter` hook** provided by `next/router`.\n- The hook returns a `router` object, and the dynamic parameters are available on the `router.query` object.\n\n```jsx\nimport { useRouter } from 'next/router';\n\nfunction ProductDetail() {\n  const router = useRouter();\n  const { productId } = router.query;\n\n  return <h1>Details about product {productId}</h1>;\n}\n\nexport default ProductDetail;\n```\n\n> [!NOTE]\n> The key in the `query` object (`productId`) directly corresponds to the name you gave the dynamic segment in the file name (`[productId].js`). If the file was named `[id].js`, you would access `router.query.id`.\n\n### Routing Precedence\n\nNext.js has a clear order of operations when resolving a URL that could match both a static and a dynamic route.\n\n- **Rule**: Predefined routes are matched before dynamic routes.\n- **Example**: If you have both `pages/product/sweater.js` and `pages/product/[productId].js`, a request to `/product/sweater` will render the `sweater.js` component.\n\n> [!IMPORTANT]\n> Next.js prioritizes specific, predefined routes over general dynamic routes. It will always try to find a direct file name match first before treating the URL segment as a dynamic parameter.\n\nThis mechanism is fundamental for implementing the common **list-detail pattern** in web applications.",
+  "transcription": "## Introduction & The Problem with Nested Routes\n\nIn the previous video, we learned about nested routes. We created a blog folder within the pages folder, and within the blog folder, we created `first.js` and `second.js`, which map to `/blog/first` and `/blog/second`. Now, this is fine at the moment, but defining routes by using predefined paths is not always enough for complex applications.\n\n## Scenario 4: Product List & Detail Pages\n\nWhich brings us to scenario four. For scenario four, the assumption is that we are building a product listing and detail page. If a user navigates to `/product`, we should display a list of three products. However, in addition to this, if the user navigates to `/product` followed by the ID of that product, we need to display details about that individual product. For example, if the user navigates to `/product/1`, we should display details about the first product. Similarly, if the user navigates to `/product/2`, we need to display details about the second product, and `/product/3`, we need to display details about the third product. Let's understand how to achieve this in Next.js.\n\n## Building the Static Product List Page\n\nI'm going to create a new folder within the pages folder. This is going to be `product`. Within the folder, create a new file called `index.js`. Within the file, let's export a component that displays a list of three products. Now, this is nothing new, so I'm going to copy-paste a React component. It's a function `ProductList` which returns product 1, 2, 3, and we export `ProductList` as the default export. If you now head back to the browser and type in `localhost:3000/product`, we see the list of products as expected. So the first part of our scenario 4 is complete.\n\n## The Need for Dynamic Routes\n\nNow, from what we have learned about nested routes, we know that the second part of this particular scenario can be implemented by creating three separate files within the product folder: so `1.js`, `2.js`, and `3.js`. This would work, but if we had 100 products, we would need to create a hundred pages, which is most definitely not the right solution. The correct solution is to use dynamic route segments.\n\nFor our scenario, the product id, which can be 1, 2, 3, and so on, should be a dynamic value that maps to a particular file in the pages folder. And in Next.js, you can add brackets to a page file name to create a dynamic route. Let's go back to VS Code and understand what I mean by that.\n\n## Creating a Dynamic Route File\n\nIn the product folder, let's first get rid of the individual product ID files. Instead, we are going to create a new file. This file name, though, is special. Within a pair of square brackets, I'm going to specify `productId`, and the extension remains `.js`. You could name it just `id.js`, but `productId` makes sense given the context.\n\nNow, within this file, I'm going to define and export a component. So, `function ProductDetail` and we return an h1 tag that says, \"Details about product.\" And we export default `ProductDetail`. If I now save the file, head back to the browser and navigate to `/product/1`, we see the product details page. The same holds good for `/product/2` and `/product/3`, and of course even `/product/100`.\n\n## Accessing Route Parameters with `useRouter`\n\nNow this is possible because Next.js treats square brackets in a file name as a dynamic segment to create a dynamic route. So we have successfully created a dynamic route, but our component JSX needs to be improved. At the moment, we just display the text \"Details about product\" irrespective of what the product is. In a typical application, you would want to extract the product id and do something with that id, perhaps make an API call to fetch the product details. Of course, for our scenario, let's keep it simple and just display the product id in the browser.\n\nNow to extract the route parameter, which is `productId`, we need to import a hook from the Next package. So in the `[productId]` file, `import { useRouter } from 'next/router'`. Within the function body, we call this `useRouter` hook. The hook returns a router object. From this router object, we access the query parameters object, so `router.query`. The parameter we want to access is `productId`, so `.productId`. Let's store this in a constant.\n\nNow, it is important to note here that `productId` on the query object corresponds to the dynamic segment we have specified for the file name. If this was just `id`, you would have to code `router.query.id`. Now once we have the product id, we can render it as part of the JSX: so \"Details about product {productId}\". If you now save the file and head back to the browser, you can see the URL is `/product/100` and the JSX is \"Details about product 100.\" Navigate to `/product/1` and we get \"Details about product 1.\" So scenario number four has been successfully implemented.\n\n## Route Precedence: Static vs. Dynamic\n\nNow there is one point that I would like you to make note of. The `productId` can be any string and not just a number. So I could type `product/sweater` and it would render the same page. Now it might so happen that apart from this dynamic route, we would also need a fixed path. So in the product folder, I'm going to create a file called `sweater.js`. Within the file, I'm going to define and export a simple component. So `function Sweater` and we return an h1 tag, \"Landing page for sweaters\". We also default export the component.\n\nNow, my question to you is, if we navigate to `/product/sweater`, will the product ID page render or the sweater page render? Let's head to the browser and find out. Let's refresh the page and you can see that the JSX from the sweater component is rendered. So this is something I want you to keep in mind. Even though we have a dynamic route where the ID could be anything, including sweater, Next.js is smart enough to first match the route with a page that is more specific. So if you navigate to `/product/sweater`, Next.js will first try to find a `sweater.js` page. Only if that is not found, will it render the dynamic `[productId]` page.\n\n## Summary & Conclusion\n\nAll right, let me quickly summarize what we have done. We first created a file with a special file name. The file name consists of a pair of square brackets and an ID within the brackets. This lets Next.js map any route with the URL `/product/productId`. Within the exported component, we use the `useRouter` hook exported by the `next/router` package to access the product ID route parameter. We then render the product ID as part of the JSX.\n\nAlso, Next.js will always try to match the route path with a file name in the pages folder, nested or not, before trying to match a dynamic route. Now, dynamic routes is useful when implementing the list-detail pattern in any UI application. Hopefully, you now know how to do that with Next.js. Thank you all for watching and I'll see you in the next video."
+}

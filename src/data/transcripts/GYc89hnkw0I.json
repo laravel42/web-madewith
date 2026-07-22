@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 3,
+  "videoId": "GYc89hnkw0I",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to build a complete, powerful e-commerce store from scratch using Medusa.js V2 and Supabase. This comprehensive tutorial guides you through the entire process, from initial setup to a fully functional online shop. You'll master setting up a Medusa backend, connecting it to a Supabase database, and creating a sleek Next.js storefront. Discover how to seed your store with products, manage them through a feature-rich admin panel, and even redesign your UI with AI tools.",
+  "chapters": [
+    {
+      "title": "Introduction & Prerequisites",
+      "description": "An overview of building an e-commerce store with Medusa.js and Supabase, and the required tools like Node.js and a Supabase account.",
+      "startTime": 0.0,
+      "endTime": 39.0,
+      "slug": "introduction-prerequisites"
+    },
+    {
+      "title": "What is Medusa.js?",
+      "description": "This chapter explores the features and benefits of Medusa.js as an open-source e-commerce solution with a backend, frontend, and admin panel.",
+      "startTime": 39.0,
+      "endTime": 121.0,
+      "slug": "what-is-medusa-js"
+    },
+    {
+      "title": "Exploring the Medusa.js Documentation",
+      "description": "A walkthrough of the Medusa.js documentation, covering its e-commerce modules and the core setup commands.",
+      "startTime": 121.0,
+      "endTime": 178.0,
+      "slug": "exploring-the-medusa-js-documentation"
+    },
+    {
+      "title": "Project Setup and Structure",
+      "description": "This chapter covers the initial project setup, including the Medusa server, admin panel, and the Next.js storefront starter.",
+      "startTime": 178.0,
+      "endTime": 231.0,
+      "slug": "project-setup-and-structure"
+    },
+    {
+      "title": "Creating the Medusa Project",
+      "description": "This chapter shows how to run the create-medusa-app command with the --skip-db flag and reviews the generated project folders.",
+      "startTime": 231.0,
+      "endTime": 258.0,
+      "slug": "creating-the-medusa-project"
+    },
+    {
+      "title": "Setting Up the Supabase Project",
+      "description": "A guide on how to create a new Supabase project, generate a database password, and prepare for connecting it to Medusa.",
+      "startTime": 258.0,
+      "endTime": 292.0,
+      "slug": "setting-up-the-supabase-project"
+    },
+    {
+      "title": "Connecting Supabase to Medusa",
+      "description": "This chapter details how to retrieve the Supabase connection string and add it to the Medusa project's environment variables.",
+      "startTime": 292.0,
+      "endTime": 339.0,
+      "slug": "connecting-supabase-to-medusa"
+    },
+    {
+      "title": "Database Migration and Seeding",
+      "description": "Learn how to run the database migration to create schemas and use the seed command to populate the store with demo products.",
+      "startTime": 339.0,
+      "endTime": 398.0,
+      "slug": "database-migration-and-seeding"
+    },
+    {
+      "title": "Setting Up and Exploring the Admin Panel",
+      "description": "This chapter demonstrates how to create an admin user, launch the admin panel, and navigate its features for managing products.",
+      "startTime": 398.0,
+      "endTime": 468.0,
+      "slug": "setting-up-and-exploring-the-admin-panel"
+    },
+    {
+      "title": "Launching the Storefront & API Key Fix",
+      "description": "Follow the steps to launch the Next.js storefront, troubleshoot the missing API key error, and add the correct key from the admin panel.",
+      "startTime": 468.0,
+      "endTime": 543.0,
+      "slug": "launching-the-storefront-api-key-fix"
+    },
+    {
+      "title": "Exploring Storefront Features",
+      "description": "A tour of the default storefront, including browsing products, adding items to the cart, and initiating the checkout process.",
+      "startTime": 543.0,
+      "endTime": 627.0,
+      "slug": "exploring-storefront-features"
+    },
+    {
+      "title": "Redesigning the UI with an AI Tool",
+      "description": "Learn how to use an AI tool like Claude to quickly redesign a React component and give the storefront's hero section a modern new look.",
+      "startTime": 627.0,
+      "endTime": 719.0,
+      "slug": "redesigning-the-ui-with-an-ai-tool"
+    },
+    {
+      "title": "Medusa.js vs. Alternatives & Conclusion",
+      "description": "A final comparison of Medusa.js with other platforms like Shopify and WooCommerce, highlighting its advantages for developers.",
+      "startTime": 719.0,
+      "endTime": 768.519,
+      "slug": "medusa-js-vs-alternatives-conclusion"
+    }
+  ],
+  "summary": "## Project Overview\nThis guide details building a full-stack e-commerce store using an open-source, composable stack. \n- **Backend & Admin**: Medusa.js\n- **Database**: Supabase (PostgreSQL)\n- **Storefront**: Next.js\n\n## Initial Setup\nTo begin, scaffold the entire project with a single command.\n- **Prerequisites**: Node.js, a package manager (npm, yarn, pnpm), and a free Supabase account.\n- **Command**: Run `npx create-medusa-app latest <your-app-name> --skip-db`. The `--skip-db` flag is essential for using Supabase instead of the default SQLite.\n\n> [!NOTE]\nThe setup wizard will prompt you to automatically include a Next.js starter storefront, which is recommended for this guide.\n\n## Database Configuration with Supabase\nConnecting your Medusa backend to a Supabase database involves a few critical steps:\n1. **Create a Supabase Project**: In Supabase, create a new project and securely save the generated database password.\n2. **Get Connection String**: Navigate to your project's `Settings > Database` and copy the **connection string** from the `Connection pooling` section.\n3. **Update Environment Variables**: Paste the connection string into the `DATABASE_URL` variable in your Medusa project's `.env` file and insert your password.\n\n> [!IMPORTANT]\n> For local development, add this variable to your `.env` file to prevent SSL certificate issues:\n> `DATABASE_EXTRA='{\"ssl\": {\"rejectUnauthorized\": false}}'`\n\n## Backend and Data Management\nOnce the database is connected, you need to prepare the schema and add sample data.\n- **Migrate the Database**: Run `npx medusa db migrate` from your Medusa project directory. This command builds all the necessary tables and relations in your Supabase database.\n- **Seed with Demo Data**: Run `npm run seed` to populate your store with demo products, which you can immediately see in both your Supabase table editor and the Medusa Admin panel.\n\n## The Medusa Admin Panel\nMedusa includes a powerful, pre-built admin panel for store management.\n- **Create Admin User**: Use the command `npx medusa user -e <email> -p <password>` to create your first admin account.\n- **Launch Admin**: Run `npm run dev` in the Medusa project directory and navigate to the provided URL (typically `localhost:9000/app`).\n- **Features**: From the admin panel, you can manage **products**, **collections**, **orders**, **customers**, and more.\n\n## Storefront Setup\n- **Launch Storefront**: In a separate terminal, `cd` into the storefront directory (e.g., `demo-clothing-store-storefront`) and run `npm run dev`.\n- **Fix API Key Error**: The storefront will initially fail until you provide a publishable API key.\n\n> [!TIP]\n> Find the **Publishable API Key** in your Medusa Admin under `Settings > API Key Management`. Copy this key and paste it into the `NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY` variable in your storefront's `.env.local` file.\n\n## UI Customization with AI\nWhile the starter provides full functionality, its design is basic. You can rapidly accelerate UI development using AI tools.\n- **Identify a Component**: Locate a React component file you want to change (e.g., the `Hero` component).\n- **Use an AI Assistant**: Paste the component's code into an AI tool like Claude or Cursor and provide a prompt asking for a modern redesign.\n- **Implement Changes**: Replace the old code with the AI-generated version to quickly update your store's look and feel.\n\n## Medusa.js vs. Alternatives\nCompared to platforms like **Shopify** or **WooCommerce**, Medusa.js offers key advantages for developers:\n- **Flexibility & Customization**: Its open-source and modular nature allows for deep customization.\n- **Modern Stack**: Built on Node.js and React, making it familiar and easy for developers to extend.\n- **Scalability**: Designed to be easier to scale and develop over the long term.",
+  "transcription": "## Introduction & Prerequisites\n\nHey devs, welcome back to Max Dev Insights. Ever dreamed of launching a fully functional online store without spending days setting everything up? Well, today I will show you exactly how to build a powerful clothing store using Medusa V2 and Supabase.\n\nWe will smoothly go from zero to a complete e-commerce solution featuring an admin panel, elegant storefront and real products, all in one easy to follow tutorial. Before we jump in, just double check that you have NodeJS installed, you have a package manager (npm, yarn or pnpm) and also you will need a free Supabase account.\n\n## What is Medusa.js?\n\nOkay, so what is that Medusa.js? It is an open source solution for commerce and it actually has everything you need to start an online store. So it has a back end, front end, and also it has an admin panel so you can easily manage your products. It has an MIT license, so of course you can use it for your online store.\n\nThat solution actually saves a lot of time for development because everything is set there as I mentioned before. So you can actually connect your own database to it by just providing the data URL and also you can connect a payment system. So basically you can get that boilerplate and start your online store just tomorrow.\n\nBut of course if you want your store to look more fancy you need to do some adjustments. But actually with this AI era it's super easy. So you can refactor components, you can redesign them. And uh, by the way, let's try it also to do that. Let's redesign a bit uh landing page of that storefront and see what we can achieve with combination of that open source solution and uh AI tools.\n\n## Exploring the Medusa.js Documentation\n\nLet's go to Medusa JS documentation. And here we can find a section which says all commerce features are provided as extendable modules in Medusa. And there are a lot of very important things. So there are cart, customer, payment, promotion, pricing, products, inventory, fulfillment, order, a lot of things and it is super useful for an online store and we can have this out of the box.\n\nLet's click here 'create your first application' just to see the setup guide. So first we need to run that command `npx create-medusa-app latest my-medusa-store`. So you can call it whatever you want. And then we need to install Medusa store and Medusa storefront. That's the diagram of app setup.\n\n## Project Setup and Structure\n\nSo we'll have a Medusa server with a back end. Also we will have Medusa admin and we will have a Next.js starter storefront. Then what we will need to do? We need to create a Medusa admin user. So we need to run that command to create the user.\n\nThen here there are some explanation of the structure of the app and basically that's it what we need to know for now. So let's try to install that Medusa.js store and then we will create a user and we will navigate through the admin panel and as well through the storefront.\n\n## Creating the Medusa Project\n\nLet's paste that command to create a store: `npx create-medusa-app latest` and let's call it `demo-clothing-store`. Also, we need to add some extra parameter since we're going to use Supabase. We need to type here `--skip-db`. Okay, let's press enter.\n\nNow, uh we got a question. Would you like to install the Next.js starter storefront? Uh we need it. Yes. Okay. So, it started to setting up the project. Installation is done.\n\nSo here there are some instructions how to run the app. So now let's go to the IDE and check these folders what we just created. Here are these two folders what we have created. It is `demo-clothing-store` and `demo-clothing-store-storefront`. So this is the server of the app with an admin panel and this is a Next.js app with a store storefront.\n\n## Setting Up the Supabase Project\n\nLet's open demo closing store and let's take a look at the .env file. As you see here we have all environment variables we need to run the app, but also we will need to add one more which is going to be `DATABASE_URL` and here we will provide the URL to our Supabase project. Now let's go to Supabase. There we need to create a new project and then we need to get that URL to connect Supabase database with our Medusa JS app.\n\nWe are in Supabase. So if you're not familiar with that, so first you need to create here an organization and then inside the organization you need to press new project. So let's do this now. So let's call the project `demo-store`. Then you need to specify the database password here. For that you can press here 'generate a password'. Um then you need to copy it and save it somewhere. And here you can specify a region, the closest to you.\n\n## Connecting Supabase to Medusa\n\nIn my case, it's going to be Singapore. Then we can press create new project. Then, after your project is created, you need to press on that button at the header 'Connect'. Here we need to go to that transaction puller section and here we need to copy that line. Now we're going back to the project and here we need to paste this line what we have copied and here we need to specify the password what we created when we were creating the project. And additionally we need that `DATABASE_EXTRA` just to reject unauthorized false. This is just for development purposes.\n\n## Database Migration and Seeding\n\nAs the next step, we need to open terminal and run commands to connect to our DB and create all schemas we need for the project. In terminal, first of all, we need to go to `demo-clothing-store` folder. And here we need to run that command `npx medusa db migrate`. Migration is finished. And now we can run `npm run seed`.\n\nSo what it will do? So basically it will create some demo products for us so we can see it in our storefront. That's done. Let's go back to Supabase and take a look at the current state of database. Let's go to table editor. And here we can see a lot of tables created. Let's find products. And once we click on that product, we can see that some products are created. We can see here that we have titles for the product handle and description. Perfect.\n\n## Setting Up and Exploring the Admin Panel\n\nSo now let's try to spin up the admin panel of our store. Before we run admin panel, let's create a user and let's use that demo email and demo password. And finally `npm run dev`. Okay. So here is the URL. Let's click on it. Okay. So here is the login to admin panel. Continue with the email. We are in and we start with the orders page.\n\nUh let's go to the products and we can see that these products what we saw in the database, they are here. So there are a lot of functionality here. So we can export, import, create. Um also we can edit products, delete them. Also we have collections, categories, inventory, customers. So a lot of things and you see we just with simple commands we have our back end running, we have our admin panel running. So it's super cool, super fast and yeah like in one day you can build your online store.\n\n## Launching the Storefront & API Key Fix\n\nOkay. So now we confirmed that admin panel works, that integration with database worked. So now it's time to spin up storefront. Let's open another tab in terminal. And here let's go to `demo-clothing-storefront`. And here let's run `npm run dev`. Okay, here is the URL. Let's click on it. Okay, so here we have an error.\n\nSo what does that mean? A valid publishable key is required to proceed with the request. So where we should get that publishable key? And actually in admin panel. In admin panel you need to find this part, uh 'Publishable API keys'. You need to click here and here you see that one key is generated already. So you can click on it and here you can press copy and then we need to go to `demo-clothing-storefront`. Here we have to go to `.env.local` and here as you see there is the part for `NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY`. So we need to paste this key here.\n\n## Exploring Storefront Features\n\nPerfect. So now let's go back to the storefront and refresh it. And here is it. So as you see it's pretty simple. So it has like few items in the header. Hero part is almost empty. There is just one title and button with a link to Medusa JS GitHub. Then we have footer straight away. So, but then let's click here for example to the shirts section. And here is the t-shirt, the one we saw in database and in admin panel. So, let's try to click on that uh t-shirt product.\n\nOkay. So, you see we have another component with a product preview, which is pretty cool. So here we can select color, size and then we can add it to cart. So once we press this, great, so we see that cart was updated. So I added uh two items here. We can remove it or we can go to cart. Let's go to cart now. Here let's select, let's say I just want one product. Great. Here we have our checkout preview. So now let's press go to checkout. Perfect. So now we need to fill up the address and then we can continue with the delivery. I will not do that now.\n\nSo as you see it's a pretty functional online store. But of course you need to do your adjustments. Uh you can change the theming. You can change actually the design of it. But you have everything out of the box.\n\n## Redesigning the UI with an AI Tool\n\nNow let's go back to the folder of the storefront. Let's investigate a bit `demo-clothing-store-storefront` folder. So here we have `app`, we have basic layout here. So let's go inside to main and I'm wondering to find the hero page. Here, we have `nav`. Okay. So let's go to `page` and here we have hero. Let's try to redesign it a bit and let's use AI tools for that. Let's copy that part.\n\nOkay. So in Claude, I just pasted this component and wrote a pretty basic prompt. `Can you please redesign that hero component of the clothing storefront to make it look modern and fancy following the latest trends in UI design in 2025?`\n\nLet's try it. Great. So I had to refine a bit my prompt. So now it is created. So let's copy that and paste to the project. Here is it. Uh, Claude AI also wrote some comments to the sections. So now let's see in browser how it looks. And now it's much better. We have some animation here. Um, better styled hero page. And actually you can do the same to the whole storefront. Also you can add more sections here. You can fit the context of this app to clothing or if you're using for example Cursor, it is going to be even much more easier. So now building online stores doesn't take too much time.\n\n## Medusa.js vs. Alternatives & Conclusion\n\nNow you're probably comparing in your head Medusa.js to other alternatives like Shopify, Commerce.js or WooCommerce. As for my opinion, I would prefer Medusa JS just because it has more features. It is more flexible and customizable and it has a modern stack which is also very important. So if you're a developer, I think that Medusa JS is going to be a great pick because it's going to be much easier to scale it and develop it.\n\nAnd that's it for today. I hope this video was helpful to you. Now let me know in the comments uh what do you think about Medusa JS and also let me know which tool you will choose to build an online store. Happy coding and see you in the next one."
+}

@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 3,
+  "videoId": "0r575dWbkMk",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn the fundamentals of inventory management with Odoo. This guide walks you through the essential first steps, from configuring products for your warehouse to receiving and storing incoming stock. Discover how to set up tracked and untracked products, enable and manage specific storage locations like shelves, and process receipts from purchase orders. We'll also cover how to perform physical inventory adjustments and relocate stock to maintain an organized and accurate warehouse system, providing a solid foundation for your business.",
+  "chapters": [
+    {
+      "title": "Introduction to Odoo Inventory",
+      "description": "An introduction to the scenario of a growing furniture company and the goal of organizing its warehouse using Odoo Inventory.",
+      "startTime": 0.0,
+      "endTime": 37.0,
+      "slug": "introduction-to-odoo-inventory"
+    },
+    {
+      "title": "Configuring a Tracked Product",
+      "description": "This chapter demonstrates how to set up a storable product in Odoo and enable inventory tracking by quantity.",
+      "startTime": 37.0,
+      "endTime": 94.0,
+      "slug": "configuring-a-tracked-product"
+    },
+    {
+      "title": "Configuring an Untracked Product",
+      "description": "Learn how to configure products like screws, where exact on-hand quantities are not tracked, and understand the use case for this setup.",
+      "startTime": 94.0,
+      "endTime": 134.0,
+      "slug": "configuring-an-untracked-product"
+    },
+    {
+      "title": "Enabling Storage Locations",
+      "description": "This section shows how to activate the storage locations feature from the Odoo Inventory settings menu.",
+      "startTime": 134.0,
+      "endTime": 173.0,
+      "slug": "enabling-storage-locations"
+    },
+    {
+      "title": "Managing a Specific Storage Location",
+      "description": "A walkthrough of a specific storage location's configuration, including its location type and a brief mention of putaway rules.",
+      "startTime": 173.0,
+      "endTime": 231.0,
+      "slug": "managing-a-specific-storage-location"
+    },
+    {
+      "title": "Navigating the Inventory Dashboard",
+      "description": "An overview of the main inventory dashboard, focusing on the Receipts card and what its color-coded bars signify.",
+      "startTime": 231.0,
+      "endTime": 277.0,
+      "slug": "navigating-the-inventory-dashboard"
+    },
+    {
+      "title": "Starting the Receipt Process",
+      "description": "This chapter explains how to begin processing an incoming shipment, starting from the list of receipts generated from purchase orders.",
+      "startTime": 277.0,
+      "endTime": 338.0,
+      "slug": "starting-the-receipt-process"
+    },
+    {
+      "title": "Adjusting Quantity and Setting Destination",
+      "description": "Learn how to verify incoming items, adjust the received quantity if it differs from the demand, and assign a specific storage location.",
+      "startTime": 338.0,
+      "endTime": 430.0,
+      "slug": "adjusting-quantity-and-setting-destination"
+    },
+    {
+      "title": "Validating the Receipt and Handling Backorders",
+      "description": "This chapter covers validating the receipt, understanding the backorder pop-up for quantity discrepancies, and verifying the completed stock move.",
+      "startTime": 430.0,
+      "endTime": 459.0,
+      "slug": "validating-the-receipt-and-handling-backorders"
+    },
+    {
+      "title": "Checking Stock with Physical Inventory",
+      "description": "Explore how to use the Physical Inventory report to view on-hand quantities and their current locations within the warehouse.",
+      "startTime": 459.0,
+      "endTime": 512.0,
+      "slug": "checking-stock-with-physical-inventory"
+    },
+    {
+      "title": "Relocating Stock to Correct Its Location",
+      "description": "Learn how to correct inventory location discrepancies by using the relocate feature to move items to their proper storage area.",
+      "startTime": 512.0,
+      "endTime": 524.0,
+      "slug": "relocating-stock-to-correct-its-location"
+    },
+    {
+      "title": "Confirming Relocation and Final Checks",
+      "description": "Finalize the stock relocation by setting the new location and reason, and observe how tracked and untracked products appear differently in inventory reports.",
+      "startTime": 524.0,
+      "endTime": 549.0,
+      "slug": "confirming-relocation-and-final-checks"
+    },
+    {
+      "title": "Conclusion",
+      "description": "A summary of the skills learned and a look ahead at future Odoo Inventory tutorials.",
+      "startTime": 549.0,
+      "endTime": 576.0,
+      "slug": "conclusion"
+    }
+  ],
+  "summary": "## Product Configuration in Odoo\n\nProper product setup is the first step to effective inventory management.\n\n- **Tracked Products**:\n  - **Product Type**: Set to **Goods** for physical items.\n  - **Inventory Valuation**: Set to **Track Inventory By Quantity** (or by Lots/Serial Number) for Odoo to monitor exact on-hand stock levels.\n  - *Example*: A \"Drawer\" that needs precise quantity tracking.\n\n- **Untracked Products**:\n  - **Product Type**: Also set to **Goods**.\n  - **Inventory Valuation**: The **Track Inventory** field is *unchecked*.\n  - *Use Case*: Ideal for low-value, high-volume items where exact counts aren't critical, such as screws, pens, or coffee.\n\n## Warehouse Organization\n\nTo store products in specific places, you must first enable and define those locations.\n\n1.  **Enable the Feature**: Navigate to `Inventory > Configuration > Settings` and check the box for **Storage Locations** under the *Warehouse* section.\n\n    > [!IMPORTANT]\n    > Always click **Save** after changing settings to apply them.\n\n2.  **Manage Locations**: Go to `Inventory > Configuration > Locations` to create and manage specific storage spots.\n    - **Location Type**: For internal storage, this should be set to **Internal Location**.\n    - *Example*: Defining `WH/Stock/Shelf 3` as a specific place to store incoming drawers.\n\n## The Product Receiving Workflow\n\nThis workflow details how to process incoming goods from a vendor.\n\n1.  **Start from the Dashboard**: The `Inventory` dashboard's **Receipts** card shows pending incoming shipments. These are often generated automatically when a Purchase Order (PO) is confirmed.\n2.  **Open the Receipt**: Select the relevant receipt to process. The **Source Document** field links back to the original PO.\n3.  **Verify and Adjust**: In the **Operations** tab, compare the **Demand** (ordered quantity) with what was physically received.\n    - If quantities differ, manually update the **Quantity** field.\n    - *Example*: The PO demanded 5 drawers, but only 4 arrived. The Quantity is changed to `4`.\n4.  **Set Destination**: Assign the goods to their final storage spot by setting the **Destination Location** field (e.g., to `WH/Stock/Shelf 3`).\n5.  **Validate**: Click **Validate** to confirm the move.\n\n> [!NOTE]\n> If the received quantity is less than the demanded quantity, Odoo will prompt you to create a **backorder** to track the missing items. For the demo, \"No Backorder\" was selected.\n\n## Physical Inventory Management\n\nUse physical inventory tools to check and correct stock information.\n\n- **Check On-Hand Stock**: Navigate to `Inventory > Operations > Physical Inventory` to see a list of all tracked products, their on-hand quantities, and their recorded locations. \n\n- **Correcting Locations**: If an item is in the wrong place:\n  1.  Select the product line with the incorrect location.\n  2.  Click the **Relocate** button.\n  3.  Set the correct **To Location** (e.g., `WH/Stock/Cellar`).\n  4.  Provide a reason and confirm the move.\n\n> [!TIP]\n> Untracked products (like the screws) do not appear in the Physical Inventory view, as Odoo does not track their specific quantities or locations.",
+  "transcription": "## Introduction to Odoo Inventory\n\nHello doers and welcome back. My name is Jose Osio. Welcome to Inventory.\n\nOur furniture company, Stealthy Wood, is expanding fast. With tons of products to manage, we need a robust inventory system that keeps us organized, from tracking stock to storing incoming products. Today, we're going to introduce you to Odoo Inventory by configuring our first products and organizing them within our warehouse. We're going to release some more videos in the future that get into deeper topics, so enough chitchat, let's dive right into the database.\n\n## Configuring a Tracked Product\n\nSo I think before we can manage inventory, let's set up a product inside of Odoo. So I'm going to open up our inventory application over here, and we're going to select Products in the top heading, and Products. Great. If it happens to be your first time here, you're going to click New in the top left corner, but for me, I'm going to click on this star drawer that we have right here with a nice little yellow star.\n\nSo when configuring items to be stored in the warehouse, we set our product type over here to Goods. These represent physical products like our Stealthy Wood furniture. Ah, and you'll notice how we have track inventory over here by quantity enabled. Now, this lets Odoo track the exact on-hand amount that we have. And in this case, it's quantities. We can do it by quantity, by Lots—oh, and it actually will give us a nice little warning there just because of the changes—by unique serial number, and another warning. But in our case, we are by quantity over there. I'm going to get into that later.\n\n## Configuring an Untracked Product\n\nSo next, let's look at untracked products. So we're going to select our products breadcrumb up at the top and... which one can we think of here? I'm going to select the screw. So if you see over here, it's still a product type of a Goods, but we have our track inventory field unchecked. Now, this is because we don't track quantities or locations for this product. And this is perfect for something that we keep in stock but we don't need the exact counts for, like screws, pens, coffee, toilet paper. Maybe if supplies run low, someone will let procurement know. We can avoid unnecessary updates.\n\n## Enabling Storage Locations\n\nBut up next, I think it's time for us to talk about something else. Let's set up storage locations for incoming products. So we're going to go over to Configuration, and this is going to be a big menu right here, and we're going to select Settings. Okay, so here we are inside of the inventory settings. I need you to scroll down to the Warehouse section. So let's get there right away. It's really down here. Okay, perfect. Here we are in the Warehouse section. Here we'll make sure that Storage Locations is checked off. If you're doing this for the first time, make sure your settings are saved by clicking Save in the top left. You'll hear me say it again and again, but please save. Don't lose your work. Don't make a ticket because you forgot to save.\n\n## Managing a Specific Storage Location\n\nSo now let's manage storage locations over here by going once again to Configuration and you guessed it, this time we're going to Locations. All right, spoiler alert: I'm expecting some drawers to come now since in my case right here, we have Warehouse Stock > Shelf 3, and it happens to have space, as shown by our 'Is Empty' field over here. I'm going to select Shelf 3. So let's select that right there.\n\nSo on this page, we see the location name, and that's pretty easy to spot. And then for storage locations, you need to make sure the location type that we have over here is set to Internal Location. To learn more about other types, make sure to check out the Warehouses and Locations tutorial, which I will graciously link inside of the description below. So while we could use putaway rules—in our case for something like this, which is up here at the top as a smart button—these to automatically route incoming drawers here, we also won't cover that today. So I'm not going to go with that for now.\n\n## Navigating the Inventory Dashboard\n\nI think we're ready to start receiving products, so let's head over there. So to get there, we're on our main dashboard, and we're going to open up the Inventory app. And look at that. Now we're at the main inventory dashboard. Now, picture me as your typical warehouse operations manager. Every day I check this dashboard to see what I need to do. The Receipts card that we have over here shows shipments from vendors that I need to organize and store. The orange bar that we have right there represents today's arrivals, while the red bars over here show late items. Where are my packages?\n\nGreen bars show the future shipments. Now the ones we have over here called Delivery Orders are orders we are preparing for customers. We're going to go over that in the next video about outgoing shipments.\n\n## Starting the Receipt Process\n\nSo let's kick off our day by receiving and storing products. So we're going to select this 'to receive' button right there, and that brings us up to this list of incoming shipments. So when a purchase order, AKA a PO for my acronym lovers, is confirmed inside of the Purchase application, it creates a receipt here inside of Inventory. This helps us make sure purchased items actually arrive and are recorded properly inside of Odoo. The linked purchase order, or PO if there is one, appears inside of our Source Document column over here, starting with the letter P for purchase. That was a dumb joke.\n\nBut let's pretend that I'm standing at the loading docks just staring out there, and I see all of these incoming shipments and all of these in the list. Well, I'd first scan the package's barcode using the Barcode app to pull up its receipt inside of Odoo. Since I don't have one, but we don't have that all done today, I'm going to manually click the start receipt instead. So let's click into that right now.\n\n## Adjusting Quantity and Setting Destination\n\nOkay, so on the receipt, the vendor's information is inside of the Receive From form over here. Inside of our Operations tab, I'm going to verify if the received products match the order. Demand over here is the ordered amount and Quantity over here is what we received. If the received amount differs, I can manually adjust the Quantity field. In our case, let's assume that the drawers—it's actually for us, it's actually a four. And so we do that. We store the products. So how do we do that, though?\n\nWell, you need to make sure that you set the destination location field... let's make sure it's right there. Final location and it matches over there with that one right there is perfect. We need to make sure that the destination field happens to now be changed over to our Warehouse > Stock > Shelf 3 that we talked about earlier. So let's type in that dash and put that in there because remember, it's what we planned to do. Now click the manual Save button because I want to show you something cool that happens with that.\n\n## Validating the Receipt and Handling Backorders\n\nGreat. Now all we need to do is move these items to Shelf 3. But let's pretend you didn't hear me wrestling with the drawers and skidding them across the floor like a bad moving company. We've all been there. Pretend that I'm actually an amazing person. Once everything's neatly stored, we click Validate. And would you look at that, ah, the backorder pop-up. Since we set the received quantities to four, Odoo helped us keep track of the missing quantities. Typically, I'm going to only click the Create Backorder button so that we expect that missing item, but we're just showing an example today, so I'm going to select No Back Order. Then once that we're done with that, we can actually click on the Move smart button up at the top. Now this Move smart button shows us that we successfully moved these items in their quantities over to Shelf 3. Look at that, isn't that beautiful?\n\n## Checking Stock with Physical Inventory\n\nAll right, our doers. Now that we've stocked our warehouse, how do we check what we have? Well, first, I'm going to go to Operations, then Physical Inventory. Okay, and this is kind of cool. So here we actually see our on-hand quantities over here for products as well as their location, if we need to figure out where they are on the far left. For example, the 500 bottles of varnish are listed at Warehouse > Stock. They should be in the cellar, or we're going to shorten its shelf life. Now I'm going to go to the cellar and check, just pretend with me. And ah, they're there! I see them right in front of me.\n\n## Relocating Stock to Correct Its Location\n\nSo someone probably forgot to set the destination location on the receipt to the correct storage location. To fix that, we're going to select the checkbox here next to the varnish, and we're going to select the button up at the top that says Relocate.\n\n## Confirming Relocation and Final Checks\n\nNow our To location is going to be set to the cellar that I talked about. That's WH/Stock/Cellar, and the reason is 'Update Stock Location'. And then we're going to select Confirm. And if we scroll down, would you look at that! Oh, and remember the untracked screws that we received earlier? They won't appear here, even though we confirmed that we moved them in the Move smart button earlier.\n\n## Conclusion\n\nAh, remember that, because notice how the last inventory adjustment line, Shelf 3, shows in our case, Drawer. If you'd like to track stock and locations for a product, tick the Track Inventory checkbox on the product form as well. And there you have it, Odooers! We just learned how to receive and store products as well as how to manage and track existing stock. For more about inventory, check out the next tutorial on managing outgoing shipments and customer orders, as well as the specifics about inventory adjustments. Thanks for watching again, Odooer. See you next time. Go grab a snack. I still have these pretzels I have not eaten. We'll see when I eventually eat these."
+}

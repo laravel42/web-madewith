@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 3,
+  "videoId": "PMa2m0Fe-Q4",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to build a basic asynchronous web service in Rust from scratch using the Actix Web framework. This guide walks through setting up an HTTP server, defining routes, and creating handlers for GET and POST requests. Discover how to connect your application to a PostgreSQL database, use the Serde crate for JSON serialization, and execute SQL queries to fetch and insert data. The video also explores the challenges of tight coupling between your code and database schema, setting the stage for advanced solutions with procedural macros.",
+  "chapters": [
+    {
+      "title": "Introduction",
+      "description": "The video's purpose is introduced: to provide an overview of creating a basic web service in Rust for learning purposes.",
+      "startTime": 0.0,
+      "endTime": 30.0,
+      "slug": "introduction"
+    },
+    {
+      "title": "System Architecture Overview",
+      "description": "The overall architecture is outlined, showing a Rust server handling HTTP and interacting with a PostgreSQL database.",
+      "startTime": 30.0,
+      "endTime": 71.0,
+      "slug": "system-architecture-overview"
+    },
+    {
+      "title": "Setting Up the Actix Web Server",
+      "description": "This chapter covers the initial setup of an asynchronous web server using the Actix Web framework.",
+      "startTime": 71.0,
+      "endTime": 151.0,
+      "slug": "setting-up-the-actix-web-server"
+    },
+    {
+      "title": "Defining the Data Model with Serde",
+      "description": "The User data model is defined, and the Serde crate is introduced for serialization and deserialization.",
+      "startTime": 151.0,
+      "endTime": 184.0,
+      "slug": "defining-the-data-model-with-serde"
+    },
+    {
+      "title": "Implementing HTTP Handlers",
+      "description": "This section explains how to implement the handler functions for handling GET and POST requests for users.",
+      "startTime": 184.0,
+      "endTime": 276.0,
+      "slug": "implementing-http-handlers"
+    },
+    {
+      "title": "Database Logic: Fetching Users",
+      "description": "The logic for the get_users function is detailed, showing how to execute a SQL SELECT query against the database.",
+      "startTime": 276.0,
+      "endTime": 322.0,
+      "slug": "database-logic-fetching-users"
+    },
+    {
+      "title": "Database Logic: Adding a User",
+      "description": "The implementation of the add_user function is shown, including how to use a parameterized SQL INSERT statement.",
+      "startTime": 322.0,
+      "endTime": 378.0,
+      "slug": "database-logic-adding-a-user"
+    },
+    {
+      "title": "Live Demonstration",
+      "description": "The completed web service is demonstrated by running the server and making live GET and POST requests.",
+      "startTime": 378.0,
+      "endTime": 414.0,
+      "slug": "live-demonstration"
+    },
+    {
+      "title": "The Problem with Tight Coupling",
+      "description": "This chapter points out a major flaw in the design: the tight coupling between the Rust code and the database schema.",
+      "startTime": 414.0,
+      "endTime": 445.0,
+      "slug": "the-problem-with-tight-coupling"
+    },
+    {
+      "title": "Solution: Procedural Macros & TQL",
+      "description": "Procedural macros are presented as a solution, with the `tql` crate shown as an example of deriving SQL from structs.",
+      "startTime": 445.0,
+      "endTime": 498.0,
+      "slug": "solution-procedural-macros-tql"
+    },
+    {
+      "title": "Conclusion and What's Next",
+      "description": "The video concludes by setting up the topic for the next video: learning the basics of creating a procedural macro.",
+      "startTime": 498.0,
+      "endTime": 507.4,
+      "slug": "conclusion-and-what-s-next"
+    }
+  ],
+  "summary": "## Project Overview\n\nThis document outlines the key concepts for building a basic web service in Rust using the **Actix Web** framework. The service exposes HTTP endpoints to interact with a **PostgreSQL** database.\n\n## Core Technologies\n- **Language**: Rust\n- **Web Framework**: Actix Web (for asynchronous handling)\n- **Database**: PostgreSQL\n- **Serialization**: Serde (for converting Rust structs to/from JSON)\n\n## Server Setup with Actix Web\n\nThe main function is the entry point for the server:\n\n1.  **Async Runtime**: The `main` function must be decorated with `#[actix_web::main]` to set up the required asynchronous runtime.\n\n2.  **Shared State**: A database connection pool (e.g., for Postgres) is created and shared with all request handlers via `app_data`.\n\n3.  **HTTP Server**: An `HttpServer` is instantiated, taking an `App` factory.\n\n4.  **Routing**: Inside the `App`, services are defined for specific routes. For `/users`, handlers are registered for `GET` (list users) and `POST` (add user) requests.\n\n5.  **Binding & Running**: The server is bound to an address (e.g., `127.0.0.1:8080`) and started with `.run().await`.\n\n## Data Modeling with Serde\n\n-   A `User` struct is a plain Rust struct representing the data model.\n-   To send and receive this struct over HTTP as JSON, it must be serializable and deserializable.\n\n> [!TIP]\n> The **Serde** crate makes this easy. Simply add `#[derive(Serialize, Deserialize)]` above your struct definition.\n\n## HTTP Handlers\n\nHandlers are asynchronous functions that process incoming requests.\n\n-   **Shared Data Access**: Handlers receive access to shared application data (like the DB pool) via function arguments (e.g., `data: web::Data<...>`).\n-   **Payload Extraction**: For `POST` requests, data from the request body can be extracted and deserialized automatically using the `web::Json<User>` extractor.\n-   **Response**: Handlers return a `Result<HttpResponse, Error>`. A successful response is built with `HttpResponse::Ok().json(data)`.\n\n## Database Interaction\n\n-   The application communicates with the database using raw SQL queries.\n-   **`get_users`**: Executes `SELECT * FROM testing.users`, iterates over the resulting rows, and maps each row to a `User` struct.\n-   **`add_user`**: Executes a parameterized `INSERT` statement. It uses placeholders (`$1`, `$2`, etc.) which are safely filled with user data to prevent SQL injection.\n\n> [!IMPORTANT]\n> Using a `postgres_mapper` derive macro helps map database rows to the Rust `User` struct.\n\n## The Key Problem: Tight Coupling\n\nA major drawback of this implementation is the tight coupling between the application code and the database schema.\n\n-   **Manual Synchronization**: If you change a field in the `User` struct, you must manually update the database table definition and all corresponding SQL queries (`SELECT`, `INSERT`, etc.).\n-   **Error-Prone**: This manual process is tedious and highly susceptible to bugs.\n\n## The Way Forward: Procedural Macros\n\nThe ideal solution is to derive the database schema and queries directly from the Rust struct, just like Serde derives JSON serialization.\n\n-   **Procedural Macros**: A powerful Rust feature that allows code to be generated at compile time based on a struct's definition.\n-   **Inspiration**: The `tql` crate is an existing library that uses this technique. Its `#[derive(SqlTable)]` macro can generate SQL `CREATE TABLE`, `INSERT`, `UPDATE`, and `DELETE` statements automatically.",
+  "transcription": "## Introduction\n\nI am David, your developer on duty, and this video is an overview on how to create a basic web service in Rust.\n\nThis video series is all about Rust because I'm fairly new to it, and I take this as an opportunity to learn more about it. However, I will not cover every aspect, especially the basic syntax and basic language features.\n\n## System Architecture Overview\n\nLet me give you a quick outline of what I'm going to do. And I'm using here this open-source tool called Excalidraw, which is awesome to scribble around. I want to create a Rust server, and this Rust server will be able to interact with the outside world through HTTP. And since it's stateless, it will have some database, which is a PostgreSQL database. And it will have one table called users, and I will be able to interact with my database through SQL. I will be able to read my users and insert new users.\n\n## Setting Up the Actix Web Server\n\nIf you want to build a web server in Rust or any other programming language, you need to choose a framework first. And Actix Web is one of the more popular ones, which also supports asynchronous functions. There's a nice GitHub repository with samples which I cloned here and slightly adapted. And looking at the code, it's quite simple to build a web server.\n\nFirst, you need to decorate your async main function with `actix_web::main`, and this is needed to have an async runtime because Rust by default doesn't provide one. Then you create some data which should be available in your handler functions. In this case, it's a Postgres pool which I create here.\n\nThen you create your server using the `HttpServer` constructor, which takes an `App` factory, aka a closure which returns an `App`. And in this `App`, you plug in the data you want to make available in your handlers, and you create a service. In this case, I have a resource `/users` where I define two handlers: one for GET requests and the other one for POST requests. Then you need to bind it to your server address and run it and await the server.\n\n## Defining the Data Model with Serde\n\nBefore we define our handler functions, we first need to create a model. In this case, we just define a public structure called `User`. It has four fields called email, first name, last name, and username, all of type string. And to retrieve it through HTTP and send it across HTTP, we need to be able to serialize and deserialize this struct. There's a nice little crate called Serde, and the only thing you have to do is to derive `Serialize` and `Deserialize`, and that's it.\n\n## Implementing HTTP Handlers\n\nLet's define the handler functions to handle the HTTP requests. In this case, `get_users` to handle the GET request. And we always have access to our app data, in this case, our PostgreSQL database pool. And the result of this function must be a result of `HttpResponse` and `Error`. That means we either return an OK HTTP response or an error.\n\nNow we can use the database pool to retrieve a client. And let's just assume for now that we have this method `get_users` which takes a client to retrieve all our users. So we await this function call to get our users and provide an HTTP response with status OK and with the users as a JSON object.\n\nNow for our POST request, we define our function called `add_user`, which again takes our database pool, but additionally also needs to extract the user information out of the HTTP request body. And this we can do using a declarative approach. So we can use this `web::Json` extractor and the `User` struct to retrieve the user information. We just have to call `user.into_inner()`, and then we can again retrieve our client from our database pool. And let's just assume we have this `add_user` function to create a user on the database. So we provide the client and the user information, await the function call, and then return the `HttpResponse::Ok()` with a new user as JSON data.\n\n## Database Logic: Fetching Users\n\nTo use our user structure in database interactions, we derive `postgres_mapper`. And this provides some functions which we later use.\n\nOur database function `get_users` is constructed as follows: we take our database client and provide a result of our vector of users or our custom error, `MyError`. First, we create a statement. In this case, it's just a SQL string: `SELECT * FROM testing.users`. We take our client, call `query` with our statement and no parameters, await the result, iterate over the result, and then map each row into our User struct and collect it as a vector of users and return `Ok(users)`.\n\n## Database Logic: Adding a User\n\nOur `add_user` database function works like this. It takes again the client and this time also the user info and provides a result of our user or `MyError`. We create our database statement. This time it's a statement with placeholders. It's an `INSERT INTO testing.users` with email, first name, last name, and username with values, and it returns the table fields. We replace the table fields with our `sql_table_fields` function from our user struct. Then we prepare our statement and await it.\n\nThen we take our client and again call `query` with our statement and now, this time, our user info parameters. We await it, iterate over the result, map each row again to our user struct, collect it into a vector of users, we pop it, and return `Ok` or our custom error.\n\n## Live Demonstration\n\nNow let's run our service. And the prerequisite is a running Postgres database in the background. So I hit `cargo run`, and the server is running. Now I can trigger some HTTP requests. To get a list of all users, I execute the GET endpoint and you can see I will get the list of all users. Now let's create a new one. And you can see the status 200, which is okay. Now let's trigger the users endpoint again, and you can see our new new user was correctly inserted in our database.\n\n## The Problem with Tight Coupling\n\nLet's look at the flaws of this implementation, especially with regard to the domain. So in our Rust server, I created this `User` struct. And the problem is if I would have changed this user struct, I would also need to change my database table, and I would need to change all the queries to interact with my database. So in the optimal world, I could derive my database table out of this user struct as well as all my queries.\n\n## Solution: Procedural Macros & TQL\n\nTo overcome this problem, we need to somehow derive our database table as well as our queries based on our user struct. And one technique to achieve that is called procedural macro, which you already know, for example, from Serde to deserialize our struct.\n\nI did some investigation to find out if there already is a crate who provides this procedural macro, and it turns out there is. It's called `tql`, and it works like this: you define your struct and then you `derive(SqlTable)`. And this lets you create a database table, create an insert statement, an update statement, a delete statement, and also a query statement. I want to build something similar to this and learn more about procedural macros. So it's great that this project exists so I can take some inspiration and get some help if I'm stuck on the way.\n\n## Conclusion and What's Next\n\nIn the next video, I will create my first procedural macro to learn the basics. Thanks for watching and stay tuned."
+}

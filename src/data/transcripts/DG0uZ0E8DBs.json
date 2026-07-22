@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 3,
+  "videoId": "DG0uZ0E8DBs",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn to create professional-grade API documentation for your NestJS application quickly and easily. This guide walks you through using the OpenAPI standard and Swagger UI to generate interactive web documentation. You'll see how to set up Swagger, organize endpoints with tags, define response statuses, document schemas with DTOs using @ApiProperty, and provide example data. Enhance developer experience by making your API endpoints clearly defined, testable directly in the browser, and secured with bearer authentication.",
+  "chapters": [
+    {
+      "title": "The Importance of Professional API Documentation",
+      "description": "This chapter explains why high-quality documentation is crucial for any API and introduces OpenAPI and Swagger as the solution for NestJS.",
+      "startTime": 0.0,
+      "endTime": 57.0,
+      "slug": "the-importance-of-professional-api-documentation"
+    },
+    {
+      "title": "Understanding OpenAPI and Swagger",
+      "description": "This chapter uses a restaurant menu analogy to explain the roles of OpenAPI as a standard and Swagger as a toolset.",
+      "startTime": 57.0,
+      "endTime": 116.0,
+      "slug": "understanding-openapi-and-swagger"
+    },
+    {
+      "title": "Initial Swagger Setup in NestJS",
+      "description": "Learn how to install the Swagger package and perform the initial configuration in the main.ts file to generate the base UI.",
+      "startTime": 116.0,
+      "endTime": 161.0,
+      "slug": "initial-swagger-setup-in-nestjs"
+    },
+    {
+      "title": "First Look and Initial Limitations",
+      "description": "This chapter reviews the initial, auto-generated Swagger UI and points out its limitations, like undocumented endpoints and empty schemas.",
+      "startTime": 161.0,
+      "endTime": 191.0,
+      "slug": "first-look-and-initial-limitations"
+    },
+    {
+      "title": "Organizing Endpoints with Tags",
+      "description": "Learn how to use the @ApiTags decorator to group related endpoints in the Swagger UI for better navigation.",
+      "startTime": 191.0,
+      "endTime": 226.0,
+      "slug": "organizing-endpoints-with-tags"
+    },
+    {
+      "title": "Documenting Responses and Status Codes",
+      "description": "This chapter covers how to specify expected response status codes using decorators like @ApiOperation and @ApiOkResponse.",
+      "startTime": 226.0,
+      "endTime": 283.0,
+      "slug": "documenting-responses-and-status-codes"
+    },
+    {
+      "title": "Defining Response Schemas",
+      "description": "See how to add response types, including arrays, to your response decorators and the importance of documenting error response models.",
+      "startTime": 283.0,
+      "endTime": 347.0,
+      "slug": "defining-response-schemas"
+    },
+    {
+      "title": "Documenting DTOs with @ApiProperty",
+      "description": "This chapter details how to use the @ApiProperty decorator to define schema properties, descriptions, optionality, enums, and nested types inside your DTOs.",
+      "startTime": 347.0,
+      "endTime": 400.0,
+      "slug": "documenting-dtos-with-apiproperty"
+    },
+    {
+      "title": "Providing Realistic Example Data",
+      "description": "Make your documentation more user-friendly by adding example data to your schema properties using the @ApiProperty decorator.",
+      "startTime": 400.0,
+      "endTime": 421.0,
+      "slug": "providing-realistic-example-data"
+    },
+    {
+      "title": "Handling Mapped Types for Input Schemas",
+      "description": "Learn the correct way to use OmitType and PartialType functions from the @nestjs/swagger package to properly generate input DTOs.",
+      "startTime": 421.0,
+      "endTime": 469.0,
+      "slug": "handling-mapped-types-for-input-schemas"
+    },
+    {
+      "title": "Adding Authentication to Swagger UI",
+      "description": "Enable developers to make authenticated requests directly from the Swagger UI by implementing bearer authentication.",
+      "startTime": 469.0,
+      "endTime": 510.0,
+      "slug": "adding-authentication-to-swagger-ui"
+    },
+    {
+      "title": "Conclusion: The Power of an API Playground",
+      "description": "A final look at the transformed API documentation, emphasizing its value for developer onboarding and team productivity, with a hint for further improvement.",
+      "startTime": 510.0,
+      "endTime": 577.0,
+      "slug": "conclusion-the-power-of-an-api-playground"
+    }
+  ],
+  "summary": "## The Importance of API Documentation\n\nAn API, no matter how well-implemented, is difficult to use without **professional-grade documentation**. Using the **OpenAPI standard** and **Swagger** provides a standardized, interactive way for developers to understand and interact with your API, drastically improving the developer experience.\n\n## Initial Swagger Setup in NestJS\n\n1.  **Install the package**: `npm install @nestjs/swagger`\n2.  **Configure in `main.ts`**:\n    *   Create a `DocumentBuilder` instance to set the API's title, description, and version.\n    *   Use `SwaggerModule.createDocument()` to generate the OpenAPI document.\n    *   Call `SwaggerModule.setup()` to create the interactive UI endpoint (e.g., `/api`).\n\n> [!NOTE]\n> Initially, Swagger scans your controllers and method handlers, but the generated documentation will be basic, with undocumented endpoints and empty schemas.\n\n## Enhancing Documentation with Decorators\n\n- **`@ApiTags('GroupName')`**: Place on controllers to group related endpoints together in the UI.\n- **`@ApiOperation({ summary: '...' })`**: Provides a short summary for an endpoint.\n- **`@ApiResponse` Decorators**: Define the possible responses for an endpoint.\n    - Use specific decorators like **`@ApiOkResponse`** (200), **`@ApiCreatedResponse`** (201), **`@ApiNotFoundResponse`** (404), and **`@ApiBadRequestResponse`** for clarity.\n- **`type` Property**: Specify the response DTO in the response decorator (e.g., `@ApiOkResponse({ type: BookDto })`). For arrays, add `isArray: true`.\n\n## Documenting Data Schemas (DTOs)\n\nBring your schemas to life using the **`@ApiProperty()`** decorator on each property within your DTO classes.\n\n- **`description`**: Explain what the property is for.\n- **`required: false`**: Mark optional properties. Alternatively, use `@ApiPropertyOptional()`.\n- **`enum`**: Specify the available values for an enum property.\n- **`example`**: Provide realistic sample data to show developers the expected format.\n\n> [!TIP]\n> Documenting error responses is crucial. Developers often consult documentation when things go wrong, so clearly defining error schemas is extremely helpful.\n\n## Handling Mapped Types for Inputs\n\n- When using utility types like `PartialType` or `OmitType` to create input DTOs (e.g., for `create` or `update` operations), you must import them from the correct package for Swagger to recognize them.\n\n> [!IMPORTANT]\n> Replace imports from `@nestjs/mapped-types` with imports from **`@nestjs/swagger`** for `PartialType`, `OmitType`, etc. This allows Swagger to correctly generate the schema for your input DTOs.\n\n## Securing the Swagger UI\n\nTo enable testing of protected endpoints directly from the Swagger UI:\n\n1.  **Add `addBearerAuth()`** to the `DocumentBuilder` chain in `main.ts`.\n2.  **Apply the `@ApiBearerAuth()`** decorator to the controllers or specific endpoints that require authentication.\n\nThis will add an \"Authorize\" button to the UI, allowing developers to input a JWT token for authenticated requests.",
+  "transcription": "## The Importance of Professional API Documentation\n\nYou can implement the best API in the world, but people will hate it if it lacks professional-grade documentation. So however, documenting your NestJS API is actually very easy and very quick. Nearly every professional API that I've worked with was documented using the OpenAPI standard. So in the next 8 minutes, I'll show you exactly how to describe your NestJS API using OpenAPI and Swagger. No more getting lost in a sea of undocumented endpoints. By the end of this video, you'll have an interactive web page for your API with all the endpoints clearly defined. And for each endpoint, you'll have the response, input documented, and I'll also show you how to provide example data. It makes it so much better when documentation includes a sample of realistic data. But first, what is OpenAPI and Swagger?\n\n## Understanding OpenAPI and Swagger\n\nAny restaurant you go to, the menu usually has the same structure. So you have a section for starters, main, and dessert, and you have a description of each dish and sometimes even a picture and the list of ingredients. OpenAPI is the same thing. It defines a standard way of describing your API so that way any developer can understand how to interact with your API. Swagger, on the other hand, is a set of tools that help you implement the OpenAPI standard.\n\n## Initial Swagger Setup in NestJS\n\nTo use Swagger in your NestJS application, you first need to install the `nestjs/swagger` package. So now you can go to your `main.ts` file, and that's where all the magic happens. So you start by creating the configuration for your Swagger site using the `DocumentBuilder` class. That configuration is used to set up basic information about your API documentation, so you can set the title, description, and a version. And of course, feel free to customize these to fit your own project. Now that you have your configuration, you can create the actual Swagger document. The `SwaggerModule.createDocument` function takes our NestJS app and config we just created and generates a Swagger document that follows the OpenAPI specification. Finally, you need to set up the Swagger site by calling the `SwaggerModule.setup`. and the first parameter is the root path for our Swagger web page.\n\n## First Look and Initial Limitations\n\nNow let's run our application and navigate to localhost:3000/api to see the Swagger UI in action. So you should see the Swagger UI with your API title, version, and description. And what the Swagger module does is that it scans your entire application and goes through every controller, every method handler and their arguments to generate this documentation. However, you'll notice that the endpoints aren't fully documented yet, and the schemas are completely empty.\n\n## Organizing Endpoints with Tags\n\nSo the Swagger module has done a good job, but you'll need to provide more information to make the documentation more useful. So imagine that you're reading a restaurant menu and the main courses, desserts, and drinks and starters are all mixed up in one giant list. It would be very confusing, right? So similarly, APIs endpoints need to be grouped to help with navigation. To group endpoints, you can use the `@ApiTags` decorator in your controllers. This helps organize related endpoints under a same common label.\n\n## Documenting Responses and Status Codes\n\nJust like a dish can have gluten-free or vegan option, each endpoint can have a different response status code. Specifying response status code is like setting expectations with your API consumers. You can use the `@ApiOperation` and the `@ApiResponse` decorators to describe the operation and the expected response status code for each endpoint. But instead of manually specifying the status code, you can also use decorators such as `@ApiOkResponse` for successful responses. So that will return a 200 status. And you can also specify not found responses using the `@ApiNotFoundResponse` decorator. And similarly for the create method, we'll use the `@ApiCreatedResponse` and the `@ApiBadRequestResponse` whenever there is a validation error, for example. Now you can navigate to the Swagger UI and you see the endpoints grouped under tags, they have a quick summary, and the response status codes are clearly defined.\n\n## Defining Response Schemas\n\nSo on a menu, a dish description is good, but showing a picture of the actual dish is even better. Similarly, defining response types is like showing a picture of the dish on the menu, so it gives clarity on what to expect. You can specify the response by adding the `type` to the response decorator. And in the case of `findAll`, you'll have to set `isArray` to true since it returns an array of books. What is extremely useful is defining the error responses. So we tend to focus on best case scenarios, but actually people will often reach to the documentation when things go wrong. So it's important to provide clear and helpful documentation for error responses. For example, you can define a validation error response for the create method.\n\n## Documenting DTOs with @ApiProperty\n\nAs you can see, there is a list of schemas representing the response and input types, but they are completely empty, basically useless. To define properties in our schemas, we use the `@ApiProperty` decorator inside the class definitions. If you start with the Book DTO class, you can add the `@ApiProperty` decorator to each property with a description. And for optional properties, you can use the `required: false` or you can use the `@ApiPropertyOptional` decorator directly. For slightly more complex properties such as array and nested object, you can define them using the type configuration. And for enums, you can use the enum configuration.\n\n## Providing Realistic Example Data\n\nWe can see all the properties in the Swagger UI now and the success responses models has all properties defined. And you can also see the validation error response model. But what if we could give the developers a taste of the real data? So you can easily do that by providing example data in the API property decorator.\n\n## Handling Mapped Types for Input Schemas\n\nLook how this makes the documentation so much better. So this can save a lot of time to developers who are trying to understand how to interact with your API. We know exactly how the API response will look like, but unfortunately, we have no clue how the input should look like. I have defined the CreateBookDTO class using the `OmitType` function from the `@nestjs/mapped-types` package. And to convert this to Swagger, you can switch to using the exact same function but from the `@nestjs/swagger` package. And the same goes for the `PartialType` function as well. You can switch to using the `@nestjs/swagger` package instead.\n\n## Adding Authentication to Swagger UI\n\nAnd now your documentation is really looking great and you can try out the API right there in the browser. But if you try as is, you'll see an authentication error, which renders the feature useless, at least with my implementation, because I have a guard to my endpoints. My API is using bearer authentication, but there is also support for basic authentication and OAuth2 and cookie-based authentication as well with Swagger. So you can add the `@ApiBearerAuth` decorator to all the controllers to add authentication to the Swagger UI as well. And after that, you'll have to add the `addBearerAuth` to the Document Builder in the main.ts file as well. Now when you try sending a request with the correct authentication token, it should succeed, confirming that our API is secure.\n\n## Conclusion: The Power of an API Playground\n\nSo let's take a moment to appreciate the transformation we've just witnessed. With Swagger integrated into our NestJS application, we've turned our API into a developer's playground. So imagine joining a new project and you open up the Swagger UI, and boom, everything is right there in front of you. All the endpoints neatly organized. You can see a preview of the responses and what input to send. And the best part, you can actually test the API right there in the browser. This is a must-have for any serious team building an API. And there is no excuse for not having it because it's very easy to implement. But what if I told you that you can do even better than that? So an API playground is great, but what if you could provide a set of requests directly alongside your source code in your version control system? So you can check out this video to learn more about this new way of sharing request collections with your team."
+}

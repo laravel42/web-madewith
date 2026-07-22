@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 3,
+  "videoId": "dDpZfOQBMaU",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to create progressively enhanced forms and manage data mutations in Next.js with the App Router and Server Actions. This tutorial walks through building a simple todo application, demonstrating key patterns for handling loading and error states. Discover how to use server-side functions directly from your components, revalidate cached data with `revalidatePath`, and leverage new React hooks like `useFormState` and `useFormStatus` for a modern, streamlined development experience.",
+  "chapters": [
+    {
+      "title": "Introduction: Building Forms with Server Actions",
+      "description": "This chapter introduces the todo list application that will be built and outlines the core concepts to be covered, including Server Actions, loading states, and progressive enhancement.",
+      "startTime": 0.0,
+      "endTime": 21.0,
+      "slug": "introduction-building-forms-with-server-actions"
+    },
+    {
+      "title": "The Old Way: Forms in the Pages Router",
+      "description": "A brief review of the traditional method for handling forms in the Next.js Pages Router, which involves client-side event handlers and separate API routes.",
+      "startTime": 21.0,
+      "endTime": 66.0,
+      "slug": "the-old-way-forms-in-the-pages-router"
+    },
+    {
+      "title": "Project Setup in the App Router",
+      "description": "This chapter covers setting up a new Next.js project and the basic file structure, including the root layout and an async Page component for initial data fetching.",
+      "startTime": 66.0,
+      "endTime": 117.0,
+      "slug": "project-setup-in-the-app-router"
+    },
+    {
+      "title": "The Form Action Prop & `useFormState`",
+      "description": "An explanation of how to use the `action` prop on a form to call a Server Action directly, and how the `useFormState` hook initializes its state.",
+      "startTime": 117.0,
+      "endTime": 140.0,
+      "slug": "the-form-action-prop-useformstate"
+    },
+    {
+      "title": "Invoking a Server Action",
+      "description": "This section details how the form's action prop invokes a function that runs on the server, eliminating the need for a separate API endpoint.",
+      "startTime": 140.0,
+      "endTime": 176.0,
+      "slug": "invoking-a-server-action"
+    },
+    {
+      "title": "Inside a Server Action: Validation and Revalidation",
+      "description": "A deep dive into the `createTodo` Server Action, covering the `\"use server\"` directive, data validation with Zod, database mutation, and using `revalidatePath` to update the UI.",
+      "startTime": 176.0,
+      "endTime": 228.0,
+      "slug": "inside-a-server-action-validation-and-revalidation"
+    },
+    {
+      "title": "Demo: Progressive Enhancement in Action",
+      "description": "This chapter demonstrates the form working seamlessly with and without JavaScript enabled, highlighting the benefits of progressive enhancement with Server Actions.",
+      "startTime": 228.0,
+      "endTime": 263.0,
+      "slug": "demo-progressive-enhancement-in-action"
+    },
+    {
+      "title": "Implementing Loading States with `useFormStatus`",
+      "description": "Learn how to an implement automatic loading state on a submit button by using the `useFormStatus` React hook to track the form's pending status.",
+      "startTime": 263.0,
+      "endTime": 302.0,
+      "slug": "implementing-loading-states-with-useformstatus"
+    },
+    {
+      "title": "About React Canary Hooks",
+      "description": "A quick explanation that `useFormStatus` and `useFormState` are new hooks available through the React Canary channel, which frameworks like Next.js adopt early.",
+      "startTime": 302.0,
+      "endTime": 364.0,
+      "slug": "about-react-canary-hooks"
+    },
+    {
+      "title": "Handling Multiple Forms & Deleting Data",
+      "description": "This section shows how to implement a delete form for each item in a list, demonstrating how Server Actions easily handle multiple forms on a single page.",
+      "startTime": 364.0,
+      "endTime": 401.0,
+      "slug": "handling-multiple-forms-deleting-data"
+    },
+    {
+      "title": "The Power of Integrated Data Caching",
+      "description": "Discover the efficiency of the Next.js App Router architecture, which integrates data fetching, caching, and revalidation into a single, optimized network roundtrip.",
+      "startTime": 401.0,
+      "endTime": 451.0,
+      "slug": "the-power-of-integrated-data-caching"
+    },
+    {
+      "title": "Advanced Data Revalidation Techniques",
+      "description": "This chapter introduces more fine-grained data revalidation options beyond `revalidatePath`, such as `revalidateTag` and the upcoming `cache()` function.",
+      "startTime": 451.0,
+      "endTime": 491.0,
+      "slug": "advanced-data-revalidation-techniques"
+    },
+    {
+      "title": "Implementing Form Accessibility",
+      "description": "Learn key accessibility techniques, including using ARIA live regions to announce form status updates and `aria-disabled` for better screen reader compatibility.",
+      "startTime": 491.0,
+      "endTime": 597.0,
+      "slug": "implementing-form-accessibility"
+    },
+    {
+      "title": "Conclusion & Next Steps",
+      "description": "A summary of the topics covered and a look at other advanced features of Server Actions, such as handling cookies, redirects, headers, and optimistic UI.",
+      "startTime": 597.0,
+      "endTime": 627.26,
+      "slug": "conclusion-next-steps"
+    }
+  ],
+  "summary": "## From API Routes to Server Actions\n\nThe Next.js App Router modernizes form handling by replacing the traditional pattern of client-side event handlers and separate API routes with Server Actions.\n\n*   **Traditional (Pages Router)**: Required a client-side `onSubmit` handler that made a `fetch` request to a separate `/pages/api` endpoint.\n*   **Modern (App Router)**: Uses **Server Actions**, which are functions that run securely on the server and can be called directly from a form component, simplifying the architecture.\n\n## Building Forms with Server Actions\n\nKey primitives for creating forms with Server Actions include:\n\n*   **`<form action={...}>`**: The `action` prop is bound directly to a Server Action function. This enables progressive enhancement, allowing the form to work even without JavaScript.\n*   **Server Action Function**: An `async` function, typically defined in a separate file with a `\"use server\"` directive at the top. It automatically receives `formData` as an argument.\n*   **`useFormState` Hook**: A React hook that manages form state based on the result of the Server Action. It's used to display success or error messages to the user.\n*   **`useFormStatus` Hook**: A React hook that provides the pending status of a form submission. It must be used in a component that is a child of the `<form>` element.\n\n## Inside a Server Action\n\nA typical Server Action follows a clear workflow:\n\n1.  **Directive**: Mark the file or function with `\"use server\"` to ensure the code only runs on the server and is not bundled with client-side JavaScript.\n2.  **Validate Data**: Safely parse and validate incoming `formData`. The video uses **Zod** for schema validation.\n3.  **Mutate Data**: Perform server-side operations, such as inserting or deleting records in a database.\n4.  **Revalidate Cache**: Call `revalidatePath('/your-path')` to instruct Next.js to invalidate its cache and refetch the data for a specific route, updating the UI.\n5.  **Return State**: Return a serializable object (e.g., `{ message: 'Success!' }`) that `useFormState` can use to update the client-side UI.\n\n> [!NOTE]\n> Server Actions combine the data mutation and UI update logic into a single, efficient network roundtrip.\n\n## Managing UI State\n\nReact's new hooks (`useFormState` and `useFormStatus`) are essential for providing user feedback.\n\n*   **Loading State**: The `pending` boolean from `useFormStatus` is used to disable the submit button and show a loading indicator during submission.\n*   **Error/Success State**: The value returned by the Server Action is managed by `useFormState` and can be displayed to the user. This state is also used to provide feedback to screen readers.\n\n## Data Revalidation\n\nNext.js provides powerful, integrated caching and revalidation strategies.\n\n*   `revalidatePath('/path')`: Invalidates the cache for an entire route segment. Simple and effective for many use cases.\n*   `revalidateTag('tag')`: Offers more granular control by invalidating specific `fetch` requests that have been assigned a cache tag.\n*   `cache()`: An upcoming function that will allow memoizing and tagging data from any source (not just `fetch`), further enhancing revalidation capabilities.\n\n## Accessibility Best Practices\n\nEnsure your forms are accessible to all users with these techniques:\n\n*   **Screen Reader Announcements**: Use an `aria-live=\"polite\"` region to announce the results of form submissions (e.g., \"Todo added successfully\" or \"Failed to create todo\").\n*   **Disabled State**: Prefer the `aria-disabled` attribute over `disabled` on buttons. `disabled` can cause some screen readers to ignore the element entirely, whereas `aria-disabled` communicates the state while keeping the element focusable.\n*   **Labels**: Always associate inputs with a `<label>` to ensure they are properly identified by assistive technologies.",
+  "transcription": "## Introduction: Building Forms with Server Actions\n\nLet's take a look at how you can create forms and handle data mutations with the Next.js App Router and Server Actions.\n\nBefore we get started, let's see what we'll build. So I have a pretty simple form where I can of course add some items and delete them as well, and while it's simple, we'll talk about some of the common patterns you'll need like loading states, and error states, and also making your forms progressively enhanced.\n\n## The Old Way: Forms in the Pages Router\n\nBut first, before we get into the App Router, let's talk about how you might have been building forms today. So on the left, in my editor here, I have an example of a form in the Pages Router. Now, you'll notice we have the familiar form tag and event handler for onSubmit, an input, and then some button. And you click to submit this form it's going to call your event handler and we have to call a separate API route.\n\nSo traditionally, you would create an API Route in your application, you would talk to the server securely inside of that API route, since this code and this event handler would run in the browser, and then you could get the response back and do something with it. This is how it's worked in the Pages Router since Next.js was originally created, but today we're going to talk about how to handle things a bit differently with the App Router.\n\n## Project Setup in the App Router\n\nSo I went ahead and created a new Next.js application to get started using create-next-app, you can do `npx create-next-app@latest -e next-forms`, which is the name of this specific one to get all the code that I'm showing today.\n\nSo we have a basic root layout here, and then the entry point into our application, which is the page file that marks the entry route. Now, inside of this file, this is a server component in the App Router and it's asynchronous, so we can fetch data directly to display the todos on the page, so it's marked as async. We grab the todos back from really anywhere, in this case we're using Vercel Postgres, but could be any service or any promise, and we take those todos and we map over them inside of a list and then we also add a form for adding todo.\n\nSo some basic scaffolding here to get our application ready.\n\n## The Form Action Prop & `useFormState`\n\nLet's take a look at adding a todo. Okay, so let's look at the add form component. Now, there's some things in here that might look familiar, and also some new things, so starting on line 25 we have the form tag, but you'll notice instead of using an event handler like onSubmit, we have the action prop. Now, for those who are familiar with HTML, this might look familiar.\n\nThe action prop is used for processing a form, and in traditional applications, that action is some URL that it sends the form data to. Now, this is great because it allows you to really easily send over your data and it works if you have JavaScript disabled. But what if you want to have more than one form on a page? What if you want 10 forms on a page? Well, the cool thing about server actions is it's going to make this really easy to do, plus some other benefits that we're going to get into.\n\n## Invoking a Server Action\n\nSo this action, which is actually just calling a function that runs on the server, which means there was no separate API that we had to set up, there was no API Route or no Route Handler, we just call functions. We of course have an input, as well a submit button, and then also a live area that we're going to talk about a bit later around accessibility.\n\nSo, we have this form action that takes in a server action called createTodo, and then it also has some initial state. This initial state is just a message that we want to return from our server action whether it was successful or it failed, but let's jump into this specific create todo.\n\n## Inside a Server Action: Validation and Revalidation\n\nSo this file contains all of the server actions for our applications denoted by the \"use server\" directive at the top of the file. That means that everything in this file runs securely on the server and does not get sent to the client. So specifically, we have our createTodo server action that takes in the previous state from our useFormState (we'll get to that in a second) and then also the form data.\n\nNow, let me step through each part of the server action, how it's happening, and then I'll show an example of how it works. So first we have the form data. We're using Zod to validate the data that we're getting back is correct, so we're expecting a string and we're expecting it to be there. You could use whatever library you want you here, but this is just an example showing how we're parsing that schema and then getting the data back. Then inside of a try catch, we call Vercel Postgres, or we call our Postgres database, to insert this new value into our TODOs table. Then, we revalidate the data. So this is going to go to the index of our application it's going to look at the data that's been cached when we fetched it back from the server, it's going to say you know what we just did a data mutation, so revalidate all of the data on that path, and then it's going to return back a message saying that it successfully added todo.\n\n## Demo: Progressive Enhancement in Action\n\nOkay, so what does this look like? Well, let me go over to the browser on the right and I'll add a new todo that says new todo, hit enter to submit my form, and we can see it was successfully added here. And this works whether we have JavaScript enabled or disabled, which can show how progressive enhancement works. So let me just disable JavaScript here and I can say \"another one\" and add it and we can see that this works as expected here. Let me just re-enable this and this works for adding or deleting todos as well too.\n\n## Implementing Loading States with `useFormStatus`\n\nNow, you might have noticed that when we submitted the todo, it put the add button or the submit button into a loading state as we can see here. Let's take a look at what that looks like. So back in our add form, we have this submit button component and it's pretty simple. It reads from a new React hook called useFormStatus, it uses the pending boolean to determine whether it should put this button into a disabled visual state, and that's really all it takes.\n\n## About React Canary Hooks\n\nNow, it's important to denote that there's been a couple hooks that we've been using, useFormStatus and useFormState, that are coming from React. These are new hooks that are in react canary, which is a channel that's made available for frameworks to adopt and put the latest React features out into the world that will then come to a stable general purpose React channel for the rest of other standalone React users.\n\nI'll include a link down in the description if you want to check out how to use these hooks in standalone React on the canary channel as well too.\n\n## Handling Multiple Forms & Deleting Data\n\nIt's a pretty similar story for deleting todos as well too, so if I go back to my page, I iterate over the todos and then I have a delete form for each of the individual todos that has the ID in the text. So if I click in here again, it looks pretty similar. We're using form state to take in both the action that we want as well as the initial state again. This is just some message for either an error state or a success state.\n\nWe have some hidden values in our form that allows us to pass additional data to the form data for our server action. We have a delete button that looks very similar to before and then we have our live area as well too. So what does this look like? Well, I'll say another one I'll add it and I can click delete.\n\nNow, as I mentioned before, this allows us to have \"n\" number of forms on our page. We can have a bunch of different forms and critically one really cool thing that Next.js and Server Actions provide here is the data that can be returned from the server actions can not only update the cache data, it can also provide the new UI in one network roundtrip.\n\n## The Power of Integrated Data Caching\n\nThat's pretty cool. The Next.js App Router architecture considers all of these individual pieces like fetching, caching, and revalidating data, and integrates them all together. So for example, when we're deleting a todo, just like in creating, we're able to call revalidatePath to update that cached data and as you see here we click delete, it makes a network request, but then in that network request in that round trip we're able to say you know, what we made a mutation on our data and we have some new UI to show by updating what values were cached.\n\n## Advanced Data Revalidation Techniques\n\nNow you might be thinking, that's great but what if I need more fine-grained control over revalidating the data in my application, more than just an entire path? Well, you can also use revalidateTag for specific data that you've tagged with the cache tag and then if you're not using the fetch API we are soon releasing a stable version of a way to tag any data as a function through cache() that you can both set revalidation times as well as cache tags on, so stay tuned for that as well.\n\n## Implementing Form Accessibility\n\nLet's also talk about accessibility. So a couple things I want to point out in this application, one inside of this form, we've ensured that our inputs are correctly labeled for screen readers. Two, we have this live area that analyzes changes in our application, so I have voice over on right now on Mac. Let's say I want to add a new task here and I hit enter and we see that it says that I added this todo hello. Now that's being read out in the live area here that's politely not interrupting my screen reader if something more urgent came in and it's not being shown, so I've added a little CSS here so it's only for screen readers and you'll notice that, let me just close this for a second, if I go back to my action the value that is returned from the server action that is used by useFormState is what is put into that live area that's announced, so either we've successfully added a todo in the create case or in the delete case or we've failed to create or delete a todo.\n\nSo to quickly show what this would look like in an error state, what I've done is just put a delay of two seconds and then I've early returned to show that there was an error state. I could also throw an error here as well too, so let me just type in test. I'll hit submit and we see that it says failed to create todo which is returned from our server action if there was some issue saving to your database, for example.\n\nOne other small accessibility bit here is that we're using the aria-disabled attribute on our button rather than disabled because for some screen readers, that will actually hide the button if disabled is true, so this is a little bit better for the use case of this example.\n\n## Conclusion & Next Steps\n\nNow there's a whole bunch more that we can do with forms in Next.js and with Server Actions in react, we can read cookies we can set cookies we can look at headers we can handle optimistic UI, we can redirect–there's a bunch of stuff but for the sake of the video today, we'll keep it just to some of the basics. The docs for this are live on nextjs.org, as well as this example, which I'll link in the description as well too. Let me know if you want to see more videos like this and stay tuned for the next one. Peace!"
+}

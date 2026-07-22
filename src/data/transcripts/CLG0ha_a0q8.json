@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 3,
+  "videoId": "CLG0ha_a0q8",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Master Postman for API testing with this comprehensive beginner's tutorial. Learn how to install Postman, organize your work with collections, and create different types of requests. This guide covers sending GET requests with query and path parameters, executing POST requests with a JSON body, and attaching authorization tokens in headers. You'll also discover how to use form-data to upload files like images and videos, inspect responses effectively, and customize your Postman environment for a better workflow.",
+  "chapters": [
+    {
+      "title": "Introduction to Postman for API Testing",
+      "description": "Introduces Postman as a tool for API testing and outlines what will be covered in the tutorial.",
+      "startTime": 0.0,
+      "endTime": 23.0,
+      "slug": "introduction-to-postman-for-api-testing"
+    },
+    {
+      "title": "Installation and Initial Setup",
+      "description": "Walks through how to download and install Postman or an alternative VS Code extension, and how to get started without creating an account.",
+      "startTime": 23.0,
+      "endTime": 61.0,
+      "slug": "installation-and-initial-setup"
+    },
+    {
+      "title": "Organizing Requests with Collections",
+      "description": "Learn how to create a new collection to organize project-related APIs and add a new request to it.",
+      "startTime": 61.0,
+      "endTime": 98.0,
+      "slug": "organizing-requests-with-collections"
+    },
+    {
+      "title": "Sending Your First GET Request",
+      "description": "This chapter shows how to make a basic GET request to fetch a list of books and how to interpret the response data.",
+      "startTime": 98.0,
+      "endTime": 195.0,
+      "slug": "sending-your-first-get-request"
+    },
+    {
+      "title": "Filtering Data with Query Parameters",
+      "description": "Understand how to use the Params tab to add query parameters to your GET request to filter the API response.",
+      "startTime": 195.0,
+      "endTime": 242.0,
+      "slug": "filtering-data-with-query-parameters"
+    },
+    {
+      "title": "Using Path Parameters for Specific Resources",
+      "description": "This section explains how to define and use path parameters in the URL to request a specific resource, like a single book by its ID.",
+      "startTime": 242.0,
+      "endTime": 298.0,
+      "slug": "using-path-parameters-for-specific-resources"
+    },
+    {
+      "title": "Making a POST Request with a JSON Body",
+      "description": "Learn to create a POST request, navigate to the Body tab, and send data in the raw JSON format.",
+      "startTime": 298.0,
+      "endTime": 377.0,
+      "slug": "making-a-post-request-with-a-json-body"
+    },
+    {
+      "title": "Sending Data via Request Headers",
+      "description": "This chapter demonstrates how to add custom data, such as a JSON Web Token (JWT), to the request headers.",
+      "startTime": 377.0,
+      "endTime": 408.0,
+      "slug": "sending-data-via-request-headers"
+    },
+    {
+      "title": "Uploading Files with Form Data",
+      "description": "Discover how to upload files like images and videos by using the form-data option in the request body.",
+      "startTime": 408.0,
+      "endTime": 465.0,
+      "slug": "uploading-files-with-form-data"
+    },
+    {
+      "title": "Customizing Postman Settings",
+      "description": "A quick overview of the Postman settings menu, where you can customize the theme, font size, and other preferences.",
+      "startTime": 465.0,
+      "endTime": 489.0,
+      "slug": "customizing-postman-settings"
+    },
+    {
+      "title": "Conclusion & Next Steps",
+      "description": "Concluding remarks about the ease of using Postman and an invitation for questions and to stay tuned for future content.",
+      "startTime": 489.0,
+      "endTime": 512.199,
+      "slug": "conclusion-next-steps"
+    }
+  ],
+  "summary": "## Getting Started with Postman\n\n- **Installation**: Download and install Postman from `postman.com` for your specific operating system.\n- **Initial Setup**: You can **skip the sign-in/account creation** process to start testing APIs immediately.\n\n> [!TIP]\n> For testing only a few simple APIs, the **Rapid API extension for VS Code** is a lightweight alternative.\n\n## Organizing Your Work\n\n- **Collections**: Use collections to group and organize all API requests for a single project. Create a new collection by clicking the `+` icon in the left-hand sidebar.\n- **Requests**: Add new requests to a collection via the three-dot menu. Give each request a descriptive name (e.g., \"Fetching Books Data\").\n\n## Making API Requests\n\n### GET Requests\n- **Basic GET**: Enter the API URL, select the `GET` method from the dropdown, and click **Send**.\n- **Query Parameters**: To filter results, use the **Params** tab to add key-value pairs (e.g., `key: type`, `value: fiction`). Postman automatically appends them to the URL.\n- **Path Parameters**: To fetch a specific resource, add a parameter to the URL path using a colon (e.g., `/books/:bookId`). You can then define its value in the **Params** section that appears.\n\n### POST Requests\n- **Sending Data**: POST requests send data in the request **body**.\n- **Body Format**: Navigate to the **Body** tab, select **raw**, and then choose the data format (e.g., **JSON**) from the dropdown.\n\n> [!IMPORTANT]\n> Ensure you select the body format that the API's server is expecting to receive (e.g., JSON for most modern Node.js APIs).\n\n## Sending Additional Data\n\n- **Headers**: Use the **Headers** tab to send metadata as key-value pairs. This is commonly used for sending authentication credentials like a **JWT** (e.g., `key: x-auth-token`, `value: <your_token>`).\n- **File Uploads**: To upload files (images, videos, documents):\n  1. In the **Body** tab, select **form-data**.\n  2. Enter a key (the field name your backend expects, e.g., `video`).\n  3. In the key's row, change the type from `Text` to `File`.\n  4. Click **Select Files** to upload your file.\n\n## Inspecting the Response\n\n- **Response Panel**: After sending a request, the bottom panel shows the response.\n- **Key Metrics**: Check the **Status Code** (e.g., `200 OK`), response **Time**, and **Size**.\n- **Response Body**: Use the **Pretty** view to see a formatted and readable version of the response data (especially for JSON or XML).\n- **Saving Responses**: You can save the response payload directly to a file using the **Save to a file** option.\n\n## Customization\n\n- Access Postman's **Settings** (gear icon) to customize the user interface.\n- Change the editor **theme** (dark/light), **font size**, and other preferences to suit your workflow.",
+  "transcription": "## Introduction to Postman for API Testing\n\nPostman, one of the most used tools for testing different APIs. In this tutorial, you will see how to use Postman, how to send different kinds of requests, how to send an image or video for testing, and some tips to manage the structure of saving APIs.\n\nSo I am very excited about this and hope you are too. So let's dive into this.\n\n## Installation and Initial Setup\n\nSo first of all, you need to install Postman in your machine. If you don't have Postman, then head over to postman.com and then download Postman for your operating system and then install it.\n\nIf you only want to test two or three simple APIs, then I suggest you install the Rapid API extension for VS Code. Now open up Postman, and you can see we have two options: sign in or create a free account. So I'll just click on this skip button. And after that, you are ready to test APIs. So for now, don't worry about this interface.\n\n## Organizing Requests with Collections\n\nJust click on this plus icon to create a new folder or collection, and give it a related name to your project, and hit enter. So save all APIs from one project in this single collection.\n\nNow to test an API, you need to create a request. So click on these three dots on your collection and select add request. Now at the top, you can give this request a name, let's say 'fetching books data', and you see it's updated here.\n\n## Sending Your First GET Request\n\nNow we have one API called Simple Book API. I will give this link in the description box. So here we get different kinds of APIs for testing. So first let's test this simple API for getting the list of books, and the request method is GET. So copy this URL from here and back to Postman. Here we enter our API URL. So paste that URL here and at the end we add /books.\n\nNow from this dropdown, we can select the method of our API. 90% of the time, we will use these four to five methods. So here, we need the GET method. Now to send the request, just click on this send button or you can press Control + Enter or Command + Enter. And at the bottom, we get our response.\n\nThis section displays all data related to the API response. Here you can see the status code which is 200, the time to complete that request, and the size of this response. And at the end, you can also save this response in Postman or if you want to export that data in a file, then you can select the 'Save to File' option.\n\nNow below that, you will get a couple of options for previewing the data, but 'Pretty' is a really good option because we see data in a clear structure. So congratulations, you successfully tested a GET request.\n\n## Filtering Data with Query Parameters\n\nNow this section is very important for sending data with our API request. So we know that we can send data as a query parameter. So in Postman, we don't need to write query parameters in the URL. Just open this 'Params' tab and write here your parameters.\n\nNow in the documentation, we can see these query parameters for 'type' and as a value, 'fiction' or 'non-fiction'. So in Postman, we write here 'type' and see, we get this parameter in our URL. And in this value field, we write 'fiction'. Now click on the send button and see, we get all books of the fictional type.\n\n## Using Path Parameters for Specific Resources\n\nNow back to our documentation. Here we get single book information by using path parameters. So how can we add path parameters in Postman? So I'll create a new request and give it a name, 'fetching single book details'. Now I paste that base URL, /books/:bookId. And you see Postman adds this path parameter. Now here you can pass its value, let's say 2, and click on the send button. See, we get details about book ID 2. Here we can also directly pass the ID in the URL. So I remove this book ID and write here 2 and click on send. See, this also works.\n\n## Making a POST Request with a JSON Body\n\nNow let's see the POST request, which is the same as the GET request, but the difference is that we have to send data in our request body. So I have this login API which I created in my JWT tutorial, because with this simple book API we can't access POST requests. So I'll create one new request and give it a name called 'login'.\n\nNow in the URL, I write my API URL and select POST from these request methods. Now head over to this Body section. Here you can see various types of data formats, like form-data, URL-encoded, raw, etc. So I select 'raw' and from this dropdown, I select 'JSON'. You have to select the appropriate format that the server accepts. If you want to test a Node API, then most probably you'll use raw and JSON data.\n\nNow I pass here data in JSON format: email and password. Now click on the send button and see, we get 'login successful'. So this is how you send data with a POST request.\n\n## Sending Data via Request Headers\n\nNow sometimes we want to send data with our headers. So move to this 'Headers' section. And here, same as params, we will add data in a key-value pair. For example, we want to send a JSON Web Token as a header. So I write here the variable name, which is x-auth-token, and in the value, I add the token. Remember, this variable name is the same as declared in the backend.\n\n## Uploading Files with Form Data\n\nNow the most important part: how can we send data like images, videos, and files with our request? So for that, move to the body section and select 'form-data'. Now here you write your variable name, for example, 'video'. And at the right side, you can see there is a dropdown with options 'Text' and 'File'. So if you want to send any type of file like an image, video, or other types of files, then select 'File'. And if you want to pass text, then select 'Text'.\n\nSo I select 'File', and see here we get a 'Select File' option. So click on that and select the file and open that. See, we get our file. Now in the backend, with this 'video' variable, we can get this file data.\n\n## Customizing Postman Settings\n\nNow if you want to change the theme, font size, font style, or anything related to Postman, then click on this setting icon and select 'Settings'. Now in the 'General' tab, you can change font size, font style, and many other things. And in this 'Themes' tab, you can select your Postman theme, dark or light.\n\n## Conclusion & Next Steps\n\nAnd there are many other tabs for Postman. So there is nothing hard in using Postman for API testing. If you have some doubts, then you can ask me in the comment section. And a lot of interesting tutorials are coming, so stay tuned and see you in the next video."
+}

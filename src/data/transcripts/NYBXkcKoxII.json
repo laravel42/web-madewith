@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 3,
+  "videoId": "NYBXkcKoxII",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to customize your Ghost blog for an amazing look while embracing its powerful simplicity. This tutorial walks you through key design settings, from crafting a compelling site title and aspirational headline to optimizing your SEO with metadata. Discover how to change your accent color, upload a custom logo and favicon, and select the perfect homepage cover image using the built-in Unsplash integration. You'll also learn to configure font styles, logo placement, and post settings to create a professional and fast-loading website.",
+  "chapters": [
+    {
+      "title": "The Power of Simple Customization",
+      "description": "Understand Ghost's design philosophy, which intentionally limits customizations to prioritize speed and clear messaging.",
+      "startTime": 0.0,
+      "endTime": 46.0,
+      "slug": "the-power-of-simple-customization"
+    },
+    {
+      "title": "Configuring General Site Settings",
+      "description": "This chapter covers the General Settings tab, including the site title, description, time zone, language, and metadata for SEO.",
+      "startTime": 46.0,
+      "endTime": 106.0,
+      "slug": "configuring-general-site-settings"
+    },
+    {
+      "title": "Crafting Your Homepage Brand",
+      "description": "Learn how to use the Brand settings to create a powerful, aspirational headline for your homepage to attract and engage visitors.",
+      "startTime": 106.0,
+      "endTime": 184.0,
+      "slug": "crafting-your-homepage-brand"
+    },
+    {
+      "title": "Using Unsplash for Cover Images",
+      "description": "Discover how to replace the default homepage cover with a new, royalty-free image from the integrated Unsplash library.",
+      "startTime": 184.0,
+      "endTime": 276.0,
+      "slug": "using-unsplash-for-cover-images"
+    },
+    {
+      "title": "Setting the Accent Color, Icon, and Logo",
+      "description": "This chapter demonstrates how to change your site's accent color, upload a site icon (favicon), and add a custom logo.",
+      "startTime": 276.0,
+      "endTime": 357.0,
+      "slug": "setting-the-accent-color-icon-and-logo"
+    },
+    {
+      "title": "Site-Wide Layout and Font Choices",
+      "description": "Explore the site-wide layout options, including changing the logo position, and learn about the available font choices.",
+      "startTime": 357.0,
+      "endTime": 386.0,
+      "slug": "site-wide-layout-and-font-choices"
+    },
+    {
+      "title": "Navigating Homepage Settings",
+      "description": "Understand the homepage settings, including how the email sign-up text field works and how you can rename your featured posts section.",
+      "startTime": 386.0,
+      "endTime": 448.0,
+      "slug": "navigating-homepage-settings"
+    },
+    {
+      "title": "Fine-Tuning Post Details and Mobile Preview",
+      "description": "Learn how to toggle author and related post visibility in the post settings and how to preview your site's mobile experience.",
+      "startTime": 448.0,
+      "endTime": 498.0,
+      "slug": "fine-tuning-post-details-and-mobile-preview"
+    },
+    {
+      "title": "Conclusion and What's Next",
+      "description": "This final chapter concludes the design customization tutorial and previews the topic of the next video, which will cover site navigation.",
+      "startTime": 498.0,
+      "endTime": 527.659,
+      "slug": "conclusion-and-what-s-next"
+    }
+  ],
+  "summary": "## Ghost's Customization Philosophy\n\nGhost intentionally offers minimal customization options. This is a feature, not a limitation, designed to help you focus on **strong messaging** and maintain a **fast-loading website** without getting overwhelmed by excessive choices.\n\n## General Settings\n\nUnder the **General** tab, you can configure the foundational elements of your site:\n\n*   **Title and Description:** Set the main name and tagline for your blog. You can change this at any time.\n*   **Time Zone & Language:** Adjust these to match your location and primary audience.\n*   **Metadata:** Customize the title and description that appear in Google search results. This is crucial for SEO.\n\n> [!TIP]\n> By default, Ghost uses your site title and description for metadata. Taking a moment to write a custom, keyword-rich meta description can improve your site's visibility on search engines.\n\n## Homepage Design & Branding\n\nMost of your site's visual identity is controlled in the **Design** panel.\n\n*   **Aspirational Headline**: Replace the default site description with a powerful headline that speaks directly to your audience's goals (e.g., \"Want to start a home-based business selling sports cards on eBay?\").\n*   **Cover Image**: You can remove the default cover, upload your own, or use the built-in **Unsplash** integration to add a high-quality, royalty-free image. You can set the cover to be full-screen or half-screen.\n*   **Accent Color**: Choose a single accent color that will be used for buttons, links, and other highlights, creating a simple and consistent color scheme.\n*   **Icon & Logo**: Upload a small **site icon (favicon)** for browser tabs and a **logo** to replace the default text-based site title on your homepage.\n\n## Layout & Post Settings\n\nFine-tune the remaining details for a polished look and feel.\n\n*   **Site-Wide Settings**: Control the **logo position** (left, middle, or stacked) and choose between two clean, pre-selected **font pairings** for your body and headings.\n*   **Homepage Settings**: Adjust the feed layout and rename the \"Featured articles\" label.\n*   **Post Settings**: Configure options for individual blog posts.\n\n> [!IMPORTANT]\n> It is recommended to keep both **\"Show author name\"** and **\"Show related posts\"** enabled. This adds credibility and helps keep readers engaged on your site.\n\n## Key Takeaways\n\n*   **Embrace simplicity**: Use Ghost's focused toolset to your advantage.\n*   **Focus on messaging**: Your headline and content are more important than endless design tweaks.\n*   **Use built-in tools**: Leverage features like the Unsplash integration to save time and add professional polish.\n*   **Preview everywhere**: Always use the mobile preview toggle to ensure your site looks great on all devices.",
+  "transcription": "## The Power of Simple Customization\n\nAll right, welcome back. We're going to now customize our site. I'm going to show you just how easy it is. Now here's the thing that I love about Ghost that is something that a lot of people get tripped up on. Ghost, by intention, has very few customizations, and that's a good thing. And you're going to see why as we get into it, because we can get lost in all that extra customizations when really we just need to have a really good story brand messaging and a very fast loading website.\n\nSo let's jump in and let me walk you through this. So we're going to skip over this first post; we'll come back to that. I actually want to jump into—let me move myself around as I get in the way here—but I want to start here at Customize Your Site. So we're going to click on that.\n\n## Configuring General Site Settings\n\nAnd you've got some general settings here, so we're just going to do kind of work through this a little bit. So if you click on General, this is where your title and description is. If you expand it, if you didn't name it the way that you wanted when you signed it up, you can come back in here and name it a little bit better.\n\nYou can also give it more of a description. You can set your time zone, so if you have a particular time zone that you're at, you could do that. This is going to be by default the English language. This is the metadata, so it's by default going to grab what you put in for your title and description, but you can give it more here. Metadata is basically what's going to show up on Google. \n\nThe Twitter card, you can come in here and mess with this, but it has integrations with Twitter if you want like a default title and description. Same with Facebook, some social accounts. You don't need to worry too much about this stuff. I'm just showing you that is in here.\n\n## Crafting Your Homepage Brand\n\nAlright, so we're going to pop back. Let's go into design. Now, design is where we're going to get into what do we want our home page to look like. Alright, so we click on this first one over here in brand. We've got our site description, which we can change. Let me just go down here and show you something.\n\nSite wide you can mess with this. Do you want your logo on the left, to different fonts, things like that. And then home page, this is going to... we're going to come back around to some of this. And then you've got your post. So let's go back up to brand.\n\nAnd let's say I want a really good... one of the things that I teach is having a real good aspirational headline. So let's say this is for people who want to sell vintage sports cards on eBay. I'm going to say something like, \"I want to start a home based business selling sports cards on eBay.\" All right. So then let's save and it should show up when we do that.\n\nSo boom, \"Want to start a home-based business selling sports cards on eBay?\" and then just subscribe down here. I'm going to have, we'll start here or something like this, because the goal is we want to build an email list from this.\n\n## Using Unsplash for Cover Images\n\nAll right. Now you can come in here and create a logo. You've also got your cover here. If you want to just roll with what's here, great. If you say I don't really want to, you can click on it and find a picture of you or a customized picture there. You can also click on this trash can and it will get rid of it. And then if you look down here, you can upload your cover image anytime you want. Or right next to it is this I know it's small but it's this little icon that is called Unsplash. Unsplash allows you to have royalty free images, which is already built into this, which is going to be awesome later when you do blog posts. But if I click on Unsplash, I can come in here and I can type, let's just type sports cards.\n\nOh, that's a good one. This is a good one too. Let's go with this one. So we like this one. We're gonna hit insert image. Check that out. Now, if I say I don't want it to be the full screen, you do have an option to make this half. So if we click down into home page, you'll see right here and again, maybe I can make this a little bit bigger. Try not to... that's pretty good. You can see it's a little bit better now if we go down here to home page where it says full screen, we can choose half screen. And then it's going to... and obviously it looks that way because I zoomed in. But if I go back, you'll see now this is how it's looking right now. Okay? So not bad at all. So we've got... we're already starting to customize and at the same time keep things simple.\n\n## Setting the Accent Color, Icon, and Logo\n\nSo under Brand again, you got your site description. If you want to change your accent color, this is where you'd come do it. Now you can go get different colors, you can move it around, slide it around on here. You can just find something you like until you just move it around until you just find something that you really like, and then say, hey, this is what I want. So what they have is by default, you're going to have just a simple, minimalistic white website, and then you're going to have an accent color. So the accent color here is more of a purple. You can see it down here and it's going to show up at different places, like for your buttons, things like that you create.\n\nIf you really wanted to upload a kind of an icon, you could do that here. You can also upload a logo. So the icon is what's going to be like a really small way up here. It's hard to see anyway. But the logo is going to replace this area here, this is site design. I don't know if I have a logo I can just grab. Let's see if this would work. Yeah, so actually it's not up here in site design, sorry. That's actually in the page, but you can see right here there's now a logo there. So that's how you get the logo.\n\n## Site-Wide Layout and Font Choices\n\nAll right, so if we jump down to site wide, do you want the logo on the left? Do you want the logo in the middle? You can see now it's in the middle. Do you want the logo stacked? And I'm going to actually take it back to logo on the left. \n\nYou can choose from different... actually two different fonts here. Again, we're keeping things simple. You got two different body fonts. I think there's nothing wrong with this. I really like the font that's here, so I'm not... that doesn't concern me. Alright, we're going to click down here to home page.\n\n## Navigating Homepage Settings\n\nAnd this is your email sign up text. So if I were to go \"Start Here\" and then click on save, what this will probably do... actually... maybe that's not where it is. All right, so I am not sure. I thought I understood what that one was for. \n\nFeatured articles... You could rename this featured blog post. Latest... and then your feed layout, do you want it expanded? I would just leave it as expanded. So this one is pretty simple. This one is baffling me a little bit because I thought you could just... Oh, it's replacing that! Okay, that's what it was. Sorry about that. Actually is what replaces this whole headline, I wasn't seeing that when I was doing it. All right, there you have it.\n\n## Fine-Tuning Post Details and Mobile Preview\n\nLet's see, we don't really have anything else here. So the last thing for this video is actually taking a look at the post. So we've basically only got two options here, which is to show the author name or not and show related posts or not. So if you scroll down a little bit, you'll see if I toggle this off, now that show author is gone, and show related posts I don't really have any so it's hard to see, but you want to keep these on. So to be honest with you, I think you keep both of these on, so I wouldn't mess with that.\n\nSo as you can see that quickly we can have... and by the way, let me go back real quick, show you this. So if we go back up here and we're looking at our site, you can also toggle up here over to what it would look like on a phone, which is really cool. Which I love.\n\n## Conclusion and What's Next\n\nSo there you go. If we click on Save, if we go back to settings here, then we'll dive into a few more things. I don't want to make this video too long. So that's mostly the General and the Design. We're going to come back into it. We're going to talk about navigation on the next video."
+}

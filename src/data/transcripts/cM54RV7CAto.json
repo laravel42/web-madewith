@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 3,
+  "videoId": "cM54RV7CAto",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to set up a local development environment for your PrestaShop e-commerce store. This step-by-step tutorial guides you through downloading PrestaShop and installing it on a localhost using MAMP Pro. You'll see how to create a virtual host, set up a new MySQL database using phpMyAdmin, and navigate the web-based installer. The process covers initial store configuration, creating an admin account, and resolving common steps like database connection testing and deleting the install folder for security.",
+  "chapters": [
+    {
+      "title": "Introduction to Local Installation",
+      "description": "This chapter introduces the goal of installing PrestaShop on a localhost and an overview of the tools that will be used, such as MAMP Pro.",
+      "startTime": 0.0,
+      "endTime": 41.0,
+      "slug": "introduction-to-local-installation"
+    },
+    {
+      "title": "Downloading PrestaShop",
+      "description": "This chapter covers where to find and download the PrestaShop software from the official website.",
+      "startTime": 41.0,
+      "endTime": 81.0,
+      "slug": "downloading-prestashop"
+    },
+    {
+      "title": "Local Tools and Hosting Options",
+      "description": "This chapter discusses using MAMP Pro for local development, filling out the download form, and briefly mentions a recommended hosting partner.",
+      "startTime": 81.0,
+      "endTime": 127.0,
+      "slug": "local-tools-and-hosting-options"
+    },
+    {
+      "title": "Preparing the Project Files",
+      "description": "This chapter demonstrates how to unzip the downloaded files and move the PrestaShop folder into a local sites directory.",
+      "startTime": 127.0,
+      "endTime": 183.0,
+      "slug": "preparing-the-project-files"
+    },
+    {
+      "title": "Creating a Virtual Host",
+      "description": "This chapter walks through how to configure a virtual host in MAMP Pro to point to the PrestaShop project directory.",
+      "startTime": 183.0,
+      "endTime": 227.0,
+      "slug": "creating-a-virtual-host"
+    },
+    {
+      "title": "Starting the Web Installer",
+      "description": "This chapter covers how to access the installer via the virtual host and complete the first steps of language selection and license agreement.",
+      "startTime": 227.0,
+      "endTime": 248.0,
+      "slug": "starting-the-web-installer"
+    },
+    {
+      "title": "Configuring Store and Admin Details",
+      "description": "This chapter walks through setting the store name, primary business activity, and creating the main administrator account.",
+      "startTime": 248.0,
+      "endTime": 325.0,
+      "slug": "configuring-store-and-admin-details"
+    },
+    {
+      "title": "Setting Up the Database",
+      "description": "This chapter explains how to create a new MySQL database in phpMyAdmin and then connect it to the PrestaShop installer.",
+      "startTime": 325.0,
+      "endTime": 408.0,
+      "slug": "setting-up-the-database"
+    },
+    {
+      "title": "Finalizing Installation and Cleanup",
+      "description": "This chapter shows the installation process completing and highlights the critical post-install step of deleting the install folder.",
+      "startTime": 408.0,
+      "endTime": 435.0,
+      "slug": "finalizing-installation-and-cleanup"
+    },
+    {
+      "title": "First Look: Front Office and Back Office",
+      "description": "This last chapter gives a first look at the new site's front-end and demonstrates how to log into the administrative back office.",
+      "startTime": 435.0,
+      "endTime": 502.34,
+      "slug": "first-look-front-office-and-back-office"
+    }
+  ],
+  "summary": "## Local Development Environment\n\n- This tutorial uses **MAMP Pro** on macOS, but other local server stacks like **XAMPP** (cross-platform) or **WAMP** (Windows) are also suitable.\n- A local server provides the necessary **PHP** and **MySQL** environment to run PrestaShop.\n\n> [!TIP]\n> If you are new to local development, it's recommended to first familiarize yourself with the basics of your chosen tool (MAMP, XAMPP, etc.).\n\n## Installation Steps\n\n1.  **Download PrestaShop:**\n    *   Obtain the latest version from the official `prestashop.com` website.\n    *   You'll need to provide an email and select your role (e.g., \"freelance\", \"other\") to start the download.\n2.  **Prepare Project Files:**\n    *   Unzip the downloaded file.\n    *   Inside, you'll find a `prestashop` folder which contains all the CMS files.\n    *   Move this `prestashop` folder into your local web server's document root or your designated sites directory.\n3.  **Set Up a Virtual Host:**\n    *   In MAMP Pro, create a new host (e.g., `prestashop`).\n    *   Point the host's document root to the `prestashop` folder you just moved.\n    *   Start your servers. This makes the site accessible via a local URL (e.g., `http://prestashop:8888`).\n4.  **Create a Database:**\n    *   Using a tool like **phpMyAdmin** (accessible from the MAMP start page), create a new, empty database.\n    *   A simple name like `prestashop` is sufficient for local development.\n5.  **Run the Web Installer:**\n    *   Navigate to your virtual host's URL in a browser. You will be automatically redirected to the installer.\n    *   **Step 1:** Select your language and agree to the license terms.\n    *   **Step 2:** Configure your shop details (name, main activity, country) and create your **administrator account** with a secure password.\n    *   **Step 3:** Enter your database connection details:\n        *   **Database server address:** `localhost` (usually default)\n        *   **Database name:** The name you chose earlier (e.g., `prestashop`).\n        *   **Database login:** `root` (for default MAMP/XAMPP).\n        *   **Database password:** `root` (for default MAMP).\n        *   **Table prefix:** `ps_` (default is fine).\n    *   > [!IMPORTANT]\n        > Use the **\"Test your database connection\"** button to verify your credentials are correct before proceeding. This prevents installation errors.\n6.  **Post-Installation Security:**\n    *   Once the installation is complete, you **must delete the `/install` folder** from your PrestaShop directory.\n    *   This is a critical security measure to prevent unauthorized access.\n\n## First Look\n\n- The installer provides links to both the **Front Office** (your public-facing store) and the **Back Office** (the admin dashboard).\n- Log into the Back Office using the email and password you created during installation.\n- The Back Office is where you will manage products, customers, orders, themes, and modules.",
+  "transcription": "## Introduction to Local Installation\n\nHey what's up? This is Scott with Level Up Tuts, and today we're going to be downloading and installing PrestaShop on our localhost. This video is going to cover the installation process using MAMP Pro. If you're familiar with something like XAMPP or MAMP or WAMP on Windows, then go ahead and use whatever you're most comfortable with.\n\nHowever, for this example, we're going to be using MAMP Pro. So if you have that or don't, you can follow along with that either way, as long as you can get a site up and running in PHP. Perhaps you've used another CMS like Drupal or WordPress, then this should be a breeze for you. If you haven't, please check out MAMP Pro if you're on Mac or WAMP if you're on Windows and look through some basic guides on how to use those first. So let's get into it now.\n\n## Downloading PrestaShop\n\nNow, as we went over in the last video, PrestaShop is a free e-commerce full-featured online platform with tons of free themes. And as you can see, it's been downloaded over 3,900,000 times so it's almost hit that 4 million download. And maybe by the time you're seeing this video, it has already reached that 4 million download.\n\nSo we can go ahead and grab PrestaShop from prestashop.com just by clicking the green download button here. Or, if you'd like beforehand, you can always take a tour by clicking on this blue live demo and checking out PrestaShop for yourself. So let's go ahead and click download now.\n\n## Local Tools and Hosting Options\n\nI'm going to be installing this with MAMP Pro. If you're used to something like MAMP or XAMPP or any of the other solutions, perhaps you're on Windows, then go ahead and use that. I just find that MAMP Pro, even though it's a paid solution, is the easiest way to get sites quickly up and running on an OSX machine. Okay, so to download this, we just need to enter our email. I'm going to enter my email, it's just scott@leveluptuts. And you need to select from the drop-down who you are. I am not really any of these, so I'm gonna select other. However, if I was doing this for a project, I would select freelance. Okay, so let's go ahead and click download now. Okay, and as you can see, we're here. There's also a recommended hosting solution if you have interest in wanting just a quick way to get your site up and running with a host that already has free PrestaShop installation. Then InMotion Hosting is the way to go, and you can obviously sign up for that here.\n\n## Preparing the Project Files\n\nOkay so we have PrestaShop downloaded and it's just in our zip here. So now let's check out what's inside of this PrestaShop folder. As you can see we have an HTML page that you could visit that's going to redirect you to the gettings tarted guide and we have a PrestaShop folder, and inside of our PrestaShop folder is the CMS, the site content here.\n\nSo what we can go ahead and do is grab this whole PrestaShop folder and just drag it into wherever you keep your sites. Now you could move this into your documents. I mean, wherever you just normally keep your websites is fine.\n\n## Creating a Virtual Host\n\nAnd now I'm going to point a virtual host in MAMP Pro to that location. So in MAMP Pro, I'm just going to add a virtual host here. We're going to name this PrestaShop just like that. And we're going to go ahead and point our folder to that location. Okay. Now I'm going to click apply, and I'm going to start my servers.\n\n## Starting the Web Installer\n\nSo now that our servers started we can visit that new virtual host we created. For me it's PrestaShop and then a colon with the port after it: 8888. Depending on what you're using that might be different. Now if you notice if we browse to that it's going to automatically redirect you to the install page.\n\nNow before we actually install, we'll need to create a database, but let's go ahead and just get started with this first. So welcome to the PrestaShop installer. We can make sure that our language is set in English because that's what we are setting the site up for. If your language is something else obviously you would want to change that now. Now let's go ahead and select next. Let's agree to the terms here and select next.\n\n## Configuring Store and Admin Details\n\nOkay so now let's go ahead and set up our shop name. This is going to be the Level Up Tuts Store and your store name is going to be whatever your store name is going to be. Please choose a main activity. We're going to search maybe not mobile and telcom but you can see they have all sorts of different animals and pets, arts and culture, babies, downloads, fashion. I'm just gonna keep scrolling down.\n\nOkay so I'm just going to select other because I don't really know what we're selling on the site quite yet. So let's select country's United States for us and timezone is US Eastern. First name Scott, last name to Lensky and we'll fill out our email address. And you're going to want to put in a password. Now this password must be eight characters. You're going to want it to be secure because this is what you use to log into the administrative section of your site. So go ahead and type in your eight character password here. Okay and you can choose whether you want to sign up for the newsletter nut. I'm going to select yes because I want to get the regular updates from PrestaShop. So let's click Next. If everything is either should be you should be taken to the next screen.\n\n## Setting Up the Database\n\nNow here's where we set up our database configuration. What's nice about this install is you have a test your database configuration button. So some other CMS sites, when you enter your database information you click Next, maybe you mistyped something and it comes back with an error about your database. Well, in this case you don't have to do that. You can actually test your connection. And obviously if we click test right now it's going to come back with a failure because we haven't set up any databases for this.\n\nSo let's go ahead and create a database for this right now. Now from our MAMP Start screen we can go to phpMyAdmin and let's go ahead and create a new database. This database is just going to be PrestaShop. Obviously if you have your own database naming scheme you're going to want to go ahead and do that to whatever is relevant for yourself. Let's click create. Okay, so now let's go ahead and fill it in our installer information. We have a database named PrestaShop, the root login is root, and the password should be rude as well. We can leave the table prefix as PS underscore and let's click test your database connection. So as you can see we've gotten this databases connected success message, which means we're all clear to go to the next step.\n\n## Finalizing Installation and Cleanup\n\nSo let's click Next. And now what's happening is it's installing PrestaShop for our site. Ok as you can see our installation is now finished and it gives you an option to print your login information if you'd like. Now it tells you for security purposes you must delete your install folder. So let's go ahead and do that. I'm going to come back to finder. We're going to go into our PrestaShop folder and now I'm just going to go ahead and grab this whole folder, the install, and toss it in the trash and empty my trash.\n\n## First Look: Front Office and Back Office\n\nSo what do we do next? We have these two options to see the back office or the front office. The front office is the front of the store. The back office is where you're going to be managing your content. So I'm going to open each of these in the new tab. So here's the front end of our site. It looks great. You can go ahead and explore that all you want.\n\nNow let's go ahead and log into the backend. I'm going to log in with my email address that you entered during installation and your password. I'll just keep me logged in and sign in to the site. There we go. Here's the PrestaShop backend, full of sales information and everything you'll need to get your shop up and running.\n\nSo in the next videos we're going to explain how you can build your site with PrestaShop from scratch and we're going to take a look at themes and plugins and all sorts of things you can do to build a fully featured web store online nice and easy.\n\nSo as always, this is Scott with Level Up Tuts. Any questions or comments leave a comment the video or hit us up at twitter or facebook at LevelUp tuts. We love to hear from you. Thanks for watching and we'll see you in the next one. Bye."
+}

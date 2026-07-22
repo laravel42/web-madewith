@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 3,
+  "videoId": "FC7JQItVqzM",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to install the Laravel PHP framework on Windows 11 with this step-by-step guide for beginners. This tutorial covers the complete setup process, including installing all necessary dependencies. You will learn how to download and configure XAMPP to get PHP 8, install Composer and add it to your system's PATH, and optionally install Node.js. Follow along to create your first Laravel project using a simple Composer command and run the local development server with 'php artisan serve'.",
+  "chapters": [
+    {
+      "title": "Introduction and Prerequisites",
+      "description": "This chapter outlines the goal of installing Laravel on Windows 11 and identifies the required dependencies, PHP and Composer, from the official documentation.",
+      "startTime": 0.0,
+      "endTime": 30.0,
+      "slug": "introduction-and-prerequisites"
+    },
+    {
+      "title": "Installing PHP with XAMPP",
+      "description": "This chapter demonstrates how to download and install XAMPP to get PHP, emphasizing the need for PHP version 8 for compatibility with Laravel 9.",
+      "startTime": 30.0,
+      "endTime": 106.0,
+      "slug": "installing-php-with-xampp"
+    },
+    {
+      "title": "XAMPP Installation Walkthrough",
+      "description": "This chapter walks through the XAMPP installation wizard and the file download process.",
+      "startTime": 106.0,
+      "endTime": 147.0,
+      "slug": "xampp-installation-walkthrough"
+    },
+    {
+      "title": "Configuring and Troubleshooting XAMPP",
+      "description": "This chapter covers starting the Apache and MySQL services in the XAMPP Control Panel and provides a solution for a common error by running the control panel as an administrator.",
+      "startTime": 147.0,
+      "endTime": 206.0,
+      "slug": "configuring-and-troubleshooting-xampp"
+    },
+    {
+      "title": "Solving the XAMPP Admin Permissions Error",
+      "description": "This section provides a detailed fix for the XAMPP error by navigating to the installation directory and setting the control panel executable to always run as an administrator.",
+      "startTime": 206.0,
+      "endTime": 264.0,
+      "slug": "solving-the-xampp-admin-permissions-error"
+    },
+    {
+      "title": "Installing Composer",
+      "description": "This chapter details downloading and running the Composer setup, highlighting the importance of correctly linking the PHP path from the XAMPP installation.",
+      "startTime": 264.0,
+      "endTime": 317.0,
+      "slug": "installing-composer"
+    },
+    {
+      "title": "Verifying the Composer Installation",
+      "description": "This chapter shows how to confirm that Composer was installed correctly by running the 'composer' command in the Windows Terminal.",
+      "startTime": 317.0,
+      "endTime": 341.0,
+      "slug": "verifying-the-composer-installation"
+    },
+    {
+      "title": "Installing Node.js",
+      "description": "This chapter covers the optional but recommended installation of Node.js by downloading the LTS version and running the simple installer.",
+      "startTime": 341.0,
+      "endTime": 374.0,
+      "slug": "installing-node-js"
+    },
+    {
+      "title": "Creating a New Laravel Project",
+      "description": "This chapter explains how to use the 'composer create-project' command in the XAMPP htdocs directory to create a new Laravel application and customize its name.",
+      "startTime": 374.0,
+      "endTime": 401.0,
+      "slug": "creating-a-new-laravel-project"
+    },
+    {
+      "title": "Running the Laravel Installer",
+      "description": "This chapter shows the Laravel installation process in the terminal after running the composer command, and explains that it may take some time to download all dependencies.",
+      "startTime": 401.0,
+      "endTime": 443.0,
+      "slug": "running-the-laravel-installer"
+    },
+    {
+      "title": "Running the Artisan Development Server",
+      "description": "This chapter demonstrates how to navigate into the new project's directory and use the 'php artisan serve' command to start the Laravel development server and view the application in a browser.",
+      "startTime": 443.0,
+      "endTime": 500.0,
+      "slug": "running-the-artisan-development-server"
+    },
+    {
+      "title": "Managing the Server & Opening in VS Code",
+      "description": "This chapter covers stopping and restarting the artisan server, and concludes by showing how to open the project folder in Visual Studio Code.",
+      "startTime": 500.0,
+      "endTime": 536.72,
+      "slug": "managing-the-server-opening-in-vs-code"
+    }
+  ],
+  "summary": "## Prerequisites\n- **PHP**: The core language Laravel is built on.\n- **Composer**: A dependency manager for PHP, used to install Laravel and its packages.\n- **Node.js**: Recommended for managing front-end assets and dependencies.\n\n## 1. Install PHP via XAMPP\nThe video uses **XAMPP** to install a full web server stack, including PHP, on Windows.\n- **Download**: Get the XAMPP installer from the official Apache Friends website.\n- **Version**: Select an installer that includes **PHP 8 or higher**, as this is a requirement for modern Laravel versions (like Laravel 9).\n\n> [!IMPORTANT]\n> During the XAMPP installation, you can accept the default settings by clicking \"Next\" through all the prompts.\n\n## 2. Configure XAMPP\nAfter installation, you must manage your server environment using the XAMPP Control Panel.\n- **Run Services**: Start the **Apache** web server. Starting **MySQL** is also good practice.\n- **Troubleshooting**: If you get an error when quitting the Control Panel, you need to set it to run with administrator privileges.\n  1. Navigate to your XAMPP installation directory (e.g., `C:\\xampp`).\n  2. Right-click on `xampp-control.exe`.\n  3. Go to `Properties` > `Compatibility`.\n  4. Check \"Run this program as an administrator\".\n\n## 3. Install Composer\nComposer manages your project's dependencies and is used to install Laravel itself.\n- **Download**: Get the installer (`Composer-Setup.exe`) from the official Composer website (getcomposer.org).\n- **Installation**:\n  1. Run the installer.\n  2. Confirm that the installer correctly detects the path to your PHP executable (e.g., `C:\\xampp\\php\\php.exe`).\n  3. Ensure the option to \"Add this PHP to your path\" is enabled.\n- **Verification**: Open a new terminal and run `composer`. A successful installation will display the Composer logo and a list of available commands.\n\n## 4. Install Node.js (Optional)\nNode.js is recommended for projects that involve front-end build steps.\n- **Download**: Get the LTS (Long-Term Support) version from the Node.js website.\n- **Installation**: Run the installer and accept all the default options.\n\n## 5. Create a New Laravel Project\nWith all dependencies configured, you can create your Laravel application.\n- **Navigate**: Open a terminal in the folder where your web projects should live. The video uses the `htdocs` folder inside the XAMPP directory (`C:\\xampp\\htdocs`).\n- **Run Command**: Execute the following Composer command:\n  ```bash\n  composer create-project laravel/laravel your-project-name\n  ```\n> [!NOTE]\n> Replace `your-project-name` with the desired name for your application. The first run may take several minutes as Composer downloads all required packages.\n\n## 6. Run the Development Server\nOnce the project is created, you can launch Laravel's built-in development server.\n1. **Navigate**: In your terminal, change directory into the new project folder: `cd your-project-name`.\n2. **Start Server**: Run the Artisan command:\n   ```bash\n   php artisan serve\n   ```\n3. **Access App**: Your application will now be running and accessible at `http://127.0.0.1:8000` in your web browser.\n4. **Stop Server**: To stop the server, press `Ctrl+C` in the terminal window where it is running.\n\n## 7. Open Project in a Code Editor\nFinally, open your project folder in a code editor like **Visual Studio Code** to begin development.",
+  "transcription": "## Introduction and Prerequisites\n\nHello everyone. In this video, I'm going to show you how to install Laravel on Windows 11. Okay, let's get started. Let's open Google Chrome and then search for Laravel.\n\nOkay, click on Laravel official website and then click on documentation. Scroll down. So this is how you install Laravel on your computer. So you need to install PHP and Composer on your computer.\n\n## Installing PHP with XAMPP\n\nOkay, let's go to XAMPP to install PHP on our computer. Okay, click over here. XAMPP is the software package that includes PHP, MariaDB, Perl, and Apache server. Okay, click on download over here.\n\nAnd then I recommend you to download version 8 of PHP because Laravel 9 only supports PHP version 8. Okay, click on download over here. So if the download doesn't start automatically, you can click here and click on download the latest version over here.\n\n## XAMPP Installation Walkthrough\n\nOkay, you can close this one and close this one. The file is quite big, it's 147 megabytes, so it's going to take for a while depending on how fast your internet is. Okay, after the download is done, you click over here and click on show in folder and double-click on the files to install the file on your computer.\n\nClick on Yes. Click OK. Click on Next and click on Next, and click on Next and click on Next, and click on Next. The installation will take for a while.\n\n## Configuring and Troubleshooting XAMPP\n\nOkay, then click on Finish. Then the XAMPP control panel will pop up. You can start Apache or you can start MySQL. \n\nAnd then you can close it, or you can right-click over here and quit to access the software. So if you see an error like this, I will tell you how to solve it.\n\n## Solving the XAMPP Admin Permissions Error\n\nI'll close the program. Okay, this is how you solve it. After you close it, you go to C drive and go to XAMPP folder and scroll down. You will see xampp-control. Right-click on these files and go to Property and then go to Compatibility and then check on 'Run this program as an administrator'. Click on Apply and click on OK.\n\nSo let's open XAMPP again. Click on Yes. Okay, if you close it, and then you go here and quit it, so you see no error right now. Let me close this one. And then if you see this pop up, just click 'Allow access', and this one too, 'Allow access'.\n\n## Installing Composer\n\nAnd the next thing that you have to install is Composer. Okay, let's click on Composer over here and then download the composer. And then click on `composer-setup.exe`. We can go back to Laravel documentation. And then over here you will see `composer-setup.exe` files. Show in folder. Click on the files.\n\nClick over here, 'Install for all user.' Click on yes. Click on next. And then you have to make sure that a PHP path is correctly here. It's in C drive, and XAMPP, PHP, and php.exe. And then click on 'Add this PHP to your path'. Okay, click on next, and click on next, and click on install. Click on next, and then click on Finished.\n\n## Verifying the Composer Installation\n\nClose this one. Okay let's check if composer is installed. Let's go to terminal. Okay, Windows Terminal and then type `composer`.\n\nOkay, if it shows something like this, that does mean Composer is installed correctly. So right now we are using Composer version 2.4.4.\n\n## Installing Node.js\n\nOkay, you can close it. The next thing that they recommend is Node.js, so you can install it on your computer as well. So the installation is pretty simple. Just click download the long-term version. When the downloads is done, just show in the folder, double-click on the files, and click Next. Check it and then click Next, Next, Next, Next, Install. Click on Yes. Finish. Okay, Node is installed on our computer right now.\n\n## Creating a New Laravel Project\n\nOkay, the next thing you have to run this command. This command is a Composer command that's used to install Laravel on your computer. Okay, copy it. \n\nOkay, let's go to drive C and go to XAMPP, and then let's go to htdocs here. And then right-click here and click on Open in Terminal. Okay, make sure XAMPP is open. Okay, and you have to make sure that Apache is running and MySQL is running as well. For MySQL, it doesn't matter, but just make sure it's running. So you can close this one, and then just paste the command over here.\n\n## Running the Laravel Installer\n\nSo we are going to create a new Laravel project, and the name of the project is `example-app`. You can change this name to whatever you want. For example, I'm going to change this to `sample-laravel-app`. Hit Enter. \n\nSo it's going to download Laravel and install on this folder for me. See, you will see `sample-laravel-app`, but you have to wait until it's done so you can access the folder and running the application. If you install this for the first time, it's going to take for a while because it has to download everything on the internet.\n\n## Running the Artisan Development Server\n\nOkay, the installation is done. You can access the folder by typing `cd` and the folder name. For example, `cd sample-laravel-app`. Hit Enter. Okay, then go back to the documentation. Then you can run `php artisan serve`.\n\n`php artisan serve`. So if you click on over here, you will see that our application is running on IP 127.0.0.1 and port 8000. See, this is our application. So this is a Laravel application. And this is the folder of the code. You can open this code with Visual Studio Code. So if you have Visual Studio code, you can open the folder with this code editor.\n\nOkay, I highly recommend you use this text editor. Click on here to download it. If you have it on your computer, you don't have to download it and install it. And if you want to stop this Laravel server, you just type Ctrl-C on your keyboard.\n\n## Managing the Server & Opening in VS Code\n\nAnd the application is stopped. If you go back to the application here and you refresh it, you won't be able to access the application because it's already stopped. So to start the server again you can type `php artisan serve`. Then the server will be running on this IP number and Port. You can press Ctrl and click on this link on the keyboard to open it on the web browser. So you will see it over here.\n\nAll right. If you want to open this folder with Visual Studio Code... okay, let's open Visual Studio Code, and then you just drop this folder over here. Okay, click on 'Yes, I trust the authors'. Okay, this is the code of the Laravel application that we've installed on our computer. \n\nAlright, this is all about this tutorial. If you like this video, don't forget to click like, subscribe, and comment down below. Thank you so much for watching."
+}

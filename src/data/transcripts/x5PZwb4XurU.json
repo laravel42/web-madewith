@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 3,
+  "videoId": "x5PZwb4XurU",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn about Angular's powerful Standalone Components feature, which simplifies the development workflow by making NgModules optional. This video guides you through creating, configuring, and routing standalone components, directives, and pipes. Discover how this new API reduces boilerplate, streamlines dependency management, and makes it easier than ever to implement fine-grained lazy loading. Build a practical application from scratch and see how standalone components improve code reusability and simplify the Angular learning curve.",
+  "chapters": [
+    {
+      "title": "Introduction to Standalone Components",
+      "description": "Understand the shift from traditional NgModules to the new self-contained standalone component API in Angular.",
+      "startTime": 0.0,
+      "endTime": 68.0,
+      "slug": "introduction-to-standalone-components"
+    },
+    {
+      "title": "The Benefits of Going Standalone",
+      "description": "Explore the primary advantages of using standalone components, including a simplified workflow and easier lazy loading.",
+      "startTime": 68.0,
+      "endTime": 108.0,
+      "slug": "the-benefits-of-going-standalone"
+    },
+    {
+      "title": "Scaffolding the Demo Application",
+      "description": "Set up a new Angular project using the CLI, including routing and a mock data service, to prepare for building with standalone components.",
+      "startTime": 108.0,
+      "endTime": 163.0,
+      "slug": "scaffolding-the-demo-application"
+    },
+    {
+      "title": "Creating Your First Standalone Component",
+      "description": "Generate a new component using the `--standalone` flag and examine the `standalone: true` and `imports` properties.",
+      "startTime": 163.0,
+      "endTime": 232.0,
+      "slug": "creating-your-first-standalone-component"
+    },
+    {
+      "title": "Configuring Routing for Standalone Components",
+      "description": "Learn how to directly integrate a standalone component into the Angular router configuration and test the setup.",
+      "startTime": 232.0,
+      "endTime": 285.0,
+      "slug": "configuring-routing-for-standalone-components"
+    },
+    {
+      "title": "Composing Standalone Components",
+      "description": "Discover how to use one standalone component inside another by adding it to the `imports` array, effectively managing dependencies.",
+      "startTime": 285.0,
+      "endTime": 374.0,
+      "slug": "composing-standalone-components"
+    },
+    {
+      "title": "Building and Routing the Details View",
+      "description": "Create a details view component, inject services to read router parameters, and add the necessary routing configuration and links.",
+      "startTime": 374.0,
+      "endTime": 472.0,
+      "slug": "building-and-routing-the-details-view"
+    },
+    {
+      "title": "Testing the Full Application Flow",
+      "description": "Verify that the entire application, including navigation from the list to the detail view, works as expected.",
+      "startTime": 472.0,
+      "endTime": 502.0,
+      "slug": "testing-the-full-application-flow"
+    },
+    {
+      "title": "Simplified Lazy Loading with Standalone Components",
+      "description": "Learn how to easily lazy-load a standalone component using the `loadComponent` property in the router for improved performance.",
+      "startTime": 502.0,
+      "endTime": 590.0,
+      "slug": "simplified-lazy-loading-with-standalone-components"
+    },
+    {
+      "title": "Availability and Developer Preview Status",
+      "description": "Understand that standalone APIs are available in Angular v14 as a developer preview and what this means for API stability.",
+      "startTime": 590.0,
+      "endTime": 652.0,
+      "slug": "availability-and-developer-preview-status"
+    },
+    {
+      "title": "Future Plans and Call to Action",
+      "description": "Hear about the future of standalone components and how you can contribute feedback to the Angular team.",
+      "startTime": 652.0,
+      "endTime": 709.0,
+      "slug": "future-plans-and-call-to-action"
+    }
+  ],
+  "summary": "## The Shift from NgModules to Standalone Components\n\n- Traditionally, Angular required `NgModules` to declare which components, directives, and pipes were available for use in templates.\n- **Standalone Components** are self-contained and manage their own template dependencies directly, making `NgModules` optional for most development tasks.\n\n## Core Benefits\n\n- **Simplified Workflow**: Reduces boilerplate code, as there's no need to open and modify module files when creating a new component.\n- **Easier Learning Curve**: Lowers the number of core concepts a new Angular developer needs to understand.\n- **Improved Encapsulation & Reusability**: Self-contained components are easier to package, reuse, and lazy-load on their own.\n\n## Creating and Using Standalone Components\n\n- **CLI Generation**: Use the `--standalone` flag with the Angular CLI: `ng generate component MyComponent --standalone`.\n- **Component Decorator Properties**:\n  - `standalone: true`: This new property marks the component as standalone.\n  - `imports: []`: An array where you import other standalone components, directives, pipes, or traditional `NgModules` that your component's template needs. This includes `CommonModule` (for `*ngIf`, `*ngFor`) and `RouterModule` (for `routerLink`).\n\n> [!IMPORTANT]\n> To use one standalone component (e.g., a `CardComponent`) inside another (e.g., a `ListComponent`), you must add the `CardComponent` to the `ListComponent`'s `imports` array.\n\n## Routing with Standalone Components\n\n- Standalone components can be assigned directly to a route in your router configuration, simplifying the setup.\n  - `... { path: 'dogs', component: DogsListComponent } ...`\n\n## Simplified Lazy Loading\n\n- The Angular Router enables fine-grained, component-level lazy loading without needing a separate `NgModule`.\n- Use the `loadComponent` property in your route configuration and provide a function that returns a dynamic `import()`.\n  - **Eager**: `component: DogViewComponent`\n  - **Lazy**: `loadComponent: () => import('./dog-view/dog-view.component').then(m => m.DogViewComponent)`\n\n> [!TIP]\n> This allows the component's code to be downloaded only when the user navigates to its route, which significantly improves initial application load times and performance.\n\n## Developer Preview in Angular v14\n\n- The standalone APIs were introduced as a **Developer Preview** in Angular v14.\n- This means the APIs were complete and available for use but subject to potential changes based on community feedback, without following the standard deprecation cycle for stable APIs.\n\n> [!NOTE]\n> Standalone components are fully backward-compatible with existing Angular applications. They do not introduce breaking changes and can be adopted gradually.",
+  "transcription": "## Introduction to Standalone Components\n\nHey, friends. I'm Jessica and I'm standing here alone today to tell you about our latest feature, standalone components.\n\nAngular applications are composed of components. And until now, developers have had to create or update an existing ng module in order to use a freshly created component. Ng modules have been used to specify which components, directives, and pipes are available to use in templates.\n\nThe new standalone API makes it possible to write angular components, directives, and pipes without creating an associated ng module. Standalone components are self contained and directly manage their template dependencies. This makes ng modules optional for many practical development tasks. The focus shifts from ng modules to components. Components are becoming a central concept in Angular.\n\n## The Benefits of Going Standalone\n\nLet's discuss the benefits of this new approach. Making ng modules optional reduces the friction of creating a new component. There's just less code to write and less files to open and modify. But this is more than just the syntax change. We lower the number of concepts a developer needs to understand. This is essential for simplifying the Angular learning journey.\n\nMost importantly, the self contained components can be packaged, reused, and lazy loaded on their own. This enables a range of use cases that were just very hard or even impossible to achieve before.\n\n## Scaffolding the Demo Application\n\nTo get a feel for these new APIs, let's create an application for a local dog friendly community. It can be used to arrange the walk my dog help among neighbors. This application has a list and the details view.\n\nLet's start by scaffolding our application using the Angular CLI. I'm using the ng new command in a terminal window. We'll use inline templates and styles for this example. That's why we use the --inline flag. I'm going to add the routing so we can navigate between pages. Regular CSS will do for our sample application.\n\nWe'll also need some data to display. So let's quickly generate some services with mock data using the ng generate command. I'm going to switch to the Code Editor, open up the generated dogs.service.ts file and just paste some sample data that I've prepared before.\n\n## Creating Your First Standalone Component\n\nWith all the preparations done, I can create the very first standalone component. It will display a list of dogs that could get some fresh air. Angular CLI will be helpful to quickly scaffold the component code. Notice that I'm passing the new --standalone option to the ng generate schematic. Such a dashing option.\n\nIn our generated component DogsListComponent.ts, the component decorator has a new property called standalone that has the value set to true. This component is now a standalone component and doesn't require declaration in any ng module.\n\nThere's another property in the component decorator called imports that has an array containing common module in it. Now the component can use ng if, ng for, and other control flow directives.\n\nThe dogs list component will display data from a NOC data service that is injected in the constructor in DogsListComponent.ts. With the data ready, we can add some basic HTML to component.html and display the data. We'll improve the look and feel of this component later.\n\n## Configuring Routing for Standalone Components\n\nWe need one final step before testing our list component. Update the router configuration. I'm creating a new route entry in the AppRoutingModule.ts file previously generated by the CLI. Next we'll add our standalone component directly to the router configuration routes variable by using the path and component properties. I'm also setting up a router redirect so that our list is displayed by default. At this point, we will have a working list page rendered by a standalone component.\n\nSo let's test it together. I'm going to open up a terminal and start a development server with the ng serve command. Let's confirm that everything works as expected by navigating to localhost at port 4200 in the browser. Our list renders OK, but it's not very pretty yet.\n\n## Composing Standalone Components\n\nLet's improve the design by introducing a dog card component. Using Angular CLI again, I'm scaffolding a new standalone component using the ng generate component command in a terminal.\n\nIn DogsListCardComponent.ts, I'll update the template and style's property of the component decorator by adding some previously written code. A dog's info will be passed into this component as an input.\n\nAt this point, I've got two standalone components. A list and a card. How could I use a card in a list though? Let me switch back to the dogs list component and import the card we've just created. Importing a standalone component makes it available in the template and can be referenced in the component template by its selector. In this case, app dogs list card.\n\nRemember that before standalone components, you had to add a reference to an ng module to make a component available for use in the other parts of the application. And now that's no longer necessary. Standalone components explicitly manage their own dependencies. We can know with certainty what is available in the template by expecting the component's list of imports. And this is of great importance.\n\n## Building and Routing the Details View\n\nOur list is done. I'm going to create the details view component now following similar coding patterns. So here's a view of that. From the command line, I'll type ng generate component, once again using the --standalone option.\n\nIn the dog view component class, the dog's ID will be passed in as a router param, so I need to inject the activated route and the dogs service in the constructor. Setting up a subscription to the route param changes will make sure that we update the dog's data when navigating between pages.\n\nTo test the details view, we need to add the dog view component to a router configuration and link to it from the ListComponentRoutes.ts file. Then, we need to link to it from the dogs list component. We will update the router configuration by opening the AppRoutingModule.ts file and add the new entry in the routes array.\n\nWith the new route entry in place, we can now open the dogs list component file and introduce a router link. A standalone component explicitly imports its template dependencies. So we need to add the router module to the list of component imports. With this step done, we can add a link to the detailed view component with a router link attribute.\n\n## Testing the Full Application Flow\n\nWe can now test the entire functionality of the application. In a browser, I can open up the application URL and still see the list. This is good, but now I can also click on the Details link and navigate to the page dedicated to a given dog.\n\nAt this point, we know how to create standalone components and manage their template dependencies. We've also successfully used routing to navigate between pages rendered by standalone components.\n\n## Simplified Lazy Loading with Standalone Components\n\nI'd like to focus now on one of the major benefits of standalone components, simplified lazy loading. The new functionality in Angular router enables fine grained lazy loading and code splitting on a component level. To demonstrate it in practice, we will lazy load the details view component.\n\nLet's navigate to the router configuration in app routing module and change the route entry for dog view component. We need to, one, change the component property to the load component one. Two, change the component type to the dynamic import. And three, remove the static import to the component type.\n\nLet's confirm that the dog view component code is lazy loaded in the browser. In Chrome DevTools, open the Network tab. That way we can observe the lazy loaded activity when taking action. Now back in the app, click on the Details link. You'll notice that the code for the dog view component is downloaded and executed right when we click. That demonstrates that the code load is delayed and only happens when the root is loaded. This means the application can load and bootstrap faster because this route was not part of the main bundle and it loads separately.\n\nSwitching a route in the application to lazy loaded mode took us just a few seconds. We hope this leads to a better experience for developers.\n\n## Availability and Developer Preview Status\n\nAll the new functionality and APIs discussed today are available right now in Angular version 14. Standalone components are fully compatible with your existing Angular applications. They don't introduce any breaking changes and they don't require any rewrites. In v14 we've released the standalone APIs as developer preview.\n\nThis means that the APIs are complete, polished, and available for you to experiment with and to explore. However, we're not quite ready to mark them as stable APIs just yet. If we get feedback from our developer community that they're not working well in certain use cases, we want to be able to make adjustments right away without waiting for our regular deprecation timeline of two major versions for stable APIs.\n\nMaking ng modules optional requires adjustments to the entire Angular ecosystem. We are releasing core functionality today but have several follow up projects lined up.\n\n## Future Plans and Call to Action\n\nWe will keep improving APIs, tooling, and documentation around standalone components. The goal is to make the developer journey as smooth as possible. We'd really like you to test out the new APIs and share your feedback. We can't wait to hear about your new developer experiences. If you have an issue, a feature request, or something else, please open a GitHub issue and let us know.\n\nLinks to the example project and the Angular documentation are in the description of this video. Subscribe to this channel and follow us on Twitter for more updates. This video certainly won't stand alone in your learning journey for Angular. There are many more for you to enjoy. Thanks for watching, everyone. And hey, live long and prosper, friends."
+}

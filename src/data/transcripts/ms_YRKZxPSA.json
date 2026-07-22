@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 3,
+  "videoId": "ms_YRKZxPSA",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn to design a professional and aesthetic WooCommerce shop page using just Elementor and the free ShopLenter plugin. This tutorial guides you through creating a complete shop layout from scratch, featuring both stylish horizontal filters and a functional vertical sidebar. Discover how to configure price range filters, sorting options, product categories, and even a 'Recent Products' section.",
+  "chapters": [
+    {
+      "title": "Initial Setup & Plugin Configuration",
+      "description": "An introduction to the shop page design and the necessary initial setup using the ShopLenter and Elementor plugins.",
+      "startTime": 0.0,
+      "endTime": 104.0,
+      "slug": "initial-setup-plugin-configuration"
+    },
+    {
+      "title": "Building a Horizontal Filter Layout",
+      "description": "This chapter walks through creating and customizing a horizontal product filter using ShopLenter's widgets in Elementor.",
+      "startTime": 104.0,
+      "endTime": 180.0,
+      "slug": "building-a-horizontal-filter-layout"
+    },
+    {
+      "title": "Quick Tip: Improving Site Speed",
+      "description": "This section provides a brief recommendation for a free plugin to improve website performance and speed.",
+      "startTime": 180.0,
+      "endTime": 202.0,
+      "slug": "quick-tip-improving-site-speed"
+    },
+    {
+      "title": "Building a Vertical Filter Sidebar: Part 1",
+      "description": "Learn how to construct the basic structure of a vertical sidebar, including setting up columns and adding price and search filters.",
+      "startTime": 202.0,
+      "endTime": 286.0,
+      "slug": "building-a-vertical-filter-sidebar-part-1"
+    },
+    {
+      "title": "Building a Vertical Filter Sidebar: Part 2",
+      "description": "This chapter covers adding a product categories filter and a recent products section to complete the vertical sidebar design.",
+      "startTime": 286.0,
+      "endTime": 351.0,
+      "slug": "building-a-vertical-filter-sidebar-part-2"
+    },
+    {
+      "title": "Designing the Main Product Grid",
+      "description": "Learn to use the Universal Product Layout widget to create and customize the main product display area of the shop page.",
+      "startTime": 351.0,
+      "endTime": 426.0,
+      "slug": "designing-the-main-product-grid"
+    },
+    {
+      "title": "Saving Your Design as a Reusable Template",
+      "description": "This chapter explains how to publish the completed shop page design and save it as an Elementor template for future use.",
+      "startTime": 426.0,
+      "endTime": 449.0,
+      "slug": "saving-your-design-as-a-reusable-template"
+    },
+    {
+      "title": "Applying the Template & Final Review",
+      "description": "The final step involves applying the newly saved template to your WooCommerce shop page via the ShopLenter settings for a complete, functional design.",
+      "startTime": 449.0,
+      "endTime": 487.88,
+      "slug": "applying-the-template-final-review"
+    }
+  ],
+  "summary": "## Key Concepts: Designing a WooCommerce Shop Page\n\nThis document outlines the steps to create a custom shop page using **Elementor** and the **ShopLenter** plugin.\n\n### Initial Setup\n\n1.  **Required Plugins**: Ensure **Elementor** and **ShopLenter** are installed.\n2.  **ShopLenter Configuration**:\n    *   Navigate to the **WooCommerce Template** tab.\n    *   For the shop page template, choose **Select Template** to build from scratch.\n    *   In **Elements & Modules**, enable all desired features like filters and badges.\n\n### Building Product Filters\n\nTwo primary filter styles are covered:\n\n*   **Horizontal Filter**:\n    *   Drag the **Horizontal Filter** widget into an Elementor container.\n    *   Configure **Price Range** to create custom price brackets for filtering.\n    *   Customize other filters like **Sort By** (price, categories) and **Order By**.\n\n*   **Vertical Filter Sidebar**:\n    *   Create a two-column layout (e.g., 25% for the sidebar, 75% for products).\n    *   Add the **Product Filter** widget and set its type to **Price**.\n    *   Add another **Product Filter** widget and set the type to **Search Form**.\n    *   Add the **Categories** filter widget for category-based browsing.\n    *   Use the **Product Query** widget to display **Recent Products**, creating an upsell opportunity.\n\n> [!NOTE]\n> Each filter section in the sidebar should be introduced with a **Heading** widget for clarity and better user experience.\n\n### Designing the Main Product Grid\n\n*   In the main content area, use **WooLentor's Universal Product Layout** widget.\n*   Enable the **Same Height Box** option for a uniform, clean look.\n*   Under **Query Section**, define which products to display (e.g., by category).\n*   Adjust **Layout Style** and **Action Settings** (add-to-cart buttons) to match your brand's aesthetic.\n\n### Finalizing and Publishing\n\n1.  **Publish the Page**: Once the design is complete, publish your Elementor page.\n2.  **Save as Template**: Save the entire page layout as a reusable Elementor template.\n3.  **Apply Template**: Go to **ShopLenter Settings**, and from the shop page dropdown, select your newly saved template.\n4.  **Save & Verify**: Save the settings and check your live shop page to see the new design in action.\n\n> [!TIP]\n> Saving your design as a template is a significant time-saver, allowing you to quickly apply a consistent look across multiple sites or pages.",
+  "transcription": "## Initial Setup & Plugin Configuration\n\nIn this video, I'll show you the easiest free way of creating a shop page using just one plugin. You can create aesthetic horizontal filters like this. Also, don't worry. If you don't like this, then you can create a vertical filter section using the same plugin, which will have all the standard filters. Also, we will add a recent product section like this, too. So, without wasting any time, let's get started.\n\nMake sure you have these two plugins installed. First, our star, ShopLenter. Second, Elementor. Once done, let's make sure we have turned on these settings in the ShopLenter plugin. Then go to WooCommerce template tab at the top. Then down here, choose this from template options. The reason for choosing select template is that we will create everything from scratch. Don't worry, it's a simple drag-and-drop process.\n\nThen go to elements and modules and turn on all the features you want on your shop page, like filters, sale badges, etc. In the style tab, you can customize the elements on your shop page, but let's skip it for now as we will do this later.\n\nAll right, let's build our shop page. I'll show you two ways of adding filters to your shop page. A horizontal filter like this. And a vertical filter like this. The best part about horizontal filter is that they appear when you click on the filter icon like this. Cool, right?\n\n## Building a Horizontal Filter Layout\n\nOkay, let's build this. So, open up a fresh page on Elementor and add a container like this. Make sure the container settings are set to this. Then go to the left, scroll down till you find ShopLenter widgets. Here they are.\n\nI look for a horizontal filter and drag it into my first container. Woah, the basic layout itself looks neat and pretty. To customize this filter according to our need, we'll go to the left panel and select price range. From here, I add price ranges depending on my products.\n\nLet's say I have products ranging between $0 to $200. So, I'll just put zero here and 200 here. Likewise, to create multiple price ranges in the price filter drop down, I'll duplicate this and put a new price range. Awesome. Now, if my customer selects one of these range, they will see the relevant products.\n\nOnce a range is set, we'll go to the pricing filter. Here, I can change the filter name, placeholder, and dimensions of the filter. Same for sort by filter. Here, I can choose my sorting type. It can be anything. I can sort by price, colors, categories, and more. Order by filter is pretty much the same thing.\n\nAll right. Now, if you want to add an icon, make the filter text clickable, then select it, and you can change the text, make it clickable by adding a link here, change placeholder text of this, and more. These are basic things, so I won't get into it.\n\n## Quick Tip: Improving Site Speed\n\nNext, let's add a vertical filter now. But before that, whenever I'm doing some design work for clients, I make sure to install this free plugin Airlift because... Okay, let me actually show you this. So, that's my site speed before and that's after. It does a lot of optimizations automatically and keeps stuff fast. So, you should definitely try this and I'll leave the link in the description below.\n\n## Building a Vertical Filter Sidebar: Part 1\n\nLet's add a vertical filter now. To do this, add a two-column container and make it full width. I want my column width to be accurate, so I'll select the left side column and change the width to 25%. Select the right container and change the width to 75%. I'll select the main container and remove the margins. Then, I'll select the left container and add these values.\n\nThen, go to layout and change the direction to column vertical. Look for the product filter from the widget section and drop it here. Begin by setting the filter type to price. This allows users to narrow down their options based on the budget, which is one of the most common ways people browse products. Once you've configured the filter, move on to styling it. Add padding of 15 pixels to the button. Then add another product filter widget, but this time set the filter type to search form. This feature lets users to quickly find specific products by typing in the keywords.\n\nTo wrap things up, include a heading widget in your sidebar. Use it to label or introduce the section, making it clear what users can expect from the filters below. Don't forget to add some margins to the heading to maintain proper spacing and alignment with the rest of the sidebar elements. This small touch enhances readability and ties the design together.\n\n## Building a Vertical Filter Sidebar: Part 2\n\nNext, we will add categories filter. So, look for it in the sidebar and drag and drop this widget like this. From here, choose style one to keep the layout minimal. Set the columns to one for a clean, uncluttered look that emphasizes each category individually. Don't forget to enable the all categories option, which ensures your customers can see every available product category at once. This setup helps guide shoppers to the section they're most interested in.\n\nNext, include another widget to introduce the next section of the sidebar like this. Below it, place a product query widget for showcasing specific items. Set the columns to one for a streamlined design. Under the query option, select recent products and limit the count to three products. This feature highlights fresh arrivals or trending items, creating interest and encouraging customers to add more items to their carts. With the sidebar complete, move on to designing the main content area.\n\n## Designing the Main Product Grid\n\nIn the right container, add a new container. Now, insert a heading widget.\n\nAll right, for the main product area, I'll drop in WooLentor's Universal Product Layout widget because it has pre-built templates and will save time. Now, I'll turn on same height box so that all the product cards are in equal sizes. From here, I can change the number of columns. And in query section, you can select what kind of products you want to display here.\n\nThen, let's increase the number of products to be shown from here. I'll choose this number for now. And add as many categories as possible from here. Totally up to you.\n\nNow, let's see how we can change the layout. So, just go here and you can choose one of the styles from the drop-down. It's pretty basic, so try it out and choose a style which suits your brand. Now, do you see these action buttons? The search and the cart button? You can customize that, too. Just go to action settings and choose a theme from here. Okay, this looks good. I'll choose this. All right, just go ahead, tweak these settings. I'll do mine, and this is how it will look.\n\n## Saving Your Design as a Reusable Template\n\nOnce you finalize the layout, it's time to publish the page. All right, I'll do that. After publishing, save the entire design as a template. So, go here. Then, here. And save the template.\n\nThis setup is a huge time-saver for future products, allowing you to apply the same design to other pages or sites quickly.\n\n## Applying the Template & Final Review\n\nFinally, let's apply the template using ShopLentor settings. Open the settings menu. Look at the drop-down and select your newly saved template. Once done, hit save to confirm your selection. Let's check it. Mhm. Looks fine to me.\n\nYour shop page is now beautifully designed, fully functional, and optimized for a smooth shopping experience. Comment below if you have any questions and I'll help you out. Click this video if you want to triple your site speed in just 1 minute. You're really going to thank me for this. So, click here and I'll see you there."
+}

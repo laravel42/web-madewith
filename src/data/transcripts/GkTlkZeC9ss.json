@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 3,
+  "videoId": "GkTlkZeC9ss",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to install and configure the vtiger CRM open source software on your own web server. This detailed guide walks you through the entire process, starting with an introduction to vtiger's features, including its low-code/no-code capabilities. You'll see how to download the community edition, prepare your web hosting environment with tools like aaPanel, and set up a subdomain.",
+  "chapters": [
+    {
+      "title": "Introduction to Vtiger Open Source CRM",
+      "description": "This chapter provides an overview of vtiger CRM, highlighting its status as a leading open-source system and its key features like low-code/no-code capabilities.",
+      "startTime": 0.0,
+      "endTime": 95.0,
+      "slug": "introduction-to-vtiger-open-source-crm"
+    },
+    {
+      "title": "Downloading the Vtiger Community Edition",
+      "description": "This section shows where to find and download the Vtiger Community Edition, along with the optional customer portal, from SourceForge.",
+      "startTime": 95.0,
+      "endTime": 134.0,
+      "slug": "downloading-the-vtiger-community-edition"
+    },
+    {
+      "title": "Preparing the Web Hosting Environment",
+      "description": "This chapter explains how to set up the necessary server environment, including free web hosting options, creating a subdomain, and adding the new site in a hosting panel like aaPanel.",
+      "startTime": 134.0,
+      "endTime": 184.0,
+      "slug": "preparing-the-web-hosting-environment"
+    },
+    {
+      "title": "PHP Configuration & File Upload",
+      "description": "This segment covers setting the recommended PHP version, uploading the vtiger source files to the server, unzipping the archive, and pointing the domain to the correct directory.",
+      "startTime": 184.0,
+      "endTime": 253.0,
+      "slug": "php-configuration-file-upload"
+    },
+    {
+      "title": "Installation Wizard: Fixing PHP Pre-requisites",
+      "description": "This part details running the installation wizard and resolving the three critical PHP setting errors by modifying the server's PHP configuration file.",
+      "startTime": 253.0,
+      "endTime": 328.0,
+      "slug": "installation-wizard-fixing-php-pre-requisites"
+    },
+    {
+      "title": "Installation Wizard: Database and Admin Setup",
+      "description": "This chapter guides you through creating a new database and user in your hosting panel and then entering those credentials, along with admin user details, into the vtiger installer.",
+      "startTime": 328.0,
+      "endTime": 416.0,
+      "slug": "installation-wizard-database-and-admin-setup"
+    },
+    {
+      "title": "Installation Wizard: Module & Final Settings",
+      "description": "This section covers the final steps of the installation wizard, including selecting the initial CRM modules to install and configuring the base currency and date format.",
+      "startTime": 416.0,
+      "endTime": 460.0,
+      "slug": "installation-wizard-module-final-settings"
+    },
+    {
+      "title": "Creating a Demo User & Conclusion",
+      "description": "Here, a new demo user account is created for practice purposes, and the video concludes with a summary of the installation process and a preview of the upcoming vtiger training series.",
+      "startTime": 460.0,
+      "endTime": 514.039,
+      "slug": "creating-a-demo-user-conclusion"
+    }
+  ],
+  "summary": "## Introduction to vtiger CRM\n\nvtiger is a popular **open-source CRM** used by over 300,000 companies. It helps unify marketing, sales, and customer service operations.\n\n**Key Features:**\n- **Open Core:** Free to deploy on your own server.\n- **Low-Code/No-Code Platform:** Allows for extensive customization to fit specific business needs.\n- **Unified View:** Provides a single platform for customer communication, sales analytics, and marketing.\n\n## Pre-Installation Steps\n\n1.  **Download vtiger:** Get the **Community Edition** from SourceForge. The tutorial uses version 7.4.\n2.  **Prepare Web Hosting:**\n    - A web server is required. You can use free tiers from **Oracle Cloud Infrastructure** or manage your server with a panel like **aaPanel**.\n    - Create a **subdomain** (e.g., `vtiger.yourdomain.com`) and point it to your server's IP address.\n    - Add the new site in your hosting panel and apply for an **SSL certificate**.\n\n## Installation & Configuration Process\n\n1.  **Upload & Unzip:** Upload the downloaded vtiger archive to your server and unzip it into a folder (e.g., `vtiger_crm`).\n2.  **Set Site Directory:** Point your subdomain's root directory to the folder containing the unzipped vtiger files.\n3.  **PHP Configuration:** The installer has specific PHP requirements.\n\n    > [!IMPORTANT]\n    > vtiger 7.4 may have issues with PHP 7.4. Using **PHP 7.3** is recommended for better compatibility.\n\n4.  **Run Installation Wizard:** Access your subdomain in a browser to start the wizard.\n    - **Fix Prerequisites:** You will likely need to adjust your `php.ini` file.\n      - `display_errors` = **Off**\n      - `log_errors` = **Off**\n      - `short_open_tag` = **Off**\n    - **Database Setup:** Create a new **MySQL/MariaDB database** and a dedicated **user** with a strong password. Enter these credentials into the installer.\n    - **Admin & Module Setup:** Provide details for the primary admin account, select your industry, and choose the initial modules to install (e.g., Contact Management).\n    - **Finalize:** Set your base currency and date format to complete the installation.\n\n## Post-Installation\n\nAfter installation, you can log in and begin configuring the CRM. The video demonstrates creating an additional **user account** for testing or demonstration purposes.",
+  "transcription": "## Introduction to Vtiger Open Source CRM\n\nvtiger is one of the best open-source crm software. In today's video, I'll give you a quick overview of vtiger CRM, and then we will install and configure vtiger CRM.\n\nvtiger is one of the best open-source CRM systems, which is being used by more than 300,000 companies today. vtiger is a recognized CRM leader for many years. CRM helped the companies to increase 25% of the sales productivity. vtiger CRM offers a unified view to boost your marketing, sales, and customer service.\n\nAn introduction to CRM systems in general and what are the activities involved in the CRM process link is available here in the description below, or you can find the card above. And if you have already seen it, then let us continue to this video.\n\nOne view, guided selling, customizable, it is easy to use. It is built on open core, which means that it is an open-source system. You can deploy it for free. An important thing which I want to mention here is the low-code/no-code platform. By 2024, 70% of the organization's business applications will be built on a low-code/no-code platform. You can customize vtiger CRM to fit into your business. A single platform will help you to have communication with the customer. It will help you to generate the sales analytics, marketing productivity. A lot is available on the vtiger website. We will be now installing vtiger open-source CRM on our web server. Then we will do the basic configuration. So I'll guide you step-by-step how to install vtiger CRM and how to configure that.\n\n## Downloading the Vtiger Community Edition\n\nvtiger community edition which is available on SourceForge also and you can search for vtiger community edition download. We'll download here it is. And here you will go, vtiger 7 download, vtiger7, and download vtiger open-source. These are three options. If you're already using previous versions, so you can do that, but I'll be mainly downloading this one. This is the source. It will start the download from SourceForge. And the second file that I'll be downloading will be the customer portal, in case you want to have that I'll be downloading that.\n\n## Preparing the Web Hosting Environment\n\nSo what are the steps involved here? We need to have our web hosting. You can have free web hosting using aaPanel. Oracle Cloud Infrastructure is providing a free cloud infrastructure where you can have VMs and storage available for free. I have provided all the details of Oracle Cloud Infrastructure. This will be hassle-free; you can have your cloud infrastructure ready.\n\nIf you're already having a website, you can create a subdomain for your website and that subdomain can be pointed to your web server. I have created a subdomain called vtiger.syncprix.com. As you can see here, this is the subdomain that I have created, and right now nothing is hosted here. So I'll be creating now a website inside my web host. So I'll be defining here vtiger.syncprix.com and it will be vtiger crm and I'll apply the SSL also, and I'll apply the HTTPS.\n\n## PHP Configuration & File Upload\n\nWe should have the PHP version 7.4, but I have seen it sometimes it did not work with 7.4. Let me create this first. So subdomain is already created. Let it create the website. We'll wait for this process to complete. It has successfully completed the process. Now if I refresh this page, it will show me an Nginx default page which means that my website is now ready.\n\nSo we'll go to websites here and we'll see here vtiger.syncprix. It is using 7.4. In some of the cases, vtiger 7.4 did not work well with php 7.4. That's why I'm using PHP 7.3 to run vtiger 7.4. Now we'll be uploading the vtiger 7.4 which we downloaded from the SourceForge website. Just click on upload. There's vtiger, and upload. Just unzip here. And here you can see vtiger crm is here. I'll be just going back to the website and I'll be changing the site directory and choose the site directory to vtiger crm. This will be my site directory and click on save to refresh the page.\n\n## Installation Wizard: Fixing PHP Pre-requisites\n\nOkay, here is the installation wizard which will run now. So click on Install, and it will show you the welcome and license agreement. Click on I agree.\n\nOkay, here are the prerequisites which are required for the vtiger. Modules are already available and these three errors need to be checked here. So recommended PHP setting is: display error should be off, it is turned on. Log errors should be off, it is on. And short open tag should be off, it is on. So we'll be going to PHP setting and we will look for these and we'll change this settings here.\n\nSo my PHP setting is here. We'll go to configuration and look for the display errors which should be off. And then a short open tags. So short open tag is on, I'll turn it off. Now we will refresh this again and then we will see log_error is equal to... so log errors is on, so I'll be turning it to off. So we'll save it, reload the configuration, and let us refresh this again. Now you can see all the errors have disappeared here, and vtiger installation wizard is ready. We'll click Next.\n\n## Installation Wizard: Database and Admin Setup\n\nNow one important thing to mention here is that we need to create a database here. So we can either create with the universal user ID and password, but I'll be just going back to here and create the database. I'll be creating a database called vtigerdb and its user will be vtigeruser and I'll save this to notepad here. So db is vtigerdb, user is vtigeruser, and here is password. And just submit this. Now the database is created.\n\nSo we'll just enter these credentials here. So localhost host will be hostname, or you can have the IP address, whatever IP address is there. So username is vtigeruser. Let's copy this password here and the database name type in here. Click next. And this is my admin details. Click next. So the type of industry could be anything that you want, so I'll be installing it for, for example, retail and warehouse will be retail and wholesale. And now it has started the installation. We'll wait for the wizard to continue.\n\n## Installation Wizard: Module & Final Settings\n\nOkay, these are all the modules which are available. Contact management is definitely the module that any CRM system should have. So contact management is by default available. If you want to have complete sales automation so you can have that as well. Marketing automation or bulk email and send individual targeted email, you can have that as well. Support, project management, invoicing. So we'll start with the contact management first, and we can add these modules one by one later as well. So we'll continue with the contact management and next. And here is my base currency. I can change it, the base currency to...and all this information is fine, DD and YY, and get started.\n\n## Creating a Demo User & Conclusion\n\nNow the installation is ready. For the purpose of demo, I'll be creating another user called demo. So password will be demo@2022. This is admin, and save. You can also access it whenever you want. So you can use the same for practicing it.\n\nIn this video, we have seen how to install and configure vtiger CRM. In this series of videos, I'll be providing a complete training of vtiger CRM. Subscribe to the channel. See you in the next video. Take care and goodbye."
+}

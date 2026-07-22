@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 3,
+  "videoId": "3x2q6-5XbQ8",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to run the Claude code CLI completely free and offline by using local large language models through Ollama. This guide walks you through installing Ollama, downloading recommended open-source coding models like Queen 3 Coder, GLM 4.7, and GPT-OSS, and launching Claude code to use them on your own consumer-grade hardware. Unlock the full power of agentic coding, including slash commands and sub-agents, without any API keys or subscriptions, ensuring a completely secure and private workflow.",
+  "chapters": [
+    {
+      "title": "Demo: A Free, Offline Weather App with Claude Code",
+      "description": "This chapter showcases a real-time weather app built for free using Claude code and a local model, highlighting the benefits of this offline and secure setup.",
+      "startTime": 0.0,
+      "endTime": 65.0,
+      "slug": "demo-a-free-offline-weather-app-with-claude-code"
+    },
+    {
+      "title": "Setting Up Ollama for Local Models",
+      "description": "This section covers the first step of downloading, installing, and verifying Ollama on your machine to manage and run local LLMs.",
+      "startTime": 65.0,
+      "endTime": 106.0,
+      "slug": "setting-up-ollama-for-local-models"
+    },
+    {
+      "title": "Choosing the Right Local Code Model",
+      "description": "Learn about the recommended models for Claude code, including Queen 3 Coder, GLM 4, and GPT-OSS, with suggestions based on your system's VRAM.",
+      "startTime": 106.0,
+      "endTime": 161.0,
+      "slug": "choosing-the-right-local-code-model"
+    },
+    {
+      "title": "Model Recommendations and Hardware Considerations",
+      "description": "This segment offers opinions on model performance and provides options for high-end hardware, such as larger quantized versions requiring more VRAM.",
+      "startTime": 161.0,
+      "endTime": 221.0,
+      "slug": "model-recommendations-and-hardware-considerations"
+    },
+    {
+      "title": "Downloading a Model and Installing Claude Code",
+      "description": "Follow these steps to download your chosen model using the 'ollama pull' command and then install the Claude code CLI tool.",
+      "startTime": 221.0,
+      "endTime": 272.0,
+      "slug": "downloading-a-model-and-installing-claude-code"
+    },
+    {
+      "title": "How to Launch Claude Code with Ollama",
+      "description": "Discover the specific command needed to launch Claude code with Ollama, bypassing the standard login and API key requirements.",
+      "startTime": 272.0,
+      "endTime": 333.0,
+      "slug": "how-to-launch-claude-code-with-ollama"
+    },
+    {
+      "title": "Switching Between Different Local Models",
+      "description": "Learn how to use the '--config' flag to switch between different downloaded models when launching Claude code with Ollama.",
+      "startTime": 333.0,
+      "endTime": 391.0,
+      "slug": "switching-between-different-local-models"
+    },
+    {
+      "title": "Local Model Performance and Use Cases",
+      "description": "This chapter demonstrates a local model's capabilities and discusses realistic expectations, positioning them as ideal for learning and minor coding tasks.",
+      "startTime": 391.0,
+      "endTime": 429.0,
+      "slug": "local-model-performance-and-use-cases"
+    },
+    {
+      "title": "Troubleshooting Tips for Ollama and Claude Code",
+      "description": "This section provides a practical tip for resolving errors by using the official documentation as context for a more intelligent AI model.",
+      "startTime": 429.0,
+      "endTime": 481.0,
+      "slug": "troubleshooting-tips-for-ollama-and-claude-code"
+    },
+    {
+      "title": "Comparing Model Context Windows",
+      "description": "Explore the importance of a model's context window size, comparing GLM, Queen 3 Coder, and GPT-OSS, and how it affects performance in Claude code.",
+      "startTime": 481.0,
+      "endTime": 545.0,
+      "slug": "comparing-model-context-windows"
+    },
+    {
+      "title": "Conclusion",
+      "description": "The video concludes with a quick recap and a call to action for viewers to like the video and subscribe for more content.",
+      "startTime": 545.0,
+      "endTime": 558.24,
+      "slug": "conclusion"
+    }
+  ],
+  "summary": "## Run Claude Code for Free with Local Models\n\nYou can use the **Claude code CLI** with local, open-source models via **Ollama** for a powerful coding experience that is completely **free**, **unlimited**, **secure**, and **offline**. This setup retains all of Claude code's native features, like slash commands, planning mode, and sub-agents.\n\n## Setup and Installation\n\n1.  **Install Ollama**: Download from `ollama.com` and verify the installation in your terminal by running `ollama`. Check for existing models with `ollama list`.\n2.  **Download a Model**: Browse available models on the Ollama website. Use the command `ollama pull <model_name>` to download your chosen model (e.g., `ollama pull qwen2-coder`).\n3.  **Install Claude Code**: Follow the installation instructions on the Ollama website's Claude code page to get the CLI tool.\n\n> [!IMPORTANT]\n> To run Claude code with local models, you must use the special command `ollama launch claude`. The standard `claude` command will prompt for an API key. To change your selected model later, use the `--config` flag: `ollama launch claude --config`.\n\n## Recommended Local Models\n\nYour choice depends on your hardware, particularly VRAM. Here are the key recommendations:\n\n*   **Queen 3 Coder**: A strong all-rounder requiring ~19GB of VRAM. It's a favorite due to its excellent performance and a large **256K token context window**.\n*   **GLM 4.7 Flash**: Similar in size to Queen 3 Coder (~19GB VRAM) but with a smaller **198K token context window** that aligns well with Claude code's internal limits.\n*   **GPT-OSS (20B)**: A great starting point for less powerful hardware (~14GB VRAM or less). Its main drawback is a smaller **128K token context window**, which can lead to performance degradation on larger projects.\n\n## Key Considerations\n\n*   **Performance Expectations**: Local models are fantastic for learning agentic workflows and performing many coding tasks. However, they will **not** match the reasoning capabilities of state-of-the-art cloud models like **Opus** or **Sonnet 4.5**.\n*   **Context Window**: A model's context window is crucial. Claude code starts to summarize conversations as they approach its ~200K token limit. Models with larger context windows (like Queen 3 Coder) handle large, complex codebases more effectively.\n\n> [!TIP]\n> **Troubleshooting**: If you encounter errors (e.g., model not found, version conflicts), copy the text from the official Ollama documentation page and your specific error message, then paste it into a more capable AI like ChatGPT or a cloud-based Claude model for assistance.",
+  "transcription": "## Demo: A Free, Offline Weather App with Claude Code\n\nIn this video, I'm going to show you how you can use local models in Claude code. I just used Claude code to create this real-time weather app. This app calls an API to fetch real, accurate information from the web, so I can enter any city in the world and it will retrieve up-to-date weather information for that city, along with all of these beautiful little animations.\n\nNow, here's the kicker. This is completely free. No need for any subscriptions or API costs. And these models are running locally on my own machine, which I can use for unlimited times and it's completely secure and offline. In fact, if you have a look at the CLI, you will notice that I'm actually using Queen 3 coder and not Sonnet, Opus, or Haiku. And because we're running in the Claude code CLI tool, these agents have access to all of the features available in Claude code, like slash commands, skills, MCP servers, sub-agents, you name it. We can also switch between edit mode and plan modes as well. Everything just works. And yes, this is running on consumer-grade hardware.\n\n## Setting Up Ollama for Local Models\n\nThe first thing we need to do is to download models onto our machine. For this, we will be using Ollama. If you're new to Ollama, it's a fantastic tool for running large language models on your own machine. So, go over to ollama.com, then click on download, and then download and install Ollama. Afterwards, you can verify that Ollama is actually working by opening up your terminal or command prompt and running the command Ollama. You should receive something like this, which shows you all of these available commands. And if you run Ollama list, it will show you all of the available models on your machine. If this is your first time using Ollama, you won't see any models at this stage.\n\n## Choosing the Right Local Code Model\n\nSo, how do you download models then? Again, on the Ollama website, simply go to models and now you have different models for different purposes. For Claude code, if we actually go to the Ollama website and click on Claude code, we can go down to recommended models and Ollama themselves actually recommend Queen 3 coder, GLM 4.7, this is actually GLM 4.7 flash by the way, and the GPT-OSS series of models from OpenAI. So, let's go back to models. Here's my recommendation based on your system specs. Let's go to GPT-OSS.\n\nThe smallest model out of all of these is the GPT-OSS 20 billion parameter model. You only need about 14 gig of VRAM. And in fact, this number is misleading due to the architecture of the model. You can get away with running this on way less VRAM. Then, if your hardware can handle it, I actually recommend using Queen 3 coder, this 19 gig model over here. Then, it's also worth mentioning that the GLM 4.7 flash model was recently added to Ollama as well. Just like the Queen 3 model, this is also a 30 billion parameter model. And this also clocks in at about 19 gig, just like Queen 3.\n\n## Model Recommendations and Hardware Considerations\n\nNow, this is just my opinion, but I feel like I actually got better results from Queen 3 compared to GLM 4.7 flash. If you've got a more capable graphics card, you can definitely go for GLM 4.7 flash, the Q8 quantized version. This requires about 32 gig of VRAM. So, at this point, you probably need something like an RTX 5090 to run this model.\n\nAnd if you don't mind a little bit of offloading and slower responses, you can definitely go for GPT-OSS, the 120 billion parameter model, which is the largest out of all of these.\n\n## Downloading a Model and Installing Claude Code\n\nSo, once you've selected a model, all you have to do is copy the name of the model, then back in your terminal, simply run Ollama pull and then paste in that model name. And after downloading the model, we can run Ollama list and you should now see the model in this list. Cool. We can now close the terminal and we should now be able to use these models in Claude code.\n\nSo, how do you install Claude code then? Well, from the Ollama website, simply scroll down to Claude code. Then, from this page, we can go down to the install section and then depending on your operating system, simply copy this command and simply run that command in your terminal. This will now download and install the latest version of Claude code.\n\n## How to Launch Claude Code with Ollama\n\nSo, now that we have the model downloaded and we've got Ollama up and running, all we have to do now is start Claude code and use these models. But, there's a catch. If you try to use Claude normally by running the Claude command, you will be taken to the setup instructions and you will be asked to sign in with either your Claude code subscription or your Anthropic API key. So, I'm actually going to press control C to exit out of this. And there's actually a special way to start Claude code using Ollama. What you have to enter is `ollama launch claude`. Optionally, you can add --config to kind of reset the setup process.\n\nSo, I'm just going to run it without the config flag. Then, let's select our theme. We can press enter and you will notice it didn't ask us to sign in with our subscription or provide an API key. We can simply press enter. We can use the recommended settings and that's really it. Now, we have access to Claude code and we are using an open-source model that's running securely on our own machines.\n\n## Switching Between Different Local Models\n\nNow, what happens if you download additional models and you want the option to select between a different models? Now, since we've already run that setup process, this command actually won't ask us again what model to select. It will simply default to the previously selected model. So, in order to go through the setup process again, we simply have to add this --config flag. And now, we have an opportunity to select one of those models. So, let's go with GPT-OSS, the 20 billion parameter model, just to keep things interesting. And let's see if everything works by saying, \"Hey.\" And look at that, we get our response back. And just to prove to you that we're not running any Claude models behind the scenes, I'll start the Claude command and you'll see this error message, \"Missing API key.\" And that's because I'm currently signed out of my Anthropic account. So, this is indeed completely running offline.\n\n## Local Model Performance and Use Cases\n\nAnd we can still go into planning mode and change mode. We can create sub-agents. We can hook up custom commands and everything else.\n\nHey, please can you describe this code base? And let's send this. So, while this is running, I do want to mention that these models will never compete with the likes of Opus and Sonnet 4.5. It's just unreasonable to assume that you can run something of that caliber on your local hardware. But, these local models are perfect for starting out with agentic coding and vibe coding and you might not have the means to pay for these expensive services. And it doesn't mean that these models are useless either. You can definitely use them to make quick little edits in your code base. And as you can see, GPT-OSS was perfectly fine with describing this application.\n\n## Troubleshooting Tips for Ollama and Claude Code\n\nIf you run into any issues using these models, what I recommend you do is simply go to this Claude code documentation on the Ollama website, copy this page, and then pass it to a more intelligent model like one of the Claude models or ChatGPT. It really doesn't matter. Just pass in this documentation and explain the issue that you're having. For example, while I was preparing for this video, I kept getting these 404 error messages in the terminal. So, it effectively said that it couldn't find the model. Or when I tried to download one of these models, I believe it was the GLM 4.7 flash model, Ollama said it couldn't download the model because I don't have the correct version of Ollama installed. So, I found that by passing in the content of this page to a more intelligent model, it was able to resolve all of these issues for me.\n\n## Comparing Model Context Windows\n\nAnother important factor between deciding on the different models is the model's... So, something to take note is the GLM 4.7 model has a context window size of 198K tokens. This is similar to the 200,000 token limit in Claude code. When you get close to reaching this limit, the conversation will be summarized or compacted. So, the GLM model does fit nicely into that context window limit. The Queen 3 coder model actually supports up to 256,000 tokens. This means the 200,000 token limit in Claude code doesn't come close to the limit of this model. Whereas, the GPT-OSS models only have a context window of 128,000 tokens. This means in Claude code, you'll see the quality of the responses degrade when using about 50% of this maximum context window size. And that's why the Queen 3 coder model is basically my favorite model at this point in time.\n\n## Conclusion\n\nI hope you found this video useful. If you did, please hit the like button and subscribe to my channel for more Claude code tips and tricks. I'll see you in the next one. Bye-bye."
+}

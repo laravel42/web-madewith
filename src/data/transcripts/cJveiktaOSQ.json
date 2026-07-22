@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 3,
+  "videoId": "cJveiktaOSQ",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn to build a simple, powerful API with the Django REST Framework (DRF) from scratch. This tutorial guides you through installing Django and DRF, configuring your project, and creating a dedicated API application. You'll discover how to create function-based views with the `@api_view` decorator, serialize model data using `ModelSerializer`, and set up URL endpoints. Master the fundamentals by building a GET endpoint to display data and a POST endpoint to add new items to your database through the API.",
+  "chapters": [
+    {
+      "title": "Introduction to Django REST Framework",
+      "description": "An overview of what the Django REST Framework is and the simple API project that will be built in the video.",
+      "startTime": 0.0,
+      "endTime": 37.0,
+      "slug": "introduction-to-django-rest-framework"
+    },
+    {
+      "title": "Project Setup and Installation",
+      "description": "This chapter covers installing Django and Django REST Framework, creating a new project, and adding DRF to the installed apps.",
+      "startTime": 37.0,
+      "endTime": 109.0,
+      "slug": "project-setup-and-installation"
+    },
+    {
+      "title": "Organizing the API Code",
+      "description": "A dedicated API folder is created to keep API-related logic separate from other Django apps.",
+      "startTime": 109.0,
+      "endTime": 137.0,
+      "slug": "organizing-the-api-code"
+    },
+    {
+      "title": "Creating the First API View",
+      "description": "Learn to create a function-based view using the `@api_view` decorator and the `Response` object to return static JSON data.",
+      "startTime": 137.0,
+      "endTime": 177.0,
+      "slug": "creating-the-first-api-view"
+    },
+    {
+      "title": "Returning Static JSON Data",
+      "description": "This chapter shows how to pass a Python dictionary into the `Response` object, which is then automatically rendered as JSON.",
+      "startTime": 177.0,
+      "endTime": 217.0,
+      "slug": "returning-static-json-data"
+    },
+    {
+      "title": "Configuring URL Endpoints",
+      "description": "This segment demonstrates how to wire up the API's URLs by including the API app's URL configuration in the main project's `urls.py`.",
+      "startTime": 217.0,
+      "endTime": 240.0,
+      "slug": "configuring-url-endpoints"
+    },
+    {
+      "title": "Testing the Browsable API",
+      "description": "A first look at the Django REST Framework's browsable API, which provides a user-friendly interface for interacting with endpoints.",
+      "startTime": 240.0,
+      "endTime": 280.0,
+      "slug": "testing-the-browsable-api"
+    },
+    {
+      "title": "Modeling the Application Data",
+      "description": "This chapter walks through creating a separate 'base' app and defining a simple `Item` model with a name and a creation timestamp.",
+      "startTime": 280.0,
+      "endTime": 324.0,
+      "slug": "modeling-the-application-data"
+    },
+    {
+      "title": "Migrating and Populating the Database",
+      "description": "Instructions are given on how to run database migrations and use the Django shell to create and save new `Item` objects.",
+      "startTime": 324.0,
+      "endTime": 387.0,
+      "slug": "migrating-and-populating-the-database"
+    },
+    {
+      "title": "Creating a Model Serializer",
+      "description": "Learn to create a `ModelSerializer` to convert complex model instances into data types that the `Response` object can render.",
+      "startTime": 387.0,
+      "endTime": 454.0,
+      "slug": "creating-a-model-serializer"
+    },
+    {
+      "title": "Fetching and Serializing Dynamic Data",
+      "description": "The `getData` view is updated to query all items from the database and use the `ItemSerializer` to prepare the data for the response.",
+      "startTime": 454.0,
+      "endTime": 499.0,
+      "slug": "fetching-and-serializing-dynamic-data"
+    },
+    {
+      "title": "Creating a POST Endpoint to Add Data",
+      "description": "This chapter details how to build a view that accepts POST requests and uses the serializer to validate and save new data.",
+      "startTime": 499.0,
+      "endTime": 545.0,
+      "slug": "creating-a-post-endpoint-to-add-data"
+    },
+    {
+      "title": "Testing the POST Endpoint",
+      "description": "The browsable API is used to send a POST request with JSON data to the new endpoint, creating a new item in the database.",
+      "startTime": 545.0,
+      "endTime": 574.0,
+      "slug": "testing-the-post-endpoint"
+    },
+    {
+      "title": "Final Verification and Conclusion",
+      "description": "The video concludes by verifying that the newly created item appears in the GET endpoint's response and offers final thoughts.",
+      "startTime": 574.0,
+      "endTime": 585.56,
+      "slug": "final-verification-and-conclusion"
+    }
+  ],
+  "summary": "## Django REST Framework: Key Concepts\n\nThis document summarizes the core steps for building a basic API with Django REST Framework (DRF).\n\n### ## Initial Setup\n\n1.  **Installation**: Install Django and DRF via pip.\n    *   `pip install django`\n    *   `pip install djangorestframework`\n2.  **Configuration**: Add `'rest_framework'` to the `INSTALLED_APPS` list in your `settings.py` file.\n\n> [!TIP]\n> For better organization, create a dedicated `api` folder in your project's root directory to hold all API-specific files like views, serializers, and URLs.\n\n### ## Building API Views\n\nDRF provides tools to build views that handle web requests.\n\n*   **`@api_view` Decorator**: For function-based views, this decorator specifies which HTTP methods the view can handle (e.g., `['GET']`, `['POST']`).\n*   **`Response` Object**: Imported from `rest_framework.response`, this object takes Python data (like a dictionary or serialized data) and renders it into the correct format, typically JSON.\n\n### ## Serializers: The Bridge Between Models and JSON\n\nA serializer's primary job is to convert complex data types, like Django model instances, into native Python data types that can be easily rendered as JSON.\n\n*   **`ModelSerializer`**: A specialized serializer that automatically generates fields and validators based on a Django model.\n\n```python\n# api/serializers.py\nfrom rest_framework import serializers\nfrom base.models import Item\n\nclass ItemSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Item\n        fields = '__all__' # Or a list of specific fields: ['id', 'name']\n```\n\n> [!IMPORTANT]\n> When serializing a queryset (multiple objects), you must pass `many=True` to the serializer instance: `serializer = ItemSerializer(items, many=True)`.\n\n### ## Handling GET and POST Requests\n\n**1. Fetching Data (GET Request)**\n\nIn your view, query the data from the database, pass it through the serializer, and return the `serializer.data` in the `Response`.\n\n```python\n# api/views.py\n@api_view(['GET'])\ndef getData(request):\n    items = Item.objects.all()\n    serializer = ItemSerializer(items, many=True)\n    return Response(serializer.data)\n```\n\n**2. Creating Data (POST Request)**\n\nThe serializer also handles deserialization—validating incoming data and creating new objects.\n\n```python\n# api/views.py\n@api_view(['POST'])\ndef addItem(request):\n    serializer = ItemSerializer(data=request.data)\n    if serializer.is_valid():\n        serializer.save() # Creates a new Item instance\n        return Response(serializer.data)\n```\n\n> [!NOTE]\n> The `serializer.is_valid()` method checks if the incoming data (`request.data`) conforms to the model's structure. If valid, `serializer.save()` creates and saves the new object to the database.",
+  "transcription": "## Introduction to Django REST Framework\n\nToday we're gonna use the Django REST framework to build an oversimplified API. But before we get started, let's take a quick look at what it is and its purpose.\n\nSo while Django is a Python-based framework for building out web applications, the Django REST framework is a library we can use with it to help us build out APIs. So whether you're looking to build a public API or an API to simply distribute data to your own applications, the Django REST framework is a great tool to use.\n\nSo for our project today, we'll build an API to display all the items in our database and an endpoint for adding new items all through this API.\n\n## Project Setup and Installation\n\nLet's start from scratch by installing the latest version of Django using pip, and then create a new project using the start project command and call your project `myproject`.\n\nOnce our boilerplate files are created, go ahead and open up your project files in a text editor. And then we'll jump back into our command prompt because we still need to install the Django REST framework package. To do this, let's go ahead and run `pip install djangorestframework` all as one word.\n\nNow in your text editor, go ahead and open up the settings file and add `rest_framework` to the list of installed apps.\n\n## Organizing the API Code\n\nThere's multiple ways to configure our API, but my personal preference is to keep my API separate from all of the other apps inside of my project. So let's go ahead and create a new folder in the root directory of our project and call it `api`. And inside of this API folder, go ahead and create an init file. Just in case you missed it, there's double underscores before and after `init`. In this new API folder, we'll also want to create some views and URLs, so let's start by creating a `views.py` file.\n\n## Creating the First API View\n\nIn the views file, let's first import the `Response` class from `rest_framework.response`. And this response object will take in any Python data or already serialized data that we pass into it and will render it out as JSON data. Because we are using function-based views, we'll also need to import the `api_view` decorator, and we're going to use this with all of our views.\n\nNow that we have the two imports that we need, let's create our first view and call it `getData`. Above the view, we'll use the `api_view` decorator and pass in the GET method into the list of allowed methods. We can always add more methods such as POST, PUT, and DELETE to this list, but at this point, we're only going to return some data, so the GET method is the only one that we'll need. And for the return method, let's just use the Response object that we just imported.\n\n## Returning Static JSON Data\n\nWe'll create some models and return back some real data in a minute, but before we talk about serializing models, let's just set a Python dictionary with some key-value pairs and pass this into the response object. Remember that once this dictionary is passed into the response, this will be output as JSON data. Okay so we have our view and now it's time to create an endpoint to see what this outputs. Let's add in a `urls.py` file into the API folder, and in this folder, let's make some basic imports like our `path` function and our views. And below our views, let's go ahead and create a `urlpatterns` list and let's use the path function to set some endpoints and pass in the `getData` view.\n\n## Configuring URL Endpoints\n\nLet's jump back into the root directory of our project and connect our root `urls.py` file to the new URLs inside of the API folder. Okay, so at this point, we have the basics configured and now we're ready to see the output. Let's make sure our server is running and open up the website on the following port.\n\n## Testing the Browsable API\n\nOkay, awesome. If you're seeing this output, it means that everything is working as it's supposed to. The Django REST framework gives us this easy-to-use interface with our API and it makes things much more readable and easier to understand. If you want to see this output as raw data, we can click on the drop-down menu in the top right, go ahead and select JSON, and this will append a format in the URL and return back some data as raw JSON data without an interface.\n\n## Modeling the Application Data\n\nOkay, so all we did was configure the Django REST framework and render out some data. But now I want to return back some real data. For this, we'll create some models and migrate our database. After we add some data, we'll serialize this data and output it instead of the static data that we currently have. I want to replicate how I would separate my API from my apps in a real project, so let's open up the command prompt and use the `startapp` command to create a new app and let's go ahead and call it `base`.\n\nOnce the app is created, let's go ahead and jump into our `settings.py` file and register the app inside of the installed apps. Within the new app folder that we just created, let's go into the `models.py` file and add a model called `Item`. In order to speed things up, I'm just going to paste in some code that I already have pre-written for this item model. This model will only contain two attributes: it's going to have a name, which will be a string value, and a `created` attribute that will contain a timestamp for when each instance is created.\n\n## Migrating and Populating the Database\n\nOnce our model is created, let's go ahead and run some migrations by calling the `makemigrations` command, and then apply these migrations by calling the `migrate` command. To add some data, let's open up our terminal and run `python manage.py` and then the `shell` command. This will give us an interactive shell to start working with our data.\n\nWhen the shell is ready, we'll first need to import the `Item` model from `base.models`. To create an item, let's get the Item model and use the `create` method to set the item name. I'll just keep it simple and call the item `Item1`. I'll leave it up to you to decide how much data you want to add here, but what I'm gonna do here is just run this command two more times, and I'm just gonna change the item number from two and three. Just to make sure everything was done correctly, let's query all the items in the database and print them out in the terminal. Okay, so everything looks good so far. Let's go ahead and exit the interactive shell and start up the server.\n\n## Creating a Model Serializer\n\nLet's jump back into our API folder and add in a new file called `serializers.py`. In this file, we're going to need to create model serializers because the response object cannot natively handle complex data types such as Django model instances. So we'll first need to serialize this data before we can actually render it out. So we'll create serializers for our item model, and all this will do is convert instances of our items from objects into data types the response object can understand.\n\nSo in `serializers.py`, we'll start by importing serializers from `rest_framework`, and then we'll import the Item model from the base app. Next, we'll create our serializer class, and this can be called anything you want, but I tend to stick with a model name followed by the word serializer. Our item serializer will inherit from the `models.Serializer` class. We'll set the inner `Meta` class, and then we'll set the two required attributes, and in this case, it's going to be the model and the fields that we want to serialize. We can pass in a list of fields here, but in our case, I just want to serialize all the fields, so we'll just leave this as `all`.\n\n## Fetching and Serializing Dynamic Data\n\nNow that we have our ItemSerializer, let's jump back into our views and import our item model and then the new serializer that we just created. Inside of our `getData` view, we'll get rid of any dummy data and query all the items from our database. Once we've queried the data, we'll need to serialize these items before we can return them. So let's first set the serializer variable and use the ItemSerializer class. In the serializer, we'll pass in the items, and then we'll set `many` to `true`.\n\nSetting this value to true simply tells our serializer that we're going to serialize multiple items, whereas if we only wanted to return back one item, we would set this to false. In the response, we'll throw in our serializer, and in particular, we want to return back the data value. All right, so let's jump back into the browser and see what the output is to this new view. In the response, we can now see all the items we added to the database output as JSON data.\n\n## Creating a POST Endpoint to Add Data\n\nOkay so that looks great, but let's add in one more endpoint to see how you can add data with your API. In the `views.py` file, let's start by creating a new view and calling it `addItem` and make sure we add in a decorator and set POST to the list of methods that are allowed. Because we are about to make a POST request, we have a lot of options in how we can handle this next part, but the method I want to use is to use the serializer class itself and pass in all the data to this class and let it deal with all the functionality in creating an item and actually validating the data that was sent from the front end.\n\nSo to do this, let's set the serializer variable to the `ItemSerializer`. And inside of the ItemSerializer, we're going to set the `data` value, and in this value, we're going to pass in the data that was sent from the front end on that POST request. Once the data is passed into the class, we can check if this is valid data the same way you would check with a model form using the `is_valid` method. If everything checks out, let's just call the save method. This will create a new item in the database, and then let's return the newly created item in the response. Last thing we'll do is create a url path for this new endpoint and then we'll pass in this new view.\n\n## Testing the POST Endpoint\n\nOnce the view is set, let's go back into the browser and check out this new endpoint. So we'll open up the root URL and we'll just add in that new path that we created. First thing we'll see is an interface telling us that a GET method is not allowed, and we can change this directly from the interface. So let's scroll down and actually send some data using a POST method.\n\nIn this text area, we can add in any data that we want here and then send it as a POST request to the back end. So let's go ahead and replicate what a real request might look like from the front end. So we'll pass in an object and the only attribute that we need to pass in is the name, because that created value is auto-generated. So we'll just go ahead and set this value to `Item created`. Now let's scroll down and send it as a post request. The data was sent and now we have a new response with an object, and this means that a new item was added to the database.\n\n## Final Verification and Conclusion\n\nSo let's jump back into the first endpoint that we created and let's see this listed out with all the other items. And here we go, and now we see item number four.\n\nOkay, so that's it for this video. I hope you got some good insights and feel much more prepared to take the next step in learning about the Django REST framework."
+}

@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 3,
+  "videoId": "-jRxG84AzCI",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to manage application data and state in Angular by creating and using services. This guide demonstrates how to solve the common challenge of sharing data between routed components. You'll use the Angular CLI to generate a service, implement methods to retrieve all and single data items, and refactor existing components to utilize dependency injection with the `inject` function. Discover the benefits of services as a single source of truth, improve code maintainability, and build a complete, data-driven details page.",
+  "chapters": [
+    {
+      "title": "Introduction to Angular Services",
+      "description": "This chapter introduces the problem of sharing data between components and presents Angular services as the solution.",
+      "startTime": 0.0,
+      "endTime": 51.0,
+      "slug": "introduction-to-angular-services"
+    },
+    {
+      "title": "Creating a Housing Service with the CLI",
+      "description": "Learn how to generate a new service using the Angular CLI and understand the purpose of the `@Injectable` decorator.",
+      "startTime": 51.0,
+      "endTime": 101.0,
+      "slug": "creating-a-housing-service-with-the-cli"
+    },
+    {
+      "title": "Understanding the Service Class Structure",
+      "description": "This chapter explains the basic structure of a generated service class, including the `@Injectable` decorator and the `providedIn` property.",
+      "startTime": 101.0,
+      "endTime": 149.0,
+      "slug": "understanding-the-service-class-structure"
+    },
+    {
+      "title": "Moving Data into the Service",
+      "description": "Refactor the application by moving the static housing data from the component to the newly created housing service, establishing a single source of truth.",
+      "startTime": 149.0,
+      "endTime": 196.0,
+      "slug": "moving-data-into-the-service"
+    },
+    {
+      "title": "Implementing Data Access Methods",
+      "description": "Create methods within the service to get all housing locations and to find a specific location by its ID.",
+      "startTime": 196.0,
+      "endTime": 255.0,
+      "slug": "implementing-data-access-methods"
+    },
+    {
+      "title": "Using the Array.find Method",
+      "description": "This chapter demonstrates how to implement the logic for `getHousingLocationById` using the `find` array method and an arrow function.",
+      "startTime": 255.0,
+      "endTime": 281.0,
+      "slug": "using-the-array-find-method"
+    },
+    {
+      "title": "Using the Service in HomeComponent",
+      "description": "Refactor the home component to inject the housing service and use it to retrieve the list of housing locations.",
+      "startTime": 281.0,
+      "endTime": 355.0,
+      "slug": "using-the-service-in-homecomponent"
+    },
+    {
+      "title": "Verifying the Refactor and Explaining DI",
+      "description": "Confirm that the application still functions correctly after refactoring and provides a conceptual overview of dependency injection and its benefits.",
+      "startTime": 355.0,
+      "endTime": 420.0,
+      "slug": "verifying-the-refactor-and-explaining-di"
+    },
+    {
+      "title": "Benefits of Dependency Injection",
+      "description": "This chapter details the key benefits of using dependency injection in Angular, including improved testability, reusability, and maintainability.",
+      "startTime": 420.0,
+      "endTime": 422.0,
+      "slug": "benefits-of-dependency-injection"
+    },
+    {
+      "title": "Refactoring the Details Component",
+      "description": "Inject the housing service into the details component and use it to fetch the data for a single housing location based on the route parameter.",
+      "startTime": 422.0,
+      "endTime": 508.0,
+      "slug": "refactoring-the-details-component"
+    },
+    {
+      "title": "Using the Optional Chaining Operator",
+      "description": "Learn how to use the optional chaining operator `?.` in the template to safely access properties on an object that might be undefined.",
+      "startTime": 508.0,
+      "endTime": 561.0,
+      "slug": "using-the-optional-chaining-operator"
+    },
+    {
+      "title": "Building the Details Component Template",
+      "description": "Construct the HTML template for the details component, including the main image, title, and location information.",
+      "startTime": 561.0,
+      "endTime": 652.0,
+      "slug": "building-the-details-component-template"
+    },
+    {
+      "title": "Adding Location Features to the Template",
+      "description": "Expand the details template to include a list of features, such as available units, Wi-Fi, and laundry status.",
+      "startTime": 652.0,
+      "endTime": 731.0,
+      "slug": "adding-location-features-to-the-template"
+    },
+    {
+      "title": "Completing the UI with Styles",
+      "description": "Add the final 'Apply now' section to the template, apply the necessary CSS styles, and verify the completed details page.",
+      "startTime": 731.0,
+      "endTime": 795.0,
+      "slug": "completing-the-ui-with-styles"
+    },
+    {
+      "title": "Recap and Next Steps",
+      "description": "This final chapter recaps the creation and injection of services, the completion of the details page, and previews future topics.",
+      "startTime": 795.0,
+      "endTime": 845.0,
+      "slug": "recap-and-next-steps"
+    }
+  ],
+  "summary": "## Key Concepts\n\nThis video covers how to use **Angular services** to manage data and share logic across components. The primary goal is to refactor an application so that data is fetched from a central service rather than being hardcoded in components.\n\n## Creating a Service\n\n\n-   **Purpose**: A service is an injectable class used to encapsulate logic and data, making it a **single source of truth** for your application.\n-   **CLI Command**: Generate a new service using the Angular CLI.\n    ```bash\n    ng g s housing\n    ```\n\n> [!NOTE]\n> `s` is the abbreviation for `service`.\n\n## Service Implementation\n\n\nAn Angular service is a TypeScript class decorated with `@Injectable()`.\n\n-   **`@Injectable()` Decorator**: Marks a class as available to be provided and injected as a dependency.\n-   **`providedIn: 'root'`**: This metadata tells Angular to provide the service at the application's root level. This makes a single, shared instance of the service available to be injected throughout the app.\n\n```typescript\nimport { Injectable } from '@angular/core';\nimport { HousingLocation } from './housinglocation';\n\n@Injectable({\n  providedIn: 'root',\n})\nexport class HousingService {\n  protected housingLocationList: HousingLocation[] = [/* ... data ... */];\n\n  getAllHousingLocations(): HousingLocation[] {\n    return this.housingLocationList;\n  }\n\n  getHousingLocationById(id: number): HousingLocation | undefined {\n    return this.housingLocationList.find(\n      (housingLocation) => housingLocation.id === id\n    );\n  }\n}\n```\n\n## Dependency Injection (DI)\n\n\nDI is a design pattern Angular uses to provide components with their dependencies (like services).\n\n-   **`inject()` Function**: Used within a component to request an instance of a service.\n    ```typescript\n    housingService = inject(HousingService);\n    ```\n\n> [!IMPORTANT]\n> Using dependency injection leads to loosely coupled code, which has several benefits:\n> - **Testability**: Dependencies can be easily mocked in unit tests.\n> - **Reusability**: Services can be reused across many components.\n> - **Maintainability**: You can change the internal logic of a service without affecting the components that use it.\n\n\n## Using the Service in Components\n\n\n1.  **Inject the Service**: Add a property to your component class to hold the injected service instance.\n2.  **Call Service Methods**: Use the service instance to call its methods, typically within the `constructor` or lifecycle hooks, to fetch data.\n\n```typescript\n// In details.component.ts\nexport class DetailsComponent {\n  route: ActivatedRoute = inject(ActivatedRoute);\n  housingService = inject(HousingService);\n  housingLocation: HousingLocation | undefined;\n\n  constructor() {\n    const housingLocationId = Number(this.route.snapshot.params['id']);\n    this.housingLocation = this.housingService.getHousingLocationById(housingLocationId);\n  }\n}\n```\n\n## Handling Potentially Undefined Data\n\n\nWhen fetching data that may not exist (e.g., a location by an invalid ID), the service method may return `undefined`.\n\n> [!TIP]\n> Use the **optional chaining operator (`?.`)** in your templates to safely access properties on an object that might be `undefined`. This prevents runtime errors.\n\n```html\n<!-- Safely accessing photo and name properties -->\n<img class=\"listing-photo\" [src]=\"housingLocation?.photo\" alt=\"Exterior photo of {{housingLocation?.name}}\">\n<h2 class=\"listing-heading\">{{ housingLocation?.name }}</h2>\n```",
+  "transcription": "## Introduction to Angular Services\n\nMARK THOMPSON: All right, friends, welcome back. We've completed the routing, and we came across a challenge. How do we get the selected housing location data to be available in the details component? We're going to solve this with a concept called a service.\n\nNow, a service has many different functions or purposes. And we get to decide which of these directions we'll take in our application.\n\nOne way a service can be used is to function as the way to interact with the data. For example, instead of each component having a copy of the housing location data, we can create a service that is responsible for retrieving the data from the data source, providing the helpful utility functions that allow us to access the data and, in some cases, having functions that allow us to persist data to a data source.\n\n## Creating a Housing Service with the CLI\n\nSo let's start by creating a service using the Angular CLI. And by the way, have you noticed how helpful the Angular CLI is? Yeah, I'm just saying, it's pretty cool.\n\nSo, from the command line in your project, enter the following: `ng g s housing`.\n\nIn this case, the `s` is an abbreviation for service, and we're naming it `housing`. In the IDE, open `housing.service.ts`.\n\n## Understanding the Service Class Structure\n\nIn the IDE, open housing.service.ts. A service is a TypeScript class in Angular. The injectable decorator tells Angular that we can use this class in the dependency injection system, meaning that other parts of the application can request an instance of this service. The providedIn property of the injectable decorator metadata tells the Angular where in the application this service can be injected.\n\nNow, root means that it can be used throughout the application. We need to move the data from the home component to the service.\n\n## Moving Data into the Service\n\nIn housing.service.ts, let's import the housing location interface from `./housinglocation`.\n\nNext, add a protected property to the HousingService class called housingLocationList, and make that of type HousingLocation array. For now, assign housingLocationList an empty array.\n\nWe need to populate the array with data. Now we'll copy the data from the home component. So in home.component.ts, copy the contents of the HousingLocation array and paste it into the housingLocationList array in housing.service.ts.\n\n## Implementing Data Access Methods\n\nBack in housing.service.ts, we're going to add two methods to the service. First, add a method named `getAllHousingLocations` that takes no parameters but returns a `HousingLocation` array. We'll use this method to return the list of housing locations to the caller. In the body of the function, return `this.housingLocationList`.\n\nNow, wherever we inject this service, we can request the housingLocationList. We also don't have to worry about duplicated data because the service will now be the source of truth.\n\nThe next method we need to add is `getHousingLocationById`, which accepts a parameter called `id` of type Number. And it returns the union type of `HousingLocation` or `undefined`. We're using the TypeScript union type here because the caller of this function could pass in an ID that doesn't match any housing location. In the body of the function, we'll search the array.\n\n## Using the Array.find Method\n\nHere's how: `this.housingLocationList.find` and, to the find function, we'll pass in an arrow function as a parameter. The arrow function has a parameter of housingLocation, and the logic is this one-liner, `housingLocation.id === id`. The find function will return the first match in the array, so we don't have to worry about any unnecessary iterations here.\n\nNow be sure to save your progress. We're going to update a few more files to use our fancy new service.\n\n## Using the Service in HomeComponent\n\nThe first component we'll update to use the new housing service is home.component.ts. Update the imports for the file to include `inject` from `@angular/core` and `HousingService` from `../housing.service`. Then in the body of the home component, add a property called `housingService`. Make that camel case, and set the value to a call to the inject function with `HousingService` as a parameter.\n\nRemember that property we had called housingLocationList? Make sure you've removed all of the contents of the array so that the value of the property is just an empty array.\n\nCreate a function called `constructor` that accepts no parameters. In the body of the function, let's add the logic to populate the `housingLocationList` property. `this.housingLocationList = this.housingService.getAllHousingLocations()`, and don't forget to add the parentheses at the end because we're invoking the `getAllHousingLocations` function.\n\n## Verifying the Refactor and Explaining DI\n\nNow, save all of the code, and let's check the browser. If we navigate to localhost port 4200, the application will be functioning just as it was before we refactored the code to use services. This is really excellent work so far, friends. Thumbs up.\n\nNow this is an important change that will actually improve the app's overall quality. Let's continue and get the detail page functioning properly.\n\nBefore we go on, we should take a quick break to discuss why we're using inject. Angular uses a concept called dependency injection to allow components and other parts of the code to ask the framework for things that are needed to function, also known as dependencies.\n\n## Benefits of Dependency Injection\n\nAt first, this might seem like an extra step, but it gives us some great benefits. First, it allows us to have testable code. When writing unit tests, we can make mocks of things like databases and online resources without having to call them in our test code. Second, we can have more reusable code. We can create our dependencies and use dependency injection to get access in other parts of the application. Third, we benefit from maintainability as well. When our code is loosely coupled, we can change the behind-the-scenes details and update our code over time without having to impact other parts of the code unnecessarily.\n\n## Refactoring the Details Component\n\nAll right, friends, back to the code. In details.component.ts, let's import `HousingService` from `../housing.service`. We also need to import `HousingLocation` from `../housinglocation`. Next, let's add a reference to the service by adding a property to the Component class called `housingService`, where the value is a call to the inject function with `HousingService` as a parameter. Now be sure you use your class and not your property as the parameter. Be mindful there.\n\nWe are also going to do some slight refactoring too, so delete the declaration of `housingLocationId` as a class property. Next, add another class property, and that is `housingLocation` of union type `HousingLocation` or `undefined`. Then, in the body of the constructor, instead of `this.housingLocationId`, update the code to `const housingLocationId`. We can make this ID a local variable now that we have access to an actual housing location instance. Finally, let's update the code to include the following logic: `this.housingLocation = this.housingService.getHousingLocationById()`, and as a parameter to this function, pass in `housingLocationId`.\n\n## Using the Optional Chaining Operator\n\nWait, we're not done making edits because our code now has an error in the template. To resolve that, replace the interpolated property, `housingLocationId`, with `housingLocation?.id`.\n\nOK, so what are we doing here? Well, in this case, we have to guard against calling dot id on undefined. So we use the optional chaining operator from TypeScript. If the housingLocation is undefined, the id property won't be accessed, and we don't have to worry about an error here. Save this code, and let's go back to the browser.\n\n## Building the Details Component Template\n\nClick on Learn More for any of the housing locations. When the Details page renders, we'll find the ID of the selected housing location being displayed. All right, again, this is really outstanding work, friends. This application is coming along wonderfully, and you should be really proud of yourselves and the work that you've done.\n\nNow we've reached the point where we can finally create the details component template. Back in the IDE, in details.component.ts, let's update the component metadata template property. Delete the existing HTML code here and replace it with an article element. Now add an img tag as a child element of the article. In this case, give the img element a src attribute of `housingLocation?.photo`. Wrap the src attribute in square brackets to enable property bindings. Because the housingLocation could be undefined, we'll use the optional chaining operator whenever accessing properties in this particular template.\n\nNext, we're going to add the title and location. We'll start by adding another child to the article element, a section with the class name `listing-description`. Give the section two children, an h2 element with a class of `listing-heading`, and then, using interpolation, add the housingLocation name property as a child of the h2. Add another child to the section element, this time, a paragraph element. Set the child content to be the following: interpolate the housingLocation city property. Then to the right of the interpolated value, add a comma followed by space. And then interpolate the housingLocation state property.\n\n## Adding Location Features to the Template\n\nAll right, now that we've set up the name, location, and location image, let's add a section for some details. We're going to add another section as a child of the article element. Set the class of the section element to be listing-features.\n\nAdd an h2 element with the class name section-heading as a child of the list features section. Set the contents of the element to be \"About this location.\"\n\nNext, we're going to list the features of the location, number of units and both Wi-Fi and laundry status. So let's add the following code to the listing-features section. Add a `ul` as a sibling to that `h2`, and give the `ul` three `li` children elements. The first child has the text, Units available, colon, and then the interpolated value of `housingLocation`, `availableUnits`. The second li has a content, Does this location have wifi, colon, followed by the interpolated value of `housingLocation`, `wifi`. And the final li content is, Does this location have laundry, colon, followed by the interpolated value of `housingLocation`, `laundry`.\n\n## Completing the UI with Styles\n\nNow we're going to add one more panel that we'll expand on in the next section, but we'll add the placeholder here for now.\n\nAs a sibling to the `listing-features` section, let's add a new section with the class `listing-apply`. This section has two children. The first is an h2 with the class `section-heading` with the content, Apply to live here. And the second element is a button with the class `primary` and the text, Apply now.\n\nAs for the styles, copy the styles from the URL linked in the resources of this video and add them to details.component.css. Now, save all of the code and check the browser. Our details page now displays the details of the selected housing location. And you know what's great about this? It works for all the locations because the URLs are dynamic. How cool is that?\n\n## Recap and Next Steps\n\nAll right, friends, that's the end of this section. Let's recap what we've covered. We've learned how to create a service, how to inject a service into a component for use, and we've completed our details page. Bravo, very well done.\n\nTechnically, at this point, you have enough skills to get started building Angular applications. You should be proud of yourselves. I know I'm very proud of you. If you want to continue to expand your Angular skills, then join me in the next section, where we'll explore even more Angular features and further build out the functionality.\n\nAll right, friends, catch you in the next one."
+}

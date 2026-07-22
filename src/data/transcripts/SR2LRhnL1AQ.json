@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 3,
+  "videoId": "SR2LRhnL1AQ",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Explore an in-depth performance benchmark comparing Rust and Zig for web services. This analysis pits Rust's Actix framework against two Zig implementations: the Zap framework and a pure Zig HTTP server. Discover how compilation optimizations drastically alter results, and see a head-to-head comparison of latency, throughput, CPU usage, and availability under heavy, saturating load. Find out which technology stack breaks first and which offers the best performance characteristics for high-demand applications.",
+  "chapters": [
+    {
+      "title": "Introduction & Updated Benchmark",
+      "description": "This chapter introduces the updated Rust vs. Zig benchmark, including the three contestants: Actix for Rust, Zap for Zig, and a new pure Zig HTTP server implementation.",
+      "startTime": 0.0,
+      "endTime": 53.0,
+      "slug": "introduction-updated-benchmark"
+    },
+    {
+      "title": "Actix (Rust) Overview",
+      "description": "This chapter briefly covers why the Actix framework was chosen for the Rust implementation based on its superior performance in previous tests.",
+      "startTime": 53.0,
+      "endTime": 71.0,
+      "slug": "actix-rust-overview"
+    },
+    {
+      "title": "Zap (Zig) Overview & Optimization",
+      "description": "This chapter explains how the Zap (Zig) application was incorrectly compiled in the previous test and details Zig's different build modes like ReleaseFast.",
+      "startTime": 71.0,
+      "endTime": 139.0,
+      "slug": "zap-zig-overview-optimization"
+    },
+    {
+      "title": "Pure Zig HTTP Server Overview",
+      "description": "This chapter introduces the high-performance, pure Zig web server implementation contributed by an expert and compiled in ReleaseFast mode.",
+      "startTime": 139.0,
+      "endTime": 176.0,
+      "slug": "pure-zig-http-server-overview"
+    },
+    {
+      "title": "Test Setup & Idle State Analysis",
+      "description": "This chapter details the Kubernetes test environment and analyzes the baseline CPU and memory usage of all three applications before applying any load.",
+      "startTime": 176.0,
+      "endTime": 261.0,
+      "slug": "test-setup-idle-state-analysis"
+    },
+    {
+      "title": "Load Test Execution & Initial Observations",
+      "description": "This chapter describes the start of the load test, where virtual clients are incrementally added, and shows the initial performance metrics as they stabilize.",
+      "startTime": 261.0,
+      "endTime": 347.0,
+      "slug": "load-test-execution-initial-observations"
+    },
+    {
+      "title": "Performance Under Moderate Load (~50k RPS)",
+      "description": "This chapter analyzes performance around 50,000 requests per second, where the pure Zig implementation begins to show increased latency and performance degradation.",
+      "startTime": 347.0,
+      "endTime": 413.0,
+      "slug": "performance-under-moderate-load-50k-rps"
+    },
+    {
+      "title": "Actix vs. Zap at High Load (>100k RPS)",
+      "description": "This chapter focuses the comparison on Actix and the optimized Zap, pushing them past 100,000 requests per second to find Zap's breaking point.",
+      "startTime": 413.0,
+      "endTime": 484.0,
+      "slug": "actix-vs-zap-at-high-load-100k-rps"
+    },
+    {
+      "title": "Final Results and Analysis",
+      "description": "This chapter reveals the final saturation points for all applications, with Actix handling the most requests, and compares the final performance figures.",
+      "startTime": 484.0,
+      "endTime": 547.0,
+      "slug": "final-results-and-analysis"
+    },
+    {
+      "title": "Detailed Graph Review & Conclusion",
+      "description": "This chapter provides a detailed walkthrough of the final performance graphs for all three applications and concludes with a call for community feedback.",
+      "startTime": 547.0,
+      "endTime": 655.2,
+      "slug": "detailed-graph-review-conclusion"
+    }
+  ],
+  "summary": "## Benchmark Contestants\n\nThis video compares the performance of three different web server implementations:\n- **Actix (Rust)**: A popular, high-performance HTTP framework for Rust.\n- **Zap (Zig)**: An HTTP framework for Zig, which is a wrapper around a C library.\n- **Pure Zig**: A custom, pure Zig implementation of an HTTP server contributed by an expert.\n\n## The Critical Optimization: Zig Build Modes\n\nA key finding from the previous benchmark was the incorrect use of Zig's default build mode.\n\n- **Debug Mode**: The default (`zig build`). Includes safety checks and debug info, resulting in significantly slower performance. This was used by mistake initially.\n- **ReleaseFast Mode**: (`zig build -Drelease-fast=true`). Prioritizes performance above all else, disabling safety checks and enabling optimizations.\n\n> [!IMPORTANT]\n> Using the **ReleaseFast** build mode for the Zig applications was crucial for a fair performance comparison and led to dramatically different results.\n\n## Test Environment\n\n- **Platform**: Amazon EKS (Elastic Kubernetes Service)\n- **Application Nodes**: `xlarge` instances\n- **Load Generator Nodes**: `4xlarge` instances\n- **Resource Limits**: Each application pod was limited to 2 CPUs and 256MB of memory.\n\n## Performance Metrics Breakdown\n\n### Idle State\n- **CPU Usage**: The pure Zig implementation had negligible CPU usage at idle, while Actix (Rust) had the highest.\n- **Memory Usage**: Zap had the highest idle memory usage at **22 MB**, compared to **~1 MB** for pure Zig and **760 KB** for Actix.\n\n### Saturation Points (Max Requests Per Second)\n- **Actix (Rust)**: `~160,000 RPS`\n- **Zap (Zig)**: `~127,000 RPS`\n- **Pure Zig**: `~81,000 RPS`\n\n### Latency & CPU Usage Under Load\n- At **lower loads** (< 50k RPS), the **Pure Zig** implementation had the lowest latency.\n- As load increased, the **Pure Zig** server was the first to saturate, with its latency climbing rapidly after ~75,000 RPS.\n- **Actix (Rust)** ultimately handled the highest request volume before performance degraded significantly.\n- The properly compiled **Zap (Zig)** application performed substantially better than its debug-mode counterpart, handling over 125,000 RPS.\n\n## Key Takeaways\n\n- **Actix (Rust) was the top performer** in terms of maximum throughput, handling ~160,000 RPS.\n- **Compiler flags are critical for performance**. The difference between Zig's `Debug` and `ReleaseFast` modes was the difference between a slow application and a high-performance contender.\n- The **pure Zig implementation showed excellent low-load latency** but could not scale to the same peak throughput as the framework-based solutions in this test.\n\n> [!TIP]\n> It is not recommended to run applications at such high CPU utilization (approaching 90-100%). For production systems, you should implement horizontal autoscaling based on a more conservative CPU threshold, such as 50%, to maintain performance and availability.",
+  "transcription": "## Introduction & Updated Benchmark\n\nIn this video, I want to share the updated results from the previous benchmark I ran between Rust and Zig. I got a lot of tips on how to improve the Zig application, as well as a couple of PRs, and it made a huge difference.\n\nI’ll quickly go over the optimization techniques and then run the benchmark again with the optimized code. I used the same setup and settings to generate load in this test. So in this video, we'll compare Rust with the Zig programming language. Specifically, I'll use the Actix HTTP framework for Rust and the Zap framework for Zig. Additionally, I got a Pull Request from a Zig expert with a pure Zig implementation of an HTTP server. And as always I'll generate enough load to find the breaking point of each application.\n\n## Actix (Rust) Overview\n\nI chose the Actix framework based on a previous benchmark I ran between the most popular Rust HTTP frameworks: Actix, Axum, and Rocket. Actix had the lowest latency and the lowest CPU usage among the three.\n\n## Zap (Zig) Overview & Optimization\n\nNext, we have the Zap HTTP framework, written in Zig. It's essentially a wrapper around a C library, and based on the provided benchmark results, it should outperform Rust. When I ran the previous benchmark, I didn’t compile the application with all the optimization flags. And just a few minutes after I released the benchmark, I got a pull request with proper optimizations.\n\nZig has four build modes. The first is Debug mode, which is the default and is applied when you run the build command like this. This default mode is what I used in the previous benchmark, which is why the Zap application was so slow. The other modes are ReleaseFast, ReleaseSafe, and ReleaseSmall. ReleaseFast prioritizes performance and disables checks. ReleaseSafe prioritizes safety and keeps all safety checks. Finally, ReleaseSmall creates small executables. You can read more about building your Zig application and other settings you can apply on this page.\n\n## Pure Zig HTTP Server Overview\n\nI also got another pull request from a Zig expert with a pure Zig implementation of the web server using the same endpoints. Based on local tests, it performed better than Rust, handling almost 200,000 requests per second. This test was performed on a Mac with an M2 ARM-based processor.\n\nThe only difference I made was compiling the code in ReleaseFast mode to prioritize performance over size. If you're interested in learning Zig, I suggest going over the code in this PR.\n\n## Test Setup & Idle State Analysis\n\nTo run this test, I used a production-ready EKS cluster. I created two node groups: one with xlarge instances to run the applications and another with 4xlarge instances to run the clients that generate the load. All the source code is available in my public GitHub repo—link in the description.\n\nAlright, let’s go ahead and deploy all three applications to Kubernetes in AWS and let them run for about 10 to 15 minutes in an idle state. Let’s take a look at CPU usage. Rust has the highest usage, and it's funny that the pure Zig implementation's CPU usage is so small that Prometheus and cAdvisor show 0% usage. Sometimes, they can't even detect that it's running.\n\nOn the other hand, we have memory usage. As expected, Zap has the highest usage. Let’s take a closer look at the actual usage: Actix uses 760 kilobytes, Zap uses 22 megabytes, and the pure Zig implementation uses around 1,000 kilobytes. While this doesn't really mean much, it's a useful baseline for our applications.\n\n## Load Test Execution & Initial Observations\n\nAlright, let me go ahead and deploy test jobs to Kubernetes to generate some load. I have 20 pods for each application, and every 30 seconds, the number of virtual clients will increase by one. So, we start with 20 clients and will probably reach around 4,000 virtual concurrent clients by the end of the test. For the first couple of minutes, you can ignore the latency until it stabilizes.\n\nAt the beginning of the test, you can see that Rust has the lowest latency, while Zig and Zap stay close to each other. The pure Zig implementation also uses much more CPU at the beginning. For this test, I set the requests and limits to 2 CPUs and 256 megabytes of memory, with each application instance running on its own separate node. Once in a while, you might see drops in availability, which is the ratio of successful requests divided by the total number of requests, multiplied by 100. Since the average request duration is under 1 millisecond, I set the client timeout to 200 milliseconds. So, when a client times out, you get a 408 status code, which is reflected in the availability graph. And these drops represent client timeouts.\n\n## Performance Under Moderate Load (~50k RPS)\n\nBy around 50,000 requests per second, you start to see clear differences between the three applications. In terms of latency, we have the pure Zig implementation first, followed by Zap, then Rust. CPU usage follows a similar pattern. Other metrics aren’t as important at this point. Occasionally, some clients will experience timeouts, but with 99.999% availability, only a few requests fail, which doesn’t significantly affect most clients.\n\nAt around 75,000 requests per second, the pure Zig application starts to degrade, and its latency increases. This is more or less the maximum number of requests the pure Zig application can handle within a reasonable time. At around 81,000 requests per second, it becomes clear that the pure Zig implementation is falling behind, so I’ll remove it from the graph at this point and revisit it at the end of the test.\n\n## Actix vs. Zap at High Load (>100k RPS)\n\nNow, I’ll keep only Zap and Actix on the dashboard. If you watched the previous benchmark, you might remember that the Zap application, compiled in default debug mode, could only handle around 83,000 requests per second. Let’s see if the optimizations made a difference. As we reach 100,000 requests per second, both applications show spikes in latency and availability. I wouldn’t recommend running these applications at around 60% CPU usage; instead, you should scale them horizontally and set an autoscaling threshold, maybe at around 50% CPU usage.\n\nBut for now, we’re trying to find out which application can handle more requests with lower latency. Let’s keep going. By the way, you can still see the values for the pure Zig implementation, but it’s not shown in the graph. You can even see that Kubernetes is heavily throttling it at this point.\n\n## Final Results and Analysis\n\nNow, we’ve reached 125,000 requests per second, which is the maximum number of requests the Zap application can handle. Let’s continue the test for a few more minutes.\n\nAlright, I got pretty much the same results for the Rust application as in the previous benchmark, processing around 160,000 requests per second. The Zap application handled around 127,000 requests per second, with CPU usage close to 90%. Now, let me open each graph for the entire test duration and include the pure Zig implementation.\n\n## Detailed Graph Review & Conclusion\n\nFirst, we have the requests per second. If you can explain this behavior, like why one application processes more requests with lower latency, please share your knowledge and experience.\n\nNext, we have client latency.\n\nLet me also show the latency before the applications started to slow down.\n\nNext is CPU usage for each application.\n\nHere’s the memory usage.\n\nAvailability graph.\n\nAnd finally, we have CPU throttling from Kubernetes.\n\nIf you can improve any of these applications, please create a pull request. Also, let me know what I should test next. I have other benchmarks on my channel. Thank you for watching, and I’ll see you in the next video."
+}

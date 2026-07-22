@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 3,
+  "videoId": "s_DhQrjK8Tw",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Get started with Bagisto, a powerful, open-source e-commerce platform built on the Laravel framework. This guide walks you through the complete installation and initial configuration process, from using Composer to set up the project to migrating the database and publishing assets. Discover how to configure your environment, run the necessary Artisan commands, and get your storefront and admin panel up and running in minutes. Explore the feature-rich admin dashboard and understand its modular, package-based architecture.",
+  "chapters": [
+    {
+      "title": "Introduction to Bagisto & Composer Installation",
+      "description": "This chapter introduces the Bagisto e-commerce platform and begins the installation process using a Composer command.",
+      "startTime": 0.0,
+      "endTime": 116.5,
+      "slug": "introduction-to-bagisto-composer-installation"
+    },
+    {
+      "title": "Project Setup & Database Configuration",
+      "description": "This section covers opening the Bagisto project in a code editor, setting up the environment file, and migrating the database.",
+      "startTime": 116.5,
+      "endTime": 191.0,
+      "slug": "project-setup-database-configuration"
+    },
+    {
+      "title": "Configuring the Application URL",
+      "description": "This part focuses on the critical step of correctly configuring the application's URL in the environment file as per the documentation.",
+      "startTime": 191.0,
+      "endTime": 231.0,
+      "slug": "configuring-the-application-url"
+    },
+    {
+      "title": "Final Installation Commands",
+      "description": "This chapter walks through the final series of Artisan and Composer commands required to complete the Bagisto setup.",
+      "startTime": 231.0,
+      "endTime": 265.0,
+      "slug": "final-installation-commands"
+    },
+    {
+      "title": "Exploring the Customer Frontend",
+      "description": "Here, we explore the customer-facing storefront, register a new user, and take a quick look at the customer account dashboard.",
+      "startTime": 265.0,
+      "endTime": 323.0,
+      "slug": "exploring-the-customer-frontend"
+    },
+    {
+      "title": "Discovering the Admin Dashboard",
+      "description": "This chapter showcases the powerful admin panel, logging in with default credentials and getting a first look at its features.",
+      "startTime": 323.0,
+      "endTime": 382.0,
+      "slug": "discovering-the-admin-dashboard"
+    },
+    {
+      "title": "Bagisto's Popularity & Community",
+      "description": "Learn about the Bagisto project's popularity, including download numbers and its feature in Laravel News, and how to contribute.",
+      "startTime": 382.0,
+      "endTime": 434.0,
+      "slug": "bagisto-s-popularity-community"
+    },
+    {
+      "title": "Understanding Bagisto's Architecture",
+      "description": "This section provides a deep dive into Bagisto's modular architecture, explaining how it uses separate packages for different features.",
+      "startTime": 434.0,
+      "endTime": 544.0,
+      "slug": "understanding-bagisto-s-architecture"
+    },
+    {
+      "title": "Conclusion and What's Next",
+      "description": "The video concludes by summarizing the installation process, previewing the next episode on products, and asking for viewer feedback.",
+      "startTime": 544.0,
+      "endTime": 591.71,
+      "slug": "conclusion-and-what-s-next"
+    }
+  ],
+  "summary": "## What is Bagisto?\nBagisto is a **free, open-source e-commerce platform** built on top of the **Laravel** PHP framework. It is developed and maintained by the company **Webkul**. It provides a complete solution for building an online store, including both a customer-facing frontend and a powerful admin dashboard.\n\n## Installation Process\nTo get a Bagisto store running, follow these command-line steps in order:\n\n1.  **Create the project**: `composer create-project bagisto/bagisto`\n2.  **Configure Environment**: Set up your database credentials in the `.env` file.\n3.  **Migrate Database**: `php artisan migrate`\n4.  **Seed Database**: `php artisan db:seed`\n5.  **Publish Assets**: `php artisan vendor:publish --all` (or select `Bagisto\\Core\\Providers\\CoreServiceProvider`)\n6.  **Link Storage**: `php artisan storage:link`\n7.  **Optimize Autoloader**: `composer dump-autoload`\n8.  **Serve Application**: `php artisan serve`\n\n> [!IMPORTANT]\n> Before serving the application, you must set the `APP_URL` in your `.env` file to the exact URL you will use for development (e.g., `APP_URL=http://localhost:8000`). This is critical for Bagisto to function correctly.\n\n## Bagisto's Core Components\n\n### Customer Frontend\nOut of the box, Bagisto provides a complete storefront where customers can:\n*   Create an account and log in.\n*   Manage their profile, addresses, and view order history.\n*   Browse the catalog, leave reviews, and manage a wishlist.\n\n### Admin Dashboard\n*   Accessed at `/admin`.\n*   Default login: `admin@example.com` / `admin123`.\n*   Provides a comprehensive and customizable interface for managing sales, customers, catalog, configurations, and every other aspect of the e-commerce store.\n\n## Modular Architecture\nBagisto is not a single monolithic application but a **platform** composed of many smaller, interconnected packages.\n\n*   **`packages/` Directory**: The project contains a `packages` directory where each core feature (e.g., Customer, CMS, Checkout) is managed as its own separate package.\n*   **`composer.json`**: This file links all the individual packages into the main Laravel application using PSR-4 autoloading and the `replace` directive.\n*   **Customizability**: This modular design allows developers to easily override, extend, or replace any part of the platform to fit specific needs.",
+  "transcription": "## Introduction to Bagisto & Composer Installation\n\nTo get started with Bagisto, we need to go to the documentation. In this documentation on the left side, we have introduction and installation and configuration. There are two options to install Bagisto: either you can download the zip file or you can have it by using this Composer command. So let's quickly get by using the Composer command. So I will paste it here, and while this is installing, let us talk about Bagisto.\n\nBagisto is an open-source and free platform to create an e-commerce website. It is built over Laravel, and this means you have a full Laravel project. The company which has created this Bagisto is called Webkul. So they have created a bunch of packages binded into Laravel to have this all framework kind of things, or you can say platform, to create a great ecommerce website in a just few minutes.\n\nSo let's just see. Yeah, you can see this package is installed, and it's just like installing a Laravel application. So it's installing everything, related packages, and some of the dependencies. And after installing everything, we have our Bagisto on our machine.\n\n## Project Setup & Database Configuration\n\nSo let's open this Bagisto with VS Code. So I will open VS Code here. And so here is Bagisto on our VS Code. On this panel, you can see we have a Laravel application. And I told you, they have created this Bagisto on top of Laravel. So yes, you have everything just like you have on Laravel. This means you don't have to learn something new; it's everything you already know, obviously if you know about Laravel. So you have this `.env` file, and directly we can create a database. Let's open Sequel Pro here, and in this Sequel Pro, I have created a database called 'bagisto'. And what I will do, I will just go into name the database, which is 'bagisto' over here, 'root', and then password.\n\nAfter setting up these things, you can simply migrate. So I will say here `php artisan migrate`. But because when I was testing, I already had this, so I will say `migrate:fresh`, but you don't have to say 'fresh'. You just say `php artisan migrate` if you are doing it first time.\n\n## Configuring the Application URL\n\nOkay, so let's go to the documentation. And as it says, after installing this, you need to set up all these things. So yeah, we have set up the database. We need to set a URL. Connection, host, and port are already done. So make sure we also have localhost:8000. Be very specific. You must define this as the exact URL where you are deploying it. So we are on localhost, we need to say `php artisan serve`, and it will open on localhost:8000. This is very important. So yes, after doing all these things, we have this table, but just tables is not enough.\n\n## Final Installation Commands\n\nAfter migrating, we need to do `php artisan db:seed`. Let's copy that and stop this. And seeding is done. Then we need to say `php artisan vendor:publish`. And then after they're saying, yeah, press 0 to have everything. So if I do this on the 0, we have published everything. Good, no problem.\n\nSo we have published everything from here, and there are lots and lots of things, so you can just see that resources, it means a major part here is for front-end. So that's cool, that's cool. Okay, so now we need to link the storage so that we can have the images when we upload on our Bagisto. Then `composer dump-autoload`. So after doing these steps, which are very much required, we can then simply execute the server and then we are up to go. So `php artisan serve`, hit enter. Localhost:8000.\n\n## Exploring the Customer Frontend\n\nLet's go to localhost:8000. Front end. So yeah, we have everything like about us, return policy, and everything is configurable, and we will see how we can configure everything. So let's just quickly create a new user or a customer. So I will just create a customer. So one, two, three, secret, one, two, three, and register. So we have registered a user, and yes, we can simply log in by using the credentials we have just defined. And yeah, you can see we are on this authenticated page. So here we have profile, address—when you are buying anything, you need to define the address, and you can add it here—some of the reviews if you have given, wishlist, and orders.\n\n## Discovering the Admin Dashboard\n\nThis front end is not just the main part. The extremely important and the main part of this Bagisto is actually the admin side. `slash admin`. Localhost:8000/admin. We will land on this page, and here we can use the credentials defined in this documentation called `admin@example.com` and password is `admin123`. So `admin123`, like this. And here comes the magical thing.\n\nSo this dashboard is extremely customizable, super cool, and you don't have to do anything. So you have just seen that in just a few minutes, we are from nothing to have a front end, to have the authentication for a customer, to have this quick and easy and lovely dashboard to manage almost everything.\n\n## Bagisto's Popularity & Community\n\nAnd this Bagisto is super, super, super cool. Why? Because if you go to the GitHub, maybe if they have... no they don't have. So GitHub, Bagisto. Let's go here. And you can see this Bagisto has more than 10,000 downloads. And yeah, it's reaching 12,000 downloads. And this package has also been featured in Laravel News, which is a great achievement. And now this package is gaining more and more popularity day by day. If you want to contribute to this package, you can contribute. There are lots of contributors. You want to support or sponsor this package, then also you can do something. You can see this package is very, very cool. Again, created by Webkul.\n\n## Understanding Bagisto's Architecture\n\nAnd let's talk about the packages, `composer.json` file. So this package, I am calling it 'package', but it's actually not a package, it's a collection of packages; it's a platform. So on this Laravel kind of things, you can see we have a new folder called `packages`, and in this `packages` folder, they have created packages for every feature. So if you want to have customer-related things, you can go to the customer package. If you want to have people-related things, yeah, on the people package you have. So every package is here. And these packages are connected to the Laravel application by using this `composer.json` file. So on this `composer.json` file, you can see they are having a `require` of lots and lots of things. But this is the community package, but if you go here, yeah, `replace`. `replace` is having these packages which you can find inside the `packages` directory. So you can see we have this `laravel/people` as we talked about somewhere, `laravel/customer`. This is the package you have just seen here, like `packages` and then `customer`. And `composer.json`, you can see the name is `laravel/customer`, and which comes here, `laravel/customer`. So this is how Bagisto is connecting its all packages. Yep, they are defining the namespaces, so connecting their own packages with Laravel so that you don't have to learn new things. And if you want even configuration for your e-commerce, then you can configure each and every package. Then you can literally configure everything, each and every bit of this Bagisto.\n\n## Conclusion and What's Next\n\nSo this is all about interaction, installing, and getting up with Bagisto. And in the next episode, we will talk about the product and how we can add products on our catalog. And then we can show that product on the front end. So these are just images; they are not doing anything. So this is your introduction to Bagisto and thanks to the Bagisto team, Webkul team. So if you liked this episode, just give it a thumbs up, share this with friends, and comment what's your views on Bagisto. Is it a good package for creating an e-commerce platform, or there are others? If there are other packages, just let me know and I will create a video on that. Also, you just need to follow me on Facebook, Twitter, Instagram, LinkedIn at Bitfumes, at Sarthak Savvy. We will meet in the next episode. Till then, goodbye."
+}

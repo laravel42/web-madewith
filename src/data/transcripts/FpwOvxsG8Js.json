@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 3,
+  "videoId": "FpwOvxsG8Js",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to build a super-fast, SEO-friendly Jamstack front end with Nuxt.js that communicates with a Laravel REST API. This tutorial demonstrates how to implement secure, session-based authentication using Laravel Sanctum and the Nuxt/Auth module. You'll see how to configure Axios for API requests, handle Cross-Origin Resource Sharing (CORS), protect routes, and fetch data to display on your pages. Discover the practical steps to connect a Nuxt.js v2 application to a Laravel back end for modern web development.",
+  "chapters": [
+    {
+      "title": "Introduction to Nuxt.js and Laravel",
+      "description": "This chapter introduces Nuxt.js as a Vue.js framework and outlines the video's goal: building a Nuxt.js front end for a Laravel REST API using session-based authentication.",
+      "startTime": 0.0,
+      "endTime": 53.0,
+      "slug": "introduction-to-nuxt-js-and-laravel"
+    },
+    {
+      "title": "Project Setup Overview",
+      "description": "This chapter provides an overview of the pre-configured Nuxt.js v2 application, including the installed dependencies like Tailwind CSS and Axios, and the prepared dummy pages.",
+      "startTime": 53.0,
+      "endTime": 143.0,
+      "slug": "project-setup-overview"
+    },
+    {
+      "title": "Local Domain Configuration with Valet",
+      "description": "This chapter explains how to configure local development domains using Laravel Valet's 'link' and 'proxy' commands to enable session cookie sharing between the front end and back end.",
+      "startTime": 143.0,
+      "endTime": 193.0,
+      "slug": "local-domain-configuration-with-valet"
+    },
+    {
+      "title": "Laravel Back-End Configuration for Sanctum",
+      "description": "This chapter details the necessary configuration changes in the Laravel application, including setting the session domain, Sanctum stateful domains, and CORS settings.",
+      "startTime": 193.0,
+      "endTime": 263.0,
+      "slug": "laravel-back-end-configuration-for-sanctum"
+    },
+    {
+      "title": "Nuxt.js Axios Configuration",
+      "description": "This chapter covers how to configure Axios within the Nuxt.js application to send credentials and set the base URL for API requests in the 'nuxt.config.js' file.",
+      "startTime": 263.0,
+      "endTime": 292.0,
+      "slug": "nuxt-js-axios-configuration"
+    },
+    {
+      "title": "Fetching & Displaying a List of Records",
+      "description": "This chapter demonstrates how to use Nuxt's 'fetch' hook with Axios to retrieve a list of records from the API and display them, including handling loading and error states.",
+      "startTime": 292.0,
+      "endTime": 362.0,
+      "slug": "fetching-displaying-a-list-of-records"
+    },
+    {
+      "title": "Fetching & Displaying a Single Record",
+      "description": "This chapter shows how to fetch a single record on a dynamic page by reading URL parameters within the 'fetch' hook and updating the component's data.",
+      "startTime": 362.0,
+      "endTime": 395.0,
+      "slug": "fetching-displaying-a-single-record"
+    },
+    {
+      "title": "Installing and Configuring Nuxt/Auth",
+      "description": "This chapter walks through installing the Nuxt/Auth module and configuring it in 'nuxt.config.js' with the 'cookie' strategy, defining endpoints for CSRF, login, logout, and user fetching.",
+      "startTime": 395.0,
+      "endTime": 485.0,
+      "slug": "installing-and-configuring-nuxt-auth"
+    },
+    {
+      "title": "Configuring Auth Redirects and Plugins",
+      "description": "This chapter covers setting up authentication redirects for login and logout, and creating a plugin that makes the Nuxt/Auth module available inside the Axios instance.",
+      "startTime": 485.0,
+      "endTime": 541.0,
+      "slug": "configuring-auth-redirects-and-plugins"
+    },
+    {
+      "title": "Activating Vuex and Reviewing the Laravel Backend",
+      "description": "This chapter explains the need to create a store file to activate Vuex for Nuxt/Auth and briefly reviews the authentication logic in the Laravel backend.",
+      "startTime": 541.0,
+      "endTime": 585.0,
+      "slug": "activating-vuex-and-reviewing-the-laravel-backend"
+    },
+    {
+      "title": "Implementing the Login Form",
+      "description": "This chapter demonstrates how to implement the login form's submit function using the '$auth.loginWith' helper to handle authentication, display API errors, and redirect on success.",
+      "startTime": 585.0,
+      "endTime": 656.0,
+      "slug": "implementing-the-login-form"
+    },
+    {
+      "title": "Updating the UI and Implementing Logout",
+      "description": "This chapter explains how to use the '$auth' helper in the default layout to conditionally render UI elements based on the user's authentication state and how to implement the logout function.",
+      "startTime": 656.0,
+      "endTime": 737.0,
+      "slug": "updating-the-ui-and-implementing-logout"
+    },
+    {
+      "title": "Protecting Routes with Middleware",
+      "description": "This chapter shows how to protect routes by applying middleware to the login page to prevent access by authenticated users, and to the profile page to require authentication.",
+      "startTime": 737.0,
+      "endTime": 806.0,
+      "slug": "protecting-routes-with-middleware"
+    },
+    {
+      "title": "Creating a Protected Profile Page",
+      "description": "This chapter details how to build the user profile page, using the 'fetch' hook to load user-specific data and applying the 'auth' middleware to protect it from unauthenticated access.",
+      "startTime": 806.0,
+      "endTime": 866.0,
+      "slug": "creating-a-protected-profile-page"
+    },
+    {
+      "title": "Conclusion and Next Steps",
+      "description": "This chapter concludes the tutorial, provides links to the source code, mentions a similar tutorial using Next.js, and gives a brief update on the upcoming Nuxt 3.",
+      "startTime": 866.0,
+      "endTime": 947.399,
+      "slug": "conclusion-and-next-steps"
+    }
+  ],
+  "summary": "## Summary: Using a Laravel REST API with a Nuxt.js App\n\nThis document outlines the key concepts for connecting a Nuxt.js v2 front end to a Laravel back end for session-based authentication using Laravel Sanctum.\n\n### ## Local Environment Setup\n\nFor local development, both applications must be served under the same top-level domain to share session cookies.\n\n*   **Back End (Laravel)**: Served on a subdomain like `api.ergodnc.test` using `valet link`.\n*   **Front End (Nuxt.js)**: Served on a different subdomain like `app.ergodnc.test` by proxying the Nuxt dev server (`localhost:3000`) using `valet proxy`.\n\n> [!IMPORTANT]\n> This shared domain structure is critical for session-based authentication, as cookies cannot be shared across different top-level domains.\n\n### ## Laravel Back-End Configuration (Sanctum & CORS)\n\nKey changes are needed in the Laravel `.env` and `cors.php` configuration files.\n\n1.  **`.env` file**:\n    *   Set `SESSION_DOMAIN` to the root domain (`.ergodnc.test`) to allow cookie sharing across subdomains.\n    *   Add the front-end URL to `SANCTUM_STATEFUL_DOMAINS` to tell Sanctum which origins are stateful (`app.ergodnc.test`).\n\n2.  **`config/cors.php` file**:\n    *   Set `'supports_credentials' => true` to allow the `Access-Control-Allow-Credentials` header.\n    *   Ensure your API paths are included in the `'paths'` array.\n\n### ## Nuxt.js Front-End Configuration\n\nConfiguration is primarily done in `nuxt.config.js`.\n\n*   **Axios Module (`@nuxtjs/axios`)**:\n    *   `baseURL`: Set to the Laravel API's URL (`http://api.ergodnc.test`).\n    *   `credentials`: Set to `true` to ensure Axios sends cookies with every request.\n\n*   **Auth Module (`@nuxtjs/auth-next`)**:\n    *   **Strategy**: Use the `cookie` strategy for session-based authentication.\n    *   **Endpoints**: Configure the endpoints for `csrf`, `login`, `logout`, and `user` data fetching.\n    *   **User Property**: Specify the key for user data in the response (e.g., `user: { property: 'data' }`) if your API wraps it.\n    *   **Redirects**: Define paths for `login`, `logout`, and `home`.\n\n### ## Core Nuxt.js Concepts\n\n*   **Data Fetching**: The **`fetch()` hook** is used for asynchronously fetching data from the API before rendering the page. The **`fetchState`** object (`$fetchState.pending`, `$fetchState.error`) is useful for showing loading and error states.\n\n*   **Authentication Flow**:\n    1.  **Login**: Use **`this.$auth.loginWith('cookie', { data: this.form })`** to attempt authentication. Catch errors to display validation messages.\n    2.  **Logout**: Use **`this.$auth.logout()`** to invalidate the session and clear local auth state.\n    3.  **Auth State**: Access auth status and user data globally via the **`$auth`** helper (e.g., `$auth.loggedIn`, `$auth.user`).\n\n*   **Route Protection**:\n    *   **`middleware: 'auth'`**: Add to any page that requires a user to be authenticated. Unauthenticated users will be redirected to the login page.\n    *   **`middleware: 'auth', auth: 'guest'`**: Add to pages like login/register to redirect already-authenticated users away (e.g., to the homepage).\n\n> [!TIP]\n> Create an Axios plugin to intercept `401 Unauthorized` responses. This allows you to automatically log the user out via `$auth.logout()` if their session expires, providing a seamless user experience.",
+  "transcription": "## Introduction to Nuxt.js and Laravel\n\nNuxt.js is a framework for building Jamstack websites that are super fast and super SEO friendly. It's built on the top of the great Vue JavaScript framework.\n\nNuxt.js can be perfectly combined with any kind of back end, and that includes Laravel back ends. In this video, we are going to use Nuxt.js to build a front end that interacts with the Laravel REST API to authenticate users and fetch data.\n\nThe back end we are going to use the ergodnc app that we built earlier during several live streams. I will leave links to the stream and the final code in the description down below.\n\n## Project Setup Overview\n\nSo let's get to it, but first, let me show you what I've already prepared off-camera.\n\nI have created a Nuxt.js app using the current stable version, which is version 2 at the time of making this video. During the installation, I chose to install Tailwind CSS and Axios. If you are not familiar with Axios, it is a promise-based JavaScript HTTP client that we will use to interact with our Laravel API.\n\nInside the Nuxt.js app, I have created several components for buttons, input fields, labels, and error messages. I've also created several pages with some basic Tailwind CSS styling: one page for the index, one page for the login page, one page for the profile page, and one for showing a single entry.\n\nAll these pages currently have dummy static HTML that's not reading from the REST API yet. Now let's get our Nuxt.js server up and running by running `npm run dev`. Once the server is up and running, we will visit localhost:3000 to view our front end.\n\nThe REST API, on the other hand, is hosted on the local ergodnc.test domain that is served via Laravel Valet.\n\n## Local Domain Configuration with Valet\n\nWhat we want to achieve here is to be able to communicate with our REST API via Sanctum session-based authentication. This Nuxt.js app is a first-party front-end for the ergodnc app, which means it will be hosted on the same domain as the API. And because of that, we will be able to use session-based authentication to authenticate users of our front end on our Laravel back end. Session-based authentication provides the benefits of CSRF protection as well as protects against the leakage of authentication credentials via XSS.\n\nNow, to be able to test our session authentication locally, we need both the Nuxt.js and the Laravel app to share the same domain. So we are going to use Valet's `link` and `proxy` commands to serve the back end on `api.ergodnc.test` and the front-end on `app.ergodnc.test`. To do that, we will run `valet link api.ergodnc` from within the ergodnc directory, and then run `valet proxy` and provide `app.ergodnc` for the domain and `http://127.0.0.1:3000` for the host.\n\n## Laravel Back-End Configuration for Sanctum\n\nNow if we visit api.ergodnc, we will see our Laravel app, and if we visit app.ergodnc.test, we will see our Nuxt.js app. To ensure the session cookie is shared between the two subdomains, we are going to configure the session domain environment variable in the Laravel app to `.ergodnc.test`. We will also configure the Sanctum stateful domains variable to add `app.ergodnc.test` to Sanctum's stateful domains, so it applies the session middleware to requests coming from the origin.\n\nFinally, we will update the `cors.php` configuration file and set `supports_credentials` to `true` to set the `Access-Control-Allow-Credentials` header on requests, and also change the accepted paths to all paths since the entire Laravel app here is an API app.\n\n## Nuxt.js Axios Configuration\n\nOn the Nuxt.js app side, we need to configure Axios a little bit. So we will head to the `nuxt.config.js` file and update the `axios` attribute. We will set `credentials` to `true` to include cookies with every request and configure the `baseURL` to `http://api.ergodnc.test`, which is where our Laravel API is hosted.\n\n## Fetching & Displaying a List of Records\n\nAnd now we have everything ready to start working on the Nuxt.js app. So let's do just that and work on the `index.js` file to display the list of records from the API. All we need to do is add a `fetch` hook inside the script section of our Vue page, and inside the function, we will use the Axios plugin we have configured to send a request to the `offices` endpoint. Notice that we use `await` to wait for the promise to resolve. Then, we will use the response data to mutate the `offices` property. And now we are ready to remove the dummy `offices` values and provide an empty array as the default value.\n\nFinally, let's use `fetchState` to show a loading indicator if the data fetching is still pending and an error message if it encounters an error. We will then wrap our markup inside a template that will be rendered if the fetch state is successful. And now let's visit the app in the browser, and we can see that it is reading from our Laravel API. No dummy data anymore.\n\n## Fetching & Displaying a Single Record\n\nLet's implement another page, which is the page for showing a single office. We will add a `fetch` hook inside the script section of our Vue page. Inside the function, we will use the Axios plugin we have configured to send a request to the `offices` endpoint to print the requested office resource. Notice we can read the URL parameters from the route parameter here.\n\nNext, we will use the response data to mutate the `office` property and remove the dummy office data. And finally, we will use `fetchState` to render a loading view or an error view like what we did in the previous page.\n\n## Installing and Configuring Nuxt/Auth\n\nAnd now let's visit one of the office pages in the browser and here we go. We can see that it is displaying the correct office data. Perfect. Let's get to working on the login screen.\n\nFor starters, we will install the Nuxt.js, or the `auth-next` module by running `npm install @nuxtjs/auth-next`. After that, we will add it to the `modules` attribute inside `nuxt.config.js`. We will also add an `auth` attribute inside the file to configure the auth module. So first, we will add a `strategies` attribute that configures the `cookie` strategy, since we are using cookie authentication in this app. We will need to configure four endpoints: one for initializing CSRF protection—this one points to `sanctum/csrf-cookie` since we are using Laravel Sanctum in our Laravel API. The other three endpoints are for the login route, the logout route, and the user route. Nuxt/Auth will use this user route to get the current logged-in user after authentication.\n\nAnd since we are using JSON resources to build responses in our Laravel app, we need to configure the property Nuxt/Auth will use to extract the user data from the response of the user endpoint. In our case, that will be the `data` attribute.\n\n## Configuring Auth Redirects and Plugins\n\nNow we will configure several redirects: when Nuxt.js wants to redirect to the login page, where to redirect after logout, and where to redirect when the user visits the login page while they are already authenticated. Finally, we will configure a `plugins` attribute and point it to an `axios` file inside the `plugin` directory. Setting this attribute will make the auth module available inside the Axios plugin extension that we will just create now.\n\nWe will create a directory called `plugins` in the root of our project and inside that directory, we will create an `axios.js` file. Inside the file, we will export a function that uses the `axios` parameter to intercept errors on any requests made by Axios and check if the response code was 401. In that case, we will log the user out and redirect them to the login page. That way, if the user session expires, we will be able to catch the 401 response coming from the Laravel app and log the user out of our Nuxt.js app.\n\n## Activating Vuex and Reviewing the Laravel Backend\n\nOne more thing: we need to create an `index.js` file inside the `store` directory so Nuxt.js activates the Vuex store, which is needed by the Nuxt/Auth module.\n\nNow the Nuxt.js app is ready to authenticate users and protect pages that require authentication from unauthenticated access. Before we implement the login page, let's take a look at the Laravel app. The login endpoint in the Laravel app uses the `fromFrontend` method of the `EnsureFrontendRequestsAreStateful` class to check if the request is coming from our front-end. In that case, we will authenticate using the `web` guard, otherwise, we may use token authentication.\n\nThe logout endpoint also makes the same check and uses the `web` guard to invalidate the session, otherwise, we may revoke the token.\n\n## Implementing the Login Form\n\nRight, now that the Nuxt.js app and the Laravel app are both ready, we will work on implementing the login page by utilizing functions provided by the Nuxt/Auth module. Inside the login page, we will add a `submitForm` function. Inside this function, we will reset the `errors` data parameter before we attempt authenticating the user. Then we use the `$auth` helper provided by the Nuxt/Auth module to call the `loginWith` function and provide the `cookie` strategy as the first parameter, and the form data as the second parameter. If the authentication succeeds, we will redirect the user to the home page; otherwise, we will populate the `errors` property with errors coming from the API.\n\nNow let's head to the browser and view the login page. Let's first try to log in with wrong credentials, and we will see the incoming validation errors displayed in the form. Now let's log in with valid credentials, and we can see that we get redirected to the home page.\n\n## Updating the UI and Implementing Logout\n\nHow will the user know the authentication was successful? Well, let's change this part in the header and display links to log out and view the user profile. To do that, let's head to the default layout file and use the `$auth` helper to extract the user object. We will use this object to check if there is a user and display the profile and logout links; otherwise, we will display the sign-in and create account links.\n\nFor the logout link, we will call the `logout` function when the link is clicked. Finally, we will implement the logout function by calling the `logout` function on the `$auth` helper. Now let's head to the browser and see what we have. We can see that the logout and profile links are displayed because the user is logged in. If we click logout, we will get redirected to the login page and the header links will change back to sign in and create account because we are now logged out.\n\n## Protecting Routes with Middleware\n\nAlright, looking in and out seems very easy. Let's look into one more thing, which is redirecting the user to the root page if they visit the login page while they are already logged in. Doing that with Auth, or using the Nuxt/Auth module is very easy. All we have to do is add a `middleware` attribute to the login page and set it to `auth`, and then add an `auth` attribute and set it to `guest`.\n\nNow if we check in the browser while being authenticated, the login page will redirect us to the root page. I told you that it's pretty easy. Kudos to the contributors and maintainers of Nuxt.js and Nuxt/Auth for making this so easy.\n\n## Creating a Protected Profile Page\n\nAlright, let's move to work on the profile page. For this page, we will use the `fetch` hook to read the reservations from the `reservations` endpoint and assign the results to the `reservations` data property. We will also use `fetchState` to display a loader or an error message when needed. Then let's add a `middleware` attribute to apply the `auth` middleware. If an unauthenticated user tries to open this page, they will get redirected to the login page.\n\nNow we get rid of the dummy reservations here. Let's check everything in the browser. Make sure we are authenticated and then head to the profile page, and here we go. We can see that it was able to read the logged-in user's name and reservations. Now let's log out and then revisit the profile page, and we get redirected to the login page.\n\n## Conclusion and Next Steps\n\nAnd that's it! We have our Nuxt.js app communicating with our Laravel app and authenticating via session-based authentication. I'm going to leave links to the code of the Nuxt.js app and the Laravel app in the description down below.\n\nAlso, I've made a video on building the same front end we built today using Next.js, the React framework. Check it out if you want to compare between the two frameworks. Finally, the team behind Nuxt is currently working on version 3, which will support Vite, Vue 3, incremental static generation, and more. Check the website for the beta version to learn about the new features and follow the progress.\n\nAnd that's all I have for you today. I hope you learned something and I hope to see you soon in the next video. Goodbye."
+}

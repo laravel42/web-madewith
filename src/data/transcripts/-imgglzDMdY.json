@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 3,
+  "videoId": "-imgglzDMdY",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn to create custom firmware for your mechanical keyboard using the official QMK Configurator web tool. This comprehensive tutorial walks you through every step of the process, from selecting your specific keyboard model and layout to populating your keymap with standard, quantum, media, and RGB keys. Discover efficient methods for defining layers, exporting your configuration for future edits, and compiling the final firmware file (.hex or .bin) ready to be flashed with QMK Toolbox.",
+  "chapters": [
+    {
+      "title": "Introduction to the QMK Configurator",
+      "description": "This chapter introduces the purpose of the tutorial, which is to guide users through the QMK Configurator to create custom keyboard firmware.",
+      "startTime": 0.0,
+      "endTime": 28.0,
+      "slug": "introduction-to-the-qmk-configurator"
+    },
+    {
+      "title": "Step 1 & 2: Selecting Your Keyboard",
+      "description": "Learn how to navigate to the configurator and the critical importance of selecting the exact correct keyboard model and version.",
+      "startTime": 28.0,
+      "endTime": 86.0,
+      "slug": "step-1-2-selecting-your-keyboard"
+    },
+    {
+      "title": "Step 3: Choosing Your Layout",
+      "description": "This segment covers selecting a layout that matches your physical keyboard and offers advice for handling slight mismatches.",
+      "startTime": 86.0,
+      "endTime": 129.0,
+      "slug": "step-3-choosing-your-layout"
+    },
+    {
+      "title": "Step 4 & 5: Populating Your Keymap",
+      "description": "Discover multiple methods for filling out your keymap, including loading defaults, drag-and-drop, clicking, and a 'fast input' keyboard mode.",
+      "startTime": 129.0,
+      "endTime": 217.0,
+      "slug": "step-4-5-populating-your-keymap"
+    },
+    {
+      "title": "Step 6: Understanding Keycodes and Layers",
+      "description": "Explore the different categories of keycodes, including Quantum keys like MO (FN) and Layer Tap, and learn how to manage multiple layers.",
+      "startTime": 217.0,
+      "endTime": 299.0,
+      "slug": "step-6-understanding-keycodes-and-layers"
+    },
+    {
+      "title": "Step 7: Exporting Your Keymap JSON",
+      "description": "Learn the importance of exporting your keymap's JSON file as a backup for future edits, and understand what this file is not used for.",
+      "startTime": 299.0,
+      "endTime": 332.0,
+      "slug": "step-7-exporting-your-keymap-json"
+    },
+    {
+      "title": "Step 8 & 9: Compiling and Downloading Firmware",
+      "description": "Follow the steps to compile your keymap into firmware and download the final file, noting the different file types for AVR and ARM boards.",
+      "startTime": 332.0,
+      "endTime": 393.0,
+      "slug": "step-8-9-compiling-and-downloading-firmware"
+    },
+    {
+      "title": "Step 10 (Optional): Downloading Source Code",
+      "description": "This chapter covers the optional steps for advanced users to download the full source code or just the keymap.c file for local development.",
+      "startTime": 393.0,
+      "endTime": 431.0,
+      "slug": "step-10-optional-downloading-source-code"
+    },
+    {
+      "title": "Conclusion and Further Help",
+      "description": "The tutorial concludes with a thank you and points viewers to resources like the comments section and the QMK Discord for additional help.",
+      "startTime": 431.0,
+      "endTime": 481.31,
+      "slug": "conclusion-and-further-help"
+    }
+  ],
+  "summary": "## Getting Started\n\n1.  **Navigate** to `config.qmk.fm`.\n2.  **Select Your Keyboard**: Choose your specific keyboard from the dropdown menu.\n3.  **Select Your Layout**: Pick the layout that most closely matches your physical keyboard's configuration.\n\n> [!IMPORTANT]\n> You **must** be absolutely sure you have chosen the correct keyboard model and version. A firmware file is not universal and can only be used for the board it was compiled for.\n\n## Creating Your Keymap\n\nAfter selecting a keyboard and layout, you can populate your keymap. Give your keymap a memorable name first.\n\nThere are three main methods for assigning keys:\n*   **Drag and Drop**: Drag keycodes from the bottom panel onto the visual keyboard layout.\n*   **Click & Select**: Click an empty spot on the keyboard layout, then click the desired keycode from the bottom panel.\n*   **Direct Input**: Click a spot on the keyboard layout and press the corresponding key on your actual keyboard.\n\n> [!TIP]\n> Enable **Fast Input Mode** via the settings gear icon. This allows you to type your entire layout in sequence, as the tool will automatically advance to the next key position.\n\n## Understanding Keycodes & Layers\n\nKeycodes are grouped into several tabs:\n*   **ANSI & ISO**: Standard alphabetical, numeric, and symbol keys.\n*   **Quantum**: QMK-specific keys that provide advanced functionality.\n    *   **`MO(layer)`**: Momentary layer switch, commonly used for your `FN` key.\n    *   **`LT(layer, kc)` (Layer Tap)**: Tap for a keycode, hold for a layer switch.\n    *   **Any Key**: A placeholder for custom keycodes not directly supported in the Configurator.\n*   **Keyboard Settings**: Keys for controlling backlighting and RGB effects.\n*   **App, Media, & Mouse**: Controls for volume, media playback, and mouse movement.\n\nTo create more complex layouts, you can add, modify, and delete layers using the controls to the left of the keyboard visual.\n\n## Compiling and Flashing Your Firmware\n\nThe final workflow has several distinct steps:\n1.  **Export Keymap**: Press this to download a `.json` file of your keymap. This is a backup for editing, not the firmware itself.\n2.  **Compile**: Press the compile button to build your firmware. You can monitor the progress in the terminal window.\n3.  **Download Firmware**: Once compilation is successful, download the final firmware file. This is the file you will flash to your keyboard using a tool like **QMK Toolbox**.\n\n> [!IMPORTANT]\n> The exported `.json` keymap is **NOT** the file you flash onto your keyboard. It is only for re-importing your layout into the QMK Configurator for future edits.\n\n> [!NOTE]\n> Firmware file extensions vary by microcontroller:\n> *   **`.hex`** is typically for AVR-based boards (e.g., DZ60).\n> *   **`.bin`** is typically for ARM-based boards.\n\n## Advanced Options\n\nFor users with a local QMK development environment, two additional download options appear after a successful compile:\n*   **Download Full Source**: Gets the complete source code for your keyboard and keymap, useful for adding custom functions or macros.\n*   **Download Keymap Only**: Downloads just the `keymap.c` file for easy integration into your existing setup.",
+  "transcription": "## Introduction to the QMK Configurator\n\nWelcome to the MechMerlin QMK Configurator tutorial. The purpose of this video is to help you navigate the user interface and show you how to make a keyboard firmware for your keyboard. All links mentioned in this tutorial will be listed in the description section down below.\n\n## Step 1 & 2: Selecting Your Keyboard\n\nStep 1: Navigate to config.qmk.fm in a browser of your choice.\n\nStep 2: Select the keyboard you are creating firmware for. There is no such thing as a universal keyboard firmware that will work on all boards. Some boards may also share the same name but have a different version. Please make sure you choose the correct keyboard. I'll say that again, please be absolutely sure you have chosen the correct keyboard.\n\nFor today's example, I'll be using the KBDfans DZ60. It is a 60% PCB supporting multiple layouts and uses an ATmega32U4 microcontroller. Do not mistake this for other similarly named boards such as the DZ60 RGB v1 or v2. This is simply the DZ60.\n\n## Step 3: Choosing Your Layout\n\nStep 3: Select your desired layout. This layout should match your physical keyboard's layout as close as possible. The QMK contributors have tried their best to provide as many layouts as possible. Unfortunately, we still cannot match everyone's use case.\n\nFor example, if `layout_all` is chosen but you have the 6.25u spacebar, simply fill out these three keys with 'all space'. If you only have four keys, well then you'll have to do some guess and check to see which of these five keys you should put the four keys in.\n\n## Step 4 & 5: Populating Your Keymap\n\nStep 4: Give your keymap a name that you can remember and easily find.\n\nStep 5: Learning how to populate your keymap. Some keyboards such as this have defaults already predefined. In that case, you can simply hit load default and the keyboard will be populated. However, in some cases a default keymap has not yet been contributed. For example's sake, let us create the keymap the old-fashioned way.\n\nCreating your keymap can be done in three ways:\n\nNumber one, drag-and-drop. Drag and drop keys from the selections down below to the keyboard layout visual.\n\nNumber two, clicking. You can click a spot on the keyboard visual and then click a keycode from down below.\n\nNumber three, use a keyboard to input the desired keycode. Click on a spot on the keyboard visual and press a key on your physical keyboard. If you would like to speed up the keymap entry, click on the Settings gear icon on the top right and toggle the fast input switch. With this you can start at the top left of your board and just populate your keymap by typing on your keyboard and it will progress to the next key position automatically.\n\nChoose any combination of keymap entry to create your keymap.\n\n## Step 6: Understanding Keycodes and Layers\n\nStep 6: Learning what you want in your keymap. Keycodes are separated into five different tabs. If you are unsure what a keycode does, hover over it and the description will appear in a blue bar on the bottom of your screen.\n\nThe first two tabs are ANSI and ISO containing the most commonly used ANSI and ISO keys. The next tab is Quantum. Quantum contains keys unique to QMK. In here you'll find keys such as MO, which is most often known as your FN key. You'll find things such as Layer Tap, which lets you tap a key for a keycode and hold for a layer, and even an 'Any' key if there is a keycode not supported by the configurator.\n\nThe Keyboard Settings tab contains several settings such as backlight and RGB underglow. Lastly, the App, Media, and Mouse tab allows you to choose things such as muting your volume or turning it up and down. If you would like even more detail on what a keycode does, please click the Keycode Reference link to read some of QMK's documentation.\n\nIf you would like more than one layer on your keyboard, simply click the layer you want to modify. This is located to the left of the keyboard visual. If you would like to delete an entire layer, simply click on the trash button below with the layer you want selected.\n\n## Step 7: Exporting Your Keymap JSON\n\nStep 7: After you have created your keymap and are satisfied, make sure you press the export keymap button. This saves the keymap you've created in JSON format so you can import it back in at a later time for additional edits. The JSON file is made specifically for editing within QMK Configurator and will not be compatible with other tools. This is not the file you flash on your keyboard. I'll say that again, this is not the file you flash on your keyboard.\n\n## Step 8 & 9: Compiling and Downloading Firmware\n\nStep 8: Press the compile button and wait for the potato to finish baking. If you hate potatoes for some reason and would rather not see one baking, you can click anywhere on your screen to disable the animation. You can still keep track of progress by paying attention to the terminal window.\n\nStep 9: Once the compilation is done, you can press the download firmware button. After the download has completed, you may flash this file onto your keyboard using tools such as QMK Toolbox. Depending on your board this firmware file may have different file extensions. For AVR powered boards such as the DZ60 that I have here, the firmware file extension should be .hex. For ARM powered boards, the firmware file extension should be .bin. This is true for most cases. Make sure you have the correct file. For more details on how to flash your board, please refer to my QMK Toolbox video.\n\n## Step 10 (Optional): Downloading Source Code\n\nOptional step 10: You may have noticed that upon finishing a successful compilation two other buttons were now clickable. If you would like access to the full source of your keyboard to perhaps add macros or custom code, please press download full source. If you already have a developer environment setup and simply need a keymap file, you can press the download keymap only button and you will get a keymap.c file. If at any time you need to reference this video again, you may simply click the wizard hat on the top right. It will link to the newest version of my QMK Configurator tutorial.\n\n## Conclusion and Further Help\n\nThank you for watching this tutorial. I hope you enjoyed it and that I have made the process even a little easier. If you need additional help or have further questions, please leave a comment or visit the QMK Discord. All links are provided down below."
+}

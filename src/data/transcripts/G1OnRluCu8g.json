@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 3,
+  "videoId": "G1OnRluCu8g",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to create and manage articles in Joomla with this step-by-step tutorial for beginners. This guide walks you through navigating the Joomla backend to the Article Manager, using the content editor to add text, headings, and images, and understanding the source code. You'll also discover how to configure critical article settings like status (published, unpublished, archived), access levels, and featured status, and see how an automatically generated alias creates a clean URL for your new content.",
+  "chapters": [
+    {
+      "title": "Introduction to Joomla Articles",
+      "description": "This chapter introduces the concept of an article in Joomla by showing the default article on a fresh installation's frontend.",
+      "startTime": 0.0,
+      "endTime": 51.0,
+      "slug": "introduction-to-joomla-articles"
+    },
+    {
+      "title": "Navigating to the Article Manager",
+      "description": "Learn how to navigate to the Joomla backend, access the Article Manager, and begin creating a new article.",
+      "startTime": 51.0,
+      "endTime": 100.0,
+      "slug": "navigating-to-the-article-manager"
+    },
+    {
+      "title": "Using the Content Editor & Source Code View",
+      "description": "This chapter covers adding a title, headings, and paragraphs with the default WYSIWYG editor and how to view the underlying HTML source code.",
+      "startTime": 100.0,
+      "endTime": 180.0,
+      "slug": "using-the-content-editor-source-code-view"
+    },
+    {
+      "title": "Configuring Article Settings & Saving",
+      "description": "Learn about essential article settings including category, featured status, publish status, and public access before saving the article.",
+      "startTime": 180.0,
+      "endTime": 241.0,
+      "slug": "configuring-article-settings-saving"
+    },
+    {
+      "title": "Viewing the Article on the Frontend",
+      "description": "See how the newly created article appears on the website's frontend, including its title, content, and the URL alias.",
+      "startTime": 241.0,
+      "endTime": 306.0,
+      "slug": "viewing-the-article-on-the-frontend"
+    },
+    {
+      "title": "Inserting an Image into an Article",
+      "description": "This section demonstrates how to add an image to a Joomla article by using the 'Images and Links' tab and the Media Manager.",
+      "startTime": 306.0,
+      "endTime": 361.0,
+      "slug": "inserting-an-image-into-an-article"
+    },
+    {
+      "title": "Understanding Article Statuses",
+      "description": "An explanation of the different article statuses available in Joomla: Published, Unpublished, Archived, and Trashed.",
+      "startTime": 361.0,
+      "endTime": 410.0,
+      "slug": "understanding-article-statuses"
+    },
+    {
+      "title": "Managing Articles from the List View",
+      "description": "Discover how to quickly publish, unpublish, feature, archive, and trash articles directly from the Article Manager list.",
+      "startTime": 410.0,
+      "endTime": 471.0,
+      "slug": "managing-articles-from-the-list-view"
+    },
+    {
+      "title": "Conclusion",
+      "description": "A summary of how to create and manage articles in Joomla and a final call to action.",
+      "startTime": 471.0,
+      "endTime": 491.0,
+      "slug": "conclusion"
+    }
+  ],
+  "summary": "## Creating a New Article\n- Navigate to the Joomla backend administrator.\n- Go to `Content > Article Manager`.\n- Click the **New** button to open the editor.\n\n## The Content Editor\n- **Title**: Every article must have a title.\n- **Content Area**: A WYSIWYG editor allows you to add and format text, such as paragraphs and headings.\n- **Source Code**: You can view and edit the raw HTML of your article by clicking the \"Source Code\" button in the editor's toolbar.\n- **Inserting Images**: Use the **Images and Links** tab below the editor to access the Joomla Media Manager and select an existing image.\n\n> [!TIP]\n> The **Images and Links** tab provides a more user-friendly way to browse and insert images compared to the editor's default image dialog.\n\n## Core Article Settings\n- **Alias**: An SEO-friendly URL slug that Joomla automatically generates from the title when you save the article (e.g., `my-first-article`).\n- **Category**: Assign your article to a category. By default, it's `Uncategorized`.\n- **Status**: Controls the article's visibility.\n  - **Published**: Visible to everyone on the frontend.\n  - **Unpublished**: Hidden from the frontend. Useful for drafts.\n  - **Archived**: For old content you want to keep but remove from main listings.\n  - **Trashed**: Moves the article to the trash.\n- **Featured**: Toggles whether the article is \"featured,\" which can be used to display it in specific modules on your site.\n- **Access**: Sets which user groups can view the article (e.g., `Public`).\n\n> [!IMPORTANT]\n> An article's **status must be set to `Published`** and **access must be set to `Public`** for it to be visible to general visitors on your website's frontend.\n\n## Managing Articles in the List View\n- The Article Manager provides a list of all your articles.\n- You can perform quick actions directly from this list:\n  - **Publish/Unpublish**: Click the green checkmark or red 'x' in the `Status` column.\n  - **Feature**: Click the star icon.\n  - **Archive/Trash**: Use the dropdown action menu.\n\n> [!NOTE]\n> Unpublishing an article will make its direct URL result in a 404 \"Not Found\" error and remove it from modules like \"Latest Articles\".",
+  "transcription": "## Introduction to Joomla Articles\n\nHey YouTube, how's it going? It's Quinton here and in this video I'm going to show you how to create a new article in Joomla.\n\nSo I've got my current installation of Joomla open in my browser and this is the installation that we uh installed pretty much tutorials ago. I haven't actually changed anything but you can see that we have this article showing up on the web page over here. So this is an article and the article heading is Getting Started. Okay, so that is how we know that this is an article and we also have a little menu on the right hand side over here that says latest articles, Getting Started. So that is the uh one and only article that we have on our website at the moment. So if I click on that it's going to take me straight back here but now let's take a look at how to actually add a new article in Joomla.\n\n## Navigating to the Article Manager\n\nSo you're going to have to go over to the back end of Joomla and of course, uh, hopefully you guys know how to get here. But of course you have to log in and uh all that good stuff and then you can go over to Content > Article Manager. And I could have just gone straight to Add New Article but I just wanted to go into the Article Manager so that I could show you guys that right now we have one article which is called Getting Started. And I'm going to go ahead and click the new button here and we can create a new article. Okay, and whenever you you create a new article in Joomla you have to give it a title. So let me just say something like my uh first article.\n\n## Using the Content Editor & Source Code View\n\nAnd then we'll also give this article some text. Uh probably good to just maybe throw in a heading. So I'm going to use this text editor here to just pick a heading, uh and we'll go for a heading two and we'll just say hey everyone. Uh, and then uh once I hit enter you can see that the formatting has changed back to paragraph and I say uh this is my first Joomla article.\n\nOkay, now I actually have an article that I can go ahead and save. Uh one thing that I actually want to show you guys is if I go ahead and click on source code, you can see that it actually shows me the source code for the website, or just the source code that is going to be displayed uh for this article. And you can see I've actually got one too many paragraphs over here so I can go ahead and remove that and then just have a heading and a paragraph underneath that. And I'm also going to show you guys in the future how to make a editor in Joomla that's a little bit better than this so you can uh edit straight in uh code rather than have to open up this little window. Okay, but we'll get to that whenever we start talking about plugins. Okay.\n\n## Configuring Article Settings & Saving\n\nRight now, I've got my article. I could go ahead and give that a category, but I don't have any categories at the moment so the only one I can choose is uncategorized. Uh featured will allow me to feature the article or uh not feature the article, so I'm just going to go ahead and leave it at unfeatured. Uh but we do want to keep this status as published and the access as public. If you change any of that stuff it might not show up on the front end of the website, uh depending on whether you're logged in or not uh to the back end and that kind of thing. Okay, uh and then we can also set a whole bunch of permissions and stuff here, although I'm not going to worry about that too much. Let's go ahead and just click save. And now you can see we've autogenerated an alias. So that wasn't there a minute ago but now we have an alias and that is just how we get to the article uh in the URL up here.\n\n## Viewing the Article on the Frontend\n\nOkay, but now that we've got this article saved, let me go ahead and refresh my browser. And you can see that under latest articles, I now have a new link to an article called My First Article. So I'm going to go ahead and click on that and you can see that I now have an article over here which uh has my title, my first article, and that is the title we put up here. Okay, we also have the content which is a header and a paragraph and we did put indeed put a header and a paragraph over here so that's what's showing up. Okay, and if we take a look at the URL in the top of the browser over here, you can see that we have a, um, well an alias showing up of my-first-article and that's actually what we have in our Alias over there. So those are kind of all the things that you can see in the front end.\n\n## Inserting an Image into an Article\n\nOkay, and we can also add images and a whole bunch of cool stuff like that. So let me go ahead and insert an image. And here I have to actually put in the image source and the description of the image, okay, which is kind of annoying. But what I could do is go ahead and click on uh image down here, and this is going to allow me to pick an image from my Joomla installation. Um so right now, uh in my images folder in Joomla I've got banners, headers, sample data and all of this other default uh Joomla stuff which is actually just Joomla logos. Okay, and I could go ahead and just pick uh any image I guess, insert that. And now we've got an image over there. And if we save that and go back to the front end of the site and click refresh, then we should have the image show up over here as well. So that is pretty cool.\n\n## Understanding Article Statuses\n\nAnd that is how you create an article in Joomla. Okay.\n\nNow let's take a look at this little side thingy over here which is the status. And right now it's set to published which means anyone can see it, it's going to be visible on the front end of the website. If we say unpublished, that means nobody's going to be able to see it unless they log into the back end and want to maybe edit the article. So that's if you're writing an article and you're not quite done yet, um you might want to just leave it as unpublished. Archived is going to be for old articles that people probably aren't reading on your website anymore so you just want to archive them. And trashed will obviously trash the uh article. Let's go ahead and change that back to published. I'm going to close this.\n\n## Managing Articles from the List View\n\nAnd uh a cool way to publish and unpublish articles is to actually just go ahead and click on the tick and you can see that that changes to an X. So that means that the article is now unpublished. So if I go back over to the front end of the site over here, uh you can see I got a 404 error because technically this, uh, my first article doesn't exist anymore. Okay, and you can see that the link kind of disappeared from latest articles. And if I go ahead and publish that again uh and come back here and refresh, the article should show up again and we should be able to visit it again as well. So, uh, hey look at that, that's pretty awesome. So that's just a quick way of publishing and unpublishing articles. You can also go ahead and feature them by adding in this little star, uh or you could archive and trash them by just clicking on that arrow. Okay.\n\n## Conclusion\n\nSo that is how to uh create articles and also manage articles in Joomla. And that is all I have for you in this video. So don't forget to subscribe. Uh please feel free to leave a comment or uh like this video. It's really going to help my channel grow and I will see you guys next time."
+}

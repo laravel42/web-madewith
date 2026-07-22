@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 3,
+  "videoId": "dTIjAJO-tcQ",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn to build your first ASP.NET Core web application from scratch using Visual Studio 2022. This comprehensive guide walks you through creating a new project, explaining the necessary workloads and project templates. You'll explore the fundamental structure of an ASP.NET Core application, including Razor Pages, models, views, and shared layouts. Follow along to create a simple static page and then a dynamic contact form that processes user input with GET and POST methods, demonstrating data binding and code-behind logic.",
+  "chapters": [
+    {
+      "title": "Creating a New ASP.NET Core Project",
+      "description": "This chapter shows how to start a new project in Visual Studio 2022, filter for the C# web template, and install the required ASP.NET and web development workload.",
+      "startTime": 0.0,
+      "endTime": 74.0,
+      "slug": "creating-a-new-asp-net-core-project"
+    },
+    {
+      "title": "Configuring the Project Details",
+      "description": "This chapter covers how to provide a project name and location, select the .NET framework version, and configure additional settings like HTTPS before creating the application.",
+      "startTime": 74.0,
+      "endTime": 99.0,
+      "slug": "configuring-the-project-details"
+    },
+    {
+      "title": "Exploring the Default Project Structure",
+      "description": "This chapter provides an overview of the default files and folders in a new ASP.NET Core project, including Program.cs, the Pages folder, and the concept of Razor Page views and their associated code-behind models.",
+      "startTime": 99.0,
+      "endTime": 158.0,
+      "slug": "exploring-the-default-project-structure"
+    },
+    {
+      "title": "Running the Application and Understanding Routing",
+      "description": "This chapter demonstrates how to run the web application using IIS Express and explains how URLs are automatically routed to their corresponding Razor Pages.",
+      "startTime": 158.0,
+      "endTime": 193.0,
+      "slug": "running-the-application-and-understanding-routing"
+    },
+    {
+      "title": "Inspecting a Razor Page and its Layout",
+      "description": "This chapter involves stopping the application to inspect the code of the Privacy page, explaining the @page directive, the associated model, and how it uses the shared _Layout.cshtml file for its structure.",
+      "startTime": 193.0,
+      "endTime": 251.0,
+      "slug": "inspecting-a-razor-page-and-its-layout"
+    },
+    {
+      "title": "Creating a Simple Static Razor Page",
+      "description": "This chapter provides a step-by-step guide on how to add a new, empty Razor Page called 'About' that does not use a C# model and contains simple HTML with Razor syntax.",
+      "startTime": 251.0,
+      "endTime": 314.0,
+      "slug": "creating-a-simple-static-razor-page"
+    },
+    {
+      "title": "Adding the New Page to the Navigation Menu",
+      "description": "This chapter explains how to modify the shared _Layout.cshtml file to add a new navigation link for the 'About' page and then demonstrates the result by running the application.",
+      "startTime": 314.0,
+      "endTime": 366.0,
+      "slug": "adding-the-new-page-to-the-navigation-menu"
+    },
+    {
+      "title": "Creating a Razor Page with a Model and Form",
+      "description": "This chapter walks through creating a new 'Contact' Razor Page that includes both a view with an HTML form and an associated code-behind C# model to handle the form data.",
+      "startTime": 366.0,
+      "endTime": 458.0,
+      "slug": "creating-a-razor-page-with-a-model-and-form"
+    },
+    {
+      "title": "Implementing the C# Model Logic",
+      "description": "This chapter covers writing the C# code in the 'Contact' page's model, including the OnGet and OnPost methods and defining public properties to store data from the submitted form.",
+      "startTime": 458.0,
+      "endTime": 523.0,
+      "slug": "implementing-the-c-model-logic"
+    },
+    {
+      "title": "Displaying Form Data in the View",
+      "description": "This chapter demonstrates how to use the model's public properties within the Razor view to conditionally display the submitted form data and adds a navigation link to the 'Contact' page.",
+      "startTime": 523.0,
+      "endTime": 574.0,
+      "slug": "displaying-form-data-in-the-view"
+    },
+    {
+      "title": "Testing and Debugging the Form Submission",
+      "description": "This chapter shows the process of testing the contact form, identifying a bug where a message did not appear, and then correcting the C# code by fixing the form field key.",
+      "startTime": 574.0,
+      "endTime": 625.0,
+      "slug": "testing-and-debugging-the-form-submission"
+    },
+    {
+      "title": "Setting the Page Title and Final Test",
+      "description": "This chapter covers how to set the page's title dynamically from within the Razor Page view, followed by a final test to confirm that both the form submission and the page title are working correctly.",
+      "startTime": 625.0,
+      "endTime": 669.56,
+      "slug": "setting-the-page-title-and-final-test"
+    }
+  ],
+  "summary": "## Project Setup in Visual Studio 2022\n\nTo create a new **ASP.NET Core Web Application**:\n\n1.  In Visual Studio 2022, select **Create a new project**.\n2.  Filter templates by language (**C#**) and project type (**Web**).\n3.  Choose the **ASP.NET Core Web App** template.\n\n> [!IMPORTANT]\n> If the template is missing, click **Install more tools and features** and ensure the **ASP.NET and web development** workload is installed.\n\n4.  Configure the project name and location.\n5.  Select the desired **.NET framework version** and create the project. HTTPS can be disabled for local development.\n\n## Core Project Structure\n\nThe default project contains several key components:\n\n*   `Program.cs`: The entry point and configuration file for the application.\n*   `Pages/`: This folder contains the application's **Razor Pages**.\n*   `Pages/Shared/_Layout.cshtml`: A shared template file that defines the common layout (header, footer, navigation menu) for all pages.\n\n## Understanding Razor Pages\n\nRazor Pages follow a page-centric model for building web UIs.\n\n*   **View (`.cshtml`)**: Contains HTML markup and C# code using Razor syntax (`@`). It defines the page's structure and presentation. The `@page` directive at the top is essential.\n*   **Model (`.cshtml.cs`)**: The \"code-behind\" file. It's a C# class that contains the page's logic, data, and event handlers (like form submissions).\n*   **Routing**: Pages are automatically routed based on their file path. For example, `Pages/Contact.cshtml` is accessible at the URL `/contact`.\n\n## Creating a Simple Static Page\n\nTo create a page without a code-behind model:\n\n1.  Right-click the `Pages` folder and select **Add > Razor Page**.\n2.  Choose **Razor Page - Empty**.\n3.  Name the file (e.g., `About.cshtml`).\n4.  In the `.cshtml` file, remove the `@model` directive if you don't need a code-behind file.\n5.  Add your HTML and Razor syntax directly. For example, to display the current date: `@DateTime.Now`.\n6.  Add a link to the page in `_Layout.cshtml` to make it accessible from the navigation menu.\n\n## Creating a Page with a Model (Form Handling)\n\nTo handle user input from a form, create a Razor Page with a model.\n\n### The View (HTML Form)\n\n*   Create a standard HTML `<form>` element.\n*   Set the `method` to `post` to submit data.\n*   Add input fields (`<input>`, `<textarea>`) with unique `name` attributes. These names are the keys used to retrieve data in the backend.\n\n### The Model (Code-Behind)\n\n*   The model class inherits from `PageModel`.\n*   It has handler methods corresponding to HTTP verbs:\n    *   **`OnGet()`**: Executes when the page is requested with an HTTP GET request (navigating to the page).\n    *   **`OnPost()`**: Executes when a form on the page is submitted with `method=\"post\"`.\n\n> [!TIP]\n> Define public properties in your model class to hold the data from the form. In the `OnPost()` method, retrieve the form data from the `Request.Form` collection and assign it to your properties. The keys in this collection match the `name` attributes of your HTML form inputs.",
+  "transcription": "## Creating a New ASP.NET Core Project\n\nHello everyone. In this video, I will show you how to create your first ASP.NET Core project using Visual Studio 2022. So let's click on `Create new project`.\n\nSo in this window, we can use these fields to filter the different available templates. So for the language, I will select C#. For the platform, let's select all platforms, and for the project type, let's select Web. So this is the web option. Then here we can select `ASP.NET Core Web App`. But if you cannot find this option in this list, then you have to scroll down and to click on `Install more tools and features`.\n\nThen in this window, we have to select this component which is called `ASP.NET and web development` and then we have to click on `Modify`. But in my case, I have already installed this component, so I will just close this window. So in this window, we have just to select the option `ASP.NET Core Web App`. So let's select it and let's click on `Next`.\n\n## Configuring the Project Details\n\nIn this window, we have to provide the project name. Let's call it `FirstWebApp`. So it will be saved at this location. And now let's click on `Next`.\n\nIn this window, we can accept this latest version of the .NET platform and for the HTTPS, we can disable it. Now let's click on `Create`.\n\n## Exploring the Default Project Structure\n\nSo this project has been created and by default it contains some files. For example, it contains this `Program.cs` file which allows us to configure the application. Also, it contains this folder called `Pages`. So this folder contains some Razor Pages, and here we have the `Shared` folder which contains the template of our application.\n\nSo in the `Pages` folder, we have several files. For example, we have this `Index.cshtml` file, which is the main file of the application. Also, if we want to see the model behind this page, we have just to make a right click and to click on `View Code`. And here we have the model associated to the view. So this is the view, it is called `Index.cshtml`. And this is the model, it is called `Index.cshtml.cs`.\n\n## Running the Application and Understanding Routing\n\nNow to run this application, here we have to select the server. Let's select IIS Express. Then let's click on this button. And here we obtain this welcome page. So this welcome page is accessible at this URL. We can also click on `Privacy` and we obtain the second page. So the second page is accessible at this URL which ends with `privacy`. So privacy is the name of the `cshtml` file. Let's take a look on this file.\n\n## Inspecting a Razor Page and its Layout\n\nSo let's stop the application first. And here we have this file which is called `Privacy.cshtml`. If we open it, we can see this text. If we want to see the model behind this view, we have to make a right click, then `View Code`. And here we have the model.\n\nNow let's close the model. So here we have the `@page` keyword, which means that we will not use any controller. This is the name of the model associated to this view, and this is the title that we will set to this page. And here we have some HTML code. So this page is using this layout. If we open this layout, we can find the head, the HTML, the doctype, and also the body. And here we will display the content of the file called `Privacy`.\n\n## Creating a Simple Static Razor Page\n\nSo now I will show you how to create a new page. So we have to make a right click on the `Pages` folder, then `Add`, then `Razor Page`. So here, let's select `Razor Page - Empty`, then let's click on `Add`.\n\nIn this page, the option `Razor Page - Empty` is already selected. So let's provide a name to this file. I will call it `About.cshtml`. And let's click on `Add`. In this page, I don't need to use the controller, so I need to use the keyword `@page`. But I don't need the model, so I will remove this source code.\n\nNow let's create some HTML code. Then let's print some text to the user. We can also display the current date to the user. Now let's save this file.\n\n## Adding the New Page to the Navigation Menu\n\nAnd if we want to display the text 'About' in the menu of this application, we have to modify the file `Layout.cshtml`. So here I will copy this code and I will paste it just here. And let's add a new item, so I will call it `About`. And it is accessible at the URL `/about`. So we can access this file using the URL `/about`, where 'about' is the file name without the extension. Now let's save this file and let's run the application.\n\nSo here we have this new item. Let's click on it. And here we obtain the content of this page.\n\n## Creating a Razor Page with a Model and Form\n\nNow I will show you how to create a new Razor Page which uses a model. So let's go back to Visual Studio. Let's stop the application and let's create a new Razor Page. So let's make a right click on `Pages`, then `Add`, then `Razor Page`. So I will select `Razor Page - Empty`, then `Add`.\n\nSo here the option `Razor Page` is already selected. Let's modify the file name. I will call it `Contact.cshtml`. So in this page, we will not use the controller, so we need to add this keyword `@page`. Also, we will use this model which is associated to this view.\n\nSo then I will add some HTML code. So first, let's display the title of this page, and also let's display a contact form. So this form will be transmitted using the method `POST`, and it will be transmitted to the same URL of the page. Then we have the first field that allows the user to provide his first name, another field to provide the last name, and the third field that allows the user to write some text. Finally, we have a button to submit this form. So when we submit the data of this form, the model of this view will be executed first. So let's go to the model. Let's make a right click then `View Code`.\n\n## Implementing the C# Model Logic\n\nSo in this model we have the `OnGet` method. This method will be executed when we request the page using the GET method. But we will submit the form using the `POST` method, so we need to add an `OnPost` method. So this method will be executed when we submit the form using the POST method.\n\nNow, let's create some public variables that you can access from the view. So the first variable allows us to know if there is some data in the form or not, and we will have some data if the form is transmitted using the submit button. And then we will have these three variables that will contain the data of the different fields of the form. Now we need to initialize these variables in the `OnPost` method. So when we submit the data of this form, `hasData` will become true, and the other fields will be initialized using the data of the form.\n\n## Displaying Form Data in the View\n\nNow let's use these variables in the view. So let's make a right click, then `Go to Page`. And here, let's add some modifications. So to use the public variables of the model, we have to use the class `Model` followed by the name of the variable. So if we have some data in the form, then we will display this text to the user.\n\nNow we can add an item to this page in the layout. So let's go to the layout file. Let's copy these lines and let's paste them just here. Let's modify the name of the item, let's call it `Contact`, and let's modify the URL, it is `contact`. Now let's run the application.\n\n## Testing and Debugging the Form Submission\n\nSo in this page, we have this `Contact` item. Let's click on it. And you can see that this URL ends with `/contact`. Now let's provide some data in this form, for example, let's say `Bill Gates`. Then let's click on this submit button. So here we can see this welcome message, but we can see that I don't have the message of the user. This means that I need to correct my source code. Let's go to the model. And here, let's correct the key of the field. So the field is called `message`. Let's save it and let's run the application again. So we can use this button to restart the application.\n\n## Setting the Page Title and Final Test\n\nLet's click on `Contact` and let's fill the form. Let's click on `Submit`. And here we have the welcome message in addition to the message transmitted by the user. But we can see that this page does not have a title. We can fix this.\n\nSo in this area, we can provide the title of the page. Let's restart the application. So let's click on contact, and this time we have this title `Contact Page` followed by the name of the application.\n\nFinally, thank you very much for watching and please subscribe to the channel."
+}

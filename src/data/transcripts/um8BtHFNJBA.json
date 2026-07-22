@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 3,
+  "videoId": "um8BtHFNJBA",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to install WordPress on your Windows 10 or Windows 11 computer using XAMPP to create a local development environment. This comprehensive step-by-step guide walks you through downloading and installing both WordPress and XAMPP, configuring the Apache and MySQL services, creating a new database using phpMyAdmin, and successfully setting up your first local WordPress site. Ideal for beginners, this tutorial provides all the necessary steps to get your WordPress website up and running for free on your localhost.",
+  "chapters": [
+    {
+      "title": "Introduction: Installing WordPress Locally",
+      "description": "The video's objective is introduced: installing WordPress on a local machine for free.",
+      "startTime": 0.0,
+      "endTime": 38.0,
+      "slug": "introduction-installing-wordpress-locally"
+    },
+    {
+      "title": "Downloading WordPress and XAMPP",
+      "description": "This chapter shows how to find and download the required software, WordPress and XAMPP, from their official websites.",
+      "startTime": 38.0,
+      "endTime": 102.0,
+      "slug": "downloading-wordpress-and-xampp"
+    },
+    {
+      "title": "Starting the XAMPP Installation",
+      "description": "After downloading the required files, the process of running the XAMPP installer on a Windows system is demonstrated.",
+      "startTime": 102.0,
+      "endTime": 153.0,
+      "slug": "starting-the-xampp-installation"
+    },
+    {
+      "title": "Navigating the XAMPP Setup Wizard",
+      "description": "The video walks through the XAMPP setup wizard, confirming the components, installation directory, and starting the installation.",
+      "startTime": 153.0,
+      "endTime": 218.0,
+      "slug": "navigating-the-xampp-setup-wizard"
+    },
+    {
+      "title": "Starting Services and Creating a Database",
+      "description": "Learn how to start the Apache and MySQL services in the XAMPP control panel and create a new database using phpMyAdmin.",
+      "startTime": 218.0,
+      "endTime": 260.0,
+      "slug": "starting-services-and-creating-a-database"
+    },
+    {
+      "title": "Moving WordPress Files to htdocs",
+      "description": "The extracted WordPress project folder is moved from the downloads directory to the XAMPP htdocs folder.",
+      "startTime": 260.0,
+      "endTime": 314.0,
+      "slug": "moving-wordpress-files-to-htdocs"
+    },
+    {
+      "title": "Running the WordPress Installation Wizard",
+      "description": "The video demonstrates how to access the WordPress installation wizard in the browser and configure the database connection.",
+      "startTime": 314.0,
+      "endTime": 389.0,
+      "slug": "running-the-wordpress-installation-wizard"
+    },
+    {
+      "title": "Finalizing Setup and Logging In",
+      "description": "Complete the installation by setting the site title and admin credentials, and then log in to the WordPress dashboard for the first time.",
+      "startTime": 389.0,
+      "endTime": 452.0,
+      "slug": "finalizing-setup-and-logging-in"
+    },
+    {
+      "title": "Exploring the WordPress Dashboard",
+      "description": "A quick tour of the new WordPress site is given, showing how to visit the live site and access the theme customization options.",
+      "startTime": 452.0,
+      "endTime": 510.0,
+      "slug": "exploring-the-wordpress-dashboard"
+    },
+    {
+      "title": "Conclusion and Next Steps",
+      "description": "The video concludes with a summary and a promotion for other channels with related content on WordPress and vlogging.",
+      "startTime": 510.0,
+      "endTime": 555.0,
+      "slug": "conclusion-and-next-steps"
+    }
+  ],
+  "summary": "## Summary of Key Concepts\n\nThis document outlines the essential steps to install WordPress on a local Windows machine using XAMPP.\n\n### ## Prerequisites\n\nBefore you begin, you need to download two key pieces of software:\n\n* **WordPress:** Download the latest version from `wordpress.org`.\n\n* **XAMPP:** Download the installer for Windows from `apachefriends.org`.\n\n### ## Installation and Setup Process\n\nFollow these steps to get your local WordPress site running:\n\n1.  **Install XAMPP:** Run the downloaded XAMPP installer. You can proceed with the default settings in the setup wizard.\n2.  **Start Services:** Launch the **XAMPP Control Panel**, and start the **Apache** and **MySQL** services.\n\n3.  **Create a Database:** From the XAMPP Control Panel, click the **Admin** button for MySQL to open `phpMyAdmin`. Create a new database, for example, named `wordpress`.\n\n4.  **Position WordPress Files:** Extract the downloaded WordPress `.zip` file. Copy the resulting `wordpress` folder and paste it into the `htdocs` folder within your XAMPP installation directory (e.g., `C:\\xampp\\htdocs`).\n\n5.  **Run the WordPress Installer:** Open a web browser and navigate to `http://localhost/wordpress/`. This will launch the WordPress setup wizard.\n\n6.  **Configure and Finalize:** Follow the on-screen prompts. You will need to provide the database name, username, and password you set up earlier.\n\n### ## Key Configuration Details\n\n> [!IMPORTANT]\n\n> The name of your WordPress folder inside `htdocs` determines its URL. For a folder named **wordpress**, the URL is `http://localhost/wordpress/`. To run multiple sites, use unique folder names (e.g., `wordpress-site1`, `wordpress-site2`).\n\n\n> [!NOTE]\n\n> During the WordPress installation, use the following database credentials for a default XAMPP setup: \n\n> *   **Database Name:** `wordpress` (or the name you chose)\n\n> *   **Username:** `root`\n\n> *   **Password:** (leave this field blank)\n\n### ## Post-Installation\n\n*   Once the installation is complete, you can log in to your WordPress dashboard using the admin credentials you created during setup.\n\n*   From the dashboard, you can visit your new site, add pages, and install new themes under **Appearance** > **Themes**.",
+  "transcription": "## Introduction: Installing WordPress Locally\n\nHello everyone, I welcome you all to G-Script. Today in this video, I'm going to show you how to install WordPress, and after that, I'm also going to show you how we can easily use our WordPress for absolutely free locally on your system. So do watch the video till the end. I can promise you that you'll be learning a lot of new things. And if these videos are really helping you, you can always put a comment in your comment sections letting me know that, yeah, this video is actually helping me, and I need more videos on WordPress. So that will, you know, motivate me to make more such videos. And again, if you face any issues, so that also you can let me know, I'll try my best to help you.\n\n## Downloading WordPress and XAMPP\n\nNow to install WordPress, you need to first simply go to your favorite browser and just simply type over here \"WordPress download\" and hit enter. And this will show you this download.wordpress.org link. You need to open that link, and you can see \"Get WordPress\". So this link I'm going to put right in our description. So here, click on this \"Download WordPress\", and you can see our WordPress is rightly started downloading over here. So WordPress is the first product that we need to have. And the next one that you need to have is XAMPP. So open a new tab and just simply type over here \"XAMPP download\" and you'll be able to see this \"Download XAMPP\". So open that, and you can see our official site of XAMPP.\n\n## Starting the XAMPP Installation\n\nSo again, this link I'm going to put right in our description. So here you can see that our latest version of XAMPP is version 8.2.12. So you need to click on this download button, and you can see, \"Awesome! Your download will start automatically.\" And you can see that our XAMPP is rightly started downloading. I have already downloaded both these two software, so I'll cancel this. You know, I'll minimize my browser. I'll go to my download directory, and here you can see that we already have XAMPP, then WordPress already downloaded over here, right? So just simply first double-click on XAMPP to install it locally on our system. It will ask you for administrative privileges, just simply click on yes and let's minimize our download directory.\n\n## Navigating the XAMPP Setup Wizard\n\nSo welcome to XAMPP and welcome to XAMPP setup wizard. So just simply click on Next over here. So here, you know, all the files are already been selected. You have to just simply click on next. So they're going to create a XAMPP folder over here which is again totally fine. Click on next and now it's ready to be installed. Click on next, and there you go. You can see our XAMPP is rightly started installing, right? So this is installing XAMPP will take some time, you know, so you can wait. So by the time our XAMPP gets installed, I'll go to my download directory and here remember we have downloaded our WordPress, right? So let's, you know, right-click and extract our WordPress over here. So just simply click on Extract, and you can see that our extraction of our WordPress has rightly begun. So let's wait for some time, let both our XAMPP and our WordPress get extracted, and then I'm going to again back to this video. So, we'll come back and now you can clearly see that our WordPress is rightly extracted over here, right? So you can close the folder now. And you can also see that our XAMPP is also installed. So also, \"Do you want to start XAMPP Control Panel?\" This option is checked. Just simply click on Finish to launch our XAMPP. And you can also, you know, open our XAMPP by just simply going to the search icon and just simply typing XAMPP. So that will also show you this XAMPP control panel. So from here also you can open.\n\n## Starting Services and Creating a Database\n\nOnce our XAMPP gets open, you need to just simply start our Apache and you need to start our MySQL. So you can see both our Apache and MySQL are rightly started. So now you need to click on this admin, so that will open our, you know, LocalHost PHP my admin within our default browser. So here you need to just simply click on New, and we'll be creating a database over here. So let's give the database name as \"wordpress\". So remember to give the WordPress, you know, database name as 'w' as small. So normally we give small. So just simply click on Create, and you'll be able to see that our WordPress, you know, database is rightly created over here. So that's all you need to do it over here for the time being.\n\n## Moving WordPress Files to htdocs\n\nSo let's minimize our browser now and go back to our, you know, download folder. So here you can see that our, you know, WordPress is extracted over here, right? If you go inside that folder, you'll be able to see WordPress is rightly extracted, right? All these files are here now. So what you need to do is, you need to click on this WordPress folder and you need to click on cut. So you are cutting our WordPress folder, and then we are going back to our C drive. We'll go to our XAMPP folder, and then we'll be going inside our htdocs folder. And within our htdocs folder, we are again right-clicking and we are pasting that extracted WordPress folder over here. So whatever files were there are now currently moved into our htdocs folder of XAMPP. So here you can see the folder name is 'w' is small, right?\n\n## Running the WordPress Installation Wizard\n\nSo same thing you need to type over here. Just need to open a new tab and type localhost first, and after localhost give a slash and give \"wordpress\" and hit enter. So localhost/the name of the folder. So let's say you want to create, you know, a couple of more WordPress folders. So you need to give the, you need to rename this WordPress folder name with WordPress folder one, WordPress folder two, like that, right? And here in our browser, you know, you need to type localhost/wordpress folder one, wordpress folder two, like that if you are, if you want to create, you know, multiple WordPress sites. So that's just I wanted to tell you. So once you do that, you'll be able to see these languages. So English is fine. Click on continue. Let's go. We'll be providing our database name. So remember that database name that we have created is \"wordpress\", right? So that same database name is what you need to provide over here, \"wordpress\". So you need to provide your username. So let's give the username as \"root\". Password, I'll leave it blank, and all other things are fine. Localhost and WP only. Just simply click on submit and run the installation.\n\n## Finalizing Setup and Logging In\n\nWhen you click on this \"Run the installation\", it's going to start installing our WordPress. Before that, it will ask you for a site title. Let's give the site title as Geeky Script. And username, let's give the username as \"root\", and password also we are going to provide as \"root\". And confirm the use of weak password. And email, you can give any email, so I'll just give a dummy email. And I'm going to click on Install WordPress. So when you click on install WordPress, it's going to take some time, you know, about a minute or two hardly to install our WordPress. So let's wait for a couple of minutes. And there you go. You can see that our WordPress is rightly installed. So you can just simply click on login over here. So let's give the same password, username, and password whatever you have given, \"root\", and the password is also \"root\", right? You can also check this \"Remember me\" so that you don't need to type that same user credentials again and again. Click on login, and it's going to log in. So there you go, welcome to WordPress, right? So you are rightly logged in over here.\n\n## Exploring the WordPress Dashboard\n\nSo let's hover our title. So remember the title name that we had given is Geeky Script and you'll be able to see this Visit Site. Click on that, and it's going to redirect to the site that they have already created, right? So you can see our site is created over here. So already you are having a website up and running, right? So anything you can change it over here. Let's go back to our our dashboard. From here, you can just hover over Appearance and click on Themes. So you can install any theme from here. You can also click on this Add New Theme, and you can install any new theme from here. You can see we have a lot of themes, right? So in this way, you install the latest version of WordPress on the Windows operating system.\n\n## Conclusion and Next Steps\n\nSo do let me know in our comment sections if you need more videos on WordPress. I'll be happy to make more videos. And I have started Geeky Syntax channel, so here I am going to provide more and more WordPress related videos. So the videos will be on like how to create a cooking website or how to create a educational website and all that, right? So many of those videos you'll be seeing on our Geeky Syntax channel. So for that, I'm going to request you to subscribe to our this channel. I'm going to put the link in the description. And I have also started a Geeky Script vlogging channel, so this channel also you can subscribe if you're interested. So that's basically all about this video. Thank you very much for watching this video. Please do like, share, and subscribe. That will really help me to make more such videos. Thank you very much for watching this video and God bless you all."
+}

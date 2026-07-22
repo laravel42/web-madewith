@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 3,
+  "videoId": "qsprfmjazd8",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn to build two powerful, automated scrap farms in Astroneer to generate unlimited scrap, an essential currency for trading, time-limited events like the EXO Salvage Initiative, and research bytes. This guide provides step-by-step instructions for a basic, easy-to-build soil-to-scrap farm ideal for early game, and a highly efficient, advanced astronium-to-scrap farm. Discover techniques using the soil centrifuge, trade platform, auto arms, and auto extractors for a truly set-and-forget setup.",
+  "chapters": [
+    {
+      "title": "Introduction: The Value of Unlimited Scrap",
+      "description": "This chapter explains the importance of scrap in Astroneer and introduces two automated farm designs: a basic soil-based setup and an advanced, high-yield version.",
+      "startTime": 0.0,
+      "endTime": 52.0,
+      "slug": "introduction-the-value-of-unlimited-scrap"
+    },
+    {
+      "title": "Soil-to-Scrap Farm: Concept and Efficiency",
+      "description": "This chapter covers the core concept of the first farm, which uses soil to produce scrap at a 1-to-2 ratio via automated canister printing.",
+      "startTime": 52.0,
+      "endTime": 87.0,
+      "slug": "soil-to-scrap-farm-concept-and-efficiency"
+    },
+    {
+      "title": "Building the Soil Farm: Soil Centrifuge and Printer",
+      "description": "This section provides step-by-step instructions for setting up the soil centrifuge, soil storage, and the small printer for producing canisters.",
+      "startTime": 87.0,
+      "endTime": 148.0,
+      "slug": "building-the-soil-farm-soil-centrifuge-and-printer"
+    },
+    {
+      "title": "Building the Soil Farm: Shredder and Auto-Arms",
+      "description": "This chapter details how to add the large shredder, auto-arms, and resource canister to complete the automated soil-to-scrap production line.",
+      "startTime": 148.0,
+      "endTime": 217.0,
+      "slug": "building-the-soil-farm-shredder-and-auto-arms"
+    },
+    {
+      "title": "Operating the Soil Farm",
+      "description": "This segment shows the completed soil-to-scrap farm in action and explains the automated process from soil to scrap.",
+      "startTime": 217.0,
+      "endTime": 243.0,
+      "slug": "operating-the-soil-farm"
+    },
+    {
+      "title": "Introducing the Advanced Astronium Farm",
+      "description": "This chapter introduces a more advanced farm design based on astronium, which offers a higher 1-to-3 scrap ratio and full automation potential.",
+      "startTime": 243.0,
+      "endTime": 269.0,
+      "slug": "introducing-the-advanced-astronium-farm"
+    },
+    {
+      "title": "Building the Astronium Farm: Platform Layout",
+      "description": "This is a step-by-step guide to laying out the platforms, storages, trade platform, and large shredder for the astronium farm.",
+      "startTime": 269.0,
+      "endTime": 317.0,
+      "slug": "building-the-astronium-farm-platform-layout"
+    },
+    {
+      "title": "Configuring the Trade Platform and Automation Logic",
+      "description": "This chapter explains how to configure the trade platform for Solid-Fuel Jump Jets and set up the storage sensor to trigger the rocket automatically.",
+      "startTime": 317.0,
+      "endTime": 372.0,
+      "slug": "configuring-the-trade-platform-and-automation-logic"
+    },
+    {
+      "title": "Initializing the Astronium Farm",
+      "description": "This is a guide to the initial startup of the astronium farm, including filtering the auto-arm, dispatching the first rocket, and explaining the trigger mechanism.",
+      "startTime": 372.0,
+      "endTime": 424.0,
+      "slug": "initializing-the-astronium-farm"
+    },
+    {
+      "title": "Automating Jump Jet Shredding",
+      "description": "This section covers how to configure the auto-arm to automatically pick up and shred the Solid-Fuel Jump Jets produced by the trade platform.",
+      "startTime": 424.0,
+      "endTime": 472.0,
+      "slug": "automating-jump-jet-shredding"
+    },
+    {
+      "title": "Full Automation with Auto Extractors",
+      "description": "This final chapter explains how to achieve a truly endless scrap supply by using an Auto Extractor to automatically mine and feed astronium into the farm.",
+      "startTime": 472.0,
+      "endTime": 517.36,
+      "slug": "full-automation-with-auto-extractors"
+    }
+  ],
+  "summary": "## Key Concepts for Unlimited Scrap Farms\n\nThis document summarizes how to build two automated scrap farms in Astroneer.\n\n### Farm 1: Basic Soil-to-Scrap Farm\n\nThis setup is cheap, easy to build, and ideal for early-game players.\n\n- **Scrap Ratio**: **1 Soil Canister** produces **2 Scrap**. Soil is converted to Resin (2 soil per 1 resin), which is used to print Small Canisters (1 resin each) that are then shredded.\n- **Core Components**:\n    - `Soil Centrifuge`: To produce Resin from Soil.\n    - `Small Printer`: Set to loop-print Small Canisters.\n    - `Large Shredder`: To shred canisters into Scrap.\n    - `Auto-Arms`: To transfer materials between modules.\n    - `Medium/Large Soil Canister`: As a large input buffer.\n- **Build Process**:\n    1. Set up a **Soil Centrifuge** to process soil from a large canister into Resin.\n    2. An **Auto-Arm** moves a Small Canister to fill the Centrifuge.\n    3. The produced Resin is moved to a **Small Printer**.\n    4. The Printer, set on a loop, prints **Small Canisters** onto a Medium Storage.\n    5. A second **Auto-Arm** moves the printed canisters to a **Large Shredder**.\n    6. A final **Auto-Arm** collects the resulting Scrap into a storage canister.\n\n> [!TIP]\n> Slightly slant the shredder platform towards the printer's storage so the auto-arm can easily reach the printed canisters.\n\n### Farm 2: Advanced Astronium-to-Scrap Farm\n\nThis is a high-yield, fully automatable farm for a truly infinite scrap supply.\n\n- **Scrap Ratio**: **1 Astronium** produces **3 Scrap**. This is achieved by trading Astronium for an item with a high scrap value.\n- **Core Components**:\n    - `Trade Platform`: To exchange Astronium for Solid-Fuel Jump Jets.\n    - `Large Shredder`: To shred the Jump Jets into Scrap.\n    - `Auto-Arms`: To automate the entire transfer process.\n    - `Storage Sensor`: To automatically dispatch the Trade Platform rocket.\n    - (**Optional**) `Auto Extractor`: For fully automated Astronium mining.\n- **Automation Logic**:\n    1. **Astronium** is loaded onto the **Trade Platform**.\n    2. The platform is set to trade **4 Astronium** for **8 Solid-Fuel Jump Jets**.\n    3. A **Storage Sensor** set to `Full/Empty` is attached to the Jump Jet output storage. When the storage fills with jump jets, the sensor automatically sends the rocket with a new load of Astronium.\n    4. An **Auto-Arm** transfers the jump jets from the output storage to the **Large Shredder**.\n    5. A final **Auto-Arm** collects the scrap.\n\n> [!IMPORTANT]\n> Use filter slots on all Auto-Arms to prevent them from picking up the wrong items and jamming the system. For the Astronium farm, use placeholder items (like Compound) on the trade rocket's input storage to lock in the 4-Astronium trade ratio.\n\n### Achieving Full Automation\n\nTo make the Astronium farm truly set-and-forget, you must automate the resource supply.\n\n- **Action**: Place an **Auto Extractor** directly on an **Astronium** deposit (found in planet cores).\n- **Connection**: Use one or more **Auto-Arms** to create a conveyor line that feeds the extracted Astronium directly into the farm's input storage.\n- **Result**: With a constant power supply, this setup will run indefinitely, producing more scrap than you'll ever need.",
+  "transcription": "## Introduction: The Value of Unlimited Scrap\n\nI'm going to show you how to build not one but two infinite scrap farms that produce unlimited scrap. This resource is used mainly as a currency and is incredibly useful to complete time events like the EXO Salvage Initiative, traded to obtain resources, and in case you have too many, just scan it for bytes.\n\nWe're going to build a basic, cheaper setup useful if you only need scrap from time to time or you just have started the game, and a more advanced setup that produces scrap at a higher rate.\n\nThere are many different designs, but I have selected for you the easiest designs with the best rate of scrap production. Both farms are going to be almost 100% automated. I'm granting you that you can set up these farms and forget about them for a long time before you ever need to bring resources to these farms again. This applies especially to the second one. Okay, let's start with the first design.\n\n## Soil-to-Scrap Farm: Concept and Efficiency\n\nThanks to the community for voting the poll. This first farm is based on soil. It produces scrap at a rate of 1 to 2, meaning that each soil canister that we bring, we get two scraps. Not too bad.\n\nThe reason why we're using this design is that we want the farm to be automated, so we are avoiding printing, for example, drill mods one, which has a higher scrap rate of 1 to 3 but would require us to always be around and use our backpack to print the drills. We are aiming for automation because time is gold, right? So let's build this first unlimited soil-to-scrap farm together.\n\n## Building the Soil Farm: Soil Centrifuge and Printer\n\nDealing with soil, of course we're going to need to start with a soil centrifuge on a large platform B. Then we need to provide as much soil as we can. For example, we could place a medium soil canister here at the side. Of course, the larger supply you can provide, the less you need to refill the farm. Don't forget to place a small canister that will move back and forth to load the centrifuge.\n\nThen we're going to place a small printer at the side of the platform, and I recommend that you place it toward the front, leaving an empty slot behind. This will help to reach further onto the next segment. Let's place down a medium platform. Why can't we just call these small platforms anyway? Attach a medium storage, then feel free to open it up if you wish. Now we can set up the 3D printer to print small canisters and hit the green button to loop the printer and print the same item repeatedly, bro.\n\n## Building the Soil Farm: Shredder and Auto-Arms\n\nNext, place another large platform B and make sure it's a little slanted toward the storage that we just placed so that the auto-arm can reach into it. As always, the green area is the pickup area and it should reach into the storage itself.\n\nNow we can print and put the grinder onto the platform, also known as large shredder. Add a medium resource canister. Of course, you could have a large platform with a larger canister if you wanted to. I also recommend your storage to be a canister so that you can place a scrap into it and make it accept scrap only. Otherwise, the auto-arm could try to put items on top of it and block it. To prevent any other problem, add a filter to the auto-arms. Basically, just place the one resource you want them to pick up in their filter slots.\n\nMake sure to provide power to the platforms with machines on them. It really could be any form of power, and even if it was low, the farm would still work but just slowly. So the more yellow you get, the better. As long as there is some power. Only the first time, you need to make sure all of the arms are on and activated.\n\n## Operating the Soil Farm\n\nThe centrifuge... then let it go. Now look at how simple yet efficient this design is. Soil is transformed into resin, which is used to print canisters, which are shredded into scrap. As long as there is soil, you can leave this farm alone and do your stuff. You would only need to bring soil from time to time.\n\n## Introducing the Advanced Astronium Farm\n\nWhat, you don't want to bring resources to the farm? Then watch how to make the next farm for a more advanced design.\n\nThe second farm is more advanced because it produces scrap at a higher rate of 1 to 3. It's based on astronium, and I'm showing you how to build the cheaper version and how to make it even more powerful with a simple tweak. And the best thing about this farm is that unlike soil, you can automate astronium collection. This means that you will not need to constantly gather astronium. Let's build it together.\n\n## Building the Astronium Farm: Platform Layout\n\nYou can build this farm anywhere, but if you want it to be even more automated, build it down in the core layer. It's going to be much easier to load it. More on that later. Now let's start with the basic design.\n\nWe're starting with a large platform B with a medium storage at each side. Then add two platforms with an auto-arm each on both sides. We're not going to use a soil centrifuge this time, rather a trade platform. Add a square platform and a large shredder; bigger shredder means faster production.\n\nNext, we're going to add a platform with an auto-arm and a canister. As always, the green area of the auto-arm points to the preceding section of the production chain. You can manually put a scrap into the canister to make it accept scrap only.\n\n## Configuring the Trade Platform and Automation Logic\n\nNow let's go back to the start of the line and place our astronium. I'm using a canister, but it could be any kind of storage. We're going to need four ores of any resource just to hold those slots. I'm using some cheap compound here. This will make sure the trading ratio is never messed up. More about it in a second. Now make sure all platforms receive power.\n\nThis is what I mean with trade ratio. Go to the trade platform. We don't want to trade for scrap, so scroll down for astronium, then scroll to the right to select the Solid-Fuel Jump Jet. This is what we want to get, and the ratio is important because for every four ores of astronium, we get eight jump jets.\n\nMake sure the first auto-arm is reaching into astronium, but the blue area should not reach into this storage at the right of the trade platform. This is important. Now get a storage sensor and place it to the side of this storage. Make sure it's attached to the storage itself and not to the platform. Pull the hook, and even though you could connect it directly to the trade platform, I think it's going to be easier if you branch it to the ground first, then attach it to the trade platform. Set the storage sensor to full/empty. You can visually check that both arrows are green.\n\n## Initializing the Astronium Farm\n\nI have already set the filter of the first auto-arm to astronium and now you can switch it on. It will start to load the trade platform, then the storage to the side. Just for the first time, we need to manually dispatch the rocket loaded with astronium and wait for it to come back with our goodies: eight shiny jump jets. Well, not for much longer, we're going to shred them. As you can see, the jump jets are unloaded and astronium is loaded immediately. At this point, the storage sensor realizes that the storage is full, so it triggers the rocket to ship a second cargo.\n\n## Automating Jump Jet Shredding\n\nNow we can use one of the jump jets to filter the auto-arm, and it's better to make sure that the green area doesn't reach into the astronium storage just for double safety. The blue area, of course, should reach into the shredder.\n\nNow you can switch the auto-arm on and look at those expensive jump jets getting destroyed forever. But no worries, you will get some nice scrap out of it. Grab the first piece of scrap and place it as a memorabilia on the auto-arm filter. Switch this last auto-arm on and your farm is completed.\n\n## Full Automation with Auto Extractors\n\nBut wait, didn't we say that we were going to make it auto-load astronium? Of course, let me show you how. By the way, you can have a more advanced design simply by having a large shredder and canister. It's going to make your farm even bigger and run for longer.\n\nTo automatically provide astronium, place an Auto Extractor on an astronium deposit, provide power, and an auto-arm or a line of auto-arms if needed to bring the precious resources to your scrap farm. Especially if you get a spot with a full green bar, your farm will run for ages and it will probably get more scrap that you would ever spend. Watch this video next to learn more about Astroneer tricks, and stay safe."
+}

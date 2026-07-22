@@ -1,0 +1,137 @@
+{
+  "schemaVersion": 3,
+  "videoId": "LOH1l-MP_9k",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Master every React Hook in this comprehensive guide that explains their purpose, best use cases, and how often you'll need them. Explore the eight major categories, from fundamental state management with `useState` and `useReducer` to performing side effects correctly with `useEffect`. Learn to optimize your applications with performance hooks like `useMemo` and `useCallback`, and improve user experience with transition hooks. This video also covers ref hooks, context, and a preview of what's new in React 19.",
+  "chapters": [
+    {
+      "title": "Introduction to React Hooks",
+      "description": "This chapter provides an overview of the many React hooks and introduces a map of eight major categories they fall into.",
+      "startTime": 0.0,
+      "endTime": 62.0,
+      "slug": "introduction-to-react-hooks"
+    },
+    {
+      "title": "State Hooks: useState",
+      "description": "This chapter covers the most fundamental hook, useState, explaining its syntax and common use cases like forms and conditional rendering.",
+      "startTime": 62.0,
+      "endTime": 134.0,
+      "slug": "state-hooks-usestate"
+    },
+    {
+      "title": "State Hooks: useReducer",
+      "description": "This chapter explains useReducer for managing more complex, related state logic in a single function.",
+      "startTime": 134.0,
+      "endTime": 196.0,
+      "slug": "state-hooks-usereducer"
+    },
+    {
+      "title": "State Hooks: useSyncExternalStore",
+      "description": "This chapter introduces a rare hook, useSyncExternalStore, used for integrating non-React state stores.",
+      "startTime": 196.0,
+      "endTime": 216.0,
+      "slug": "state-hooks-usesyncexternalstore"
+    },
+    {
+      "title": "Effect Hooks: Understanding useEffect",
+      "description": "This chapter defines what a side effect is and shows the basic syntax and usage of the useEffect hook.",
+      "startTime": 216.0,
+      "endTime": 253.0,
+      "slug": "effect-hooks-understanding-useeffect"
+    },
+    {
+      "title": "When and When Not to Use useEffect",
+      "description": "This chapter clarifies the best practices for useEffect, highlighting what it should and should not be used for.",
+      "startTime": 253.0,
+      "endTime": 306.0,
+      "slug": "when-and-when-not-to-use-useeffect"
+    },
+    {
+      "title": "Effect Hooks: useLayoutEffect",
+      "description": "This chapter introduces useLayoutEffect, explaining how it differs from useEffect by running synchronously before the browser paints.",
+      "startTime": 306.0,
+      "endTime": 347.0,
+      "slug": "effect-hooks-uselayouteffect"
+    },
+    {
+      "title": "Effect Hooks: useInsertionEffect",
+      "description": "This chapter briefly covers the highly specialized useInsertionEffect hook, intended for CSS-in-JS library authors.",
+      "startTime": 347.0,
+      "endTime": 368.0,
+      "slug": "effect-hooks-useinsertioneffect"
+    },
+    {
+      "title": "Ref Hooks: useRef",
+      "description": "This chapter details the useRef hook for storing mutable values that don't trigger re-renders and for referencing DOM elements.",
+      "startTime": 368.0,
+      "endTime": 426.0,
+      "slug": "ref-hooks-useref"
+    },
+    {
+      "title": "Ref Hooks: useImperativeHandle",
+      "description": "This chapter explains the rarely used useImperativeHandle hook for exposing specific functions on a child component's ref to a parent.",
+      "startTime": 426.0,
+      "endTime": 461.0,
+      "slug": "ref-hooks-useimperativehandle"
+    },
+    {
+      "title": "Performance Hooks: useMemo",
+      "description": "This chapter explores useMemo, a performance hook that caches the result of expensive calculations through memoization.",
+      "startTime": 461.0,
+      "endTime": 498.0,
+      "slug": "performance-hooks-usememo"
+    },
+    {
+      "title": "Performance Hooks: useCallback",
+      "description": "This chapter explains how useCallback memoizes functions, preventing them from being recreated on every render and optimizing child components.",
+      "startTime": 498.0,
+      "endTime": 533.0,
+      "slug": "performance-hooks-usecallback"
+    },
+    {
+      "title": "Context Hooks: useContext",
+      "description": "This chapter covers the simple but powerful useContext hook, which allows components to consume values from a React Context.",
+      "startTime": 533.0,
+      "endTime": 561.0,
+      "slug": "context-hooks-usecontext"
+    },
+    {
+      "title": "Transition Hooks: useTransition",
+      "description": "This chapter introduces useTransition for marking state updates as non-urgent to keep the UI responsive during heavy computations.",
+      "startTime": 561.0,
+      "endTime": 614.0,
+      "slug": "transition-hooks-usetransition"
+    },
+    {
+      "title": "Transition Hooks: useDeferredValue",
+      "description": "This chapter explains useDeferredValue, an alternative to useTransition that defers updates to a value to improve responsiveness.",
+      "startTime": 614.0,
+      "endTime": 652.0,
+      "slug": "transition-hooks-usedeferredvalue"
+    },
+    {
+      "title": "Other Hooks: useDebugValue",
+      "description": "This chapter covers useDebugValue, a hook for developers to label custom hooks within the React DevTools for easier debugging.",
+      "startTime": 652.0,
+      "endTime": 673.0,
+      "slug": "other-hooks-usedebugvalue"
+    },
+    {
+      "title": "Other Hooks: useId",
+      "description": "This chapter explains the useId hook for generating stable, unique IDs, particularly for linking form inputs with labels.",
+      "startTime": 673.0,
+      "endTime": 708.0,
+      "slug": "other-hooks-useid"
+    },
+    {
+      "title": "Next Steps and Further Learning",
+      "description": "This chapter provides resources for mastering React hooks and a teaser for a video on new hooks in React 19.",
+      "startTime": 708.0,
+      "endTime": 743.8,
+      "slug": "next-steps-and-further-learning"
+    }
+  ],
+  "summary": "## React Hook Categories\n\nReact hooks can be grouped into eight major categories:\n\n1.  **State Management**: For managing component state.\n2.  **Effects**: For performing side effects and synchronizing with external systems.\n3.  **Refs**: For referencing values without re-rendering and accessing DOM elements.\n4.  **Performance**: For optimizing app performance with memoization.\n5.  **Context**: For reading data from React context.\n6.  **Transitions**: For improving UX by marking updates as non-urgent.\n7.  **Random**: Miscellaneous utility hooks.\n8.  **React 19**: New hooks introduced in React 19.\n\n---\n\n## State Management Hooks\n\n### `useState`\n- **Usage**: A Lot\n- **Purpose**: The primary hook for adding state to function components.\n- **Syntax**: Returns an array with a state variable and a setter function: `const [state, setState] = useState(initialState);`\n- **Use Cases**:\n    - Capturing user input in forms (`<input>`, `<textarea>`).\n    - Toggling UI elements (modals, dropdowns) with a boolean.\n    - Conditionally applying styles or classes.\n    - Simple counters or shopping cart quantities.\n\n### `useReducer`\n- **Usage**: Rarely\n- **Purpose**: An alternative to `useState` for managing more complex state logic, especially when state is interrelated or depends on previous state.\n- **Syntax**: `const [state, dispatch] = useReducer(reducer, initialState);`\n- **Use Cases**:\n    - Managing state for complex forms with multiple, related inputs.\n    - State machines where the next state depends on the previous one and an action.\n\n### `useSyncExternalStore`\n- **Usage**: Almost Never\n- **Purpose**: For library authors to subscribe to an external, non-React data store (e.g., building a state management library).\n\n---\n\n## Effect Hooks\n\n### `useEffect`\n- **Usage**: Rarely\n- **Purpose**: To synchronize a component with an external system (a \"side effect\").\n\n> [!IMPORTANT]\n> **Do not use `useEffect` for:**\n> - **Event-based side effects**: Place logic directly in event handlers.\n> - **Data fetching on mount**: Use a dedicated library like React Query or a framework's built-in data fetching solution.\n\n- **When to Use**: Use `useEffect` when you need to sync React state with an external system, like a browser API (e.g., playing/pausing a `<video>` element based on state).\n\n### `useLayoutEffect` \n- **Usage**: Almost Never\n- **Purpose**: Runs synchronously **before** the browser paints the screen. Useful for measuring DOM layout information and updating state before the user sees the final UI.\n- **Use Case**: Getting the dimensions of a tooltip with `getBoundingClientRect()` before it becomes visible to position it correctly.\n\n### `useInsertionEffect`\n- **Usage**: Almost Never\n- **Purpose**: For CSS-in-JS library authors to inject styles into the DOM before other effects run.\n\n---\n\n## Ref Hooks\n\n### `useRef`\n- **Usage**: Often\n- **Purpose**: To create a reference that persists across renders without causing a re-render when it's mutated.\n- **Key Features**:\n    - Returns a mutable ref object with a `.current` property.\n    - Changing `.current` does **not** trigger a re-render.\n- **Use Cases**:\n    - Storing a mutable value like a timer ID (`setInterval`).\n    - Accessing and manipulating DOM elements directly.\n\n### `useImperativeHandle`\n- **Usage**: Rarely\n- **Purpose**: To customize the value that is exposed to parent components when they use a ref on your component. Almost always used with `forwardRef`.\n\n---\n\n## Performance Hooks\n\n### `useMemo`\n- **Usage**: As needed\n- **Purpose**: To **memoize a value** from an expensive calculation. It recomputes the value only when one of its dependencies changes.\n- **Use Case**: Caching the result of a computationally heavy function, like filtering or summing a large array.\n\n### `useCallback`\n- **Usage**: As needed\n- **Purpose**: To **memoize a function**. This is useful when passing callbacks to optimized child components that rely on reference equality to prevent unnecessary re-renders.\n\n> [!TIP]\n> Use `useCallback` when passing a function as a prop to a child component that is wrapped in `React.memo`.\n\n---\n\n## Context Hooks\n\n### `useContext`\n- **Usage**: Often\n- **Purpose**: To read and subscribe to a value from a React Context Provider, avoiding the need to pass props down through many levels (\"prop drilling\").\n\n---\n\n## Transition Hooks\n\n### `useTransition`\n- **Usage**: As needed\n- **Purpose**: To mark a state update as non-urgent, allowing other, more urgent updates (like typing in an input) to remain responsive. Returns an `isPending` flag to show loading UI.\n\n### `useDeferredValue`\n- **Usage**: As needed\n- **Purpose**: Similar to `useTransition`, but it defers updating a value rather than a state setter. It's a simpler way to achieve the same result when you don't control the state update code.\n- **Use Case**: Filtering a long list based on user input without freezing the UI on each keystroke.\n\n---\n\n## Other Hooks\n\n### `useDebugValue`\n- **Usage**: Almost Never (unless you build custom hooks)\n- **Purpose**: To display a custom label for your custom hooks in the React DevTools.\n\n### `useId`\n- **Usage**: As needed\n- **Purpose**: To generate a unique, stable ID that can be shared between elements, primarily for accessibility (e.g., linking a `<label>` to an `<input>`).\n\n> [!NOTE]\n> `useId` is **not** for generating keys in a list. React keys need to be stable based on your data.",
+  "transcription": "## Introduction to React Hooks\n\nSo you've decided to make a React app, which means you're going to build it with the help of React hooks. The only problem is there are a lot of different hooks, so which ones should you use? Let's answer that question by looking at all the hooks and see what each one does, all the best ways to use each hook, and how often you'll need to use them: a lot, rarely, or almost never.\n\nHere's a neat trick to make learning hooks much easier because there's actually a convenient pattern to how all the hooks fit together. I've created a complete map of React hooks to show you all eight major categories that each one falls into, starting with State Management hooks to work with React State, Effect hooks to perform side effects, Ref hooks to reference JavaScript values or DOM elements, Performance hooks to improve app performance with memoization, Context hooks to read from React context, Transition hooks to use transitions for better user experiences, some random Hooks, and some powerful new hooks introduced in React 19.\n\n## State Hooks: useState\n\nAnd we'll begin with the hook you'll likely use the most. `useState` is probably the bread and butter of any React developer because unless you're using a framework, you'll use it a lot. A big reason why React exists is to help us manage state and render components when state changes. `useState` is best for client components that need their own simple, specific state. And there are so many cases where we need to manage state in React. `useState` is probably the most versatile hook we'll cover.\n\nTo use it, you can give it an initial value, which can virtually be any JavaScript value, and that will then be stored in your state variable that's returned when you call `useState`. It's returned in an array which can be destructured as two separate variables where the first one is the state variable and the second is a function to update that variable. `useState` is great for capturing user input in form fields like inputs, text areas, and selects. It can be used to show or hide components like modals, tooltips, or dropdowns when you give it a boolean state value. You can also use a boolean state variable as well to conditionally apply classes and styles. And working with number values like in a shopping cart or counter is another perfect use case for `useState`.\n\n## State Hooks: useReducer\n\n`useReducer` is another state hook that's useful for performing more complex state management than `useState`. You won't need to use it very often, but it's worth adding if you have a lot of related state. `useReducer` uses a reducer function to update state, which can radically simplify your code because all the state updates can be done in a single function.\n\n`useReducer` accepts both a reducer function and a starting state value and, like `useState`, it returns an array which includes the state variable and a new function called dispatch. When dispatch is called, it runs the reducer function and sends data to it called an action. The benefit of the action data is to conditionally set state based off of what action came in. `useReducer` works well for simplifying components with multiple related state values like multiple inputs within a form. It's also good for components where the state depends on other values like in this game-based example. This makes `useReducer` a great choice for apps with lots of user interactions.\n\n## State Hooks: useSyncExternalStore\n\nA state hook you might not have heard of, however, is `useSyncExternalStore`. This is one of those hooks you're likely not going to use at all. It's primarily used to add non-React state stores into React components, which means you're not going to need it unless you want to make your own state management library from scratch.\n\n## Effect Hooks: Understanding useEffect\n\nAfter state hooks, we have effect hooks, which let us perform side effects. But what is a side effect? It's a way to reach outside React and synchronize with an external system. A good basic example of performing a side effect is to set the title using the document API. To do that, you first give `useEffect` a function to run, and by default, it'll run after each render. To change that behavior, you can give it a dependencies array. When any value in this array changes, the effect function will run. And when the button is clicked, count will be updated in state, which will cause the effect function to run and update the title.\n\n## When and When Not to Use useEffect\n\nLet's take a look at two types of side effects: event-based side effects, which run when some event takes place like a button click, and render-based side effects, which is a side effect which runs after render, such as fetching data. And it may surprise you, but `useEffect` really shouldn't be used for either type. Instead of performing side effects when an event happens in `useEffect`, make your code simpler by doing it directly in an event handler. And instead of fetching data when your component mounts and putting it in state, use a more sophisticated tool to fetch data like React Query or data fetching patterns that come with frameworks like Next.js.\n\nWhen should you use effect then? You won't need to use it often, but mainly when you need to sync your React code with a browser API like in this example where we're synchronizing the React state with the browser media API using a ref and either playing it or pausing it.\n\n## Effect Hooks: useLayoutEffect\n\nAnd in fact, there's a more specialized version of `useEffect` called `useLayoutEffect`. While `useEffect` runs after React paints the UI, `useLayoutEffect` runs just before React paints the UI. While `useEffect` is asynchronous, this hook is primarily for synchronous operations that you want to do right before displaying the UI content, like setting state. And this particular use case means this hook is going to be used even less than `useEffect`. `useLayoutEffect` is good to use, for example, when you want to get some initial state from a browser API, like this one where we're measuring the height of a tooltip with `getBoundingClientRect` and then setting it in state before the browser repaints and it's visible to the user.\n\n## Effect Hooks: useInsertionEffect\n\n`useInsertionEffect` is an even more niche effect hook you've probably never heard of because it's made exclusively for CSS-in-JS library makers, libraries like Styled Components or Emotion. This hook runs before `useEffect` and `useLayoutEffect` run, and it does so in order to make sure any CSS styles are inserted if other effect hooks need to read from the layout.\n\n## Ref Hooks: useRef\n\nLike effects, refs are a way to step outside of React. The `useRef` hook is kind of like `useState`. It lets us remember data but without triggering a render like `useState`. Refs can be given any data value, but it's simpler because it returns only one value, which is whatever you passed it. And to access the underlying value, you can use the `current` property.\n\nAnother important difference between refs and state is that refs are mutable while state is immutable. This means the `current` property can be modified directly using the equals operator. This is really useful in this timer example where we're storing the interval ID in a ref to clear the interval when we want to using the stop timer function. DOM elements can also be stored in refs. You can do this by connecting a created ref to the ref prop of an element. Once you do that, use the `current` property to access the underlying DOM element.\n\n## Ref Hooks: useImperativeHandle\n\n`useImperativeHandle` is a type of ref hook but rarely used. It's only necessary to use when you need to forward a ref, which means you need to pair it with the `forwardRef` function and only if you also need to expose a method to the parent component that passed the ref. Let's say you have a parent component that wants to focus an input within a child component. To do that, you need to first forward the ref to the child with the `forwardRef` function, which won't be required in React 19, and to expose the focus method to the parent ref, you use `useImperativeHandle` to put that method on the ref.\n\n## Performance Hooks: useMemo\n\n`useMemo` is one of two hooks made to improve your app's performance. It uses something called memoization to improve performance by caching previous results. `useMemo` will recompute the cached value only when one of its dependencies has changed, and this makes it good for performing expensive computations.\n\n`useMemo` looks similar to `useEffect`, but it's not for side effects and it must return a value. A heavy computation that `useMemo` might do is calculate the sum of numbers in an array. It only reruns this function when the numbers array changes and it puts the computed result in the sum variable.\n\n## Performance Hooks: useCallback\n\nLike `useMemo`, `useCallback` memorizes what's passed to it, but `useCallback` is different. It's for functions, specifically callback functions that are passed down to child components. This improves performance by preventing callback functions from being recreated on each render. In this example, we're passing the increment function as a prop to the button component. Since that function updates state, it'll cause a rerender whenever it's run, so to prevent the increment function from being recreated every time the component re-renders, we wrap the increment function in `useCallback`.\n\n## Context Hooks: useContext\n\nThere's one context hook called `useContext`, and it's really pretty simple. It can read context values, which means if a component is wrapped in a context provider, you can use this hook to read the value passed down on context. `useContext` works in any component that's nested inside a provider, no matter how deep it is. To read the context value, you just need to pass the created context to `useContext`, and that's it.\n\n## Transition Hooks: useTransition\n\nIn React, all state updates are considered to be urgent. `useTransition` is a transition hook that allows us to specify that certain state updates are not urgent. This is helpful for state updates that involve heavy computations which can lead to a bad user experience if they're executed immediately. We can make our app more responsive by wrapping these state updates in a transition.\n\nA great use case for `useTransition` is filtering a list based on user input. Typing into the input might cause the UI to freeze or be sluggish because the app is trying to render the list after each keystroke. We can mark the filter state update as non-urgent with the `startTransition` function from `useTransition`. `useTransition` also gives us an `isPending` boolean value to tell us when the transition is pending, allowing us to show a loading state to the user until the state update finishes.\n\n## Transition Hooks: useDeferredValue\n\n`useDeferredValue` is another transition hook that lets you defer or pause an update to keep your app responsive. It's very similar to `useTransition`, but we use it to tell React to schedule an update at an optimal time for us instead of us doing it ourselves. To use it, all you need to do is pass the value you want to defer to `useDeferredValue`. Just like the `useTransition` example, `useDeferredValue` is best for things like filtering lists. This leads to the same improved user experience as `useTransition`, but without you having to manually start the transition or use any pending state.\n\n## Other Hooks: useDebugValue\n\nThe only reason to use a random hook like `useDebugValue` is if you regularly use React Dev tools. If not, then you probably won't ever use it. But if you do and you're using custom hooks, `useDebugValue` lets you label your custom hooks with whatever string value you pass to them. That way you can find your custom hooks easier in the React DevTools extension.\n\n## Other Hooks: useId\n\n`useId` is another random hook that does exactly what it says: it creates a unique ID when it's called, and it doesn't require any arguments. But I know what you're thinking, and no, you can't use it to create keys for your list items. It's made for creating dynamic IDs to be shared between form inputs and their labels. `useId` is useful when form inputs can be reused multiple times in a single page. In this form component, we're using the email input component twice, so to make sure they each have unique IDs that don't conflict with each other, we use `useId` to make a unique ID to keep them separate.\n\n## Next Steps and Further Learning\n\nThere's so much more to learn about React hooks to really master them. And to help you do that, plus every other React topic, I've created a complete bootcamp with tons of interactive challenges, fun fun videos, and super helpful cheat sheets with all the code and examples we covered here. You can find all that and more at reactbootcamp.io. And as for the React 19 hooks, here I have a complete video that covers them all in depth, what they do, and how to start using them today. Just click here to watch that now. Thanks for watching, and I'll see you in the next video."
+}

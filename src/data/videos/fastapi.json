@@ -1,7 +1,7 @@
 {
   "slug": "fastapi",
   "techName": "FastAPI",
-  "scrapedAt": "2026-07-22T00:58:56.511713+00:00",
+  "scrapedAt": "2026-07-22T04:52:19.657909+00:00",
   "source": "youtube-api",
   "videoCount": 19,
   "videos": [
@@ -56,7 +56,7 @@
     {
       "id": "h5wLuVDr0oc",
       "title": "Deploy ML models with FastAPI, Docker, and Heroku | Tutorial",
-      "description": "This video demonstrates deploying machine learning models using FastAPI. Topics covered include developing the model, building a FastAPI application, containerizing with Docker, and deploying the application to Heroku for cloud hosting.",
+      "description": "Learn to create a production-ready application by deploying a machine learning model using FastAPI, Docker, and Heroku. This step-by-step tutorial guides you through the entire process, from training a language detection model in a notebook to containerizing it with Docker for\u2026",
       "channel": "AssemblyAI",
       "channelUrl": "https://www.youtube.com/channel/UCtatfZMf-8EkIwASXM4ts0A",
       "url": "https://www.youtube.com/watch?v=h5wLuVDr0oc",
@@ -72,7 +72,7 @@
     {
       "id": "502XOB0u8OY",
       "title": "Why Python Needs Pydantic for Real Applications",
-      "description": "This tutorial explores Pydantic's features for data validation and management in Python projects. It covers setup, field and model validation, custom serialization, and integration with FastAPI, demonstrating its role in structuring data for applications.",
+      "description": "Discover how Pydantic supercharges Python applications by enforcing data integrity. This guide explores how to move beyond Python's dynamic typing with Pydantic's robust data validation and serialization. Learn to define data models using `BaseModel`, leverage built-in types\u2026",
       "channel": "ArjanCodes",
       "channelUrl": "https://www.youtube.com/channel/UCVhQ2NnY5Rskt6UjCUkJ_DA",
       "url": "https://www.youtube.com/watch?v=502XOB0u8OY",
@@ -88,7 +88,7 @@
     {
       "id": "F43rgxq4CKw",
       "title": "How To Create Your Very First API With FastAPI In Python Tutorial 2023",
-      "description": "This tutorial demonstrates building an initial API using FastAPI in Python. It covers the fundamentals of creating a high-performance web API with Python 3.6+ and standard type hints, focusing on the core concepts of the FastAPI framework.",
+      "description": "Learn the fundamentals of building a web API with Python using the powerful FastAPI framework. This tutorial guides you through creating your very first API from scratch, covering essential steps like installing FastAPI and Uvicorn, instantiating the app, and defining a root\u2026",
       "channel": "Indently",
       "channelUrl": "https://www.youtube.com/channel/UCuudpdbKmQWq2PPzYgVCWlA",
       "url": "https://www.youtube.com/watch?v=F43rgxq4CKw",
@@ -120,7 +120,7 @@
     {
       "id": "Rf9jbnzt2UU",
       "title": "#2 FastAPI Setup in VS Code",
-      "description": "This video details the initial setup of FastAPI within a VS Code development environment. It covers the necessary steps to configure FastAPI for use.",
+      "description": "Master the essential setup for your FastAPI projects in VS Code. This guide walks you through verifying your Python installation, creating a project folder, and setting up an isolated virtual environment (`venv`) to manage dependencies. Learn to install FastAPI and the Uvicorn\u2026",
       "channel": "Telusko",
       "channelUrl": "https://www.youtube.com/channel/UC59K-uG2A5ogwIrHw4bmlEg",
       "url": "https://www.youtube.com/watch?v=Rf9jbnzt2UU",
@@ -152,7 +152,7 @@
     {
       "id": "M-DzoNzmJI0",
       "title": "#4 FastAPI - Pydantic and Fetching all products",
-      "description": "This video demonstrates integrating Pydantic with FastAPI for data validation and serialization. It specifically covers fetching and handling multiple product entries within a FastAPI application.",
+      "description": "Learn to build a REST API with FastAPI by creating an endpoint to fetch a list of products. This tutorial covers RESTful URL design, differentiating between HTTP methods like GET and POST, and setting up a `/products` route. You'll see how to define a data model for your\u2026",
       "channel": "Telusko",
       "channelUrl": "https://www.youtube.com/channel/UC59K-uG2A5ogwIrHw4bmlEg",
       "url": "https://www.youtube.com/watch?v=M-DzoNzmJI0",
@@ -168,7 +168,7 @@
     {
       "id": "SgSnz7kW-Ko",
       "title": "How to Deploy FastAPI on AWS EC2: Quick and Easy Steps!",
-      "description": "This video demonstrates deploying a Python FastAPI application to an AWS EC2 instance. It covers launching and connecting to EC2, installing pip and NGINX, configuring NGINX for API traffic routing, running the FastAPI server, and testing the API.",
+      "description": "Learn how to quickly and easily deploy your FastAPI Python application on an AWS EC2 instance, making your API accessible from the public internet. This step-by-step guide walks you through configuring and launching a virtual server on AWS using an Ubuntu image and a t2.micro\u2026",
       "channel": "pixegami",
       "channelUrl": "https://www.youtube.com/channel/UCuxhTSKtnMJizinblLs9xOA",
       "url": "https://www.youtube.com/watch?v=SgSnz7kW-Ko",
@@ -200,7 +200,7 @@
     {
       "id": "cH0immwfykI",
       "title": "How to Use Async SQLAlchemy in FastAPI",
-      "description": "This video demonstrates converting a synchronous SQLAlchemy implementation to an asynchronous version within a FastAPI application. It covers adapting existing code to utilize async SQLAlchemy for improved performance in web services.",
+      "description": "Learn how to integrate async SQLAlchemy into your FastAPI applications by converting a synchronous project to an asynchronous one. This guide demonstrates the necessary changes, from installing the required AIO SQLite driver to updating your database connection URI. Discover how\u2026",
       "channel": "Pretty Printed",
       "channelUrl": "https://www.youtube.com/channel/UC-QDfvrRIDB6F0bIO4I4HkQ",
       "url": "https://www.youtube.com/watch?v=cH0immwfykI",
@@ -216,7 +216,7 @@
     {
       "id": "zTSmvUVbk8M",
       "title": "FastAPI & Alembic - Database Migrations in FastAPI apps",
-      "description": "This video teaches how to implement database migrations in FastAPI applications using Alembic. It covers setting up Alembic with FastAPI, generating migrations, and applying model changes through the migration process, providing a practical guide for managing database schema\u2026",
+      "description": "Learn how to integrate Alembic into your FastAPI project to manage database migrations effectively. This guide covers setting up Alembic with SQLModel, which builds on SQLAlchemy, to automate the creation of migration scripts. Discover how to configure Alembic to detect changes\u2026",
       "channel": "BugBytes",
       "channelUrl": "https://www.youtube.com/channel/UCTwxaBjziKfy6y_uWu30orA",
       "url": "https://www.youtube.com/watch?v=zTSmvUVbk8M",
@@ -232,7 +232,7 @@
     {
       "id": "5GorMC2lPpk",
       "title": "FastAPI Python Tutorial (Part 1) - Building a Stock Screener with FastAPI",
-      "description": "This tutorial demonstrates building a web-based stock screener using FastAPI, a Python framework based on Starlette. It covers core FastAPI features like Pydantic models, dependency injection, background tasks, and SQLAlchemy integration for data management.",
+      "description": "Learn the fundamentals of FastAPI, a modern Python web framework, by building a practical stock screener application from the ground up. This tutorial introduces FastAPI's key advantages over frameworks like Flask and Django, covering powerful features such as Pydantic for data\u2026",
       "channel": "Part Time Larry",
       "channelUrl": "https://www.youtube.com/channel/UCY2ifv8iH1Dsgjrz-h3lWLQ",
       "url": "https://www.youtube.com/watch?v=5GorMC2lPpk",
@@ -248,7 +248,7 @@
     {
       "id": "Lw-zLopB3o0",
       "title": "FastAPI #1  Installation / API Routes / Swagger Docs",
-      "description": "This video covers FastAPI installation with Uvicorn, defining API routes using Python type hints, and exploring interactive Swagger documentation. It demonstrates creating a FastAPI app with HTTP GET endpoints and utilizing type hints for API handler functions.",
+      "description": "Learn the fundamentals of FastAPI, a modern, high-performance Python API framework. This tutorial guides you through setting up your project from scratch, including creating a Python virtual environment and installing FastAPI and Uvicorn. Discover how to define API routes for\u2026",
       "channel": "BugBytes",
       "channelUrl": "https://www.youtube.com/channel/UCTwxaBjziKfy6y_uWu30orA",
       "url": "https://www.youtube.com/watch?v=Lw-zLopB3o0",
@@ -296,7 +296,7 @@
     {
       "id": "f270BoTicMA",
       "title": "Dependency Injection Explained Like You\u2019re 5 (with FastAPI Examples)",
-      "description": "This video explains dependency injection using FastAPI. It covers the core concepts and demonstrates the use of FastAPI's `Depends` keyword for managing dependencies within web applications.",
+      "description": "Understand the often-confusing software design pattern of Dependency Injection (DI) with a clear, step-by-step explanation. This guide breaks down what DI is, why it's crucial for building loosely coupled, modular, and testable applications, and how it relates to Inversion of\u2026",
       "channel": "Eric Roby",
       "channelUrl": "https://www.youtube.com/channel/UCFxwS8HIGH5_ut1fk0PNAHw",
       "url": "https://www.youtube.com/watch?v=f270BoTicMA",
