@@ -23,13 +23,26 @@ python3 -m venv .venv
 cd ..
 
 cp .env.example .env
-# Fill in DATABASE_URL, GITHUB_TOKEN, and optionally YOUTUBE_API_KEY.
+# Fill in DATABASE_URL, GITHUB_TOKEN, YOUTUBE_API_KEY, and OPENROUTER_API_KEY
+# (LLM enrichment/descriptions; OPENAI_API_KEY works as the OpenAI-direct alternative).
 
 pnpm dev                    # http://localhost:4321
 pnpm run build              # canonical full validation → dist/
 ```
 
-> `pnpm run build` is the canonical end-to-end check. Its `prebuild` runs `scripts/pull-data.mjs` and `scripts/hydrate-blog.mjs` before Astro compiles the static site.
+> `pnpm run build` is the canonical end-to-end check. Its `prebuild` runs `scripts/pull-data.mjs` (with the cross-domain scrub and `addedAt` stamping) and `scripts/hydrate-blog.mjs` before Astro compiles the static site.
+
+### One-command operations
+
+`./pipeline.sh` aggregates the day-to-day flows; every step is idempotent, so each command resumes where the last run stopped:
+
+```bash
+./pipeline.sh status     # DB queue counts + local coverage
+./pipeline.sh videos     # transcribe → enrich → rewrite descriptions → publish video JSON
+./pipeline.sh projects   # publish project catalogs (scrub + addedAt included)
+./pipeline.sh build      # full site build
+./pipeline.sh ship       # videos + build + commit src/data + push
+```
 
 ## Current data flow
 
@@ -76,7 +89,7 @@ The Scrapy pipeline writes repository metadata, topics, languages, technology li
 
 GitHub Search exposes at most **1,000 results per individual query**. Authentication improves the request limit but does not remove that cap. Broad discovery therefore needs bounded queries such as star ranges; increasing a single query past 1,000 returns HTTP 422.
 
-GitHub topics are candidate-discovery signals, not final proof of membership. Technology-specific categorization belongs in `src/config/domain-catalog.json` and `scraper/madewith_scraper/normalize.py`. Laravel currently has a dedicated classifier that keeps Laravel projects, packages/plugins, and Laravel-specific tools while rejecting generic integrations and content-only repositories.
+GitHub topics are candidate-discovery signals, not final proof of membership. Category assignment uses the shared weighted-signal engine (`shared/classify-signals.json`, consumed by both the Worker and the publish pipeline, golden-tested on both sides); domain membership is guarded by the `github/` qualification engine (shared-vendor dependency rules, topic-breadth limits) plus the post-publish `scripts/scrub-cross-domain.mjs` pass. Laravel additionally has a dedicated per-tech classifier that keeps Laravel projects, packages/plugins, and Laravel-specific tools while rejecting generic integrations and content-only repositories.
 
 CSV imports are auxiliary replay tools, not the primary scraper:
 
@@ -101,19 +114,18 @@ pnpm scrape:youtube:publish -- laravel
 
 Video metadata is stored in `youtube_videos` and published to `src/data/videos/<slug>.json`. `/video/` and `/video/<generated-slug>/` render the catalog and individual video pages.
 
-Fetch raw caption segments for discovered videos, then structure them with AI:
+Fetch raw caption segments for discovered videos, then structure them with AI (or run everything via `./pipeline.sh videos`):
 
 ```bash
+youtube/transcribe_rotate.sh ~/vpn-wg 100 1 2       # bulk fetch with VPN location rotation
 youtube/.venv/bin/python youtube/transcribe_youtube.py --slug laravel --limit 20
-youtube/.venv/bin/python youtube/transcribe_youtube.py --limit 1200 --sleep 1
-youtube/.venv/bin/python youtube/enrich_transcripts.py --limit 100
+youtube/.venv/bin/python youtube/enrich_transcripts.py --limit 200 --workers 8 --max-output-tokens 32000
+youtube/.venv/bin/python youtube/rewrite_descriptions.py   # clean descriptions for non-enriched videos
 ```
 
-Raw captions are cached locally at `youtube/data/transcripts/<youtube-video-id>.json`. `enrich_transcripts.py` sends timestamped captions to the configured OpenAI model and publishes schema-v2 files at `src/data/transcripts/<youtube-video-id>.json`. Each published file contains AI-generated chapters (`title`, `description`, `startTime`, `endTime`), a Markdown `summary`, and a literal, AI-formatted Markdown `transcription`. `src/lib/transcripts.ts` includes those files at build time.
+Raw captions are cached locally at `youtube/data/transcripts/<youtube-video-id>.json`. `enrich_transcripts.py` sends timestamped captions to the configured model (OpenRouter → `google/gemini-2.5-pro` by default; see `youtube/README.md` for providers and overrides) and publishes schema-v3 files at `src/data/transcripts/<youtube-video-id>.json`: AI-generated chapters, an SEO description, a Markdown `summary`, and a literal Markdown `transcription`. `src/lib/transcripts.ts` includes those files at build time. Published video descriptions resolve best-source-first: enriched `seoDescription` → LLM rewrite (`src/data/video-descriptions.json`) → sanitized raw text.
 
-`youtube-transcript-api` uses YouTube’s transcript endpoint rather than the official Data API and may return `IpBlocked` or `RequestBlocked` during bulk runs. Those are transient failures and must remain retryable; they do not mean the video lacks captions. Use a cooldown, a slower `--sleep`, or a supported rotating proxy. Permanent no-caption cases are recorded as `unavailable`.
-
-The first full 1,121-video batch on 2026-07-13 fetched 40 transcripts before YouTube blocked the host IP; together with the smoke test, 43 transcript JSON files were produced. Treat this as an observed run result, not expected coverage.
+`youtube-transcript-api` uses YouTube’s anonymous transcript endpoint rather than the official Data API; blocking is purely IP-based. The fetcher fails fast after consecutive block errors (exit 75, blocked videos stay `pending`), and `transcribe_rotate.sh` rotates through WireGuard location configs until the queue drains. Permanent no-caption cases are recorded as `unavailable`.
 
 ## Generated data and pages
 
@@ -136,16 +148,26 @@ src/
     video/                      video index, detail pages, RSS
     blog/                       editorial index, detail pages, RSS
 scraper/
-  madewith_scraper/             Scrapy spiders, PostgreSQL persistence, normalization
-  publish.py                    PostgreSQL → project JSON
-  publish_videos.py             PostgreSQL → video JSON
-  transcribe_youtube.py         raw caption fetcher and status tracker
-  enrich_transcripts.py         raw captions → AI-structured transcript JSON
+  madewith_scraper/             Scrapy spiders, PostgreSQL persistence, classify engine
+  publish.py / publish.sh       PostgreSQL → project JSON (+ scrub + addedAt guards)
+youtube/
+  madewith_youtube/             YouTube discovery spider, relevance gate, DB access
+  transcribe_youtube.py         raw caption fetcher (workers, fail-fast on blocks)
+  transcribe_rotate.sh          VPN location rotation for bulk caption fetching
+  enrich_transcripts.py         raw captions → AI chapters/summary/transcription (v3)
+  rewrite_descriptions.py       LLM description rewrites for non-enriched videos
+  publish_videos.py             PostgreSQL → video JSON (description preference chain)
+  cleanup_videos.py             retroactive relevance-gate purge
+github/                         repository qualification engine (membership rules)
+shared/                         classifier signal table + JS engine (single source of truth)
 scripts/
-  pull-data.mjs                 build-time project/video hydration
+  pull-data.mjs                 build-time project/video hydration (+ guards)
+  scrub-cross-domain.mjs        evict cross-domain contamination from published JSON
+  stamp-added-at.mjs            preserve/assign per-project addedAt (RSS recency)
   hydrate-blog.mjs              optional factory-output hydration
+pipeline.sh                     one-command drivers (status/videos/projects/build/ship)
 worker/                         optional Cloudflare Worker/R2/admin backend
-factory/                        editorial content generator
+factory/                        editorial content generator (OpenRouter, Sonnet 4.5)
 ```
 
 Generated JSON can change substantially after a scrape or publish run. Review source-code changes separately from generated data before committing.

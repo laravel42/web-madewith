@@ -34,6 +34,14 @@ Browser ── /admin (UI, static) ─────────────┐   
   network category, canonical page URL, meta title/description, visible category pills,
   and project visibility toggles (hide/show). Settings are stored in D1, published to
   R2 as `config/<slug>.json`, and pulled at build into `src/data/config/`.
+- **Pipeline** — content-pipeline health computed at build time from the published
+  data: per-domain project counts and freshness (scrape date, newest `addedAt`
+  entry), video counts with description-source badges (enriched transcript →
+  LLM rewrite → sanitized raw), network totals/coverage cards, and a runbook of
+  the six pipeline stages with their commands. This panel is a snapshot of the
+  last build; live queue counts (pending transcripts, DB status) come from
+  `./pipeline.sh status` on the machine holding Postgres — the Worker cannot
+  reach the local database by design.
 - **Settings** — read-only status for worker secrets (`GITHUB_TOKEN`, deploy hook,
   Access), bindings (R2/KV/D1), and site env vars (`ADMIN_WORKER_URL`, etc.).
 

@@ -53,6 +53,24 @@ The script loads environment variables in this order:
 2. `./.env`
 3. dotenv's normal fallback search
 
+## LLM provider
+
+The factory routes through **OpenRouter** whenever `OPENROUTER_API_KEY` is set,
+defaulting to `anthropic/claude-sonnet-4.5` (long-form editorial quality). With
+only `OPENAI_API_KEY` it uses OpenAI directly (legacy behavior, default
+`gpt-5-mini`). Keys are matched to the endpoint, so both can coexist in `.env`.
+
+Overrides (env):
+
+| Variable | Purpose | Default |
+| --- | --- | --- |
+| `FACTORY_MODEL` | Model for this tool only | `anthropic/claude-sonnet-4.5` (OpenRouter) / `gpt-5-mini` (OpenAI) |
+| `FACTORY_BASE_URL` | Any OpenAI-compatible endpoint | OpenRouter when its key is set |
+| `FACTORY_MAX_TOKENS` | Output cap per article (chat path) | `32000` |
+
+`GITHUB_TOKEN` is also required (repository facts), and an LLM key —
+`OPENROUTER_API_KEY` or `OPENAI_API_KEY` — must be present unless `--dry-run`.
+
 ## Preview the editorial schedule
 
 This requires no API calls:

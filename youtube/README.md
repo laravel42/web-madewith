@@ -10,6 +10,10 @@ under `src/data/` are publishing artifacts. The domain catalog is shared with
 the rest of the project at `src/config/domain-catalog.json`; relevance rules
 live in `src/config/video-relevance.json`.
 
+The repo-root `./pipeline.sh videos` aggregates the whole flow (transcribe →
+enrich → rewrite descriptions → publish); the commands below are the
+individual steps.
+
 ## Setup
 
 From the repository root:
@@ -60,9 +64,10 @@ Spider arguments:
 | `refresh_days` | 14 | Skip recently searched domains; `0` disables cooldown |
 | `max_results` | 40 | Candidates requested per domain (capped at 50) |
 
-Relevance rules live in `src/config/video-relevance.json` and matter most for
-ambiguous terms such as Astro, Fiber, Gin, Ghost, Haystack, Medusa, Monica,
-Phoenix, and Rocket.
+Relevance rules live in `src/config/video-relevance.json`; 25 ambiguous slugs
+have strict reject/require rules (`strictSlugs`), e.g. Express vs
+HitFilm/Adobe Express, Alpine vs Alpine Linux, Django vs the movie, React vs
+reaction videos, Rails vs model railways, Twill vs the fabric.
 
 Tables written: `youtube_videos`, `youtube_search_runs`.
 
@@ -85,7 +90,8 @@ caption files to the local cache `youtube/data/transcripts/<videoId>.json`
 
 ```bash
 youtube/.venv/bin/python youtube/transcribe_youtube.py --slug laravel --limit 20
-youtube/.venv/bin/python youtube/transcribe_youtube.py --limit 1200 --sleep 1
+youtube/.venv/bin/python youtube/transcribe_youtube.py --limit 500 --sleep 1 --workers 2
+youtube/transcribe_rotate.sh ~/vpn-wg 100 1 2     # bulk fetch with VPN location rotation
 ```
 
 | Argument | Default | Description |
@@ -93,47 +99,74 @@ youtube/.venv/bin/python youtube/transcribe_youtube.py --limit 1200 --sleep 1
 | `--slug` | all | Restrict work to one catalog slug |
 | `--limit` | 100 | Maximum pending videos selected |
 | `--lang` | `en` | Preferred transcript language |
-| `--sleep` | `0.5` | Delay between requests; increase for bulk runs |
+| `--sleep` | `0.5` | Per-worker delay between requests; increase for bulk runs |
+| `--workers` | 1 | Concurrent fetchers. Blocks are per-IP and rate-triggered — keep 1–3 from a single IP; high counts only behind a rotating proxy |
 | `--force` | off | Replace an existing transcript file |
 | `--out` | `youtube/data/transcripts` | Raw-caption output directory |
 
-Convert raw captions to the published v2 schema (requires `OPENAI_API_KEY`):
-
-```bash
-youtube/.venv/bin/python youtube/enrich_transcripts.py --video-id DKnn8TlJ4MA
-youtube/.venv/bin/python youtube/enrich_transcripts.py --limit 100
-```
-
-Published output at `src/data/transcripts/<video-id>.json` contains
-`chapters[]`, `summary`, `transcription`, and provenance fields
-(`schemaVersion`, `videoId`, `language`, `source`). Existing schema-v2 outputs
-are skipped unless `--force` is supplied.
-
 Transcript status columns on `youtube_videos`:
 
-- `pending`: eligible for the next run
+- `pending`: eligible for the next run (IP-block/network errors leave a video here, so re-runs resume automatically)
 - `fetched`: JSON written successfully
 - `unavailable`: permanent no-caption/unplayable condition
-- `failed`: transient block/network/unknown failure; reset to `pending` before retrying
+- `failed`: non-transient errors only; reset to `pending` to retry
 
-Bulk fetching is not the official YouTube Data API. `youtube-transcript-api` can
-trigger `IpBlocked` or `RequestBlocked`; these are transient and must not be
-treated as evidence that captions are absent. Stop the run, allow a cooldown,
-increase `--sleep`, or configure a proxy before retrying.
+Bulk fetching is not the official YouTube Data API — the caption endpoint is
+anonymous and YouTube's defense is purely **IP-based** (the API key is
+irrelevant to blocks). After 3 consecutive block errors (10 with a proxy) the
+run aborts with **exit 75** rather than grinding a burned IP through the
+queue.
 
-**Proxy** (recommended for bulk runs — YouTube IP-blocks datacenter ranges).
-`transcribe_youtube.py` reads proxy settings from the environment:
+**VPN rotation** — `transcribe_rotate.sh <conf-dir> [chunk] [sleep] [workers]`
+drives the fetcher through manual WireGuard configs (e.g. SurfShark: dashboard
+→ VPN → Manual setup → WireGuard, one `.conf` per location). It brings up a
+location, runs chunks until the queue empties or the location gets blocked
+(exit 75), then rotates. Requires `brew install wireguard-tools bash` on macOS
+(`wg-quick` needs bash 4+); `sudo` is used only for `wg-quick`, and the VPN
+app must be disconnected while it runs.
+
+**Rotating proxy** (alternative to VPN rotation):
 
 | Variable(s) | Proxy |
 | --- | --- |
 | `WEBSHARE_PROXY_USERNAME` + `WEBSHARE_PROXY_PASSWORD` | Webshare residential (most reliable) |
 | `YT_PROXY_HTTP` / `YT_PROXY_HTTPS` (or `YT_PROXY_URL` for both) | Any generic HTTP/S proxy |
 
-```sql
--- reset retryable failures
-UPDATE youtube_videos SET transcript_status = 'pending'
-WHERE transcript_status = 'failed';
+## Enrichment
+
+Convert raw captions to the published **schema v3** (chapters + `seoDescription`
++ summary + literal transcription; see `.env` notes above for provider/model):
+
+```bash
+youtube/.venv/bin/python youtube/enrich_transcripts.py --video-id DKnn8TlJ4MA --force
+youtube/.venv/bin/python youtube/enrich_transcripts.py --limit 200 --workers 8 --max-output-tokens 32000
 ```
+
+Runs are parallel (`--workers`, default 4) with buffered per-video log blocks,
+per-call token usage (reasoning vs visible split), and a throughput-based ETA.
+`--limit` counts only videos that still need work, so repeated runs always make
+progress. If a long video's cleaned transcript can't fit in one response, the
+run retries in structure-only mode and rebuilds the literal transcription from
+the raw captions per chapter window. Existing v3 outputs are skipped unless
+`--force`.
+
+## Description rewrites
+
+`rewrite_descriptions.py` covers videos **without** an enriched transcript: it
+rewrites the raw YouTube description (sponsor plugs, links, timestamps) into
+one neutral editorial paragraph via the LLM, accumulating idempotently in
+`src/data/video-descriptions.json` (OpenRouter default model
+`google/gemini-2.5-flash`; override with `DESC_MODEL` or `--model`).
+
+```bash
+youtube/.venv/bin/python youtube/rewrite_descriptions.py --dry-run   # preview queue
+youtube/.venv/bin/python youtube/rewrite_descriptions.py             # rewrite
+```
+
+At publish time each video's display description resolves best-source-first:
+**enriched `seoDescription` → LLM rewrite → sanitized raw text** (URL/promo/
+timestamp lines stripped). The relevance gate still judges the raw
+description.
 
 ## Cleaning up non-relevant videos
 
