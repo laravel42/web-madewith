@@ -184,6 +184,11 @@ export function allVideoCards(): VideoCardItem[] {
   return CARDS;
 }
 
+/** Videos for one stack slug (e.g. "laravel"), newest first. */
+export function videoCardsForDomain(techSlug: string): VideoCardItem[] {
+  return allVideoCards().filter((c) => c.techSlug === techSlug);
+}
+
 export interface VideoGroupChip {
   group: DomainGroup;
   label: string;

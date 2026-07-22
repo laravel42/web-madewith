@@ -1,6 +1,6 @@
 ---
 import type { NetworkCardStyle } from "../config/domains";
-import { readableOn, readableOnDark, readableOnLight, solidSurface, tint } from "../config/accessible-color";
+import { readableOnDark, readableOnLight, solidSurface, tint } from "../config/accessible-color";
 import { hasNetworkIcon, networkIconHref } from "../lib/network-icons";
 
 interface Props {
@@ -18,14 +18,11 @@ const { href, techName, domain, count, blurb, accent, accentInk, card } = Astro.
 const hasLogo = hasNetworkIcon(techName);
 const iconHref = networkIconHref(techName);
 const letter = techName.replace(/[^A-Za-z0-9]/g, "").charAt(0).toUpperCase();
-// The card gradient starts on the 14% tint, so that is the darkest surface the
-// blurb and link land on — every ink below is measured against it, not white.
 const soft = tint(accent, 14);
 const softBorder = tint(accent, 30);
 // Terminal shell: the 55%-toward-white tint the design used, lightened further
 // for near-black accents (fastify's #000000 mixed to 3.97:1 on #0c130e).
 const accentText = readableOnDark(accent);
-const blurbInk = readableOn(tint(accent, 32, "#1a222b"), soft);
 const linkInk = readableOnLight(accent);
 // Solid accent plate carrying accentInk (badge, logo chip, fallback letter):
 // raw brand accents ran 2.95–4.5:1 against their own ink.
@@ -50,7 +47,7 @@ const maskStyle = `background-color:var(--mask-fill); -webkit-mask-image:url(${i
     </div>
     <div class="net-card__terminal-title">Made with {techName}</div>
     <div class="net-card__terminal-domain" style={`color:${accentText};`} hidden>~/{domain}</div>
-    <div class="net-card__terminal-blurb" style={`color:${accentText};`}>{blurb}</div>
+    <div class="net-card__terminal-blurb">{blurb}</div>
     <div class="net-card__terminal-link" style={`color:${accentText};`}>cd → open gallery</div>
   </a>
 ) : card === "black" ? (
@@ -94,7 +91,7 @@ const maskStyle = `background-color:var(--mask-fill); -webkit-mask-image:url(${i
     </div>
     <div class="net-card__title">Made with {techName}</div>
     <div class="net-card__domain" hidden>{domain}</div>
-    <div class="net-card__blurb" style={`color:${blurbInk};`}>{blurb}</div>
+    <div class="net-card__blurb">{blurb}</div>
     <div class="net-card__link" style={`color:${linkInk};`}>Visit the gallery →</div>
   </a>
 )}
@@ -177,9 +174,10 @@ const maskStyle = `background-color:var(--mask-fill); -webkit-mask-image:url(${i
   .net-card__blurb {
     font-size: 14px;
     font-weight: 500;
+    color: #3d4550;
     line-height: 1.45;
     margin-top: 11px;
-    min-height: 34px;
+    min-height: 3.9em;
     flex: 1;
     position: relative;
   }
@@ -227,6 +225,7 @@ const maskStyle = `background-color:var(--mask-fill); -webkit-mask-image:url(${i
   .net-card__terminal-blurb {
     font-size: 13px;
     font-weight: 500;
+    color: #ffffff;
     line-height: 1.5;
     margin-top: 12px;
     min-height: 52px;
@@ -263,10 +262,10 @@ const maskStyle = `background-color:var(--mask-fill); -webkit-mask-image:url(${i
   .net-card__black-blurb {
     font-size: 14px;
     font-weight: 500;
-    color: #e6e6e6;
+    color: #ffffff;
     line-height: 1.45;
     margin-top: 11px;
-    min-height: 34px;
+    min-height: 3.9em;
     flex: 1;
     position: relative;
   }

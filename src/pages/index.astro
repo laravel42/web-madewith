@@ -1,5 +1,5 @@
 ---
-import { GROUP_META, getResolvedTheme, networkMetaFor, NETWORK_DOMAINS, type DomainGroup } from "../config/domains";
+import { GROUP_META, getResolvedTheme, networkCardBlurb, networkMetaFor, NETWORK_DOMAINS, type DomainGroup } from "../config/domains";
 import { getCatalog } from "../lib/catalog";
 import NetworkCard from "../components/NetworkCard.astro";
 import NetworkFooter from "../components/NetworkFooter.astro";
@@ -9,7 +9,6 @@ import SiteHeader from "../components/SiteHeader.astro";
 function siteCard(slug: string) {
   const d = getResolvedTheme(slug);
   const data = getCatalog(d.slug);
-  const top = [...data.projects].sort((a, b) => b.stars - a.stars).slice(0, 3).map((p) => p.name);
   const net = networkMetaFor(d);
   return {
     slug: d.slug,
@@ -17,7 +16,7 @@ function siteCard(slug: string) {
     domain: d.domain,
     href: `/${d.slug}/`,
     count: data.projects.length,
-    blurb: top.length ? `Featuring ${top.join(", ")} and more.` : "Gallery indexing in progress.",
+    blurb: networkCardBlurb(d),
     ...net,
   };
 }

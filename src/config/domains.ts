@@ -10,6 +10,7 @@ import { readableOn, tint } from "./accessible-color";
 import { applyEngineTokens } from "./engine-theme";
 import type { HeroArch } from "./engine-theme";
 import { applyThemeOverrides, getDomainSettings } from "./domain-settings";
+import { NETWORK_STACK_BLURBS } from "./network-stack-blurbs";
 
 export type Variant = "light" | "terminal";
 export type HeroId = "nuxt" | "node" | "next" | "ionic" | "statamic" | "twill" | "generic";
@@ -409,3 +410,11 @@ export const GROUP_META: Record<DomainGroup, { label: string; icon: string; colo
     bg: "color-mix(in srgb, #6366F1 16%, #ffffff)",
   },
 };
+
+/** Short SEO blurb for network landing cards — stack identity, not project names. */
+export function networkCardBlurb(theme: Pick<Theme, "slug" | "techName" | "group">): string {
+  return (
+    NETWORK_STACK_BLURBS[theme.slug] ??
+    `${theme.techName} is an open-source ${theme.group.replace("-", " / ")} stack with a growing GitHub ecosystem.`
+  );
+}

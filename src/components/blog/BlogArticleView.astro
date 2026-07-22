@@ -258,6 +258,7 @@ const coverVariant = (article.slug.charCodeAt(0) % 3) as 0 | 1 | 2;
 
   .blog-toc-link {
     display: block;
+    position: relative;
     padding: 5px 0;
     font-size: 13px;
     font-weight: 500;
@@ -272,6 +273,22 @@ const coverVariant = (article.slug.charCodeAt(0) % 3) as 0 | 1 | 2;
   .blog-toc-link:focus-visible {
     color: var(--hero-accent-text, #2f6feb);
     outline: none;
+  }
+
+  .blog-toc-link.is-active {
+    color: var(--hero-accent-text, #2f6feb);
+    font-weight: 700;
+  }
+
+  .blog-toc-link.is-active::before {
+    content: "";
+    position: absolute;
+    left: -18px;
+    top: 4px;
+    bottom: 4px;
+    width: 2px;
+    border-radius: 1px;
+    background: var(--hero-accent-text, #2f6feb);
   }
 
   div.blog-article-author {
@@ -304,6 +321,54 @@ const coverVariant = (article.slug.charCodeAt(0) % 3) as 0 | 1 | 2;
     onScroll();
   }
 
-  initReadProgress();
-  document.addEventListener("astro:page-load", initReadProgress);
+  function initTocSpy() {
+    const nav = document.querySelector(".blog-toc-nav");
+    if (!(nav instanceof HTMLElement) || nav.dataset.spyInitialized) return;
+    const links = [...nav.querySelectorAll(".blog-toc-link")].filter(
+      (el): el is HTMLAnchorElement => el instanceof HTMLAnchorElement && !!el.hash,
+    );
+    if (!links.length) return;
+    nav.dataset.spyInitialized = "true";
+
+    const sections = links
+      .map((link) => {
+        const id = decodeURIComponent(link.hash.slice(1));
+        const heading = document.getElementById(id);
+        return heading ? { link, heading } : null;
+      })
+      .filter((item): item is { link: HTMLAnchorElement; heading: HTMLElement } => !!item);
+    if (!sections.length) return;
+
+    const setActive = (active: HTMLAnchorElement | null) => {
+      for (const { link } of sections) {
+        const on = link === active;
+        link.classList.toggle("is-active", on);
+        if (on) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      }
+    };
+
+    // Prefer the last heading whose top has crossed a fixed offset from the viewport top.
+    const offset = 120;
+    const sync = () => {
+      let current: HTMLAnchorElement | null = sections[0]?.link ?? null;
+      for (const { link, heading } of sections) {
+        if (heading.getBoundingClientRect().top - offset <= 0) current = link;
+        else break;
+      }
+      setActive(current);
+    };
+
+    window.addEventListener("scroll", sync, { passive: true });
+    window.addEventListener("resize", sync);
+    sync();
+  }
+
+  function initBlogArticleChrome() {
+    initReadProgress();
+    initTocSpy();
+  }
+
+  initBlogArticleChrome();
+  document.addEventListener("astro:page-load", initBlogArticleChrome);
 </script>
