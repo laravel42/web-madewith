@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 3,
+  "videoId": "iOt8_SkuEo4",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn the fundamentals of templating in October CMS by building a basic website structure from scratch. This tutorial guides you through creating and integrating reusable partials for your header and footer, organizing your layout with CSS classes, and constructing a dynamic navigation menu. Discover how to use October's Twig-based templating language to generate page links and apply active class states for a better user experience. Master these essential skills to efficiently structure your October CMS projects.",
+  "chapters": [
+    {
+      "title": "Introduction to Basic Templating",
+      "description": "This chapter introduces the goal of organizing the page layout using HTML, pre-written CSS, and the October CMS templating language.",
+      "startTime": 0.0,
+      "endTime": 117.0,
+      "slug": "introduction-to-basic-templating"
+    },
+    {
+      "title": "Creating and Including a Header Partial",
+      "description": "This chapter demonstrates how to create a header partial and include it in the main layout file using the Twig partial tag.",
+      "startTime": 117.0,
+      "endTime": 153.0,
+      "slug": "creating-and-including-a-header-partial"
+    },
+    {
+      "title": "Using the Twig Partial Tag",
+      "description": "This part explains how to use the Twig `partial` tag to render a partial file, noting that the folder and extension are automatically inferred by October CMS.",
+      "startTime": 153.0,
+      "endTime": 180.0,
+      "slug": "using-the-twig-partial-tag"
+    },
+    {
+      "title": "Building the Header Markup",
+      "description": "This chapter covers writing the HTML structure for the site header within the newly created partial file, including a logo and container.",
+      "startTime": 180.0,
+      "endTime": 219.0,
+      "slug": "building-the-header-markup"
+    },
+    {
+      "title": "Creating and Including the Footer Partial",
+      "description": "This chapter shows how to create a footer partial, add content to it, and include it in the default layout just like the header.",
+      "startTime": 219.0,
+      "endTime": 288.0,
+      "slug": "creating-and-including-the-footer-partial"
+    },
+    {
+      "title": "Adding Content to the Homepage",
+      "description": "This chapter demonstrates how to add placeholder content directly into the homepage page file to populate the main content area.",
+      "startTime": 288.0,
+      "endTime": 322.0,
+      "slug": "adding-content-to-the-homepage"
+    },
+    {
+      "title": "Building a Navigation Menu with Twig Links",
+      "description": "This part walks through creating a navigation menu in the header partial and using the Twig `page` filter to dynamically generate links.",
+      "startTime": 322.0,
+      "endTime": 427.0,
+      "slug": "building-a-navigation-menu-with-twig-links"
+    },
+    {
+      "title": "Linking to Other Pages and Fixing Layouts",
+      "description": "This chapter shows how to add a link for the movies page and then corrects its appearance by applying the default layout to the page file.",
+      "startTime": 427.0,
+      "endTime": 500.0,
+      "slug": "linking-to-other-pages-and-fixing-layouts"
+    },
+    {
+      "title": "Implementing Active Menu States with Twig",
+      "description": "This chapter details how to dynamically add an 'active' class to the current menu item using a Twig conditional and the `this.page.id` variable.",
+      "startTime": 500.0,
+      "endTime": 620.0,
+      "slug": "implementing-active-menu-states-with-twig"
+    },
+    {
+      "title": "Conclusion and Next Steps",
+      "description": "This final chapter summarizes the basic templating concepts covered and gives a brief preview of what is to come in the series.",
+      "startTime": 620.0,
+      "endTime": 673.279,
+      "slug": "conclusion-and-next-steps"
+    }
+  ],
+  "summary": "## Key Concepts: Basic Theming in October CMS\n\nThis document outlines the fundamental techniques for structuring a website's theme using October CMS's templating language.\n\n### Layouts and Partials\n\nThe foundation of theming in October CMS involves separating your code into layouts, pages, and partials.\n\n- **Layouts (`default.htm`):** Define the main HTML structure (`<html>`, `<head>`, `<body>`) that's shared across multiple pages. They act as a shell where page-specific content is injected.\n- **Partials (`header.htm`, `footer.htm`):** Contain reusable chunks of HTML, like headers, footers, or sidebars. This avoids code duplication and makes maintenance easier.\n\n> [!TIP]\n> To include a partial in a layout or page, use the Twig tag `{% partial 'partial-name' %}`. You don't need to specify the `.htm` extension or the `/partials/` directory path.\n\n### Dynamic Page Linking with Twig\n\nHard-coding URLs is fragile. October CMS provides a robust way to link between pages using the **`| page` filter**.\n\n- **Usage:** Create links by passing the page's ID (its filename without the extension) to the filter.\n- **Example:** `<a href=\"{{ 'movies' | page }}\">Movies</a>` will generate the correct URL for the `movies.htm` page.\n\n> [!IMPORTANT]\n> This approach ensures that your links will not break even if the URL structure of your site changes.\n\n### Creating an Active Navigation State\n\nTo provide visual feedback to users, you can highlight the current page in the navigation menu. This is achieved with a simple Twig conditional.\n\n- **Key Variable:** The `this.page.id` variable contains the ID of the currently rendered page.\n- **Implementation:** Use a ternary operator within the `class` attribute of your list item.\n\n**Example Code:**\n```twig\n<li class=\"{{ this.page.id == 'homepage' ? 'active' : '' }}\">\n    <a href=\"{{ 'homepage' | page }}\">Home</a>\n</li>\n\n<li class=\"{{ this.page.id == 'movies' ? 'active' : '' }}\">\n    <a href=\"{{ 'movies' | page }}\">Movies</a>\n</li>\n```\nThis code checks if the current page's ID matches 'homepage' or 'movies' and adds the `active` class accordingly. The corresponding CSS will then style the active menu item differently.\n\n### Assigning Layouts to Pages\n\nIf a page appears unstyled, it may not have a layout assigned. You can fix this by adding the `layout` property to the configuration section at the top of the page's `.htm` file.\n\n**Example in `movies.htm`:**\n```ini\nurl = \"/movies\"\nlayout = \"default\"\ntitle = \"Movies\"\n==\n<p>This is the movies page.</p>\n```",
+  "transcription": "## Introduction to Basic Templating\n\nNow before we get too deep into the Builder plug-in and displaying our movies and adding new fields to them and doing all sorts of good stuff with it, first we are going to take a few minutes to get our page in order. So what we are going to be doing in this lesson is we are just going to write some HTML. CSS is already written for this and I'm going to show you some of the basics of October CMS templating.\n\nDon't forget to turn on live reload or gulp watch when doing this so that our page can be automatically refreshed. So this is the way our page looks right now. It's a bit different from the last time because I added some CSS, so this text is a little bit smaller. Okay, so now I'm going to go to my code editor. I'm going to go to default.htm file and I'm going to add the class to layout content, which is going to be container. So it's just going to be a container div with some width, position in the center of the page, and I'm also going to add a clear fix to it. Okay, now what we are going to do is I'm going to create a header.HTM file and I'm going to save it in partials.\n\n## Creating and Including a Header Partial\n\nSo we are going to call a partial header.HTM. First of all, I'm going to save this, create a new file. Okay, now I can write something in it. Okay, save it. And now we have to, of course, if we check our page right now, you can see that this is in the center, but I have to call this partial to get this string of letters right here. So to call a partial you just do this.\n\n## Using the Twig Partial Tag\n\nSo you just write `partial header`. You don't have to write `.htm` because October will automatically know that the partials are in the partials folder and that their suffix or extension is .htm. So we save this, check out our page right now.\n\n## Building the Header Markup\n\nAnd as you can see, we have this right here. Okay, let's make our header a little bit better.\n\nIn my header.htm file, I'm going to delete this and then I'm just going to add a header with a class of main header. Okay. Now we just set a container with a clear fix. And now we add an H1 with a class of logo and call it October Movies. And that should be it for now. We just save this.\n\n## Creating and Including the Footer Partial\n\nTake a look at our page. Currently nothing is happening. It seems that I spelled clearfix wrong. Now we save it, go to our page, and now we can see October Movies. So this is our header. Okay, next thing we are going to do, we are going to create our footer.\n\nOkay, and here I'm going to create a footer with the class of `main-footer`. Then we set our container and then we, in an H3 tag, going to write \"This is our footer\" and then just add some lorem ipsum text below it. Okay, we save this. Now we go to our default.htm file and call `partial footer`. Save this. We are going to need to refresh our page a little bit because the footer doesn't exist for gulp to see it right now, so we have to refresh it. Okay, now the footer is visible. I just had to clear the cache and refresh it once again, so with this plugin right here.\n\n## Adding Content to the Homepage\n\nOkay, so now that we got our footer and header set up, let's just add some more content to our homepage. So we're going to go to Pages, homepage, and I'm just going to add some lorem ipsum text right here. Save this. Okay, now we have our homepage. So this is our homepage and we have some things right here. Next thing we are going to do, we are going to create a menu for our page.\n\n## Building a Navigation Menu with Twig Links\n\nIn our header.htm file, I'm just going to create a navigation tag with a class of `main-nav` and in it I'm going to put a `ul` tag. And then we are going to add some menu items. So we're going to add a menu item for Home and a menu item for Movies. So now we have `li`, `a` tag. In the `a` tag, you write this. So this is going to be a homepage. So this is a link for our homepage. And now I'm going to add some Twig tags to connect to that page. So instead of writing a full URL, I'm just going to do this. So what this is saying is actually we are calling a homepage by ID. So the ID of our homepage is `homepage`, and then we are using this Twig filter called `page`. You can find all the filters right here in October's documentation. So you have a page filter, this is actually this page filter. You have tags that you can use, you have the filters, so this is the page filter right here and so on. So if you want to link to something, you do something like `about | page` and the ID of the page is actually the slug of the page, so you use it like that.\n\n## Linking to Other Pages and Fixing Layouts\n\nOkay, so the next page we want to create, I'm just going to copy this. The next page is going to be movies. Movies. And this should link to our movies page. If we go right here right now, we can see that we have a Home link and a Movies link. And if I click on Movies, we get to the movies page. As you can see, the movies page doesn't look that good right now because it doesn't... we didn't set a default layout for it in the previous video. So we can amend that by going to `movies.htm` or you can go to backend of course, but we are going to go to `movies.htm` and just set our layout to be default.\n\n## Implementing Active Menu States with Twig\n\nAnd now our movies page looks a bit different. So what we want to do for the end of this episode is create some way for us to know on which page we are currently on. As you can see, when we click on Home or we click on Movies, it doesn't highlight these menu items right here. So to do that, we are going to go to our header.htm file and here in our `li` tag, I'm just going to add a class, and then I'm going to set some conditional logic. So I'm going to say if you're on a page ID of `homepage`, then add active class to this `li` tag. And also we are going to do the same thing for Movies. So to do that, you just write this.\n\nSo what we are saying right here, if the page ID is equal to `homepage`, then add class `active`, else don't add anything to this `li` tag. And then I'm just going to copy this, paste it right here, and of course, this ID is not going to be `homepage` but it's going to be `movies`. We save this and I already created an HTML, actually CSS for active classes in our menus. So we should see some difference right now. So as you can see, the home has this text, actually underline border right here. So if I click on movies, now the movies are underlined. So this is this is the way you would create menus for your October CMS installation.\n\n## Conclusion and Next Steps\n\nOkay so this has been a basic templating video for October CMS. Of course, there are much more things to cover about templating, but I just wanted to quickly show you how you can get your theme off the ground pretty easily and pretty fast. Of course, we are going to do templating throughout this video series, so you will learn much more stuff about it. Okay, thank you guys for watching this video. Remember, everything we did here will be available for you on GitHub. The link will be in the description below. If you like this video, please like it. If you like the channel, please subscribe to the channel, and you can also, if you want, follow me on Twitter or on Facebook. Thank you guys for watching once again, and I will see you in the next video."
+}

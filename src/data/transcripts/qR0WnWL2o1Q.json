@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 3,
+  "videoId": "qR0WnWL2o1Q",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn to build a simple and efficient REST API from scratch using Golang and the popular Gin framework. This tutorial guides you through project initialization, setting up a Gin server, and defining your first endpoints. You'll explore handling HTTP requests, returning JSON responses, and structuring your application with a clean architecture by separating logic into entities, services, and controllers. Discover how to create GET and POST endpoints to manage video data, making this a practical introduction to web development with Go.",
+  "chapters": [
+    {
+      "title": "Introduction",
+      "description": "An overview of the project and promotional messages for related learning resources.",
+      "startTime": 0.0,
+      "endTime": 28.0,
+      "slug": "introduction"
+    },
+    {
+      "title": "Project Setup & Server Initialization",
+      "description": "Initialize a Go module, install the Gin framework dependency, and set up the initial server file.",
+      "startTime": 28.0,
+      "endTime": 105.0,
+      "slug": "project-setup-server-initialization"
+    },
+    {
+      "title": "Initializing the Default Gin Server",
+      "description": "Write the main function, create a default Gin server, and learn about the built-in Logger and Recovery middleware.",
+      "startTime": 105.0,
+      "endTime": 217.0,
+      "slug": "initializing-the-default-gin-server"
+    },
+    {
+      "title": "Creating a Basic GET Endpoint",
+      "description": "Create a simple GET endpoint, exploring the Gin Context to handle requests and send JSON responses.",
+      "startTime": 217.0,
+      "endTime": 245.0,
+      "slug": "creating-a-basic-get-endpoint"
+    },
+    {
+      "title": "Running and Testing the First Endpoint",
+      "description": "Start the server, understand the debug logs, and use Postman to test the newly created test endpoint.",
+      "startTime": 245.0,
+      "endTime": 314.0,
+      "slug": "running-and-testing-the-first-endpoint"
+    },
+    {
+      "title": "Structuring the API: The Video Entity",
+      "description": "Plan a three-tier architecture (entity, service, controller) and create the Video entity struct with JSON serialization tags.",
+      "startTime": 314.0,
+      "endTime": 397.0,
+      "slug": "structuring-the-api-the-video-entity"
+    },
+    {
+      "title": "Building the Video Service Layer",
+      "description": "Define a service interface for business logic and create its implementation to save and retrieve video data using an in-memory slice.",
+      "startTime": 397.0,
+      "endTime": 582.0,
+      "slug": "building-the-video-service-layer"
+    },
+    {
+      "title": "Building the Video Controller Layer",
+      "description": "Create the video controller interface and implementation to handle HTTP requests, bind JSON data, and delegate logic to the service layer.",
+      "startTime": 582.0,
+      "endTime": 837.0,
+      "slug": "building-the-video-controller-layer"
+    },
+    {
+      "title": "Wiring Endpoints to the Controller",
+      "description": "Integrate the service and controller into the main server file, creating GET and POST endpoints that use the controller's logic.",
+      "startTime": 837.0,
+      "endTime": 1007.0,
+      "slug": "wiring-endpoints-to-the-controller"
+    },
+    {
+      "title": "End-to-End API Testing with Postman",
+      "description": "Test the complete API functionality using Postman, demonstrating how to create and then list videos.",
+      "startTime": 1007.0,
+      "endTime": 1090.0,
+      "slug": "end-to-end-api-testing-with-postman"
+    },
+    {
+      "title": "Conclusion",
+      "description": "A brief wrap-up of the video.",
+      "startTime": 1090.0,
+      "endTime": 1106.0,
+      "slug": "conclusion"
+    }
+  ],
+  "summary": "## Key Concepts for Building a REST API with Golang and Gin\n\nThis document summarizes the core steps and concepts for creating a simple REST API using the Gin framework.\n\n### Project Setup and Server Initialization\n\n1.  **Initialize Go Module**: Start your project with `go mod init <module_path>`.\n2.  **Install Gin**: Add the Gin framework to your project using `go get github.com/gin-gonic/gin`.\n3.  **Create Server Instance**: Use `server := gin.Default()` to create a router with default middleware.\n\n> [!NOTE]\n> `gin.Default()` automatically includes **Logger** and **Recovery** middleware. The Logger prints request details to the console, and Recovery prevents the server from crashing on a panic, returning a `500 Internal Server Error` instead.\n\n4.  **Start Server**: Launch the server and make it listen for requests with `server.Run(\":<port>\")`, for example, `server.Run(\":8080\")`.\n\n### Application Architecture\n\nThe application is structured into three main components for separation of concerns:\n\n*   **Entity**: Go structs that model the data (e.g., `Video`). They include JSON tags for serialization/deserialization.\n*   **Service**: Contains the business logic. It's defined by an interface for abstraction and implemented by a struct. In this example, it manages an in-memory slice of videos.\n*   **Controller**: Handles incoming HTTP requests, validates input, calls the appropriate service methods, and returns an HTTP response.\n\n### Handling HTTP Requests\n\nControllers use the `gin.Context` object to manage the HTTP request-response cycle.\n\n*   **Defining Routes**: Routes are defined by pairing an HTTP method and a path with a handler function.\n    *   `server.GET(\"/videos\", videoController.FindAll)`\n    *   `server.POST(\"/videos\", videoController.Save)`\n\n*   **Binding JSON**: To parse a JSON request body into a Go struct, use the `ctx.BindJSON(&yourStruct)` method. This is typically done in the controller's `Save` or `Update` methods.\n    ```go\n    var video entity.Video\n    ctx.BindJSON(&video)\n    ```\n\n*   **Sending JSON Responses**: To send a JSON response, use `ctx.JSON(statusCode, object)`.\n    ```go\n    // Return a list of videos with a 200 OK status\n    ctx.JSON(http.StatusOK, videos)\n    \n    // Use gin.H for arbitrary JSON objects\n    ctx.JSON(http.StatusOK, gin.H{\"message\": \"OK\"})\n    ```\n\n> [!TIP]\n> **`gin.H`** is a convenient shortcut for `map[string]interface{}`. It's useful for creating simple, unstructured JSON responses on the fly.",
+  "transcription": "## Introduction\n\nWhat's going on guys? In this video we're going to start working with the Gin HTTP framework by building a simple REST API. And if you want to learn Data Science with Python check out DataCamp; there is a link in the description below this video. You will get certificates showing your progress and you can include them as part of your LinkedIn profile. You can download the Golang cheat sheet; there is a link in the description below this video. Remember to subscribe to the channel and let's get started!\n\n## Project Setup & Server Initialization\n\nOkay, first I'm going to initialize the project: `go mod init \"gitlab.com/...\"`... and I'm going to install the Gin library: `go get github.com/...`.\n\nOkay, and let's start by creating a new file, and the file will be `server.go`.\n\n## Initializing the Default Gin Server\n\nAnd the package will be `main` and I'm going to create a `main` function. And here I'm going to initialize a new server using the Gin library: `gin.Default()`. This is the default server. And if we go here, we're going to see that this server is going to include by default a couple of middlewares. In this case, we have a Logger that is going to output information about the requests, we're going to see that in a second. And then we have this Recovery function that is going to recover from any panics and it's going to write the 500 HTTP code if we get any panic condition. So I'm going to close this and I'm going to keep working on the server.\n\n## Creating a Basic GET Endpoint\n\nAnd let's create our first endpoint. So let's create a get endpoint, `server.Get(...)`. Let's call it `/test`, and let's create an anonymous function. And here we need to pass the context. There is a special struct in Gin that is the Context, so we can specify it like this: `ctx *gin.Context` like this. And the context includes the HTTP request, a writer that is going to be the HTTP response at the end, and a bunch of other attributes. Let's go back. \n\nAnd here we need to include the body of this function. We're going to return a JSON: `ctx.JSON(...)`. The HTTP code is going to be the first parameter, in this case it's gonna be 200. And here we can return the body of the response, `gin.H{...}` and here, this struct, and here we can pass the JSON object. This will be `message` and the value is gonna be `OK!!`.\n\n## Running and Testing the First Endpoint\n\nLet's run this, `go run server.go`. And yeah, before running it I forgot to initialize the server, this will be `server.Run(...)` and I need to pass the port, that's going to be 8080 in this case. Let's say... okay, now I can run the server. I forgot to add a comma here, that's the issue.\n\nOkay, let's run it. And as we can see here, the server is going to output some debugging text. In this case, it's saying that we can use these two ways to change from the debug mode, that is the current mode or the default mode when we start the server, and with this we can switch from debug to production mode. And it's basically saying that is listening on port 8080 and that this is the only endpoint available for this HTTP verb and this is the URI. Okay, let's go to Postman and let's run the first request. And the port is 8080 actually. Let's try this and we get the response. And here we get a pretty nice output including the response time, here we have the verb, and here we have the URI. Okay, I'm going to stop this.\n\n## Structuring the API: The Video Entity\n\nWe're going to create an entity, a service, and a controller. So let's get started by creating the entity. Let's create a new folder, `entity`, and I'm going to create, let's say that we want to manage video information. So it's going to be `video.go`. The package is gonna be `entity`.\n\nAnd I'm going to create our struct: `type Video struct...` It's gonna have a title that it's gonna be a string, a description that's gonna be a string, and a URL that's gonna be a string as well, just to keep it really simple. And here we need to specify the details for the JSON serialization. We are going to use `title` for this property, the next one is going to be `description`, and for the last one it's going to be `url`. Now I'm going to create a service.\n\n## Building the Video Service Layer\n\n`service` and it's going to be video service file `video-service.go`. The package `service` and the type here... I'm going to create an interface and I'm just going to create two functions: one to save the videos and another one to get the list of the existing videos. `type VideoService interface...` I'm going to include a function to save the video, and I'm going to return the new video. And the `FindAll` function that is going to return a slice of videos, like that. \n\nOkay, now I'm going to create a struct that is going to implement that interface and it's going to include as a property a slice of videos, like that. And I'm going to create a constructor function to get a new instance of this VideoService and it's going to return an implementation of the interface that we created here. It's going to return a pointer to this structure.\n\nOkay, and now let's get started working on these two functions. We need to specify the struct to make it implement the interface like that, and the same for the `FindAll` function. And we are going to use this slice to store the videos, so the `FindAll` function is going to return that slice: `return service.videos`. And here we are going to append the new video to the slice, so it's going to be `service.videos = append(...)` and then we pass the slice first and then the new element that's gonna be the video. I forgot to add the name of the argument like this, and this is going to return the video. Okay, and now let's start working on the controller.\n\n## Building the Video Controller Layer\n\nThe controller basically is going to include all the handlers for the two HTTP verbs that we are going to handle. We're going to handle GET to get the list of existing videos and POST to create a new video. So let's create a new folder, and it's gonna be `video-controller.go`. The package it's gonna be `controller` and we're going to have an interface `type VideoController interface...` and it's going to include two functions: a `FindAll` function that is going to return a slice of videos, and a `Save` function. In this case, we're going to receive a Gin Context and we are going to use this context to access the data that comes with the HTTP request. So this is `gin.Context`. I'm going to use that structure.\n\nOkay, now let's create the struct that is going to implement that interface, let's call it `controller`. Okay, and this structure is going to include a service and it's going to use that service to delegate these operations. And this is going to be `service service.VideoService`. Okay, now we need to add a constructor function, and this constructor function is going to receive the service, so we need to add this argument. And this is going to return a VideoController, so here we need to return this struct and we're going to pass the service.\n\nOkay, and now let's start working on these two functions. And here I'm going to pass the controller struct to implement the video controller interface. This is going to be a pointer to the controller struct, and the same for the `Save` function. And this is just going to delegate to the service, `c.service.FindAll()`. And here we need to declare a video variable that's going to be of type `entity.Video` and we need to extract from the context the payload that is going to be a JSON including the Video struct. So `ctx.BindJSON(...)`, this is the function that we need to use here, and a pointer to the variable where I'm going to unmarshal the video. And here I'm going to delegate to the service. Now this is actually `c.service.FindAll()` and here... `c.service.Save(...)` and we need to pass the video. And yes I forgot to add this here in the interface. We're going to return the video every time that we store a new video. Here... and I'm going to return the video. Ok, really simple, just two functions.\n\n## Wiring Endpoints to the Controller\n\nAnd now let's move on to the server. I'm going to remove this one and I'm going to create another endpoint. It's gonna be `server.GET(...)` and it's going to be `/videos` and an anonymous function that is going to handle that HTTP verb. Here we need to declare the context that is a pointer to `gin.Context` struct. And here I'm going to declare a couple of variables. The first one is going to be `videoService`, this one will be `service.VideoService`. And here I'm going to use the constructor function like that. And the next one is going to be the `videoController`, `controller.VideoController`, and it's going to be `controller.New()` and I need to pass the video service here.\n\nOkay, and here within this GET handler we need to use the controller, and here we're going to use the `FindAll` function. And here we need to use the context and the JSON function of the context to return this list of videos. So this is `ctx.JSON(...)` and we need to pass the HTTP response code, that's gonna be 200 in this case, and now `videoController.FindAll()`. And that's that.\n\nAnd we are going to add another HTTP verb that is going to be POST to create a new video. And here we need to replace this `FindAll()` function by the `Save()` function and I'm going to pass the context here. And that's what I need. Okay, this is gonna be `videos` instead of `posts` (sorry about that). Yeah, now this makes sense. Okay, let's run this.\n\n## End-to-End API Testing with Postman\n\nOkay, now let's go to Postman and let's run a couple of requests. Yeah, the first GET request is going to return an empty array so this makes sense. And now let's create a new video. So we're going to pass the title, the description, and the URL like that. Let's run this, and we get the title that we created. And if we execute the GET operation, we're gonna get the element. Yeah, we get the array including the element that we just created. And let's create another one. And as we can see here, we have our first version, our initial version of the video API up and running. And here we can see the details with the response time, the HTTP method that we are executing, and the URI. GET, POST, etc. And here we have the HTTP response here highlighted in green.\n\n## Conclusion\n\nOkay guys, that's pretty much all I have for today. Thank you for watching and I see you in the next video. Take care, bye!"
+}

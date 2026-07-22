@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 3,
+  "videoId": "Rsx1xPURdc8",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Get started with the Laravel framework in this comprehensive beginner's tutorial. Learn the essential first steps, starting with how to download and install Composer, the dependency manager for PHP. This guide walks you through using Composer commands to create a new Laravel project, explaining the installation process step by step. You'll also explore the fundamental directory structure of a fresh Laravel application and learn how to start the local development server to view your new project in the browser.",
+  "chapters": [
+    {
+      "title": "Introduction to Laravel and Composer",
+      "description": "An overview of the Laravel PHP framework, its benefits, and its dependency on Composer for installation.",
+      "startTime": 0.0,
+      "endTime": 56.0,
+      "slug": "introduction-to-laravel-and-composer"
+    },
+    {
+      "title": "Downloading and Installing Composer",
+      "description": "A step-by-step guide to downloading the Composer installer and running it on your computer.",
+      "startTime": 56.0,
+      "endTime": 285.0,
+      "slug": "downloading-and-installing-composer"
+    },
+    {
+      "title": "Preparing the Project Directory via Command Line",
+      "description": "This chapter shows how to use the command prompt to check the Composer installation and create a new directory for the Laravel project.",
+      "startTime": 285.0,
+      "endTime": 399.0,
+      "slug": "preparing-the-project-directory-via-command-line"
+    },
+    {
+      "title": "Creating a New Laravel Project with Composer",
+      "description": "Learn the Composer command to create a new Laravel project and what to expect during the download process.",
+      "startTime": 399.0,
+      "endTime": 575.0,
+      "slug": "creating-a-new-laravel-project-with-composer"
+    },
+    {
+      "title": "Exploring the Laravel Directory Structure",
+      "description": "A walkthrough of the key directories in a new Laravel application, including app, public, resources, and vendor.",
+      "startTime": 575.0,
+      "endTime": 673.0,
+      "slug": "exploring-the-laravel-directory-structure"
+    },
+    {
+      "title": "Running the Application with Artisan Serve",
+      "description": "This chapter demonstrates how to use the 'php artisan serve' command to start Laravel's local development server and view the project in a browser.",
+      "startTime": 673.0,
+      "endTime": 729.0,
+      "slug": "running-the-application-with-artisan-serve"
+    },
+    {
+      "title": "Conclusion and Next Steps",
+      "description": "A summary of the topics covered in the video and a preview of the next tutorial on database connections in Laravel.",
+      "startTime": 729.0,
+      "endTime": 796.36,
+      "slug": "conclusion-and-next-steps"
+    }
+  ],
+  "summary": "## Why Use Laravel?\n\nLaravel is a popular open-source **PHP MVC framework** designed to make web development faster and easier. It provides a robust set of tools and a clean application architecture that is easy to understand for developers familiar with core PHP.\n\n## Core Prerequisite: Composer\n\nLaravel uses **Composer** to manage all of its dependencies (the various libraries and packages it needs to run).\n\n- You **must install Composer first** before you can install Laravel.\n\n> [!IMPORTANT]\n> Composer is a dependency manager for PHP. It allows you to declare the libraries your project depends on and it will manage (install/update) them for you.\n\n## Installation Steps\n\n1.  **Download and Install Composer**: Get the installer from Composer's official website. When running the installer, you must point it to the location of your `php.exe` executable file.\n\n2.  **Prepare a Project Directory**: Open your command line or terminal. Use `cd` to navigate to your development folder (e.g., `F:` drive) and `mkdir <project-folder-name>` to create a new directory for your project.\n\n3.  **Create the Laravel Project**: Navigate into your newly created project folder and run the `create-project` command:\n\n    ```bash\n    composer create-project --prefer-dist laravel/laravel .\n    ```\n\n    > [!NOTE]\n    > This command downloads the Laravel framework and all its dependencies into the current directory. This process can take several minutes to complete.\n\n## Laravel Directory Structure\n\nA new Laravel project has a standardized folder structure:\n\n-   **`app/`**: Contains the core code of your application, including Models, Controllers, and more.\n-   **`bootstrap/`**: Contains scripts that bootstrap the framework and configure autoloading.\n-   **`config/`**: Holds all of the application's configuration files.\n-   **`database/`**: For your database migrations, model factories, and seeds.\n-   **`public/`**: The web server's document root. Contains the entry point `index.php` and public assets (images, JavaScript, CSS).\n-   **`resources/`**: Contains your views (HTML templates), raw un-compiled assets (like SASS or LESS), and language files.\n-   **`storage/`**: Stores compiled Blade templates, file-based sessions, file caches, logs, and user-uploaded files.\n-   **`vendor/`**: Where all of your Composer dependencies are stored.\n\n## Running Your Application\n\nLaravel includes a built-in development server that you can run using its command-line interface, **Artisan**.\n\n1.  In your terminal, make sure you are in the root directory of your Laravel project.\n2.  Run the command: `php artisan serve`\n3.  This will start a development server, typically at `http://127.0.0.1:8000`.\n4.  Copy this URL into your web browser to see the Laravel welcome page.",
+  "transcription": "## Introduction to Laravel and Composer\n\nBecause it is not easy to install into a computer like other PHP frameworks like CodeIgniter. In CodeIgniter, we simply download the CodeIgniter folder and run it in localhost.\n\nWe all know Laravel is an MVC framework and it offers a robust set of tools and application architecture. It is an open-source PHP framework and it offers very robust features for boosting the speed of web development. If you know core PHP, then you can easily understand the flow of this framework.\n\nLaravel manages dependencies, and it uses Composer to manage its dependencies.\n\n## Downloading and Installing Composer\n\nSo, for installing Laravel, we want to first install Composer, which is a PHP dependency manager. By using this software, we can install the Laravel framework and we can run a Laravel application in our localhost. So, first we have to download Composer software. To download this software, first, we have to go to this website and from this site, we have to download this composer software.\n\nAfter downloading this software, now we have to install this software in our computer by running this executable file. Here, we want to select where we have installed our PHP software. So, here we have installed our PHP server in the F drive, so we have selected this drive. So, you have to select that drive where you have installed your PHP server. After selecting that, now we have to press next. By selecting that, now we can execute PHP files from anywhere in our computer.\n\nSo, this way we can install Composer software in our computer. By using this software, we can download a Laravel application and run that application in the browser.\n\n## Preparing the Project Directory via Command Line\n\nNow, we want to run the Composer software. So, we have to open the command prompt and after this, here we have to write the `composer` command. After writing that command, it will load the Composer software commands on screen.\n\nNow, here we want to create one folder in which we want to download the Laravel application. So, here we have written F drive, in which we want to download the Laravel application. After coming into this drive, now we want to go into this drive. So, we have to write the change directory command with the folder path. By using this command, we can go into a particular folder.\n\nUnder this folder, we want to create one folder with the name `Laravel-crud`. So, here we have to write the make directory command with the folder name `Laravel-crud`. By using this command, we have made this folder.\n\n## Creating a New Laravel Project with Composer\n\nNow, here we have to type a command like `composer create-project laravel/laravel --prefer-dist`.\n\nThis command will create the folder and under this, it will download the Laravel application. It will take around 5 to 10 minutes to download the Laravel application. Here, we can see the download process. It has downloaded all Laravel application dependency files from their respective servers to our local folder.\n\nAfter completing the download process, so here we can see the `Laravel-crud` folder in our local directory. And in which we can see the Laravel folder in which the whole Laravel application has been downloaded.\n\n## Exploring the Laravel Directory Structure\n\nNow, we can see the root directory of the Laravel application. Here, first is the `app` folder, and under this directory is stored the core code of the application.\n\nSecond folder is `bootstrap`, and in this directory is stored the application bootstrapping script.\n\nBelow the `bootstrap` folder, we can see the `config` folder, and under this directory, it stores configuration files for the application.\n\nFourth folder is the `database` folder, and under this folder, it stores our database migrations and seeds.\n\nAfter this, we can see the `public` folder, and this is our application's root directory. From this directory, it starts the Laravel application, and under this directory, we can also find application assets like JavaScript, CSS, and images also.\n\nBelow the `public` directory, we can see the `resources` directory, and under this directory, we can see raw assets of the application like LESS and CSS files, language files, and HTML templates also.\n\nAfter this, we can see the `storage` directory, and under this, we can store application storage like file uploads.\n\nBelow this, we can see the `test` directory, and this directory contains various test cases.\n\nLastly, we can see the `vendor` directory, and this directory contains Composer dependencies.\n\nSo, this is a short description of the Laravel directory structure.\n\n## Running the Application with Artisan Serve\n\nNow, we want to run the Laravel application. So, we go to the command prompt and here we type a command like `php artisan serve` and press enter.\n\nAfter pressing enter, we can see a message like 'Laravel development server started' and we can also see a new URL on screen also. So, we copy this URL and paste it into the browser and press enter.\n\nSo, here we can see the Laravel framework welcome page on the web page. So, this way we can run a Laravel application.\n\n## Conclusion and Next Steps\n\nSo, in this part, we have discussed how to install Composer software, and then after, we have downloaded the Laravel application by using Composer software. After downloading the Laravel application, we have discussed the directory structure of this framework, and lastly, we have seen how to run the Laravel application.\n\nNow, in the next part, we will discuss how to make a database connection and how to make a simple database table in the Laravel framework.\n\nIf you have any query regarding this video tutorial part, please comment your query in the comment box. And if you like this video tutorial, please share it with your friends or you can also share it on social media also. If you want to get more updates regarding our video tutorials, please subscribe to our YouTube channel to get more updates regarding the release of future videos. Lastly, keep watching our YouTube channel. Thanks for watching."
+}

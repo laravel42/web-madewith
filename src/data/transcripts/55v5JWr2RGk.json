@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 3,
+  "videoId": "55v5JWr2RGk",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Discover SolidStart, the powerful and lightweight meta-framework for SolidJS, a performant React alternative. This guide introduces you to the core features of SolidStart, showing how it enables full-stack development with a familiar JSX-based syntax. Learn about its file-system-based routing for both UI pages and API endpoints, including dynamic routes. We'll build a small application to demonstrate handling user input with signals, making server requests with fetch, and creating server-side logic for API routes.",
+  "chapters": [
+    {
+      "title": "What is SolidJS?",
+      "description": "An overview of SolidJS, its core features like reactivity with signals, and its lightweight, high-performance nature.",
+      "startTime": 0.0,
+      "endTime": 33.0,
+      "slug": "what-is-solidjs"
+    },
+    {
+      "title": "Introducing the SolidStart Meta-Framework",
+      "description": "This chapter explains the concept of a meta-framework and introduces SolidStart, comparing it to contemporaries like Next.js and SvelteKit.",
+      "startTime": 33.0,
+      "endTime": 79.0,
+      "slug": "introducing-the-solidstart-meta-framework"
+    },
+    {
+      "title": "Project Setup and File Structure",
+      "description": "A step-by-step guide to initializing a new SolidStart project and a walkthrough of the generated file and directory structure.",
+      "startTime": 79.0,
+      "endTime": 126.0,
+      "slug": "project-setup-and-file-structure"
+    },
+    {
+      "title": "Understanding File-Based UI Routing",
+      "description": "Learn how SolidStart uses file-system-based routing to map components to URL paths, including an introduction to the special <Link> component.",
+      "startTime": 126.0,
+      "endTime": 186.0,
+      "slug": "understanding-file-based-ui-routing"
+    },
+    {
+      "title": "Creating Nested Routes",
+      "description": "This section demonstrates how to create nested routes by organizing files within subdirectories inside the `routes` folder.",
+      "startTime": 186.0,
+      "endTime": 237.0,
+      "slug": "creating-nested-routes"
+    },
+    {
+      "title": "Dynamic Routes and 404 Pages",
+      "description": "This chapter covers handling unknown routes with a custom 404 page and then refactors the code to use dynamic routes for more scalable page creation.",
+      "startTime": 237.0,
+      "endTime": 293.0,
+      "slug": "dynamic-routes-and-404-pages"
+    },
+    {
+      "title": "Building an API Route for Form Submissions",
+      "description": "Learn to create a full-stack feature by building a form that uses signals for state and sends a POST request to a server-side API route.",
+      "startTime": 293.0,
+      "endTime": 369.0,
+      "slug": "building-an-api-route-for-form-submissions"
+    },
+    {
+      "title": "Managing Metadata with Root Layout Components",
+      "description": "Explore the `root.tsx` file to understand how to manage page titles and meta tags, and learn about the purpose of <Suspense> and <ErrorBoundary>.",
+      "startTime": 369.0,
+      "endTime": 432.0,
+      "slug": "managing-metadata-with-root-layout-components"
+    },
+    {
+      "title": "The Full-Stack Power of SolidStart",
+      "description": "This section summarizes SolidStart's main value proposition as a meta-framework that elegantly handles the entire request-response cycle.",
+      "startTime": 432.0,
+      "endTime": 458.0,
+      "slug": "the-full-stack-power-of-solidstart"
+    },
+    {
+      "title": "Server Data Fetching with `routeData`",
+      "description": "Discover how to fetch data on the server using the `routeData` function, `createResource`, and then consume it in your component with the `useRouteData` hook.",
+      "startTime": 458.0,
+      "endTime": 515.0,
+      "slug": "server-data-fetching-with-routedata"
+    },
+    {
+      "title": "Conclusion",
+      "description": "A brief wrap-up of the video's content and a call to action for viewers to stay engaged with the channel.",
+      "startTime": 515.0,
+      "endTime": 527.959,
+      "slug": "conclusion"
+    }
+  ],
+  "summary": "## What is SolidStart?\n\nSolidStart is a meta-framework for **SolidJS**, a UI library known for its high performance and fine-grained reactivity through **signals**. Like other meta-frameworks (e.g., Next.js, SvelteKit), SolidStart provides a full-stack environment, allowing you to build both the frontend and backend of your application in one cohesive project.\n\n## File-Based Routing\n\nSolidStart uses the file and folder structure within `src/routes/` to define your application's routes.\n\n> [!NOTE]\n> The path of a file in the `routes` directory maps directly to a URL in the browser.\n\n### UI Routes\n\nUI Routes render components to the user.\n\n- **Root Page:** `src/routes/index.tsx` maps to `/`.\n- **Nested Page:** `src/routes/learn/solid.tsx` maps to `/learn/solid`.\n- **Dynamic Page:** `src/routes/learn/[tech].tsx` maps to `/learn/react`, `/learn/vue`, etc. The `tech` parameter is available inside the component.\n- **Catch-all (404):** `src/routes/learn/[...404].tsx` creates a custom \"not found\" page for any unmatched route under `/learn/`.\n\n### API Routes\n\nAPI Routes define server-side endpoints for handling data.\n\n- **Location:** Files are placed in `src/routes/api/` (e.g., `src/routes/api/subscribe.ts`).\n- **Handlers:** You can handle specific HTTP methods by exporting functions with corresponding names.\n\n```typescript\n// src/routes/api/subscribe.ts\nimport { APIEvent } from \"solid-start/api\";\n\nexport async function post({ request }: APIEvent) {\n  const body = await request.json();\n  // ... process data\n  return new Response(\"Success\");\n}\n```\n\n## Key Components & Concepts\n\n- **`<Link>` component**: A special component for client-side navigation that works even before the page is fully hydrated, leveraging the Islands Architecture pattern.\n- **Signals**: The core of Solid's reactivity system, used for managing component state. `const [email, setEmail] = createSignal('');`\n- **`routeData` Function**: A special function exported from a route component that runs on the server to fetch data before the page loads. It's often used with `createResource`.\n- **`createResource` & `useRouteData`**: `createResource` is a utility for wrapping asynchronous operations (like `fetch`). The data it fetches within `routeData` can then be accessed in your component using the `useRouteData` hook.\n\n> [!TIP]\n> Combining `routeData` and `createResource` is the primary pattern for server-side data fetching in SolidStart, ensuring your components get the data they need efficiently.\n\n- **Root Layout (`root.tsx`)**: This file defines the global shell for your application.\n  - **`<Title>` & `<Meta>`**: Components used to dynamically set the page's `<title>` and `<meta>` tags for SEO.\n  - **`<Suspense>`**: Wraps components that load data asynchronously and displays a fallback UI until the data is resolved.\n  - **`<ErrorBoundary>`**: Catches rendering errors in its children and displays a fallback UI, preventing the entire app from crashing.",
+  "transcription": "## What is SolidJS?\n\nSolidJS, a powerful, lightweight real alternative to established libraries such as react.js. Despite the fact that it only weighs 7 kilobytes, it comes packed with powerful features such as a truly reactive system built on top of signals, an intuitive templating system based on the popular JSX, a lean built-in state management solution, and last but not least, an efficient solution to perform DOM updates, which helps Solid rank better than most competitors on this topic.\n\nIf you are still not convinced, the Solid team just released another amazing product: its meta-framework called SolidStart.\n\n## Introducing the SolidStart Meta-Framework\n\nThis is a huge step forward for the Solid ecosystem, so let's spend the next few minutes looking into SolidStart, analyze its main features, and figure out if it is as good as some of its competitors.\n\nIf you are not familiar with the concept of meta-frameworks, it is enough for you to know that these are a set of libraries and concepts bundled together around a popular UI library. The end goal of this approach is to provide an environment which allows developers to optimize their front-end apps and also, more importantly, do some server work, create REST APIs, and interact with databases.\n\nSolidStart is not really innovating in this area, and other established libraries already have meta-frameworks for quite a while now. Think here of Next.js, which builds on top of React; Nuxt.js, which builds on top of Vue; and more recently, SvelteKit, which is built for the Svelte ecosystem.\n\n## Project Setup and File Structure\n\nOkay, so let's start by creating a new project, and then we'll go through the framework's main features one by one. I am using NVM to make sure my Node version is up to date, and then I'm simply running the `npm init solid` command. This will start a small setup wizard for us, and we'll choose the basic project template, and of course, we'll use TypeScript for all the obvious reasons. Next, we'll run the `npm install` command so that all dependencies are downloaded locally in our `node_modules` folder, and we should be ready to go. \n\nThe resulting project will look like this. Let's briefly go through the structure so we know we are all on the same page. So, this uses Vite as a bundler and we also got a `tsconfig` file since we decided to use TypeScript here. And static assets can be stored in the `public` folder.\n\nAnd now let's focus a bit on the `source` directory. We already have two folders in here: one where we can store our Solid components and one called `routes`.\n\n## Understanding File-Based UI Routing\n\nThis is where all the magic happens. In any well-designed application, everything relies on routes. This is the same in SolidStart, which uses the common file system-based routing approach to handle requests and map them to the corresponding components. There are two categories of routes: UI routes, which define the, quote unquote, pages or views of your application, and API routes, which define data endpoints running on the server.\n\nSo let's start by creating an `index.tsx` file directly under the `routes` folder. This will map the `Home` Solid component to the root path of the application. Inside the component, I'm simply returning some JSX with a list of URLs to some other pages in our application. \n\nOne thing to note here is the usage of a special `Link` component. This is a wrapper around the native link element, and it is able to work on the client side even when the application is not fully hydrated by leveraging the Islands architecture. As a big side note, the Islands architecture is a technique gaining a lot of traction in the front-end space at the moment. The approach leads to better performance by allowing devs to create HTML-first apps and deliver less JavaScript to the browser. One big proponent of this architecture is Astro.js, so check out the link in the top right corner to find out more about all this.\n\n## Creating Nested Routes\n\nOur links are pointing to some nested routes that start with the `learn` string. We'll use nested folders to handle nested routes. So I'll create a `learn` directory and inside it a `solid.sx` file to map the `/learn/solid` path. There isn't anything interesting inside this component since we are simply rendering a header for our demo purposes. Now when the user will click on the Solid link, the appropriate page will be rendered accordingly. Let's do the same for Svelte next. If it looks repetitive, don't worry, we'll discuss dynamic routes in just a second.\n\n## Dynamic Routes and 404 Pages\n\nOkay, so clicking on the Solid link is taking you to the right page, but let's see what happens when we try to access the React page, which is not mapped yet. The default not-found scenario simply renders a blank page, but we can override this behavior by defining a 404 page inside our `learn` directory.\n\nTwo things to keep in mind here. First of all, this 404 template will only apply to routes nested under the `learn` directory. And second, the square brackets and the leading dots are necessary because of the imposed naming conventions.\n\nThis looks promising, but can easily get out of hand when you have a large number of technologies you could learn. So we can leverage the power of dynamic routes here. Using the square brackets, let's define a `[tech].tsx` file. Inside the component, SolidStart will know to extract the URL information associated with the `tech` parameter and inject it into our component. So we can now easily handle not only the React route but any other future routes as well.\n\n## Building an API Route for Form Submissions\n\nOkay, so you should now have an idea about the power of UI routes. However, this is not all, and API routes are actually more impressive. Let's remove the Svelte and the Solid TSX files, since our dynamic route will capture all tech options. Next, I am going to allow users to subscribe to a specific technology feed by inputting their email and sending a POST request to the server. We are able to do all this, including the backend work, directly with SolidStart.\n\nI'll begin by declaring a signal to store the email value as component internal state. Signals are the building blocks of Solid's reactivity, and you can find more details on this topic in the link posted in the top right corner.\n\nIn the JSX, binding the input element to the signal is fairly straightforward, especially if you worked with UI libraries in the past. When the user clicks on the register button, the `register` function is called. A couple of things to note here: I am using the standard `fetch` API to make a POST request to the server. In a real application, you'd either move this code in some sort of service method or you could actually generate the code automatically using a standard such as the OpenAPI. Fetch returns a promise, so I'm using async/await to retrieve the response. Finally, the email and the tech parameter are sent in the request body as JSON.\n\nFollowing the known convention, I am adding a `subscribe.ts` file under the `api` directory, and in here we can define our API routes. We can easily listen to any type of request method here by exporting a function with the same name as the HTTP method. So in our case, let's export a `post` function where we are simply extracting the body information and storing it somewhere for later usage. We'll return a 200 success message, and that's pretty much it.\n\n## Managing Metadata with Root Layout Components\n\nNext, let's take a little detour and discuss another important aspect of web apps: handling page titles and meta tags. The `root.tsx` file contains some interesting stuff. Besides the special `Title` and `Meta` components, `Suspense` is a component that tracks all resource reads underneath and shows a fallback placeholder until they are resolved. `ErrorBoundary` is also important because it catches errors triggered in the component tree and renders a nice fallback if necessary. We can use any of these components anywhere in our app.\n\nSo let's add an appropriate title for our `tech` page. SolidStart will know to extract the `Title` tag from your component and will update the corresponding HTML tag.\n\n## The Full-Stack Power of SolidStart\n\nNow in theory, we defined and implemented an entire HTTP request-response cycle with SolidStart. We have the front end up running our UI components, and we have a Node server under the hood which is able to listen to incoming requests and send back responses. This is the main selling point of any meta-framework, and SolidStart is able to gracefully handle such scenarios while also giving you access to a reactive, easy-to-use UI library which is built with efficiency in mind.\n\n## Server Data Fetching with `routeData`\n\nThere is another thing I'd like to do before we wrap things up. We can refactor our `index.tsx` page and fetch the available technologies directly from the back end. To do this, I added the `technologies.ts` file under the `api` directory where I'm simply returning a list of strings. Then, on the front end, we can retrieve the list by making an async GET request.\n\nWe are doing this in a special method called `routeData`, which will be automatically triggered when the component is loaded. Inside here, we are using Solid's built-in `createResource` method, which provides a useful wrapper around the HTTP call, and we are returning the result as an object. \n\nIn our `Home` component, we can then retrieve the data using the `useRouteData` method. Finally, in the JSX, we can now refactor our code and replace the hard-coded technologies with the list retrieved from the server. I am using Solid's utility `<For>` component here for convenience, but as always, this is JSX, so you can write your own custom components if you don't like them.\n\n## Conclusion\n\nSolidStart provides other powerful features as well, so be sure to subscribe to this channel if you want to stay up to date with such topics. Please don't forget to like this video, and thank you for watching."
+}

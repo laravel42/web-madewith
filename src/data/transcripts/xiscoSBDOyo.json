@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 3,
+  "videoId": "xiscoSBDOyo",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Discover a simpler approach to web development with the \"Boom Stack,\" a lightweight and performant alternative to complex modern frameworks. This guide demonstrates how to build a full-stack stock monitoring application by leveraging Bun as a fast JavaScript runtime, Astro for efficient server-side rendering and API endpoints, and HTMX for server-driven dynamic content. Learn to enhance the user interface with Alpine.js for minimal client-side interactivity and manage data persistence using MongoDB's flexible document model.",
+  "chapters": [
+    {
+      "title": "The Problem with Modern Web Development",
+      "description": "This chapter critiques the unnecessary complexity of modern web development and introduces the 'Boom Stack' as a simpler, more efficient alternative.",
+      "startTime": 0.0,
+      "endTime": 59.0,
+      "slug": "the-problem-with-modern-web-development"
+    },
+    {
+      "title": "Project Overview and a Simpler Tech Stack",
+      "description": "An overview of the stock monitoring app project is given, along with the specific technologies that will be used: Bun, Astro, HTMX, Alpine, and MongoDB.",
+      "startTime": 59.0,
+      "endTime": 110.0,
+      "slug": "project-overview-and-a-simpler-tech-stack"
+    },
+    {
+      "title": "Setting Up Bun and Astro",
+      "description": "This section covers installing Bun as a performant JavaScript runtime and initializing an Astro project for server-side rendering and its islands architecture.",
+      "startTime": 110.0,
+      "endTime": 153.0,
+      "slug": "setting-up-bun-and-astro"
+    },
+    {
+      "title": "Building the Search UI with HTMX",
+      "description": "Learn how to use HTMX attributes to create a dynamic search input that fetches data from the server without a full page refresh.",
+      "startTime": 153.0,
+      "endTime": 204.0,
+      "slug": "building-the-search-ui-with-htmx"
+    },
+    {
+      "title": "Creating the Astro API Endpoint",
+      "description": "This chapter demonstrates how to build a server-side API endpoint within Astro to handle search requests and return HTML partials.",
+      "startTime": 204.0,
+      "endTime": 231.0,
+      "slug": "creating-the-astro-api-endpoint"
+    },
+    {
+      "title": "Enhancing the UI with Alpine.js",
+      "description": "Explore how to use Alpine.js for adding lightweight client-side interactivity and conditional styling without a heavy UI framework.",
+      "startTime": 231.0,
+      "endTime": 291.0,
+      "slug": "enhancing-the-ui-with-alpine-js"
+    },
+    {
+      "title": "Persisting Data with MongoDB",
+      "description": "Learn how to integrate MongoDB to persist user favorites, covering its flexible document model and data structure.",
+      "startTime": 291.0,
+      "endTime": 329.0,
+      "slug": "persisting-data-with-mongodb"
+    },
+    {
+      "title": "Database Connection And Service Logic",
+      "description": "This chapter covers best practices for connecting to MongoDB, advocating for a long-lived singleton connection, and building a reusable database service.",
+      "startTime": 329.0,
+      "endTime": 371.0,
+      "slug": "database-connection-and-service-logic"
+    },
+    {
+      "title": "Displaying and Updating the Watchlist",
+      "description": "This section shows how to render the saved watchlist using server-side data from Astro and then dynamically update it with HTMX.",
+      "startTime": 371.0,
+      "endTime": 422.0,
+      "slug": "displaying-and-updating-the-watchlist"
+    },
+    {
+      "title": "Implementing a Background Task with Bun",
+      "description": "Discover how to create a server-side background task using Bun's built-in scheduler to check for stock updates and alert the user with Alpine.js.",
+      "startTime": 422.0,
+      "endTime": 457.0,
+      "slug": "implementing-a-background-task-with-bun"
+    },
+    {
+      "title": "Conclusion: Simpler is Better",
+      "description": "The video concludes by reiterating that web development can be simpler and more efficient, positioning this stack as an example of a better way forward.",
+      "startTime": 457.0,
+      "endTime": 494.68,
+      "slug": "conclusion-simpler-is-better"
+    }
+  ],
+  "summary": "## The \"Boom\" Stack Philosophy\n\nThe core idea is to move away from the over-engineered complexity of modern web development. This stack prioritizes simplicity, performance, and less client-side JavaScript, challenging the notion that powerful web apps require heavy frameworks and complicated build tools.\n\n## Core Technologies\n\n*   **Bun**: A modern, performant **JavaScript runtime** that serves as a drop-in replacement for Node.js. It offers superior speed, native TypeScript support, and built-in web APIs.\n*   **Astro**: A web framework focused on **server-side rendering (SSR)** and content-rich sites. It uses a file-system based router and an **islands architecture**, which ships zero client-side JavaScript by default.\n*   **HTMX**: A library that enables dynamic, server-driven interactions directly in HTML. It allows you to trigger AJAX requests and swap HTML content without writing complex JavaScript.\n*   **Alpine.js**: A rugged, minimal JavaScript framework for adding small bursts of **client-side interactivity** directly in your markup, such as conditional classes or simple UI behaviors.\n*   **MongoDB**: A flexible **NoSQL database** that uses a JSON-like document model. It allows for evolving data schemas without complex migrations, making it ideal for rapid development.\n\n## Key Implementation Patterns\n\n### Server-Driven UI with HTMX\n\nUse declarative HTML attributes to handle user interactions. An `input` field can trigger a `GET` request to a server endpoint and swap the response into a target element, creating a dynamic search experience without a single line of client-side JavaScript.\n\n> [!TIP]\n> Use HTMX's built-in **throttling and debouncing** mechanisms (`hx-trigger=\"keyup changed delay:500ms\"`) to prevent sending excessive requests to your backend on every keystroke.\n\n### Unified Backend and Frontend with Astro\n\nAstro simplifies development by managing both the frontend and backend in one cohesive project.\n\n*   **Pages**: Files in the `src/pages` directory become server-rendered HTML pages.\n*   **API Endpoints**: Files in the `src/pages/api` directory become serverless functions that can handle requests and return data or HTML partials.\n\n### Efficient Database Management\n\nTo maximize performance and avoid wasting resources, establish a single, long-lived database connection at the module level.\n\n> [!IMPORTANT]\n> Avoid opening a new database connection for every incoming request. Instead, create a **singleton instance** of your database connection that can be reused across all server-side handlers.\n\n### Background Tasks with Bun\n\nBun makes it easy to run scheduled background tasks on the server.\n\n*   Use `setInterval` in a server-side script to periodically run logic, such as fetching updated stock prices from an external API.\n*   Update your database based on the results of the background task.\n*   Use Alpine.js on the frontend to reactively display these changes, such as by applying a `highlight` class when a `isHigh` flag is true.",
+  "transcription": "## The Problem with Modern Web Development\n\nThe really funny thing about webdev is that for the past 15 years, we had to pretend things are more complicated than they need to be for the sake of job security. These days, you need to know a handful of frameworks, several build tools, and a bunch of crazy architectural patterns just to be taken seriously as a junior dev. But when you strip away the layers of nonsense, building for the web isn't supposed to be painful. And this is where the boom stack comes into play.\n\nThe idea behind this stack is kind of appealing. Keep it simple and remove all the clutter. After years of JavaScript fatigue, we all reached a few clear conclusions. We don't need to move megabytes of JavaScript over the wire just to render a few elements on the screen. We don't need the overengineering noise. And for certain, we don't need large frameworks with hundreds of dependencies that can be compromised with a basic fishing attack. And granted, while you might not get the chance to use this tech in your day-to-day life anytime soon, reviewing these technologies is a really good exercise since these are some of the main trends driving the future of web development. So, let's not waste any more time and jump right into it.\n\n## Project Overview and a Simpler Tech Stack\n\nIf you're new here, what you probably don't know is that the only thing I enjoy more than writing code is finding new and creative ways to lose my hard-earned money in the stock market. So, for the next few minutes, we'll build a small app that allows us to monitor stocks and alert us when the prices hit an all-time high because the only thing I'm actually good at is buying high and selling low. So, we'll use Bun as the JavaScript runtime. We'll use Astro to handle both serverside rendering and to generate a basic REST API. We'll persist our data in a basic collection and we'll use HTMX and Alpine to implement the UI.\n\n## Setting Up Bun and Astro\n\nLet's start by installing BN locally since it is going to do all the server business logic and rendering heavy lifting for us. If you are not familiar with it, BN is a modern performant JavaScript runtime that acts as a Node.js replacement. It has a long list of selling points, but I consider it a good match for us, mostly because it's a step forward compared to Node when it comes to TypeScript support, web API integrations, and overall speed. Next, let's add Astro into the mix using their init command. Of course, we'll use TypeScript as well. Astro projects are structured around the file system based router where we can define pages and components. The main selling point of Astro is its serverside rendering and islands architecture which keeps apps lightweight and snappy. Components are computed on the server which returns to the browser static HTML that can then be simply rendered on the page. Any type of JavaScript interactivity can then be sprinkled in with Astro integrations.\n\n## Building the Search UI with HTMX\n\nBut we'll get back to this in a second when we'll discuss HTMX and Alpine. We'll start by adding an input in the index estro page which allows us to search through various companies listed on the stock exchange. Quick side note, Astro also offers a smooth layout system so we can easily reuse repeating elements, headers, or in our case the HTMX library.\n\nSo we want users to be able to type in this field and get back some results. And of course, since we don't want to do a full page refresh after each search, we'll sprinkle in some HTMX magic. With just a few self-explanatory attributes added directly in the markup, we can make our element trigger a sync request to the server and swap parts of the HTML content with the received response.\n\n## Creating the Astro API Endpoint\n\nIn our case, whenever the input is changed, a get request is sent to the server. And of course, we don't want requests to be triggered for every single keystroke, otherwise our back end would get absolutely hammered. Luckily for us, HTMX comes packed with a seamless throttling mechanism.\n\nNext, let's add the backend logic needed to handle this request. This is easier than you might think thanks to Astro endpoints. We'll create a new file called search under the API directory and we'll export a get function to capture any incoming request to the search URL. Here we'll get the search query, pass it to a third party service which publishes stock prices and then we'll return a chunk of HTML containing the matching results.\n\n## Enhancing the UI with Alpine.js\n\nRemember that all this runs on the server through bun. Back on the client, we might want to improve the user experience and add some nice UI interactivity. Sure, we could do most of this with HTMX, but Alpine lets us push things a little further without dragging in a heavy UI framework. Alpine is perfect for cases where you just want small bursts of behavior tied directly to your markup. For example, maybe we want to highlight the stock that just hit a new high or show a quick drop down with extra details when a user hovers over a result.\n\nSo, we'll add it in our project using the Astro CLI and then we can conditionally render some classes on the resulting element with just a few directives. This way, we don't need to wire up an entire state management system or drag in some massive React component library just for some basic UI improvements. Sure, there is an overlap between HTMX and Alpine. And some would argue that you don't really need both. And in some cases, that's true. If all you're doing is swapping chunks of HTML from the server, HTMX alone might be enough. But the reality is that once you start adding small interactive touches, Alpine makes your life easier.\n\n## Persisting Data with MongoDB\n\nFor the next feature, let's add another layer to the mix. First, we'll let our users add any of the searched companies to a favorites list. Again, we'll do this server interaction easily thanks to HTMX. Clicking on the hard button will trigger a post request to a favorites endpoint which will be captured by an Astro file placed under the API directory. Once we have the company details, we'll store them in MongoDB which works out of the box with bun. So, let's go ahead and install it and then we'll create a schema ts file where we'll define a company model.\n\nThe advantage of MongoDB is that it lets us stay flexible with the data we store and that flexibility comes from how it structures information. Instead of rigid tables with strict schemas like in SQL, MongoDB organizes everything into collections. A collection is basically a bucket of documents and a document is just a JSON-like object. In practice, it means we can store all companies inside a single collection where each company has its own fields and then we can still evolve the shape of those documents over time without rewriting migrations for every small change.\n\n## Database Connection And Service Logic\n\nIn a database service file, we'll first connect to MongoDB using a single long lived connection. Opening a new socket per request wastes resources and slows everything down. A module level singleton keeps one connection alive and every handler reuses it. The service will expose two methods. One will store the company in the database and the second one will be used to fetch all entries from the collection.\n\n## Displaying and Updating the Watchlist\n\nWe'll use this method in a new watch list astro file in the coding section of the component. We'll simply import our database service and call get favorites to retrieve the list of companies. Then in the HTML section, we'll loop through that data and render a simple list of the saved stocks. Again, thanks to Astro Server first model, this will be rendered on the server and sent down as plain HTML, which keeps the client fast and responsive without extra JavaScript bloat.\n\nTo make the experience smoother, we'll hook up HTMX again, so that whenever a company is added, the watch list updates without a full page reload. The API endpoint can just return a partial snippet of HTML and HTMX will swap it directly into the watch list section.\n\n## Implementing a Background Task with Bun\n\nSo, at this point, our users can search for stocks, add them to a favorites list, and see their watch list update dynamically. But the app still needs one more feature to match its purpose of helping me lose money. I need to know exactly when a stock hits an all-time high because that's the perfect buying time to increase my chances of losing money. For that, we'll create a background task that runs on the server side. With Bun, this is straightforward since we can schedule an interval that checks each company in the watch list against the stock API.\n\nIf the latest price is higher than the previously stored max, we update the document in MongoDB with a new is high flag. Back on the front end, Alpine comes in handy here. We can bind a simple conditional to each stock row. So if is high is true, we apply a CSS class that highlights the entry. And with that, we've got the full picture. We can search for stocks, save them to a favorites list, keep everything synced, and even get notified when one of them hits an all-time high, all in under 10 minutes.\n\n## Conclusion: Simpler is Better\n\nGranted, this stack will not get popular anytime soon, and you and I are probably still stuck in a hot pile of Angular or React spaghetti code, but that's not really the point. The point is that the web doesn't have to be this endless maze of config files, bundlers, and dependencies stacked on top of each other, and we can actually do better.\n\nDon't forget to like the video, subscribe to the channel, and until next time, thank you for watching."
+}

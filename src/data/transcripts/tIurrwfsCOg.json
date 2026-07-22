@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 3,
+  "videoId": "tIurrwfsCOg",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to migrate a very large WordPress website, even files up to 100GB, to a new domain completely for free. This tutorial walks you through using the All-in-One WP Migration plugin, including a critical workaround to bypass the standard 300MB upload limit. Follow this step-by-step guide to export your site, prepare a new installation, and import your content seamlessly, ensuring a perfect clone. This method is also useful for creating a full backup of your entire WordPress website.",
+  "chapters": [
+    {
+      "title": "Introduction",
+      "description": "This chapter introduces the goal of the video: to migrate a very large WordPress website for free.",
+      "startTime": 0.0,
+      "endTime": 22.0,
+      "slug": "introduction"
+    },
+    {
+      "title": "Exporting the 12GB Website",
+      "description": "This chapter demonstrates how to use the 'All-in-One WP Migration' plugin to export a large website.",
+      "startTime": 22.0,
+      "endTime": 97.0,
+      "slug": "exporting-the-12gb-website"
+    },
+    {
+      "title": "Preparing the New WordPress Installation",
+      "description": "This chapter covers how to clean a new WordPress installation by deleting default posts, pages, media, and themes before import.",
+      "startTime": 97.0,
+      "endTime": 162.0,
+      "slug": "preparing-the-new-wordpress-installation"
+    },
+    {
+      "title": "The 300MB Upload Limit Problem",
+      "description": "This chapter reveals the default upload limit of the All-in-One WP Migration plugin and explains the GPLv3 license that allows for code modification.",
+      "startTime": 162.0,
+      "endTime": 225.0,
+      "slug": "the-300mb-upload-limit-problem"
+    },
+    {
+      "title": "Installing a Modified Plugin to Bypass the Limit",
+      "description": "This chapter explains why the plugin can be modified and shows how to download and install a special version that removes the upload size limit.",
+      "startTime": 225.0,
+      "endTime": 288.0,
+      "slug": "installing-a-modified-plugin-to-bypass-the-limit"
+    },
+    {
+      "title": "Importing the Site and Finalizing the Migration",
+      "description": "This chapter walks through importing the 12GB file and the crucial final step of re-saving permalinks.",
+      "startTime": 288.0,
+      "endTime": 364.0,
+      "slug": "importing-the-site-and-finalizing-the-migration"
+    },
+    {
+      "title": "Verifying the Successful Migration",
+      "description": "This chapter compares the original site with the newly migrated site to confirm it's an exact clone.",
+      "startTime": 364.0,
+      "endTime": 400.0,
+      "slug": "verifying-the-successful-migration"
+    },
+    {
+      "title": "Other Uses and Final Thoughts",
+      "description": "This chapter discusses alternate uses for the tool, such as creating backups and migrating local websites.",
+      "startTime": 400.0,
+      "endTime": 488.0,
+      "slug": "other-uses-and-final-thoughts"
+    },
+    {
+      "title": "Outro: T-Shirts and Filming Setup",
+      "description": "The video ends with a lighthearted look at the presenter's wardrobe and his video recording setup.",
+      "startTime": 488.0,
+      "endTime": 534.0,
+      "slug": "outro-t-shirts-and-filming-setup"
+    }
+  ],
+  "summary": "## Migrating a Large WordPress Site for Free\n\nThis document outlines the key steps to migrate a WordPress site of any size, including very large ones (e.g., 12GB+), for free using the **All-in-One WP Migration** plugin and a special workaround.\n\n### ## Step 1: Export Your Website\n\n1.  Install and activate the **All-in-One WP Migration** plugin on the source website.\n2.  Navigate to `All-in-One WP Migration` > `Export`.\n3.  Choose `Export to` > `File`.\n4.  Wait for the process to complete and download the `.wpress` backup file.\n\n### ## Step 2: Prepare the Destination Site\n\nOn the new, destination WordPress installation, perform a clean-up to avoid conflicts:\n\n*   **Posts:** Delete all default posts.\n*   **Pages:** Delete all default pages.\n*   **Media:** Delete all items from the Media Library.\n*   **Themes:** Delete all inactive themes.\n\n### ## The Workaround: Bypassing the 300MB Upload Limit\n\nThe standard free version of the plugin limits imports to 300MB. To bypass this, you can use a modified version of the plugin, which is permissible under the **GPL version 3 license**.\n\n> [!NOTE]\n> The General Public License (GPL) allows users to modify and redistribute the source code of the plugin.\n\n### ## Step 3: Install the Modified Plugin\n\n1.  On the destination site, **deactivate and delete** the standard All-in-One WP Migration plugin if you installed it.\n2.  Download the modified plugin from: `ferdykorp.com/migrate` (redirects to a Google Drive link from WP Press Doctor).\n3.  Go to `Plugins` > `Add New` > `Upload Plugin` and upload the downloaded ZIP file.\n4.  Activate the plugin. You now have an upload limit of up to **100GB**.\n\n> [!IMPORTANT]\n> Do not update this modified plugin, as updating will restore the 300MB import limit. After successfully migrating your site, it's a good practice to deactivate and delete the plugin.\n\n### ## Step 4: Import and Finalize\n\n1.  Go to `All-in-One WP Migration` > `Import`.\n2.  Drag and drop your `.wpress` file to start the upload and import process.\n3.  Click **Proceed** when prompted. This will overwrite the database, plugins, themes, and media.\n4.  After the import is complete, you must log in with the **username and password from your original site**.\n5.  Go to `Settings` > `Permalinks`, select **Post name**, and click **Save Changes twice** to rebuild your site's URL structure and prevent 404 errors.\n\n### ## Alternative Use Cases\n\nThis method is also highly effective for:\n\n*   **Creating full website backups:** Regularly export your site to a file for easy restoration.\n*   **Migrating from local to live:** Develop your site on a local computer (e.g., using LocalWP) and use this process to push it to a live domain.",
+  "transcription": "## Introduction\n\nHello people, my name is Ferdy and in this video I will show you how you can migrate your WordPress website to a different domain for free, even if it's a website that's one gigabyte or 10 or even up to 100 gigabytes. I will show you how it's done using a free tool.\n\nIf you like this video please like it. Feel free to subscribe for more upcoming WordPress-related tutorials. Now let's get started.\n\n## Exporting the 12GB Website\n\nSo here I have my biggest website. It's around 1 gigabyte but I uploaded a lot of videos so the website is 12 gigabytes. And I'll show you in this video how you can transfer this website to a different domain or as a backup completely for free.\n\nSo I go to the back end and I hover over plugins, add new. I'm going to install a plugin called All-in-One WP Migration. So I search over here, All-in-One WP Migration, really simple name for a plugin. And over here I click on Install Now. You see a lot of installations, a lot of nice reviews, and then I click on Activate. And with this plugin, I can export my complete 12 gigabyte website completely for free. So I go to All-in-One WP Migration and I click on Export.\n\nAnd then I click over here on File. That's it. It will prepare and since I have a really big website, it can take a while so I will fast forward. But normally my websites are around 200 megabytes, so it's exported within a few seconds. So there it is, download for FerdyKorpershoek.com, 12 gigabytes. So I click on download and it can take a while before it's downloaded. 16 seconds, wow.\n\n## Preparing the New WordPress Installation\n\nAnd now I go to my new website, ferdykorpershoek2.com. And what I have over here is a brand new website. I want to import my website, my 12-gigabyte website. So the first thing I'll do when I use a brand new installation and I want to import a backup or migrate a website, I go to Posts, I remove all the posts to the trash, and I empty the trash. I go to Pages, select all the pages, move them to the trash, apply it. Then I go to the trash and I empty the trash. Also if you have media, select everything. Using build select, click on the first one, hold shift, click on the latest one and then delete. And then I go to Appearance, Themes, and I want to remove all the themes that are not active so I have a clean installation of WordPress. Because otherwise, my post can stay intact and then I have posts in my migrated website. I don't want that.\n\n## The 300MB Upload Limit Problem\n\nNow if I would go to Plugins, Add New, and I would search for All-in-One WP Migration, look what happens. I click on Install now, I click on Activate. I go to All-in-One WP Migration and I click on Import and then I see I'm limited with 300 megabytes, but this website is 12 gigabytes. How can I do this?\n\nWell, there's something called GPL version 3 license, that means that when you download a file or you buy something that has a license, you can adjust it. So a friend of mine did that, WP Press Doctor. He created the file from All-in-One WP Migration that can let you migrate a website that is 100 gigabytes.\n\n## Installing a Modified Plugin to Bypass the Limit\n\nSo why can the WordPress doctor change this file? Well because this file, this plugin, falls under the GPL version 3 license, which gives people the right to adjust the source code. So that's what he has done, nothing illegal here, so we're good to go.\n\nSo I go to Plugins, I deactivate this one and I delete it. And let me show you how it is done. In the new tab I go to ferdykorp.com/migrate. You will be redirected to the Google Drive of WP Press Doctor. And then you click on Download on this icon. There it goes. I close this. Now I go to Plugins, Add New, Upload Plugin. Now I drag this one from WordPress Doctor, up to 100 gigabytes, and I click on Install Now. And then it will say to you when you activate it that is not the final version, the most updated version, but that's okay because if you update it you are limited to 300 megabytes again. Keep in mind that when you have used this tool, you've migrated your website, that you remove the tool from your website.\n\nSo now if I go to All in WP Migration and I click on Import, I have up to 100 gigabytes, depending on how much room you have on your server. If you still see it's limited, you can go to your web hosting provider and make sure it is increased by going to the chat or going to certain settings.\n\n## Importing the Site and Finalizing the Migration\n\nSo over here I have my 12 gigabyte website. Let me check it one more time. Yes, 13 gigabytes. I drag it over here. I think I can take a break.\n\nOkay, now I click on Proceed. So our data has been successfully imported, and it says subscribe to the WordPress Doctor channel, so I would do that if I were you. This guy gives a lot of tutorials especially about Divi. So, I highly suggest you do that.\n\nNow we need to go to the permalink settings. So I go to Settings, Permalinks. And keep in mind that you need to log in again with the details that you have over here, because this is now an exact clone of this website. So save it on Post Name twice. Save Changes, and save the changes. Otherwise you can get problems in your website. I close this.\n\n## Verifying the Successful Migration\n\nAnd now this is my current website, my migrated website. So the regular one with this submenu, mega menu, and now if I go to the homepage over here it should be exactly the same. Okay, I go to Elementor tutorial. It looks like this. I go to Elementor tutorial and it looks like this, exactly the same. And since I entered the website over here for the first time I can accept this. So resources, resources. They both look the same. I have an exact copy of 12 gigabytes migrated for free.\n\n## Other Uses and Final Thoughts\n\nAnd why is my website so big? I said it before. If I go to media, I uploaded a lot of videos to make it as heavy as it is. And I will delete them right now. But that's how you can copy and paste or migrate a complete website for free. You can also use this tool as a backup tool. So now and then you can make a backup of your website. Then when something goes wrong you can put it back. And I think this is the best and simplest way to make these backups.\n\nThey're also web hosting providers that will make a backup for your website every day. I highly suggest you get a web hosting provider like that. But if you want to make a website on your computer, I have a tutorial about that, and you want to put it on a live domain when you're ready, you can do that. So if you search for local wp ferdy, I show you how to get you make a website right on your computer. And then through these principles I show you in this tutorial, you know how to export them to your live website.\n\nThank you for watching this video. I hope you liked it and I hope you're able to migrate your big website or make a backup with it. And I hope this video was helpful. If it was, please like this and feel free to leave a comment to say that you like it or if you have any questions, let me know in the comments. I'll do my best to answer them.\n\n## Outro: T-Shirts and Filming Setup\n\nAnd then I hope you have a great day and feel free to subscribe to this YouTube channel for more upcoming WordPress-related tutorials. And I want to show you something. Normally I'm carrying my blue t-shirt. Rest assured, I still have my blue t-shirt. But this time it has no V because I also have different t-shirts without a V. This t-shirt, I don't know how it's called, but the one with the V is called Barcelona. Barcelona is playing right now on the iPad but I cannot watch it because I'm watching myself, because then I can see if everything is in focus. Well, I think it is, so I can turn this off and then I can continue to watch the game or edit the video or do it at the same time. Okay, bye."
+}

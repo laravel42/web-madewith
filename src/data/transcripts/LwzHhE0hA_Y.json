@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 3,
+  "videoId": "LwzHhE0hA_Y",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn to enhance your October CMS websites by implementing user-friendly, SEO-optimized URLs with slugs and adding pagination to your data lists. This guide walks you through using the Builder plugin to add a slug column to your database, configuring your model's form fields to automatically generate slugs from titles, and updating your page URLs to use these slugs instead of IDs.",
+  "chapters": [
+    {
+      "title": "Adding a Slug Field to the Database",
+      "description": "This chapter explains how to use the October CMS Builder plugin to add a nullable slug column to a database table.",
+      "startTime": 0.0,
+      "endTime": 77.0,
+      "slug": "adding-a-slug-field-to-the-database"
+    },
+    {
+      "title": "Auto-Generating Slugs from Titles",
+      "description": "Learn how to configure a model's form fields to automatically generate a slug from the movie's title using the preset option.",
+      "startTime": 77.0,
+      "endTime": 183.0,
+      "slug": "auto-generating-slugs-from-titles"
+    },
+    {
+      "title": "Updating Page URLs to Use Slugs",
+      "description": "This section covers changing the single-record page URL from using an ID to a slug and updating the Record Details component settings accordingly.",
+      "startTime": 183.0,
+      "endTime": 292.0,
+      "slug": "updating-page-urls-to-use-slugs"
+    },
+    {
+      "title": "Verifying Slugs for All Movies",
+      "description": "After updating the remaining movies off-screen, a quick demonstration shows that the new slug-based URLs work for all records.",
+      "startTime": 292.0,
+      "endTime": 315.0,
+      "slug": "verifying-slugs-for-all-movies"
+    },
+    {
+      "title": "Enabling Pagination for the Movie List",
+      "description": "Here, you will learn how to enable pagination on the record list component and set the number of records displayed per page.",
+      "startTime": 315.0,
+      "endTime": 376.0,
+      "slug": "enabling-pagination-for-the-movie-list"
+    },
+    {
+      "title": "Fixing the Optional Pagination URL Parameter",
+      "description": "This chapter demonstrates how to make the page URL parameter optional to fix the 'Page not found' error on the base URL.",
+      "startTime": 376.0,
+      "endTime": 472.0,
+      "slug": "fixing-the-optional-pagination-url-parameter"
+    },
+    {
+      "title": "Outro",
+      "description": "The video concludes with a thank you and a call to action for viewers to like, subscribe, and follow on social media.",
+      "startTime": 472.0,
+      "endTime": 500.24,
+      "slug": "outro"
+    }
+  ],
+  "summary": "## Implementing Slugs for SEO-Friendly URLs\n\nThis section covers adding a `slug` field to a model and using it in page URLs for better SEO and user experience.\n\n### 1. Database and Model Setup\n\n- **Add a `slug` column** to your database table using the Builder plugin.\n  - **Type**: `String`\n  - **Nullable**: `true`.\n  > [!IMPORTANT]\n  > The column must be **nullable** initially to avoid SQL errors when saving the schema, as existing records won't have a value for this new column.\n\n- **Add a `slug` field** to your model's backend form (`fields.yaml`).\n  - Navigate to your model, then to the \"Fields\" tab.\n  - Add a **Text** field with the field name `slug`.\n\n### 2. Auto-Generating Slugs\n\n- In the `slug` field's **Advanced** tab, configure the **Preset** option.\n  - **Source Field**: The field the slug should be based on (e.g., `name` or `title`).\n  - **Preset Type**: `slug`.\n- This will automatically generate a URL-friendly slug whenever the source field is typed into or updated.\n\n> [!NOTE]\n> For existing records, you will need to manually open each one and re-save it (or just clear and re-type the title) to trigger the slug generation.\n\n### 3. Updating URLs and Links\n\n- **Change the Details Page URL**:\n  - Open the page that displays a single record (e.g., `movie-single`).\n  - Update its URL from `/movies/:id` to `/movies/:slug`.\n\n- **Configure the `recordDetails` Component**:\n  - **Identifier Value**: Set to `{{ :slug }}` to fetch the record using the URL's slug parameter.\n  - **Key Column**: Set to `slug` to tell the component which database column to match against.\n\n- **Update Links in the List View**:\n  - In the component that lists the records (e.g., `recordList`), ensure the link to the details page is generated using the `slug` attribute, not the `id`.\n\n## Adding Pagination to a Record List\n\nThis section details how to enable and correctly configure pagination for a list of records.\n\n### 1. Enabling Pagination\n\n- In the CMS, open the page containing your `recordList` component.\n- In the component's settings, find the **Pagination** section.\n- **Records per page**: Set the number of items you want to show on each page (e.g., `1`).\n- **Page number**: Define the URL parameter for the page number (e.g., `{{ :page }}`).\n\n### 2. Configuring an Optional URL Parameter\n\n- After enabling pagination, update your list page's URL. For example, change it from `/movies` to `/movies/:page?`.\n\n> [!TIP]\n> The **question mark (`?`)** at the end of the URL parameter (`:page?`) makes it **optional**. This is crucial for preventing a \"Page not found\" error when a user visits the base URL (`/movies`) without a page number.\n\n- With an optional parameter, the following URLs will work correctly:\n  - `/movies` (defaults to the first page)\n  - `/movies/2`\n  - `/movies/3`\n\n### 3. Styling Pagination Links\n\n- The `recordList` component automatically injects the necessary HTML for pagination links (`<ul>`, `<li>`, `<a>` tags).\n- You can apply custom CSS to this HTML to style the pagination controls to match your website's design.",
+  "transcription": "## Adding a Slug Field to the Database\n\nIn this quick episode, we are going to link to our details page via slug. In the previous episode, we linked our list to the details page via ID. So in this episode, we're going to be doing it by slug, and also I'm going to show you how you can set up pagination for your movie list.\n\nOkay, so first of all, let's set up our slug. So we are going to go to the builder plugin, choose our plugin, some movies, and then I'm going to click on our database and add one more column. And that column is going to be called `slug`. It's going to be a string, and it's going to be nullable.\n\nIt's going to be nullable because if you try to save it right now without it being nullable, it's going to give you an error, so you have to make it nullable. We save it, save and apply, and that's it. Now we have a slug field for our movies.\n\n## Auto-Generating Slugs from Titles\n\nNext thing we are going to do, we are going to go to models, fields, and we are going to add one more field right here. It's going to be a text field. The field name will be, of course, `slug`. Actually, that's the field name from our database, and the label is going to be `slug` also.\n\nOkay, and now what I want to do is go to Advanced right here, and you have this preset. Let me just make this bigger. Okay, so you have preset right here. Click on it, and you choose a field that this slug is going to be connected to. So the field we want is named `name`, and the type of that field is going to be `slug`. Okay, save this.\n\nAnd now if we go to our movies and click, for example, on Inception... Now we can see this slug field right here. But if we try to type something in the movie title, as you can see, it automatically fills in the slug field. So when you're developing your application or your website, you should have the slug right away. Because right now, I'm going to have to go through all of our movies, which is not a lot because we only have three, and write that title again. So I'm going to do that behind the scenes.\n\nBut for now, we have this slug for Inception. We click Save and close.\n\n## Updating Page URLs to Use Slugs\n\nAnd now we go to our CMS. We go to movies... and now I'm going to... instead of this movies URL... actually, we have to go to movie-single. Instead of `/movie/:id`, I'm going to say `/movies/...` because I actually wanted to do that in the previous episode, but it turned out to be `movie` instead of `movies`. And we are not going to be calling the `id` parameter, but the `slug` parameter. And also, you have to go to the Record Details and set the Identifier value to be `slug` and also Key column to be `slug` also. Save this.\n\nOkay, if we go to our movies right now... click this... we click the link to the details page is currently using this details column of `id`. We are going to change this to `slug` also. Okay, save this.\n\nAnd now if we go to our movies, refresh the page, go to Inception... we should see down here that the URL currently is `/movies/inception`. For Fight Club, we have `/movies/default`, and for American Beauty, we have `/movies/default` because we didn't write the titles of those movies again. So for Inception, this should work now. As you can see, we get Inception. Okay, so now...\n\n## Verifying Slugs for All Movies\n\n...behind the scenes, I'm going to add slugs to all other movies. Now that I entered the new slugs, Now The Fight Club works, and also American Beauty works. Okay, next...\n\n## Enabling Pagination for the Movie List\n\n...thing we are going to be doing is creating pagination for our movie list. So how do you do that? We go to CMS, we go to movies, and now if we click this Record List right here, you have Pagination. Okay, let's click it and set the records per page to be just one. Okay, save this.\n\nAnd if we go to our movies, we should get only one movie right here, like we did. And we have page one, two, and three. Okay, but this doesn't actually work just yet. If you check out down here, you can see that these URLs all point to `/movies`. So if I click on it, I will just get on the same page that I'm already on. So we need to do something else.\n\nOkay, so if I click on this, we have this Page number parameter that we have to set. So I can do something like `/movies/:page`. Okay, save it.\n\n## Fixing the Optional Pagination URL Parameter\n\nAnd now, if we go to movies, now we get 'Page not found'. So what's going on? Well, what is going on is that currently, the way we have our URL set up is that it is expecting this parameter to be present. So if we go to `/movies/1`, we should get Inception and then all the other movies, and the pagination works. But we don't want it to work that way because we want when someone goes to `/movies` to actually display the movies page and not get 'Page not found'.\n\nSo to deal with that, you just add a question mark at the end. So what this is saying to the URL is that this parameter right here is optional. So if we save this, we get `/movies` and we get all the movies that we need on this page. So we are displaying only one, but our pagination also works. So Fight Club... Previous works and so on.\n\nOf course, if you go to your template, to the movies page, you can see down here, which I didn't mention in the previous episodes, that you have this HTML for pagination. So of course, you can take this and use a little bit of CSS to make this pagination look much prettier. Okay, guys,\n\n## Outro\n\n...this is it for this episode. I hope you liked it. I hope you enjoyed this video. If you did, please like it. If you like the content I put out, please subscribe to the channel. You can, of course, also follow me on Facebook or on Twitter and ask me questions there. So that's it for this video. Thank you guys for watching once again, and I will see you in the next episode."
+}

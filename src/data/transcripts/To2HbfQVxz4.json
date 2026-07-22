@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 3,
+  "videoId": "To2HbfQVxz4",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to create a custom theme from scratch in October CMS. This tutorial covers two methods for theme creation: manually creating a theme.yml file and using the backend interface. You'll see how to set up a new theme, activate it, and understand why a new theme initially results in a 'Page Not Found' error. The guide then walks through structuring your theme by creating a default layout, managing asset folders for CSS and JavaScript like jQuery, and linking them properly. Discover how October CMS automatically combines assets to improve performance.",
+  "chapters": [
+    {
+      "title": "Two Methods for Creating an October CMS Theme",
+      "description": "This chapter introduces the two ways to create a theme in October CMS: manually with a theme.yml file or through the backend interface.",
+      "startTime": 0.0,
+      "endTime": 49.0,
+      "slug": "two-methods-for-creating-an-october-cms-theme"
+    },
+    {
+      "title": "Creating a Theme from the Backend",
+      "description": "Learn to generate a new blank theme using the October CMS backend, filling out its properties and activating it.",
+      "startTime": 49.0,
+      "endTime": 125.0,
+      "slug": "creating-a-theme-from-the-backend"
+    },
+    {
+      "title": "Why New Themes Cause a \"Page Not Found\" Error",
+      "description": "This section explains that new themes are empty and that pages are theme-dependent, which causes the initial 'Page Not Found' error.",
+      "startTime": 125.0,
+      "endTime": 181.0,
+      "slug": "why-new-themes-cause-a-page-not-found-error"
+    },
+    {
+      "title": "Setting Up a Default Layout & Asset Structure",
+      "description": "Follow along to copy a default layout from the demo theme, clean it up, and create the necessary folders and files for JavaScript assets.",
+      "startTime": 181.0,
+      "endTime": 253.0,
+      "slug": "setting-up-a-default-layout-asset-structure"
+    },
+    {
+      "title": "Creating and Linking CSS Assets",
+      "description": "This chapter covers creating a CSS stylesheet and correctly linking both the CSS and JavaScript files within the default layout.",
+      "startTime": 253.0,
+      "endTime": 321.0,
+      "slug": "creating-and-linking-css-assets"
+    },
+    {
+      "title": "Creating the Homepage",
+      "description": "Learn how to create a new page in the CMS backend, assign it as the root URL, connect it to the default layout, and add content.",
+      "startTime": 321.0,
+      "endTime": 375.0,
+      "slug": "creating-the-homepage"
+    },
+    {
+      "title": "Understanding the October CMS Asset Combiner",
+      "description": "This chapter explores how October CMS automatically combines multiple JavaScript and CSS files into single files to improve site performance.",
+      "startTime": 375.0,
+      "endTime": 484.0,
+      "slug": "understanding-the-october-cms-asset-combiner"
+    },
+    {
+      "title": "Preview: Using Laravel Elixir for Asset Management",
+      "description": "Get a preview of the next video, which will cover using Laravel Elixir for a more advanced asset compilation workflow instead of the built-in combiner.",
+      "startTime": 484.0,
+      "endTime": 560.6,
+      "slug": "preview-using-laravel-elixir-for-asset-management"
+    }
+  ],
+  "summary": "## Creating a Custom Theme in October CMS\n\nThere are two primary methods for creating a theme:\n\n1.  **Manual Creation**: Create a theme directory and a `theme.yml` configuration file by hand.\n2.  **Backend UI**: Use the built-in tools in the October CMS backend, which is the method shown in this video.\n\nTo create a theme from the backend, navigate to **Settings > Front-end Theme** and click **Create a new blank theme**. After filling in the details (name, author, etc.), you must **activate** it from the theme list.\n\n> [!IMPORTANT]\n> Activating a new, blank theme will immediately result in a \"Page Not Found\" error on your frontend. This is because pages, layouts, and other content are theme-specific, and a new theme starts completely empty.\n\n## Building the Theme Structure\n\nTo make your new theme functional, you need to create a basic structure:\n\n1.  **Create a Layout**: A good starting point is to copy `default.htm` from the demo theme's `layouts` folder into your new theme's `layouts` folder.\n2.  **Clean the Layout**: Remove any unnecessary code, such as default headers, footers, and script tags for frameworks you don't plan to use (e.g., Bootstrap).\n3.  **Set Up Asset Folders**: In your theme's root, create an `assets` folder with `css` and `js` subfolders inside it.\n4.  **Add Asset Files**: Create your primary stylesheet (e.g., `assets/css/style.css`) and JavaScript file (e.g., `assets/js/app.js`).\n5.  **Link Assets**: In your `default.htm` layout, link your assets using Twig and the `| theme` filter:\n\n    *   CSS: `{% styles %}` block with `<link href=\"{{ 'assets/css/style.css'|theme }}\" rel=\"stylesheet\">`\n    *   JS: `{% scripts %}` block with `<script src=\"{{ 'assets/js/app.js'|theme }}\"></script>`\n\n## Creating the Homepage\n\nWith the layout and assets in place, you can create your first page:\n\n*   Go to the **CMS > Pages** area in the backend.\n*   Click **Add** to create a new page.\n*   Set the **URL** to `/` to designate it as the site's homepage.\n*   Choose your `default` layout from the **Layout** dropdown.\n*   Add some basic content, like an `<h1>` tag, to confirm it works.\n\n## The Asset Combiner\n\nOctober CMS includes a powerful built-in feature for performance optimization:\n\n*   **Automatic Concatenation**: It automatically combines multiple CSS files into a single CSS file and multiple JavaScript files into a single JS file.\n*   **Reduced Requests**: This process reduces the number of HTTP requests a browser needs to make, leading to faster page load times.\n*   **How it Works**: The framework generates combined asset files in a `combine` directory, and your page source will show a single link to this compiled file instead of individual asset links.\n\n> [!NOTE]\n> While the built-in combiner is excellent for basic CSS, JS, and Less files, the video series will later explore using **Laravel Elixir** for more advanced asset compilation needs, such as handling Sass files and enabling live reloading.",
+  "transcription": "## Two Methods for Creating an October CMS Theme\n\nIn this quick episode of making websites with October CMS, I'm just going to show you how you can create your own theme. As you will see, it's a very easy and quick process.\n\nSo there are two ways to create a theme in October CMS. First way is to create a theme directory, call it wherever you want, and then in it you have to have this theme.yml file with the theme name, description, author, homepage, and code, which is used in October CMS's repository so that other people can install your theme. We are not going to do that today, but we are going to create our theme from backend, and as you will see, it is very simple.\n\n## Creating a Theme from the Backend\n\nSo you just go to settings, click front-end Theme, create a new blank theme, and I will call mine Olympus. So it automatically fills in the directory name. So it's a new starter theme. Author is me. Website URL is going to be watchandlearn.com and that's it. Of course, if you have this code, you can enter it. Also, a unique code for this theme used for distribution. Okay, create.\n\nAnd if we go to our code editor right now, you will see that there is an Olympus theme right here. It has a theme.yml file, it's Olympus, description, author's name, and it has a homage. But also, what you will notice if we go right here and refresh this page, you will get... no, you won't get page not found because we didn't activate Olympus Theme. So I will activate it right now, and now we will get page not found.\n\n## Why New Themes Cause a \"Page Not Found\" Error\n\nWe will get page not found because the content of October CMS, at least what you get out of the box, so the pages, is dependent on the theme. So this theme doesn't have any pages, and we can check that out if you go to CMS, and as you will see, 'No pages found'.\n\nSo let's amend that in our code editor and here on the back end. So first of all, to display our pages, we would need a layout.\n\n## Setting Up a Default Layout & Asset Structure\n\nSo I'm going to go to our demo theme, to layouts, and copy this default.htm and paste it in my layouts folder. Okay, so we have default.htm right here. And in that layout, I'm going to remove this header, we are going to call it as a partial later on. I'm also going to remove the footer and also all of these scripts right here. We don't need them because we are not going to be using bootstrap. So I'm just going to remove all of this and leave asset JavaScript jQuery JS and app.js. We are we are going to be needing jQuery.\n\nSo I'm going to from the demo theme in JavaScript copy jQuery file, just copy it out and paste it in our assets. But not right now because we still don't have a JS folder right here. So I'm going to create a JS folder. So it's going to be assets/js, and I'm going to call app.js. Okay, now we have assets/js and app.js file. And I'm going to paste jQuery right here. So we have abjs and jQuery JS, okay.\n\n## Creating and Linking CSS Assets\n\nNext thing we need is a style.css file, so I'm going to create that also. So as you can see, we now have a CSS folder and style.css file. Okay. They're both empty for now, abjs and install CSS or empty.\n\nNow we just have to call them from our default.htm. Since we are calling it this way, if we didn't make those files then we would get an error on our page saying the October CMS can't find app.js or style.css. So since we called this JS and not JavaScript, we are just going to rename this. And also right here in assets/css, we are going to call this stylesheet style.css. Save this, and now we have our default layout ready.\n\n## Creating the Homepage\n\nOkay. if we go right here, we'll still of course get a page not found. We're getting page not found because we don't have a front page for our site. So we have to create that. I'm just going to click add, and the URL is not going to be homepage, but it's going to be our root URL. The file name is going to be homepage, and the layout is going to be default.\n\nAnd also, I'm just going to add an H1 tag and say `<h1>This is our homepage</h1>`. Okay, save this. Now the template is saved and now we should be able to get to our site if we refresh this page. As you can see, 'This is our homepage'.\n\n## Understanding the October CMS Asset Combiner\n\nOkay, so we created the theme and we created our homepage. I just want to show you something before we wrap this up. So if we check out page Source, we can see something right here. So check out this line. It says `october-movies-dev/combine/` and a series of numbers. So what is this? This is actually these two files right here: `jquery.js` and `app.js`. And we can confirm that if we click on this link and we will get... you will see this is jQuery 1.11.1. Okay, so what is going on here?\n\nSo October CMS will take all of your JS files and concatenate them into one JS file, and in that way, it will make less requests to the server and make your website load faster. So this is very good. Also, the same thing goes for your stylesheets. You can add more stylesheets right here and they they will also concatenate into one file, as you can see right here. So also `combine/` and a series of numbers. They will concatenate into one file and all of and October CMS will make just one request to get those CSS files.\n\nNow this is all well and good. Also it will combine your less files, I forgot to mention that if you're using less. If you're not using less you can install a plugin which will concatenate and compile your SS files.\n\n## Preview: Using Laravel Elixir for Asset Management\n\nbut we are not going to be using this throughout this video series. You can of course use it, but in the next episode I'm going to talk about Laravel Elixir. I already talked a little bit about it in one of the previous videos where in where we installed Laravel Elixir on WordPress. We are going to install it right here and compile our CS files JS files and live reload our page that way.\n\nI'm doing this because this is a CMS based on a Laravel framework and Laravel uses by default Elixir plug-in for Gulp. And we are going to we are also going to be using Elixir throughout this series. But as I said, if you don't want it you don't have to use it. You can just use vanilla CSS and javascripts and compile them this way. Okay so this is it for this video. as I said in the next video we are talking about Laravel Elixir.\n\nPlease follow me on Facebook or on Twitter. If you like this video, please like it. If you like the channel, please subscribe to it. Thank you guys for watching and I will see you in the next episode."
+}

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 3,
+  "videoId": "A3ywtCYjmf4",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn to build cross-platform applications by getting started with Ionic 4 and Capacitor. This guide walks you through creating a new Ionic project using the Angular framework, from initial setup and dependency installation to enabling Capacitor integration. Discover how to add the Android platform, build your web assets, and run your application on an Android emulator via Android Studio.",
+  "chapters": [
+    {
+      "title": "Introduction to Capacitor with Ionic",
+      "description": "This chapter introduces Capacitor as a tool for creating cross-platform apps from a single web codebase and outlines the video's goal.",
+      "startTime": 0.0,
+      "endTime": 34.0,
+      "slug": "introduction-to-capacitor-with-ionic"
+    },
+    {
+      "title": "Environment Setup and Prerequisites",
+      "description": "Learn how to check for Node.js and install the Ionic CLI, which are the necessary prerequisites for starting a project.",
+      "startTime": 34.0,
+      "endTime": 117.0,
+      "slug": "environment-setup-and-prerequisites"
+    },
+    {
+      "title": "Creating a New Ionic Project",
+      "description": "Follow the steps to create a new Ionic project using the 'ionic start' command with the tabs template and Angular framework.",
+      "startTime": 117.0,
+      "endTime": 129.0,
+      "slug": "creating-a-new-ionic-project"
+    },
+    {
+      "title": "Running the Ionic Web App",
+      "description": "This chapter shows how to run the newly created Ionic application in the browser using the 'ionic serve' command.",
+      "startTime": 129.0,
+      "endTime": 181.0,
+      "slug": "running-the-ionic-web-app"
+    },
+    {
+      "title": "Integrating Capacitor into the Project",
+      "description": "Learn how to add Capacitor to an existing Ionic project using the 'ionic integrations enable capacitor' command.",
+      "startTime": 181.0,
+      "endTime": 239.0,
+      "slug": "integrating-capacitor-into-the-project"
+    },
+    {
+      "title": "Reviewing Capacitor Configuration",
+      "description": "This chapter examines the files modified by the Capacitor integration, including package.json and the new capacitor.config.json file.",
+      "startTime": 239.0,
+      "endTime": 291.0,
+      "slug": "reviewing-capacitor-configuration"
+    },
+    {
+      "title": "Preparing the Project for a Native Build",
+      "description": "Learn why you must run 'ionic build' to create the 'www' directory before you can add a native platform like Android.",
+      "startTime": 291.0,
+      "endTime": 382.0,
+      "slug": "preparing-the-project-for-a-native-build"
+    },
+    {
+      "title": "Adding the Android Platform and Opening Android Studio",
+      "description": "After a successful build, add the Android platform and then use 'ionic capacitor run' to open the project in Android Studio.",
+      "startTime": 382.0,
+      "endTime": 455.0,
+      "slug": "adding-the-android-platform-and-opening-android-studio"
+    },
+    {
+      "title": "Running the App on an Android Emulator",
+      "description": "See how to select a virtual device (AVD) in Android Studio and deploy the Ionic application directly to the emulator.",
+      "startTime": 455.0,
+      "endTime": 530.0,
+      "slug": "running-the-app-on-an-android-emulator"
+    },
+    {
+      "title": "Making Code Changes and the Update Workflow",
+      "description": "This chapter demonstrates making a code change and explains that native builds require a manual update process, unlike web development with live-reload.",
+      "startTime": 530.0,
+      "endTime": 612.0,
+      "slug": "making-code-changes-and-the-update-workflow"
+    },
+    {
+      "title": "Syncing Changes to the Native Application",
+      "description": "Follow the complete workflow for updating a native app: build the web assets, copy them to the native project, and redeploy from Android Studio.",
+      "startTime": 612.0,
+      "endTime": 707.69,
+      "slug": "syncing-changes-to-the-native-application"
+    }
+  ],
+  "summary": "## Project Setup\nTo get started with Ionic and Capacitor, you need a few prerequisites and to run a single command to scaffold your project.\n\n- **Prerequisites**: Ensure you have **Node.js** installed (`node -v`).\n- **Ionic CLI**: Install the Ionic command-line tool globally with `npm install -g ionic`.\n- **Create Project**: Use the `ionic start` command to create a new project. For this example, the command is:\n  ```\n  ionic start my-app tabs --type=angular\n  ```\n\n> [!NOTE]\n> Ionic supports Angular, React, and Vue. The `--type` flag specifies which framework to use.\n\n## Integrating Capacitor\nOnce you have an Ionic project, you can add Capacitor to enable native platform builds.\n\n- **Enable Integration**: Run `ionic integrations enable capacitor` to add Capacitor dependencies and configuration files.\n- **Configuration**: This creates `capacitor.config.json`, where you can set your **appId**, **appName**, and the location of your web assets (`webDir`), which is `\"www\"` for Ionic projects.\n\n## Building for Android\nA key step in the process is building your web app *before* adding a native platform.\n\n1.  **Build Web Assets**: Run `ionic build`. This command compiles your web code and places the output in the `www` directory.\n2.  **Add Platform**: Add the Android platform project with `ionic capacitor add android`.\n3.  **Open IDE**: Open the native project in Android Studio by running `ionic capacitor run android`.\n4.  **Deploy**: From Android Studio, you can run the app on a physical device or an emulator (AVD).\n\n> [!TIP]\n> You must run `ionic build` at least once before `ionic capacitor add android` will succeed, as it needs the `www` directory to exist.\n\n## The Native Development Workflow\nUpdating a native Capacitor app requires a different process than the live-reload workflow (`ionic serve`) used for web development.\n\n> [!IMPORTANT]\n> To see code changes in your native app (Android/iOS), you must follow this three-step process:\n> 1.  **Rebuild Web App**: Compile your latest web code changes into the `www` directory.\n>     `ionic build`\n> 2.  **Copy Assets**: Sync the updated `www` directory to your native platforms.\n>     `npx cap copy`\n> 3.  **Re-run in IDE**: Open Android Studio or Xcode and click the 'Run' button again to deploy the updated application to your device or emulator.",
+  "transcription": "## Introduction to Capacitor with Ionic\n\nHello everyone. In this video, we will see how we can use Capacitor with Ionic framework. We can use Capacitor with any web framework, but in this example, we are going to be using Ionic.\n\nSo with Capacitor, what you can do is you will have a single code base and then with that code, you can create an iOS application, Android application, Electron application for the desktop, and then you can also create a Progressive Web Application with it. So let's get started.\n\n## Environment Setup and Prerequisites\n\nSo first, we can go to the directory of our choice. So in my case, I am currently on the desktop. Now, first, you need to make sure you have Node.js installed on your system. For that, you can type `node -v` and if you don't have Node installed, you can go to nodejs.org and then download Node from there. And after that, we can install Ionic by typing `npm install -g ionic`. Right? So I currently have it installed, so I won't do that step.\n\nAnd after that, you can go ahead and run `ionic start`...\n\n## Creating a New Ionic Project\n\n...and then the name of the application. So I will name it `my-app`, and then after that, we can say `tabs`, so that will be the template that we are going to be using. So there are a couple of templates, namely blank, tabs, and then side menu template. And after that, we can add `type=angular`, as Ionic works with various frameworks, for example, React, Vue, but in this example, we are going to be using Angular. So we have to specify `--type=angular`. Now, if I hit enter here, this will go ahead and then create our Ionic project for us, and then it is installing our dependencies, as you can see in the bottom. So this might take some time, so I will be back when it finishes.\n\n## Running the Ionic Web App\n\nNow once this is done, we can change the directory to our newly created project and then we can open it inside our code editor. I am using Visual Studio Code, insiders build. So I can type `code-insiders .`. So this will go ahead and then open the project inside of the editor. So here we can see the structure here. So if I open the terminal and then I can run the project by typing `ionic serve`. So this will build the project for the first time and then it will automatically open it inside of the browser. So this is how the default Ionic project with the tabs template looks like.\n\n## Integrating Capacitor into the Project\n\nAnd now let's see how we can add Capacitor to our project. So, if I maybe let's close the terminal here and maybe let's clear it. So inside of an Ionic project, and then the other web frameworks, the steps are slightly different. So inside of Ionic, we can do `ionic integrations enable capacitor`. Okay. So now we can hit enter and then this will automatically add Capacitor to our project. And now in the console, you can also see what commands this will run. So currently this is installing the package called `@capacitor/core` and then it is installing `@capacitor/cli` as a dev dependency.\n\n## Reviewing Capacitor Configuration\n\nAnd after that, we can see we are getting `Integration capacitor added`. And here we can also see the commands to add the various platforms. So we can either add Android, iOS, and Electron, or we can add all three. So let's open Git and then maybe let's see what files this will update. So currently this has updated package.json, and in here, we can see this has added `@capacitor/core`. So let's close the terminal here. And if I scroll down, this has added `@capacitor/cli`. And then inside of `capacitor.config.json` we have this `appId`, so this can be different for you. You can change that to something like `com.yourcompany.app`. All right? So that will be your domain name or subdomain in reverse, something like that. And then you can add the `appName` here. And then we can also specify the `webDir`.\n\n## Preparing the Project for a Native Build\n\nSo this will be a directory that we will get once we build our Ionic project for the first time. And then we have this `ionic.config.json`, right? So here we have this `integrations` and then we have this Capacitor property here. Okay.\n\nSo let's go back to the explorer and then inside of the terminal. Now we have Capacitor added, so we can actually add the platforms that we want to target. So in this case, currently I am on a Windows machine, so I can either target Electron or Android, so I cannot work on iOS. So maybe let us see how we can add Android. So we can either use `npx cap add android` or we can use `ionic capacitor add android`. Okay, so once I run this command, this will go ahead and then add Android to our project. But here you can see we are getting the error: `Capacitor couldn't find the web assets directory at www` that I was talking about. So for that what you have to do is for once you have to run `ionic build`. So this will create a new directory called `www` here inside of the explorer. So let's go ahead and run this `ionic build`. So this will build our project and then it will create that folder.\n\n## Adding the Android Platform and Opening Android Studio\n\nOkay, so once the build is finished, we can see we have this `www` directory. So this is actually our web application that we can deploy to any static hosting, okay? But what we are interested in now is we can run this command once again. So maybe let's clear the terminal here and now we can run `ionic capacitor add android` once again. So now this won't give the error and now you can see we're getting this `Installing Android dependencies`. And now you can see the Capacitor Android is added to our project. And here you can see the command: `Now you can run npx cap open android to launch Android studio.` Okay, so I will do a slightly different command. So we can run `ionic capacitor run android`. So this will go ahead and then open the Android studio for us.\n\n## Running the App on an Android Emulator\n\nAnd here we can select the simulator or if you have connected your real device, then you can run the application on the device or the emulator. So let's wait for it to finish so that it will open the Android Studio for us. So now you can see this command has opened the Android Studio for us, and then this will do some processing. So this will start the Gradle daemon, and then this will run the build here inside of the Android studio. So once this is finished, we can select the simulator or the real device here, and then we can hit play, then the application will run on that device. So now this is finished, and then we can select the emulator or the simulator. So here currently I have this Pixel 2 XL API 28. So if you don't have this, you can click here and then open AVD manager and then create one, or you can maybe add your device, or you can connect your device to your system. So I currently have this created, so I can hit play here.\n\n## Making Code Changes and the Update Workflow\n\nSo now this will go ahead and then install our application to the device and after some time you should see the application running on the emulator, and if you have a real device connected you will see it there. Okay, so now let's see how we can make some modifications inside the application. So currently we are on Tab 1, so let's change this 'Welcome to Ionic' text.\n\nSo we will go to our editor and then inside of `src/app` and then `tab1`, then I can go to `tab1.page.html` here. So here maybe I'm getting 'Welcome to Ionic', so I will add 'Welcome to Ionic Updates'. Okay. So here I can save it and if we go to the emulator, you won't see the change there, right? So we have to do a couple of steps. So maybe let's see. If I go here and then I run that command `ionic serve` and you can see the change here. And if I also changed maybe, let's say 'two updates', and then the change will be seen live on that web app. Okay, but this is not the case with the emulator here. So what we have to do is we have to build the application and then sync the `www` directory with our Android or the iOS platform so that we can see the changes there.\n\n## Syncing Changes to the Native Application\n\nSo maybe let us go to the editor here. And so what we can do is we have to do `ionic build`. Okay, so this will build the project and then this will put the changes inside of our `www` directory. Okay, so you can see this is now gone and this will come back in a minute once the build is finished. And once we have the build finished, we will see this `www` directory once again. And now we have to push this directory to our respective platforms. For that, we can run the command `npx cap copy`. Okay, so now this will copy the web assets from `www` to the platforms, currently we only have Android, right? And now the next step is we can go to the Android studio and then we can hit that run button once again. Okay, so our app is currently running. This is slightly different. All right. So now this will again install the app on the real device and then we will be able to see our changes there. So now you can see 'Welcome to Ionic Updates'.\n\nSo that's how you can get started with Ionic and Capacitor. So in the coming videos, we will talk about how we can use the APIs inside of Capacitor. So let me know if you are interested, so I will create a video for that too. Thanks."
+}

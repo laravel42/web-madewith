@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 3,
+  "videoId": "AFgIftl355g",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Set up an October CMS backend to serve a simple Todo API using the Builder and Faker plugins. This tutorial covers installing Builder and Faker, creating a Todo plugin with database schema, models, forms, lists and controllers, populating sample data with Faker, exposing a RESTful route that returns JSON, and troubleshooting common issues like mass assignment. Practical for Vue frontends that consume October/Laravel JSON APIs.",
+  "chapters": [
+    {
+      "title": "Introduction and episode scope",
+      "description": "Overview of the series focus and what this episode will set up for the API used by the frontend.",
+      "startTime": 0.0,
+      "endTime": 37.0,
+      "slug": "introduction-and-episode-scope"
+    },
+    {
+      "title": "Installing Builder and Faker plugins",
+      "description": "Install the Builder and Faker plugins through October CMS updates and plugins interface.",
+      "startTime": 37.0,
+      "endTime": 90.0,
+      "slug": "installing-builder-and-faker-plugins"
+    },
+    {
+      "title": "Creating the Todo plugin with Builder",
+      "description": "Use Builder to scaffold a new plugin named todo with author/namespace and icon.",
+      "startTime": 90.0,
+      "endTime": 156.0,
+      "slug": "creating-the-todo-plugin-with-builder"
+    },
+    {
+      "title": "Defining the database schema",
+      "description": "Add a database table for todos with ID, title, description, status and timestamps.",
+      "startTime": 156.0,
+      "endTime": 232.0,
+      "slug": "defining-the-database-schema"
+    },
+    {
+      "title": "Creating the model, form fields and list",
+      "description": "Add a Todo model with timestamps, create backend form controls for title, description and status, and a simple list.",
+      "startTime": 232.0,
+      "endTime": 360.0,
+      "slug": "creating-the-model-form-fields-and-list"
+    },
+    {
+      "title": "Controllers, backend menu and testing CRUD",
+      "description": "Add a backend menu item, create a controller with list and form behaviors, set the menu URL, and test creating todos in the backend.",
+      "startTime": 360.0,
+      "endTime": 469.0,
+      "slug": "controllers-backend-menu-and-testing-crud"
+    },
+    {
+      "title": "Creating a Faker populate route",
+      "description": "Create routes.php and add an API populate route that uses Faker to generate 20 todo records.",
+      "startTime": 469.0,
+      "endTime": 540.0,
+      "slug": "creating-a-faker-populate-route"
+    },
+    {
+      "title": "Using Faker to generate fields and return",
+      "description": "Define how Faker constructs title, description, status and created_at for each todo and return a confirmation message.",
+      "startTime": 540.0,
+      "endTime": 708.0,
+      "slug": "using-faker-to-generate-fields-and-return"
+    },
+    {
+      "title": "Fixing mass assignment: add fillable fields",
+      "description": "Resolve the mass assignment error by adding fillable properties to the Todo model and re-run the populate route.",
+      "startTime": 708.0,
+      "endTime": 772.0,
+      "slug": "fixing-mass-assignment-add-fillable-fields"
+    },
+    {
+      "title": "Creating the API route to list todos",
+      "description": "Add an API todos GET route that returns all todos as JSON by returning the Eloquent collection.",
+      "startTime": 772.0,
+      "endTime": 896.0,
+      "slug": "creating-the-api-route-to-list-todos"
+    },
+    {
+      "title": "Testing the API and closing notes",
+      "description": "Visit the API route to confirm JSON output and final remarks about GitHub, social links, and next steps with Vue.",
+      "startTime": 896.0,
+      "endTime": 966.38,
+      "slug": "testing-the-api-and-closing-notes"
+    }
+  ],
+  "summary": "## Key Concepts\n\n- **October CMS**: used as the backend API provider, built on Laravel, exposes route returns as JSON automatically.\n- **Builder plugin**: scaffolds plugins, models, database schema, forms, lists, controllers and backend menu items.\n- **Faker plugin**: generates realistic sample data to populate the database for development and testing.\n- **Database schema for Todo**: include **id**, **title** (string), **description** (text), **status** (boolean), and **timestamps** (created_at, updated_at).\n- **Model configuration**: add **protected $fillable = ['title','description','status']** to avoid mass assignment exceptions.\n- **Routes/API**: define Route::get('api/todos', ...) and return Eloquent collections; framework converts to **JSON** automatically.\n\n## Practical Steps\n\n- Install Builder and Faker via Settings → Updates → Plugins.\n- Use Builder to create plugin namespace/author, database table, model, backend form fields, list columns, and controller with behaviors.\n- Create routes.php in the plugin to add utility endpoints: **api/populate** to seed with Faker and **api/todos** to return all todos.\n\n> [!TIP]\n> Use Faker to seed a realistic mix of completed and uncompleted todos; generate created_at dates up to the current time.\n\n> [!NOTE]\n> Mass assignment errors mean you must add fields to the model's **$fillable** array before calling Model::create().\n\n> [!IMPORTANT]\n> October/Laravel will serialize returned Eloquent collections as JSON; you don't need to json_encode them manually.\n\n## Takeaways\n\n- Setting up a simple JSON API with October CMS is quick: define models, seed data with Faker, expose routes that return model collections, and configure model fillable properties to allow mass assignment. This provides a ready backend for a Vue frontend to consume.",
+  "transcription": "## Introduction and episode scope\n\nWe are not going to be talking much about October CMS in this series but we have to set it up because it's going to be used as our API. In this episode we are going to do that, and in the next episode we are going to start creating our actual application. Most of the things that we are going to be doing in this episode we are already done in the Making Websites with October CMS series, so if you don't understand something just check that series out and go through the episodes that cover the stuff that we are going to be doing right now. In this episode we are going to be using Builder plugin, Faker plugin, and also we are going to create the first part of our API that is going to actually provide us with the data that we need on our application site.\n\n## Installing Builder and Faker plugins\n\nFirst of all we go to the settings and we have to install two plugins. The first one is going to be Builder and the second one is going to be the Faker plugin. We are going to use that plugin to populate our database with some fake data. So we just go to Updates and Plugins, Installed Plugins, and search for Builder. Once that is done we installed Faker plugin.\n\n## Creating the Todo plugin with Builder\n\nNow we are going to create our own plugin using the Builder which is actually going to be our todo list. So we go to the Builder, we click right here and we create the plugin. We are going to call it todo. The author is going to be Watch Learn and that is also going to be our namespace. Let's see right here, let's put this list as the icon for our plugin and we click OK.\n\n## Defining the database schema\n\nNext thing we need to do is we need to create a database. So I'm just going to add the database right here and add a few columns to it. So the first column is of course going to be the ID. The ID is going to be integer and is going to be auto incrementing. Next thing we need: title for our todo. So for every item in our todo we are going to have a title that is going to be type of string. And that's about it. Let's create another column; this one is going to be the description, so it's going to be the description of our todo item and it's going to be text. That's it. One more column that we are going to have to have is going to be the status column: is the todo completed or not? So we are going to call it status and it's going to be a boolean. It's only going to have two states: is it done or is it not done. That's it: one or zero. One more thing I want to add right here is we are going to add timestamps so we are going to have created_at and updated_at fields. Okay, we just save this. We click Save and Apply.\n\n## Creating the model, form fields and list\n\nNext we go to Models, add new model and it's going to be called Todo. We add timestamp support for it. We are not going to add soft deleting support. Click OK and now we have our forms and lists. We have to create a form for our todo list. I'm going to add one for the title: it's going to be a text form. I'm going to put it right here. The label for the field is going to be Title. We can leave everything else as is. Let's create another one for the description so this is going to be a textarea, the Description. Okay, we set it to be auto and let's set the size of it to be large. Let's create another control and that control is going to be a switch: is the todo item done or is it not done? So I'm going to create a status field and going to be called Status. I think that should be it. Save this. We don't need to create created_at and updated_at fields because they're going to fill themselves out once you created a todo: it is going to take the current date and time and put it in our database.\n\n## Controllers, backend menu and testing CRUD\n\nThe next thing we want to do is go to the Backend Menu and add a menu item. This menu item is going to be called Todo. Let's pick the list icon and save this. We have to fill this URL out but we are not going to fill it just yet. First of all we actually have to go to Models again and create a list for our todo. The list is going to consist of just type for our so that we don't spend too much time on it. It's going to be a text, the label is going to be Title and it's going to be searchable and maybe sortable. Next thing we need to do is go to our Controllers and create a new controller. It's also going to be called Todo. We have to select a model for it and select a menu item which is going to be Todo, a List Controller behavior and Form Controller behavior. That's about it. Click OK. Now we have this setup. Refresh this page. Now you see we have this Todo. We have to go to the Backend Menu, click on Todos and fill out this URL. If we just start typing todo it's going to add this address automatically. Save it, refresh the page again and if we go to Todos we should get the list of our todos and now we can create a todo. Test: we have test, description. Click Create and that's about it. Now if I go to Todos we have this test Todo. I can change it, edit it and so on. We are not going to do that on the backend; once we get into the development of our actual application we are going to make it so that we can add new todos from the front end.\n\n## Creating a Faker populate route\n\nRight now I'm in my code editor and we are going to create a route for our Faker plugin to populate the database so that we don't have to insert our test data by hand. I'm just going to go to the plugins, Watch Learn Todo, and now right here I'm going to create a new file called routes.php. We open up PHP tag. We use the Todo model and now we create a route which is going to be called API populate. So when we hit that route in our browser API populate is going to populate our database with some example todos. Now we have our function set up, our anonymous function, and first of all we are going to use the Faker plugin. Next thing we need to do we need to create a for loop which is going to go to the number 20 and create 20 todos. Now we use a create function to create our todos since we used the Todo model. We can just write Todo::create and then set fields using Faker.\n\n## Using Faker to generate fields and return\n\nI'm creating the title, description, status and created_at date using the Faker variable that we called earlier. Here we are creating a sentence of up to six words. Then we are creating some text with a maximum number of 200 characters. Then we are generating a boolean which is going to be true 50% of the time, so some todos will be done and some won't. Then we are setting this created_at date to be a format of date and the maximum for that date is going to be current time. That's about it; we just return a message indicating the todos were created. Now we go to our browser and we go to API populate. My URL is todo.dev/api/populate and it says that is not found, and that is because I didn't actually save the file. Let's save and try again. Now we get a syntax error on line 15; let's fix that. Now we get a mass assignment exception. When this happens to you this is because some of the fields are not available, so you can't mass assign some data to them.\n\n## Fixing mass assignment: add fillable fields\n\nTo correct that error you will have to go to Models Todo and somewhere around here create fillable fields. Those fields are created like this: protected $fillable = ['title', 'description', 'status']; We save this and try the populate route again. Now we have the todos created and if you go to the backend and go to Todos you will see that we have these todos right here. If I click on one of them you get the title, you get the description and the status is off for this one. Try another one and you can see the status for that one is on, and so on. Now we created our todos.\n\n## Creating the API route to list todos\n\nOne more thing we are going to do in this tutorial is create the first part of our API, and that part is going to be just the list of the todos that we have to work with. Back in our code editor in the routes.php file, create another route called API todos. This is going to be our main route for displaying all of our todos. Do Route::get('api/todos', function() { $todos = Todo::all(); return $todos; }); Since Laravel, which October is using, is actually a REST-based framework, this is the only thing that you need to do. When you just return something from the route it's automatically going to be converted to JSON and displayed. This is what we are going to be using in our application to get all of the todos. We will probably pull this data in the next episode.\n\n## Testing the API and closing notes\n\nIf I go to /api/todos we get all of our todos in JSON format. We get the id, the title, the description and of course the date and time that this is created. That's about it: this is how you create the first part of the API for our application. Now that we have all this set up, in the next episode we can actually start using Vue and pulling this data into our application. Remember everything we did here will be available for you on GitHub; the link will be in the description below. If you want to ask questions you can do that on Facebook, Twitter, GitHub, YouTube, wherever. Also, if you liked this video please give it a thumbs up. If you like the channel maybe subscribe, and if you want to send someone my way you can use the Patreon page for that. Thank you guys for watching and I will see you in the next video."
+}

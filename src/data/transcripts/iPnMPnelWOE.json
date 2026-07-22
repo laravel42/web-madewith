@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 3,
+  "videoId": "iPnMPnelWOE",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Explore an in-depth performance benchmark of Go (Golang) web frameworks to determine the fastest option for your applications. This comparison analyzes the standard library's `net/http` against popular alternatives `fasthttp`, `Fiber`, and `gNet`. The evaluation covers key metrics including latency, throughput, CPU usage, and memory footprint in a Kubernetes environment. A second test introduces a PostgreSQL database to measure real-world performance with database insert operations, revealing critical limitations and trade-offs between frameworks.",
+  "chapters": [
+    {
+      "title": "Benchmark Overview & Methodology",
+      "description": "An outline of the two tests comparing Go web frameworks on metrics like latency, throughput, and resource usage.",
+      "startTime": 0.0,
+      "endTime": 61.0,
+      "slug": "benchmark-overview-methodology"
+    },
+    {
+      "title": "Test Environment on AWS EKS",
+      "description": "A walkthrough of the Kubernetes testing infrastructure on AWS, including instance types for applications and the PostgreSQL database.",
+      "startTime": 61.0,
+      "endTime": 93.0,
+      "slug": "test-environment-on-aws-eks"
+    },
+    {
+      "title": "A Note on Channel Support",
+      "description": "The creator offers one-on-one sessions to help support the channel and its infrastructure costs.",
+      "startTime": 93.0,
+      "endTime": 102.0,
+      "slug": "a-note-on-channel-support"
+    },
+    {
+      "title": "Test 1 Results: Initial Performance",
+      "description": "A look at the initial performance, where the standard library has low latency but high CPU, and Fiber/fasthttp track closely.",
+      "startTime": 102.0,
+      "endTime": 181.0,
+      "slug": "test-1-results-initial-performance"
+    },
+    {
+      "title": "Test 1 Results: Under Heavy Load",
+      "description": "As load increases, the standard library falls behind, gNet shows low latency, and Fiber starts to fail health checks.",
+      "startTime": 181.0,
+      "endTime": 223.0,
+      "slug": "test-1-results-under-heavy-load"
+    },
+    {
+      "title": "Test 1 Results: fasthttp vs. gNet",
+      "description": "The final phase of the test pits fasthttp against gNet, with fasthttp proving more stable at over 100,000 requests per second.",
+      "startTime": 223.0,
+      "endTime": 249.0,
+      "slug": "test-1-results-fasthttp-vs-gnet"
+    },
+    {
+      "title": "Test 1 Graph Analysis",
+      "description": "A detailed review of the graphs for requests per second, latency, CPU usage, availability, memory, and CPU throttling.",
+      "startTime": 249.0,
+      "endTime": 324.0,
+      "slug": "test-1-graph-analysis"
+    },
+    {
+      "title": "Test 2 with PostgreSQL: gNet's Major Limitation",
+      "description": "Introducing a database reveals a major limitation in gNet, where its connection pool size is restricted by its event loop count.",
+      "startTime": 324.0,
+      "endTime": 430.0,
+      "slug": "test-2-with-postgresql-gnet-s-major-limitation"
+    },
+    {
+      "title": "Test 2 Graph Analysis",
+      "description": "A review of the Test 2 graphs, showing how gNet's limitation impacts its performance and how other frameworks handle database interactions.",
+      "startTime": 430.0,
+      "endTime": 503.0,
+      "slug": "test-2-graph-analysis"
+    },
+    {
+      "title": "Final Verdict & Key Takeaways",
+      "description": "The final conclusion summarizes that the standard library offers low latency at the cost of high CPU, highlighting the trade-off between latency and throughput.",
+      "startTime": 503.0,
+      "endTime": 525.24,
+      "slug": "final-verdict-key-takeaways"
+    }
+  ],
+  "summary": "## Benchmark Overview\n\nThis video presents a performance comparison of four Go web frameworks: **net/http** (Go standard library), **fasthttp**, **Fiber**, and **gNet**. The analysis is divided into two tests:\n\n*   **Test 1**: A pure framework benchmark measuring **latency**, **throughput (RPS)**, **CPU usage**, **memory usage**, and **availability** in a Kubernetes environment.\n*   **Test 2**: A real-world scenario involving a **PostgreSQL** database to measure **POST request latency** and **database insert latency**, also examining the **database connection pool** behavior.\n\n## Test 1: Framework-Only Benchmark\n\n> [!IMPORTANT]\n> A key finding is the trade-off between low latency and CPU efficiency.\n\n*   **net/http (Standard Library)**:\n    *   Achieved the **lowest latency** at the start of the test.\n    *   Consumed the **highest CPU** resources.\n    *   Performance degraded significantly above 15,000 requests/sec, becoming the slowest framework.\n    *   Started failing health checks around 90,000 requests/sec.\n*   **fasthttp & Fiber**:\n    *   **Fiber** is a user-friendly framework built on top of **fasthttp**, so their performance was very similar.\n    *   **fasthttp** proved to be the most stable and achieved the highest throughput, handling over **100,000 requests/sec**.\n*   **gNet**:\n    *   Features a low-level API with minimal documentation.\n    *   Exhibited the **lowest CPU and memory usage**.\n    *   Showed excellent latency under heavy load but ultimately handled slightly fewer requests than `fasthttp`.\n\n## Test 2: Benchmark with PostgreSQL\n\nThis test involved parsing a JSON payload from a POST request and inserting it into a PostgreSQL database.\n\n> [!NOTE]\n> The `2xlarge` PostgreSQL instance became a bottleneck during this high-load test.\n\n*   **gNet's Critical Limitation**:\n    *   `gNet`'s design limits its database connection pool size to its number of event loops, which is tied to the number of available CPU cores.\n    *   On a 2-CPU VM, it could only create 2 database connections, despite a configured limit of 100. This severely bottlenecked its performance, causing it to fall far behind other frameworks in throughput.\n    *   This limitation could also affect other I/O-bound operations, such as using an AWS SDK.\n*   **net/http Performance**:\n    *   Once again demonstrated the **best latency**, including the lowest database insert latency among all frameworks.\n    *   This low latency came at the cost of the highest CPU consumption.\n\n## Final Conclusion\n\nThe choice of a Go web framework depends heavily on your application's specific needs.\n\n*   **`net/http`**: The best choice for **latency-sensitive applications** where CPU cost is less of a concern or can be managed via aggressive horizontal scaling.\n*   **`fasthttp`**: The ideal choice for applications requiring **maximum throughput and stability** under extreme load, making it the overall winner for high-performance scenarios.\n*   **`gNet`**: While extremely resource-efficient, its connection handling model presents a significant limitation for database-intensive or other I/O-heavy applications.",
+  "transcription": "## Benchmark Overview & Methodology\n\nIn this video, we'll try to find the fastest Go web framework. We'll compare the Go standard library with fasthttp, Fiber, and gNet frameworks.\n\nIn the first test, we'll compare just the frameworks themselves. We'll start with latency, measuring it from the client side. I think it's one of the most important metrics for any framework. Then, we'll measure the throughput of each framework by counting how many requests per second each can handle.\n\nWe'll also measure CPU usage, memory usage, availability or error rate, as well as CPU throttling since we'll run these applications in Kubernetes.\n\nIn the second test, I'll add a PostgreSQL database and instrument each application with Prometheus metrics to measure latency for insert operations. We'll also measure the connection pool size, as well as the database CPU usage itself.\n\nI think I found a major limitation in one of the frameworks I tested.\n\n## Test Environment on AWS EKS\n\nI use AWS to run my tests. I create an EKS cluster with two instance groups. I use 4xlarge Graviton instances to deploy my monitoring components, and I use large instances for each application I deploy, ensuring each app runs on its own VM.\n\nFor the second test, I deploy PostgreSQL on a 2xlarge instance with 8 CPUs and 64GB of memory, and I use pgTune to optimize my database performance.\n\n## A Note on Channel Support\n\nTo support my channel and pay for the infrastructure, I'd like to offer one-on-one sessions. You can find more information in the video description.\n\n## Test 1 Results: Initial Performance\n\nAlright, let's go ahead and run the test. So, as in many other tests where I compared the Go standard library with other frameworks, in this one as well, the standard library has the lowest latency from the start. But it also has the highest CPU usage.\n\nAt around 15,000 requests per second and 32 percent CPU usage, the standard library loses its advantage and becomes the slowest framework. So, if you use it, pay attention to this CPU usage threshold and scale it horizontally.\n\nOn the other hand, we have Fiber and fasthttp, which are very close to each other. This is because Fiber is a framework built on top of fasthttp. Fasthttp doesn't really have a user-friendly API, so Fiber is a tool that wraps the fasthttp framework and adds not only a nice API but other middleware as well.\n\nAnd gNet is supposed to be the fastest framework based on the benchmarks I've seen, but it has a very low-level API with almost non-existent documentation. However, it has an incredibly small memory footprint and the lowest CPU usage with the potential to achieve the highest throughput in the end.\n\n## Test 1 Results: Under Heavy Load\n\nAt around 55,000 requests per second, you can start to notice that the standard library is falling behind all other frameworks; this is very consistent with all other benchmarks I've run in AWS using Go. Also, you can notice that gNet has one of the lowest latencies so far under heavy load.\n\nAt around 90,000 requests per second, health checks on the Fiber and standard library applications started to fail, and in Kubernetes, if your pod fails too quickly, it transitions to a crashloop state. In production, to recover, you would need to double the capacity and then adjust based on the load.\n\n## Test 1 Results: fasthttp vs. gNet\n\nSo now we have fasthttp and gNet fighting for the title of the fastest framework.\n\nIt looks like fasthttp is much more stable at the end and able to handle more than 100,000 requests per second, which is a huge difference compared to the standard library, while gNet is slightly behind with around 98,000 requests per second.\n\n## Test 1 Graph Analysis\n\nAlright, let me open each graph for the entire test duration.\n\nFirst, we have requests per second.\n\nNext, we have GET latency, which is measured using the 99th percentile.\n\nNext, we have CPU usage.\n\nAvailability graph.\n\nMemory usage.\n\nAnd finally, the CPU throttling graph.\n\nSo, as expected, the standard library in this test would be the slowest, and fasthttp actually performed better than any other framework.\n\n## Test 2 with PostgreSQL: gNet's Major Limitation\n\nIn the second test, when the client sends a POST request with a JSON payload, each application needs to parse it, convert it to a Go struct, and then use the PostgreSQL driver to save it in the database.\n\nSo here we're getting latency from the application when it inserts a new record into the database. The source code is available in my public GitHub repository, and you can try to improve it if you can.\n\nFor this test, I also used the PostgreSQL exporter to track the pool size created by each application and found a major issue with gNet. I did enable multi-core support since we're running on a VM with two CPUs, and gNet created two event loops.\n\nOn my Mac, for example, with 10 CPU cores, it creates 10 event loops. It's best to run as many threads or processes as you have CPU cores, similar to other frameworks like Ruby on Rails. However, the connection pool is limited to the number of threads. So, I have the same 100 connection limit per application, but gNet only creates as many connections as it has event loops. Maybe there's a way to adjust this, but they don't really have any documentation.\n\nSo, the number of connections to the database will be a limiting factor for gNet. This doesn't only affect the database driver; it could also affect the AWS SDK and how many connections it can create.\n\n## Test 2 Graph Analysis\n\nFor this test, I used a 2xlarge instance for PostgreSQL, which actually became a bottleneck. I might use larger instances for future tests it just becomes very expensive.\n\nAlright, let me open each graph for the entire duration.\n\nFirst, we have the requests per second graph. gNet was way behind all other applications due to its small database pool size.\n\nNext, we have POST latency for the entire request.\n\nThen, we have database insert latency. As in the previous test, the standard library performs better than other frameworks.\n\nNext, we have CPU usage.\n\nAvailability graph.\n\nPostgreSQL database CPU usage.\n\nConnection pool size.\n\nAnd Memory usage.\n\n## Final Verdict & Key Takeaways\n\nSo, it looks like the standard library has the best latency performance in all tests but also has the highest CPU usage. It's up to you to decide what's more important: latency or throughput. \n\nThank you for watching, and I have other benchmarks on my channel that you may find interesting. Thank you, and see you in the next video."
+}

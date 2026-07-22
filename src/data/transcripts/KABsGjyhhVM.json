@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 3,
+  "videoId": "KABsGjyhhVM",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn a straightforward method for uploading images and files from a public frontend form in October CMS. This tutorial guides you through configuring your model for file attachments and adapting a component form for file submissions. Discover how to convert a non-functional Ajax form into a standard POST form by correctly setting the `enctype`, defining the `action`, and including the necessary CSRF token and session key handlers. This simple approach provides a reliable foundation for handling user-submitted files.",
+  "chapters": [
+    {
+      "title": "Introduction: The Easy Way to Upload Files",
+      "description": "This chapter introduces the common challenge of uploading images from the frontend in October CMS and outlines the simple, non-Ajax approach that will be demonstrated.",
+      "startTime": 0.0,
+      "endTime": 40.0,
+      "slug": "introduction-the-easy-way-to-upload-files"
+    },
+    {
+      "title": "Reviewing the Existing Frontend Form",
+      "description": "This section reviews the existing 'Add Actor' component and form, demonstrating its current functionality by adding a new actor to the database from the frontend.",
+      "startTime": 40.0,
+      "endTime": 129.0,
+      "slug": "reviewing-the-existing-frontend-form"
+    },
+    {
+      "title": "Defining the Model's Image Relationship",
+      "description": "This chapter explains how to create a file attachment relationship between the Actor model and the system's file table by adding the '$attachOne' property.",
+      "startTime": 129.0,
+      "endTime": 146.0,
+      "slug": "defining-the-model-s-image-relationship"
+    },
+    {
+      "title": "Adding the Backend File Upload Field",
+      "description": "This part details how to add a file upload widget to the backend Actor form using the Builder plugin to verify that images are being saved correctly.",
+      "startTime": 146.0,
+      "endTime": 219.0,
+      "slug": "adding-the-backend-file-upload-field"
+    },
+    {
+      "title": "Adding the File Input to the Frontend Form",
+      "description": "This chapter shows how to modify the component's HTML template to include a file input field and update the `onSave` PHP method to handle the new image field.",
+      "startTime": 219.0,
+      "endTime": 301.0,
+      "slug": "adding-the-file-input-to-the-frontend-form"
+    },
+    {
+      "title": "Why Ajax Uploads Fail (The Simple Way)",
+      "description": "This segment demonstrates that using the default Ajax form handler does not work for file uploads and explains that a different approach is necessary for this method.",
+      "startTime": 301.0,
+      "endTime": 387.0,
+      "slug": "why-ajax-uploads-fail-the-simple-way"
+    },
+    {
+      "title": "Converting to a Standard POST Form",
+      "description": "Learn how to convert the Ajax form into a standard non-Ajax POST form, including adding the correct `enctype`, action, handler, CSRF token, and session key.",
+      "startTime": 387.0,
+      "endTime": 520.0,
+      "slug": "converting-to-a-standard-post-form"
+    },
+    {
+      "title": "Testing the Final Frontend Upload Form",
+      "description": "This chapter tests the newly configured standard POST form, shows the rendered hidden inputs, and successfully uploads an actor with an image, verifying the result in the backend.",
+      "startTime": 520.0,
+      "endTime": 607.0,
+      "slug": "testing-the-final-frontend-upload-form"
+    },
+    {
+      "title": "Conclusion",
+      "description": "The video concludes by summarizing the process and providing links to the source code on GitHub and social media channels for further questions.",
+      "startTime": 607.0,
+      "endTime": 636.88,
+      "slug": "conclusion"
+    }
+  ],
+  "summary": "## Handling Frontend File Uploads in October CMS\n\nThis document outlines the simplest method to enable file and image uploads from a public-facing form in October CMS by converting an Ajax form to a standard POST form.\n\n### Step 1: Define the Model Relationship\n\nFirst, you must define the relationship between your model (e.g., `Actor`) and the files you want to attach. For a single image, use the `$attachOne` relationship.\n\n**In your model file (e.g., `plugins/your/plugin/models/Actor.php`):**\n```php\nclass Actor extends Model\n{\n    // ...\n    public $attachOne = [\n        'actor_image' => 'System\\Models\\File'\n    ];\n    // ...\n}\n```\n\n> [!TIP]\n> You can add a `fileupload` widget to your model's `fields.yaml` to easily view and manage the uploaded image in the backend.\n\n### Step 2: Configure the Frontend Form\n\nTo handle the upload, you need to modify both the component's HTML and its corresponding PHP method.\n\n- **Add a file input to your component's HTML (`default.htm`):**\n    ```html\n    <input type=\"file\" name=\"actor_image\">\n    ```\n\n- **Ensure your component's `onSave` method handles the file:** October CMS automatically handles associating the uploaded file with the model if the input `name` matches the relationship name (`actor_image`).\n    ```php\n    function onSave()\n    {\n        $actor = new Actor();\n        $actor->name = post('name');\n        $actor->lastname = post('lastname');\n        $actor->actor_image = post('actor_image'); // This is sufficient\n        $actor->save();\n    }\n    ```\n\n### Step 3: Use a Standard POST Form for Submissions\n\nSimple Ajax requests using the `data-request` attribute do not support file uploads out-of-the-box. The easiest solution is to convert the form to a standard HTML form that performs a full-page POST request.\n\n> [!IMPORTANT]\n> The `enctype=\"multipart/form-data\"` attribute is **required** for any form that uploads files. Without it, the browser will not send the file data to the server.\n\nYour final form tag and hidden inputs should look like this:\n\n```html\n<form method=\"POST\" \n      action=\"{{ 'add-actors'|page }}\" \n      enctype=\"multipart/form-data\">\n\n    <!-- \n      Tells October which handler function to run. \n      This replaces the `data-request` attribute.\n    -->\n    <input type=\"hidden\" name=\"handler\" value=\"onSave\">\n\n    <!-- Security tokens required by October for non-Ajax POSTs -->\n    {{ form_token() }}\n    {{ form_session_key() }}\n\n    <!-- Your other form fields -->\n    <input type=\"text\" name=\"name\">\n    <input type=\"text\" name=\"lastname\">\n    <input type=\"file\" name=\"actor_image\">\n\n    <button type=\"submit\">Save</button>\n\n</form>\n```\n\n### Step 4: Verify the Upload\n\nAfter submitting the form, the page will refresh. You can then navigate to the backend area for your model to confirm that the new record was created and the image was successfully attached.",
+  "transcription": "## Introduction: The Easy Way to Upload Files\n\nSo this is going to be a quick episode about uploading images or some other files from the front end. So this has been a question that has been asked many times: how do you upload images from the front end in October CMS? So I'm going to show you that now.\n\nIt's a popular question and a popular problem. Just one note about this: so we are not going to do this the hard way, which would be via Ajax and some JavaScript library for uploading files, but we are going to do it the most easy way possible.\n\n## Reviewing the Existing Frontend Form\n\nSo in one of the previous episodes, we created this add actor form, and we can use that form. So it's actually a component that we added to the page. So that component is in `watch-learn/movies/actorform/default.htm` and `actorform.php`. So this is our code for that component, and that's about it. So that's our component.\n\nAnd what it does is from the front end, you can add actor's name and last name and save it to the database. So let's for example use Brad Pitt. Save actor. Okay, if we go to Actors, refresh the page, as you can see we have Brad Pitt right here. Okay.\n\n## Defining the Model's Image Relationship\n\nSo first of all, we have to create a relationship between October system images. So October has already has a database or a table in our database for saving images. So we just have to define the relationship between actors and those images.\n\n## Adding the Backend File Upload Field\n\nAnd to do that you will just go to Models and then to the actor model and then you would define that relationship right here.\n\nPublic, we are going to call our field `actor_image`. Okay. Now we save this. We already did this before, so this is just a relationship between the image and the actor model. Also, we can go to Builder right now. I'm already on the Movies plugin. We go to `watch-learn-movies`, so to models, and then go to fields. And then we just add a field right here so that we can check if the image is actually saved.\n\nSo I'm going to add a file upload widget right here and I'm going to call it `actor_image`. Okay. File upload is going to be an image and we're going to define that it's going to be 100 pixels wide and 100 pixels high. And that should be it. Save this. Now if we go to Movies, Actors, click on Brad Pitt, you will see this field right here and we can add an image. So I prepared this one of John Cusack. Save and close. And if we go to Brad Pitt right now, you can see that that image is saved.\n\n## Adding the File Input to the Frontend Form\n\nSo we need to do the same thing on this form right here. Okay. So first of all, let's just go to `movies/components/actorform/default.htm`. So this is our form, and create a field for adding our image.\n\nSo the input is going to be type of file and the name is going to be `actor_image`. Okay, save this.\n\nSo what this does, we already did this before, but I'm just going to explain it again. So what this does is first of all when you click submit, it finds this onSave function. And that function is in our ActorForm, so it's actually a method. So it has `public function onSave` and what it does, it creates a new model of Actor, it gets the name from the form, it gets the last name from the form, and then it saves the actor and displays the success message. So what we are going to add here, we are going to add this `actor_image` field and save it. Okay.\n\n## Why Ajax Uploads Fail (The Simple Way)\n\nSo if I save this, go to my page, refresh this. And now we have our new field right here. We can just add a new actor, choose a file... and now try to save that actor.\n\nOkay, so it says that the actor has been added. And just note that, but this is actually an Ajax request, so the page doesn't refresh. And if we go to actors, we have Kevin Spacey but unfortunately the image hasn't been added because it's a little bit more complicated to add images when dealing with Ajax forms. So we are going to convert this form to be a regular form and that way this code that we coded in our `actorform.php` will actually work. It will not work as an Ajax. And in one of the future episodes, we are definitely going to, I'm definitely going to show you how to use some of the jQuery libraries for uploading files and then save that form via Ajax, but for now we are just going to do it the simple way.\n\n## Converting to a Standard POST Form\n\nSo what we need to do is we need some way to say to October that this isn't going to be an Ajax form. And to do that, we are going to define this form a little bit different. So I'm going to delete this data-request and create a normal form. So the method is going to be post, the action is going to be this page that we are on, so Add Actors. Okay.\n\nNow we save this. The important thing to realize here is you have to add this `enctype=\"multipart/form-data\"`, because that way you say to the form that there will be files that need to be posted to our endpoint, which is going to be this method right here, onSave. Okay.\n\nSo there are two more things, actually three more things that we need to do. We need to add a token, so CSRF token, and we need to add a session key, and we need to tell it to look for this method right here, so onSave method. So first of all, let's just do the onSave method.\n\nOkay, so the type is going to be hidden, the name is going to be `handler`, and the value is going to be `onSave`.\n\nTwo things we need to do is add a form token and session key. Luckily, October already has those, let's call it tags or functions, prepared for us. So to do that, you would just use normal Twig tags. So this is for `form_token` and this one is for `form_session_key`.\n\n## Testing the Final Frontend Upload Form\n\nSo if we save this, you can check it out. If we refresh the page and check out how our form looks right now, you will see two new fields. So you have this input token which is hidden, and you have this session key right here. So you need those two things to post that form. Okay.\n\nNow our form should actually, I think, be working. Let me just try it. So the actor is going to be Kevin Spacey... actually not Kevin Spacey but John Cusack, and we choose a file with his image this time, open it up, and save that actor. As you can see, the page refreshes, and the actor has been added.\n\nLet's go to Actors right now and click on John Cusack. And as you can see, you have that image right here. Of course, you can change it if you want. The same thing would be if you needed to add some files, not just images, and you can use this on your contact form or on a front end form for your users.\n\n## Conclusion\n\nOkay, so this has been it for this episode. Remember, everything we did here will be available for you on GitHub. The link will be in the description below. If you want to ask me questions, you can follow me on Facebook or on Twitter, or maybe ask those questions in the comment section below. If you like this video, please like it. If you like the channel, subscribe to it. And that's about it. Thank you guys for watching, and I will see you in the next episode."
+}

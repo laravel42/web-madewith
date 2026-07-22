@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 3,
+  "videoId": "Uq7TkegTXRU",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn the complete process for installing Django on Windows 10/11 using Python 3.11.3. This comprehensive guide walks you through downloading and installing Python, ensuring PIP is correctly configured and added to your system's PATH. You'll then see how to create and activate a virtual environment, install Django using PIP, and verify the installation. Finally, discover how to start a new Django project from the command line and run the local development server to see your new application in action.",
+  "chapters": [
+    {
+      "title": "Introduction to Installing Django",
+      "description": "This chapter outlines the video's goals, which include installing Django for Python 3.11.3 and running a test project.",
+      "startTime": 0.0,
+      "endTime": 17.0,
+      "slug": "introduction-to-installing-django"
+    },
+    {
+      "title": "Downloading the Python Installer",
+      "description": "Learn how to navigate to the official Python website and download the latest version for Windows, Python 3.11.3.",
+      "startTime": 17.0,
+      "endTime": 60.0,
+      "slug": "downloading-the-python-installer"
+    },
+    {
+      "title": "Installing Python and PIP on Windows",
+      "description": "Follow a step-by-step guide through the Python installation wizard, including adding Python to the PATH and selecting PIP for installation.",
+      "startTime": 60.0,
+      "endTime": 159.0,
+      "slug": "installing-python-and-pip-on-windows"
+    },
+    {
+      "title": "Verifying the Python and PIP Installation",
+      "description": "Use the Windows Command Prompt to run commands that verify both the Python and PIP installations were successful.",
+      "startTime": 159.0,
+      "endTime": 202.0,
+      "slug": "verifying-the-python-and-pip-installation"
+    },
+    {
+      "title": "Creating a Virtual Environment",
+      "description": "This chapter demonstrates how to create a project folder and set up an isolated virtual environment using a simple command.",
+      "startTime": 202.0,
+      "endTime": 265.0,
+      "slug": "creating-a-virtual-environment"
+    },
+    {
+      "title": "Activating the Environment and Installing Django",
+      "description": "Learn how to activate the virtual environment's script and use PIP to install the Django web framework.",
+      "startTime": 265.0,
+      "endTime": 323.0,
+      "slug": "activating-the-environment-and-installing-django"
+    },
+    {
+      "title": "Verifying Django and Creating a New Project",
+      "description": "This section covers how to verify the Django installation and use the `django-admin` command to create a new project.",
+      "startTime": 323.0,
+      "endTime": 370.0,
+      "slug": "verifying-django-and-creating-a-new-project"
+    },
+    {
+      "title": "Running the Django Development Server",
+      "description": "See how to navigate into your new project directory and use the `manage.py` script to run the local development server.",
+      "startTime": 370.0,
+      "endTime": 421.0,
+      "slug": "running-the-django-development-server"
+    },
+    {
+      "title": "Conclusion",
+      "description": "The video concludes with a quick recap of the installation process and a final call to action.",
+      "startTime": 421.0,
+      "endTime": 481.0,
+      "slug": "conclusion"
+    }
+  ],
+  "summary": "## Key Concepts for Installing Django on Windows\n\nThis document outlines the essential steps and commands for setting up a Django development environment on Windows with Python 3.11.3.\n\n### 1. Installing Python and PIP\nBefore installing Django, you must have **Python** and its package manager, **PIP**, installed on your system.\n\n*   **Download**: Get the installer from the official website: `www.python.org`.\n*   **Installation Wizard**: During installation, two settings are crucial:\n    *   **Add Python to PATH**: Check the box labeled \"Add python.exe to PATH\". This ensures you can run Python from the command line.\n    *   **Customize Installation**: Use \"Customize installation\" to ensure that **PIP** is selected to be installed. Select \"Install for all users\" in the advanced options for system-wide access.\n\n> [!IMPORTANT]\n> Forgetting to add Python to the PATH is a common installation error that will prevent subsequent commands from working correctly.\n\n### 2. Verifying the Installation\nAfter installation, open the Command Prompt (CMD) and verify that Python and PIP are recognized.\n\n*   **Verify Python**: `py --version`\n*   **Verify PIP**: `pip --version`\n\n### 3. Setting Up a Virtual Environment\nIt's a best practice to install Django inside a **virtual environment** to isolate project dependencies.\n\n1.  **Create a Project Folder**: Make a new folder for your project (e.g., `Django`).\n2.  **Open CMD in Folder**: Navigate to your new folder and type `cmd` in the File Explorer address bar to open a command prompt in that location.\n3.  **Create the Virtual Environment**: Run the following command, replacing `my_virtual_environment` with your desired name.\n    ```shell\n    python -m venv my_virtual_environment\n    ```\n4.  **Activate the Environment**: You must activate the environment before you can use it. The command for Windows is:\n    ```shell\n    my_virtual_environment\\Scripts\\activate\n    ```\n\n> [!NOTE]\n> Once activated, your command prompt line will be prepended with the name of your virtual environment (e.g., `(my_virtual_environment) C:\\...\\Django>`).\n\n### 4. Installing and Managing Your Django Project\nWith the virtual environment active, you can now install Django and create your first project.\n\n*   **Install Django**:\n    ```shell\n    pip install django\n    ```\n*   **Verify Django Installation**:\n    ```shell\n    django-admin --version\n    ```\n*   **Create a New Project**: This command scaffolds a new Django project.\n    ```shell\n    django-admin startproject my_app\n    ```\n*   **Run the Development Server**:\n    1.  Navigate into your project folder: `cd my_app`\n    2.  Start the server: `python manage.py runserver`\n    3.  Open your browser and go to the provided URL (usually `http://127.0.0.1:8000/`) to see the default Django welcome page.",
+  "transcription": "## Introduction to Installing Django\n\nHello guys, assalamualaikum, welcome back to another video. In this video, I'm gonna show you how you can install Django with Python 3.11.3 and how to verify the installation of the Django and how to run any project there. Okay?\n\n## Downloading the Python Installer\n\nBut before you install it, first you need to install the Python with pip in your device. So for install the Python with Pip, first you need to go to the browser and search for Python. And as you can see, you need to visit the first link which is www.python.org. Just click on it, and once you click on it, it will open this kind of web page where you need to go to the download. And as you can see, at the time of making this video, Python 3.11.3 is the latest one. Just download it.\n\n## Installing Python and PIP on Windows\n\nAnd once our download is complete, and as you can see here is the python 3.11.3 exe file. So just double click on it to install it. And once you double click on it, it will open this kind of installation wizard where I need to click on this check box which is going to create a path in our environment variable path. Okay? So make sure that this option is check marked, otherwise it cannot be installed properly. \n\nAnd after that, for install the PIP, you need to click on the customize installation. And once you click on it, it will show you all of the optional features which is going to install with our Python 3.11.3. And here you also see the pip, which is going to help to download and install the other Python packages. And here you also check mark all of the option and then choose here next. Then it will show you the advance option. Here you need to choose this option, which is going to install the Python 3.11 for all users, okay? And then just simply click on the install.\n\n## Verifying the Python and PIP Installation\n\nAnd as you can see our installation is complete, so just click on the close. So now for verified the installation, you need to go to the search bar and search for CMD. And once our Command Prompt is open, just right here `py --version` and press enter. And as you can see, it's showing us the Python version which we have installed. Okay? \n\nAnd also for verified the PIP installation, you need to write here `pip --version` and press enter. And as you can see, here is the pip version. That means Pip is also installed with our Python 3.11.3, okay?\n\n## Creating a Virtual Environment\n\nSo now it's time to install the Django. For install it, you need to create a folder. I just name it Django, you can give here whatever you want. And open it and go to the path and remove all the previous path, and simply write here CMD and press enter, and it will open the command prompt in this folder. \n\nSo now you need to write here this command, which is going to create a virtual environment in this folder. Just write here `python -m venv` ...your virtual environment name. I just name it `my_virtual_environment` and press enter. And as you can see, it's create a virtual environment folder in our this folder which we are create, okay?\n\n## Activating the Environment and Installing Django\n\nSo now what you need to do, you need to activate the script folder which is inside the virtual environment folder for install the Django. Okay? For activate it, just write here this command. First you write here your virtual environment folder name, then slash, then script, then again slash and write here activate, and press enter. And as you can see, the virtual environment folder name is at the beginning of this command line. That means our script folder is activated. Okay? \n\nSo now just write here this command, which is `pip install django` and press enter. And as you can see, our Django is successfully installed. Okay?\n\n## Verifying Django and Creating a New Project\n\nSo now for verified the Django installation, you just right here `django-admin --version` and press enter. And as you can see here is the version of the Django. Okay? And if you want to create a project in your Django, just write here `django-admin startproject`, then write here your project name. I just name it `my_app` and press enter. And as you can see here is the Django project which name is `my_app`. And if you open the folder, you can find here all of the file which is need to be create a Django project, okay?\n\n## Running the Django Development Server\n\nAnd if you want to run this project, you need to go inside the project folder by right here `cd` space your project folder name and press enter. So now our command line is inside the my_app folder. And now from here, you just write here `python manage.py`, then space and write here `runserver` and press enter. And as you can see it will automatically run your project, and here is the project server link. Just copy it and go to your browser and paste it here and press enter. And as you can see, here is the output of this project which we are create.\n\n## Conclusion\n\nSo I hopefully guys you properly understand how to install the Django with Python 3.11.3 and how to create here any project and how to run it. Okay? If you enjoy this video don't forget to like, comment, and share. And if you like this type of video, don't forget to subscribe to my channel and also press the Bell icon. And I will see you guys in the next one, inshallah. Thank you so much."
+}

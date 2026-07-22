@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 3,
+  "videoId": "kK1379ubaVE",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Explore the future of Laravel's TALL stack by examining the job market viability and adoption rates of Livewire and Alpine.js. This analysis compares their current standing against established single-page application (SPA) frameworks like Vue.js and React, using freelance job data from Upwork and real-world testimonials. Discover why Livewire is considered a niche, Laravel-locked technology, and learn about the business decisions behind choosing it. The video also discusses Alpine.js's potential as a modern jQuery replacement.",
+  "chapters": [
+    {
+      "title": "The Future of Livewire and Alpine.js",
+      "description": "This chapter introduces the discussion about the job market future for Livewire and Alpine.js, framed by a viewer's comment.",
+      "startTime": 0.0,
+      "endTime": 36.0,
+      "slug": "the-future-of-livewire-and-alpine-js"
+    },
+    {
+      "title": "Job Market Analysis on Upwork",
+      "description": "This chapter analyzes the number of job postings on Upwork for Livewire and Alpine.js compared to Vue.js, React, and Laravel.",
+      "startTime": 36.0,
+      "endTime": 93.0,
+      "slug": "job-market-analysis-on-upwork"
+    },
+    {
+      "title": "Production Readiness and Real-World Use",
+      "description": "This chapter presents community testimonials confirming that Livewire and Alpine.js are being used successfully in production environments for large-scale applications.",
+      "startTime": 93.0,
+      "endTime": 123.0,
+      "slug": "production-readiness-and-real-world-use"
+    },
+    {
+      "title": "Livewire as a Niche Laravel Technology",
+      "description": "This chapter explores the idea that Livewire is a Laravel-specific package rather than a direct competitor to standalone JavaScript frameworks.",
+      "startTime": 123.0,
+      "endTime": 183.0,
+      "slug": "livewire-as-a-niche-laravel-technology"
+    },
+    {
+      "title": "The Business Case for the TALL Stack",
+      "description": "This chapter weighs the business pros and cons of using Livewire, from client hesitation to the cost-saving benefits for smaller projects.",
+      "startTime": 183.0,
+      "endTime": 257.0,
+      "slug": "the-business-case-for-the-tall-stack"
+    },
+    {
+      "title": "Alpine.js: The Modern jQuery Replacement",
+      "description": "This chapter focuses on Alpine.js, discussing its potential to replace jQuery for simple dynamic page elements and pointing to community talks on the subject.",
+      "startTime": 257.0,
+      "endTime": 321.0,
+      "slug": "alpine-js-the-modern-jquery-replacement"
+    },
+    {
+      "title": "Use Cases: Small Interactions vs. Complex SPAs",
+      "description": "This chapter recommends further resources for learning more about using Alpine.js alongside or instead of Vue.js, such as a recent talk by Matt Stauffer.",
+      "startTime": 321.0,
+      "endTime": 376.0,
+      "slug": "use-cases-small-interactions-vs-complex-spas"
+    },
+    {
+      "title": "A Personal Take on Full-Page Livewire",
+      "description": "This chapter shares a personal opinion that Livewire excels at small interactions, questioning the approach of building entire applications with full-page Livewire components.",
+      "startTime": 376.0,
+      "endTime": 423.0,
+      "slug": "a-personal-take-on-full-page-livewire"
+    },
+    {
+      "title": "Philosophy: Skate to Where the Puck Is Going",
+      "description": "This chapter introduces a philosophical take on adopting emerging technologies early to carve out a valuable niche in the market.",
+      "startTime": 423.0,
+      "endTime": 492.0,
+      "slug": "philosophy-skate-to-where-the-puck-is-going"
+    },
+    {
+      "title": "Resources for Learning Livewire & Alpine.js",
+      "description": "This chapter provides resources for beginners to learn Alpine.js and Livewire, including free videos and paid courses, and concludes a call to subscribe.",
+      "startTime": 492.0,
+      "endTime": 595.16,
+      "slug": "resources-for-learning-livewire-alpine-js"
+    }
+  ],
+  "summary": "## Job Market Snapshot\n\nA quick analysis of freelance job postings on Upwork reveals a significant gap between emerging and established technologies:\n\n*   **Livewire:** ~50 jobs\n*   **Alpine.js:** ~35 jobs\n*   **Vue.js:** ~1,900 jobs\n*   **React:** ~7,000 jobs\n\n> [!NOTE]\n> Livewire jobs are often not listed separately but are included as an expected skill within a general **Laravel** developer role, which can skew the numbers.\n\n## Production Viability\n\nDespite lower job posting numbers, community testimonials confirm that both **Livewire** and **Alpine.js** are stable and successfully used in production for large-scale, high-traffic applications in sectors like insurance and healthcare.\n\n## Core Concepts & Use Cases\n\n*   **Livewire**:\n    *   It is a **Laravel-exclusive** package, designed to enhance Laravel applications, not to compete directly with standalone frameworks like **Vue.js** or **React**.\n    *   Its primary strength is adding **dynamic interactions** to server-rendered pages with minimal JavaScript know-how.\n    *   While building full-page components is technically possible, it can introduce new challenges and may not be the ideal approach.\n\n*   **Alpine.js**:\n    *   It is widely seen as a lightweight, modern successor to **jQuery**.\n    *   It is perfect for adding small, declarative snippets of dynamic behavior to a page without the overhead of a full framework.\n\n## The Business Perspective\n\n*   **Challenges**: Clients may be hesitant to invest in a newer, less-established technology compared to industry-proven frameworks like React or Vue.\n*   **Opportunities**: For smaller projects, hiring a single **full-stack Laravel developer** who knows Livewire can be more cost-effective than hiring separate backend and frontend developers.\n\n## A Philosophical Takeaway\n\n> [!TIP]\n> **Skate to where the puck is going.** The video advocates for adopting promising technologies before they become mainstream. By mastering a niche toolset like the TALL stack, developers and agencies can build a specialized, profitable market for themselves even if the technology isn't globally dominant.",
+  "transcription": "## The Future of Livewire and Alpine.js\n\nHello guys. Today I want to get a bit philosophical and discuss the job market situation between Livewire and Alpine and TALL stack basically. And on the other side you have SPAs with Vue.js, React, or other front-end frameworks. And it's all based on one comment, and I've tweeted that comment. And this video is brought to you by the replies on those comments. There are around 50 replies and I will discuss them, kind of grouped into some topics. So one of you, Tim, replied on my latest video about Livewire that they don't have much future, or do they? Let's discuss.\n\n## Job Market Analysis on Upwork\n\nFirst, as a test of job market, I really like to use Upwork for freelancers to search for some technology and see how many jobs are on the market. So for example, if we search for Livewire in all Upwork, we see how many jobs? 50 jobs, which is not that many. If we go for Alpine, there are even less, 35 jobs. In comparison, so you would understand what are the numbers of Upwork, you can go Vue and see 1900 jobs. In comparison, React, of course, it's not a strict and fair comparison, but 7,000. So I mean Livewire and Alpines are in like dozens and other technologies are in thousands. Or Laravel probably will be also thousands. Yep, 2,000 jobs. So imagine the small pie of Livewire and Alpine even mentioned on Upwork. But of course, that's only one part of the story.\n\n## Production Readiness and Real-World Use\n\nNow let's look at some replies which answer the question: are Livewire and Alpine stable at all to use in production? And Luke Downing said that we build applications for some of the largest insurance companies. 16 likes basically is a proof of that message. Also Ronnie added hospitals and pharmacies. And in another tweet, Scott added that Livewire and Alpine can be used with very heavy daily traffic. So they are good as technologies, ready for production.\n\n## Livewire as a Niche Laravel Technology\n\nNext, I want to mention a few tweets with one similar message that Livewire is kind of a subset of Laravel. It's a Laravel package. And DingoCat told that it's a Laravel package and it's not directly competing with React or Vue. And I kind of agree that Laravel developers go for Livewire to proceed with their Laravel career and to avoid React or Vue. In another tweet, Sebastian kind of agreed that Livewire works with Laravel only, so that's why it has smaller market than Vue and React. And in another tweet, Owen agreed that Livewire will stay niche because of the fact that it's Laravel locked. And we can tie it back to the Upwork results earlier that Livewire wouldn't be necessarily listed as a technology required because it's part of Laravel stack which assumes that any Laravel developer should learn Livewire to achieve some dynamic stuff on the page without Vue.js or React or any JavaScript framework.\n\n## The Business Case for the TALL Stack\n\nNext, I want to emphasize that choosing the stack is not only a technical decision but a business decision first. So what is better in the long run? And here Amitav Roy says that it's difficult to convince the client on such technology like Livewire because it's not like stable and proven on the market for a long time with a huge community like React or Vue. So it still seems like Livewire and Alpine is kind of like a hype which may pass and for the long term clients don't really trust it yet enough. But on the other hand, for smaller projects, here's Jihad Ismail saying that instead of hiring two devs—one for back and one for front—now these days you can hire one Laravel developer with Livewire so you can get cheaper results. And that's probably for smaller projects, I would assume. And also a third example of business decision by Placebo that Livewire can replace the SPAs that we had to build before the Livewire, which were complex, often unnecessary complex. And some of the same projects created in 2021 would use Livewire instead to achieve the result quicker.\n\n## Alpine.js: The Modern jQuery Replacement\n\nSo I've been talking about Livewire mostly until now. Let's talk about Alpine.js. And here's where we get back to the tweet of Sebastian: pretty sure that Alpine is going to replace jQuery. And I do agree with that. Alpine is kind of like a similar thing to achieve some dynamic elements on the page without loading jQuery. And Alpine is easier to use probably for modern development if you need only some JavaScript. In the old days, we used jQuery and people would use Alpine more and more, I agree with that. Also we get back to the comment of Owen and the second part of it is about Alpine, that it has more potential. But then he says about browsers, about bleeding edge browsers and if you want to dig deep into that topic there's a discussion between Ryan and Owen. And by the way, I like the tweets that have kind of sub-tweets, sub-discussions where two or more people get on to some sub-topic and discuss it. So you can read that, read the opinions of Ryan and Owen and maybe join the discussion. I will link by the way the original tweet with all the replies in the description of this video.\n\n## Use Cases: Small Interactions vs. Complex SPAs\n\nAnd finishing the topic about Alpine, Abrar Ahmad suggests to watch the talk of Matt Stauffer about Vue and Alpine. That talk is really recent from Alpine Day event, which was like a week or two ago. And here's the tweet of Matt Stauffer with link to the slides of that talk, and the talk itself also is available on video for free. Caleb Porzio, creator of Livewire and Alpine, announced that the Alpine Day talks are available so you can go to alpineday.com, watch, and one of the talks is 'From Vue to Alpine: How and Why'. And I will also link all of those in the description of this video. But if we had to summarize all of that about Alpine, Abrar did it for us in the tweet: Alpine and Livewire are good for little interactions, but Vue and full SPA are for complex projects and complex DOM manipulation, something like that.\n\n## A Personal Take on Full-Page Livewire\n\nAnd that kind of summarizes my own feeling about Livewire. I don't work that much with Alpine, but I do work with Livewire a lot and it's good for little interactions. I really, really agree with that. And I don't really understand or necessarily agree with people who create all the full-page Livewire applications. It is possible with full-page components, and even I have on my YouTube one code review, Livewire demo full-page components. So you can watch that and see how it is implemented in a real-life scenario. So it's technically possible, but it comes with its own challenges and I don't necessarily agree with that approach. For me, Livewire and Alpine are kind of includes to the main project, instead of being like the main stack, the main choice of technology.\n\n## Philosophy: Skate to Where the Puck Is Going\n\nAnd I want to summarize it all with the philosophical note. Great tweet by Frank van der Herten from Spatie, which were always, their company were always on the bleeding edge of technology. So they were always using latest PHP versions, latest technologies, latest stack. They were trying it out and recommending that to the community. So kind of summarizing their own philosophy is you need to skate where the puck is going. It's kind of like ice hockey terminology, but basically you need to adopt the technology before it becomes sexy. So you would be on the bleeding edge. If it works well for you, you should use it. So Livewire and Alpine are just examples of that. So now they are not popular or they are niche enough on the global job market. But if you become the best at those, you still have your own market and your own niche which is totally enough for one freelancer or one company. So even that bubble could be enough for you. But eventually a lot of people predict that Livewire and Alpine will get more adoption and will be more widely used. And Freek agrees with that.\n\n## Resources for Learning Livewire & Alpine.js\n\nAnd here's the section of this video where I should give you like something for further reading or further watching. So if you haven't worked with Alpine at all or haven't started, I have a few videos on this channel. So intro to Alpine in seven minutes, this is how much it takes to understand how that thing works. And generally Alpine is really easy to start using. It's not like a full framework like Vue or React where you need to go full course. Alpine.js is really easy to start, so I recommend to at least get familiar with it. And similar with Livewire, it's kind of like an add-on or addition to the framework. Livewire is not the framework itself, so it's easier to learn. And for that I can suggest a few courses that I've created myself on my laraveldaily.teachable.com. First, Practical Livewire from Scratch. So in a few hours or even less you would get familiar with how Livewire works. And also a few practical projects, one with Jetstream plus Livewire and another one is a heavy Livewire-based checklister, which was also as a series in YouTube with 29 videos. So you can take all three of those. The price is here, it's 29 plus VAT, or if you're planning to take more courses—I have 19 courses at the moment and creating more in 2021—you can go for yearly membership for 99 plus VAT, if you're from the European Union. You would get all the current courses and everything upcoming a year ahead. But if you are here for just daily Laravel tips, the channel name is Laravel Daily, so I will keep publishing daily videos and you should subscribe to that and join 64,000 subscribers and see you guys in other videos."
+}

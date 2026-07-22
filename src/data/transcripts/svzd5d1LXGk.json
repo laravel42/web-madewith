@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 3,
+  "videoId": "svzd5d1LXGk",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to properly install and configure the Unstructured library for LangChain to handle diverse document types. This comprehensive tutorial walks you through setting up your environment and installing all necessary dependencies, including PyTorch, Tesseract, Poppler, and Detectron2. Follow step-by-step instructions to enable your LangChain applications to load and process data from files like PDFs, images, .py, and .json, as well as fetch content directly from URLs, unlocking powerful data ingestion capabilities.",
+  "chapters": [
+    {
+      "title": "Introduction to Unstructured for LangChain",
+      "description": "Learn what Unstructured is used for in LangChain and get an overview of the document types it can process, including code, JSON, PDFs, and images.",
+      "startTime": 0.0,
+      "endTime": 39.0,
+      "slug": "introduction-to-unstructured-for-langchain"
+    },
+    {
+      "title": "Prerequisites and Installation Overview",
+      "description": "Review the essential prerequisites for the installation, including Miniconda, Git, PyTorch, Poppler, and Tesseract, and the external resources that will be used.",
+      "startTime": 39.0,
+      "endTime": 101.0,
+      "slug": "prerequisites-and-installation-overview"
+    },
+    {
+      "title": "Setting Up the Conda Environment",
+      "description": "Follow the steps to create and activate a new Conda virtual environment and upgrade essential tools like pip and setuptools.",
+      "startTime": 101.0,
+      "endTime": 164.0,
+      "slug": "setting-up-the-conda-environment"
+    },
+    {
+      "title": "Installing LangChain and OpenAI",
+      "description": "Perform the basic installations of the LangChain and OpenAI libraries within the new virtual environment.",
+      "startTime": 164.0,
+      "endTime": 188.0,
+      "slug": "installing-langchain-and-openai"
+    },
+    {
+      "title": "Installing Unstructured and PyTorch",
+      "description": "Install the core `unstructured[local-inference]` package, troubleshoot potential numpy errors, and install PyTorch for either CPU or GPU use.",
+      "startTime": 188.0,
+      "endTime": 258.0,
+      "slug": "installing-unstructured-and-pytorch"
+    },
+    {
+      "title": "Installing Detectron2 and Layout Parser",
+      "description": "Walk through the process of cloning and installing the Detectron2 library, followed by installing OpenCV, Layout Parser, and Python-Magic.",
+      "startTime": 258.0,
+      "endTime": 325.0,
+      "slug": "installing-detectron2-and-layout-parser"
+    },
+    {
+      "title": "Configuring Poppler for PDF Processing",
+      "description": "Learn how to download Poppler, place it in your project, and correctly configure the system's PATH environment variable to its location.",
+      "startTime": 325.0,
+      "endTime": 425.0,
+      "slug": "configuring-poppler-for-pdf-processing"
+    },
+    {
+      "title": "Installing Tesseract OCR",
+      "description": "Complete the installation of Tesseract OCR, add its path to the system environment variables, and install the corresponding Python library.",
+      "startTime": 425.0,
+      "endTime": 472.0,
+      "slug": "installing-tesseract-ocr"
+    },
+    {
+      "title": "Setting up NLTK Dependencies",
+      "description": "Execute the necessary Python commands to download required NLTK dependencies for Unstructured and restart your development environment.",
+      "startTime": 472.0,
+      "endTime": 506.0,
+      "slug": "setting-up-nltk-dependencies"
+    },
+    {
+      "title": "Demo: Loading .py and .json Files",
+      "description": "See a practical demonstration of using the `UnstructuredFileLoader` to successfully load and read content from Python and JSON files.",
+      "startTime": 506.0,
+      "endTime": 573.0,
+      "slug": "demo-loading-py-and-json-files"
+    },
+    {
+      "title": "Demo: Loading a PDF File",
+      "description": "Watch the process of loading a PDF document, with a note on the potential processing time when using a CPU.",
+      "startTime": 573.0,
+      "endTime": 604.0,
+      "slug": "demo-loading-a-pdf-file"
+    },
+    {
+      "title": "Demo: Extracting Text from an Image",
+      "description": "Discover how `unstructured` can perform Optical Character Recognition (OCR) to extract text directly from an image file.",
+      "startTime": 604.0,
+      "endTime": 632.0,
+      "slug": "demo-extracting-text-from-an-image"
+    },
+    {
+      "title": "Demo: Loading from URLs and Conclusion",
+      "description": "Learn to use the `UnstructuredURLLoader` to ingest content from websites and get a final summary of the installation process.",
+      "startTime": 632.0,
+      "endTime": 691.339,
+      "slug": "demo-loading-from-urls-and-conclusion"
+    }
+  ],
+  "summary": "## Core Goal\n\nTo properly install and configure the **Unstructured** library and its dependencies for **LangChain**, enabling the loading and processing of various document types including `.py`, `.json`, `.pdf`, image files, and URLs.\n\n## Installation Prerequisites\n\nA complete setup requires several external tools and libraries:\n\n- **Virtual Environment**: A tool like **Miniconda** or `venv` to isolate dependencies.\n- **Git**: For cloning repositories like Detectron2.\n- **PyTorch**: The deep learning framework needed for model-based extraction.\n- **Poppler**: A PDF rendering library, essential for processing `.pdf` files.\n- **Tesseract**: An Optical Character Recognition (OCR) engine for extracting text from images.\n- **7-Zip**: To unzip the Poppler binaries.\n\n## Step-by-Step Installation Process\n\n1.  **Environment Setup**: Create and activate a Conda environment with Python 3.10. Upgrade `pip` and `setuptools`.\n2.  **Core Libraries**: Install `langchain`, `openai`, and the main Unstructured package with `pip install unstructured[local-inference]`.\n3.  **PyTorch**: Install PyTorch from its official website. The command provided is for the CPU version; for faster processing, use a GPU-compatible version if available.\n4.  **Detectron2**: Clone the Detectron2 repository using Git, navigate into the directory, and run `pip install -e .`.\n5.  **Poppler**: Download and unzip Poppler into your project directory. Add the path to its `bin` folder to your system's `PATH` environment variable.\n6.  **Tesseract**: Download and run the Tesseract installer. Add its installation path to your system's `PATH` environment variable. Then, install its Python wrapper with `pip install pytesseract`.\n7.  **Additional Libraries**: Install `opencv-python`, `layoutparser`, and `python-magic`.\n8.  **NLTK Dependencies**: Run a Python script to download the `punkt` and `averaged_perceptron_tagger` packages from NLTK.\n\n> [!IMPORTANT]\n> For **Poppler** and **Tesseract** to work correctly, their executable paths **must** be added to your system's **PATH environment variable**. The application needs to be able to call them from the command line.\n\n## Key Components and Loaders\n\n- **`UnstructuredFileLoader`**: Used to load data from a wide variety of local files. The demo successfully loaded:\n  - A Python file (`.py`)\n  - A JSON file (`.json`)\n  - A research paper (`.pdf`)\n  - An infographic image (`.png`)\n\n- **`UnstructuredURLLoader`**: Used to fetch and parse content directly from web URLs.\n\n> [!NOTE]\n> Processing documents like PDFs and images is computationally intensive. The process can take several minutes when using a CPU. Installing a GPU-compatible version of PyTorch can significantly speed this up if you have a supported GPU.",
+  "transcription": "## Introduction to Unstructured for LangChain\n\nIn this video, we're going to be learning how to properly install Unstructured for LangChain so that we can deal with many document types. For example, loading of regular files like .py files, .txt files, or .json files. Also the problematic one, .pdf files. So we will be able to use PDF files at the end of this and also just image files. We'll be able to read the text out of images.\n\nAnd also URLs. You'll be able to read the text out of a URL. I'll be putting all the links that I'm showing you in the description. First of all, we need to read the manual for installing Unstructured from LangChain. There's some instructions, but they are not fully complete.\n\n## Prerequisites and Installation Overview\n\nI'm also using Miniconda for my virtual environment setup, but you can use anything you like. You're gonna have to install Git. You can install it by going to the link provided and go to downloads and select it for your system. We're going to be installing it for Windows. You need to install PyTorch. Just go to PyTorch, get started locally, and select your options, and you'll get the command for pip install it. Also, we're going to be, you should read the installation instructions which are at Unstructured as well, but I found this Medium article which was much easier for me to install the Detectron part of it, so I'll be using that.\n\nWe also need Poppler. We need to download it and then unzip it and place it in our working directory using 7-Zip. I'll put all these links in the description. We also need Tesseract. We'll just need to download it. Both for this Tesseract and for Poppler, we're going to have to place them in our path environment variable as well. I will be putting all these instructions in Patreon as a post for my Patreon supporters. But let's begin.\n\n## Setting Up the Conda Environment\n\nFirst, we need to create a Conda environment using this command. To use this command in Visual Studio Code, you're going to need to come here with this arrow and create a command prompt. And I have already actually created a virtual environment named `unstructure`. You can name it anything you like. So normally we just paste this here. This will create a new virtual environment named `unstructured` with the Python version which you specify, in this case we are using 3.10.\n\nNext is to activate the environment which you have created. So you would just copy this and paste it here. I have activated my environment, so we can see. So after that, we'll be in your virtual environment of name of your choosing, in this case, `unstructure`. It is best to upgrade your setup tools and upgrade pip. You just would have to copy these commands and paste them into your command prompt in Visual Studio Code or your standalone command prompt. This will upgrade your setup tools, and the next command will upgrade your pip install. If you get a permission error with pip upgrade, then use the exact same command with `--user` at the end of it.\n\n## Installing LangChain and OpenAI\n\nAfter that, we installed the regular LangChain and OpenAI. You would just paste it and run it. As you'll see, I already have requirements satisfied because I have already done this. You would have to do the same for pip install openai. And I put in the instructions here that please do read the LangChain documentation on unstructured file uploader and also the installation instructions at Unstructured.\n\n## Installing Unstructured and PyTorch\n\nAfter that, just go to the Git's website and then download it and install it. I have followed, it's a bit of a complex install, but I haven't changed anything in the default installation except pointing it to my Visual Studio Code IDE. Install `unstructured[local-inference]`. Again, this is the same as everything else. `pip install unstructured[local-inference]`. I have already done this, so I won't install it. If you end up getting for whatever reason an error related to numpy, then upgrade your numpy for Detectron.\n\nYou would do this with `pip install numpy --upgrade`. But I'm hoping that this won't be necessary for most people. After that, we pip install Cython and then `pip3 install torch torchvision torchaudio`. This is the instruction we have gotten from the Torch's website. Keep in mind that this will only install the Torch for CPU use, so it'll be slower. So if you want, if you have a good GPU and you want to use it, then you can actually install it with GPU support as well. You will just need the instruction to CUDA 11.6 or 11.7, and then you would use this command for GPU support.\n\n## Installing Detectron2 and Layout Parser\n\nNext, we'll be using the Medium article I mentioned for installing Detectron. I'm so glad I ran into this. It actually creates an environment, which we have already done, and the pip install Python comes from there. And after that, the instruction is to use Git to clone the Detectron repository into your working folder. Here we have done this right here, Detectron folder exists. After that, we type in `cd detectron` on our command prompt to get into that folder like this, and we will enter the Detectron folder.\n\nAfter that, you have to `pip install -e .` You have to include the dot in the end, don't forget that from the folder, which is Detectron2. After you've done this and you back away from that directory by doing `cd ..` and return to your working directory, instruction is here, and then you will install `pip install opencv-python`. After that, you pip install layoutparser, layoutmodels, and Tesseract. Then we continue with pip installing `python-magic` first, and then `pip install python-magic-bin` next.\n\n## Configuring Poppler for PDF Processing\n\nThen we go and download the 7-Zip from 7-zip.org. This is to unzip the file which we will be downloading from Poppler. The link is here, it will also be in the description. This is the download Poppler for Windows. After you download Poppler, unzip it and place it into your working directory, just like this. Here we have done it in the Visual Studio Code. And then you have to take note of where the bin directory is. You can copy that, just like right clicking and copy path. You just have to get the path in your hard drive to this directory and then you would have to add it into your environment variable path.\n\nTo add the Poppler's bin directory path to your environment path variable, you have to go to Windows, search for environment, and select the Edit the system environment variables. I'm just using the text manager so it'll block my OpenAI keys and whatnot. Anyway, once you're here, click the Environment Variables, and this window pops out. And down here you would have to go to Path and then click Edit. And from here you would have to add a new one and just paste the path right here, and then by clicking OK, just get out of it. I have done this right here. The second line is for Poppler. So this is the path we're talking about. It directs to the Poppler's bin directory. \n\nVS Code by right-clicking, copying the path, and if you do that, as you can see, it'll give you the path, and this is what you'll have to put in that path environment variable.\n\n## Installing Tesseract OCR\n\nAfter that, you'd have to go to Tesseract's GitHub. Tesseract is a Windows installer. Just download it and install it. There are instructions probably for other operating systems too. I have downloaded the 64-bit and installed it. While you're installing, make sure the path which you are installing Tesseract to, because you're going to have to put this into your environment path variable as well, just like we have done for Poppler. After it is installed and after you have it in your path, then just simply `pip install pytesseract` like this.\n\nSo this is pretty much it. This should cover for what we were looking for. Anyway, I have skipped LibreOffice, libxml, and libxslt. LibreOffice is for Word documents and stuff like that. I will put these links in the description if you want to look into it just as I have if you want of document support.\n\n## Setting up NLTK Dependencies\n\nBut last thing which you must not forget is to actually execute this code which is to install NLTK dependencies for Unstructured. You have to run this command. It will download the `punkt` and then you have to import NLTK and then `averaged_perceptron_tagger`. After which time, we should restart your VS Code and make sure your Unstructured environment is active in VS Code by checking Python interpreter by clicking Ctrl+Shift+P.\n\n## Demo: Loading .py and .json Files\n\nSo if you press, after you've done all this, now you can actually just start loading the documents of your choice. You just have to import the `UnstructuredFileLoader`, which I'm using in this case, and we're also going to be using the `UnstructuredURLLoader`. I've selected some files. Here's a Python file called `test_bash` from LangChain, a JSON file, it's a Wikipedia article about physics and start bash is just a unit test. And then a PDF of the Language Models are Few-shot Learners paper, which inspired the retention-based large language models. And also an image. We're going to be also using this image.\n\nSo let's just demo this real quick. First, we're loading `test.bash` and then assigning it to a loader using `UnstructuredFileLoader`. After that we're assigning docs to `loader.load()`, which we have defined right here, and then we're just printing the document up to 100 characters. Let's just turn 200, and then we just run it. As you see when you run this, you get the first 200 characters from this .py file right here, which means that we were able to successfully load the document. Next let's take a look at the JSON file and then save the file and run it. And we were able to load this document successfully as well.\n\n## Demo: Loading a PDF File\n\nNext, let's try the PDF. Save the file and run it. Doing this with PDF, especially if you're using the CPU version of Torch, takes a while. It can take a couple of minutes for long files because it's using a lot of image recognition and also object character recognition (OCR). So I'm just going to have to wait. I'm assuming the GPU version would be much faster with the GPU version of PyTorch installed. Typically a minute or two, but it was able to load the paper and print the first 200 characters. So loading PDF is successful as well.\n\n## Demo: Extracting Text from an Image\n\nLet's try an image. So he's just going to be reading the text out of this image. Just give the name of the file because it's in our working directory. Let's just run this. Now here we go. This is very cool. We were able to read file image file: \"Infographics to use striking engaging visuals, communicate information quickly and clearly.\" And if you look right here, make sure that's what it says right up here. This is pretty awesome.\n\n## Demo: Loading from URLs and Conclusion\n\nAnd finally, let's comment this file loader out and uncomment our URL loader. I've just put in two URLs from the LangChain documentation. So if you save this and run it, we'll be able to get the text out of these two documents and load it for use in LangChain. And as you see, we have done just that. This is pretty quick.\n\nSo this is awesome. So this really covers most of the documents that you probably need to deal with. If you need to deal with Office, Microsoft Office documents, you need to look into installing LibreOffice. But other than that, this should be pretty cool. I'll put these instructions for my Patreon supporters to Patreon, but feel free to install everything from the video. All the instructions are here. Please join the EchoHive server, I'll put that in the description as well. All the links necessary will be in the description. Please let me know what you think in the comments. I'll see you in the next video. I hope this is helpful."
+}

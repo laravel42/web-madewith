@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 3,
+  "videoId": "90hAvj0A8C8",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Explore a comprehensive 2024 roadmap for mastering Spring Boot and microservices, designed for developers with a foundation in Java. This guide covers essential topics from the ground up, including Spring Boot fundamentals, dependency injection, REST APIs, security, and caching. Progress to advanced concepts like interceptors, scheduling, and unit testing with Mockito.",
+  "chapters": [
+    {
+      "title": "Introduction and Prerequisites",
+      "description": "The video opens with an overview of the upcoming Spring Boot and Microservices playlist and states that Java knowledge is a prerequisite.",
+      "startTime": 0.0,
+      "endTime": 61.0,
+      "slug": "introduction-and-prerequisites"
+    },
+    {
+      "title": "Spring Boot Fundamentals & Build Tools",
+      "description": "This chapter covers why Spring Boot is required, how to set up a basic project, its layered architecture, and the importance of build tools like Maven or Gradle.",
+      "startTime": 61.0,
+      "endTime": 113.0,
+      "slug": "spring-boot-fundamentals-build-tools"
+    },
+    {
+      "title": "Essential Spring Boot Annotations",
+      "description": "Learn about the most common and frequently used annotations in day-to-day Spring Boot development, based on professional experience.",
+      "startTime": 113.0,
+      "endTime": 145.0,
+      "slug": "essential-spring-boot-annotations"
+    },
+    {
+      "title": "Core Features: Data, APIs, Security, and Caching",
+      "description": "This section details key functionalities including dependency injection, database access, creating REST APIs, security, logging, exception handling, and implementing caching.",
+      "startTime": 145.0,
+      "endTime": 212.0,
+      "slug": "core-features-data-apis-security-and-caching"
+    },
+    {
+      "title": "Advanced Topics: Interceptors, Scheduling, and Testing",
+      "description": "Explore more advanced topics such as using interceptors for pre- and post-processing, scheduling tasks, and writing unit tests with Mockito.",
+      "startTime": 212.0,
+      "endTime": 262.0,
+      "slug": "advanced-topics-interceptors-scheduling-and-testing"
+    },
+    {
+      "title": "Microservices: Introduction & Service Discovery with Eureka",
+      "description": "This chapter introduces the microservices section of the roadmap, explaining the core concept and how to use Eureka for service registration and discovery.",
+      "startTime": 262.0,
+      "endTime": 330.0,
+      "slug": "microservices-introduction-service-discovery-with-eureka"
+    },
+    {
+      "title": "Distributed Tracing with Sleuth and Zipkin",
+      "description": "Learn how to trace requests across multiple microservices by using Sleuth to attach trace IDs and Zipkin to visualize the request flow.",
+      "startTime": 330.0,
+      "endTime": 400.0,
+      "slug": "distributed-tracing-with-sleuth-and-zipkin"
+    },
+    {
+      "title": "Configuration Management: Profiles and Cloud Config",
+      "description": "This section explains how to manage environment-specific settings with Spring Profiles and how to use Spring Cloud Config Server for centralized configuration.",
+      "startTime": 400.0,
+      "endTime": 484.0,
+      "slug": "configuration-management-profiles-and-cloud-config"
+    },
+    {
+      "title": "Microservice Communication Patterns",
+      "description": "Explore patterns for inter-service communication, including synchronous and asynchronous methods with Kafka, API gateways, fault tolerance with circuit breakers, and CQRS.",
+      "startTime": 484.0,
+      "endTime": 577.0,
+      "slug": "microservice-communication-patterns"
+    },
+    {
+      "title": "Deployment with Docker and Project Overview",
+      "description": "Learn about the final steps of the development lifecycle, including creating an executable JAR and deploying the application to a Docker container.",
+      "startTime": 577.0,
+      "endTime": 613.0,
+      "slug": "deployment-with-docker-and-project-overview"
+    },
+    {
+      "title": "Conclusion and Roadmap Flexibility",
+      "description": "The video concludes with a recap, emphasizing that this roadmap is a flexible starting point and invites viewers to provide feedback annd suggestions.",
+      "startTime": 613.0,
+      "endTime": 661.24,
+      "slug": "conclusion-and-roadmap-flexibility"
+    }
+  ],
+  "summary": "## Spring Boot 2024 Roadmap\n\nThis document outlines a comprehensive learning path for Spring Boot, from foundational concepts to building advanced microservice architectures.\n\n> [!IMPORTANT]\n> **Prerequisite**: A solid understanding of **Java** is essential before starting this roadmap.\n\n## Core Spring Boot Concepts\n\nThis section covers the essential features needed to build standalone Spring applications.\n\n- **Fundamentals**: Understanding why Spring Boot exists, its main features, and the standard layered architecture.\n- **Build Tools**: Using **Maven** (`pom.xml`) or **Gradle** to manage project dependencies.\n- **Annotations**: Mastering the most common annotations used in daily development.\n- **Dependency Injection & Beans**: Understanding the core principle of Inversion of Control (IoC).\n- **Data Access**: Connecting the application to a database.\n- **REST APIs**: Building and exposing RESTful web services.\n- **Security**: Implementing authentication and authorization.\n- **Logging & Exception Handling**: Essential for debugging and creating robust applications.\n- **Caching**: Improving performance using caching strategies like `@EnableCaching`.\n- **Advanced Topics**: Implementing **Interceptors** (for pre/post request handling), **Scheduling** tasks, and **Unit Testing** with Mockito.\n\n## Microservices with Spring Boot\n\nThis section focuses on using Spring Boot to build distributed systems based on microservice patterns.\n\n### Architectural Components & Patterns\n\n- **Service Discovery**: Using **Eureka** to allow services to register themselves and discover others dynamically.\n- **Distributed Tracing**: Tracking a request across multiple services.\n    - > [!TIP]\n    > **Sleuth** attaches a unique trace ID to requests, and **Zipkin** provides a UI to visualize these traces for debugging.\n- **Configuration Management**:\n    - **Spring Profiles**: Managing environment-specific properties (e.g., QA, Production, Sandbox).\n    - **Spring Cloud Config Server**: A centralized server to manage configuration properties for all microservices.\n- **Inter-Service Communication**: Methods for services to talk to each other, including synchronous APIs and asynchronous messaging with tools like **Kafka**.\n- **API Gateway**: A single, unified entry point for all external client requests, routing them to the appropriate internal microservice.\n- **Circuit Breaker**: A fault-tolerance pattern that prevents an application from repeatedly trying to execute an operation that is likely to fail, preventing cascading failures.\n- **CQRS (Command Query Responsibility Segregation)**: A pattern that separates read and write operations into different models, which can improve performance, scalability, and security.\n\n## Deployment & Final Project\n\n- **Containerization**: The roadmap covers creating an **executable JAR** from the application and deploying it using **Docker containers**.\n- **Final Project**: The series will culminate in building a hands-on project (e.g., a coupon service) to apply all the concepts learned.",
+  "transcription": "## Introduction and Prerequisites\n\nHey guys, welcome to Concept and Coding, and this is Shaan. And today I'm going to share the roadmap of Spring Boot with you guys. And these are all the topics which I have come up with based on my experience, and I have covered microservices also in that, right? Spring Boot microservices using Spring Boot. They are a lot of topics and yeah, we will go through one by one. But yes, after LLD, HLD, and Java, this is the next playlist I'm going to work on.\n\nOkay, so one thing before I tell you the topics which I'm planning to cover, the prerequisite is Java. Like Spring Boot, as you know, it's a kind of a Java framework. Like if you don't know Java, then I would say that first go through the Java playlist and then come back to this topics.\n\n## Spring Boot Fundamentals & Build Tools\n\nOkay, so first is Introduction to Spring Boot. Like in this part where I would be telling like why the Spring Boot is required, what problem it solves, what are its features, advantages. So at least we will get an introductory like, okay, we are going to use Spring, but why? What problem it does solve? Then we will set up a basic Spring Boot project, and I will also try to cover the layered architecture of Spring Boot.\n\nAfter that, I have put like understanding of Maven pom.xml or Gradle, right? Because this is very much we are going, a lot of dependencies we are going to add. If you don't know either Gradle or Maven, then I think it's better I will pick either Maven or Gradle, and at least I'll cover the structure of XML file once, Maven pom.xml.\n\n## Essential Spring Boot Annotations\n\nThen Spring Boot annotations. So these are most of the annotations which we use day-to-day. And based on my 8 to 9 years of experience in total, Spring Boot, Java, Spring Boot, these are the most common annotations which we use, right? There can be others also, that's why I put an asterisk, right? So we will start with this. If any other important annotation is left, we will also add it.\n\n## Core Features: Data, APIs, Security, and Caching\n\nThen we will understand about the dependency injections and beans. We will also cover the Spring Boot data access, like where it connects to the database, right? So we will also cover this part. We will create a REST APIs with a Spring Boot, right? We will also cover the Spring Boot security, authentication and authorization. So I have kept this part.\n\nThen logging part I have kept, like during when we create a project, we have to do a lot of loggings, right? So Spring Boot also provide that functionality, so how to use it. So that's one of the topic. Exception handling. We have already seen exception handling in Java, right? So how in Spring Boot we do it, that's also one of the good topic to cover. Spring Boot caching, another very important. Like `@EnableCaching`, there are certain annotations with this, right? So you will find `@EnableCaching`. So there are certain very important topics, right? This is also an important topic which we will cover.\n\n## Advanced Topics: Interceptors, Scheduling, and Testing\n\nInterceptor. We use a lot, many companies use a lot, Interceptor, right? So generally Interceptor is like pre-work. Whatever the task you want to perform and if you want certain pre-work and post-work after that task, then Interceptor comes into the picture. Spring Boot provides a way to add the Interceptor. A Spring Boot scheduling, if you want to schedule a particular task, how to do that? We have, we can do that easily using a Spring Boot. So I think I can tell you scheduling much more in depth because I have created a very good project into the scheduling part.\n\nThen Spring Boot unit testing. So I have picked Mockito, so we will cover with the Mockito, Spring Boot unit testing.\n\n## Microservices: Introduction & Service Discovery with Eureka\n\nNow, microservices topics with Spring Boot. In your company you might be using this or maybe some internal tools but the concept would be same. Okay, so what I'm planning to cover which is which I think is important is: first thing is Introduction to microservices. So one should understand what is microservices, right? So we will discuss about microservices.\n\nSecond part, Service Discovery using Eureka. So what is this Eureka microservice registering? So this is a very important part, you know, right? Each microservices, there can be multiple instances, right? And let's say, let's say this is microservices one, there are 100 instances, and this is your application. This is your application, you want to connect to this microservice. Now which instance to connect? Right? That is what helps a Service Discovery using Eureka. So each microservice registering happens. Very important piece we will cover.\n\n## Distributed Tracing with Sleuth and Zipkin\n\nAnother is tracing. So what generally happen is you have microservices one, microservices two, microservices three, and then say request comes here, then it goes here, then it goes here. So let's say there are so many microservices and request goes through multiple microservices. So what does happen is that we have to trace but let's say if any issue comes here, so right, so how to trace this request? So that's where this Sleuth and Zipkin helps.\n\nSo what does happen, it, the Sleuth will attach the trace ID with the request. So it will provide certain trace ID 1, 2, 3, 4, 5 something, right? So wherever the microservice goes, wherever the logging they will do, the logging, it will go against this trace ID. And Zipkin would provide you, help you to visualize the microservices level logging using this trace ID. So it's again a very important part, but just wanted to tell you what this tracing the request means, what we have written here.\n\n## Configuration Management: Profiles and Cloud Config\n\nThen another is a Spring Boot profile. So what generally happen is, you might be working, right? So you want different properties of QA, production, sandbox, right? So that's called profiling. We have different QA environment, production environment, sandbox environment. So and sometime in the code also, you have to say that okay, if it is a QA environment, do this. So that is known as Spring Boot profiles. So we will see that also.\n\nSpring Cloud Config Server, so it's a configuration management. So what generally happen is, let's say you have three microservices: microservices one, microservices two, microservices three. Each microservices has their application.properties, application.properties, application.properties. So here it can store the config for this microservice, it can store a config for this. But what Cloud Config says is that we can have one component where we can have a config, but that is common for all the microservices. That's why it is known as centralized config server also. But yeah, this is also something sometimes is required so that's why I've kept it here under the microservices part.\n\n## Microservice Communication Patterns\n\nCommunication between different microservices, sync and async, where I have put the messaging services. So how to set up a Kafka and using a Spring Boot. So that's where we will, like if two microservices have to communicate with each other, how they can do.\n\nAPI gateways, right? So we will write REST APIs, right? So API Gateway you can say that the centralized server where all the request comes and from there it will goes to a different microservices, right?\n\nCircuit breaker, again important. Let's say that you have microservices one, you are connected to microservices two. Let's say if this microservices two is down and you keep on calling, calling, calling, right? So sometimes your requirement is that okay, if this is down, then handle this. Okay? So that is can be done through circuit breaker. So circuit breaker can be open, circuit breaker can be, a circuit breaker can be closed, right? If it is closed, it goes to a fallback model. Okay, so this is also important. All companies I can tell you this is using, right?\n\nCQRS, again, an important and Spring Boot helps to implement this: Command Query Responsibility Segregation, where the write queries and the read queries can be different. Right? So very important part.\n\n## Deployment with Docker and Project Overview\n\nAnd the last which I have kept is the deployment and containerization. Right? Whatever the project we're going to build, how to create an executable JAR out of it, how to deploy it to a Docker container. So that will be under your microservices topics which I can think of.\n\nAnd finally we will build a project, any small project. But currently in my top of head, the project which I'm thinking would be something related to coupons, but maybe let's see that. But first we understand this topics and then we'll create a project of it.\n\n## Conclusion and Roadmap Flexibility\n\nOkay, so this is all the topics which I have written and just, this is just a heads-up that these are the initial topics which I have come up with based on my experience. So I might update this list as and when required. Uh, if I missed anything, I will add it. And if I see that if something is duplicate or not required, I might update it. So this is the Spring Boot uh, covering from totally basics and also a lot of advanced topics are also there in that. If you think that if I have missed anything, please ping me in the comment section and I will see that if I can add it into what sequence and if it is really important. Thank you. Thank you team. Bye."
+}

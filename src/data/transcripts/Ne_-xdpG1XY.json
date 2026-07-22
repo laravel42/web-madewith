@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 3,
+  "videoId": "Ne_-xdpG1XY",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Explore the journey of building a dream web application using Rust as the sole programming language. This in-depth analysis covers the architecture of a progressive web app (PWA) that relies heavily on language model inference, hosted on AWS ECS. Learn about crucial technology decisions, including a migration from AWS DynamoDB to CockroachDB and the switch from AWS Bedrock to HuggingFace inference providers. Discover key lessons about the viability of Rust and Leptos, the surprising limits of small language models, and the future of self-hosting.",
+  "chapters": [
+    {
+      "title": "Introduction: My Dream Web App in Rust",
+      "description": "This chapter introduces a progressive web app built entirely in Rust that leverages language model inference and outlines the five main lessons learned during its development.",
+      "startTime": 0.0,
+      "endTime": 62.0,
+      "slug": "introduction-my-dream-web-app-in-rust"
+    },
+    {
+      "title": "Application Architecture on AWS",
+      "description": "This section details the application's hosting and architecture using AWS services like ECS, ALB, SQS, and Redis for real-time updates with WebSockets.",
+      "startTime": 62.0,
+      "endTime": 127.0,
+      "slug": "application-architecture-on-aws"
+    },
+    {
+      "title": "Database Regret: DynamoDB to CockroachDB",
+      "description": "The video discusses the major mistake of starting with DynamoDB and explains the decision to migrate to CockroachDB for its necessary SQL capabilities.",
+      "startTime": 127.0,
+      "endTime": 164.0,
+      "slug": "database-regret-dynamodb-to-cockroachdb"
+    },
+    {
+      "title": "Why Not AWS SQL? Exploring CockroachDB",
+      "description": "Here, the choice of CockroachDB is justified over AWS SQL offerings like Aurora and RDS due to its automatic data sharding capabilities.",
+      "startTime": 164.0,
+      "endTime": 202.0,
+      "slug": "why-not-aws-sql-exploring-cockroachdb"
+    },
+    {
+      "title": "Choosing an LLM Provider: Bedrock vs. HuggingFace",
+      "description": "This chapter covers the decision to abandon AWS Bedrock in favor of HuggingFace Inference Providers for better model support, pricing, and flexibility.",
+      "startTime": 202.0,
+      "endTime": 254.0,
+      "slug": "choosing-an-llm-provider-bedrock-vs-huggingface"
+    },
+    {
+      "title": "Mistake: Underestimating LLM Size and Self-Hosting",
+      "description": "This section explains the critical mistake of assuming small language models would be sufficient and why self-hosting became impractical.",
+      "startTime": 254.0,
+      "endTime": 298.0,
+      "slug": "mistake-underestimating-llm-size-and-self-hosting"
+    },
+    {
+      "title": "The Power of Inference Providers and Async Rust",
+      "description": "Here, the benefits of using third-party inference providers for parallel processing are highlighted, along with a note on the effectiveness of Async Rust.",
+      "startTime": 298.0,
+      "endTime": 323.0,
+      "slug": "the-power-of-inference-providers-and-async-rust"
+    },
+    {
+      "title": "Regret: Building a Custom Rich Text Editor",
+      "description": "The author talks about the failed attempt to build a custom rich text editor and the decision to revert to using a JavaScript library, Tiptap.",
+      "startTime": 323.0,
+      "endTime": 384.0,
+      "slug": "regret-building-a-custom-rich-text-editor"
+    },
+    {
+      "title": "Lesson 1: The Current Limits of AI-Assisted Coding",
+      "description": "The first lesson explores how AI tools are powerful for specific tasks like code migration but still lack the ability to maintain context in large codebases.",
+      "startTime": 384.0,
+      "endTime": 431.0,
+      "slug": "lesson-1-the-current-limits-of-ai-assisted-coding"
+    },
+    {
+      "title": "Lesson 2: Is Self-Hosting LLMs a Viable Future?",
+      "description": "This chapter questions the long-term viability of self-hosting language models due to the rise of custom inference chips from specialized providers.",
+      "startTime": 431.0,
+      "endTime": 467.0,
+      "slug": "lesson-2-is-self-hosting-llms-a-viable-future"
+    },
+    {
+      "title": "Lesson 3: Small vs. Large Language Models",
+      "description": "The third lesson reiterates that small language models, while good at answering questions, fail at complex instruction-following and agentic tasks.",
+      "startTime": 467.0,
+      "endTime": 483.0,
+      "slug": "lesson-3-small-vs-large-language-models"
+    },
+    {
+      "title": "Lesson 4: Is Rust + Leptos a Viable Web Stack?",
+      "description": "The fourth lesson confirms that Rust and the Leptos framework are a great choice for web development, especially for those already familiar with Rust.",
+      "startTime": 483.0,
+      "endTime": 523.0,
+      "slug": "lesson-4-is-rust-leptos-a-viable-web-stack"
+    },
+    {
+      "title": "Lesson 5: Avoid Shiny Objects, Stick to the Vision",
+      "description": "The final lesson warns against getting sidetracked by exciting new features, emphasizing the importance of first achieving the project's original vision.",
+      "startTime": 523.0,
+      "endTime": 576.0,
+      "slug": "lesson-5-avoid-shiny-objects-stick-to-the-vision"
+    },
+    {
+      "title": "Conclusion and Beta Testing",
+      "description": "The video concludes with information about the project's beta status and invites interested viewers to join a newsletter and Discord for more details.",
+      "startTime": 576.0,
+      "endTime": 615.0,
+      "slug": "conclusion-and-beta-testing"
+    }
+  ],
+  "summary": "## Project Overview\n\nThe project is a **Progressive Web App (PWA)** built entirely with **Rust** and the **Leptos** framework. It is designed to be installable on mobile devices and relies heavily on **language model inference** for its core functionality. \n\nThe application consists of two main components:\n*   A **web application** for user interaction.\n*   **Worker nodes** that process background tasks from a queue.\n\nThe system proactively runs inference on user data and uses **WebSockets** and **Redis** messaging to update the UI in real-time.\n\n## Technology Stack & Architecture\n- **Compute**: AWS ECS for hosting the web app and worker nodes.\n- **Load Balancing**: AWS ALB distributes traffic to the web app containers.\n- **Queuing**: AWS SQS manages the message queue for worker nodes.\n- **Real-time Messaging**: Redis (via AWS ElastiCache) for pub/sub between services.\n- **Database**: CockroachDB for its SQL capabilities and automatic sharding.\n- **LLM Inference**: HuggingFace Inference Providers for access to a marketplace of models and providers.\n\n> [!IMPORTANT]\n> A major architectural pivot was migrating from **DynamoDB** to **CockroachDB**. DynamoDB's schema constraints and inflexible querying proved unsuitable for the application's needs, establishing it as a pure SQL-database project.\n\n## Key Decisions and Regrets\n\n1.  **Self-Hosting Small LLMs**: The initial assumption that small models (e.g., Llama 3.1 8B) would be sufficient was incorrect. They fail at complex instruction-following and agentic tasks, making them unsuitable. This led to abandoning self-hosting in favor of third-party providers.\n\n2.  **Abandoning AWS Bedrock**: AWS Bedrock was dropped due to non-competitive pricing and poor support for tool use in its models. **HuggingFace Inference Providers** was chosen for its flexibility and wide selection of models.\n\n3.  **Building a Custom Text Editor**: Attempting to build a bespoke, Markdown-based rich text editor was a significant time sink. The project reverted to using the JavaScript library **TipTap**, acknowledging that leveraging existing, robust solutions is often more practical.\n\n## Five Core Lessons Learned\n\n1.  **AI-Assisted Coding has Limits**: While excellent for specific, well-defined tasks like migrations (e.g., DynamoDB to CockroachDB) and Q&A, AI tools cannot yet replace human developers due to their inability to maintain context across large codebases.\n\n2.  **The Future of Self-Hosting is Uncertain**: Specialized inference providers (e.g., Cerebras, Grok) are creating custom chips that dramatically outperform general-purpose GPUs. This may make self-hosting LLMs economically and technically non-viable in the future.\n\n3.  **Small LLMs are Deceptively Simple**: Their performance on simple Q&A tasks masks their inability to handle complex instructions and agentic workflows, which are often required for advanced applications.\n\n4.  **Rust + Leptos is a Viable Web Stack**: For developers already proficient in Rust or those without tight deadlines, Rust and Leptos are a powerful combination for building web applications. The main critique is the verbosity of the Leptos `view!` macro.\n\n5.  **Stick to the Vision**: Avoid the \"shiny object syndrome.\" Getting sidetracked by exciting but unplanned features can waste significant time and may lead to a worse user experience. Complete the core product vision first.",
+  "transcription": "## Introduction: My Dream Web App in Rust\n\nI built my dream web app using Rust as the only programming language and I'm going to talk about whether I regret that decision, whether you should build your next web app using the same stack. I'm going to talk about some decisions I made during the project that I wound up regretting and took a 180 on. And I'm going to talk about five main lessons that I learned from this project. \n\nNow, this app is a progressive web app, which means it's usable in the web browser and it's also installable on mobile devices like on iOS. It relies heavily on language model inference. And by language model inference, I mean we're giving some text to a language model and we're getting a result back. One of the basic premises of the app is the user changes their data in some way and then we'll proactively go off and do some inference on their data and save it to a database in case the user wants to look at it later.\n\nSo this application has two main components. One is the web application which is what users are interacting with when they use the application through the browser or on their mobile device. The other is like a worker node and that actually pulls messages off of a queue, does some computation and then writes the result to the database. Those are the two main components.\n\n## Application Architecture on AWS\n\nI use AWS ECS elastic container service to host both those worker nodes and the web application. In the case of the web application, those ECS containers are behind an ALB, an application load balancer. The ALB actually accepts the user traffic and distributes it equally across all the web app nodes. I use AWS SQS to manage the queue that the worker nodes pull from. So the web app based on something that the user does. It'll push a message to the queue. The worker nodes will pull that off the queue, do the work, and then write it to the database. \n\nThe application makes heavy use of websockets. So we have these long running potentially long-running computations. If the user's on a page in the web application where the result of that computation is relevant, we'd want to let the the web application know the computation's done as soon as possible, updating the page basically proactively instead of having to have the client pull. We use websockets for that between the web app and the user's browser. To notify the web app that a computation's done, we use Redis messaging. AWS ElastiCache has a Redis compatible API. So in the cloud, I actually use ElastiCache for that same purpose.\n\n## Database Regret: DynamoDB to CockroachDB\n\nNow the things that I went outside AWS for database. I was a huge fan of AWS DynamoDB. I actually started the project with DynamoDB. It did not make sense for this project. DynamoDB was never going to work. I don't know why I thought it would. That is one of the biggest mistakes I made for this project. DynamoDB has far too many constraints on what you can do with your schema and how flexible querying is. It just doesn't work for this project. This this project is a SQL database project through and through. And unfortunately I waited a little bit too long to realize that but I did eventually and so I migrated from DynamoDB to Cockroach DB.\n\n## Why Not AWS SQL? Exploring CockroachDB\n\nAWS does have SQL offerings. They do have AWS Aurora as RDS. Uh there's a new one called AWS DSQL which is more similar to Cockroach DB. Their existing offerings Aurora and RDS they don't automatically shard your data like DynamoDB does. Right? So if your data becomes larger than a single node can handle, it does not automatically distribute that data equally across x number of nodes. DSQL I think is going to be able to do that. It's more like Cockroach DB in that sense. At the time I was looking into it, it was still in preview and it did not have feature parity with something like Cockroach or Yugabyte or any of these other competitors. So I went with Cockroach DB and I've been very happy with it so far.\n\n## Choosing an LLM Provider: Bedrock vs. HuggingFace\n\nThe other AWS service that I tried to use was AWS Bedrock and I was not happy with it. A lot of the models don't have good support for tool use. The prices are not competitive. Yeah, I was not a fan of Bedrock. I ditched it pretty quickly and I went to HuggingFace inference providers which is a very new product. You probably heard of HuggingFace. They are the central repository for open language models already a well-known name. \n\nYou can choose from basically a marketplace of inference providers without making any code changes. I can switch between different inference providers like Grok, Cerebras, Samba, Nova, Novita, Hyperbolic, Together AI, Fireworks AI, all these providers are on there, which is amazing. And so you can switch to whatever one best suits your use case or whichever one has the best pricing, so on and so forth. Hugging face inference providers is shaping up to be a great product. I'm very happy with it so far.\n\n## Mistake: Underestimating LLM Size and Self-Hosting\n\nOne of my biggest mistakes, I went into this thinking that I was going to self-host the language models. And the reason I thought I was going to self-host the language models is because I thought the small language models like the 8 billion parameter Llama 3.1 8 billion parameter language model was going to be sufficient for my application's use case and it was not even close. \n\nIf you compare language models by asking them a question. So you have Llama 3.1 AP over here you have DeepSeek R1 over here. If you ask them trivia questions like how far is the moon from the Earth? Their answers are going to be roughly similar. The small model is going to look like it's very capable relative to this huge model. When you start introducing instruction following and agentic tasks, they become very different very quickly. The small model will start just doing weird stuff and just be completely incapable of doing what you're asking it. The small models will fit easily into an Nvidia GPU that you can get on AWS. The larger models like they're very very difficult to self-host. And so I thought I was going to self-host this thing no problem. I can't do that yet.\n\n## The Power of Inference Providers and Async Rust\n\nThe other reason inference providers are nice is that you can do a bunch of inference requests in parallel. If one user action might kick off like 50 inference requests, as is the case with this application, inference providers are amazing for this uh because you can do those 50 inference requests immediately. Async Rust was amazing for this project.\n\n## Regret: Building a Custom Rich Text Editor\n\nAnother big mistake, trying to build my own web-based rich text editor. There are a number of these available in the JavaScript ecosystem. There's one called Quill. There's one called TipTap. And I thought I was going to have some features that required my own rich text editor. Building a text editor is more work than it sounds. It's feasible, but it's not something you want to do if you don't have to. So, I started out with TipTap. I ditched TipTap. I started building my own markdown based text editor. And I quickly realized that this was not something I was going to be able to tackle for this project. It was not realistic. So, I switched back to TipTap. When I say this project is I use Rust as the only programming language, yes, that's true. I am using a JavaScript library for the actual text editing experience. Everything else I'm using is all Rust.\n\n## Lesson 1: The Current Limits of AI-Assisted Coding\n\nOkay. Lessons I learned. First of all, AI assisted coding. It is not good enough to replace software developers yet. Humans have, for whatever reason, have a unique capacity to understand and maintain context of large code bases, which is something that these AI tools cannot do yet. One place that AI was extremely helpful for me, I I used it a lot, but mostly for like question answering, like am I doing this right or what does this tailwind CSS class do in this context, things like that it was amazing for. I don't think I had it write a ton of code. The one place that I did have it write a ton of code is when I was transitioning from Dynamo DB to cockroach DB. That transition probably would have taken a week if I didn't have AI. With AI, it took about about 2 days roughly, which is amazing. So it was very helpful for that.\n\n## Lesson 2: Is Self-Hosting LLMs a Viable Future?\n\nI also learned that self-hosting might not be a viable option in the future. Language model inference providers are building custom chips that make inference way faster than anything an a current generation Nvidia chip can do. Shiny examples of this are Cerebras and Grok. They use custom chips and their inference speed is extremely fast. It makes me wonder if self-hosting is going to be a viable option going forward. It would be if we can get similar chips on AWS or other cloud providers. It may be the case that self-hosting just isn't a viable option anymore. Time will tell.\n\n## Lesson 3: Small vs. Large Language Models\n\nThe third one is small language models seem really good when you're asking them questions. I mentioned this already. They seem really good when you're asking them questions. They break down very quickly when you start to give them instructions or set them off on agentic tasks. That was a hard lesson to learn.\n\n## Lesson 4: Is Rust + Leptos a Viable Web Stack?\n\nNumber four, Rust and Leptos are absolutely viable for building web applications. Are they for everybody? No. If you're already familiar with Rust and you need to build a web application, go for it. If you're not familiar with Rust, it might not be the best option, especially if you have a tight deadline. If you are extremely familiar with Rust or you don't have a tight deadline, go for it. There's very little reason not to. My one complaint with Leptos is the view macro syntax can get a little verbose. Uh, I don't know if anything is going to be done about that or if it's even feasible or if it aligns with the charter of the project. I don't know. I would like to see it get a little more concise. Long story short, Leptos, great web framework.\n\n## Lesson 5: Avoid Shiny Objects, Stick to the Vision\n\nThe fifth and final lesson is achieve the original vision of the project before you tackle features that you like thought of on a whim and get really excited about. I had this feature called annotations. I won't go into what it exactly was, but it was something I thought about on a whim and I got really, really excited about it and so I ditched all my work for the preceding week. I spent all this time on it and ultimately realized it was not conducive to a good user experience. It was a cool feature, but it made things very cumbersome in a way that I could tell users were not going to like. So, I just pulled it out. So, I I wasted like 2 or 3 weeks of work. What I should have done is kind of mold it over longer, achieve the original vision of the project and then maybe by that time I would have realized that it was a bad idea or I would have been happy with the project as it is. I don't know. But yeah, implementing features that you think of on a whim, usually a bad idea.\n\n## Conclusion and Beta Testing\n\nThat is a stream of consciousness kind of postmortem on this project. The project's not done. It is in a beta state. If you're interested in beta testing or you want to know more about the project, um, I put a link to a newsletter in the description of the video, sign up for the newsletter. I also put a link to a Discord server, not the Code to the Moon Discord server, but a Discord server specifically for this app. You can go in there, ask questions. Other than that, thanks for watching and we'll see you in the next one."
+}

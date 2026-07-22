@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 3,
+  "videoId": "BFxSYP5IRjQ",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Explore a comprehensive comparison of five leading document parsing tools for building robust AI agents. This guide tests Andrew Ng's DPT, Docling, LlamaParse, Unstructured.io, and PDFPlumber on complex files like NVIDIA's financial report and medical scans. Discover how each parser handles intricate tables, layouts, and images. The analysis extends to building and evaluating a Retrieval-Augmented Generation (RAG) system with LangChain and ChromaDB to measure the practical quality of the extracted data for real-world question-answering.",
+  "chapters": [
+    {
+      "title": "Introduction: Testing 5 Document Parsers for AI Agents",
+      "description": "This chapter introduces the video's goal of testing five different document parsing tools on complex, real-world documents to create usable data for AI agents.",
+      "startTime": 0.0,
+      "endTime": 31.0,
+      "slug": "introduction-testing-5-document-parsers-for-ai-agents"
+    },
+    {
+      "title": "The Challenge of Complex Document Extraction",
+      "description": "Learn why accurate document extraction is critical by examining a complex 130-page NVIDIA financial report and understanding the high error rates in parsing such files.",
+      "startTime": 31.0,
+      "endTime": 91.0,
+      "slug": "the-challenge-of-complex-document-extraction"
+    },
+    {
+      "title": "Understanding the \"Dark Data\" Problem",
+      "description": "This chapter explains the concept of \"dark data,\" noting that 90% of enterprise data is unstructured in formats like PDFs, which contributes to high error rates.",
+      "startTime": 91.0,
+      "endTime": 116.0,
+      "slug": "understanding-the-dark-data-problem"
+    },
+    {
+      "title": "Code Walkthrough of the 5 Parsers",
+      "description": "A quick walkthrough of the Python code implementations for the five document parsers: Andrew Ng's DPT, Docling, LlamaParse, Unstructured.io, and PDFPlumber.",
+      "startTime": 116.0,
+      "endTime": 184.0,
+      "slug": "code-walkthrough-of-the-5-parsers"
+    },
+    {
+      "title": "Deep Dive: Andrew Ng's DPT Parser",
+      "description": "This chapter provides a detailed look at how Andrew Ng's Document Pre-trained Transformer (DPT) works and analyzes its superior performance on the NVIDIA document.",
+      "startTime": 184.0,
+      "endTime": 269.0,
+      "slug": "deep-dive-andrew-ng-s-dpt-parser"
+    },
+    {
+      "title": "Evaluating IBM's Docling Parser",
+      "description": "An introduction to IBM's popular Docling parser, its features, and an initial look at its performance, including a comparison of output length against DPT.",
+      "startTime": 269.0,
+      "endTime": 321.0,
+      "slug": "evaluating-ibm-s-docling-parser"
+    },
+    {
+      "title": "Comparing Docling, LlamaParse, Unstructured.io, and PDFPlumber",
+      "description": "This chapter compares the extraction results from Docling, LlamaParse, Unstructured.io, and PDFPlumber on the NVIDIA financial report.",
+      "startTime": 321.0,
+      "endTime": 404.0,
+      "slug": "comparing-docling-llamaparse-unstructured-io-and-pdfplumber"
+    },
+    {
+      "title": "Test Case: Complex Research Paper",
+      "description": "The parsers are tested on a new document type: a dense, single-page research paper, where LlamaParse shows excellent performance.",
+      "startTime": 404.0,
+      "endTime": 488.0,
+      "slug": "test-case-complex-research-paper"
+    },
+    {
+      "title": "Test Case: Medical Lab Report",
+      "description": "The parsers tackle a real-world medical lab report, where LlamaParse again excels at creating structured tables while other methods struggle.",
+      "startTime": 488.0,
+      "endTime": 535.0,
+      "slug": "test-case-medical-lab-report"
+    },
+    {
+      "title": "Test Case: ID Card and MRI Scan",
+      "description": "This chapter tests the parsers on image-heavy documents, including a German ID card and an MRI scan, revealing their limitations with primarily visual content.",
+      "startTime": 535.0,
+      "endTime": 617.0,
+      "slug": "test-case-id-card-and-mri-scan"
+    },
+    {
+      "title": "Building a RAG System to Test Extraction Quality",
+      "description": "This chapter introduces the concept of using a Retrieval-Augmented Generation (RAG) system to evaluate the practical quality and usability of the parsed document data.",
+      "startTime": 617.0,
+      "endTime": 672.0,
+      "slug": "building-a-rag-system-to-test-extraction-quality"
+    },
+    {
+      "title": "RAG Implementation with LangChain & ChromaDB",
+      "description": "A code walkthrough demonstrates how to build the RAG pipeline using libraries like LangChain and ChromaDB for splitting, embedding, and retrieving information.",
+      "startTime": 672.0,
+      "endTime": 732.0,
+      "slug": "rag-implementation-with-langchain-chromadb"
+    },
+    {
+      "title": "RAG Performance Results and Analysis",
+      "description": "This chapter presents the results of querying the RAG systems, showing how performance varies and how tuning parameters like chunk size can change which parser wins.",
+      "startTime": 732.0,
+      "endTime": 816.0,
+      "slug": "rag-performance-results-and-analysis"
+    },
+    {
+      "title": "The Importance of Parameter Tuning",
+      "description": "Learn why there is no magic-box solution and why tuning parameters for both the parser and the RAG system is essential for achieving good results.",
+      "startTime": 816.0,
+      "endTime": 873.0,
+      "slug": "the-importance-of-parameter-tuning"
+    },
+    {
+      "title": "Conclusion: Extraction, Retrieval, and Reasoning",
+      "description": "The video concludes that solving the document problem requires addressing three distinct challenges: extraction, retrieval, and reasoning, and that the best tool depends on the context.",
+      "startTime": 873.0,
+      "endTime": 917.966,
+      "slug": "conclusion-extraction-retrieval-and-reasoning"
+    }
+  ],
+  "summary": "## The Core Problem: \"Dark Data\" and Extraction Errors\n\nA significant portion of enterprise data (around 90%) is unstructured \"dark data\" locked in PDFs and scanned documents. Standard extraction methods often fail on complex layouts, such as financial reports, leading to high error rates (e.g., 68% hallucinated numerical values), which makes them unreliable for AI agents.\n\n## The Contenders: 5 Document Parsers Tested\n\n- **Andrew Ng's DPT (Document Pre-trained Transformer)**: A powerful, structure-aware model that uses visual grounding. It excelled at parsing complex, multi-page reports and was the only tool to identify a logo. However, it is very expensive.\n- **IBM's Docling**: A popular and versatile parser. It performed well on dense one-page documents but struggled with complex table-of-contents layouts in large PDFs.\n- **LlamaParse**: Excellent for single, complex pages and extracting data into clean tables. It initially failed on very large PDFs due to timeouts, but performance improved with parameter tuning (`verbose=True`).\n- **PDFPlumber**: A lightweight and fast library that proved to be a surprisingly robust and reliable baseline. It handled tables of contents well and provided stable performance in RAG tests.\n- **Unstructured.io**: Consistently performed poorly across tests, often producing messy, unusable output described as a \"complete soup.\"\n\n> [!TIP]\n> **Use Case is King!**\n> - For complex, multi-page reports (with budget): **DPT**\n> - For dense, single-page documents with tables: **LlamaParse** or **Docling**\n> - For a reliable, lightweight baseline: **PDFPlumber**\n\n## Evaluating with Retrieval-Augmented Generation (RAG)\nTo test the practical usability of the parsed text, a RAG system was built using **LangChain** and **ChromaDB**. This allowed for asking questions against the extracted content and scoring the accuracy of the answers.\n\n> [!IMPORTANT]\n> Raw extraction quality does not guarantee good RAG performance. The process introduces new challenges related to text splitting (chunking), embedding selection, and retrieval logic.\n\n## Key Takeaways\n\n- **No \"Magic Box\"**: No single parser works perfectly out of the box for all scenarios. **Parameter tuning is mandatory** for both the parser and the RAG pipeline (e.g., chunk size, overlap, embedding models).\n- **The Three-Part Problem**: A successful solution requires independently addressing three challenges:\n  1.  **Extraction**: Parsing the document accurately.\n  2.  **Retrieval**: Finding the correct information chunks.\n  3.  **Reasoning**: Synthesizing the retrieved chunks into a correct answer.\n- **Images & Minimal Text**: For documents that are primarily images with sparse text (like an MRI scan), specialized **vision models** are a better choice than text-based PDF parsers.",
+  "transcription": "## Introduction: Testing 5 Document Parsers for AI Agents\n\nIn this video, I show you how to parse complex documents with five different tools to create usable data for AI agents.\n\nTo reflect real world complexity, I chose documents like NVIDIA's financial report, medical records with MRI scan, and research papers. For the tools, Andrew Ng, agentic extraction, Docling, Llama Parse, and more. I also built a RAG with ChromaDB and Langchain to compare the actual quality of extraction.\n\nI'm Maryam Miradi, PhD with twenty plus years in AI, teaching thousands to build AI agents in ninety plus countries.\n\n## The Challenge of Complex Document Extraction\n\nFiles, files. So the first one is, the hundred thirty pages NVIDIA document, the finance document. So for our code, we just need a bunch of API keys, the Llama cloud API, and also the Vision Agent API, which is for Andrew Ng agentic extraction. And then we can go ahead and load the page just before extracting that. Let me show you. This is the NVIDIA one hundred and thirty pages PDF. It has a table of content, it has complicated graphs and it has lots of tables as you can see, financial tables.\n\nBut also in the first page, things like logo can be quite difficult for extraction. So why are we interested in these PDFs? Because we see very often that the agent confederatory tells you, hey, upper revenue is forty seven billion when the actual number is actually ninety four billion. So it's swapped two rows silently, and that's in sixty eight percent of extraction. Error in financial documents is hallucinated numerical values.\n\n## Understanding the \"Dark Data\" Problem\n\nSo if we look at the data in enterprise, about ten percent is structured and ninety percent is the so called dark data. They are in PDFs and scanned documents. So in other words, we have sixty eight percent, at least here, problems. So that's why we want a better extraction for such a big PDF in our...\n\n## Code Walkthrough of the 5 Parsers\n\nBack to our code, let's take a look at all of our extracts. They are all here in the extract.py. Five methods from Landing AI from Andrew Ng DPT, Docling, Llama parse, unstructured IO, and PDFPlumber.\n\nThe first one is the DPT of Andrew Ng's pre-trained transformer. The only thing that you need to do is just import Parse and then parse the PDF path and get the result in markdown.\n\nThe next one is Docling, which is also extremely famous from IBM. The way it works for docling is document converter, then you convert it, and then you export it to Markdown. Just a little bit of pass, a bit of formatting.\n\nNext one is Llama parse. We get llama, we say our result type is markdown, load the data and get the result in text.\n\nThen, unstructured IO. Again the PDF path, we get the partition PDF from Unstructured, partition PDF, use it, find the elements, and then join all of the elements.\n\nLast one is PDF Plumber. This is like the classical read page by page, appended, extract table, and then put everything together at the end by a text port.\n\n## Deep Dive: Andrew Ng's DPT Parser\n\nThen we've got extract all of that in a dictionary and loop over it and extract all of that. And then at the end we can print all of the extracted methods.\n\nSo the most popular one is actually the most recent one, the Andrew Ng's DPT, Document Pre-trained Transformer. The way it works is the model breaks tables into structures first, so cells and the position of that, then extract data from isolated sections and can work parallel. And as you guys have seen, it's just three lines of codes. And they care about the structure first, so you will just do that multi-level header. They would look at the hierarchy, then they will decompose everything, break it into small pieces as I said, and create that parallel extraction. And most importantly, it has also visual grounding because of the bounding boxes around each of the pixels and they just say that's the place they will get the attention.\n\nSo let's take a look at the extraction and see if we can see this element back. So if we look at DPT, the first fifteen hundred character, the first thing that we notice is it has identified logo. And further in the extraction, you will see that none of the methods is identifying the logo of Nvidia. If you remember on the page we had NVIDIA logo.\n\n## Evaluating IBM's Docling Parser\n\nWhen we are running the extracted, the next method is docling, also really famous. We barely have a project this famous. So in about one year, forty thousand plus stars. What IBM says is that docling can do parsing of multiple documents, any document you can see, advanced PDFs, unified representation of formats, and a list of all of the advantages. So, let's see how is the extraction going at our side.\n\nby the way, I made one module of my paid course, AI Agents Mastery, free. It's thirty minutes zero to hero deep dive and you will learn how to build agents. And you also get a free guide of building AI agents. And if you want you can also join my five in one AI agent mastery to build real world AI agents with nine different projects. All of the links are in the description.\n\nAnd as you can see, this is just a little bit less character, five hundred ninety five thousand in comparison to DPT. Let's take a look at output.\n\n## Comparing Docling, LlamaParse, Unstructured.io, and PDFPlumber\n\nIt looks a little bit more messy. Do you remember we had the table of content? This one, I said that's gonna be a problem. You can see this is really a problem. This is the table of content for DPT. As you can see the items are just neatly... this is like a way better table of content than the one that Ducling extracted.\n\nThe next method is Llama parser and it didn't extract it well. It gave a very fast time out, so you immediately can see it has a little bit of problems with very big PDFs. We can look at the extraction, but unfortunately it's not complete.\n\nNext one is Unstructured. It just doesn't use so much of separators, it just eliminate them inside. And then this is where it makes a complete soup out of that table of contents.\n\nThe last one is PDF plumber. It is such a lightweight library. It just gives you results in so many situations. it has a decent amount of stars and has been written by Jeremy Singer-Vine. Let's take a look at extraction. Table of content, also less of the separators. As you can see, although it's very lightweight, really beautifully put that table of content and also extract all of the links very well. Just keep this one in your toolkit.\n\n## Test Case: Complex Research Paper\n\nSo the next thing that you could do is to put this PDF in a RAG and ask all of the questions from it and see if it's working. But before that, let's just try actually to extract other documents that I promised, like the medical lab or MRI.\n\nThe paper itself is about hundred forty eight pages, but I took one complex page, which is this one, and I wanted to see how good or bad the extraction is done with this page. We just use the same code, extract with all of the methods.\n\nThen I noticed something about DPT, it shows that API is valid, but I don't have any credit anymore. And then I noticed that only by just using this one document, I've used eleven hundred forty nine credits. It's a lot of it. And these are actually the subscription plans. So DPT, although sounds like a very good option, seems to be insanely also expensive. One document, one trial about ten dollars. For the rest of documents, I just pass DPT.\n\nAs you can see, docling is not extracting anything. LlamaParse, looking at this page full of information, is doing a really great job, and it's just extracting that. So you can see, just giving me that it was an overview of domain expert agent. This complicated one pagers can be really good for LAMA index. Onstract, actually Fairlink and PDF plumber as well.\n\n## Test Case: Medical Lab Report\n\nThen we go to a medical lab report. It's this data that you have different and I have just downloaded one of them because they are real world documents.\n\nLet's take a look at the extractions. So Docling is extracting a lot of information. It does not showing it in a very good way, I should say. It's just a bit of soup. It is extracting the information, but it doesn't keep logic. Llama parse just making very beautifully a table. So Llama parse is really good in this one pager complicated stuff. Unstructured and PDF plumber both fail.\n\n## Test Case: ID Card and MRI Scan\n\nThen I've got ID card. I got it from here but I'm not quite sure if it's legal to show it. They have all of these test images. I won't show the ID, but I show you the extraction.\n\nSo Docling didn't come with anything useful. As you can see, it was a German ID and you can see that the names and birthday is just extracted. This is public data from Kaggle but I won't show the ID itself. Unstructured nothing, and PDF plumber also nothing.\n\nThen let's go to MRI of a brain also from Kaggle. Picked data of this MRI brain. And you can see in MRI scan, you have always, like, a small text. I wanted to see how all of these are reacting to an image with barely some text. It's from this MRI images from the brain tumor. Let's take a look at the extractions. Barely anything from Docling. The Llama Parse showing a part of it, unstructured nothing, and pdf plumber nothing. So on images they are really not that great on extracting the text. I think when it comes to those kind of images you better use vision models. Vision models they have longer latency, they are expensive, it takes longer to just extract information. But at least for now we don't see that much of information coming back from the PDF extractors.\n\n## Building a RAG System to Test Extraction Quality\n\nSo imagine that we wanted to create a RAG for each method to ask actually questions. You need to know what are the steps of the RAG. I have already explained that in another video in my channel. But very shortly, if you want to build a financial advisor with RAG, you just parse your PDFs and then get those in a text splitter, then you change them to number with embeddings and then you put them in a database because then you can just do a similarity search. Most of the time you use ChromaDB for a database. And finally, you can just do multi query retriever. And then you've got the financial Advisor. That information can become your audio. You can use ElevenLabs and create this very interactive adviser.\n\n## RAG Implementation with LangChain & ChromaDB\n\nSo let me just show you how to implement what I just explained with LangChain and ChromaDB. So here are all of the libraries. We've got a Chroma, the character splitter. We'll start with creating a vector store. Got our splitter, give the chunk size, a splitter text, the OpenAI Embedding as Embedding. And then we can here retrieve the information as a retriever from the Vector database anytime we ask a question.\n\nAnd this is a prompt, the chat prompt template from the template. And finally, we use a chain from the LangChain, which does prompt LLM and the STR output parser. And this is the way actually we built a RAG and then we can also compare the RAG performance for different vector databases. We can add that. And we can also score the result by showing, for example, the ground truth, meaning an example and the answer and then just compare it. And then we have displaying a result in the table. So it's pretty straightforward.\n\n## RAG Performance Results and Analysis\n\nSo we can build the RAG, then I start asking questions. I started with a number of questions. A lot of them getting wrong answers, then I started with just one question. A lot of not found, except for the PDF plumber. It came with the exact numbers that I wanted. And this is where it's not anymore about your extraction but also your retrieval plus your reasoning.\n\nSo be very careful when you're extracting, then you put it inside a RAG because you split it and any split can just also cause that disjoint of information. And if you just make the chunks too big, it's too much of information; too little, it's just too fragmented. And I tried different embeddings and different size of chunking.\n\nI made chunk size a bit bigger and the number of k higher, and then DBT start to win when the other ones still are not giving any information except the PDF plumber. Ducklink, llama parse and unstructured didn't give any good information even I improved my embedding and chunking. And PDF plumber in general stay a stable thing, and DPT is an expensive alternative. And when it came to one page information then it was Llama parse and ducling that gave a lot of good results.\n\n## The Importance of Parameter Tuning\n\nIn none of my tests unstructured came out as something special. Then I thought let me just improve a little bit also on Larmor parse. So just improved the number of— I made a verbose is true because it gives- it gives a time out. So then the problem was resolved for llama parse. But then I had to— but then I noticed that I had to use another embedding which was not working very well for DBT or PDF plumber. So it's really important to work with your use case. There is no such thing that Ducling is amazing, DBT is amazing. None of them are just the magic box. Each of them are good with a set of parameters. You have to really play around with those parameters. So just out of the box, I notice none of them is working. As an AI engineer, data scientist, AI professional need to still set the parameters for your problem. Otherwise you would not get any good result.\n\n## Conclusion: Extraction, Retrieval, and Reasoning\n\nSo that's the comparison, and the way I noticed, especially when you are working combined with RAG, remember that you do not have only the problem which is extraction, but also retrieval plus reasoning. And those three problems get combined and then you need to resolve those problem separately.\n\nPDFs are just one type of context that you can give to your agents, and we have other types of context like prompts and tools. And that's the context engineering. I have these seven methods of context engineering for production AI agents. And you can watch that video, and I see you there."
+}

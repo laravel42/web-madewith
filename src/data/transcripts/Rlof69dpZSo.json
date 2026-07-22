@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 3,
+  "videoId": "Rlof69dpZSo",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to automate data processing and repetitive tasks with Directus Flows, a powerful tool built directly into the Directus platform. This overview explains how to create event-driven workflows for tasks like sending email notifications, updating collections, and integrating with third-party systems via webhooks. Discover the different types of triggers (event hooks, schedules, webhooks) and operations (conditions, running scripts, CRUD) to build simple or complex automations, similar to Zapier or Make.com.",
+  "chapters": [
+    {
+      "title": "Introduction to Directus Flows",
+      "description": "An introduction to the Directus Flows feature, a powerful tool for automation within the platform.",
+      "startTime": 0.0,
+      "endTime": 17.0,
+      "slug": "introduction-to-directus-flows"
+    },
+    {
+      "title": "What is Directus Flows?",
+      "description": "This chapter defines Directus Flows as an event-driven data processing and task automation tool, comparing it to Zapier or Make.com.",
+      "startTime": 17.0,
+      "endTime": 77.0,
+      "slug": "what-is-directus-flows"
+    },
+    {
+      "title": "Common Use Cases for Flows",
+      "description": "Explore common use cases for Flows, such as sending team alerts, syncing collections, managing content workflows, and scheduling regular jobs.",
+      "startTime": 77.0,
+      "endTime": 127.0,
+      "slug": "common-use-cases-for-flows"
+    },
+    {
+      "title": "How to Create a Flow: Triggers and Operations",
+      "description": "Learn how to create a flow using the drag-and-drop builder, which consists of a single trigger and one or more operations.",
+      "startTime": 127.0,
+      "endTime": 158.0,
+      "slug": "how-to-create-a-flow-triggers-and-operations"
+    },
+    {
+      "title": "Exploring Different Trigger Types",
+      "description": "This section details the various trigger types available, including event hooks, webhooks, scheduled cron jobs, and manual triggers.",
+      "startTime": 158.0,
+      "endTime": 228.0,
+      "slug": "exploring-different-trigger-types"
+    },
+    {
+      "title": "Core Concepts of Operations",
+      "description": "An explanation of what operations do, including getting, processing, and sending data with examples like conditional logic, running custom scripts, and performing CRUD actions.",
+      "startTime": 228.0,
+      "endTime": 301.0,
+      "slug": "core-concepts-of-operations"
+    },
+    {
+      "title": "Advanced Operations",
+      "description": "Discover advanced operations like logging to the console, sending emails, making webhook requests to third parties, and triggering other flows.",
+      "startTime": 301.0,
+      "endTime": 361.0,
+      "slug": "advanced-operations"
+    },
+    {
+      "title": "Robust Error Handling in Flows",
+      "description": "Understand how Directus Flows handles errors with dedicated success and failure paths for each operation, allowing for more robust workflows.",
+      "startTime": 361.0,
+      "endTime": 388.0,
+      "slug": "robust-error-handling-in-flows"
+    },
+    {
+      "title": "Managing Data with the Flow JSON Object",
+      "description": "Learn about the flow's internal JSON object, including the default `$trigger`, `$accountability`, and `$last` keys, and how to access data using variables.",
+      "startTime": 388.0,
+      "endTime": 452.0,
+      "slug": "managing-data-with-the-flow-json-object"
+    },
+    {
+      "title": "Debugging with Flow Logs",
+      "description": "This chapter covers how to use flow logs to debug your automations by inspecting triggers, operations, and any errors that occurred during execution.",
+      "startTime": 452.0,
+      "endTime": 473.0,
+      "slug": "debugging-with-flow-logs"
+    },
+    {
+      "title": "Conclusion and Next Steps",
+      "description": "A summary of the power of Directus Flows and recommendations for next steps, including watching advanced videos and reading the documentation.",
+      "startTime": 473.0,
+      "endTime": 517.0,
+      "slug": "conclusion-and-next-steps"
+    }
+  ],
+  "summary": "## What are Directus Flows?\n\n**Directus Flows** is a built-in tool that enables custom, event-driven data processing and task automation. It eliminates the need for boilerplate code for repetitive tasks, acting like a self-hosted Zapier or Make.com within your Directus project.\n\n## Common Use Cases\n\n- Alerting your team when a business metric is reached (e.g., 1000 GitHub stars).\n- Syncing data between two different collections.\n- Creating content approval workflows with email notifications.\n- Triggering static site deployments on content updates.\n- Running scheduled jobs, like daily reports or hourly data ingestion from an external API.\n\n## Anatomy of a Flow\n\nEvery flow is built in a drag-and-drop interface and consists of two main parts:\n\n- **A single Trigger**: The event that kicks off the flow.\n- **One or more Operations**: The actions performed on your data after the trigger.\n\n## Triggers: Starting a Flow\n\n- **Event Hook**: Starts a flow based on an internal Directus event (e.g., `items.create`, `files.upload`, `auth.login`).\n- **Webhook**: Provides a unique URL to start a flow from a third-party service.\n- **Schedule (CRON)**: Triggers a flow based on a time interval (e.g., every 15 minutes, daily at noon).\n- **Manual**: Allows a user to trigger a flow directly from a collection's page.\n- **Chained**: One flow can trigger another flow.\n\n## Operations: The Actions\n\nAt their core, operations perform three functions: **get data**, **process data**, and **send data**. Key operations include:\n\n- **Condition**: Apply `if/else` logic to branch your flow's execution path.\n- **Run Script**: Write custom Node.js code to transform data.\n- **CRUD Operations**: Create, read, update, or delete items in any collection.\n- **Send Email/Notification**: Send messages based on flow events.\n- **Webhook**: Send HTTP requests to third-party APIs.\n\n> [!TIP]\n> The `Log to Console` operation is very useful for debugging the data at any step in your flow.\n\n## Data Handling in Flows\n\nEach flow execution maintains a **JSON object** to store data from the trigger and subsequent operations. \n\n- **`$trigger`**: Contains the payload from the event that started the flow.\n- **`$accountability`**: Details about the user and permissions that initiated the flow.\n- **`$last`**: A shortcut that holds the output from the most recently executed operation.\n\nData from this object can be accessed in operation fields using double-mustache syntax: `{{ $trigger.key }}`.\n\n> [!IMPORTANT]\n> You cannot perform computations inside the `{{ }}` syntax. For any data manipulation, use the **Run Script** operation.\n\n## Error Handling & Debugging\n\n- **Control Flow**: Unlike other systems, a failed operation does not halt the entire workflow. Each operation has **Success** and **Failure** paths, allowing you to build robust flows that can handle API errors or validation issues.\n- **Flow Logs**: Every flow run is logged to the database. You can inspect these logs to see the data at each step, understand the execution path, and diagnose any errors.",
+  "transcription": "## Introduction to Directus Flows\n\nHi, Bryant here for Directus. In this video, we're going to give you a quick overview of Directus Flows, which is a tool that a lot of our community members are very excited about.\n\nLet's get into it.\n\n## What is Directus Flows?\n\nData is the lifeblood of any digital project and Directus makes it super easy to browse, manage, update, and visualize your data with all the tools our platform provides. But today we're talking about automating your manual data tasks that could slow you down or stop you.\n\nSo your first question is, what is Directus Flows? Directus Flows is a tool that enables custom event-driven data processing and task automation. It eliminates a lot of the boilerplate and custom code that you have to write for repetitive development tasks like sending email notifications to users, sending or receiving data from other systems. Using flows, you can automate simple tasks or even complex automations inside your Directus project. You could say it's similar to having your own Zapier or Make.com, right inside your Directus instance.\n\n## Common Use Cases for Flows\n\nSo how can I use flows? What are some of the common use cases for it? Here's a few that might ring a bell for you. You might want to, uh, alert your team when a business metric passes a certain limit. Maybe you receive a thousand stars on GitHub. You want to update data in one collection when data in another collection changes. If you want to set up content workflows with emails and notifications for reviews or approvals, let's say you're deploying a static site whenever your content is created or updated or approved by a content manager.\n\nAnd Directus Flows is also great for scheduled jobs, like running reports on a daily or weekly basis, or ingesting data from another service's API on the hour, every hour.\n\n## How to Create a Flow: Triggers and Operations\n\nHow do I create flows? Flows features a simple drag and drop workflow builder for creating your automations, and Flows is located within the Settings section of your Directus instance. Each flow consists of a single trigger, the event or action that kicks off the automated process, and one or more operations.\n\nOperations are simply the actions or processes that are performed on your data after the flow has been triggered.\n\n## Exploring Different Trigger Types\n\nLet's cover triggers first. There are lots of potential triggers that you might use to kick off one of your flows. Let's cover a few examples.\n\nYou can use the event hook trigger anytime you want to start a flow, whenever a certain event happens inside Directus, like whether a new user logs in or a new file is uploaded, if items within a specific collection are created, updated, or deleted. To start a flow based on events that happen in a third party system, use the webhook trigger to get a URL where you can make a request to. A schedule or cron trigger allows you to kick off a flow based on a specific time interval, whether that's every 10 or 15 minutes, once a day, or only Mondays at noon. You can also chain flows together by triggering one flow based on another.\n\nAnd if you prefer to trigger a flow manually, you can do that as well by choosing a specific collection and then opening up that collection. And you'll find that on the right hand side where you can trigger that flow.\n\n## Core Concepts of Operations\n\nSo let's move on to our operations. They're the actions that our flow is performing. At the core, operations do three things. Number one, get data from Directus or another service. Number two, process data, like transforming it or validating it. Number three, sending data to Directus or some other third party service.\n\nSo here's a few examples of some of the operations. If you need to change the path of a particular flow based on a specific piece of data, use the condition operation to set up some if-else logic. This follows the standard Directus filter rules syntax. If you want or need the power of JavaScript, use the run script operation to write arbitrary code to transform your data however you'd like.\n\nYou've also got an access to perform any CRUD operations against any of the items inside your database. So you can create data, delete data, update data, do whatever you want with any of the items inside the collections of your database.\n\n## Advanced Operations\n\nThe log to console operation is useful in debugging your flows so you can log any message. And even use the variables inside your JSON object. One of the handiest operations is the ability to send emails or notifications based on certain events that happen. Directus makes this super simple where it might take you 25, 30 minutes to code this up previously.\n\nThe webhook operation allows you to send any type of HTTP request to whatever third party system you specify at a specific URL. You can pass along any headers or any body information that you choose to include. If you're trying to format data for a third party, the transform payload operation is a great tool to use. And again, you can chain flows together using the trigger flow operation to select the flow that you would like to trigger and pass along your data.\n\n## Robust Error Handling in Flows\n\nOperations may not always execute successfully. Unlike other platforms or tools, this does not immediately stop your workflow. Flows gives you an easy way to implement control flow by adding success and failure paths to each operation. This allows you to build more robust flows that can handle errors and error from a third party API or service.\n\n## Managing Data with the Flow JSON Object\n\nEach flow creates its own JSON object to store the data that's generated. There are three keys appended to the JSON object whenever a flow begins. `$trigger`, which holds the data that is generated by the Flow's trigger event. `$accountability`, which provides details on who started the flow and what permissions they have access to. And `$last` but not least, which is a handy shortcut that stores the data of the last operation executed.\n\nOnce an operation finishes, the data generated by that operation is appended to the JSON object under its operation key. When you're creating operations, you can access the data generated by using those keys as variables. All you have to do is wrap the variable with quotes and double mustaches like this. One quick tip: you cannot pass any type of computation though. For that, you'll want to use the script.\n\n## Debugging with Flow Logs\n\nLogs are generated and stored in the database each time your flow runs, and the logs are there to help you understand how a flow was triggered, what operations were ran, and if there were any errors during the execution of that flow. Each trigger and operation will show as its own dropdown where you can see all the relevant data.\n\n## Conclusion and Next Steps\n\nAll right, so that is the overview of Directus Flows. The possibilities of what you can build with this awesome tool are pretty limitless. Flows is intentionally broad and flexible to support whatever use cases you may come up with.\n\nNow that you've got a good understanding of what flows are and how they work, make sure you check out the Advanced Flows videos that show you how to actually build your own automated workflows step by step in detail. And I'd also recommend reviewing the documentation for Directus Flows because there's tons of helpful tips that you can get right now. Thanks for watching."
+}

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 3,
+  "videoId": "Wb0weT3vD6I",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn to create a beautiful, modern side menu for your Ionic app using Ionic Creator. This tutorial walks you through customizing the entire look and feel, from applying a custom SCSS gradient background and creating a circular profile image to styling transparent list items. You'll also learn how to override default Ionic styles and implement a custom AngularJS directive to create a persistent active state, ensuring the current page is always highlighted in the menu.",
+  "chapters": [
+    {
+      "title": "Introduction & Project Setup",
+      "description": "Introduces the goal of creating a beautiful side menu and sets up a new Ionic Creator project.",
+      "startTime": 0.0,
+      "endTime": 38.0,
+      "slug": "introduction-project-setup"
+    },
+    {
+      "title": "Basic App Theming and Layout",
+      "description": "Sets a global header color for the app and then hides the default header on the side menu page.",
+      "startTime": 38.0,
+      "endTime": 86.0,
+      "slug": "basic-app-theming-and-layout"
+    },
+    {
+      "title": "Adding a Profile Picture",
+      "description": "Uses spacer and image components to add a profile picture at the top of the side menu.",
+      "startTime": 86.0,
+      "endTime": 134.0,
+      "slug": "adding-a-profile-picture"
+    },
+    {
+      "title": "Creating a Gradient Background",
+      "description": "Applies a custom gradient background to the side menu page using a new SCSS class and variables.",
+      "startTime": 134.0,
+      "endTime": 203.0,
+      "slug": "creating-a-gradient-background"
+    },
+    {
+      "title": "Styling the Circular Profile Image",
+      "description": "Styles the profile image to be circular with a transparent border using custom SCSS.",
+      "startTime": 203.0,
+      "endTime": 283.0,
+      "slug": "styling-the-circular-profile-image"
+    },
+    {
+      "title": "Adding and Styling a User Name",
+      "description": "Adds and styles a text element below the profile picture to display the user's name.",
+      "startTime": 283.0,
+      "endTime": 315.0,
+      "slug": "adding-and-styling-a-user-name"
+    },
+    {
+      "title": "Customizing List Item Appearance",
+      "description": "Overrides default Ionic styles to remove list item backgrounds and define a custom style for the clicked (activated) state.",
+      "startTime": 315.0,
+      "endTime": 437.0,
+      "slug": "customizing-list-item-appearance"
+    },
+    {
+      "title": "Adding Icons to Menu Items",
+      "description": "Enhances the menu's appearance by adding left-aligned icons to each list item.",
+      "startTime": 437.0,
+      "endTime": 501.0,
+      "slug": "adding-icons-to-menu-items"
+    },
+    {
+      "title": "Creating an Active State Directive",
+      "description": "Introduces a custom AngularJS directive to dynamically add a class to the currently active menu item.",
+      "startTime": 501.0,
+      "endTime": 576.0,
+      "slug": "creating-an-active-state-directive"
+    },
+    {
+      "title": "Styling the Active Menu Item",
+      "description": "Applies SCSS styling to the `active-page-highlight` class created by the directive to visually mark the current page's menu item.",
+      "startTime": 576.0,
+      "endTime": 638.0,
+      "slug": "styling-the-active-menu-item"
+    },
+    {
+      "title": "Conclusion & Call for Ideas",
+      "description": "Summarizes the completed side menu and invites viewers to submit ideas for future tutorials.",
+      "startTime": 638.0,
+      "endTime": 671.0,
+      "slug": "conclusion-call-for-ideas"
+    }
+  ],
+  "summary": "This document outlines the key concepts for creating a customized, beautiful side menu in Ionic Creator.\n\n## Core Customizations\n- Apply a **gradient background** to the side menu page.\n- Add a **circular profile image** with a transparent border.\n- Remove default backgrounds from **list items**.\n- Style list items to show a **click state** (`.activated`).\n- Implement a persistent **active menu state** using a custom directive.\n\n## SCSS Theming\nSCSS is used to override default Ionic styles and create a custom look.\n\n- **Gradient Background**: A custom class (`.side-menu-gradient`) is applied to the page, and the gradient is defined in SCSS using variables for the colors.\n  ```scss\n  $side-menu-top: #DE6262;\n  $side-menu-bottom: #FFB88C;\n\n  .side-menu-gradient {\n    background: linear-gradient(to bottom, $side-menu-top, $side-menu-bottom);\n  }\n  ```\n\n- **Circular Profile Image**: The image is styled by targeting the `<img>` tag within a container that has a `.profile-image` class.\n  - `border-radius: 50%` makes the image round.\n  - `border: 4px solid $side-menu-transparency` adds a semi-transparent white border.\n  - A variable `$side-menu-transparency: rgba(255, 255, 255, 0.4)` handles the transparent color.\n\n- **List Item Styling**:\n\n> [!IMPORTANT]\n> To override the background on **linked** list items in Ionic 1, you must target the `.item-content` class, not the `<a>` tag or the `.item` itself.\n\n  - **Remove default background**: `background: none;` is applied to `.item-content`.\n  - **Click-state styling**: The `.activated` class, automatically applied by Ionic on touch, is used to set a background color.\n    ```scss\n    .side-menu-item {\n      /* ...other styles... */\n      &.activated .item-content {\n        background: $side-menu-transparency;\n      }\n    }\n    ```\n\n## Active State Highlighting\nIonic 1 does not have a built-in class for the active menu item, so a custom directive is required.\n\n- **`activePageHighlight` Directive**: An AngularJS directive is created to solve this.\n  1.  It is added as an attribute to each menu item: `<ion-item active-page-highlight>`.\n  2.  The directive listens for state changes (`$stateChangeSuccess`).\n  3.  It compares the item's `ui-sref` with the new state.\n  4.  It **adds** the `.active-page-highlight` class to the element if it matches, and **removes** it if it doesn't.\n\n- **SCSS Styling**: The `.active-page-highlight` class is styled to give the user visual feedback.\n\n> [!TIP]\n> The styling for the active state can be identical to the `.activated` click state for a consistent user experience.\n\n  ```scss\n  .side-menu-item.active-page-highlight .item-content {\n    background: $side-menu-transparency;\n  }\n  ```",
+  "transcription": "## Introduction & Project Setup\n\nHey everybody, I'm Matt and welcome to Creator's Weekly Workshop. This week I want to show you how to make a beautiful looking side menu. Over the past week we've actually got a lot of requests on how to take our side menus, customize their look and feel, maybe remove the backgrounds from the list items, or even make those list items highlight depending on the current state. So I wanted to show you how to do all that and more in a quick tutorial just showing you how to make a really awesome looking side menu for your app.\n\nSo the first thing we're going to do is we're going to start a new project, and we're just going to call this \"Beautiful Side Menu,\" choose \"Side Menu\" as the type, and create that project.\n\n## Basic App Theming and Layout\n\nAnd here, it's just going to bootstrap our standard side menu project. So we're going to have three pages that are automatically hooked up to three different list items in our side menu, just like that.\n\nNow the first thing we're going to want to do is I want to just change the header color overall for the app. So we are going to change the header background to positive and change the theme color positive to be a nice red color. So as we save that here and we close, we'll see that the overall menu of our app is that red and our side menu still maintains that stable. But we're actually going to want to select this page, hide header, and so we can get rid of that header option.\n\nNow as you can see, these list items have been pushed all the way up to the top. So let's grab our spacer component here.\n\n## Adding a Profile Picture\n\nAdd something to the top just to give us just a little bit of room. We're going to make that fairly small. We're actually going to duplicate it and then throw an image in between there. And this image is what we're going to kind of use as a profile image starter. So here we're going to want to upload an image, and I'm just going to choose an image from over here that I already have of myself. Right? And then we're going to change this to be like a 40% width to give us kind of a little bit of size there. And you know what, maybe I do want to add just a little bit more spacing to that top, maybe just a little bit more spacing to the bottom. So overall, we're not looking too good yet, but we're getting there.\n\n## Creating a Gradient Background\n\nSo now I want to do two different things: we're going to get a background gradient on this page, and then we're going to turn this profile image into something circular with a nice border. So let's on our page add here, we're going to do `side-menu-gradient` as a class on our side menu here. And over here, we're going to open up our custom SCSS, and I am just going to copy over a gradient that I already have programmed.\n\nNow as I add code to SCSS and other places throughout this app, you can find all the code for this at github.com. This is going to be the beautiful side menu tutorial, so that's the section where you can find all the code for this. So now as you can see though, in this side menu gradient, I actually use some variables. So we are going to grab `side-menu-top` and `side-menu-bottom` and put them up here. So this is actual SCSS, so we will actually take these variables and we're going to recompile all this SCSS for you. You just have to remember to hit save to trigger that compile. So now that that's compiled, you can see we have our nice background gradient coming from here. So now the next thing I want to do is turn this profile image to something that looks just a little better.\n\n## Styling the Circular Profile Image\n\nSo we are going to go over to our profile image, and we are going to add a class of `profile-image` and go back to our themes. And we are going to start working with `profile-image`. And `profile-image` is actually a container around the image. So if you would use the Chrome inspector, for instance, you could see that in order to get some CSS on the actual image, you're going to have to include an `img` tag there. Now here, the first thing I'm going to want to do is a `border-radius` of 50% to make that thing round. We're going to give it just a little bit of margin around the image, and then give it a border of `4px solid`, and here we're going to want to start working with another variable, `side-menu-transparency`. And this transparency variable is just going to be another variable that I set here that's an RGBA of white with a 40% opacity. So what this is going to give us right here is a round profile image with a little bit more space, and you can see this nice little transparent effect that we have around this image here that looks pretty good now.\n\n## Adding and Styling a User Name\n\nUh, let's say you also wanted to add a name. So let's pull up here, and we are going to do center on that. We're going to change it to white. We're going to do a 300 light here, make it an H3, and we are going to change this to my name, just so we get a nice little text there to see, you know, whose profile it is. We can see what account we're logged into automatically. So now we're starting to kind of come together a little bit, but we still have to work on these list items.\n\n## Customizing List Item Appearance\n\nNow, list items, as well as a couple other things in Ionic, already have styles built into them. For instance, one of the more complicated styles here is the background color of these tags here. So if I were to inspect this, what we can see is on this `<a>`, okay, we have a background color, but it's on `item-content`. So if I was to add a background color to, for instance, the `<a>` tag, that wouldn't work. So the custom code I need here is going to be `item-content`, not the `<a>`, to override the background color.\n\nSo back here, we are going to go to all three of these. We're actually going to add a class just to kind of make sure everything stays legit. So we're going to add `side-menu-item` to all three of these, just so we can work on a separate class for these fancy styles and so they don't override anything else in our app. So here we can do `side-menu-item`, and the first thing we're going to want to do is do a `background: none`. Now, if the side menu item is not linked, that's what this `background: none` is going to fix. If it is linked, we're going to want to override that `item-content` and make that a background of none. Now the click state is an `activated` class. So we're going to do `&.activated` and we're going to put some code there. We're going to make the background into that `side-menu-transparency` if it's the activated one, okay? The other thing we're going to want to do is just change a little bit of the style on here. So let's do a `color: white` for the text color, let's do that same `font-weight: 300` that we did for the H3 tag, and set the border to zero pixels. So as we save that and preview, now we're getting these nice looking side menu items here.\n\n## Adding Icons to Menu Items\n\nNow, this might look a little bland, so I like to go ahead, and I'm actually going to rename these and add some icons to them just to give you guys a look and feel that looks good. So this one, let's call \"My Profile\" and let's change the type to Icon and make that left icon a person. Okay, let's change this one to \"My Photos,\" change it to an icon, change that icon to be a camera. And let's change this one to be \"My Favorites,\" and that is also going to be a type of icon, and that we're going to use a heart. So overall, I just like the look of those icons on this style of side menu the best. So there you go. As you can see, our active state when we click is that same transparency that's around our profile image up here.\n\n## Creating an Active State Directive\n\nNow, kind of the last thing I want to show you guys is the ability to add an active state to this. So for instance, our home or My Profile page is currently active. Maybe we want this style to change a little bit. Now, that's not something that's built directly into Ionic 1; we do have to use a custom directive for that. So I am just going to open up our directives.js, okay, and I'm going to copy over a directive I already wrote. Yet again, you can find this directive over at github.com where you can find all the code that we use in our tutorials.\n\nNow let me just explain this directive real quick. This is `activePageHighlight` directive. So what I'm going to do is go to each of these items, add a directive called `active-page-highlight`, and I'm not going to set a value—this directive doesn't need one. Going to add that to all three of our list items here. And what this is going to do is when it loads and whenever the state change success, it's going to call this `checkUISref` function. So it's going to look at where the page is or where that link is going and check it versus the current state of the app. If it is the current state, we're going to add the class `active-page-highlight` to it. If it's not, we're going to make sure to remove that class in case it already existed.\n\n## Styling the Active Menu Item\n\nSo now, you know, we have to save the changes to this code, and we also have to add some style for that `active-page-highlight`. So let's open our theming back up, okay, and we are going to go to our theme SCSS here, and right in here, we're going to do `&.active-page-highlight`. We are going to do that `item-content` because these are linked items, and we're going to add that background `side-menu-transparency`, and we are going to save those changes so it recompiles our SCSS. And we are going to open that up and see that home, or My Profile in this case. We open My Profile selected. I can switch, it maintains that switch. Switch again, it maintains that switch. So now we've got a really nice looking side menu complete with a background gradient, a nice round profile image, as well as state that is actually remembered in our side menu items.\n\n## Conclusion & Call for Ideas\n\nSo this is a great start for you guys to start making apps that look and function beautifully. Uh, now I want to start doing these weekly Creator things every single week, but I need ideas from you guys. So if you've got an idea or you've got something that you've put into your app that you think other people would like to know how to do, hit me up on Twitter @MatthewKramer and I might wind up making the weekly Workshop about your idea. So until next time guys, I will catch you later. Thanks for tuning in. Bye-bye."
+}

@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 3,
+  "videoId": "yXAJwDtAbLo",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Discover Dify, an open-source LLMOps platform designed to simplify the creation of AI-powered applications. This guide demonstrates how to self-host Dify using Docker and integrate it with local models via Ollama. Learn to build a powerful retrieval-augmented generation (RAG) workflow from scratch using a graphical interface. We cover configuring model providers like Llama 3, setting up external tools such as SearchNG, and using the workflow builder to connect components, test, and deploy a functional app with an instant UI and API.",
+  "chapters": [
+    {
+      "title": "Introduction to Dify for AI Apps",
+      "description": "This chapter introduces Dify as a tool to rapidly build and deploy AI applications with a graphical interface.",
+      "startTime": 0.0,
+      "endTime": 57.0,
+      "slug": "introduction-to-dify-for-ai-apps"
+    },
+    {
+      "title": "Hosting Options and Self-Hosting Setup",
+      "description": "This chapter covers Dify's hosting options and the initial steps for self-hosting with Docker and Ollama.",
+      "startTime": 57.0,
+      "endTime": 110.0,
+      "slug": "hosting-options-and-self-hosting-setup"
+    },
+    {
+      "title": "Configuring Dify with Docker",
+      "description": "This chapter details cloning the Dify repository and configuring the environment variables for Docker deployment.",
+      "startTime": 110.0,
+      "endTime": 151.0,
+      "slug": "configuring-dify-with-docker"
+    },
+    {
+      "title": "Setting Environment Variables",
+      "description": "This chapter provides a step-by-step guide to configuring port and URL settings in the .env file.",
+      "startTime": 151.0,
+      "endTime": 191.0,
+      "slug": "setting-environment-variables"
+    },
+    {
+      "title": "Launching Dify and First Login",
+      "description": "This chapter walks through launching Dify using Docker Compose and setting up the initial administrator account.",
+      "startTime": 191.0,
+      "endTime": 217.0,
+      "slug": "launching-dify-and-first-login"
+    },
+    {
+      "title": "Navigating the Dify User Interface",
+      "description": "This chapter offers a tour of the Dify UI, including the Studio, Explore, Knowledge, and Tools sections.",
+      "startTime": 217.0,
+      "endTime": 257.0,
+      "slug": "navigating-the-dify-user-interface"
+    },
+    {
+      "title": "Configuring Ollama Model Providers",
+      "description": "This chapter provides a detailed walkthrough for setting up Ollama, Llama 3, and Nomic embedding models within Dify.",
+      "startTime": 257.0,
+      "endTime": 398.0,
+      "slug": "configuring-ollama-model-providers"
+    },
+    {
+      "title": "Setting Up the SearchNG Tool",
+      "description": "This chapter demonstrates how to add and configure an external tool, SearchNG, for web search capabilities.",
+      "startTime": 398.0,
+      "endTime": 467.0,
+      "slug": "setting-up-the-searchng-tool"
+    },
+    {
+      "title": "Creating a Workflow and Understanding Blocks",
+      "description": "This chapter initiates the app-building process by explaining how to create a workflow and detailing the purpose of various available blocks.",
+      "startTime": 467.0,
+      "endTime": 553.0,
+      "slug": "creating-a-workflow-and-understanding-blocks"
+    },
+    {
+      "title": "Advanced Workflow Blocks Explained",
+      "description": "This chapter covers advanced workflow blocks such as Iteration, Code, Template, HTTP Request, and using Tools.",
+      "startTime": 553.0,
+      "endTime": 614.0,
+      "slug": "advanced-workflow-blocks-explained"
+    },
+    {
+      "title": "Building a RAG Workflow Example",
+      "description": "This chapter provides a practical example of building a simple RAG workflow connecting a search tool to an LLM.",
+      "startTime": 614.0,
+      "endTime": 678.0,
+      "slug": "building-a-rag-workflow-example"
+    },
+    {
+      "title": "Testing, Publishing, and Monitoring the App",
+      "description": "This chapter covers testing the workflow, viewing traces, publishing the app, and using the monitoring and API features.",
+      "startTime": 678.0,
+      "endTime": 718.0,
+      "slug": "testing-publishing-and-monitoring-the-app"
+    },
+    {
+      "title": "Review, Critique, and Final Thoughts",
+      "description": "This chapter offers a final review of Dify's strengths and weaknesses, including its power for prototyping versus its UI/UX flaws.",
+      "startTime": 718.0,
+      "endTime": 806.0,
+      "slug": "review-critique-and-final-thoughts"
+    },
+    {
+      "title": "Conclusion and Outro",
+      "description": "The video concludes with a call for feedback and some brief outtakes.",
+      "startTime": 806.0,
+      "endTime": 830.0,
+      "slug": "conclusion-and-outro"
+    }
+  ],
+  "summary": "## Dify: The Easiest Way to Build AI Applications?\n\nDify is an open-source, self-hostable LLMOps platform that enables rapid development and deployment of AI-powered applications through a graphical interface. It's particularly useful for creating RAG (Retrieval-Augmented Generation) systems.\n\n### ## Key Concepts & Features\n- **Workflow Builder**: A visual, node-based editor to chain together LLMs, tools, knowledge bases, and logic.\n- **Instant Deployment**: Automatically generates a usable web UI and a RESTful API for any application you build.\n- **Self-Hosting**: Can be run locally or on your own infrastructure using Docker, providing full control.\n- **Model Integration**: Connects to various model providers, including local models via **Ollama**.\n- **Tool & Knowledge Base**: Integrate external tools (e.g., web search) and manage vector stores for RAG directly within the platform.\n\n### ## Self-Hosting and Configuration\n\n> [!TIP]\n> For a smooth self-hosting experience, ensure you have **Docker** and **Ollama** installed.\n\n1.  **Clone & Configure**: Clone the Dify GitHub repository and copy `docker/env.example` to `docker/.env`.\n2.  **Edit `.env`**: \n    -   Set `EXPOSE_ENGINE_X_PORT` to an available port (e.g., `8088`).\n    -   Update `APP_WEB_URL` and `SERVICE_API_URL` to match (e.g., `http://localhost:8088`).\n3.  **Launch**: Run `docker compose up -d` in the `docker` directory.\n\n### ## Integrating Local Models with Ollama\n\n> [!IMPORTANT]\n> When Dify is running in Docker, you cannot use `localhost` to refer to services on your host machine. Use `http://host.docker.internal` instead.\n\n- **Model Provider Setup**: In Dify's **Settings > Model Provider**, add your Ollama models.\n- **Required Information**:\n    - **Model Name**: Must match the exact name in Ollama (e.g., `llama3`, `nomic-embed-text`).\n    - **Base URL**: Use `http://host.docker.internal:11434` (or your Ollama server's address).\n    - **Model Context**: Set the context length appropriate for the model (e.g., `2048` for default Ollama models, `8192` for `nomic-embed-text`).\n\n### ## Building a RAG Workflow\n\n- **Start Node**: Defines the initial user inputs, like a `prompt` variable.\n- **Tool Node**: Add a tool like **SearchNG** to perform a web search based on the user's prompt.\n- **LLM Node**: \n    - Select your model (e.g., `llama3`).\n    - Construct a prompt that injects both the original user query and the retrieved search results.\n    - Example Prompt: `User Query: {start.query}. Use the following information to help answer the question: {search_tool.text}`.\n- **End Node**: Defines the final output of the workflow, typically the text generated by the LLM.\n\n### ## Overall Assessment\n\n**Pros:**\n- **Rapid Prototyping**: Excellent for quickly testing AI application ideas.\n- **Beginner-Friendly**: The visual interface lowers the barrier to entry for building complex AI flows.\n- **All-in-One**: Combines building, testing, deploying, and monitoring in a single platform.\n\n**Cons:**\n- **Heavy Application**: Runs numerous Docker containers, which can be resource-intensive.\n- **UI/UX Quirks**: Inconsistent navigation, lack of sorting in lists, and some buggy UI elements.\n- **Limited Customization**: The auto-generated UI is basic and cannot be significantly altered.",
+  "transcription": "## Introduction to Dify for AI Apps\n\nWhat if you had an idea for a new AI app that would take a query, get some information from a web search or some other tools, pass that info and the query to the model, and spit out the answer? How long would it take you to build that app? It's not that difficult, but how long would it take you to spin up the infrastructure to host that app, including the web search API, a vector database if you need it, a front end, and anything else your application requires?\n\nUsing a tool called Dify, you could have it do it for you. So all you need to do is connect the components in a graphical interface, answer a few questions, and click a button to deploy it. You will instantly have a UI your users can work with right away, as well as an API for the app for when you want to build a more bespoke UI. It's kind of magical. It isn't perfect, but I kind of dig it.\n\n## Hosting Options and Self-Hosting Setup\n\nThe one thing you have to set up is the model provider. I'm going to assume that you have Ollama installed for this one, but if you don't, you can go to ollama.com and follow the instructions in the middle of the homepage.\n\nThere are two main ways you can use Dify. You can pay them to host the application and anything you build, and the prices seem pretty reasonable, but I'm more excited about self-hosting and using it with Ollama.\n\n## Configuring Dify with Docker\n\nSo to spin it up, you'll need to have Docker installed. I'll assume that you've done that already. If you don't, there are plenty of tutorials for that. Then you need to clone the GitHub repo to your local machine or wherever you want to run Dify. So, `git clone` and this URL.\n\nNow go into the Dify directory and then into the Docker directory. Copy the `env.example` file to `.env`. If you already have something running on Port 80 on your machine, there are three settings you need to change in the `.env` file.\n\n## Setting Environment Variables\n\nFirst, decide what port you want to use. In my case, I'm using Port 8088. So in the `.env` file, if you're connecting to Local Host, change `APP_WEB_URL` and `SERVICE_API_URL` to `http://localhost:8088`. This will be used in the UI for any links to other parts of the app. And way down at the bottom, change `EXPOSE_ENGINE_X_PORT` to 8088. There's a lot of other stuff you can set here, such as the vector database to use, storage integrations, and more, but let's move on to running.\n\n## Launching Dify and First Login\n\nAt the command line, run `docker compose up -d`. It'll take a bit of time to download all the images and start everything up. There are at least nine containers running when everything is set. So, open up a browser to localhost, port 8088. The first time you log in, you need to set an admin account. Then you can log in as that account.\n\n## Navigating the Dify User Interface\n\nThere are a few different parts of the product, and I hope they reorganize the navigation because there are some things you only need rarely that are in the top navigation and other things that you need every day that are buried several clicks away. You typically start in the Studio. This is where you design apps and can see the apps you've already created. Explore lets you discover examples of Dify apps. Knowledge lets you add content to a vector database. Tools is a list of all the tools you can use, and this is where you set up the login information for those tools. Thankfully, there aren't a huge number of tools because they aren't in any order, and there's no way to see which are enabled and configured and which are not.\n\n## Configuring Ollama Model Providers\n\nWell, let's start by configuring a couple of things. The first is going to be Ollama, our model provider. I'm going to assume that you have Llama 3 and Nomic embed text models installed. If you don't, run `ollama pull llama3` and `ollama pull nomic-embed-text`. \n\nSo back into Dify, go to your name at the top right of the window. Under there, you can find Settings, and right at the top is Model Provider. Of course, this also has no sort order, so you just have to look for it. When you find it, click Add Model. So we want to add a regular chat model like Llama 3. That's going to be the first option. For model name, enter `llama3`. This actually has to be a model you have, and it will error out if you don't.\n\nBase URL can be a little tricky. If you installed Ollama locally on your machine, you might be tempted to put localhost port 11434. But Dify is running in Docker, and so localhost would probably refer to that Docker container. What you need to do instead is put `http://host.docker.internal:11434`. That's how this container can find the actual host of the system. If you put your Ollama server somewhere else, then point to that location.\n\nFor completion mode, leave it at Chat. For model context, we need to be a little bit careful. The original model released by Meta has a context size of 8K, and there are lots of fine-tunes that bump that up by enormous amounts. But all models in Ollama, with a few exceptions, default to 2K, since many users have limited memory. It's easy enough to increase that by setting the `num_ctx` parameter in a model file or in the CLI or in the API call, but since we're just using the default, let's set this to 2048. \n\nThe next thing is Max token limit. Some models have a context size that's a lot bigger than what it can output. There was a recent Anthropic release that has something like a 200k context but output maxes out at 4K. Normally, we can just set this to the same as the context size. Finally, this does not have vision support, so leave that unchecked.\n\nSince we're here, go back to the top and click Add model for Ollama again. For model name, enter `nomic-embed-text`. Enter the same URL which in my case is `http://host.docker.internal:11434`. It's reasonable to have multiple Ollama servers, each hosting different models, so that's why we have to enter this each time. Finally, model context size is a little different. You can see on this page for the model `num_ctx` is already set to 8192, so enter that in the size text box. Now, I don't understand why, but most text boxes in this UI seem to take one character and then take the focus away. Totally bizarre. Okay, for each of these two models, you may need to click the switch to enable them.\n\n## Setting Up the SearchNG Tool\n\nWe're going to be using web search, so the next step is to go to set up the tools, which probably should be done in settings but isn't. Up at the top navbar is Tools. Again, there's no sort order. I really like using SearchNG, that's search with an X instead of a CH. I have it running as a Docker container all the time and use it often. If you don't have it, visit this site and get it up and running. \n\nThroughout Dify, they use very inconsistent phrases for configuring things. Here we need to just point to the URL for the SearchNG API, but instead of anything that makes sense, we need to click 'To authorize'. So click that. Our Dify containers are probably not on the same Docker network as SearchNG, so enter the same Docker host name we used before, assuming it also is installed on Docker. So, `http://host.docker.internal:3333` since my SearchNG host is using port 3333. You may be using something else. Then click save. If you get the URL wrong, it won't let you move on.\n\n## Creating a Workflow and Understanding Blocks\n\nWith all that set, let's build our app. So go into the studio, create a new app by starting with a blank, and we have a few choices. There's a chatbot, text generator, agent, and workflow, but the only one that seems to be really interesting is the workflow. So let's choose that and give it a name.\n\nThe start box allows us to define the first inputs to the flow. When using a model, it's important to define a prompt, so create a new input field called `prompt` with a label of 'What would you like to know?' and a decent length. \n\nNow click that plus sign on the right side, and we have a number of choices to use for our next block. LLM will send a prompt to a model. Knowledge retrieval pulls relevant content text out of a vector database. End is the final block of any workflow. Question classifier lets you use a model to determine if any variable fits a certain class. You define the classes, which are just buckets to group possible matches. Maybe you want to look for queries that have a date or an artist name or a place name or that need a tool to answer or anything else. For each match class you could continue down a different path. And then there is if/else where you can compare any variable against any other value and define different paths for each option.\n\n## Advanced Workflow Blocks Explained\n\nIteration lets you take any variable that has a list or array of items and then run the same block or multiple blocks on each thing. Maybe the previous block generated a list of topics and you want a set of tweets for each block to be generated. \n\nNext is Code. This lets us run any arbitrary Python or JavaScript code using any variables as input. \n\nTemplate lets you apply a Jinja2 template to any variable or set of variables. \n\nVariable Aggregator lets you combine variables to create a new variable. \n\nParameter Extractor will use a model to try to extract one or more parameters from a variable. \n\nFinally, there's HTTP request. This lets you make any restful API request with API keys, headers, and parameters. \n\nWe can also run lots of tools here. So if you switch to the Tools tab, you can find lots of ways of running web searches and lots of other things. You may have to set these up first, and there's no way to see what's set up and what is not. But one common example is adding the current date to a request, because otherwise the model has no way of knowing.\n\n## Building a RAG Workflow Example\n\nSo for our first block, choose SearchNG search. At the query string box, type a slash and then choose query from the start block. Leave everything else as is. On the right side of the box, click the plus sign and choose LLM. Choose Llama 3 from the model list. You can add whatever context you like, a system prompt, and then for the user prompt, just type in slash and choose query from the start. Now I'll add a period just in case the user didn't type one, and then add 'use the following information to help answer the question: ' slash and then choose text from the SearchNG section. Before we chose the plus sign on the right side of the box, but you can also go down to the bottom of this dialogue and click select next box and then select End. Now set the output to Output and specify the text from the model. \n\nThis is a pretty simple flow, but let's try it out. Click the Run button at the top right. Enter in a question then click Start Run.\n\n## Testing, Publishing, and Monitoring the App\n\nIf there are any problems along the way, it'll let you know. You can also go over to Tracing and it'll show you the input and output of each box. You can also publish and then run the app as an end user. It's not the prettiest app, and there isn't much customization that can happen, but it's a good start. But go back to the studio and choose Monitoring. Change analysis to Today and we see the runs from today. That's pretty nice. We also have access to the API where we can trigger the start and get the result at the end.\n\n## Review, Critique, and Final Thoughts\n\nI also love the fact that you can build a flow one time and then reuse it in your other workflows by clicking 'Publish this as a tool'. There is a lot more to Dify and it's probably worth continuing to dig into it, but again, it's not perfect. The navigation in the app needs a bit of work, and nothing is is sorted in any way that makes any sense. The published UI is always the same, and it would be nice to be able to tweak it. But as I say that, it sounds a bit nitpicky. Some bigger complaints is that it's a pretty heavy app. There are a lot of moving pieces, maybe more than it really needs. It feels like it started simple, and rather than removing code, they just kept adding and adding, which gets a bit dangerous. I would love to see this get cleaned up a bit. Labels should be a bit more consistent. But again, this is getting nitpicky, and if I have to be nitpicky, then maybe I think it's really awesome. \n\nFor beginners, this is an amazing way to get started, and for more experienced devs, it's a great way to prototype an idea quickly without getting stuck in the weeds of deploying to a test group of users. We didn't really touch the RAG stuff built in here, but it defaults to using Weaviate and you can easily swap that out to using other vector databases as well. There is a lot you can do just by tweaking that configuration file, which unfortunately is only minimally documented. There's a lot in there that isn't very clear, but with a little trial and error, you can probably figure it out.\n\n## Conclusion and Outro\n\nWhat do you think? Is this a tool that you could use? Do you have any ideas of what you might build with it? I'd love to hear about it in the comments below. Thanks so much for watching. Goodbye.\n\nStart with a coffee and then some water."
+}

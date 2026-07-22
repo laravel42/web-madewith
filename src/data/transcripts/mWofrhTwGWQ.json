@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 3,
+  "videoId": "mWofrhTwGWQ",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to expand your Django web application by creating additional views and pages. This tutorial demonstrates how to define a new view function to display detailed information, such as for a specific music album. You'll master URL routing in Django by writing a URL pattern with regular expressions (regex) to capture dynamic segments like an album ID from the URL. Understand how to pass this captured data from your `urls.py` file to your view function in `views.py` and return a custom `HttpResponse` for each unique page.",
+  "chapters": [
+    {
+      "title": "What is a Django View?",
+      "description": "A refresher on what a Django view is and how it connects a URL to an HTML response.",
+      "startTime": 0.0,
+      "endTime": 47.0,
+      "slug": "what-is-a-django-view"
+    },
+    {
+      "title": "Planning the Album and Detail Pages",
+      "description": "This chapter outlines the plan to create a music homepage with all albums and a separate detail page for each one.",
+      "startTime": 47.0,
+      "endTime": 88.0,
+      "slug": "planning-the-album-and-detail-pages"
+    },
+    {
+      "title": "Creating a URL Pattern with Regex",
+      "description": "Learn how to define a new URL pattern in `urls.py` and start building the regular expression to match a URL like `/music/<album_id>`.",
+      "startTime": 88.0,
+      "endTime": 168.0,
+      "slug": "creating-a-url-pattern-with-regex"
+    },
+    {
+      "title": "Capturing URL Parameters",
+      "description": "This section explains the Django-specific regular expression syntax `?P<album_id>` for capturing a part of the URL as a named variable.",
+      "startTime": 168.0,
+      "endTime": 243.0,
+      "slug": "capturing-url-parameters"
+    },
+    {
+      "title": "Matching an ID with Regex",
+      "description": "Discover how to use `[0-9]+` in the regular expression to match a numeric ID of any length.",
+      "startTime": 243.0,
+      "endTime": 323.0,
+      "slug": "matching-an-id-with-regex"
+    },
+    {
+      "title": "Defining the Detail View Function",
+      "description": "A new view function named `detail` is created in `views.py` which accepts the captured `album_id` as an argument.",
+      "startTime": 323.0,
+      "endTime": 381.0,
+      "slug": "defining-the-detail-view-function"
+    },
+    {
+      "title": "Returning a Dynamic HTTP Response",
+      "description": "The `detail` view function is completed by returning a dynamic `HttpResponse` that includes the specific album ID.",
+      "startTime": 381.0,
+      "endTime": 432.0,
+      "slug": "returning-a-dynamic-http-response"
+    },
+    {
+      "title": "Linking the URL to the View",
+      "description": "This chapter shows how to connect the new URL pattern to the `detail` view in `urls.py` and explains the purpose of the `name` argument.",
+      "startTime": 432.0,
+      "endTime": 516.0,
+      "slug": "linking-the-url-to-the-view"
+    },
+    {
+      "title": "Testing and Recap",
+      "description": "The new detail view is tested in the browser, and the video concludes with a recap of how views and URL patterns work together in Django.",
+      "startTime": 516.0,
+      "endTime": 574.48,
+      "slug": "testing-and-recap"
+    }
+  ],
+  "summary": "## Core Concepts: Views and URLs\n- A **view** is a Python function in Django that takes a web request and returns a web response.\n- Each **URL** on your site is mapped to a specific view function.\n- This mapping is configured in the `urls.py` file of your app.\n\n## Building a Detail View\n1.  **Define the URL Structure**: Plan the URL for the new page. In this tutorial, the goal is `/music/<album_id>/`.\n2.  **Create the URL Pattern**: In `music/urls.py`, add a new `url()` entry. This entry will use a regular expression to match the planned URL structure.\n3.  **Define the View Function**: In `music/views.py`, create a new function (e.g., `detail`) that accepts the `request` object and any parameters captured from the URL (e.g., `album_id`).\n4.  **Return a Response**: The view function must return an `HttpResponse` object. For this example, it's simple HTML text that dynamically includes the requested `album_id`.\n\n## URL Pattern with Regular Expressions (Regex)\nThe pattern to capture a numeric album ID is constructed as follows:\n`url(r'^(?P<album_id>[0-9]+)/$', views.detail, name='detail')`\n\n- `r''`: Indicates a raw string, a best practice for writing regular expressions in Python.\n- `^`: Matches the beginning of the string.\n- `(?P<album_id>...)`: This is a named capturing group. Django captures the matched text and passes it as a keyword argument named `album_id` to the view function.\n- `[0-9]+`: Matches any numeric digit (`0` through `9`) one or more times (`+`). This allows it to match an ID of any length (e.g., '2', '71', '953').\n- `/`: Matches the literal trailing slash in the URL.\n- `$`: Matches the end of the string, ensuring the entire URL path is matched.\n\n> [!NOTE]\n> Using a named capturing group, like `(?P<album_id>...)`, is the standard Django way to pass parts of a URL as arguments to a view. This makes your view code clear and readable.\n\n## Connecting URLs to Views\n- The `url()` function takes three primary arguments:\n    1.  A **regular expression** to match against the requested URL path.\n    2.  The **view function** to execute when the pattern matches (e.g., `views.detail`). You pass a reference to the function, not the result of calling it (i.e., no parentheses).\n    3.  An optional `name` keyword argument.\n\n> [!IMPORTANT]\n> The `name` argument (e.g., `name='detail'`) provides a unique, project-wide identifier for this URL pattern. It allows you to refer to this URL from other parts of your Django project, like templates and other views, without having to hardcode the URL path itself. This makes your application much easier to maintain.",
+  "transcription": "## What is a Django View?\n\nAlright Hosses, welcome back. In this video, what I'm going to do is I'm going to be making another view, AKA we are going to be adding another web page to our website. So let's just have a little quick refresher on what a view is.\n\nA view is just a simple function that returns some HTML, that's all it is. So we need these because each URL pattern, or each URL, is connected to a view. So if we want to simplify that even more, each URL is connected to an HTML response. Obviously, each web page is connected to some HTML that needs to be displayed whenever you go to that.\n\n## Planning the Album and Detail Pages\n\nSo what I thought would be pretty cool is if on the music homepage, whenever the user first goes to this section, then they can kind of basically just look at all of their albums. So the album cover is going to pop up, and then they can scroll through. And when they click one of these albums, then it's going to take them to a more detail view where they can see the artist and, you know, all the songs and the album name, so on and so forth.\n\nSo again, we're going to have two pages. The first one is just the overview where you're going to see all of your albums, and the second one is the detail view. So let's go ahead and make that detail view structure right now.\n\n## Creating a URL Pattern with Regex\n\nSo, let's just go ahead and do this. This might be a little bit easier. Above each of these patterns, I'm going to add a comment and just write the exact pattern that it's matching. So this one, we didn't match any pattern, so that means that they just went to the homepage with no extra information after it.\n\nNow the pattern that we're going to be matching in this is this: music, and I think the best URL structure is after music you just type in the album ID. So remember one was Taylor Swift, two was Myth, but let's just go ahead and put like 71 in here just so we have a little example that that is what the structure is. So basically music followed by some ID.\n\nSo what we always have to do whenever we're making these patterns or trying to figure out what the user typed in is always type URL and then a regular expression. So r, two single quotes, put my comment at the end there. So whenever you use regular expressions, 90% of the time in these cases, use carrot, dollar sign. So the carrot represents the beginning, and the dollar sign represents the end. So that's just how you signify beginning and end using regular expressions.\n\n## Capturing URL Parameters\n\nNow what we also want to do is we want to group these together. So a group takes a bunch of things and signifies that this is one item. So that way whenever we type something like 712, it doesn't view this as 7, 1, and 2. It's not three different numbers. It's actually one number, 712. So of course the user was looking for album with the ID 712 and not, you know, three different albums.\n\nSo later on whenever we figure out what number these are typed in, what album ID they were looking for, we're going to have to pretty much save this as a variable so we can use it in our code. So how do we do that? Well, this is actually kind of weird, but you write question mark, capital P, and then greater than and less so. Go ahead and write something like album_id right here. So later on whenever we look for this pattern and extract the integer, it's going to save it as album_id. So then we can just pass it in our function just like normal. So again, I know it's weird but hey, you got to blame Django and, you know, whoever came up with regular expressions. So there you go.\n\n## Matching an ID with Regex\n\nAlright, now after this, we can finally start matching this pattern. So what are we looking for in the ID number? Well, we're looking for a digit 0 to 9, first of all. So how do we do that? Add two square brackets and write 0 to 9. So this means that we're looking for a number 0, 1, 2, 3, 4, 5, 6, 7, 8, 9. Now this is going to be great if we only have 10 albums possible, but the thing is we are looking for, you know, 11 and 12 and 100 and 1,000. So we need to say, okay, this is going to match any integer, but we want these IDs to be, you know, several decimal places long. So after this we write plus, and this means that this pattern is going to match any following integer. So 712 is going to hit, or pretty much anything that's a combination of single integers, we're going to group them together into one single ID which is going to represent a number. Sounds kind of weird, but again, you have to write to the people making regular expressions and blame them for us.\n\nAnd by the way, once we do like two or three more, you guys are going to like, okay, you're just going to like type them as fast and not even really think about it. This is probably only confusing the first time, but there you go.\n\n## Defining the Detail View Function\n\nSo the next thing we have to do after we find this pattern is we need to connect it with a view function. So actually, let's just go ahead and make our view function right now. And I'm just going to name it `detail`. So every single view function is going to take the request, and the request is just the HTML request. And this is just whenever they connect to your site and request something like a web page or an image or whatever. And there's a lot of background information about this like their IP address and yada yada. We really don't look at too much, but that's what that is.\n\nNow the next thing we really care about is this `album_id`. And again, like I said, what this bit of code does is it allows us to treat the album ID just like a variable. So we can just pass it in. And this is just going to be equal to something like 1 or 2 or 712 or 10,000, whatever. Pretty awesome, eh?\n\n## Returning a Dynamic HTTP Response\n\nAlright, so we have our function and now we just need to return some HTML. So return `HttpResponse` and let me just make this a heading two. And for this tutorial, we aren't actually going to connect to the database and pull out, you know, like the album title or the artist or anything like that. Got to, you know, kind of try to keep things simple here. So I'll just say, uh, details for album ID, and then let me go ahead and write string `album_id` and I want to move this to the end as well. All right, looking good.\n\n## Linking the URL to the View\n\nSo that looks pretty good. Whenever we call this function, it's just going to turn details for album ID 1, 2, 3, whatever. Make sure I follow pep8 and have a blank line at the end.\n\nAlright, so remember that function that we just created is called `detail`. So whenever we want to hook up a URL pattern to it, we just need to say `views`, because that's the name of the module, `detail`. Pretty cool way. And you don't add the parentheses at the end because it knows all the variables from these groups already.\n\nSo the last thing I want to say is just this: add a `name` and just name it whatever the function is. And I'm not going to touch on this because this is kind of what we're going to use later, but whenever you have a name, it allows you to do some really cool things in your HTML later on. So there you go.\n\nNow actually, there's one other thing before I forget. So what this does is it looks at this and it's going to pull out the number. However, what we need to do is we need to say, okay, this pattern also has a little forward slash after it. So look for the pattern with the number and the forward slash, pull out the number and treat it as `album_id`, and we're just going to ignore the forward slash that isn't part of the group. All right, cool enough.\n\n## Testing and Recap\n\nNow, let me just refresh this. All right, that still works. Now let's go ahead and check out this. Whenever they go to album ID 2, it says \"details for album ID 2\". And this is going to be Myth. Whenever they go to one, there we go, it's going to display Taylor Swift. And right now we can even go to three or any number such as bada bing, whatever. And that is because we are not actually connecting to the database yet and validating that it is a valid album ID and we actually have something stored for it. So that's your basics of views.\n\nAgain, it's actually really simple. Just look for whatever URL the user typed in and connect it to one of these functions right in there. All the tutorials online and all the documentation makes it seem really hard, but it's not. So yeah, that's it. I'll see you guys next time."
+}

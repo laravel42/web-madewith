@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 3,
+  "videoId": "Rx6Al347_AY",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn Astro, the static-first web framework, in this fast-paced developer guide. Discover how Astro's unique Islands architecture allows you to build highly performant static sites with zero client-side JavaScript by default, while still enabling sprinkles of interactivity with your favorite UI frameworks like React or Svelte.",
+  "chapters": [
+    {
+      "title": "What is Astro?",
+      "description": "Learn about Astro's static-first philosophy, its zero client-side JS default, and the innovative Islands architecture for adding interactivity.",
+      "startTime": 0.0,
+      "endTime": 28.0,
+      "slug": "what-is-astro"
+    },
+    {
+      "title": "Project Setup & Structure",
+      "description": "Get started by installing Astro, running the dev server, and understanding the conventional project directory structure.",
+      "startTime": 28.0,
+      "endTime": 78.0,
+      "slug": "project-setup-structure"
+    },
+    {
+      "title": "Building with Astro Components",
+      "description": "Understand the two main parts of an Astro component, the component script and template, and how to use JavaScript within them.",
+      "startTime": 78.0,
+      "endTime": 120.0,
+      "slug": "building-with-astro-components"
+    },
+    {
+      "title": "Component Props and Slots",
+      "description": "Learn how to pass data to components using props and how to render child content using default and named slots.",
+      "startTime": 120.0,
+      "endTime": 160.0,
+      "slug": "component-props-and-slots"
+    },
+    {
+      "title": "Pages, Routing, and Layouts",
+      "description": "Explore Astro's file-based routing system, how to link between pages, and how to use reusable layouts for consistent page structure.",
+      "startTime": 160.0,
+      "endTime": 192.0,
+      "slug": "pages-routing-and-layouts"
+    },
+    {
+      "title": "Working with Markdown & MDX",
+      "description": "Discover how to create content pages with Markdown and MDX, use YAML frontmatter to pass data to layouts, and import components into MDX.",
+      "startTime": 192.0,
+      "endTime": 250.0,
+      "slug": "working-with-markdown-mdx"
+    },
+    {
+      "title": "Importing Markdown Content",
+      "description": "Learn how to programmatically import all of your Markdown files using `Astro.glob` to create features like post lists.",
+      "startTime": 250.0,
+      "endTime": 282.0,
+      "slug": "importing-markdown-content"
+    },
+    {
+      "title": "Image Optimization",
+      "description": "Use the built-in `<Image>` and `<Picture>` components for automatic image optimization, format conversion, and responsive source sets.",
+      "startTime": 282.0,
+      "endTime": 339.0,
+      "slug": "image-optimization"
+    },
+    {
+      "title": "Using Integrations",
+      "description": "Add powerful features like UI frameworks (React, Svelte) and tools (Tailwind CSS, MDX) to your site using Astro's integration system.",
+      "startTime": 339.0,
+      "endTime": 364.0,
+      "slug": "using-integrations"
+    },
+    {
+      "title": "Islands Architecture & Client Directives",
+      "description": "Understand how to add client-side interactivity using UI framework components and client directives like `client:load` and `client:visible`.",
+      "startTime": 364.0,
+      "endTime": 411.0,
+      "slug": "islands-architecture-client-directives"
+    },
+    {
+      "title": "SSR & Hybrid Rendering",
+      "description": "Learn about Astro's different output modes (static, server, hybrid) and how to enable server-side rendering with an adapter.",
+      "startTime": 411.0,
+      "endTime": 451.0,
+      "slug": "ssr-hybrid-rendering"
+    },
+    {
+      "title": "Dynamic Routing & API Endpoints",
+      "description": "Create dynamic pages using route parameters and build API endpoints by exporting functions for HTTP methods like GET and POST.",
+      "startTime": 451.0,
+      "endTime": 488.0,
+      "slug": "dynamic-routing-api-endpoints"
+    },
+    {
+      "title": "Content Collections",
+      "description": "Organize your content, validate frontmatter with Zod, and ensure type-safety by using Astro's powerful Content Collections API.",
+      "startTime": 488.0,
+      "endTime": 549.0,
+      "slug": "content-collections"
+    },
+    {
+      "title": "Querying and Rendering Collections",
+      "description": "Fetch and render your collection data using `getCollection` to generate static paths or to retrieve content on demand in SSR mode.",
+      "startTime": 549.0,
+      "endTime": 571.0,
+      "slug": "querying-and-rendering-collections"
+    },
+    {
+      "title": "View Transitions API",
+      "description": "Implement seamless, single-page application-like navigation with smooth animations by using Astro's built-in View Transitions component.",
+      "startTime": 571.0,
+      "endTime": 617.0,
+      "slug": "view-transitions-api"
+    },
+    {
+      "title": "Conclusion & Next Steps",
+      "description": "A quick recap of other Astro features to explore and a suggestion to learn about htmx for a different approach to web development.",
+      "startTime": 617.0,
+      "endTime": 637.519,
+      "slug": "conclusion-next-steps"
+    }
+  ],
+  "summary": "## Core Concepts\n\n- Astro is a **static-first** web framework designed for content-rich websites.\n- It ships **zero client-side JavaScript** by default, leading to faster load times.\n- It uses an **Islands Architecture** to add pockets of client-side interactivity only where needed.\n\n## Project Structure\n\n- `astro.config.mjs`: The main configuration file for integrations, build settings, and more.\n- `src/pages/`: Handles file-based routing. `about.astro` becomes the `/about` page.\n- `src/components/`: Location for reusable UI components (`.astro`, `.jsx`, `.svelte`, etc.).\n- `src/layouts/`: Special components that define shared page structure, like headers and footers.\n- `public/`: For static assets that do not need to be processed (e.g., `favicon.ico`).\n\n## Astro Components (`.astro`)\n\nAstro components are HTML-only templates with no client-side runtime.\n\n- **Component Script**: A code fence (`---`) at the top contains build-time JavaScript/TypeScript for fetching data, defining variables, and handling logic.\n- **Component Template**: The area below the script fence uses an HTML-like syntax. It can include JavaScript expressions `{}` and JSX-like patterns for conditional and list rendering.\n- Props are accessed via the global `Astro.props` object.\n- Child content is rendered into a component using the `<slot />` element. Named slots (`<slot name=\"...\" />`) are also supported.\n\n## Content & Data\n\n- **Markdown/MDX**: Astro can render `.md` and `.mdx` files in the `src/pages` directory directly into pages. MDX requires an integration.\n- **`Astro.glob()`**: A function to import multiple local files into your component script, useful for creating index pages.\n- **Content Collections**: The preferred method for organizing Markdown or MDX content, located in `src/content/`.\n    - Provides **type-safety** and data validation for frontmatter using **Zod** schemas.\n    - Query content using `getCollection()` and `getEntry()` from `astro:content`.\n\n## Client-Side Interactivity (Islands)\n\n> [!IMPORTANT]\n> By default, components from UI frameworks (React, Svelte, etc.) are rendered to static HTML. Their JavaScript is stripped out unless you use a `client:*` directive.\n\n- Use `astro add` to install integrations for frameworks like **React** or **Svelte**.\n- To hydrate a component on the client, add a client directive:\n    - `client:load`: Hydrates immediately on page load.\n    - `client:idle`: Hydrates once the main thread is idle.\n    - `client:visible`: Hydrates when the component enters the viewport.\n    - `client:media={query}`: Hydrates when a CSS media query is met.\n    - `client:only={framework}`: Skips server-rendering and renders only on the client.\n\n## Rendering Modes\n\n- **`static` (default)**: Pre-renders the entire site to HTML at build time.\n- **`server`**: Renders pages on-demand (SSR). Requires an adapter (e.g., for Vercel, Netlify).\n- **`hybrid`**: A mix of static and server-rendered pages. Export `export const prerender = false;` on any page to make it dynamic.\n\n## Advanced Features\n\n- **Image Optimization**: Use the `<Image>` and `<Picture>` components from `astro:assets` for automatic optimization, resizing, and modern format conversion (e.g., to WebP).\n- **API Endpoints**: Create files in `src/pages/` that export functions named after HTTP methods (`get`, `post`, etc.) to build a backend API.\n- **Dynamic Routes**: Use bracket syntax in filenames (e.g., `pages/posts/[slug].astro`). In static mode, export `getStaticPaths` to define which paths to generate.\n- **View Transitions**: Add the `<ViewTransitions />` component to enable seamless page transitions, turning your site into a single-page app (SPA). Control animations with `transition:name` and `transition:persist` directives.",
+  "transcription": "## What is Astro?\n\nAstro is a static first web framework held for its easy-to-use APIs and content-driven philosophy. It allows users to ship highly performant static sites with zero client-side JavaScript. With its innovative Islands architecture allowing sprinkles of interactivity where needed.\n\nThis video is going to be a whirlwind tour of Astro's greatest features aimed at devs with at least a little JavaScript experience. Let's all go and ship the fastest websites you ever done did see.\n\nOh, and as a quick side note, if you'd like to see a production Astro site, check out my blog and portfolio site. It's open source and linked in the description.\n\n## Project Setup & Structure\n\nRun the Astro install wizard with your favorite packaging manager. I recommend using TypeScript and installing the sample files. Run the dev server to get a good first look at Astro. Astro has plugins for VS Code and JetBrains IDEs. You can also install community-maintained plugins for your favorite text editor. I'd also recommend the Prettier plugin, `prettier-plugin-astro`.\n\nAstro is configured via the `astro.config.mjs` file. This is where you'll register Astro plugins, configure adapters, and adjust your build settings. Static files are served from the public directory. Your website content can be found in the source directory. `components` typically contains your components written in Astro or other front-end frameworks. `layouts` is typically used to hold Astro components that define page structures shared by multiple Pages. It's also common to have a `styles` directory for CSS files, though these are all just conventions. However, the `pages` directory is a required directory. Your website content will be served from here. Pages can be Astro components or Markdown files.\n\n## Building with Astro Components\n\nAstro components are templating components that have no client-side runtime by default. They're made up of two parts: the component script and the component template. The component script is held within a code fence at the top of the file. This is JavaScript or TypeScript that is executed at build time and can affect the compiled output.\n\nThe component template is written using a HTML-like template syntax that supports JavaScript expressions, components, and special Astro directives. Use curly braces to insert the results of a JavaScript expression into the HTML markup. You can use JSX-like syntax to conditionally display components or repeat components with map functions. If you need client-side interactivity, you can add a script tag in your component template and use vanilla JavaScript to manipulate the DOM. Styling can be done using style tags.\n\n## Component Props and Slots\n\nImport other Astro components using an import statement in the component script. You can then use this like a HTML component in the template. Define props for your component by destructuring the global `Astro.props` property. Define the type of the props by specifying the props interface anywhere in the component script. You can also define default values for your props. Pass props to your Astro components like HTML attributes.\n\nRender child components in your props using a `<slot>` element. An unnamed slot will become the default slot for your component. Give slots a name to allow multiple slots per component. Inject HTML content into a slot by placing the content within the Astro component's opening and closing tags. Inject into a named slot by specifying the `slot` property on the child. Define default content for slots by placing content within the `<slot>` element in your Astro component.\n\n## Pages, Routing, and Layouts\n\nCreate a page by creating an Astro component in the `pages` directory. Astro uses file-based routing, so a page called `blog.astro` directly within the `pages` directory will be at `/blog`. The default page is defined in `index.astro`. Link between Astro pages with standard HTML anchor tags. You may use a path relative to the root domain to avoid typing the whole URL every time. Pages can also be defined using HTML or Markdown files and follow the same routing conventions.\n\nIf you'd like to create a custom 404 page, specify a `404.astro` or `404.md` file at the root of the `pages` directory. Reusable page layouts are just normal Astro components. Create a layout by creating an Astro component with a default slot, then import it into your page to use it. These usually contain boilerplate code like HTML and head tags. Layouts can be nested.\n\n## Working with Markdown & MDX\n\nCreate a Markdown page by creating a Markdown or MDX file in the `pages` directory. MDX files require the Astro MDX integration to be installed. We'll cover integrations later in the video. For now, though, why not subscribe so you don't miss future videos about interesting frameworks like this one?\n\nMarkdown files in Astro can include front matter YAML within a code fence. This is useful for defining metadata. The only reserved property is `layout`. Specify this property and a path to an Astro layout to use that layout for building the page. The layout must contain a default slot. The frontmatter properties defined in the Markdown file will then be available in the layout component via the frontmatter. If you're using MDX, you can write JavaScript in your Markdown. Exported variables will be available within the page and anywhere the file is imported. You can also import and use components in MDX.\n\n## Importing Markdown Content\n\nYour Markdown files can be imported in other Astro files. Use this to create a post list, for example. You can also use `Astro.glob` to import many Markdown files at once. Pass a type parameter to `Astro.glob` to type the frontmatter. Astro will also add some extra properties to any imported Markdown, such as `file` containing the file path and `getHeadings`, a function to get all of the headings in the file. Read more about these in the Astro docs.\n\nThe `Content` property on a Markdown import is an Astro component containing the rendered contents of the Markdown or MDX file. If you're using MDX, this can take a `components` prop, allowing you to override the components used in the rendering.\n\n## Image Optimization\n\nUse an image in your `.astro` components by importing it. Your image must be in your `source` directory to be imported. If you need a public URL to your image, add it to the `public` directory and reference it using a path. For automatically optimized images, import the `Image` component from `astro:assets`. The `Image` component must be used with imported images if you wish for the image to be processed. Generate an automatic source set for optimized images by specifying either the `densities` attribute or both `widths` and `sizes`. Change the image format with the `format` attribute. By default, Astro will convert your images to WebP format. If you'd like to use remote images with the `Image` component, register the authorized remote domains in your Astro config. There are other configurable options in the config; check the docs for more information.\n\nThe `Picture` component can be used to generate responsive images. Specify the `formats` attribute to create images of different formats. Local and authorized remote images in Markdown files will be automatically optimized using Astro's image service. This is the Sharp library by default, though it can depend on the hosting platform. For example, Vercel uses its own image optimizer.\n\n## Using Integrations\n\nAdd functionality to your Astro site using integrations. These can add additional UI frameworks, pre-processors, and new functionality to your site effortlessly. Examples of integrations include the MDX integration, which is required to use MDX on your site, or the Tailwind integration if you'd like to use Tailwind CSS. Install an integration using the `astro add` CLI tool. Integrations are also used to enable server-side rendering, which we will discuss shortly. Check out the Astro docs for a list of integrations.\n\n## Islands Architecture & Client Directives\n\nAdd client-side interactivity to your Astro project using Astro Islands. Islands are interactive UI components on the page. Astro allows you to send the UI for the component with the initial response and then stream the JavaScript in later to improve the user experience. Astro supports using external UI frameworks like React or Svelte to create islands, and you can mix and match your frameworks.\n\nSimply install a relevant integration and then import your UI component as usual. By default, though, Astro will strip out any client-side JavaScript. In order for the component to become interactive, add a client directive to the component. `client:load` will hydrate the component on page load. Use `client:idle` to load after the initial page load, or `client:visible` to wait until the component enters the viewport for the first time. Alternatively, use `client:media` to hydrate at a certain screen size or `client:only` followed by the UI framework to only render the component on the client.\n\n## SSR & Hybrid Rendering\n\nAstro's sites can be rendered in one of three modes: static, server-side rendered, or a hybrid of the two. SSR and hybrid rendering require an SSR adapter to be installed. Change the output mode by specifying the `output` key in the `astro.config` file. In server mode, pages will be rendered on demand by default, whereas hybrid mode sites will be statically generated by default. Opt into or out of pre-rendering by exporting the `prerender` constant from your page. SSR allows features such as the use of cookies, request and response objects in the page script, and creating server endpoints.\n\n## Dynamic Routing & API Endpoints\n\nCreate an endpoint by creating a JavaScript or TypeScript file in the `pages` directory. Define a HTTP method handler by defining a function of the same name, such as `get` or `post`. These functions take in an API context object and return a response. Create a dynamic route by specifying one or more root parameters in the file name with square brackets. Route parameters are available in the page via the `Astro.params` object.\n\nIf you're running in static mode, you must specify the `getStaticPaths` exported function, which will return an array of objects, each of which defines a page. The function can be asynchronous, so you can use it to fetch content from a CMS or database at build time. Use a spread syntax in the route name to match paths of any depth. If your page is running in SSR mode, you can simply render the page based on the contents of the parameters; `getStaticPaths` should not be defined. Astro's routing capabilities are excellent. Check out the docs for more info.\n\n## Content Collections\n\nTo organize your Astro content, create a content collection. These allow you to sort your content into directories, validate your YAML frontmatter, and add TypeScript type safety to your Astro content. Create a content collection by creating a new top-level directory in the `src/content` directory. You cannot nest content collections, though you can still organize with subdirectories.\n\nDefine collection configurations by creating a `config.ts` file in `src/content`. Use the `defineCollection` function to set up the config for each collection. Register your content collections by exporting a record of collection names to the config definitions. You can also use Zod to validate your YAML frontmatter by including a Zod object schema under the `schema` property of the collection config. If you want to reference another collection, import the `reference` function from `astro:content` and include it in your Zod schema with the name of the referenced collection. The `schema` property can also be a function. Use this with the `image` parameter to add images to your YAML frontmatter. Query your content collections in your component or pages using the `getCollection` or `getEntry` functions. `getCollection` will return all entries in a collection, or use `getEntry` with the collection name and entry slug to fetch just a single entry. `getCollection` takes a filter function as an optional second argument. Use `getEntries` with an array of references to return data from any referenced collections.\n\n## Querying and Rendering Collections\n\nIf you're running in static mode, use `getCollection` to generate your static paths. Entries have a `render` function that you can use to create a Content component to render your entry's contents as HTML. You can also use `getEntry` in SSR mode to fetch content on demand.\n\n## View Transitions API\n\nMake use of the browser's View Transitions API with Astro's View Transitions built-in component. Add it to the `head` of a page to enable view transitions on a single page, or add it to your layout to enable them for your entire site. Transitions are opt-in and will automatically respect users' reduced motion preferences.\n\nAdd a transition name to a component or element using the `transition:name` directive. Any elements with the same names across a page change will be transitioned between automatically. Add the `transition:persist` directive to keep content states across page navigations, or use `transition:animate` to customize the transition used for that component. Adding the View Transitions component to your site will turn it into a single-page application, and Astro will ship a small client-side router by default. This will also enable data prefetching for links. You can disable this behavior using Astro's prefetch settings. More information can be found in the documentation, as well as more information on view transitions.\n\n## Conclusion & Next Steps\n\nAstro is an extensive framework, and there's a lot I haven't been able to cover. Check out the documentation for more information on image optimization, font handling, internationalization, middleware, and much more. Or, if you've decided that Astro isn't really your thing and you'd like to avoid having to write any front-end code, you might like to learn about htmx. Check that out in this video here."
+}

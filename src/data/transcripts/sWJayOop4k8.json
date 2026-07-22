@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 3,
+  "videoId": "sWJayOop4k8",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to build a complete Web API from scratch using ASP.NET Core and C#. This step-by-step tutorial guides beginners through creating a RESTful API for managing book data, covering all essential CRUD operations: creating, reading, updating, and deleting. You'll work with Entity Framework Core to interact with a SQLite database, implement the repository pattern for clean data access, and configure dependency injection. Discover how to set up controllers, define API endpoints, and test your work using the built-in Swagger UI.",
+  "chapters": [
+    {
+      "title": "Introduction to the Web API Project",
+      "description": "This chapter introduces the goal of the video: creating a Web API with ASP.NET Core and C# to perform CRUD operations.",
+      "startTime": 0.0,
+      "endTime": 24.0,
+      "slug": "introduction-to-the-web-api-project"
+    },
+    {
+      "title": "API Overview and Initial Project Setup",
+      "description": "An overview of the Book API is provided, along with the necessary tools and the steps to create a new ASP.NET Core Web API project in Visual Studio.",
+      "startTime": 24.0,
+      "endTime": 84.0,
+      "slug": "api-overview-and-initial-project-setup"
+    },
+    {
+      "title": "Cleaning the Project and Installing Dependencies",
+      "description": "This chapter covers cleaning up the default project files and installing the Entity Framework Core SQLite NuGet package for database interaction.",
+      "startTime": 84.0,
+      "endTime": 129.0,
+      "slug": "cleaning-the-project-and-installing-dependencies"
+    },
+    {
+      "title": "Creating the Data Model and DbContext",
+      "description": "This section demonstrates how to create the `Book` model class and the `BookContext` class, which is essential for Entity Framework to manage database operations.",
+      "startTime": 129.0,
+      "endTime": 215.0,
+      "slug": "creating-the-data-model-and-dbcontext"
+    },
+    {
+      "title": "Configuring Dependency Injection for the DbContext",
+      "description": "This chapter explains how to register the BookContext for dependency injection in the startup file and configure the SQLite database connection string.",
+      "startTime": 215.0,
+      "endTime": 250.0,
+      "slug": "configuring-dependency-injection-for-the-dbcontext"
+    },
+    {
+      "title": "Introducing the Repository Pattern",
+      "description": "The repository pattern is introduced as a best practice, and the IBookRepository interface is created to define the contract for data operations.",
+      "startTime": 250.0,
+      "endTime": 315.0,
+      "slug": "introducing-the-repository-pattern"
+    },
+    {
+      "title": "Implementing the BookRepository",
+      "description": "This chapter shows how to create the concrete BookRepository class, which implements the IBookRepository interface using Entity Framework Core for data access.",
+      "startTime": 315.0,
+      "endTime": 412.0,
+      "slug": "implementing-the-bookrepository"
+    },
+    {
+      "title": "Registering the Repository for Dependency Injection",
+      "description": "This part covers registering the repository as a scoped service in the dependency injection container to make it available throughout the application.",
+      "startTime": 412.0,
+      "endTime": 431.0,
+      "slug": "registering-the-repository-for-dependency-injection"
+    },
+    {
+      "title": "Creating the API Controller",
+      "description": "This chapter walks through creating the BooksController, explaining the role of the Route and ApiController attributes, and injecting the book repository.",
+      "startTime": 431.0,
+      "endTime": 519.0,
+      "slug": "creating-the-api-controller"
+    },
+    {
+      "title": "Implementing the GET Endpoints",
+      "description": "Two GET action methods are created: one to fetch all books and another to retrieve a single book by its ID, explaining route parameters and ActionResult.",
+      "startTime": 519.0,
+      "endTime": 626.0,
+      "slug": "implementing-the-get-endpoints"
+    },
+    {
+      "title": "Testing the GET Endpoints with Swagger UI",
+      "description": "This segment shows how to run the project and use the integrated Swagger UI to test both GET endpoints, demonstrating their functionality.",
+      "startTime": 626.0,
+      "endTime": 691.0,
+      "slug": "testing-the-get-endpoints-with-swagger-ui"
+    },
+    {
+      "title": "Implementing the POST Endpoint",
+      "description": "The POST action method is created to handle the creation of a new book, explaining model binding and how to return a 201 Created status code.",
+      "startTime": 691.0,
+      "endTime": 740.0,
+      "slug": "implementing-the-post-endpoint"
+    },
+    {
+      "title": "Testing POST and Verifying with GET",
+      "description": "This chapter demonstrates how to use Swagger UI to send POST requests to create new books and then use the GET endpoint to verify that they were successfully added.",
+      "startTime": 740.0,
+      "endTime": 789.0,
+      "slug": "testing-post-and-verifying-with-get"
+    },
+    {
+      "title": "Implementing the PUT Endpoint",
+      "description": "The PUT action method is implemented to handle updating an existing book, including input validation and returning a 204 No Content status code.",
+      "startTime": 789.0,
+      "endTime": 859.0,
+      "slug": "implementing-the-put-endpoint"
+    },
+    {
+      "title": "Testing the PUT Endpoint",
+      "description": "This part demonstrates how to use Swagger to test the PUT endpoint by retrieving a book, modifying its data, and then verifying the update with a GET request.",
+      "startTime": 859.0,
+      "endTime": 906.0,
+      "slug": "testing-the-put-endpoint"
+    },
+    {
+      "title": "Implementing the DELETE Endpoint",
+      "description": "This chapter focuses on creating the DELETE action method, which finds a book by its ID and removes it from the database.",
+      "startTime": 906.0,
+      "endTime": 948.0,
+      "slug": "implementing-the-delete-endpoint"
+    },
+    {
+      "title": "Testing DELETE and Final Conclusion",
+      "description": "The DELETE endpoint is tested using Swagger UI, its success is verified with a GET request, and the tutorial concludes with a summary.",
+      "startTime": 948.0,
+      "endTime": 989.0,
+      "slug": "testing-delete-and-final-conclusion"
+    }
+  ],
+  "summary": "## Project Setup\n- Create an **ASP.NET Core Web API** project in Visual Studio.\n- Remove the default `WeatherForecast` controller and model files to start with a clean slate.\n\n## Data Layer with Entity Framework Core\n- **Entity Framework Core (EF Core)** is an Object-Relational Mapper (O/RM) that allows interacting with a database using .NET objects instead of raw SQL.\n- **Dependencies**: Install the `Microsoft.EntityFrameworkCore.Sqlite` NuGet package to work with a SQLite database.\n- **Model**: Create a `Book` class with properties like `Id`, `Title`, `Author`, and `Description`. This class represents the data structure for a book.\n- **DbContext**:\n    - Create a `BookContext` class that inherits from `DbContext`.\n    - It contains a `DbSet<Book>` property, which represents the collection of books in the database.\n    - The constructor should accept `DbContextOptions` to allow for configuration via dependency injection.\n- **Configuration**:\n    - In `Startup.cs`, register the `BookContext` in the `ConfigureServices` method.\n    - Use `services.AddDbContext<BookContext>()` and provide the connection string to the SQLite database file.\n\n> [!TIP]\n> The connection string for a local SQLite file is simple, e.g., `Data Source=books.db`.\n\n## Repository Pattern\n- A repository acts as a layer of abstraction between the application logic (controller) and the data access layer (DbContext). This is a good practice for clean architecture and maintainability.\n- **Interface (`IBookRepository`)**: Define a contract with methods for all CRUD operations:\n    - `Task<IEnumerable<Book>> Get()`\n    - `Task<Book> Get(int id)`\n    - `Task<Book> Create(Book book)`\n    - `Task Update(Book book)`\n    - `Task Delete(int id)`\n- **Implementation (`BookRepository`)**:\n    - Create a `BookRepository` class that implements the `IBookRepository` interface.\n    - Inject the `BookContext` via the constructor.\n    - Use `async` methods from EF Core (e.g., `SaveChangesAsync()`, `ToListAsync()`, `FindAsync()`) to perform database operations.\n- **Dependency Injection**:\n    - Register the repository in `ConfigureServices` using `services.AddScoped<IBookRepository, BookRepository>();`.\n\n> [!NOTE]\n> Using `AddScoped` ensures that a single instance of the repository is created for each HTTP request, which is a common and effective lifetime for database contexts and repositories.\n\n## API Controller (`BooksController`)\n- An API controller is responsible for handling incoming HTTP requests and returning responses.\n- **Attributes**:\n    - `[Route(\"api/[controller]\")]`: Defines the URL path for the controller (e.g., `/api/books`).\n    - `[ApiController]`: Enables helpful API-specific behaviors like automatic validation of the request model.\n- **Action Methods**: These are public methods in the controller that handle specific endpoints and HTTP verbs.\n    - **`GET /api/books`**: Returns a list of all books. Decorated with `[HttpGet]`.\n    - **`GET /api/books/{id}`**: Returns a single book by ID. Decorated with `[HttpGet(\"{id}\")]`. Returns `ActionResult<Book>` to allow for sending `NotFound` (404) if the book doesn't exist.\n    - **`POST /api/books`**: Creates a new book. Decorated with `[HttpPost]`. Returns `CreatedAtAction()` to send back a **201 Created** status code and the location of the new resource.\n    - **`PUT /api/books/{id}`**: Updates an existing book. Decorated with `[HttpPut(\"{id}\")]`. Returns `NoContent()` for a successful update (**204 No Content** status code).\n    - **`DELETE /api/books/{id}`**: Deletes a book by ID. Decorated with `[HttpDelete(\"{id}\")]`. Returns `NoContent()` for a successful deletion (**204 No Content**).\n\n## Testing with Swagger UI\n- The ASP.NET Core Web API template includes **OpenAPI (Swagger)** support by default.\n- When you run the application, it launches a browser with the **Swagger UI**, which provides automatically generated documentation for your API.\n- This UI allows you to test each endpoint directly from the browser by sending requests and viewing the responses.",
+  "transcription": "## Introduction to the Web API Project\n\nIn this video, we will learn how to create a web API using ASP.NET Core and C#. By the end of the video, you will be able to create an API that supports creating, reading, updating, and deleting data. My name is Pat. If you are new to the channel, consider subscribing. Let's get into it.\n\n## API Overview and Initial Project Setup\n\nThe API we are going to create will be able to manage books. We will expose various endpoints for creating, reading, updating, and deleting books. This endpoint will be used in combination with an HTTP verb to perform a specific action on the data.\n\nIn case you want to follow along, I will use Visual Studio 2019 and the .NET 5 SDK. Let's launch Visual Studio and then select create a new project. On the next screen, select the ASP.NET Core Web Application, and then Next. In this dialog, we'll give a name to the project. Let's name it BookApi and then click Create. In this dialog, select ASP.NET Core Web API, then click on Create to generate all the project files.\n\n## Cleaning the Project and Installing Dependencies\n\nWell done, the project is created. Let's remove two files we don't need: WeatherForecast at the root of the project and WeatherForecastController in the controllers folder.\n\nBehind the REST API, we will use Entity Framework to interact with a SQLite database. Entity Framework is an object-relational mapper. It allows working with a database using .NET objects instead of SQL statements. Let's start by installing a NuGet package named microsoft.entityframeworkcore.sqlite. This package has everything that helps work with Entity Framework and SQLite. Using Entity Framework Core, data access is performed using a model.\n\n## Creating the Data Model and DbContext\n\nWe need to create a book model. Let's create a folder named `Models`, then add a new class named Book. This class has a few properties: Id, which is a unique identifier; Title represents the title of the book; Author is the name of, well, the author; Description is a short description of the book. In the real world, a book has probably more attributes than this.\n\nEntity Framework Core also needs a context object. The context object allows querying and saving data. In the `Models` folder, let's add a new class called `BookContext`. This class inherits from the `DbContext` class. The constructor takes a `DbContextOptions` object as a parameter. This object is a configuration of the context. It will be injected through dependency injection. Let's also expose a DbSet property that represents a collection of books. Let's make sure the database is created when using the DbContext.\n\n## Configuring Dependency Injection for the DbContext\n\nOnce the BookContext is created, we need to register it for dependency injection. Let's update the `ConfigureServices` method in the `Startup.cs` file. We use the `AddDbContext` to register the BookContext class with ASP.NET Core's dependency injection system. We also provide a connection string to the SQLite database, which is a simple file in our project. If you have an existing database, this is the place where you can set your connection string.\n\n## Introducing the Repository Pattern\n\nEntity Framework is all set. It's time to add a repository. Simply put, a repository is a layer that sits between our application and the data access layer, which is in our case the BookContext. Adding a repository is a good practice; it helps add a layer of abstraction between your code and the data access layer. Let's create a folder named `Repositories`, then we add an interface called `IBookRepository`.\n\nThis interface describes operations that can be performed against the database. `Get` will retrieve all books. `Get` with an ID parameter will retrieve a single book. Create, update, and delete are self-explanatory.\n\n## Implementing the BookRepository\n\nLet's add a concrete implementation. In the `Repositories` folder, we add a new class called `BookRepository`. This class implements the `IBookRepository` interface. The repository will query the database using the BookContext. We inject the context through the constructor.\n\nLet's implement the `Create` method. We use the `Add` method of the DbSet to add a new instance of the Book class. The `SaveChangesAsync` method will insert data into the database. In the `Delete` method, we use the `Remove` method of the DbSet, and the `SaveChangesAsync` will delete the entity from the database.\n\nLet's implement the `Get` method now. Invoking `ToListAsync` on the DbSet will fetch all the books from the database. The other `Get` method takes an ID parameter; we will use the `FindAsync` method to get a single book. The last method is the `Update` method. We change the state of the entity, and `SaveChangesAsync` will update the entity in the database.\n\n## Registering the Repository for Dependency Injection\n\nThe repository is ready. Now we need to register it with the dependency injection system. Let's update the `ConfigureServices` method in the `Startup.cs` file. `AddScoped` will register an instance of the BookRepository. This also means that only one instance of the BookRepository class will be created for a given HTTP request.\n\n## Creating the API Controller\n\nThe repository is ready. Let's create an API controller. An API controller is a class that is responsible for handling requests for an endpoint. Right-click on the `Controllers` folder, next Add Controller, then select API Controller - Empty. We name the class BooksController.\n\nLet's take a look at the structure of the controller. It has a `Route` attribute that defines the path that the controller will handle. In our case, the path will be `api/books`. The `ApiController` attribute provides behavior such as automatic model validation and more. The controller inherits from `ControllerBase`, which provides many properties and methods that are useful for handling HTTP requests. The controller needs an instance of the BookRepository to interact with the database. Let's inject the BookRepository in the constructor. Now let's implement methods that are going to handle specific HTTP requests. These methods are called action methods. We will create one for each HTTP verb we want to handle.\n\n## Implementing the GET Endpoints\n\nLet's create a new method called `GetBooks`. This method returns an `IEnumerable<Book>`. We decorate the method with the `HttpGet` attribute. This tells ASP.NET that the method will handle HTTP GET requests. We get the books from the repository using the `Get` method. When this action is invoked, ASP.NET will convert the book's object to JSON before returning it to the caller.\n\nLet's create a new method also named `GetBooks`. This method returns a `Task<ActionResult<Book>>`. Why can't we just return a book object? The `Task` part is because the caller will be able to `await` this method. The `ActionResult` provides the flexibility to return other types like `NotFound` or `BadRequest`, for instance. The method takes an ID as a parameter. It's also decorated with `HttpGet` to tell that it will handle HTTP GET requests. Notice that the `HttpGet` in the attribute is used with an argument in curly braces. This puts the endpoint's subpath in the `id` parameter. If we use `api/books/3`, for instance, then the `id` parameter will have 3 as a value. We get a single book from the repository using the `Get` method that takes an id.\n\n## Testing the GET Endpoints with Swagger UI\n\nLet's run the project to test what we've done so far. As you can see, the default page comes with documentation of the API. The template we use to create the project comes with OpenAPI support. This gives us Swagger UI, which is a tool that generates documentation for our API. It also supports testing the API in the browser.\n\nLet's try the GET endpoint. If I execute it, of course, there is no data because our database is empty. Let's add a breakpoint inside the `GetBooks` actions. If I execute the GET endpoint again, as you can see, the breakpoint in the first `GetBooks` method is hit. Let's do the same with the second `Get`. I provide a random ID, and if I execute, the breakpoint is also hit. The endpoint seems to work. Let's implement an action method for posting a book.\n\n## Implementing the POST Endpoint\n\nIn the controller, we add a new method called `PostBooks`. The method takes a Book object in parameter and returns a `Task<ActionResult<Book>>`. We decorate the method with the `HttpPost` attribute to tell that it will handle HTTP POST requests. Thanks to a process called model binding, ASP.NET will convert a JSON in the request payload to a Book object. We use the `Create` method on the repository to insert a book in the database. We return a `CreatedAtActionResult`, which will generate a 201 HTTP status code.\n\n## Testing POST and Verifying with GET\n\nLet's run the project to test this endpoint. Select `POST`. In the request body, we add a JSON text. This JSON represents a book. We set some properties. We execute. If we check the result, we get a 201 HTTP status code.\n\nLet's add another book and execute. Now, let's test the GET endpoint. If I execute, I get the two books I posted.\n\n## Implementing the PUT Endpoint\n\nNow let's add an action method to update an existing book. We add a new method called `PutBooks`. It returns a `Task<ActionResult>`. It takes an ID parameter, which is the ID of the book we want to update. It also takes a Book parameter, which is the updated book. It is decorated with `HttpPut` to tell that it will handle HTTP PUT requests.\n\nWe make sure that the ID provided in the URL and the one in the payload is the same, otherwise we return a `BadRequest` result. `BadRequest` generates a 400 HTTP status code, which indicates that the server cannot understand the request. If the ID is okay, we invoke the `Update` method of the repository. We return a `NoContent` result that will generate a 204 HTTP status code to indicate that the request has been processed, but there is no data.\n\n## Testing the PUT Endpoint\n\nLet's test this endpoint. Let's first execute a GET so we can copy a book payload. Now in the PUT endpoint, I set the ID to 2, paste the payload, and I modify the description. If I execute the request... if I execute the GET endpoint again, you can see that the description has been changed.\n\n## Implementing the DELETE Endpoint\n\nLet's implement the action method for deleting a book. We add a new method called `DeleteBooks`. The method takes an ID parameter, which is the ID of the book we want to delete. It returns a `Task<ActionResult>`. We decorate it with an `HttpDelete` attribute to tell that it will handle HTTP DELETE requests. We first check if the book exists in the database. If the book exists, we invoke the `Remove` method from the repository to delete it. Finally, we return a `NoContent` result.\n\n## Testing DELETE and Final Conclusion\n\nLet's test the endpoint. I provide the ID 2, which is the ID of the second book, and I hit execute. If I execute the GET endpoint, as you can see, the second book is no longer there.\n\nThat's it for this tutorial. If you enjoyed it, feel free to like the video and subscribe to the channel. Thanks for watching. See you soon."
+}

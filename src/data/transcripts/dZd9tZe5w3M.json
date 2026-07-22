@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 3,
+  "videoId": "dZd9tZe5w3M",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to manage configuration and environment variables in your NestJS applications using the official @nestjs/config package. This tutorial demonstrates best practices for moving beyond simple .env file usage. You'll see how to set up the ConfigModule globally, inject the ConfigService into services and custom providers, and retrieve variables for JWT secrets. The walkthrough also covers advanced techniques, such as getting the port in main.ts and creating a structured, type-safe configuration for complex modules like TypeORM.",
+  "chapters": [
+    {
+      "title": "Introduction to NestJS Config",
+      "description": "This chapter introduces the @nestjs/config module as a best-practice alternative to using dotenv directly for managing environment variables.",
+      "startTime": 0.0,
+      "endTime": 40.0,
+      "slug": "introduction-to-nestjs-config"
+    },
+    {
+      "title": "Global ConfigModule Setup",
+      "description": "This chapter covers installing the package and importing ConfigModule.forRoot() with the `isGlobal` option into the root AppModule.",
+      "startTime": 40.0,
+      "endTime": 81.0,
+      "slug": "global-configmodule-setup"
+    },
+    {
+      "title": "Using ConfigService in a Standard Service",
+      "description": "This chapter demonstrates how to inject the ConfigService into a regular NestJS service to retrieve a JWT secret from environment variables.",
+      "startTime": 81.0,
+      "endTime": 122.0,
+      "slug": "using-configservice-in-a-standard-service"
+    },
+    {
+      "title": "Injection in Custom Classes and Providers",
+      "description": "This chapter explains how to inject ConfigService into custom providers and the importance of letting NestJS handle instantiation for dependency injection.",
+      "startTime": 122.0,
+      "endTime": 175.0,
+      "slug": "injection-in-custom-classes-and-providers"
+    },
+    {
+      "title": "Accessing Configuration in main.ts",
+      "description": "This chapter shows how to get an instance of the ConfigService within the bootstrap function to set the application's port.",
+      "startTime": 175.0,
+      "endTime": 213.0,
+      "slug": "accessing-configuration-in-main-ts"
+    },
+    {
+      "title": "Creating a Structured Configuration File",
+      "description": "This chapter walks through creating a separate configuration file to organize variables into a nested object and loading it via the ConfigModule.",
+      "startTime": 213.0,
+      "endTime": 322.0,
+      "slug": "creating-a-structured-configuration-file"
+    },
+    {
+      "title": "Implementing a TypeOrmOptionsFactory",
+      "description": "This chapter shows how to create a dedicated configuration service that implements TypeOrmOptionsFactory to provide database connection details.",
+      "startTime": 322.0,
+      "endTime": 366.0,
+      "slug": "implementing-a-typeormoptionsfactory"
+    },
+    {
+      "title": "Asynchronous Module Configuration",
+      "description": "This chapter details how to use TypeOrmModule.forRootAsync with the custom configuration factory to ensure dependencies are loaded in the correct order.",
+      "startTime": 366.0,
+      "endTime": 414.0,
+      "slug": "asynchronous-module-configuration"
+    },
+    {
+      "title": "Verification and Final Thoughts",
+      "description": "This chapter validates the implementation by starting the server and testing the API endpoints, confirming that the new configuration works as intended.",
+      "startTime": 414.0,
+      "endTime": 484.729,
+      "slug": "verification-and-final-thoughts"
+    }
+  ],
+  "summary": "This document outlines key concepts for using the `@nestjs/config` module to manage application configuration in NestJS.\n\n## Core Concepts\n\nThe `@nestjs/config` package provides a best-practice approach for handling environment variables and configuration, moving beyond direct `process.env` access. It centralizes configuration logic, supports `.env` files, and enables structured, type-safe configurations.\n\n## Basic Setup and Usage\n\n- **Installation**: `npm i @nestjs/config`\n- **Global Import**: In `app.module.ts`, import the `ConfigModule` to make it accessible throughout the application without needing to re-import it in every module.\n  ```typescript\n  ConfigModule.forRoot({ isGlobal: true })\n  ```\n- **Injecting `ConfigService`**: Inject `ConfigService` into any service or provider's constructor to access configuration values.\n  ```typescript\n  constructor(private configService: ConfigService) {}\n  \n  someMethod() {\n    const secret = this.configService.get<string>('JWT_SECRET');\n  }\n  ```\n\n> [!IMPORTANT]\n> For custom providers or strategies (like a Passport strategy), you must let the NestJS dependency injection container instantiate the class. Do not use the `new` keyword, or the `ConfigService` will not be injected.\n\n- **Accessing Config in `main.ts`**: To use configuration during the application bootstrap phase (e.g., to get the port), you can retrieve the `ConfigService` from the application instance.\n  ```typescript\n  // In main.ts\n  const configService = app.get(ConfigService);\n  const port = configService.get('PORT');\n  await app.listen(port);\n  ```\n\n## Advanced: Structured Configuration for TypeORM\n\nFor complex configurations like a database connection, you can create namespaced, type-safe configuration objects.\n\n1.  **Create a Configuration File (`config.ts`)**: Export a function that returns a configuration object. This allows you to group related variables.\n    ```typescript\n    export default () => ({\n      database: {\n        host: process.env.DB_HOST,\n        port: parseInt(process.env.DB_PORT, 10) || 5432\n      }\n    });\n    ```\n\n2.  **Load the Custom Config**: Update `ConfigModule` in `app.module.ts` to load your new configuration file.\n    ```typescript\n    ConfigModule.forRoot({ load: [config], isGlobal: true })\n    ```\n\n3.  **Implement `TypeOrmOptionsFactory`**: Create a dedicated service that builds the TypeORM configuration dynamically.\n    - It should implement `TypeOrmOptionsFactory`.\n    - Inject `ConfigService`.\n    - Use `configService.get('database')` to retrieve the entire database object.\n\n    > [!NOTE]\n    > `configService.get()` retrieves from custom config files if the key is not all-caps with underscores. Keys like `JWT_SECRET` are read from `.env`, while keys like `database` are read from loaded config files.\n\n4.  **Use `forRootAsync`**: In `app.module.ts`, configure `TypeOrmModule` to use the factory asynchronously. This ensures the configuration is loaded before the database module tries to connect.\n    ```typescript\n    TypeOrmModule.forRootAsync({\n      imports: [ConfigModule], // Make ConfigModule available\n      useClass: DatabaseConfigService, // Your factory class\n      inject: [ConfigService], // Optional, if factory needs it directly\n    }),\n    ```",
+  "transcription": "## Introduction to NestJS Config\n\nWell, welcome back, everyone. Today I just want to make a quick video going over NestJS configuration, and for that, we're going to need to install `@nestjs/config`. \n\nNormally I use `dotenv` and just use the environment variables directly, but that's not really best practice. So I want to show how to use the config module. The project that I'm going to be using is the Space Explorer project that I've been creating for fun, and we already have a couple of environment variables that we can use: `PORT`, the `JWT_SECRET`, and then the database variables.\n\n## Global ConfigModule Setup\n\nSo the first thing that we'll want to do is open up our App module, and we're going to want to import the `ConfigModule` and then add it to our imports array. The `ConfigModule` has a `forRoot` method which automatically reads all the variables from our `.env` file, but it does take an options object. \n\nTo make things a little easier, we could add the attribute of `isGlobal` to `true`. All that means is that for all of our individual sub-modules, we won't need to add it to their imports array. It's going to assume that the `ConfigModule` is available for all modules in our application.\n\n## Using ConfigService in a Standard Service\n\nSo first, I'm going to be using the JWT secret for the first use case. That would be using it inside a service that's automatically injected—that goes into `UserService`. What we want to do is inject it into our constructor of our `UserService`. \n\nThat way, in our `createToken` method, we can use that `ConfigService` to get the environment variable. I believe it's called `JWT_SECRET`. And then in here, instead of hardcoded strings, we can change it to the `secret` variable. Now, this is for a normal service.\n\n## Injection in Custom Classes and Providers\n\n...but for a custom NestJS injectable, where we're implementing some of the underlying functionality, we're going to follow the same steps: add a constructor and then inject the `ConfigService` into that. And then wherever we need the environment variable which is right down here in `validateToken`, we'll do the same thing and change this to a variable. \n\nBut one important note is that for one of these special classes, wherever we are using it—and I believe I'm using this in the user resolver—we can't call `new`. We have to actually pass this to NestJS for it to instantiate it instead. That way the `ConfigService` will be injected properly.\n\n## Accessing Configuration in main.ts\n\nThe next use case that I want to cover is how to use `PORT`. Because this is not actually going to be inside of any of our modules; it'll actually be inside of our bootstrap function in `main.ts`. \n\nWhat you can do here is get the `ConfigService` by accessing the app. We'll do an `app.get()` and we're getting the `ConfigService`. And then with the `ConfigService`, we can just use it like we have been in the other services. So that would be a `configService.get()`, and this time we want `PORT`. And it will pass the port into `app.listen()`. Okay.\n\n## Creating a Structured Configuration File\n\nAnd then the last thing that I want to show in this video is how to use all of these database environment variables. And that's because we want to pass an object that looks like this from the config that we've been using previously. I want to show how you can get variables that are a little more complex than just a string or a number. So to do that, I'm going to make a new file, `config.ts`, and while I'm here I'm also going to make a file `database.config.ts`.\n\nBut first, I'm going to go to `config.ts` and make sure that we're exporting something. In the config, the reason why it's a function is we're going to wait until the app loads all the environment variables, and then NestJS is going to pass it into this function. Inside of this function, we're going to return an object. And this object I'm just going to copy from our config and paste it in here. I'm also going to replace all of these field values with the things that are inside of our `.env` file, which I have to reference because I don't remember what they're called. So, this one's `DB_HOST`, and finally, this one is `process.env.DB_DATABASE`. I don't need this anymore. You can also add all of your other environment variables or configuration variables here, but it's not entirely necessary.\n\nOnce you do that, in your `AppModule`, all you have to do is update your `ConfigModule.forRoot` and give it the property of `load` and we want to load our config file. Make sure you import it as well.\n\n## Implementing a TypeOrmOptionsFactory\n\nNow we're going to go to the other file that we created, the `database.config`. And this is going to be an injectable service where we're going to be using the `ConfigService`. So we'll need the constructor so we can inject that. And we want this to implement the `TypeOrmOptionsFactory` so that our TypeORM module can use these environment variables.\n\nAnd here, we'll just do a `configService.get()` and we'll get the `database` object. Now, the rule with the `ConfigService.get` method is that if it's all uppercase with underscores, it'll get it from the environment variables. Otherwise, it will get it from the config file that the `ConfigModule` loaded.\n\n## Asynchronous Module Configuration\n\nAnd now we need to make use of this database config. So Inside of our App module again, we're going to change this `forRoot` method to `forRootAsync`. It's asynchronous because we actually want it to wait until our entire application loads before it loads the database.\n\nAnd inside the options object, we just want to pass a `useClass` and give it the class that we just created, which is our `DatabaseConfig`. But the TypeORM module depends on the `ConfigModule`, so we also need to add it to the `imports` array, where we're passing the `ConfigModule`. And don't worry about circular dependencies because I am assuming that this is loading after the `ConfigModule` is loaded, so this should be okay.\n\n## Verification and Final Thoughts\n\nAnd after you do all that, the application should be good to go. So if you do a `yarn start:dev`, you start the server. And once the server has started, your app, your API should work as it always has.\n\nSo we'll do a `me` query here, which should give us a forbidden resource because we're not logged in. We need to add the HTTP header. So let's quickly log in. And this is a mutation and not a query. So here we go. We'll grab the token, add to headers. Remember the prefix is going to be `Bearer`, and paste that in. And we'll run the `me` query again, which... I'm just going to get ID and email. And we've logged in.\n\nSo everything is working as intended. And yeah, that's pretty much the `ConfigService` and the `ConfigModule` and how to use it. So I hope you all enjoyed this video and found it valuable. I'll see all of you next time."
+}

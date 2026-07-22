@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 3,
+  "videoId": "qAF1NjEVHhY",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Explore the key differences between LangChain and LangGraph to determine the best framework for your LLM applications. This guide contrasts LangChain's sequential, chain-based approach for tasks like data retrieval and summarization with LangGraph's powerful cyclic graph structure, ideal for building stateful, multi-agent systems. Understand their unique components, state management capabilities, and architectural focuses—from directed acyclic graphs (DAGs) to flexible nodes and edges—to make an informed decision for your next project.",
+  "chapters": [
+    {
+      "title": "Introduction: LangChain vs. LangGraph",
+      "description": "An introduction to the two open-source frameworks, LangChain and LangGraph, and the core question of when to use each.",
+      "startTime": 0.0,
+      "endTime": 13.0,
+      "slug": "introduction-langchain-vs-langgraph"
+    },
+    {
+      "title": "What is LangChain?",
+      "description": "A summary of LangChain's core concept as a framework for building LLM applications by executing a sequence of functions in a chain.",
+      "startTime": 13.0,
+      "endTime": 38.0,
+      "slug": "what-is-langchain"
+    },
+    {
+      "title": "LangChain Example: A Sequential Workflow",
+      "description": "This chapter breaks down a practical example of a retrieve, summarize, and answer workflow built with LangChain.",
+      "startTime": 38.0,
+      "endTime": 101.0,
+      "slug": "langchain-example-a-sequential-workflow"
+    },
+    {
+      "title": "Core LangChain Components",
+      "description": "A look at the specific LangChain components, like Document Loaders, Text Splitters, Chains, Prompts, and LLM modules, used to build an application.",
+      "startTime": 101.0,
+      "endTime": 197.0,
+      "slug": "core-langchain-components"
+    },
+    {
+      "title": "Orchestrating Logic with Chains",
+      "description": "This section explains how to use chains to orchestrate summarization and answer generation, including the use of memory and different LLMs.",
+      "startTime": 197.0,
+      "endTime": 257.0,
+      "slug": "orchestrating-logic-with-chains"
+    },
+    {
+      "title": "Introducing LangGraph for Complex Workflows",
+      "description": "An introduction to LangGraph, a library designed for building stateful, multi-agent systems and handling nonlinear workflows.",
+      "startTime": 257.0,
+      "endTime": 293.0,
+      "slug": "introducing-langgraph-for-complex-workflows"
+    },
+    {
+      "title": "LangGraph Example: A Task Management Agent",
+      "description": "A demonstration of building a task manager using LangGraph, explaining its graph structure with nodes, edges, and a central state component.",
+      "startTime": 293.0,
+      "endTime": 342.0,
+      "slug": "langgraph-example-a-task-management-agent"
+    },
+    {
+      "title": "Framework Comparison: Focus and Structure",
+      "description": "A direct comparison of the primary focus and core structure of LangChain (DAG) versus LangGraph (cyclic graph).",
+      "startTime": 342.0,
+      "endTime": 439.0,
+      "slug": "framework-comparison-focus-and-structure"
+    },
+    {
+      "title": "Framework Comparison: Components and State",
+      "description": "Comparing the different components native to each framework and their distinct approaches to state management, from limited to robust.",
+      "startTime": 439.0,
+      "endTime": 526.0,
+      "slug": "framework-comparison-components-and-state"
+    },
+    {
+      "title": "Framework Comparison: Use Cases and Conclusion",
+      "description": "A final look at the ideal use cases for LangChain and LangGraph, helping you decide which is right for your project.",
+      "startTime": 526.0,
+      "endTime": 595.0,
+      "slug": "framework-comparison-use-cases-and-conclusion"
+    }
+  ],
+  "summary": "## LangChain vs. LangGraph: Key Differences\n\nThis document summarizes the core distinctions between the LangChain and LangGraph frameworks for building LLM-powered applications.\n\n## LangChain: The Sequential Application Builder\n\nLangChain is designed to build applications by creating a **sequence of operations**. It provides an abstraction layer for chaining together different components.\n\n*   **Structure**: Follows a **Directed Acyclic Graph (DAG)** structure, meaning execution flows in one direction without loops. This is often referred to as a \"chain.\"\n*   **Core Components**: Utilizes high-level abstractions like:\n    *   **Document Loaders**: To fetch data from sources.\n    *   **Text Splitters**: To break down large documents.\n    *   **Prompt Components**: To format instructions for an LLM.\n    *   **LLM Components**: To interface with language models.\n    *   **Memory**: To retain some state across interactions within a single chain execution.\n*   **State Management**: State management is limited. While `Memory` components can hold conversational context, it does not easily maintain a persistent, modifiable state across multiple independent runs.\n\n> [!TIP]\n> Use **LangChain** for applications with a predictable, linear workflow, such as a process that retrieves data, summarizes it, and then answers a question based on the summary.\n\n## LangGraph: The Stateful Multi-Agent System Builder\n\nLangGraph is a specialized library within the LangChain ecosystem built for creating complex, **stateful, and agentic systems** where the flow of logic is not linear.\n\n*   **Structure**: Uses a **Graph structure** that allows for **cycles**. This means the application can loop, revisit previous steps, and make decisions based on the current state.\n*   **Core Components**: The primary building blocks are:\n    *   **Nodes**: Represent functions or tools that can be executed (e.g., `add_task`, `summarize_tasks`).\n    *   **Edges**: Represent the transitions between nodes, directing the flow of the application.\n    *   **State**: A central, persistent object that is passed between nodes. All nodes can read from and write to the state, allowing for robust context retention and modification.\n*   **State Management**: State is a core, first-class concept. The ability for all nodes to access and modify a shared state makes LangGraph's state management highly robust and flexible.\n\n> [!IMPORTANT]\n> Use **LangGraph** for applications requiring complex, non-linear interactions, long-term context memory, and adaptation, such as a virtual assistant, a task manager, or any multi-agent system.\n\n## Choosing the Right Framework\n\n*   **Choose LangChain** when your application follows a clear, sequential set of steps.\n*   **Choose LangGraph** when your application needs to handle unpredictable user inputs, maintain context over long interactions, and manage a central, modifiable state.",
+  "transcription": "## Introduction: LangChain vs. LangGraph\n\nLangChain and LangGraph are both open source frameworks designed to help developers build applications with large language models. So what are the differences and why use one over the other?\n\n## What is LangChain?\n\nWell, I think a good place to start is to define what these two things are, and let's begin with LangChain. Now, we've done a dedicated video on LangChain, and my guess is there's probably a pop up somewhere over my head right now encouraging you to watch that video.\n\nBut don't click, not yet. Give me a moment to summarize LangChain. Then at the end of this video, if you want any more, you can go back and check that one out.\n\n## LangChain Example: A Sequential Workflow\n\nOkay. Now, at its core, LangChain is a way for building LLM powered applications by executing a sequence of functions in a chain.\n\nSo let's say we're building an application and the first thing it needs to do is it needs to retrieve some data from a website. Once we've done that, we move on to stage two, and stage two is to summarize that data that we retrieved.\n\n## Core LangChain Components\n\nAnd then finally, we're going to use this summary to do something, specifically, we're going to have it answer user questions. So the workflow here is retrieve, summarize, and answer. Now we can use the LangChain to help us do this.\n\nSo let's start with the retrieve component. Now, the retrieve component might consist of a LangChain component called a document loader. Now a document loader is used to fetch and load content from various data sources, and if some of those documents are large, we might choose to use a text splitter, which is another LangChain component to split takes up into smaller, semantically meaningful chunks.\n\nOkay, that's retrieve.\n\n## Orchestrating Logic with Chains\n\nNow to summarize, we would use a chain, and the chain will orchestrate the summarization process. Now, that might include constructing a prompt component to instruct an LLM to perform the summarization. And that might also contain an LLM component to pass that request to the large language model of our choosing.\n\nOkay, and then answer. Well, we would build another chain and this chain might include a memory component, so this is another component of LangChain, and that's used to store conversation, history and context. And we'd throw in another prompt component and another LLM component to generate the answer based on the summary and the record context. And the cool thing here is that the LLM that we use for the answer component, may be a completely different large language model to the one we use in the summarize component.\n\nLangChain modular architecture let's build complex workflows by combining these high level components.\n\n## Introducing LangGraph for Complex Workflows\n\nOkay, now let's introduce LangGraph. LangGraph is a specialized library within the LangChain ecosystem, specifically designed for building stateful multi-agent systems that can handle complex nonlinear workflows.\n\nSo let's consider a task management assistant agent. Now, the workflow here involves processing user input. So let's start there, process inputs. And then to this workflow we are going to allow to add tasks, we're going to be able to complete tasks, and we are also going to be able to summarize task.\n\n## LangGraph Example: A Task Management Agent\n\nSo this is the kind of the architecture of what we're trying to build here. Now, LangGraph helps us create this as a graph structure, where each one of these actions is considered as a node. So at tasks, complete tasks, summarize, they're all nodes. And then the transitions between these things, that's known as edges.\n\nNow the central mode is the process input node. So that's where the user input comes in, and that's going to use an LLM component to understand the user intent and to route to the appropriate action node. Now there's another component here that's quite central to this called state, the state component. And the state component is used to maintain the task list across all the interaction.\n\nSo the adds task node adds new tasks to the state, the complete task node marks tasks as finished, and then the summarize node uses an LLM to generate an overview of current tasks. All nodes can access and modify the state allowing for contextual stateful interactions. The graph structure allows the assistant to handle various user requests in any order, always returning back to the process input node after the action is complete.\n\n## Framework Comparison: Focus and Structure\n\nLangGraph Architecture lets us create flexible stateful agents that can maintain context over extended interactions. So let's directly compare, LangChain and LangGraph across a number of dimensions. Let's start with the primary focus.\n\nNow the Primary focus of LangGraph Is to create and manage what is known as multi agent systems and workflows. The focus of LangChain is to provide an abstraction layer for chaining LLM operations into large language model applications. That's the difference between the two.\n\nNow, as for structure, LangChain adopts no surprise here a chain structure. And that acts as a Dag, that is an acronym for directed acyclic graph, which means that tasks are executed in a specific order always moving forward. So, for example, we start with task number one then we'd have a branch for maybe tasks number two and task three, and then we'd come back to the central task number four. And this process is great where you know the exact sequence of steps that are needed.\n\nNow, LangGraph's graph structure, on the other hand, is a little bit different because it allows for loops and revisiting previous states. So we might have state A which can go backwards and forwards with state B and State C, and this is beneficial for interactive systems where the next step might depend on evolving conditions or user input.\n\n## Framework Comparison: Components and State\n\nNow, when it comes to components, LangChain uses a bunch and we've mentioned many of these already, that includes memory, There's the prompt component as well, There's also the LLM component, which is how we actually pass things to the large language model, and there's the agent component as well that forms, chains between all of these things.\n\nNow, LangGraph uses a bunch of different components. So we have nodes, we also have edges, and we have states, and these are all part of a graph.\n\nAnd speaking of state. That brings us nicely to state management. I don't think we can say that LangChain has somewhat limited state management capabilities. It can pass information forth through the chain, but it doesn't easily maintain a persistent state across multiple runs. That said, LangChain does have these memory components that can maintain some state across interactions.\n\nLangGraph's state management, I'm going to say, is more robust. And that's because state is a core component that all nodes can access and modify, allowing for more complex, context aware behaviors.\n\n## Framework Comparison: Use Cases and Conclusion\n\nLet's say use cases. Well, LangChain really excels, particularly at sequential tasks like a process that retrieves data and then processes it and then outputs a result. Again, that said, LangChain is able to handle non sequential tasks to some extent with its own agents feature, but LangGraph's wheelhouse that really is. Scenarios that have a much more complex nature to them. Complex systems requiring ongoing interaction and adaptation. For example, a virtual assistant that needs to maintain context over long conversations and handle varying types of requests.\n\nSo that LangChain and LangGraph, two powerful frameworks for building applications that make use of large language models. All right. That's all I got. You can go watch that LangChain video now."
+}

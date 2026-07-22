@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 3,
+  "videoId": "DrEYgPK1NUw",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to set up your own e-commerce platform with this step-by-step OpenCart installation tutorial. This guide walks you through the entire process on a Windows machine using XAMPP. You'll see how to download the latest version of OpenCart, create a project folder, and configure your local server environment. The video also covers creating the necessary database in phpMyAdmin and completing the installation wizard, including setting up your admin credentials, before securing your installation.",
+  "chapters": [
+    {
+      "title": "Introduction to OpenCart",
+      "description": "An overview of OpenCart as a free e-commerce platform and the goal of installing it on Windows with XAMPP.",
+      "startTime": 0.0,
+      "endTime": 37.0,
+      "slug": "introduction-to-opencart"
+    },
+    {
+      "title": "Creating the Project Folder",
+      "description": "This chapter shows how to navigate to the XAMPP htdocs directory and create a new folder for the OpenCart project.",
+      "startTime": 37.0,
+      "endTime": 116.0,
+      "slug": "creating-the-project-folder"
+    },
+    {
+      "title": "Downloading and Extracting OpenCart Files",
+      "description": "Learn how to download the latest version of OpenCart from the official website and extract the contents into your project directory.",
+      "startTime": 116.0,
+      "endTime": 186.0,
+      "slug": "downloading-and-extracting-opencart-files"
+    },
+    {
+      "title": "Preparing and Configuring Project Files",
+      "description": "This section covers how to organize the extracted files and rename the necessary configuration files for the installation.",
+      "startTime": 186.0,
+      "endTime": 251.0,
+      "slug": "preparing-and-configuring-project-files"
+    },
+    {
+      "title": "Starting the Installation Wizard",
+      "description": "This chapter demonstrates how to start the OpenCart web installation wizard and proceed through the initial license and server check steps.",
+      "startTime": 251.0,
+      "endTime": 294.0,
+      "slug": "starting-the-installation-wizard"
+    },
+    {
+      "title": "Creating the Database in phpMyAdmin",
+      "description": "Learn how to use phpMyAdmin to create a new MySQL database required for the OpenCart installation.",
+      "startTime": 294.0,
+      "endTime": 331.0,
+      "slug": "creating-the-database-in-phpmyadmin"
+    },
+    {
+      "title": "Finalizing Installation and Admin Setup",
+      "description": "This part covers filling out the database connection details and setting the administrator credentials to complete the installation.",
+      "startTime": 331.0,
+      "endTime": 399.0,
+      "slug": "finalizing-installation-and-admin-setup"
+    },
+    {
+      "title": "Post-Installation Cleanup and Verification",
+      "description": "Learn the crucial final step of deleting the installation directory and then verifying that both the storefront and admin panel are working correctly.",
+      "startTime": 399.0,
+      "endTime": 514.0,
+      "slug": "post-installation-cleanup-and-verification"
+    },
+    {
+      "title": "Conclusion",
+      "description": "A final summary of the OpenCart installation process and an invitation for questions.",
+      "startTime": 514.0,
+      "endTime": 533.28,
+      "slug": "conclusion"
+    }
+  ],
+  "summary": "## Key Concepts: Installing OpenCart on Windows\n\nThis guide details the process of installing the OpenCart e-commerce platform on a local Windows machine using a XAMPP server environment.\n\n### ## Pre-requisites\n\n*   A local server environment like **XAMPP** must be installed.\n*   This tutorial uses **phpMyAdmin** to manage the database.\n\n### ## Installation Steps\n\n1.  **Create a Project Folder**\n    *   Navigate to your XAMPP installation directory (e.g., `C:\\xampp`).\n    *   Inside the `htdocs` folder, create a new folder for your store (e.g., `OpenCartPro`).\n\n2.  **Download and Prepare OpenCart Files**\n    *   Download the latest version from the official **opencart.com** website.\n    *   Extract the contents of the downloaded `.zip` file into your project folder.\n    *   Move all files and folders from the `upload` directory into the root of your project folder.\n\n3.  **Configure System Files**\n    > [!IMPORTANT]\n    > The installation will fail if these files are not renamed correctly.\n    *   In the project root, rename `config-dist.php` to **`config.php`**.\n    *   Inside the `admin` folder, rename `config-dist.php` to **`config.php`**.\n\n4.  **Create the Database**\n    *   Open phpMyAdmin by navigating to `http://localhost/phpmyadmin`.\n    *   Create a new, empty database (e.g., `OpenCartProDB`).\n\n5.  **Run the Installation Wizard**\n    *   In your browser, go to your project's local URL (e.g., `http://localhost/OpenCartPro`).\n    *   Follow the on-screen steps for the license agreement and pre-installation check.\n    *   On the configuration screen, enter your database details:\n        *   **Hostname**: `localhost`\n        *   **User**: `root`\n        *   **Password**: (blank by default on XAMPP)\n        *   **Database**: The name of the database you created.\n    *   Set the **username**, **password**, and **email** for your store's administrator account.\n    *   Click `Continue` to finish the installation.\n\n### ## Post-Installation Security\n\n> [!TIP]\n> This is a critical step to secure your OpenCart store.\n\n*   After the installation is complete, you **must delete the `install` directory** from your project folder.\n\n### ## Accessing Your Store\n\n*   **Storefront**: `http://localhost/YourProjectFolder`\n*   **Admin Panel**: `http://localhost/YourProjectFolder/admin`",
+  "transcription": "## Introduction to OpenCart\n\nHi everyone, welcome back to the OpenCart tutorial. In this video, we are going to learn about installation of OpenCart.\n\nOpenCart is a free open source e-commerce platform for online merchants. It provides a professional and reliable foundation from which to build a successful online store. OpenCart combines flexibility, simplicity, and multi-functionality.\n\nAll right, so let's start to install the OpenCart on Windows. Okay?\n\n## Creating the Project Folder\n\nI'm just going to install OpenCart on XAMPP. XAMPP is already installed in my computer, so just open my computer first. And simply open C drive. And inside C drive, just click on XAMPP folder. Then htdocs.\n\nAnd inside the htdocs folder, just create a new folder. Let's say folder name is OpenCart Pro. All right. This folder.\n\n## Downloading and Extracting OpenCart Files\n\nNow switch to the browser. And just go to the opencart.com. Okay? And here, free download, just click on this link.\n\nAnd for downloading the OpenCart, just click on this link, download now. All right, downloading has started. OpenCart current version is 3.0.3.6. All right?\n\nAll right, now it's downloaded. So just click on this icon. And now right click. Then extract file. All right, now go to the project directory. Which is C drive, XAMPP, htdocs and OpenCart Pro. Okay? Now copy this URL. And go to the WinRAR. And here, just paste the URL. And just click on okay.\n\nNow it's extracting the zip file into the project directory. You can see here.\n\n## Preparing and Configuring Project Files\n\nAll right. Now just select these files and remove this. And just open upload folder. And control A for selecting all, and control X for cut. And here just paste here. All right?\n\nNow just rename this file config-dist.php with config.php. All right? Now open admin folder. And here also rename config-dist with config.php. All right?\n\n## Starting the Installation Wizard\n\nNow switch to the browser. And just open new tab. And here, type localhost/OpenCart Pro. Okay?\n\nAll right, this is the OpenCart installation page. Now just click on continue. All are green. It means all good. Okay, now click on continue.\n\n## Creating the Database in phpMyAdmin\n\nAll right, now open new tab. And here just type localhost/phpmyadmin. And here, just click on new. Creating new database. And here, just type database name, which is OpenCart Pro DB. Okay? Now click on create.\n\nNow database has been created. So just copy this database name.\n\n## Finalizing Installation and Admin Setup\n\nAnd switch to the installation page. And here, hostname localhost, username root. Password in my case, this is a blank. And database name which is OpenCart Pro DB. Okay?\n\nNow set the username, password, and email address. Okay? Uh username admin, and password let's say ad@ this. Okay? This is my password for the admin login. Now enter here the email ID. Let's say this is the email ID. Okay? Now just click on continue.\n\n## Post-Installation Cleanup and Verification\n\nAll right, now the installation has been completed. So this is the message, don't forget to delete your installation directory. So for that deleting the installation directory, switch to the project folder. And here, just remove this directory. Okay? So select and right click. And just click on delete. Okay? Now install folder has been deleted.\n\nNow switch to the browser and refresh the page. Okay. All right, now just go to the URL localhost/OpenCartPro. Okay, you can see here the OpenCart website is stored. All right?\n\nFor admin login, just type here /admin. And here, just type the username, which was admin. And password is adm@7890. Okay, now click on login. Password. All right.\n\nNow just close this. And you can see here, this is the OpenCart admin panel. And from here you can see the your store. So just click on profile icon. And click on this link, your store. And you can see here the store. Okay?\n\n## Conclusion\n\nSo in this way, you can install OpenCart on Windows. So that's all about OpenCart installation. So thanks for watching this video. And if you still have any kind of question, you can ask me in the comment box. Don't forget to subscribe my channel. Thanks for watching."
+}

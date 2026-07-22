@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 3,
+  "videoId": "4eYYM8GbMkk",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn the fundamentals of project management within ERPNext. This tutorial guides you through creating and configuring projects, tasks, and project types from scratch. Discover how to use project templates for rapid setup, choose the right completion calculation method, and automate progress monitoring with email updates. Master visualizing project timelines with Gantt charts and Kanban boards, manage costs and user access, and effectively communicate status updates to stakeholders.",
+  "chapters": [
+    {
+      "title": "Introduction to Projects in ERPNext",
+      "description": "This chapter introduces the Project Management course in ERPNext and outlines the key learning objectives.",
+      "startTime": 0.0,
+      "endTime": 42.0,
+      "slug": "introduction-to-projects-in-erpnext"
+    },
+    {
+      "title": "Fundamentals of Project Management",
+      "description": "Learn the core definition of a project and how the project management module in ERPNext integrates with other parts of the system.",
+      "startTime": 42.0,
+      "endTime": 142.0,
+      "slug": "fundamentals-of-project-management"
+    },
+    {
+      "title": "Configuring Project Types",
+      "description": "This chapter demonstrates how to navigate to and create custom Project Types to categorize and classify projects in your system.",
+      "startTime": 142.0,
+      "endTime": 202.0,
+      "slug": "configuring-project-types"
+    },
+    {
+      "title": "Creating a New Project & Choosing a Completion Method",
+      "description": "Follow a step-by-step guide to create a new project and understand the different methods for calculating project completion.",
+      "startTime": 202.0,
+      "endTime": 321.0,
+      "slug": "creating-a-new-project-choosing-a-completion-method"
+    },
+    {
+      "title": "Setting Project Details: Dates, Costs, and Users",
+      "description": "Learn how to configure essential project details such as start and end dates, priority levels, cost centers, and user access.",
+      "startTime": 321.0,
+      "endTime": 389.0,
+      "slug": "setting-project-details-dates-costs-and-users"
+    },
+    {
+      "title": "Automating Progress Monitoring & Duplication",
+      "description": "This chapter covers how to set up automatic email notifications for project progress and how to quickly duplicate existing projects.",
+      "startTime": 389.0,
+      "endTime": 473.0,
+      "slug": "automating-progress-monitoring-duplication"
+    },
+    {
+      "title": "Creating and Using Project Templates",
+      "description": "Discover how to create project templates with a predefined set of tasks to streamline the creation of similar projects.",
+      "startTime": 473.0,
+      "endTime": 593.0,
+      "slug": "creating-and-using-project-templates"
+    },
+    {
+      "title": "Visualizing Project Tasks (Gantt, Kanban, and More)",
+      "description": "Explore the different ways to visualize project tasks, including the Gantt chart, Kanban board, Calendar view, and Tree view.",
+      "startTime": 593.0,
+      "endTime": 663.0,
+      "slug": "visualizing-project-tasks-gantt-kanban-and-more"
+    },
+    {
+      "title": "Manually Sending Project Updates",
+      "description": "Learn how to use the Project Update feature to manually compose and send status updates to all project stakeholders.",
+      "startTime": 663.0,
+      "endTime": 741.0,
+      "slug": "manually-sending-project-updates"
+    },
+    {
+      "title": "Conclusion and Next Steps",
+      "description": "This chapter summarizes the key takeaways on creating projects in ERPNext and provides a preview of the next topic.",
+      "startTime": 741.0,
+      "endTime": 772.0,
+      "slug": "conclusion-and-next-steps"
+    }
+  ],
+  "summary": "## Key Concepts in ERPNext Project Management\n\n### Understanding Projects\n- **Project:** A planned piece of work to produce something new, which can be **internal** (involving employees) or **external** (involving clients and vendors).\n- **ERPNext Integration:** The Project module is tightly integrated with other core modules like Accounting, Procurement, Sales, Customer Support, and HR.\n\n### Core Building Blocks\n- **Project Type:** Helps classify and group similar projects (e.g., Internal Project, External Project, Employee Onboarding).\n- **Project Template:** A predefined set of tasks and schedules that can be used to quickly create new, similar projects.\n- **Project:** The central document that brings together tasks, timelines, costs, and stakeholders.\n\n### Creating and Configuring a Project\n- **Project Completion Method:** Defines how the project's completion percentage is calculated.\n\n> [!IMPORTANT]\n> Choose your completion method carefully:\n> - **Manual:** Manually set the completion percentage yourself.\n> - **Task Completion:** Based on the number of completed tasks (e.g., 2 of 10 tasks done = 20%).\n> - **Task Progress:** An average of each task's individual progress percentage.\n> - **Task Weight:** A weighted average, useful when tasks have different levels of importance.\n\n- **Costing and Billing:** You can assign an **estimated cost** and link all project-related expenses to a specific **Cost Center** for better financial tracking.\n- **Duplication:** Use the **\"Duplicate projects with tasks\"** button to quickly clone an existing project, including its task structure.\n\n### Automating & Visualizing Progress\n\n#### Automated Progress Monitoring\n- Check **Collect Progress** to send automated email updates.\n- Configure the **frequency**, day, and time for sending updates.\n- The system uses the selected **Holiday List** to only track progress on working days.\n\n#### Visualization Tools\nERPNext offers multiple ways to view project tasks:\n- **Gantt Chart:** Shows task dependencies and timelines visually, ideal for understanding project flow.\n- **Kanban View:** Displays tasks as cards on a board, organized by execution stage (e.g., To Do, In Progress, Done).\n- **Calendar View:** Shows tasks on a calendar based on their start and end dates.\n- **Tree View:** A hierarchical list of parent and child tasks.\n\n### Communicating Status\n- **Project Updates:** A dedicated doctype to manually create and send status updates to project stakeholders.\n\n> [!TIP]\n> Use Project Updates for ad-hoc communication outside of the automated progress monitoring schedule to keep everyone informed.",
+  "transcription": "## Introduction to Projects in ERPNext\n\nHi everyone, welcome to Frappe School. My name is Lynette Sharon, and this is the first chapter in our Project Management course.\n\nToday, we will be discussing how to create projects in ERPNext. By the end of this chapter, you will know how to create projects and tasks, how to update projects and tasks, and how to visualize project status in ERPNext.\n\n## Fundamentals of Project Management\n\nLet's first understand what project management is. A project is a planned piece of work designed to improve or produce something new. It can be internal, that is involving internal stakeholders like employees, or external, which could involve external parties like clients and vendors.\n\nA well-planned project defines explicitly what needs to be achieved, what tasks are required to be done for this project to succeed, and the timeline and assignment for the execution of each task. Project management involves planning all these tasks and preparing, assigning, executing, and tracking their completion. Additionally, a project may be allocated a certain budget within which it needs to be completed.\n\nAs an organization, when you execute multiple projects with similar tasks, a certain level of system and process automation ensures that errors are reduced and execution is swift. Some projects may have tasks that need to be finished in a particular order. The project management module in ERPNext is tightly integrated with the accounting, procurement, sales, customer support, and HR modules. Let's see project management in action in ERPNext.\n\n## Configuring Project Types\n\nFirst, let's explore project types. We can find project type by navigating from home to the Project module and going to Project Type under the Project section. We can categorize different project types in our system that will help us classify projects in our organization based on type or help group similar kinds of projects.\n\nWhen we open the project type list, we can see that a couple of project types have been predefined in the system, such as Internal Project and External Project. We can add a new project here and name it. Let's name this project type as Employee Onboarding. We can even add a description of this project type for reference and save once done.\n\n## Creating a New Project & Choosing a Completion Method\n\nNext, we can move on to creating a new project in our system. To navigate to projects, we can go to the Project section in the Project module and click on Project. Here we can see all the previous projects created in the system and filter the list based on either name, status, type, or even priority. To create a new project, we can click on Add Project. Start by choosing a naming series and add a name.\n\nNext, we need to add a project type. We can select the project type we just created and then select if this is an active project or not. Now we need to define how the project percentage completion is to be calculated. We can set completion method to Manual if we want to keep updating it manually. Suppose we want to calculate it based on the completion of each task. In that case, we can select Task Completion. If we add 10 tasks and two tasks are marked as completed, then the project completion percentage is set to 20%. If we want to add the percentage of completion of each task manually and we would like the overall percentage of completion to be calculated based on that, we can set completion method to Task Progress. If the tasks in the project do not have equal weightage and we would like to assign weightage to each task individually, we can set completion method to Task Weight.\n\n## Setting Project Details: Dates, Costs, and Users\n\nIf we want to select a template for this project, we can select it here in the From Template field, and tasks will be auto created based on the template.\n\nNext, add an expected start and end date for our project. We can also set a priority level for this project. Let's assume the onboarding project is a high priority project. And we can select the department this project belongs to. In the Customer Details section, we can select details of a customer or a sales order if this project is associated with one. Since this project we are creating is not, we will leave the section blank.\n\nIf we would like to allow external parties like customers or suppliers to view this project via a portal, we can create user records for them and select them here. Once we have added all the users we need, we can move on to the next section. Next, we can add notes for reference to anyone viewing this project. In the Costing and Billing section, we can add an estimated cost for this project and select a cost center for the expenses made in this project.\n\n## Automating Progress Monitoring & Duplication\n\nThe last section is the Monitor Progress section. We can configure ERPNext to trigger emails with the details of the project automatically by ticking the Collect Progress checkbox.\n\nFirst, we can select a holiday list for this project, which will enable progress to be collected only based on working days. Next, we can select the frequency we want for progress collection. Suppose we want the project's progress to be collected weekly. We need to set a day and time when the project progress update will be sent to users. Once we do that, we need to add a message that will accompany the email sent to users in this project to update them on the status.\n\nNow we can save this project with all the details we have added to it. If we ever want to duplicate this project, we can navigate to the top of the project we just created. Here, we can see a button that says Duplicate projects with tasks. Once we select it, we can name the project and click on submit, and a new project will be created with the exact details and tasks.\n\n## Creating and Using Project Templates\n\nNow let's move on to project templates. A project template is basically a predefined set of tasks with schedules that can be added to a project. These templates help us create similar projects quickly. We can find project templates in our system by going to Project Templates under the Project section in the Project module.\n\nWe can see any project templates created before and click on Add Project Template to create a new one. We will first have to name the project template. We can name it Employee Onboarding and select a project type. Let's select Internal. once we do, we can add the tasks for this project template.\n\nThe first task we can add is Create Email ID. Then next, we can select Issue Laptop. We can add as many tasks as we want and then save this project template.\n\nLet's try creating a project from this template. We can do that using the Connections tab at the top. Once we create a new project from here, we can see that the template will be pre-selected here. We can add the remaining details and save the new project. The tasks will be automatically pulled from the template from which we created this project.\n\n## Visualizing Project Tasks (Gantt, Kanban, and More)\n\nOnce we have created a project, we can view the tasks in the project in different ways to suit different needs. The first one we can explore is the Gantt chart view. Open a project and click on Gantt chart. A Gantt chart shows how tasks are linked to each other and shows the sequence in which they need to be completed based on their start and end dates.\n\nThe second one is the Kanban view. This view shows tasks in a segregated board with each column representing an execution stage. Tasks are shown as notes on the board and can be moved around as per their progress.\n\nNext, let's look at the Calendar view. This view shows a regular calendar with tasks spread across the days it is expected to complete in. Tasks can also be viewed in a Tree view.\n\n## Manually Sending Project Updates\n\nThe status of an ongoing project can be sent to all the project stakeholders using the Project Update feature. We can find the project update list by navigating in the project module and going to project update under the project section. Here we can see if any previous project updates have been sent and create a new update by clicking on Add Project Update.\n\nWe can first select the project we have created and then add the users to whom we want to send an update. Suppose we want to send an update to Evelyn Fuller. We can add their email ID and type in a project status. Next, we can use the checkboxes to define if a welcome email has been sent to this user and if the user can view attachments or not. Once done, we can save and add as many users as we want. Once we have added all the details we can save the document and the date and time of this update will be recorded. Next, we can save this document to confirm. This project update is now recorded and sent to all the users added.\n\n## Conclusion and Next Steps\n\nThis brings us to the end of the first chapter in our project management course. I hope this helped you understand how to use ERPNext to create projects effectively. You can read more about ERPNext on docs.erpnext.com. In the next chapter, we will discuss task creation in project management. Thank you."
+}

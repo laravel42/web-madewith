@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 3,
+  "videoId": "hisau__LM-o",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn the fundamentals of Strapi, the open-source headless CMS, and see how it streamlines API creation. This tutorial guides you through setting up a Strapi instance with Docker and MariaDB, building a content model for a guestbook application, and configuring permissions. You'll also learn how to interact with your new Strapi API using web requests, including GET, POST, and DELETE operations demonstrated with Postman. Get your backend up and running quickly with this practical introduction to Strapi's core features.",
+  "chapters": [
+    {
+      "title": "What is Strapi?",
+      "description": "An introduction to Strapi, its core purpose as an API creation tool, and its key benefits like efficiency and an open-source model.",
+      "startTime": 0.0,
+      "endTime": 76.0,
+      "slug": "what-is-strapi"
+    },
+    {
+      "title": "Prerequisites: Docker & MariaDB",
+      "description": "This chapter explains the choice of Docker for a consistent setup across operating systems and the use of MariaDB as the database.",
+      "startTime": 76.0,
+      "endTime": 131.0,
+      "slug": "prerequisites-docker-mariadb"
+    },
+    {
+      "title": "Setting Up Strapi with Docker",
+      "description": "A step-by-step guide to cloning the project repository, configuring the Docker Compose file, and launching the Strapi and database containers.",
+      "startTime": 131.0,
+      "endTime": 221.0,
+      "slug": "setting-up-strapi-with-docker"
+    },
+    {
+      "title": "First Run & Admin Account Setup",
+      "description": "This chapter covers monitoring the container logs, accessing the Strapi admin panel for the first time, and creating the initial administrator account.",
+      "startTime": 221.0,
+      "endTime": 274.0,
+      "slug": "first-run-admin-account-setup"
+    },
+    {
+      "title": "Building a 'Note' Content Type",
+      "description": "Learn how to use the Content-Type Builder to create a new 'Note' model for a guestbook, defining its name and adding custom fields.",
+      "startTime": 274.0,
+      "endTime": 421.0,
+      "slug": "building-a-note-content-type"
+    },
+    {
+      "title": "Saving the Content Type & Adding Content",
+      "description": "This chapter shows how to save the new content type, wait for the server to restart, and then add the first two 'note' entries via the admin panel.",
+      "startTime": 421.0,
+      "endTime": 466.0,
+      "slug": "saving-the-content-type-adding-content"
+    },
+    {
+      "title": "Enabling Public API Access",
+      "description": "Learn how to diagnose a permission error on a GET request and then configure Strapi's roles and permissions to make the API endpoints publicly accessible.",
+      "startTime": 466.0,
+      "endTime": 555.0,
+      "slug": "enabling-public-api-access"
+    },
+    {
+      "title": "Creating Entries with POST Requests via Postman",
+      "description": "This chapter introduces Postman for API testing, performs a GET request to confirm connectivity, and then sends a POST request with a JSON body to create a new note.",
+      "startTime": 555.0,
+      "endTime": 654.0,
+      "slug": "creating-entries-with-post-requests-via-postman"
+    },
+    {
+      "title": "Deleting Entries with DELETE Requests via Postman",
+      "description": "Learn how to perform a DELETE request in Postman by targeting a specific record's ID in the URL to remove it from the database.",
+      "startTime": 654.0,
+      "endTime": 697.0,
+      "slug": "deleting-entries-with-delete-requests-via-postman"
+    },
+    {
+      "title": "Conclusion & Next Steps",
+      "description": "A final summary of Strapi's value and a preview of upcoming videos that will cover custom actions and integrating Strapi with Unity3D.",
+      "startTime": 697.0,
+      "endTime": 759.0,
+      "slug": "conclusion-next-steps"
+    }
+  ],
+  "summary": "## What is Strapi?\nStrapi is an open-source, Node.js-based headless CMS that markets itself as an **efficient API creation tool**. It allows developers to quickly build and deliver APIs for their applications.\n\nKey features include:\n- A helpful **admin panel** for content management.\n- A flexible framework with a rich ecosystem of **plugins**.\n- **Open-source** nature, allowing for full customization and community contributions.\n\n## Project Setup\nThis tutorial uses **Docker** to create a reproducible development environment.\n\n- **Database**: The project uses **MariaDB** instead of the default MongoDB.\n- **Docker Compose**: A `docker-compose.yml` file is provided in a public GitHub repository to spin up the Strapi application and the database with a single command: `docker compose up -d`.\n\n> [!IMPORTANT]\n> Before running the containers, you must edit the `docker-compose.yml` file to map a volume to a valid directory on your host machine that is shared with Docker.\n\n## Building a Content Type\nStrapi's **Content-Type Builder** is used to model the data for a guestbook application. A new content type called **Note** is created with the following fields:\n\n- **name**: A `String` field, set as required, with a default value of `\"anonymous\"`.\n- **message**: A `Text` field, set as required, using the **WYSIWYG** editor for a better admin experience.\n- **email**: An `Email` field, also set as required.\n\n## Managing Permissions\nAPI endpoints in Strapi are secured by default. Access is managed through **Roles & Permissions**.\n\n- **Roles**: Strapi provides default roles like `Public` and `Authenticated`.\n- **Endpoint Access**: To allow unauthenticated users to interact with the API, you must grant permissions to the `Public` role for the specific actions (e.g., `find`, `create`, `delete`) on your content type.\n\n> [!WARNING]\n> Exposing all API actions publicly is not recommended for production environments. It is only done here for demonstration purposes.\n\n## Interacting with the API\nStandard web requests are used to perform CRUD (Create, Read, Update, Delete) operations on the content. The tutorial uses a web browser and **Postman** to demonstrate this.\n\n- **Fetch all notes**: `GET /notes`\n- **Create a new note**: `POST /notes` with a JSON object in the request body, like `{\"name\": \"...\", \"message\": \"...\", \"email\": \"...\"}`.\n- **Delete a note**: `DELETE /notes/:id` (e.g., `DELETE /notes/2` to delete the note with ID 2).",
+  "transcription": "## What is Strapi?\n\nIn this video we're going to cover the following: Strapi and why use it, how to get up and running with Strapi for testing quickly, how to build a quick model for a little guestbook application, and how to use web requests to interact with the API.\n\nSo let's begin by touching on what Strapi actually is and why you may want to use it. Strapi markets itself as an efficient API creation tool that lets you get your website or application up and running quickly. I have to agree, my own installations of Strapi are running with very little memory or computational overhead and there was simple enough for me to get my projects up and running quickly.\n\nWhat you get with Strapi is a helpful admin panel, a framework, some very useful default plugins, and many more plugin contributions from the community. Of course, Strapi is open-source, meaning you can extend it to suit your own needs or even contribute as part of the community.\n\n## Prerequisites: Docker & MariaDB\n\nTo get up and running we're going to use Docker, which I hope will allow you to follow along with this video regardless of your host operating system. Depending on how you plan to deploy Strapi, Docker may also come handy. It's also worth mentioning I'm not a DevOps guy so my selection of Docker is purely out of convenience. Don't expect Docker best practices from this video.\n\nIf you don't have Docker or don't know how to use it, you can get up and running with Docker in around five minutes using one of my videos on learning Docker for Windows, Ubuntu, or Mac OS.\n\nAlso, Strapi needs to run on top of a database and by default it's configured to use MongoDB. However, for this video we're going to use MariaDB. This is simply because it's a database I use personally.\n\n## Setting Up Strapi with Docker\n\nLet's get started.\n\nI've uploaded my docker-compose file at this public GitHub repository. You can get a copy of it by downloading it as a zip or cloning it through Git. For this video, we're going to clone it using Git. To do so, I'll create a new folder, name it appropriately, and open a terminal at that location. Then I'm going to type `git clone` and paste in the repository address. Once I hit enter, it's going to clone the repository into that directory.\n\nBefore moving on, make sure to go into this folder and open the docker-compose file in your editor of choice. Then you want to substitute this directory with a directory on your host machine. This must be shared with Docker. Make sure to check Docker preferences, especially on Windows.\n\nNow, let's open a terminal window in this directory and create a database and application containers using `docker-compose up -d`.\n\n## First Run & Admin Account Setup\n\nIf you have Kitematic installed, you can open it now and check on the logs from both our database and application container. This will give us an indication of when Strapi is ready to go. When Strapi is ready, the logs will print out the location of the admin panel. If you use the port number in my docker-compose file, you want to visit `localhost:8080/admin`.\n\nOn your first visit, you will need to create your administrator account.\n\nNow we're inside Strapi's admin panel. From here you can configure and manage your API fairly easily, and you'll only need to dig deeper into configuration files if you need something extra. You can see a content-type already exists called 'user', and if we look inside, you can see we have a single entry for the administrator account we just created.\n\n## Building a 'Note' Content Type\n\nBut let's move on to creating our own content type. Say we want some kind of old-school guestbook like every GeoCities website used to have. We want the user to be able to enter three bits of data: their name, some kind of message, and their email.\n\nWe can do this all through the admin panel using the default content-type builder plugin. We can see the existing content types: user, role, and permission. So let's click 'Add Content Type' in the top right to get started. We need to give our content type a name. Strapi advises that it should be singular, so we'll call it 'note', as in guests leaving notes on our web page. Click Save.\n\nAnd now we need to populate it with fields to store the relevant data. Click 'Add new field' and you can see the different types of data supported by Strapi and some examples for their use. Let's use a string for the name of a note leaver. We'll call this field 'name'. I want this field to be mandatory, but I also want to allow the user to be anonymous, so I'll quickly go to the Advanced Settings tab, enter a default value of 'anonymous' and check the box indicating it's a required field. By clicking 'Add another field' here, I can move straight on to adding the next field.\n\nThis time, let's use the text type to store the message that's being left. We'll name this 'message'. I don't want this to be empty again, so I'm going to indicate that it's a required field using the advanced settings. Let's also click 'Display as a WYSIWYG' to enable the nice editor in the Strapi admin panel. We're going to see this later.\n\nFinally, let's add one last field to store the note leaver's email address. We'll simply name this 'email' and mark it as a required field as well.\n\n## Saving the Content Type & Adding Content\n\nSo now that we've finished adding our fields, we can click 'Save' to save our content type. Now we wait for our Strapi server to restart.\n\nWhen it's done, our content type is ready to view through the admin panel. Click on our new 'notes' content type in the navigation panel and you can see an empty list of notes. You'll notice our three fields plus the ID. If we click 'Add New Note', we can create our first note through the admin panel. Let's use my name and leave a message using the markdown editor we talked about earlier. We'll set an email and click Save.\n\nNow you can see our newly created note in this list. Let's quickly add a second one to use in the examples that follow.\n\n## Enabling Public API Access\n\nAll done. Now let's interact with our API and content type using web requests. We're going to do this first using a web browser. If we make a GET request to our Strapi installation followed by our content type, it should return a list of all of our notes items in the JSON format. However, you can see we don't yet have permission to do this.\n\nLet's have a quick glance at the permissions in Strapi. Back in the admin panel, if you click the 'Roles & Permissions' plugin, we can see three different default roles: Administrator, Authenticated, and Public. We're not going to go too deep into roles and permissions for this video, so let's simply expose all of our actions publicly. This is only for the purpose of demonstration and not advised. Click on 'Public' and scroll down to see the permissions granted per action. We're going to check 'Select all' and save everything up.\n\nWith this done, let's try our GET request one more time. Perfect. Now we're receiving the JSON for both of the notes we created through the admin panel. This has been formatted nicely through Firefox, but here is the raw JSON just to show you what to expect.\n\n## Creating Entries with POST Requests via Postman\n\nNow that we've interacted with Strapi using the web browser, let's move on to creating notes using POST requests. I'm going to use an app called Postman to do this. We can use it to configure and execute requests to test our API. It's available for Windows, Mac OS, and Linux, but you're welcome to use any software of your own choice.\n\nWith Postman open, we can make a quick GET request to check if it's working as expected. I'll select GET from the drop-down, copy in our API location, and hit Send. It appears to be working as expected and we can see the two entries from earlier.\n\nNow let's try creating a note. This time we'll select POST from the drop-down and paste in our location once again. We're going to configure our request body using raw JSON. Type in the JSON we'd like to post here. You can see I'm setting the name, the message, and the email. Once it's done, click 'Send'.\n\nAnd there we have it. We can check this by sending our earlier GET request once again. As expected we now see three note items returned from Strapi.\n\n## Deleting Entries with DELETE Requests via Postman\n\nLastly, let's try and delete this note here with the ID of 2. To do this, create a new request and select DELETE from the drop-down. This time we're going to enter our location and also pass in the ID of 2 to delete the second note left by the anonymous guest. Click 'Send' and we're done.\n\nLet's check this again using our earlier GET request. Great, we can see that it worked. The notes with the ID 1 and 3 have been returned, but the note with the ID 2 has been deleted.\n\n## Conclusion & Next Steps\n\nI hope you found this useful. I've personally used Strapi in a few projects now and I think it's an excellent solution. You can watch my other videos on Docker or even on artificial intelligence topics for beginners on YouTube. Be sure to subscribe to be notified of the next Strapi video, in which I'll be digging deeper into creating your own actions outside of the default Strapi behavior. I will also be releasing a video on how to communicate with Strapi through Unity3D, allowing you to build things like leaderboards, uploading and sharing stage designs, and much more."
+}

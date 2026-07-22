@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 3,
+  "videoId": "59Zu-S5QXn0",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to perform a complete installation of Frappe Bench and ERPNext on a fresh Ubuntu 22.04 LTS server. This detailed guide walks you through every step, from updating your system and installing prerequisites like Python, MariaDB, Node.js, and Redis, to initializing a new bench. Follow along to configure your database, create a new site, install the ERPNext application from the development branch, and complete the setup wizard. Finally, see how to enable developer mode and create a new custom app.",
+  "chapters": [
+    {
+      "title": "Introduction & Initial System Update",
+      "description": "The video opens with an introduction and proceeds to update and upgrade the Ubuntu 22.04 system repositories.",
+      "startTime": 0.0,
+      "endTime": 98.0,
+      "slug": "introduction-initial-system-update"
+    },
+    {
+      "title": "Installing Python and Core Dependencies",
+      "description": "This chapter covers checking the system's Python version and installing essential dependencies like python3-dev, venv, setuptools, and pip.",
+      "startTime": 98.0,
+      "endTime": 185.0,
+      "slug": "installing-python-and-core-dependencies"
+    },
+    {
+      "title": "Installing and Securing MariaDB",
+      "description": "This section details the installation of the MariaDB server and client, followed by running the secure installation script to set a root password.",
+      "startTime": 185.0,
+      "endTime": 284.0,
+      "slug": "installing-and-securing-mariadb"
+    },
+    {
+      "title": "Configuring MariaDB Character Set",
+      "description": "This chapter explains how to edit the MariaDB configuration file to add specific character set and collation settings required by Frappe.",
+      "startTime": 284.0,
+      "endTime": 351.0,
+      "slug": "configuring-mariadb-character-set"
+    },
+    {
+      "title": "Restarting MySQL & Installing Redis",
+      "description": "After configuring MariaDB, the MySQL service is restarted, and the Redis server, another key prerequisite, is installed.",
+      "startTime": 351.0,
+      "endTime": 431.0,
+      "slug": "restarting-mysql-installing-redis"
+    },
+    {
+      "title": "Installing Node.js, npm, and wkhtmltopdf",
+      "description": "This part of the installation covers installing Node.js via NVM, the npm package manager, and the wkhtmltopdf utility for PDF generation.",
+      "startTime": 431.0,
+      "endTime": 510.0,
+      "slug": "installing-node-js-npm-and-wkhtmltopdf"
+    },
+    {
+      "title": "Installing Frappe Bench",
+      "description": "With all prerequisites in place, this chapter focuses on the command to install the Frappe Bench CLI tool using pip3.",
+      "startTime": 510.0,
+      "endTime": 563.0,
+      "slug": "installing-frappe-bench"
+    },
+    {
+      "title": "Initializing the Bench and Creating a Site",
+      "description": "This section demonstrates how to initialize a new bench directory, create a new site, and troubleshoot the 'Not Found' error by setting the default site.",
+      "startTime": 563.0,
+      "endTime": 736.0,
+      "slug": "initializing-the-bench-and-creating-a-site"
+    },
+    {
+      "title": "Logging In and Installing ERPNext",
+      "description": "After successfully creating a site, this chapter shows the first login to the Frappe interface and then installs the ERPNext application from the develop branch.",
+      "startTime": 736.0,
+      "endTime": 856.0,
+      "slug": "logging-in-and-installing-erpnext"
+    },
+    {
+      "title": "Completing the ERPNext Setup Wizard",
+      "description": "This chapter walks through the multi-step ERPNext setup wizard, configuring localization, user details, business domains, and company information.",
+      "startTime": 856.0,
+      "endTime": 984.0,
+      "slug": "completing-the-erpnext-setup-wizard"
+    },
+    {
+      "title": "Enabling Developer Mode and Creating a New App",
+      "description": "This section demonstrates how to enable developer mode for the site and then proceeds to create a new custom Frappe application from scratch.",
+      "startTime": 984.0,
+      "endTime": 1113.0,
+      "slug": "enabling-developer-mode-and-creating-a-new-app"
+    },
+    {
+      "title": "Installing the Custom App and Conclusion",
+      "description": "The final chapter covers installing the newly created custom app onto the site, restarting the bench, verifying the installation, and concluding the tutorial.",
+      "startTime": 1113.0,
+      "endTime": 1161.64,
+      "slug": "installing-the-custom-app-and-conclusion"
+    }
+  ],
+  "summary": "## Frappe & ERPNext Installation on Ubuntu 22.04 LTS\n\nThis document outlines the key steps to install the Frappe framework and ERPNext on a new Ubuntu 22.04 system.\n\n### ## Initial System Setup\n\n- **Update annd Upgrade System:** Always start by ensuring your system is up-to-date.\n  ```bash\n  sudo apt-get update\n  sudo apt-get upgrade\n  ```\n\n### ## Core Prerequisites\n\n- **Python:** Frappe requires Python 3.6+. Ubuntu 22.04 comes with a compatible version (3.10.4) by default. Install necessary development tools:\n  - `sudo apt-get install git python3-dev python3-venv python3-setuptools python3-pip virtualenv`\n- **Database (MariaDB):** Frappe uses MariaDB as its default database.\n  - Install the server and client: `sudo apt-get install mariadb-server mariadb-client`\n  - Secure the installation and set a root password: `sudo mysql_secure_installation`\n\n> [!IMPORTANT]\n> You must configure MariaDB's character set. Edit `/etc/mysql/my.cnf` (or a file in `conf.d`) and add the following settings under the `[mysqld]` and `[mysql]` sections to ensure UTF-8 support:\n> \n> ```ini\n> [mysqld]\n> character-set-server=utf8mb4\n> collation-server=utf8mb4_unicode_ci\n> \n> [mysql]\n> default-character-set=utf8mb4\n> ```\n> After editing, restart the service with `sudo service mysql restart`.\n\n- **Other Dependencies:**\n  - **Redis:** `sudo apt-get install redis-server`\n  - **Node.js:** Use **NVM** (Node Version Manager) to install a specific version (e.g., v14.15.0).\n    - `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash`\n    - `nvm install 14.15.0`\n  - **npm & wkhtmltopdf:** Install the Node package manager and the PDF generation tool.\n    - `sudo apt-get install npm`\n    - `sudo apt-get install wkhtmltopdf`\n\n### ## Frappe Bench and Site Setup\n\n1.  **Install Frappe Bench:** This is the command-line tool for managing Frappe environments.\n    - `sudo pip3 install frappe-bench`\n2.  **Initialize a New Bench:** Create a directory for your Frappe project.\n    - `bench init frappe-bench`\n3.  **Create a New Site:** Inside the bench directory, create your first site.\n    - `cd frappe-bench`\n    - `bench new-site your-site-name.com` (e.g., `decodi.com`)\n4.  **Set Default Site:** Tell the bench which site to serve by default.\n    - `bench use your-site-name.com`\n5.  **Start the Bench:** Run the development server.\n    - `bench start`\n\n### ## ERPNext Installation\n\n1.  **Get the App:** Download the ERPNext application from its repository. This example uses the `develop` branch for the latest features.\n    - `bench get-app --branch develop erpnext`\n2.  **Install on Site:** Install the downloaded app onto your specific site.\n    - `bench --site your-site-name.com install-app erpnext`\n3.  **Migrate:** Apply database schema changes.\n    - `bench migrate`\n4.  **Setup Wizard:** After installation, access your site in a web browser and complete the on-screen setup wizard for ERPNext.\n\n### ## Development Mode and Custom Apps\n\n> [!TIP]\n> To make changes, create custom DocTypes, and develop custom features, you must enable developer mode.\n\n- **Enable Developer Mode:**\n  - `bench --site your-site-name.com set-config developer_mode 1`\n- **Create a New App:** Build your own functionality in a custom app.\n  - `bench new-app your-app-name`\n- **Install Custom App:** Install your new app on your site.\n  - `bench --site your-site-name.com install-app your-app-name`",
+  "transcription": "## Introduction & Initial System Update\n\nHello and welcome to Decoding. My name is Abe Matthew, and in this video lecture, we will see how to install Frappe Bench and ERPNext application in Ubuntu 22.04. Ubuntu 22.04 is the latest Ubuntu release and it has numerous new features and long term support. Let's see how to install our Frappe Bench in Ubuntu 22.04.\n\nHere I have an installation guide and I'm following this guide to install the prerequisites and Frappe Bench in Ubuntu. This is my guide and you can see the link in the description. Let's open the terminal and start the installation.\n\nMy terminal is ready and let's set it to always on top. Before starting the installation, let's update the system. We can run `sudo apt-get update` command to update the system. It will ask for the password. Let's enter the password.\n\nI'm also upgrading the system. You can use this command: `sudo apt-get upgrade`. Some upgradations are there, let's enter 'y'.\n\n## Installing Python and Core Dependencies\n\nNow the system is upgraded and we can start the prerequisites installation. For installing Frappe Bench we need Python 3.6 or higher version. Let's check the Python version in Ubuntu.\n\nLet me clear this. And we can check the Python version using this command: `python3 -V`. And here we can see Python 3.10.4 is available in this system by default.\n\nLet's start with the step 1 installation, and I'm installing git into the system. Now the git is installed. I'm installing Python 3 environment. Press 'y' and enter to continue.\n\nLet's clear this. Next we need Python 3 setup tools and Python package manager. Let's install those applications using this command. Press 'y' to continue.\n\n## Installing and Securing MariaDB\n\nNext I am installing virtual environment using this command: `sudo apt-get install virtualenv`. 'y' and enter to continue. Let's clear this.\n\nAnother important prerequisite is MariaDB. Frappe uses MariaDB as the default database, so let's install MariaDB using these commands. I am running this command one by one. 'y' and enter to continue.\n\nNext, we need to set up a root password for MariaDB. So for setting up that password, we can run this `sudo mysql_secure_installation` command. Now we need to enter some data into some fields. And the first one is to enter the root password of MariaDB. We didn't set up any root password, so I'm just pressing Enter. Then, switch to unix_socket authentication? Press 'y' and enter. Here we can change the MariaDB root password, so I am selecting 'y' and enter. Now we can add our new password here. I'm adding one password, then enter. It will ask to re-enter the password again, and re-enter it again. Then press 'y'. Then again plus 'y'. Again plus 'y'. I am not changing anything in configuration. Then this, press 'y' and enter. Now we successfully created the root user password in MariaDB.\n\n## Configuring MariaDB Character Set\n\nNext, we need to install MySQL database development files. We can install it running this command. Let's run this command and press 'y' and enter to continue. Let's clear this.\n\nNext, we need to add some configuration changes in the MariaDB configuration file. We can open MariaDB configuration file using this command, `sudo nano` then the file path. And this is our MariaDB configuration file. We need to add some configuration in server. Let's add this in server. We can use Ctrl+Shift+V to paste that configuration. Let's align this using Shift and Tab.\n\nNext, we need to add some configuration in `mysqld`. Let's copy this and paste it under `mysqld`. Can align using Shift+Tab. Now let's comment some lines here. We have already set up this collation-server and character-set-server, so let's comment this using hash. Now just add this mysql configuration down here. \n\nWe can save this using Ctrl+S and exit using Ctrl+X. Now we successfully configured this MariaDB configuration file.\n\n## Restarting MySQL & Installing Redis\n\nLet's restart the MySQL service using this command: `sudo service mysql restart`. Now our MySQL is restarted. Next, we need to install Redis server. Press 'y' and enter to continue. Let's clear this.\n\n## Installing Node.js, npm, and wkhtmltopdf\n\nFrappe framework requires Node.js higher than 14 version. So let's install Node.js 14.15.0 using this command. I am running this command one by one. First, we need to install curl.\n\nHere I am using NVM to install Node.js. So first install NVM using this command. We can install Node.js using NVM and this command will install Node.js version 14.15.0. Let's run this command. Now we successfully installed Node.js 14.\n\nLet's install package manager for Node.js. 'y' and enter to continue. We are using HTML to PDF converter to convert HTML content to PDF. So for that purpose, let's install wkhtmltopdf converter. 'y' and enter to continue the installation.\n\n## Installing Frappe Bench\n\nLet's install Frappe Bench using this command: `sudo pip3 install frappe-bench`. This will install Frappe Bench into our Ubuntu 22.04 system. Here we can see one warning, we can neglect that warning.\n\nLet's check the bench version using this command, `bench version`, and this will show the installed bench version. Here I have installed bench version 5.8.1, and which is the latest available bench version. Let's clear this.\n\n## Initializing the Bench and Creating a Site\n\nNow we can create a Frappe project. So let's initialize a new bench using this command: `bench init frappe-bench`. Now we successfully initialized our Frappe Bench. Let's move to Frappe Bench using this command: `cd` then the Frappe bench name. Now I'm in Frappe Bench. We can see the different files and directories available in Frappe Bench.\n\nWe can start the bench using the command `bench start`. This will start the bench services. And we can open our web application using this link. Now we found a 'Not Found' error. This is because we didn't create any site for this application. Let's create a new site. I am creating a new site called decodi.com. Then enter. Let's enter the MySQL root password. Let's add an administrator password here. Re-enter the password again. Now we successfully created our first site.\n\nLet's go back to the previous terminal and we can stop the bench using Ctrl+C command. Then I'm starting it again using `bench start`. We can still see a 'Not Found' error and it is because we have not set up this site as the default site. We can set up that site as default using this command: `bench use` then site name. Then enter. Migrate the bench using the command `bench migrate`. Now the migration started.\n\n## Logging In and Installing ERPNext\n\nLet's go back and restart the bench again using `bench start` command. Let's restart this page again and here we can see the login page of Frappe. We can login as administrator, so let's enter the username as 'administrator'. And let's enter the password which we set up while creating the site. Let's save this.\n\nAnd here we can see the setup has started. So before completing the setup wizard, we need to install ERPNext application. So let's install ERPNext application into our site. We can install ERPNext using this command: `bench get-app erpnext`. And here I am not using version 13, I am using the latest ERPNext which is present in development branch. So let's copy this and paste it in the Frappe Bench terminal. \n\nNow the installation is completed. Let's install this into our site. Let's migrate the bench. Shows 'bench is not started'. Let's go back and start the bench using command `bench start`. Migrate it again. Go to the web application page and reload the page.\n\n## Completing the ERPNext Setup Wizard\n\nNow here we can see a version release message. Here we can see the setup start for ERPNext. Let's select English and click on Next. I'm from India so I'm selecting India here, and Time Zone is Indian Time when currency is Indian Rupee. Click on Next.\n\nThen my full name, DecodEe. Then let's add an email address: mailtodecodee@gmail.com. I'm adding a password here. Click on Next. Let's save this. Here, I'm using this bench for development purposes, so I'm selecting all domains. Click on Next. Let's add company name, Decoding. Abbreviation: DE. Click on Next.\n\nAnd here I'm adding Software, Jobs. Then my bank name is ICICI. Chart of Accounts: India Chart of Accounts. And the financial year begins on April 1st. Complete Setup. And now here we can see the workspace of ERPNext. Click on About, and here we can see the ERPNext version 13 development is installed here, and also Frappe version 14 is installed in this site. Let's close this.\n\n## Enabling Developer Mode and Creating a New App\n\nNow we can start development by configuring the development mode in site. So let's open the terminal and run the command `bench set-config developer_mode 1`. Now the site is in developing mode and we can start development. Let's clear this.\n\nNext, I am going to create a new application in this bench. And we can create a new application using this command: `bench new-app` then app name. I'm adding a `demo-app` here. I'm not changing the app title. Let's add some description: Demo App. Publisher: Decoding. Then email: mailtodecodee@gmail.com. Icon: default one. Color: default color. License: MIT license. Now our app is created.\n\n## Installing the Custom App and Conclusion\n\nLet's install this app into our site. `bench install-app demo-app`. Try `bench migrate`. Let's go to our previous tab and start the bench using `bench start` command, because when we create a new application the bench will automatically stop, so we need to restart the bench using `bench start` command. Minimize this terminal and refresh this page. \n\nOpen Help and click on About. Now here we can see `demo-app` version 0.0.1 is installed into our site. I hope that now you are able to install Frappe framework in Ubuntu 22.04. Let's wind up this video lecture and see you soon. Bye."
+}

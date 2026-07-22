@@ -1,14 +1,14 @@
 {
   "slug": "payload",
   "techName": "Payload CMS",
-  "scrapedAt": "2026-07-15T23:20:36.007742+00:00",
+  "scrapedAt": "2026-07-22T00:58:56.631907+00:00",
   "source": "youtube-api",
-  "videoCount": 9,
+  "videoCount": 10,
   "videos": [
     {
       "id": "jCMU4qw6LqI",
       "title": "The Big Headless CMS Lie (James Mikrut)",
-      "description": "Presented at Next.js Conf 2023. \n\nView all talks from the conference: https://www.youtube.com/playlist?list=PLBnKlKpPeagl57K9bCw_IXShWQXePnXjY\nExplore templates of sites built with Next.js: https://vercel.fyi/verceltemplates\nCheck out the Vercel product tour: https://vercel.fyi/producttour\n\nThe idea of the headless CMS got popular because of its decoupled architecture, separation of concerns, and ability to bring your own frontend. But is that really it? Let's be real. People just wanted to build Next.JS sites with a CMS. Payload is looking at moving from Express to Next's App Router, so we can once again give the \"head\" back to \"headless CMS\" without compromising on its API-first nature.",
+      "description": "This video explores the concept of headless CMS, analyzing its rise due to decoupled architecture and separation of concerns. It discusses the desire to integrate CMS with Next.js sites and how Payload aims to reintroduce \"the head\" by moving from Express to Next.js App Router\u2026",
       "channel": "Vercel",
       "channelUrl": "https://www.youtube.com/channel/UCLq8gNoee7oXM7MvTdjyQvA",
       "url": "https://www.youtube.com/watch?v=jCMU4qw6LqI",
@@ -22,9 +22,25 @@
       "definition": "hd"
     },
     {
+      "id": "RhhVt9XliCo",
+      "title": "How I built a blog with Next.js and Sanity headless CMS",
+      "description": "Learn how to build a fully-featured, open-source blog with Next.js and the Sanity headless CMS. This practical guide walks through the entire process, from setting up the project and integrating Sanity Studio to managing content, authors, and posts. Explore the Next.js code\u2026",
+      "channel": "Elie Steinbock",
+      "channelUrl": "https://www.youtube.com/channel/UCp48vy_SNmQ0rrqfArxnRLw",
+      "url": "https://www.youtube.com/watch?v=RhhVt9XliCo",
+      "thumbnail": "https://i.ytimg.com/vi/RhhVt9XliCo/mqdefault.jpg",
+      "publishedAt": "2024-09-06T02:08:52-06:00",
+      "duration": "9:30",
+      "durationSeconds": 570,
+      "views": 53156,
+      "likes": 663,
+      "qualityScore": 82.51,
+      "definition": "hd"
+    },
+    {
       "id": "DoPLyXG26Dg",
       "title": "Overview of Payload CMS Access Control",
-      "description": "Access control is one of Payload's killer features. It delivers a ton of power and flexibility, especially compared to other CMS' rigid RBAC patterns. \n\nPayload's admin UI automatically responds to the access control that you define. For example, if a user can't edit a document, the \"Publish\" button will be automatically removed. If a user can't edit a field, the field is automatically set to read-only in the admin UI. If a user can't create new documents in a collection, the \"Create New\" function will be disabled throughout all of the admin UI.\n\nIn this video, we'll go over an overview of Access Control using the open-source demo repo linked to below. It demonstrates how to set up a \"multi-tenant\" style infrastructure among many other things.\n\nCodebase shown in vid:\nhttps://github.com/payloadcms/access-control-demo\n\nAccess Control docs:\nhttps://payloadcms.com/docs/access-control/overview",
+      "description": "Explore the power of Payload CMS's code-based access control, which transforms it from a headless CMS into a robust application framework. This overview demonstrates how to implement granular, role-based permissions, including multi-tenant setups where users only see content for\u2026",
       "channel": "Payload",
       "channelUrl": "https://www.youtube.com/channel/UCyrx4Wpd4SBIpqUKlkb6N1Q",
       "url": "https://www.youtube.com/watch?v=DoPLyXG26Dg",
@@ -40,7 +56,7 @@
     {
       "id": "L5w2QYB9-UU",
       "title": "How to set up Payload with Supabase",
-      "description": "Learn how to set up Payload with @Supabase to create a powerful backend for your Next.js app! \ud83d\udc47 \n\nIf you're deploying Payload, you need a database. With Payload, you can choose MongoDB or Postgres. Supabase provides a Postgres database and multiple S3 storage buckets\u2014along with a generous free plan (500 MB database, 1 GB storage). \n\n\u2b50 Like what we're up to? Leave us a star \u2b50\nhttps://github.com/payloadcms/payload\n\nA primer on Payload ...\n\u2014 The fastest growing CMS in our category.\n\u2014 Next.js native, so it can seamlessly integrate it into your Next app. You can also one-click deploy on Vercel.\n\u2014 Fully open-source, offering the flexibility of self-hosting or managed hosting.\n\u2014 Fully TypeScript, eliminating the need to navigate through a UI \u2013 simply configure everything in code.\n\u2014 Highly extensible, granting you full control over custom hooks, endpoints, and more. It's not just a CMS; you can extend it to become a comprehensive backend for any application you build.\n\u2014 Use as a standalone app if you're working with other frameworks.\n\nGet started in one line: npx create-payload-app@beta\n----------------------------------------\nS3 code snippet and environment variables from video: \n\ns3Storage({\n      collections: {\n        media: {\n          prefix: 'media',\n        }\n      },\n      bucket: process.env.S3_BUCKET,\n      config: {\n        forcePathStyle: true,\n        credentials: {\n          accessKeyId: process.env.S3_ACCESS_KEY_ID,\n          secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,\n        },\n        region: process.env.S3_REGION,\n        endpoint: process.env.S3_ENDPOINT,\n      },\n    }),\n\nS3_BUCKET=\nS3_ACCESS_KEY_ID=\nS3_SECRET_ACCESS_KEY=\nS3_REGION=\nS3_ENDPOINT=\n\nBig thanks to our friends at 10xMedia.de, a Payload preferred agency, who created this video.",
+      "description": "Learn how to set up Payload CMS with Supabase for a robust and scalable backend. This guide walks you through configuring a Postgres database and S3-compatible file storage provided by Supabase. Discover how to create a new Payload project, connect it to your Supabase database\u2026",
       "channel": "Payload",
       "channelUrl": "https://www.youtube.com/channel/UCyrx4Wpd4SBIpqUKlkb6N1Q",
       "url": "https://www.youtube.com/watch?v=L5w2QYB9-UU",
@@ -56,7 +72,7 @@
     {
       "id": "OurpR8G6Ec0",
       "title": "Exploring Payload 2.0: Postgres, Lexical RTE, Live Preview, and So Much More",
-      "description": "Payload 2.0 is here, and founder James Mikrut breaks down everything that is new! \n\nIf you like what we're up to, give us a Star: https://github.com/payloadcms/payload",
+      "description": "Discover the major new features in Payload 2.0, a significant update that transforms the headless CMS into a more powerful application framework. This release introduces official Postgres support, built on the high-performance Drizzle ORM, for clean, relational data structures\u2026",
       "channel": "Payload",
       "channelUrl": "https://www.youtube.com/channel/UCyrx4Wpd4SBIpqUKlkb6N1Q",
       "url": "https://www.youtube.com/watch?v=OurpR8G6Ec0",
@@ -72,7 +88,7 @@
     {
       "id": "Fm4YaG__EHg",
       "title": "Overview of the Payload Form Builder Plugin",
-      "description": "Tired of implementing HubSpot forms that look like garbage? Struggling with iFrames, or having nightmares thinking about integrating Gravity Forms? With Payload's Form builder plugin, you can easily implement custom forms without the headache.\n\nForm Builder Plugin - https://github.com/payloadcms/plugin-form-builder\n\nForm Builder Plugin Blog Post - https://payloadcms.com/blog/create-custom-forms-with-the-official-form-builder-plugin",
+      "description": "Build powerful, custom forms for your headless websites with the Payload Form Builder plugin, a modern alternative to clunky iframe-based solutions like HubSpot. This guide demonstrates how to manage forms directly within your Payload CMS, create reusable form blocks, and\u2026",
       "channel": "Payload",
       "channelUrl": "https://www.youtube.com/channel/UCyrx4Wpd4SBIpqUKlkb6N1Q",
       "url": "https://www.youtube.com/watch?v=Fm4YaG__EHg",
@@ -88,7 +104,7 @@
     {
       "id": "wCZsKrF5elM",
       "title": "Let's Checkout... #Payload #CMS",
-      "description": "What I really like about Payload CMS is that everything is done through code, you don't have to go around clicking in the admin UI to setup things like you would do in WordPress, Strapi or even Directus. \n\nYou just configure everything directly in code and use the Admin UI to add data to your app. Being a developer this is really appealing to me. It has a great developer experience, but the end users don't need to know anything about coding to add new data to the CMS easily.\n\nLet me show you how this works.\n\n### Mongo DB Install\n\nDocker - https://bit.ly/41hHVB3\nMongo Manual Install - https://bit.ly/3GS7UXn\nMongoDB Atlas - https://bit.ly/3KOQoEE\n\n### Code used in this video\n\nhttps://bit.ly/41thtnI\n\n### Follow me on Social Media\n\nGithub:  https://github.com/ivandoric\nTwitter: https://twitter.com/ivan_doric",
+      "description": "This video reviews Payload CMS, highlighting its code-first configuration approach. It demonstrates setting up the system by defining schemas and fields in code, in contrast to UI-driven alternatives, for building web applications and managing content without requiring coding\u2026",
       "channel": "Watch and Learn",
       "channelUrl": "https://www.youtube.com/channel/UCXQC_GB5hG6PkzIhSMZ-hWA",
       "url": "https://www.youtube.com/watch?v=wCZsKrF5elM",
@@ -104,7 +120,7 @@
     {
       "id": "oBO4z5lQM2g",
       "title": "World without WordPress: Payload as an alternative to ACF",
-      "description": "Instead of taking over ACF (Advanced Custom Fields), WordPress should have just had a \"fields\" feature\u2014in 2004. \n\nACF was the first plugin I installed when I had to use WP,  and inspired a lot of what Payload does. In this video, I address the WordPress drama, some of their mistakes, and discuss how Payload is a nice transition for WP + ACF devs looking to jump ship.\n\n\u2b50 Like what we're up to? Leave us a star \u2b50\nhttps://github.com/payloadcms/payload\n\nGive it a whirl:\nnpx create-payload-app@beta\n\nA primer on Payload ...\n\u2014 The fastest growing open source, headless CMS.\n\u2014 Next.js native, so it can seamlessly integrate it into your Next app.\n\u2014 Fully open source.\n\u2014 Fully TypeScript and code-first \u2014 no more click ops.\n\u2014 Highly extensible, granting you full control over custom hooks, endpoints, and more. \n\u2014 It's not just a CMS; you can extend it to become a comprehensive backend for any application you build.",
+      "description": "This video discusses Payload as an alternative to WordPress and its Advanced Custom Fields (ACF) plugin. It explains how Payload, a headless CMS, offers a different approach to content management, highlighting its TypeScript, code-first nature, and extensibility for developers.",
       "channel": "Payload",
       "channelUrl": "https://www.youtube.com/channel/UCyrx4Wpd4SBIpqUKlkb6N1Q",
       "url": "https://www.youtube.com/watch?v=oBO4z5lQM2g",
@@ -120,7 +136,7 @@
     {
       "id": "t8AU4r9RGPU",
       "title": "It's 2022 - time to stop using headless WordPress. Payload is your headless WordPress alternative.",
-      "description": "In 2016, WordPress + ACF was one of the best ways to build a headless CMS. ACF made it useful. But it was never ideal.\n\nWe did our best to make Payload CMS a powerful alternative to headless WordPress, making sure that we support all the features we used to rely on from ACF like conditional logic and powerful custom fields.\n\nNow, Payload does everything WP + ACF does, but much, much better. Payload is completely free and open-source, and ACF costs $$.\n\nNow, in 2022, there's no reason you should build with headless Wordpress and this video talks about a few reasons why.\n\nHere's the source code for the video, including both the WP site and the Payload site that we looked at:\nhttps://github.com/payloadcms/wp-to-payload\n\nWe'd love to know what you think!",
+      "description": "This video discusses using Payload CMS as an alternative to headless WordPress setups, particularly those utilizing Advanced Custom Fields (ACF). It highlights Payload's features for custom fields and conditional logic, comparing its capabilities and open-source nature to\u2026",
       "channel": "Payload",
       "channelUrl": "https://www.youtube.com/channel/UCyrx4Wpd4SBIpqUKlkb6N1Q",
       "url": "https://www.youtube.com/watch?v=t8AU4r9RGPU",
@@ -136,7 +152,7 @@
     {
       "id": "X-6af837WbY",
       "title": "Payload CMS: Fast Admin UI Custom Views",
-      "description": "Payload CMS: Fast Admin UI Custom Views - Add Create User View To Admin UI\n#payloadcms #reactjs #webdevelopment #payload \n\nLearn how to create custom views in Payload CMS to customize your admin UI and enhance your user experience. With these tips, you can easily create accounts and manage your content with ease!\n\n--\n\"For teams or developers looking for specialized advisory on the Payload CMS, I offer targeted consulting sessions. Feel free to get in touch to discuss how I can help.\"\n\n\u27a1\ufe0f **Contact:**  info@clearlyinnovative.com\n---\n\nPayload CMS 3 - Backend (server)\n\ud83d\udee0 Payload CMS with SQLite database\n\ud83d\udc64 User authentication system\n\ud83d\udd11 Role-based access control (Admin/User roles)\n\ud83c\udf10 REST API endpoints\n\ud83d\ude80 Custom Create Account Screen / Endpoint\n\n\u23f1\ufe0f Chapters\n=================\n00:00 - introduction\n01:40 - Create the Payload Project\n02:24 - Explaining The Problem We Are Solving In App Demo\n03:15 - Modify Payload Config To Add New View\n04:21 - Creating the Custom Component For the New View ( use server )\n06:33 - Child Component for Actual Form ( use client )\n09:40 -  Add API Call to Create User\n11:15 - Testing Code\n13:50 - Wrap Up\n\n\ud83d\udd25 Recent Payload Content\n\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\u2014\n- - Need Real-Time Data (websockets) in Payload CMS? Watch This NOW!\nhttps://youtu.be/l3InbfMi2yE\n- Quick Payload 3 Custom Component Example - https://youtu.be/W_Da3Sp4Lgw\n- Real Time Chat - https://youtu.be/9ll-8KkRWjo\n- Payload CMS And React Router 7 - https://youtu.be/KGJa08OBlSw\n- Custom Dynamic Select Component - https://youtu.be/yJFbOzPD0oA\n\n\ud83d\udd17 Helpful Links\n=================\nPayload CMS - https://payloadcms.com/\nBlog Post - https://dev.to/aaronksaunders/payload-cms-add-a-custom-create-account-screen-in-admin-ui-2pdg\n\nPayload is the open-source, fullstack Next.js framework, giving you instant backend superpowers. Get a full TypeScript backend and admin panel instantly. Use Payload as a headless CMS or for building powerful applications.",
+      "description": "This video demonstrates how to create custom views within the Payload CMS admin UI. It covers modifying the Payload config and building custom React components to add a \"Create User\" view, encompassing API calls for user creation within a Payload 3 backend utilizing SQLite.",
       "channel": "Aaron Saunders",
       "channelUrl": "https://www.youtube.com/channel/UCMCcqbJpyL3LAv3PJeYz2bg",
       "url": "https://www.youtube.com/watch?v=X-6af837WbY",

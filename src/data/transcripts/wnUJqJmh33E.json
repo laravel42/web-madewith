@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 3,
+  "videoId": "wnUJqJmh33E",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Discover Preact, the fast, 3KB alternative to React that leverages the same familiar JSX and Hooks API. This guide explores Preact's core features, including its efficient signals-based reactivity, lightweight routing, and built-in Context API for state management. Learn how to build a high-performance, HTML-first application by creating a language learning app from scratch, covering topics like component structure, side effects with `useEffect`, and event handling, demonstrating why Preact is a powerful choice for modern web development.",
+  "chapters": [
+    {
+      "title": "Introducing Preact: The 3KB React Alternative",
+      "description": "This chapter introduces Preact as a small, fast, and powerful alternative to React, highlighting its relevance in the modern trend of performance-focused frameworks.",
+      "startTime": 0.0,
+      "endTime": 38.0,
+      "slug": "introducing-preact-the-3kb-react-alternative"
+    },
+    {
+      "title": "Project Setup and Structure",
+      "description": "Learn how to set up a new Preact project using the CLI and get a tour of the standard folder structure, including a recommendation for using TypeScript.",
+      "startTime": 38.0,
+      "endTime": 78.0,
+      "slug": "project-setup-and-structure"
+    },
+    {
+      "title": "Preact Components and Routing",
+      "description": "This section covers the basics of building functional components with JSX and hooks, and explains how to model an application around routes using Preact's router.",
+      "startTime": 78.0,
+      "endTime": 126.0,
+      "slug": "preact-components-and-routing"
+    },
+    {
+      "title": "Global State Management with Context API",
+      "description": "Explore how to manage shared application state without prop drilling by using Preact's implementation of the Context API.",
+      "startTime": 126.0,
+      "endTime": 191.0,
+      "slug": "global-state-management-with-context-api"
+    },
+    {
+      "title": "Building a Context-Aware Header Component",
+      "description": "See a practical example of consuming global state with the `useContext` hook, handling navigation with the `Link` component, and implementing conditional rendering.",
+      "startTime": 191.0,
+      "endTime": 244.0,
+      "slug": "building-a-context-aware-header-component"
+    },
+    {
+      "title": "Fetching Initial Data with `useEffect`",
+      "description": "Learn to fetch data when a component first renders by using the `useEffect` hook with an empty dependency array.",
+      "startTime": 244.0,
+      "endTime": 290.0,
+      "slug": "fetching-initial-data-with-useeffect"
+    },
+    {
+      "title": "Enhancing Reactivity with Preact Signals",
+      "description": "This chapter introduces Preact Signals, an optional and highly efficient state management library for creating fine-grained, automatic UI updates.",
+      "startTime": 290.0,
+      "endTime": 316.0,
+      "slug": "enhancing-reactivity-with-preact-signals"
+    },
+    {
+      "title": "Implementing the Core Application Logic",
+      "description": "This part covers fetching a news story from an API, processing its text, and rendering individual words to the page to enable the app's learning functionality.",
+      "startTime": 316.0,
+      "endTime": 361.0,
+      "slug": "implementing-the-core-application-logic"
+    },
+    {
+      "title": "Optimizing Performance with `useCallback`",
+      "description": "Discover how the `useCallback` hook can prevent unnecessary function re-definitions during re-renders, improving your application's performance.",
+      "startTime": 361.0,
+      "endTime": 380.0,
+      "slug": "optimizing-performance-with-usecallback"
+    },
+    {
+      "title": "Building a Dynamic Modal Component",
+      "description": "Follow the implementation of a modal component that displays word definitions and uses `useEffect` to reactively update when new data is passed to it.",
+      "startTime": 380.0,
+      "endTime": 415.0,
+      "slug": "building-a-dynamic-modal-component"
+    },
+    {
+      "title": "Persisting Data and Updating Context",
+      "description": "Learn how to save user data to Local Storage and update the shared application context, ensuring the UI stays in sync.",
+      "startTime": 415.0,
+      "endTime": 459.0,
+      "slug": "persisting-data-and-updating-context"
+    },
+    {
+      "title": "Final Touches and Conclusion",
+      "description": "This chapter concludes the project by building a page to display saved words from context and summarizes why Preact is a compelling choice for modern web development.",
+      "startTime": 459.0,
+      "endTime": 507.62,
+      "slug": "final-touches-and-conclusion"
+    }
+  ],
+  "summary": "## What is Preact?\n\nPreact is a **fast, 3KB alternative to React** that provides the same modern API with a focus on performance and small bundle size.\n\n- **React Compatible API**: Uses the familiar **JSX** and **Hooks** API (`useState`, `useEffect`, etc.), making it easy to learn for React developers.\n- **Performance-Oriented**: Aims to deliver fast, HTML-first applications with excellent time-to-interaction metrics.\n- **Lightweight**: Its extremely small size makes it a powerful choice in an ecosystem shifting towards leaner frameworks like Solid.js and Svelte.\n\n## Project Structure and Setup\n\nA new Preact project can be scaffolded using `preact-cli`. The typical project structure includes:\n- `components/`: For reusable UI components.\n- `routes/`: For page-level components managed by the router.\n- `services/`: For business logic and API calls.\n- `style/`: For global CSS rules.\n\n> [!TIP]\n> The video strongly recommends using **TypeScript**, which is natively supported in Preact, for improved type safety and maintainability in any project.\n\n## Core Preact Concepts\n\n### State Management\nPreact offers several tools for managing state that mirror the React ecosystem.\n\n- **`useState` Hook**: The fundamental hook for managing local component state.\n- **Context API**: For sharing state across the component tree without \"prop drilling\". This involves:\n  1. Creating a context with `createContext()`.\n  2. Wrapping the application or component tree in a `<Context.Provider>`.\n  3. Accessing the context value in any child component using the `useContext()` hook.\n\n### Side Effects\n- **`useEffect` Hook**: Used to perform side effects like data fetching or subscriptions. Its behavior is controlled by a **dependency array**.\n    - `[]` (empty array): The effect runs only **once** when the component mounts.\n    - `[dep1, dep2]` (array with dependencies): The effect runs again whenever a dependency's value changes.\n\n### Performance Optimization\n\n- **`useCallback` Hook**: Wraps a function definition, memoizing it so it isn't recreated on every render. This prevents unnecessary re-renders in child components that depend on that function.\n\n## Advanced Reactivity: Preact Signals\n\nSignals are an optional, opt-in feature for more advanced and efficient state management.\n\n- **Fine-Grained Updates**: Unlike standard state which re-renders the component, Signals can update parts of the DOM directly and automatically.\n- **Efficient**: Inspired by Solid.js, Signals provide one of the most efficient ways to keep the UI in sync with state.\n- **Flexible**: They can be used outside of components and are easily composable, making them great for managing global state.\n\n> [!IMPORTANT]\n> The trend in front-end development is shifting towards smaller, more efficient libraries. Preact demonstrates that you can achieve a modern developer experience with high performance without delivering megabytes of JavaScript to the client.",
+  "transcription": "## Introducing Preact: The 3KB React Alternative\n\nPreact, a fast 3 kilobytes alternative to React. It uses the same familiar JSX and hooks API but sticks to the bare minimum in order to be both small and powerful. This is a major selling point since the new wave of frameworks such as Solid or Svelte rely on much less code sent to the browser, and libraries such as Astro or Qwik are proof that the general direction of the front-end space is to deliver fast, HTML-first apps with great performance and awesome immediate time to interaction metrics.\n\nWith its extremely small size, Preact is a viable option in today's development environment. And in this video, we'll take a look at its core features, its signals-based reactivity, and more, while building a cool little language learning app.\n\n## Project Setup and Structure\n\nSetting up the project is straightforward using the Preact CLI. Run the following command in your terminal, and you will end up with a basic project we can use. As a quick FYI, we'll be using TypeScript since it has native support in Preact. Regardless of the project type, project size, or team experience, I believe you should always use TypeScript in your projects because its benefits outweigh any possible drawbacks.\n\nSo let's take a quick look at the project structure. Like in any other modern framework, the components are Preact's main building blocks. The library comes with a lightweight router as well, and we'll let any business logic or backend API calls in the services directory. As you'd expect, any public static files can be stored in the assets folder, and general CSS rules can be saved in the style directory.\n\n## Preact Components and Routing\n\nIf you are familiar with React or Solid, the component structure should look familiar. We'll be using functional components since these are pretty much the status quo at this point. Inside the function, you can define state using Hooks and you'll need to return this HTML-plus-JavaScript mix called JSX as your component template. We'll take a look at all these in detail in just a second.\n\nIn the meantime, let's quickly discuss routing. This is a concept already solved in single-page applications, and in Preact, we have access to good tooling for it. Always keep in mind to model and architect your app around routes, since your users expect to be able to reliably share links in a manner in which our app will always reflect the URL. We are building a small application, so we'll just add mappings for the root and the words path. Keep in mind, however, that the Preact router is more flexible than that and allows you to pass path variables, do redirects, and more.\n\n## Global State Management with Context API\n\nNext, let's look in detail at managing state in our application. Again, this is a meta topic in front-end development. There are tons of libraries and approaches to handle data flow, side effects, and reliably update and consume data throughout the app. Preact, just like React, comes up with the Context API, which allows you to easily work with shared data. In my experience, the simplest approach works the best for this problem, and this mindset is reflected in the third-party state management libraries where in the last years everybody is trading off features and architectural constraints for simplicity.\n\nIn the shared context, we are adding a theme mode to style the app accordingly in a light or a dark theme, and the list of known words, to which we'll come back in a couple of minutes. Back in the app.tsx file, we are going to define some state to be linked to the context. Note that we are using hooks for most of our work. Hooks were a great addition to React, and then they were ported in Preact version 10 as well. They allow you to work in a more functional manner and at this point replace the class-based components completely. The Context API will allow you to fetch the state we defined anywhere in the component tree, but for this to work, we'll need to wrap our app in a Context provider. If you are not familiar with all these, know that the alternative would be to pass all this information down as component properties, which can easily get out of hand and turn into a boilerplate hell.\n\n## Building a Context-Aware Header Component\n\nNext, we'll jump into the header component and see that we can easily retrieve context data by calling the `useContext` hook. Other than this, there are no major points of interest here. Just know that I am using the router `Link` component to correctly define links in our single-page application. Also, in the JSX, I'm conditionally rendering a theme mode button using the JSX approach. If you are coming from other libraries which are offering special components or directives for conditional rendering, I get that this might look a little bit weird. To wrap up the header implementation, let's register an `onClick` event handler which will allow the user to toggle the dark mode on or off. This is a rather naive implementation, and in a real project, you might want to persist such user decisions in the local storage or even better, on a back-end server.\n\n## Fetching Initial Data with `useEffect`\n\nIt's time now to jump in the `today.tsx` file and work on something a bit more interesting. We'll start by defining some state values to work with. As a quick FYI, note that I'm using CSS modules in this project. Since styling is not really a topic for this video, I'm not getting into any such details, but you can check out the full app implementation on the GitHub link I'm adding in the description.\n\nBack to the code, the `useEffect` hook is the main mechanism Preact offers to hook into some component lifecycle methods and run code whenever some state or property values are changing. The important aspect here is the dependency array. Whenever this array is empty, the effect will run only once when the component is mounted in the DOM. You probably notice that the code we are writing is 100% compatible with React. This is the main selling point of the Preact library; even though it offers so much flexibility, it still is extremely small in size.\n\n## Enhancing Reactivity with Preact Signals\n\nA new exciting addition to the library I want to mention here are Signals. For 1.5 kilobytes more, you can choose to add them into your project and unleash more reactive capabilities. Signals became really popular in recent years because of Solid.js, and they are the most efficient way possible to automatically update UI components. They don't suffer the same constraints state values are facing; they can be computed or held with better managing global state.\n\n## Implementing the Core Application Logic\n\nWhen the component is mounted, using the newsdata.io API, we'll fetch a random news story. Then we are splitting the title and the description of the story and we are rendering each word individually in the page. The whole idea here is that whenever the user opens the app, he'll be able to read a new story about the current events. If any of the words is unknown, he'll be able to click on it and read some explanations, listen to an English speaker saying the word, and then save this word in his list.\n\nOkay, so we fetched a recent news event and we are rendering it to the DOM. Apparently, Elon Musk's old photos being sold is newsworthy. Anyhow, getting back to the code, let's use the Lingua Robot API to fetch the definition whenever a word is being clicked. Just like with the styling, I'm not getting into any details about working with third-party APIs, since these are just some basic fetch calls with some TypeScript annotation for clear usage.\n\n## Optimizing Performance with `useCallback`\n\nWhat I want to mention though is the `useCallback` hook, which we'll be using to wrap our story fetching call. This is a good practice because it avoids redefining functions whenever the rendering process is triggered. Preact is React-based, so it follows the same virtual DOM and rendering approach where the entire function component is re-executed whenever props or state values are being changed.\n\n## Building a Dynamic Modal Component\n\nOkay, once we have a word definition added in the state, we can conditionally render a small UI modal to display all these details. We'll jump into the word modal file to do that, and this implementation is just revisiting what we've already discussed. Some props are being sent to the component, and internally we are simply rendering this information.\n\nNext, we want to retrieve the audio source file from the word object and link it to an HTML audio element. After we define the state value, we'll use the `useEffect` hook again with the word variable in the dependency array. Whenever the modal component will receive a new reference of the word property, it will run the effect again. Okay, so it looks like most of our implementation is done.\n\n## Persisting Data and Updating Context\n\nand we just need to allow users to save new words in their list. I am storing all this information in the local storage, but in a real application, you'd probably persist all this information in a database or in some sort of backend as a service solution. As a side note, I really encourage you to take a look at backend as a service providers, since they are now doing what Preact is doing to React: they come up with simpler, more efficient ways to solve specific problems. At the end of the day, as developers, this should be our main goal: quickly build reliable and maintainable software using smart tools which simplify the whole process.\n\nSo whenever save is clicked, we are updating the local storage entries and the context value as well. As a result, when the list is updated, the header word counter will reflect the new array length.\n\n## Final Touches and Conclusion\n\nTo wrap things up, let's quickly work on the `words` route. This is what you'd call a dumb or a presentational component, since its only purpose is to display some data. We'll iterate over the context words and render them to the DOM. And with that, our small app is completely done and ready to use.\n\nWhile developing it, we got a chance to work with Preact and we saw that most of the things you are able to accomplish using one of the heavy, popular frameworks can also be done with a much smaller library and with better performance and network usage. With such alternatives, I believe it's harder and harder to justify unnecessarily delivering megabytes of data to the client, and all the front-end space will start to shift towards a thinner, more robust way of doing things. If you've made it this far, please consider liking this video and subscribing to the channel. Thank you for watching."
+}

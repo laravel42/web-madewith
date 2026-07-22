@@ -1,6 +1,6 @@
 {
   "slug": "bagisto",
-  "scrapedAt": "2026-07-15T22:28:32.976092+00:00",
+  "scrapedAt": "2026-07-21T11:09:09.200433+00:00",
   "source": "scrapy-github",
   "totalRepos": 17,
   "projects": [
@@ -29,7 +29,7 @@
       "langs": [
         {
           "name": "PHP",
-          "pct": 100,
+          "pct": 100.0,
           "size": 100
         }
       ],
@@ -121,10 +121,10 @@
       "stars": 29,
       "author": "cagartner",
       "avatar": "https://avatars.githubusercontent.com/u/4007696?v=4",
-      "desc": "Método de entrega Correios para o Laravel eCommerce",
+      "desc": "M\u00e9todo de entrega Correios para o Laravel eCommerce",
       "demo": "https://bagisto.com/en/extensions/laravel-ecommerce-correios-shipping/",
       "repoUrl": "https://github.com/cagartner/bagisto-correios",
-      "long1": "Método de entrega Correios para o Laravel eCommerce. Maintained by cagartner on GitHub, where it has earned 29 stars from the community.",
+      "long1": "M\u00e9todo de entrega Correios para o Laravel eCommerce. Maintained by cagartner on GitHub, where it has earned 29 stars from the community.",
       "long2": "It's actively developed around bagisto, bagisto-correios, correios, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
@@ -134,11 +134,11 @@
         "Ecommerce Shipping Solution"
       ],
       "updated": "4 years ago",
-      "license": "—",
+      "license": "\u2014",
       "langs": [
         {
           "name": "PHP",
-          "pct": 100,
+          "pct": 100.0,
           "size": 100
         }
       ],
@@ -172,12 +172,12 @@
         "Codenteq",
         "Ecommerce"
       ],
-      "updated": "5 months ago",
+      "updated": "6 months ago",
       "license": "MIT",
       "langs": [
         {
           "name": "PHP",
-          "pct": 100,
+          "pct": 100.0,
           "size": 100
         }
       ],
@@ -190,6 +190,43 @@
         "opensource",
         "payment",
         "stripe"
+      ]
+    },
+    {
+      "slug": "bagisto-pickup",
+      "name": "bagisto-pickup",
+      "fullName": "ghermans/bagisto-pickup",
+      "category": "E-commerce",
+      "stars": 17,
+      "author": "ghermans",
+      "avatar": "https://avatars.githubusercontent.com/u/1594411?v=4",
+      "desc": "This extension allows your customers to collect their orders from your physical stores.",
+      "demo": null,
+      "repoUrl": "https://github.com/ghermans/bagisto-pickup",
+      "long1": "This extension allows your customers to collect their orders from your physical stores. Maintained by ghermans on GitHub, where it has earned 17 stars from the community.",
+      "long2": "It's actively developed around bagisto, ecommerce, laravel, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Bagisto",
+        "Ecommerce",
+        "Laravel",
+        "Shipping Methods"
+      ],
+      "updated": "1 year ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "PHP",
+          "pct": 100.0,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "bagisto",
+        "ecommerce",
+        "laravel",
+        "shipping-methods"
       ]
     },
     {
@@ -212,7 +249,7 @@
         "Bagisto Package",
         "Custom Theme"
       ],
-      "updated": "3 weeks ago",
+      "updated": "4 weeks ago",
       "license": "MIT",
       "langs": [
         {
@@ -256,43 +293,6 @@
       ]
     },
     {
-      "slug": "bagisto-pickup",
-      "name": "bagisto-pickup",
-      "fullName": "ghermans/bagisto-pickup",
-      "category": "E-commerce",
-      "stars": 17,
-      "author": "ghermans",
-      "avatar": "https://avatars.githubusercontent.com/u/1594411?v=4",
-      "desc": "This extension allows your customers to collect their orders from your physical stores.",
-      "demo": null,
-      "repoUrl": "https://github.com/ghermans/bagisto-pickup",
-      "long1": "This extension allows your customers to collect their orders from your physical stores. Maintained by ghermans on GitHub, where it has earned 17 stars from the community.",
-      "long2": "It's actively developed around bagisto, ecommerce, laravel, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Bagisto",
-        "Ecommerce",
-        "Laravel",
-        "Shipping Methods"
-      ],
-      "updated": "1 year ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "bagisto",
-        "ecommerce",
-        "laravel",
-        "shipping-methods"
-      ]
-    },
-    {
       "slug": "booking-product",
       "name": "booking-product",
       "fullName": "bagisto/booking-product",
@@ -313,11 +313,11 @@
         "Booking Platform"
       ],
       "updated": "2 years ago",
-      "license": "—",
+      "license": "\u2014",
       "langs": [
         {
           "name": "PHP",
-          "pct": 100,
+          "pct": 100.0,
           "size": 100
         }
       ],
@@ -358,7 +358,7 @@
       "langs": [
         {
           "name": "PHP",
-          "pct": 100,
+          "pct": 100.0,
           "size": 100
         }
       ],
@@ -398,7 +398,7 @@
       "langs": [
         {
           "name": "PHP",
-          "pct": 100,
+          "pct": 100.0,
           "size": 100
         }
       ],
@@ -409,6 +409,46 @@
         "multisafepay",
         "payment-gateway",
         "payment-method"
+      ]
+    },
+    {
+      "slug": "bagisto-stripe-payment-gateway",
+      "name": "Bagisto-Stripe-Payment-Gateway",
+      "fullName": "wontonee/Bagisto-Stripe-Payment-Gateway",
+      "category": "E-commerce",
+      "stars": 7,
+      "author": "wontonee",
+      "avatar": "https://avatars.githubusercontent.com/u/112187926?v=4",
+      "desc": "Laravel bagisto stripe payment gateway from wontonee",
+      "demo": "https://www.wontonee.com",
+      "repoUrl": "https://github.com/wontonee/Bagisto-Stripe-Payment-Gateway",
+      "long1": "Laravel bagisto stripe payment gateway from wontonee. Maintained by wontonee on GitHub, where it has earned 7 stars from the community.",
+      "long2": "It's actively developed around bagisto, bagisto-package, bagisto-payment, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Bagisto",
+        "Bagisto Package",
+        "Bagisto Payment",
+        "Laravel"
+      ],
+      "updated": "1 year ago",
+      "license": "\u2014",
+      "langs": [
+        {
+          "name": "PHP",
+          "pct": 100.0,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "bagisto",
+        "bagisto-package",
+        "bagisto-payment",
+        "laravel",
+        "laravel-framework",
+        "stripe-checkout",
+        "stripe-payments"
       ]
     },
     {
@@ -433,7 +473,7 @@
       "langs": [
         {
           "name": "PHP",
-          "pct": 100,
+          "pct": 100.0,
           "size": 100
         }
       ],
@@ -441,81 +481,6 @@
       "topics": [
         "bagisto",
         "hacktoberfest"
-      ]
-    },
-    {
-      "slug": "bagisto-stripe-payment-gateway",
-      "name": "Bagisto-Stripe-Payment-Gateway",
-      "fullName": "wontonee/Bagisto-Stripe-Payment-Gateway",
-      "category": "E-commerce",
-      "stars": 7,
-      "author": "wontonee",
-      "avatar": "https://avatars.githubusercontent.com/u/112187926?v=4",
-      "desc": "Laravel bagisto stripe payment gateway from wontonee",
-      "demo": "https://www.wontonee.com",
-      "repoUrl": "https://github.com/wontonee/Bagisto-Stripe-Payment-Gateway",
-      "long1": "Laravel bagisto stripe payment gateway from wontonee. Maintained by wontonee on GitHub, where it has earned 7 stars from the community.",
-      "long2": "It's actively developed around bagisto, bagisto-package, bagisto-payment, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Bagisto",
-        "Bagisto Package",
-        "Bagisto Payment",
-        "Laravel"
-      ],
-      "updated": "1 year ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "bagisto",
-        "bagisto-package",
-        "bagisto-payment",
-        "laravel",
-        "laravel-framework",
-        "stripe-checkout",
-        "stripe-payments"
-      ]
-    },
-    {
-      "slug": "printful-bagisto",
-      "name": "Printful-Bagisto",
-      "fullName": "SamiXSous/Printful-Bagisto",
-      "category": "DevTools",
-      "stars": 6,
-      "author": "SamiXSous",
-      "avatar": "https://avatars.githubusercontent.com/u/10419603?v=4",
-      "desc": "A Printful plugin for the Bagisto e-commerce framework",
-      "demo": null,
-      "repoUrl": "https://github.com/SamiXSous/Printful-Bagisto",
-      "long1": "A Printful plugin for the Bagisto e-commerce framework. Maintained by SamiXSous on GitHub, where it has earned 6 stars from the community.",
-      "long2": "It's actively developed around bagisto, laravel, printful, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Bagisto",
-        "Laravel",
-        "Printful"
-      ],
-      "updated": "4 years ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "bagisto",
-        "laravel",
-        "printful"
       ]
     },
     {
@@ -538,12 +503,12 @@
         "Ecommerce Payment Solution",
         "Laravel"
       ],
-      "updated": "5 years ago",
-      "license": "—",
+      "updated": "6 years ago",
+      "license": "\u2014",
       "langs": [
         {
           "name": "PHP",
-          "pct": 100,
+          "pct": 100.0,
           "size": 100
         }
       ],
@@ -554,6 +519,41 @@
         "ecommerce-payment-solution",
         "laravel",
         "laravel-package"
+      ]
+    },
+    {
+      "slug": "printful-bagisto",
+      "name": "Printful-Bagisto",
+      "fullName": "SamiXSous/Printful-Bagisto",
+      "category": "DevTools",
+      "stars": 6,
+      "author": "SamiXSous",
+      "avatar": "https://avatars.githubusercontent.com/u/10419603?v=4",
+      "desc": "A Printful plugin for the Bagisto e-commerce framework",
+      "demo": null,
+      "repoUrl": "https://github.com/SamiXSous/Printful-Bagisto",
+      "long1": "A Printful plugin for the Bagisto e-commerce framework. Maintained by SamiXSous on GitHub, where it has earned 6 stars from the community.",
+      "long2": "It's actively developed around bagisto, laravel, printful, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Bagisto",
+        "Laravel",
+        "Printful"
+      ],
+      "updated": "4 years ago",
+      "license": "\u2014",
+      "langs": [
+        {
+          "name": "PHP",
+          "pct": 100.0,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "bagisto",
+        "laravel",
+        "printful"
       ]
     },
     {
@@ -577,11 +577,11 @@
         "Laravel Extension"
       ],
       "updated": "3 years ago",
-      "license": "—",
+      "license": "\u2014",
       "langs": [
         {
           "name": "Blade",
-          "pct": 100,
+          "pct": 100.0,
           "size": 100
         }
       ],
@@ -591,41 +591,6 @@
         "bagisto-package",
         "laravel",
         "laravel-extension"
-      ]
-    },
-    {
-      "slug": "ecommerce-blog-extension",
-      "name": "ecommerce-blog-extension",
-      "fullName": "ahmetarsiv/ecommerce-blog-extension",
-      "category": "E-commerce",
-      "stars": 5,
-      "author": "ahmetarsiv",
-      "avatar": "https://avatars.githubusercontent.com/u/101526596?v=4",
-      "desc": "The Laravel eCommerce Blog Extension",
-      "demo": "https://www.arsivpro.com",
-      "repoUrl": "https://github.com/ahmetarsiv/ecommerce-blog-extension",
-      "long1": "The Laravel eCommerce Blog Extension. Maintained by ahmetarsiv on GitHub, where it has earned 5 stars from the community.",
-      "long2": "It's actively developed around bagisto, blog, ecommerce, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Bagisto",
-        "Blog",
-        "Ecommerce"
-      ],
-      "updated": "3 years ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "bagisto",
-        "blog",
-        "ecommerce"
       ]
     },
     {
@@ -653,7 +618,7 @@
       "langs": [
         {
           "name": "PHP",
-          "pct": 100,
+          "pct": 100.0,
           "size": 100
         }
       ],
@@ -666,6 +631,41 @@
         "opensource",
         "payment",
         "paytr"
+      ]
+    },
+    {
+      "slug": "ecommerce-blog-extension",
+      "name": "ecommerce-blog-extension",
+      "fullName": "ahmetarsiv/ecommerce-blog-extension",
+      "category": "E-commerce",
+      "stars": 5,
+      "author": "ahmetarsiv",
+      "avatar": "https://avatars.githubusercontent.com/u/101526596?v=4",
+      "desc": "The Laravel eCommerce Blog Extension",
+      "demo": "https://www.arsivpro.com",
+      "repoUrl": "https://github.com/ahmetarsiv/ecommerce-blog-extension",
+      "long1": "The Laravel eCommerce Blog Extension. Maintained by ahmetarsiv on GitHub, where it has earned 5 stars from the community.",
+      "long2": "It's actively developed around bagisto, blog, ecommerce, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Bagisto",
+        "Blog",
+        "Ecommerce"
+      ],
+      "updated": "3 years ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "PHP",
+          "pct": 100.0,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "bagisto",
+        "blog",
+        "ecommerce"
       ]
     }
   ]

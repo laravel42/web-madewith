@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 3,
+  "videoId": "7cdGAUXDLCs",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Explore the exciting new beta release of the Bagisto e-commerce platform, featuring the stunning and modern Velocity theme. This guide walks you through downloading the v1.0.0-beta-1 version directly from GitHub and performing a fresh installation using the GUI installer. Learn how to switch from the default theme to the new Velocity theme to give your shop a clean, appealing look. Discover new product types like grouped, bundle, downloadable, and virtual, with a practical demo on creating a grouped product.",
+  "chapters": [
+    {
+      "title": "Introducing the Bagisto Velocity Theme Beta",
+      "description": "An introduction to the new Bagisto v1.0.0 beta release, highlighting the exciting new Velocity theme and mentioning bug fixes.",
+      "startTime": 0.0,
+      "endTime": 60.0,
+      "slug": "introducing-the-bagisto-velocity-theme-beta"
+    },
+    {
+      "title": "Downloading and Initial Setup",
+      "description": "Learn how to download the beta release zip file from GitHub and run the initial composer install command.",
+      "startTime": 60.0,
+      "endTime": 113.0,
+      "slug": "downloading-and-initial-setup"
+    },
+    {
+      "title": "Running the GUI Installer",
+      "description": "A step-by-step guide through the web-based installer, including server requirements, application setup, and database migration.",
+      "startTime": 113.0,
+      "endTime": 179.0,
+      "slug": "running-the-gui-installer"
+    },
+    {
+      "title": "Database Migration and Seeding",
+      "description": "This chapter covers the database migration and seeding process and shows the empty database before the operation.",
+      "startTime": 179.0,
+      "endTime": 191.0,
+      "slug": "database-migration-and-seeding"
+    },
+    {
+      "title": "Finishing Installation & Admin Setup",
+      "description": "Create an admin account, configure email settings, and log in to the newly installed Bagisto admin panel.",
+      "startTime": 191.0,
+      "endTime": 239.0,
+      "slug": "finishing-installation-admin-setup"
+    },
+    {
+      "title": "Activating the New Velocity Theme",
+      "description": "Enable the new Velocity theme through the channel settings and compare the modern new storefront to the old default theme.",
+      "startTime": 239.0,
+      "endTime": 318.0,
+      "slug": "activating-the-new-velocity-theme"
+    },
+    {
+      "title": "Exploring New Product Types",
+      "description": "Discover the new product attribute types (grouped, bundle, downloadable, virtual) and create two simple products intended for a group.",
+      "startTime": 318.0,
+      "endTime": 445.0,
+      "slug": "exploring-new-product-types"
+    },
+    {
+      "title": "Creating and Demonstrating a Grouped Product",
+      "description": "See how to create a grouped product that bundles other simple products together, appearing on the storefront as a single offering.",
+      "startTime": 445.0,
+      "endTime": 531.0,
+      "slug": "creating-and-demonstrating-a-grouped-product"
+    },
+    {
+      "title": "Final Thoughts & Call to Action",
+      "description": "A recap of the new Bagisto features and a call for viewers to share their thoughts on the new Velocity theme.",
+      "startTime": 531.0,
+      "endTime": 582.64,
+      "slug": "final-thoughts-call-to-action"
+    }
+  ],
+  "summary": "## Bagisto's New Release: Velocity Theme & New Product Types\n\nThis video introduces the exciting **Bagisto v1.0.0-beta-1** release, which includes the modern **Velocity theme** and new product types.\n\n> [!IMPORTANT]\n> This is a beta release. You must download it directly from the **Bagisto GitHub repository** under the \"Releases\" section, as it's not available on the main download page yet.\n\n### Installation and Setup\n\n1.  **Download & Extract**: Get the source code zip file from GitHub and extract it.\n2.  **Install Dependencies**: Open the project folder in your terminal and run `composer install`.\n3.  **Start Server**: Run `php artisan serve` to start the local development server, typically at `localhost:8000`.\n4.  **GUI Installer**: Navigate to `localhost:8000` in your browser. The Bagisto installer will guide you through:\n    *   Server requirement checks\n    *   Application configuration (Name, URL)\n    *   Database connection details\n    *   Database migration & seeding\n    *   Admin user creation\n\n### Activating the Velocity Theme\n\nBy default, Bagisto will use the old theme. To enable the new **Velocity** theme:\n\n1.  Log in to the **Admin Panel**.\n2.  Navigate to **Settings** > **Channels**.\n3.  Edit your `default` channel.\n4.  Scroll down to the **Themes** dropdown.\n5.  Select **Velocity** and save the channel.\n\n> [!TIP]\n> After switching, visit your shop's frontend to see the transformation from a minimalistic layout to a clean, modern, and feature-rich design.\n\n### New Product Types\n\nThis release introduces several new product types to expand your e-commerce capabilities:\n\n*   **Virtual**: For services or non-shippable items.\n*   **Downloadable**: Ideal for digital products like ebooks or software.\n*   **Bundle**: A collection of existing simple or virtual products sold together.\n*   **Grouped**: Allows customers to buy a group of associated products from a single product page.\n\n#### Creating a Grouped Product\n\nA grouped product is a collection of individual simple products. Here’s the workflow shown:\n\n1.  **Create Simple Products**: Create two or more **simple products** (e.g., \"Product 1,\" \"Product 2\").\n    > [!NOTE]\n    > For these child products, set **Visibility** to **\"Not Visible Individually\"**. This ensures they only appear as part of the group.\n2.  **Create the Grouped Product**: Create a new product and select the **Grouped** product type. This will be the main, visible product.\n3.  **Link Products**: In the \"Grouped Products\" section of your new product, search for and add the simple products you created in step 1.\n4.  **View on Storefront**: The grouped product (e.g., \"Bundle of Two\") will appear on your shop, allowing customers to specify quantities for each item within the group and add them to the cart.",
+  "transcription": "## Introducing the Bagisto Velocity Theme Beta\n\nWelcome to Bitfumes. This is Bagisto tutorial for its new release. Why? Because the new release has an exciting thing. I am very excited for the theme. The Velocity theme Bagisto team has introduced into its new beta release. And it's a beta version, and stable version will come very soon. But we can check out the new Velocity theme and some of the other things which are included in the latest tours out.\n\nSo let's check out how we can get that because this is a beta version. If you go to a download page, you will not get the version 1.0.0 because it's in beta. So let's go on the GitHub and on the GitHub you will find here we have the releases. And in this releases, you can see we have this version 1.0.0 beta one. And this is what I am talking about, they provided new theme, Velocity theme. Very, very good, very, very awesome theme and dozens of fixes, the bug fix. Cool, very nice.\n\n## Downloading and Initial Setup\n\nNow let's grab this new release. So we need to get it as a zip file. So we will download it, and after download, we just need to go on our downloaded file and we just need to extract it. As soon as we extract it, we can simply open this with our favorite text editor. And here we are. And first thing we need to... we need to say `composer install`. And now `composer install` is done. Next step is to start the server. So we need to say `php artisan serve`. Simple thing. And it started at localhost:8000. localhost:8000. And you have seen that we have not configured anything, but there is a GUI for Bagisto which tells us what we need to do next.\n\n## Running the GUI Installer\n\nSo on this localhost:8000, it already redirected me to installer. And now on this installer, you can see it first checking the missing thing or it's actually checking what are the requirements of Bagisto. Then click on next and giving the name as Bagisto, giving the URL as localhost:8000. MySQL database connection, and then host is 127.0.0.1, database name is Bagisto, and root is the username and password is password in my case. Obviously, you need to fill your credentials on these fields.\n\n## Database Migration and Seeding\n\nSo save and continue. Then it will migrate, and then it will seed. So firstly let me tell you that I have already created a database called bagisto and on this, you can see we don't have anything here. Okay, that's cool.\n\n## Finishing Installation & Admin Setup\n\nSo let's click on migrate and seed. Now it's migrating that database and after migrating, it's now seeding the database. And it's done actually. So let's click on continue and we need to create a simple admin. So let's create an admin with a password of secret and click on continue. Because it will use the email system, so we need to use the Mailtrap for just testing purpose. You can see we have this Mailtrap and I have already done that. So everything is inside this, and we need to grab the password from here and paste it. Finish and done. So now it's now redirecting me to the admin section. I can simply say admin@example.com and password is secret. Hit sign in.\n\n## Activating the New Velocity Theme\n\nWoohoo! We are on a new version of Bagisto, which is 1.0.0. And how you can verify that this is the new version? You can see we have this new Velocity tab on this sidebar. And this means now, wait for this, this is very interesting. So let me show you the current front page. There's a shop. My shop looks like this. Yeah, this is good, but not so good. It's not so appealing.\n\nBut what if I go to settings, then I will go to channels, and on this channel, I will click on this default channel. Then at the bottom I can see we have a theme. And now I change the theme to Velocity theme, which is the new one, Velocity theme. Save channel actually, and it's not saving because we need to give the meta tags. So I say \"my shop\" and copy-paste for now. Save Channel. And it's done. Again, Save Channel, not Save Changes. Okay. So this time because I have changed the team, if I go to visit shop, here's the thing. You can see the new, cool, awesome, very nice, clean, modern look of Bagisto. Very, very nice. You can see, so clean, all the categories are there. You can have a big banner, then you have a short banner, then you have some information here. Again, some other products, you can fill it on your own way. So this is good. And now let's compare it with the old one. See, simplest, very, very minimalistic, but this one is cool, awesome, and very nice.\n\n## Exploring New Product Types\n\nIt's like a thanks for the people who are using Bagisto with this new theme. And we have seen that we also have some other things on this new version which is grouped, bundle, downloadable, and virtual product. Hmmm, what is this? So let's talk about these things. If we go to catalog, we have a product. So initially, we just have two options to create the product, one is simple and second is configurable. But now we have a more than one type of product. So we have virtual, you know virtual means what, the grouped, the downloadables, and downloadable somewhat like an ebook if you have a PDF, then bundle, but let me show you one thing, like grouped one.\n\nSo what I will do, I will firstly create a simple product in a default, and SKU something. So this is the one. And here I will add its status to 'yes' and 'not visible individually' because I don't want this... I don't want this to be visible individually. I want this to be a part of a group. Okay? So now we need to fill the description. Save product. That's done. \n\nAnd we can replicate this same product one more time. So a simple product with SKU of 1234 this time. Once more, just status to 'yes', no individual visibility. So now we have two products, product one and product two.\n\n## Creating and Demonstrating a Grouped Product\n\nBut if you go to this website, the shop, we can't see these products because we have said that, okay, these products are available but not visible individually. Now I will create a group of products. So this time I will say save product for grouped product. And now I will say \"bundle of two.\" So it's like a bundle of two, and whatever the bundle of two. Okay.\n\nNow I want this to be visible... visible individually. It is on the featured one. Status is 'yes', obviously. And fill the description. Then comes group product. So I want product one... product two one and product two. Product two is already there. Product one is added. Now we need to say quantity is ten. Once more, quantity is ten. Order doesn't matter. Save Changes. And now go to shop, refresh the page, scroll down. You can see we have a new featured product. Because we have not added any image, its image is not showing actually. And now we can have a bundle of two of something. And this means now we have product one and product two. We can give customers the ability to buy a bundle of two products, product one and product two at a time, by using this simple system of grouped product.\n\n## Final Thoughts & Call to Action\n\nSo in this way, you can see the new release is very cool with the awesome new Velocity theme and some of the product types. And maybe with the stable version, they will come up with a cool new other theme. So how you like the new Velocity theme? If you have watched the video till then, you must reply so that I know that you have watched this episode till the end.\n\nSo the question is, how do you like the Velocity theme? Your answer should be in the comment so I know that this person has watched it till the end and I will love to reply you. And if you liked this episode, please share this video with your friends and don't forget to like Bitfumes on Facebook, Twitter, Instagram, LinkedIn, subscribe, and give it a thumbs up. We will meet in the next episode. Till then, goodbye."
+}

@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 3,
+  "videoId": "Y-SvIFS4J8o",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to integrate a rich text What You See Is What You Get (WYSIWYG) editor into your Laravel application using the popular TinyMCE library. This tutorial walks through the essential steps, from downloading and setting up TinyMCE to configuring it within your Blade view. Discover how to replace a standard textarea with a full-featured editor, define plugins and toolbar options, and correctly handle the HTML output in Laravel to render styled content. This guide provides the foundation for adding advanced text editing with image support.",
+  "chapters": [
+    {
+      "title": "Introduction: Integrating a WYSIWYG Editor",
+      "description": "This chapter introduces the project's goal: integrating a WYSIWYG editor into a Laravel application, specifically using TinyMCE.",
+      "startTime": 0.0,
+      "endTime": 24.0,
+      "slug": "introduction-integrating-a-wysiwyg-editor"
+    },
+    {
+      "title": "Downloading and Installing TinyMCE",
+      "description": "This section covers how to download the TinyMCE library and place it within the Laravel project's public JavaScript directory.",
+      "startTime": 24.0,
+      "endTime": 99.0,
+      "slug": "downloading-and-installing-tinymce"
+    },
+    {
+      "title": "Preparing the Blade View",
+      "description": "A basic Blade view is set up with a form containing a CSRF token and a textarea, which will be the target for the editor.",
+      "startTime": 99.0,
+      "endTime": 125.0,
+      "slug": "preparing-the-blade-view"
+    },
+    {
+      "title": "Configuring TinyMCE with JavaScript",
+      "description": "This chapter details the JavaScript configuration for initializing TinyMCE, including importing the script and setting the selector.",
+      "startTime": 125.0,
+      "endTime": 232.0,
+      "slug": "configuring-tinymce-with-javascript"
+    },
+    {
+      "title": "Configuring Plugins and the Toolbar",
+      "description": "Learn how to configure which TinyMCE features are available by adding plugins and defining the layout of the editor's toolbar.",
+      "startTime": 232.0,
+      "endTime": 299.0,
+      "slug": "configuring-plugins-and-the-toolbar"
+    },
+    {
+      "title": "Preparing for File Management",
+      "description": "This section notes the configuration block for the file manager, explaining that it is a placeholder for future functionality.",
+      "startTime": 299.0,
+      "endTime": 331.0,
+      "slug": "preparing-for-file-management"
+    },
+    {
+      "title": "Creating the Output View in Blade",
+      "description": "This chapter demonstrates how to create a view to display the editor's content and explains why unescaped output is necessary.",
+      "startTime": 331.0,
+      "endTime": 433.0,
+      "slug": "creating-the-output-view-in-blade"
+    },
+    {
+      "title": "Setting Up Laravel Routes for Submission",
+      "description": "The necessary GET and POST routes are created in Laravel to display the editor page and handle the form submission.",
+      "startTime": 433.0,
+      "endTime": 504.0,
+      "slug": "setting-up-laravel-routes-for-submission"
+    },
+    {
+      "title": "Demonstration and Final Result",
+      "description": "The video concludes with a demonstration of the working TinyMCE editor, showing text formatting, form submission, and the rendered output.",
+      "startTime": 504.0,
+      "endTime": 607.04,
+      "slug": "demonstration-and-final-result"
+    }
+  ],
+  "summary": "## Project Goal\nIntegrate the **TinyMCE** What You See Is What You Get (WYSIWYG) editor into a **Laravel** application to replace a standard `<textarea>` with a rich text editor.\n\n## Setup & Installation\n1.  **Download TinyMCE**: Get the library from the official TinyMCE website.\n2.  **Place Files**: Unzip and place the TinyMCE folder into your project, for example, under `public/js/vendor/`.\n\n## Core Integration Steps\n\nThe integration involves three main parts: the HTML view, the JavaScript configuration, and the server-side route for processing.\n\n### 1. Blade View (`welcome.blade.php`)\n*   Create a standard HTML form.\n*   Include a `<textarea>` element. This element will be targeted and replaced by TinyMCE.\n*   Add a script tag to include the `tinymce.min.js` file from your project.\n*   Add a second script block to hold the TinyMCE initialization code.\n\n### 2. JavaScript Initialization\nTinyMCE is initialized using the `tinymce.init()` method, which takes a configuration object.\n\n> [!TIP]\n> The most crucial configuration option is the **`selector`**. It uses a CSS-like syntax to tell TinyMCE which element to replace. For example, `selector: 'textarea'` will target all textarea elements on the page.\n\n### 3. Key Configuration Options\n*   **`path_absolute`**: A JavaScript variable holding the base URL of your application. This is useful for creating absolute paths, especially for file management.\n*   **`selector`**: Defines the HTML element(s) to transform into a rich text editor.\n*   **`plugins`**: An array of strings specifying which extra features to enable (e.g., `'image'`, `'print'`, `'lists'`).\n*   **`toolbar`**: A string that defines the layout and available buttons in the editor's toolbar.\n*   **`relative_urls: false`**: Set to `false` to ensure all generated URLs are absolute, which is important for file handling.\n\n## Handling HTML Output in Laravel\n\n### 1. Submission Route (`web.php`)\n*   Create a `POST` route (`/submit`) to handle the form submission.\n*   In the controller method or route closure, access the editor's content from the request: `$request->content`.\n*   Pass this content to an output view.\n\n### 2. Rendering Content (`output.blade.php`)\nThe content from TinyMCE is HTML. To render it correctly in a Blade view, you must use the unescaped syntax.\n\n*   **`{{ $content }}`**: Escapes HTML, printing tags as plain text. **This is not what you want.**\n*   **`{!! $content !!}`**: Renders the raw HTML, displaying formatted text, lists, bolding, etc.\n\n> [!IMPORTANT]\n> Using `{!! !!}` disables Blade's default XSS protection for that variable. Only use it with content you trust. Since the content is generated by a controlled editor, it's generally safe in this context, but always be aware of the security implications of outputting unescaped HTML.",
+  "transcription": "## Introduction: Integrating a WYSIWYG Editor\n\nHi, welcome back. Time for a new Laravel project. What I also read a lot in the comments is that a lot of you guys wanted to see how we can integrate a What You See Is What You Get editor in our Laravel application. So this is what we're going to do here. And this also includes image upload, of course, because that is probably the most interesting thing about it, right?\n\n## Downloading and Installing TinyMCE\n\nBut let's start with the basics. What we will use in this video is TinyMCE because I think it's a great editor, but integration kind of works similar for most of these editors. So the first thing I will do is I'll head over to TinyMCE and then just click download. And then I will, well, simply hit the download button and make sure to save it in my project. So I will store it in my source JavaScript vendor folder here.\n\nAnd as you can see, I already got it there. So let me to get it exactly the same way as you have it, deleted. And now I'll extract this file, get rid of the zip file, and well, here it is. Kind of multi-layered here, but that's fine.\n\n## Preparing the Blade View\n\nSo this is the project, I'll add this to source control. And now I got my TinyMCE editor imported. \n\nNext thing is in my welcome.blade view, I already prepared something which you will paste into it. Now, this is basically a plain setup which has a form in the middle here with our hidden session token field and with a text area, and this text area is what we want to replace with this TinyMCE editor.\n\n## Configuring TinyMCE with JavaScript\n\nWe're doing this with the code here at the bottom. And whoa, this looks extremely frightening, but let's start at the top and move through it. \n\nSo first, I'm importing this TinyMCE script. And well, this is just the path to the script file here, `tinymce.min.js`, which we just imported, or just added here. So this is the path I add here, and then I configure it before I then initialize it. \n\nThis here, this at the very bottom, will initialize our What You See Is What You Get editor here, and it will initialize it with the configuration we pass as an argument. Now, the first thing here is we're defining a path, and this really is just the base path of our app, which comes in important when we come to things like image download and well, everything this has to do with accessing files on our server then. So this is where we need this `path_absolute` thing there for.\n\nThe next one is the selector. This is very important. This defines what should be replaced with this rich-featured editor, with this What You See is What You Get editor. And we of course want to replace this text area. Therefore I'm using this `textarea` tag here as a selector, and you use the selector here like you know it from CSS selectors. So passing a name like this will refer to a tag, a dot at the beginning will refer to a class, of course, and a hashtag to an ID, and so on.\n\n## Configuring Plugins and the Toolbar\n\nNext thing is, which plugins do we want to use in this editor? Because you can dynamically configure in TinyMCE which features you want and which you don't want. And this really isn't a detailed video about configuring TinyMCE, but this is how you do it. You just add a string, an array of strings, which contains all the plugins you want, like for example, allowing printing, image, and so on. And yeah, this is how you do this. Then you can configure the toolbar as will be displayed, so how your options will be grouped and in the first place available in this toolbar. And I recommend checking out the description for more information about this because there you will find a link to the TinyMCE documentation, which is the best place to get started learning the configuration of TinyMCE. Well, then I'm disabling relative URLs because I want to do all the routing absolute from this path again, important for working with files later on.\n\n## Preparing for File Management\n\nNow, this part here is important later when we come to managing files and images, and I will explain it then. The same is true for this, so this whole part, basically what this does is it just configures our file manager, which we will later use to manage our uploads, our files we have on the server, and so on. Well, that again, this starts it with the configuration, the most important part being for this part here, the selector.\n\n## Creating the Output View in Blade\n\nNow, before we actually see something, I'll add one more thing here. We'll call this `output.blade.php` file, so a new view. And I also get some code for this view. And this is very simple. It will basically just output whatever, whichever content we're submitting in our editor, in our What You See Is What You Get one. \n\nImportant thing though, here where we output this content variable, I'm using curly braces and then double exclamation marks. Why am I doing this and not the normal syntax of double curly braces? The reason is using this syntax here will not escape the HTML code if there is any. So using double exclamation marks will print or will render the HTML code instead of printing it as text. And this is of course important because what will what you see is what you get editor do? It will add HTML tags. This is how it styles it and how it saves the styling you apply in the editor. Now, all the styling would be gone and we would have all these nasty tags as plain text if we were to use normal curly braces here, which again, escape HTML tags. And this is the default, because normally you don't really want to output rendered HTML in your view because this might pose a security issue. So you have to kind of check that everything is fine there. And in this case, well, we're just making this easy and say, yeah, it will be fine, and we're just rendering it.\n\n## Setting Up Laravel Routes for Submission\n\nVery last thing before we really see something is setting up some routes. And I already got my first route, which is fine. I will just give it a name of `welcome`. And then I will add a new route, which will be a post route. We'll call it `/submit`, or give it a path `/submit`. Then this will have a function which will take a request... This one here, Illuminate\\Http... and make sure to get this path right: `\\Illuminate\\Http\\Request`, which will of course hold the input field or the text area we submit.\n\nAnd in here, I will retrieve the content and save it in a variable, so just access `request->content` here. And then I will return a view, the `output` view here, of course, and I will pass the content to the content variable I use in this view. And I will also give this route a name of `submit`.\n\n## Demonstration and Final Result\n\nNow, everything should work. And if I go to my page here and reload, you can see we got our What You See Is What You Get editor right out of the box. This is all TinyMCE which we plugged in. Then we told it to replace this text area with the TinyMCE editor, and now we can use this and type some text, type it in bold as well. You might then use some bullets here. And yeah, note this image-related thing here won't work as of now. We need to implement some additional functionality for this to work. So only the basic text formatting works. If I now hit submit, you can see, well, yeah, this was saved. And as you can see, the boldness was saved, that we got a list here was saved. And this is how you use your rich editor, what you see is what you get. It will basically just generate HTML behind the scenes and then send this to your server. And there, of course, you have to handle it, save it, and in this case then output it with this double exclamation mark thing to render it to the screen.\n\nSo this is the basics of throwing in a WYSIWYG editor into your Laravel application. In the next video, we'll come to the very interesting part of using a file manager to actually be able to upload and store images mainly, but any files would work here. See you in the next videos. Bye."
+}

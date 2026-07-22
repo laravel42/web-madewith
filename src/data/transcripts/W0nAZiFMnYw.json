@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 3,
+  "videoId": "W0nAZiFMnYw",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to implement Retrieval-Augmented Generation (RAG) using Open WebUI to enable a 'chat with your document' feature. This guide provides a step-by-step demonstration of how to upload, manage, and tag documents within the Open WebUI admin workspace. Discover practical tips for organizing your knowledge base with hashtags for efficient retrieval. The tutorial covers both one-off manual document uploads and creating persistent document collections that users can query, complete with a look at how users access this powerful system.",
+  "chapters": [
+    {
+      "title": "Introduction to RAG",
+      "description": "This chapter introduces the concept of Retrieval-Augmented Generation (RAG), or chatting with your documents, in Open WebUI.",
+      "startTime": 0.0,
+      "endTime": 24.0,
+      "slug": "introduction-to-rag"
+    },
+    {
+      "title": "Managing Documents in the Admin Workspace",
+      "description": "Learn how to access the document management ares within the Open WebUI admin portal and the importance of using tags for organization.",
+      "startTime": 24.0,
+      "endTime": 118.0,
+      "slug": "managing-documents-in-the-admin-workspace"
+    },
+    {
+      "title": "Uploading and Tagging New Documents",
+      "description": "This section provides a step-by-step demonstration of uploading new files and applying relevant tags for future retrieval.",
+      "startTime": 118.0,
+      "endTime": 218.0,
+      "slug": "uploading-and-tagging-new-documents"
+    },
+    {
+      "title": "Performing RAG with Manual One-Off Uploads",
+      "description": "Discover how to perform a simple, one-off RAG query by manually attaching a single document directly to a chat session.",
+      "startTime": 218.0,
+      "endTime": 303.0,
+      "slug": "performing-rag-with-manual-one-off-uploads"
+    },
+    {
+      "title": "Querying Persistent Document Collections",
+      "description": "Learn to use the '#' syntax to efficiently query pre-uploaded and tagged document collections for persistent, long-term RAG.",
+      "startTime": 303.0,
+      "endTime": 372.0,
+      "slug": "querying-persistent-document-collections"
+    },
+    {
+      "title": "Understanding Open WebUI's RAG Limitations",
+      "description": "This chapter explains that Open WebUI's RAG functionality is a basic implementation that only extracts text and ignores images or graphs.",
+      "startTime": 372.0,
+      "endTime": 423.0,
+      "slug": "understanding-open-webui-s-rag-limitations"
+    },
+    {
+      "title": "The User Experience and Final Conclusion",
+      "description": "See how a standard user interacts with the RAG system, the importance of refreshing the UI to access new documents, and a summary conclusion.",
+      "startTime": 423.0,
+      "endTime": 522.519,
+      "slug": "the-user-experience-and-final-conclusion"
+    }
+  ],
+  "summary": "## RAG with Open WebUI\n\nRetrieval-Augmented Generation (**RAG**) allows you to chat with your documents. In **Open WebUI**, this is managed through a document system accessible from the admin portal.\n\n## Setting Up Your Document Knowledge Base\n\nThe primary setup happens in the admin console:\n\n1.  Navigate to the **Workspace** tab.\n2.  Select the **Documents** sub-tab.\n3.  This area is where you upload and manage all documents for RAG.\n\n> [!IMPORTANT]\n> Use **tags** (hashtags) to organize your documents into logical groups (e.g., `HR-policies`, `marketing-reports`). Proper tagging is crucial for managing and retrieving documents efficiently, especially with a large number of files.\n\n## Two Ways to Perform RAG\n\nYou can interact with your documents in two distinct ways:\n\n### 1. Manual (One-Off) Chat\n*   **How it works:** Use the upload button directly within a chat session to add a document for a single conversation.\n*   **Best for:** Quick, one-time questions about a specific document that doesn't need to be part of the permanent knowledge base.\n\n### 2. Persistent Document Collections\n*   **How it works:** In the chat prompt, type the `#` character to bring up a list of your pre-uploaded, tagged document collections. Select a tag (e.g., `#marketing`) to provide all documents with that tag as context for your query.\n*   **Best for:** Creating a long-term, queryable knowledge base that users can access repeatedly.\n\n## Key Considerations & Limitations\n\n> [!TIP]\n> When an admin adds new documents or tags, **users must refresh their web UI page** to see the new collections available with the `#` command.\n\n> [!NOTE]\n> Open WebUI's RAG implementation is **text-only**. It performs basic text extraction from your documents but **cannot** process information contained in images, charts, or graphs. For best results, use documents with high-quality, text-based content.",
+  "transcription": "## Introduction to RAG\n\nNow we will focus on RAG—Retrieval-Augmented Generation, or chat with your document. How are we going to do that?\n\nDon't forget to give us likes, leave your comments, share us with your friends, and also subscribe to our channels. We have YouTube, LinkedIn, TikTok, and Facebook.\n\n## Managing Documents in the Admin Workspace\n\nSo just for clarity, to start the RAG application you start with the admin portal, come to Workspace, and you will have tabs on the top. You will go to Documents. This is a place where you will upload. I'm not sure if it's uploading, but you tell this program that this is a document that you want to put into RAG.\n\nI'm not sure whether behind the scene it is going to copy it to a local folder or not, but I don't want to go into the detail just yet. But this is how you are going to do it. And when you do it right, you can manage your document well using hashtags. As you can see here, these are separate documents. And imagine if you have hundreds of documents, without proper hashtagging, it's going to be wild, right?\n\nI group everything that I have uploaded here so far into 'MBA marketing'. So maybe you will have like 10 or 20 documents for some of your usage. Maybe HR about hiring a new person, if it's Human Resources, or HR about payroll, or HR about company policies. So make sure you use tagging correctly because it's going to help you a lot.\n\n## Uploading and Tagging New Documents\n\nNow let's go through a process of adding more information. Here we go. You click the plus button on the right-hand side, and you can click here to select documents.\n\nSo I am going to make a demo with—I already added accounting but I want to—wait, sorry, is it accounting? Sorry, I added marketing. I am going to add accounting.\n\nSo, I can select everything here, click open, and to manage, don't forget to add the right tag. So click here and make sure that you can type. So I will put MBA, this is accounting, and enter. Make sure you enter. You can add multiple tags. Go experiment with multiple tags; I think it will be useful. Or, yeah, I'll just leave it at that, and you can click save.\n\nNow it's going to upload things. Here we go. It has uploaded accounting. See, over here I have a whole lot more list. Now you can manage by using filter as well. So I'm filtering with accounting, I'm filtering with marketing, right? I haven't really used this yet, but I think this is enough for you to get started. All right, there we go. I have uploaded documents in order for me to use RAG.\n\n## Performing RAG with Manual One-Off Uploads\n\nHow to use it? To use it, let's try with an admin account first. So, first you need to select a model. Let's say I am going to select GPT 3.5 Turbo. To use RAG what you need to do is provide a document, right? How are you going to provide a document?\n\nYou can provide documents through this upload button here, upload button, but you have to do that every time. That's what I'm trying to say, you have to do that every time that you are needing this. So for example, if I want to—so this thing is about merger and acquisition. So I can add it to this chat manually. And I can ask, \"Tell me the difference between merger and acquisition.\"\n\nSo it's going to provide an answer based on the document that I provided, right, having a reference here. But this is manual. It's good for just one-off RAG application. But what about the documents that we uploaded? We uploaded it because we want them to be accessed, we want the users to be able to access it a long time. It will be available all the time.\n\n## Querying Persistent Document Collections\n\nSo how are we going to do that? Through 'select a document.' You need to start with the sharp (#) notation. Sharp notation allows you to select whatever document you want to use as a context for a RAG application. And the reason why I want you to use hashtag is this: you can actually select it better. If it's about marketing, you just want to make sure that you search in marketing-related documents only, not all documents, right?\n\nSo here we go. I will select the whole collection. So I can ask, \"What is 4 Ps?\" How about that? So 4 Ps refers to four factors of the marketing mix that a company must consider in order to create a strategy. Marketing strategy is Product, Price, Place, and Promotion. And these are the references. You can click it; it is actually information text inside the document.\n\nThis is basic, right?\n\n## Understanding Open WebUI's RAG Limitations\n\nYou provide—this document processing is basic. I provide a document which can contain images, graphs, and text. Open WebUI will only do basic processing, meaning extracting only text inside the document. It's not going to do image-to-text or any kind of enrichment at all. So the RAG that you get from Open WebUI this way is going to be the bare minimum, but at least it gets you started. So if your document contains high-quality text without a lot of information being kept in graphs or images, this is going to be really good for you. There we go. This is RAG.\n\n## The User Experience and Final Conclusion\n\nSo I have tested RAG in the admin portal, admin page. Can my user use it? So right now I am in my user interface, right? Can a user use it? Let's do the same thing. I pick GPT 3.5. I want to do RAG. I press sharp (#). Maybe I just want to refresh.\n\nOkay. So I'm only seeing 'MBA marketing'. It could be because I just added 'MBA accounting' into the document. Then this interface needs to be refreshed maybe in order to see that. So let me just try to refresh it. Refresh. Here we go. Try GPT-3.5 again. Press sharp. And there we go. So anytime, every time that you add a new document, the user is not going to see it right away. The user needs to refresh the page so that all the information is now updated.\n\nAlright. Similar question: \"What is a marketing mix?\" A marketing mix is a combination of four fundamental factors: Product, Price, Place, and Promotion. And these are the retrieved context or relevant context that it thinks it should retrieve to answer this question. Alright.\n\nNow you have seen that RAG with Open WebUI is extremely easy. You just need to provide documents, right? So we have nailed this one."
+}

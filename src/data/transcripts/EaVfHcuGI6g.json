@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 3,
+  "videoId": "EaVfHcuGI6g",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how Strapi, a leading open-source headless CMS, can streamline your backend development process. This overview demonstrates how to quickly set up a self-hosted Strapi instance, build a data model using collection types and components, and manage content through an intuitive admin dashboard. Discover how to create relationships between data, leverage the built-in asset manager, and automatically generate a documented REST or GraphQL API.",
+  "chapters": [
+    {
+      "title": "The Power of a Headless CMS",
+      "description": "This chapter explains the common challenges of backend development and introduces Strapi as an open-source headless CMS that automates these tedious tasks.",
+      "startTime": 0.0,
+      "endTime": 61.0,
+      "slug": "the-power-of-a-headless-cms"
+    },
+    {
+      "title": "Deploying Strapi via Elestio",
+      "description": "This section provides a step-by-step guide on how to deploy a Strapi instance using the Elestio platform.",
+      "startTime": 61.0,
+      "endTime": 123.0,
+      "slug": "deploying-strapi-via-elestio"
+    },
+    {
+      "title": "Creating a Collection Type",
+      "description": "This chapter walks through building the first \"Properties\" collection type by defining various fields like text, number, media, and boolean.",
+      "startTime": 123.0,
+      "endTime": 208.0,
+      "slug": "creating-a-collection-type"
+    },
+    {
+      "title": "Using Components for Data Structuring",
+      "description": "Learn how to use components to group related fields together by creating a non-repeatable \"address\" component for properties.",
+      "startTime": 208.0,
+      "endTime": 268.0,
+      "slug": "using-components-for-data-structuring"
+    },
+    {
+      "title": "Creating and Populating a Second Collection",
+      "description": "This part covers creating a second collection type, \"Property Types,\" and populating it with data, introducing the draft vs. published states.",
+      "startTime": 268.0,
+      "endTime": 368.0,
+      "slug": "creating-and-populating-a-second-collection"
+    },
+    {
+      "title": "Establishing Content Relationships",
+      "description": "This chapter shows how to create a relationship between the \"Properties\" collection and the \"Property Types\" collection.",
+      "startTime": 368.0,
+      "endTime": 412.0,
+      "slug": "establishing-content-relationships"
+    },
+    {
+      "title": "Entering Content and Using the Asset Manager",
+      "description": "Walk through creating the first property entry, using the built-in asset manager to upload and assign an image.",
+      "startTime": 412.0,
+      "endTime": 452.0,
+      "slug": "entering-content-and-using-the-asset-manager"
+    },
+    {
+      "title": "Editing a Component and Finalizing Content",
+      "description": "This section demonstrates how to edit an existing component to add more fields and then completes the data entry for the first property.",
+      "startTime": 452.0,
+      "endTime": 504.0,
+      "slug": "editing-a-component-and-finalizing-content"
+    },
+    {
+      "title": "Filtering and Customizing the Admin View",
+      "description": "After creating a second property, this chapter showcases Strapi's powerful filtering and view customization features within the admin panel.",
+      "startTime": 504.0,
+      "endTime": 605.0,
+      "slug": "filtering-and-customizing-the-admin-view"
+    },
+    {
+      "title": "Generating the API and Documentation",
+      "description": "See how to install the documentation plugin from the marketplace to automatically generate a Swagger UI for the REST API.",
+      "startTime": 605.0,
+      "endTime": 675.0,
+      "slug": "generating-the-api-and-documentation"
+    },
+    {
+      "title": "Setting Public API Permissions",
+      "description": "Learn how to manage access control by editing the Public role to make specific API endpoints accessible without authentication.",
+      "startTime": 675.0,
+      "endTime": 732.0,
+      "slug": "setting-public-api-permissions"
+    },
+    {
+      "title": "Querying the API with Filters",
+      "description": "This section demonstrates how to query the live API with filters, shows the structured JSON response, and briefly mentions custom roles.",
+      "startTime": 732.0,
+      "endTime": 797.0,
+      "slug": "querying-the-api-with-filters"
+    },
+    {
+      "title": "Extending Strapi and Conclusion",
+      "description": "The video concludes by mentioning ways to extend Strapi's functionality with webhooks and the CLI, followed by a call to action.",
+      "startTime": 797.0,
+      "endTime": 843.32,
+      "slug": "extending-strapi-and-conclusion"
+    }
+  ],
+  "summary": "## What is Strapi?\nStrapi is a leading **open-source headless CMS** designed to accelerate backend development. It provides an intuitive admin panel to model your data, manage content, and automatically generates a fully-featured API, saving you from repetitive coding tasks.\n\n## Data Modeling in Strapi\n- **Collection Types**: The fundamental containers for your content. In the video, `Properties` and `Property Types` are created as distinct collection types.\n- **Fields**: Strapi offers a rich set of field types to structure your data, including Text (short/long), Number (integer/decimal), Boolean, and Media (for files and images).\n- **Components**: Reusable groups of fields. They are ideal for structured data that belongs to a parent entry, such as an `address` component containing `city` and `zip_code` fields.\n\n> [!TIP]\n> Use **Components** for data structures that are part of a single entry (like an address). Use a separate **Collection Type** with a **Relation** for data you want to reuse across multiple entries (like tags or categories).\n\n- **Relations**: Define connections between your collection types. The video demonstrates a one-to-one relationship, linking a `Property` to a `Property Type`.\n\n## Content Management\n- **Draft & Publish System**: All new content is created as a **draft** by default. It only becomes available in the public API after it has been explicitly **published**.\n- **Automatic Timestamps**: Strapi automatically adds and manages `created_at`, `updated_at`, and `published_at` fields for every content entry.\n- **Asset Manager**: A built-in media library allows you to upload assets once and reuse them across multiple content entries.\n- **Admin Panel Customization**: You can configure the list view for any collection to reorder columns, display new ones (like a `thumbnail` preview), and enable sorting.\n\n## API Generation and Access\n- **Automatic API Creation**: Strapi automatically generates a comprehensive **REST API** based on your data models. A GraphQL API can also be enabled via a plugin.\n- **API Documentation**: The **Documentation** plugin, available in the Marketplace, generates an interactive **Swagger UI**. This makes it easy for developers to explore and test API endpoints.\n- **Role-Based Access Control (RBAC)**: By default, all API endpoints are private.\n\n> [!IMPORTANT]\n> To make content publicly accessible, you must navigate to **Settings > Roles > Public** and explicitly grant permissions (e.g., `find`, `findOne`) for each relevant collection type.\n\n- **API Filtering**: The REST API supports powerful filtering, sorting, and population of relations via URL query parameters, allowing front-end applications to request precisely the data they need.\n  - *Example:* `.../api/properties?filters[title][$contains]=Lux`",
+  "transcription": "## The Power of a Headless CMS\n\nDeveloping a backend is time-consuming. Most of the time you will need to create basic CRUD operations, prepare role and permission systems, and prepare an admin dashboard to let the team manage the content. You also need to prepare some API documentation for the front end.\n\nBut that was before the emergence of headless CMS, and today we will discover one of the most promising: Strapi. Out of the box, Strapi sweeps away all the tedious types by providing you with a complete and intuitive platform to create your data structure, to automatically generate a documented REST or GraphQL API, and views for administrators to fill in and update content.\n\nBefore we dive into the platform overview, let's have a look at the different options to use Strapi. You can use the cloud version starting at $99 per month, or, as it is an open-source software, use it in the self-hosted version. Still, some features require an Enterprise license.\n\nTogether, we will use the free open-source version through our platform, Elestio, for an easy setup. To create our instance of Strapi, go to Elestio, hit login, and then deploy my first service.\n\n## Deploying Strapi via Elestio\n\nSearch for Strapi, hit select, then choose your cloud provider. I will choose Scaleway. Choose your region, choose the plan of your VM, and hit next. Then choose your level of support and create service.\n\nI received the email telling me that my instance is ready. I can click on the link here to access it. It is the first time we open it, so we need to create our first administrator. Let's fill in our information and we are connected.\n\nAnd we arrive on the onboarding process. We can create our first content type, or read the documentation, or have a look at code examples. Let's read the documentation. We arrive on a quick start guide. We need to read it to know how to use it and know what we can do using Strapi. As with any other open-source software we see together, I recommend you to have a look at the documentation to see what you are capable to do and to see if it's a serious project. Here it is.\n\n## Creating a Collection Type\n\nLet's create our first collection. Create your first content type. The display name will be \"Properties\" and continue. We can choose between many types to create our collections. Let's start with a text. Let's name it \"title.\" It's a short text. I can select if it's short or long, and I have advanced settings like default value, regex validation pattern, define if it's required, the maximum length, if it's private, unique, but we don't need any of those, so finish.\n\nAdd another field. Add a text \"description,\" and this time a long text.\n\nThen we can add maybe the price of the property. We need a number, \"price,\" and then you have the number format. As it's a price, we will need to display cents, so decimal should be nice. Finish.\n\nAdd another field. Let's say we want to display the surface. It will be a number too. Maybe a decimal too. Finish. Oh, maybe I should use \"add another field\" instead of \"finish\" every time.\n\nOh, let's say we want to add images, so it will be media. Let's name it \"thumbnail.\" We have the choice between multiple images or single media. As it's a thumbnail here, we can use a single media.\n\nAnd add another field. We can add a Boolean: is it sold or not? Advanced setting: the default value will be false. It's not sold by default. And okay.\n\n## Using Components for Data Structuring\n\nAdd another field. And we want to add the address of that property. We can either create a new type that will be an address, but I don't need to store the address independently. I could use address 1, street, city inside multiple columns, but it's not very effective.\n\nInstead, we will use something called \"component.\" We need to add a category. Let's say it's \"address\" and an icon, maybe this one, and configure the component. You can see it's either a repeatable component, but also we need one address per property, so here a single component. That's for grouping fields like full address and information, so it's exactly what we want to do, and hit finish.\n\nSo far we have our \"Properties\" type defined, the different fields that a property contains. Let's hit save.\n\n## Creating and Populating a Second Collection\n\nNow let's create a new collection type to define the type of property we have, like an apartment or a house. We can create a new collection type, name it \"Property Types,\" continue. It will only have a \"type\" and type. Finish, and we hit save.\n\nNow let's leave the collection edition and go into a collection directly. Add a new property type, let's say \"Apartment.\" Let's add another one that we will say... Oh, first we need to publish it. It's the same but you need to publish because by default it's a draft. This is a great feature out of the box from Strapi, is that you don't need to add a \"last update\" or a creator or a creation date. It's already inside every collection entry that you create.\n\nOkay, let's go back to our property types. Add a new one, we will say \"House.\" Save. Publish. And go back. Add a new property type, let's say \"Mansion.\" Save and publish.\n\nYou got it. So you have all your property types. You can see the ID, the type, but also when it was created, when it was updated, and the current state—if it's published or a draft. You can duplicate, edit, or delete it. You also have filters available, but this one is not very interesting. We will add more on the properties later.\n\n## Establishing Content Relationships\n\nSo let's start by... oh no, let's not add yet properties. Now we have our property types. Let's look how we can add them to our properties. So add another field. We want to create a relation between a property, it will be its type, and the property type. So we want one property to have one... You have the relation here: \"Property type,\" and finish.\n\nDon't forget to save. We can now go to properties and add our properties. So you can see it automatically created an edition view.\n\n## Entering Content and Using the Asset Manager\n\nTitle... I asked ChatGPT, it gave me some names. So, \"Siren Heaven,\" a great property. The price, let's say it's 1 million. I don't know if I counted enough. Okay. 200 square meter. It's not sold. And we can add a thumbnail.\n\nIt's not just a file input, it's an asset manager. So you can add your files and reuse them into other collections. Let's add this picture here. Upload one asset to the library, finish. And we have our thumbnail here.\n\nAddress... I don't have the permission to see these fields because I made a mistake. I forgot to add other properties inside an address. So hit save for the moment.\n\n## Editing a Component and Finalizing Content\n\nGo to edit the fields, and inside an address, we need to say what it contains. So address, we have a city, maybe a zip code. Let's say it's a number, I'm not sure it works everywhere. And finish. Okay, you should add more but we will stick to it.\n\nOkay, let's go back to our properties, this one. And now inside address we can add our address. So 32 Street of Something, uh, Colorado. I put this. I have the property type here, which is the relation field, and we have the different types available. So this one will say it's an apartment. And save.\n\nAs for the property types, we need to publish it.\n\n## Filtering and Customizing the Admin View\n\nGo back to our properties and add another one. Let's call it \"Lux Retreats.\" Uh, great place. Let's put a price, a surface also. Add an image, upload, and finish. We need to add the address. I can reuse it. It's the property type. This one, it's a house. And hit publish.\n\nNow if we go to our properties, we can add some filters. We can go to the price, \"is,\" \"is not,\" \"is lower.\" Well, you can add many filters. And if you go to property type, you can write the value of the property type. So it's \"apartment.\" And you find this one. It's looking into the value of the relation to apply the filter, which is powerful.\n\nNow we can remove it. We can also configure the view. By default it selected the first columns of our collection, but we can go here, enable sort, the thumbnail, and we can even reorder them and save it for the long term. So let's add a thumbnail, put it in first, save. Yes, confirm.\n\nWe go back to our collections and now we have the thumbnail. They have this nice effect when you hover it, you see the image in bigger. Out of the box you have this available to you and to your team.\n\n## Generating the API and Documentation\n\nAnd from those data that you created without code, you're able to generate a REST API or a GraphQL API. Let's go to the marketplace. You can see that you have plugins enabled. So you have GraphQL, the documentation, content type builder, and some are already installed like the email.\n\nLet's add the documentation that automatically generates the Swagger UI. The API is already available, but we need a UI to pass it to the team. So download.\n\nNow our documentation plugin is installed. We can see it on the left. And go to documentation. We have a JWT token, if the access to the documentation is restricted or not, and we can open the documentation. If you know Swagger, you should be familiar with this interface. You can see that we created properties ourselves and it automatically generated the endpoints for GET, POST, and other GET methods to get the count of properties we have, to get one specific property. And for example on GET there are multiple parameters that you can use to do your requests.\n\n## Setting Public API Permissions\n\nIf we try it out of the box... so the URL is Strapi, this, and then we need to add \"properties,\" we will have a forbidden message because our API isn't public. If we want to make them public, we need to go into our settings, to Roles, and into the Public here. So it's the role that anyone has.\n\nYou can add for each field what you are able to do. So for properties, we want people to be able to count them, to find them, but we don't want people to be able to create or delete property. \"Find one\" is okay. And no update also. Same for property types: \"find one\" okay.\n\nNow hit save, and you can see on the right that it's saying \"bound route to,\" and it's explaining you what route you are updating by giving access or not to it. Now if we go back to our tab, we reload, and we have a JSON.\n\n## Querying the API with Filters\n\nThe... with our data. It's not very readable. Let's see it in JSONLint. And now we have an array of objects. Maybe I can zoom a bit. We have the ID, the title, all the information that we set. And as we discussed earlier, we didn't create a \"published at,\" \"created at,\" and \"updated at,\" but it's by default on everything you do. You have the address. As it's a component, it's a nested object. Same applies for the image thumbnail. It gives a lot of information, so you can use and optimize in the format.\n\nAnd if we look further, the documentation, they have some parameters here that we can use for our request. So we don't need our team to do it for us. We can say, \"I want the title contains maybe 'Lux'\" because we have Lux Retreat. Your filters... oh, it's \"title\" here. Okay. Now if we look, we only have one value, and it's Lux Retreat because we filtered our search.\n\nWe updated our public role, but of course you can create your role and your user for your team, so anyone had the right access to the right data.\n\n## Extending Strapi and Conclusion\n\nIf you need more features that Strapi isn't providing out of the box, you can go to webhooks and plug your backend and do additional logic to those data inside your own backend. And you can use their CLI to update data and do the process you need to.\n\nThank you for watching. We hope you enjoyed this video. Let us know if there is any open-source software you'd like us to cover, or if you are searching for a specific software solution and can't find it. Don't forget to subscribe to not miss our upcoming platform overviews. To continue your journey of open-source software, I recommend you to watch this video here."
+}

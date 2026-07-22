@@ -1,6 +1,6 @@
 {
   "slug": "espocrm",
-  "scrapedAt": "2026-07-15T22:28:33.020887+00:00",
+  "scrapedAt": "2026-07-21T11:09:09.263638+00:00",
   "source": "scrapy-github",
   "totalRepos": 25,
   "projects": [
@@ -20,8 +20,8 @@
       "stack": [
         "Espocrm"
       ],
-      "updated": "2 days ago",
-      "license": "—",
+      "updated": "1 week ago",
+      "license": "\u2014",
       "langs": [
         {
           "name": "JavaScript",
@@ -61,7 +61,7 @@
         "Docker Image",
         "Espocrm"
       ],
-      "updated": "5 days ago",
+      "updated": "2 weeks ago",
       "license": "AGPL-3.0",
       "langs": [
         {
@@ -101,7 +101,7 @@
         "Espocrm",
         "Php"
       ],
-      "updated": "2 weeks ago",
+      "updated": "3 weeks ago",
       "license": "CC0-1.0",
       "langs": [
         {
@@ -142,11 +142,11 @@
         "Espocrm Extension"
       ],
       "updated": "1 year ago",
-      "license": "—",
+      "license": "\u2014",
       "langs": [
         {
           "name": "JavaScript",
-          "pct": 100,
+          "pct": 100.0,
           "size": 100
         }
       ],
@@ -180,7 +180,7 @@
         "Extension",
         "Php"
       ],
-      "updated": "3 weeks ago",
+      "updated": "4 weeks ago",
       "license": "AGPL-3.0",
       "langs": [
         {
@@ -209,6 +209,40 @@
       ]
     },
     {
+      "slug": "php-espo-api-client",
+      "name": "php-espo-api-client",
+      "fullName": "espocrm/php-espo-api-client",
+      "category": "APIs",
+      "stars": 20,
+      "author": "espocrm",
+      "avatar": "https://avatars.githubusercontent.com/u/6860351?v=4",
+      "desc": "PHP API client for EspoCRM",
+      "demo": null,
+      "repoUrl": "https://github.com/espocrm/php-espo-api-client",
+      "long1": "PHP API client for EspoCRM. Maintained by espocrm on GitHub, where it has earned 20 stars from the community.",
+      "long2": "It's actively developed around api-client, espocrm, php, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Api Client",
+        "Espocrm",
+        "Php"
+      ],
+      "updated": "4 months ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "PHP",
+          "pct": 100.0,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "api-client",
+        "espocrm",
+        "php"
+      ]
+    },
+    {
       "slug": "ext-sms-providers",
       "name": "ext-sms-providers",
       "fullName": "espocrm/ext-sms-providers",
@@ -232,7 +266,7 @@
       "langs": [
         {
           "name": "PHP",
-          "pct": 100,
+          "pct": 100.0,
           "size": 100
         }
       ],
@@ -244,37 +278,41 @@
       ]
     },
     {
-      "slug": "php-espo-api-client",
-      "name": "php-espo-api-client",
-      "fullName": "espocrm/php-espo-api-client",
-      "category": "APIs",
-      "stars": 20,
-      "author": "espocrm",
-      "avatar": "https://avatars.githubusercontent.com/u/6860351?v=4",
-      "desc": "PHP API client for EspoCRM",
+      "slug": "download-all-attachments",
+      "name": "download-all-attachments",
+      "fullName": "Kharg/download-all-attachments",
+      "category": "DevTools",
+      "stars": 14,
+      "author": "Kharg",
+      "avatar": "https://avatars.githubusercontent.com/u/32223252?v=4",
+      "desc": "Download all the attachments from an attachment multiple field in EspoCRM.",
       "demo": null,
-      "repoUrl": "https://github.com/espocrm/php-espo-api-client",
-      "long1": "PHP API client for EspoCRM. Maintained by espocrm on GitHub, where it has earned 20 stars from the community.",
-      "long2": "It's actively developed around api-client, espocrm, php, and is a solid reference for anyone building with these tools.",
+      "repoUrl": "https://github.com/Kharg/download-all-attachments",
+      "long1": "Download all the attachments from an attachment multiple field in EspoCRM. Maintained by Kharg on GitHub, where it has earned 14 stars from the community.",
+      "long2": "It's actively developed around attachments, espocrm, espocrm-extension, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "Api Client",
+        "PHP",
+        "Attachments",
         "Espocrm",
-        "Php"
+        "Espocrm Extension",
+        "Extension"
       ],
-      "updated": "4 months ago",
-      "license": "MIT",
+      "updated": "2 years ago",
+      "license": "\u2014",
       "langs": [
         {
           "name": "PHP",
-          "pct": 100,
+          "pct": 100.0,
           "size": 100
         }
       ],
       "versions": [],
       "topics": [
-        "api-client",
+        "attachments",
         "espocrm",
-        "php"
+        "espocrm-extension",
+        "extension",
+        "field"
       ]
     },
     {
@@ -299,51 +337,13 @@
       "langs": [
         {
           "name": "JavaScript",
-          "pct": 100,
+          "pct": 100.0,
           "size": 100
         }
       ],
       "versions": [],
       "topics": [
         "espocrm"
-      ]
-    },
-    {
-      "slug": "download-all-attachments",
-      "name": "download-all-attachments",
-      "fullName": "Kharg/download-all-attachments",
-      "category": "DevTools",
-      "stars": 14,
-      "author": "Kharg",
-      "avatar": "https://avatars.githubusercontent.com/u/32223252?v=4",
-      "desc": "Download all the attachments from an attachment multiple field in EspoCRM.",
-      "demo": null,
-      "repoUrl": "https://github.com/Kharg/download-all-attachments",
-      "long1": "Download all the attachments from an attachment multiple field in EspoCRM. Maintained by Kharg on GitHub, where it has earned 14 stars from the community.",
-      "long2": "It's actively developed around attachments, espocrm, espocrm-extension, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Attachments",
-        "Espocrm",
-        "Espocrm Extension",
-        "Extension"
-      ],
-      "updated": "2 years ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "attachments",
-        "espocrm",
-        "espocrm-extension",
-        "extension",
-        "field"
       ]
     },
     {
@@ -371,7 +371,7 @@
       "langs": [
         {
           "name": "JavaScript",
-          "pct": 100,
+          "pct": 100.0,
           "size": 100
         }
       ],
@@ -382,6 +382,41 @@
         "espocrm",
         "espocrm-extension",
         "ui"
+      ]
+    },
+    {
+      "slug": "ext-dark-theme",
+      "name": "ext-dark-theme",
+      "fullName": "dubas-pro/ext-dark-theme",
+      "category": "UI Kits",
+      "stars": 11,
+      "author": "dubas-pro",
+      "avatar": "https://avatars.githubusercontent.com/u/27334252?v=4",
+      "desc": "Dark theme for EspoCRM adjusted by devs from devcrm.it. Theme created from the default EspoCRM theme.",
+      "demo": "https://devcrm.it/dark-theme",
+      "repoUrl": "https://github.com/dubas-pro/ext-dark-theme",
+      "long1": "Dark theme for EspoCRM adjusted by devs from devcrm.it. Theme created from the default EspoCRM theme. Maintained by dubas-pro on GitHub, where it has earned 11 stars from the community.",
+      "long2": "It's actively developed around dark-theme, espocrm, theme, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Less",
+        "Dark Theme",
+        "Espocrm",
+        "Theme"
+      ],
+      "updated": "9 months ago",
+      "license": "GPL-3.0",
+      "langs": [
+        {
+          "name": "Less",
+          "pct": 100.0,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "dark-theme",
+        "espocrm",
+        "theme"
       ]
     },
     {
@@ -405,11 +440,11 @@
         "File"
       ],
       "updated": "1 year ago",
-      "license": "—",
+      "license": "\u2014",
       "langs": [
         {
           "name": "PHP",
-          "pct": 100,
+          "pct": 100.0,
           "size": 100
         }
       ],
@@ -421,41 +456,6 @@
         "file",
         "filesharing",
         "sharing"
-      ]
-    },
-    {
-      "slug": "ext-dark-theme",
-      "name": "ext-dark-theme",
-      "fullName": "dubas-pro/ext-dark-theme",
-      "category": "UI Kits",
-      "stars": 11,
-      "author": "dubas-pro",
-      "avatar": "https://avatars.githubusercontent.com/u/27334252?v=4",
-      "desc": "Dark theme for EspoCRM adjusted by devs from devcrm.it. Theme created from the default EspoCRM theme.",
-      "demo": "https://devcrm.it/dark-theme",
-      "repoUrl": "https://github.com/dubas-pro/ext-dark-theme",
-      "long1": "Dark theme for EspoCRM adjusted by devs from devcrm.it. Theme created from the default EspoCRM theme. Maintained by dubas-pro on GitHub, where it has earned 11 stars from the community.",
-      "long2": "It's actively developed around dark-theme, espocrm, theme, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Less",
-        "Dark Theme",
-        "Espocrm",
-        "Theme"
-      ],
-      "updated": "8 months ago",
-      "license": "GPL-3.0",
-      "langs": [
-        {
-          "name": "Less",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "dark-theme",
-        "espocrm",
-        "theme"
       ]
     },
     {
@@ -479,11 +479,11 @@
         "Espocrm Extension"
       ],
       "updated": "3 years ago",
-      "license": "—",
+      "license": "\u2014",
       "langs": [
         {
           "name": "JavaScript",
-          "pct": 100,
+          "pct": 100.0,
           "size": 100
         }
       ],
@@ -518,11 +518,11 @@
         "Espocrm"
       ],
       "updated": "5 years ago",
-      "license": "—",
+      "license": "\u2014",
       "langs": [
         {
           "name": "Dockerfile",
-          "pct": 100,
+          "pct": 100.0,
           "size": 100
         }
       ],
@@ -555,11 +555,11 @@
         "Settings"
       ],
       "updated": "3 years ago",
-      "license": "—",
+      "license": "\u2014",
       "langs": [
         {
           "name": "JavaScript",
-          "pct": 100,
+          "pct": 100.0,
           "size": 100
         }
       ],
@@ -569,6 +569,39 @@
         "espocrm-extension",
         "extension",
         "settings"
+      ]
+    },
+    {
+      "slug": "ext-public-attachment",
+      "name": "ext-public-attachment",
+      "fullName": "dubas-pro/ext-public-attachment",
+      "category": "DevTools",
+      "stars": 8,
+      "author": "dubas-pro",
+      "avatar": "https://avatars.githubusercontent.com/u/27334252?v=4",
+      "desc": "The extension created by devcrm.it to EspoCRM. The extension let you share files with your clients.",
+      "demo": "https://devcrm.it",
+      "repoUrl": "https://github.com/dubas-pro/ext-public-attachment",
+      "long1": "The extension created by devcrm.it to EspoCRM. The extension let you share files with your clients. Maintained by dubas-pro on GitHub, where it has earned 8 stars from the community.",
+      "long2": "It's actively developed around espocrm, extension, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Espocrm",
+        "Extension"
+      ],
+      "updated": "6 years ago",
+      "license": "GPL-3.0",
+      "langs": [
+        {
+          "name": "PHP",
+          "pct": 100.0,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "espocrm",
+        "extension"
       ]
     },
     {
@@ -589,12 +622,12 @@
         "Espocrm",
         "Theme"
       ],
-      "updated": "8 months ago",
+      "updated": "9 months ago",
       "license": "GPL-3.0",
       "langs": [
         {
           "name": "JavaScript",
-          "pct": 100,
+          "pct": 100.0,
           "size": 100
         }
       ],
@@ -629,7 +662,7 @@
       "langs": [
         {
           "name": "JavaScript",
-          "pct": 100,
+          "pct": 100.0,
           "size": 100
         }
       ],
@@ -639,39 +672,6 @@
         "discussion",
         "espocrm",
         "espocrm-extension"
-      ]
-    },
-    {
-      "slug": "ext-public-attachment",
-      "name": "ext-public-attachment",
-      "fullName": "dubas-pro/ext-public-attachment",
-      "category": "DevTools",
-      "stars": 8,
-      "author": "dubas-pro",
-      "avatar": "https://avatars.githubusercontent.com/u/27334252?v=4",
-      "desc": "The extension created by devcrm.it to EspoCRM. The extension let you share files with your clients.",
-      "demo": "https://devcrm.it",
-      "repoUrl": "https://github.com/dubas-pro/ext-public-attachment",
-      "long1": "The extension created by devcrm.it to EspoCRM. The extension let you share files with your clients. Maintained by dubas-pro on GitHub, where it has earned 8 stars from the community.",
-      "long2": "It's actively developed around espocrm, extension, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Espocrm",
-        "Extension"
-      ],
-      "updated": "6 years ago",
-      "license": "GPL-3.0",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "espocrm",
-        "extension"
       ]
     },
     {
@@ -697,7 +697,7 @@
       "langs": [
         {
           "name": "JavaScript",
-          "pct": 100,
+          "pct": 100.0,
           "size": 100
         }
       ],
@@ -732,7 +732,7 @@
       "langs": [
         {
           "name": "PHP",
-          "pct": 100,
+          "pct": 100.0,
           "size": 100
         }
       ],
@@ -767,11 +767,11 @@
         "Extension"
       ],
       "updated": "2 years ago",
-      "license": "—",
+      "license": "\u2014",
       "langs": [
         {
           "name": "PHP",
-          "pct": 100,
+          "pct": 100.0,
           "size": 100
         }
       ],
@@ -784,6 +784,44 @@
         "lead",
         "notes",
         "stream"
+      ]
+    },
+    {
+      "slug": "manual-scheduled-job",
+      "name": "manual-scheduled-job",
+      "fullName": "Kharg/manual-scheduled-job",
+      "category": "DevTools",
+      "stars": 5,
+      "author": "Kharg",
+      "avatar": "https://avatars.githubusercontent.com/u/32223252?v=4",
+      "desc": "Run EspoCRM Scheduled Jobs Manually",
+      "demo": null,
+      "repoUrl": "https://github.com/Kharg/manual-scheduled-job",
+      "long1": "Run EspoCRM Scheduled Jobs Manually. Maintained by Kharg on GitHub, where it has earned 5 stars from the community.",
+      "long2": "It's actively developed around espocrm, espocrm-extension, extension, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Espocrm",
+        "Espocrm Extension",
+        "Extension",
+        "Extensions"
+      ],
+      "updated": "2 years ago",
+      "license": "\u2014",
+      "langs": [
+        {
+          "name": "PHP",
+          "pct": 100.0,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "espocrm",
+        "espocrm-extension",
+        "extension",
+        "extensions",
+        "scheduled-jobs"
       ]
     },
     {
@@ -807,11 +845,11 @@
         "Notes"
       ],
       "updated": "11 months ago",
-      "license": "—",
+      "license": "\u2014",
       "langs": [
         {
           "name": "JavaScript",
-          "pct": 100,
+          "pct": 100.0,
           "size": 100
         }
       ],
@@ -822,6 +860,41 @@
         "extension",
         "notes",
         "stream"
+      ]
+    },
+    {
+      "slug": "esposecsignauth",
+      "name": "EspoSecSignAuth",
+      "fullName": "fodinabor/EspoSecSignAuth",
+      "category": "Authentication",
+      "stars": 5,
+      "author": "fodinabor",
+      "avatar": "https://avatars.githubusercontent.com/u/5982050?v=4",
+      "desc": "Module for EspoCRM that uses SecSign for Two-Factor Authentication.",
+      "demo": null,
+      "repoUrl": "https://github.com/fodinabor/EspoSecSignAuth",
+      "long1": "Module for EspoCRM that uses SecSign for Two-Factor Authentication. Maintained by fodinabor on GitHub, where it has earned 5 stars from the community.",
+      "long2": "It's actively developed around 2fa, espocrm, security, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "2Fa",
+        "Espocrm",
+        "Security"
+      ],
+      "updated": "7 years ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "PHP",
+          "pct": 100.0,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "2fa",
+        "espocrm",
+        "security"
       ]
     },
     {
@@ -849,7 +922,7 @@
       "langs": [
         {
           "name": "JavaScript",
-          "pct": 100,
+          "pct": 100.0,
           "size": 100
         }
       ],
@@ -860,79 +933,6 @@
         "login-as-user",
         "user",
         "view-as-user"
-      ]
-    },
-    {
-      "slug": "manual-scheduled-job",
-      "name": "manual-scheduled-job",
-      "fullName": "Kharg/manual-scheduled-job",
-      "category": "DevTools",
-      "stars": 5,
-      "author": "Kharg",
-      "avatar": "https://avatars.githubusercontent.com/u/32223252?v=4",
-      "desc": "Run EspoCRM Scheduled Jobs Manually",
-      "demo": null,
-      "repoUrl": "https://github.com/Kharg/manual-scheduled-job",
-      "long1": "Run EspoCRM Scheduled Jobs Manually. Maintained by Kharg on GitHub, where it has earned 5 stars from the community.",
-      "long2": "It's actively developed around espocrm, espocrm-extension, extension, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Espocrm",
-        "Espocrm Extension",
-        "Extension",
-        "Extensions"
-      ],
-      "updated": "1 year ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "espocrm",
-        "espocrm-extension",
-        "extension",
-        "extensions",
-        "scheduled-jobs"
-      ]
-    },
-    {
-      "slug": "esposecsignauth",
-      "name": "EspoSecSignAuth",
-      "fullName": "fodinabor/EspoSecSignAuth",
-      "category": "Authentication",
-      "stars": 5,
-      "author": "fodinabor",
-      "avatar": "https://avatars.githubusercontent.com/u/5982050?v=4",
-      "desc": "Module for EspoCRM that uses SecSign for Two-Factor Authentication.",
-      "demo": null,
-      "repoUrl": "https://github.com/fodinabor/EspoSecSignAuth",
-      "long1": "Module for EspoCRM that uses SecSign for Two-Factor Authentication. Maintained by fodinabor on GitHub, where it has earned 5 stars from the community.",
-      "long2": "It's actively developed around 2fa, espocrm, security, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "2Fa",
-        "Espocrm",
-        "Security"
-      ],
-      "updated": "7 years ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "2fa",
-        "espocrm",
-        "security"
       ]
     }
   ]
