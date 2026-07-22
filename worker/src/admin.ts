@@ -98,6 +98,33 @@ export async function handleAdmin(req: Request, env: Env, path: string, ctx: Exe
     }
   }
 
+  // ---- newsletter subscribers ----
+  if (seg[0] === "newsletter" && method === "GET") {
+    const filter = {
+      status: url.searchParams.get("status") || undefined,
+      slug: url.searchParams.get("slug") || undefined,
+    };
+    if (seg[1] === "export") {
+      const rows = await db.listNewsletterSubscribers(filter, 100_000);
+      const cell = (v: unknown) => `"${String(v ?? "").replace(/"/g, '""')}"`;
+      const csv = [
+        "email,scope,slug,status,created_at,unsubscribed_at",
+        ...rows.map((r) => [r.email, r.scope, r.slug, r.status, r.created_at, r.unsubscribed_at].map(cell).join(",")),
+      ].join("\n");
+      return new Response(csv, {
+        headers: {
+          "Content-Type": "text/csv; charset=utf-8",
+          "Content-Disposition": `attachment; filename="newsletter-subscribers.csv"`,
+        },
+      });
+    }
+    const [stats, subscribers] = await Promise.all([
+      db.newsletterStats(),
+      db.listNewsletterSubscribers(filter),
+    ]);
+    return json({ stats, subscribers });
+  }
+
   // ---- domain page settings ----
   if (seg[0] === "domains") {
     if (method === "GET" && !seg[1]) {

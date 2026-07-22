@@ -93,6 +93,37 @@ export class Db {
     return "reactivated";
   }
 
+  async listNewsletterSubscribers(
+    filter: { status?: string; slug?: string } = {},
+    limit = 500,
+  ): Promise<Array<{ id: number; email: string; scope: string; slug: string; status: string; created_at: string; unsubscribed_at: string | null }>> {
+    const where: string[] = [];
+    const binds: unknown[] = [];
+    if (filter.status) { where.push("status = ?"); binds.push(filter.status); }
+    if (filter.slug) { where.push("slug = ?"); binds.push(filter.slug); }
+    const sql =
+      `SELECT id, email, scope, slug, status, created_at, unsubscribed_at FROM newsletter_subscribers` +
+      (where.length ? ` WHERE ${where.join(" AND ")}` : "") +
+      ` ORDER BY created_at DESC LIMIT ?`;
+    const r = await this.d1.prepare(sql).bind(...binds, limit).all();
+    return (r.results ?? []) as Array<{ id: number; email: string; scope: string; slug: string; status: string; created_at: string; unsubscribed_at: string | null }>;
+  }
+
+  async newsletterStats(): Promise<{ active: number; unsubscribed: number; network: number; domains: Array<{ slug: string; n: number }> }> {
+    const [active, unsub, network, perSlug] = await Promise.all([
+      this.d1.prepare(`SELECT COUNT(*) AS n FROM newsletter_subscribers WHERE status = 'active'`).first<{ n: number }>(),
+      this.d1.prepare(`SELECT COUNT(*) AS n FROM newsletter_subscribers WHERE status != 'active'`).first<{ n: number }>(),
+      this.d1.prepare(`SELECT COUNT(*) AS n FROM newsletter_subscribers WHERE status = 'active' AND scope = 'network'`).first<{ n: number }>(),
+      this.d1.prepare(`SELECT slug, COUNT(*) AS n FROM newsletter_subscribers WHERE status = 'active' AND scope = 'domain' GROUP BY slug ORDER BY n DESC`).all(),
+    ]);
+    return {
+      active: active?.n ?? 0,
+      unsubscribed: unsub?.n ?? 0,
+      network: network?.n ?? 0,
+      domains: (perSlug.results ?? []) as Array<{ slug: string; n: number }>,
+    };
+  }
+
   // ---- approved entries ----
   async upsertApproved(slug: string, project: Project, at: string): Promise<void> {
     await this.d1
