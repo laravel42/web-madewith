@@ -2,12 +2,14 @@
 import NetworkFooter from "../components/NetworkFooter.astro";
 import PageShell from "../components/PageShell.astro";
 import SiteHeader from "../components/SiteHeader.astro";
+import { readableOnLight } from "../config/accessible-color";
 import "../styles/blog-card-cover.css";
 
 interface Props {
   title: string;
   description: string;
   active?: "network" | "blog" | "rss";
+  /** Raw brand accent, as hex. Text vars are derived from it, never set to it. */
   accent?: string;
   headerCta?: { href: string; label: string };
   /** og:type — "article" for posts, "website" for listings. */
@@ -18,7 +20,11 @@ interface Props {
   image?: string;
 }
 
-const { title, description, active = "blog", accent = "rgb(47, 111, 235)", headerCta, ogType = "website", canonical, image } = Astro.props;
+const { title, description, active = "blog", accent = "#2f6feb", headerCta, ogType = "website", canonical, image } = Astro.props;
+// `--blog-accent` paints prose links and inline code, both on light surfaces
+// (#fbfcfb page, #f2f4f7 code chip). The raw accent stays available for the
+// non-text uses (the blockquote rule) as `--blog-accent-raw`.
+const accentText = readableOnLight(accent);
 const pageTitle = title.includes("MadeWithWhat") ? title : `${title} — MadeWithWhat`;
 const site = Astro.site ?? new URL(Astro.url.origin);
 const canonicalHref = canonical ?? new URL(Astro.url.pathname, site).href;
@@ -71,7 +77,7 @@ const FONT_HREF =
         color: inherit;
       }
       .disp { font-family: "Bricolage Grotesque", sans-serif; }
-      .mw-link { color: rgb(47, 111, 235); }
+      .mw-link { color: #2c68dd; }
       .mw-link:hover { color: #1c4fbf; }
       .filter-link {
         cursor: pointer;
@@ -79,7 +85,7 @@ const FONT_HREF =
         transition: color 0.12s ease, text-decoration-color 0.12s ease;
       }
       .filter-link:hover {
-        color: rgb(47, 111, 235);
+        color: #2c68dd;
         text-decoration: underline;
         text-underline-offset: 3px;
       }
@@ -93,7 +99,7 @@ const FONT_HREF =
         font-size: 12px;
         font-weight: 700;
         letter-spacing: 0.14em;
-        color: #2f6feb;
+        color: #2c68dd;
         text-transform: uppercase;
         margin-bottom: 18px;
       }
@@ -178,7 +184,7 @@ const FONT_HREF =
         white-space: pre;
       }
       :global(.prose blockquote) {
-        border-left: 3px solid var(--blog-accent, #2f6feb);
+        border-left: 3px solid var(--blog-accent-raw, #2f6feb);
         margin: 0 0 18px;
         padding: 6px 0 6px 20px;
         font-family: "Newsreader", serif;
@@ -228,7 +234,7 @@ const FONT_HREF =
         font-weight: 700;
         letter-spacing: 0.05em;
         text-transform: uppercase;
-        color: #6b7178;
+        color: #6a7077;
       }
       :global(.prose tbody tr:nth-child(even) td) {
         background: #fafbfc;
@@ -245,7 +251,7 @@ const FONT_HREF =
       }
       :global(.prose figcaption) {
         font-size: 13px;
-        color: #9aa0a6;
+        color: #5c665f;
         margin-top: 8px;
         text-align: center;
       }
@@ -476,7 +482,7 @@ const FONT_HREF =
       }
     </style>
   </head>
-  <body class="has-page-shell" style={`--blog-accent:${accent};`}>
+  <body class="has-page-shell" style={`--blog-accent:${accentText}; --blog-accent-raw:${accent};`}>
     <PageShell>
       <SiteHeader
         active={active}

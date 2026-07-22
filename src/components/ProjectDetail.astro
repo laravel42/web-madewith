@@ -1,6 +1,7 @@
 ---
 import type { Theme } from "../config/domains";
 import type { Project } from "../lib/catalog";
+import { readableOn, readableOnDark, readableOnLight, readableOnSurfaceDark, tint } from "../config/accessible-color";
 import { formatStars } from "../lib/catalog";
 import { projectDisplayLong, projectDisplayName, projectPreviewExcerpt } from "../lib/preview-text";
 import InstallBox from "./InstallBox.astro";
@@ -19,46 +20,73 @@ const displayLong2 = projectDisplayLong(project, "long2");
 const relatedCards = related.map((p) => ({ project: p, name: projectDisplayName(p) }));
 const isTerminal = theme.variant === "terminal";
 const editorial = theme.editorial;
+// `editorial` is a layout flag, not a background: Next renders it on its black
+// shell, angular/sveltekit/rails/drupal/payload on the light one. Ink has to
+// follow `darkShell`, which is the only token that says how dark the page is.
+const darkShell = !!theme.darkShell;
 const btnRadius = editorial ? "2px" : isTerminal ? "8px" : "10px";
+const accentText = readableOnDark(theme.accent);
+// Terminal tag chips sit on a 16% tint of their own ink, which lifts the fill
+// out from under it — the near-black brands landed at 4.05:1 on it.
+const tagBg = tint(accentText, 16, "#0c0f0e");
+const tagInk = readableOnSurfaceDark(accentText, tagBg);
+const muted = isTerminal ? "#a8b2ab" : "#5c665f";
+// Light-branch page ink. Next puts this branch on #000000, every other domain
+// on #fbfcfb, so each grey has a dark-shell and a light-shell value.
+const pageMuted = darkShell ? "#a1a1a1" : "#5c665f"; // 8.1:1 on #000 / 5.8:1 on #fbfcfb
+const pageBody = darkShell ? "#c4c4c4" : "#4a554f"; // 12.0:1 / 7.6:1
+const pageStrong = darkShell ? "#ededed" : "#3a443f"; // 17.9:1 / 9.8:1
+// The sidebar cards stay white on every shell, so they carry their own ink
+// rather than inheriting the page ink — Next's #fafafa was 1.04:1 on #fff.
+const cardInk = "#16201b"; // 16.7:1 on #fff
+const cardMuted = "#5c665f"; // 6.0:1 on #fff (was #8b9690, 3.06:1)
 
 // Dominant language keeps the brand accent, except editorial (Next) whose accent
 // is white and would vanish on the light Languages card — give it a visible base.
-const langBase = editorial ? "#6366f1" : theme.accent;
+const langBase = editorial ? "#6366f1" : isTerminal ? accentText : theme.accent;
 const palette = isTerminal
-  ? [theme.accent, "#37423a", "#232a26"]
+  ? [langBase, "#7d9484", "#4f6357"]
   : [langBase, "#f59e0b", "#10b981", "#ec4899", "#06b6d4"];
-const langs = (project.langs || []).map((l, i) => ({ ...l, color: palette[i] ?? (isTerminal ? "#1c231e" : "#94a3b8") }));
-// "Built with" chip tint — brand accent, or indigo for editorial (white accent).
-const chipColor = editorial ? "#6366f1" : theme.accent;
+const langs = (project.langs || []).map((l, i) => ({ ...l, color: palette[i] ?? (isTerminal ? "#6b7a70" : "#94a3b8") }));
+// "Built with" chip — a light pill on every shell, so its ink is derived for a
+// light surface and measured against the exact tint behind it. Indigo stands in
+// on the dark shell, where the accent is white and would leave no tint to read.
+const chipColor = darkShell ? "#6366f1" : theme.accent;
+const chipBg = tint(chipColor, 14, "#ffffff");
+const chipInk = readableOn(tint(chipColor, 58, "#1a221d"), chipBg);
 const demo = project.demo;
 
 // Latest 5 releases/tags (may be empty if the repo has none).
 const versions = (project.versions || []).slice(0, 5);
 const homeLabel = editorial ? "Back to gallery" : "Back to projects";
-const soft = `color-mix(in srgb, ${theme.accent} 13%, #ffffff)`;
+// The category pill keeps its 13% tint on white on every shell, so its ink is
+// the light-surface accent checked against that exact tint — the raw accent was
+// white-on-white for Next.
+const soft = tint(theme.accent, 13, "#ffffff");
+const pillInk = readableOn(readableOnLight(theme.accent), soft);
 const previewVariant = isTerminal ? "terminal" : editorial ? "editorial" : "default";
 ---
 
 {isTerminal ? (
   <div style="max-width:1080px; margin:0 auto; padding:36px 32px 80px;">
-    <a href={`${base}/`} style="display:inline-flex; align-items:center; gap:7px; font-size:13px; color:#7c887f; cursor:pointer; text-decoration:none; margin-bottom:26px;">
-      <span style={`color:${theme.accent};`}>&lt;</span> cd ../gallery
+    <a href={`${base}/`} style={`display:inline-flex; align-items:center; gap:7px; font-size:13px; color:${muted}; cursor:pointer; text-decoration:none; margin-bottom:26px;`}>
+      <span style={`color:${accentText};`}>&lt;</span> cd ../gallery
     </a>
     <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:30px; flex-wrap:wrap;">
       <div style="flex:1; min-width:300px;">
-        <span style="font-size:11px; color:#5c665f;">[{project.category}]</span>
+        <span style={`font-size:11px; color:${muted};`}>[{project.category}]</span>
         <h1 class="disp" style="font-size:40px; font-weight:700; letter-spacing:-0.02em; margin:10px 0 0; line-height:1.05; color:#f1f6f2;">{displayName}</h1>
         <div style="font-size:15px; color:#8b948d; margin-top:12px; line-height:1.6; max-width:600px;">{displayDesc}</div>
         <div style="display:flex; align-items:center; gap:18px; margin-top:20px;">
           <div style="display:flex; align-items:center; gap:9px;">
-            <span style={`width:36px; height:36px; border-radius:7px; background:color-mix(in srgb, ${theme.accent} 22%, #0c0f0e); color:${theme.accent}; border:1px solid ${theme.accent}; font-size:14px; font-weight:700; display:flex; align-items:center; justify-content:center; overflow:hidden;`}><img src={project.avatar} alt={project.author} width="36" height="36" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/></span>
-            <div><a href={`${base}/?author=${encodeURIComponent(project.author)}`} class="filter-link" style="font-size:13px; color:#e8efe9;">@{project.author}</a><div style="font-size:11px; color:#5c665f;">maintainer</div></div>
+            <span style={`width:36px; height:36px; border-radius:7px; background:color-mix(in srgb, ${accentText} 22%, #0c0f0e); color:${accentText}; border:1px solid ${accentText}; font-size:14px; font-weight:700; display:flex; align-items:center; justify-content:center; overflow:hidden;`}><img src={project.avatar} alt={project.author} width="36" height="36" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/></span>
+            <div><a href={`${base}/?author=${encodeURIComponent(project.author)}`} class="filter-link" style="font-size:13px; color:#e8efe9;">@{project.author}</a><div style={`font-size:11px; color:${muted};`}>maintainer</div></div>
           </div>
-          <div style={`display:flex; align-items:center; gap:6px; font-size:14px; color:${theme.accent};`}>★ {stars} stars</div>
+          <div style={`display:flex; align-items:center; gap:6px; font-size:14px; color:${accentText};`}>★ {stars} stars</div>
         </div>
       </div>
       <div style="display:flex; flex-wrap:wrap; gap:10px;">
-        {demo && <a href={demo} target="_blank" rel="noopener" style={`background:${theme.accent}; color:${theme.accentInk}; font-weight:700; padding:9px 15px; border-radius:${btnRadius}; text-decoration:none; font-size:13px; display:inline-flex; align-items:center; gap:6px;`}>go to website ↗</a>}
+        {demo && <a href={demo} target="_blank" rel="noopener" style={`background:var(--accent-solid); color:${theme.accentInk}; font-weight:700; padding:9px 15px; border-radius:${btnRadius}; text-decoration:none; font-size:13px; display:inline-flex; align-items:center; gap:6px;`}>go to website ↗</a>}
         <a href={project.repoUrl} target="_blank" rel="noopener" style={`background:#24292f; color:#fff; font-weight:600; padding:9px 15px; border-radius:${btnRadius}; text-decoration:none; font-size:13px; display:inline-flex; align-items:center; gap:6px; border:1px solid #3a4048;`}><svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>github</a>
       </div>
     </div>
@@ -80,31 +108,31 @@ const previewVariant = isTerminal ? "terminal" : editorial ? "editorial" : "defa
         <div style="font-size:14px; color:#a3ada7; line-height:1.75; margin-top:14px;">{displayLong2}</div>
         <div class="disp" style="font-size:17px; font-weight:600; color:#f1f6f2; margin:28px 0 12px;"># tags</div>
         <div style="display:flex; gap:8px; flex-wrap:wrap;">
-          {project.stack.map((s) => <a href={`${base}/?tag=${encodeURIComponent(s)}`} class="tag-link" style={`font-size:11px; font-weight:600; color:${theme.accent}; background:color-mix(in srgb, ${theme.accent} 16%, #0c0f0e); border:1px solid color-mix(in srgb, ${theme.accent} 42%, #0c0f0e); padding:4px 10px; border-radius:999px;`}>{s}</a>)}
+          {project.stack.map((s) => <a href={`${base}/?tag=${encodeURIComponent(s)}`} class="tag-link" style={`font-size:11px; font-weight:600; color:${tagInk}; background:${tagBg}; border:1px solid color-mix(in srgb, ${accentText} 42%, #0c0f0e); padding:4px 10px; border-radius:999px;`}>{s}</a>)}
         </div>
         <div class="disp" style="font-size:17px; font-weight:600; color:#f1f6f2; margin:28px 0 12px;"># install</div>
         <InstallBox theme={theme} project={project} />
       </div>
       <div>
         <div style="background:#101410; border:1px solid #1f2622; border-radius:10px; padding:20px;">
-          <div style="font-size:12px; color:#5c665f; text-transform:uppercase; letter-spacing:.04em; margin-bottom:16px;">languages</div>
+          <div style={`font-size:12px; color:${muted}; text-transform:uppercase; letter-spacing:.04em; margin-bottom:16px;`}>languages</div>
           <div style="display:flex; height:8px; border-radius:6px; overflow:hidden; margin-bottom:16px; background:#0e120f;">
             {langs.map((l) => <span style={`width:${l.pct}%; background:${l.color}; height:100%;`}></span>)}
           </div>
           {langs.map((l) => (
             <div style="display:flex; align-items:center; justify-content:space-between; font-size:12.5px; margin-bottom:9px;">
               <span style="display:flex; align-items:center; gap:8px; color:#c7d0ca;"><span style={`width:9px; height:9px; border-radius:2px; background:${l.color}; display:inline-block;`}></span><a href={`${base}/?lang=${encodeURIComponent(l.name)}`} class="filter-link" style="color:inherit;">{l.name}</a></span>
-              <span style="color:#5c665f;">{l.pct}%</span>
+              <span style={`color:${muted};`}>{l.pct}%</span>
             </div>
           ))}
-          <div style="border-top:1px solid #1c211e; margin-top:14px; padding-top:14px; display:flex; justify-content:space-between; font-size:12.5px;"><span style="color:#5c665f;">last commit</span><span style="color:#c7d0ca;">{project.updated}</span></div>
-          <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-top:9px;"><span style="color:#5c665f;">license</span><a href={`${base}/?license=${encodeURIComponent(project.license)}`} class="filter-link" style="color:#c7d0ca;">{project.license}</a></div>
+          <div style={`border-top:1px solid #1c211e; margin-top:14px; padding-top:14px; display:flex; justify-content:space-between; font-size:12.5px;`}><span style={`color:${muted};`}>last commit</span><span style="color:#c7d0ca;">{project.updated}</span></div>
+          <div style="display:flex; justify-content:space-between; font-size:12.5px; margin-top:9px;"><span style={`color:${muted};`}>license</span><a href={`${base}/?license=${encodeURIComponent(project.license)}`} class="filter-link" style="color:#c7d0ca;">{project.license}</a></div>
         </div>
         {versions.length > 0 && (
           <div style="background:#101410; border:1px solid #1f2622; border-radius:10px; padding:16px 20px; margin-top:16px;">
-            <div style="font-size:12px; color:#5c665f; text-transform:uppercase; letter-spacing:.04em; margin-bottom:10px;">latest versions</div>
+            <div style={`font-size:12px; color:${muted}; text-transform:uppercase; letter-spacing:.04em; margin-bottom:10px;`}>latest versions</div>
             {versions.map((v) => (
-              <a href={v.url} target="_blank" rel="noopener" class="version-link" style="font-size:12.5px; color:#c7d0ca;"><span style={`color:${theme.accent};`}>{v.name}</span><span style="color:#5c665f;">↗</span></a>
+              <a href={v.url} target="_blank" rel="noopener" class="version-link" style="font-size:12.5px; color:#c7d0ca;"><span style={`color:${accentText};`}>{v.name}</span><span style={`color:${muted};`}>↗</span></a>
             ))}
           </div>
         )}
@@ -120,7 +148,7 @@ const previewVariant = isTerminal ? "terminal" : editorial ? "editorial" : "defa
           </div>
           <div style="padding:13px 15px 15px;">
             <div class="disp" style="font-weight:600; font-size:14px; color:#e8efe9; margin-bottom:5px;">{name}</div>
-            <div style="display:flex; align-items:center; justify-content:space-between; font-size:11.5px; color:#5c665f; margin-top:8px;"><span>@{p.author}</span><span style={`color:${theme.accent};`}>★ {formatStars(p.stars)}</span></div>
+            <div style={`display:flex; align-items:center; justify-content:space-between; font-size:11.5px; color:${muted}; margin-top:8px;`}><span>@{p.author}</span><span style={`color:${accentText};`}>★ {formatStars(p.stars)}</span></div>
           </div>
         </a>
       ))}
@@ -128,27 +156,27 @@ const previewVariant = isTerminal ? "terminal" : editorial ? "editorial" : "defa
   </div>
 ) : (
   <div style="max-width:1080px; margin:0 auto; padding:36px 32px 80px;">
-    <a href={`${base}/`} style={`display:inline-flex; align-items:center; gap:7px; font-size:14px; font-weight:600; color:${editorial ? "#a1a1a1" : "#5c665f"}; cursor:pointer; text-decoration:none; margin-bottom:26px;`}>
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m15 6-6 6 6 6" stroke={editorial ? "#a1a1a1" : "#5c665f"} stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> {homeLabel}
+    <a href={`${base}/`} style={`display:inline-flex; align-items:center; gap:7px; font-size:14px; font-weight:600; color:${pageMuted}; cursor:pointer; text-decoration:none; margin-bottom:26px;`}>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="m15 6-6 6 6 6" stroke={pageMuted} stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg> {homeLabel}
     </a>
     <div style="display:flex; align-items:flex-start; justify-content:space-between; gap:30px; flex-wrap:wrap;">
       <div style="flex:1; min-width:300px;">
-        <span style={`font-size:11px; font-weight:600; color:${theme.accent}; background:${soft}; padding:3px 9px; border-radius:20px;`}>{project.category}</span>
+        <span style={`font-size:11px; font-weight:600; color:${pillInk}; background:${soft}; padding:3px 9px; border-radius:20px;`}>{project.category}</span>
         <h1 class="disp" style="font-size:42px; font-weight:800; letter-spacing:-0.03em; margin:14px 0 0; line-height:1.05;">{displayName}</h1>
-        <div style={`font-size:17px; color:${editorial ? "#a1a1a1" : "#5c665f"}; margin-top:12px; line-height:1.55; max-width:600px;`}>{displayDesc}</div>
+        <div style={`font-size:17px; color:${pageMuted}; margin-top:12px; line-height:1.55; max-width:600px;`}>{displayDesc}</div>
         <div style="display:flex; align-items:center; gap:18px; margin-top:20px;">
           <div style="display:flex; align-items:center; gap:9px;">
             <span style={`width:38px; height:38px; border-radius:50%; overflow:hidden; background:${theme.accent}; display:flex; align-items:center; justify-content:center;`}><img src={project.avatar} alt={project.author} width="38" height="38" style="width:100%;height:100%;object-fit:cover;" loading="lazy"/></span>
-            <div><a href={`${base}/?author=${encodeURIComponent(project.author)}`} class="filter-link" style="font-size:14px; font-weight:600;">{project.author}</a><div style={`font-size:12px; color:${editorial ? "#a1a1a1" : "#8b9690"};`}>Maintainer</div></div>
+            <div><a href={`${base}/?author=${encodeURIComponent(project.author)}`} class="filter-link" style="font-size:14px; font-weight:600;">{project.author}</a><div style={`font-size:12px; color:${pageMuted};`}>Maintainer</div></div>
           </div>
-          <div style={`display:flex; align-items:center; gap:6px; font-size:15px; font-weight:700; color:${editorial ? "#ededed" : "#3a443f"};`}>
+          <div style={`display:flex; align-items:center; gap:6px; font-size:15px; font-weight:700; color:${pageStrong};`}>
             <svg width="17" height="17" viewBox="0 0 24 24" fill="#f5b400"><path d="m12 2 3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
             {stars} stars
           </div>
         </div>
       </div>
       <div style="display:flex; flex-wrap:wrap; gap:10px;">
-        {demo && <a href={demo} target="_blank" rel="noopener" style={`background:${theme.accent}; color:${theme.accentInk}; font-weight:700; padding:9px 16px; border-radius:${btnRadius}; text-decoration:none; font-size:13px; display:inline-flex; align-items:center; gap:6px;`}>Go to website ↗</a>}
+        {demo && <a href={demo} target="_blank" rel="noopener" style={`background:var(--accent-solid); color:${theme.accentInk}; font-weight:700; padding:9px 16px; border-radius:${btnRadius}; text-decoration:none; font-size:13px; display:inline-flex; align-items:center; gap:6px;`}>Go to website ↗</a>}
         <a href={project.repoUrl} target="_blank" rel="noopener" style={`background:#24292f; color:#fff; font-weight:600; padding:9px 16px; border-radius:${btnRadius}; text-decoration:none; font-size:13px; display:inline-flex; align-items:center; gap:6px; border:1px solid #3a4048;`}><svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>View on GitHub</a>
       </div>
     </div>
@@ -163,35 +191,35 @@ const previewVariant = isTerminal ? "terminal" : editorial ? "editorial" : "defa
     <div class="mw-split" style="display:grid; grid-template-columns:1.6fr 1fr; gap:40px; margin-top:38px;">
       <div>
         <div class="disp" style="font-size:22px; font-weight:700; margin-bottom:14px;">About this project</div>
-        <div style={`font-size:15.5px; color:${editorial ? "#c4c4c4" : "#4a554f"}; line-height:1.7;`}>{displayLong1}</div>
-        <div style={`font-size:15.5px; color:${editorial ? "#c4c4c4" : "#4a554f"}; line-height:1.7; margin-top:14px;`}>{displayLong2}</div>
+        <div style={`font-size:15.5px; color:${pageBody}; line-height:1.7;`}>{displayLong1}</div>
+        <div style={`font-size:15.5px; color:${pageBody}; line-height:1.7; margin-top:14px;`}>{displayLong2}</div>
         <div class="disp" style="font-size:18px; font-weight:700; margin:28px 0 12px;">Tags</div>
         <div style="display:flex; gap:8px; flex-wrap:wrap;">
-          {project.stack.map((s) => <a href={`${base}/?tag=${encodeURIComponent(s)}`} class="tag-link" style={`font-size:11.5px; font-weight:600; color:color-mix(in srgb, ${chipColor} 58%, #1a221d); background:color-mix(in srgb, ${chipColor} 14%, #fff); border:1px solid color-mix(in srgb, ${chipColor} 30%, #fff); padding:4px 10px; border-radius:999px;`}>{s}</a>)}
+          {project.stack.map((s) => <a href={`${base}/?tag=${encodeURIComponent(s)}`} class="tag-link" style={`font-size:11.5px; font-weight:600; color:${chipInk}; background:${chipBg}; border:1px solid color-mix(in srgb, ${chipColor} 30%, #fff); padding:4px 10px; border-radius:999px;`}>{s}</a>)}
         </div>
         <div class="disp" style="font-size:18px; font-weight:700; margin:28px 0 12px;">Install</div>
         <InstallBox theme={theme} project={project} />
       </div>
       <div>
-        <div style={`background:#fff; border:1px solid #eef0ef; border-radius:${radius}; padding:22px;`}>
-          <div style="font-size:13px; font-weight:700; color:#8b9690; text-transform:uppercase; letter-spacing:.04em; margin-bottom:16px;">Languages</div>
+        <div style={`background:#fff; color:${cardInk}; border:1px solid #eef0ef; border-radius:${radius}; padding:22px;`}>
+          <div style={`font-size:13px; font-weight:700; color:${cardMuted}; text-transform:uppercase; letter-spacing:.04em; margin-bottom:16px;`}>Languages</div>
           <div style="display:flex; height:8px; border-radius:6px; overflow:hidden; margin-bottom:16px;">
             {langs.map((l) => <span style={`width:${l.pct}%; background:${l.color}; height:100%;`}></span>)}
           </div>
           {langs.map((l) => (
             <div style="display:flex; align-items:center; justify-content:space-between; font-size:13.5px; margin-bottom:9px;">
               <span style="display:flex; align-items:center; gap:8px; color:#3a443f;"><span style={`width:9px; height:9px; border-radius:3px; background:${l.color}; display:inline-block;`}></span><a href={`${base}/?lang=${encodeURIComponent(l.name)}`} class="filter-link" style="color:inherit;">{l.name}</a></span>
-              <span style="color:#8b9690;">{l.pct}%</span>
+              <span style={`color:${cardMuted};`}>{l.pct}%</span>
             </div>
           ))}
-          <div style="border-top:1px solid #f0f2f0; margin-top:14px; padding-top:14px; display:flex; justify-content:space-between; font-size:13.5px;"><span style="color:#8b9690;">Last updated</span><span style="font-weight:600;">{project.updated}</span></div>
-          <div style="display:flex; justify-content:space-between; font-size:13.5px; margin-top:9px;"><span style="color:#8b9690;">License</span><a href={`${base}/?license=${encodeURIComponent(project.license)}`} class="filter-link" style="font-weight:600; color:inherit;">{project.license}</a></div>
+          <div style="border-top:1px solid #f0f2f0; margin-top:14px; padding-top:14px; display:flex; justify-content:space-between; font-size:13.5px;"><span style={`color:${cardMuted};`}>Last updated</span><span style="font-weight:600;">{project.updated}</span></div>
+          <div style="display:flex; justify-content:space-between; font-size:13.5px; margin-top:9px;"><span style={`color:${cardMuted};`}>License</span><a href={`${base}/?license=${encodeURIComponent(project.license)}`} class="filter-link" style="font-weight:600; color:inherit;">{project.license}</a></div>
         </div>
         {versions.length > 0 && (
-          <div style={`background:#fff; border:1px solid #eef0ef; border-radius:${radius}; padding:16px 22px; margin-top:16px;`}>
-            <div style="font-size:13px; font-weight:700; color:#8b9690; text-transform:uppercase; letter-spacing:.04em; margin-bottom:10px;">Latest versions</div>
+          <div style={`background:#fff; color:${cardInk}; border:1px solid #eef0ef; border-radius:${radius}; padding:16px 22px; margin-top:16px;`}>
+            <div style={`font-size:13px; font-weight:700; color:${cardMuted}; text-transform:uppercase; letter-spacing:.04em; margin-bottom:10px;`}>Latest versions</div>
             {versions.map((v) => (
-              <a href={v.url} target="_blank" rel="noopener" class="version-link" style="font-size:13.5px; color:#3a443f;"><span style="font-weight:600;">{v.name}</span><span style="color:#8b9690;">↗</span></a>
+              <a href={v.url} target="_blank" rel="noopener" class="version-link" style="font-size:13.5px; color:#3a443f;"><span style="font-weight:600;">{v.name}</span><span style={`color:${cardMuted};`}>↗</span></a>
             ))}
           </div>
         )}
@@ -207,7 +235,7 @@ const previewVariant = isTerminal ? "terminal" : editorial ? "editorial" : "defa
           </div>
           <div style="padding:13px 15px 15px;">
             <div class="disp" style="font-weight:700; font-size:15px; margin-bottom:5px;">{name}</div>
-            <div style="display:flex; align-items:center; justify-content:space-between; font-size:12.5px; color:#8b9690; margin-top:8px;"><span>{p.author}</span><span style="font-weight:600; color:#3a443f;">★ {formatStars(p.stars)}</span></div>
+            <div style={`display:flex; align-items:center; justify-content:space-between; font-size:12.5px; color:${cardMuted}; margin-top:8px;`}><span>{p.author}</span><span style="font-weight:600; color:#3a443f;">★ {formatStars(p.stars)}</span></div>
           </div>
         </a>
       ))}

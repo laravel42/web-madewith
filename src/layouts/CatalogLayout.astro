@@ -1,5 +1,6 @@
 ---
 import type { Theme } from "../config/domains";
+import { readableOnDark, readableOnLight, solidSurface } from "../config/accessible-color";
 import { canonicalUrl } from "../config/domain-settings";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -26,6 +27,15 @@ const ogImageUrl = ogImage ?? new URL(`${base}/og.png`, Astro.site!.href).href;
 const wrapperClass = `mw v-${theme.variant}${theme.editorial ? " is-editorial" : ""}`;
 // soft accent tint differs between light (white base) and terminal (dark base)
 const softMix = theme.variant === "terminal" ? "22%, #0c0f0e" : "13%, #ffffff";
+// Bright brand colors (Haystack lime, React cyan, …) need darkening as text on
+// light UI — and lightening on the dark shells. Editorial used to pass the raw
+// accent straight through, which left Svelte orange at 3.4:1 and Next's white
+// accent invisible on its own white cards.
+const accentText = theme.darkShell ? readableOnDark(theme.accent) : readableOnLight(theme.accent);
+// Solid accent surfaces that carry --accentInk text (buttons, logo tile, active
+// pills). Shifts the accent only far enough that the ink clears AA, so brands
+// whose ink already worked (React, Nuxt, Haystack) are untouched.
+const accentSolid = solidSurface(theme.accent, theme.accentInk);
 ---
 
 <!DOCTYPE html>
@@ -76,7 +86,7 @@ const softMix = theme.variant === "terminal" ? "22%, #0c0f0e" : "13%, #ffffff";
         flex-direction: column;
         font-family: var(--body);
       }
-      .mw ::placeholder { color: #9aa39e; }
+      .mw ::placeholder { color: #5c665f; }
       .mw-main { flex: 1; }
 
       .disp { font-family: var(--disp); }
@@ -90,7 +100,7 @@ const softMix = theme.variant === "terminal" ? "22%, #0c0f0e" : "13%, #ffffff";
       }
       .tag.is-active {
         background: color-mix(in srgb, var(--accent) var(--softMix));
-        color: var(--accent); font-weight: 600;
+        color: var(--accent-text); font-weight: 600;
       }
 
       /* ---- tag pills (terminal) ---- */
@@ -100,7 +110,8 @@ const softMix = theme.variant === "terminal" ? "22%, #0c0f0e" : "13%, #ffffff";
       }
       .v-terminal .tag.is-active {
         background: color-mix(in srgb, var(--accent) var(--softMix));
-        color: var(--accent); border-color: var(--accent);
+        color: var(--accent-text);
+        border-color: var(--accent-text);
       }
 
       /* ---- cards ---- */
@@ -122,7 +133,7 @@ const softMix = theme.variant === "terminal" ? "22%, #0c0f0e" : "13%, #ffffff";
       .v-terminal .card:hover { transform: translateY(-3px); box-shadow: none; border-color: var(--accent); }
 
       .is-editorial .card-editorial {
-        border-right: 1px solid #e8e8e8; border-bottom: 1px solid #e8e8e8;
+        border: 1px solid #e8e8e8;
         background: #fff; cursor: pointer; text-decoration: none; color: inherit; display: flex; flex-direction: column;
         transition: background .12s;
       }
@@ -133,12 +144,12 @@ const softMix = theme.variant === "terminal" ? "22%, #0c0f0e" : "13%, #ffffff";
 
       /* ---- buttons ---- */
       .btn { cursor: pointer; text-decoration: none; display: inline-block; text-align: center; font-weight: 700; }
-      .btn-primary { background: var(--accent); color: var(--accentInk); border-radius: var(--radius); }
-      .v-terminal .btn-primary { background: var(--accent); color: #04231a; border-radius: 8px; }
+      .btn-primary { background: var(--accent-solid); color: var(--accentInk); border-radius: var(--radius); }
+      .v-terminal .btn-primary { background: var(--accent-solid); color: var(--accentInk); border-radius: 8px; }
 
       /* active tag/category in the count label — solid brand chip, high contrast */
       .active-tag {
-        background: var(--accent); color: var(--accentInk);
+        background: var(--accent-solid); color: var(--accentInk);
         font-weight: 700; padding: 2px 10px; border-radius: 999px;
         margin-left: 5px; letter-spacing: .01em; white-space: nowrap;
       }
@@ -150,7 +161,8 @@ const softMix = theme.variant === "terminal" ? "22%, #0c0f0e" : "13%, #ffffff";
 
       /* clickable inline filters (author, language, license) → filtered gallery */
       .filter-link { cursor: pointer; text-decoration: none; transition: color .12s ease, text-decoration-color .12s ease; }
-      .filter-link:hover { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+      .filter-link:hover { color: var(--accent-text); text-decoration: underline; text-underline-offset: 3px; }
+      .v-terminal .filter-link:hover { color: var(--accent-text); }
 
       /* version rows in the detail sidebar → linked to the GitHub release/tag */
       .version-link { display: flex; align-items: center; justify-content: space-between; text-decoration: none; padding: 6px 8px; margin: 0 -8px; border-radius: 6px; transition: background .12s ease; }
@@ -165,9 +177,9 @@ const softMix = theme.variant === "terminal" ? "22%, #0c0f0e" : "13%, #ffffff";
         transition: border-color .12s, background .12s, color .12s;
       }
       .pager-btn:hover:not(:disabled):not(.is-active) { border-color: var(--accent); }
-      .pager-btn.is-active { background: var(--accent); color: var(--accentInk); border-color: var(--accent); font-weight: 700; }
+      .pager-btn.is-active { background: var(--accent-solid); color: var(--accentInk); border-color: var(--accent-solid); font-weight: 700; }
       .pager-btn:disabled { opacity: .35; cursor: default; }
-      .pager-gap { color: #9aa39e; padding: 0 3px; }
+      .pager-gap { color: #5c665f; padding: 0 3px; }
       .v-terminal .pager-btn { border-radius: 5px; border-color: #232a26; }
 
       /* ---- hero panels (bordered card heroes) ---- */
@@ -239,7 +251,7 @@ const softMix = theme.variant === "terminal" ? "22%, #0c0f0e" : "13%, #ffffff";
     <slot name="head" />
   </head>
   <body>
-    <div class={wrapperClass} style={`--accent:${theme.accent}; --accentInk:${theme.accentInk}; --radius:${theme.radius}px; --disp:${theme.dispFont}; --body:${theme.bodyFont}; --softMix:${softMix}; background:${theme.bg}; color:${theme.ink};`}>
+    <div class={wrapperClass} style={`--accent:${theme.accent}; --accentInk:${theme.accentInk}; --accent-text:${accentText}; --accent-solid:${accentSolid}; --radius:${theme.radius}px; --disp:${theme.dispFont}; --body:${theme.bodyFont}; --softMix:${softMix}; background:${theme.bg}; color:${theme.ink};`}>
       <Header theme={theme} active={active} />
       <main class="mw-main">
         <slot />

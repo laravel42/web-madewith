@@ -1,5 +1,6 @@
 ---
-import { DOMAINS } from "../config/domains";
+import { NETWORK_DOMAINS } from "../config/domains";
+import { readableOnLight } from "../config/accessible-color";
 import NetworkLayout from "../layouts/NetworkLayout.astro";
 
 // Cloudflare Pages serves this for unmatched routes with a real 404 status
@@ -7,7 +8,7 @@ import NetworkLayout from "../layouts/NetworkLayout.astro";
 // this page), replacing the previous soft-404 that returned the homepage as 200.
 const title = "Page not found — MadeWithWhat";
 const description = "The page you were looking for doesn't exist. Browse the MadeWithWhat network of open-source galleries instead.";
-const popular = DOMAINS.slice(0, 8);
+const popular = NETWORK_DOMAINS.slice(0, 8);
 ---
 <NetworkLayout title={title} description={description} noindex>
   <main class="nf-wrap">
@@ -23,7 +24,7 @@ const popular = DOMAINS.slice(0, 8);
     </div>
     <nav class="nf-domains" aria-label="Popular galleries">
       {popular.map((d) => (
-        <a href={`/${d.slug}/`} class="nf-chip" style={`--c:${d.accent};`}>Made with {d.techName}</a>
+        <a href={`/${d.slug}/`} class="nf-chip" style={`--c:${d.accent}; --c-ink:${readableOnLight(d.accent)};`}>Made with {d.techName}</a>
       ))}
     </nav>
   </main>
@@ -67,7 +68,7 @@ const popular = DOMAINS.slice(0, 8);
       margin-top: 32px;
     }
     .nf-btn { padding: 12px 22px; font-size: 15px; }
-    .nf-link { font-size: 15px; font-weight: 600; color: rgb(47, 111, 235); }
+    .nf-link { font-size: 15px; font-weight: 600; color: #2c68dd; }
     .nf-link:hover { text-decoration: underline; text-underline-offset: 3px; }
     .nf-domains {
       display: flex;
@@ -81,7 +82,7 @@ const popular = DOMAINS.slice(0, 8);
       font-weight: 600;
       padding: 7px 14px;
       border-radius: 20px;
-      color: var(--c);
+      color: var(--c-ink);
       background: color-mix(in srgb, var(--c) 9%, #ffffff);
       border: 1px solid color-mix(in srgb, var(--c) 22%, #ffffff);
       transition: transform 0.12s ease;

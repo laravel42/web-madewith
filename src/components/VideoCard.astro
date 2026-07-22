@@ -3,7 +3,9 @@ import type { VideoCardItem } from "../lib/video-view";
 
 interface Props { item: VideoCardItem; priority?: boolean; }
 const { item, priority = false } = Astro.props;
-const cover = `linear-gradient(135deg, color-mix(in srgb, ${item.accent} 82%, #000), ${item.accent})`;
+// White text (kind/duration badges) sits on this, so both stops come off the
+// AA-safe `accentCover` rather than the raw brand colour.
+const cover = `linear-gradient(135deg, color-mix(in srgb, ${item.accentCover} 82%, #000), ${item.accentCover})`;
 const haystack = `${item.techName} ${item.title} ${item.channel} ${item.groupLabel} ${item.kind}`.toLowerCase();
 ---
 
@@ -34,10 +36,10 @@ const haystack = `${item.techName} ${item.title} ${item.channel} ${item.groupLab
       <span class="video-card-play"><span class="video-card-tri" style={`border-color:transparent transparent transparent ${item.accent};`}></span></span>
     </div>
     <div class="video-card-body">
-      <div class="video-card-tech" style={`color:${item.accent};`}>{item.techName}</div>
+      <div class="video-card-tech" style={`color:${item.accentOnLight};`}>{item.techName}</div>
       <h3 class="video-card-title">{item.title}</h3>
       <div class="video-card-meta">
-        <span class="video-card-avatar" style={`background:${item.accent}; color:${item.accentInk};`}>{item.channelInitial}</span>
+        <span class="video-card-avatar" style={`background:${item.accentSolid}; color:${item.accentInk};`}>{item.channelInitial}</span>
         <span class="video-card-metatext">{item.channel} · {item.viewsLabel} views · <time datetime={item.dateIso}>{item.dateLabel}</time></span>
       </div>
     </div>
@@ -89,7 +91,7 @@ const haystack = `${item.techName} ${item.title} ${item.channel} ${item.groupLab
   }
   .video-card-meta {
     display: flex; align-items: center; gap: 8px; margin-top: auto; padding-top: 13px;
-    font-size: 12.5px; color: #9aa0a6;
+    font-size: 12.5px; color: #5c665f;
   }
   .video-card-avatar {
     width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0;

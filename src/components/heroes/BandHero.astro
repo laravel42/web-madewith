@@ -10,7 +10,9 @@ const subcopy = heroSubcopy(theme, total);
 const dark = theme.heroBandDark;
 const accent = theme.accent;
 const titleColor = dark ? "#f6f2ff" : undefined;
-const eyebrowColor = dark ? `color-mix(in srgb, ${accent} 60%, #fff)` : accent;
+const eyebrowColor = dark
+  ? `color-mix(in srgb, ${accent} 60%, #fff)`
+  : `color-mix(in srgb, ${accent} 45%, #16202a)`;
 const subColor = dark ? "rgba(255,255,255,.78)" : "#4a6157";
 const bandBg = theme.heroBandBg ?? `color-mix(in srgb, ${accent} 7%, #fff)`;
 const bandBorder = dark ? "none" : `1px solid ${theme.heroSoftBorder ?? `color-mix(in srgb, ${accent} 22%, #e8ecea)`}`;
@@ -30,7 +32,7 @@ const radius = dark ? "24px" : "28px";
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke={accent} stroke-width="2"/><path d="m20 20-3.5-3.5" stroke={accent} stroke-width="2" stroke-linecap="round"/></svg>
       <input data-role="search" aria-label="Search projects, authors, or tags" placeholder="Search projects, authors, tags…" style="border:none; outline:none; background:transparent; font-size:15px; width:100%; color:#16201b;"/>
     </div>
-    <div data-role="sort" style={`display:flex; align-items:center; gap:8px; background:${accent}; border-radius:12px; padding:13px 18px; font-size:14px; font-weight:700; color:${theme.accentInk}; cursor:pointer; white-space:nowrap; box-shadow:0 8px 18px color-mix(in srgb, ${accent} 34%, transparent);`}>
+    <div data-role="sort" style={`display:flex; align-items:center; gap:8px; background:var(--accent-solid); border-radius:12px; padding:13px 18px; font-size:14px; font-weight:700; color:${theme.accentInk}; cursor:pointer; white-space:nowrap; box-shadow:0 8px 18px color-mix(in srgb, ${accent} 34%, transparent);`}>
       <span data-sort-label data-label-stars="Most stars" data-label-name="A–Z">Most stars</span>
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
     </div>

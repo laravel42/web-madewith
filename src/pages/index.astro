@@ -1,5 +1,5 @@
 ---
-import { DOMAINS, GROUP_META, getResolvedTheme, networkMetaFor, type DomainGroup } from "../config/domains";
+import { GROUP_META, getResolvedTheme, networkCardBlurb, networkMetaFor, NETWORK_DOMAINS, type DomainGroup } from "../config/domains";
 import { getCatalog } from "../lib/catalog";
 import NetworkCard from "../components/NetworkCard.astro";
 import NetworkFooter from "../components/NetworkFooter.astro";
@@ -9,7 +9,6 @@ import SiteHeader from "../components/SiteHeader.astro";
 function siteCard(slug: string) {
   const d = getResolvedTheme(slug);
   const data = getCatalog(d.slug);
-  const top = [...data.projects].sort((a, b) => b.stars - a.stars).slice(0, 3).map((p) => p.name);
   const net = networkMetaFor(d);
   return {
     slug: d.slug,
@@ -17,7 +16,7 @@ function siteCard(slug: string) {
     domain: d.domain,
     href: `/${d.slug}/`,
     count: data.projects.length,
-    blurb: top.length ? `Featuring ${top.join(", ")} and more.` : "Gallery indexing in progress.",
+    blurb: networkCardBlurb(d),
     ...net,
   };
 }
@@ -27,14 +26,14 @@ const sections = groups
   .map((group) => ({
     group,
     meta: GROUP_META[group],
-    sites: DOMAINS.filter((d) => getResolvedTheme(d.slug).group === group).map((d) => siteCard(d.slug)),
+    sites: NETWORK_DOMAINS.filter((d) => getResolvedTheme(d.slug).group === group).map((d) => siteCard(d.slug)),
   }))
   .filter((s) => s.sites.length > 0);
 
 const site = Astro.site ?? new URL("https://madewithwhat.net");
 const canonical = new URL("/", site).href;
 const seoTitle = "MadeWithWhat — open-source project galleries for every stack";
-const seoDescription = `Browse ${DOMAINS.length} daily-updated showcase galleries across frameworks, frontends, backends, CMS/CRM, commerce, and AI/LLM — indexed from GitHub and ranked by stars.`;
+const seoDescription = `Browse ${NETWORK_DOMAINS.length} daily-updated showcase galleries across frameworks, frontends, backends, CMS/CRM, commerce, and AI/LLM — indexed from GitHub and ranked by stars.`;
 const ogImage = new URL("/favicon.svg", site).href;
 const ogCard = new URL("/og.png", site).href;
 const jsonLd = {
@@ -178,7 +177,7 @@ const FONT_HREF =
         font-size: 12px;
         font-weight: 700;
         letter-spacing: 0.14em;
-        color: #2F6FEB;
+        color: #2c68dd;
         text-transform: uppercase;
         margin-bottom: 18px;
       }
@@ -235,7 +234,7 @@ const FONT_HREF =
           <a
             href={`#${group}`}
             class="filter-pill"
-            style={`color:${meta.color}; background:color-mix(in srgb, ${meta.color} 9%, #ffffff); border:1px solid color-mix(in srgb, ${meta.color} 22%, #ffffff);`}
+            style={`color:${meta.ink}; background:color-mix(in srgb, ${meta.color} 9%, #ffffff); border:1px solid color-mix(in srgb, ${meta.color} 22%, #ffffff);`}
           >
             <span aria-hidden="true">{meta.icon}</span>
             {meta.label}
@@ -248,9 +247,9 @@ const FONT_HREF =
       {sections.map(({ group, meta, sites }) => (
         <section class="section" id={group} aria-labelledby={`section-${group}`}>
           <div class="section-head">
-            <span class="section-icon" style={`background:${meta.bg}; color:${meta.color};`} aria-hidden="true">{meta.icon}</span>
+            <span class="section-icon" style={`background:${meta.bg}; color:${meta.ink};`} aria-hidden="true">{meta.icon}</span>
             <h2 class="section-label" id={`section-${group}`}>{meta.label}</h2>
-            <span class="section-count" style={`color:${meta.color}; background:color-mix(in srgb, ${meta.color} 12%, #ffffff);`}>
+            <span class="section-count" style={`color:${meta.ink}; background:color-mix(in srgb, ${meta.color} 12%, #ffffff);`}>
               {sites.length} {sites.length === 1 ? "site" : "sites"}
             </span>
             <span class="section-rule" style={`background:linear-gradient(90deg, color-mix(in srgb, ${meta.color} 30%, #ffffff), transparent);`}></span>

@@ -32,6 +32,10 @@ const links = isTerminal
 
 const submitHref = `${base}/submit`;
 const submitLabel = isTerminal ? "+ submit" : isNext || isBannerHeader ? "Submit ↗" : "Submit a project";
+// Bright accents stay vivid on solid chips; darken for text on light headers.
+const brandTextAccent = isEditorial
+  ? theme.accent
+  : `color-mix(in srgb, ${theme.accent} 45%, #16202a)`;
 ---
 
 <header
@@ -49,7 +53,7 @@ const submitLabel = isTerminal ? "+ submit" : isNext || isBannerHeader ? "Submit
       ) : (
         <>
           <span class:list={["mw-header-logo", "disp", (isNext || isBannerHeader) && "is-round", isBannerHeader && "is-banner-logo"]}>{logo}</span>
-          <MadeWithTechWordmark techName={theme.techName} accent={theme.accent} />
+          <MadeWithTechWordmark techName={theme.techName} accent={brandTextAccent} />
         </>
       )}
     </a>
@@ -76,6 +80,7 @@ const submitLabel = isTerminal ? "+ submit" : isNext || isBannerHeader ? "Submit
             part="links"
             variant={isTerminal ? "terminal" : "light"}
             includeBlog={false}
+            includeVideo={false}
             includeRss={false}
             includeSubscribe={false}
           />
@@ -146,7 +151,11 @@ const submitLabel = isTerminal ? "+ submit" : isNext || isBannerHeader ? "Submit
 
   .is-terminal .mw-header-brand-text { color: #e8efe9; }
 
-  .mw-header-brand-accent { color: var(--accent); }
+  .mw-header-brand-accent { color: var(--accent-text); }
+
+  .is-terminal .mw-header-brand-accent {
+    color: var(--accent-text);
+  }
 
   .mw-header-cursor {
     width: 8px;
@@ -156,12 +165,16 @@ const submitLabel = isTerminal ? "+ submit" : isNext || isBannerHeader ? "Submit
     flex-shrink: 0;
   }
 
+  .is-terminal .mw-header-cursor {
+    background: var(--accent-text);
+  }
+
   .mw-header-logo {
     flex-shrink: 0;
     width: 34px;
     height: 34px;
     border-radius: 9px;
-    background: var(--accent);
+    background: var(--accent-solid);
     color: var(--accentInk);
     display: flex;
     align-items: center;
@@ -270,11 +283,28 @@ const submitLabel = isTerminal ? "+ submit" : isNext || isBannerHeader ? "Submit
   .is-terminal .mw-header-nav {
     gap: 8px;
     font-size: 13px;
-    color: #7c887f;
+    color: #a8b2ab;
   }
 
   .is-editorial .mw-header-nav {
     font-weight: 600;
+    color: #d4d4d4;
+  }
+
+  .mw-header.is-editorial .mw-header-link,
+  .mw-header.is-editorial .mw-header-global-nav :global(.global-site-nav-link) {
+    color: #d4d4d4;
+  }
+
+  .mw-header.is-editorial .mw-header-link:hover,
+  .mw-header.is-editorial .mw-header-global-nav :global(.global-site-nav-link:hover) {
+    color: #ffffff;
+  }
+
+  .mw-header.is-editorial .mw-header-link.is-active,
+  .mw-header.is-editorial .mw-header-global-nav :global(.global-site-nav-link.is-active) {
+    color: #ffffff;
+    background: rgb(255 255 255 / 14%);
   }
 
   .is-banner .mw-header-nav {
@@ -312,7 +342,8 @@ const submitLabel = isTerminal ? "+ submit" : isNext || isBannerHeader ? "Submit
   }
 
   .mw-header:not(.is-terminal):not(.is-editorial):not(.is-banner) .mw-header-link:hover {
-    color: rgb(47, 111, 235);
+    /* the brand blue is 4.44:1 on the #fbfcfb header — just under AA at 14px */
+    color: #2c68dd;
     text-decoration: underline;
     text-underline-offset: 3px;
   }
@@ -327,7 +358,16 @@ const submitLabel = isTerminal ? "+ submit" : isNext || isBannerHeader ? "Submit
   }
 
   .is-terminal .mw-header-link.is-active {
+    color: #e8efe9;
     background: color-mix(in srgb, var(--accent) 18%, transparent);
+  }
+
+  .is-terminal .mw-header-link.is-active:hover {
+    color: #ffffff;
+  }
+
+  .is-terminal .mw-header-link:not(.is-active):hover {
+    color: var(--accent-text);
   }
 
   .mw-header-submit {
@@ -353,12 +393,12 @@ const submitLabel = isTerminal ? "+ submit" : isNext || isBannerHeader ? "Submit
   }
 
   .mw-header.is-terminal .mw-header-global-nav :global(.global-site-nav-link:hover) {
-    color: var(--accent);
+    color: var(--accent-text);
     text-decoration: none;
   }
 
   .mw-header.is-terminal .mw-header-global-nav :global(.global-site-nav-link.is-active) {
-    color: var(--accent);
+    color: var(--accent-text);
     background: color-mix(in srgb, var(--accent) 14%, transparent);
   }
 
@@ -463,11 +503,16 @@ const submitLabel = isTerminal ? "+ submit" : isNext || isBannerHeader ? "Submit
   }
 
   .is-terminal .mw-header-submit {
-    border: 1px solid var(--accent);
-    color: var(--accent);
-    background: transparent;
+    border: 1px solid var(--accent-text);
+    color: var(--accent-text);
+    background: color-mix(in srgb, var(--accent) 10%, transparent);
     padding: 8px 15px;
     border-radius: 6px;
+  }
+
+  .is-terminal .mw-header-submit:hover {
+    color: #ffffff;
+    border-color: #ffffff;
   }
 
   .is-editorial .mw-header-submit {

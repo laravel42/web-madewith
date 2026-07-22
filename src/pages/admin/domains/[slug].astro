@@ -36,11 +36,11 @@ const { slug } = Astro.params;
           </div>
           <div>
             <label for="f-heroHeadline" class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">Headline (HTML, e.g. Next.js)</label>
-            <input id="f-heroHeadline" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white" placeholder="Optional — MADE WITH&lt;br&gt;NEXT.JS" />
+            <input id="f-heroHeadline" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-300" placeholder="Optional — MADE WITH&lt;br&gt;NEXT.JS" />
           </div>
           <div>
             <label for="f-tagline" class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">Subcopy</label>
-            <textarea id="f-tagline" rows="3" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white" placeholder="Use {total} for project count"></textarea>
+            <textarea id="f-tagline" rows="3" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-300" placeholder="Use {total} for project count"></textarea>
           </div>
         </div>
       </section>
@@ -62,11 +62,11 @@ const { slug } = Astro.params;
           </div>
           <div>
             <label for="f-domain" class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">Hostname</label>
-            <input id="f-domain" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white" placeholder="madewithnuxt.com" />
+            <input id="f-domain" type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-300" placeholder="madewithnuxt.com" />
           </div>
           <div>
             <label for="f-pageUrl" class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">Direct page URL</label>
-            <input id="f-pageUrl" type="url" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white" placeholder="https://madewithnuxt.com/" />
+            <input id="f-pageUrl" type="url" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white placeholder:text-gray-500 dark:placeholder:text-gray-300" placeholder="https://madewithnuxt.com/" />
           </div>
           <div>
             <label for="f-seoTitle" class="block mb-1 text-sm font-medium text-gray-700 dark:text-gray-300">Meta title</label>
@@ -83,8 +83,8 @@ const { slug } = Astro.params;
     <section class="p-5 mt-6 bg-white border border-gray-200 rounded-lg shadow-sm dark:bg-gray-800 dark:border-gray-700">
       <h2 class="mb-4 text-lg font-semibold text-gray-900 dark:text-white">Visible categories</h2>
       <div class="flex gap-6 mb-4 text-sm">
-        <label class="inline-flex items-center gap-2"><input id="cat-mode-auto" type="radio" name="cat-mode" value="auto" class="text-primary-600" checked /> Auto (top 5 by count)</label>
-        <label class="inline-flex items-center gap-2"><input id="cat-mode-custom" type="radio" name="cat-mode" value="custom" class="text-primary-600" /> Custom selection</label>
+        <label class="inline-flex items-center gap-2 text-gray-700 dark:text-gray-300"><input id="cat-mode-auto" type="radio" name="cat-mode" value="auto" class="text-primary-600" checked /> Auto (top 5 by count)</label>
+        <label class="inline-flex items-center gap-2 text-gray-700 dark:text-gray-300"><input id="cat-mode-custom" type="radio" name="cat-mode" value="custom" class="text-primary-600" /> Custom selection</label>
       </div>
       <div id="category-checks" class="grid gap-2 sm:grid-cols-2 lg:grid-cols-3"></div>
     </section>
@@ -96,15 +96,15 @@ const { slug } = Astro.params;
         <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-600">
           <thead class="bg-gray-100 dark:bg-gray-700">
             <tr>
-              <th class="p-3 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">Project</th>
-              <th class="p-3 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">Author</th>
-              <th class="p-3 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">★</th>
-              <th class="p-3 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">Category</th>
-              <th class="p-3 text-xs font-medium text-left text-gray-500 uppercase dark:text-gray-400">Visible</th>
+              <th class="p-3 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Project</th>
+              <th class="p-3 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Author</th>
+              <th class="p-3 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">★</th>
+              <th class="p-3 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Category</th>
+              <th class="p-3 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Visible</th>
             </tr>
           </thead>
           <tbody id="project-rows" class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
-            <tr><td colspan="5" class="p-4 text-sm text-gray-500">Loading…</td></tr>
+            <tr><td colspan="5" class="p-4 text-sm text-gray-500 dark:text-gray-400">Loading…</td></tr>
           </tbody>
         </table>
       </div>

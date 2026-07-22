@@ -1,5 +1,5 @@
 ---
-import { DOMAINS } from "../config/domains";
+import { NETWORK_DOMAINS } from "../config/domains";
 import { networkLatestScrapedAt } from "../lib/feed";
 
 interface Props {
@@ -8,11 +8,11 @@ interface Props {
 }
 
 const { llmsTxt, projectCount } = Astro.props;
-const accent = "rgb(47, 111, 235)";
+const accent = "#2c68dd";
 ---
 
 <div style="max-width:760px; margin:0 auto; padding:48px 28px 90px;">
-  <div style="font-size:13px; color:#8b9690; margin-bottom:14px;"><a href="/" class="filter-link" style="color:inherit;">Home</a> &nbsp;/&nbsp; LLM</div>
+  <div style="font-size:13px; color:#5c665f; margin-bottom:14px;"><a href="/" class="filter-link" style="color:inherit;">Home</a> &nbsp;/&nbsp; LLM</div>
   <div class="disp" style="font-size:40px; font-weight:800; letter-spacing:-0.03em;">LLM context</div>
   <div style="font-size:16px; color:#5c665f; margin-top:10px; line-height:1.6; max-width:620px;">
     Structured catalog metadata for AI agents and crawlers across the MadeWithWhat network. Copy the text below or fetch the plain-text endpoint directly.
@@ -20,13 +20,13 @@ const accent = "rgb(47, 111, 235)";
 
   <div style="margin-top:28px; display:flex; flex-wrap:wrap; gap:12px; font-size:14px;">
     <a href="/llms.txt" class="filter-link" style={`border:1px solid ${accent}; color:${accent}; padding:9px 16px; border-radius:10px; text-decoration:none; font-weight:600;`}>llms.txt ↓</a>
-    <a href="/blog/rss/" class="filter-link" style="color:#8b9690; padding:9px 0; text-decoration:none;">RSS feed</a>
-    <a href="/newsletter/" class="filter-link" style="color:#8b9690; padding:9px 0; text-decoration:none;">Newsletter</a>
+    <a href="/blog/rss/" class="filter-link" style="color:#5c665f; padding:9px 0; text-decoration:none;">RSS feed</a>
+    <a href="/newsletter/" class="filter-link" style="color:#5c665f; padding:9px 0; text-decoration:none;">Newsletter</a>
   </div>
 
   <div style="margin-top:28px; border:1px solid #e0e5e2; border-radius:10px; background:#f4f6f5; overflow:hidden;">
-    <div style="display:flex; align-items:center; justify-content:space-between; padding:12px 16px; border-bottom:1px solid #e0e5e2; font-size:12px; color:#8b9690;">
-      <span>{DOMAINS.length} galleries · {projectCount.toLocaleString()} projects · updated {new Date(networkLatestScrapedAt()).toLocaleDateString()}</span>
+    <div style="display:flex; align-items:center; justify-content:space-between; padding:12px 16px; border-bottom:1px solid #e0e5e2; font-size:12px; color:#5c665f;">
+      <span>{NETWORK_DOMAINS.length} galleries · {projectCount.toLocaleString()} projects · updated {new Date(networkLatestScrapedAt()).toLocaleDateString()}</span>
       <button type="button" data-role="copy-llms" style="background:transparent; border:1px solid #e0e5e2; color:inherit; padding:5px 12px; border-radius:6px; cursor:pointer; font-size:12px;">Copy</button>
     </div>
     <pre data-role="llms-body" style="margin:0; padding:18px 16px 22px; font-size:13px; line-height:1.65; white-space:pre-wrap; word-break:break-word; color:#3a443f; overflow-x:auto;">{llmsTxt}</pre>

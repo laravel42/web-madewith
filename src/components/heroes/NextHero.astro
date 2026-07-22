@@ -19,3 +19,10 @@ const subcopy = heroSubcopy(theme, total);
     </div>
   </div>
 </div>
+
+<style>
+  /* CatalogLayout's `.mw ::placeholder` is tuned for the white search fields and
+     only reaches 3.5:1 on Next's black shell — lift it here. The attribute
+     selector keeps it ahead of the layout rule. */
+  input[data-role="search"]::placeholder { color: #9aa69e; }
+</style>

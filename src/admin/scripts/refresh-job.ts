@@ -52,6 +52,8 @@ export function createRefreshJobPanel(): RefreshJobPanel | null {
     setBusy(busy: boolean) {
       document.querySelectorAll<HTMLButtonElement>("[data-refresh-job]").forEach((btn) => {
         btn.disabled = busy;
+        // `opacity-50` is applied only alongside `disabled`. WCAG 1.4.3 exempts inactive
+        // controls from the contrast minimum, so the dimming is intentional and kept.
         btn.classList.toggle("opacity-50", busy);
         btn.classList.toggle("cursor-not-allowed", busy);
       });

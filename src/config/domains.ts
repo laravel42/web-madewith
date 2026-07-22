@@ -6,9 +6,11 @@
  */
 
 import catalog from "./domain-catalog.json";
+import { readableOn, tint } from "./accessible-color";
 import { applyEngineTokens } from "./engine-theme";
 import type { HeroArch } from "./engine-theme";
 import { applyThemeOverrides, getDomainSettings } from "./domain-settings";
+import { NETWORK_STACK_BLURBS } from "./network-stack-blurbs";
 
 export type Variant = "light" | "terminal";
 export type HeroId = "nuxt" | "node" | "next" | "ionic" | "statamic" | "twill" | "generic";
@@ -34,6 +36,12 @@ export interface Theme {
   heroId: HeroId;
   /** Engine layout — band, browser, phone, terminal, or banner (editorial grid). */
   heroArch?: HeroArch;
+  /**
+   * True when the page shell is dark (terminal variants + Next's black editorial
+   * shell). Components branch on this to pick the light- or dark-surface ink
+   * instead of assuming a near-white page.
+   */
+  darkShell?: boolean;
   heroGradient?: string;
   heroMockHero?: string;
   heroBandDark?: boolean;
@@ -287,6 +295,24 @@ export const DOMAINS: Theme[] = DOMAIN_CATALOG.map(buildTheme);
 
 export const DOMAIN_MAP: Record<string, Theme> = Object.fromEntries(DOMAINS.map((d) => [d.slug, d]));
 
+/**
+ * Temporary: hide generic madewith*.com (non-bespoke) galleries from the
+ * public network hub. Flip to false to restore them on the homepage / llms.txt.
+ * Individual /[domain]/ routes stay buildable.
+ */
+export const HIDE_SINGLE_DOMAINS = false;
+
+const BESPOKE_SLUGS = new Set(DOMAIN_CATALOG.filter((d) => d.bespoke).map((d) => d.slug));
+
+export function isBespokeDomain(slug: string): boolean {
+  return BESPOKE_SLUGS.has(slug);
+}
+
+/** Domains listed on the network landing and related public surfaces. */
+export const NETWORK_DOMAINS: Theme[] = HIDE_SINGLE_DOMAINS
+  ? DOMAINS.filter((d) => isBespokeDomain(d.slug))
+  : DOMAINS;
+
 export function getTheme(slug: string): Theme {
   const t = DOMAIN_MAP[slug];
   if (!t) throw new Error(`Unknown domain slug: ${slug}`);
@@ -334,41 +360,61 @@ export const GROUP_LABELS: Record<DomainGroup, string> = {
   "ai-llm": "AI / LLM",
 };
 
-export const GROUP_META: Record<DomainGroup, { label: string; icon: string; color: string; bg: string }> = {
+/**
+ * `color` is the group's hue — used for the chip background tint, the icon
+ * plate and borders. `ink` is that hue darkened until it clears AA as 12–14px
+ * text on the 16% tint (the darkest surface it lands on); the raw hue ran
+ * 2.45–4.48:1 there, so labels and glyphs must use `ink`, not `color`.
+ */
+export const GROUP_META: Record<DomainGroup, { label: string; icon: string; color: string; ink: string; bg: string }> = {
   frameworks: {
     label: "Frameworks",
     icon: "◈",
     color: "#16A34A",
+    ink: readableOn("#16A34A", tint("#16A34A", 16)),
     bg: "color-mix(in srgb, #16A34A 16%, #ffffff)",
   },
   frontend: {
     label: "Frontend",
     icon: "▤",
     color: "#2F6FEB",
+    ink: readableOn("#2F6FEB", tint("#2F6FEB", 16)),
     bg: "color-mix(in srgb, #2F6FEB 16%, #ffffff)",
   },
   backend: {
     label: "Backend",
     icon: "❯",
     color: "#EA7A2B",
+    ink: readableOn("#EA7A2B", tint("#EA7A2B", 16)),
     bg: "color-mix(in srgb, #EA7A2B 16%, #ffffff)",
   },
   "cms-crm": {
     label: "CMS / CRM",
     icon: "❏",
     color: "#7C3AED",
+    ink: readableOn("#7C3AED", tint("#7C3AED", 16)),
     bg: "color-mix(in srgb, #7C3AED 16%, #ffffff)",
   },
   commerce: {
     label: "Commerce",
     icon: "⛬",
     color: "#C2612B",
+    ink: readableOn("#C2612B", tint("#C2612B", 16)),
     bg: "color-mix(in srgb, #C2612B 16%, #ffffff)",
   },
   "ai-llm": {
     label: "AI / LLM",
     icon: "✦",
     color: "#6366F1",
+    ink: readableOn("#6366F1", tint("#6366F1", 16)),
     bg: "color-mix(in srgb, #6366F1 16%, #ffffff)",
   },
 };
+
+/** Short SEO blurb for network landing cards — stack identity, not project names. */
+export function networkCardBlurb(theme: Pick<Theme, "slug" | "techName" | "group">): string {
+  return (
+    NETWORK_STACK_BLURBS[theme.slug] ??
+    `${theme.techName} is an open-source ${theme.group.replace("-", " / ")} stack with a growing GitHub ecosystem.`
+  );
+}

@@ -7,6 +7,7 @@ import CatalogLayout from "../../layouts/CatalogLayout.astro";
 import Hero from "../../components/Hero.astro";
 import ProjectGrid from "../../components/ProjectGrid.astro";
 import DomainBlogStrip from "../../components/DomainBlogStrip.astro";
+import DomainVideoStrip from "../../components/DomainVideoStrip.astro";
 
 export function getStaticPaths() {
   return DOMAINS.map((theme) => ({ params: { domain: theme.slug }, props: { slug: theme.slug } }));
@@ -60,4 +61,5 @@ const jsonLd = {
   <Hero theme={theme} total={total} categories={categories} />
   <ProjectGrid theme={theme} projects={projects} />
   <DomainBlogStrip theme={theme} />
+  <DomainVideoStrip theme={theme} />
 </CatalogLayout>

@@ -11,6 +11,8 @@
   background:
     radial-gradient(circle at 82% 16%, rgb(255 255 255 / 24%) 0 2px, transparent 3px),
     radial-gradient(circle at 82% 16%, transparent 0 28px, rgb(255 255 255 / 12%) 29px 30px, transparent 31px),
+    /* `--cover-accent` is `accentCover`, not the raw brand colour: the 100% stop
+       carries the white eyebrow, category chip and title. */
     linear-gradient(135deg, color-mix(in srgb, var(--cover-accent) 76%, #111) 0%, var(--cover-accent) 100%);
 }
 
@@ -57,7 +59,8 @@
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  opacity: 0.82;
+  /* Full white: at 82% this 10–12px label only reached 3.5:1 on the light stop. */
+  opacity: 1;
 }
 
 .blog-card-cover-category {
@@ -239,7 +242,8 @@
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  opacity: 0.82;
+  /* Full white — see .blog-card-cover-tech. */
+  opacity: 1;
 }
 
 .blog-article-hero-cover .blog-article-tech-name,
@@ -423,7 +427,7 @@
   font-family: "Hanken Grotesk", sans-serif;
   font-size: 12px;
   font-weight: 500;
-  color: #9aa0a6;
+  color: #5c665f;
 }
 
 /* ---- shared blog card shell (main blog grid + per-domain "From the blog") ---- */

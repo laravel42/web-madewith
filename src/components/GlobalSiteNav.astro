@@ -108,7 +108,7 @@ const openSubscribeModal = isDefaultSubscribeHref(subscribeHref);
   }
 
   .global-site-nav-link:hover {
-    color: rgb(47, 111, 235);
+    color: #2c68dd;
     text-decoration: underline;
     text-underline-offset: 3px;
   }
@@ -127,8 +127,13 @@ const openSubscribeModal = isDefaultSubscribeHref(subscribeHref);
     background: color-mix(in srgb, var(--global-nav-accent, #5fa04e) 18%, transparent);
   }
 
+  /*
+   * Hover uses the layout's derived accent text (readableOnDark) rather than the
+   * raw --global-nav-accent: on the dark shell the brand accents themselves run
+   * 1.08:1 (fastify/ollama black) to 4.17:1, all under AA.
+   */
   .global-site-nav.is-terminal .global-site-nav-link:hover {
-    color: var(--global-nav-accent, #5fa04e);
+    color: var(--accent-text, var(--global-nav-accent, #5fa04e));
   }
 
   .global-site-nav.is-terminal .global-site-nav-link.is-active:hover {

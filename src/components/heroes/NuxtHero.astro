@@ -3,14 +3,22 @@ import type { Theme } from "../../config/domains";
 import { heroSubcopy } from "../../config/domain-settings";
 import TagRow from "../TagRow.astro";
 import type { CategoryFilter } from "../../lib/catalog";
+import { readableOn } from "../../config/accessible-color";
 interface Props { theme: Theme; total: string; categories: CategoryFilter[]; }
 const { theme, total, categories } = Astro.props;
 const subcopy = heroSubcopy(theme, total);
+
+// Nuxt green is a fill colour: as text on the panel's mint tint the eyebrow ran
+// 2.94:1 and the h1 gradient's light stop 2.55:1. Both are pushed against
+// #e6fff4 — the darker of the two stops the panel fades between, so whatever the
+// gradient lands on is at least this good. The h1 is ≥32px/800, so 3:1 applies.
+const eyebrowColor = readableOn("#00a866", "#f7f4ee");
+const titleStop = readableOn("#00b56c", "#e6fff4", 3);
 ---
 <div class="hero-panel" style="max-width:1140px; margin:22px auto 8px; padding:44px 46px; border-radius:28px; background:radial-gradient(560px 300px at 92% 6%, rgba(0,220,130,.20), rgba(0,220,130,0) 62%), linear-gradient(135deg,#e6fff4 0%,#f2fdf8 100%); border:1px solid #c9f5e2; display:flex; align-items:center; gap:46px; flex-wrap:wrap;">
   <div style="flex:1; min-width:320px;">
-    <div style="font-size:13px; font-weight:600; color:#00a866; letter-spacing:.05em; text-transform:uppercase; margin-bottom:14px;">{theme.eyebrow}</div>
-    <h1 class="disp" style="margin:0; font-size:clamp(32px, 7vw, 46px); font-weight:800; letter-spacing:-0.03em; line-height:1.04; background:linear-gradient(96deg,#053f2b,#00b56c); -webkit-background-clip:text; background-clip:text; color:transparent;">{theme.heroTitle}</h1>
+    <div style={`font-size:13px; font-weight:600; color:${eyebrowColor}; letter-spacing:.05em; text-transform:uppercase; margin-bottom:14px;`}>{theme.eyebrow}</div>
+    <h1 class="disp" style={`margin:0; font-size:clamp(32px, 7vw, 46px); font-weight:800; letter-spacing:-0.03em; line-height:1.04; background:linear-gradient(96deg,#053f2b,${titleStop}); -webkit-background-clip:text; background-clip:text; color:transparent;`}>{theme.heroTitle}</h1>
     <div style="font-size:17px; color:#4a6157; margin-top:16px; max-width:500px; line-height:1.55;">{subcopy}</div>
 
     <div style="display:flex; gap:10px; margin-top:28px; max-width:560px;">

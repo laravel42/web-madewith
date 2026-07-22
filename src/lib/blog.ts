@@ -1,6 +1,7 @@
 import { blogTechFor } from "./blog-tech";
 import { formatBlogDate } from "./blog-dates";
 import { englishDisplayText } from "./preview-text";
+import { readableOn, tint } from "../config/accessible-color";
 
 export interface BlogArticle {
   slug: string;
@@ -24,10 +25,7 @@ export interface BlogArticle {
 
 export const BLOG_CATEGORIES = ["All", "Tutorial", "Patterns", "Performance", "Guide", "AI / LLM", "Headless"] as const;
 
-export const BLOG_CATEGORY_META: Record<
-  (typeof BLOG_CATEGORIES)[number],
-  { icon: string; color: string }
-> = {
+const BLOG_CATEGORY_COLOR: Record<(typeof BLOG_CATEGORIES)[number], { icon: string; color: string }> = {
   All: { icon: "◎", color: "#2F6FEB" },
   Tutorial: { icon: "▣", color: "#16A34A" },
   Patterns: { icon: "◈", color: "#7C3AED" },
@@ -36,6 +34,22 @@ export const BLOG_CATEGORY_META: Record<
   "AI / LLM": { icon: "✦", color: "#6366F1" },
   Headless: { icon: "❏", color: "#C2612B" },
 };
+
+/**
+ * `color` tints the pill background and border; `ink` is the label. The filter
+ * pills draw the label on a 9% (inactive) or 18% (active) tint of the same hue,
+ * where the raw colour sat around 3–4:1 — `ink` targets the 18% tint, the
+ * darker of the two.
+ */
+export const BLOG_CATEGORY_META: Record<
+  (typeof BLOG_CATEGORIES)[number],
+  { icon: string; color: string; ink: string }
+> = Object.fromEntries(
+  Object.entries(BLOG_CATEGORY_COLOR).map(([label, v]) => [
+    label,
+    { ...v, ink: readableOn(v.color, tint(v.color, 18)) },
+  ])
+) as Record<(typeof BLOG_CATEGORIES)[number], { icon: string; color: string; ink: string }>;
 
 /** Map factory editorial categories to blog index filter pills. */
 const FACTORY_CATEGORY_MAP: Record<string, (typeof BLOG_CATEGORIES)[number]> = {
@@ -270,9 +284,10 @@ export function articleCardExcerpt(article: Pick<BlogArticle, "excerpt" | "descr
 
 export function articleCardMeta(article: BlogArticle) {
   const tech = blogTechFor(article.primaryTechnology);
+  // White chips sit on the light end of the gradient, so it ends at `accentCover`.
   const coverStyle = article.image
     ? `height:150px; background:url(${article.image}) center/cover no-repeat; display:flex; align-items:flex-end; padding:13px; position:relative;`
-    : `height:150px; background:linear-gradient(135deg, color-mix(in srgb, ${tech.accent} 80%, #000), ${tech.accent}); display:flex; align-items:flex-end; padding:13px; position:relative;`;
+    : `height:150px; background:linear-gradient(135deg, color-mix(in srgb, ${tech.accentCover} 80%, #000), ${tech.accentCover}); display:flex; align-items:flex-end; padding:13px; position:relative;`;
   return {
     ...article,
     title: englishDisplayText(article.title, article.excerpt, article.description),
@@ -284,16 +299,17 @@ export function articleCardMeta(article: BlogArticle) {
     authorInitial: article.author.charAt(0).toUpperCase(),
     coverStyle,
     tagChipStyle: "font-size:11px; font-weight:700; color:#fff; background:rgba(0,0,0,.24); padding:4px 10px; border-radius:20px;",
-    avatarStyle: `width:24px; height:24px; border-radius:50%; background:${tech.accent}; color:${tech.accentInk}; font-weight:700; font-size:11px; display:inline-flex; align-items:center; justify-content:center;`,
+    avatarStyle: `width:24px; height:24px; border-radius:50%; background:${tech.accentSolid}; color:${tech.accentInk}; font-weight:700; font-size:11px; display:inline-flex; align-items:center; justify-content:center;`,
   };
 }
 
 /** Card fields for the blog index — excludes body/sourcePath so JSON can be embedded safely. */
 export function articleIndexItem(article: BlogArticle) {
   const tech = blogTechFor(article.primaryTechnology);
+  // White chips sit on the light end of the gradient, so it ends at `accentCover`.
   const coverStyle = article.image
     ? `height:150px; background:url(${article.image}) center/cover no-repeat; display:flex; align-items:flex-end; padding:13px; position:relative;`
-    : `height:150px; background:linear-gradient(135deg, color-mix(in srgb, ${tech.accent} 80%, #000), ${tech.accent}); display:flex; align-items:flex-end; padding:13px; position:relative;`;
+    : `height:150px; background:linear-gradient(135deg, color-mix(in srgb, ${tech.accentCover} 80%, #000), ${tech.accentCover}); display:flex; align-items:flex-end; padding:13px; position:relative;`;
   return {
     slug: article.slug,
     title: englishDisplayText(article.title, article.excerpt, article.description),
@@ -310,7 +326,7 @@ export function articleIndexItem(article: BlogArticle) {
     authorInitial: article.author.charAt(0).toUpperCase(),
     coverStyle,
     tagChipStyle: "font-size:11px; font-weight:700; color:#fff; background:rgba(0,0,0,.24); padding:4px 10px; border-radius:20px;",
-    avatarStyle: `width:24px; height:24px; border-radius:50%; background:${tech.accent}; color:${tech.accentInk}; font-weight:700; font-size:11px; display:inline-flex; align-items:center; justify-content:center;`,
+    avatarStyle: `width:24px; height:24px; border-radius:50%; background:${tech.accentSolid}; color:${tech.accentInk}; font-weight:700; font-size:11px; display:inline-flex; align-items:center; justify-content:center;`,
   };
 }
 

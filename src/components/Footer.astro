@@ -9,19 +9,26 @@ const logo = theme.techName.charAt(0).toUpperCase();
 const techSlug = theme.techName.toLowerCase().replace(/[^a-z0-9]/g, "");
 const laravel42Url = "https://laravel42.com";
 const laravel42Icon = `${laravel42Url}/apple-touch-icon.png`;
+// The light branch also renders on Next's #000000 footer, so the link grey
+// follows `darkShell`; #8b9690 was 3.06:1 on #fff and 2.66:1 on twill's #f2efe7.
+const linkInk = theme.darkShell ? "#a3ada7" : "#5c665f"; // 9.1:1 on #000 / 6.0:1 on #fff / 5.2:1 on #f2efe7
+// The wordmark's brand blue needs opposite adjustments per polarity: #2c68dd
+// (its default) is 4.9:1 on the light shells, but only 4.3:1 on the terminal /
+// Next footers, where a lighter #3775ec gets to 4.5:1.
+const wordmarkBrand = theme.darkShell ? "#3775ec" : "#2c68dd";
 ---
 
 {theme.variant === "terminal" ? (
   <div style={`border-top:${theme.footerBorder}; background:${theme.footerBg}; margin-top:auto;`}>
     <div style="max-width:1200px; margin:0 auto; padding:16px 32px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
-      <div style="display:flex; align-items:center; gap:9px; font-size:13px; color:#5c665f;">
-        <span style={`color:${theme.accent};`}>$</span> made-with-{techSlug}
+      <div style="display:flex; align-items:center; gap:9px; font-size:13px; color:#a8b2ab;">
+        <span style="color:var(--accent-text);">$</span> made-with-{techSlug}
       </div>
-      <div style="display:flex; align-items:center; flex-wrap:wrap; gap:20px; font-size:12px; color:#5c665f;">
+      <div style="display:flex; align-items:center; flex-wrap:wrap; gap:20px; font-size:12px; color:#a8b2ab;">
         <a href={`${base}/rss.xml`} class="filter-link" style="color:inherit;">rss</a>
         <a href={`${base}/newsletter/`} class="filter-link" style="color:inherit;">newsletter</a>
         <a href={`${base}/llm/`} class="filter-link" style="color:inherit;">llm</a>
-        <a href="/" class="filter-link" style="color:inherit; display:inline-flex; align-items:center; text-decoration:none;">
+        <a href="/" class="filter-link" style={`color:inherit; display:inline-flex; align-items:center; text-decoration:none; --wordmark-brand:${wordmarkBrand};`}>
           <MadeWithWhatWordmark size="compact" />
         </a>
         <a href={laravel42Url} target="_blank" rel="noopener noreferrer" class="filter-link" style="display:inline-flex; align-items:center; text-decoration:none;" aria-label="Laravel42">
@@ -34,18 +41,18 @@ const laravel42Icon = `${laravel42Url}/apple-touch-icon.png`;
   <div style={`border-top:${theme.footerBorder}; background:${theme.footerBg}; margin-top:auto;`}>
     <div style="max-width:1200px; margin:0 auto; padding:18px 32px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
       <div style="display:flex; align-items:center; gap:10px;">
-        <div class="disp" style={`width:26px; height:26px; border-radius:7px; background:${theme.accent}; color:${theme.accentInk}; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:13px;`}>{logo}</div>
+        <div class="disp" style={`width:26px; height:26px; border-radius:7px; background:var(--accent-solid); color:${theme.accentInk}; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:13px;`}>{logo}</div>
         {theme.editorial ? (
           <span class="disp" style="font-weight:700; font-size:15px; letter-spacing:-0.01em;">Made with {theme.techName}</span>
         ) : (
-          <span class="disp" style="font-weight:800; font-size:16px; letter-spacing:-0.01em;">Made with <span style={`color:${theme.accent};`}>{theme.techName}</span></span>
+          <span class="disp" style="font-weight:800; font-size:16px; letter-spacing:-0.01em;">Made with <span style="color:var(--accent-text);">{theme.techName}</span></span>
         )}
       </div>
-      <div style="display:flex; align-items:center; flex-wrap:wrap; gap:22px; font-size:13px; color:#8b9690;">
+      <div style={`display:flex; align-items:center; flex-wrap:wrap; gap:22px; font-size:13px; color:${linkInk};`}>
         <a href={`${base}/rss.xml`} class="filter-link" style="color:inherit;">RSS</a>
         <a href={`${base}/newsletter/`} class="filter-link" style="color:inherit;">Newsletter</a>
         <a href={`${base}/llm/`} class="filter-link" style="color:inherit;">LLM</a>
-        <a href="/" class="filter-link" style="color:inherit; display:inline-flex; align-items:center; text-decoration:none;">
+        <a href="/" class="filter-link" style={`color:inherit; display:inline-flex; align-items:center; text-decoration:none; --wordmark-brand:${wordmarkBrand};`}>
           <MadeWithWhatWordmark size="compact" />
         </a>
         <a href={laravel42Url} target="_blank" rel="noopener noreferrer" class="filter-link" style="display:inline-flex; align-items:center; text-decoration:none;" aria-label="Laravel42">
