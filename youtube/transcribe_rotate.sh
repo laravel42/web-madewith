@@ -13,12 +13,16 @@
 #   mkdir -p ~/vpn-wg && <download configs there>
 #
 # Usage (run as your normal user; sudo is used only for wg-quick):
-#   youtube/transcribe_rotate.sh ~/vpn-wg [chunk-size] [sleep-seconds]
+#   youtube/transcribe_rotate.sh ~/vpn-wg [chunk-size] [sleep-seconds] [workers]
+# workers: concurrent fetchers per location (default 2). All workers share one
+# exit IP, so more workers = faster fetching but faster location burn; 2-3 is
+# the sweet spot, rotation absorbs the burns.
 set -uo pipefail
 
-CONF_DIR="${1:?usage: transcribe_rotate.sh <wireguard-conf-dir> [chunk] [sleep]}"
+CONF_DIR="${1:?usage: transcribe_rotate.sh <wireguard-conf-dir> [chunk] [sleep] [workers]}"
 CHUNK="${2:-100}"
 SLEEP="${3:-1}"
+WORKERS="${4:-2}"
 DIR="$(cd "$(dirname "$0")" && pwd)"
 PY="$DIR/.venv/bin/python"
 BLOCK_EXIT=75
@@ -29,7 +33,7 @@ if [ ! -e "${configs[0]}" ]; then
   echo "No .conf files in $CONF_DIR" >&2
   exit 1
 fi
-echo "${#configs[@]} location(s), chunk=$CHUNK, sleep=${SLEEP}s"
+echo "${#configs[@]} location(s), chunk=$CHUNK, sleep=${SLEEP}s, workers=$WORKERS"
 
 current=""
 vpn_down() {
@@ -65,7 +69,7 @@ while [ "$pass" -lt "$MAX_PASSES" ]; do
 
   # Run chunks on this location until it gets blocked or the queue empties.
   while true; do
-    "$PY" "$DIR/transcribe_youtube.py" --limit "$CHUNK" --sleep "$SLEEP" | tee "$log"
+    "$PY" "$DIR/transcribe_youtube.py" --limit "$CHUNK" --sleep "$SLEEP" --workers "$WORKERS" | tee "$log"
     code=${PIPESTATUS[0]}
     if grep -q "Processing 0 videos" "$log"; then
       echo ""
