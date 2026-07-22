@@ -35,6 +35,7 @@ const codeBorder = isTerminal ? "#232a26" : "#e0e5e2";
 
   <div style={`margin-top:28px; display:flex; flex-wrap:wrap; gap:12px; font-size:${isTerminal ? "13px" : "14px"};`}>
     <a href={`${base}/llms.txt`} class="filter-link" style={`border:1px solid var(--accent-text); color:var(--accent-text); padding:9px 16px; border-radius:${isTerminal ? "6px" : `${theme.radius}px`}; text-decoration:none; font-weight:600;`}>llms.txt ↓</a>
+    <a href={`${base}/llms-full.txt`} class="filter-link" style={`border:1px solid ${codeBorder}; color:inherit; padding:9px 16px; border-radius:${isTerminal ? "6px" : `${theme.radius}px`}; text-decoration:none; font-weight:600;`} title={`All ${data.projects.length.toLocaleString()} projects by category`}>llms-full.txt ↓</a>
     <a href={`${base}/rss.xml`} class="filter-link" style={`color:${faint}; padding:9px 0; text-decoration:none;`}>RSS feed</a>
   </div>
 

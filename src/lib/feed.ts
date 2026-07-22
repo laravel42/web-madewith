@@ -88,6 +88,7 @@ export function buildLlmsTxt(theme: Theme, data: CatalogData, site: URL, limit =
     "",
     "## Useful links",
     "",
+    `- Full catalog, all ${data.projects.length.toLocaleString()} projects by category: ${new URL(`/${theme.slug}/llms-full.txt`, site).href}`,
     `- RSS feed: ${new URL(`/${theme.slug}/rss.xml`, site).href}`,
     `- Submit a project: ${new URL(`/${theme.slug}/submit/`, site).href}`,
     `- Browse categories: ${new URL(`/${theme.slug}/categories/`, site).href}`,
@@ -96,6 +97,51 @@ export function buildLlmsTxt(theme: Theme, data: CatalogData, site: URL, limit =
     "## Optional",
     "",
     "This catalog ranks open-source projects by GitHub stars. Each project page includes description, stack, languages, license, and related projects.",
+  ];
+  return lines.join("\n");
+}
+
+/**
+ * Exhaustive llms-full.txt: every indexed project, grouped by category.
+ * The curated llms.txt above stays the small table-of-contents an AI crawler
+ * can hold in context; this file is the long-tail surface — answer engines
+ * can only cite entries that appear somewhere, and >95% of the catalog sits
+ * below the top-30 cut.
+ */
+export function buildLlmsFullTxt(theme: Theme, data: CatalogData, site: URL): string {
+  const base = catalogUrl(site, theme.slug);
+  const ranked = rankedProjects(data);
+  const byCategory = new Map<string, Project[]>();
+  for (const p of ranked) {
+    const list = byCategory.get(p.category);
+    if (list) list.push(p);
+    else byCategory.set(p.category, [p]);
+  }
+  const categories = [...byCategory.entries()].sort((a, b) => b[1].length - a[1].length);
+
+  const lines = [
+    `# Made with ${theme.techName} — full catalog`,
+    "",
+    `> ${theme.seoDescription}`,
+    "",
+    "## About",
+    "",
+    `- Gallery: ${base}`,
+    `- Curated summary: ${new URL(`/${theme.slug}/llms.txt`, site).href}`,
+    `- Projects indexed: ${data.projects.length.toLocaleString()}`,
+    `- Data source: GitHub (refreshed daily)`,
+    `- Last scraped: ${data.scrapedAt}`,
+    "",
+    ...categories.flatMap(([category, projects]) => [
+      `## ${category} (${projects.length.toLocaleString()})`,
+      "",
+      ...projects.map((p) => {
+        const link = projectUrl(site, theme.slug, p);
+        const license = p.license && p.license !== "—" ? `, ${p.license}` : "";
+        return `- [${projectDisplayName(p)}](${link}): ${projectPreviewExcerpt(p)} (${p.stars.toLocaleString()} stars${license})`;
+      }),
+      "",
+    ]),
   ];
   return lines.join("\n");
 }
@@ -267,6 +313,7 @@ export function buildNetworkLlmsTxt(site: URL, topLimit = 30, perDomainLimit = 5
     "## Optional",
     "",
     "Each gallery ranks open-source projects by GitHub stars for a specific technology. Project pages include description, stack, languages, license, and related projects.",
+    "Every gallery also publishes a curated /<slug>/llms.txt and an exhaustive /<slug>/llms-full.txt listing all of its indexed projects by category.",
   ];
   return lines.join("\n");
 }
