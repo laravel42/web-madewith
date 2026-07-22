@@ -165,6 +165,7 @@ def main() -> int:
 
     api = build_api()
     has_proxy = proxy_config() is not None
+    aborted_blocked = False
     conn = db_connect()
     try:
         videos = get_videos(conn, args.slug, args.limit)
@@ -214,6 +215,7 @@ def main() -> int:
                                   "  WEBSHARE_PROXY_USERNAME=... WEBSHARE_PROXY_PASSWORD=...   (recommended)\n"
                                   "  or YT_PROXY_URL=http://user:pass@host:port")
                         print("Blocked videos were left as 'pending', so a re-run resumes where this stopped.")
+                        aborted_blocked = True
                         break
                 else:
                     mark_status(conn, v["id"], "failed")
@@ -227,7 +229,9 @@ def main() -> int:
         print(f"\nDone in {dt:.1f}s — fetched={fetched} skipped={skipped} unavailable={unavailable} failed={failed}")
     finally:
         conn.close()
-    return 0
+    # 75 (EX_TEMPFAIL) tells wrappers (transcribe_rotate.sh) "this IP is
+    # burned, rotate and retry" — distinct from success and from real errors.
+    return 75 if aborted_blocked else 0
 
 
 if __name__ == "__main__":
