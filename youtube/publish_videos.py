@@ -21,6 +21,7 @@ from madewith_youtube.youtube_relevance import passes_relevance_gate  # noqa: E4
 
 OUT_DIR = ROOT / "src" / "data" / "videos"
 TRANSCRIPTS_DIR = ROOT / "src" / "data" / "transcripts"
+REWRITES_PATH = ROOT / "src" / "data" / "video-descriptions.json"
 KEEP = int(__import__("os").environ.get("YOUTUBE_PUBLISH_KEEP", "24"))
 DESC_MAX = 280
 
@@ -63,10 +64,23 @@ def sanitize_description(raw: str) -> str:
     return _shorten(" ".join(kept))
 
 
+def _load_rewrites() -> dict[str, str]:
+    """LLM-rewritten descriptions from youtube/rewrite_descriptions.py."""
+    if not REWRITES_PATH.exists():
+        return {}
+    try:
+        return {k: str(v) for k, v in json.loads(REWRITES_PATH.read_text(encoding="utf-8")).items()}
+    except (OSError, json.JSONDecodeError):
+        return {}
+
+
+_REWRITES = _load_rewrites()
+
+
 def display_description(row: dict) -> str:
-    """Editorial description for the overview card: the transcript-derived
-    seoDescription when the video is enriched (clean, written from what the
-    video actually teaches), otherwise the sanitized YouTube description."""
+    """Editorial description for the overview card, best source first:
+    the transcript-derived seoDescription when the video is enriched, then an
+    LLM rewrite from rewrite_descriptions.py, then the sanitized raw text."""
     enriched = TRANSCRIPTS_DIR / f"{row['youtube_video_id']}.json"
     if enriched.exists():
         try:
@@ -75,6 +89,9 @@ def display_description(row: dict) -> str:
                 return _shorten(seo)
         except (OSError, json.JSONDecodeError):
             pass
+    rewritten = _REWRITES.get(row["youtube_video_id"])
+    if rewritten and len(rewritten.strip()) >= 40:
+        return _shorten(rewritten)
     return sanitize_description(row.get("description") or "")
 
 
