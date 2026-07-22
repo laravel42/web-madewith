@@ -18,6 +18,8 @@ export interface Project {
   long2: string;
   stack: string[];
   updated: string;
+  /** When the project first entered this catalog (stamped at publish; feeds sort by it). */
+  addedAt?: string;
   license: string;
   langs: Lang[];
   versions?: { name: string; url: string }[];
