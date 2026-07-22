@@ -108,7 +108,7 @@ pending ── success ───────▶ fetched
    └── IP block/network/unknown error ────▶ failed ── reset to pending for retry
 ```
 
-`enrich_transcripts.py` reads that raw cache and uses `OPENAI_API_KEY` plus `OPENAI_MODEL` to publish `src/data/transcripts/<video-id>.json`:
+`enrich_transcripts.py` reads that raw cache and uses `OPENROUTER_API_KEY` (or `OPENAI_API_KEY` for OpenAI direct; model override via `ENRICH_MODEL`) to publish `src/data/transcripts/<video-id>.json`:
 
 ```json
 {

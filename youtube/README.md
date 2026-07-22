@@ -25,12 +25,18 @@ Required `.env` entries (read from the repository-root `.env`):
 ```dotenv
 DATABASE_URL=
 YOUTUBE_API_KEY=
-OPENAI_API_KEY=      # only for transcript enrichment
+OPENROUTER_API_KEY=  # only for transcript enrichment (or OPENAI_API_KEY)
 ```
 
 - `DATABASE_URL`: PostgreSQL used by discovery, publishing, and transcript status.
 - `YOUTUBE_API_KEY`: required for YouTube Data API discovery.
-- `OPENAI_API_KEY`: required only by `enrich_transcripts.py`. `OPENAI_MODEL` defaults to `gpt-5-mini`.
+- Enrichment (`enrich_transcripts.py`) needs one model backend:
+  - `OPENROUTER_API_KEY`: routes through OpenRouter; the model defaults to `google/gemini-2.5-pro`
+    (best quality; set `ENRICH_MODEL=google/gemini-2.5-flash` for ~10x cheaper bulk runs).
+    Model precedence: `--model` > `ENRICH_MODEL` > `OPENAI_MODEL` (legacy, shared) > default.
+  - `OPENAI_API_KEY`: uses OpenAI directly; `OPENAI_MODEL` defaults to `gpt-5-mini`.
+  - `OPENAI_BASE_URL` (or `--base-url`): any other OpenAI-compatible server, e.g.
+    `http://localhost:11434/v1` for Ollama (no key needed; `--model` required).
 
 Never put real credential values in documentation or logs.
 

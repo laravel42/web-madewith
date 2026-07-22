@@ -166,15 +166,31 @@ def normalize_result(raw: dict[str, Any], generated: dict[str, Any], duration_se
     }
 
 
-def prompt_for(raw: dict[str, Any], title: str, duration_seconds: float) -> str:
+def prompt_for(raw: dict[str, Any], title: str, duration_seconds: float, include_transcripts: bool = True) -> str:
+    if include_transcripts:
+        chapter_schema = """{"title": "Chapter title", "description": "One sentence on what this chapter covers.",
+      "startTime": 0, "endTime": 60.5, "transcript": "Markdown of the literal speech in this chapter."}"""
+        transcript_rule = """- chapter `transcript`: the literal speech-to-text for that chapter as clean, readable Markdown
+  (short paragraphs). Fix punctuation, capitalization, and obvious caption errors, and drop non-speech
+  noise like isolated [Music] markers and duplicated fragments — but do NOT summarize, invent, reorder,
+  or omit substantive content. Together the chapter transcripts are the complete transcription.
+"""
+        transcript_field = "and a `transcript` field"
+    else:
+        # Structure-only mode for videos whose full cleaned transcript can't fit
+        # in one response: the literal transcription is rebuilt from the raw
+        # captions per chapter window instead (see normalize_result).
+        chapter_schema = """{"title": "Chapter title", "description": "One sentence on what this chapter covers.",
+      "startTime": 0, "endTime": 60.5}"""
+        transcript_rule = ""
+        transcript_field = "and numeric times only — do NOT include the speech text"
     return f"""You are an expert technical video editor and SEO writer. Read the timestamped
 transcript and return JSON ONLY (no prose, no code fence) with exactly these keys:
 
 {{
   "seoDescription": "One cohesive paragraph.",
   "chapters": [
-    {{"title": "Chapter title", "description": "One sentence on what this chapter covers.",
-      "startTime": 0, "endTime": 60.5, "transcript": "Markdown of the literal speech in this chapter."}}
+    {chapter_schema}
   ],
   "summary": "Markdown key-concepts document."
 }}
@@ -182,13 +198,9 @@ transcript and return JSON ONLY (no prose, no code fence) with exactly these key
 Requirements:
 - chapters: segment the ENTIRE video into coherent topic/argument chunks in chronological
   order. Each needs a specific, descriptive title, a useful one-sentence description, numeric
-  startTime and endTime in seconds, and a `transcript` field. Cover the full {duration_seconds:.0f}-second
+  startTime and endTime in seconds, {transcript_field}. Cover the full {duration_seconds:.0f}-second
   runtime with no gaps or overlaps (first startTime 0; each startTime equals the previous endTime).
-- chapter `transcript`: the literal speech-to-text for that chapter as clean, readable Markdown
-  (short paragraphs). Fix punctuation, capitalization, and obvious caption errors, and drop non-speech
-  noise like isolated [Music] markers and duplicated fragments — but do NOT summarize, invent, reorder,
-  or omit substantive content. Together the chapter transcripts are the complete transcription.
-- seoDescription: a single cohesive, natural paragraph of ~450-520 characters describing what the
+{transcript_rule}- seoDescription: a single cohesive, natural paragraph of ~450-520 characters describing what the
   video teaches and its value. Weave in the core topics/technologies as keywords. No clickbait, no
   "in this video", no hashtags, no emojis.
 - summary: an elegant, scannable Markdown "key concepts" document. Use `##` section headings, **bold**
@@ -204,24 +216,112 @@ TIMESTAMPED RAW CAPTIONS
 """.strip()
 
 
-def generate(client: Any, model: str, prompt: str, max_output_tokens: int = MAX_OUTPUT_TOKENS) -> dict[str, Any]:
+class TruncatedOutput(RuntimeError):
+    """The model ran out of output tokens before finishing the JSON."""
+
+
+def generate(client: Any, model: str, prompt: str, max_output_tokens: int = MAX_OUTPUT_TOKENS,
+             use_chat: bool = False, log: Any = print) -> dict[str, Any]:
+    import openai
+
+    # Misconfiguration fails the same way on every retry — surface it at once.
+    fatal = (openai.AuthenticationError, openai.PermissionDeniedError, openai.NotFoundError, openai.BadRequestError)
+    if use_chat:
+        # OpenAI-compatible local servers (Ollama, LM Studio, vLLM) speak the
+        # Chat Completions API, not the Responses API.
+        kwargs: dict[str, Any] = {"model": model, "messages": [{"role": "user", "content": prompt}],
+                                  "max_tokens": max_output_tokens,
+                                  "response_format": {"type": "json_object"}}
+    else:
+        kwargs = {"model": model, "input": prompt, "max_output_tokens": max_output_tokens}
+        if model.startswith("gpt-5"):
+            # Reasoning models spend max_output_tokens on hidden reasoning *before*
+            # the visible JSON; at the default effort a long transcript exhausts the
+            # cap and the response comes back incomplete/empty.
+            kwargs["reasoning"] = {"effort": "low"}
+            # Constrained JSON decoding — long transcript fields otherwise pick up
+            # unescaped quotes/newlines that json.loads rejects.
+            kwargs["text"] = {"format": {"type": "json_object"}}
+    log(f"    → {model} ({len(prompt):,} chars in"
+        + (", reasoning=low" if "reasoning" in kwargs else "")
+        + (", api=chat" if use_chat else "")
+        + f", max_output_tokens={max_output_tokens:,})")
     for attempt in range(5):
         try:
-            response = client.responses.create(model=model, input=prompt, max_output_tokens=max_output_tokens)
+            t0 = time.time()
+            if use_chat:
+                response = client.chat.completions.create(**kwargs)
+                dt = time.time() - t0
+                usage = getattr(response, "usage", None)
+                if usage is not None:
+                    log(f"    ← {dt:.1f}s — tokens: {usage.prompt_tokens:,} in, {usage.completion_tokens:,} out")
+                else:
+                    log(f"    ← {dt:.1f}s")
+                choice = response.choices[0]
+                if choice.finish_reason == "length":
+                    raise TruncatedOutput(f"output cut off at max_tokens={max_output_tokens}")
+                return parse_model_json(choice.message.content or "")
+            response = client.responses.create(**kwargs)
+            dt = time.time() - t0
+            usage = getattr(response, "usage", None)
+            if usage is not None:
+                reasoning = getattr(getattr(usage, "output_tokens_details", None), "reasoning_tokens", 0) or 0
+                log(f"    ← {dt:.1f}s — tokens: {usage.input_tokens:,} in, {usage.output_tokens:,} out"
+                    f" ({reasoning:,} reasoning, {usage.output_tokens - reasoning:,} visible)")
+            else:
+                log(f"    ← {dt:.1f}s")
+            if getattr(response, "status", None) == "incomplete":
+                reason = getattr(getattr(response, "incomplete_details", None), "reason", None) or "unknown"
+                raise TruncatedOutput(f"response incomplete ({reason}, max_output_tokens={max_output_tokens})")
             return parse_model_json(response.output_text)
-        except Exception:
+        except (TruncatedOutput, *fatal):
+            raise
+        except Exception as exc:
             if attempt == 4:
                 raise
-            time.sleep(min(30, 2 ** attempt))
+            wait = min(30, 2 ** attempt)
+            log(f"    attempt {attempt + 1}/5 {type(exc).__name__}: {str(exc)[:120]} — retrying in {wait}s")
+            time.sleep(wait)
     raise RuntimeError("unreachable")
 
 
-def metadata() -> dict[str, tuple[str, float]]:
+def enrich_one(client: Any, model: str, use_chat: bool, max_output_tokens: int,
+               info: dict[str, tuple[str, float, str]], path: Path, out_dir: Path, log: Any) -> None:
+    """Enrich a single raw transcript file. Logs progress via `log`; raises on failure."""
+    raw = json.loads(path.read_text())
+    video_id = str(raw["videoId"])
+    output = out_dir / f"{video_id}.json"
+    title, db_duration, slug = info.get(video_id, (video_id, 0.0, "?"))
+    segments = raw.get("segments", [])
+    inferred_duration = float(segments[-1]["start"]) + 5 if segments else 0.0
+    duration = max(db_duration, inferred_duration)
+    log(f"{video_id}  {slug}  \"{title[:60]}\"  ({clock(duration)}, {len(segments)} segments)")
+    t_video = time.time()
+    try:
+        generated = generate(client, model, prompt_for(raw, title, duration),
+                             max_output_tokens, use_chat=use_chat, log=log)
+    except TruncatedOutput as exc:
+        # The full cleaned transcript doesn't fit in one response. Ask for
+        # structure only; normalize_result rebuilds each chapter's
+        # transcription from the raw captions in its time window.
+        log(f"    {exc} — retrying structure-only (transcription will be rebuilt from raw captions)")
+        generated = generate(client, model,
+                             prompt_for(raw, title, duration, include_transcripts=False),
+                             max_output_tokens, use_chat=use_chat, log=log)
+    result = normalize_result(raw, generated, duration)
+    output.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n")
+    log(f"    ok in {time.time() - t_video:.1f}s — {len(result['chapters'])} chapters, "
+        f"seo {len(result['seoDescription'])} chars, summary {len(result['summary']):,} chars, "
+        f"transcription {len(result['transcription']):,} chars → {output.name}")
+
+
+def metadata() -> dict[str, tuple[str, float, str]]:
     import psycopg
 
     with psycopg.connect(os.environ["DATABASE_URL"]) as conn, conn.cursor() as cur:
-        cur.execute("SELECT youtube_video_id, title, COALESCE(duration_seconds, 0) FROM youtube_videos")
-        return {video_id: (title, float(duration)) for video_id, title, duration in cur.fetchall()}
+        cur.execute("SELECT youtube_video_id, title, COALESCE(duration_seconds, 0), COALESCE(catalog_slug, '') "
+                    "FROM youtube_videos")
+        return {video_id: (title, float(duration), slug) for video_id, title, duration, slug in cur.fetchall()}
 
 
 def main() -> int:
@@ -230,61 +330,140 @@ def main() -> int:
     parser.add_argument("--out", default=str(OUT_DIR), help="Published transcript directory")
     parser.add_argument("--video-id", help="Process one YouTube video ID")
     parser.add_argument("--limit", type=int, default=100)
-    parser.add_argument("--model", help="OpenAI model; defaults to OPENAI_MODEL or gpt-5-mini")
+    parser.add_argument("--model", help="Model id; defaults to OPENAI_MODEL, else gpt-5-mini on OpenAI "
+                                        "or google/gemini-2.5-pro on OpenRouter")
+    parser.add_argument("--base-url", default=os.getenv("OPENAI_BASE_URL"),
+                        help="OpenAI-compatible endpoint, e.g. http://localhost:11434/v1 for Ollama "
+                             "(defaults to OPENAI_BASE_URL; api.openai.com when unset)")
     parser.add_argument("--max-output-tokens", type=int, default=MAX_OUTPUT_TOKENS,
                         help=f"Output-token reservation per request (default {MAX_OUTPUT_TOKENS})")
+    parser.add_argument("--workers", type=int, default=4,
+                        help="Videos enriched concurrently (default 4; use 1 for sequential)")
     parser.add_argument("--force", action="store_true", help="Replace an existing up-to-date output")
     parser.add_argument("--dry-run", action="store_true", help="Validate inputs without calling OpenAI")
     args = parser.parse_args()
 
     load_dotenv(ROOT / ".env")
     input_dir, out_dir = Path(args.input), Path(args.out)
-    candidates = sorted(input_dir.glob("*.json"))
+    raw_files = sorted(input_dir.glob("*.json"))
     if args.video_id:
-        candidates = [input_dir / f"{args.video_id}.json"]
-    candidates = [path for path in candidates if path.exists()][: args.limit]
+        raw_files = [input_dir / f"{args.video_id}.json"]
+    raw_files = [path for path in raw_files if path.exists()]
+
+    def already_enriched(path: Path) -> bool:
+        """Raw and published files share the <videoId>.json name."""
+        output = out_dir / path.name
+        if not output.exists():
+            return False
+        try:
+            return json.loads(output.read_text()).get("schemaVersion") == SCHEMA_VERSION
+        except (OSError, json.JSONDecodeError):
+            return False
+
+    # Apply --limit to videos that still NEED work, not to raw files: otherwise
+    # already-enriched files consume the limit and repeated runs re-scan the
+    # same alphabetical prefix forever instead of advancing through the queue.
+    skipped = 0
+    candidates: list[Path] = []
+    for path in raw_files:
+        if not args.force and already_enriched(path):
+            skipped += 1
+        elif len(candidates) < args.limit:
+            candidates.append(path)
     if args.dry_run:
         for path in candidates:
             raw = json.loads(path.read_text())
             print(f"{raw['videoId']}: {len(raw.get('segments', []))} segments")
         return 0
-    if not os.getenv("OPENAI_API_KEY"):
-        raise SystemExit("OPENAI_API_KEY is required")
+    # OPENROUTER_API_KEY alone is enough to route through OpenRouter (an
+    # explicit --base-url / OPENAI_BASE_URL still wins).
+    openrouter_key = os.getenv("OPENROUTER_API_KEY")
+    if openrouter_key and not args.base_url:
+        args.base_url = "https://openrouter.ai/api/v1"
+    # Non-OpenAI endpoints (OpenRouter, Ollama, LM Studio, vLLM) speak Chat
+    # Completions instead of the Responses API.
+    use_chat = bool(args.base_url) and "api.openai.com" not in args.base_url
+    # Prefer the key matching the endpoint: OPENAI_API_KEY can then stay in
+    # .env for other tools (factory/content_factory.py, github LLM classifier)
+    # without hijacking OpenRouter runs.
+    if args.base_url and "openrouter" in args.base_url:
+        api_key = openrouter_key or os.getenv("OPENAI_API_KEY")
+    else:
+        api_key = os.getenv("OPENAI_API_KEY") or openrouter_key
+    is_local = use_chat and ("localhost" in args.base_url or "127.0.0.1" in args.base_url)
+    if not api_key and not is_local:
+        raise SystemExit("An API key is required: OPENAI_API_KEY or OPENROUTER_API_KEY "
+                         "(or point --base-url/OPENAI_BASE_URL at a local server)")
 
     from openai import OpenAI
 
     info = metadata()
-    model = args.model or os.getenv("OPENAI_MODEL", "gpt-5-mini")
-    client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+    # Model precedence: --model > ENRICH_MODEL (this tool only) > OPENAI_MODEL
+    # (legacy, shared with other tools) > backend default. OpenRouter defaults
+    # to Gemini 2.5 Pro — best long-document comprehension for chapter and
+    # timestamp accuracy, with enforced JSON mode (ENRICH_MODEL=
+    # google/gemini-2.5-flash trades quality for ~10x cheaper bulk runs);
+    # local servers must name their model explicitly.
+    if args.model:
+        model = args.model
+    elif os.getenv("ENRICH_MODEL"):
+        model = os.environ["ENRICH_MODEL"]
+    elif os.getenv("OPENAI_MODEL"):
+        model = os.environ["OPENAI_MODEL"]
+    elif use_chat and "openrouter" in args.base_url:
+        model = "google/gemini-2.5-pro"
+    elif use_chat:
+        raise SystemExit("--model (or OPENAI_MODEL) is required for a local server, e.g. --model qwen3:14b")
+    else:
+        model = "gpt-5-mini"
+    client = OpenAI(api_key=api_key or "ollama", base_url=args.base_url)
     out_dir.mkdir(parents=True, exist_ok=True)
-    written = skipped = failed = 0
-    for index, path in enumerate(candidates, 1):
-        raw = json.loads(path.read_text())
-        video_id = str(raw["videoId"])
-        output = out_dir / f"{video_id}.json"
-        if output.exists() and not args.force:
-            try:
-                if json.loads(output.read_text()).get("schemaVersion") == SCHEMA_VERSION:
-                    skipped += 1
-                    print(f"[{index}/{len(candidates)}] {video_id} skip (v{SCHEMA_VERSION} exists)")
-                    continue
-            except (OSError, json.JSONDecodeError):
-                pass
-        title, db_duration = info.get(video_id, (video_id, 0.0))
-        segments = raw.get("segments", [])
-        inferred_duration = float(segments[-1]["start"]) + 5 if segments else 0.0
-        duration = max(db_duration, inferred_duration)
+    beyond_limit = len(raw_files) - skipped - len(candidates)
+    workers = max(1, min(args.workers, len(candidates) or 1))
+    print(f"model={model}  max_output_tokens={args.max_output_tokens:,}  workers={workers}"
+          + (f"  base_url={args.base_url} (chat api)" if use_chat else ""))
+    print(f"raw:  {input_dir}  ({len(raw_files)} file(s): {skipped} already enriched (v{SCHEMA_VERSION}), "
+          f"{len(candidates)} to process"
+          + (f", {beyond_limit} beyond --limit {args.limit}" if beyond_limit > 0 else "") + ")")
+    print(f"out:  {out_dir}")
+    print(f"db:   {len(info)} videos with metadata\n")
+    written = failed = 0
+    t_start = time.time()
+
+    # Each video's log lines are buffered by its worker and printed as one
+    # block on completion, so parallel runs stay readable.
+    def run_video(path: Path) -> tuple[list[str], Exception | None]:
+        lines: list[str] = []
         try:
-            generated = generate(client, model, prompt_for(raw, title, duration), args.max_output_tokens)
-            result = normalize_result(raw, generated, duration)
-            output.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n")
-            written += 1
-            print(f"[{index}/{len(candidates)}] {video_id} ok ({len(result['chapters'])} chapters, "
-                  f"seo {len(result['seoDescription'])} chars)")
+            enrich_one(client, model, use_chat, args.max_output_tokens, info, path, out_dir, lines.append)
+            return lines, None
         except Exception as exc:
-            failed += 1
-            print(f"[{index}/{len(candidates)}] {video_id} FAIL {type(exc).__name__}: {exc}")
-    print(f"Done — written={written} skipped={skipped} failed={failed}")
+            lines.append(f"    FAIL {type(exc).__name__}: {exc}")
+            return lines, exc
+
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
+    import openai
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        futures = [pool.submit(run_video, path) for path in candidates]
+        for done, future in enumerate(as_completed(futures), 1):
+            lines, exc = future.result()
+            written += exc is None
+            failed += exc is not None
+            first, *rest = lines or ["(no output)"]
+            print("\n".join([f"[{done:>3}/{len(candidates)}] {first}", *rest]))
+            remaining = len(candidates) - done
+            if remaining:
+                # Completions-per-second already reflects parallel throughput.
+                eta = (time.time() - t_start) / done * remaining
+                print(f"    elapsed {clock(time.time() - t_start)}, ~{clock(eta)} remaining for {remaining} video(s)")
+            if isinstance(exc, (openai.AuthenticationError, openai.PermissionDeniedError, openai.NotFoundError)):
+                pool.shutdown(wait=False, cancel_futures=True)
+                raise SystemExit(
+                    f"Aborting: {type(exc).__name__} — every video would fail the same way. "
+                    "Check OPENAI_API_KEY and the model name "
+                    f"(model={model}; override with OPENAI_MODEL or --model).")
+    print(f"\nDone in {clock(time.time() - t_start)} — written={written} skipped={skipped} failed={failed}")
     return 1 if failed else 0
 
 

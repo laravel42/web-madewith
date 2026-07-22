@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -19,7 +20,79 @@ from madewith_youtube.youtube_quality import format_duration  # noqa: E402
 from madewith_youtube.youtube_relevance import passes_relevance_gate  # noqa: E402
 
 OUT_DIR = ROOT / "src" / "data" / "videos"
+TRANSCRIPTS_DIR = ROOT / "src" / "data" / "transcripts"
+REWRITES_PATH = ROOT / "src" / "data" / "video-descriptions.json"
 KEEP = int(__import__("os").environ.get("YOUTUBE_PUBLISH_KEEP", "24"))
+DESC_MAX = 280
+
+# Lines dropped by the raw-description sanitizer: links, contact/promo blocks,
+# chapter timestamps, hashtag piles — the parts of YouTube descriptions that
+# are ads rather than information.
+_URL = re.compile(r"https?://\S+|www\.\S+|\S+@\S+\.\S+")
+_TIMESTAMP_LINE = re.compile(r"^\s*[\(\[]?\d{1,2}:\d{2}")
+_HASHTAG_LINE = re.compile(r"^\s*(#\S+\s*)+$")
+# Orphaned section headers ("Timestamps:", "Links:") whose bodies get stripped.
+_HEADER_LINE = re.compile(r"^\s*[\w &/]{1,30}:\s*$")
+_PROMO = re.compile(
+    r"sponsor|coupon|discount|promo\s*code|use\s+code|%\s*off|free\s+trial|"
+    r"patreon|instagram|twitter|tiktok|discord|telegram|facebook|linkedin|"
+    r"subscribe|follow\s+(me|us)|newsletter|affiliate|referral|merch|"
+    r"donate|buy\s+me\s+a\s+coffee|my\s+courses?\b|link\s+in\s+(bio|description)",
+    re.IGNORECASE,
+)
+
+
+def _shorten(text: str) -> str:
+    text = re.sub(r"\s+", " ", text).strip()
+    if len(text) <= DESC_MAX:
+        return text
+    cut = text[:DESC_MAX].rsplit(" ", 1)[0].rstrip(",;:.")
+    return cut + "…"
+
+
+def sanitize_description(raw: str) -> str:
+    kept = [
+        line.strip(" \t-•·|#>")
+        for line in (raw or "").splitlines()
+        if line.strip()
+        and not _URL.search(line)
+        and not _TIMESTAMP_LINE.match(line)
+        and not _HASHTAG_LINE.match(line)
+        and not _HEADER_LINE.match(line)
+        and not _PROMO.search(line)
+    ]
+    return _shorten(" ".join(kept))
+
+
+def _load_rewrites() -> dict[str, str]:
+    """LLM-rewritten descriptions from youtube/rewrite_descriptions.py."""
+    if not REWRITES_PATH.exists():
+        return {}
+    try:
+        return {k: str(v) for k, v in json.loads(REWRITES_PATH.read_text(encoding="utf-8")).items()}
+    except (OSError, json.JSONDecodeError):
+        return {}
+
+
+_REWRITES = _load_rewrites()
+
+
+def display_description(row: dict) -> str:
+    """Editorial description for the overview card, best source first:
+    the transcript-derived seoDescription when the video is enriched, then an
+    LLM rewrite from rewrite_descriptions.py, then the sanitized raw text."""
+    enriched = TRANSCRIPTS_DIR / f"{row['youtube_video_id']}.json"
+    if enriched.exists():
+        try:
+            seo = str(json.loads(enriched.read_text(encoding="utf-8")).get("seoDescription") or "")
+            if len(seo.strip()) >= 40:
+                return _shorten(seo)
+        except (OSError, json.JSONDecodeError):
+            pass
+    rewritten = _REWRITES.get(row["youtube_video_id"])
+    if rewritten and len(rewritten.strip()) >= 40:
+        return _shorten(rewritten)
+    return sanitize_description(row.get("description") or "")
 
 
 def serialize(row: dict) -> dict:
@@ -28,9 +101,7 @@ def serialize(row: dict) -> dict:
     return {
         "id": row["youtube_video_id"],
         "title": row["title"],
-        # Full YouTube description (API max ~5000). Card excerpts truncate later
-        # in the frontend; don't cut mid-word here for the detail Overview tab.
-        "description": row.get("description") or "",
+        "description": display_description(row),
         "channel": row.get("channel_title"),
         "channelUrl": f"https://www.youtube.com/channel/{channel_id}" if channel_id else None,
         "url": row.get("video_url"),
@@ -62,14 +133,16 @@ def main() -> None:
         for domain in domains:
             slug = domain["slug"]
             rows = youtube_db.load_videos_for_slug(conn, slug, KEEP)
-            serialized = [serialize(r) for r in rows]
+            # Gate on the RAW description (tech mentions often live in the link
+            # lines the display sanitizer strips), then serialize survivors
+            # with the cleaned editorial description.
             relevant = [
-                video
-                for video in serialized
+                serialize(r)
+                for r in rows
                 if passes_relevance_gate(slug, domain["techName"], {
-                    "title": video["title"],
-                    "description": video.get("description") or "",
-                    "channel_title": video.get("channel") or "",
+                    "title": r["title"],
+                    "description": r.get("description") or "",
+                    "channel_title": r.get("channel_title") or "",
                 })[0]
             ]
             if not relevant:
