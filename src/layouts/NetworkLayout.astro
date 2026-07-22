@@ -1,5 +1,6 @@
 ---
 import NetworkFooter from "../components/NetworkFooter.astro";
+import ChatWidget from "../components/ChatWidget.astro";
 import PageShell from "../components/PageShell.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import type { GlobalNavActive } from "../components/GlobalSiteNav.astro";
@@ -26,7 +27,7 @@ const FONT_HREF =
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, interactive-widget=resizes-content" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex, follow" />}
@@ -94,5 +95,6 @@ const FONT_HREF =
 
       <NetworkFooter />
     </PageShell>
+    <ChatWidget />
   </body>
 </html>

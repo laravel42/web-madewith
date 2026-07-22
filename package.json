@@ -19,13 +19,14 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "astro build && wrangler pages deploy",
+    "deploy": "astro build && wrangler pages deploy --branch=main --commit-dirty=true",
     "cf:preview": "wrangler pages dev ./dist"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.3",
     "@tailwindcss/vite": "^4.3.2",
     "astro": "^7.0.7",
+    "astro-chat-widget": "^0.1.2",
     "flowbite": "^4.0.2",
     "marked": "^18.0.6",
     "tailwindcss": "^4.3.2"

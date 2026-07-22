@@ -1,0 +1,6 @@
+# Local secrets for Cloudflare Pages Functions (`wrangler pages dev` / `npm run cf:preview`).
+# Copy to `.dev.vars` (gitignored) and fill in. `astro dev` does NOT run Functions,
+# so use `npm run build && npm run cf:preview` to exercise /api/chat locally.
+INFOBIP_API_KEY=
+INFOBIP_BASE_URL=https://xxxxx.api.infobip.com
+INFOBIP_ASSISTANT_ID=1014612c-95ad-4488-9ab6-b05c8f538b08

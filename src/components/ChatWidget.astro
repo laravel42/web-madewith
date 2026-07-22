@@ -1,0 +1,34 @@
+---
+// Network-wide AI chat widget (astro-chat-widget) wired to the Infobip AI
+// Assistant via the same-origin /api/chat Pages Function. One instance per page;
+// dropped into each public layout just before </body>. The floating button is
+// injected fixed bottom-right and the chat module lazy-loads on first click.
+import { AIChat } from "astro-chat-widget";
+---
+
+<AIChat
+  endpoint="/api/chat"
+  storageKey="mww-chat"
+  maxLength={1000}
+  strings={{
+    title: "Ask MadeWithWhat",
+    greeting:
+      "Hi! I'm the MadeWithWhat assistant. Ask me about the technologies we cover, how projects are ranked, submitting your project, or anything about the catalog.",
+  }}
+  quickReplies={[
+    { text: "What is MadeWithWhat?" },
+    { text: "Which technologies do you cover?" },
+    { text: "How are projects ranked?" },
+    { text: "How do I submit my project?" },
+  ]}
+/>
+
+<style is:global>
+  /* Brand the widget to the network's AI/LLM accent (indigo). Individual
+     domains can override --acw-accent in their own layout if desired. */
+  :root {
+    --acw-accent: #6366f1;
+    --acw-accent-hover: #4f46e5;
+    --acw-on-accent: #ffffff;
+  }
+</style>

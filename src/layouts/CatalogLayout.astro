@@ -4,6 +4,7 @@ import { readableOnDark, readableOnLight, solidSurface } from "../config/accessi
 import { canonicalUrl } from "../config/domain-settings";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import ChatWidget from "../components/ChatWidget.astro";
 import "../styles/blog-card-cover.css";
 
 interface Props {
@@ -42,7 +43,7 @@ const accentSolid = solidSurface(theme.accent, theme.accentInk);
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, interactive-widget=resizes-content" />
     <link rel="icon" href={theme.favicon ?? `/favicon-${theme.slug}.svg`} />
     <title>{seoTitle}</title>
     <meta name="description" content={seoDescription} />
@@ -258,5 +259,6 @@ const accentSolid = solidSurface(theme.accent, theme.accentInk);
       </main>
       <Footer theme={theme} />
     </div>
+    <ChatWidget />
   </body>
 </html>

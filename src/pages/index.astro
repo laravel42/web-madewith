@@ -3,6 +3,7 @@ import { GROUP_META, getResolvedTheme, networkCardBlurb, networkMetaFor, NETWORK
 import { getCatalog } from "../lib/catalog";
 import NetworkCard from "../components/NetworkCard.astro";
 import NetworkFooter from "../components/NetworkFooter.astro";
+import ChatWidget from "../components/ChatWidget.astro";
 import PageShell from "../components/PageShell.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 
@@ -274,5 +275,6 @@ const FONT_HREF =
 
     <NetworkFooter />
     </PageShell>
+    <ChatWidget />
   </body>
 </html>
