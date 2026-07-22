@@ -57,11 +57,29 @@ async function runPythonScript(script, label) {
   });
 }
 
+async function runNodeScript(script, label) {
+  return new Promise((resolve) => {
+    const child = spawn(process.execPath, [script], { cwd: ROOT, stdio: "inherit", env: process.env });
+    child.on("close", (code) => {
+      if (code !== 0) console.log(`pull-data: ${label} exited ${code}`);
+      resolve(code === 0);
+    });
+    child.on("error", () => resolve(false));
+  });
+}
+
 async function hydrateFromPostgres() {
   console.log("pull-data: hydrating src/data/*.json from Postgres");
   const ok = await runPythonScript(join(SCRAPER_DIR, "publish.py"), "projects");
-  if (ok) console.log("pull-data: project hydration complete");
-  else console.log("pull-data: project hydration failed — keeping committed src/data/*.json");
+  if (ok) {
+    console.log("pull-data: project hydration complete");
+    // Same post-publish guards scraper/publish.sh runs: evict cross-domain
+    // contamination, then preserve/assign per-project addedAt (feeds sort by it).
+    await runNodeScript(join(ROOT, "scripts", "scrub-cross-domain.mjs"), "scrub");
+    await runNodeScript(join(ROOT, "scripts", "stamp-added-at.mjs"), "addedAt stamp");
+  } else {
+    console.log("pull-data: project hydration failed — keeping committed src/data/*.json");
+  }
   return ok;
 }
 
