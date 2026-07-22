@@ -14,3 +14,6 @@ done
 # the discovery-side qualification fixes; needed until the DB has been
 # requalified with the fixed engine (github: qualify pass).
 node ../scripts/scrub-cross-domain.mjs
+
+# Preserve/assign per-project addedAt (feeds sort by catalog entry date).
+node ../scripts/stamp-added-at.mjs

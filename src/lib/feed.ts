@@ -28,10 +28,23 @@ function catalogUrl(site: URL, slug: string): string {
   return new URL(`/${slug}/`, site).href;
 }
 
-/** RSS 2.0 feed for the top projects in a domain catalog. */
+/** When the project entered the catalog; repo push date until stamping has run. */
+function projectAddedAt(p: Project): string {
+  return p.addedAt ?? p.updated;
+}
+
+function byRecency(a: Project, b: Project): number {
+  return projectAddedAt(b).localeCompare(projectAddedAt(a)) || b.stars - a.stars;
+}
+
+/**
+ * RSS 2.0 feed of the newest catalog entries for a domain. Recency-driven on
+ * purpose: a feed is a change-notification channel, and subscribers/automations
+ * only get value from items that surface as NEW (a static top-50 never does).
+ */
 export function buildRssXml(theme: Theme, data: CatalogData, site: URL, limit = 50): string {
   const base = catalogUrl(site, theme.slug);
-  const projects = rankedProjects(data).slice(0, limit);
+  const projects = [...data.projects].sort(byRecency).slice(0, limit);
   const updated = new Date(data.scrapedAt).toUTCString();
   const items = projects
     .map((p) => {
@@ -42,6 +55,7 @@ export function buildRssXml(theme: Theme, data: CatalogData, site: URL, limit = 
       <title>${escapeXml(name)}</title>
       <link>${escapeXml(link)}</link>
       <guid isPermaLink="true">${escapeXml(link)}</guid>
+      <pubDate>${new Date(projectAddedAt(p)).toUTCString()}</pubDate>
       <description>${escapeXml(desc)}</description>
       <category>${escapeXml(p.category)}</category>
     </item>`;
@@ -206,7 +220,7 @@ export function buildProjectsRssXml(site: URL, limit = 100): string {
   const base = new URL("/", site).href;
   const feedUrl = new URL("/projects/rss.xml", site).href;
   const projects = networkProjectEntries()
-    .sort((a, b) => b.project.stars - a.project.stars)
+    .sort((a, b) => byRecency(a.project, b.project))
     .slice(0, limit);
   const updated = new Date(networkLatestScrapedAt()).toUTCString();
   const items = projects
@@ -218,6 +232,7 @@ export function buildProjectsRssXml(site: URL, limit = 100): string {
       <title>${escapeXml(name)}</title>
       <link>${escapeXml(link)}</link>
       <guid isPermaLink="true">${escapeXml(link)}</guid>
+      <pubDate>${new Date(projectAddedAt(p)).toUTCString()}</pubDate>
       <description>${escapeXml(desc)}</description>
       <category>${escapeXml(techName)}</category>
     </item>`;

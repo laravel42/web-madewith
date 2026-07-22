@@ -33,21 +33,44 @@ if [ ! -e "${configs[0]}" ]; then
   echo "No .conf files in $CONF_DIR" >&2
   exit 1
 fi
+
+# wg-quick is a bash script that needs bash 4+; macOS ships 3.2 and sudo's
+# PATH finds only that one. Run it through Homebrew's bash explicitly.
+WG_QUICK="$(command -v wg-quick || true)"
+if [ -z "$WG_QUICK" ]; then
+  echo "wg-quick not found — brew install wireguard-tools" >&2
+  exit 1
+fi
+MODERN_BASH=""
+for candidate in /opt/homebrew/bin/bash /usr/local/bin/bash /usr/bin/bash /bin/bash; do
+  if [ -x "$candidate" ] && [ "$("$candidate" -c 'echo "${BASH_VERSINFO[0]}"')" -ge 4 ]; then
+    MODERN_BASH="$candidate"
+    break
+  fi
+done
+if [ -z "$MODERN_BASH" ]; then
+  echo "wg-quick needs bash 4+ and only bash 3 was found — run: brew install bash" >&2
+  exit 1
+fi
+
 echo "${#configs[@]} location(s), chunk=$CHUNK, sleep=${SLEEP}s, workers=$WORKERS"
 
 current=""
+came_up=0
+wg() { sudo "$MODERN_BASH" "$WG_QUICK" "$@"; }
 vpn_down() {
   if [ -n "$current" ]; then
-    sudo wg-quick down "$current" >/dev/null 2>&1 || true
+    wg down "$current" >/dev/null 2>&1 || true
     current=""
   fi
 }
 vpn_up() {
   vpn_down
-  if ! sudo wg-quick up "$1"; then
+  if ! wg up "$1"; then
     echo "wg-quick up failed for $(basename "$1") — skipping location" >&2
     return 1
   fi
+  came_up=1
   current="$1"
   local ip
   ip="$(curl -s --max-time 10 https://api.ipify.org || echo '?')"
@@ -91,5 +114,9 @@ while [ "$pass" -lt "$MAX_PASSES" ]; do
   [ $((loc % ${#configs[@]})) -eq 0 ] && pass=$((pass + 1))
 done
 
+if [ "$came_up" -eq 0 ]; then
+  echo "No location could be brought up at all — see the wg-quick errors above (VPN app still connected? bad configs?)." >&2
+  exit 1
+fi
 echo "Every location was blocked across $MAX_PASSES passes — wait a few hours and re-run." >&2
 exit "$BLOCK_EXIT"
