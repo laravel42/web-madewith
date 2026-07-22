@@ -1,0 +1,26 @@
+{
+  "name": "madewith-server",
+  "private": true,
+  "type": "module",
+  "description": "Node backend for MadeWith… (Ploi VPS): scraper cron + submit/newsletter/admin API + Infobip chat. Replaces the Cloudflare Worker.",
+  "scripts": {
+    "start": "tsx src/server.ts",
+    "dev": "tsx watch src/server.ts",
+    "refresh": "tsx src/refresh.ts",
+    "migrate": "tsx src/migrate.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test test/*.test.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.15.0",
+    "hono": "^4.9.0",
+    "ioredis": "^5.4.1",
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "@types/pg": "^8.11.10",
+    "tsx": "^4.23.1",
+    "typescript": "^5.9.3"
+  }
+}

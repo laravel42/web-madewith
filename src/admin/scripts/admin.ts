@@ -4,6 +4,11 @@ export const $ = (s: string, r: ParentNode = document) => r.querySelector(s) as 
 
 export const api = (p: string, opts?: RequestInit) =>
   fetch(`/admin/api/${p}`, opts).then(async (r) => {
+    // App-level auth: an unauthenticated call means the session expired / is absent.
+    if (r.status === 401 && !location.pathname.startsWith("/admin/login")) {
+      location.href = "/admin/login";
+      throw new Error("unauthorized");
+    }
     const body = await r.json().catch(() => ({}));
     if (!r.ok) throw new Error((body as { error?: string }).error || `HTTP ${r.status}`);
     return body;

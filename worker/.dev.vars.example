@@ -1,9 +1,0 @@
-# Copy to worker/.dev.vars for local wrangler dev (gitignored).
-# Enables /admin without Cloudflare Access when ACCESS_* vars are unset.
-ADMIN_DEV_BYPASS=true
-
-# Optional — needed for approve/refresh actions that call GitHub.
-GITHUB_TOKEN=
-
-# Optional — gates POST /refresh outside the admin UI.
-REFRESH_SECRET=local-dev-secret

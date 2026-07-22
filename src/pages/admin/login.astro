@@ -1,0 +1,81 @@
+---
+// Standalone admin login. Posts to the Node app's /admin/api/login, which sets
+// an HMAC-signed session cookie; on success we go to the dashboard. Deliberately
+// does not use AdminLayout (that layout assumes an authenticated session).
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Admin sign in — MadeWith…</title>
+    <style>
+      :root { color-scheme: light dark; }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0; min-height: 100dvh; display: grid; place-items: center;
+        font: 15px/1.5 system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        background: #0f172a; color: #e2e8f0;
+      }
+      .card {
+        width: min(92vw, 360px); padding: 28px 26px; border-radius: 14px;
+        background: #1e293b; border: 1px solid #334155;
+        box-shadow: 0 10px 40px rgba(0,0,0,.35);
+      }
+      h1 { font-size: 18px; margin: 0 0 4px; }
+      p.sub { margin: 0 0 20px; color: #94a3b8; font-size: 13px; }
+      label { display: block; font-size: 12px; color: #94a3b8; margin: 0 0 6px; }
+      input {
+        width: 100%; padding: 10px 12px; border-radius: 9px; font-size: 15px;
+        background: #0f172a; border: 1px solid #334155; color: #e2e8f0;
+      }
+      input:focus { outline: 2px solid #6366f1; outline-offset: 1px; }
+      button {
+        width: 100%; margin-top: 16px; padding: 10px 12px; border: 0; border-radius: 9px;
+        background: #6366f1; color: #fff; font-weight: 600; font-size: 15px; cursor: pointer;
+      }
+      button:disabled { opacity: .6; cursor: default; }
+      .err { margin-top: 12px; color: #fca5a5; font-size: 13px; min-height: 18px; }
+    </style>
+  </head>
+  <body>
+    <form class="card" id="login-form">
+      <h1>MadeWith… admin</h1>
+      <p class="sub">Sign in to manage the catalog.</p>
+      <label for="password">Password</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" required autofocus />
+      <button id="submit" type="submit">Sign in</button>
+      <div class="err" id="err" role="alert"></div>
+    </form>
+
+    <script>
+      const form = document.getElementById("login-form") as HTMLFormElement;
+      const err = document.getElementById("err") as HTMLElement;
+      const btn = document.getElementById("submit") as HTMLButtonElement;
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        err.textContent = "";
+        btn.disabled = true;
+        const password = (document.getElementById("password") as HTMLInputElement).value;
+        try {
+          const res = await fetch("/admin/api/login", {
+            method: "POST",
+            headers: { "content-type": "application/json" },
+            body: JSON.stringify({ password }),
+          });
+          if (res.ok) {
+            location.href = "/admin";
+            return;
+          }
+          const body = await res.json().catch(() => ({}));
+          err.textContent = (body as { error?: string }).error || `Sign in failed (${res.status})`;
+        } catch {
+          err.textContent = "Could not reach the server.";
+        } finally {
+          btn.disabled = false;
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+/**
+ * HTTP surface (Hono) — ports every route from the Worker's fetch() handler,
+ * plus the folded-in Infobip chat route and the app-level admin login/logout.
+ * Handlers are written against web Request/Response, so they carry over verbatim
+ * via `c.req.raw`.
+ */
+import { Hono } from "hono";
+import type { AppEnv } from "./env";
+import { DOMAINS } from "./domains";
+import { handleSubmit } from "./submit";
+import { handleNewsletter } from "./newsletter";
+import { handleAdmin } from "./admin";
+import { handleLogin, handleLogout } from "./auth";
+import { handleChat } from "./chat";
+import { readDataset, readDomainConfig } from "./storage";
+import { refreshAll } from "./refresh";
+
+const SLUG = /^[a-z0-9-]+$/;
+const jsonHeaders = { "content-type": "application/json", "cache-control": "public, max-age=300" };
+
+/** Constant-time refresh-secret check (ports the Worker's `authorized`). */
+function authorized(req: Request, env: AppEnv): boolean {
+  const provided = (req.headers.get("authorization") || "").replace(/^Bearer\s+/i, "") || new URL(req.url).searchParams.get("key") || "";
+  const expected = env.refreshSecret || "";
+  if (!expected || provided.length !== expected.length) return false;
+  let diff = 0;
+  for (let i = 0; i < expected.length; i++) diff |= provided.charCodeAt(i) ^ expected.charCodeAt(i);
+  return diff === 0;
+}
+
+export function createApp(env: AppEnv) {
+  const app = new Hono();
+
+  app.get("/health", (c) => c.json({ ok: true, domains: DOMAINS.map((d) => d.slug) }));
+
+  // Build hydration source (MADEWITH_DATA_BASE_URL) + runtime dataset reads.
+  app.get("/data/:file", async (c) => {
+    const file = c.req.param("file");
+    const slug = file.replace(/\.json$/, "");
+    if (!file.endsWith(".json") || !SLUG.test(slug)) return c.json({ error: "not found" }, 404);
+    const text = await readDataset(env.store, slug);
+    return text ? new Response(text, { headers: jsonHeaders }) : c.json({ error: "not found" }, 404);
+  });
+
+  app.get("/config/:file", async (c) => {
+    const file = c.req.param("file");
+    const slug = file.replace(/\.json$/, "");
+    if (!file.endsWith(".json") || !SLUG.test(slug)) return c.json({ error: "not found" }, 404);
+    const text = await readDomainConfig(env.store, slug);
+    return text ? new Response(text, { headers: jsonHeaders }) : c.json({ error: "not found" }, 404);
+  });
+
+  // Public APIs.
+  app.post("/submit", (c) => handleSubmit(c.req.raw, env.db, env.kv, new Date().toISOString()));
+  app.post("/newsletter", (c) => handleNewsletter(c.req.raw, env.db, env.kv, new Date().toISOString()));
+  app.post("/api/chat", (c) => handleChat(c.req.raw, env));
+
+  // Admin auth + API (specific routes before the wildcard).
+  app.post("/admin/api/login", (c) => handleLogin(c.req.raw, env));
+  app.post("/admin/api/logout", () => Promise.resolve(handleLogout(env)));
+  app.all("/admin/api/*", (c) => handleAdmin(c.req.raw, env, new URL(c.req.url).pathname));
+
+  // Legacy secret-gated full refresh.
+  app.post("/refresh", (c) => {
+    if (!authorized(c.req.raw, env)) return c.json({ error: "unauthorized" }, 401);
+    refreshAll(env).catch((e) => console.log(`bg refresh failed: ${(e as Error).message}`));
+    return c.json({ started: true, domains: DOMAINS.map((d) => d.slug) });
+  });
+
+  app.notFound((c) => c.json({ error: "not found" }, 404));
+  return app;
+}
