@@ -3,10 +3,12 @@ import AdminLayout from "../../admin/layouts/AdminLayout.astro";
 import { DOMAINS } from "../../config/domains";
 import { getCatalog } from "../../lib/catalog";
 
+let projectsTotal = 0;
 const catalogStats = Object.fromEntries(
   DOMAINS.map((d) => {
     try {
       const data = getCatalog(d.slug);
+      projectsTotal += data.projects.length;
       return [d.slug, { published: data.projects.length, totalRepos: data.totalRepos, scrapedAt: data.scrapedAt }];
     } catch {
       return [d.slug, { published: 0, totalRepos: 0, scrapedAt: null }];
@@ -16,77 +18,79 @@ const catalogStats = Object.fromEntries(
 ---
 
 <AdminLayout title="Overview" active="overview">
-  <div class="px-4 pt-6">
-    <div class="mb-4 sm:flex sm:items-center sm:justify-between">
-      <div>
-        <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Overview</h1>
-        <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Catalog stats and domain refresh controls</p>
-      </div>
-      <div class="flex gap-2 mt-4 sm:mt-0">
-        <button
-          id="republish-all"
-          type="button"
-          data-refresh-job
-          class="text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-        >
-          Republish all
-        </button>
-        <button
-          id="refresh-all"
-          type="button"
-          data-refresh-job
-          class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700"
-        >
-          Refresh all (scrape)
-        </button>
-      </div>
-    </div>
-
-    <div id="refresh-job" class="hidden mb-6 rounded-lg border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800">
-      <div class="flex items-center justify-between gap-3 border-b border-gray-200 px-4 py-3 dark:border-gray-700">
-        <h2 id="refresh-job-title" class="text-sm font-semibold text-gray-900 dark:text-white">Refresh</h2>
-        <span id="refresh-job-progress-label" class="text-xs font-medium text-gray-500 dark:text-gray-400">0%</span>
-      </div>
-      <div class="px-4 pt-3 pb-1">
-        <progress id="refresh-job-progress" class="h-2 w-full overflow-hidden rounded-full accent-primary-600" value="0" max="100"></progress>
-      </div>
-      <div id="refresh-job-log" class="max-h-48 overflow-y-auto px-4 py-3 font-mono text-xs leading-5" aria-live="polite"></div>
-    </div>
-
-    <div class="grid gap-4 mb-6 sm:grid-cols-2 lg:grid-cols-3">
-      <div class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 dark:bg-gray-800">
-        <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Pending submissions</p>
-        <p id="stat-pending" class="mt-2 text-3xl font-bold text-gray-900 dark:text-white">—</p>
-      </div>
-      <div class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 dark:bg-gray-800">
-        <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Domains</p>
-        <p id="stat-domains" class="mt-2 text-3xl font-bold text-gray-900 dark:text-white">—</p>
-      </div>
-      <div class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 dark:bg-gray-800 sm:col-span-2 lg:col-span-1">
-        <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Last full run</p>
-        <p id="stat-lastrun" class="mt-2 text-lg font-semibold text-gray-900 dark:text-white">—</p>
-      </div>
-    </div>
-
-    <div class="overflow-hidden shadow rounded-lg">
-      <div class="overflow-x-auto">
-        <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-600">
-          <thead class="bg-gray-100 dark:bg-gray-700">
-            <tr>
-              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Domain</th>
-              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Published</th>
-              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Ecosystem</th>
-              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Last scraped</th>
-              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Actions</th>
-            </tr>
-          </thead>
-          <tbody id="domain-rows" class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700" data-catalog-stats={JSON.stringify(catalogStats)}>
-            <tr><td colspan="5" class="p-4 text-sm text-gray-500 dark:text-gray-400">Loading…</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+  <div slot="actions" class="flex gap-2">
+    <button id="republish-all" type="button" data-refresh-job class="mw-btn mw-btn-secondary">Republish all</button>
+    <button id="refresh-all" type="button" data-refresh-job class="mw-btn">↻ Refresh all</button>
   </div>
+
+  <div id="refresh-job" class="hidden mw-card mb-5 overflow-hidden">
+    <div class="flex items-center justify-between gap-3 px-[22px] py-3" style="border-bottom:1px solid #eef0f2;">
+      <h2 id="refresh-job-title" class="text-sm font-bold m-0">Refresh</h2>
+      <span id="refresh-job-progress-label" class="text-xs font-semibold" style="color:#9aa0a6;">0%</span>
+    </div>
+    <div class="px-[22px] pt-3 pb-1">
+      <progress id="refresh-job-progress" class="h-2 w-full overflow-hidden rounded-full" value="0" max="100"></progress>
+    </div>
+    <div id="refresh-job-log" class="max-h-48 overflow-y-auto px-[22px] py-3 font-mono text-xs leading-5 mw-scroll" aria-live="polite"></div>
+  </div>
+
+  <section aria-label="Key metrics" class="grid gap-[18px]" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
+    <div class="mw-card mw-kpi">
+      <div class="flex items-center justify-between">
+        <span class="mw-kpi-label">Pending submissions</span>
+        <span class="mw-kpi-icon" style="background:#FF5D011a; color:#FF5D01;">⊕</span>
+      </div>
+      <div id="stat-pending" class="mw-kpi-value">—</div>
+      <a href="/admin/submissions/" class="text-[12.5px] font-semibold" style="color:#2F6FEB;">Review queue →</a>
+    </div>
+    <div class="mw-card mw-kpi">
+      <div class="flex items-center justify-between">
+        <span class="mw-kpi-label">Technologies</span>
+        <span class="mw-kpi-icon" style="background:#7C3AED1a; color:#7C3AED;">◈</span>
+      </div>
+      <div id="stat-domains" class="mw-kpi-value">—</div>
+      <span class="text-[12.5px]" style="color:#9aa0a6;">tracked catalogs</span>
+    </div>
+    <div class="mw-card mw-kpi">
+      <div class="flex items-center justify-between">
+        <span class="mw-kpi-label">Projects published</span>
+        <span class="mw-kpi-icon" style="background:#2F6FEB1a; color:#2F6FEB;">▤</span>
+      </div>
+      <div class="mw-kpi-value">{projectsTotal.toLocaleString()}</div>
+      <span class="text-[12.5px]" style="color:#9aa0a6;">as of last build</span>
+    </div>
+    <div class="mw-card mw-kpi">
+      <div class="flex items-center justify-between">
+        <span class="mw-kpi-label">Last full run</span>
+        <span class="mw-kpi-icon" style="background:#0f9d581a; color:#0f9d58;">↻</span>
+      </div>
+      <div id="stat-lastrun" class="mw-kpi-value" style="font-size:19px; margin-top:16px;">—</div>
+      <span class="text-[12.5px]" style="color:#9aa0a6;">scrape or republish</span>
+    </div>
+  </section>
+
+  <section class="mw-card mt-[18px] overflow-hidden">
+    <div class="mw-card-head">
+      <h2 class="mw-display text-base m-0">Technologies</h2>
+      <span class="mw-count">{DOMAINS.length} tracked</span>
+    </div>
+    <div class="overflow-x-auto mw-scroll">
+      <table class="mw-table">
+        <thead>
+          <tr>
+            <th>Technology</th>
+            <th>Published</th>
+            <th>Ecosystem</th>
+            <th>Last scraped</th>
+            <th style="text-align:right; padding-right:22px;">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="domain-rows" data-catalog-stats={JSON.stringify(catalogStats)}>
+          <tr><td colspan="5">Loading…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
 </AdminLayout>
 
 <script>
