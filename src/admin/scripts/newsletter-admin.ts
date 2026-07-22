@@ -52,15 +52,15 @@ async function load(preserveSlugOptions = false) {
     rowsEl.innerHTML = data.subscribers
       .map(
         (s) => `<tr>
-        <td class="p-4 text-sm font-medium text-gray-900 dark:text-white">${esc(s.email)}</td>
-        <td class="p-4 text-sm text-gray-500 dark:text-gray-400">${s.scope === "network" ? "Network" : esc(s.slug)}</td>
-        <td class="p-4 text-sm">${
+        <td style="font-weight:700; color:#12161a;">${esc(s.email)}</td>
+        <td>${s.scope === "network" ? "Network" : esc(s.slug)}</td>
+        <td>${
           s.status === "active"
-            ? `<span class="px-2 py-0.5 text-xs font-semibold rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300">active</span>`
-            : `<span class="px-2 py-0.5 text-xs font-semibold rounded-full bg-gray-100 text-gray-700 dark:bg-gray-700 dark:text-gray-300">${esc(s.status)}</span>`
+            ? `<span class="mw-pill mw-pill-green">active</span>`
+            : `<span class="mw-pill mw-pill-gray">${esc(s.status)}</span>`
         }</td>
-        <td class="p-4 text-sm text-gray-500 dark:text-gray-400">${new Date(s.created_at).toLocaleDateString()}</td>
-        <td class="p-4 text-sm text-gray-500 dark:text-gray-400">${s.unsubscribed_at ? new Date(s.unsubscribed_at).toLocaleDateString() : "—"}</td>
+        <td class="mw-num">${new Date(s.created_at).toLocaleDateString()}</td>
+        <td class="mw-num">${s.unsubscribed_at ? new Date(s.unsubscribed_at).toLocaleDateString() : "—"}</td>
       </tr>`,
       )
       .join("");

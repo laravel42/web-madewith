@@ -3,44 +3,31 @@ import AdminLayout from "../../admin/layouts/AdminLayout.astro";
 ---
 
 <AdminLayout title="Submissions" active="submissions">
-  <div class="px-4 pt-6">
-    <div class="mb-4 sm:flex sm:items-center sm:justify-between">
-      <div>
-        <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Submissions</h1>
-        <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Review and moderate public project submissions</p>
-      </div>
-      <div class="mt-4 sm:mt-0">
-        <select
-          id="sub-filter"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
-        >
-          <option value="pending">Pending</option>
-          <option value="">All</option>
-          <option value="approved">Approved</option>
-          <option value="rejected">Rejected</option>
-        </select>
-      </div>
-    </div>
-
-    <div class="overflow-hidden shadow rounded-lg">
-      <div class="overflow-x-auto">
-        <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-600">
-          <thead class="bg-gray-100 dark:bg-gray-700">
-            <tr>
-              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Project</th>
-              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Domain</th>
-              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Repo</th>
-              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Status</th>
-              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Actions</th>
-            </tr>
-          </thead>
-          <tbody id="sub-rows" class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
-            <tr><td colspan="5" class="p-4 text-sm text-gray-500 dark:text-gray-400">Loading…</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+  <div slot="actions">
+    <select id="sub-filter" class="mw-btn mw-btn-secondary" style="appearance:auto; padding:9px 12px;">
+      <option value="pending">Pending</option>
+      <option value="">All</option>
+      <option value="approved">Approved</option>
+      <option value="rejected">Rejected</option>
+    </select>
   </div>
+
+  <section class="mw-card overflow-hidden">
+    <div class="mw-card-head">
+      <h2 class="mw-display text-base m-0">Project submissions</h2>
+      <span class="text-[12.5px]" style="color:#9aa0a6;">Approve to scrape, store, and republish the domain</span>
+    </div>
+    <div class="overflow-x-auto mw-scroll">
+      <table class="mw-table">
+        <thead>
+          <tr><th>Project</th><th>Domain</th><th>Repo</th><th>Status</th><th>Actions</th></tr>
+        </thead>
+        <tbody id="sub-rows">
+          <tr><td colspan="5">Loading…</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
 </AdminLayout>
 
 <script>

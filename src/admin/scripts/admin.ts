@@ -105,17 +105,23 @@ export async function loadOverview() {
       .map(
         (d: Record<string, unknown>) => {
           const { published, total, scrapedAt } = mergedDomainStats(d, stats[String(d.slug)] ?? { published: 0, totalRepos: 0, scrapedAt: null });
-          return `<tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
-            <td class="p-4 text-sm font-normal text-gray-900 whitespace-nowrap dark:text-white">
-              <span class="font-semibold">${esc(d.techName)}</span>
-              <span class="text-gray-500 dark:text-gray-400"> /${esc(d.slug)}</span>
+          const initial = esc(String(d.techName || "?").charAt(0).toUpperCase());
+          return `<tr>
+            <td class="whitespace-nowrap">
+              <div style="display:flex; align-items:center; gap:11px;">
+                <span class="mw-badge">${initial}</span>
+                <div>
+                  <div style="font-weight:700; color:#12161a;"><a href="/admin/domains/${esc(d.slug)}/" style="color:inherit; text-decoration:none;">${esc(d.techName)}</a></div>
+                  <div style="font-size:11.5px; color:#9aa0a6;">/${esc(d.slug)}</div>
+                </div>
+              </div>
             </td>
-            <td class="p-4 text-sm text-gray-500 dark:text-gray-400">${published.toLocaleString()}</td>
-            <td class="p-4 text-sm text-gray-500 dark:text-gray-400">${total ? total.toLocaleString() : "—"}</td>
-            <td class="p-4 text-sm text-gray-500 dark:text-gray-400">${scrapedAt ? new Date(scrapedAt).toLocaleString() : "never"}</td>
-            <td class="p-4 space-x-2 whitespace-nowrap">
-              <button type="button" class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-xs px-3 py-1.5 dark:bg-primary-600 dark:hover:bg-primary-700" data-republish="${esc(d.slug)}" data-refresh-job>Republish</button>
-              <button type="button" class="text-gray-900 bg-white border border-gray-300 hover:bg-gray-100 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-xs px-3 py-1.5 dark:bg-gray-800 dark:text-gray-200 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" data-refresh="${esc(d.slug)}" data-refresh-job>Refresh</button>
+            <td class="mw-num" style="font-weight:600; color:#12161a;">${published.toLocaleString()}</td>
+            <td class="mw-num">${total ? total.toLocaleString() : "—"}</td>
+            <td class="mw-num">${scrapedAt ? new Date(scrapedAt).toLocaleString() : "never"}</td>
+            <td class="whitespace-nowrap" style="text-align:right; padding-right:22px;">
+              <button type="button" class="mw-btn mw-btn-sm mw-btn-secondary" data-republish="${esc(d.slug)}" data-refresh-job>Republish</button>
+              <button type="button" class="mw-btn mw-btn-sm" data-refresh="${esc(d.slug)}" data-refresh-job>Refresh</button>
             </td>
           </tr>`;
         },
@@ -140,16 +146,21 @@ export async function loadSubs() {
       ? submissions
           .map(
             (s) =>
-              `<tr class="hover:bg-gray-100 dark:hover:bg-gray-700">
-                <td class="p-4 text-sm font-normal text-gray-900 dark:text-white">
-                  <div class="font-semibold">${esc(s.name)}</div>
-                  <div class="text-gray-500 dark:text-gray-400">${esc(s.description || "")}</div>
+              `<tr>
+                <td>
+                  <div style="display:flex; align-items:center; gap:11px;">
+                    <span class="mw-badge">${esc(String(s.name || "?").charAt(0).toUpperCase())}</span>
+                    <div style="min-width:0;">
+                      <div style="font-weight:700; color:#12161a;">${esc(s.name)}</div>
+                      <div style="font-size:11.5px; color:#9aa0a6; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; max-width:340px;">${esc(s.description || "")}</div>
+                    </div>
+                  </div>
                 </td>
-                <td class="p-4 text-sm text-gray-500 dark:text-gray-400">${esc(s.slug)}</td>
-                <td class="p-4 text-sm"><a href="${esc(s.repo_url)}" target="_blank" rel="noopener" class="font-medium text-primary-700 hover:underline dark:text-primary-400">repo ↗</a></td>
-                <td class="p-4"><span class="text-xs font-medium px-2.5 py-0.5 rounded ${s.status === "pending" ? "bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-300" : "bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-300"}">${esc(s.status)}</span></td>
-                <td class="p-4 space-x-2 whitespace-nowrap">
-                  ${s.status === "pending" ? `<button type="button" class="text-white bg-green-700 hover:bg-green-800 font-medium rounded-lg text-xs px-3 py-1.5" data-approve="${s.id}">Approve</button><button type="button" class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 font-medium rounded-lg text-xs px-3 py-1.5 dark:border-red-500 dark:text-red-400" data-reject="${s.id}">Reject</button>` : `<span class="text-sm text-gray-500 dark:text-gray-400">${esc(s.decided_by || "")}</span>`}
+                <td>${esc(s.slug)}</td>
+                <td><a href="${esc(s.repo_url)}" target="_blank" rel="noopener" style="color:#2F6FEB; font-weight:600; text-decoration:none;">repo ↗</a></td>
+                <td><span class="mw-pill ${s.status === "pending" ? "mw-pill-orange" : s.status === "approved" ? "mw-pill-green" : "mw-pill-gray"}">${esc(s.status)}</span></td>
+                <td class="whitespace-nowrap">
+                  ${s.status === "pending" ? `<button type="button" class="mw-btn mw-btn-sm" style="background:#0f9d58;" data-approve="${s.id}">Approve</button> <button type="button" class="mw-btn mw-btn-sm mw-btn-secondary" style="color:#e0245e; border-color:#e0245e40;" data-reject="${s.id}">Reject</button>` : `<span style="font-size:12.5px; color:#9aa0a6;">${esc(s.decided_by || "")}</span>`}
                 </td>
               </tr>`,
           )

@@ -3,68 +3,63 @@ import AdminLayout from "../../admin/layouts/AdminLayout.astro";
 ---
 
 <AdminLayout title="Newsletter" active="newsletter">
-  <div class="px-4 pt-6">
-    <div class="mb-4 sm:flex sm:items-center sm:justify-between">
-      <div>
-        <h1 class="text-xl font-semibold text-gray-900 sm:text-2xl dark:text-white">Newsletter subscribers</h1>
-        <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Signups from the public network and per-domain forms (D1)</p>
-      </div>
-      <a
-        id="nl-export"
-        href="/admin/api/newsletter/export"
-        class="inline-block mt-4 sm:mt-0 text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-primary-600 dark:hover:bg-primary-700"
-      >Export CSV</a>
-    </div>
+  <a slot="actions" id="nl-export" href="/admin/api/newsletter/export" class="mw-btn">Export CSV</a>
 
-    <div class="grid gap-4 mb-6 sm:grid-cols-2 lg:grid-cols-4">
-      <div class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 dark:bg-gray-800">
-        <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Active subscribers</p>
-        <p id="nl-active" class="mt-2 text-3xl font-bold text-gray-900 dark:text-white">—</p>
+  <section aria-label="Subscriber metrics" class="grid gap-[18px]" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));">
+    <div class="mw-card mw-kpi">
+      <div class="flex items-center justify-between">
+        <span class="mw-kpi-label">Active subscribers</span>
+        <span class="mw-kpi-icon" style="background:#0f9d581a; color:#0f9d58;">✉</span>
       </div>
-      <div class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 dark:bg-gray-800">
-        <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Network list</p>
-        <p id="nl-network" class="mt-2 text-3xl font-bold text-gray-900 dark:text-white">—</p>
-      </div>
-      <div class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 dark:bg-gray-800">
-        <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Domain lists</p>
-        <p id="nl-domain-count" class="mt-2 text-3xl font-bold text-gray-900 dark:text-white">—</p>
-      </div>
-      <div class="p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 dark:bg-gray-800">
-        <p class="text-sm font-medium text-gray-500 dark:text-gray-400">Unsubscribed</p>
-        <p id="nl-unsub" class="mt-2 text-3xl font-bold text-gray-900 dark:text-white">—</p>
-      </div>
+      <div id="nl-active" class="mw-kpi-value">—</div>
     </div>
+    <div class="mw-card mw-kpi">
+      <div class="flex items-center justify-between">
+        <span class="mw-kpi-label">Network list</span>
+        <span class="mw-kpi-icon" style="background:#7C3AED1a; color:#7C3AED;">◧</span>
+      </div>
+      <div id="nl-network" class="mw-kpi-value">—</div>
+    </div>
+    <div class="mw-card mw-kpi">
+      <div class="flex items-center justify-between">
+        <span class="mw-kpi-label">Domain lists</span>
+        <span class="mw-kpi-icon" style="background:#2F6FEB1a; color:#2F6FEB;">◈</span>
+      </div>
+      <div id="nl-domain-count" class="mw-kpi-value">—</div>
+    </div>
+    <div class="mw-card mw-kpi">
+      <div class="flex items-center justify-between">
+        <span class="mw-kpi-label">Unsubscribed</span>
+        <span class="mw-kpi-icon" style="background:#6b72801f; color:#6b7280;">⊘</span>
+      </div>
+      <div id="nl-unsub" class="mw-kpi-value">—</div>
+    </div>
+  </section>
 
-    <div class="flex flex-wrap gap-3 mb-4">
-      <select id="nl-status" class="text-sm rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-900 dark:border-gray-600 dark:bg-gray-800 dark:text-white">
+  <section class="mw-card mt-[18px] overflow-hidden">
+    <div class="mw-card-head">
+      <h2 class="mw-display text-base m-0">Subscribers</h2>
+      <div class="flex-1"></div>
+      <select id="nl-status" class="mw-chip" style="appearance:auto;">
         <option value="">All statuses</option>
         <option value="active">Active</option>
         <option value="unsubscribed">Unsubscribed</option>
       </select>
-      <select id="nl-slug" class="text-sm rounded-lg border border-gray-300 bg-white px-3 py-2 text-gray-900 dark:border-gray-600 dark:bg-gray-800 dark:text-white">
+      <select id="nl-slug" class="mw-chip" style="appearance:auto;">
         <option value="">All lists</option>
       </select>
     </div>
-
-    <div class="overflow-hidden shadow rounded-lg mb-10">
-      <div class="overflow-x-auto">
-        <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-600">
-          <thead class="bg-gray-100 dark:bg-gray-700">
-            <tr>
-              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Email</th>
-              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">List</th>
-              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Status</th>
-              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Subscribed</th>
-              <th scope="col" class="p-4 text-xs font-medium text-left text-gray-600 uppercase dark:text-gray-300">Unsubscribed</th>
-            </tr>
-          </thead>
-          <tbody id="nl-rows" class="bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700">
-            <tr><td colspan="5" class="p-4 text-sm text-gray-500 dark:text-gray-400">Loading…</td></tr>
-          </tbody>
-        </table>
-      </div>
+    <div class="overflow-x-auto mw-scroll">
+      <table class="mw-table">
+        <thead>
+          <tr><th>Email</th><th>List</th><th>Status</th><th>Subscribed</th><th>Unsubscribed</th></tr>
+        </thead>
+        <tbody id="nl-rows">
+          <tr><td colspan="5">Loading…</td></tr>
+        </tbody>
+      </table>
     </div>
-  </div>
+  </section>
 </AdminLayout>
 
 <script>
