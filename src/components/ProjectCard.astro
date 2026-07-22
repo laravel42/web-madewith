@@ -1,28 +1,22 @@
 ---
 import type { Theme } from "../config/domains";
 import type { Project } from "../lib/catalog";
-import { formatStars } from "../lib/catalog";
-import { projectDisplayName, projectPreviewExcerpt } from "../lib/preview-text";
-import { readableOnDark, readableOnLight } from "../config/accessible-color";
+import { timeAgo } from "../lib/catalog";
+import { projectPreviewExcerpt } from "../lib/preview-text";
 import ProjectShot from "./ProjectShot.astro";
 
 interface Props { theme: Theme; project: Project; rank: string; priority?: boolean; }
 const { theme, project, rank, priority = false } = Astro.props;
 const base = `/${theme.slug}`;
 const href = `${base}/project/${project.slug}`;
-const stars = formatStars(project.stars || 0);
 const initial = (project.author || "").charAt(0).toUpperCase();
-const displayName = projectDisplayName(project);
 const displayDesc = projectPreviewExcerpt(project);
+// "Scraped date" — when this project entered the catalog, shown as time-ago.
+const scraped = timeAgo(project.addedAt);
 const dark = theme.variant === "terminal";
 const shotBg = dark ? "#0e120f" : theme.editorial ? "#f5f5f5" : "#f4f6f5";
 const shotBorder = dark ? "#1f2622" : theme.editorial ? "#e8e8e8" : "#eef0ef";
-const soft = `color-mix(in srgb, ${theme.accent} 13%, #ffffff)`;
-// The raw 55%/45% tints are only the starting point — on near-black and near-white
-// accents they land at 3.9–4.4:1 on the card. The helpers push them the rest of
-// the way, and are a no-op on the accents that already cleared AA.
-const terminalAccentText = readableOnDark(theme.accent);
-const lightAccentText = readableOnLight(theme.accent);
+const clockPath = "M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm7-3.25v2.992l2.028.812a.75.75 0 0 1-.557 1.392l-2.5-1A.751.751 0 0 1 7 8.25v-3.5a.75.75 0 0 1 1.5 0Z";
 const dataAttrs = {
   "data-role": "card",
   "data-name": project.name.toLowerCase(),
@@ -36,58 +30,65 @@ const dataAttrs = {
 };
 const editorial = theme.editorial;
 const previewVariant = dark ? "terminal" : editorial ? "editorial" : "default";
+// Category chip pinned to the header's bottom-right corner (was in the card body).
+const catBadge = `position:absolute; bottom:12px; right:12px; z-index:2; font-size:10.5px; font-weight:700; color:${theme.accentInk}; background:var(--accent-solid); padding:3px 10px; border-radius:20px; max-width:64%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; box-shadow:0 1px 4px rgba(0,0,0,.22);`;
 ---
 
 {theme.variant === "terminal" ? (
   <a href={href} class="card" {...dataAttrs}>
-    <div style={`height:152px; background:${shotBg}; border-bottom:1px solid ${shotBorder}; position:relative; overflow:hidden;`}>
-      <ProjectShot theme={theme} fullName={project.fullName} name={project.name} size="card" variant={previewVariant} priority={priority} />
+    <div style={`height:116px; background:${shotBg}; border-bottom:1px solid ${shotBorder}; position:relative; overflow:hidden;`}>
+      <ProjectShot theme={theme} fullName={project.fullName} name={project.name} stars={project.stars} forks={project.forks} issues={project.issues} discussions={project.discussions} contributors={project.contributors} size="card" variant={previewVariant} priority={priority} />
+      <span style={catBadge}>{project.category}</span>
     </div>
     <div class="card-body" style="padding:14px 15px 15px;">
-      <div style="font-size:11px; color:#9aa69e; margin-bottom:7px;">[{project.category}]</div>
-      <div class="disp" style="font-weight:600; font-size:16px; color:#e8efe9; margin-bottom:5px;">{displayName}</div>
       <div style="font-size:12px; color:#9aa69e; line-height:1.5; margin-bottom:13px; min-height:36px;">{displayDesc}</div>
       <div class="card-foot" style="display:flex; align-items:center; justify-content:space-between; font-size:12px;">
         <span style="color:#9aa69e;">@{project.author}</span>
-        <span style={`color:${terminalAccentText};`}>★ {stars}</span>
+        {scraped && (
+          <span style="display:flex; align-items:center; gap:4px; color:#7c887f;">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d={clockPath}/></svg>{scraped}
+          </span>
+        )}
       </div>
     </div>
   </a>
 ) : editorial ? (
   <a href={href} class="card-editorial" {...dataAttrs}>
-    <div style={`height:158px; background:${shotBg}; position:relative; border-bottom:1px solid ${shotBorder}; overflow:hidden; padding:14px;`}>
-      <ProjectShot theme={theme} fullName={project.fullName} name={project.name} size="card" variant="editorial" priority={priority} />
+    <div style={`height:120px; background:${shotBg}; position:relative; border-bottom:1px solid ${shotBorder}; overflow:hidden;`}>
+      <ProjectShot theme={theme} fullName={project.fullName} name={project.name} stars={project.stars} forks={project.forks} issues={project.issues} discussions={project.discussions} contributors={project.contributors} size="card" variant="editorial" priority={priority} />
       <div class="disp" style="position:absolute; top:14px; right:14px; z-index:2; font-weight:800; font-size:13px;">{rank}</div>
+      <span style={catBadge}>{project.category}</span>
     </div>
     <div class="card-body" style="padding:18px 20px 20px;">
-      <div class="disp" style="font-weight:700; font-size:18px; letter-spacing:-0.01em; margin-bottom:6px;">{displayName}</div>
       <div style="font-size:13.5px; color:#666; line-height:1.45; margin-bottom:15px; min-height:38px;">{displayDesc}</div>
       <div class="card-foot" style="display:flex; align-items:center; justify-content:space-between; border-top:1px solid #f0f0f0; padding-top:13px;">
         <span style="font-size:13px; font-weight:600;">@{project.author}</span>
-        <span style="font-size:13px; font-weight:700;">★ {stars}</span>
+        {scraped && (
+          <span style="display:flex; align-items:center; gap:4px; font-size:12.5px; color:#888;">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d={clockPath}/></svg>{scraped}
+          </span>
+        )}
       </div>
     </div>
   </a>
 ) : (
   <a href={href} class="card" {...dataAttrs}>
-    <div style={`height:152px; background:${shotBg}; border-bottom:1px solid ${shotBorder}; position:relative; overflow:hidden;`}>
-      <ProjectShot theme={theme} fullName={project.fullName} name={project.name} size="card" variant="default" priority={priority} />
+    <div style={`height:116px; background:${shotBg}; border-bottom:1px solid ${shotBorder}; position:relative; overflow:hidden;`}>
+      <ProjectShot theme={theme} fullName={project.fullName} name={project.name} stars={project.stars} forks={project.forks} issues={project.issues} discussions={project.discussions} contributors={project.contributors} size="card" variant="default" priority={priority} />
+      <span style={catBadge}>{project.category}</span>
     </div>
     <div class="card-body" style="padding:15px 16px 16px;">
-      <div style="margin-bottom:7px;">
-        <span style={`font-size:11px; font-weight:600; color:${lightAccentText}; background:${soft}; padding:3px 9px; border-radius:20px;`}>{project.category}</span>
-      </div>
-      <div class="disp" style="font-weight:700; font-size:17px; margin-bottom:5px; letter-spacing:-0.01em;">{displayName}</div>
       <div style="font-size:13.5px; color:#68716c; line-height:1.45; margin-bottom:14px; min-height:38px;">{displayDesc}</div>
       <div class="card-foot" style="display:flex; align-items:center; justify-content:space-between;">
         <div style="display:flex; align-items:center; gap:8px;">
           <span style={`width:22px; height:22px; border-radius:50%; background:var(--accent-solid); color:${theme.accentInk}; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center;`}>{initial}</span>
           <span style="font-size:13px; color:#68716c;">{project.author}</span>
         </div>
-        <div style="display:flex; align-items:center; gap:5px; font-size:13px; font-weight:600; color:#3a443f;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="#f5b400"><path d="m12 2 3 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.9 21l1.2-6.8-5-4.9 6.9-1z"/></svg>
-          {stars}
-        </div>
+        {scraped && (
+          <span style="display:flex; align-items:center; gap:4px; font-size:12.5px; color:#68716c;">
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d={clockPath}/></svg>{scraped}
+          </span>
+        )}
       </div>
     </div>
   </a>

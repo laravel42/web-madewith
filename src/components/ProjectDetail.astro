@@ -2,7 +2,7 @@
 import type { Theme } from "../config/domains";
 import type { Project } from "../lib/catalog";
 import { readableOn, readableOnDark, readableOnLight, readableOnSurfaceDark, tint } from "../config/accessible-color";
-import { formatStars } from "../lib/catalog";
+import { formatStars, timeAgo } from "../lib/catalog";
 import { projectDisplayLong, projectDisplayName, projectPreviewExcerpt } from "../lib/preview-text";
 import InstallBox from "./InstallBox.astro";
 import ProjectShot from "./ProjectShot.astro";
@@ -18,6 +18,8 @@ const displayDesc = projectPreviewExcerpt(project);
 const displayLong1 = projectDisplayLong(project, "long1");
 const displayLong2 = projectDisplayLong(project, "long2");
 const relatedCards = related.map((p) => ({ project: p, name: projectDisplayName(p) }));
+// Clock glyph for the related cards' scraped-date time-ago (matches the gallery cards).
+const clockPath = "M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm7-3.25v2.992l2.028.812a.75.75 0 0 1-.557 1.392l-2.5-1A.751.751 0 0 1 7 8.25v-3.5a.75.75 0 0 1 1.5 0Z";
 const isTerminal = theme.variant === "terminal";
 const editorial = theme.editorial;
 // `editorial` is a layout flag, not a background: Next renders it on its black
@@ -97,7 +99,7 @@ const previewVariant = isTerminal ? "terminal" : editorial ? "editorial" : "defa
         <span style="font-size:11px; color:#3f4a43; margin-left:8px;">{project.slug} — preview</span>
       </div>
       <div style="position:relative; min-height:220px;">
-        <ProjectShot theme={theme} fullName={project.fullName} name={project.name} size="detail" variant={previewVariant} layout="auto" />
+        <ProjectShot theme={theme} fullName={project.fullName} name={project.name} size="detail" variant={previewVariant} layout="auto" realCover />
       </div>
     </div>
 
@@ -144,11 +146,11 @@ const previewVariant = isTerminal ? "terminal" : editorial ? "editorial" : "defa
       {relatedCards.map(({ project: p, name }) => (
         <a href={`${base}/project/${p.slug}`} class="card">
           <div style="aspect-ratio:2 / 1; background:#0e120f; border-bottom:1px solid #1f2622; overflow:hidden; position:relative;">
-            <ProjectShot theme={theme} fullName={p.fullName} name={p.name} size="sm" variant={previewVariant} />
+            <ProjectShot theme={theme} fullName={p.fullName} name={p.name} stars={p.stars} forks={p.forks} issues={p.issues} discussions={p.discussions} contributors={p.contributors} size="sm" variant={previewVariant} />
           </div>
           <div style="padding:13px 15px 15px;">
             <div class="disp" style="font-weight:600; font-size:14px; color:#e8efe9; margin-bottom:5px;">{name}</div>
-            <div style={`display:flex; align-items:center; justify-content:space-between; font-size:11.5px; color:${muted}; margin-top:8px;`}><span>@{p.author}</span><span style={`color:${accentText};`}>★ {formatStars(p.stars)}</span></div>
+            <div style={`display:flex; align-items:center; justify-content:space-between; font-size:11.5px; color:${muted}; margin-top:8px;`}><span>@{p.author}</span>{timeAgo(p.addedAt) && <span style="display:flex; align-items:center; gap:3px;"><svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor"><path d={clockPath}/></svg>{timeAgo(p.addedAt)}</span>}</div>
           </div>
         </a>
       ))}
@@ -184,7 +186,7 @@ const previewVariant = isTerminal ? "terminal" : editorial ? "editorial" : "defa
     <div style={`margin-top:30px; background:#f4f6f5; border:1px solid #eef0ef; border-radius:${radius}; overflow:hidden;`}>
       <div style="display:flex; gap:6px; padding:16px 18px; border-bottom:1px solid #eef0ef;"><span style="width:11px;height:11px;border-radius:50%;background:#e0e5e2;"></span><span style="width:11px;height:11px;border-radius:50%;background:#e0e5e2;"></span><span style="width:11px;height:11px;border-radius:50%;background:#e0e5e2;"></span></div>
       <div style="position:relative; min-height:280px; background:#f8faf9;">
-        <ProjectShot theme={theme} fullName={project.fullName} name={project.name} size="detail" variant={previewVariant} layout="auto" />
+        <ProjectShot theme={theme} fullName={project.fullName} name={project.name} size="detail" variant={previewVariant} layout="auto" realCover />
       </div>
     </div>
 
@@ -231,11 +233,11 @@ const previewVariant = isTerminal ? "terminal" : editorial ? "editorial" : "defa
       {relatedCards.map(({ project: p, name }) => (
         <a href={`${base}/project/${p.slug}`} class="card">
           <div style="aspect-ratio:2 / 1; background:#f4f6f5; border-bottom:1px solid #eef0ef; overflow:hidden; position:relative;">
-            <ProjectShot theme={theme} fullName={p.fullName} name={p.name} size="sm" variant={previewVariant} />
+            <ProjectShot theme={theme} fullName={p.fullName} name={p.name} stars={p.stars} forks={p.forks} issues={p.issues} discussions={p.discussions} contributors={p.contributors} size="sm" variant={previewVariant} />
           </div>
           <div style="padding:13px 15px 15px;">
             <div class="disp" style="font-weight:700; font-size:15px; margin-bottom:5px;">{name}</div>
-            <div style={`display:flex; align-items:center; justify-content:space-between; font-size:12.5px; color:${cardMuted}; margin-top:8px;`}><span>{p.author}</span><span style="font-weight:600; color:#3a443f;">★ {formatStars(p.stars)}</span></div>
+            <div style={`display:flex; align-items:center; justify-content:space-between; font-size:12.5px; color:${cardMuted}; margin-top:8px;`}><span>{p.author}</span>{timeAgo(p.addedAt) && <span style="display:flex; align-items:center; gap:3px;"><svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor"><path d={clockPath}/></svg>{timeAgo(p.addedAt)}</span>}</div>
           </div>
         </a>
       ))}

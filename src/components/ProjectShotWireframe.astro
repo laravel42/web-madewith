@@ -5,61 +5,112 @@ interface Props {
   theme: Theme;
   size?: "card" | "sm" | "detail";
   variant?: "default" | "editorial";
+  /** Project identity — seeds the artifact so every card is visually distinct. */
+  seed?: string;
 }
 
-const { theme, size = "card", variant = "default" } = Astro.props;
+const { theme, size = "card", variant = "default", seed = "" } = Astro.props;
 const dark = theme.variant === "terminal";
 const accent = theme.accent;
 const radius = theme.radius;
-const blockRadius = radius < 4 ? "0" : size === "sm" ? "5px" : "6px";
-const dot = dark ? "#2a322d" : "#dfe4e1";
-const barA = dark ? "#2a322d" : variant === "editorial" ? "#e3e3e3" : "#e3e8e5";
-const barB = dark ? "#232a26" : variant === "editorial" ? "#e8e8e8" : "#e9edeb";
-const panelBg = dark
-  ? `color-mix(in srgb, ${accent} 18%, #0e120f)`
-  : `color-mix(in srgb, ${accent} 12%, #f4f6f5)`;
+
+// Deterministic pseudo-randomness from the project's fullName so each generated
+// cover is distinct (xorshift over an FNV-1a hash — stable across builds).
+function hash(s: string): number {
+  let h = 2166136261 >>> 0;
+  for (let i = 0; i < s.length; i++) {
+    h ^= s.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return h >>> 0;
+}
+function makeRng(s: string) {
+  let x = (hash(s) || 0x9e3779b9) >>> 0;
+  return () => {
+    x ^= x << 13; x >>>= 0;
+    x ^= x >>> 17;
+    x ^= x << 5; x >>>= 0;
+    return x / 4294967296;
+  };
+}
+const rnd = makeRng(seed || accent);
+const span = (lo: number, hi: number) => Math.round(lo + rnd() * (hi - lo));
+
+// ---- palette (surface tones match the card shot backgrounds) ----
+const surface = dark ? "#0e120f" : variant === "editorial" ? "#f5f5f5" : "#f4f6f5";
+const panel = dark ? "#141a16" : "#ffffff";
+const border = dark ? "#1f2622" : variant === "editorial" ? "#e8e8e8" : "#eaeeec";
+const line = dark ? "#242c27" : variant === "editorial" ? "#e9e9e9" : "#eef1ef";
+const dotColor = dark ? "#2a322d" : "#dfe4e1";
+const accentSoft = `color-mix(in srgb, ${accent} ${dark ? 24 : 15}%, ${panel})`;
+const blockR = radius < 4 ? 1 : 5;
+
+// ---- seeded composition for the app-mock (card / sm) ----
+const showSidebar = rnd() > 0.34;
+const addrW = span(96, 168);
+const headerW = span(64, 116);
+const heroW = span(86, 138);
+const sbLineCount = 3 + Math.floor(rnd() * 2);
+const accentSbLine = Math.floor(rnd() * sbLineCount);
+const sbLines = Array.from({ length: sbLineCount }, (_, i) => ({
+  y: 62 + i * 15,
+  w: span(26, 42),
+  accent: i === accentSbLine,
+}));
+const mainX = showSidebar ? 92 : 30;
+const mainW = 298 - mainX;
+const tileGap = 10;
+const tileW = (mainW - tileGap * 2) / 3;
+const accentTile = Math.floor(rnd() * 3);
+const tiles = Array.from({ length: 3 }, (_, i) => ({
+  x: mainX + i * (tileW + tileGap),
+  h: span(24, 46),
+  accent: i === accentTile,
+}));
+const dots = [26, 38, 50];
 ---
 
 {size === "detail" ? (
   <div style="display:flex; gap:14px; padding:18px; min-height:220px;">
-    <div style={`width:180px; background:${dark ? "#101410" : "#fff"}; border-radius:8px; border:1px solid ${dark ? "#1f2622" : "#eaeeec"}; padding:14px; flex-shrink:0;`}>
-      <div style={`height:22px; width:45%; background:${accent}; opacity:.9; border-radius:${blockRadius};`}></div>
-      <div style={`height:9px; width:80%; background:${dark ? "#232a26" : "#eef1ef"}; border-radius:4px; margin:14px 0 9px;`}></div>
-      <div style={`height:9px; width:65%; background:${dark ? "#232a26" : "#eef1ef"}; border-radius:4px;`}></div>
+    <div style={`width:180px; background:${dark ? "#101410" : "#fff"}; border-radius:8px; border:1px solid ${border}; padding:14px; flex-shrink:0;`}>
+      <div style={`height:22px; width:45%; background:${accent}; opacity:.9; border-radius:${blockR}px;`}></div>
+      <div style={`height:9px; width:80%; background:${line}; border-radius:4px; margin:14px 0 9px;`}></div>
+      <div style={`height:9px; width:65%; background:${line}; border-radius:4px;`}></div>
     </div>
-    <div style={`flex:1; background:${dark ? "#101410" : "#fff"}; border-radius:8px; border:1px solid ${dark ? "#1f2622" : "#eaeeec"}; padding:18px;`}>
-      <div style={`height:13px; width:40%; background:${dark ? "#2a322d" : "#e8ece9"}; border-radius:5px; margin-bottom:18px;`}></div>
+    <div style={`flex:1; background:${dark ? "#101410" : "#fff"}; border-radius:8px; border:1px solid ${border}; padding:18px;`}>
+      <div style={`height:13px; width:40%; background:${line}; border-radius:5px; margin-bottom:18px;`}></div>
       <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;">
         <div style={`height:80px; background:${dark ? "#0e120f" : "#f6f8f7"}; border-radius:8px;`}></div>
         <div style={`height:80px; background:${dark ? "#0e120f" : "#f6f8f7"}; border-radius:8px;`}></div>
         <div style={`height:80px; background:${dark ? "#0e120f" : "#f6f8f7"}; border-radius:8px;`}></div>
       </div>
-      <div style={`height:110px; background:${panelBg}; border-radius:8px; margin-top:14px;`}></div>
+      <div style={`height:110px; background:${accentSoft}; border-radius:8px; margin-top:14px;`}></div>
     </div>
-  </div>
-) : variant === "editorial" ? (
-  <div aria-hidden="true" style="position:relative; height:100%;">
-    <div style={`height:8px; width:50%; background:${barA}; margin-bottom:9px; margin-top:26px;`}></div>
-    <div style={`height:30px; width:44%; background:${accent}; margin-bottom:11px;`}></div>
-    <div style={`height:7px; width:78%; background:${barB}; margin-bottom:6px;`}></div>
-    <div style={`height:7px; width:62%; background:${barB};`}></div>
   </div>
 ) : (
-  <div aria-hidden="true" style="position:absolute; inset:0; padding:11px;">
-    <div style="display:flex; gap:5px; margin-bottom:13px;">
-      <span style={`width:8px; height:8px; border-radius:50%; background:${dot};`}></span>
-      <span style={`width:8px; height:8px; border-radius:50%; background:${dot};`}></span>
-      <span style={`width:8px; height:8px; border-radius:50%; background:${dot};`}></span>
-    </div>
-    {size === "card" && <div style={`height:8px; width:55%; background:${barA}; border-radius:4px; margin-bottom:9px;`}></div>}
-    <div
-      style={`height:${size === "sm" ? "22px" : "30px"}; width:${size === "sm" ? "45%" : "42%"}; background:${accent}; opacity:.9; border-radius:${blockRadius}; margin-bottom:${size === "card" ? "11px" : "0"};`}
-    ></div>
-    {size === "card" && (
-      <>
-        <div style={`height:7px; width:80%; background:${barB}; border-radius:4px; margin-bottom:7px;`}></div>
-        <div style={`height:7px; width:68%; background:${barB}; border-radius:4px;`}></div>
-      </>
+  <svg
+    aria-hidden="true"
+    viewBox="0 0 320 152"
+    preserveAspectRatio="xMidYMid slice"
+    style="position:absolute; inset:0; width:100%; height:100%; display:block;"
+  >
+    <rect x="0" y="0" width="320" height="152" style={`fill:${surface}`} />
+    <rect x="14" y="14" width="292" height="124" rx="8" style={`fill:${panel};stroke:${border};stroke-width:1`} />
+    {dots.map((cx) => <circle cx={cx} cy="28" r="3.4" style={`fill:${dotColor}`} />)}
+    <rect x="66" y="24.5" width={addrW} height="7" rx="3.5" style={`fill:${line}`} />
+    <rect x="15" y="41" width="290" height="1" style={`fill:${border}`} />
+    {showSidebar && (
+      <g>
+        <rect x="22" y="49" width="58" height="81" rx="6" style={`fill:${dark ? "#101410" : surface};stroke:${border};stroke-width:1`} />
+        {sbLines.map((l) => (
+          <rect x="30" y={l.y} width={l.w} height="6" rx="3" style={`fill:${l.accent ? accent : line}`} />
+        ))}
+      </g>
     )}
-  </div>
+    <rect x={mainX} y="56" width={headerW} height="8" rx="4" style={`fill:${line}`} />
+    <rect x={mainX} y="72" width={heroW} height="24" rx={blockR} style={`fill:${accent};opacity:.92`} />
+    {tiles.map((t) => (
+      <rect x={t.x} y={130 - t.h} width={tileW} height={t.h} rx="5" style={`fill:${t.accent ? accentSoft : line}`} />
+    ))}
+  </svg>
 )}

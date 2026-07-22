@@ -2,6 +2,7 @@
 import type { Theme } from "../config/domains";
 import ProjectPreviewImage from "./ProjectPreviewImage.astro";
 import ProjectShotWireframe from "./ProjectShotWireframe.astro";
+import ProjectCoverArtifact from "./ProjectCoverArtifact.astro";
 
 interface Props {
   theme: Theme;
@@ -11,20 +12,38 @@ interface Props {
   variant?: "terminal" | "editorial" | "default";
   layout?: "fill" | "auto";
   priority?: boolean;
+  /** Load the real GitHub cover on top of the artifact. Off for cards (they'd
+   *  each fetch a ~1200×600 opengraph image); on only for the single-project hero. */
+  realCover?: boolean;
+  /** Repo stats for the generated cover (card / related sizes). */
+  stars?: number;
+  forks?: number;
+  issues?: number;
+  discussions?: number;
+  contributors?: number;
 }
 
-const { theme, fullName, name, size = "card", variant = "default", layout = "fill", priority = false } = Astro.props;
+const {
+  theme, fullName, name, size = "card", variant = "default", layout = "fill", priority = false, realCover = false,
+  stars, forks, issues, discussions, contributors,
+} = Astro.props;
 const wireframeVariant = variant === "editorial" ? "editorial" : "default";
 const autoLayout = layout === "auto";
 ---
 
 <div class:list={["project-shot", autoLayout && "project-shot-auto"]} data-role="project-shot">
   <div class="project-shot-wireframe" data-role="shot-wireframe">
-    <ProjectShotWireframe theme={theme} size={size} variant={wireframeVariant} />
+    {size === "detail" ? (
+      <ProjectShotWireframe theme={theme} size={size} variant={wireframeVariant} seed={fullName} />
+    ) : (
+      <ProjectCoverArtifact theme={theme} name={name} stars={stars} forks={forks} issues={issues} discussions={discussions} contributors={contributors} size={size} />
+    )}
   </div>
-  <div class="project-shot-image">
-    <ProjectPreviewImage fullName={fullName} name={name} variant={variant} layout={layout} withWireframe priority={priority} />
-  </div>
+  {realCover && (
+    <div class="project-shot-image">
+      <ProjectPreviewImage fullName={fullName} name={name} variant={variant} layout={layout} withWireframe priority={priority} />
+    </div>
+  )}
 </div>
 
 <style>
@@ -55,7 +74,14 @@ const autoLayout = layout === "auto";
     min-height: 220px;
   }
 
+  /* Detail hero: the real cover drives the box so it renders full-size at its
+     natural 2:1 aspect (full height); the wireframe placeholder sits behind it. */
   .project-shot-auto .project-shot-wireframe {
+    position: absolute;
+    inset: 0;
+  }
+
+  .project-shot-auto .project-shot-image {
     position: relative;
     inset: auto;
   }

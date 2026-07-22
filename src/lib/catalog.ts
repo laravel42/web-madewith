@@ -24,6 +24,11 @@ export interface Project {
   langs: Lang[];
   versions?: { name: string; url: string }[];
   topics: string[];
+  /** Repository stats for the generated cover; absent until a scrape captures them. */
+  forks?: number;
+  issues?: number;
+  discussions?: number;
+  contributors?: number;
 }
 
 export interface CatalogData {
@@ -51,6 +56,25 @@ export function getCatalog(slug: string): CatalogData {
 /** Format a star count the GitHub way: 3200 → "3.2k". */
 export function formatStars(n: number): string {
   return n >= 1000 ? (n / 1000).toFixed(1).replace(/\.0$/, "") + "k" : "" + n;
+}
+
+/** Compact relative time ("3d ago", "5mo ago"), baked at build. Empty for bad/absent input. */
+export function timeAgo(iso?: string | null): string {
+  if (!iso) return "";
+  const t = Date.parse(iso);
+  if (Number.isNaN(t)) return "";
+  const s = Math.max(0, (Date.now() - t) / 1000);
+  if (s < 3600) {
+    const m = Math.floor(s / 60);
+    return m <= 1 ? "just now" : `${m}m ago`;
+  }
+  const h = s / 3600;
+  if (h < 24) return `${Math.floor(h)}h ago`;
+  const d = h / 24;
+  if (d < 7) return `${Math.floor(d)}d ago`;
+  if (d < 30) return `${Math.floor(d / 7)}w ago`;
+  if (d < 365) return `${Math.floor(d / 30)}mo ago`;
+  return `${Math.floor(d / 365)}y ago`;
 }
 
 /** Human total for the hero ("8,584+"). Uses GitHub search total — prefer formatGalleryTotal for UI copy. */
