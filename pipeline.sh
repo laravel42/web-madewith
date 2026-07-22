@@ -10,8 +10,11 @@
 #   ./pipeline.sh build      full site build (prebuild re-hydrates projects+videos from Postgres)
 #   ./pipeline.sh all        videos + build
 #   ./pipeline.sh ship       all + commit src/data + push to main
+#   ./pipeline.sh deploy     rsync dist/ to the web server (atomic symlink swap)
 #
-# Tunables (env vars): VPN_DIR (default ~/vpn-wg), LIMIT (1000), WORKERS (8).
+# Tunables (env vars): VPN_DIR (default ~/vpn-wg), LIMIT (1000), WORKERS (8),
+# DEPLOY_TARGET (user@host, required for deploy), DEPLOY_PATH
+# (default /home/ploi/madewithwhat.net; nginx root must be $DEPLOY_PATH/current).
 set -uo pipefail
 cd "$(dirname "$0")"
 
@@ -103,6 +106,24 @@ cmd_build() {
   pnpm build || { echo "build failed" >&2; exit 1; }
 }
 
+cmd_deploy() {
+  # Push the locally built dist/ to the web server — no server-side build, no
+  # CI. Atomic: rsync into a timestamped release, then flip the `current`
+  # symlink nginx serves (root /home/ploi/<site>/current). Keeps 3 releases.
+  : "${DEPLOY_TARGET:?set DEPLOY_TARGET=user@host (e.g. ploi@1.2.3.4)}"
+  DEPLOY_PATH="${DEPLOY_PATH:-/home/ploi/madewithwhat.net}"
+  [ -s dist/index.html ] || { echo "dist/ missing or empty — run ./pipeline.sh build first" >&2; exit 1; }
+  pages=$(find dist -name index.html | wc -l | tr -d ' ')
+  stamp=$(date +%Y%m%d-%H%M%S)
+  step "Deploy $pages pages → $DEPLOY_TARGET:$DEPLOY_PATH (release $stamp)"
+  ssh "$DEPLOY_TARGET" "mkdir -p '$DEPLOY_PATH/releases/$stamp'"
+  rsync -a --delete --info=stats1 dist/ "$DEPLOY_TARGET:$DEPLOY_PATH/releases/$stamp/"
+  ssh "$DEPLOY_TARGET" "cd '$DEPLOY_PATH' \
+    && ln -sfn 'releases/$stamp' current-next && mv -Tf current-next current \
+    && ls -dt releases/*/ | tail -n +4 | xargs -r rm -rf \
+    && echo 'live: releases/$stamp'"
+}
+
 cmd_ship() {
   step "Commit & push data"
   git add src/data
@@ -130,5 +151,6 @@ case "${1:-}" in
   build)    cmd_build; finish ;;
   all)      cmd_videos; cmd_build; finish ;;
   ship)     cmd_videos; cmd_build; cmd_ship; finish ;;
+  deploy)   cmd_deploy; finish ;;
   *)        awk 'NR > 1 { if (!/^#/) exit; sub(/^# ?/, ""); print }' "$0"; exit 1 ;;
 esac
