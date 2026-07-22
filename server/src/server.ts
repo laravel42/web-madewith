@@ -1,13 +1,18 @@
 /** HTTP entry — the Ploi daemon runs this (`tsx src/server.ts`). */
-import { serve } from "@hono/node-server";
-import { createRuntime } from "./env";
-import { createApp } from "./app";
+import "./load-env";
+
+const { serve } = await import("@hono/node-server");
+const { createRuntime } = await import("./env");
+const { createApp } = await import("./app");
 
 const rt = createRuntime();
 const app = createApp(rt.env);
 
-const server = serve({ fetch: app.fetch, port: rt.env.port }, (info) => {
-  console.log(`madewith server listening on :${info.port} (data dir ${rt.env.dataDir})`);
+// Only the local nginx proxy should reach this — never bind publicly unless
+// HOST is set explicitly.
+const hostname = process.env.HOST || "127.0.0.1";
+const server = serve({ fetch: app.fetch, port: rt.env.port, hostname }, (info) => {
+  console.log(`madewith server listening on ${hostname}:${info.port} (data dir ${rt.env.dataDir})`);
 });
 
 for (const sig of ["SIGINT", "SIGTERM"] as const) {

@@ -3,6 +3,7 @@
  * HTTP /refresh route); running this file directly is the cron entry (Ploi
  * scheduler) that the Worker's scheduled() handler used to be.
  */
+import "./load-env";
 import { pathToFileURL } from "node:url";
 import { GitHub } from "./github";
 import { DOMAINS } from "./domains";

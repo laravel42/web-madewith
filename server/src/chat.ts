@@ -74,10 +74,22 @@ const STOP = new Set(["the","a","an","for","with","and","or","in","on","of","to"
 const keywords = (msg: string) =>
   (msg.toLowerCase().match(/[a-z0-9-]{3,}/g) ?? []).filter((w) => !STOP.has(w));
 
+const BLOG_WORDS = /\b(blog|article|articles|post|posts|read|guide|written|analysis|comparison)\b/i;
+const VIDEO_WORDS = /\b(video|videos|watch|tutorial|tutorials|course|courses|talk|talks|transcript|transcripts|youtube|chapters?)\b/i;
+
+/** Static site facts — always in context so newsletter/submission questions work. */
+const SITE_FACTS = `## Site facts
+- Newsletter: free; a network-wide list plus one per technology catalog. Sign up on /newsletter/ or any catalog's newsletter page with just an email.
+- Submitting a project: every catalog has a /submit/ page; propose a public GitHub repository genuinely built with that technology. A moderator reviews it before publication. Private repos, unrelated projects, forks without original work, and content-only repos are rejected.
+- Fixing project info: data mirrors GitHub daily — update the repository's description/topics/website and changes flow in automatically. For removal requests, use the catalog's /submit/ page with a note.
+- Video pages include AI-generated chapters, a key-concepts summary, and a full literal transcription generated from captions (small errors possible).`;
+
 async function buildContext(message: string): Promise<string> {
   const origin = (process.env.SITE_ORIGIN || "https://madewithwhat.net").replace(/\/+$/, "");
   const slugs = detectSlugs(message);
   const paths = slugs.length ? slugs.map((s) => `/${s}/llms-full.txt`) : ["/llms.txt"];
+  if (BLOG_WORDS.test(message)) paths.push("/llms-blog.txt");
+  if (VIDEO_WORDS.test(message)) paths.push("/llms-videos.txt");
   const words = keywords(message);
   const parts: string[] = [];
 
@@ -98,6 +110,7 @@ async function buildContext(message: string): Promise<string> {
       parts.push(`${head}\n${picked.join("\n")}`);
     } catch { /* export unavailable — answer from what we have */ }
   }
+  parts.push(SITE_FACTS);
   return parts.join("\n\n").slice(0, MAX_CONTEXT_CHARS);
 }
 
@@ -110,7 +123,7 @@ Rules:
 - When you mention a project from the context, include its site link (markdown).
 - Keep answers short: 1-3 sentences, or a bulleted list of max 5 items for "best/top" questions.
 - Star counts refresh daily — present them as approximate.
-- If the answer isn't in the context, say so and point to the closest catalog page (e.g. /laravel/).
+- If the answer isn't in the context, say so and point to the closest page (/laravel/, /blog/, /video/).
 - Technology names always mean the software (Express = Node framework, Astro = web framework).
 - Friendly, precise, developer-to-developer. No hype, no emojis.
 - Off-topic questions (politics, medical/legal advice, other websites): politely decline and steer
