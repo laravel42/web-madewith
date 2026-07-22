@@ -383,7 +383,13 @@ def main() -> int:
     # Non-OpenAI endpoints (OpenRouter, Ollama, LM Studio, vLLM) speak Chat
     # Completions instead of the Responses API.
     use_chat = bool(args.base_url) and "api.openai.com" not in args.base_url
-    api_key = os.getenv("OPENAI_API_KEY") or openrouter_key
+    # Prefer the key matching the endpoint: OPENAI_API_KEY can then stay in
+    # .env for other tools (factory/content_factory.py, github LLM classifier)
+    # without hijacking OpenRouter runs.
+    if args.base_url and "openrouter" in args.base_url:
+        api_key = openrouter_key or os.getenv("OPENAI_API_KEY")
+    else:
+        api_key = os.getenv("OPENAI_API_KEY") or openrouter_key
     is_local = use_chat and ("localhost" in args.base_url or "127.0.0.1" in args.base_url)
     if not api_key and not is_local:
         raise SystemExit("An API key is required: OPENAI_API_KEY or OPENROUTER_API_KEY "
@@ -392,13 +398,16 @@ def main() -> int:
     from openai import OpenAI
 
     info = metadata()
-    # Default model per backend: OpenRouter gets Gemini 2.5 Pro — best
-    # long-document comprehension for chapter/timestamp accuracy, with
-    # enforced JSON mode (use OPENAI_MODEL=google/gemini-2.5-flash to trade
-    # quality for ~10x cheaper bulk runs); local servers must name their
-    # model explicitly.
+    # Model precedence: --model > ENRICH_MODEL (this tool only) > OPENAI_MODEL
+    # (legacy, shared with other tools) > backend default. OpenRouter defaults
+    # to Gemini 2.5 Pro — best long-document comprehension for chapter and
+    # timestamp accuracy, with enforced JSON mode (ENRICH_MODEL=
+    # google/gemini-2.5-flash trades quality for ~10x cheaper bulk runs);
+    # local servers must name their model explicitly.
     if args.model:
         model = args.model
+    elif os.getenv("ENRICH_MODEL"):
+        model = os.environ["ENRICH_MODEL"]
     elif os.getenv("OPENAI_MODEL"):
         model = os.environ["OPENAI_MODEL"]
     elif use_chat and "openrouter" in args.base_url:
