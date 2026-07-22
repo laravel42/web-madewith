@@ -1,17 +1,5 @@
 /** HTTP entry — the Ploi daemon runs this (`tsx src/server.ts`). */
-import { readFileSync } from "node:fs";
-import { join, dirname } from "node:path";
-import { fileURLToPath } from "node:url";
-
-// Load the repo-root .env (KEY=VALUE lines; real environment wins) so the
-// daemon needs no env plumbing beyond that file.
-try {
-  const envPath = join(dirname(fileURLToPath(import.meta.url)), "..", "..", ".env");
-  for (const line of readFileSync(envPath, "utf8").split("\n")) {
-    const m = line.match(/^\s*(?:export\s+)?([A-Z0-9_]+)\s*=\s*(.*?)\s*$/);
-    if (m && !(m[1] in process.env)) process.env[m[1]] = m[2].replace(/^(["'])(.*)\1$/, "$2");
-  }
-} catch { /* no .env — rely on the process environment */ }
+import "./load-env";
 
 const { serve } = await import("@hono/node-server");
 const { createRuntime } = await import("./env");
