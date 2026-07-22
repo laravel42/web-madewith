@@ -66,35 +66,115 @@
     "\\bbuild an?\\b"
   ],
   "techAliases": {
-    "next": ["next\\.?js", "nextjs"],
-    "nuxt": ["nuxt\\.?js", "nuxt"],
-    "aspnet-core": ["asp\\.?net\\s*core", "aspnet\\s*core"],
-    "spring-boot": ["spring\\s+boot"],
-    "rails": ["ruby on rails", "rails"],
-    "sveltekit": ["sveltekit", "svelte kit"],
-    "solidjs": ["solidjs", "solid\\.?js"],
-    "alpine": ["alpine\\.?js", "alpinejs"],
-    "vue": ["vue\\.?js", "vuejs"],
-    "angular": ["angular"],
-    "actix-web": ["actix\\s*web", "actix-web"],
-    "open-webui": ["open\\s*webui", "open-webui"],
-    "anythingllm": ["anythingllm", "anything\\s*llm"],
-    "twenty-crm": ["twenty\\s*crm", "twenty crm"],
-    "payload": ["payload\\s*cms", "payloadcms"],
-    "octobercms": ["october\\s*cms", "octobercms"],
-    "llamaindex": ["llamaindex", "llama\\s*index"],
-    "erpnext": ["erpnext", "erp\\s*next"],
-    "suitecrm": ["suitecrm", "suite\\s*crm"],
-    "espocrm": ["espocrm", "espo\\s*crm"],
-    "vtiger": ["vtiger"],
-    "prestashop": ["prestashop"],
-    "woocommerce": ["woocommerce", "woo\\s*commerce"],
-    "shopware": ["shopware"],
-    "opencart": ["opencart"],
-    "librechat": ["librechat"],
-    "fastapi": ["fastapi", "fast\\s*api"],
-    "nestjs": ["nestjs", "nest\\.?js"],
-    "vllm": ["vllm", "v-llm"]
+    "next": [
+      "next\\.?js",
+      "nextjs"
+    ],
+    "nuxt": [
+      "nuxt\\.?js",
+      "nuxt"
+    ],
+    "aspnet-core": [
+      "asp\\.?net\\s*core",
+      "aspnet\\s*core"
+    ],
+    "spring-boot": [
+      "spring\\s+boot"
+    ],
+    "rails": [
+      "ruby on rails",
+      "rails"
+    ],
+    "sveltekit": [
+      "sveltekit",
+      "svelte kit"
+    ],
+    "solidjs": [
+      "solidjs",
+      "solid\\.?js"
+    ],
+    "alpine": [
+      "alpine\\.?js",
+      "alpinejs"
+    ],
+    "vue": [
+      "vue\\.?js",
+      "vuejs"
+    ],
+    "angular": [
+      "angular"
+    ],
+    "actix-web": [
+      "actix\\s*web",
+      "actix-web"
+    ],
+    "open-webui": [
+      "open\\s*webui",
+      "open-webui"
+    ],
+    "anythingllm": [
+      "anythingllm",
+      "anything\\s*llm"
+    ],
+    "twenty-crm": [
+      "twenty\\s*crm",
+      "twenty crm"
+    ],
+    "payload": [
+      "payload\\s*cms",
+      "payloadcms"
+    ],
+    "octobercms": [
+      "october\\s*cms",
+      "octobercms"
+    ],
+    "llamaindex": [
+      "llamaindex",
+      "llama\\s*index"
+    ],
+    "erpnext": [
+      "erpnext",
+      "erp\\s*next"
+    ],
+    "suitecrm": [
+      "suitecrm",
+      "suite\\s*crm"
+    ],
+    "espocrm": [
+      "espocrm",
+      "espo\\s*crm"
+    ],
+    "vtiger": [
+      "vtiger"
+    ],
+    "prestashop": [
+      "prestashop"
+    ],
+    "woocommerce": [
+      "woocommerce",
+      "woo\\s*commerce"
+    ],
+    "shopware": [
+      "shopware"
+    ],
+    "opencart": [
+      "opencart"
+    ],
+    "librechat": [
+      "librechat"
+    ],
+    "fastapi": [
+      "fastapi",
+      "fast\\s*api"
+    ],
+    "nestjs": [
+      "nestjs",
+      "nest\\.?js"
+    ],
+    "vllm": [
+      "vllm",
+      "v-llm"
+    ]
   },
   "strictSlugs": {
     "phoenix": {
@@ -174,7 +254,10 @@
       ]
     },
     "gin": {
-      "reject": ["\\bcocktail\\b", "\\bgin\\s+and\\s+tonic\\b"],
+      "reject": [
+        "\\bcocktail\\b",
+        "\\bgin\\s+and\\s+tonic\\b"
+      ],
       "requireAny": [
         "\\bgolang\\b",
         "\\bgo\\s+lang\\b",
@@ -185,7 +268,11 @@
       ]
     },
     "fiber": {
-      "reject": ["\\bdietary\\s+fiber\\b", "\\bnutrition\\b", "\\boptical\\s+fiber\\b"],
+      "reject": [
+        "\\bdietary\\s+fiber\\b",
+        "\\bnutrition\\b",
+        "\\boptical\\s+fiber\\b"
+      ],
       "requireAny": [
         "\\bgofiber\\b",
         "\\bgo\\s+fiber\\b",
@@ -195,7 +282,11 @@
       ]
     },
     "ghost": {
-      "reject": ["\\bparanormal\\b", "\\bscary\\s+sketch\\b", "\\bhorror\\b"],
+      "reject": [
+        "\\bparanormal\\b",
+        "\\bscary\\s+sketch\\b",
+        "\\bhorror\\b"
+      ],
       "requireAny": [
         "\\bghost\\s+cms\\b",
         "\\bghost\\s+blog\\b",
@@ -205,7 +296,12 @@
       ]
     },
     "rocket": {
-      "reject": ["\\bkerbal\\b", "\\bspacex\\b", "\\bpvc\\s+pipe\\b", "\\bmodel\\s+rocket\\b"],
+      "reject": [
+        "\\bkerbal\\b",
+        "\\bspacex\\b",
+        "\\bpvc\\s+pipe\\b",
+        "\\bmodel\\s+rocket\\b"
+      ],
       "requireAny": [
         "\\brocket\\.rs\\b",
         "\\brust\\s+rocket\\b",
@@ -224,7 +320,10 @@
       ]
     },
     "lit": {
-      "reject": ["\\bminecraft\\b", "\\broblox\\b"],
+      "reject": [
+        "\\bminecraft\\b",
+        "\\broblox\\b"
+      ],
       "requireAny": [
         "\\blit\\s+element\\b",
         "\\blit\\s+html\\b",
@@ -251,7 +350,11 @@
       ]
     },
     "astro": {
-      "reject": ["\\bastrology\\b", "\\bhoroscope\\b", "\\bzodiac\\b"],
+      "reject": [
+        "\\bastrology\\b",
+        "\\bhoroscope\\b",
+        "\\bzodiac\\b"
+      ],
       "requireAny": [
         "\\bastro\\s+framework\\b",
         "\\bastro\\s+js\\b",
@@ -276,6 +379,149 @@
         "\\bnode\\.?js\\s+koa\\b",
         "\\bkoa\\s+framework\\b",
         "\\bkoajs\\b"
+      ]
+    },
+    "express": {
+      "reject": [
+        "\\bhitfilm\\b",
+        "\\badobe\\s+express\\b",
+        "\\baliexpress\\b",
+        "\\bexpress\\s*vpn\\b",
+        "\\bamerican\\s+express\\b",
+        "\\bexpress\\s+entry\\b"
+      ],
+      "requireAny": [
+        "\\bexpress\\.?js\\b",
+        "\\bexpress\\s+js\\b",
+        "\\bnode\\.?js\\b",
+        "\\bnodejs\\b",
+        "\\bnode\\b",
+        "\\bjavascript\\b",
+        "\\btypescript\\b",
+        "\\brest\\s+api\\b",
+        "\\bbackend\\b",
+        "\\bmiddleware\\b",
+        "\\bmern\\b",
+        "\\bmongodb\\b"
+      ]
+    },
+    "alpine": {
+      "reject": [
+        "\\balpine\\s+linux\\b",
+        "\\bski\\b",
+        "\\bskiing\\b",
+        "\\bsnowboard\\b",
+        "\\balpine\\s+a\\d{3}\\b",
+        "\\bf1\\b",
+        "\\bformula\\s*1\\b"
+      ],
+      "requireAny": [
+        "\\balpine\\.?js\\b",
+        "\\balpine\\s+js\\b",
+        "\\balpinejs\\b",
+        "\\btailwind\\b",
+        "\\blivewire\\b",
+        "\\bx-data\\b"
+      ]
+    },
+    "django": {
+      "reject": [
+        "\\bunchained\\b",
+        "\\breinhardt\\b",
+        "\\btarantino\\b"
+      ],
+      "requireAny": [
+        "\\bpython\\b",
+        "\\bdjango\\s+(rest|app|project|tutorial|course|framework|admin|orm|model)\\b",
+        "\\bdrf\\b"
+      ]
+    },
+    "flask": {
+      "reject": [
+        "\\bhydro\\s*flask\\b",
+        "\\bthermos\\b",
+        "\\bwhisk(e)?y\\b"
+      ],
+      "requireAny": [
+        "\\bpython\\b",
+        "\\bflask\\s+(app|api|tutorial|course|framework|route|blueprint)\\b"
+      ]
+    },
+    "rails": {
+      "reject": [
+        "\\bmodel\\s+rail(way|road)?\\b",
+        "\\brailway\\s+station\\b",
+        "\\btrain(s|ing)?\\s+set\\b"
+      ],
+      "requireAny": [
+        "\\bruby\\b",
+        "\\bruby\\s+on\\s+rails\\b",
+        "\\brails\\s+[0-9]\\b",
+        "\\bactiverecord\\b",
+        "\\bhotwire\\b",
+        "\\bturbo\\b"
+      ]
+    },
+    "react": {
+      "reject": [
+        "\\breact(s|ing)\\s+to\\b",
+        "\\breaction\\s+(video|channel|compilation)\\b"
+      ]
+    },
+    "next": {
+      "requireAny": [
+        "\\bnext\\.?js\\b",
+        "\\bnextjs\\b",
+        "\\bnext\\s+js\\b",
+        "\\bvercel\\b",
+        "\\bapp\\s+router\\b",
+        "\\bserver\\s+components?\\b",
+        "\\bssr\\b"
+      ]
+    },
+    "angular": {
+      "reject": [
+        "\\bangular\\s+(momentum|velocity|acceleration)\\b",
+        "\\bphysics\\b",
+        "\\bgeometry\\b"
+      ]
+    },
+    "twill": {
+      "reject": [
+        "\\bfabric\\b",
+        "\\bweav(e|ing)\\b",
+        "\\bsew(ing)?\\b",
+        "\\btextile\\b",
+        "\\bpants\\b",
+        "\\btrousers\\b",
+        "\\bdenim\\b"
+      ],
+      "requireAny": [
+        "\\btwill\\s+cms\\b",
+        "\\blaravel\\b",
+        "\\barea\\s*17\\b",
+        "\\bcms\\b"
+      ]
+    },
+    "payload": {
+      "reject": [
+        "\\bmalware\\b",
+        "\\bexploit\\b",
+        "\\bdrone\\b",
+        "\\brocket\\b",
+        "\\bmetasploit\\b"
+      ],
+      "requireAny": [
+        "\\bpayload\\s+cms\\b",
+        "\\bpayloadcms\\b",
+        "\\bheadless\\s+cms\\b",
+        "\\bcms\\b"
+      ]
+    },
+    "twenty-crm": {
+      "requireAny": [
+        "\\btwenty\\s*crm\\b",
+        "\\bcrm\\b"
       ]
     }
   }
