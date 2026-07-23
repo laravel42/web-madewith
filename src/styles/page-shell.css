@@ -1,3 +1,6 @@
+/* A stray wide element must scroll inside its container, never widen the page. */
+html { overflow-x: clip; }
+
 body.has-page-shell {
   background:
     radial-gradient(680px 340px at 12% 2%, rgba(47, 111, 235, 0.06), transparent 60%),

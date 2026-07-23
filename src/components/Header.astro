@@ -476,6 +476,15 @@ const brandTextAccent = isEditorial
 
     .mw-header.is-open .mw-header-nav { display: flex; }
 
+    /* The default-variant grid uses display:contents on the nav with high
+       specificity; re-assert the mobile collapse at matching specificity. */
+    .mw-header:not(.is-terminal):not(.is-editorial):not(.is-banner) .mw-header-nav {
+      display: none;
+    }
+    .mw-header.is-open:not(.is-terminal):not(.is-editorial):not(.is-banner) .mw-header-nav {
+      display: flex;
+    }
+
     .mw-header-link,
     .mw-header-submit {
       padding: 12px 0;
