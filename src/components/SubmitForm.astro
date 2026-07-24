@@ -109,7 +109,10 @@ const labels = isTerminal
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
       // No API configured (e.g. local/preview) → keep the client-only success state.
-      if (!apiBase) { form.hidden = true; success.hidden = false; window.scrollTo({ top: 0 }); return; }
+      if (!apiBase) {
+        (window as any).posthog?.capture("project_submitted", { tech_name: form.dataset.slug });
+        form.hidden = true; success.hidden = false; window.scrollTo({ top: 0 }); return;
+      }
 
       if (btn) { btn.disabled = true; btn.dataset.label = btn.textContent || ""; btn.textContent = "Submitting…"; }
       try {
@@ -124,8 +127,10 @@ const labels = isTerminal
         });
         const data = await res.json().catch(() => ({}));
         if (!res.ok) throw new Error((data as any).error || `Submission failed (${res.status})`);
+        (window as any).posthog?.capture("project_submitted", { tech_name: form.dataset.slug });
         form.hidden = true; success.hidden = false; window.scrollTo({ top: 0 });
       } catch (err) {
+        (window as any).posthog?.capture("project_submission_failed", { tech_name: form.dataset.slug, error: (err as Error).message });
         alert((err as Error).message);
         if (btn) { btn.disabled = false; btn.textContent = btn.dataset.label || "Submit"; }
       }

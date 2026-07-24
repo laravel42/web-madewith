@@ -3,6 +3,7 @@ import type { Theme } from "../config/domains";
 import { readableOnDark, readableOnLight, solidSurface } from "../config/accessible-color";
 import { canonicalUrl } from "../config/domain-settings";
 import Header from "../components/Header.astro";
+import PostHog from "../components/PostHog.astro";
 import Footer from "../components/Footer.astro";
 import ChatWidget from "../components/ChatWidget.astro";
 import "../styles/blog-card-cover.css";
@@ -73,6 +74,7 @@ const accentSolid = solidSurface(theme.accent, theme.accentInk);
       href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&display=swap"
       rel="stylesheet"
     />
+    <PostHog />
 
     <style is:global>
       * { box-sizing: border-box; }

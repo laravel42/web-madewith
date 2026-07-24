@@ -239,6 +239,7 @@
       resetModal();
       dialog.showModal();
       requestAnimationFrame(() => emailInput.focus());
+      (window as any).posthog?.capture("subscribe_modal_opened");
     }
 
     function closeModal() {
@@ -297,6 +298,7 @@
 
       try {
         await subscribeNewsletter({ email, scope: "network" });
+        (window as any).posthog?.capture("newsletter_subscribed", { source: "subscribe_modal" });
         formWrap.hidden = true;
         success.hidden = false;
       } catch (err) {

@@ -3,6 +3,7 @@ import NetworkFooter from "../components/NetworkFooter.astro";
 import ChatWidget from "../components/ChatWidget.astro";
 import PageShell from "../components/PageShell.astro";
 import SiteHeader from "../components/SiteHeader.astro";
+import PostHog from "../components/PostHog.astro";
 import { readableOnLight } from "../config/accessible-color";
 import "../styles/blog-card-cover.css";
 
@@ -59,6 +60,7 @@ const FONT_HREF =
     <link href={FONT_HREF} rel="stylesheet" />
     <link rel="alternate" type="application/rss+xml" title="MadeWithWhat Articles" href="/articles/rss.xml" />
     <slot name="head" />
+    <PostHog />
     <style>
       * { box-sizing: border-box; }
       body {

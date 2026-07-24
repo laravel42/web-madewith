@@ -26,10 +26,10 @@ const pmActiveBg = tint(accentBase, 14, "#0d1117");
 const accent = readableOnSurfaceDark(accentBase, pmActiveBg);
 ---
 
-<div class="install" data-install style={`--pm-accent:${accent}; --pm-active-bg:${pmActiveBg};`}>
+<div class="install" data-install data-tech={theme.slug} style={`--pm-accent:${accent}; --pm-active-bg:${pmActiveBg};`}>
   <div class="row">
     <input class="fld" data-clone readonly value={clone} aria-label="Clone command" />
-    <button class="cp" type="button" data-copy="[data-clone]" aria-label="Copy clone command">
+    <button class="cp" type="button" data-copy="[data-clone]" data-command-type="clone" aria-label="Copy clone command">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
     </button>
   </div>
@@ -44,7 +44,7 @@ const accent = readableOnSurfaceDark(accentBase, pmActiveBg);
 
   <div class="row">
     <code class="fld out" data-cmd-out>{managers[0].cmd}</code>
-    <button class="cp" type="button" data-copy="[data-cmd-out]" aria-label="Copy install command">
+    <button class="cp" type="button" data-copy="[data-cmd-out]" data-command-type="install" aria-label="Copy install command">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
     </button>
   </div>
@@ -107,6 +107,10 @@ const accent = readableOnSurfaceDark(accentBase, pmActiveBg);
           if (!el) return;
           const text = (el as HTMLInputElement).value || el.textContent || "";
           flash(btn, text);
+          (window as any).posthog?.capture("install_command_copied", {
+            command_type: btn.dataset.commandType || "install",
+            tech_name: root.dataset.tech,
+          });
         });
       });
 

@@ -3,6 +3,7 @@ import NetworkFooter from "../components/NetworkFooter.astro";
 import ChatWidget from "../components/ChatWidget.astro";
 import PageShell from "../components/PageShell.astro";
 import SiteHeader from "../components/SiteHeader.astro";
+import PostHog from "../components/PostHog.astro";
 import type { GlobalNavActive } from "../components/GlobalSiteNav.astro";
 
 interface Props {
@@ -48,6 +49,7 @@ const FONT_HREF =
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href={FONT_HREF} rel="stylesheet" />
     <slot name="head" />
+    <PostHog />
     <style>
       * { box-sizing: border-box; }
       body {

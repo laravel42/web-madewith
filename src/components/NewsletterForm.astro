@@ -78,6 +78,7 @@ const bodyInk = theme.darkShell ? "#a3ada7" : "#5c665f"; // 9.1:1 on #000 / 5.8:
       if (btn) { btn.disabled = true; btn.dataset.label = btn.textContent || ""; btn.textContent = "Subscribing…"; }
       try {
         await subscribeNewsletter({ email, slug: domainSlug });
+        (window as any).posthog?.capture("newsletter_subscribed", { tech_name: domainSlug, source: "newsletter_page" });
         form.hidden = true;
         success.hidden = false;
         window.scrollTo({ top: 0 });

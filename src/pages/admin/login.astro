@@ -2,6 +2,7 @@
 // Standalone admin login. Posts to the Node app's /admin/api/login, which sets
 // an HMAC-signed session cookie; on success we go to the dashboard. Deliberately
 // does not use AdminLayout (that layout assumes an authenticated session).
+import PostHog from "../../components/PostHog.astro";
 ---
 
 <html lang="en">
@@ -10,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex" />
     <title>Admin sign in — MadeWith…</title>
+    <PostHog />
     <style>
       :root { color-scheme: light dark; }
       * { box-sizing: border-box; }
@@ -65,6 +67,7 @@
             body: JSON.stringify({ password }),
           });
           if (res.ok) {
+            (window as any).posthog?.capture("admin_logged_in");
             location.href = "/admin";
             return;
           }
