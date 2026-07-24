@@ -31,15 +31,20 @@
     if (!form || !success || form.dataset.newsletterInitialized) return;
     form.dataset.newsletterInitialized = "true";
 
+    const emailInput = form.querySelector<HTMLInputElement>('[name="email"]');
+    const prefill = new URLSearchParams(window.location.search).get("email");
+    if (emailInput && prefill) emailInput.value = prefill;
+
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
-      const email = (form.querySelector('[name="email"]') as HTMLInputElement | null)?.value.trim() || "";
+      const email = emailInput?.value.trim() || "";
       if (!email) return;
 
       if (btn) { btn.disabled = true; btn.dataset.label = btn.textContent || ""; btn.textContent = "Subscribing…"; }
       try {
         await subscribeNewsletter({ email, scope: "network" });
+        (window as any).posthog?.capture("newsletter_subscribed", { source: "newsletter_page" });
         form.hidden = true;
         success.hidden = false;
         window.scrollTo({ top: 0 });

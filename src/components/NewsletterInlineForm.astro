@@ -1,0 +1,169 @@
+---
+/**
+ * Compact email + Subscribe row used on blog/video banners.
+ * Posts to the Node app via same-origin /newsletter (proxied in dev + prod).
+ */
+interface Props {
+  /** PostHog / analytics source tag. */
+  source?: string;
+  /** Extra class on the root (e.g. vid-news-form). */
+  class?: string;
+  /** Accent for the submit button (defaults to network blue). */
+  buttonBg?: string;
+  buttonColor?: string;
+}
+
+const {
+  source = "newsletter_banner",
+  class: className = "",
+  buttonBg = "#2F6FEB",
+  buttonColor = "#fff",
+} = Astro.props;
+---
+
+<div
+  class:list={["nl-inline", className]}
+  data-role="newsletter-inline"
+  data-source={source}
+  style={`--nl-btn-bg:${buttonBg}; --nl-btn-ink:${buttonColor};`}
+>
+  <form class="nl-inline-form" data-role="newsletter-inline-form">
+    <input
+      class="nl-inline-input"
+      type="email"
+      name="email"
+      required
+      autocomplete="email"
+      aria-label="Email address"
+      placeholder="you@example.com"
+    />
+    <button class="nl-inline-btn" type="submit">Subscribe</button>
+  </form>
+  <p class="nl-inline-error" data-role="newsletter-inline-error" hidden></p>
+  <p class="nl-inline-success" data-role="newsletter-inline-success" hidden role="status"></p>
+</div>
+
+<style>
+  .nl-inline {
+    flex: 1 1 280px;
+    min-width: min(100%, 280px);
+    max-width: 420px;
+    width: 100%;
+  }
+
+  .nl-inline-form {
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .nl-inline-input {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    padding: 13px 16px;
+    font-size: 15px;
+    outline: none;
+    font-family: inherit;
+    background: #fff;
+    color: #12161a;
+  }
+
+  .nl-inline-btn {
+    flex: 0 0 auto;
+    background: var(--nl-btn-bg, #2f6feb);
+    color: var(--nl-btn-ink, #fff);
+    border: none;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 13px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: inherit;
+    white-space: nowrap;
+  }
+
+  .nl-inline-btn:disabled {
+    opacity: 0.7;
+    cursor: wait;
+  }
+
+  .nl-inline-error {
+    margin: 10px 0 0;
+    font-size: 13.5px;
+    line-height: 1.4;
+    color: #feb2b2;
+  }
+
+  .nl-inline-success {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.45;
+    color: #9ae6b4;
+  }
+
+  .nl-inline.is-done .nl-inline-form,
+  .nl-inline.is-done .nl-inline-error {
+    display: none;
+  }
+</style>
+
+<script>
+  import { newsletterSuccessMessage, subscribeNewsletter } from "../lib/newsletter";
+
+  function initNewsletterInlineForms() {
+    document.querySelectorAll<HTMLElement>('[data-role="newsletter-inline"]').forEach((root) => {
+      if (root.dataset.newsletterInitialized) return;
+      root.dataset.newsletterInitialized = "true";
+
+      const form = root.querySelector<HTMLFormElement>('[data-role="newsletter-inline-form"]');
+      const errorEl = root.querySelector<HTMLElement>('[data-role="newsletter-inline-error"]');
+      const successEl = root.querySelector<HTMLElement>('[data-role="newsletter-inline-success"]');
+      if (!form || !errorEl || !successEl) return;
+
+      const source = root.dataset.source || "newsletter_banner";
+
+      const clearError = () => {
+        errorEl.hidden = true;
+        errorEl.textContent = "";
+      };
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const emailInput = form.querySelector<HTMLInputElement>('input[name="email"]');
+        const btn = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+        const email = emailInput?.value.trim() || "";
+        if (!email) return;
+
+        clearError();
+        const label = btn?.textContent || "Subscribe";
+        if (btn) {
+          btn.disabled = true;
+          btn.textContent = "Subscribing…";
+        }
+
+        try {
+          const result = await subscribeNewsletter({ email, scope: "network" });
+          (window as any).posthog?.capture("newsletter_subscribed", { source, status: result.status });
+          successEl.textContent = newsletterSuccessMessage(result.status);
+          successEl.hidden = false;
+          root.classList.add("is-done");
+        } catch (err) {
+          errorEl.textContent = (err as Error).message || "Subscription failed.";
+          errorEl.hidden = false;
+          if (btn) {
+            btn.disabled = false;
+            btn.textContent = label;
+          }
+        }
+      });
+    });
+  }
+
+  initNewsletterInlineForms();
+  document.addEventListener("astro:page-load", initNewsletterInlineForms);
+</script>

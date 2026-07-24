@@ -18,6 +18,20 @@ import { refreshAll } from "./refresh";
 const SLUG = /^[a-z0-9-]+$/;
 const jsonHeaders = { "content-type": "application/json", "cache-control": "public, max-age=300" };
 
+/** Allow browser POSTs from the static site when PUBLIC_API_BASE is cross-origin. */
+async function corsPublic(c: any, next: () => Promise<void>) {
+  const origin = c.req.header("Origin") || "*";
+  const headers: Record<string, string> = {
+    "Access-Control-Allow-Origin": origin,
+    "Access-Control-Allow-Methods": "POST, OPTIONS",
+    "Access-Control-Allow-Headers": "content-type",
+    Vary: "Origin",
+  };
+  if (c.req.method === "OPTIONS") return new Response(null, { status: 204, headers });
+  await next();
+  for (const [k, v] of Object.entries(headers)) c.res.headers.set(k, v);
+}
+
 /** Constant-time refresh-secret check (ports the Worker's `authorized`). */
 function authorized(req: Request, env: AppEnv): boolean {
   const provided = (req.headers.get("authorization") || "").replace(/^Bearer\s+/i, "") || new URL(req.url).searchParams.get("key") || "";
@@ -30,6 +44,12 @@ function authorized(req: Request, env: AppEnv): boolean {
 
 export function createApp(env: AppEnv) {
   const app = new Hono();
+
+  // Public form POSTs may come from the static site origin (Pages / local Astro)
+  // when PUBLIC_API_BASE points at this host. Same-origin proxy skips CORS.
+  app.use("/newsletter", corsPublic);
+  app.use("/submit", corsPublic);
+  app.use("/api/chat", corsPublic);
 
   app.get("/health", (c) => c.json({ ok: true, domains: DOMAINS.map((d) => d.slug) }));
 

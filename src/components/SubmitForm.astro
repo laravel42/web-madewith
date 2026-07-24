@@ -1,11 +1,9 @@
 ---
 import type { Theme } from "../config/domains";
-import { readableOnLight } from "../config/accessible-color";
 import { CATEGORY_ORDER } from "../config/categories";
 interface Props { theme: Theme; }
 const { theme } = Astro.props;
 const base = `/${theme.slug}`;
-const radius = `${theme.radius}px`;
 const isTerminal = theme.variant === "terminal";
 const btnRadius = theme.editorial ? "2px" : isTerminal ? "8px" : "10px";
 // Page-level ink. The light branch also renders on Next's black shell, so the
@@ -13,13 +11,9 @@ const btnRadius = theme.editorial ? "2px" : isTerminal ? "8px" : "10px";
 // payload share while sitting on #fbfcfb).
 const labelInk = theme.darkShell ? "#b4b4b4" : "#3a443f"; // 10.1:1 on #000 / 9.8:1 on #fbfcfb
 const bodyInk = theme.darkShell ? "#a3ada7" : "#5c665f"; // 9.1:1 on #000 / 5.8:1 on #fbfcfb
-// The dropzone keeps its white fill on every shell, so its ink is derived for a
-// light surface — the raw accent was invisible there for the near-black brands.
-const dropInk = "#5c665f"; // 6.0:1 on #fff
-const dropAccent = readableOnLight(theme.accent);
 const labels = isTerminal
-  ? { repo: "repository_url", name: "project_name", desc: "description", cat: "category", demo: "demo_url", shot: "screenshot", submit: "./submit" }
-  : { repo: "GitHub repository URL", name: "Project name", desc: "Short description", cat: "Category", demo: "Live demo URL", shot: "Screenshot", submit: "Submit project" };
+  ? { repo: "repository_url", name: "project_name", desc: "description", cat: "category", demo: "demo_url", submit: "./submit" }
+  : { repo: "GitHub repository URL", name: "Project name", desc: "Short description", cat: "Category", demo: "Live demo URL", submit: "Submit project" };
 ---
 
 {isTerminal ? (
@@ -43,16 +37,6 @@ const labels = isTerminal
         <div style="display:flex; gap:16px;">
           <div style="flex:1;"><label for="t-category" style="display:block; font-size:12px; color:#7c887f; margin-bottom:8px;">{labels.cat}</label><select id="t-category" name="category" style="width:100%; border:1px solid #232a26; border-radius:8px; padding:13px 15px; font-size:14px; outline:none; background:#121614; color:#e8efe9;">{CATEGORY_ORDER.map((c) => <option>{c}</option>)}</select></div>
           <div style="flex:1;"><label for="t-demo" style="display:block; font-size:12px; color:#7c887f; margin-bottom:8px;">{labels.demo}</label><input id="t-demo" name="demo" type="url" placeholder="https://…" style="width:100%; border:1px solid #232a26; border-radius:8px; padding:13px 15px; font-size:14px; outline:none; background:#121614; color:#e8efe9;"/></div>
-        </div>
-        <div>
-          <label for="t-screenshot" style="display:block; cursor:pointer;">
-            <span style="display:block; font-size:12px; color:#7c887f; margin-bottom:8px;">{labels.shot}</span>
-            <span style="display:block; border:1.5px dashed #2a332d; border-radius:10px; padding:34px; text-align:center; color:#8b948d; font-size:13px; background:#101410;">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" style="margin-bottom:8px;"><path d="M12 16V4m0 0L8 8m4-4 4 4" stroke="#4a554f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke="#4a554f" stroke-width="2" stroke-linecap="round"/></svg>
-              <span style="display:block;">Drop an image or <span style="color:var(--accent-text);">browse</span></span>
-            </span>
-          </label>
-          <input id="t-screenshot" name="screenshot" type="file" accept="image/*" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); border:0;"/>
         </div>
         <button type="submit" style="background:var(--accent-solid); color:var(--accentInk); font-weight:700; padding:15px 22px; border-radius:8px; cursor:pointer; font-size:14px; text-align:center; margin-top:6px; border:none;">{labels.submit}</button>
       </div>
@@ -80,16 +64,6 @@ const labels = isTerminal
           <div style="flex:1;"><label for="l-category" style={`display:block; font-size:13px; font-weight:600; color:${labelInk}; margin-bottom:8px;`}>{labels.cat}</label><select id="l-category" name="category" style={`width:100%; border:1px solid #e0e5e2; border-radius:${btnRadius}; padding:13px 15px; font-size:15px; outline:none; background:#fff; color:#16201b;`}>{CATEGORY_ORDER.map((c) => <option>{c}</option>)}</select></div>
           <div style="flex:1;"><label for="l-demo" style={`display:block; font-size:13px; font-weight:600; color:${labelInk}; margin-bottom:8px;`}>{labels.demo}</label><input id="l-demo" name="demo" type="url" placeholder="https://…" style={`width:100%; border:1px solid #e0e5e2; border-radius:${btnRadius}; padding:13px 15px; font-size:15px; outline:none; background:#fff; color:#16201b;`}/></div>
         </div>
-        <div>
-          <label for="l-screenshot" style="display:block; cursor:pointer;">
-            <span style={`display:block; font-size:13px; font-weight:600; color:${labelInk}; margin-bottom:8px;`}>{labels.shot}</span>
-            <span style={`display:block; border:1.5px dashed #d6ddd9; border-radius:${radius}; padding:34px; text-align:center; color:${dropInk}; font-size:14px; background:#fff;`}>
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" style="margin-bottom:8px;"><path d="M12 16V4m0 0L8 8m4-4 4 4" stroke="#aab3ae" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" stroke="#aab3ae" stroke-width="2" stroke-linecap="round"/></svg>
-              <span style="display:block;">Drop an image or <span style={`color:${dropAccent};`}>browse</span></span>
-            </span>
-          </label>
-          <input id="l-screenshot" name="screenshot" type="file" accept="image/*" style="position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); border:0;"/>
-        </div>
         <button type="submit" class="btn btn-primary" style="padding:15px 22px; font-size:15px; margin-top:6px; border:none; width:100%;">{labels.submit}</button>
       </div>
     </form>
@@ -97,42 +71,51 @@ const labels = isTerminal
 )}
 
 <script>
+  import { submitProject } from "../lib/public-api";
+
   function initSubmit() {
     const form = document.querySelector<HTMLFormElement>('[data-role="submit-form"]');
     const success = document.querySelector<HTMLElement>('[data-role="submit-success"]');
     if (!form || !success || form.dataset.submitInitialized) return;
     form.dataset.submitInitialized = "true";
-    const apiBase = import.meta.env.PUBLIC_API_BASE;
+
     const val = (name: string) => (form.querySelector(`[name="${name}"]`) as HTMLInputElement | null)?.value.trim() || "";
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
-      // No API configured (e.g. local/preview) → keep the client-only success state.
-      if (!apiBase) {
-        (window as any).posthog?.capture("project_submitted", { tech_name: form.dataset.slug });
-        form.hidden = true; success.hidden = false; window.scrollTo({ top: 0 }); return;
+      const slug = form.dataset.slug || "";
+      const label = btn?.textContent || "Submit";
+
+      if (btn) {
+        btn.disabled = true;
+        btn.dataset.label = label;
+        btn.textContent = "Submitting…";
       }
 
-      if (btn) { btn.disabled = true; btn.dataset.label = btn.textContent || ""; btn.textContent = "Submitting…"; }
       try {
-        const res = await fetch(`${apiBase.replace(/\/$/, "")}/submit`, {
-          method: "POST",
-          headers: { "content-type": "application/json" },
-          body: JSON.stringify({
-            slug: form.dataset.slug,
-            repo_url: val("repo"), name: val("name"), description: val("description"),
-            category: val("category"), demo_url: val("demo"),
-          }),
+        await submitProject({
+          slug,
+          repoUrl: val("repo"),
+          name: val("name"),
+          description: val("description"),
+          category: val("category"),
+          demoUrl: val("demo"),
         });
-        const data = await res.json().catch(() => ({}));
-        if (!res.ok) throw new Error((data as any).error || `Submission failed (${res.status})`);
-        (window as any).posthog?.capture("project_submitted", { tech_name: form.dataset.slug });
-        form.hidden = true; success.hidden = false; window.scrollTo({ top: 0 });
+        (window as any).posthog?.capture("project_submitted", { tech_name: slug });
+        form.hidden = true;
+        success.hidden = false;
+        window.scrollTo({ top: 0 });
       } catch (err) {
-        (window as any).posthog?.capture("project_submission_failed", { tech_name: form.dataset.slug, error: (err as Error).message });
+        (window as any).posthog?.capture("project_submission_failed", {
+          tech_name: slug,
+          error: (err as Error).message,
+        });
         alert((err as Error).message);
-        if (btn) { btn.disabled = false; btn.textContent = btn.dataset.label || "Submit"; }
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = btn.dataset.label || label;
+        }
       }
     });
   }

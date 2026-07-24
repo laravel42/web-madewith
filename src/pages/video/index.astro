@@ -1,6 +1,7 @@
 ---
 import NetworkLayout from "../../layouts/NetworkLayout.astro";
 import VideoCard from "../../components/VideoCard.astro";
+import NewsletterInlineForm from "../../components/NewsletterInlineForm.astro";
 import { allVideoCards, videoGroupChips } from "../../lib/video-view";
 
 const cards = allVideoCards();
@@ -115,10 +116,7 @@ const jsonLd = {
           <h2 class="disp vid-news-title">One email a week. Every stack.</h2>
           <p class="vid-news-sub">The best new videos across the network, hand-picked. No spam, unsubscribe anytime.</p>
         </div>
-        <form action="/newsletter/" method="get" class="vid-news-form">
-          <input type="email" name="email" aria-label="Email address" placeholder="you@example.com" />
-          <button type="submit">Subscribe</button>
-        </form>
+        <NewsletterInlineForm source="video_index_banner" class="vid-news-form" />
       </div>
     </section>
   </main>
@@ -178,7 +176,7 @@ const jsonLd = {
     .vid-news-copy { max-width: 460px; }
     .vid-news-title { font-size: 26px; font-weight: 800; letter-spacing: -0.02em; color: #fff; margin: 0; }
     .vid-news-sub { font-size: 15px; color: #b8c0d4; margin: 10px 0 0; line-height: 1.55; }
-    .vid-news-form { display: flex; gap: 10px; flex: 1; min-width: 280px; max-width: 420px; }
+    .vid-news-form { display: flex; flex-wrap: wrap; gap: 10px; flex: 1; min-width: 0; max-width: 420px; }
     .vid-news-form input { flex: 1; border: none; border-radius: 12px; padding: 14px 16px; font-size: 15px; outline: none; font-family: inherit; }
     .vid-news-form button { background: #2F6FEB; color: #fff; border: none; font-weight: 700; font-size: 15px; padding: 14px 22px; border-radius: 12px; cursor: pointer; font-family: inherit; white-space: nowrap; }
 

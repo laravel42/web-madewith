@@ -1,3 +1,5 @@
+import { publicApiBase } from "./public-api";
+
 export type NewsletterScope = "network" | "domain";
 
 export interface NewsletterSubscribeInput {
@@ -8,18 +10,17 @@ export interface NewsletterSubscribeInput {
 
 export interface NewsletterSubscribeResult {
   ok: true;
-  status: "subscribed" | "already_subscribed" | "reactivated" | "preview";
+  status: "subscribed" | "already_subscribed" | "reactivated";
 }
 
-function apiBase(): string | undefined {
-  const base = import.meta.env.PUBLIC_API_BASE;
-  return typeof base === "string" && base.trim() ? base.replace(/\/$/, "") : undefined;
+/** @deprecated Prefer publicApiBase from ./public-api */
+export function newsletterApiBase(): string {
+  return publicApiBase();
 }
 
 export async function subscribeNewsletter(input: NewsletterSubscribeInput): Promise<NewsletterSubscribeResult> {
   const email = input.email.trim();
-  const base = apiBase();
-  if (!base) return { ok: true, status: "preview" };
+  if (!email) throw new Error("Enter your email address.");
 
   const body: Record<string, string> = { email };
   if (input.slug) {
@@ -29,12 +30,12 @@ export async function subscribeNewsletter(input: NewsletterSubscribeInput): Prom
     body.scope = input.scope ?? "network";
   }
 
-  const res = await fetch(`${base}/newsletter`, {
+  const res = await fetch(`${publicApiBase()}/newsletter`, {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(body),
   });
-  const data = await res.json().catch(() => ({})) as { error?: string; status?: string };
+  const data = (await res.json().catch(() => ({}))) as { error?: string; status?: string };
   if (!res.ok) throw new Error(data.error || `Subscription failed (${res.status})`);
 
   const status = data.status;
@@ -47,4 +48,11 @@ export async function subscribeNewsletter(input: NewsletterSubscribeInput): Prom
 export function isDefaultSubscribeHref(href: string): boolean {
   const normalized = href.replace(/\/+$/, "") || "/";
   return normalized === "/newsletter";
+}
+
+/** Status copy for inline banners after a successful subscribe. */
+export function newsletterSuccessMessage(status: NewsletterSubscribeResult["status"]): string {
+  if (status === "already_subscribed") return "You're already on the list.";
+  if (status === "reactivated") return "Welcome back — you're subscribed again.";
+  return "You're subscribed. Thanks!";
 }

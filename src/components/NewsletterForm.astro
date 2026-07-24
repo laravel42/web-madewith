@@ -69,10 +69,14 @@ const bodyInk = theme.darkShell ? "#a3ada7" : "#5c665f"; // 9.1:1 on #000 / 5.8:
     if (!form || !success || form.dataset.newsletterInitialized) return;
     form.dataset.newsletterInitialized = "true";
 
+    const emailInput = form.querySelector('[name="email"]');
+    const prefill = new URLSearchParams(window.location.search).get("email");
+    if (emailInput && prefill) emailInput.value = prefill;
+
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]');
-      const email = (form.querySelector('[name="email"]')?.value || "").trim();
+      const email = (emailInput?.value || "").trim();
       if (!email) return;
 
       if (btn) { btn.disabled = true; btn.dataset.label = btn.textContent || ""; btn.textContent = "Subscribing…"; }
