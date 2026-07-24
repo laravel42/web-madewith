@@ -36,11 +36,17 @@ const submitLabel = isTerminal ? "+ submit" : isNext || isBannerHeader ? "Submit
 const brandTextAccent = isEditorial
   ? theme.accent
   : `color-mix(in srgb, ${theme.accent} 45%, #16202a)`;
+
+function opaqueBg(color: string): string {
+  const match = color.match(/^rgba?\(\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)/);
+  if (match) return `rgb(${match[1]}, ${match[2]}, ${match[3]})`;
+  return color;
+}
 ---
 
 <header
   class:list={["mw-header", isTerminal && "is-terminal", isEditorial && "is-editorial", isBannerHeader && "is-banner"]}
-  style={`--header-bg:${theme.headerBg}; --header-border:${theme.headerBorder}; --accent:${theme.accent}; --accentInk:${theme.accentInk}; --radius:${theme.radius}px;`}
+  style={`--header-bg:${theme.headerBg}; --header-bg-solid:${opaqueBg(theme.headerBg)}; --header-border:${theme.headerBorder}; --accent:${theme.accent}; --accentInk:${theme.accentInk}; --radius:${theme.radius}px;`}
 >
   <div class="mw-header-inner">
     <a href={`${base}/`} class="mw-header-brand">
@@ -336,9 +342,9 @@ const brandTextAccent = isEditorial
   }
 
   .mw-header:not(.is-terminal):not(.is-editorial):not(.is-banner) .mw-header-link.is-active {
-    color: #12161a;
+    color: var(--accent-text, #12161a);
     font-weight: 700;
-    background: color-mix(in srgb, rgb(47, 111, 235) 14%, transparent);
+    background: color-mix(in srgb, var(--accent) 14%, transparent);
   }
 
   .mw-header:not(.is-terminal):not(.is-editorial):not(.is-banner) .mw-header-link:hover {
@@ -349,7 +355,7 @@ const brandTextAccent = isEditorial
   }
 
   .mw-header:not(.is-terminal):not(.is-editorial):not(.is-banner) .mw-header-link.is-active:hover {
-    color: #12161a;
+    color: var(--accent-text, #12161a);
     text-decoration: none;
   }
 
@@ -402,31 +408,31 @@ const brandTextAccent = isEditorial
     background: color-mix(in srgb, var(--accent) 14%, transparent);
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     .mw-header-inner {
       flex-wrap: wrap;
       padding: 14px 20px;
     }
 
-    .mw-header-global-nav {
-      width: 100%;
-    }
-
-    .mw-header-global-nav .global-site-nav {
-      width: 100%;
-      flex-wrap: wrap;
-      justify-content: flex-start;
+    .mw-header-global-nav,
+    .mw-header-global-nav :global(.global-site-nav) {
+      display: contents;
     }
 
     .mw-header-global-nav + .mw-header-link,
     .mw-header-nav-center > .mw-header-global-nav + .mw-header-link,
     .mw-header-nav-center + .mw-header-nav-end {
+      border-top: none;
+    }
+
+    .mw-header:not(.is-terminal):not(.is-editorial):not(.is-banner) :global(.global-site-nav-link) + .mw-header-link,
+    .mw-header:not(.is-terminal):not(.is-editorial):not(.is-banner) :global(.global-site-nav-link) + :global(.global-site-nav-link) {
       border-top: 1px solid color-mix(in srgb, currentColor 12%, transparent);
     }
 
-    .is-terminal .mw-header-global-nav + .mw-header-link,
-    .is-terminal .mw-header-nav-center > .mw-header-global-nav + .mw-header-link {
-      border-top-color: #232a26;
+    .is-terminal :global(.global-site-nav-link) + .mw-header-link,
+    .is-terminal :global(.global-site-nav-link) + :global(.global-site-nav-link) {
+      border-top: 1px solid #232a26;
     }
 
     .is-editorial .mw-header-inner { padding: 16px 20px; }
@@ -464,9 +470,8 @@ const brandTextAccent = isEditorial
       align-items: stretch;
       gap: 0;
       padding: 8px 20px 16px;
-      background: var(--header-bg);
+      background: var(--header-bg-solid);
       border-bottom: var(--header-border);
-      backdrop-filter: blur(10px);
     }
 
     .mw-header-nav-center,
@@ -491,8 +496,41 @@ const brandTextAccent = isEditorial
       white-space: normal;
     }
 
-    .mw-header-link + .mw-header-link {
+    .mw-header:not(.is-terminal):not(.is-editorial):not(.is-banner) .mw-header-link,
+    .mw-header:not(.is-terminal):not(.is-editorial):not(.is-banner) .mw-header-global-nav :global(.global-site-nav-link) {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 0;
+      border-left: 3px solid transparent;
+      margin-inline: -20px;
+      padding: 12px 20px 12px 17px;
+    }
+
+    .mw-header:not(.is-terminal):not(.is-editorial):not(.is-banner) .mw-header-link:hover:not(.is-active),
+    .mw-header:not(.is-terminal):not(.is-editorial):not(.is-banner) .mw-header-global-nav :global(.global-site-nav-link:hover:not(.is-active)) {
+      color: var(--accent-text, #12161a);
+      background: color-mix(in srgb, var(--accent) 6%, var(--header-bg-solid));
+      text-decoration: none;
+      border-left-color: color-mix(in srgb, var(--accent) 40%, transparent);
+    }
+
+    .mw-header-link + .mw-header-submit {
       border-top: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+    }
+
+    .mw-header:not(.is-terminal):not(.is-editorial):not(.is-banner) .mw-header-link.is-active,
+    .mw-header:not(.is-terminal):not(.is-editorial):not(.is-banner) .mw-header-global-nav :global(.global-site-nav-link.is-active) {
+      color: var(--accent-text, #12161a);
+      background: color-mix(in srgb, var(--accent) 10%, var(--header-bg-solid));
+      border-left-color: var(--accent-solid, var(--accent));
+    }
+
+    .mw-header:not(.is-terminal):not(.is-editorial):not(.is-banner) .mw-header-link.is-active:hover,
+    .mw-header:not(.is-terminal):not(.is-editorial):not(.is-banner) .mw-header-global-nav :global(.global-site-nav-link.is-active:hover) {
+      color: var(--accent-text, #12161a);
+      text-decoration: none;
     }
 
     .is-terminal .mw-header-link + .mw-header-link {

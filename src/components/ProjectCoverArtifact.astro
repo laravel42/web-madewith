@@ -56,13 +56,14 @@ const maxStats = isSm ? 3 : 4;
 const present = rawStats.filter((s) => typeof s.v === "number" && s.v > 0).slice(0, maxStats);
 
 // ---- size-specific geometry ----
+const padL = isSm ? 4 : 7;
 const VW = isSm ? 176 : 340;
 const VH = isSm ? 92 : 124;
 const borderH = isSm ? 4 : 6;
 const favSize = isSm ? 15 : 22;
-const favX = isSm ? 14 : 22;
+const favX = (isSm ? 14 : 22) + padL;
 const favY = isSm ? 12 : 22;
-const nameX = isSm ? 36 : 54;
+const nameX = (isSm ? 36 : 54) + padL;
 const nameY = isSm ? 26 : 40;
 const nameFont = isSm ? 13 : 20;
 const nameClipN = isSm ? 14 : 22;
@@ -73,7 +74,7 @@ const iconTop = statBaseline - (isSm ? 10 : 12);
 const charW = isSm ? 6.2 : 7.3;
 const gapAfter = isSm ? 12 : 16;
 
-let cursor = isSm ? 14 : 24;
+let cursor = (isSm ? 14 : 24) + padL;
 const placed = present.map((s) => {
   const label = formatStars(s.v as number);
   const item = { icon: s.icon, label, x: cursor };
@@ -85,7 +86,7 @@ const glow2 = dark ? 0.1 : 0.06;
 ---
 
 <div style="position:absolute; inset:0; overflow:hidden;">
-  <svg aria-hidden="true" viewBox={`0 0 ${VW} ${VH}`} preserveAspectRatio="xMidYMid slice" style="position:absolute; inset:0; width:100%; height:100%; display:block;">
+  <svg aria-hidden="true" viewBox={`0 0 ${VW} ${VH}`} preserveAspectRatio="xMinYMid slice" style="position:absolute; inset:0; width:100%; height:100%; display:block;">
     <rect x="0" y="0" width={VW} height={VH} style={`fill:${bg}`} />
     {/* background visual — soft accent glow + faint accent motes */}
     <circle cx={VW - 8} cy={-10} r={isSm ? 58 : 112} style={`fill:${accent};opacity:${glow}`} />

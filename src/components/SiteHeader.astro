@@ -16,23 +16,45 @@ const {
 } = Astro.props;
 ---
 
-<header class="site-header">
+<header
+  class="site-header"
+  style="--header-bg:rgba(251,252,251,.86); --header-bg-solid:rgb(251,252,251); --header-border:1px solid #ececec; --accent:#2f6feb; --accent-text:#12161a; --accent-solid:#2f6feb;"
+>
   <div class="site-header-inner">
     <a href="/" aria-label="MadeWithWhat home" class="site-header-brand">
       <MadeWithWhatWordmark size="header" />
     </a>
-    <GlobalSiteNav
-      part="links"
-      active={active}
-      includeSubscribe={false}
-    />
-    <div class="site-header-end">
-      <GlobalSiteNav
-        part="subscribe"
-        subscribeHref={subscribeHref}
-        subscribeLabel={subscribeLabel}
-      />
-    </div>
+
+    <button
+      type="button"
+      class="site-header-toggle"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="site-header-nav"
+    >
+      <span class="site-header-toggle-bar" aria-hidden="true"></span>
+      <span class="site-header-toggle-bar" aria-hidden="true"></span>
+      <span class="site-header-toggle-bar" aria-hidden="true"></span>
+    </button>
+
+    <nav id="site-header-nav" class="site-header-nav" aria-label="Site">
+      <div class="site-header-nav-center">
+        <div class="site-header-global-nav">
+          <GlobalSiteNav
+            part="links"
+            active={active}
+            includeSubscribe={false}
+          />
+        </div>
+      </div>
+      <div class="site-header-nav-end">
+        <GlobalSiteNav
+          part="subscribe"
+          subscribeHref={subscribeHref}
+          subscribeLabel={subscribeLabel}
+        />
+      </div>
+    </nav>
   </div>
 </header>
 
@@ -41,20 +63,24 @@ const {
     position: sticky;
     top: 0;
     z-index: 30;
-    background: rgba(251, 252, 251, 0.86);
+    background: var(--header-bg);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid #ececec;
+    border-bottom: var(--header-border);
+    /* Body has 20px side padding; bleed the bar edge-to-edge without widening layout. */
+    margin-inline: -20px;
+    padding-inline: 20px;
   }
 
   .site-header-inner {
     max-width: 1100px;
     margin: 0 auto;
     padding: 18px 28px;
-    width: 100%;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
     column-gap: 4px;
+    position: relative;
+    overflow-x: clip;
   }
 
   .site-header-brand {
@@ -63,39 +89,207 @@ const {
     gap: 10px;
     text-decoration: none;
     color: inherit;
-    justify-self: start;
     grid-column: 1;
+    justify-self: start;
+    min-width: 0;
+    overflow: hidden;
   }
 
-  .site-header-inner :global(.global-site-nav) {
-    justify-self: center;
+  .site-header-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    cursor: pointer;
+    color: #2a3038;
+    flex-shrink: 0;
+  }
+
+  .site-header-toggle-bar {
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin: 0 auto;
+    background: currentColor;
+    border-radius: 1px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .site-header.is-open .site-header-toggle-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .site-header.is-open .site-header-toggle-bar:nth-child(2) { opacity: 0; }
+  .site-header.is-open .site-header-toggle-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Let the two halves sit in their own grid tracks so the menu is centered
+     on the page and Subscribe can never overlap the links. */
+  .site-header-nav {
+    display: contents;
+    font-size: 14px;
+    color: #2a3038;
+  }
+
+  .site-header-nav-center {
     grid-column: 2;
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
   }
 
-  @media (max-width: 720px) {
-    .site-header-inner {
-      grid-template-columns: auto auto;
-      grid-template-rows: auto auto;
-      row-gap: 8px;
-      padding: 12px 16px;
-    }
-    .site-header-brand { grid-column: 1; grid-row: 1; }
-    .site-header-end { grid-column: 2; grid-row: 1; }
-    .site-header-inner :global(.global-site-nav) {
-      grid-column: 1 / -1;
-      grid-row: 2;
-      justify-self: stretch;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-    }
-    .site-header-inner :global(.global-site-nav)::-webkit-scrollbar { display: none; }
-  }
-
-  .site-header-end {
-    justify-self: end;
+  .site-header-nav-end {
     grid-column: 3;
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .site-header-global-nav {
     display: flex;
     align-items: center;
   }
+
+  .site-header-global-nav :global(.global-site-nav) {
+    gap: 6px;
+  }
+
+  /* Collapse to the hamburger only on small screens. */
+  @media (max-width: 900px) {
+    .site-header-inner {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 20px;
+    }
+
+    .site-header-brand {
+      flex: 0 1 auto;
+      min-width: 0;
+      overflow: hidden;
+    }
+
+    .site-header-toggle {
+      display: flex;
+      flex-shrink: 0;
+      margin-left: auto;
+    }
+
+    /* Keep the whole nav subtree out of the top bar — no display:contents here. */
+    .site-header-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+      gap: 0;
+      grid-column: auto;
+      padding: 8px 20px 16px;
+      background: var(--header-bg-solid);
+      border-bottom: var(--header-border);
+    }
+
+    .site-header.is-open .site-header-nav { display: flex; }
+
+    .site-header.is-open .site-header-nav-center,
+    .site-header.is-open .site-header-nav-end,
+    .site-header.is-open .site-header-global-nav,
+    .site-header.is-open .site-header-global-nav :global(.global-site-nav) {
+      display: contents;
+    }
+
+    .site-header :global(.global-site-nav-link) {
+      display: flex;
+      align-items: center;
+      gap: 0.35em;
+      width: 100%;
+      box-sizing: border-box;
+      border-radius: 0;
+      border-left: 3px solid transparent;
+      margin-inline: -20px;
+      padding: 12px 20px 12px 17px;
+      white-space: normal;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .site-header :global(.global-site-nav-link:hover:not(.is-active)) {
+      color: var(--accent-text, #12161a);
+      background: color-mix(in srgb, var(--accent) 6%, var(--header-bg-solid));
+      text-decoration: none;
+      border-left-color: color-mix(in srgb, var(--accent) 40%, transparent);
+    }
+
+    .site-header :global(.global-site-nav-link.is-active) {
+      color: var(--accent-text, #12161a);
+      font-weight: 700;
+      background: color-mix(in srgb, var(--accent) 10%, var(--header-bg-solid));
+      border-left-color: var(--accent-solid, var(--accent));
+    }
+
+    .site-header :global(.global-site-nav-link.is-active:hover) {
+      color: var(--accent-text, #12161a);
+      text-decoration: none;
+    }
+
+    .site-header-nav-end :global(.global-site-nav-subscribe) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-self: stretch;
+      width: auto;
+      box-sizing: border-box;
+      margin-top: 8px;
+      padding: 11px 16px;
+      border-radius: 10px;
+      text-align: center;
+      white-space: normal;
+    }
+  }
 </style>
+
+<script>
+  function initSiteHeaders(root: ParentNode = document) {
+    root.querySelectorAll(".site-header").forEach((header) => {
+      if (header.hasAttribute("data-nav-init")) return;
+      header.setAttribute("data-nav-init", "");
+
+      const toggle = header.querySelector<HTMLButtonElement>(".site-header-toggle");
+      const nav = header.querySelector<HTMLElement>(".site-header-nav");
+      if (!toggle || !nav) return;
+
+      const close = () => {
+        header.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open menu");
+      };
+
+      toggle.addEventListener("click", () => {
+        const open = header.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", String(open));
+        toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      });
+
+      nav.querySelectorAll("a").forEach((link) => link.addEventListener("click", close));
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && header.classList.contains("is-open")) close();
+      });
+    });
+  }
+
+  initSiteHeaders();
+  document.addEventListener("astro:page-load", () => initSiteHeaders());
+</script>
