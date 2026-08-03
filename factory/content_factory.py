@@ -16,7 +16,9 @@ Key behavior:
 - Adds technology-specific tags, TOC, FAQ, JSON-LD, data tables, callouts,
   Mermaid diagrams, and locally generated cover/data images.
 - Loads configuration from ../.env first, then ./.env.
-- Rejects exact and near-duplicate content.
+- Rejects exact and near-duplicate content, including against articles already
+  committed to src/content/blog and prior factory output (imported into the
+  dedup corpus at startup).
 
 This is a publishing draft generator. Security/news articles are constrained to
 the GitHub facts collected at generation time and must be reviewed before
@@ -65,6 +67,10 @@ _db = Path(os.getenv("CONTENT_DB", "content_factory.sqlite3"))
 DB_PATH = _db if _db.is_absolute() else BASE_DIR / _db
 _out = Path(os.getenv("CONTENT_OUTPUT_DIR", "output"))
 OUTPUT_DIR = _out if _out.is_absolute() else BASE_DIR / _out
+# Committed site articles (hydrate-blog's destination). Imported into the dedup
+# corpus at startup so a fresh checkout / deleted DB can't regenerate them.
+_site_blog = Path(os.getenv("SITE_BLOG_DIR", "../src/content/blog"))
+SITE_BLOG_DIR = _site_blog if _site_blog.is_absolute() else BASE_DIR / _site_blog
 # LLM provider: OpenRouter whenever OPENROUTER_API_KEY is set (FACTORY_BASE_URL
 # overrides the endpoint), OpenAI direct otherwise. Model precedence:
 # FACTORY_MODEL > backend default (Sonnet 4.5 on OpenRouter for long-form
@@ -81,7 +87,7 @@ else:
 LLM_MAX_TOKENS = int(os.getenv("FACTORY_MAX_TOKENS", "32000"))
 GITHUB_API_VERSION = os.getenv("GITHUB_API_VERSION", "2022-11-28")
 SITE_NAME = os.getenv("SITE_NAME", "MadeWithWhat")
-SITE_URL = os.getenv("SITE_URL", "https://madewithwhat.com").rstrip("/")
+SITE_URL = os.getenv("SITE_URL", "https://madewithwhat.net").rstrip("/")
 AUTHOR_NAME = os.getenv("AUTHOR_NAME", "MadeWithWhat Editorial Team")
 REQUEST_TIMEOUT = int(os.getenv("REQUEST_TIMEOUT", "45"))
 
@@ -1365,12 +1371,64 @@ def render_frontmatter(
     return "\n".join(lines)
 
 
+def _frontmatter_field(markdown: str, field: str) -> str | None:
+    match = re.match(r"---\n(.*?)\n---", markdown, flags=re.S)
+    if not match:
+        return None
+    line = re.search(rf"^{field}:\s*(.+?)\s*$", match.group(1), flags=re.M)
+    if not line:
+        return None
+    return line.group(1).strip().strip("\"'") or None
+
+
+def import_existing_articles(conn: sqlite3.Connection) -> int:
+    """Seed the dedup corpus with articles that exist outside the database:
+    the committed site content and any factory output not yet recorded.
+    Without this, a fresh checkout (or a deleted DB) would happily regenerate
+    near-copies of already-published articles or reuse their slugs."""
+    before = conn.execute("SELECT COUNT(*) FROM articles").fetchone()[0]
+    for root in (SITE_BLOG_DIR, OUTPUT_DIR / "articles"):
+        if not root.is_dir():
+            continue
+        for path in sorted(root.rglob("*.md")):
+            markdown = path.read_text(encoding="utf-8")
+            slug = slugify(_frontmatter_field(markdown, "slug") or path.stem)[:180]
+            title = _frontmatter_field(markdown, "title") or slug
+            conn.execute(
+                """
+                INSERT OR IGNORE INTO articles (
+                    content_hash, title_hash, article_type, primary_tech, secondary_tech,
+                    title, slug, description, tags_json, publication_date, body,
+                    max_similarity, source_fingerprint, status, created_at
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0, ?, 'imported', ?)
+                """,
+                (
+                    hashlib.sha256(clean_markdown_for_similarity(markdown).encode()).hexdigest(),
+                    hashlib.sha256(slugify(title).encode()).hexdigest(),
+                    _frontmatter_field(markdown, "category") or "imported",
+                    _frontmatter_field(markdown, "primaryTechnology") or "unknown",
+                    _frontmatter_field(markdown, "secondaryTechnology"),
+                    title,
+                    slug,
+                    _frontmatter_field(markdown, "description") or "",
+                    "[]",
+                    _frontmatter_field(markdown, "date") or "1970-01-01",
+                    markdown,
+                    f"imported:{path.name}",
+                    utc_now().isoformat(),
+                ),
+            )
+    conn.commit()
+    return conn.execute("SELECT COUNT(*) FROM articles").fetchone()[0] - before
+
+
 def max_similarity(
     conn: sqlite3.Connection,
     candidate: str,
 ) -> tuple[float, str | None]:
     rows = conn.execute(
-        "SELECT title, body FROM articles WHERE status = 'published' ORDER BY id DESC LIMIT 2500"
+        "SELECT title, body FROM articles WHERE status IN ('published', 'imported') "
+        "ORDER BY id DESC LIMIT 2500"
     ).fetchall()
     best = (0.0, None)
     for title, body in rows:
@@ -1493,6 +1551,11 @@ def main() -> None:
 
     conn = sqlite3.connect(DB_PATH)
     init_db(conn)
+    imported = import_existing_articles(conn)
+    corpus = conn.execute(
+        "SELECT COUNT(*) FROM articles WHERE status IN ('published', 'imported')"
+    ).fetchone()[0]
+    print(f"Dedup corpus: {corpus} articles ({imported} newly imported from disk)")
     client = OpenAI(api_key=llm_key, base_url=LLM_BASE_URL)
     print(f"LLM: {LLM_MODEL}" + (f" via {LLM_BASE_URL}" if LLM_BASE_URL else " via OpenAI"))
 

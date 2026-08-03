@@ -153,6 +153,12 @@ The script produces **draft-ready files**, but news and security content should 
 
 ## Duplicate protection
 
+At startup the engine seeds its dedup corpus from articles that already exist
+on disk — the committed site content (`../src/content/blog`, override with
+`SITE_BLOG_DIR`) and prior factory output (`output/articles`) — so a fresh
+checkout or a deleted `content_factory.sqlite3` cannot regenerate
+already-published articles or reuse their slugs.
+
 The engine rejects:
 
 - exact normalized-content duplicates
