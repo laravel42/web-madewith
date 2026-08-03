@@ -327,15 +327,40 @@ const FONT_HREF =
         letter-spacing: -0.01em;
         line-height: 1.35;
         color: #12161a;
-        margin: 0 0 8px;
+        margin: 0;
         scroll-margin-top: 96px;
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 14px;
+      }
+      :global(.prose .blog-faq-question::-webkit-details-marker) {
+        display: none;
+      }
+      :global(.prose .blog-faq-question::after) {
+        content: "+";
+        flex-shrink: 0;
+        font-size: 19px;
+        font-weight: 700;
+        color: var(--blog-accent, #2f6feb);
+        transition: transform 0.15s ease;
+      }
+      :global(.prose .blog-faq-item[open] .blog-faq-question::after) {
+        content: "−";
+      }
+      :global(.prose .blog-faq-question:focus-visible) {
+        outline: 2px solid var(--blog-accent, #2f6feb);
+        outline-offset: 4px;
+        border-radius: 6px;
       }
       :global(.prose .blog-faq-answer) {
         font-family: "Newsreader", serif;
         font-size: 17px;
         line-height: 1.65;
         color: #3a4048;
-        margin: 0;
+        margin: 10px 0 0;
       }
       :global(.prose .blog-seo-meta) {
         margin: 42px 0 0;

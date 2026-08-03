@@ -467,10 +467,12 @@ function parseFaqItems(lines: string[]): FaqItem[] {
 }
 
 function renderFaqSection(items: FaqItem[]): string {
+  // Native <details>: answers are hidden until the question is toggled,
+  // keyboard-accessible without any client JS.
   const body = items
     .map((item) => {
       const answer = item.answerParts.join(" ").trim();
-      return `<article class="blog-faq-item"><h3 class="blog-faq-question">${inline(item.question)}</h3><p class="blog-faq-answer">${inline(answer)}</p></article>`;
+      return `<details class="blog-faq-item"><summary class="blog-faq-question">${inline(item.question)}</summary><p class="blog-faq-answer">${inline(answer)}</p></details>`;
     })
     .join("");
   return `<section class="blog-faq"><h2 id="faq">FAQ</h2><div class="blog-faq-list">${body}</div></section>`;
