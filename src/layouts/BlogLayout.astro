@@ -486,13 +486,15 @@ const FONT_HREF =
           grid-template-columns: 1fr;
           gap: 8px;
         }
-        .blog-grid-3 { grid-template-columns: 1fr 1fr !important; }
-        .blog-featured { grid-template-columns: 1fr !important; }
-        .blog-article-grid { grid-template-columns: 1fr !important; }
-        .blog-toc-layout { grid-template-columns: minmax(0, 1fr) !important; }
+        /* These classes render inside child components, so the selectors must
+           be :global() — bare ones get scoped to this layout and match nothing. */
+        :global(.blog-grid-3) { grid-template-columns: 1fr 1fr !important; }
+        :global(.blog-featured) { grid-template-columns: 1fr !important; }
+        :global(.blog-article-grid) { grid-template-columns: 1fr !important; }
+        :global(.blog-toc-layout) { grid-template-columns: minmax(0, 1fr) !important; }
       }
       @media (max-width: 560px) {
-        .blog-grid-3 { grid-template-columns: 1fr !important; }
+        :global(.blog-grid-3) { grid-template-columns: 1fr !important; }
       }
       .blog-index-card {
         transition: transform 0.15s ease, box-shadow 0.15s ease;

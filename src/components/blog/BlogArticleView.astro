@@ -206,22 +206,6 @@ const coverVariant = (article.slug.charCodeAt(0) % 3) as 0 | 1 | 2;
     margin-top: 2px;
   }
 
-  @media (max-width: 900px) {
-    .blog-article-intro {
-      grid-template-columns: 1fr;
-      gap: 20px;
-      align-items: start;
-    }
-
-    .blog-article-meta {
-      justify-self: start;
-    }
-
-    .blog-toc-layout {
-      grid-template-columns: minmax(0, 1fr);
-    }
-  }
-
   .blog-toc-layout {
     margin-top: 22px;
     display: grid;
@@ -233,6 +217,26 @@ const coverVariant = (article.slug.charCodeAt(0) % 3) as 0 | 1 | 2;
   .blog-toc-layout .prose {
     min-width: 0;
     max-width: 100%;
+  }
+
+  /* Must come after the base rules above: same specificity, so source order
+     decides whether the mobile collapse actually applies. */
+  @media (max-width: 900px) {
+    .blog-article-intro {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      align-items: start;
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .blog-article-meta {
+      justify-self: start;
+    }
+
+    .blog-toc-layout {
+      grid-template-columns: minmax(0, 1fr);
+    }
   }
 
   .blog-toc {
