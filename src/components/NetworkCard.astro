@@ -12,9 +12,11 @@ interface Props {
   accent: string;
   accentInk: string;
   card: NetworkCardStyle;
+  /** Clone used for seamless marquee — skip keyboard focus. */
+  decorative?: boolean;
 }
 
-const { href, techName, domain, count, blurb, accent, accentInk, card } = Astro.props;
+const { href, techName, domain, count, blurb, accent, accentInk, card, decorative = false } = Astro.props;
 const hasLogo = hasNetworkIcon(techName);
 const iconHref = networkIconHref(techName);
 const letter = techName.replace(/[^A-Za-z0-9]/g, "").charAt(0).toUpperCase();
@@ -31,7 +33,7 @@ const maskStyle = `background-color:var(--mask-fill); -webkit-mask-image:url(${i
 ---
 
 {card === "terminal" ? (
-  <a href={href} class="net-card net-card--terminal" style={`--accent:${accent};`}>
+  <a href={href} class="net-card net-card--terminal" style={`--accent:${accent};`} tabindex={decorative ? -1 : undefined}>
     {hasLogo && (
       <span class="net-card__watermark net-card__watermark--terminal" style={`--mask-fill:${accent}; ${maskStyle}`} aria-hidden="true"></span>
     )}
@@ -51,7 +53,7 @@ const maskStyle = `background-color:var(--mask-fill); -webkit-mask-image:url(${i
     <div class="net-card__terminal-link" style={`color:${accentText};`}>cd → open gallery</div>
   </a>
 ) : card === "black" ? (
-  <a href={href} class="net-card net-card--black">
+  <a href={href} class="net-card net-card--black" tabindex={decorative ? -1 : undefined}>
     {hasLogo && (
       <span class="net-card__watermark net-card__watermark--black" style={`--mask-fill:#ffffff; ${maskStyle}`} aria-hidden="true"></span>
     )}
@@ -75,6 +77,7 @@ const maskStyle = `background-color:var(--mask-fill); -webkit-mask-image:url(${i
     href={href}
     class="net-card net-card--default"
     style={`--accent:${accent}; --soft:${soft}; --soft-border:${softBorder};`}
+    tabindex={decorative ? -1 : undefined}
   >
     {hasLogo && (
       <span class="net-card__watermark" style={`--mask-fill:${accent}; ${maskStyle}`} aria-hidden="true"></span>

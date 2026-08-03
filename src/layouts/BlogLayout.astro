@@ -492,6 +492,17 @@ const FONT_HREF =
         :global(.blog-featured) { grid-template-columns: 1fr !important; }
         :global(.blog-article-grid) { grid-template-columns: 1fr !important; }
         :global(.blog-toc-layout) { grid-template-columns: minmax(0, 1fr) !important; }
+        :global(.blog-hero),
+        :global(.shell-pad-x) {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+          padding-bottom: 40px !important;
+        }
+        :global(.blog-main),
+        :global(.blog-article-shell) {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
       }
       @media (max-width: 560px) {
         :global(.blog-grid-3) { grid-template-columns: 1fr !important; }

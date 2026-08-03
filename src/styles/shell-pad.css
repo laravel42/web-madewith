@@ -1,0 +1,29 @@
+/**
+ * Mobile page edge inset is owned by `body` (20px each side).
+ * Nested horizontal padding is for desktop gutters — cleared on mobile so
+ * every page keeps a consistent 20px side inset.
+ */
+
+@media (max-width: 560px) {
+  body {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .wrap,
+  .site-header-inner,
+  .vid,
+  .vd,
+  .mw-header-inner,
+  .blog-hero,
+  .blog-article-shell,
+  .blog-main,
+  .rss-feeds-section,
+  .rss-preview-section,
+  .shell-pad-x,
+  .hero-panel,
+  .mw-footer-inner {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+}

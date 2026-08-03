@@ -1,11 +1,13 @@
 ---
 import { GROUP_META, getResolvedTheme, networkCardBlurb, networkMetaFor, NETWORK_DOMAINS, type DomainGroup } from "../config/domains";
 import { getCatalog } from "../lib/catalog";
+import { expandForMarquee, marqueeDuration } from "../lib/marquee-rows";
 import NetworkCard from "../components/NetworkCard.astro";
 import NetworkFooter from "../components/NetworkFooter.astro";
 import ChatWidget from "../components/ChatWidget.astro";
 import PageShell from "../components/PageShell.astro";
 import SiteHeader from "../components/SiteHeader.astro";
+import "../styles/marquee-rows.css";
 
 function siteCard(slug: string) {
   const d = getResolvedTheme(slug);
@@ -218,8 +220,14 @@ const FONT_HREF =
       }
       .filter-pill:hover { transform: translateY(-2px); }
       .network { padding: 24px 0 40px; }
-      @media (max-width: 860px) { .grid { grid-template-columns: 1fr 1fr; } }
-      @media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+      @media (max-width: 860px) {
+        .hero { padding: 40px 0 0; }
+        .grid { grid-template-columns: 1fr 1fr; }
+      }
+      @media (max-width: 560px) {
+        .wrap { padding: 0; }
+        .grid { display: none; }
+      }
     </style>
   </head>
   <body class="has-page-shell">
@@ -245,7 +253,11 @@ const FONT_HREF =
     </section>
 
     <main id="network" class="wrap network" aria-label="Technology galleries">
-      {sections.map(({ group, meta, sites }) => (
+      {sections.map(({ group, meta, sites }) => {
+        const rowA = expandForMarquee(sites.filter((_, i) => i % 2 === 0));
+        const rowB = expandForMarquee(sites.filter((_, i) => i % 2 === 1));
+        const rows = [rowA, rowB].filter((row) => row.length > 0);
+        return (
         <section class="section" id={group} aria-labelledby={`section-${group}`}>
           <div class="section-head">
             <span class="section-icon" style={`background:${meta.bg}; color:${meta.ink};`} aria-hidden="true">{meta.icon}</span>
@@ -269,12 +281,63 @@ const FONT_HREF =
               />
             ))}
           </div>
+          <div class="grid-slideshow is-active" data-marquee>
+            {rows.map((row, rowIndex) => (
+              <div
+                class:list={["grid-slideshow__row", rowIndex === 1 && "grid-slideshow__row--reverse"]}
+                data-marquee-row
+                data-reverse={rowIndex === 1 ? "true" : undefined}
+                style={`--marquee-duration:${marqueeDuration(row.length)};`}
+              >
+                <div class="grid-slideshow__track">
+                  <div class="grid-slideshow__set">
+                    {row.map((s) => (
+                      <div class="grid-slideshow__item">
+                        <NetworkCard
+                          href={s.href}
+                          techName={s.techName}
+                          domain={s.domain}
+                          count={s.count}
+                          blurb={s.blurb}
+                          accent={s.accent}
+                          accentInk={s.accentInk}
+                          card={s.card}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                  <div class="grid-slideshow__set" aria-hidden="true">
+                    {row.map((s) => (
+                      <div class="grid-slideshow__item">
+                        <NetworkCard
+                          href={s.href}
+                          techName={s.techName}
+                          domain={s.domain}
+                          count={s.count}
+                          blurb={s.blurb}
+                          accent={s.accent}
+                          accentInk={s.accentInk}
+                          card={s.card}
+                          decorative
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </section>
-      ))}
+        );
+      })}
     </main>
 
     <NetworkFooter />
     </PageShell>
     <ChatWidget />
+    <script>
+      import { bindAllMarqueeRows } from "../scripts/marquee-rows";
+      bindAllMarqueeRows();
+    </script>
   </body>
 </html>

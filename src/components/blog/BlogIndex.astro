@@ -3,6 +3,7 @@ import { BLOG_CATEGORIES, BLOG_CATEGORY_META, articleIndexItem, getArticles, saf
 import BlogCardCover from "./BlogCardCover.astro";
 import NewsletterInlineForm from "../NewsletterInlineForm.astro";
 import { MW_LOGOS } from "../../lib/logos";
+import "../../styles/marquee-rows.css";
 
 const articles = getArticles().map(articleIndexItem);
 const featured = articles[0];
@@ -35,7 +36,7 @@ const articlesJson = safeJsonForScript(articles);
     </nav>
   </section>
 
-  <section data-role="blog-featured" aria-label="Featured article" style="max-width:1080px; margin:0 auto; padding:30px 28px 8px; width:100%;">
+  <section data-role="blog-featured" aria-label="Featured article" class="shell-pad-x" style="max-width:1080px; margin:0 auto; padding:30px 28px 8px; width:100%;">
     {featured && (
       <a href={featured.href} class="blog-featured">
         <BlogCardCover
@@ -69,13 +70,14 @@ const articlesJson = safeJsonForScript(articles);
     )}
   </section>
 
-  <section aria-label="Articles" style="max-width:1080px; margin:0 auto; padding:30px 28px 20px; width:100%;">
+  <section aria-label="Articles" class="shell-pad-x" style="max-width:1080px; margin:0 auto; padding:30px 28px 20px; width:100%;">
     <div style="display:flex; align-items:baseline; justify-content:space-between; margin-bottom:20px; gap:16px;">
       <h2 data-role="blog-results-label" class="disp" style="font-size:22px; font-weight:800; letter-spacing:-0.02em; margin:0;">Latest articles</h2>
       <span data-role="blog-count-label" style="font-size:13px; color:#5c665f;">{articles.length} articles</span>
     </div>
 
     <div data-role="blog-grid" class="blog-grid-3" data-featured-slug={featured?.slug ?? ""}></div>
+    <div class="grid-slideshow grid-slideshow--pad-28" data-role="blog-marquee"></div>
 
     <div data-role="blog-empty" hidden style="text-align:center; padding:64px 0; color:#5c665f;">
       <div style="font-size:17px; font-weight:600; color:#5c6169;">No articles match your filters.</div>
@@ -86,7 +88,7 @@ const articlesJson = safeJsonForScript(articles);
     <nav data-role="blog-pager" aria-label="Pagination" hidden style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:8px; margin-top:40px;"></nav>
   </section>
 
-  <section aria-label="Newsletter" style="max-width:1080px; margin:0 auto; padding:26px 28px 70px; width:100%;">
+  <section aria-label="Newsletter" class="shell-pad-x" style="max-width:1080px; margin:0 auto; padding:26px 28px 70px; width:100%;">
     <div style="background:linear-gradient(135deg,#141a2e,#1f2b52); border-radius:20px; padding:40px; display:flex; align-items:center; justify-content:space-between; gap:30px; flex-wrap:wrap;">
       <div style="max-width:460px;">
         <h2 class="disp" style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#fff; margin:0;">One email a week. Every stack.</h2>
@@ -227,6 +229,22 @@ const articlesJson = safeJsonForScript(articles);
     margin-top: 2px;
   }
 
+  @media (max-width: 900px) {
+    .blog-featured {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto;
+    }
+
+    .blog-featured :global(.blog-card-cover) {
+      display: none;
+    }
+
+    .blog-featured-body,
+    .blog-featured-meta {
+      grid-column: 1;
+    }
+  }
+
   .blog-grid-3 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -244,10 +262,12 @@ const articlesJson = safeJsonForScript(articles);
 <script id="blog-articles" type="application/json" set:html={articlesJson}></script>
 <script type="module">
   import { blogCardCoverHtml } from "../../lib/blog-card-cover";
+  import { syncGridMarquee } from "../../scripts/marquee-rows";
 
   function initBlogIndex() {
     const dataEl = document.getElementById("blog-articles");
     const grid = document.querySelector("[data-role=blog-grid]");
+    const marqueeHost = document.querySelector("[data-role=blog-marquee]");
     const empty = document.querySelector("[data-role=blog-empty]");
     const pager = document.querySelector("[data-role=blog-pager]");
     const featured = document.querySelector("[data-role=blog-featured]");
@@ -263,6 +283,8 @@ const articlesJson = safeJsonForScript(articles);
     const featuredSlug = grid.dataset.featuredSlug || "";
     const PAGE_SIZE = 12;
     const state = { cat: "All", page: 1 };
+    const mobile = window.matchMedia("(max-width: 560px)");
+    let destroyMarquee = () => {};
 
     function setCatActive(btn, active) {
       btn.classList.toggle("is-active", active);
@@ -288,6 +310,12 @@ const articlesJson = safeJsonForScript(articles);
       return articles.filter((item) => state.cat === "All" || item.category === state.cat);
     }
 
+    function syncMarquee() {
+      if (!marqueeHost) return;
+      const cards = Array.from(grid.querySelectorAll(".blog-index-card"));
+      destroyMarquee = syncGridMarquee(grid, marqueeHost, cards, destroyMarquee);
+    }
+
     function render() {
       const all = filtered();
       const showFeatured = state.page === 1 && state.cat === "All";
@@ -306,6 +334,8 @@ const articlesJson = safeJsonForScript(articles);
       const total = gridSource.length + (showFeatured ? 1 : 0);
       resultsLabel.textContent = state.cat === "All" ? "Latest articles" : `${state.cat} articles`;
       countLabel.textContent = `${total} article${total === 1 ? "" : "s"}`;
+
+      syncMarquee();
 
       if (totalPages <= 1) {
         pager.hidden = true;
@@ -354,6 +384,7 @@ const articlesJson = safeJsonForScript(articles);
       render();
     });
 
+    mobile.addEventListener("change", syncMarquee);
     render();
   }
 

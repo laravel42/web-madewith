@@ -510,9 +510,84 @@ const feedPreviewJson = safeJsonForScript(feedPreview);
     color: #f0b429;
   }
 
+  .rss-preview-list :global(.rss-preview-aside) {
+    display: contents;
+  }
+
   @media (max-width: 900px) {
     .rss-feeds-grid {
       grid-template-columns: 1fr;
+    }
+
+    .rss-preview-list :global(.rss-preview-link) {
+      display: grid;
+      grid-template-columns: 7px minmax(0, 1fr);
+      align-items: start;
+      column-gap: 10px;
+      row-gap: 6px;
+    }
+
+    .rss-preview-list :global(.rss-preview-dot) {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+      margin-top: 5px;
+    }
+
+    .rss-preview-list :global(.rss-preview-body) {
+      grid-column: 2;
+      grid-row: 1;
+      min-width: 0;
+    }
+
+    .rss-preview-list :global(.rss-preview-aside) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 6px 8px;
+      grid-column: 2;
+      grid-row: 2;
+      min-width: 0;
+    }
+
+    .rss-preview-list :global(.rss-preview-meta) {
+      min-width: 0;
+      justify-content: flex-start;
+      text-align: left;
+    }
+
+    .rss-preview-list :global(.rss-preview-headline) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+    }
+
+    .rss-preview-list :global(.rss-preview-title) {
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+
+    .rss-preview-list :global(.rss-preview-byline) {
+      white-space: normal;
+    }
+
+    .rss-preview-list :global(.rss-preview-excerpt) {
+      white-space: normal;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .rss-preview-section {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    .rss-preview-list :global(.rss-preview-link) {
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 </style>
@@ -573,8 +648,10 @@ const feedPreviewJson = safeJsonForScript(feedPreview);
             </span>
             <span class="rss-preview-excerpt">${escapeHtml(excerpt)}</span>
           </span>
-          <span class="rss-preview-stack" style="--stack-accent:${escapeHtml(item.accent)}">${escapeHtml(item.stack)}</span>
-          ${metaHtml(item)}
+          <span class="rss-preview-aside">
+            <span class="rss-preview-stack" style="--stack-accent:${escapeHtml(item.accent)}">${escapeHtml(item.stack)}</span>
+            ${metaHtml(item)}
+          </span>
         </a>
       </li>
     `;

@@ -1,3 +1,5 @@
+@import "./shell-pad.css";
+
 /* Same reset CatalogLayout applies; without it, every `width:100%` element
    with horizontal padding overflows its parent by the padding on phones. */
 *, *::before, *::after { box-sizing: border-box; }

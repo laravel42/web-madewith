@@ -7,6 +7,7 @@ import BlogCardCover from "./BlogCardCover.astro";
 import NewsletterInlineForm from "../NewsletterInlineForm.astro";
 import { MW_LOGOS } from "../../lib/logos";
 import { englishDisplayText } from "../../lib/preview-text";
+import "../../styles/marquee-rows.css";
 
 interface Props { article: BlogArticle; }
 const { article } = Astro.props;
@@ -28,7 +29,7 @@ const galleryHref = tech.galleryHref;
 const coverVariant = (article.slug.charCodeAt(0) % 3) as 0 | 1 | 2;
 ---
 
-<main class="blog-main">
+<main class="blog-main blog-article-shell">
   <div class="blog-read-progress" style="position:fixed; top:0; left:0; right:0; height:3px; background:transparent; z-index:50;">
     <div data-role="read-progress" style={`height:100%; width:0%; background:${tech.accent}; transition:width .08s linear;`}></div>
   </div>
@@ -93,9 +94,9 @@ const coverVariant = (article.slug.charCodeAt(0) % 3) as 0 | 1 | 2;
 
   <section class="blog-article-section" aria-label="Related articles">
     <h2 class="disp" style="font-size:22px; font-weight:800; letter-spacing:-0.02em; margin:0 0 20px;">Keep reading</h2>
-    <div class="blog-grid-3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px;">
+    <div class="blog-grid-3" data-role="related-blog-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:22px;">
       {related.map((item, index) => (
-        <article style="background:#fff; border:1px solid #e9ebee; border-radius:16px; overflow:hidden;">
+        <article class="blog-index-card" style="background:#fff; border:1px solid #e9ebee; border-radius:16px; overflow:hidden;">
           <a href={item.href} class="blog-related-link" aria-label={`Read: ${item.title}`}>
             <BlogCardCover
               accent={item.tech.accentCover}
@@ -114,6 +115,7 @@ const coverVariant = (article.slug.charCodeAt(0) % 3) as 0 | 1 | 2;
         </article>
       ))}
     </div>
+    <div class="grid-slideshow grid-slideshow--pad-28" data-role="related-blog-marquee"></div>
   </section>
 
   <section class="blog-article-section blog-article-newsletter" aria-label="Newsletter">
@@ -313,9 +315,11 @@ const coverVariant = (article.slug.charCodeAt(0) % 3) as 0 | 1 | 2;
 </style>
 
 <script>
+  import { syncGridMarquee } from "../../scripts/marquee-rows";
+
   function initReadProgress() {
     const bar = document.querySelector("[data-role=read-progress]");
-    if (!bar || bar.dataset.initialized) return;
+    if (!(bar instanceof HTMLElement) || bar.dataset.initialized) return;
     bar.dataset.initialized = "true";
     const onScroll = () => {
       const root = document.documentElement;
@@ -373,6 +377,22 @@ const coverVariant = (article.slug.charCodeAt(0) % 3) as 0 | 1 | 2;
   function initBlogArticleChrome() {
     initReadProgress();
     initTocSpy();
+    initRelatedMarquee();
+  }
+
+  function initRelatedMarquee() {
+    const grid = document.querySelector<HTMLElement>('[data-role="related-blog-grid"]');
+    const host = document.querySelector<HTMLElement>('[data-role="related-blog-marquee"]');
+    if (!grid || !host || grid.dataset.marqueeInit) return;
+    grid.dataset.marqueeInit = "1";
+    const cards = Array.from(grid.querySelectorAll<HTMLElement>(".blog-index-card"));
+    const mobile = window.matchMedia("(max-width: 560px)");
+    let destroy = () => {};
+    const sync = () => {
+      destroy = syncGridMarquee(grid, host, cards, destroy);
+    };
+    mobile.addEventListener("change", sync);
+    sync();
   }
 
   initBlogArticleChrome();

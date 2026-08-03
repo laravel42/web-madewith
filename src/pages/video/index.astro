@@ -3,6 +3,7 @@ import NetworkLayout from "../../layouts/NetworkLayout.astro";
 import VideoCard from "../../components/VideoCard.astro";
 import NewsletterInlineForm from "../../components/NewsletterInlineForm.astro";
 import { allVideoCards, videoGroupChips } from "../../lib/video-view";
+import "../../styles/marquee-rows.css";
 
 const cards = allVideoCards();
 const featured = cards[0];
@@ -99,6 +100,7 @@ const jsonLd = {
       <div class="vid-grid" data-role="video-grid" data-featured-slug={featured?.slug ?? ""}>
         {cards.map((item, i) => <VideoCard item={item} priority={i > 0 && i < 4} />)}
       </div>
+      <div class="grid-slideshow grid-slideshow--pad-28" data-role="video-marquee"></div>
 
       <div class="vid-empty" data-role="video-empty" hidden>
         <div class="vid-empty-title">No videos match your filters.</div>
@@ -210,12 +212,15 @@ const jsonLd = {
   </style>
 
   <script>
+    import { syncGridMarquee } from "../../scripts/marquee-rows";
+
     function initVideoIndex() {
       const grid = document.querySelector<HTMLElement>('[data-role="video-grid"]');
       if (!grid || grid.dataset.init) return;
       grid.dataset.init = "1";
 
       const cards = Array.from(grid.querySelectorAll<HTMLElement>('[data-role="video-card"]'));
+      const marqueeHost = document.querySelector<HTMLElement>('[data-role="video-marquee"]');
       const empty = document.querySelector<HTMLElement>('[data-role="video-empty"]');
       const pager = document.querySelector<HTMLElement>('[data-role="video-pager"]');
       const chipsWrap = document.querySelector<HTMLElement>('[data-role="video-chips"]');
@@ -226,6 +231,8 @@ const jsonLd = {
       const resetBtn = document.querySelector<HTMLElement>('[data-role="video-reset"]');
       const featuredSlug = grid.dataset.featuredSlug || "";
       const PAGE = 24;
+      const mobile = window.matchMedia("(max-width: 560px)");
+      let destroyMarquee = () => {};
 
       let cat = "all";
       let catLabel = "All";
@@ -260,6 +267,11 @@ const jsonLd = {
         pager.append(mk("Next →", page + 1, { disabled: page === pages }));
       }
 
+      function syncMarquee() {
+        if (!marqueeHost) return;
+        destroyMarquee = syncGridMarquee(grid, marqueeHost, cards, destroyMarquee);
+      }
+
       function apply() {
         const isDefault = cat === "all";
         if (featured) featured.hidden = !(isDefault && page === 1);
@@ -280,6 +292,7 @@ const jsonLd = {
         if (resultsLabel) resultsLabel.textContent = isDefault ? "Latest videos" : `${catLabel} videos`;
         if (countLabel) countLabel.textContent = `${total} video${total === 1 ? "" : "s"}`;
         renderPager(pages);
+        syncMarquee();
       }
 
       chipsWrap?.addEventListener("click", (e) => {
@@ -298,6 +311,7 @@ const jsonLd = {
         apply();
       });
 
+      mobile.addEventListener("change", syncMarquee);
       apply();
     }
 
