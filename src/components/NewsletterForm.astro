@@ -22,7 +22,7 @@ const bodyInk = theme.darkShell ? "#a3ada7" : "#5c665f"; // 9.1:1 on #000 / 5.8:
       <div style="font-size:14px; color:#8b948d; margin-top:12px; max-width:440px; margin-inline:auto; line-height:1.6;">You're on the list. We'll send a digest of new {theme.techName} projects when the index updates.</div>
       <a href={`${base}/`} style="border:1px solid var(--accent-text); color:var(--accent-text); background:transparent; padding:12px 22px; border-radius:8px; text-decoration:none; font-size:14px; display:inline-block; margin-top:26px;">cd ../gallery</a>
     </div>
-    <form data-role="newsletter-form">
+    <form data-role="newsletter-form" data-slug={theme.slug}>
       <div style="font-size:13px; color:var(--accent-text); margin-bottom:16px;">// newsletter</div>
       <div class="disp" style="font-size:38px; font-weight:700; letter-spacing:-0.02em; color:#f1f6f2;">Stay in the loop</div>
       <div style="font-size:14px; color:#8b948d; margin-top:10px; line-height:1.6;">Get a digest of standout {theme.techName} projects when the gallery refreshes — no spam, unsubscribe any time.</div>
@@ -45,7 +45,7 @@ const bodyInk = theme.darkShell ? "#a3ada7" : "#5c665f"; // 9.1:1 on #000 / 5.8:
       <div style={`font-size:16px; color:${bodyInk}; margin-top:12px; max-width:420px; margin-inline:auto; line-height:1.55;`}>We'll send a digest of new {theme.techName} projects when the gallery refreshes.</div>
       <a href={`${base}/`} class="btn btn-primary" style="padding:13px 22px; font-size:15px; margin-top:26px;">Back to gallery</a>
     </div>
-    <form data-role="newsletter-form">
+    <form data-role="newsletter-form" data-slug={theme.slug}>
       <div style="font-size:13px; font-weight:600; color:var(--accent-text); letter-spacing:.05em; text-transform:uppercase; margin-bottom:14px;">Newsletter</div>
       <div class="disp" style="font-size:40px; font-weight:800; letter-spacing:-0.03em;">Stay in the loop</div>
       <div style={`font-size:16px; color:${bodyInk}; margin-top:10px; line-height:1.55;`}>Get a digest of standout {theme.techName} projects when the gallery refreshes — no spam, unsubscribe any time.</div>
@@ -60,22 +60,25 @@ const bodyInk = theme.darkShell ? "#a3ada7" : "#5c665f"; // 9.1:1 on #000 / 5.8:
   </div>
 )}
 
-<script define:vars={{ domainSlug: theme.slug }}>
+<script>
+  // No define:vars here: it forces the script inline, where `import` throws a
+  // SyntaxError. The slug travels via data-slug on the form instead.
   import { subscribeNewsletter } from "../lib/newsletter";
 
   function initNewsletter() {
-    const form = document.querySelector('[data-role="newsletter-form"]');
-    const success = document.querySelector('[data-role="newsletter-success"]');
+    const form = document.querySelector<HTMLFormElement>('[data-role="newsletter-form"]');
+    const success = document.querySelector<HTMLElement>('[data-role="newsletter-success"]');
     if (!form || !success || form.dataset.newsletterInitialized) return;
     form.dataset.newsletterInitialized = "true";
+    const domainSlug = form.dataset.slug || "";
 
-    const emailInput = form.querySelector('[name="email"]');
+    const emailInput = form.querySelector<HTMLInputElement>('[name="email"]');
     const prefill = new URLSearchParams(window.location.search).get("email");
     if (emailInput && prefill) emailInput.value = prefill;
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const btn = form.querySelector('button[type="submit"]');
+      const btn = form.querySelector<HTMLButtonElement>('button[type="submit"]');
       const email = (emailInput?.value || "").trim();
       if (!email) return;
 
@@ -87,7 +90,7 @@ const bodyInk = theme.darkShell ? "#a3ada7" : "#5c665f"; // 9.1:1 on #000 / 5.8:
         success.hidden = false;
         window.scrollTo({ top: 0 });
       } catch (err) {
-        alert(err.message);
+        alert(err instanceof Error ? err.message : String(err));
         if (btn) { btn.disabled = false; btn.textContent = btn.dataset.label || "Subscribe"; }
       }
     });
