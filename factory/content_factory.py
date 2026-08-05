@@ -1603,6 +1603,13 @@ def main() -> None:
         repos[key] = fetch_repo(TECHNOLOGIES[key]["repo"], github_token)
         time.sleep(0.15)
 
+    def ensure_repo(key: str) -> None:
+        # Replacement pairings can involve repos outside the prefetched plan.
+        if key not in repos:
+            print(f"[repo] fetching {TECHNOLOGIES[key]['repo']}")
+            repos[key] = fetch_repo(TECHNOLOGIES[key]["repo"], github_token)
+            time.sleep(0.15)
+
     print("Fetching recent GitHub security advisories...")
     advisories = fetch_security_advisories(github_token)
     used_advisories: set[str] = set()
@@ -1610,9 +1617,24 @@ def main() -> None:
     published = 0
     rejected = 0
     failed = 0
+    attempts = 0
     index_records: list[dict[str, Any]] = []
+    signatures = iter_signatures(args.seed)
 
-    for position, job in enumerate(jobs, start=1):
+    while published < args.count:
+        if attempts >= max_attempts:
+            print(
+                f"Giving up after {attempts} attempts: {published}/{args.count} "
+                "valid articles produced. Raise --max-attempts to keep trying.",
+                file=sys.stderr,
+            )
+            break
+        attempts += 1
+        job = job_for_slot(next(signatures), published, first_date)
+        ensure_repo(job.primary_key)
+        if job.secondary_key:
+            ensure_repo(job.secondary_key)
+
         primary_name = TECHNOLOGIES[job.primary_key]["name"]
         secondary_name = (
             TECHNOLOGIES[job.secondary_key]["name"] if job.secondary_key else None
@@ -1620,7 +1642,10 @@ def main() -> None:
         label = f"{primary_name} / {job.article_type}"
         if secondary_name:
             label += f" / {secondary_name}"
-        print(f"\n[{position}/{len(jobs)}] {label} — {job.publication_date}")
+        print(
+            f"\n[attempt {attempts}, valid {published}/{args.count}] "
+            f"{label} — {job.publication_date}"
+        )
 
         advisory = None
         if job.article_type == "security-alert":
@@ -1708,7 +1733,7 @@ def main() -> None:
         except Exception as exc:
             failed += 1
             print(f"FAILED: {exc}", file=sys.stderr)
-            if not args.continue_on_error:
+            if args.fail_fast:
                 raise
 
     index_path = write_index(index_records)
@@ -1717,8 +1742,9 @@ def main() -> None:
         "published": published,
         "rejected": rejected,
         "failed": failed,
-        "first_publication_date": jobs[0].publication_date,
-        "last_publication_date": jobs[-1].publication_date,
+        "attempts": attempts,
+        "first_publication_date": index_records[0]["publication_date"] if index_records else first_date.isoformat(),
+        "last_publication_date": index_records[-1]["publication_date"] if index_records else first_date.isoformat(),
         "articles_per_date": 5,
         "output_directory": str(OUTPUT_DIR.resolve()),
         "batch_index": str(index_path.resolve()),

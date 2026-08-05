@@ -79,13 +79,18 @@ This requires no API calls:
 python content_factory.py --count 50 --dry-run
 ```
 
-## Generate one complete 50-article batch
+## Generate a batch
+
+`--count` (default 10) is the number of **valid** articles the batch must
+produce. Articles that fail validation or are rejected as near-duplicates are
+replaced with fresh technology pairings until the target is met, capped at
+`--max-attempts` generation attempts (default 3× `--count`). Pass `--fail-fast`
+to abort on the first failure instead.
 
 ```bash
 python content_factory.py \
   --count 50 \
-  --seed 42 \
-  --continue-on-error
+  --seed 42
 ```
 
 ## Generate a smaller test batch
@@ -93,8 +98,7 @@ python content_factory.py \
 ```bash
 python content_factory.py \
   --count 5 \
-  --start-date 2026-01-12 \
-  --continue-on-error
+  --start-date 2026-01-12
 ```
 
 ## Output structure
@@ -180,8 +184,7 @@ Use the next unused publication date explicitly:
 python content_factory.py \
   --count 50 \
   --start-date 2026-01-22 \
-  --seed 43 \
-  --continue-on-error
+  --seed 43
 ```
 
 Change the seed for each batch so the technology pairings and editorial plan vary.
