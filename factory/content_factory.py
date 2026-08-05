@@ -43,7 +43,7 @@ from collections import defaultdict
 from dataclasses import asdict, dataclass
 from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any, Iterable, Iterator
 
 import requests
 from dateutil.relativedelta import relativedelta
@@ -481,19 +481,21 @@ def category_members(category: str) -> list[str]:
     return [key for key, data in TECHNOLOGIES.items() if data["category"] == category]
 
 
-def make_jobs(count: int, start_date: date, seed: int) -> list[ArticleJob]:
+def iter_signatures(seed: int) -> Iterator[tuple[str, str, str | None]]:
+    """Endless deterministic stream of (article_type, primary, secondary)
+    pairings. The main loop draws replacements from the same stream when an
+    article is rejected or fails, so a batch can keep going until it has
+    enough valid articles."""
     rng = random.Random(seed)
     keys = list(TECHNOLOGIES)
     category_keys: dict[str, list[str]] = defaultdict(list)
     for key, data in TECHNOLOGIES.items():
         category_keys[data["category"]].append(key)
 
-    jobs: list[ArticleJob] = []
     used_pairs: set[tuple[str, str, str]] = set()
-
-    for i in range(count):
+    i = 0
+    while True:
         article_type = ARTICLE_PLAN[i % len(ARTICLE_PLAN)]
-        publication_date = start_date + timedelta(days=i // 5)
 
         primary = keys[(i * 7 + seed) % len(keys)]
         secondary: str | None = None
@@ -527,16 +529,28 @@ def make_jobs(count: int, start_date: date, seed: int) -> list[ArticleJob]:
             attempts += 1
 
         used_pairs.add(signature)
-        jobs.append(
-            ArticleJob(
-                article_type=article_type,
-                primary_key=primary,
-                secondary_key=secondary,
-                publication_date=publication_date.isoformat(),
-                sequence=i + 1,
-            )
-        )
-    return jobs
+        yield article_type, primary, secondary
+        i += 1
+
+
+def job_for_slot(
+    signature: tuple[str, str, str | None], slot: int, start_date: date
+) -> ArticleJob:
+    """Slot = zero-based position in the published progression, so dates stay
+    a gapless 5-per-day sequence even when pairings are retried."""
+    article_type, primary, secondary = signature
+    return ArticleJob(
+        article_type=article_type,
+        primary_key=primary,
+        secondary_key=secondary,
+        publication_date=(start_date + timedelta(days=slot // 5)).isoformat(),
+        sequence=slot + 1,
+    )
+
+
+def make_jobs(count: int, start_date: date, seed: int) -> list[ArticleJob]:
+    signatures = iter_signatures(seed)
+    return [job_for_slot(next(signatures), i, start_date) for i in range(count)]
 
 
 def choose_advisory(
@@ -1501,7 +1515,19 @@ def write_index(records: list[dict[str, Any]]) -> Path:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Generate MadeWithWhat main-site editorial batches.")
-    parser.add_argument("--count", type=int, default=50, help="Articles in this batch.")
+    parser.add_argument(
+        "--count",
+        type=int,
+        default=10,
+        help="Valid (published) articles this batch must produce. Rejected or "
+        "failed articles are replaced with fresh pairings until the target is met.",
+    )
+    parser.add_argument(
+        "--max-attempts",
+        type=int,
+        help="Safety cap on generation attempts before giving up on the target. "
+        "Default: 3x --count.",
+    )
     parser.add_argument(
         "--start-date",
         help="First publication date (YYYY-MM-DD). Default: exactly six calendar months ago.",
@@ -1510,14 +1536,22 @@ def main() -> None:
     parser.add_argument("--max-similarity", type=float, default=0.16)
     parser.add_argument("--dry-run", action="store_true", help="Print the editorial plan only.")
     parser.add_argument(
+        "--fail-fast",
+        action="store_true",
+        help="Abort the batch on the first article failure instead of drawing a replacement.",
+    )
+    parser.add_argument(
         "--continue-on-error",
         action="store_true",
-        help="Continue generating after an individual article fails.",
+        help="Deprecated no-op: continuing after failures is now the default (see --fail-fast).",
     )
     args = parser.parse_args()
 
     if args.count < 1:
         die("--count must be at least 1")
+    max_attempts = args.max_attempts if args.max_attempts is not None else args.count * 3
+    if max_attempts < args.count:
+        die("--max-attempts must be at least --count")
 
     github_token = os.getenv("GITHUB_TOKEN")
     # Prefer the key matching the endpoint (mirrors youtube/enrich_transcripts.py):
