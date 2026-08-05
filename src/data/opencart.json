@@ -1,8 +1,8 @@
 {
   "slug": "opencart",
-  "scrapedAt": "2026-07-22T09:29:07.717976+00:00",
+  "scrapedAt": "2026-08-05T04:38:16.236188+00:00",
   "source": "scrapy-github",
-  "totalRepos": 69,
+  "totalRepos": 86,
   "projects": [
     {
       "slug": "hookphp",
@@ -11,50 +11,54 @@
       "category": "DevTools",
       "stars": 619,
       "author": "letwang",
-      "avatar": "https://avatars.githubusercontent.com/u/3644168?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/3644168?u=3bd5334a26f07df8117fe161f866ca65fd7e0886&v=4",
       "desc": "HookPHP基于C扩展搭建内置AI编程的架构系统-支持微服务部署|热插拔业务组件-集成业务模型|权限模型|UI组件库|多模板|多平台|多域名|多终端|多语言-含常驻内存|前后分离|API平台|LUA QQ群：679116380",
       "demo": "https://my.oschina.net/cart/blog/2986804",
       "repoUrl": "https://github.com/letwang/HookPHP",
       "long1": "HookPHP基于C扩展搭建内置AI编程的架构系统-支持微服务部署|热插拔业务组件-集成业务模型|权限模型|UI组件库|多模板|多平台|多域名|多终端|多语言-含常驻内存|前后分离|API平台|LUA QQ群：679116380. Maintained by letwang on GitHub, where it has earned 619 stars from the community.",
-      "long2": "It's actively developed around cakephp, codeigniter, composer, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around yaf, symfony, joomla, and is a solid reference for anyone building with these tools.",
       "stack": [
         "HTML",
-        "Cakephp",
-        "Codeigniter",
-        "Composer",
-        "Drupal"
+        "Yaf",
+        "Symfony",
+        "Joomla",
+        "Phalcon"
       ],
       "updated": "3 months ago",
       "license": "Apache-2.0",
       "langs": [
         {
-          "name": "HTML",
-          "pct": 100,
-          "size": 100
+          "pct": 54,
+          "name": "HTML"
+        },
+        {
+          "pct": 46,
+          "name": "PHP"
+        },
+        {
+          "pct": 0,
+          "name": "CSS"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/letwang/HookPHP/releases/tag/v0.0.1",
+          "name": "v0.0.1"
+        }
+      ],
       "topics": [
-        "cakephp",
-        "codeigniter",
-        "composer",
-        "drupal",
-        "fuelphp",
-        "joomla",
-        "kohana",
-        "laravel",
-        "magento",
-        "microservice",
-        "opencart",
-        "phalcon",
-        "prestashop",
-        "swoole",
-        "symfony",
-        "thinkphp",
-        "workerman",
         "yaf",
-        "yii",
-        "zencart"
+        "symfony",
+        "joomla",
+        "phalcon",
+        "cakephp",
+        "kohana",
+        "fuelphp",
+        "swoole",
+        "workerman",
+        "thinkphp",
+        "drupal",
+        "yii"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -63,50 +67,71 @@
       "name": "vuefront",
       "fullName": "vuefront/vuefront",
       "category": "Blogs",
-      "stars": 391,
+      "stars": 390,
       "author": "vuefront",
       "avatar": "https://avatars.githubusercontent.com/u/48723923?v=4",
       "desc": "VueFront Core. Turn your old-fashioned CMS website in to a SPA & PWA in 5 minutes",
       "demo": "https://vuefront.com/",
       "repoUrl": "https://github.com/vuefront/vuefront",
-      "long1": "VueFront Core. Turn your old-fashioned CMS website in to a SPA & PWA in 5 minutes. Maintained by vuefront on GitHub, where it has earned 391 stars from the community.",
-      "long2": "It's actively developed around app, cms, framework, and is a solid reference for anyone building with these tools.",
+      "long1": "VueFront Core. Turn your old-fashioned CMS website in to a SPA & PWA in 5 minutes. Maintained by vuefront on GitHub, where it has earned 390 stars from the community.",
+      "long2": "It's actively developed around vue, vuejs, javascript, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Vue",
-        "App",
-        "Cms",
-        "Framework",
-        "Frontend"
+        "Vue",
+        "Frontend",
+        "Cms"
       ],
       "updated": "3 years ago",
       "license": "—",
       "langs": [
         {
-          "name": "Vue",
-          "pct": 100,
-          "size": 100
+          "pct": 48,
+          "name": "Vue"
+        },
+        {
+          "pct": 29,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 23,
+          "name": "TypeScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/vuefront/vuefront/releases/tag/v0.5.11",
+          "name": "v0.5.11"
+        },
+        {
+          "url": "https://github.com/vuefront/vuefront/releases/tag/v0.5.9",
+          "name": "v0.5.9"
+        },
+        {
+          "url": "https://github.com/vuefront/vuefront/releases/tag/v0.5.8",
+          "name": "v0.5.8"
+        },
+        {
+          "url": "https://github.com/vuefront/vuefront/releases/tag/v0.5.7",
+          "name": "v0.5.7"
+        },
+        {
+          "url": "https://github.com/vuefront/vuefront/releases/tag/v0.5.6",
+          "name": "v0.5.6"
+        }
+      ],
       "topics": [
-        "app",
+        "vue",
+        "vuejs",
+        "javascript",
+        "frontend",
         "cms",
         "framework",
-        "frontend",
-        "javascript",
-        "magento",
-        "opencart",
-        "prestashop",
-        "pwa",
-        "spa",
-        "typescript",
-        "vitejs",
-        "vue",
-        "vue3",
-        "vuefront",
-        "vuejs",
+        "app",
         "webapp",
-        "wordpress"
+        "pwa",
+        "vuefront",
+        "opencart",
+        "prestashop"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -122,28 +147,27 @@
       "demo": "https://www.opencartbrasil.com.br",
       "repoUrl": "https://github.com/opencartbrasil/traducao",
       "long1": "Tradução para Português do Brasil do OpenCart. Maintained by opencartbrasil on GitHub, where it has earned 69 stars from the community.",
-      "long2": "It's actively developed around brasil, ocmod, opencart, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around opencart, brasil, php, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "Brasil",
-        "Ocmod",
         "Opencart",
-        "Php"
+        "Brasil",
+        "Php",
+        "Ocmod"
       ],
       "updated": "4 years ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "PHP",
           "pct": 100,
-          "size": 100
+          "name": "PHP"
         }
       ],
       "versions": [],
       "topics": [
-        "brasil",
-        "ocmod",
         "opencart",
-        "php"
+        "brasil",
+        "php",
+        "ocmod"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -171,12 +195,32 @@
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "PHP",
           "pct": 100,
-          "size": 100
+          "name": "PHP"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/beyondit/opencart-test-suite/releases/tag/3.0.0",
+          "name": "3.0.0"
+        },
+        {
+          "url": "https://github.com/beyondit/opencart-test-suite/releases/tag/2.3.0",
+          "name": "2.3.0"
+        },
+        {
+          "url": "https://github.com/beyondit/opencart-test-suite/releases/tag/2.2.0",
+          "name": "2.2.0"
+        },
+        {
+          "url": "https://github.com/beyondit/opencart-test-suite/releases/tag/0.3.3",
+          "name": "0.3.3"
+        },
+        {
+          "url": "https://github.com/beyondit/opencart-test-suite/releases/tag/0.3.2",
+          "name": "0.3.2"
+        }
+      ],
       "topics": [
         "opencart",
         "opencart-development",
@@ -197,27 +241,43 @@
       "demo": null,
       "repoUrl": "https://github.com/copona/copona",
       "long1": "A free shopping cart system, based on OpenCart (http://www.opencart.com). An ideal alternative to Opencart, rich to develop - easy to use! Read Wiki for improvements over Opencart. Maintained by copona on GitHub, where it has earned 65 stars from the community.",
-      "long2": "It's actively developed around ecommerce, opencart, performance, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around ecommerce, performance, opencart, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Ecommerce",
-        "Opencart",
         "Performance",
+        "Opencart",
         "Php"
       ],
-      "updated": "1 month ago",
+      "updated": "today",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 59,
+          "name": "PHP"
+        },
+        {
+          "pct": 25,
+          "name": "Go Template"
+        },
+        {
+          "pct": 16,
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/copona/copona/releases/tag/0.2.0",
+          "name": "0.2.0"
+        },
+        {
+          "url": "https://github.com/copona/copona/releases/tag/v0.1.0",
+          "name": "v0.1.0"
+        }
+      ],
       "topics": [
         "ecommerce",
-        "opencart",
         "performance",
+        "opencart",
         "php"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
@@ -234,27 +294,55 @@
       "demo": "https://e-piksel.com",
       "repoUrl": "https://github.com/epiksel/opencart-tr",
       "long1": "OpenCart PHP tabanlı açık kaynak kodlu online alışveriş sepetidir. Tüccarların düşük bir maliyet ile kendi e-ticaret mağazalarını oluşturmada yardımcı olan güçlü bir e-ticaret yazılımıdır. Maintained by epiksel on GitHub, where it has earned 59 stars from the community.",
-      "long2": "It's actively developed around eticaret, opencart, opensource, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around opencart, eticaret, opensource, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Eticaret",
         "Opencart",
+        "Eticaret",
         "Opensource",
         "Software"
       ],
-      "updated": "1 year ago",
+      "updated": "2 years ago",
       "license": "—",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 67,
+          "name": "PHP"
+        },
+        {
+          "pct": 25,
+          "name": "Twig"
+        },
+        {
+          "pct": 8,
+          "name": "SCSS"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/epiksel/opencart-tr/releases/tag/3.0.4.0",
+          "name": "3.0.4.0"
+        },
+        {
+          "url": "https://github.com/epiksel/opencart-tr/releases/tag/4.0.2.3",
+          "name": "4.0.2.3"
+        },
+        {
+          "url": "https://github.com/epiksel/opencart-tr/releases/tag/4.0.2.2",
+          "name": "4.0.2.2"
+        },
+        {
+          "url": "https://github.com/epiksel/opencart-tr/releases/tag/4.0.2.1",
+          "name": "4.0.2.1"
+        },
+        {
+          "url": "https://github.com/epiksel/opencart-tr/releases/tag/4.0.1.1",
+          "name": "4.0.1.1"
+        }
+      ],
       "topics": [
-        "eticaret",
         "opencart",
+        "eticaret",
         "opensource",
         "software"
       ],
@@ -264,47 +352,48 @@
       "slug": "opencart3-exchange1c",
       "name": "opencart3-exchange1c",
       "fullName": "Tseka85/opencart3-exchange1c",
-      "category": "Blogs",
+      "category": "DevTools",
       "stars": 53,
       "author": "Tseka85",
-      "avatar": "https://avatars.githubusercontent.com/u/31914380?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/31914380?u=752b8b55700828458b097b236ce94c762f9123b2&v=4",
       "desc": "Opencart 3.x Exchange1c module",
       "demo": null,
       "repoUrl": "https://github.com/Tseka85/opencart3-exchange1c",
       "long1": "Opencart 3.x Exchange1c module. Maintained by Tseka85 on GitHub, where it has earned 53 stars from the community.",
-      "long2": "It's actively developed around 1c, 1c-bitrix, 1c-enterprise, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around opencart3, exchange1c, opencart1c, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "1C",
-        "1C Bitrix",
-        "1C Enterprise",
-        "1C Exchange"
+        "Opencart3",
+        "Exchange1C",
+        "Opencart1C",
+        "1C"
       ],
       "updated": "9 months ago",
       "license": "—",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 82,
+          "name": "PHP"
+        },
+        {
+          "pct": 18,
+          "name": "Twig"
         }
       ],
       "versions": [],
       "topics": [
+        "opencart3",
+        "exchange1c",
+        "opencart1c",
         "1c",
         "1c-bitrix",
+        "opencart",
+        "ocstore3",
+        "bitrix",
         "1c-enterprise",
-        "1c-exchange",
         "1c-packages",
         "1c-php",
-        "bitrix",
-        "cms",
-        "exchange1c",
-        "ocstore3",
-        "opencart",
-        "opencart1c",
-        "opencart3",
-        "php-1c-exchange"
+        "1c-exchange"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -315,43 +404,70 @@
       "category": "DevTools",
       "stars": 45,
       "author": "awebdesign",
-      "avatar": "https://avatars.githubusercontent.com/u/43465745?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/43465745?u=4d55f330aa5507faa1c7a3e8355c7140aa81a0c0&v=4",
       "desc": "OpenCore - Laravel for OpenCart",
       "demo": "https://github.com/awebdesign/nexus",
       "repoUrl": "https://github.com/awebdesign/opencore",
       "long1": "OpenCore - Laravel for OpenCart. Maintained by awebdesign on GitHub, where it has earned 45 stars from the community.",
-      "long2": "It's actively developed around laravel, laravel-application, laravel-framework, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around opencore, opencart, laravel, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
+        "Opencore",
+        "Opencart",
         "Laravel",
-        "Laravel Application",
-        "Laravel Framework",
-        "Laravel5"
+        "Opencart 2X"
       ],
       "updated": "4 years ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 69,
+          "name": "PHP"
+        },
+        {
+          "pct": 16,
+          "name": "Blade"
+        },
+        {
+          "pct": 15,
+          "name": "Less"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/awebdesign/opencore/releases/tag/1.2.4",
+          "name": "1.2.4"
+        },
+        {
+          "url": "https://github.com/awebdesign/opencore/releases/tag/1.2.3",
+          "name": "1.2.3"
+        },
+        {
+          "url": "https://github.com/awebdesign/opencore/releases/tag/1.2.2",
+          "name": "1.2.2"
+        },
+        {
+          "url": "https://github.com/awebdesign/opencore/releases/tag/1.2.1",
+          "name": "1.2.1"
+        },
+        {
+          "url": "https://github.com/awebdesign/opencore/releases/tag/1.2.0",
+          "name": "1.2.0"
+        }
+      ],
       "topics": [
-        "laravel",
-        "laravel-application",
-        "laravel-framework",
-        "laravel5",
+        "opencore",
         "opencart",
+        "laravel",
         "opencart-2x",
         "opencart-3x",
+        "opencart-module",
         "opencart-development",
         "opencart-extension",
         "opencart-framework",
-        "opencart-module",
         "opencart-plugin",
-        "opencore"
+        "laravel-framework",
+        "laravel5"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -367,31 +483,59 @@
       "demo": "http://docs.oneall.com/plugins/guide/social-login-opencart/3/",
       "repoUrl": "https://github.com/oneall/social-login-opencart",
       "long1": "Social Login for OpenCart allows your users to login and register with 35+ social networks. It increases your OpenCart registration rate by simplifying the registration process for new users and provides permission-based social data retrieved from the social network profiles. Maintained by oneall on GitHub, where it has earned 39 stars from the community.",
-      "long2": "It's actively developed around oneall, opencart, opencart-addon, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around social-network, social-login, opencart, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Oneall",
+        "Social Network",
+        "Social Login",
         "Opencart",
-        "Opencart Addon",
-        "Opencart Extension"
+        "Opencart Addon"
       ],
       "updated": "2 years ago",
       "license": "—",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 64,
+          "name": "PHP"
+        },
+        {
+          "pct": 34,
+          "name": "Twig"
+        },
+        {
+          "pct": 2,
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/oneall/social-login-opencart/releases/tag/4.8.0",
+          "name": "4.8.0"
+        },
+        {
+          "url": "https://github.com/oneall/social-login-opencart/releases/tag/5.1.0",
+          "name": "5.1.0"
+        },
+        {
+          "url": "https://github.com/oneall/social-login-opencart/releases/tag/5.0.2",
+          "name": "5.0.2"
+        },
+        {
+          "url": "https://github.com/oneall/social-login-opencart/releases/tag/5.0.1",
+          "name": "5.0.1"
+        },
+        {
+          "url": "https://github.com/oneall/social-login-opencart/releases/tag/5.0",
+          "name": "5.0"
+        }
+      ],
       "topics": [
-        "oneall",
+        "social-network",
+        "social-login",
         "opencart",
         "opencart-addon",
-        "opencart-extension",
-        "social-login",
-        "social-network"
+        "oneall",
+        "opencart-extension"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -402,33 +546,45 @@
       "category": "DevTools",
       "stars": 36,
       "author": "vincenth520",
-      "avatar": "https://avatars.githubusercontent.com/u/12945328?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/12945328?u=5ad00c9bb303367a83a2ee857f4bf82bedbc7214&v=4",
       "desc": "This is some of the plug-ins I developed for Opencart at work,A directory represents a plug-in",
       "demo": null,
       "repoUrl": "https://github.com/vincenth520/opencart_Extensions",
       "long1": "This is some of the plug-ins I developed for Opencart at work,A directory represents a plug-in. Maintained by vincenth520 on GitHub, where it has earned 36 stars from the community.",
-      "long2": "It's actively developed around opencart, opencart-extension, php, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around opencart, opencart-extension, plug-ins, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Opencart",
         "Opencart Extension",
-        "Php",
-        "Plug Ins"
+        "Plug Ins",
+        "Php"
       ],
       "updated": "9 years ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 92,
+          "name": "PHP"
+        },
+        {
+          "pct": 5,
+          "name": "CSS"
+        },
+        {
+          "pct": 3,
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/vincenth520/opencart_Extensions/releases/tag/v1.0",
+          "name": "v1.0"
+        }
+      ],
       "topics": [
         "opencart",
         "opencart-extension",
-        "php",
-        "plug-ins"
+        "plug-ins",
+        "php"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -439,36 +595,129 @@
       "category": "E-commerce",
       "stars": 31,
       "author": "villagedefrance",
-      "avatar": "https://avatars.githubusercontent.com/u/4930600?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/4930600?u=a61a9898214594e8e0c9023d3c873998ee0165b9&v=4",
       "desc": "OpenCart Overclocked Edition. Advanced Shopping Cart CMS based on OC v1.5.6.X source code.",
       "demo": "https://villagedefrance.net",
       "repoUrl": "https://github.com/villagedefrance/OpenCart-Overclocked",
       "long1": "OpenCart Overclocked Edition. Advanced Shopping Cart CMS based on OC v1.5.6.X source code. Maintained by villagedefrance on GitHub, where it has earned 31 stars from the community.",
-      "long2": "It's actively developed around ckeditor, cms, jquery, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around opencart, php, ckeditor, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "PHP",
+        "Opencart",
+        "Php",
         "Ckeditor",
-        "Cms",
-        "Jquery",
-        "Opencart"
+        "Jquery"
       ],
       "updated": "4 months ago",
       "license": "—",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 69,
+          "name": "PHP"
+        },
+        {
+          "pct": 19,
+          "name": "Go Template"
+        },
+        {
+          "pct": 12,
+          "name": "Smarty"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/villagedefrance/OpenCart-Overclocked/releases/tag/v1.11.1",
+          "name": "v1.11.1"
+        },
+        {
+          "url": "https://github.com/villagedefrance/OpenCart-Overclocked/releases/tag/v1.11.0",
+          "name": "v1.11.0"
+        },
+        {
+          "url": "https://github.com/villagedefrance/OpenCart-Overclocked/releases/tag/v1.10.2",
+          "name": "v1.10.2"
+        },
+        {
+          "url": "https://github.com/villagedefrance/OpenCart-Overclocked/releases/tag/v1.10.1",
+          "name": "v1.10.1"
+        },
+        {
+          "url": "https://github.com/villagedefrance/OpenCart-Overclocked/releases/tag/v1.10.0",
+          "name": "v1.10.0"
+        }
+      ],
       "topics": [
-        "ckeditor",
-        "cms",
-        "jquery",
         "opencart",
+        "php",
+        "ckeditor",
+        "jquery",
         "opensource",
-        "php"
+        "cms"
+      ],
+      "addedAt": "2026-07-15T22:28:32.987829+00:00"
+    },
+    {
+      "slug": "7cart",
+      "name": "7cart",
+      "fullName": "7cart/7cart",
+      "category": "E-commerce",
+      "stars": 29,
+      "author": "7cart",
+      "avatar": "https://avatars.githubusercontent.com/u/45238894?v=4",
+      "desc": "7cart is a php7 project for building online shops, catalogs or service platforms. 7cart built with simple code and database schema. It is easy to support and fast.",
+      "demo": "https://www.facebook.com/7cart",
+      "repoUrl": "https://github.com/7cart/7cart",
+      "long1": "7cart is a php7 project for building online shops, catalogs or service platforms. 7cart built with simple code and database schema. It is easy to support and fast. Maintained by 7cart on GitHub, where it has earned 29 stars from the community.",
+      "long2": "It's actively developed around postgresql, online-store, online-shop, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "PostgreSQL",
+        "Online Store",
+        "Online Shop",
+        "Product Catalog"
+      ],
+      "updated": "4 years ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 61,
+          "name": "PHP"
+        },
+        {
+          "pct": 28,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 11,
+          "name": "HTML"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/7cart/7cart/releases/tag/0.1.1",
+          "name": "0.1.1"
+        },
+        {
+          "url": "https://github.com/7cart/7cart/releases/tag/0.1.0",
+          "name": "0.1.0"
+        },
+        {
+          "url": "https://github.com/7cart/7cart/releases/tag/0.0.2",
+          "name": "0.0.2"
+        }
+      ],
+      "topics": [
+        "postgresql",
+        "online-store",
+        "online-shop",
+        "product-catalog",
+        "web-catalog",
+        "magento",
+        "shopify",
+        "prestashop",
+        "woocommerce",
+        "opencart",
+        "e-commerce-project",
+        "symfony"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -493,68 +742,21 @@
       "license": "—",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 44,
+          "name": "PHP"
+        },
+        {
+          "pct": 29,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 27,
+          "name": "PowerShell"
         }
       ],
       "versions": [],
       "topics": [
         "opencart"
-      ],
-      "addedAt": "2026-07-15T22:28:32.987829+00:00"
-    },
-    {
-      "slug": "7cart",
-      "name": "7cart",
-      "fullName": "7cart/7cart",
-      "category": "E-commerce",
-      "stars": 29,
-      "author": "7cart",
-      "avatar": "https://avatars.githubusercontent.com/u/45238894?v=4",
-      "desc": "7cart is a php7 project for building online shops, catalogs or service platforms. 7cart built with simple code and database schema. It is easy to support and fast.",
-      "demo": "https://www.facebook.com/7cart",
-      "repoUrl": "https://github.com/7cart/7cart",
-      "long1": "7cart is a php7 project for building online shops, catalogs or service platforms. 7cart built with simple code and database schema. It is easy to support and fast. Maintained by 7cart on GitHub, where it has earned 29 stars from the community.",
-      "long2": "It's actively developed around cart, catalog, e-commerce, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Cart",
-        "Catalog",
-        "E Commerce",
-        "E Commerce Project"
-      ],
-      "updated": "4 years ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "cart",
-        "catalog",
-        "e-commerce",
-        "e-commerce-project",
-        "ember",
-        "faceted-search",
-        "magento",
-        "online-shop",
-        "online-store",
-        "opencart",
-        "postgresql",
-        "prestashop",
-        "product-catalog",
-        "shop",
-        "shopify",
-        "software-catalog",
-        "symfony",
-        "symfony4",
-        "web-catalog",
-        "woocommerce"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -570,25 +772,53 @@
       "demo": "http://www.retailcrm.pro",
       "repoUrl": "https://github.com/retailcrm/opencart-module",
       "long1": "OpenCart integration plugin. Maintained by retailcrm on GitHub, where it has earned 23 stars from the community.",
-      "long2": "It's actively developed around opencart, retailcrm, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around retailcrm, opencart, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Opencart",
-        "Retailcrm"
+        "Retailcrm",
+        "Opencart"
       ],
-      "updated": "10 months ago",
+      "updated": "11 months ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 79,
+          "name": "PHP"
+        },
+        {
+          "pct": 12,
+          "name": "Twig"
+        },
+        {
+          "pct": 9,
+          "name": "Smarty"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/retailcrm/opencart-module/releases/tag/v4.2.2",
+          "name": "v4.2.2"
+        },
+        {
+          "url": "https://github.com/retailcrm/opencart-module/releases/tag/v4.2.1",
+          "name": "v4.2.1"
+        },
+        {
+          "url": "https://github.com/retailcrm/opencart-module/releases/tag/v4.2.0",
+          "name": "v4.2.0"
+        },
+        {
+          "url": "https://github.com/retailcrm/opencart-module/releases/tag/v4.1.19",
+          "name": "v4.1.19"
+        },
+        {
+          "url": "https://github.com/retailcrm/opencart-module/releases/tag/v4.1.18",
+          "name": "v4.1.18"
+        }
+      ],
       "topics": [
-        "opencart",
-        "retailcrm"
+        "retailcrm",
+        "opencart"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -615,12 +845,16 @@
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "PHP",
           "pct": 100,
-          "size": 100
+          "name": "PHP"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/beyondit/opencart-project-template/releases/tag/1.0.0",
+          "name": "1.0.0"
+        }
+      ],
       "topics": [
         "opencart",
         "project-template",
@@ -635,35 +869,34 @@
       "category": "E-commerce",
       "stars": 20,
       "author": "yedincisenol",
-      "avatar": "https://avatars.githubusercontent.com/u/5055288?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/5055288?u=8eacbd7e7efa944576053dc53afb2e3614cb57b9&v=4",
       "desc": "Simple Opencart order and Products api",
       "demo": "http://yedincisenol.com",
       "repoUrl": "https://github.com/yedincisenol/opencart-api",
       "long1": "Simple Opencart order and Products api. Maintained by yedincisenol on GitHub, where it has earned 20 stars from the community.",
-      "long2": "It's actively developed around opencart, opencart-api, opencart-orders-api, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around opencart-api, opencart, opencart-simple-api, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Opencart",
         "Opencart Api",
-        "Opencart Orders Api",
-        "Opencart Payment"
+        "Opencart",
+        "Opencart Simple Api",
+        "Opencart Orders Api"
       ],
       "updated": "2 months ago",
       "license": "—",
       "langs": [
         {
-          "name": "PHP",
           "pct": 100,
-          "size": 100
+          "name": "PHP"
         }
       ],
       "versions": [],
       "topics": [
-        "opencart",
         "opencart-api",
+        "opencart",
+        "opencart-simple-api",
         "opencart-orders-api",
-        "opencart-payment",
-        "opencart-simple-api"
+        "opencart-payment"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -679,75 +912,35 @@
       "demo": "https://www.opencartbrasil.com.br",
       "repoUrl": "https://github.com/opencartbrasil/instalador-sem-ftp",
       "long1": "Habilita a instalação de extensões sem a necessidade do uso de FTP no OpenCart. Maintained by opencartbrasil on GitHub, where it has earned 20 stars from the community.",
-      "long2": "It's actively developed around brasil, ocmod, opencart, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around php, brasil, opencart, and is a solid reference for anyone building with these tools.",
       "stack": [
+        "Php",
         "Brasil",
-        "Ocmod",
         "Opencart",
-        "Php"
+        "Ocmod"
       ],
       "updated": "5 years ago",
       "license": "GPL-3.0",
       "langs": [
         {
           "name": "JavaScript",
-          "pct": 71.429,
-          "size": 20
+          "pct": 72
+        },
+        {
+          "name": "JavaScript",
+          "pct": 20
         },
         {
           "name": "Other",
-          "pct": 28.571,
-          "size": 8
+          "pct": 8
         }
       ],
       "versions": [],
       "topics": [
+        "php",
         "brasil",
-        "ocmod",
         "opencart",
-        "php"
-      ],
-      "addedAt": "2026-07-15T22:28:32.987829+00:00"
-    },
-    {
-      "slug": "opencart-3-sanalpos",
-      "name": "opencart-3-sanalpos",
-      "fullName": "agtt/opencart-3-sanalpos",
-      "category": "E-commerce",
-      "stars": 18,
-      "author": "agtt",
-      "avatar": "https://avatars.githubusercontent.com/u/7992961?v=4",
-      "desc": "OpenCart 3.x Sanal Pos Entegrasyonu Ücretsiz",
-      "demo": "http://www.iova.co.uk",
-      "repoUrl": "https://github.com/agtt/opencart-3-sanalpos",
-      "long1": "OpenCart 3.x Sanal Pos Entegrasyonu Ücretsiz. Maintained by agtt on GitHub, where it has earned 18 stars from the community.",
-      "long2": "It's actively developed around akbank, bankclass, kuveyturk, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Akbank",
-        "Bankclass",
-        "Kuveyturk",
-        "Netspay"
-      ],
-      "updated": "5 years ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "akbank",
-        "bankclass",
-        "kuveyturk",
-        "netspay",
-        "opencart",
-        "opencart3",
-        "payment-integration",
-        "sanalpos"
+        "ocmod"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -763,31 +956,83 @@
       "demo": "http://santoshsetty.com/opencart/free/mintleaf/",
       "repoUrl": "https://github.com/settysantu/mintleaf",
       "long1": "Grocery Responsive OpenCart Theme. Maintained by settysantu on GitHub, where it has earned 18 stars from the community.",
-      "long2": "It's actively developed around grocery, opencart, opencart-3x, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around opencart, opencart-theme, opencart-3x, and is a solid reference for anyone building with these tools.",
       "stack": [
         "HTML",
-        "Grocery",
         "Opencart",
+        "Opencart Theme",
         "Opencart 3X",
-        "Opencart Responsive Theme"
+        "Grocery"
       ],
       "updated": "7 years ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "HTML",
-          "pct": 100,
-          "size": 100
+          "pct": 88,
+          "name": "HTML"
+        },
+        {
+          "pct": 9,
+          "name": "CSS"
+        },
+        {
+          "pct": 3,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
       "topics": [
-        "grocery",
         "opencart",
-        "opencart-3x",
-        "opencart-responsive-theme",
         "opencart-theme",
-        "responsive-theme"
+        "opencart-3x",
+        "grocery",
+        "responsive-theme",
+        "opencart-responsive-theme"
+      ],
+      "addedAt": "2026-07-15T22:28:32.987829+00:00"
+    },
+    {
+      "slug": "opencart-3-sanalpos",
+      "name": "opencart-3-sanalpos",
+      "fullName": "agtt/opencart-3-sanalpos",
+      "category": "E-commerce",
+      "stars": 18,
+      "author": "agtt",
+      "avatar": "https://avatars.githubusercontent.com/u/7992961?u=8d4488d9152af1dcde34b8dd8c287066a0a454f8&v=4",
+      "desc": "OpenCart 3.x Sanal Pos Entegrasyonu Ücretsiz",
+      "demo": "http://www.iova.co.uk",
+      "repoUrl": "https://github.com/agtt/opencart-3-sanalpos",
+      "long1": "OpenCart 3.x Sanal Pos Entegrasyonu Ücretsiz. Maintained by agtt on GitHub, where it has earned 18 stars from the community.",
+      "long2": "It's actively developed around opencart, sanalpos, akbank, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Opencart",
+        "Sanalpos",
+        "Akbank",
+        "Kuveyturk"
+      ],
+      "updated": "5 years ago",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 87,
+          "name": "PHP"
+        },
+        {
+          "pct": 13,
+          "name": "Twig"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "opencart",
+        "sanalpos",
+        "akbank",
+        "kuveyturk",
+        "netspay",
+        "bankclass",
+        "opencart3",
+        "payment-integration"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -813,12 +1058,36 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 97,
+          "name": "PHP"
+        },
+        {
+          "pct": 3,
+          "name": "Go Template"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/butopea/vue-storefront-opencart-vsbridge/releases/tag/v1.0.43",
+          "name": "v1.0.43"
+        },
+        {
+          "url": "https://github.com/butopea/vue-storefront-opencart-vsbridge/releases/tag/v1.0.42",
+          "name": "v1.0.42"
+        },
+        {
+          "url": "https://github.com/butopea/vue-storefront-opencart-vsbridge/releases/tag/v1.0.41",
+          "name": "v1.0.41"
+        },
+        {
+          "url": "https://github.com/butopea/vue-storefront-opencart-vsbridge/releases/tag/v1.0.40",
+          "name": "v1.0.40"
+        },
+        {
+          "url": "https://github.com/butopea/vue-storefront-opencart-vsbridge/releases/tag/v1.0.39",
+          "name": "v1.0.39"
+        }
+      ],
       "topics": [
         "opencart",
         "vsf1"
@@ -837,34 +1106,36 @@
       "demo": "https://www.opencartbrasil.com.br",
       "repoUrl": "https://github.com/opencartbrasil/todas-urls-amigaveis",
       "long1": "Transforma todas as urls padrões do OpenCart em URLs amigáveis. Maintained by opencartbrasil on GitHub, where it has earned 16 stars from the community.",
-      "long2": "It's actively developed around brasil, ocmod, opencart, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around php, brasil, opencart, and is a solid reference for anyone building with these tools.",
       "stack": [
+        "Php",
         "Brasil",
-        "Ocmod",
         "Opencart",
-        "Opencartbrasil"
+        "Ocmod"
       ],
       "updated": "5 years ago",
       "license": "GPL-3.0",
       "langs": [
         {
           "name": "JavaScript",
-          "pct": 71.429,
-          "size": 20
+          "pct": 72
+        },
+        {
+          "name": "JavaScript",
+          "pct": 20
         },
         {
           "name": "Other",
-          "pct": 28.571,
-          "size": 8
+          "pct": 8
         }
       ],
       "versions": [],
       "topics": [
+        "php",
         "brasil",
-        "ocmod",
         "opencart",
-        "opencartbrasil",
-        "php"
+        "ocmod",
+        "opencartbrasil"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -887,16 +1158,44 @@
         "Opencart Payment",
         "Paypal"
       ],
-      "updated": "2 months ago",
+      "updated": "6 days ago",
       "license": "—",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 68,
+          "name": "PHP"
+        },
+        {
+          "pct": 26,
+          "name": "Twig"
+        },
+        {
+          "pct": 6,
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/Dreamvention/paypal/releases/tag/v3.2.9",
+          "name": "v3.2.9"
+        },
+        {
+          "url": "https://github.com/Dreamvention/paypal/releases/tag/v3.2.8",
+          "name": "v3.2.8"
+        },
+        {
+          "url": "https://github.com/Dreamvention/paypal/releases/tag/v3.2.7",
+          "name": "v3.2.7"
+        },
+        {
+          "url": "https://github.com/Dreamvention/paypal/releases/tag/v3.2.6",
+          "name": "v3.2.6"
+        },
+        {
+          "url": "https://github.com/Dreamvention/paypal/releases/tag/v3.2.5",
+          "name": "v3.2.5"
+        }
+      ],
       "topics": [
         "opencart",
         "opencart-payment",
@@ -916,36 +1215,39 @@
       "demo": null,
       "repoUrl": "https://github.com/shurjopay-plugins/sp-plugin-php",
       "long1": "Pure PHP plugin to use/connect to shurjoPay. Maintained by shurjopay-plugins on GitHub, where it has earned 14 stars from the community.",
-      "long2": "It's actively developed around codeigniter, joomla, laravel, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around laravel, php, shurjopay, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "PHP",
-        "Codeigniter",
-        "Joomla",
         "Laravel",
-        "Lumen Framework"
+        "Php",
+        "Shurjopay",
+        "Wordpress"
       ],
       "updated": "3 years ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "PHP",
           "pct": 100,
-          "size": 100
+          "name": "PHP"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/shurjopay-plugins/sp-plugin-php/releases/tag/v0.1.1",
+          "name": "v0.1.1"
+        }
+      ],
       "topics": [
+        "laravel",
+        "php",
+        "shurjopay",
+        "wordpress",
+        "opencart",
+        "shurjomukhi",
         "codeigniter",
         "joomla",
-        "laravel",
         "lumen-framework",
         "magento2",
-        "opencart",
-        "php",
-        "shurjomukhi",
-        "shurjopay",
-        "symfony",
-        "wordpress"
+        "symfony"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -956,7 +1258,7 @@
       "category": "E-commerce",
       "stars": 13,
       "author": "cryptapi",
-      "avatar": "https://avatars.githubusercontent.com/u/44925437?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/44925437?u=61369138589bc7fee6c417f3fbd50fbd38286cc4&v=4",
       "desc": "CryptAPI's OpenCart Payment Gateway extension",
       "demo": null,
       "repoUrl": "https://github.com/cryptapi/opencart-cryptapi",
@@ -968,36 +1270,44 @@
         "Opencart",
         "Payment Gateway"
       ],
-      "updated": "2 weeks ago",
+      "updated": "4 weeks ago",
       "license": "—",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 67.013,
-          "size": 177217
+          "pct": 71,
+          "name": "PHP"
         },
         {
-          "name": "Twig",
-          "pct": 24.164,
-          "size": 63902
+          "pct": 24,
+          "name": "Twig"
         },
         {
-          "name": "CSS",
-          "pct": 4.758,
-          "size": 12582
-        },
-        {
-          "name": "JavaScript",
-          "pct": 3.446,
-          "size": 9112
-        },
-        {
-          "name": "HTML",
-          "pct": 0.619,
-          "size": 1638
+          "pct": 5,
+          "name": "CSS"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/cryptapi/opencart-cryptapi/releases/tag/v3.4.0",
+          "name": "v3.4.0"
+        },
+        {
+          "url": "https://github.com/cryptapi/opencart-cryptapi/releases/tag/v3.2.7_opencart-3",
+          "name": "v3.2.7_opencart-3"
+        },
+        {
+          "url": "https://github.com/cryptapi/opencart-cryptapi/releases/tag/v3.2.7_opencart-4",
+          "name": "v3.2.7_opencart-4"
+        },
+        {
+          "url": "https://github.com/cryptapi/opencart-cryptapi/releases/tag/v3.2.6_opencart-4",
+          "name": "v3.2.6_opencart-4"
+        },
+        {
+          "url": "https://github.com/cryptapi/opencart-cryptapi/releases/tag/v3.2.6_opencart-3",
+          "name": "v3.2.6_opencart-3"
+        }
+      ],
       "topics": [
         "cryptocurrency",
         "opencart",
@@ -1012,34 +1322,37 @@
       "category": "DevTools",
       "stars": 12,
       "author": "georgikolev7",
-      "avatar": "https://avatars.githubusercontent.com/u/3003037?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/3003037?u=9eab5916251f4cdd24f75d6109416166341d7d2d&v=4",
       "desc": "JS & CSS Minifier for OpenCart 2.1",
       "demo": null,
       "repoUrl": "https://github.com/georgikolev7/opencart-js-css-minifier",
       "long1": "JS & CSS Minifier for OpenCart 2.1. Maintained by georgikolev7 on GitHub, where it has earned 12 stars from the community.",
-      "long2": "It's actively developed around css-minifier, js-minifier, opencart, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around css-minifier, opencart, opencart-2x, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
         "Css Minifier",
-        "Js Minifier",
         "Opencart",
-        "Opencart 2X"
+        "Opencart 2X",
+        "Js Minifier"
       ],
       "updated": "7 years ago",
       "license": "—",
       "langs": [
         {
-          "name": "PHP",
           "pct": 100,
-          "size": 100
+          "name": "PHP"
+        },
+        {
+          "pct": 0,
+          "name": "Dockerfile"
         }
       ],
       "versions": [],
       "topics": [
         "css-minifier",
-        "js-minifier",
         "opencart",
-        "opencart-2x"
+        "opencart-2x",
+        "js-minifier"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -1050,7 +1363,7 @@
       "category": "DevTools",
       "stars": 12,
       "author": "byjg",
-      "avatar": "https://avatars.githubusercontent.com/u/981924?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/981924?u=43ffcf1abe80c1fecfda244718f31d960e455c95&v=4",
       "desc": "Opencart docker image prepared for production environment with volume persistent",
       "demo": null,
       "repoUrl": "https://github.com/byjg/docker-opencart",
@@ -1067,9 +1380,12 @@
       "license": "—",
       "langs": [
         {
-          "name": "Dockerfile",
-          "pct": 100,
-          "size": 100
+          "pct": 58,
+          "name": "Dockerfile"
+        },
+        {
+          "pct": 42,
+          "name": "Shell"
         }
       ],
       "versions": [],
@@ -1093,29 +1409,49 @@
       "demo": null,
       "repoUrl": "https://github.com/PaycomUZ/opencart-payment-gateway",
       "long1": "Payme checkout plugin for OpenCart. Maintained by PaycomUZ on GitHub, where it has earned 11 stars from the community.",
-      "long2": "It's actively developed around merchant-api, opencart, paycom, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around payme, opencart, merchant-api, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Merchant Api",
+        "Payme",
         "Opencart",
-        "Paycom",
-        "Payme"
+        "Merchant Api",
+        "Paycom"
       ],
       "updated": "6 years ago",
       "license": "—",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 84,
+          "name": "PHP"
+        },
+        {
+          "pct": 13,
+          "name": "HTML"
+        },
+        {
+          "pct": 3,
+          "name": "TSQL"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/PaycomUZ/opencart-payment-gateway/releases/tag/V.2.0.1",
+          "name": "V.2.0.1"
+        },
+        {
+          "url": "https://github.com/PaycomUZ/opencart-payment-gateway/releases/tag/V.2.0.0",
+          "name": "V.2.0.0"
+        },
+        {
+          "url": "https://github.com/PaycomUZ/opencart-payment-gateway/releases/tag/V.1.1.9",
+          "name": "V.1.1.9"
+        }
+      ],
       "topics": [
-        "merchant-api",
+        "payme",
         "opencart",
-        "paycom",
-        "payme"
+        "merchant-api",
+        "paycom"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -1131,30 +1467,29 @@
       "demo": "https://www.opencartbrasil.com.br",
       "repoUrl": "https://github.com/opencartbrasil/url-amigavel-automatica",
       "long1": "Adiciona automaticamente a URL amigável no momento do cadastro ou edição de produtos, departamentos, páginas de informações e marcas no OpenCart. Maintained by opencartbrasil on GitHub, where it has earned 11 stars from the community.",
-      "long2": "It's actively developed around brasil, ocmod, opencart, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around php, brasil, opencart, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
+        "Php",
         "Brasil",
-        "Ocmod",
         "Opencart",
-        "Opencartbrasil"
+        "Ocmod"
       ],
       "updated": "5 years ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "JavaScript",
           "pct": 100,
-          "size": 100
+          "name": "JavaScript"
         }
       ],
       "versions": [],
       "topics": [
+        "php",
         "brasil",
-        "ocmod",
         "opencart",
-        "opencartbrasil",
-        "php"
+        "ocmod",
+        "opencartbrasil"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -1165,7 +1500,7 @@
       "category": "DevTools",
       "stars": 10,
       "author": "19th19th",
-      "avatar": "https://avatars.githubusercontent.com/u/6640907?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/6640907?u=92047be88aac3240d2970106025aa6e06bb475f6&v=4",
       "desc": "A project worth exploring.",
       "demo": "https://liveopencart.ru",
       "repoUrl": "https://github.com/19th19th/LiveStore",
@@ -1177,16 +1512,28 @@
         "Ocstore",
         "Opencart"
       ],
-      "updated": "1 month ago",
+      "updated": "6 days ago",
       "license": "—",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 63,
+          "name": "PHP"
+        },
+        {
+          "pct": 24,
+          "name": "Twig"
+        },
+        {
+          "pct": 13,
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/19th19th/LiveStore/releases/tag/v3.0.4.4",
+          "name": "v3.0.4.4"
+        }
+      ],
       "topics": [
         "livestore",
         "ocstore",
@@ -1201,43 +1548,97 @@
       "category": "DevTools",
       "stars": 10,
       "author": "p0v1n0m",
-      "avatar": "https://avatars.githubusercontent.com/u/19241364?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/19241364?u=d06b12f32227bcf343b029a179166157fc91690d&v=4",
       "desc": "Cache and Logs Cleaner Module for CMS OpenCart",
       "demo": null,
       "repoUrl": "https://github.com/p0v1n0m/opencart_storage_cleaner",
       "long1": "Cache and Logs Cleaner Module for CMS OpenCart. Maintained by p0v1n0m on GitHub, where it has earned 10 stars from the community.",
-      "long2": "It's actively developed around cache, clean, cleaner, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around opencart, cache, logs, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
+        "Opencart",
         "Cache",
-        "Clean",
-        "Cleaner",
-        "Clear"
+        "Logs",
+        "Storage"
       ],
       "updated": "9 years ago",
       "license": "—",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 80,
+          "name": "PHP"
+        },
+        {
+          "pct": 20,
+          "name": "Smarty"
         }
       ],
       "versions": [],
       "topics": [
+        "opencart",
         "cache",
-        "clean",
+        "logs",
+        "storage",
         "cleaner",
+        "module",
+        "clean",
         "clear",
         "cms",
-        "extension",
-        "log",
-        "logs",
-        "module",
-        "ocmod",
         "ocstore",
+        "log",
+        "extension"
+      ],
+      "addedAt": "2026-07-15T22:28:32.987829+00:00"
+    },
+    {
+      "slug": "opencart-stripe-extension",
+      "name": "opencart-stripe-extension",
+      "fullName": "beyondit/opencart-stripe-extension",
+      "category": "E-commerce",
+      "stars": 10,
+      "author": "beyondit",
+      "avatar": "https://avatars.githubusercontent.com/u/4127303?v=4",
+      "desc": "Opencart Stripe Extension",
+      "demo": null,
+      "repoUrl": "https://github.com/beyondit/opencart-stripe-extension",
+      "long1": "Opencart Stripe Extension. Maintained by beyondit on GitHub, where it has earned 10 stars from the community.",
+      "long2": "It's actively developed around opencart, stripe, create-react-app, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "JavaScript",
+        "Opencart",
+        "Stripe",
+        "Create React App"
+      ],
+      "updated": "9 years ago",
+      "license": "GPL-3.0",
+      "langs": [
+        {
+          "pct": 73,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 16,
+          "name": "PHP"
+        },
+        {
+          "pct": 11,
+          "name": "Smarty"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/beyondit/opencart-stripe-extension/releases/tag/1.0.0",
+          "name": "1.0.0"
+        },
+        {
+          "url": "https://github.com/beyondit/opencart-stripe-extension/releases/tag/0.9.0",
+          "name": "0.9.0"
+        }
+      ],
+      "topics": [
         "opencart",
-        "storage"
+        "stripe",
+        "create-react-app"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -1253,27 +1654,47 @@
       "demo": null,
       "repoUrl": "https://github.com/beyondit/opencart-extension-installer",
       "long1": "Install OpenCart Extensions with Composer. Maintained by beyondit on GitHub, where it has earned 10 stars from the community.",
-      "long2": "It's actively developed around composer, composer-plugin, opencart, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around opencart, composer-plugin, composer, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Composer",
+        "Opencart",
         "Composer Plugin",
-        "Opencart"
+        "Composer"
       ],
       "updated": "3 years ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "PHP",
           "pct": 100,
-          "size": 100
+          "name": "PHP"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/beyondit/opencart-extension-installer/releases/tag/2.4.2",
+          "name": "2.4.2"
+        },
+        {
+          "url": "https://github.com/beyondit/opencart-extension-installer/releases/tag/2.4.1",
+          "name": "2.4.1"
+        },
+        {
+          "url": "https://github.com/beyondit/opencart-extension-installer/releases/tag/2.4",
+          "name": "2.4"
+        },
+        {
+          "url": "https://github.com/beyondit/opencart-extension-installer/releases/tag/2.3.2",
+          "name": "2.3.2"
+        },
+        {
+          "url": "https://github.com/beyondit/opencart-extension-installer/releases/tag/2.3.1",
+          "name": "2.3.1"
+        }
+      ],
       "topics": [
-        "composer",
+        "opencart",
         "composer-plugin",
-        "opencart"
+        "composer"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -1297,16 +1718,44 @@
         "Opencart 2X",
         "Opencart 3X"
       ],
-      "updated": "5 months ago",
+      "updated": "6 months ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 80,
+          "name": "PHP"
+        },
+        {
+          "pct": 14,
+          "name": "Go Template"
+        },
+        {
+          "pct": 6,
+          "name": "Twig"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/apiship/opencart-module/releases/tag/v1.2",
+          "name": "v1.2"
+        },
+        {
+          "url": "https://github.com/apiship/opencart-module/releases/tag/v1.1",
+          "name": "v1.1"
+        },
+        {
+          "url": "https://github.com/apiship/opencart-module/releases/tag/v1.0",
+          "name": "v1.0"
+        },
+        {
+          "url": "https://github.com/apiship/opencart-module/releases/tag/v0.9.4",
+          "name": "v0.9.4"
+        },
+        {
+          "url": "https://github.com/apiship/opencart-module/releases/tag/v0.9.3",
+          "name": "v0.9.3"
+        }
+      ],
       "topics": [
         "apiship",
         "opencart",
@@ -1315,227 +1764,6 @@
         "opencart-module",
         "shipping-module",
         "shipping-rates"
-      ],
-      "addedAt": "2026-07-15T22:28:32.987829+00:00"
-    },
-    {
-      "slug": "opencart-stripe-extension",
-      "name": "opencart-stripe-extension",
-      "fullName": "beyondit/opencart-stripe-extension",
-      "category": "E-commerce",
-      "stars": 10,
-      "author": "beyondit",
-      "avatar": "https://avatars.githubusercontent.com/u/4127303?v=4",
-      "desc": "Opencart Stripe Extension",
-      "demo": null,
-      "repoUrl": "https://github.com/beyondit/opencart-stripe-extension",
-      "long1": "Opencart Stripe Extension. Maintained by beyondit on GitHub, where it has earned 10 stars from the community.",
-      "long2": "It's actively developed around create-react-app, opencart, stripe, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "JavaScript",
-        "Create React App",
-        "Opencart",
-        "Stripe"
-      ],
-      "updated": "9 years ago",
-      "license": "GPL-3.0",
-      "langs": [
-        {
-          "name": "JavaScript",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "create-react-app",
-        "opencart",
-        "stripe"
-      ],
-      "addedAt": "2026-07-15T22:28:32.987829+00:00"
-    },
-    {
-      "slug": "opencart-to-woocommerce-migration",
-      "name": "opencart-to-woocommerce-migration",
-      "fullName": "atakanuludag/opencart-to-woocommerce-migration",
-      "category": "E-commerce",
-      "stars": 9,
-      "author": "atakanuludag",
-      "avatar": "https://avatars.githubusercontent.com/u/6053742?v=4",
-      "desc": "Opencart to Woocommerce/Wordpress Migration 🔁🛒",
-      "demo": null,
-      "repoUrl": "https://github.com/atakanuludag/opencart-to-woocommerce-migration",
-      "long1": "Opencart to Woocommerce/Wordpress Migration 🔁🛒. Maintained by atakanuludag on GitHub, where it has earned 9 stars from the community.",
-      "long2": "It's actively developed around migration, opencart, php, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Migration",
-        "Opencart",
-        "Php",
-        "Woocommerce"
-      ],
-      "updated": "5 years ago",
-      "license": "GPL-3.0",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "migration",
-        "opencart",
-        "php",
-        "woocommerce",
-        "wordpress"
-      ],
-      "addedAt": "2026-07-15T22:28:32.987829+00:00"
-    },
-    {
-      "slug": "gn-api-opencart",
-      "name": "gn-api-opencart",
-      "fullName": "gerencianet/gn-api-opencart",
-      "category": "DevTools",
-      "stars": 9,
-      "author": "gerencianet",
-      "avatar": "https://avatars.githubusercontent.com/u/7284118?v=4",
-      "desc": "Módulo OpenCart integrado a API Gerencianet. Este Plug-in está preparado para integração à API Boletos da Gerencianet, que lhe permite a realização de cobranças por boleto/Bolix, cartão de crédito e muito mais.",
-      "demo": "https://dev.gerencianet.com.br/docs/opencart",
-      "repoUrl": "https://github.com/gerencianet/gn-api-opencart",
-      "long1": "Módulo OpenCart integrado a API Gerencianet. Este Plug-in está preparado para integração à API Boletos da Gerencianet, que lhe permite a realização de cobranças por boleto/Bolix, cartão de crédito e muito mais. Maintained by gerencianet on GitHub, where it has earned 9 stars from the community.",
-      "long2": "It's actively developed around billet, boleto, bolix, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Billet",
-        "Boleto",
-        "Bolix",
-        "Card"
-      ],
-      "updated": "4 years ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "billet",
-        "boleto",
-        "bolix",
-        "card",
-        "cartao-de-credito",
-        "opencart",
-        "opencart-extension",
-        "opencart-module"
-      ],
-      "addedAt": "2026-07-15T22:28:32.987829+00:00"
-    },
-    {
-      "slug": "mapa-vendas-brasil",
-      "name": "mapa-vendas-brasil",
-      "fullName": "opencartbrasil/mapa-vendas-brasil",
-      "category": "DevTools",
-      "stars": 9,
-      "author": "opencartbrasil",
-      "avatar": "https://avatars.githubusercontent.com/u/2031108?v=4",
-      "desc": "Exibe no painel de controle do OpenCart o mapa de vendas no Brasil com os pedidos divididos pelos estados brasileiros.",
-      "demo": "https://www.opencartbrasil.com.br",
-      "repoUrl": "https://github.com/opencartbrasil/mapa-vendas-brasil",
-      "long1": "Exibe no painel de controle do OpenCart o mapa de vendas no Brasil com os pedidos divididos pelos estados brasileiros. Maintained by opencartbrasil on GitHub, where it has earned 9 stars from the community.",
-      "long2": "It's actively developed around brasil, ocmod, opencart, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Brasil",
-        "Ocmod",
-        "Opencart",
-        "Opencartbrasil"
-      ],
-      "updated": "5 years ago",
-      "license": "GPL-3.0",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "brasil",
-        "ocmod",
-        "opencart",
-        "opencartbrasil",
-        "php"
-      ],
-      "addedAt": "2026-07-15T22:28:32.987829+00:00"
-    },
-    {
-      "slug": "opencart-bundle",
-      "name": "opencart-bundle",
-      "fullName": "AlexWaha/opencart-bundle",
-      "category": "E-commerce",
-      "stars": 9,
-      "author": "AlexWaha",
-      "avatar": "https://avatars.githubusercontent.com/u/8767025?v=4",
-      "desc": "OpenCart Extension Bundle is a free and open-source collection of extensions for the OpenCart E-commerce CMS. These extensions compatible with Opencart 2.3.x, 3.x, 4.x* and provided as is, without any warranty or additional obligations.",
-      "demo": "https://alexwaha.com",
-      "repoUrl": "https://github.com/AlexWaha/opencart-bundle",
-      "long1": "OpenCart Extension Bundle is a free and open-source collection of extensions for the OpenCart E-commerce CMS. These extensions compatible with Opencart 2.3.x, 3.x, 4.x* and provided as is, without any warranty or additional obligations. Maintained by AlexWaha on GitHub, where it has earned 9 stars from the community.",
-      "long2": "It's actively developed around checkout-extension, e-commerce, extensions, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Checkout Extension",
-        "E Commerce",
-        "Extensions",
-        "Opencart"
-      ],
-      "updated": "1 month ago",
-      "license": "GPL-3.0",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 61.13,
-          "size": 1715390
-        },
-        {
-          "name": "Twig",
-          "pct": 31.675,
-          "size": 888847
-        },
-        {
-          "name": "JavaScript",
-          "pct": 3.946,
-          "size": 110736
-        },
-        {
-          "name": "CSS",
-          "pct": 3.248,
-          "size": 91142
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "checkout-extension",
-        "e-commerce",
-        "extensions",
-        "opencart",
-        "opencart-3x",
-        "opencart-checkout",
-        "opencart-development",
-        "opencart-extension",
-        "opencart-module",
-        "opencart-plugin",
-        "opencart-xml",
-        "opencart23",
-        "opencart3",
-        "plugins",
-        "simple-checkout",
-        "sms-gateway",
-        "xml-feed"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -1551,35 +1779,55 @@
       "demo": "https://www.opencart.com/index.php?route=marketplace/extension&filter_member=qwerty541",
       "repoUrl": "https://github.com/overvis/opencart-plugins",
       "long1": "Several plugins for OpenCart 3. Maintained by overvis on GitHub, where it has earned 9 stars from the community.",
-      "long2": "It's actively developed around e-commerce, open-source, opencart, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around opencart-3x, opencart, opencart-extension, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "E Commerce",
-        "Open Source",
+        "Opencart 3X",
         "Opencart",
-        "Opencart 3X"
+        "Opencart Extension",
+        "Opencart Module"
       ],
       "updated": "4 years ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 52,
+          "name": "PHP"
+        },
+        {
+          "pct": 48,
+          "name": "Twig"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/overvis/opencart-plugins/releases/tag/v1.0.0-Catalog-display",
+          "name": "v1.0.0-Catalog-display"
+        },
+        {
+          "url": "https://github.com/overvis/opencart-plugins/releases/tag/v1.0.0-Insert-arbitrary-html",
+          "name": "v1.0.0-Insert-arbitrary-html"
+        },
+        {
+          "url": "https://github.com/overvis/opencart-plugins/releases/tag/v1.0.0-Simple-cookie-policy-notice",
+          "name": "v1.0.0-Simple-cookie-policy-notice"
+        },
+        {
+          "url": "https://github.com/overvis/opencart-plugins/releases/tag/v1.0.0-Simple-navigation-bar",
+          "name": "v1.0.0-Simple-navigation-bar"
+        }
+      ],
       "topics": [
-        "e-commerce",
-        "open-source",
-        "opencart",
         "opencart-3x",
+        "opencart",
         "opencart-extension",
-        "opencart-menu",
         "opencart-module",
+        "opencart-menu",
         "opencart-plugin",
         "opencart-plugins",
-        "php"
+        "php",
+        "open-source",
+        "e-commerce"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -1590,7 +1838,7 @@
       "category": "DevTools",
       "stars": 9,
       "author": "ozzzi",
-      "avatar": "https://avatars.githubusercontent.com/u/15348996?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/15348996?u=d887340ef8f446266bdc5c6cf038e523c94cb32a&v=4",
       "desc": "Docker container for Opencart CMS.",
       "demo": null,
       "repoUrl": "https://github.com/ozzzi/docker-opencart",
@@ -1606,9 +1854,12 @@
       "license": "—",
       "langs": [
         {
-          "name": "Dockerfile",
-          "pct": 100,
-          "size": 100
+          "pct": 90,
+          "name": "Dockerfile"
+        },
+        {
+          "pct": 10,
+          "name": "Shell"
         }
       ],
       "versions": [],
@@ -1641,12 +1892,36 @@
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "JavaScript",
-          "pct": 100,
-          "size": 100
+          "pct": 84,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 10,
+          "name": "PHP"
+        },
+        {
+          "pct": 6,
+          "name": "Twig"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/iSenseLabs/architect/releases/tag/v3.1.0",
+          "name": "v3.1.0"
+        },
+        {
+          "url": "https://github.com/iSenseLabs/architect/releases/tag/v2.1.0",
+          "name": "v2.1.0"
+        },
+        {
+          "url": "https://github.com/iSenseLabs/architect/releases/tag/v2.0.0",
+          "name": "v2.0.0"
+        },
+        {
+          "url": "https://github.com/iSenseLabs/architect/releases/tag/v3.0.0",
+          "name": "v3.0.0"
+        }
+      ],
       "topics": [
         "opencart",
         "rapid-development"
@@ -1665,34 +1940,215 @@
       "demo": null,
       "repoUrl": "https://github.com/CleanTalk/opencart-antispam",
       "long1": "A project worth exploring. Maintained by CleanTalk on GitHub, where it has earned 9 stars from the community.",
-      "long2": "It's actively developed around anti-spam, antispam, opencart, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around opencart, opencart-extension, php, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "PHP",
-        "Anti Spam",
-        "Antispam",
         "Opencart",
-        "Opencart Extension"
+        "Opencart Extension",
+        "Php",
+        "Antispam"
       ],
       "updated": "3 months ago",
       "license": "—",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 92,
+          "name": "PHP"
+        },
+        {
+          "pct": 4,
+          "name": "Go Template"
+        },
+        {
+          "pct": 4,
+          "name": "JavaScript"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/CleanTalk/opencart-antispam/releases/tag/2.1",
+          "name": "2.1"
+        },
+        {
+          "url": "https://github.com/CleanTalk/opencart-antispam/releases/tag/2.0",
+          "name": "2.0"
+        },
+        {
+          "url": "https://github.com/CleanTalk/opencart-antispam/releases/tag/dev-version",
+          "name": "dev-version"
+        },
+        {
+          "url": "https://github.com/CleanTalk/opencart-antispam/releases/tag/1.8",
+          "name": "1.8"
+        },
+        {
+          "url": "https://github.com/CleanTalk/opencart-antispam/releases/tag/1.7",
+          "name": "1.7"
+        }
+      ],
+      "topics": [
+        "opencart",
+        "opencart-extension",
+        "php",
+        "antispam",
+        "spam",
+        "anti-spam",
+        "spam-protection",
+        "spam-prevention",
+        "spam-filtering"
+      ],
+      "addedAt": "2026-07-15T22:28:32.987829+00:00"
+    },
+    {
+      "slug": "mapa-vendas-brasil",
+      "name": "mapa-vendas-brasil",
+      "fullName": "opencartbrasil/mapa-vendas-brasil",
+      "category": "DevTools",
+      "stars": 9,
+      "author": "opencartbrasil",
+      "avatar": "https://avatars.githubusercontent.com/u/2031108?v=4",
+      "desc": "Exibe no painel de controle do OpenCart o mapa de vendas no Brasil com os pedidos divididos pelos estados brasileiros.",
+      "demo": "https://www.opencartbrasil.com.br",
+      "repoUrl": "https://github.com/opencartbrasil/mapa-vendas-brasil",
+      "long1": "Exibe no painel de controle do OpenCart o mapa de vendas no Brasil com os pedidos divididos pelos estados brasileiros. Maintained by opencartbrasil on GitHub, where it has earned 9 stars from the community.",
+      "long2": "It's actively developed around php, brasil, opencart, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Php",
+        "Brasil",
+        "Opencart",
+        "Ocmod"
+      ],
+      "updated": "5 years ago",
+      "license": "GPL-3.0",
+      "langs": [
+        {
+          "pct": 56,
+          "name": "PHP"
+        },
+        {
+          "pct": 44,
+          "name": "Twig"
         }
       ],
       "versions": [],
       "topics": [
-        "anti-spam",
-        "antispam",
-        "opencart",
-        "opencart-extension",
         "php",
-        "spam",
-        "spam-filtering",
-        "spam-prevention",
-        "spam-protection"
+        "brasil",
+        "opencart",
+        "ocmod",
+        "opencartbrasil"
+      ],
+      "addedAt": "2026-07-15T22:28:32.987829+00:00"
+    },
+    {
+      "slug": "gn-api-opencart",
+      "name": "gn-api-opencart",
+      "fullName": "gerencianet/gn-api-opencart",
+      "category": "DevTools",
+      "stars": 9,
+      "author": "gerencianet",
+      "avatar": "https://avatars.githubusercontent.com/u/7284118?v=4",
+      "desc": "Módulo OpenCart integrado a API Gerencianet. Este Plug-in está preparado para integração à API Boletos da Gerencianet, que lhe permite a realização de cobranças por boleto/Bolix, cartão de crédito e muito mais.",
+      "demo": "https://dev.gerencianet.com.br/docs/opencart",
+      "repoUrl": "https://github.com/gerencianet/gn-api-opencart",
+      "long1": "Módulo OpenCart integrado a API Gerencianet. Este Plug-in está preparado para integração à API Boletos da Gerencianet, que lhe permite a realização de cobranças por boleto/Bolix, cartão de crédito e muito mais. Maintained by gerencianet on GitHub, where it has earned 9 stars from the community.",
+      "long2": "It's actively developed around opencart, opencart-module, opencart-extension, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Opencart",
+        "Opencart Module",
+        "Opencart Extension",
+        "Card"
+      ],
+      "updated": "4 years ago",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 54,
+          "name": "PHP"
+        },
+        {
+          "pct": 36,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 10,
+          "name": "HTML"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/gerencianet/gn-api-opencart/releases/tag/v4.0.0",
+          "name": "v4.0.0"
+        },
+        {
+          "url": "https://github.com/gerencianet/gn-api-opencart/releases/tag/v0.4.2",
+          "name": "v0.4.2"
+        },
+        {
+          "url": "https://github.com/gerencianet/gn-api-opencart/releases/tag/v2.1.2",
+          "name": "v2.1.2"
+        },
+        {
+          "url": "https://github.com/gerencianet/gn-api-opencart/releases/tag/v3.1.2",
+          "name": "v3.1.2"
+        },
+        {
+          "url": "https://github.com/gerencianet/gn-api-opencart/releases/tag/v0.4.1",
+          "name": "v0.4.1"
+        }
+      ],
+      "topics": [
+        "opencart",
+        "opencart-module",
+        "opencart-extension",
+        "card",
+        "cartao-de-credito",
+        "boleto",
+        "billet",
+        "bolix"
+      ],
+      "addedAt": "2026-07-15T22:28:32.987829+00:00"
+    },
+    {
+      "slug": "opencart-to-woocommerce-migration",
+      "name": "opencart-to-woocommerce-migration",
+      "fullName": "atakanuludag/opencart-to-woocommerce-migration",
+      "category": "E-commerce",
+      "stars": 9,
+      "author": "atakanuludag",
+      "avatar": "https://avatars.githubusercontent.com/u/6053742?u=be4e85575d6815d7f1fcefd303906e3a563f9d29&v=4",
+      "desc": "Opencart to Woocommerce/Wordpress Migration 🔁🛒",
+      "demo": null,
+      "repoUrl": "https://github.com/atakanuludag/opencart-to-woocommerce-migration",
+      "long1": "Opencart to Woocommerce/Wordpress Migration 🔁🛒. Maintained by atakanuludag on GitHub, where it has earned 9 stars from the community.",
+      "long2": "It's actively developed around opencart, woocommerce, wordpress, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Opencart",
+        "Woocommerce",
+        "Wordpress",
+        "Migration"
+      ],
+      "updated": "5 years ago",
+      "license": "GPL-3.0",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "PHP"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/atakanuludag/opencart-to-woocommerce-migration/releases/tag/1.0",
+          "name": "1.0"
+        }
+      ],
+      "topics": [
+        "opencart",
+        "woocommerce",
+        "wordpress",
+        "migration",
+        "php"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -1708,29 +2164,147 @@
       "demo": "https://burbuja.cl/proyectos/opencart/",
       "repoUrl": "https://github.com/burbuja/opencart-spanish",
       "long1": "Traducción al español para OpenCart. Maintained by burbuja on GitHub, where it has earned 9 stars from the community.",
-      "long2": "It's actively developed around chile, opencart, spanish, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around opencart, chile, translation, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Chile",
         "Opencart",
-        "Spanish",
-        "Translation"
+        "Chile",
+        "Translation",
+        "Spanish"
       ],
       "updated": "1 year ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "PHP",
           "pct": 100,
-          "size": 100
+          "name": "PHP"
+        },
+        {
+          "pct": 0,
+          "name": "Twig"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/burbuja/opencart-spanish/releases/tag/4.1.0.3%2Bbbj1",
+          "name": "4.1.0.3+bbj1"
+        },
+        {
+          "url": "https://github.com/burbuja/opencart-spanish/releases/tag/4.1.0.2%2Bbbj1",
+          "name": "4.1.0.2+bbj1"
+        },
+        {
+          "url": "https://github.com/burbuja/opencart-spanish/releases/tag/4.1.0.0%2Bbbj1",
+          "name": "4.1.0.0+bbj1"
+        },
+        {
+          "url": "https://github.com/burbuja/opencart-spanish/releases/tag/4.0.2.3",
+          "name": "4.0.2.3"
+        },
+        {
+          "url": "https://github.com/burbuja/opencart-spanish/releases/tag/4.0.1.1",
+          "name": "4.0.1.1"
+        }
+      ],
+      "topics": [
+        "opencart",
+        "chile",
+        "translation",
+        "spanish"
+      ],
+      "addedAt": "2026-07-15T22:28:32.987829+00:00"
+    },
+    {
+      "slug": "opencart-bundle",
+      "name": "opencart-bundle",
+      "fullName": "AlexWaha/opencart-bundle",
+      "category": "DevTools",
+      "stars": 9,
+      "author": "AlexWaha",
+      "avatar": "https://avatars.githubusercontent.com/u/8767025?u=25bf3d273a2415641e92080e0524f2326b916f8d&v=4",
+      "desc": "OpenCart Extension Bundle is a free and open-source collection of extensions for the OpenCart E-commerce CMS. These extensions compatible with Opencart 2.3.x, 3.x, 4.x* and provided as is, without any warranty or additional obligations.",
+      "demo": "https://alexwaha.com",
+      "repoUrl": "https://github.com/AlexWaha/opencart-bundle",
+      "long1": "OpenCart Extension Bundle is a free and open-source collection of extensions for the OpenCart E-commerce CMS. These extensions compatible with Opencart 2.3.x, 3.x, 4.x* and provided as is, without any warranty or additional obligations. Maintained by AlexWaha on GitHub, where it has earned 9 stars from the community.",
+      "long2": "It's actively developed around e-commerce, extensions, opencart, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "E Commerce",
+        "Extensions",
+        "Opencart",
+        "Opencart 3X"
+      ],
+      "updated": "1 week ago",
+      "license": "GPL-3.0",
+      "langs": [
+        {
+          "pct": 64,
+          "name": "PHP"
+        },
+        {
+          "pct": 32,
+          "name": "Twig"
+        },
+        {
+          "pct": 4,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
       "topics": [
-        "chile",
+        "e-commerce",
+        "extensions",
         "opencart",
-        "spanish",
-        "translation"
+        "opencart-3x",
+        "opencart-development",
+        "opencart-extension",
+        "opencart-module",
+        "opencart-plugin",
+        "opencart23",
+        "opencart3",
+        "plugins",
+        "sms-gateway"
+      ],
+      "addedAt": "2026-07-15T22:28:32.987829+00:00"
+    },
+    {
+      "slug": "opencart3-sluggable-module",
+      "name": "opencart3-sluggable-module",
+      "fullName": "resoul/opencart3-sluggable-module",
+      "category": "DevTools",
+      "stars": 9,
+      "author": "resoul",
+      "avatar": "https://avatars.githubusercontent.com/u/6534474?u=f2ffedddca855295df86846e795ae3c4b0c95e87&v=4",
+      "desc": "Sluggable module for OpenCart",
+      "demo": null,
+      "repoUrl": "https://github.com/resoul/opencart3-sluggable-module",
+      "long1": "Sluggable module for OpenCart. Maintained by resoul on GitHub, where it has earned 9 stars from the community.",
+      "long2": "It's actively developed around opencart, opencart-3x, opencart-extension, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Opencart",
+        "Opencart 3X",
+        "Opencart Extension",
+        "Opencart Module"
+      ],
+      "updated": "6 years ago",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 67,
+          "name": "PHP"
+        },
+        {
+          "pct": 33,
+          "name": "HTML"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "opencart",
+        "opencart-3x",
+        "opencart-extension",
+        "opencart-module"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -1746,67 +2320,36 @@
       "demo": "https://webocreation.com/blog/opencart-3-themes-free",
       "repoUrl": "https://github.com/rupaknepali/webocreation",
       "long1": "Free Opencart 3 theme. Maintained by rupaknepali on GitHub, where it has earned 8 stars from the community.",
-      "long2": "It's actively developed around opencart, opencart-3x, opencart-development, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around opencart, opencart-theme, opencart-3x, and is a solid reference for anyone building with these tools.",
       "stack": [
         "HTML",
         "Opencart",
+        "Opencart Theme",
         "Opencart 3X",
-        "Opencart Development",
-        "Opencart Theme"
+        "Opencart Development"
       ],
       "updated": "7 years ago",
       "license": "—",
       "langs": [
         {
-          "name": "HTML",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "opencart",
-        "opencart-3x",
-        "opencart-development",
-        "opencart-theme"
-      ],
-      "addedAt": "2026-07-15T22:28:32.987829+00:00"
-    },
-    {
-      "slug": "opencart3-sluggable-module",
-      "name": "opencart3-sluggable-module",
-      "fullName": "resoul/opencart3-sluggable-module",
-      "category": "DevTools",
-      "stars": 8,
-      "author": "resoul",
-      "avatar": "https://avatars.githubusercontent.com/u/6534474?v=4",
-      "desc": "Sluggable module for OpenCart",
-      "demo": null,
-      "repoUrl": "https://github.com/resoul/opencart3-sluggable-module",
-      "long1": "Sluggable module for OpenCart. Maintained by resoul on GitHub, where it has earned 8 stars from the community.",
-      "long2": "It's actively developed around opencart, opencart-3x, opencart-extension, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Opencart",
-        "Opencart 3X",
-        "Opencart Extension",
-        "Opencart Module"
-      ],
-      "updated": "6 years ago",
-      "license": "—",
-      "langs": [
+          "pct": 70,
+          "name": "HTML"
+        },
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 21,
+          "name": "CSS"
+        },
+        {
+          "pct": 9,
+          "name": "PHP"
         }
       ],
       "versions": [],
       "topics": [
         "opencart",
+        "opencart-theme",
         "opencart-3x",
-        "opencart-extension",
-        "opencart-module"
+        "opencart-development"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -1822,72 +2365,35 @@
       "demo": null,
       "repoUrl": "https://github.com/SDG1212/opencart-image-magick",
       "long1": "Image Magick program code for editing images in CMS Opencart (3.X version). Maintained by SDG1212 on GitHub, where it has earned 8 stars from the community.",
-      "long2": "It's actively developed around cms-opencart, image-magick, opencart, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around opencart, opencart-3x, opencart-imagick, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Cms Opencart",
-        "Image Magick",
         "Opencart",
-        "Opencart 3X"
+        "Opencart 3X",
+        "Opencart Imagick",
+        "Cms Opencart"
       ],
-      "updated": "1 week ago",
+      "updated": "3 weeks ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "PHP",
           "pct": 100,
-          "size": 6217
+          "name": "PHP"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/SDG1212/opencart-image-magick/releases/tag/v1.0.0",
+          "name": "v1.0.0"
+        }
+      ],
       "topics": [
-        "cms-opencart",
-        "image-magick",
         "opencart",
         "opencart-3x",
         "opencart-imagick",
+        "cms-opencart",
+        "image-magick",
         "php"
-      ],
-      "addedAt": "2026-07-15T22:28:32.987829+00:00"
-    },
-    {
-      "slug": "craftgate-opencart-3-x-gateway",
-      "name": "craftgate-opencart-3.x-gateway",
-      "fullName": "craftgate/craftgate-opencart-3.x-gateway",
-      "category": "E-commerce",
-      "stars": 7,
-      "author": "craftgate",
-      "avatar": "https://avatars.githubusercontent.com/u/71646184?v=4",
-      "desc": "The Official Craftgate Payment Gateway Extension for OpenCart 3.x",
-      "demo": "https://developer.craftgate.io/hazir-eticaret-modulleri/opencart",
-      "repoUrl": "https://github.com/craftgate/craftgate-opencart-3.x-gateway",
-      "long1": "The Official Craftgate Payment Gateway Extension for OpenCart 3.x. Maintained by craftgate on GitHub, where it has earned 7 stars from the community.",
-      "long2": "It's actively developed around craftgate, opencart, opencart-3x, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Craftgate",
-        "Opencart",
-        "Opencart 3X",
-        "Opencart Extension"
-      ],
-      "updated": "2 years ago",
-      "license": "GPL-3.0",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "craftgate",
-        "opencart",
-        "opencart-3x",
-        "opencart-extension",
-        "opencart-payment",
-        "payment-gateway",
-        "payment-orchestration"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -1898,7 +2404,7 @@
       "category": "E-commerce",
       "stars": 7,
       "author": "beachstrider",
-      "avatar": "https://avatars.githubusercontent.com/u/48445639?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/48445639?u=35a2553f070aa24327110965bf2c49a5d3327277&v=4",
       "desc": "A project worth exploring.",
       "demo": "https://littlemini.nu",
       "repoUrl": "https://github.com/beachstrider/little-mini-opencart",
@@ -1914,9 +2420,16 @@
       "license": "—",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 57,
+          "name": "PHP"
+        },
+        {
+          "pct": 28,
+          "name": "Twig"
+        },
+        {
+          "pct": 15,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
@@ -1925,47 +2438,6 @@
         "opencart",
         "php",
         "tailwindcss"
-      ],
-      "addedAt": "2026-07-15T22:28:32.987829+00:00"
-    },
-    {
-      "slug": "simpleopencart-for-unishop2-by-get-web",
-      "name": "simpleopencart_for_unishop2_by_get-web",
-      "fullName": "get-web/simpleopencart_for_unishop2_by_get-web",
-      "category": "DevTools",
-      "stars": 7,
-      "author": "get-web",
-      "avatar": "https://avatars.githubusercontent.com/u/39173640?v=4",
-      "desc": "Адаптация корзины модуля Simple и Filterit под шаблон Unishop2 на движке opencart 3",
-      "demo": "https://get-web.site/",
-      "repoUrl": "https://github.com/get-web/simpleopencart_for_unishop2_by_get-web",
-      "long1": "Адаптация корзины модуля Simple и Filterit под шаблон Unishop2 на движке opencart 3. Maintained by get-web on GitHub, where it has earned 7 stars from the community.",
-      "long2": "It's actively developed around filterit, opencart, opencart-3x, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Twig",
-        "Filterit",
-        "Opencart",
-        "Opencart 3X",
-        "Opencart3"
-      ],
-      "updated": "2 years ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "Twig",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "filterit",
-        "opencart",
-        "opencart-3x",
-        "opencart3",
-        "simple",
-        "simpleopencart",
-        "unishop2"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -1981,34 +2453,76 @@
       "demo": "https://www.opencartbrasil.com.br",
       "repoUrl": "https://github.com/opencartbrasil/exibir-campos-personalizados",
       "long1": "Exibe os campos personalizados no pedido. Maintained by opencartbrasil on GitHub, where it has earned 7 stars from the community.",
-      "long2": "It's actively developed around brasil, ocmod, opencart, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around opencart, ocmod, php, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "Brasil",
-        "Ocmod",
         "Opencart",
-        "Opencartbrasil"
+        "Ocmod",
+        "Php",
+        "Brasil"
       ],
       "updated": "5 years ago",
       "license": "GPL-3.0",
       "langs": [
         {
           "name": "JavaScript",
-          "pct": 71.429,
-          "size": 20
+          "pct": 72
+        },
+        {
+          "name": "JavaScript",
+          "pct": 20
         },
         {
           "name": "Other",
-          "pct": 28.571,
-          "size": 8
+          "pct": 8
         }
       ],
       "versions": [],
       "topics": [
-        "brasil",
-        "ocmod",
         "opencart",
-        "opencartbrasil",
-        "php"
+        "ocmod",
+        "php",
+        "brasil",
+        "opencartbrasil"
+      ],
+      "addedAt": "2026-07-15T22:28:32.987829+00:00"
+    },
+    {
+      "slug": "simpleopencart-for-unishop2-by-get-web",
+      "name": "simpleopencart_for_unishop2_by_get-web",
+      "fullName": "get-web/simpleopencart_for_unishop2_by_get-web",
+      "category": "DevTools",
+      "stars": 7,
+      "author": "get-web",
+      "avatar": "https://avatars.githubusercontent.com/u/39173640?u=c85fa2a6c158c6563a76d793603c08340cbd15f7&v=4",
+      "desc": "Адаптация корзины модуля Simple и Filterit под шаблон Unishop2 на движке opencart 3",
+      "demo": "https://get-web.site/",
+      "repoUrl": "https://github.com/get-web/simpleopencart_for_unishop2_by_get-web",
+      "long1": "Адаптация корзины модуля Simple и Filterit под шаблон Unishop2 на движке opencart 3. Maintained by get-web on GitHub, where it has earned 7 stars from the community.",
+      "long2": "It's actively developed around opencart, opencart-3x, opencart3, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Twig",
+        "Opencart",
+        "Opencart 3X",
+        "Opencart3",
+        "Simple"
+      ],
+      "updated": "2 years ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "Twig"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "opencart",
+        "opencart-3x",
+        "opencart3",
+        "simple",
+        "filterit",
+        "simpleopencart",
+        "unishop2"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -2024,144 +2538,91 @@
       "demo": null,
       "repoUrl": "https://github.com/straightlight/opencart_contributions",
       "long1": "Opencart Contributions (Opencart Master Branch). Maintained by straightlight on GitHub, where it has earned 7 stars from the community.",
-      "long2": "It's actively developed around api, ecommerce, mysqli, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around api, opencart, ecommerce, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Twig",
         "Api",
-        "Ecommerce",
-        "Mysqli",
-        "Opencart"
-      ],
-      "updated": "6 years ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "Twig",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "api",
-        "ecommerce",
-        "mysqli",
-        "opencart",
-        "php",
-        "php7"
-      ],
-      "addedAt": "2026-07-15T22:28:32.987829+00:00"
-    },
-    {
-      "slug": "opencart-iexcel",
-      "name": "opencart_iexcel",
-      "fullName": "emreacar/opencart_iexcel",
-      "category": "DevTools",
-      "stars": 6,
-      "author": "emreacar",
-      "avatar": "https://avatars.githubusercontent.com/u/6265674?v=4",
-      "desc": "Opencart Excel Product and Category Importer",
-      "demo": null,
-      "repoUrl": "https://github.com/emreacar/opencart_iexcel",
-      "long1": "Opencart Excel Product and Category Importer. Maintained by emreacar on GitHub, where it has earned 6 stars from the community.",
-      "long2": "It's actively developed around excel, import, opencart, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Excel",
-        "Import",
-        "Opencart"
-      ],
-      "updated": "7 years ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "excel",
-        "import",
-        "opencart"
-      ],
-      "addedAt": "2026-07-15T22:28:32.987829+00:00"
-    },
-    {
-      "slug": "opencart-quickapi-development",
-      "name": "opencart-quickapi-development",
-      "fullName": "epr-ds/opencart-quickapi-development",
-      "category": "DevTools",
-      "stars": 6,
-      "author": "epr-ds",
-      "avatar": "https://avatars.githubusercontent.com/u/28659116?v=4",
-      "desc": "OpenCart v3 Module for building API",
-      "demo": null,
-      "repoUrl": "https://github.com/epr-ds/opencart-quickapi-development",
-      "long1": "OpenCart v3 Module for building API. Maintained by epr-ds on GitHub, where it has earned 6 stars from the community.",
-      "long2": "It's actively developed around api, module, opencart, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Api",
-        "Module",
         "Opencart",
-        "Opencart Extension"
+        "Ecommerce",
+        "Php7"
       ],
       "updated": "6 years ago",
       "license": "—",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 57,
+          "name": "Twig"
+        },
+        {
+          "pct": 43,
+          "name": "PHP"
         }
       ],
       "versions": [],
       "topics": [
         "api",
-        "module",
         "opencart",
-        "opencart-extension",
-        "quickapi"
+        "ecommerce",
+        "php7",
+        "php",
+        "mysqli"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
     {
-      "slug": "frontlink",
-      "name": "FrontLink",
-      "fullName": "michelpl/FrontLink",
-      "category": "Dashboards",
-      "stars": 6,
-      "author": "michelpl",
-      "avatar": "https://avatars.githubusercontent.com/u/6605776?v=4",
-      "desc": "This OpenCart module add a link to your frontend store in the admin panel.",
-      "demo": null,
-      "repoUrl": "https://github.com/michelpl/FrontLink",
-      "long1": "This OpenCart module add a link to your frontend store in the admin panel. Maintained by michelpl on GitHub, where it has earned 6 stars from the community.",
-      "long2": "It's actively developed around opencart, opencart-3x, opencart-module, and is a solid reference for anyone building with these tools.",
+      "slug": "craftgate-opencart-3-x-gateway",
+      "name": "craftgate-opencart-3.x-gateway",
+      "fullName": "craftgate/craftgate-opencart-3.x-gateway",
+      "category": "E-commerce",
+      "stars": 7,
+      "author": "craftgate",
+      "avatar": "https://avatars.githubusercontent.com/u/71646184?v=4",
+      "desc": "The Official Craftgate Payment Gateway Extension for OpenCart 3.x",
+      "demo": "https://developer.craftgate.io/hazir-eticaret-modulleri/opencart",
+      "repoUrl": "https://github.com/craftgate/craftgate-opencart-3.x-gateway",
+      "long1": "The Official Craftgate Payment Gateway Extension for OpenCart 3.x. Maintained by craftgate on GitHub, where it has earned 7 stars from the community.",
+      "long2": "It's actively developed around opencart, opencart-3x, opencart-extension, and is a solid reference for anyone building with these tools.",
       "stack": [
+        "PHP",
         "Opencart",
         "Opencart 3X",
-        "Opencart Module",
-        "Php"
+        "Opencart Extension",
+        "Opencart Payment"
       ],
-      "updated": "8 years ago",
-      "license": "MIT",
+      "updated": "2 years ago",
+      "license": "GPL-3.0",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 64,
+          "name": "PHP"
+        },
+        {
+          "pct": 36,
+          "name": "Twig"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/craftgate/craftgate-opencart-3.x-gateway/releases/tag/1.0.2",
+          "name": "1.0.2"
+        },
+        {
+          "url": "https://github.com/craftgate/craftgate-opencart-3.x-gateway/releases/tag/1.0.1",
+          "name": "1.0.1"
+        },
+        {
+          "url": "https://github.com/craftgate/craftgate-opencart-3.x-gateway/releases/tag/1.0.0",
+          "name": "1.0.0"
+        }
+      ],
       "topics": [
         "opencart",
         "opencart-3x",
-        "opencart-module",
-        "php",
-        "xml"
+        "opencart-extension",
+        "opencart-payment",
+        "craftgate",
+        "payment-gateway",
+        "payment-orchestration"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -2172,38 +2633,109 @@
       "category": "E-commerce",
       "stars": 6,
       "author": "Marjoel",
-      "avatar": "https://avatars.githubusercontent.com/u/13963848?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/13963848?u=7bbb5ad3f2210670c0f009caf5fbc857dc465d85&v=4",
       "desc": "Integração do PagSeguro com OpenCart",
       "demo": null,
       "repoUrl": "https://github.com/Marjoel/pagseguro-opencart",
       "long1": "Integração do PagSeguro com OpenCart. Maintained by Marjoel on GitHub, where it has earned 6 stars from the community.",
-      "long2": "It's actively developed around carteiradigital, checkout, opencart, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around pagseguro, uol, opencart, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Carteiradigital",
-        "Checkout",
+        "Pagseguro",
+        "Uol",
         "Opencart",
-        "Pagamentos"
+        "Payments"
       ],
       "updated": "9 years ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 95,
+          "name": "PHP"
+        },
+        {
+          "pct": 5,
+          "name": "Smarty"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/Marjoel/pagseguro-opencart/releases/tag/1.0.4",
+          "name": "1.0.4"
+        },
+        {
+          "url": "https://github.com/Marjoel/pagseguro-opencart/releases/tag/1.0.3",
+          "name": "1.0.3"
+        },
+        {
+          "url": "https://github.com/Marjoel/pagseguro-opencart/releases/tag/1.0.2",
+          "name": "1.0.2"
+        },
+        {
+          "url": "https://github.com/Marjoel/pagseguro-opencart/releases/tag/1.0.1",
+          "name": "1.0.1"
+        },
+        {
+          "url": "https://github.com/Marjoel/pagseguro-opencart/releases/tag/1.0",
+          "name": "1.0"
+        }
+      ],
       "topics": [
-        "carteiradigital",
-        "checkout",
-        "opencart",
-        "pagamentos",
         "pagseguro",
-        "payments",
         "uol",
-        "wallet"
+        "opencart",
+        "payments",
+        "pagamentos",
+        "wallet",
+        "checkout",
+        "carteiradigital"
+      ],
+      "addedAt": "2026-07-15T22:28:32.987829+00:00"
+    },
+    {
+      "slug": "frontlink",
+      "name": "FrontLink",
+      "fullName": "michelpl/FrontLink",
+      "category": "Dashboards",
+      "stars": 6,
+      "author": "michelpl",
+      "avatar": "https://avatars.githubusercontent.com/u/6605776?u=568d90bf560b580e53b17a5844ad5c3bdf603079&v=4",
+      "desc": "This OpenCart module add a link to your frontend store in the admin panel.",
+      "demo": null,
+      "repoUrl": "https://github.com/michelpl/FrontLink",
+      "long1": "This OpenCart module add a link to your frontend store in the admin panel. Maintained by michelpl on GitHub, where it has earned 6 stars from the community.",
+      "long2": "It's actively developed around opencart, opencart-3x, opencart-module, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Opencart",
+        "Opencart 3X",
+        "Opencart Module",
+        "Xml"
+      ],
+      "updated": "9 years ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "PHP"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/michelpl/FrontLink/releases/tag/v1.1.0",
+          "name": "v1.1.0"
+        },
+        {
+          "url": "https://github.com/michelpl/FrontLink/releases/tag/v1.0.0",
+          "name": "v1.0.0"
+        }
+      ],
+      "topics": [
+        "opencart",
+        "opencart-3x",
+        "opencart-module",
+        "xml",
+        "php"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -2229,15 +2761,101 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "JavaScript",
           "pct": 100,
-          "size": 100
+          "name": "JavaScript"
         }
       ],
       "versions": [],
       "topics": [
         "opencart",
         "vsf1"
+      ],
+      "addedAt": "2026-07-15T22:28:32.987829+00:00"
+    },
+    {
+      "slug": "opencart-quickapi-development",
+      "name": "opencart-quickapi-development",
+      "fullName": "epr-ds/opencart-quickapi-development",
+      "category": "DevTools",
+      "stars": 6,
+      "author": "epr-ds",
+      "avatar": "https://avatars.githubusercontent.com/u/28659116?v=4",
+      "desc": "OpenCart v3 Module for building API",
+      "demo": null,
+      "repoUrl": "https://github.com/epr-ds/opencart-quickapi-development",
+      "long1": "OpenCart v3 Module for building API. Maintained by epr-ds on GitHub, where it has earned 6 stars from the community.",
+      "long2": "It's actively developed around api, opencart, opencart-extension, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Api",
+        "Opencart",
+        "Opencart Extension",
+        "Module"
+      ],
+      "updated": "6 years ago",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 54,
+          "name": "PHP"
+        },
+        {
+          "pct": 46,
+          "name": "Twig"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "api",
+        "opencart",
+        "opencart-extension",
+        "module",
+        "quickapi"
+      ],
+      "addedAt": "2026-07-15T22:28:32.987829+00:00"
+    },
+    {
+      "slug": "razorpay-opencart-3-0-2-0-extension",
+      "name": "Razorpay-Opencart-3.0.2.0-Extension",
+      "fullName": "SatyaPenmetsa/Razorpay-Opencart-3.0.2.0-Extension",
+      "category": "DevTools",
+      "stars": 6,
+      "author": "SatyaPenmetsa",
+      "avatar": "https://avatars.githubusercontent.com/u/25602719?u=73891462e507c17a31e9f9dae206885f8c53c59b&v=4",
+      "desc": "Razorpay Opencart 3.0.2.0 Extension",
+      "demo": "https://www.linkedin.com/in/satyapenmetsa/",
+      "repoUrl": "https://github.com/SatyaPenmetsa/Razorpay-Opencart-3.0.2.0-Extension",
+      "long1": "Razorpay Opencart 3.0.2.0 Extension. Maintained by SatyaPenmetsa on GitHub, where it has earned 6 stars from the community.",
+      "long2": "It's actively developed around razorpay, opencart, razorpay-opencart, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Razorpay",
+        "Opencart",
+        "Razorpay Opencart",
+        "Razorpay Opencart3"
+      ],
+      "updated": "9 years ago",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 96,
+          "name": "PHP"
+        },
+        {
+          "pct": 3,
+          "name": "HTML"
+        },
+        {
+          "pct": 1,
+          "name": "Smarty"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "razorpay",
+        "opencart",
+        "razorpay-opencart",
+        "razorpay-opencart3"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -2259,73 +2877,35 @@
         "Opencart",
         "Robokassa"
       ],
-      "updated": "6 days ago",
+      "updated": "3 weeks ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 71.27,
-          "size": 355215
+          "pct": 71,
+          "name": "PHP"
         },
         {
-          "name": "Twig",
-          "pct": 25.751,
-          "size": 128343
+          "pct": 26,
+          "name": "Twig"
         },
         {
-          "name": "JavaScript",
-          "pct": 2.979,
-          "size": 14849
+          "pct": 3,
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/robokassa/cms-opencart/releases/tag/OpenCart-4.x-16.07.26-1209",
+          "name": "OpenCart-4.x-16.07.26-1209"
+        },
+        {
+          "url": "https://github.com/robokassa/cms-opencart/releases/tag/OpenCart-3.x-16.07.26-1209",
+          "name": "OpenCart-3.x-16.07.26-1209"
+        }
+      ],
       "topics": [
         "opencart",
         "robokassa"
-      ],
-      "addedAt": "2026-07-15T22:28:32.987829+00:00"
-    },
-    {
-      "slug": "opencart-easy-featured-products",
-      "name": "Opencart-Easy-Featured-Products",
-      "fullName": "emreacar/Opencart-Easy-Featured-Products",
-      "category": "DevTools",
-      "stars": 6,
-      "author": "emreacar",
-      "avatar": "https://avatars.githubusercontent.com/u/6265674?v=4",
-      "desc": "If you want to add your products to featured modules list, you can install this modification just a second.",
-      "demo": null,
-      "repoUrl": "https://github.com/emreacar/Opencart-Easy-Featured-Products",
-      "long1": "If you want to add your products to featured modules list, you can install this modification just a second. Maintained by emreacar on GitHub, where it has earned 6 stars from the community.",
-      "long2": "It's actively developed around easy, featured, modification, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Easy",
-        "Featured",
-        "Modification",
-        "Module"
-      ],
-      "updated": "9 years ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "JavaScript",
-          "pct": 71.429,
-          "size": 20
-        },
-        {
-          "name": "Other",
-          "pct": 28.571,
-          "size": 8
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "easy",
-        "featured",
-        "modification",
-        "module",
-        "opencart",
-        "products"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -2336,191 +2916,133 @@
       "category": "UI Kits",
       "stars": 6,
       "author": "givanz",
-      "avatar": "https://avatars.githubusercontent.com/u/302738?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/302738?u=512da2f49e7c5bab3a0c75cdf3012e48978af0eb&v=4",
       "desc": "Xezpro Opencart Theme",
       "demo": "http://themes.nicolette.ro/?theme=xezpro",
       "repoUrl": "https://github.com/givanz/xezpro",
       "long1": "Xezpro Opencart Theme. Maintained by givanz on GitHub, where it has earned 6 stars from the community.",
-      "long2": "It's actively developed around opencart, opencart-2x, opencart-3x, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around opencart, theme, opencart-theme, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
         "Opencart",
-        "Opencart 2X",
-        "Opencart 3X",
-        "Opencart Development"
+        "Theme",
+        "Opencart Theme",
+        "Opencart 2X"
       ],
       "updated": "8 years ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "JavaScript",
-          "pct": 100,
-          "size": 100
+          "pct": 51,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 37,
+          "name": "Smarty"
+        },
+        {
+          "pct": 12,
+          "name": "CSS"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/givanz/xezpro/releases/tag/1.0",
+          "name": "1.0"
+        }
+      ],
       "topics": [
         "opencart",
+        "theme",
+        "opencart-theme",
         "opencart-2x",
         "opencart-3x",
-        "opencart-development",
-        "opencart-theme",
-        "theme"
+        "opencart-development"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
     {
-      "slug": "razorpay-opencart-3-0-2-0-extension",
-      "name": "Razorpay-Opencart-3.0.2.0-Extension",
-      "fullName": "SatyaPenmetsa/Razorpay-Opencart-3.0.2.0-Extension",
+      "slug": "opencart-iexcel",
+      "name": "opencart_iexcel",
+      "fullName": "emreacar/opencart_iexcel",
       "category": "DevTools",
       "stars": 6,
-      "author": "SatyaPenmetsa",
-      "avatar": "https://avatars.githubusercontent.com/u/25602719?v=4",
-      "desc": "Razorpay Opencart 3.0.2.0 Extension",
-      "demo": "https://www.linkedin.com/in/satyapenmetsa/",
-      "repoUrl": "https://github.com/SatyaPenmetsa/Razorpay-Opencart-3.0.2.0-Extension",
-      "long1": "Razorpay Opencart 3.0.2.0 Extension. Maintained by SatyaPenmetsa on GitHub, where it has earned 6 stars from the community.",
-      "long2": "It's actively developed around opencart, razorpay, razorpay-opencart, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Opencart",
-        "Razorpay",
-        "Razorpay Opencart",
-        "Razorpay Opencart3"
-      ],
-      "updated": "9 years ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "opencart",
-        "razorpay",
-        "razorpay-opencart",
-        "razorpay-opencart3"
-      ],
-      "addedAt": "2026-07-15T22:28:32.987829+00:00"
-    },
-    {
-      "slug": "frenet-opencart",
-      "name": "frenet_opencart",
-      "fullName": "FrenetGatewaydeFretes/frenet_opencart",
-      "category": "DevTools",
-      "stars": 5,
-      "author": "FrenetGatewaydeFretes",
-      "avatar": "https://avatars.githubusercontent.com/u/11887527?v=4",
-      "desc": "Módulo Frenet para Opencart",
-      "demo": "http://www.frenet.com.br",
-      "repoUrl": "https://github.com/FrenetGatewaydeFretes/frenet_opencart",
-      "long1": "Módulo Frenet para Opencart. Maintained by FrenetGatewaydeFretes on GitHub, where it has earned 5 stars from the community.",
-      "long2": "It's actively developed around ecommerce, opencart, opencart-extension, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Ecommerce",
-        "Opencart",
-        "Opencart Extension",
-        "Opencart Module"
-      ],
-      "updated": "4 years ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "ecommerce",
-        "opencart",
-        "opencart-extension",
-        "opencart-module",
-        "opencart-plugin",
-        "shipping"
-      ],
-      "addedAt": "2026-07-15T22:28:32.987829+00:00"
-    },
-    {
-      "slug": "importmod-opencart",
-      "name": "ImportMod-opencart",
-      "fullName": "StasyanG/ImportMod-opencart",
-      "category": "DevTools",
-      "stars": 5,
-      "author": "StasyanG",
-      "avatar": "https://avatars.githubusercontent.com/u/6449294?v=4",
-      "desc": "Opencart Modification for importing data (categories, products) from xml files with arbitrary structure",
+      "author": "emreacar",
+      "avatar": "https://avatars.githubusercontent.com/u/6265674?u=acbeaceabe692d5a302930f1d5b5b5ee81be78d4&v=4",
+      "desc": "Opencart Excel Product and Category Importer",
       "demo": null,
-      "repoUrl": "https://github.com/StasyanG/ImportMod-opencart",
-      "long1": "Opencart Modification for importing data (categories, products) from xml files with arbitrary structure. Maintained by StasyanG on GitHub, where it has earned 5 stars from the community.",
-      "long2": "It's actively developed around opencart, and is a solid reference for anyone building with these tools.",
+      "repoUrl": "https://github.com/emreacar/opencart_iexcel",
+      "long1": "Opencart Excel Product and Category Importer. Maintained by emreacar on GitHub, where it has earned 6 stars from the community.",
+      "long2": "It's actively developed around opencart, excel, import, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Opencart"
+        "Opencart",
+        "Excel",
+        "Import"
       ],
       "updated": "7 years ago",
       "license": "—",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 99,
+          "name": "PHP"
+        },
+        {
+          "pct": 1,
+          "name": "HTML"
         }
       ],
       "versions": [],
       "topics": [
-        "opencart"
+        "opencart",
+        "excel",
+        "import"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
     {
-      "slug": "opencart-3-0-x-x-romanian-language",
-      "name": "OpenCart-3.0.x.x-Romanian-language",
-      "fullName": "OpenCart-Romania/OpenCart-3.0.x.x-Romanian-language",
+      "slug": "opencart-easy-featured-products",
+      "name": "Opencart-Easy-Featured-Products",
+      "fullName": "emreacar/Opencart-Easy-Featured-Products",
       "category": "DevTools",
-      "stars": 5,
-      "author": "OpenCart-Romania",
-      "avatar": "https://avatars.githubusercontent.com/u/75402470?v=4",
-      "desc": "A project worth exploring.",
-      "demo": "https://crowdin.com/project/opencart-30xx-romanian-lang/ro",
-      "repoUrl": "https://github.com/OpenCart-Romania/OpenCart-3.0.x.x-Romanian-language",
-      "long1": "A project worth exploring. Maintained by OpenCart-Romania on GitHub, where it has earned 5 stars from the community.",
-      "long2": "It's actively developed around localization, opencart, opencart-3x, and is a solid reference for anyone building with these tools.",
+      "stars": 6,
+      "author": "emreacar",
+      "avatar": "https://avatars.githubusercontent.com/u/6265674?u=acbeaceabe692d5a302930f1d5b5b5ee81be78d4&v=4",
+      "desc": "If you want to add your products to featured modules list, you can install this modification just a second.",
+      "demo": null,
+      "repoUrl": "https://github.com/emreacar/Opencart-Easy-Featured-Products",
+      "long1": "If you want to add your products to featured modules list, you can install this modification just a second. Maintained by emreacar on GitHub, where it has earned 6 stars from the community.",
+      "long2": "It's actively developed around opencart, easy, featured, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "PHP",
-        "Localization",
         "Opencart",
-        "Opencart 3X",
-        "Opencart Development"
+        "Easy",
+        "Featured",
+        "Module"
       ],
-      "updated": "3 years ago",
-      "license": "GPL-3.0",
+      "updated": "9 years ago",
+      "license": "—",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "name": "JavaScript",
+          "pct": 72
+        },
+        {
+          "name": "JavaScript",
+          "pct": 20
+        },
+        {
+          "name": "Other",
+          "pct": 8
         }
       ],
       "versions": [],
       "topics": [
-        "localization",
         "opencart",
-        "opencart-3x",
-        "opencart-development",
-        "opencart-extension",
-        "opencart-module",
-        "opencart-plugin",
-        "romania-project",
-        "romanian",
-        "romanian-language",
-        "translation"
+        "easy",
+        "featured",
+        "module",
+        "modification",
+        "products"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -2531,39 +3053,104 @@
       "category": "DevTools",
       "stars": 5,
       "author": "denis-kisel",
-      "avatar": "https://avatars.githubusercontent.com/u/15705206?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/15705206?u=c184fc1ddeeb80e9cc1519f1cb1a88de3e2e3928&v=4",
       "desc": "Quick deploy all opecart versions",
       "demo": null,
       "repoUrl": "https://github.com/denis-kisel/opencart-deploy",
       "long1": "Quick deploy all opecart versions. Maintained by denis-kisel on GitHub, where it has earned 5 stars from the community.",
-      "long2": "It's actively developed around all, autosettings, deploy, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around opencart, quick, deploy, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Shell",
-        "All",
-        "Autosettings",
+        "Opencart",
+        "Quick",
         "Deploy",
-        "Framework"
+        "All"
       ],
       "updated": "5 years ago",
       "license": "—",
       "langs": [
         {
-          "name": "Shell",
           "pct": 100,
-          "size": 100
+          "name": "Shell"
         }
       ],
       "versions": [],
       "topics": [
-        "all",
-        "autosettings",
-        "deploy",
-        "framework",
         "opencart",
-        "place",
         "quick",
+        "deploy",
+        "all",
+        "versions",
+        "autosettings",
         "testing",
-        "versions"
+        "place",
+        "framework"
+      ],
+      "addedAt": "2026-07-15T22:28:32.987829+00:00"
+    },
+    {
+      "slug": "rapin",
+      "name": "rapin",
+      "fullName": "rapinjs/rapin",
+      "category": "APIs",
+      "stars": 5,
+      "author": "rapinjs",
+      "avatar": "https://avatars.githubusercontent.com/u/53148012?v=4",
+      "desc": "NodeJS framework for creating Rest API",
+      "demo": "https://rapinjs.netlify.com",
+      "repoUrl": "https://github.com/rapinjs/rapin",
+      "long1": "NodeJS framework for creating Rest API. Maintained by rapinjs on GitHub, where it has earned 5 stars from the community.",
+      "long2": "It's actively developed around nodejs, api, rest-api, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Node",
+        "Api",
+        "Rest Api",
+        "Typeorm"
+      ],
+      "updated": "3 years ago",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 97,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 3,
+          "name": "JavaScript"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/rapinjs/rapin/releases/tag/0.1.14",
+          "name": "0.1.14"
+        },
+        {
+          "url": "https://github.com/rapinjs/rapin/releases/tag/0.1.10",
+          "name": "0.1.10"
+        },
+        {
+          "url": "https://github.com/rapinjs/rapin/releases/tag/0.1.7",
+          "name": "0.1.7"
+        },
+        {
+          "url": "https://github.com/rapinjs/rapin/releases/tag/0.1.2",
+          "name": "0.1.2"
+        },
+        {
+          "url": "https://github.com/rapinjs/rapin/releases/tag/0.1.1",
+          "name": "0.1.1"
+        }
+      ],
+      "topics": [
+        "nodejs",
+        "api",
+        "rest-api",
+        "typescript",
+        "typeorm",
+        "mvc",
+        "opencart",
+        "mongodb"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -2574,32 +3161,31 @@
       "category": "DevTools",
       "stars": 5,
       "author": "VSydorenko",
-      "avatar": "https://avatars.githubusercontent.com/u/50884937?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/50884937?u=d4e2cb8ab7693701ed6eb4ac56241ade59111eb3&v=4",
       "desc": "Розширення API для обміну із торговою платформою OpenCart",
       "demo": "https://simplysoft.com.ua/product/opencart/",
       "repoUrl": "https://github.com/VSydorenko/OpenCart_API",
       "long1": "Розширення API для обміну із торговою платформою OpenCart. Maintained by VSydorenko on GitHub, where it has earned 5 stars from the community.",
-      "long2": "It's actively developed around opencart, opencart-2x, opencart-3x, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around opencart-2x, opencart, opencart-3x, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Opencart",
         "Opencart 2X",
+        "Opencart",
         "Opencart 3X",
         "Opencart Extension"
       ],
-      "updated": "5 months ago",
+      "updated": "6 months ago",
       "license": "—",
       "langs": [
         {
-          "name": "PHP",
           "pct": 100,
-          "size": 100
+          "name": "PHP"
         }
       ],
       "versions": [],
       "topics": [
-        "opencart",
         "opencart-2x",
+        "opencart",
         "opencart-3x",
         "opencart-extension",
         "opencart23"
@@ -2618,76 +3204,141 @@
       "demo": null,
       "repoUrl": "https://github.com/jiangnanyouzi/opencart3-stripe-checkout",
       "long1": "opencart3  stripe pay checkout. Maintained by jiangnanyouzi on GitHub, where it has earned 5 stars from the community.",
-      "long2": "It's actively developed around checkout, opencart, opencart-3x, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around stripe-payments, stripe-checkout, opencart-3x, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Checkout",
-        "Opencart",
+        "Stripe Payments",
+        "Stripe Checkout",
         "Opencart 3X",
-        "Opencart Stripe Checkout"
+        "Opencart3 Stripe"
       ],
       "updated": "6 years ago",
       "license": "—",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 97,
+          "name": "PHP"
+        },
+        {
+          "pct": 2,
+          "name": "Twig"
+        },
+        {
+          "pct": 1,
+          "name": "CSS"
         }
       ],
       "versions": [],
       "topics": [
-        "checkout",
-        "opencart",
-        "opencart-3x",
-        "opencart-stripe-checkout",
-        "opencart3-stripe",
-        "opencart3-stripe-checkout",
-        "stripe",
+        "stripe-payments",
         "stripe-checkout",
-        "stripe-payments"
+        "opencart-3x",
+        "opencart3-stripe",
+        "opencart",
+        "stripe",
+        "checkout",
+        "opencart3-stripe-checkout",
+        "opencart-stripe-checkout"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
     {
-      "slug": "rapin",
-      "name": "rapin",
-      "fullName": "rapinjs/rapin",
-      "category": "APIs",
+      "slug": "frenet-opencart",
+      "name": "frenet_opencart",
+      "fullName": "FrenetGatewaydeFretes/frenet_opencart",
+      "category": "DevTools",
       "stars": 5,
-      "author": "rapinjs",
-      "avatar": "https://avatars.githubusercontent.com/u/53148012?v=4",
-      "desc": "NodeJS framework for creating Rest API",
-      "demo": "https://rapinjs.netlify.com",
-      "repoUrl": "https://github.com/rapinjs/rapin",
-      "long1": "NodeJS framework for creating Rest API. Maintained by rapinjs on GitHub, where it has earned 5 stars from the community.",
-      "long2": "It's actively developed around api, mongodb, mvc, and is a solid reference for anyone building with these tools.",
+      "author": "FrenetGatewaydeFretes",
+      "avatar": "https://avatars.githubusercontent.com/u/11887527?v=4",
+      "desc": "Módulo Frenet para Opencart",
+      "demo": "http://www.frenet.com.br",
+      "repoUrl": "https://github.com/FrenetGatewaydeFretes/frenet_opencart",
+      "long1": "Módulo Frenet para Opencart. Maintained by FrenetGatewaydeFretes on GitHub, where it has earned 5 stars from the community.",
+      "long2": "It's actively developed around ecommerce, shipping, opencart-extension, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "TypeScript",
-        "Api",
-        "MongoDB",
-        "Mvc",
-        "Node"
+        "PHP",
+        "Ecommerce",
+        "Shipping",
+        "Opencart Extension",
+        "Opencart Module"
       ],
-      "updated": "3 years ago",
+      "updated": "4 years ago",
       "license": "—",
       "langs": [
         {
-          "name": "TypeScript",
+          "pct": 78,
+          "name": "PHP"
+        },
+        {
+          "pct": 22,
+          "name": "Twig"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/FrenetGatewaydeFretes/frenet_opencart/releases/tag/V_Open3.0.x",
+          "name": "V_Open3.0.x"
+        },
+        {
+          "url": "https://github.com/FrenetGatewaydeFretes/frenet_opencart/releases/tag/V_Open2.3.x",
+          "name": "V_Open2.3.x"
+        },
+        {
+          "url": "https://github.com/FrenetGatewaydeFretes/frenet_opencart/releases/tag/V_Open2.2.x",
+          "name": "V_Open2.2.x"
+        }
+      ],
+      "topics": [
+        "ecommerce",
+        "shipping",
+        "opencart-extension",
+        "opencart-module",
+        "opencart-plugin",
+        "opencart"
+      ],
+      "addedAt": "2026-07-15T22:28:32.987829+00:00"
+    },
+    {
+      "slug": "opencart-3-0-x-x-romanian-language",
+      "name": "OpenCart-3.0.x.x-Romanian-language",
+      "fullName": "OpenCart-Romania/OpenCart-3.0.x.x-Romanian-language",
+      "category": "DevTools",
+      "stars": 5,
+      "author": "OpenCart-Romania",
+      "avatar": "https://avatars.githubusercontent.com/u/75402470?v=4",
+      "desc": "A project worth exploring.",
+      "demo": "https://crowdin.com/project/opencart-30xx-romanian-lang/ro",
+      "repoUrl": "https://github.com/OpenCart-Romania/OpenCart-3.0.x.x-Romanian-language",
+      "long1": "A project worth exploring. Maintained by OpenCart-Romania on GitHub, where it has earned 5 stars from the community.",
+      "long2": "It's actively developed around opencart, opencart-3x, opencart-extension, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Opencart",
+        "Opencart 3X",
+        "Opencart Extension",
+        "Opencart Module"
+      ],
+      "updated": "3 years ago",
+      "license": "GPL-3.0",
+      "langs": [
+        {
           "pct": 100,
-          "size": 100
+          "name": "PHP"
         }
       ],
       "versions": [],
       "topics": [
-        "api",
-        "mongodb",
-        "mvc",
-        "nodejs",
         "opencart",
-        "rest-api",
-        "typeorm",
-        "typescript"
+        "opencart-3x",
+        "opencart-extension",
+        "opencart-module",
+        "opencart-plugin",
+        "opencart-development",
+        "localization",
+        "romanian",
+        "romanian-language",
+        "translation",
+        "romania-project"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"
     },
@@ -2698,31 +3349,86 @@
       "category": "DevTools",
       "stars": 5,
       "author": "a-wing",
-      "avatar": "https://avatars.githubusercontent.com/u/18189138?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/18189138?u=c30a93b8405a7a5cba9d702d1dda494bca8473de&v=4",
       "desc": "crowdfunding system ,use opencart and mycncart as base two development crowdfunding system",
       "demo": null,
       "repoUrl": "https://github.com/a-wing/cfcart",
       "long1": "crowdfunding system ,use opencart and mycncart as base two development crowdfunding system. Maintained by a-wing on GitHub, where it has earned 5 stars from the community.",
-      "long2": "It's actively developed around mycncart, mycncart-opencart, opencart, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around opencart, mycncart, mycncart-opencart, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
+        "Opencart",
         "Mycncart",
-        "Mycncart Opencart",
-        "Opencart"
+        "Mycncart Opencart"
       ],
       "updated": "9 years ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 72,
+          "name": "PHP"
+        },
+        {
+          "pct": 24,
+          "name": "Smarty"
+        },
+        {
+          "pct": 4,
+          "name": "JavaScript"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/a-wing/cfcart/releases/tag/0.9alpha",
+          "name": "0.9alpha"
+        },
+        {
+          "url": "https://github.com/a-wing/cfcart/releases/tag/v1.6-0.8.7",
+          "name": "v1.6-0.8.7"
+        }
+      ],
+      "topics": [
+        "opencart",
+        "mycncart",
+        "mycncart-opencart"
+      ],
+      "addedAt": "2026-07-15T22:28:32.987829+00:00"
+    },
+    {
+      "slug": "importmod-opencart",
+      "name": "ImportMod-opencart",
+      "fullName": "StasyanG/ImportMod-opencart",
+      "category": "DevTools",
+      "stars": 5,
+      "author": "StasyanG",
+      "avatar": "https://avatars.githubusercontent.com/u/6449294?u=b673e13852f2d9c3c2e029f1cc25000bd91a2c18&v=4",
+      "desc": "Opencart Modification for importing data (categories, products) from xml files with arbitrary structure",
+      "demo": null,
+      "repoUrl": "https://github.com/StasyanG/ImportMod-opencart",
+      "long1": "Opencart Modification for importing data (categories, products) from xml files with arbitrary structure. Maintained by StasyanG on GitHub, where it has earned 5 stars from the community.",
+      "long2": "It's actively developed around opencart, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Opencart"
+      ],
+      "updated": "7 years ago",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 77,
+          "name": "PHP"
+        },
+        {
+          "pct": 22,
+          "name": "Smarty"
+        },
+        {
+          "pct": 1,
+          "name": "CSS"
         }
       ],
       "versions": [],
       "topics": [
-        "mycncart",
-        "mycncart-opencart",
         "opencart"
       ],
       "addedAt": "2026-07-15T22:28:32.987829+00:00"

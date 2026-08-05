@@ -1,8 +1,8 @@
 {
   "slug": "haystack",
-  "scrapedAt": "2026-07-22T09:29:08.061429+00:00",
+  "scrapedAt": "2026-08-05T04:38:16.600234+00:00",
   "source": "scrapy-github",
-  "totalRepos": 53,
+  "totalRepos": 55,
   "projects": [
     {
       "slug": "mlflow",
@@ -24,7 +24,7 @@
         "Ai",
         "Ai Governance"
       ],
-      "updated": "1 week ago",
+      "updated": "3 weeks ago",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -135,7 +135,7 @@
         "Django Blog",
         "Python"
       ],
-      "updated": "1 week ago",
+      "updated": "3 weeks ago",
       "license": "MIT",
       "langs": [
         {
@@ -198,7 +198,7 @@
         "Ecommerce",
         "Oscar"
       ],
-      "updated": "1 week ago",
+      "updated": "3 weeks ago",
       "license": "BSD-3-Clause",
       "langs": [
         {
@@ -266,7 +266,7 @@
         "Knowledge Management",
         "Markdown"
       ],
-      "updated": "3 weeks ago",
+      "updated": "1 month ago",
       "license": "GPL-3.0",
       "langs": [
         {
@@ -342,7 +342,7 @@
         "Django",
         "Hr"
       ],
-      "updated": "1 week ago",
+      "updated": "3 weeks ago",
       "license": "LGPL-2.1",
       "langs": [
         {
@@ -422,7 +422,7 @@
         "Django",
         "Docker"
       ],
-      "updated": "3 weeks ago",
+      "updated": "1 month ago",
       "license": "MIT",
       "langs": [
         {
@@ -456,86 +456,72 @@
       "name": "openinference",
       "fullName": "Arize-ai/openinference",
       "category": "AI & ML",
-      "stars": 1084,
+      "stars": 1131,
       "author": "Arize-ai",
       "avatar": "https://avatars.githubusercontent.com/u/59858760?v=4",
       "desc": "OpenTelemetry Instrumentation for AI Observability",
       "demo": "https://arize-ai.github.io/openinference/",
       "repoUrl": "https://github.com/Arize-ai/openinference",
-      "long1": "OpenTelemetry Instrumentation for AI Observability. Maintained by Arize-ai on GitHub, where it has earned 1,084 stars from the community.",
-      "long2": "It's actively developed around aiops, gemini, hacktoberfest, and is a solid reference for anyone building with these tools.",
+      "long1": "OpenTelemetry Instrumentation for AI Observability. Maintained by Arize-ai on GitHub, where it has earned 1,131 stars from the community.",
+      "long2": "It's actively developed around llmops, telemetry, aiops, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Python",
+        "Llmops",
+        "Telemetry",
         "Aiops",
-        "Gemini",
-        "Haystack",
-        "Langchain"
+        "Llms"
       ],
-      "updated": "1 week ago",
+      "updated": "today",
       "license": "Apache-2.0",
       "langs": [
         {
-          "name": "Python",
-          "pct": 66.473,
-          "size": 5191926
+          "pct": 71,
+          "name": "Python"
         },
         {
-          "name": "TypeScript",
-          "pct": 24.922,
-          "size": 1946514
+          "pct": 24,
+          "name": "TypeScript"
         },
         {
-          "name": "Java",
-          "pct": 4.8,
-          "size": 374938
-        },
-        {
-          "name": "Go",
-          "pct": 2.238,
-          "size": 174785
-        },
-        {
-          "name": "Jupyter Notebook",
-          "pct": 1.239,
-          "size": 96773
-        },
-        {
-          "name": "Shell",
-          "pct": 0.241,
-          "size": 18793
-        },
-        {
-          "name": "Makefile",
-          "pct": 0.081,
-          "size": 6325
-        },
-        {
-          "name": "JavaScript",
-          "pct": 0.007,
-          "size": 514
+          "pct": 5,
+          "name": "Java"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/Arize-ai/openinference/releases/tag/python-openinference-instrumentation-anthropic-v1.1.1",
+          "name": "python-openinference-instrumentation-anthropic-v1.1.1"
+        },
+        {
+          "url": "https://github.com/Arize-ai/openinference/releases/tag/python-openinference-instrumentation-groq-v0.1.18",
+          "name": "python-openinference-instrumentation-groq-v0.1.18"
+        },
+        {
+          "url": "https://github.com/Arize-ai/openinference/releases/tag/python-openinference-instrumentation-langchain-v0.1.69",
+          "name": "python-openinference-instrumentation-langchain-v0.1.69"
+        },
+        {
+          "url": "https://github.com/Arize-ai/openinference/releases/tag/go/openinference-semantic-conventions/v0.1.2",
+          "name": "go/openinference-semantic-conventions/v0.1.2"
+        },
+        {
+          "url": "https://github.com/Arize-ai/openinference/releases/tag/java-openinference-semantic-conventions-v0.1.14",
+          "name": "java-openinference-semantic-conventions-v0.1.14"
+        }
+      ],
       "topics": [
+        "llmops",
+        "telemetry",
         "aiops",
-        "gemini",
+        "llms",
+        "opentelemetry",
+        "tracing",
         "hacktoberfest",
         "haystack",
         "langchain",
         "langraph",
         "llamaindex",
-        "llmops",
-        "llms",
-        "mcp",
-        "openai",
-        "openai-agents",
-        "opentelemetry",
-        "pydantic-ai",
-        "smolagents",
-        "telemetry",
-        "tracing",
-        "vercel",
-        "vertex"
+        "openai"
       ],
       "addedAt": "2026-07-15T22:28:33.189672+00:00"
     },
@@ -544,44 +530,42 @@
       "name": "haystack-tutorials",
       "fullName": "deepset-ai/haystack-tutorials",
       "category": "AI & ML",
-      "stars": 367,
+      "stars": 368,
       "author": "deepset-ai",
       "avatar": "https://avatars.githubusercontent.com/u/51827949?v=4",
       "desc": "Here you can find all the Tutorials for Haystack 📓",
       "demo": "https://haystack.deepset.ai/tutorials",
       "repoUrl": "https://github.com/deepset-ai/haystack-tutorials",
-      "long1": "Here you can find all the Tutorials for Haystack 📓. Maintained by deepset-ai on GitHub, where it has earned 367 stars from the community.",
-      "long2": "It's actively developed around generative-qa, haystack, llm, and is a solid reference for anyone building with these tools.",
+      "long1": "Here you can find all the Tutorials for Haystack 📓. Maintained by deepset-ai on GitHub, where it has earned 368 stars from the community.",
+      "long2": "It's actively developed around haystack, nlp, semantic-search, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Jupyter Notebook",
-        "Generative Qa",
         "Haystack",
-        "Llm",
-        "Nlp"
+        "Nlp",
+        "Semantic Search",
+        "Tutorials"
       ],
-      "updated": "1 week ago",
+      "updated": "5 days ago",
       "license": "Apache-2.0",
       "langs": [
         {
-          "name": "Jupyter Notebook",
-          "pct": 99.38,
-          "size": 2331464
+          "pct": 99,
+          "name": "Jupyter Notebook"
         },
         {
-          "name": "Python",
-          "pct": 0.62,
-          "size": 14536
+          "pct": 1,
+          "name": "Python"
         }
       ],
       "versions": [],
       "topics": [
-        "generative-qa",
         "haystack",
-        "llm",
         "nlp",
         "semantic-search",
-        "text-generation",
-        "tutorials"
+        "tutorials",
+        "generative-qa",
+        "llm",
+        "text-generation"
       ],
       "addedAt": "2026-07-15T22:28:33.189672+00:00"
     },
@@ -605,7 +589,7 @@
         "Ecommerce",
         "Ecommerce Api"
       ],
-      "updated": "1 week ago",
+      "updated": "3 weeks ago",
       "license": "MIT",
       "langs": [
         {
@@ -645,13 +629,13 @@
       "name": "haystack-core-integrations",
       "fullName": "deepset-ai/haystack-core-integrations",
       "category": "AI & ML",
-      "stars": 198,
+      "stars": 202,
       "author": "deepset-ai",
       "avatar": "https://avatars.githubusercontent.com/u/51827949?v=4",
       "desc": "Additional packages (components, document stores and the likes) to extend the capabilities of Haystack",
       "demo": "https://haystack.deepset.ai",
       "repoUrl": "https://github.com/deepset-ai/haystack-core-integrations",
-      "long1": "Additional packages (components, document stores and the likes) to extend the capabilities of Haystack. Maintained by deepset-ai on GitHub, where it has earned 198 stars from the community.",
+      "long1": "Additional packages (components, document stores and the likes) to extend the capabilities of Haystack. Maintained by deepset-ai on GitHub, where it has earned 202 stars from the community.",
       "long2": "It's actively developed around ai, haystack, llm, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Python",
@@ -660,31 +644,44 @@
         "Llm",
         "Mlops"
       ],
-      "updated": "1 week ago",
+      "updated": "yesterday",
       "license": "Apache-2.0",
       "langs": [
         {
-          "name": "Python",
-          "pct": 99.971,
-          "size": 9460943
+          "pct": 100,
+          "name": "Python"
         },
         {
-          "name": "PLpgSQL",
-          "pct": 0.022,
-          "size": 2047
+          "pct": 0,
+          "name": "PLpgSQL"
         },
         {
-          "name": "Shell",
-          "pct": 0.004,
-          "size": 333
-        },
-        {
-          "name": "HTML",
-          "pct": 0.003,
-          "size": 320
+          "pct": 0,
+          "name": "Shell"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/deepset-ai/haystack-core-integrations/releases/tag/integrations/nvidia-v1.3.0",
+          "name": "integrations/nvidia-v1.3.0"
+        },
+        {
+          "url": "https://github.com/deepset-ai/haystack-core-integrations/releases/tag/integrations/arangodb-v1.1.1",
+          "name": "integrations/arangodb-v1.1.1"
+        },
+        {
+          "url": "https://github.com/deepset-ai/haystack-core-integrations/releases/tag/integrations/qdrant-v10.5.0",
+          "name": "integrations/qdrant-v10.5.0"
+        },
+        {
+          "url": "https://github.com/deepset-ai/haystack-core-integrations/releases/tag/integrations/pgvector-v6.5.0",
+          "name": "integrations/pgvector-v6.5.0"
+        },
+        {
+          "url": "https://github.com/deepset-ai/haystack-core-integrations/releases/tag/integrations/opensearch-v8.2.1",
+          "name": "integrations/opensearch-v8.2.1"
+        }
+      ],
       "topics": [
         "ai",
         "haystack",
@@ -699,41 +696,47 @@
       "name": "simple-django-project",
       "fullName": "Manisha-Bayya/simple-django-project",
       "category": "DevTools",
-      "stars": 191,
+      "stars": 192,
       "author": "Manisha-Bayya",
       "avatar": "https://avatars.githubusercontent.com/u/48040837?v=4",
       "desc": "A simple Django project which uses MySQL as database. It has Signup, Login, Logout functionality. It lets you search for countries, cities, languages from the default mysql dump. Django's user table has been overridden to store user information.",
       "demo": null,
       "repoUrl": "https://github.com/Manisha-Bayya/simple-django-project",
-      "long1": "A simple Django project which uses MySQL as database. It has Signup, Login, Logout functionality. It lets you search for countries, cities, languages from the default mysql dump. Django's user table has been overridden to store user information. Maintained by Manisha-Bayya on GitHub, where it has earned 191 stars from the community.",
-      "long2": "It's actively developed around css, custom-user-model, django, and is a solid reference for anyone building with these tools.",
+      "long1": "A simple Django project which uses MySQL as database. It has Signup, Login, Logout functionality. It lets you search for countries, cities, languages from the default mysql dump. Django's user table has been overridden to store user information. Maintained by Manisha-Bayya on GitHub, where it has earned 192 stars from the community.",
+      "long2": "It's actively developed around python, django, custom-user-model, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Python",
-        "Css",
-        "Custom User Model",
         "Django",
-        "Haystack"
+        "Custom User Model",
+        "Html"
       ],
       "updated": "2 years ago",
       "license": "—",
       "langs": [
         {
-          "name": "Python",
-          "pct": 100,
-          "size": 100
+          "pct": 63,
+          "name": "Python"
+        },
+        {
+          "pct": 31,
+          "name": "HTML"
+        },
+        {
+          "pct": 6,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
       "topics": [
-        "css",
-        "custom-user-model",
+        "python",
         "django",
-        "haystack",
+        "custom-user-model",
         "html",
+        "css",
         "javascript",
         "mysql",
-        "python",
         "search",
+        "haystack",
         "whoosh"
       ],
       "addedAt": "2026-07-15T22:28:33.189672+00:00"
@@ -743,52 +746,48 @@
       "name": "cnllm",
       "fullName": "kanchengw/cnllm",
       "category": "AI & ML",
-      "stars": 173,
+      "stars": 172,
       "author": "kanchengw",
-      "avatar": "https://avatars.githubusercontent.com/u/222912550?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/222912550?u=5ed682f50246b930d6daa85b2f869d97e41f5119&v=4",
       "desc": "Python toolkit for Chinese LLMs, with flexible batch capacity, structured real-time visulization and automated accumulation for streaming, and explicit feedback on vendor-native parameter validation.",
       "demo": null,
       "repoUrl": "https://github.com/kanchengw/cnllm",
-      "long1": "Python toolkit for Chinese LLMs, with flexible batch capacity, structured real-time visulization and automated accumulation for streaming, and explicit feedback on vendor-native parameter validation. Maintained by kanchengw on GitHub, where it has earned 173 stars from the community.",
-      "long2": "It's actively developed around adapter, ai, api, and is a solid reference for anyone building with these tools.",
+      "long1": "Python toolkit for Chinese LLMs, with flexible batch capacity, structured real-time visulization and automated accumulation for streaming, and explicit feedback on vendor-native parameter validation. Maintained by kanchengw on GitHub, where it has earned 172 stars from the community.",
+      "long2": "It's actively developed around ai, api, api-wrapper, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Python",
-        "Adapter",
         "Ai",
         "Api",
-        "Api Wrapper"
+        "Api Wrapper",
+        "Doubao"
       ],
-      "updated": "1 month ago",
+      "updated": "2 months ago",
       "license": "Apache-2.0",
       "langs": [
         {
-          "name": "Python",
           "pct": 100,
-          "size": 1086896
+          "name": "Python"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/kanchengw/cnllm/releases/tag/0.9.10",
+          "name": "0.9.10"
+        }
+      ],
       "topics": [
-        "adapter",
         "ai",
         "api",
         "api-wrapper",
-        "autogen",
-        "chinese-llm",
-        "chinese-llms",
-        "deepeval",
         "doubao",
         "glm",
-        "haystack",
         "langchain",
-        "litellm",
-        "llamaindex",
         "machine-learning",
-        "mimo-v2",
         "minimax",
         "openai",
         "package",
-        "python"
+        "python",
+        "litellm"
       ],
       "addedAt": "2026-07-15T22:28:33.189672+00:00"
     },
@@ -812,7 +811,7 @@
         "Legal",
         "Open Data"
       ],
-      "updated": "3 weeks ago",
+      "updated": "1 month ago",
       "license": "MIT",
       "langs": [
         {
@@ -878,69 +877,62 @@
       "demo": "https://deepset-ai.github.io/hayhooks/",
       "repoUrl": "https://github.com/deepset-ai/hayhooks",
       "long1": "Easily deploy Haystack pipelines as REST APIs and MCP Tools. Maintained by deepset-ai on GitHub, where it has earned 148 stars from the community.",
-      "long2": "It's actively developed around ai, api, api-rest, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around ai, api-rest, haystack, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Python",
         "Ai",
-        "Api",
         "Api Rest",
-        "Haystack"
+        "Haystack",
+        "Llm"
       ],
-      "updated": "2 weeks ago",
+      "updated": "yesterday",
       "license": "Apache-2.0",
       "langs": [
         {
-          "name": "Python",
-          "pct": 81.511,
-          "size": 786810
+          "pct": 84,
+          "name": "Python"
         },
         {
-          "name": "TypeScript",
-          "pct": 15.598,
-          "size": 150565
+          "pct": 15,
+          "name": "TypeScript"
         },
         {
-          "name": "CSS",
-          "pct": 1.211,
-          "size": 11688
-        },
-        {
-          "name": "Shell",
-          "pct": 1.065,
-          "size": 10283
-        },
-        {
-          "name": "JavaScript",
-          "pct": 0.344,
-          "size": 3319
-        },
-        {
-          "name": "Dockerfile",
-          "pct": 0.16,
-          "size": 1548
-        },
-        {
-          "name": "HCL",
-          "pct": 0.071,
-          "size": 682
-        },
-        {
-          "name": "HTML",
-          "pct": 0.04,
-          "size": 388
+          "pct": 1,
+          "name": "CSS"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/deepset-ai/hayhooks/releases/tag/v1.23.0",
+          "name": "v1.23.0"
+        },
+        {
+          "url": "https://github.com/deepset-ai/hayhooks/releases/tag/v1.22.0",
+          "name": "v1.22.0"
+        },
+        {
+          "url": "https://github.com/deepset-ai/hayhooks/releases/tag/v1.21.0",
+          "name": "v1.21.0"
+        },
+        {
+          "url": "https://github.com/deepset-ai/hayhooks/releases/tag/v1.20.0",
+          "name": "v1.20.0"
+        },
+        {
+          "url": "https://github.com/deepset-ai/hayhooks/releases/tag/v1.19.2",
+          "name": "v1.19.2"
+        }
+      ],
       "topics": [
         "ai",
-        "api",
         "api-rest",
         "haystack",
         "llm",
+        "api",
+        "rest",
         "mcp",
         "mcp-server",
-        "mcp-tools",
-        "rest"
+        "mcp-tools"
       ],
       "addedAt": "2026-07-15T22:28:33.189672+00:00"
     },
@@ -956,34 +948,36 @@
       "demo": null,
       "repoUrl": "https://github.com/deepset-ai/haystack-demos",
       "long1": "Fully working applications that demonstrate how to use Haystack to implement various use cases. Maintained by deepset-ai on GitHub, where it has earned 137 stars from the community.",
-      "long2": "It's actively developed around demo-app, haystack, haystack-ai, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around nlp, python, question-answering, and is a solid reference for anyone building with these tools.",
       "stack": [
+        "Nlp",
         "Python",
-        "Demo App",
-        "Haystack",
-        "Haystack Ai",
-        "Llms"
+        "Question Answering",
+        "Semantic Search"
       ],
-      "updated": "8 months ago",
+      "updated": "2 days ago",
       "license": "Apache-2.0",
       "langs": [
         {
-          "name": "Python",
-          "pct": 100,
-          "size": 100
+          "pct": 98,
+          "name": "Python"
+        },
+        {
+          "pct": 2,
+          "name": "Dockerfile"
         }
       ],
       "versions": [],
       "topics": [
+        "nlp",
+        "python",
+        "question-answering",
+        "semantic-search",
         "demo-app",
         "haystack",
         "haystack-ai",
         "llms",
-        "nlp",
-        "python",
-        "question-answering",
-        "rest-api",
-        "semantic-search"
+        "rest-api"
       ],
       "addedAt": "2026-07-15T22:28:33.189672+00:00"
     },
@@ -994,33 +988,41 @@
       "category": "DevTools",
       "stars": 126,
       "author": "bennylope",
-      "avatar": "https://avatars.githubusercontent.com/u/102509?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/102509?u=df0781c07c78f8d921f5880ca9e813f760822918&v=4",
       "desc": ":card_index: Configurable indexing and other extras for Haystack (with ElasticSearch biases)",
       "demo": null,
       "repoUrl": "https://github.com/bennylope/elasticstack",
       "long1": ":card_index: Configurable indexing and other extras for Haystack (with ElasticSearch biases). Maintained by bennylope on GitHub, where it has earned 126 stars from the community.",
-      "long2": "It's actively developed around django, elasticsearch, haystack, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around python, django, elasticsearch, and is a solid reference for anyone building with these tools.",
       "stack": [
+        "Python",
         "Django",
         "Elasticsearch",
-        "Haystack",
-        "Python"
+        "Haystack"
       ],
       "updated": "8 years ago",
       "license": "BSD-2-Clause",
       "langs": [
         {
-          "name": "Python",
-          "pct": 100,
-          "size": 100
+          "pct": 95,
+          "name": "Python"
+        },
+        {
+          "pct": 5,
+          "name": "Makefile"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/bennylope/elasticstack/releases/tag/0.4.0",
+          "name": "0.4.0"
+        }
+      ],
       "topics": [
+        "python",
         "django",
         "elasticsearch",
-        "haystack",
-        "python"
+        "haystack"
       ],
       "addedAt": "2026-07-15T22:28:33.189672+00:00"
     },
@@ -1029,56 +1031,50 @@
       "name": "HackTheBox-Writeups",
       "fullName": "fatihh92/HackTheBox-Writeups",
       "category": "DevTools",
-      "stars": 114,
+      "stars": 113,
       "author": "fatihh92",
-      "avatar": "https://avatars.githubusercontent.com/u/4903633?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/4903633?u=2245e88852020c28cc402555597d681122082322&v=4",
       "desc": "A project worth exploring.",
       "demo": null,
       "repoUrl": "https://github.com/fatihh92/HackTheBox-Writeups",
-      "long1": "A project worth exploring. Maintained by fatihh92 on GitHub, where it has earned 114 stars from the community.",
-      "long2": "It's actively developed around access, active, bounty, and is a solid reference for anyone building with these tools.",
+      "long1": "A project worth exploring. Maintained by fatihh92 on GitHub, where it has earned 113 stars from the community.",
+      "long2": "It's actively developed around hackthebox, nibbles, writeups, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "Access",
-        "Active",
-        "Bounty",
-        "Celestial"
+        "Hackthebox",
+        "Nibbles",
+        "Writeups",
+        "Poison"
       ],
       "updated": "6 years ago",
       "license": "—",
       "langs": [
         {
           "name": "JavaScript",
-          "pct": 71.429,
-          "size": 20
+          "pct": 72
+        },
+        {
+          "name": "JavaScript",
+          "pct": 20
         },
         {
           "name": "Other",
-          "pct": 28.571,
-          "size": 8
+          "pct": 8
         }
       ],
       "versions": [],
       "topics": [
-        "access",
-        "active",
-        "bounty",
-        "celestial",
-        "craft",
-        "dab",
-        "devoops",
-        "giddy",
         "hackthebox",
-        "hawk",
-        "haystack",
-        "heist",
-        "jerry",
         "nibbles",
-        "poison",
-        "safe",
-        "waldo",
         "writeups",
-        "ypuffy",
-        "zipper"
+        "poison",
+        "celestial",
+        "jerry",
+        "hawk",
+        "active",
+        "waldo",
+        "devoops",
+        "access",
+        "bounty"
       ],
       "addedAt": "2026-07-15T22:28:33.189672+00:00"
     },
@@ -1106,12 +1102,40 @@
       "license": "Apache-2.0",
       "langs": [
         {
-          "name": "JavaScript",
-          "pct": 100,
-          "size": 100
+          "pct": 91,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 9,
+          "name": "Less"
+        },
+        {
+          "pct": 0,
+          "name": "Shell"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/ExpediaDotCom/haystack-ui/releases/tag/1.1.8",
+          "name": "1.1.8"
+        },
+        {
+          "url": "https://github.com/ExpediaDotCom/haystack-ui/releases/tag/1.1.7",
+          "name": "1.1.7"
+        },
+        {
+          "url": "https://github.com/ExpediaDotCom/haystack-ui/releases/tag/1.1.6",
+          "name": "1.1.6"
+        },
+        {
+          "url": "https://github.com/ExpediaDotCom/haystack-ui/releases/tag/1.1.5",
+          "name": "1.1.5"
+        },
+        {
+          "url": "https://github.com/ExpediaDotCom/haystack-ui/releases/tag/1.0.4",
+          "name": "1.0.4"
+        }
+      ],
       "topics": [
         "haystack",
         "nodejs",
@@ -1121,70 +1145,17 @@
       "addedAt": "2026-07-15T22:28:33.189672+00:00"
     },
     {
-      "slug": "flamehaven-filesearch",
-      "name": "Flamehaven-Filesearch",
-      "fullName": "flamehaven01/Flamehaven-Filesearch",
-      "category": "AI & ML",
-      "stars": 106,
-      "author": "flamehaven01",
-      "avatar": "https://avatars.githubusercontent.com/u/242357858?v=4",
-      "desc": "Self-hosted RAG search engine — 34 formats, BM25+hybrid search, multi-LLM (Gemini/OpenAI/Claude/Ollama), FastAPI + Docker, production-ready in 3 min",
-      "demo": "https://flamehaven.space/work/flamehaven-filesearch/",
-      "repoUrl": "https://github.com/flamehaven01/Flamehaven-Filesearch",
-      "long1": "Self-hosted RAG search engine — 34 formats, BM25+hybrid search, multi-LLM (Gemini/OpenAI/Claude/Ollama), FastAPI + Docker, production-ready in 3 min. Maintained by flamehaven01 on GitHub, where it has earned 106 stars from the community.",
-      "long2": "It's actively developed around bm25, crewai, docker, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Python",
-        "Bm25",
-        "Crewai",
-        "Docker",
-        "Document Parsing"
-      ],
-      "updated": "2 months ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "Python",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "bm25",
-        "crewai",
-        "docker",
-        "document-parsing",
-        "document-search",
-        "fastapi",
-        "haystack",
-        "hybrid-search",
-        "knowledge-base",
-        "langchain",
-        "llamaindex",
-        "llm",
-        "ollama",
-        "open-source",
-        "python",
-        "rag",
-        "self-hosted",
-        "semantic-search",
-        "vector-search"
-      ],
-      "addedAt": "2026-07-15T22:28:33.189672+00:00"
-    },
-    {
       "slug": "mistral-haystack",
       "name": "mistral-haystack",
       "fullName": "anakin87/mistral-haystack",
       "category": "AI & ML",
-      "stars": 106,
+      "stars": 107,
       "author": "anakin87",
-      "avatar": "https://avatars.githubusercontent.com/u/44616784?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/44616784?u=911d52e89d3125855ede014c47e980bce8468a2e&v=4",
       "desc": "Mistral + Haystack: build RAG pipelines that rock 🤘",
       "demo": null,
       "repoUrl": "https://github.com/anakin87/mistral-haystack",
-      "long1": "Mistral + Haystack: build RAG pipelines that rock 🤘. Maintained by anakin87 on GitHub, where it has earned 106 stars from the community.",
+      "long1": "Mistral + Haystack: build RAG pipelines that rock 🤘. Maintained by anakin87 on GitHub, where it has earned 107 stars from the community.",
       "long2": "It's actively developed around haystack, large-language-models, llm, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Jupyter Notebook",
@@ -1197,9 +1168,8 @@
       "license": "—",
       "langs": [
         {
-          "name": "Jupyter Notebook",
           "pct": 100,
-          "size": 100
+          "name": "Jupyter Notebook"
         }
       ],
       "versions": [],
@@ -1213,13 +1183,87 @@
       "addedAt": "2026-07-15T22:28:33.189672+00:00"
     },
     {
+      "slug": "flamehaven-filesearch",
+      "name": "Flamehaven-Filesearch",
+      "fullName": "flamehaven01/Flamehaven-Filesearch",
+      "category": "AI & ML",
+      "stars": 106,
+      "author": "flamehaven01",
+      "avatar": "https://avatars.githubusercontent.com/u/242357858?u=a89493502678a7648c0cac35b1c60f89c56b668d&v=4",
+      "desc": "Self-hosted RAG search engine — 34 formats, BM25+hybrid search, multi-LLM (Gemini/OpenAI/Claude/Ollama), FastAPI + Docker, production-ready in 3 min",
+      "demo": "https://flamehaven.space/work/flamehaven-filesearch/",
+      "repoUrl": "https://github.com/flamehaven01/Flamehaven-Filesearch",
+      "long1": "Self-hosted RAG search engine — 34 formats, BM25+hybrid search, multi-LLM (Gemini/OpenAI/Claude/Ollama), FastAPI + Docker, production-ready in 3 min. Maintained by flamehaven01 on GitHub, where it has earned 106 stars from the community.",
+      "long2": "It's actively developed around docker, document-search, fastapi, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Python",
+        "Docker",
+        "Document Search",
+        "Fastapi",
+        "Open Source"
+      ],
+      "updated": "3 months ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 86,
+          "name": "Python"
+        },
+        {
+          "pct": 14,
+          "name": "HTML"
+        },
+        {
+          "pct": 0,
+          "name": "Shell"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/flamehaven01/Flamehaven-Filesearch/releases/tag/v1.6.4",
+          "name": "v1.6.4"
+        },
+        {
+          "url": "https://github.com/flamehaven01/Flamehaven-Filesearch/releases/tag/v1.6.1",
+          "name": "v1.6.1"
+        },
+        {
+          "url": "https://github.com/flamehaven01/Flamehaven-Filesearch/releases/tag/v1.6.0",
+          "name": "v1.6.0"
+        },
+        {
+          "url": "https://github.com/flamehaven01/Flamehaven-Filesearch/releases/tag/v1.5.3",
+          "name": "v1.5.3"
+        },
+        {
+          "url": "https://github.com/flamehaven01/Flamehaven-Filesearch/releases/tag/v1.5.2",
+          "name": "v1.5.2"
+        }
+      ],
+      "topics": [
+        "docker",
+        "document-search",
+        "fastapi",
+        "open-source",
+        "python",
+        "rag",
+        "semantic-search",
+        "bm25",
+        "crewai",
+        "document-parsing",
+        "haystack",
+        "hybrid-search"
+      ],
+      "addedAt": "2026-07-15T22:28:33.189672+00:00"
+    },
+    {
       "slug": "bricky",
       "name": "bricky",
       "fullName": "larsbaunwall/bricky",
       "category": "AI & ML",
       "stars": 104,
       "author": "larsbaunwall",
-      "avatar": "https://avatars.githubusercontent.com/u/3168816?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/3168816?u=f17612c5d90d7548419b706a51320ad25d33f922&v=4",
       "desc": "Haystack/OpenAI based chatbot curating a custom knowledgebase",
       "demo": null,
       "repoUrl": "https://github.com/larsbaunwall/bricky",
@@ -1236,9 +1280,16 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "Python",
-          "pct": 100,
-          "size": 100
+          "pct": 57,
+          "name": "Python"
+        },
+        {
+          "pct": 27,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 16,
+          "name": "CSS"
         }
       ],
       "versions": [],
@@ -1262,29 +1313,49 @@
       "demo": null,
       "repoUrl": "https://github.com/Project-Haystack/haystack-defs",
       "long1": "Haystack 4 Defs. Maintained by Project-Haystack on GitHub, where it has earned 81 stars from the community.",
-      "long2": "It's actively developed around building-automation, haystack, ontology, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around project-haystack, haystack, ontology, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Fantom",
-        "Building Automation",
+        "Project Haystack",
         "Haystack",
         "Ontology",
-        "Project Haystack"
+        "Building Automation"
       ],
       "updated": "1 year ago",
       "license": "AFL-3.0",
       "langs": [
         {
-          "name": "Fantom",
           "pct": 100,
-          "size": 100
+          "name": "Fantom"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/Project-Haystack/haystack-defs/releases/tag/v4.0.0",
+          "name": "v4.0.0"
+        },
+        {
+          "url": "https://github.com/Project-Haystack/haystack-defs/releases/tag/v3.9.15",
+          "name": "v3.9.15"
+        },
+        {
+          "url": "https://github.com/Project-Haystack/haystack-defs/releases/tag/v3.9.14",
+          "name": "v3.9.14"
+        },
+        {
+          "url": "https://github.com/Project-Haystack/haystack-defs/releases/tag/v3.9.13",
+          "name": "v3.9.13"
+        },
+        {
+          "url": "https://github.com/Project-Haystack/haystack-defs/releases/tag/v3.9.12",
+          "name": "v3.9.12"
+        }
+      ],
       "topics": [
-        "building-automation",
+        "project-haystack",
         "haystack",
         "ontology",
-        "project-haystack"
+        "building-automation"
       ],
       "addedAt": "2026-07-15T22:28:33.189672+00:00"
     },
@@ -1300,28 +1371,56 @@
       "demo": null,
       "repoUrl": "https://github.com/ExpediaGroup/kubernetes-sidecar-injector",
       "long1": "Kuberbetes mutating webhook that injects a sidecar container to a pod. Maintained by ExpediaGroup on GitHub, where it has earned 78 stars from the community.",
-      "long2": "It's actively developed around golang, haystack, kubernetes, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around kubernetes, golang, haystack, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Go",
+        "Kubernetes",
         "Golang",
         "Haystack",
-        "Kubernetes",
         "Mutating Webhook"
       ],
       "updated": "2 years ago",
       "license": "Apache-2.0",
       "langs": [
         {
-          "name": "Go",
-          "pct": 100,
-          "size": 100
+          "pct": 95,
+          "name": "Go"
+        },
+        {
+          "pct": 4,
+          "name": "Makefile"
+        },
+        {
+          "pct": 1,
+          "name": "Smarty"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/ExpediaGroup/kubernetes-sidecar-injector/releases/tag/kubernetes-sidecar-injector-1.3.0",
+          "name": "kubernetes-sidecar-injector-1.3.0"
+        },
+        {
+          "url": "https://github.com/ExpediaGroup/kubernetes-sidecar-injector/releases/tag/kubernetes-sidecar-injector-1.2.0",
+          "name": "kubernetes-sidecar-injector-1.2.0"
+        },
+        {
+          "url": "https://github.com/ExpediaGroup/kubernetes-sidecar-injector/releases/tag/kubernetes-sidecar-injector-1.1.0",
+          "name": "kubernetes-sidecar-injector-1.1.0"
+        },
+        {
+          "url": "https://github.com/ExpediaGroup/kubernetes-sidecar-injector/releases/tag/kubernetes-sidecar-injector-1.0.4",
+          "name": "kubernetes-sidecar-injector-1.0.4"
+        },
+        {
+          "url": "https://github.com/ExpediaGroup/kubernetes-sidecar-injector/releases/tag/kubernetes-sidecar-injector-1.0.3",
+          "name": "kubernetes-sidecar-injector-1.0.3"
+        }
+      ],
       "topics": [
+        "kubernetes",
         "golang",
         "haystack",
-        "kubernetes",
         "mutating-webhook",
         "oss-portal-listed"
       ],
@@ -1332,72 +1431,65 @@
       "name": "haxall",
       "fullName": "haxall/haxall",
       "category": "DevTools",
-      "stars": 71,
+      "stars": 70,
       "author": "haxall",
       "avatar": "https://avatars.githubusercontent.com/u/66066805?v=4",
       "desc": "Haxall IoT framework",
       "demo": "https://haxall.io/",
       "repoUrl": "https://github.com/haxall/haxall",
-      "long1": "Haxall IoT framework. Maintained by haxall on GitHub, where it has earned 71 stars from the community.",
-      "long2": "It's actively developed around fantom, haystack, iot, and is a solid reference for anyone building with these tools.",
+      "long1": "Haxall IoT framework. Maintained by haxall on GitHub, where it has earned 70 stars from the community.",
+      "long2": "It's actively developed around iot, iot-framework, iot-gateway, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "Fantom",
-        "Haystack",
         "Iot",
-        "Iot Framework"
+        "Iot Framework",
+        "Iot Gateway",
+        "Fantom"
       ],
-      "updated": "1 week ago",
+      "updated": "today",
       "license": "AFL-3.0",
       "langs": [
         {
-          "name": "Fantom",
-          "pct": 96.675,
-          "size": 5300595
+          "pct": 98,
+          "name": "Fantom"
         },
         {
-          "name": "Java",
-          "pct": 1.432,
-          "size": 78500
+          "pct": 1,
+          "name": "Java"
         },
         {
-          "name": "Python",
-          "pct": 1.07,
-          "size": 58641
-        },
-        {
-          "name": "JavaScript",
-          "pct": 0.462,
-          "size": 25334
-        },
-        {
-          "name": "CSS",
-          "pct": 0.279,
-          "size": 15289
-        },
-        {
-          "name": "Dockerfile",
-          "pct": 0.051,
-          "size": 2777
-        },
-        {
-          "name": "Shell",
-          "pct": 0.029,
-          "size": 1598
-        },
-        {
-          "name": "Batchfile",
-          "pct": 0.003,
-          "size": 155
+          "pct": 1,
+          "name": "Python"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/haxall/haxall/releases/tag/v4.0.6",
+          "name": "v4.0.6"
+        },
+        {
+          "url": "https://github.com/haxall/haxall/releases/tag/v4.0.5",
+          "name": "v4.0.5"
+        },
+        {
+          "url": "https://github.com/haxall/haxall/releases/tag/v4.0.4",
+          "name": "v4.0.4"
+        },
+        {
+          "url": "https://github.com/haxall/haxall/releases/tag/v4.0.3",
+          "name": "v4.0.3"
+        },
+        {
+          "url": "https://github.com/haxall/haxall/releases/tag/v4.0.2",
+          "name": "v4.0.2"
+        }
+      ],
       "topics": [
-        "fantom",
-        "haystack",
         "iot",
         "iot-framework",
         "iot-gateway",
-        "project-haystack"
+        "fantom",
+        "project-haystack",
+        "haystack"
       ],
       "addedAt": "2026-07-15T22:28:33.189672+00:00"
     },
@@ -1408,7 +1500,7 @@
       "category": "AI & ML",
       "stars": 70,
       "author": "anakin87",
-      "avatar": "https://avatars.githubusercontent.com/u/44616784?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/44616784?u=911d52e89d3125855ede014c47e980bce8468a2e&v=4",
       "desc": "Generates a quiz from a URL. You can play the quiz, or let the LLM play it.",
       "demo": "https://huggingface.co/spaces/deepset/autoquizzer",
       "repoUrl": "https://github.com/anakin87/autoquizzer",
@@ -1421,13 +1513,16 @@
         "Large Language Models",
         "Llama3"
       ],
-      "updated": "4 months ago",
+      "updated": "5 months ago",
       "license": "Apache-2.0",
       "langs": [
         {
-          "name": "Jupyter Notebook",
-          "pct": 100,
-          "size": 100
+          "pct": 90,
+          "name": "Jupyter Notebook"
+        },
+        {
+          "pct": 10,
+          "name": "Python"
         }
       ],
       "versions": [],
@@ -1447,37 +1542,107 @@
       "category": "DevTools",
       "stars": 58,
       "author": "wenweihu86",
-      "avatar": "https://avatars.githubusercontent.com/u/2144079?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/2144079?u=74208f92fc88bf70f2ad1b5b1cccf70938b70e52&v=4",
       "desc": "Distributed KV Storage System based on Raft and RocksDB, can be use to store small files, like images.",
       "demo": null,
       "repoUrl": "https://github.com/wenweihu86/distkv",
       "long1": "Distributed KV Storage System based on Raft and RocksDB, can be use to store small files, like images. Maintained by wenweihu86 on GitHub, where it has earned 58 stars from the community.",
-      "long2": "It's actively developed around distributed-file-storage, distributed-file-system, distributed-kv, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around distributed-storage, distributed-file-system, distributed-file-storage, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Java",
-        "Distributed File Storage",
+        "Distributed Storage",
         "Distributed File System",
-        "Distributed Kv",
-        "Distributed Storage"
+        "Distributed File Storage",
+        "Raft"
       ],
       "updated": "6 years ago",
       "license": "—",
       "langs": [
         {
-          "name": "Java",
-          "pct": 100,
-          "size": 100
+          "pct": 95,
+          "name": "Java"
+        },
+        {
+          "pct": 4,
+          "name": "Shell"
+        },
+        {
+          "pct": 1,
+          "name": "HTML"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/wenweihu86/distkv/releases/tag/1.0.0",
+          "name": "1.0.0"
+        }
+      ],
       "topics": [
-        "distributed-file-storage",
-        "distributed-file-system",
-        "distributed-kv",
         "distributed-storage",
-        "haystack",
+        "distributed-file-system",
+        "distributed-file-storage",
         "raft",
-        "rocksdb"
+        "rocksdb",
+        "haystack",
+        "distributed-kv"
+      ],
+      "addedAt": "2026-07-15T22:28:33.189672+00:00"
+    },
+    {
+      "slug": "maximem-synap-sdk",
+      "name": "maximem_synap_sdk",
+      "fullName": "maximem-ai/maximem_synap_sdk",
+      "category": "AI & ML",
+      "stars": 57,
+      "author": "maximem-ai",
+      "avatar": "https://avatars.githubusercontent.com/u/218974558?v=4",
+      "desc": "Maximem Synap is the memory layer that makes AI agents remember. 92% LongMemEval, 93.2% on LOCOMO. Works natively with LangChain, LlamaIndex, CrewAI, Google ADK, AutoGen, OpenAI Agents, Semantic Kernel, Haystack, and Pydantic AI.",
+      "demo": "https://www.maximem.ai/synap",
+      "repoUrl": "https://github.com/maximem-ai/maximem_synap_sdk",
+      "long1": "Maximem Synap is the memory layer that makes AI agents remember. 92% LongMemEval, 93.2% on LOCOMO. Works natively with LangChain, LlamaIndex, CrewAI, Google ADK, AutoGen, OpenAI Agents, Semantic Kernel, Haystack, and Pydantic AI. Maintained by maximem-ai on GitHub, where it has earned 57 stars from the community.",
+      "long2": "It's actively developed around agent-memory, ai, ai-agents, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Python",
+        "Agent Memory",
+        "Ai",
+        "Ai Agents",
+        "Ai Memory"
+      ],
+      "updated": "today",
+      "license": "Apache-2.0",
+      "langs": [
+        {
+          "pct": 78,
+          "name": "Python"
+        },
+        {
+          "pct": 17,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 5,
+          "name": "JavaScript"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/maximem-ai/maximem_synap_sdk/releases/tag/maximem-synap-v0.2.6",
+          "name": "maximem-synap-v0.2.6"
+        }
+      ],
+      "topics": [
+        "agent-memory",
+        "ai",
+        "ai-agents",
+        "ai-memory",
+        "autogen",
+        "context",
+        "conversational-ai",
+        "google-adk",
+        "haystack",
+        "langchain",
+        "llamaindex",
+        "llm"
       ],
       "addedAt": "2026-07-15T22:28:33.189672+00:00"
     },
@@ -1500,7 +1665,7 @@
         "Rust",
         "Rust Lang"
       ],
-      "updated": "1 week ago",
+      "updated": "3 weeks ago",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -1582,109 +1747,38 @@
       "addedAt": "2026-07-15T22:28:33.189672+00:00"
     },
     {
-      "slug": "maximem-synap-sdk",
-      "name": "maximem_synap_sdk",
-      "fullName": "maximem-ai/maximem_synap_sdk",
-      "category": "AI & ML",
-      "stars": 47,
-      "author": "maximem-ai",
-      "avatar": "https://avatars.githubusercontent.com/u/218974558?v=4",
-      "desc": "Maximem Synap is the memory layer that makes AI agents remember. 92% LongMemEval, 93.2% on LOCOMO. Works natively with LangChain, LlamaIndex, CrewAI, Google ADK, AutoGen, OpenAI Agents, Semantic Kernel, Haystack, and Pydantic AI.",
-      "demo": "https://www.maximem.ai/synap",
-      "repoUrl": "https://github.com/maximem-ai/maximem_synap_sdk",
-      "long1": "Maximem Synap is the memory layer that makes AI agents remember. 92% LongMemEval, 93.2% on LOCOMO. Works natively with LangChain, LlamaIndex, CrewAI, Google ADK, AutoGen, OpenAI Agents, Semantic Kernel, Haystack, and Pydantic AI. Maintained by maximem-ai on GitHub, where it has earned 47 stars from the community.",
-      "long2": "It's actively developed around agent-memory, ai, ai-agents, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Python",
-        "Agent Memory",
-        "Ai",
-        "Ai Agents",
-        "Ai Memory"
-      ],
-      "updated": "2 weeks ago",
-      "license": "Apache-2.0",
-      "langs": [
-        {
-          "name": "Python",
-          "pct": 77.734,
-          "size": 1571693
-        },
-        {
-          "name": "TypeScript",
-          "pct": 16.59,
-          "size": 335435
-        },
-        {
-          "name": "JavaScript",
-          "pct": 5.46,
-          "size": 110388
-        },
-        {
-          "name": "Shell",
-          "pct": 0.182,
-          "size": 3675
-        },
-        {
-          "name": "Dockerfile",
-          "pct": 0.035,
-          "size": 701
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "agent-memory",
-        "ai",
-        "ai-agents",
-        "ai-memory",
-        "autogen",
-        "context",
-        "conversational-ai",
-        "crewai",
-        "google-adk",
-        "haystack",
-        "langchain",
-        "llamaindex",
-        "llm",
-        "long-term-memory",
-        "memory",
-        "memory-layer"
-      ],
-      "addedAt": "2026-07-15T22:28:33.189672+00:00"
-    },
-    {
       "slug": "should-i-follow",
       "name": "should-i-follow",
       "fullName": "TuanaCelik/should-i-follow",
       "category": "AI & ML",
       "stars": 46,
       "author": "TuanaCelik",
-      "avatar": "https://avatars.githubusercontent.com/u/15802862?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/15802862?u=472ee02e9798172275e12f8c7d9e8dff35d9e74d&v=4",
       "desc": "🦄 An NLP application just for the lols: built with Haystack to get an overview of what a user is posting about on Twitter",
       "demo": null,
       "repoUrl": "https://github.com/TuanaCelik/should-i-follow",
       "long1": "🦄 An NLP application just for the lols: built with Haystack to get an overview of what a user is posting about on Twitter. Maintained by TuanaCelik on GitHub, where it has earned 46 stars from the community.",
-      "long2": "It's actively developed around haystack, llm, nlp, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around llm, nlp, haystack, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Python",
-        "Haystack",
         "Llm",
         "Nlp",
+        "Haystack",
         "Twitter"
       ],
       "updated": "4 months ago",
       "license": "—",
       "langs": [
         {
-          "name": "Python",
           "pct": 100,
-          "size": 100
+          "name": "Python"
         }
       ],
       "versions": [],
       "topics": [
-        "haystack",
         "llm",
         "nlp",
+        "haystack",
         "twitter"
       ],
       "addedAt": "2026-07-15T22:28:33.189672+00:00"
@@ -1701,30 +1795,58 @@
       "demo": "https://opensource.expediagroup.com/pitchfork/",
       "repoUrl": "https://github.com/ExpediaGroup/pitchfork",
       "long1": "Convert tracing data between Zipkin and Haystack formats. Maintained by ExpediaGroup on GitHub, where it has earned 46 stars from the community.",
-      "long2": "It's actively developed around distributed-tracing, haystack, oss-portal-listed, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around tracing, distributed-tracing, zipkin, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Java",
+        "Tracing",
         "Distributed Tracing",
-        "Haystack",
-        "Oss Portal Listed",
-        "Tracing"
+        "Zipkin",
+        "Haystack"
       ],
       "updated": "2 years ago",
       "license": "Apache-2.0",
       "langs": [
         {
-          "name": "Java",
-          "pct": 100,
-          "size": 100
+          "pct": 92,
+          "name": "Java"
+        },
+        {
+          "pct": 7,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 1,
+          "name": "CSS"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/ExpediaGroup/pitchfork/releases/tag/1.31",
+          "name": "1.31"
+        },
+        {
+          "url": "https://github.com/ExpediaGroup/pitchfork/releases/tag/1.30",
+          "name": "1.30"
+        },
+        {
+          "url": "https://github.com/ExpediaGroup/pitchfork/releases/tag/1.29",
+          "name": "1.29"
+        },
+        {
+          "url": "https://github.com/ExpediaGroup/pitchfork/releases/tag/1.28",
+          "name": "1.28"
+        },
+        {
+          "url": "https://github.com/ExpediaGroup/pitchfork/releases/tag/1.27",
+          "name": "1.27"
+        }
+      ],
       "topics": [
-        "distributed-tracing",
-        "haystack",
-        "oss-portal-listed",
         "tracing",
-        "zipkin"
+        "distributed-tracing",
+        "zipkin",
+        "haystack",
+        "oss-portal-listed"
       ],
       "addedAt": "2026-07-15T22:28:33.189672+00:00"
     },
@@ -1735,37 +1857,44 @@
       "category": "AI & ML",
       "stars": 43,
       "author": "Karthik-Bhaskar",
-      "avatar": "https://avatars.githubusercontent.com/u/13200370?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/13200370?u=1dbc5f5b4f8635a0cd7eacedf868adb3582fad32&v=4",
       "desc": "Context-Based-Question-Answering",
       "demo": null,
       "repoUrl": "https://github.com/Karthik-Bhaskar/Context-Based-Question-Answering",
       "long1": "Context-Based-Question-Answering. Maintained by Karthik-Bhaskar on GitHub, where it has earned 43 stars from the community.",
-      "long2": "It's actively developed around flask-application, haystack, natural-language-processing, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around question-answering, natural-language-processing, nlp, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
-        "Flask Application",
-        "Haystack",
+        "Question Answering",
         "Natural Language Processing",
-        "Nlp"
+        "Nlp",
+        "Web Application"
       ],
       "updated": "2 years ago",
       "license": "Apache-2.0",
       "langs": [
         {
-          "name": "JavaScript",
-          "pct": 100,
-          "size": 100
+          "pct": 70,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 18,
+          "name": "HTML"
+        },
+        {
+          "pct": 12,
+          "name": "Python"
         }
       ],
       "versions": [],
       "topics": [
-        "flask-application",
-        "haystack",
+        "question-answering",
         "natural-language-processing",
         "nlp",
-        "question-answering",
+        "web-application",
+        "flask-application",
         "transformers",
-        "web-application"
+        "haystack"
       ],
       "addedAt": "2026-07-15T22:28:33.189672+00:00"
     },
@@ -1781,28 +1910,56 @@
       "demo": null,
       "repoUrl": "https://github.com/kezabelle/django-haystackbrowser",
       "long1": "View and debug the data in your Haystack search indexes, from within the Django admin. Maintained by kezabelle on GitHub, where it has earned 36 stars from the community.",
-      "long2": "It's actively developed around django, django-admin, haystack, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around python, django, haystack, and is a solid reference for anyone building with these tools.",
       "stack": [
+        "Python",
         "Django",
-        "Django Admin",
         "Haystack",
-        "Python"
+        "Django Admin"
       ],
-      "updated": "3 months ago",
+      "updated": "4 months ago",
       "license": "—",
       "langs": [
         {
-          "name": "Python",
-          "pct": 100,
-          "size": 100
+          "pct": 81,
+          "name": "Python"
+        },
+        {
+          "pct": 18,
+          "name": "HTML"
+        },
+        {
+          "pct": 1,
+          "name": "Makefile"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/kezabelle/django-haystackbrowser/releases/tag/0.6.3",
+          "name": "0.6.3"
+        },
+        {
+          "url": "https://github.com/kezabelle/django-haystackbrowser/releases/tag/0.6.2",
+          "name": "0.6.2"
+        },
+        {
+          "url": "https://github.com/kezabelle/django-haystackbrowser/releases/tag/0.6.1",
+          "name": "0.6.1"
+        },
+        {
+          "url": "https://github.com/kezabelle/django-haystackbrowser/releases/tag/0.6.0",
+          "name": "0.6.0"
+        },
+        {
+          "url": "https://github.com/kezabelle/django-haystackbrowser/releases/tag/0.5.1",
+          "name": "0.5.1"
+        }
+      ],
       "topics": [
+        "python",
         "django",
-        "django-admin",
         "haystack",
-        "python"
+        "django-admin"
       ],
       "addedAt": "2026-07-15T22:28:33.189672+00:00"
     },
@@ -1818,27 +1975,43 @@
       "demo": null,
       "repoUrl": "https://github.com/skyfoundry/haystack-java",
       "long1": "Project-Haystack Java Reference Implementation. Maintained by skyfoundry on GitHub, where it has earned 33 stars from the community.",
-      "long2": "It's actively developed around building-automation, haystack, project-haystack, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around project-haystack, haystack, building-automation, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Java",
-        "Building Automation",
+        "Project Haystack",
         "Haystack",
-        "Project Haystack"
+        "Building Automation"
       ],
       "updated": "6 months ago",
       "license": "—",
       "langs": [
         {
-          "name": "Java",
-          "pct": 100,
-          "size": 100
+          "pct": 97,
+          "name": "Java"
+        },
+        {
+          "pct": 2,
+          "name": "HTML"
+        },
+        {
+          "pct": 1,
+          "name": "Fantom"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/skyfoundry/haystack-java/releases/tag/3.0.7",
+          "name": "3.0.7"
+        },
+        {
+          "url": "https://github.com/skyfoundry/haystack-java/releases/tag/3.0.6",
+          "name": "3.0.6"
+        }
+      ],
       "topics": [
-        "building-automation",
+        "project-haystack",
         "haystack",
-        "project-haystack"
+        "building-automation"
       ],
       "addedAt": "2026-07-15T22:28:33.189672+00:00"
     },
@@ -1866,9 +2039,12 @@
       "license": "—",
       "langs": [
         {
-          "name": "Python",
-          "pct": 100,
-          "size": 100
+          "pct": 96,
+          "name": "Python"
+        },
+        {
+          "pct": 4,
+          "name": "Dockerfile"
         }
       ],
       "versions": [],
@@ -1887,7 +2063,7 @@
       "category": "AI & ML",
       "stars": 30,
       "author": "anakin87",
-      "avatar": "https://avatars.githubusercontent.com/u/44616784?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/44616784?u=911d52e89d3125855ede014c47e980bce8468a2e&v=4",
       "desc": "Fact checking baseline combining dense retrieval and textual entailment",
       "demo": null,
       "repoUrl": "https://github.com/anakin87/fact-checking-rocks",
@@ -1904,9 +2080,16 @@
       "license": "Apache-2.0",
       "langs": [
         {
-          "name": "Jupyter Notebook",
-          "pct": 100,
-          "size": 100
+          "pct": 69,
+          "name": "Jupyter Notebook"
+        },
+        {
+          "pct": 29,
+          "name": "Python"
+        },
+        {
+          "pct": 2,
+          "name": "Dockerfile"
         }
       ],
       "versions": [],
@@ -1922,9 +2105,7 @@
         "python",
         "semantic-search",
         "streamlit",
-        "streamlit-webapp",
-        "text-entailment",
-        "transformers"
+        "streamlit-webapp"
       ],
       "addedAt": "2026-07-15T22:28:33.189672+00:00"
     },
@@ -1951,9 +2132,8 @@
       "license": "—",
       "langs": [
         {
-          "name": "Python",
           "pct": 100,
-          "size": 100
+          "name": "Python"
         }
       ],
       "versions": [],
@@ -1988,12 +2168,24 @@
       "license": "BSD-2-Clause",
       "langs": [
         {
-          "name": "Python",
-          "pct": 100,
-          "size": 100
+          "pct": 90,
+          "name": "Python"
+        },
+        {
+          "pct": 7,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 3,
+          "name": "Makefile"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/engie-group/shaystack/releases/tag/v0.8.21rc",
+          "name": "v0.8.21rc"
+        }
+      ],
       "topics": [
         "haystack",
         "iot",
@@ -2006,13 +2198,13 @@
       "name": "Youtube-Video-Transcribe-Summarizer-LLM-App",
       "fullName": "GURPREETKAURJETHRA/Youtube-Video-Transcribe-Summarizer-LLM-App",
       "category": "AI & ML",
-      "stars": 23,
+      "stars": 25,
       "author": "GURPREETKAURJETHRA",
-      "avatar": "https://avatars.githubusercontent.com/u/100081334?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/100081334?u=f60f2983103176019d12da171ee94014b6ddc50e&v=4",
       "desc": "YouTube Video Summarization App built using open source LLM and Framework like Llama 2, Haystack, Whisper, and Streamlit. This app smoothly runs on CPU as Llama 2 model is in GGUF format loaded through Llama.cpp.",
       "demo": "https://github.com/GURPREETKAURJETHRA/END-TO-END-GENERATIVE-AI-PROJECTS",
       "repoUrl": "https://github.com/GURPREETKAURJETHRA/Youtube-Video-Transcribe-Summarizer-LLM-App",
-      "long1": "YouTube Video Summarization App built using open source LLM and Framework like Llama 2, Haystack, Whisper, and Streamlit. This app smoothly runs on CPU as Llama 2 model is in GGUF format loaded through Llama.cpp. Maintained by GURPREETKAURJETHRA on GitHub, where it has earned 23 stars from the community.",
+      "long1": "YouTube Video Summarization App built using open source LLM and Framework like Llama 2, Haystack, Whisper, and Streamlit. This app smoothly runs on CPU as Llama 2 model is in GGUF format loaded through Llama.cpp. Maintained by GURPREETKAURJETHRA on GitHub, where it has earned 25 stars from the community.",
       "long2": "It's actively developed around generative-ai, haystack, haystack-ai, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Python",
@@ -2025,9 +2217,8 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "Python",
           "pct": 100,
-          "size": 100
+          "name": "Python"
         }
       ],
       "versions": [],
@@ -2051,33 +2242,36 @@
       "category": "APIs",
       "stars": 20,
       "author": "divinerapier",
-      "avatar": "https://avatars.githubusercontent.com/u/21213088?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/21213088?u=800616a6b7f95747e0ffa2cba2f74e3266967b8b&v=4",
       "desc": "A distributed object file system inspired by the paper Beaver which was published by Facebook Inc. at 2010.",
       "demo": null,
       "repoUrl": "https://github.com/divinerapier/weaver",
       "long1": "A distributed object file system inspired by the paper Beaver which was published by Facebook Inc. at 2010. Maintained by divinerapier on GitHub, where it has earned 20 stars from the community.",
-      "long2": "It's actively developed around filesystem, grpc, haystack, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around haystack, filesystem, rust, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "Filesystem",
-        "Grpc",
         "Haystack",
-        "Rust"
+        "Filesystem",
+        "Rust",
+        "Grpc"
       ],
-      "updated": "4 years ago",
+      "updated": "5 years ago",
       "license": "Apache-2.0",
       "langs": [
         {
-          "name": "Rust",
-          "pct": 100,
-          "size": 100
+          "pct": 99,
+          "name": "Rust"
+        },
+        {
+          "pct": 1,
+          "name": "Makefile"
         }
       ],
       "versions": [],
       "topics": [
-        "filesystem",
-        "grpc",
         "haystack",
-        "rust"
+        "filesystem",
+        "rust",
+        "grpc"
       ],
       "addedAt": "2026-07-15T22:28:33.189672+00:00"
     },
@@ -2105,9 +2299,8 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "Python",
           "pct": 100,
-          "size": 100
+          "name": "Python"
         }
       ],
       "versions": [],
@@ -2125,13 +2318,60 @@
       "addedAt": "2026-07-15T22:28:33.189672+00:00"
     },
     {
+      "slug": "haystack-docker",
+      "name": "haystack-docker",
+      "fullName": "ExpediaDotCom/haystack-docker",
+      "category": "UI Kits",
+      "stars": 18,
+      "author": "ExpediaDotCom",
+      "avatar": "https://avatars.githubusercontent.com/u/8900718?v=4",
+      "desc": "Repository with docker-compose files to start Haystack components in sandbox",
+      "demo": null,
+      "repoUrl": "https://github.com/ExpediaDotCom/haystack-docker",
+      "long1": "Repository with docker-compose files to start Haystack components in sandbox. Maintained by ExpediaDotCom on GitHub, where it has earned 18 stars from the community.",
+      "long2": "It's actively developed around haystack, docker, zipkin, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TSQL",
+        "Haystack",
+        "Docker",
+        "Zipkin",
+        "Opentracing"
+      ],
+      "updated": "6 years ago",
+      "license": "Apache-2.0",
+      "langs": [
+        {
+          "pct": 48,
+          "name": "TSQL"
+        },
+        {
+          "pct": 39,
+          "name": "SQLPL"
+        },
+        {
+          "pct": 13,
+          "name": "Shell"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "haystack",
+        "docker",
+        "zipkin",
+        "opentracing",
+        "distributed-tracing",
+        "docker-compose"
+      ],
+      "addedAt": "2026-07-15T22:28:33.189672+00:00"
+    },
+    {
       "slug": "unstructuredio-haystack",
       "name": "unstructuredio-haystack",
       "fullName": "TuanaCelik/unstructuredio-haystack",
       "category": "AI & ML",
       "stars": 18,
       "author": "TuanaCelik",
-      "avatar": "https://avatars.githubusercontent.com/u/15802862?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/15802862?u=472ee02e9798172275e12f8c7d9e8dff35d9e74d&v=4",
       "desc": "💙 Unstructured Data Connectors for Haystack 2.0",
       "demo": "https://haystack.deepset.ai/integrations",
       "repoUrl": "https://github.com/TuanaCelik/unstructuredio-haystack",
@@ -2147,12 +2387,32 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "Python",
           "pct": 100,
-          "size": 100
+          "name": "Python"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/TuanaCelik/unstructuredio-haystack/releases/tag/v0.0.7",
+          "name": "v0.0.7"
+        },
+        {
+          "url": "https://github.com/TuanaCelik/unstructuredio-haystack/releases/tag/v0.0.6",
+          "name": "v0.0.6"
+        },
+        {
+          "url": "https://github.com/TuanaCelik/unstructuredio-haystack/releases/tag/v0.0.5",
+          "name": "v0.0.5"
+        },
+        {
+          "url": "https://github.com/TuanaCelik/unstructuredio-haystack/releases/tag/v0.0.4",
+          "name": "v0.0.4"
+        },
+        {
+          "url": "https://github.com/TuanaCelik/unstructuredio-haystack/releases/tag/v0.0.3",
+          "name": "v0.0.3"
+        }
+      ],
       "topics": [
         "haystack",
         "llm",
@@ -2163,53 +2423,13 @@
       "addedAt": "2026-07-15T22:28:33.189672+00:00"
     },
     {
-      "slug": "haystack-docker",
-      "name": "haystack-docker",
-      "fullName": "ExpediaDotCom/haystack-docker",
-      "category": "UI Kits",
-      "stars": 18,
-      "author": "ExpediaDotCom",
-      "avatar": "https://avatars.githubusercontent.com/u/8900718?v=4",
-      "desc": "Repository with docker-compose files to start Haystack components in sandbox",
-      "demo": null,
-      "repoUrl": "https://github.com/ExpediaDotCom/haystack-docker",
-      "long1": "Repository with docker-compose files to start Haystack components in sandbox. Maintained by ExpediaDotCom on GitHub, where it has earned 18 stars from the community.",
-      "long2": "It's actively developed around distributed-tracing, docker, docker-compose, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TSQL",
-        "Distributed Tracing",
-        "Docker",
-        "Docker Compose",
-        "Haystack"
-      ],
-      "updated": "6 years ago",
-      "license": "Apache-2.0",
-      "langs": [
-        {
-          "name": "TSQL",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "distributed-tracing",
-        "docker",
-        "docker-compose",
-        "haystack",
-        "opentracing",
-        "zipkin"
-      ],
-      "addedAt": "2026-07-15T22:28:33.189672+00:00"
-    },
-    {
       "slug": "multimodal-agent-workshop",
       "name": "multimodal-agent-workshop",
       "fullName": "bilgeyucel/multimodal-agent-workshop",
       "category": "AI & ML",
       "stars": 17,
       "author": "bilgeyucel",
-      "avatar": "https://avatars.githubusercontent.com/u/25897116?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/25897116?u=66d966c8500a9fa0030861dbcb8f087560fa4d53&v=4",
       "desc": "🖼️ Workshop: Build a multimodal AI agent with Haystack & GPT-4o — featuring image understanding, document retrieval, conversational memory, and human-in-the-loop safety controls",
       "demo": null,
       "repoUrl": "https://github.com/bilgeyucel/multimodal-agent-workshop",
@@ -2222,13 +2442,16 @@
         "Haystack Ai",
         "Human In The Loop"
       ],
-      "updated": "2 months ago",
+      "updated": "3 months ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "Jupyter Notebook",
           "pct": 100,
-          "size": 100
+          "name": "Jupyter Notebook"
+        },
+        {
+          "pct": 0,
+          "name": "Python"
         }
       ],
       "versions": [],
@@ -2241,6 +2464,90 @@
         "multimodal",
         "multimodal-agent",
         "short-term-memory"
+      ],
+      "addedAt": "2026-07-15T22:28:33.189672+00:00"
+    },
+    {
+      "slug": "llama2-haystack",
+      "name": "llama2-haystack",
+      "fullName": "anakin87/llama2-haystack",
+      "category": "AI & ML",
+      "stars": 16,
+      "author": "anakin87",
+      "avatar": "https://avatars.githubusercontent.com/u/44616784?u=911d52e89d3125855ede014c47e980bce8468a2e&v=4",
+      "desc": "Using Llama2 with Haystack, the NLP/LLM framework.",
+      "demo": null,
+      "repoUrl": "https://github.com/anakin87/llama2-haystack",
+      "long1": "Using Llama2 with Haystack, the NLP/LLM framework. Maintained by anakin87 on GitHub, where it has earned 16 stars from the community.",
+      "long2": "It's actively developed around haystack, large-language-models, llama, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Jupyter Notebook",
+        "Haystack",
+        "Large Language Models",
+        "Llama",
+        "Llm"
+      ],
+      "updated": "3 years ago",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "Jupyter Notebook"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "haystack",
+        "large-language-models",
+        "llama",
+        "llm",
+        "nlp"
+      ],
+      "addedAt": "2026-07-15T22:28:33.189672+00:00"
+    },
+    {
+      "slug": "whispermesh",
+      "name": "WhisperMesh",
+      "fullName": "Mouez-Yazidi/WhisperMesh",
+      "category": "AI & ML",
+      "stars": 16,
+      "author": "Mouez-Yazidi",
+      "avatar": "https://avatars.githubusercontent.com/u/56160970?u=dff2098076cd05192768af34ca838e33f42dc40e&v=4",
+      "desc": "WhisperMesh is an advanced chatbot that integrates voice and text interactions, delivering personalized responses through LLM models and a sophisticated vector database. Leveraging the RAG framework from Haystack, it ensures engaging, data-driven conversations that adapt to your preferred style.",
+      "demo": "https://whispermesh.streamlit.app/",
+      "repoUrl": "https://github.com/Mouez-Yazidi/WhisperMesh",
+      "long1": "WhisperMesh is an advanced chatbot that integrates voice and text interactions, delivering personalized responses through LLM models and a sophisticated vector database. Leveraging the RAG framework from Haystack, it ensures engaging, data-driven conversations that adapt to your preferred style. Maintained by Mouez-Yazidi on GitHub, where it has earned 16 stars from the community.",
+      "long2": "It's actively developed around agent, chatbot, generative-ai, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Python",
+        "Agent",
+        "Chatbot",
+        "Generative Ai",
+        "Haystack"
+      ],
+      "updated": "1 year ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 98,
+          "name": "Python"
+        },
+        {
+          "pct": 2,
+          "name": "Dockerfile"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "agent",
+        "chatbot",
+        "generative-ai",
+        "haystack",
+        "haystack-pipeline",
+        "rag",
+        "speach-to-text",
+        "text-to-speech",
+        "voice-assistant"
       ],
       "addedAt": "2026-07-15T22:28:33.189672+00:00"
     },
@@ -2265,57 +2572,34 @@
       "license": "AFL-3.0",
       "langs": [
         {
-          "name": "C#",
           "pct": 100,
-          "size": 100
+          "name": "C#"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/SPIE-Worksphere/haystack-csharp/releases/tag/1.8.3",
+          "name": "1.8.3"
+        },
+        {
+          "url": "https://github.com/SPIE-Worksphere/haystack-csharp/releases/tag/1.1.0",
+          "name": "1.1.0"
+        },
+        {
+          "url": "https://github.com/SPIE-Worksphere/haystack-csharp/releases/tag/1.0.9",
+          "name": "1.0.9"
+        },
+        {
+          "url": "https://github.com/SPIE-Worksphere/haystack-csharp/releases/tag/1.0.8",
+          "name": "1.0.8"
+        },
+        {
+          "url": "https://github.com/SPIE-Worksphere/haystack-csharp/releases/tag/1.0.7",
+          "name": "1.0.7"
+        }
+      ],
       "topics": [
         "haystack"
-      ],
-      "addedAt": "2026-07-15T22:28:33.189672+00:00"
-    },
-    {
-      "slug": "whispermesh",
-      "name": "WhisperMesh",
-      "fullName": "Mouez-Yazidi/WhisperMesh",
-      "category": "AI & ML",
-      "stars": 16,
-      "author": "Mouez-Yazidi",
-      "avatar": "https://avatars.githubusercontent.com/u/56160970?v=4",
-      "desc": "WhisperMesh is an advanced chatbot that integrates voice and text interactions, delivering personalized responses through LLM models and a sophisticated vector database. Leveraging the RAG framework from Haystack, it ensures engaging, data-driven conversations that adapt to your preferred style.",
-      "demo": "https://whispermesh.streamlit.app/",
-      "repoUrl": "https://github.com/Mouez-Yazidi/WhisperMesh",
-      "long1": "WhisperMesh is an advanced chatbot that integrates voice and text interactions, delivering personalized responses through LLM models and a sophisticated vector database. Leveraging the RAG framework from Haystack, it ensures engaging, data-driven conversations that adapt to your preferred style. Maintained by Mouez-Yazidi on GitHub, where it has earned 16 stars from the community.",
-      "long2": "It's actively developed around agent, chatbot, generative-ai, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Python",
-        "Agent",
-        "Chatbot",
-        "Generative Ai",
-        "Haystack"
-      ],
-      "updated": "1 year ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "Python",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "agent",
-        "chatbot",
-        "generative-ai",
-        "haystack",
-        "haystack-pipeline",
-        "rag",
-        "speach-to-text",
-        "text-to-speech",
-        "voice-assistant"
       ],
       "addedAt": "2026-07-15T22:28:33.189672+00:00"
     },
@@ -2326,7 +2610,7 @@
       "category": "AI & ML",
       "stars": 16,
       "author": "ArzelaAscoIi",
-      "avatar": "https://avatars.githubusercontent.com/u/37148029?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/37148029?u=fda4b35cceb7393e95eac2a8965685cbcbd3212b&v=4",
       "desc": "🤖 A GitHub bot that summarizes your actions throughout a day and lists all your achievements. Built with Haystack and OpenAI",
       "demo": null,
       "repoUrl": "https://github.com/ArzelaAscoIi/haystack-github-bot",
@@ -2341,9 +2625,8 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "Python",
           "pct": 100,
-          "size": 100
+          "name": "Python"
         }
       ],
       "versions": [],
@@ -2351,92 +2634,6 @@
         "haystack",
         "llm",
         "python"
-      ],
-      "addedAt": "2026-07-15T22:28:33.189672+00:00"
-    },
-    {
-      "slug": "llama2-haystack",
-      "name": "llama2-haystack",
-      "fullName": "anakin87/llama2-haystack",
-      "category": "AI & ML",
-      "stars": 16,
-      "author": "anakin87",
-      "avatar": "https://avatars.githubusercontent.com/u/44616784?v=4",
-      "desc": "Using Llama2 with Haystack, the NLP/LLM framework.",
-      "demo": null,
-      "repoUrl": "https://github.com/anakin87/llama2-haystack",
-      "long1": "Using Llama2 with Haystack, the NLP/LLM framework. Maintained by anakin87 on GitHub, where it has earned 16 stars from the community.",
-      "long2": "It's actively developed around haystack, large-language-models, llama, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Jupyter Notebook",
-        "Haystack",
-        "Large Language Models",
-        "Llama",
-        "Llm"
-      ],
-      "updated": "3 years ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "Jupyter Notebook",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "haystack",
-        "large-language-models",
-        "llama",
-        "llm",
-        "nlp"
-      ],
-      "addedAt": "2026-07-15T22:28:33.189672+00:00"
-    },
-    {
-      "slug": "outlines-haystack",
-      "name": "outlines-haystack",
-      "fullName": "EdAbati/outlines-haystack",
-      "category": "AI & ML",
-      "stars": 14,
-      "author": "EdAbati",
-      "avatar": "https://avatars.githubusercontent.com/u/29585319?v=4",
-      "desc": "Use `outlines` generators with Haystack.",
-      "demo": "https://pypi.org/project/outlines-haystack/",
-      "repoUrl": "https://github.com/EdAbati/outlines-haystack",
-      "long1": "Use `outlines` generators with Haystack. Maintained by EdAbati on GitHub, where it has earned 14 stars from the community.",
-      "long2": "It's actively developed around ai, generative-ai, haystack, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Python",
-        "Ai",
-        "Generative Ai",
-        "Haystack",
-        "Llm"
-      ],
-      "updated": "1 week ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "Python",
-          "pct": 82.515,
-          "size": 192997
-        },
-        {
-          "name": "Jupyter Notebook",
-          "pct": 17.485,
-          "size": 40897
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "ai",
-        "generative-ai",
-        "haystack",
-        "llm",
-        "machine-learning",
-        "nlp",
-        "outlines",
-        "structured-generation"
       ],
       "addedAt": "2026-07-15T22:28:33.189672+00:00"
     },
@@ -2464,9 +2661,12 @@
       "license": "—",
       "langs": [
         {
-          "name": "Jupyter Notebook",
-          "pct": 100,
-          "size": 100
+          "pct": 65,
+          "name": "Jupyter Notebook"
+        },
+        {
+          "pct": 35,
+          "name": "Python"
         }
       ],
       "versions": [],
@@ -2477,6 +2677,72 @@
         "nlp",
         "opensearch",
         "sagemaker"
+      ],
+      "addedAt": "2026-07-15T22:28:33.189672+00:00"
+    },
+    {
+      "slug": "outlines-haystack",
+      "name": "outlines-haystack",
+      "fullName": "EdAbati/outlines-haystack",
+      "category": "AI & ML",
+      "stars": 14,
+      "author": "EdAbati",
+      "avatar": "https://avatars.githubusercontent.com/u/29585319?u=255c598a0280edde5ca5670976d8fdb055771931&v=4",
+      "desc": "Use `outlines` generators with Haystack.",
+      "demo": "https://pypi.org/project/outlines-haystack/",
+      "repoUrl": "https://github.com/EdAbati/outlines-haystack",
+      "long1": "Use `outlines` generators with Haystack. Maintained by EdAbati on GitHub, where it has earned 14 stars from the community.",
+      "long2": "It's actively developed around ai, generative-ai, haystack, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Python",
+        "Ai",
+        "Generative Ai",
+        "Haystack",
+        "Llm"
+      ],
+      "updated": "yesterday",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 83,
+          "name": "Python"
+        },
+        {
+          "pct": 17,
+          "name": "Jupyter Notebook"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/EdAbati/outlines-haystack/releases/tag/1.0.0",
+          "name": "1.0.0"
+        },
+        {
+          "url": "https://github.com/EdAbati/outlines-haystack/releases/tag/0.2.5",
+          "name": "0.2.5"
+        },
+        {
+          "url": "https://github.com/EdAbati/outlines-haystack/releases/tag/0.2.4",
+          "name": "0.2.4"
+        },
+        {
+          "url": "https://github.com/EdAbati/outlines-haystack/releases/tag/0.2.3",
+          "name": "0.2.3"
+        },
+        {
+          "url": "https://github.com/EdAbati/outlines-haystack/releases/tag/0.2.2",
+          "name": "0.2.2"
+        }
+      ],
+      "topics": [
+        "ai",
+        "generative-ai",
+        "haystack",
+        "llm",
+        "machine-learning",
+        "nlp",
+        "outlines",
+        "structured-generation"
       ],
       "addedAt": "2026-07-15T22:28:33.189672+00:00"
     },
@@ -2504,9 +2770,12 @@
       "license": "Apache-2.0",
       "langs": [
         {
-          "name": "Jupyter Notebook",
-          "pct": 100,
-          "size": 100
+          "pct": 64,
+          "name": "Jupyter Notebook"
+        },
+        {
+          "pct": 36,
+          "name": "Python"
         }
       ],
       "versions": [],
@@ -2522,55 +2791,7 @@
         "pdf-to-json",
         "pdf-to-text",
         "rag-pipeline",
-        "retrieval-augmented-generation",
-        "table-detection",
-        "table-recognition"
-      ],
-      "addedAt": "2026-07-15T22:28:33.189672+00:00"
-    },
-    {
-      "slug": "who-killed-laura-palmer",
-      "name": "who-killed-laura-palmer",
-      "fullName": "anakin87/who-killed-laura-palmer",
-      "category": "AI & ML",
-      "stars": 11,
-      "author": "anakin87",
-      "avatar": "https://avatars.githubusercontent.com/u/44616784?v=4",
-      "desc": "Simple Question Answering system, based on data crawled from Twin Peaks Wiki. It is built using 🔍 Haystack, an awesome open-source framework for building search systems that work intelligently over large document collections.",
-      "demo": null,
-      "repoUrl": "https://github.com/anakin87/who-killed-laura-palmer",
-      "long1": "Simple Question Answering system, based on data crawled from Twin Peaks Wiki. It is built using 🔍 Haystack, an awesome open-source framework for building search systems that work intelligently over large document collections. Maintained by anakin87 on GitHub, where it has earned 11 stars from the community.",
-      "long2": "It's actively developed around haystack, information-retrieval, natural-language-processing, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Jupyter Notebook",
-        "Haystack",
-        "Information Retrieval",
-        "Natural Language Processing",
-        "Neural Search"
-      ],
-      "updated": "3 years ago",
-      "license": "Apache-2.0",
-      "langs": [
-        {
-          "name": "Jupyter Notebook",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "haystack",
-        "information-retrieval",
-        "natural-language-processing",
-        "neural-search",
-        "nlp",
-        "python",
-        "question-answering",
-        "semantic-search",
-        "space",
-        "streamlit",
-        "streamlit-webapp",
-        "transformers"
+        "retrieval-augmented-generation"
       ],
       "addedAt": "2026-07-15T22:28:33.189672+00:00"
     },
@@ -2581,7 +2802,7 @@
       "category": "APIs",
       "stars": 11,
       "author": "vblagoje",
-      "avatar": "https://avatars.githubusercontent.com/u/458335?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/458335?u=eed2cb5afa21ec59651951ba0f73d745abc820e7&v=4",
       "desc": "Enables LLM integration with OpenAPI-defined services through function-calling JSON",
       "demo": null,
       "repoUrl": "https://github.com/vblagoje/openapi-service-client",
@@ -2598,12 +2819,32 @@
       "license": "Apache-2.0",
       "langs": [
         {
-          "name": "Python",
           "pct": 100,
-          "size": 100
+          "name": "Python"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/vblagoje/openapi-service-client/releases/tag/v0.0.10",
+          "name": "v0.0.10"
+        },
+        {
+          "url": "https://github.com/vblagoje/openapi-service-client/releases/tag/v0.0.9",
+          "name": "v0.0.9"
+        },
+        {
+          "url": "https://github.com/vblagoje/openapi-service-client/releases/tag/v0.0.8",
+          "name": "v0.0.8"
+        },
+        {
+          "url": "https://github.com/vblagoje/openapi-service-client/releases/tag/v0.0.7",
+          "name": "v0.0.7"
+        },
+        {
+          "url": "https://github.com/vblagoje/openapi-service-client/releases/tag/v0.0.6",
+          "name": "v0.0.6"
+        }
+      ],
       "topics": [
         "anthropic",
         "cohere",
@@ -2612,6 +2853,55 @@
         "openapi",
         "openapi-spec",
         "openapi-specification"
+      ],
+      "addedAt": "2026-07-15T22:28:33.189672+00:00"
+    },
+    {
+      "slug": "who-killed-laura-palmer",
+      "name": "who-killed-laura-palmer",
+      "fullName": "anakin87/who-killed-laura-palmer",
+      "category": "AI & ML",
+      "stars": 11,
+      "author": "anakin87",
+      "avatar": "https://avatars.githubusercontent.com/u/44616784?u=911d52e89d3125855ede014c47e980bce8468a2e&v=4",
+      "desc": "Simple Question Answering system, based on data crawled from Twin Peaks Wiki. It is built using 🔍 Haystack, an awesome open-source framework for building search systems that work intelligently over large document collections.",
+      "demo": null,
+      "repoUrl": "https://github.com/anakin87/who-killed-laura-palmer",
+      "long1": "Simple Question Answering system, based on data crawled from Twin Peaks Wiki. It is built using 🔍 Haystack, an awesome open-source framework for building search systems that work intelligently over large document collections. Maintained by anakin87 on GitHub, where it has earned 11 stars from the community.",
+      "long2": "It's actively developed around haystack, information-retrieval, natural-language-processing, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Jupyter Notebook",
+        "Haystack",
+        "Information Retrieval",
+        "Natural Language Processing",
+        "Neural Search"
+      ],
+      "updated": "3 years ago",
+      "license": "Apache-2.0",
+      "langs": [
+        {
+          "pct": 95,
+          "name": "Jupyter Notebook"
+        },
+        {
+          "pct": 5,
+          "name": "Python"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "haystack",
+        "information-retrieval",
+        "natural-language-processing",
+        "neural-search",
+        "nlp",
+        "python",
+        "question-answering",
+        "semantic-search",
+        "space",
+        "streamlit",
+        "streamlit-webapp",
+        "transformers"
       ],
       "addedAt": "2026-07-15T22:28:33.189672+00:00"
     }

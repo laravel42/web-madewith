@@ -1,49 +1,56 @@
 {
   "slug": "directus",
-  "scrapedAt": "2026-07-22T09:29:07.523165+00:00",
+  "scrapedAt": "2026-08-05T04:38:16.011335+00:00",
   "source": "scrapy-github",
-  "totalRepos": 101,
+  "totalRepos": 116,
   "projects": [
     {
       "slug": "agency-os",
       "name": "agency-os",
       "fullName": "directus-labs/agency-os",
       "category": "UI Kits",
-      "stars": 955,
+      "stars": 959,
       "author": "directus-labs",
       "avatar": "https://avatars.githubusercontent.com/u/79210894?v=4",
       "desc": "The open source operating system for digital agencies. Built with Directus and Nuxt.",
       "demo": "https://agencyos.dev",
       "repoUrl": "https://github.com/directus-labs/agency-os",
-      "long1": "The open source operating system for digital agencies. Built with Directus and Nuxt. Maintained by directus-labs on GitHub, where it has earned 955 stars from the community.",
-      "long2": "It's actively developed around crm, directus, headless-cms, and is a solid reference for anyone building with these tools.",
+      "long1": "The open source operating system for digital agencies. Built with Directus and Nuxt. Maintained by directus-labs on GitHub, where it has earned 959 stars from the community.",
+      "long2": "It's actively developed around directus, headless-cms, nuxt, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Vue",
-        "Crm",
         "Directus",
         "Headless Cms",
-        "Nuxt"
+        "Nuxt",
+        "Tailwind CSS"
       ],
       "updated": "5 months ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "Vue",
-          "pct": 100,
-          "size": 100
+          "pct": 66,
+          "name": "Vue"
+        },
+        {
+          "pct": 32,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 2,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
       "topics": [
-        "crm",
         "directus",
         "headless-cms",
         "nuxt",
-        "nuxt-ui",
         "tailwindcss",
         "typescript",
         "vuejs",
-        "vueuse"
+        "vueuse",
+        "crm",
+        "nuxt-ui"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -52,35 +59,63 @@
       "name": "directus-sync",
       "fullName": "tractr/directus-sync",
       "category": "DevTools",
-      "stars": 459,
+      "stars": 458,
       "author": "tractr",
       "avatar": "https://avatars.githubusercontent.com/u/4560599?v=4",
       "desc": "A CLI tool for synchronizing the schema and configuration of Directus across various environments.",
       "demo": "https://tractr.github.io/directus-sync/",
       "repoUrl": "https://github.com/tractr/directus-sync",
-      "long1": "A CLI tool for synchronizing the schema and configuration of Directus across various environments. Maintained by tractr on GitHub, where it has earned 459 stars from the community.",
-      "long2": "It's actively developed around devops, directus, directus-extension, and is a solid reference for anyone building with these tools.",
+      "long1": "A CLI tool for synchronizing the schema and configuration of Directus across various environments. Maintained by tractr on GitHub, where it has earned 458 stars from the community.",
+      "long2": "It's actively developed around directus-extension, devops, directus, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
+        "Directus Extension",
         "Devops",
         "Directus",
-        "Directus Extension",
         "Environments"
       ],
-      "updated": "3 months ago",
+      "updated": "4 months ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 90,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 6,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 4,
+          "name": "MDX"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/tractr/directus-sync/releases/tag/directus-sync%403.5.1",
+          "name": "directus-sync@3.5.1"
+        },
+        {
+          "url": "https://github.com/tractr/directus-sync/releases/tag/directus-sync%403.5.0",
+          "name": "directus-sync@3.5.0"
+        },
+        {
+          "url": "https://github.com/tractr/directus-sync/releases/tag/directus-sync%403.4.1",
+          "name": "directus-sync@3.4.1"
+        },
+        {
+          "url": "https://github.com/tractr/directus-sync/releases/tag/directus-sync%403.4.0",
+          "name": "directus-sync@3.4.0"
+        },
+        {
+          "url": "https://github.com/tractr/directus-sync/releases/tag/directus-sync%403.3.0",
+          "name": "directus-sync@3.3.0"
+        }
+      ],
       "topics": [
+        "directus-extension",
         "devops",
         "directus",
-        "directus-extension",
         "environments"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
@@ -90,43 +125,67 @@
       "name": "nuxt-directus",
       "fullName": "Intevel/nuxt-directus",
       "category": "DevTools",
-      "stars": 316,
+      "stars": 317,
       "author": "Intevel",
-      "avatar": "https://avatars.githubusercontent.com/u/59223342?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/59223342?u=619d2119cc83aaf1678adf6017a4a09ddceb59c4&v=4",
       "desc": "🐰 Easily integrate Directus to your Nuxt application.",
       "demo": "https://nuxt-directus.de/",
       "repoUrl": "https://github.com/Intevel/nuxt-directus",
-      "long1": "🐰 Easily integrate Directus to your Nuxt application. Maintained by Intevel on GitHub, where it has earned 316 stars from the community.",
-      "long2": "It's actively developed around collaborate, directus, directus-module, and is a solid reference for anyone building with these tools.",
+      "long1": "🐰 Easily integrate Directus to your Nuxt application. Maintained by Intevel on GitHub, where it has earned 317 stars from the community.",
+      "long2": "It's actively developed around directus, nuxt, nuxt3, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Collaborate",
         "Directus",
-        "Directus Module",
-        "Nuxt"
+        "Nuxt",
+        "Nuxt3",
+        "Vue3"
       ],
       "updated": "1 year ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 85,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 15,
+          "name": "Vue"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/Intevel/nuxt-directus/releases/tag/v5.7.0",
+          "name": "v5.7.0"
+        },
+        {
+          "url": "https://github.com/Intevel/nuxt-directus/releases/tag/v5.6.1",
+          "name": "v5.6.1"
+        },
+        {
+          "url": "https://github.com/Intevel/nuxt-directus/releases/tag/v5.5.0",
+          "name": "v5.5.0"
+        },
+        {
+          "url": "https://github.com/Intevel/nuxt-directus/releases/tag/v5.4.4",
+          "name": "v5.4.4"
+        },
+        {
+          "url": "https://github.com/Intevel/nuxt-directus/releases/tag/v5.4.3",
+          "name": "v5.4.3"
+        }
+      ],
       "topics": [
-        "collaborate",
         "directus",
-        "directus-module",
         "nuxt",
-        "nuxt-community",
-        "nuxt-directus",
-        "nuxt-module",
         "nuxt3",
-        "nuxtdirectus",
+        "vue3",
+        "nuxt-module",
         "nuxtjs",
-        "vue3"
+        "directus-module",
+        "nuxt-directus",
+        "nuxtdirectus",
+        "nuxt-community",
+        "collaborate"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -153,12 +212,40 @@
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 95,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 5,
+          "name": "Vue"
+        },
+        {
+          "pct": 0,
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/rezo-labs/directus-extension-computed-interface/releases/tag/v1.9.0",
+          "name": "v1.9.0"
+        },
+        {
+          "url": "https://github.com/rezo-labs/directus-extension-computed-interface/releases/tag/v1.8.2",
+          "name": "v1.8.2"
+        },
+        {
+          "url": "https://github.com/rezo-labs/directus-extension-computed-interface/releases/tag/v1.8.1",
+          "name": "v1.8.1"
+        },
+        {
+          "url": "https://github.com/rezo-labs/directus-extension-computed-interface/releases/tag/v1.8.0",
+          "name": "v1.8.0"
+        },
+        {
+          "url": "https://github.com/rezo-labs/directus-extension-computed-interface/releases/tag/v1.7.0",
+          "name": "v1.7.0"
+        }
+      ],
       "topics": [
         "directus",
         "directus-extension",
@@ -173,65 +260,70 @@
       "category": "DevTools",
       "stars": 209,
       "author": "formfcw",
-      "avatar": "https://avatars.githubusercontent.com/u/78852214?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/78852214?u=42b7bba1e0cc4096860f327002391b95918eaf2a&v=4",
       "desc": "A rich text editor (WYSIWYG) with JSON output that allows the integration of M2A relations to make it extremely flexible. A truly rich editor for Directus.",
       "demo": "https://www.npmjs.com/package/directus-extension-flexible-editor",
       "repoUrl": "https://github.com/formfcw/directus-extension-flexible-editor",
       "long1": "A rich text editor (WYSIWYG) with JSON output that allows the integration of M2A relations to make it extremely flexible. A truly rich editor for Directus. Maintained by formfcw on GitHub, where it has earned 209 stars from the community.",
-      "long2": "It's actively developed around block-editor, directus, directus-custom-bundle, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around block-editor, directus, directus-custom-display, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
         "Block Editor",
         "Directus",
-        "Directus Custom Bundle",
-        "Directus Custom Display"
+        "Directus Custom Display",
+        "Directus Custom Interface"
       ],
-      "updated": "1 month ago",
+      "updated": "2 months ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 65.111,
-          "size": 149697
+          "pct": 66,
+          "name": "TypeScript"
         },
         {
-          "name": "Vue",
-          "pct": 34.423,
-          "size": 79143
+          "pct": 34,
+          "name": "Vue"
         },
         {
-          "name": "HTML",
-          "pct": 0.266,
-          "size": 611
-        },
-        {
-          "name": "JavaScript",
-          "pct": 0.2,
-          "size": 459
+          "pct": 0,
+          "name": "HTML"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/formfcw/directus-extension-flexible-editor/releases/tag/v1.8.4",
+          "name": "v1.8.4"
+        },
+        {
+          "url": "https://github.com/formfcw/directus-extension-flexible-editor/releases/tag/v1.8.3",
+          "name": "v1.8.3"
+        },
+        {
+          "url": "https://github.com/formfcw/directus-extension-flexible-editor/releases/tag/v1.8.2",
+          "name": "v1.8.2"
+        },
+        {
+          "url": "https://github.com/formfcw/directus-extension-flexible-editor/releases/tag/v1.8.1",
+          "name": "v1.8.1"
+        },
+        {
+          "url": "https://github.com/formfcw/directus-extension-flexible-editor/releases/tag/v1.8.0",
+          "name": "v1.8.0"
+        }
+      ],
       "topics": [
         "block-editor",
         "directus",
-        "directus-custom-bundle",
         "directus-custom-display",
         "directus-custom-interface",
         "directus-extension",
         "editor",
         "flexible-content",
         "flexible-editor",
-        "internal-linking",
         "json-editor",
-        "m2a-editor",
-        "m2a-references",
         "node-editor",
         "prosemirror",
-        "rich-text",
-        "rich-text-editor",
-        "tiptap",
-        "tiptap-editor",
-        "wysiwg"
+        "rich-text"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -240,36 +332,64 @@
       "name": "directus-extension-editorjs-interface",
       "fullName": "dimitrov-adrian/directus-extension-editorjs-interface",
       "category": "DevTools",
-      "stars": 187,
+      "stars": 188,
       "author": "dimitrov-adrian",
       "avatar": "https://avatars.githubusercontent.com/u/1009639?v=4",
       "desc": "Block editor (Editor.js) interface for Directus 9",
       "demo": "https://www.npmjs.com/package/directus-extension-editorjs",
       "repoUrl": "https://github.com/dimitrov-adrian/directus-extension-editorjs-interface",
-      "long1": "Block editor (Editor.js) interface for Directus 9. Maintained by dimitrov-adrian on GitHub, where it has earned 187 stars from the community.",
-      "long2": "It's actively developed around block-editor, directus, directus-extension, and is a solid reference for anyone building with these tools.",
+      "long1": "Block editor (Editor.js) interface for Directus 9. Maintained by dimitrov-adrian on GitHub, where it has earned 188 stars from the community.",
+      "long2": "It's actively developed around directus, directus-extension, directus-extension-interface, and is a solid reference for anyone building with these tools.",
       "stack": [
         "CSS",
-        "Block Editor",
         "Directus",
         "Directus Extension",
-        "Directus Extension Interface"
+        "Directus Extension Interface",
+        "Block Editor"
       ],
       "updated": "3 years ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "CSS",
-          "pct": 100,
-          "size": 100
+          "pct": 50,
+          "name": "CSS"
+        },
+        {
+          "pct": 32,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 18,
+          "name": "Vue"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-editorjs-interface/releases/tag/v1.5.0",
+          "name": "v1.5.0"
+        },
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-editorjs-interface/releases/tag/v1.4.0",
+          "name": "v1.4.0"
+        },
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-editorjs-interface/releases/tag/v1.3.1",
+          "name": "v1.3.1"
+        },
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-editorjs-interface/releases/tag/v1.3.0",
+          "name": "v1.3.0"
+        },
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-editorjs-interface/releases/tag/v1.2.1",
+          "name": "v1.2.1"
+        }
+      ],
       "topics": [
-        "block-editor",
         "directus",
         "directus-extension",
         "directus-extension-interface",
+        "block-editor",
         "editorjs"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
@@ -292,24 +412,48 @@
         "Directus",
         "Directus Extension",
         "Directus Extension Module",
-        "Role As Code"
+        "Schema As Code"
       ],
       "updated": "2 years ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "Vue",
-          "pct": 100,
-          "size": 100
+          "pct": 97,
+          "name": "Vue"
+        },
+        {
+          "pct": 3,
+          "name": "TypeScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/rezo-labs/directus-extension-schema-management-module/releases/tag/v2.0.1",
+          "name": "v2.0.1"
+        },
+        {
+          "url": "https://github.com/rezo-labs/directus-extension-schema-management-module/releases/tag/v2.0.0",
+          "name": "v2.0.0"
+        },
+        {
+          "url": "https://github.com/rezo-labs/directus-extension-schema-management-module/releases/tag/v1.5.0",
+          "name": "v1.5.0"
+        },
+        {
+          "url": "https://github.com/rezo-labs/directus-extension-schema-management-module/releases/tag/v1.4.0",
+          "name": "v1.4.0"
+        },
+        {
+          "url": "https://github.com/rezo-labs/directus-extension-schema-management-module/releases/tag/v1.3.0",
+          "name": "v1.3.0"
+        }
+      ],
       "topics": [
         "directus",
         "directus-extension",
         "directus-extension-module",
-        "role-as-code",
-        "schema-as-code"
+        "schema-as-code",
+        "role-as-code"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -318,47 +462,72 @@
       "name": "directus-image-scout",
       "fullName": "resauce-dev/directus-image-scout",
       "category": "APIs",
-      "stars": 138,
+      "stars": 140,
       "author": "resauce-dev",
       "avatar": "https://avatars.githubusercontent.com/u/77393933?v=4",
       "desc": "Looking to spruce up your projects with stunning visuals? Meet Image Scout, your Directus companion!  Search through a world of endless images with providers that include Pexels, Pixabay, Unsplash, and Giphy! 🎨✨ (Confirmed Support for v10-10.6.1)",
       "demo": null,
       "repoUrl": "https://github.com/resauce-dev/directus-image-scout",
-      "long1": "Looking to spruce up your projects with stunning visuals? Meet Image Scout, your Directus companion!  Search through a world of endless images with providers that include Pexels, Pixabay, Unsplash, and Giphy! 🎨✨ (Confirmed Support for v10-10.6.1). Maintained by resauce-dev on GitHub, where it has earned 138 stars from the community.",
-      "long2": "It's actively developed around directus, directus-extension, directus-extension-endpoint, and is a solid reference for anyone building with these tools.",
+      "long1": "Looking to spruce up your projects with stunning visuals? Meet Image Scout, your Directus companion!  Search through a world of endless images with providers that include Pexels, Pixabay, Unsplash, and Giphy! 🎨✨ (Confirmed Support for v10-10.6.1). Maintained by resauce-dev on GitHub, where it has earned 140 stars from the community.",
+      "long2": "It's actively developed around directus, directus-extension, directus-extension-interface, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
         "Directus",
         "Directus Extension",
-        "Directus Extension Endpoint",
-        "Directus Extension Interface"
+        "Directus Extension Interface",
+        "Directus Extension Endpoint"
       ],
       "updated": "10 months ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 55,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 38,
+          "name": "Vue"
+        },
+        {
+          "pct": 7,
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/resauce-dev/directus-image-scout/releases/tag/v3.2.0",
+          "name": "v3.2.0"
+        },
+        {
+          "url": "https://github.com/resauce-dev/directus-image-scout/releases/tag/v3.1.2",
+          "name": "v3.1.2"
+        },
+        {
+          "url": "https://github.com/resauce-dev/directus-image-scout/releases/tag/v3.1.1",
+          "name": "v3.1.1"
+        },
+        {
+          "url": "https://github.com/resauce-dev/directus-image-scout/releases/tag/v3.1.0",
+          "name": "v3.1.0"
+        },
+        {
+          "url": "https://github.com/resauce-dev/directus-image-scout/releases/tag/v3.0.0",
+          "name": "v3.0.0"
+        }
+      ],
       "topics": [
         "directus",
         "directus-extension",
-        "directus-extension-endpoint",
         "directus-extension-interface",
-        "giphy",
-        "giphy-api",
+        "directus-extension-endpoint",
         "pexels",
-        "pexels-api",
-        "pixabay",
-        "pixabay-api",
         "unsplash",
         "unsplash-api",
-        "vue",
-        "vue3",
-        "vuejs3"
+        "pixabay",
+        "pixabay-api",
+        "pexels-api",
+        "giphy",
+        "giphy-api"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -369,35 +538,42 @@
       "category": "UI Kits",
       "stars": 135,
       "author": "gremo",
-      "avatar": "https://avatars.githubusercontent.com/u/1532616?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/1532616?u=76c6d1636b0bcd7e47eb3096632a3acf1a0339f2&v=4",
       "desc": "A set of React components and utilities for Directus Headless CMS",
       "demo": null,
       "repoUrl": "https://github.com/gremo/react-directus",
       "long1": "A set of React components and utilities for Directus Headless CMS. Maintained by gremo on GitHub, where it has earned 135 stars from the community.",
-      "long2": "It's actively developed around directus, react, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around react, directus, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Directus",
-        "React"
+        "React",
+        "Directus"
       ],
-      "updated": "1 week ago",
+      "updated": "yesterday",
       "license": "ISC",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 97.958,
-          "size": 21583
+          "pct": 98,
+          "name": "TypeScript"
         },
         {
-          "name": "JavaScript",
-          "pct": 2.042,
-          "size": 450
+          "pct": 2,
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/gremo/react-directus/releases/tag/v0.0.2",
+          "name": "v0.0.2"
+        },
+        {
+          "url": "https://github.com/gremo/react-directus/releases/tag/v0.0.1",
+          "name": "v0.0.1"
+        }
+      ],
       "topics": [
-        "directus",
-        "react"
+        "react",
+        "directus"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -413,30 +589,54 @@
       "demo": null,
       "repoUrl": "https://github.com/dimitrov-adrian/directus-extension-searchsync",
       "long1": "Simple Directus 9 extension that sync content with remote search engine. Maintained by dimitrov-adrian on GitHub, where it has earned 120 stars from the community.",
-      "long2": "It's actively developed around algolia, directus, directus-extension, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around directus-extension, elasticsearch, meilisearch, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
-        "Algolia",
-        "Directus",
         "Directus Extension",
-        "Elasticsearch"
+        "Elasticsearch",
+        "Meilisearch",
+        "Algolia"
       ],
       "updated": "2 years ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "JavaScript",
-          "pct": 100,
-          "size": 100
+          "pct": 95,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 5,
+          "name": "TypeScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-searchsync/releases/tag/v1.0.3",
+          "name": "v1.0.3"
+        },
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-searchsync/releases/tag/v1.0.2",
+          "name": "v1.0.2"
+        },
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-searchsync/releases/tag/v1.0.1",
+          "name": "v1.0.1"
+        },
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-searchsync/releases/tag/v1.0.0-rc.95",
+          "name": "v1.0.0-rc.95"
+        },
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-searchsync/releases/tag/v1.0.0-rc.94",
+          "name": "v1.0.0-rc.94"
+        }
+      ],
       "topics": [
-        "algolia",
-        "directus",
         "directus-extension",
         "elasticsearch",
-        "meilisearch"
+        "meilisearch",
+        "algolia",
+        "directus"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -452,46 +652,59 @@
       "demo": null,
       "repoUrl": "https://github.com/utomic-media/directus-extension-field-actions",
       "long1": "Add advanced link & copy functionalities to your directus fields. Supports interfaces as well as displays. Maintained by utomic-media on GitHub, where it has earned 108 stars from the community.",
-      "long2": "It's actively developed around directus, directus-actions, directus-cms, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around directus, directus-cms, directus-extension, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
         "Directus",
-        "Directus Actions",
         "Directus Cms",
-        "Directus Extension"
+        "Directus Extension",
+        "Directus Extension Display"
       ],
-      "updated": "1 month ago",
+      "updated": "2 months ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 70.515,
-          "size": 32597
+          "pct": 71,
+          "name": "TypeScript"
         },
         {
-          "name": "Vue",
-          "pct": 28.263,
-          "size": 13065
+          "pct": 28,
+          "name": "Vue"
         },
         {
-          "name": "Dockerfile",
-          "pct": 0.619,
-          "size": 286
-        },
-        {
-          "name": "JavaScript",
-          "pct": 0.604,
-          "size": 279
+          "pct": 1,
+          "name": "Dockerfile"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/utomic-media/directus-extension-field-actions/releases/tag/v2.2.0",
+          "name": "v2.2.0"
+        },
+        {
+          "url": "https://github.com/utomic-media/directus-extension-field-actions/releases/tag/v2.1.0",
+          "name": "v2.1.0"
+        },
+        {
+          "url": "https://github.com/utomic-media/directus-extension-field-actions/releases/tag/v2.0.1",
+          "name": "v2.0.1"
+        },
+        {
+          "url": "https://github.com/utomic-media/directus-extension-field-actions/releases/tag/v2.0.0",
+          "name": "v2.0.0"
+        },
+        {
+          "url": "https://github.com/utomic-media/directus-extension-field-actions/releases/tag/v1.10.0",
+          "name": "v1.10.0"
+        }
+      ],
       "topics": [
         "directus",
-        "directus-actions",
         "directus-cms",
         "directus-extension",
         "directus-extension-display",
-        "directus-extension-interface"
+        "directus-extension-interface",
+        "directus-actions"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -507,28 +720,48 @@
       "demo": "https://www.npmjs.com/package/directus-extension-wpslug-interface",
       "repoUrl": "https://github.com/dimitrov-adrian/directus-extension-wpslug-interface",
       "long1": "WordPress alike slug interface for Directus 9. Maintained by dimitrov-adrian on GitHub, where it has earned 100 stars from the community.",
-      "long2": "It's actively developed around directus, directus-custom-interface, directus-extension, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around directus, directus-extension, directus-custom-interface, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Vue",
         "Directus",
-        "Directus Custom Interface",
         "Directus Extension",
+        "Directus Custom Interface",
         "Permalink"
       ],
       "updated": "2 years ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "Vue",
-          "pct": 100,
-          "size": 100
+          "pct": 74,
+          "name": "Vue"
+        },
+        {
+          "pct": 26,
+          "name": "TypeScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-wpslug-interface/releases/tag/v1.1.0",
+          "name": "v1.1.0"
+        },
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-wpslug-interface/releases/tag/v1.0.2",
+          "name": "v1.0.2"
+        },
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-wpslug-interface/releases/tag/v1.0.1",
+          "name": "v1.0.1"
+        },
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-wpslug-interface/releases/tag/v1.0.0",
+          "name": "v1.0.0"
+        }
+      ],
       "topics": [
         "directus",
-        "directus-custom-interface",
         "directus-extension",
+        "directus-custom-interface",
         "permalink",
         "slug"
       ],
@@ -556,9 +789,16 @@
       "license": "Apache-2.0",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 84,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 11,
+          "name": "MDX"
+        },
+        {
+          "pct": 5,
+          "name": "HTML"
         }
       ],
       "versions": [],
@@ -573,34 +813,62 @@
       "name": "directus-extension-board-layout",
       "fullName": "shocota/directus-extension-board-layout",
       "category": "DevTools",
-      "stars": 84,
+      "stars": 85,
       "author": "shocota",
-      "avatar": "https://avatars.githubusercontent.com/u/92870471?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/92870471?u=c081140545f55146fe21d448d0b70d49d80c9461&v=4",
       "desc": "A project worth exploring.",
       "demo": null,
       "repoUrl": "https://github.com/shocota/directus-extension-board-layout",
-      "long1": "A project worth exploring. Maintained by shocota on GitHub, where it has earned 84 stars from the community.",
-      "long2": "It's actively developed around directus, directus-extension, directus-extension-layout, and is a solid reference for anyone building with these tools.",
+      "long1": "A project worth exploring. Maintained by shocota on GitHub, where it has earned 85 stars from the community.",
+      "long2": "It's actively developed around directus-extension, directus-extension-layout, directus, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Vue",
-        "Directus",
         "Directus Extension",
-        "Directus Extension Layout"
+        "Directus Extension Layout",
+        "Directus"
       ],
       "updated": "3 years ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "Vue",
-          "pct": 100,
-          "size": 100
+          "pct": 92,
+          "name": "Vue"
+        },
+        {
+          "pct": 6,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 2,
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/shocota/directus-extension-board-layout/releases/tag/v1.1.2",
+          "name": "v1.1.2"
+        },
+        {
+          "url": "https://github.com/shocota/directus-extension-board-layout/releases/tag/v1.1.1",
+          "name": "v1.1.1"
+        },
+        {
+          "url": "https://github.com/shocota/directus-extension-board-layout/releases/tag/v1.1.0",
+          "name": "v1.1.0"
+        },
+        {
+          "url": "https://github.com/shocota/directus-extension-board-layout/releases/tag/v1.0.5",
+          "name": "v1.0.5"
+        },
+        {
+          "url": "https://github.com/shocota/directus-extension-board-layout/releases/tag/v1.0.4",
+          "name": "v1.0.4"
+        }
+      ],
       "topics": [
-        "directus",
         "directus-extension",
-        "directus-extension-layout"
+        "directus-extension-layout",
+        "directus"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -609,13 +877,13 @@
       "name": "directus-extension-tags-m2m-interface",
       "fullName": "dimitrov-adrian/directus-extension-tags-m2m-interface",
       "category": "Docs",
-      "stars": 82,
+      "stars": 81,
       "author": "dimitrov-adrian",
       "avatar": "https://avatars.githubusercontent.com/u/1009639?v=4",
       "desc": "M2M driven tagging interface for Directus 9",
       "demo": "https://www.npmjs.com/package/directus-extension-tags-m2m-interface",
       "repoUrl": "https://github.com/dimitrov-adrian/directus-extension-tags-m2m-interface",
-      "long1": "M2M driven tagging interface for Directus 9. Maintained by dimitrov-adrian on GitHub, where it has earned 82 stars from the community.",
+      "long1": "M2M driven tagging interface for Directus 9. Maintained by dimitrov-adrian on GitHub, where it has earned 81 stars from the community.",
       "long2": "It's actively developed around directus, directus-extension, directus-extension-interface, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Vue",
@@ -628,12 +896,36 @@
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "Vue",
-          "pct": 100,
-          "size": 100
+          "pct": 67,
+          "name": "Vue"
+        },
+        {
+          "pct": 33,
+          "name": "TypeScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-tags-m2m-interface/releases/tag/v0.8.0",
+          "name": "v0.8.0"
+        },
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-tags-m2m-interface/releases/tag/v0.7.0",
+          "name": "v0.7.0"
+        },
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-tags-m2m-interface/releases/tag/v0.6.0",
+          "name": "v0.6.0"
+        },
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-tags-m2m-interface/releases/tag/v0.5.0",
+          "name": "v0.5.0"
+        },
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-tags-m2m-interface/releases/tag/v0.4.0",
+          "name": "v0.4.0"
+        }
+      ],
       "topics": [
         "directus",
         "directus-extension",
@@ -650,7 +942,7 @@
       "category": "DevTools",
       "stars": 72,
       "author": "gbicou",
-      "avatar": "https://avatars.githubusercontent.com/u/174636?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/174636?u=28c41947b86ac9890b90d22c716f3420a3db33bc&v=4",
       "desc": "Tiptap rich text editor interface and display for directus",
       "demo": null,
       "repoUrl": "https://github.com/gbicou/directus-extension-tiptap",
@@ -663,25 +955,53 @@
         "Directus Extension Display",
         "Directus Extension Interface"
       ],
-      "updated": "1 week ago",
+      "updated": "5 days ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "Vue",
-          "pct": 100,
-          "size": 100
+          "pct": 64,
+          "name": "Vue"
+        },
+        {
+          "pct": 35,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 1,
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/gbicou/directus-extension-tiptap/releases/tag/directus-extension-tiptap-v1.18.6",
+          "name": "directus-extension-tiptap-v1.18.6"
+        },
+        {
+          "url": "https://github.com/gbicou/directus-extension-tiptap/releases/tag/directus-extension-tiptap-v1.18.5",
+          "name": "directus-extension-tiptap-v1.18.5"
+        },
+        {
+          "url": "https://github.com/gbicou/directus-extension-tiptap/releases/tag/directus-extension-tiptap-v1.18.4",
+          "name": "directus-extension-tiptap-v1.18.4"
+        },
+        {
+          "url": "https://github.com/gbicou/directus-extension-tiptap/releases/tag/v1.18.3",
+          "name": "v1.18.3"
+        },
+        {
+          "url": "https://github.com/gbicou/directus-extension-tiptap/releases/tag/v1.18.2",
+          "name": "v1.18.2"
+        }
+      ],
       "topics": [
         "directus",
         "directus-extension",
         "directus-extension-display",
         "directus-extension-interface",
         "editor",
-        "prosemirror",
         "tiptap",
-        "wysiwyg"
+        "wysiwyg",
+        "prosemirror"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -690,54 +1010,46 @@
       "name": "blog",
       "fullName": "zpuckeridge/blog",
       "category": "Blogs",
-      "stars": 71,
+      "stars": 70,
       "author": "zpuckeridge",
-      "avatar": "https://avatars.githubusercontent.com/u/37718916?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/37718916?u=5a9d1534df2860a073d35cca5a5db17f3b2a8647&v=4",
       "desc": "A blog and video hosting site leveraging Astro, Directus, Mux, Lanyard, shadcn/ui and Tailwind CSS hosted on Cloudflare.",
       "demo": "https://zacchary.me",
       "repoUrl": "https://github.com/zpuckeridge/blog",
-      "long1": "A blog and video hosting site leveraging Astro, Directus, Mux, Lanyard, shadcn/ui and Tailwind CSS hosted on Cloudflare. Maintained by zpuckeridge on GitHub, where it has earned 71 stars from the community.",
-      "long2": "It's actively developed around astro, cloudflare, directus, and is a solid reference for anyone building with these tools.",
+      "long1": "A blog and video hosting site leveraging Astro, Directus, Mux, Lanyard, shadcn/ui and Tailwind CSS hosted on Cloudflare. Maintained by zpuckeridge on GitHub, where it has earned 70 stars from the community.",
+      "long2": "It's actively developed around tailwindcss, shadcn-ui, lanyard, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Astro",
-        "Cloudflare",
-        "Directus",
-        "Lanyard"
+        "Tailwind CSS",
+        "Shadcn Ui",
+        "Lanyard",
+        "Cloudflare"
       ],
-      "updated": "1 week ago",
+      "updated": "6 days ago",
       "license": "—",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 80.732,
-          "size": 243002
+          "pct": 80,
+          "name": "TypeScript"
         },
         {
-          "name": "Astro",
-          "pct": 15.799,
-          "size": 47554
+          "pct": 17,
+          "name": "Astro"
         },
         {
-          "name": "CSS",
-          "pct": 2.811,
-          "size": 8462
-        },
-        {
-          "name": "JavaScript",
-          "pct": 0.658,
-          "size": 1980
+          "pct": 3,
+          "name": "CSS"
         }
       ],
       "versions": [],
       "topics": [
-        "astro",
+        "tailwindcss",
+        "shadcn-ui",
+        "lanyard",
         "cloudflare",
         "directus",
-        "lanyard",
         "mux",
-        "shadcn-ui",
-        "tailwindcss"
+        "astro"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -748,7 +1060,7 @@
       "category": "DevTools",
       "stars": 67,
       "author": "AlexGaillard",
-      "avatar": "https://avatars.githubusercontent.com/u/50185022?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/50185022?u=4f1237e60a36f498d45df95ec11ce6855d2c2cd2&v=4",
       "desc": "Display URLs, emails and phone numbers as links in Directus",
       "demo": null,
       "repoUrl": "https://github.com/AlexGaillard/directus-extension-display-link",
@@ -759,15 +1071,22 @@
         "Directus",
         "Directus Extension",
         "Directus Extension Display",
-        "Link"
+        "Links"
       ],
       "updated": "2 years ago",
       "license": "—",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 52,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 42,
+          "name": "Vue"
+        },
+        {
+          "pct": 6,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
@@ -775,9 +1094,9 @@
         "directus",
         "directus-extension",
         "directus-extension-display",
-        "link",
         "links",
         "url",
+        "link",
         "urls"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
@@ -789,7 +1108,7 @@
       "category": "DevTools",
       "stars": 66,
       "author": "codihaus",
-      "avatar": "https://avatars.githubusercontent.com/u/68498487?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/68498487?u=b2f398bb5c5100c13d955f1712fdad800c1eef01&v=4",
       "desc": "Directus Extension to display items as grid with customizable, flexible display.",
       "demo": "https://directus-extension.codihaus.io/",
       "repoUrl": "https://github.com/codihaus/directus-extension-grid-layout",
@@ -805,12 +1124,40 @@
       "license": "—",
       "langs": [
         {
-          "name": "Vue",
-          "pct": 100,
-          "size": 100
+          "pct": 70,
+          "name": "Vue"
+        },
+        {
+          "pct": 19,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 11,
+          "name": "CSS"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/codihaus/directus-extension-grid-layout/releases/tag/v1.0.8",
+          "name": "v1.0.8"
+        },
+        {
+          "url": "https://github.com/codihaus/directus-extension-grid-layout/releases/tag/v1.0.6",
+          "name": "v1.0.6"
+        },
+        {
+          "url": "https://github.com/codihaus/directus-extension-grid-layout/releases/tag/v1.0.5",
+          "name": "v1.0.5"
+        },
+        {
+          "url": "https://github.com/codihaus/directus-extension-grid-layout/releases/tag/v1.0.4",
+          "name": "v1.0.4"
+        },
+        {
+          "url": "https://github.com/codihaus/directus-extension-grid-layout/releases/tag/v1.0.3",
+          "name": "v1.0.3"
+        }
+      ],
       "topics": [
         "directus",
         "directus-extension",
@@ -825,47 +1172,49 @@
       "category": "Dashboards",
       "stars": 65,
       "author": "pintoderian",
-      "avatar": "https://avatars.githubusercontent.com/u/31827066?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/31827066?u=94c2f0f14bfc643b79fc52b0832e729a0708c2a6&v=4",
       "desc": "Template for project structure with nextjs 14 - next auth - directus and typescript",
       "demo": null,
       "repoUrl": "https://github.com/pintoderian/next-directus-auth-ts",
       "long1": "Template for project structure with nextjs 14 - next auth - directus and typescript. Maintained by pintoderian on GitHub, where it has earned 65 stars from the community.",
-      "long2": "It's actively developed around admin, adminui, dashboard, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around directus, directus-sdk, husky, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Admin",
-        "Adminui",
-        "Dashboard",
-        "Dashboard Templates"
+        "Directus",
+        "Directus Sdk",
+        "Husky",
+        "Next Auth"
       ],
       "updated": "1 year ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 94,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 3,
+          "name": "CSS"
+        },
+        {
+          "pct": 3,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
       "topics": [
-        "admin",
-        "adminui",
-        "dashboard",
-        "dashboard-templates",
         "directus",
         "directus-sdk",
         "husky",
-        "javascript",
         "next-auth",
         "next-theme",
-        "nextjs",
-        "nextjs14",
         "prettier",
         "shadcn-ui",
         "tailwindcss",
-        "template",
-        "typescript"
+        "typescript",
+        "admin",
+        "dashboard",
+        "dashboard-templates"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -881,30 +1230,46 @@
       "demo": "https://www.npmjs.com/package/directus-extension-group-modal-interface",
       "repoUrl": "https://github.com/dimitrov-adrian/directus-extension-group-modal-interface",
       "long1": "Group fields into modal dialog, accessible via button. Maintained by dimitrov-adrian on GitHub, where it has earned 64 stars from the community.",
-      "long2": "It's actively developed around directus, directus-custom-interface, directus-extension, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around directus, directus-extension, directus-custom-interface, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Vue",
         "Directus",
-        "Directus Custom Interface",
         "Directus Extension",
-        "Field Group"
+        "Directus Custom Interface",
+        "Modal"
       ],
       "updated": "4 years ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "Vue",
-          "pct": 100,
-          "size": 100
+          "pct": 73,
+          "name": "Vue"
+        },
+        {
+          "pct": 27,
+          "name": "TypeScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-group-modal-interface/releases/tag/v1.2.0",
+          "name": "v1.2.0"
+        },
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-group-modal-interface/releases/tag/v1.1.0",
+          "name": "v1.1.0"
+        },
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-group-modal-interface/releases/tag/v1.0.0",
+          "name": "v1.0.0"
+        }
+      ],
       "topics": [
         "directus",
-        "directus-custom-interface",
         "directus-extension",
-        "field-group",
-        "modal"
+        "directus-custom-interface",
+        "modal",
+        "field-group"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -930,12 +1295,20 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 98,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 2,
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/Arood/directus-extension-media-ai-bundle/releases/tag/v0.1.0",
+          "name": "v0.1.0"
+        }
+      ],
       "topics": [
         "directus",
         "directus-ai-hackathon"
@@ -966,12 +1339,28 @@
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "Vue",
-          "pct": 100,
-          "size": 100
+          "pct": 64,
+          "name": "Vue"
+        },
+        {
+          "pct": 36,
+          "name": "TypeScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-masked-interface/releases/tag/v1.1.0",
+          "name": "v1.1.0"
+        },
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-masked-interface/releases/tag/v1.0.0",
+          "name": "v1.0.0"
+        },
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-masked-interface/releases/tag/v1.0.0-rc.88",
+          "name": "v1.0.0-rc.88"
+        }
+      ],
       "topics": [
         "directus",
         "directus-extension",
@@ -986,25 +1375,28 @@
       "name": "directus-sdk-typegen",
       "fullName": "bryantgillespie/directus-sdk-typegen",
       "category": "DevTools",
-      "stars": 60,
+      "stars": 61,
       "author": "bryantgillespie",
-      "avatar": "https://avatars.githubusercontent.com/u/23302570?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/23302570?u=5a1f5c02e36382ec57c4e377b88cfae9e6bcad3e&v=4",
       "desc": "CLI and library to generate TypeScript types from Directus collections for use with Directus SDK.",
       "demo": null,
       "repoUrl": "https://github.com/bryantgillespie/directus-sdk-typegen",
-      "long1": "CLI and library to generate TypeScript types from Directus collections for use with Directus SDK. Maintained by bryantgillespie on GitHub, where it has earned 60 stars from the community.",
+      "long1": "CLI and library to generate TypeScript types from Directus collections for use with Directus SDK. Maintained by bryantgillespie on GitHub, where it has earned 61 stars from the community.",
       "long2": "It's actively developed around directus, typescript, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
         "Directus"
       ],
-      "updated": "11 months ago",
+      "updated": "12 months ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 96,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 4,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
@@ -1015,52 +1407,13 @@
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
     {
-      "slug": "nuxt-directus",
-      "name": "nuxt-directus",
-      "fullName": "becem-gharbi/nuxt-directus",
-      "category": "DevTools",
-      "stars": 51,
-      "author": "becem-gharbi",
-      "avatar": "https://avatars.githubusercontent.com/u/99251251?v=4",
-      "desc": "Unofficial Directus client for Nuxt",
-      "demo": null,
-      "repoUrl": "https://github.com/becem-gharbi/nuxt-directus",
-      "long1": "Unofficial Directus client for Nuxt. Maintained by becem-gharbi on GitHub, where it has earned 51 stars from the community.",
-      "long2": "It's actively developed around directus, graphql, nuxt, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Directus",
-        "GraphQL",
-        "Nuxt",
-        "Realtime"
-      ],
-      "updated": "1 year ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "directus",
-        "graphql",
-        "nuxt",
-        "realtime",
-        "sdk"
-      ],
-      "addedAt": "2026-07-15T22:28:32.829738+00:00"
-    },
-    {
       "slug": "directus-fly",
       "name": "directus-fly",
       "fullName": "freekrai/directus-fly",
       "category": "Templates",
       "stars": 51,
       "author": "freekrai",
-      "avatar": "https://avatars.githubusercontent.com/u/21484?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/21484?u=d9c450f0cbf71581fdd03da8628dbe4067c4fcd6&v=4",
       "desc": "Starter to deploy Directus on fly.io",
       "demo": null,
       "repoUrl": "https://github.com/freekrai/directus-fly",
@@ -1075,9 +1428,12 @@
       "license": "—",
       "langs": [
         {
-          "name": "Dockerfile",
-          "pct": 100,
-          "size": 100
+          "pct": 68,
+          "name": "Dockerfile"
+        },
+        {
+          "pct": 32,
+          "name": "Shell"
         }
       ],
       "versions": [],
@@ -1111,9 +1467,8 @@
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "JavaScript",
           "pct": 100,
-          "size": 100
+          "name": "JavaScript"
         }
       ],
       "versions": [],
@@ -1126,13 +1481,80 @@
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
     {
+      "slug": "nuxt-directus",
+      "name": "nuxt-directus",
+      "fullName": "becem-gharbi/nuxt-directus",
+      "category": "DevTools",
+      "stars": 51,
+      "author": "becem-gharbi",
+      "avatar": "https://avatars.githubusercontent.com/u/99251251?u=857573c00b96c9d278342bf6cb3a4005741401a3&v=4",
+      "desc": "Unofficial Directus client for Nuxt",
+      "demo": null,
+      "repoUrl": "https://github.com/becem-gharbi/nuxt-directus",
+      "long1": "Unofficial Directus client for Nuxt. Maintained by becem-gharbi on GitHub, where it has earned 51 stars from the community.",
+      "long2": "It's actively developed around directus, sdk, graphql, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Directus",
+        "Sdk",
+        "GraphQL",
+        "Realtime"
+      ],
+      "updated": "1 year ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 86,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 13,
+          "name": "Vue"
+        },
+        {
+          "pct": 1,
+          "name": "JavaScript"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/becem-gharbi/nuxt-directus/releases/tag/v2.7.0",
+          "name": "v2.7.0"
+        },
+        {
+          "url": "https://github.com/becem-gharbi/nuxt-directus/releases/tag/v2.6.0",
+          "name": "v2.6.0"
+        },
+        {
+          "url": "https://github.com/becem-gharbi/nuxt-directus/releases/tag/v2.5.0",
+          "name": "v2.5.0"
+        },
+        {
+          "url": "https://github.com/becem-gharbi/nuxt-directus/releases/tag/v2.4.5",
+          "name": "v2.4.5"
+        },
+        {
+          "url": "https://github.com/becem-gharbi/nuxt-directus/releases/tag/v2.4.4",
+          "name": "v2.4.4"
+        }
+      ],
+      "topics": [
+        "directus",
+        "sdk",
+        "graphql",
+        "realtime",
+        "nuxt"
+      ],
+      "addedAt": "2026-07-15T22:28:32.829738+00:00"
+    },
+    {
       "slug": "directus-operation-auto-translate",
       "name": "directus-operation-auto-translate",
       "fullName": "timio23/directus-operation-auto-translate",
       "category": "AI & ML",
       "stars": 47,
       "author": "timio23",
-      "avatar": "https://avatars.githubusercontent.com/u/124673267?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/124673267?u=439b472f18efa97252f6bcf16e50bf02975a623f&v=4",
       "desc": "Use ChatGPT language models to automatically translate your content through Directus Flows!",
       "demo": null,
       "repoUrl": "https://github.com/timio23/directus-operation-auto-translate",
@@ -1147,12 +1569,16 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "JavaScript",
           "pct": 100,
-          "size": 100
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/timio23/directus-operation-auto-translate/releases/tag/v1.0.0",
+          "name": "v1.0.0"
+        }
+      ],
       "topics": [
         "directus",
         "directus-ai-hackathon"
@@ -1166,16 +1592,16 @@
       "category": "UI Kits",
       "stars": 46,
       "author": "ThijmenGThN",
-      "avatar": "https://avatars.githubusercontent.com/u/54316157?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/54316157?u=7e8a2c06962e49594331c07285b7664db73ed8a5&v=4",
       "desc": "✦ A Theme Builder for Directus",
       "demo": "https://themebuilder.thijmenheuvelink.nl",
       "repoUrl": "https://github.com/ThijmenGThN/directus-themebuilder",
       "long1": "✦ A Theme Builder for Directus. Maintained by ThijmenGThN on GitHub, where it has earned 46 stars from the community.",
-      "long2": "It's actively developed around directus, docker, nextjs, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around directus, theme-builder, nextjs, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
         "Directus",
-        "Docker",
+        "Theme Builder",
         "Next.js",
         "Tailwind"
       ],
@@ -1183,18 +1609,46 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 99,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 1,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 0,
+          "name": "CSS"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/ThijmenGThN/directus-themebuilder/releases/tag/1.7.1",
+          "name": "1.7.1"
+        },
+        {
+          "url": "https://github.com/ThijmenGThN/directus-themebuilder/releases/tag/1.7.0",
+          "name": "1.7.0"
+        },
+        {
+          "url": "https://github.com/ThijmenGThN/directus-themebuilder/releases/tag/1.6.1",
+          "name": "1.6.1"
+        },
+        {
+          "url": "https://github.com/ThijmenGThN/directus-themebuilder/releases/tag/1.6.0",
+          "name": "1.6.0"
+        },
+        {
+          "url": "https://github.com/ThijmenGThN/directus-themebuilder/releases/tag/1.5.1",
+          "name": "1.5.1"
+        }
+      ],
       "topics": [
         "directus",
-        "docker",
+        "theme-builder",
         "nextjs",
         "tailwind",
-        "theme-builder"
+        "docker"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -1205,7 +1659,7 @@
       "category": "DevTools",
       "stars": 45,
       "author": "lucasfrey",
-      "avatar": "https://avatars.githubusercontent.com/u/7697132?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/7697132?u=f8f440a06d1deea2c8d4ccc256acca2f6aba6bee&v=4",
       "desc": "An interface to manage directus fields in the administration panel",
       "demo": null,
       "repoUrl": "https://github.com/lucasfrey/directus-conditional-fields",
@@ -1219,12 +1673,24 @@
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "Vue",
           "pct": 100,
-          "size": 100
+          "name": "Vue"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/lucasfrey/directus-conditional-fields/releases/tag/v0.1.0",
+          "name": "v0.1.0"
+        },
+        {
+          "url": "https://github.com/lucasfrey/directus-conditional-fields/releases/tag/v0.0.3",
+          "name": "v0.0.3"
+        },
+        {
+          "url": "https://github.com/lucasfrey/directus-conditional-fields/releases/tag/v0.0.2",
+          "name": "v0.0.2"
+        }
+      ],
       "topics": [
         "directus"
       ],
@@ -1237,43 +1703,62 @@
       "category": "APIs",
       "stars": 45,
       "author": "sacconazzo",
-      "avatar": "https://avatars.githubusercontent.com/u/32107095?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/32107095?u=bc5aac514f14ac00da9c834089aafd388f285608&v=4",
       "desc": "directus extension for swagger interface and custom endpoints definitions and validations",
       "demo": "https://www.npmjs.com/package/directus-extension-api-docs",
       "repoUrl": "https://github.com/sacconazzo/directus-extension-api-docs",
       "long1": "directus extension for swagger interface and custom endpoints definitions and validations. Maintained by sacconazzo on GitHub, where it has earned 45 stars from the community.",
-      "long2": "It's actively developed around api-documentation, api-validator, custom-endpoints, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around custom-endpoints, directus, directus-extension, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Api Documentation",
-        "Api Validator",
         "Custom Endpoints",
-        "Directus"
+        "Directus",
+        "Directus Extension",
+        "Openapi"
       ],
-      "updated": "1 week ago",
+      "updated": "3 weeks ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 89.348,
-          "size": 101008
+          "pct": 89,
+          "name": "TypeScript"
         },
         {
-          "name": "JavaScript",
-          "pct": 10.652,
-          "size": 12042
+          "pct": 11,
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/sacconazzo/directus-extension-api-docs/releases/tag/v3.0.2",
+          "name": "v3.0.2"
+        },
+        {
+          "url": "https://github.com/sacconazzo/directus-extension-api-docs/releases/tag/v3.0.1",
+          "name": "v3.0.1"
+        },
+        {
+          "url": "https://github.com/sacconazzo/directus-extension-api-docs/releases/tag/v3.0.0",
+          "name": "v3.0.0"
+        },
+        {
+          "url": "https://github.com/sacconazzo/directus-extension-api-docs/releases/tag/v2.3.5",
+          "name": "v2.3.5"
+        },
+        {
+          "url": "https://github.com/sacconazzo/directus-extension-api-docs/releases/tag/v2.3.4",
+          "name": "v2.3.4"
+        }
+      ],
       "topics": [
-        "api-documentation",
-        "api-validator",
         "custom-endpoints",
         "directus",
         "directus-extension",
         "openapi",
         "swagger",
         "validation",
+        "api-documentation",
+        "api-validator",
         "zod",
         "zod-validation"
       ],
@@ -1291,27 +1776,35 @@
       "demo": null,
       "repoUrl": "https://github.com/7span/directus-extension-custom-query-panel",
       "long1": "An easy to use insight panel to see custom raw query data from database. Maintained by 7span on GitHub, where it has earned 43 stars from the community.",
-      "long2": "It's actively developed around directus, directus-extension, directus-panel-quest, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around directus, directus-panel-quest, directus-extension, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
         "Directus",
-        "Directus Extension",
-        "Directus Panel Quest"
+        "Directus Panel Quest",
+        "Directus Extension"
       ],
       "updated": "11 months ago",
       "license": "—",
       "langs": [
         {
-          "name": "JavaScript",
-          "pct": 100,
-          "size": 100
+          "pct": 77,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 23,
+          "name": "Vue"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/7span/directus-extension-custom-query-panel/releases/tag/v1.1.0",
+          "name": "v1.1.0"
+        }
+      ],
       "topics": [
         "directus",
-        "directus-extension",
-        "directus-panel-quest"
+        "directus-panel-quest",
+        "directus-extension"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -1320,13 +1813,13 @@
       "name": "helm-chart",
       "fullName": "directus-labs/helm-chart",
       "category": "DevTools",
-      "stars": 42,
+      "stars": 43,
       "author": "directus-labs",
       "avatar": "https://avatars.githubusercontent.com/u/79210894?v=4",
       "desc": "Directus Community Helm Chart",
       "demo": "https://directus-labs.github.io/helm-chart/",
       "repoUrl": "https://github.com/directus-labs/helm-chart",
-      "long1": "Directus Community Helm Chart. Maintained by directus-labs on GitHub, where it has earned 42 stars from the community.",
+      "long1": "Directus Community Helm Chart. Maintained by directus-labs on GitHub, where it has earned 43 stars from the community.",
       "long2": "It's actively developed around directus, helm-chart, kubernetes, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Go Template",
@@ -1334,20 +1827,83 @@
         "Helm Chart",
         "Kubernetes"
       ],
-      "updated": "4 days ago",
+      "updated": "3 weeks ago",
       "license": "—",
       "langs": [
         {
-          "name": "Go Template",
           "pct": 100,
-          "size": 2479
+          "name": "Go Template"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/directus-labs/helm-chart/releases/tag/directus-2.1.0",
+          "name": "directus-2.1.0"
+        },
+        {
+          "url": "https://github.com/directus-labs/helm-chart/releases/tag/directus-2.0.7",
+          "name": "directus-2.0.7"
+        },
+        {
+          "url": "https://github.com/directus-labs/helm-chart/releases/tag/directus-2.0.6",
+          "name": "directus-2.0.6"
+        },
+        {
+          "url": "https://github.com/directus-labs/helm-chart/releases/tag/directus-2.0.5",
+          "name": "directus-2.0.5"
+        },
+        {
+          "url": "https://github.com/directus-labs/helm-chart/releases/tag/directus-2.0.4",
+          "name": "directus-2.0.4"
+        }
+      ],
+      "topics": [
+        "directus",
+        "helm-chart",
+        "kubernetes"
+      ],
+      "addedAt": "2026-07-15T22:28:32.829738+00:00"
+    },
+    {
+      "slug": "directus-dictionary",
+      "name": "directus-dictionary",
+      "fullName": "gxvxc/directus-dictionary",
+      "category": "DevTools",
+      "stars": 41,
+      "author": "gxvxc",
+      "avatar": "https://avatars.githubusercontent.com/u/10851310?u=203ce53f48d29584d825a61fe5c02d0c71188866&v=4",
+      "desc": "Dictionary interface adding key/value pairs field support.",
+      "demo": null,
+      "repoUrl": "https://github.com/gxvxc/directus-dictionary",
+      "long1": "Dictionary interface adding key/value pairs field support. Maintained by gxvxc on GitHub, where it has earned 41 stars from the community.",
+      "long2": "It's actively developed around directus, directus-extension, directus-extension-interface, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Vue",
+        "Directus",
+        "Directus Extension",
+        "Directus Extension Interface"
+      ],
+      "updated": "4 years ago",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 60,
+          "name": "Vue"
+        },
+        {
+          "pct": 22,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 18,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
       "topics": [
         "directus",
-        "helm-chart",
-        "kubernetes"
+        "directus-extension",
+        "directus-extension-interface"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -1374,48 +1930,20 @@
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "directus",
-        "directus-extension",
-        "directus-extension-interface"
-      ],
-      "addedAt": "2026-07-15T22:28:32.829738+00:00"
-    },
-    {
-      "slug": "directus-dictionary",
-      "name": "directus-dictionary",
-      "fullName": "gxvxc/directus-dictionary",
-      "category": "DevTools",
-      "stars": 41,
-      "author": "gxvxc",
-      "avatar": "https://avatars.githubusercontent.com/u/10851310?v=4",
-      "desc": "Dictionary interface adding key/value pairs field support.",
-      "demo": null,
-      "repoUrl": "https://github.com/gxvxc/directus-dictionary",
-      "long1": "Dictionary interface adding key/value pairs field support. Maintained by gxvxc on GitHub, where it has earned 41 stars from the community.",
-      "long2": "It's actively developed around directus, directus-extension, directus-extension-interface, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Vue",
-        "Directus",
-        "Directus Extension",
-        "Directus Extension Interface"
-      ],
-      "updated": "4 years ago",
-      "license": "—",
-      "langs": [
+          "pct": 52,
+          "name": "TypeScript"
+        },
         {
-          "name": "Vue",
-          "pct": 100,
-          "size": 100
+          "pct": 48,
+          "name": "Vue"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/rezo-labs/directus-extension-api-trigger-interface/releases/tag/v1.0.0",
+          "name": "v1.0.0"
+        }
+      ],
       "topics": [
         "directus",
         "directus-extension",
@@ -1430,7 +1958,7 @@
       "category": "Templates",
       "stars": 40,
       "author": "freekrai",
-      "avatar": "https://avatars.githubusercontent.com/u/21484?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/21484?u=d9c450f0cbf71581fdd03da8628dbe4067c4fcd6&v=4",
       "desc": "Directus + Remix full-stack starter",
       "demo": "https://notes.haxstax.xyz",
       "repoUrl": "https://github.com/freekrai/directed-stack",
@@ -1446,9 +1974,16 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 92,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 6,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 2,
+          "name": "CSS"
         }
       ],
       "versions": [],
@@ -1479,13 +2014,20 @@
         "Directus",
         "Extension"
       ],
-      "updated": "9 months ago",
+      "updated": "10 months ago",
       "license": "—",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 71,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 24,
+          "name": "Nunjucks"
+        },
+        {
+          "pct": 5,
+          "name": "Liquid"
         }
       ],
       "versions": [],
@@ -1496,40 +2038,6 @@
         "extension",
         "schema",
         "type-generator"
-      ],
-      "addedAt": "2026-07-15T22:28:32.829738+00:00"
-    },
-    {
-      "slug": "stacksync",
-      "name": "StackSync",
-      "fullName": "koredeycode/StackSync",
-      "category": "Dashboards",
-      "stars": 36,
-      "author": "koredeycode",
-      "avatar": "https://avatars.githubusercontent.com/u/106745394?v=4",
-      "desc": "Manage your Paystack integration from your Directus application.",
-      "demo": null,
-      "repoUrl": "https://github.com/koredeycode/StackSync",
-      "long1": "Manage your Paystack integration from your Directus application. Maintained by koredeycode on GitHub, where it has earned 36 stars from the community.",
-      "long2": "It's actively developed around directus, directus-panel-quest, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Vue",
-        "Directus",
-        "Directus Panel Quest"
-      ],
-      "updated": "3 years ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "Vue",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "directus",
-        "directus-panel-quest"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -1556,9 +2064,12 @@
       "license": "—",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 50,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 50,
+          "name": "Vue"
         }
       ],
       "versions": [],
@@ -1570,42 +2081,39 @@
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
     {
-      "slug": "directus-extension-svgmap-picker-interface",
-      "name": "directus-extension-svgmap-picker-interface",
-      "fullName": "dimitrov-adrian/directus-extension-svgmap-picker-interface",
-      "category": "DevTools",
-      "stars": 35,
-      "author": "dimitrov-adrian",
-      "avatar": "https://avatars.githubusercontent.com/u/1009639?v=4",
-      "desc": "Select a value from a SVG Map box",
-      "demo": "https://www.npmjs.com/package/directus-extension-svgmap-picker-interface",
-      "repoUrl": "https://github.com/dimitrov-adrian/directus-extension-svgmap-picker-interface",
-      "long1": "Select a value from a SVG Map box. Maintained by dimitrov-adrian on GitHub, where it has earned 35 stars from the community.",
-      "long2": "It's actively developed around directus, directus-extension, directus-extension-interface, and is a solid reference for anyone building with these tools.",
+      "slug": "stacksync",
+      "name": "StackSync",
+      "fullName": "koredeycode/StackSync",
+      "category": "Dashboards",
+      "stars": 36,
+      "author": "koredeycode",
+      "avatar": "https://avatars.githubusercontent.com/u/106745394?u=b9e779224cb1ef8fc09a24b7ab007d05fd9d0cef&v=4",
+      "desc": "Manage your Paystack integration from your Directus application.",
+      "demo": null,
+      "repoUrl": "https://github.com/koredeycode/StackSync",
+      "long1": "Manage your Paystack integration from your Directus application. Maintained by koredeycode on GitHub, where it has earned 36 stars from the community.",
+      "long2": "It's actively developed around directus, directus-panel-quest, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "JavaScript",
+        "Vue",
         "Directus",
-        "Directus Extension",
-        "Directus Extension Interface",
-        "Image Map"
+        "Directus Panel Quest"
       ],
-      "updated": "4 years ago",
-      "license": "GPL-3.0",
+      "updated": "3 years ago",
+      "license": "MIT",
       "langs": [
         {
-          "name": "JavaScript",
-          "pct": 100,
-          "size": 100
+          "pct": 76,
+          "name": "Vue"
+        },
+        {
+          "pct": 24,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
       "topics": [
         "directus",
-        "directus-extension",
-        "directus-extension-interface",
-        "image-map",
-        "image-map-picker",
-        "svg-map"
+        "directus-panel-quest"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -1629,13 +2137,20 @@
         "Remix Stack",
         "Template"
       ],
-      "updated": "1 week ago",
+      "updated": "today",
       "license": "—",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 77,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 22,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 1,
+          "name": "Shell"
         }
       ],
       "versions": [],
@@ -1644,6 +2159,62 @@
         "remix",
         "remix-stack",
         "template"
+      ],
+      "addedAt": "2026-07-15T22:28:32.829738+00:00"
+    },
+    {
+      "slug": "directus-extension-svgmap-picker-interface",
+      "name": "directus-extension-svgmap-picker-interface",
+      "fullName": "dimitrov-adrian/directus-extension-svgmap-picker-interface",
+      "category": "DevTools",
+      "stars": 35,
+      "author": "dimitrov-adrian",
+      "avatar": "https://avatars.githubusercontent.com/u/1009639?v=4",
+      "desc": "Select a value from a SVG Map box",
+      "demo": "https://www.npmjs.com/package/directus-extension-svgmap-picker-interface",
+      "repoUrl": "https://github.com/dimitrov-adrian/directus-extension-svgmap-picker-interface",
+      "long1": "Select a value from a SVG Map box. Maintained by dimitrov-adrian on GitHub, where it has earned 35 stars from the community.",
+      "long2": "It's actively developed around directus, directus-extension, directus-extension-interface, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "JavaScript",
+        "Directus",
+        "Directus Extension",
+        "Directus Extension Interface",
+        "Svg Map"
+      ],
+      "updated": "4 years ago",
+      "license": "GPL-3.0",
+      "langs": [
+        {
+          "pct": 58,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 33,
+          "name": "Vue"
+        },
+        {
+          "pct": 9,
+          "name": "TypeScript"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-svgmap-picker-interface/releases/tag/v0.1.0",
+          "name": "v0.1.0"
+        },
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-svgmap-picker-interface/releases/tag/v0.0.1",
+          "name": "v0.0.1"
+        }
+      ],
+      "topics": [
+        "directus",
+        "directus-extension",
+        "directus-extension-interface",
+        "svg-map",
+        "image-map",
+        "image-map-picker"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -1669,9 +2240,12 @@
       "license": "—",
       "langs": [
         {
-          "name": "Vue",
-          "pct": 100,
-          "size": 100
+          "pct": 92,
+          "name": "Vue"
+        },
+        {
+          "pct": 8,
+          "name": "TypeScript"
         }
       ],
       "versions": [],
@@ -1688,7 +2262,7 @@
       "category": "DevTools",
       "stars": 31,
       "author": "licitdev",
-      "avatar": "https://avatars.githubusercontent.com/u/26413686?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/26413686?u=d37d40ee4ed477aad9b58516ede95c1404076c93&v=4",
       "desc": "Cache and limit direct access to the data managed on your Directus instance, powered by Cloudflare Workers, Workers KV and Cloudflare Pages.",
       "demo": "http://directus-cf-cache.pages.dev",
       "repoUrl": "https://github.com/licitdev/directus-cf-cache",
@@ -1705,9 +2279,16 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 74,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 23,
+          "name": "Vue"
+        },
+        {
+          "pct": 3,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
@@ -1725,51 +2306,13 @@
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
     {
-      "slug": "directus-api-manager",
-      "name": "directus_api_manager",
-      "fullName": "maxbritto/directus_api_manager",
-      "category": "APIs",
-      "stars": 30,
-      "author": "maxbritto",
-      "avatar": "https://avatars.githubusercontent.com/u/1722050?v=4",
-      "desc": "Dart & Flutter library to communicate with a Directus REST API",
-      "demo": null,
-      "repoUrl": "https://github.com/maxbritto/directus_api_manager",
-      "long1": "Dart & Flutter library to communicate with a Directus REST API. Maintained by maxbritto on GitHub, where it has earned 30 stars from the community.",
-      "long2": "It's actively developed around dart, directus, flutter, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Dart",
-        "Directus",
-        "Flutter",
-        "Rest"
-      ],
-      "updated": "4 months ago",
-      "license": "BSD-3-Clause",
-      "langs": [
-        {
-          "name": "Dart",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "dart",
-        "directus",
-        "flutter",
-        "rest",
-        "rest-api"
-      ],
-      "addedAt": "2026-07-15T22:28:32.829738+00:00"
-    },
-    {
       "slug": "directus-panel-manual-flows",
       "name": "directus-panel-manual-flows",
       "fullName": "timio23/directus-panel-manual-flows",
       "category": "Dashboards",
       "stars": 30,
       "author": "timio23",
-      "avatar": "https://avatars.githubusercontent.com/u/124673267?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/124673267?u=439b472f18efa97252f6bcf16e50bf02975a623f&v=4",
       "desc": "Place your manual flows together in a convenient panel on your dashboard",
       "demo": null,
       "repoUrl": "https://github.com/timio23/directus-panel-manual-flows",
@@ -1785,9 +2328,12 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "Vue",
-          "pct": 100,
-          "size": 100
+          "pct": 94,
+          "name": "Vue"
+        },
+        {
+          "pct": 6,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
@@ -1821,16 +2367,139 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 56,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 44,
+          "name": "Vue"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/premieroctet/directus-extension-sql-panel/releases/tag/0.4.4",
+          "name": "0.4.4"
+        },
+        {
+          "url": "https://github.com/premieroctet/directus-extension-sql-panel/releases/tag/0.4.2",
+          "name": "0.4.2"
+        }
+      ],
       "topics": [
         "directus",
         "directus-extension",
         "directus-extension-interface"
+      ],
+      "addedAt": "2026-07-15T22:28:32.829738+00:00"
+    },
+    {
+      "slug": "directus-api-manager",
+      "name": "directus_api_manager",
+      "fullName": "maxbritto/directus_api_manager",
+      "category": "APIs",
+      "stars": 30,
+      "author": "maxbritto",
+      "avatar": "https://avatars.githubusercontent.com/u/1722050?v=4",
+      "desc": "Dart & Flutter library to communicate with a Directus REST API",
+      "demo": null,
+      "repoUrl": "https://github.com/maxbritto/directus_api_manager",
+      "long1": "Dart & Flutter library to communicate with a Directus REST API. Maintained by maxbritto on GitHub, where it has earned 30 stars from the community.",
+      "long2": "It's actively developed around dart, directus, flutter, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Dart",
+        "Directus",
+        "Flutter",
+        "Rest"
+      ],
+      "updated": "4 months ago",
+      "license": "BSD-3-Clause",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "Dart"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/maxbritto/directus_api_manager/releases/tag/1.9.2",
+          "name": "1.9.2"
+        },
+        {
+          "url": "https://github.com/maxbritto/directus_api_manager/releases/tag/1.9.1",
+          "name": "1.9.1"
+        },
+        {
+          "url": "https://github.com/maxbritto/directus_api_manager/releases/tag/1.9.0",
+          "name": "1.9.0"
+        },
+        {
+          "url": "https://github.com/maxbritto/directus_api_manager/releases/tag/1.8.2",
+          "name": "1.8.2"
+        },
+        {
+          "url": "https://github.com/maxbritto/directus_api_manager/releases/tag/1.8.1",
+          "name": "1.8.1"
+        }
+      ],
+      "topics": [
+        "dart",
+        "directus",
+        "flutter",
+        "rest",
+        "rest-api"
+      ],
+      "addedAt": "2026-07-15T22:28:32.829738+00:00"
+    },
+    {
+      "slug": "directus-hook-library",
+      "name": "directus-hook-library",
+      "fullName": "formfcw/directus-hook-library",
+      "category": "DevTools",
+      "stars": 28,
+      "author": "formfcw",
+      "avatar": "https://avatars.githubusercontent.com/u/78852214?u=42b7bba1e0cc4096860f327002391b95918eaf2a&v=4",
+      "desc": "A collection of customizable hooks for Directus",
+      "demo": null,
+      "repoUrl": "https://github.com/formfcw/directus-hook-library",
+      "long1": "A collection of customizable hooks for Directus. Maintained by formfcw on GitHub, where it has earned 28 stars from the community.",
+      "long2": "It's actively developed around cascade, directus, directus-extension, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Cascade",
+        "Directus",
+        "Directus Extension",
+        "Hooks"
+      ],
+      "updated": "2 years ago",
+      "license": "GPL-3.0",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "TypeScript"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/formfcw/directus-hook-library/releases/tag/v1.0.2",
+          "name": "v1.0.2"
+        },
+        {
+          "url": "https://github.com/formfcw/directus-hook-library/releases/tag/v1.0.1",
+          "name": "v1.0.1"
+        }
+      ],
+      "topics": [
+        "cascade",
+        "directus",
+        "directus-extension",
+        "hooks",
+        "library",
+        "m2o",
+        "delete-unused",
+        "env-settings",
+        "project-settings",
+        "replace-deleted-user-references",
+        "reset-hidden-fields"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -1846,120 +2515,56 @@
       "demo": "https://www.npmjs.com/package/directus-extension-linkmeta",
       "repoUrl": "https://github.com/dimitrov-adrian/directus-extension-linkmeta",
       "long1": "Directus 9 extension that stores link metadata using Open Graph, JSON+LD, oEmbed or HTML metadata. Maintained by dimitrov-adrian on GitHub, where it has earned 28 stars from the community.",
-      "long2": "It's actively developed around directus, directus-extension, directus-extension-endpoint, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around directus-extension, directus, directus-extension-interface, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Vue",
-        "Directus",
         "Directus Extension",
-        "Directus Extension Endpoint",
-        "Directus Extension Interface"
+        "Directus",
+        "Directus Extension Interface",
+        "Directus Extension Endpoint"
       ],
       "updated": "4 years ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "Vue",
-          "pct": 100,
-          "size": 100
+          "pct": 44,
+          "name": "Vue"
+        },
+        {
+          "pct": 36,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 20,
+          "name": "TypeScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-linkmeta/releases/tag/v1.2.0",
+          "name": "v1.2.0"
+        },
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-linkmeta/releases/tag/v1.0.2",
+          "name": "v1.0.2"
+        },
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-linkmeta/releases/tag/v1.0.1",
+          "name": "v1.0.1"
+        },
+        {
+          "url": "https://github.com/dimitrov-adrian/directus-extension-linkmeta/releases/tag/v1.0.0",
+          "name": "v1.0.0"
+        }
+      ],
       "topics": [
-        "directus",
         "directus-extension",
-        "directus-extension-endpoint",
+        "directus",
         "directus-extension-interface",
-        "directus-link",
+        "directus-extension-endpoint",
         "link-preview",
-        "metascrape"
-      ],
-      "addedAt": "2026-07-15T22:28:32.829738+00:00"
-    },
-    {
-      "slug": "directus-hook-library",
-      "name": "directus-hook-library",
-      "fullName": "formfcw/directus-hook-library",
-      "category": "DevTools",
-      "stars": 28,
-      "author": "formfcw",
-      "avatar": "https://avatars.githubusercontent.com/u/78852214?v=4",
-      "desc": "A collection of customizable hooks for Directus",
-      "demo": null,
-      "repoUrl": "https://github.com/formfcw/directus-hook-library",
-      "long1": "A collection of customizable hooks for Directus. Maintained by formfcw on GitHub, where it has earned 28 stars from the community.",
-      "long2": "It's actively developed around cascade, delete-unused, directus, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Cascade",
-        "Delete Unused",
-        "Directus",
-        "Directus Extension"
-      ],
-      "updated": "2 years ago",
-      "license": "GPL-3.0",
-      "langs": [
-        {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "cascade",
-        "delete-unused",
-        "directus",
-        "directus-extension",
-        "env-settings",
-        "hooks",
-        "library",
-        "m2o",
-        "project-settings",
-        "replace-deleted-user-references",
-        "reset-hidden-fields"
-      ],
-      "addedAt": "2026-07-15T22:28:32.829738+00:00"
-    },
-    {
-      "slug": "dna",
-      "name": "dna",
-      "fullName": "cesarsalesgomes/dna",
-      "category": "DevTools",
-      "stars": 27,
-      "author": "cesarsalesgomes",
-      "avatar": "https://avatars.githubusercontent.com/u/6998275?v=4",
-      "desc": "Start a new webapp with fullstack typesafety, with Directus providing the database sdk to Nest & React/Svelte",
-      "demo": null,
-      "repoUrl": "https://github.com/cesarsalesgomes/dna",
-      "long1": "Start a new webapp with fullstack typesafety, with Directus providing the database sdk to Nest & React/Svelte. Maintained by cesarsalesgomes on GitHub, where it has earned 27 stars from the community.",
-      "long2": "It's actively developed around directus, graphql, nest, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Directus",
-        "GraphQL",
-        "Nest",
-        "Nestjs"
-      ],
-      "updated": "2 years ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "directus",
-        "graphql",
-        "nest",
-        "nestjs",
-        "react",
-        "svelte",
-        "typesafe",
-        "typesafety",
-        "typescript"
+        "metascrape",
+        "directus-link"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -1970,50 +2575,142 @@
       "category": "APIs",
       "stars": 27,
       "author": "nomaddan",
-      "avatar": "https://avatars.githubusercontent.com/u/21957456?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/21957456?u=03655bdab9a63841cce28ee632d9b2e93b926623&v=4",
       "desc": "Guide deploying Next.js and Directus fullstack app on VPS with simple CI/CD",
       "demo": null,
       "repoUrl": "https://github.com/nomaddan/nextjs-directus-vps-config",
       "long1": "Guide deploying Next.js and Directus fullstack app on VPS with simple CI/CD. Maintained by nomaddan on GitHub, where it has earned 27 stars from the community.",
-      "long2": "It's actively developed around ci-cd, cicd, digitalocean, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around vps, vps-setup, ubuntu, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "Ci Cd",
-        "Cicd",
-        "Digitalocean",
-        "Directus"
+        "Vps",
+        "Vps Setup",
+        "Ubuntu",
+        "React"
       ],
       "updated": "5 years ago",
       "license": "—",
       "langs": [
         {
           "name": "JavaScript",
-          "pct": 71.429,
-          "size": 20
+          "pct": 72
+        },
+        {
+          "name": "JavaScript",
+          "pct": 20
         },
         {
           "name": "Other",
-          "pct": 28.571,
-          "size": 8
+          "pct": 8
         }
       ],
       "versions": [],
       "topics": [
-        "ci-cd",
-        "cicd",
-        "digitalocean",
-        "directus",
-        "nextjs",
-        "nodejs",
-        "ovh",
-        "ovhcloud",
-        "react",
-        "strapi",
-        "ubuntu",
         "vps",
-        "vps-server",
         "vps-setup",
+        "ubuntu",
+        "react",
+        "nextjs",
+        "directus",
+        "strapi",
+        "ci-cd",
+        "webhooks",
         "vps-ubuntu",
-        "webhooks"
+        "vps-server",
+        "ovh"
+      ],
+      "addedAt": "2026-07-15T22:28:32.829738+00:00"
+    },
+    {
+      "slug": "dna",
+      "name": "dna",
+      "fullName": "cesarsalesgomes/dna",
+      "category": "DevTools",
+      "stars": 27,
+      "author": "cesarsalesgomes",
+      "avatar": "https://avatars.githubusercontent.com/u/6998275?u=163c0f1b5cc90583380cc87a29ab5c226fdb7d92&v=4",
+      "desc": "Start a new webapp with fullstack typesafety, with Directus providing the database sdk to Nest & React/Svelte",
+      "demo": null,
+      "repoUrl": "https://github.com/cesarsalesgomes/dna",
+      "long1": "Start a new webapp with fullstack typesafety, with Directus providing the database sdk to Nest & React/Svelte. Maintained by cesarsalesgomes on GitHub, where it has earned 27 stars from the community.",
+      "long2": "It's actively developed around nestjs, graphql, typescript, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Nestjs",
+        "GraphQL",
+        "Directus",
+        "React"
+      ],
+      "updated": "2 years ago",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 62,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 35,
+          "name": "HTML"
+        },
+        {
+          "pct": 3,
+          "name": "Svelte"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "nestjs",
+        "graphql",
+        "typescript",
+        "directus",
+        "react",
+        "typesafe",
+        "typesafety",
+        "nest",
+        "svelte"
+      ],
+      "addedAt": "2026-07-15T22:28:32.829738+00:00"
+    },
+    {
+      "slug": "directus-panel-internal-chat",
+      "name": "directus-panel-internal-chat",
+      "fullName": "timio23/directus-panel-internal-chat",
+      "category": "Dashboards",
+      "stars": 26,
+      "author": "timio23",
+      "avatar": "https://avatars.githubusercontent.com/u/124673267?u=439b472f18efa97252f6bcf16e50bf02975a623f&v=4",
+      "desc": "Native internal chat panel for communicating with other users from a dashboard.",
+      "demo": null,
+      "repoUrl": "https://github.com/timio23/directus-panel-internal-chat",
+      "long1": "Native internal chat panel for communicating with other users from a dashboard. Maintained by timio23 on GitHub, where it has earned 26 stars from the community.",
+      "long2": "It's actively developed around directus, directus-extension, directus-panel-quest, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Vue",
+        "Directus",
+        "Directus Extension",
+        "Directus Panel Quest"
+      ],
+      "updated": "3 years ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 97,
+          "name": "Vue"
+        },
+        {
+          "pct": 3,
+          "name": "JavaScript"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/timio23/directus-panel-internal-chat/releases/tag/v1.0.0",
+          "name": "v1.0.0"
+        }
+      ],
+      "topics": [
+        "directus",
+        "directus-extension",
+        "directus-panel-quest"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -2041,9 +2738,16 @@
       "license": "—",
       "langs": [
         {
-          "name": "PHP",
           "pct": 100,
-          "size": 100
+          "name": "PHP"
+        },
+        {
+          "pct": 0,
+          "name": "Shell"
+        },
+        {
+          "pct": 0,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
@@ -2052,49 +2756,13 @@
         "directus-extension",
         "directus-extension-bundle",
         "directus-extension-quickstart",
-        "directus-nodejs-quckstart",
         "directus-quickstart",
         "nodejs-api",
         "nodejs-quickstart",
         "nodejs-quickstart-boilerplate",
+        "directus-nodejs-quckstart",
         "private-server",
         "self-hosted"
-      ],
-      "addedAt": "2026-07-15T22:28:32.829738+00:00"
-    },
-    {
-      "slug": "directus-panel-internal-chat",
-      "name": "directus-panel-internal-chat",
-      "fullName": "timio23/directus-panel-internal-chat",
-      "category": "Dashboards",
-      "stars": 26,
-      "author": "timio23",
-      "avatar": "https://avatars.githubusercontent.com/u/124673267?v=4",
-      "desc": "Native internal chat panel for communicating with other users from a dashboard.",
-      "demo": null,
-      "repoUrl": "https://github.com/timio23/directus-panel-internal-chat",
-      "long1": "Native internal chat panel for communicating with other users from a dashboard. Maintained by timio23 on GitHub, where it has earned 26 stars from the community.",
-      "long2": "It's actively developed around directus, directus-extension, directus-panel-quest, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Vue",
-        "Directus",
-        "Directus Extension",
-        "Directus Panel Quest"
-      ],
-      "updated": "3 years ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "Vue",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "directus",
-        "directus-extension",
-        "directus-panel-quest"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -2105,7 +2773,7 @@
       "category": "DevTools",
       "stars": 25,
       "author": "reise69",
-      "avatar": "https://avatars.githubusercontent.com/u/3369466?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/3369466?u=12ea7b71c1186e2d0cb418e3e1e85177565f2f45&v=4",
       "desc": "A Python SDK for Directus",
       "demo": "https://www.refbax.com",
       "repoUrl": "https://github.com/reise69/directus-py-sdk",
@@ -2119,9 +2787,8 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "Python",
           "pct": 100,
-          "size": 100
+          "name": "Python"
         }
       ],
       "versions": [],
@@ -2132,51 +2799,13 @@
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
     {
-      "slug": "directus-next-starter",
-      "name": "Directus-Next-Starter",
-      "fullName": "Calderis/Directus-Next-Starter",
-      "category": "Templates",
-      "stars": 25,
-      "author": "Calderis",
-      "avatar": "https://avatars.githubusercontent.com/u/8955109?v=4",
-      "desc": "Quickstart for Directus / Next.js / Tailwind Css stack",
-      "demo": null,
-      "repoUrl": "https://github.com/Calderis/Directus-Next-Starter",
-      "long1": "Quickstart for Directus / Next.js / Tailwind Css stack. Maintained by Calderis on GitHub, where it has earned 25 stars from the community.",
-      "long2": "It's actively developed around directus, nextsjs, starter, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "JavaScript",
-        "Directus",
-        "Nextsjs",
-        "Starter",
-        "Tailwind CSS"
-      ],
-      "updated": "4 years ago",
-      "license": "ISC",
-      "langs": [
-        {
-          "name": "JavaScript",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "directus",
-        "nextsjs",
-        "starter",
-        "tailwindcss"
-      ],
-      "addedAt": "2026-07-15T22:28:32.829738+00:00"
-    },
-    {
       "slug": "directus-expandable-blocks",
       "name": "directus-expandable-blocks",
       "fullName": "smartlabsAT/directus-expandable-blocks",
       "category": "Blogs",
       "stars": 25,
       "author": "smartlabsAT",
-      "avatar": "https://avatars.githubusercontent.com/u/47238451?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/47238451?u=ad6b0d146d3bf9a7f976079962dd86b0728ee471&v=4",
       "desc": "Advanced M2A interface for Directus with inline expandable editing, drag & drop sorting, and native save integration - no custom API calls needed",
       "demo": "https://github.com/smartlabsAT/directus-expandable-blocks",
       "repoUrl": "https://github.com/smartlabsAT/directus-expandable-blocks",
@@ -2189,16 +2818,44 @@
         "Content Blocks",
         "Content Management"
       ],
-      "updated": "3 weeks ago",
+      "updated": "today",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 58,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 39,
+          "name": "Vue"
+        },
+        {
+          "pct": 3,
+          "name": "SCSS"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/smartlabsAT/directus-expandable-blocks/releases/tag/v1.3.6",
+          "name": "v1.3.6"
+        },
+        {
+          "url": "https://github.com/smartlabsAT/directus-expandable-blocks/releases/tag/v1.3.5",
+          "name": "v1.3.5"
+        },
+        {
+          "url": "https://github.com/smartlabsAT/directus-expandable-blocks/releases/tag/v1.3.4",
+          "name": "v1.3.4"
+        },
+        {
+          "url": "https://github.com/smartlabsAT/directus-expandable-blocks/releases/tag/v1.3.3",
+          "name": "v1.3.3"
+        },
+        {
+          "url": "https://github.com/smartlabsAT/directus-expandable-blocks/releases/tag/v1.3.2",
+          "name": "v1.3.2"
+        }
+      ],
       "topics": [
         "block-editor",
         "cms",
@@ -2206,13 +2863,123 @@
         "content-management",
         "directus",
         "directus-extension",
-        "directus-interface",
         "drag-and-drop",
         "inline-editing",
         "m2a",
         "typescript",
         "vue3",
         "vuedraggable"
+      ],
+      "addedAt": "2026-07-15T22:28:32.829738+00:00"
+    },
+    {
+      "slug": "directus-next-starter",
+      "name": "Directus-Next-Starter",
+      "fullName": "Calderis/Directus-Next-Starter",
+      "category": "Templates",
+      "stars": 25,
+      "author": "Calderis",
+      "avatar": "https://avatars.githubusercontent.com/u/8955109?u=23a067163fe2f4c3ca4ff130d7b92fc922f85ae4&v=4",
+      "desc": "Quickstart for Directus / Next.js / Tailwind Css stack",
+      "demo": null,
+      "repoUrl": "https://github.com/Calderis/Directus-Next-Starter",
+      "long1": "Quickstart for Directus / Next.js / Tailwind Css stack. Maintained by Calderis on GitHub, where it has earned 25 stars from the community.",
+      "long2": "It's actively developed around directus, nextsjs, tailwindcss, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "JavaScript",
+        "Directus",
+        "Nextsjs",
+        "Tailwind CSS",
+        "Starter"
+      ],
+      "updated": "4 years ago",
+      "license": "ISC",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 0,
+          "name": "Liquid"
+        },
+        {
+          "pct": 0,
+          "name": "CSS"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/Calderis/Directus-Next-Starter/releases/tag/v1.1.2",
+          "name": "v1.1.2"
+        }
+      ],
+      "topics": [
+        "directus",
+        "nextsjs",
+        "tailwindcss",
+        "starter"
+      ],
+      "addedAt": "2026-07-15T22:28:32.829738+00:00"
+    },
+    {
+      "slug": "py-directus",
+      "name": "py-directus",
+      "fullName": "panos-stavrianos/py-directus",
+      "category": "DevTools",
+      "stars": 24,
+      "author": "panos-stavrianos",
+      "avatar": "https://avatars.githubusercontent.com/u/20128753?u=1a1e0e40769ec8efa7baa089c5ecced4eeb40060&v=4",
+      "desc": "py-directus is a Python wrapper for asynchronous interaction with the Directus headless CMS API. It provides a convenient and easy-to-use interface for performing CRUD operations, querying data, and managing resources in Directus.",
+      "demo": "https://panos-stavrianos.github.io/py-directus/",
+      "repoUrl": "https://github.com/panos-stavrianos/py-directus",
+      "long1": "py-directus is a Python wrapper for asynchronous interaction with the Directus headless CMS API. It provides a convenient and easy-to-use interface for performing CRUD operations, querying data, and managing resources in Directus. Maintained by panos-stavrianos on GitHub, where it has earned 24 stars from the community.",
+      "long2": "It's actively developed around async, directus, fastapi, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Python",
+        "Async",
+        "Directus",
+        "Fastapi",
+        "Pydantic"
+      ],
+      "updated": "1 year ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "Python"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/panos-stavrianos/py-directus/releases/tag/0.0.30",
+          "name": "0.0.30"
+        },
+        {
+          "url": "https://github.com/panos-stavrianos/py-directus/releases/tag/0.0.29",
+          "name": "0.0.29"
+        },
+        {
+          "url": "https://github.com/panos-stavrianos/py-directus/releases/tag/0.0.28",
+          "name": "0.0.28"
+        },
+        {
+          "url": "https://github.com/panos-stavrianos/py-directus/releases/tag/0.0.27",
+          "name": "0.0.27"
+        },
+        {
+          "url": "https://github.com/panos-stavrianos/py-directus/releases/tag/0.0.26",
+          "name": "0.0.26"
+        }
+      ],
+      "topics": [
+        "async",
+        "directus",
+        "fastapi",
+        "pydantic",
+        "python",
+        "sdk",
+        "wrapper"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -2239,89 +3006,20 @@
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "Vue",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "directus",
-        "directus-extension",
-        "directus-extension-interface"
-      ],
-      "addedAt": "2026-07-15T22:28:32.829738+00:00"
-    },
-    {
-      "slug": "py-directus",
-      "name": "py-directus",
-      "fullName": "panos-stavrianos/py-directus",
-      "category": "DevTools",
-      "stars": 24,
-      "author": "panos-stavrianos",
-      "avatar": "https://avatars.githubusercontent.com/u/20128753?v=4",
-      "desc": "py-directus is a Python wrapper for asynchronous interaction with the Directus headless CMS API. It provides a convenient and easy-to-use interface for performing CRUD operations, querying data, and managing resources in Directus.",
-      "demo": "https://panos-stavrianos.github.io/py-directus/",
-      "repoUrl": "https://github.com/panos-stavrianos/py-directus",
-      "long1": "py-directus is a Python wrapper for asynchronous interaction with the Directus headless CMS API. It provides a convenient and easy-to-use interface for performing CRUD operations, querying data, and managing resources in Directus. Maintained by panos-stavrianos on GitHub, where it has earned 24 stars from the community.",
-      "long2": "It's actively developed around async, directus, fastapi, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Python",
-        "Async",
-        "Directus",
-        "Fastapi",
-        "Pydantic"
-      ],
-      "updated": "1 year ago",
-      "license": "MIT",
-      "langs": [
+          "pct": 89,
+          "name": "Vue"
+        },
         {
-          "name": "Python",
-          "pct": 100,
-          "size": 100
+          "pct": 11,
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
-      "topics": [
-        "async",
-        "directus",
-        "fastapi",
-        "pydantic",
-        "python",
-        "sdk",
-        "wrapper"
-      ],
-      "addedAt": "2026-07-15T22:28:32.829738+00:00"
-    },
-    {
-      "slug": "directus-extension-currency-interface",
-      "name": "directus-extension-currency-interface",
-      "fullName": "rezo-labs/directus-extension-currency-interface",
-      "category": "DevTools",
-      "stars": 23,
-      "author": "rezo-labs",
-      "avatar": "https://avatars.githubusercontent.com/u/51870813?v=4",
-      "desc": "Better input experience for currency",
-      "demo": null,
-      "repoUrl": "https://github.com/rezo-labs/directus-extension-currency-interface",
-      "long1": "Better input experience for currency. Maintained by rezo-labs on GitHub, where it has earned 23 stars from the community.",
-      "long2": "It's actively developed around directus, directus-extension, directus-extension-interface, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Vue",
-        "Directus",
-        "Directus Extension",
-        "Directus Extension Interface"
-      ],
-      "updated": "4 years ago",
-      "license": "GPL-3.0",
-      "langs": [
+      "versions": [
         {
-          "name": "Vue",
-          "pct": 100,
-          "size": 100
+          "url": "https://github.com/K3-Network/directus-interface-qrcode/releases/tag/1.0.0",
+          "name": "1.0.0"
         }
       ],
-      "versions": [],
       "topics": [
         "directus",
         "directus-extension",
@@ -2336,7 +3034,7 @@
       "category": "DevTools",
       "stars": 23,
       "author": "Intevel",
-      "avatar": "https://avatars.githubusercontent.com/u/59223342?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/59223342?u=619d2119cc83aaf1678adf6017a4a09ddceb59c4&v=4",
       "desc": "📢 Easily get notified when something in Directus happens.",
       "demo": null,
       "repoUrl": "https://github.com/Intevel/directus-logsnag",
@@ -2353,9 +3051,8 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
           "pct": 100,
-          "size": 100
+          "name": "TypeScript"
         }
       ],
       "versions": [],
@@ -2391,12 +3088,80 @@
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "Vue",
-          "pct": 100,
-          "size": 100
+          "pct": 90,
+          "name": "Vue"
+        },
+        {
+          "pct": 10,
+          "name": "TypeScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/rezo-labs/directus-extension-comment-interface/releases/tag/v1.0.1",
+          "name": "v1.0.1"
+        },
+        {
+          "url": "https://github.com/rezo-labs/directus-extension-comment-interface/releases/tag/v1.0.0",
+          "name": "v1.0.0"
+        }
+      ],
+      "topics": [
+        "directus",
+        "directus-extension",
+        "directus-extension-interface"
+      ],
+      "addedAt": "2026-07-15T22:28:32.829738+00:00"
+    },
+    {
+      "slug": "directus-extension-currency-interface",
+      "name": "directus-extension-currency-interface",
+      "fullName": "rezo-labs/directus-extension-currency-interface",
+      "category": "DevTools",
+      "stars": 23,
+      "author": "rezo-labs",
+      "avatar": "https://avatars.githubusercontent.com/u/51870813?v=4",
+      "desc": "Better input experience for currency",
+      "demo": null,
+      "repoUrl": "https://github.com/rezo-labs/directus-extension-currency-interface",
+      "long1": "Better input experience for currency. Maintained by rezo-labs on GitHub, where it has earned 23 stars from the community.",
+      "long2": "It's actively developed around directus, directus-extension, directus-extension-interface, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Vue",
+        "Directus",
+        "Directus Extension",
+        "Directus Extension Interface"
+      ],
+      "updated": "4 years ago",
+      "license": "GPL-3.0",
+      "langs": [
+        {
+          "pct": 74,
+          "name": "Vue"
+        },
+        {
+          "pct": 26,
+          "name": "TypeScript"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/rezo-labs/directus-extension-currency-interface/releases/tag/v1.1.1",
+          "name": "v1.1.1"
+        },
+        {
+          "url": "https://github.com/rezo-labs/directus-extension-currency-interface/releases/tag/v1.1.0",
+          "name": "v1.1.0"
+        },
+        {
+          "url": "https://github.com/rezo-labs/directus-extension-currency-interface/releases/tag/v1.0.1",
+          "name": "v1.0.1"
+        },
+        {
+          "url": "https://github.com/rezo-labs/directus-extension-currency-interface/releases/tag/v1.0.0",
+          "name": "v1.0.0"
+        }
+      ],
       "topics": [
         "directus",
         "directus-extension",
@@ -2422,33 +3187,20 @@
         "Directus",
         "Docs"
       ],
-      "updated": "1 week ago",
+      "updated": "today",
       "license": "—",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 53.527,
-          "size": 323164
+          "pct": 54,
+          "name": "TypeScript"
         },
         {
-          "name": "Vue",
-          "pct": 41.814,
-          "size": 252448
+          "pct": 42,
+          "name": "Vue"
         },
         {
-          "name": "JavaScript",
-          "pct": 4.023,
-          "size": 24290
-        },
-        {
-          "name": "CSS",
-          "pct": 0.547,
-          "size": 3302
-        },
-        {
-          "name": "Shell",
-          "pct": 0.089,
-          "size": 537
+          "pct": 4,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
@@ -2465,76 +3217,55 @@
       "category": "DevTools",
       "stars": 21,
       "author": "GiamPy5",
-      "avatar": "https://avatars.githubusercontent.com/u/4460702?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/4460702?u=3b86ce401e5d281e7a6946aa102da76c7dfd965a&v=4",
       "desc": "This repository allows you to deploy Directus in AWS using Terraform following AWS Best Practises.",
       "demo": "https://registry.terraform.io/modules/GiamPy5/directus/aws/latest",
       "repoUrl": "https://github.com/GiamPy5/terraform-aws-directus",
       "long1": "This repository allows you to deploy Directus in AWS using Terraform following AWS Best Practises. Maintained by GiamPy5 on GitHub, where it has earned 21 stars from the community.",
-      "long2": "It's actively developed around aws, directus, directus-aws, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around aws, directus, terraform-aws, and is a solid reference for anyone building with these tools.",
       "stack": [
         "HCL",
         "Aws",
         "Directus",
-        "Directus Aws",
-        "Terraform Aws"
+        "Terraform Aws",
+        "Terraform Module"
       ],
       "updated": "6 months ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "HCL",
           "pct": 100,
-          "size": 100
+          "name": "HCL"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/GiamPy5/terraform-aws-directus/releases/tag/v1.0.1",
+          "name": "v1.0.1"
+        },
+        {
+          "url": "https://github.com/GiamPy5/terraform-aws-directus/releases/tag/v1.0.0",
+          "name": "v1.0.0"
+        },
+        {
+          "url": "https://github.com/GiamPy5/terraform-aws-directus/releases/tag/v0.4.0",
+          "name": "v0.4.0"
+        },
+        {
+          "url": "https://github.com/GiamPy5/terraform-aws-directus/releases/tag/v0.3.2",
+          "name": "v0.3.2"
+        },
+        {
+          "url": "https://github.com/GiamPy5/terraform-aws-directus/releases/tag/v0.3.1",
+          "name": "v0.3.1"
+        }
+      ],
       "topics": [
         "aws",
         "directus",
-        "directus-aws",
         "terraform-aws",
-        "terraform-module"
-      ],
-      "addedAt": "2026-07-15T22:28:32.829738+00:00"
-    },
-    {
-      "slug": "directus-lite-sdk",
-      "name": "directus-lite-sdk",
-      "fullName": "jacoborus/directus-lite-sdk",
-      "category": "DevTools",
-      "stars": 20,
-      "author": "jacoborus",
-      "avatar": "https://avatars.githubusercontent.com/u/829859?v=4",
-      "desc": "The unofficial Directus Lite SDK in less than 1Kb",
-      "demo": null,
-      "repoUrl": "https://github.com/jacoborus/directus-lite-sdk",
-      "long1": "The unofficial Directus Lite SDK in less than 1Kb. Maintained by jacoborus on GitHub, where it has earned 20 stars from the community.",
-      "long2": "It's actively developed around client, directus, javascript, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Client",
-        "Directus",
-        "Rest",
-        "Rest Api"
-      ],
-      "updated": "4 years ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "client",
-        "directus",
-        "javascript",
-        "rest",
-        "rest-api",
-        "sdk",
-        "typescript"
+        "terraform-module",
+        "directus-aws"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -2562,9 +3293,16 @@
       "license": "—",
       "langs": [
         {
-          "name": "JavaScript",
-          "pct": 100,
-          "size": 100
+          "pct": 64,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 26,
+          "name": "Dockerfile"
+        },
+        {
+          "pct": 10,
+          "name": "TypeScript"
         }
       ],
       "versions": [],
@@ -2577,13 +3315,62 @@
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
     {
+      "slug": "directus-lite-sdk",
+      "name": "directus-lite-sdk",
+      "fullName": "jacoborus/directus-lite-sdk",
+      "category": "DevTools",
+      "stars": 20,
+      "author": "jacoborus",
+      "avatar": "https://avatars.githubusercontent.com/u/829859?v=4",
+      "desc": "The unofficial Directus Lite SDK in less than 1Kb",
+      "demo": null,
+      "repoUrl": "https://github.com/jacoborus/directus-lite-sdk",
+      "long1": "The unofficial Directus Lite SDK in less than 1Kb. Maintained by jacoborus on GitHub, where it has earned 20 stars from the community.",
+      "long2": "It's actively developed around client, directus, javascript, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Client",
+        "Directus",
+        "Rest",
+        "Rest Api"
+      ],
+      "updated": "4 years ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "TypeScript"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/jacoborus/directus-lite-sdk/releases/tag/1.1.0",
+          "name": "1.1.0"
+        },
+        {
+          "url": "https://github.com/jacoborus/directus-lite-sdk/releases/tag/1.0.0",
+          "name": "1.0.0"
+        }
+      ],
+      "topics": [
+        "client",
+        "directus",
+        "javascript",
+        "rest",
+        "rest-api",
+        "sdk",
+        "typescript"
+      ],
+      "addedAt": "2026-07-15T22:28:32.829738+00:00"
+    },
+    {
       "slug": "directus-init",
       "name": "directus-init",
       "fullName": "ched-dev/directus-init",
       "category": "DevTools",
       "stars": 19,
       "author": "ched-dev",
-      "avatar": "https://avatars.githubusercontent.com/u/73146636?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/73146636?u=06d741beca31039d3005e07c319ecd858a438c6b&v=4",
       "desc": "Directus Init is a preconfigured Directus install with PostgreSQL - intended for extension development or self-hosting",
       "demo": null,
       "repoUrl": "https://github.com/ched-dev/directus-init",
@@ -2600,9 +3387,16 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "HTML",
-          "pct": 100,
-          "size": 100
+          "pct": 62,
+          "name": "HTML"
+        },
+        {
+          "pct": 27,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 11,
+          "name": "Shell"
         }
       ],
       "versions": [],
@@ -2618,13 +3412,129 @@
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
     {
+      "slug": "directus-stripe",
+      "name": "directus-stripe",
+      "fullName": "nexthis/directus-stripe",
+      "category": "E-commerce",
+      "stars": 18,
+      "author": "nexthis",
+      "avatar": "https://avatars.githubusercontent.com/u/45048369?u=31db12170ef609e04e311f89058c23d841d99ee5&v=4",
+      "desc": "Receive payments on your Directus commerce application using Stripe.",
+      "demo": "https://nexthis.github.io/directus-stripe/",
+      "repoUrl": "https://github.com/nexthis/directus-stripe",
+      "long1": "Receive payments on your Directus commerce application using Stripe. Maintained by nexthis on GitHub, where it has earned 18 stars from the community.",
+      "long2": "It's actively developed around directus, plugin, stripe, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Directus",
+        "Plugin",
+        "Stripe"
+      ],
+      "updated": "2 years ago",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "TypeScript"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "directus",
+        "plugin",
+        "stripe",
+        "typescript"
+      ],
+      "addedAt": "2026-07-15T22:28:32.829738+00:00"
+    },
+    {
+      "slug": "directus-extensions",
+      "name": "directus-extensions",
+      "fullName": "nerkarso/directus-extensions",
+      "category": "DevTools",
+      "stars": 18,
+      "author": "nerkarso",
+      "avatar": "https://avatars.githubusercontent.com/u/25533683?u=906ed75212510515168fa7f462dfc542e0b66e23&v=4",
+      "desc": "Collection of Directus extensions",
+      "demo": "https://nerkarso.github.io/directus-extensions/",
+      "repoUrl": "https://github.com/nerkarso/directus-extensions",
+      "long1": "Collection of Directus extensions. Maintained by nerkarso on GitHub, where it has earned 18 stars from the community.",
+      "long2": "It's actively developed around directus, directus-extension, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Directus",
+        "Directus Extension"
+      ],
+      "updated": "4 days ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 94,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 4,
+          "name": "Vue"
+        },
+        {
+          "pct": 2,
+          "name": "JavaScript"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "directus",
+        "directus-extension"
+      ],
+      "addedAt": "2026-07-15T22:28:32.829738+00:00"
+    },
+    {
+      "slug": "directus-sql-panel",
+      "name": "directus-sql-panel",
+      "fullName": "harish2704/directus-sql-panel",
+      "category": "UI Kits",
+      "stars": 18,
+      "author": "harish2704",
+      "avatar": "https://avatars.githubusercontent.com/u/1652903?u=91f2f0b19f87fe38ddaa116320f4940babe4765e&v=4",
+      "desc": "Directus panel component which shows result of stored SQL query as a table",
+      "demo": null,
+      "repoUrl": "https://github.com/harish2704/directus-sql-panel",
+      "long1": "Directus panel component which shows result of stored SQL query as a table. Maintained by harish2704 on GitHub, where it has earned 18 stars from the community.",
+      "long2": "It's actively developed around directus, directus-extension-endpoint, directus-extension, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Vue",
+        "Directus",
+        "Directus Extension Endpoint",
+        "Directus Extension"
+      ],
+      "updated": "5 years ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 51,
+          "name": "Vue"
+        },
+        {
+          "pct": 49,
+          "name": "JavaScript"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "directus",
+        "directus-extension-endpoint",
+        "directus-extension"
+      ],
+      "addedAt": "2026-07-15T22:28:32.829738+00:00"
+    },
+    {
       "slug": "directus-extensions",
       "name": "directus-extensions",
       "fullName": "domsen123/directus-extensions",
       "category": "DevTools",
       "stars": 18,
       "author": "domsen123",
-      "avatar": "https://avatars.githubusercontent.com/u/5880887?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/5880887?u=c1be8da6d7b9f788f9889c98ad693eb29e6f368f&v=4",
       "desc": "SSR renders your own ⚡ Vue/Vite Application into an self-hosted 🐰 Directus Instance.",
       "demo": null,
       "repoUrl": "https://github.com/domsen123/directus-extensions",
@@ -2641,9 +3551,12 @@
       "license": "—",
       "langs": [
         {
-          "name": "TypeScript",
           "pct": 100,
-          "size": 100
+          "name": "TypeScript"
+        },
+        {
+          "pct": 0,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
@@ -2657,95 +3570,22 @@
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
     {
-      "slug": "directus-sql-panel",
-      "name": "directus-sql-panel",
-      "fullName": "harish2704/directus-sql-panel",
-      "category": "UI Kits",
-      "stars": 18,
-      "author": "harish2704",
-      "avatar": "https://avatars.githubusercontent.com/u/1652903?v=4",
-      "desc": "Directus panel component which shows result of stored SQL query as a table",
-      "demo": null,
-      "repoUrl": "https://github.com/harish2704/directus-sql-panel",
-      "long1": "Directus panel component which shows result of stored SQL query as a table. Maintained by harish2704 on GitHub, where it has earned 18 stars from the community.",
-      "long2": "It's actively developed around directus, directus-extension, directus-extension-endpoint, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Vue",
-        "Directus",
-        "Directus Extension",
-        "Directus Extension Endpoint"
-      ],
-      "updated": "5 years ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "Vue",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "directus",
-        "directus-extension",
-        "directus-extension-endpoint"
-      ],
-      "addedAt": "2026-07-15T22:28:32.829738+00:00"
-    },
-    {
-      "slug": "directus-stripe",
-      "name": "directus-stripe",
-      "fullName": "nexthis/directus-stripe",
-      "category": "E-commerce",
-      "stars": 18,
-      "author": "nexthis",
-      "avatar": "https://avatars.githubusercontent.com/u/45048369?v=4",
-      "desc": "Receive payments on your Directus commerce application using Stripe.",
-      "demo": "https://nexthis.github.io/directus-stripe/",
-      "repoUrl": "https://github.com/nexthis/directus-stripe",
-      "long1": "Receive payments on your Directus commerce application using Stripe. Maintained by nexthis on GitHub, where it has earned 18 stars from the community.",
-      "long2": "It's actively developed around directus, plugin, stripe, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Directus",
-        "Plugin",
-        "Stripe"
-      ],
-      "updated": "2 years ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "directus",
-        "plugin",
-        "stripe",
-        "typescript"
-      ],
-      "addedAt": "2026-07-15T22:28:32.829738+00:00"
-    },
-    {
       "slug": "directus-extension-human-readable-id",
       "name": "directus-extension-human-readable-id",
       "fullName": "dwaring87/directus-extension-human-readable-id",
       "category": "DevTools",
       "stars": 17,
       "author": "dwaring87",
-      "avatar": "https://avatars.githubusercontent.com/u/7526014?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/7526014?u=93eb39624e1d6dc2ba6e86ede3bc6341db1b6478&v=4",
       "desc": "A Directus v10+ extension (interface) for generating human-readable ids for text fields",
       "demo": null,
       "repoUrl": "https://github.com/dwaring87/directus-extension-human-readable-id",
       "long1": "A Directus v10+ extension (interface) for generating human-readable ids for text fields. Maintained by dwaring87 on GitHub, where it has earned 17 stars from the community.",
-      "long2": "It's actively developed around directus, directus-extension, directus-extension-interface, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around directus-extension, directus, directus-extension-interface, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Vue",
-        "Directus",
         "Directus Extension",
+        "Directus",
         "Directus Extension Interface",
         "Human Readable Id"
       ],
@@ -2753,15 +3593,23 @@
       "license": "—",
       "langs": [
         {
-          "name": "Vue",
-          "pct": 100,
-          "size": 100
+          "pct": 76,
+          "name": "Vue"
+        },
+        {
+          "pct": 24,
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/dwaring87/directus-extension-human-readable-id/releases/tag/1.1.0",
+          "name": "1.1.0"
+        }
+      ],
       "topics": [
-        "directus",
         "directus-extension",
+        "directus",
         "directus-extension-interface",
         "human-readable-id"
       ],
@@ -2774,70 +3622,35 @@
       "category": "DevTools",
       "stars": 17,
       "author": "Guiqft",
-      "avatar": "https://avatars.githubusercontent.com/u/9392803?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/9392803?u=eaf097819b6a2527531c4ddb432a4b84cdfabbe1&v=4",
       "desc": "Custom operation to backup the PG database and upload the .dump to Directus.",
       "demo": null,
       "repoUrl": "https://github.com/Guiqft/directus-backup-operation",
       "long1": "Custom operation to backup the PG database and upload the .dump to Directus. Maintained by Guiqft on GitHub, where it has earned 17 stars from the community.",
-      "long2": "It's actively developed around backup, directus, directus-extension, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around directus, directus-extension, backup, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Backup",
         "Directus",
         "Directus Extension",
-        "Directus Extension Operation"
+        "Backup",
+        "PostgreSQL"
       ],
       "updated": "4 years ago",
       "license": "—",
       "langs": [
         {
-          "name": "TypeScript",
           "pct": 100,
-          "size": 100
+          "name": "TypeScript"
         }
       ],
       "versions": [],
       "topics": [
-        "backup",
         "directus",
         "directus-extension",
+        "backup",
+        "postgresql",
         "directus-extension-operation",
-        "hacktoberfest",
-        "postgresql"
-      ],
-      "addedAt": "2026-07-15T22:28:32.829738+00:00"
-    },
-    {
-      "slug": "directus-extensions",
-      "name": "directus-extensions",
-      "fullName": "nerkarso/directus-extensions",
-      "category": "DevTools",
-      "stars": 17,
-      "author": "nerkarso",
-      "avatar": "https://avatars.githubusercontent.com/u/25533683?v=4",
-      "desc": "Collection of Directus extensions",
-      "demo": "https://nerkarso.github.io/directus-extensions/",
-      "repoUrl": "https://github.com/nerkarso/directus-extensions",
-      "long1": "Collection of Directus extensions. Maintained by nerkarso on GitHub, where it has earned 17 stars from the community.",
-      "long2": "It's actively developed around directus, directus-extension, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Directus",
-        "Directus Extension"
-      ],
-      "updated": "5 months ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "directus",
-        "directus-extension"
+        "hacktoberfest"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -2864,12 +3677,20 @@
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "Vue",
-          "pct": 100,
-          "size": 100
+          "pct": 64,
+          "name": "Vue"
+        },
+        {
+          "pct": 36,
+          "name": "TypeScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/rezo-labs/directus-extension-m2o-presentation-interface/releases/tag/v1.0.0",
+          "name": "v1.0.0"
+        }
+      ],
       "topics": [
         "directus",
         "directus-extension",
@@ -2884,7 +3705,7 @@
       "category": "DevTools",
       "stars": 16,
       "author": "Jason-CKY",
-      "avatar": "https://avatars.githubusercontent.com/u/27609953?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/27609953?u=c88210ad7ff30e6891be185d539a24ba8f093cb1&v=4",
       "desc": "Python SDK for directus client with convenience functions",
       "demo": null,
       "repoUrl": "https://github.com/Jason-CKY/directus-sdk-python",
@@ -2899,9 +3720,12 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "Python",
-          "pct": 100,
-          "size": 100
+          "pct": 96,
+          "name": "Python"
+        },
+        {
+          "pct": 4,
+          "name": "Makefile"
         }
       ],
       "versions": [],
@@ -2913,13 +3737,87 @@
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
     {
+      "slug": "directus-super-table",
+      "name": "directus-super-table",
+      "fullName": "smartlabsAT/directus-super-table",
+      "category": "UI Kits",
+      "stars": 16,
+      "author": "smartlabsAT",
+      "avatar": "https://avatars.githubusercontent.com/u/47238451?u=ad6b0d146d3bf9a7f976079962dd86b0728ee471&v=4",
+      "desc": "Powerful table layout extension for Directus 11+ featuring inline editing, quick filters with colors & icons, bookmarks, translation support, manual sorting with drag & drop, and advanced cell renderers",
+      "demo": null,
+      "repoUrl": "https://github.com/smartlabsAT/directus-super-table",
+      "long1": "Powerful table layout extension for Directus 11+ featuring inline editing, quick filters with colors & icons, bookmarks, translation support, manual sorting with drag & drop, and advanced cell renderers. Maintained by smartlabsAT on GitHub, where it has earned 16 stars from the community.",
+      "long2": "It's actively developed around data-table, directus, directus-extension, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Data Table",
+        "Directus",
+        "Directus Extension",
+        "I18N"
+      ],
+      "updated": "1 month ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 63,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 35,
+          "name": "Vue"
+        },
+        {
+          "pct": 2,
+          "name": "JavaScript"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/smartlabsAT/directus-super-table/releases/tag/v0.6.4",
+          "name": "v0.6.4"
+        },
+        {
+          "url": "https://github.com/smartlabsAT/directus-super-table/releases/tag/v0.6.3",
+          "name": "v0.6.3"
+        },
+        {
+          "url": "https://github.com/smartlabsAT/directus-super-table/releases/tag/v0.6.2",
+          "name": "v0.6.2"
+        },
+        {
+          "url": "https://github.com/smartlabsAT/directus-super-table/releases/tag/v0.6.1",
+          "name": "v0.6.1"
+        },
+        {
+          "url": "https://github.com/smartlabsAT/directus-super-table/releases/tag/v0.6.0",
+          "name": "v0.6.0"
+        }
+      ],
+      "topics": [
+        "data-table",
+        "directus",
+        "directus-extension",
+        "i18n",
+        "inline-editing",
+        "multi-language",
+        "super-table",
+        "typescript",
+        "vue3",
+        "directus-11",
+        "directus-layout",
+        "filter-management"
+      ],
+      "addedAt": "2026-07-15T22:28:32.829738+00:00"
+    },
+    {
       "slug": "directus-extension-imagga",
       "name": "directus-extension-imagga",
       "fullName": "gbicou/directus-extension-imagga",
       "category": "DevTools",
       "stars": 16,
       "author": "gbicou",
-      "avatar": "https://avatars.githubusercontent.com/u/174636?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/174636?u=28c41947b86ac9890b90d22c716f3420a3db33bc&v=4",
       "desc": "Automatic image tagging of Directus files with Imagga API",
       "demo": null,
       "repoUrl": "https://github.com/gbicou/directus-extension-imagga",
@@ -2932,21 +3830,40 @@
         "Directus Custom Hook",
         "Directus Extension"
       ],
-      "updated": "1 week ago",
+      "updated": "today",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 94.326,
-          "size": 8611
+          "pct": 94,
+          "name": "TypeScript"
         },
         {
-          "name": "JavaScript",
-          "pct": 5.674,
-          "size": 518
+          "pct": 6,
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/gbicou/directus-extension-imagga/releases/tag/directus-extension-imagga-v1.6.6",
+          "name": "directus-extension-imagga-v1.6.6"
+        },
+        {
+          "url": "https://github.com/gbicou/directus-extension-imagga/releases/tag/directus-extension-imagga-v1.6.5",
+          "name": "directus-extension-imagga-v1.6.5"
+        },
+        {
+          "url": "https://github.com/gbicou/directus-extension-imagga/releases/tag/directus-extension-imagga-v1.6.4",
+          "name": "directus-extension-imagga-v1.6.4"
+        },
+        {
+          "url": "https://github.com/gbicou/directus-extension-imagga/releases/tag/directus-extension-imagga-v1.6.3",
+          "name": "directus-extension-imagga-v1.6.3"
+        },
+        {
+          "url": "https://github.com/gbicou/directus-extension-imagga/releases/tag/v1.6.2",
+          "name": "v1.6.2"
+        }
+      ],
       "topics": [
         "auto-tagging",
         "directus",
@@ -2965,34 +3882,42 @@
       "category": "DevTools",
       "stars": 16,
       "author": "dwaring87",
-      "avatar": "https://avatars.githubusercontent.com/u/7526014?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/7526014?u=93eb39624e1d6dc2ba6e86ede3bc6341db1b6478&v=4",
       "desc": "A Directus v9 extension (module & endpoints) for initiating a Netlify build from within the Directus app.",
       "demo": null,
       "repoUrl": "https://github.com/dwaring87/directus-extension-publish-netlify",
       "long1": "A Directus v9 extension (module & endpoints) for initiating a Netlify build from within the Directus app. Maintained by dwaring87 on GitHub, where it has earned 16 stars from the community.",
-      "long2": "It's actively developed around directus, directus-extension, directus-extension-endpoint, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around directus, directus-extension-endpoint, directus-extension-module, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Vue",
         "Directus",
-        "Directus Extension",
         "Directus Extension Endpoint",
-        "Directus Extension Module"
+        "Directus Extension Module",
+        "Directus Extension"
       ],
       "updated": "2 years ago",
       "license": "—",
       "langs": [
         {
-          "name": "Vue",
-          "pct": 100,
-          "size": 100
+          "pct": 66,
+          "name": "Vue"
+        },
+        {
+          "pct": 34,
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/dwaring87/directus-extension-publish-netlify/releases/tag/v2.0.0",
+          "name": "v2.0.0"
+        }
+      ],
       "topics": [
         "directus",
-        "directus-extension",
         "directus-extension-endpoint",
-        "directus-extension-module"
+        "directus-extension-module",
+        "directus-extension"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -3008,32 +3933,85 @@
       "demo": "https://snipcart.com/blog/intro-api-first-headless-cms-directus",
       "repoUrl": "https://github.com/snipcart/directus-metalsmith-snipcart",
       "long1": "Lookbook web app with Directus' open source headless CMS, Metalsmith, Vue.js & Snipcart. Maintained by snipcart on GitHub, where it has earned 15 stars from the community.",
-      "long2": "It's actively developed around directus, headless-cms, jamstack, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around jamstack, static-site-generator, headless-cms, and is a solid reference for anyone building with these tools.",
       "stack": [
         "HTML",
-        "Directus",
-        "Headless Cms",
         "Jamstack",
-        "Metalsmith"
+        "Static Site Generator",
+        "Headless Cms",
+        "Open Source"
       ],
       "updated": "9 years ago",
       "license": "—",
       "langs": [
         {
-          "name": "HTML",
-          "pct": 100,
-          "size": 100
+          "pct": 55,
+          "name": "HTML"
+        },
+        {
+          "pct": 36,
+          "name": "CSS"
+        },
+        {
+          "pct": 9,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
       "topics": [
-        "directus",
-        "headless-cms",
         "jamstack",
-        "metalsmith",
-        "open-source",
         "static-site-generator",
-        "vuejs"
+        "headless-cms",
+        "open-source",
+        "vuejs",
+        "metalsmith",
+        "directus"
+      ],
+      "addedAt": "2026-07-15T22:28:32.829738+00:00"
+    },
+    {
+      "slug": "directus-extension-stripe",
+      "name": "directus-extension-stripe",
+      "fullName": "programmarchy/directus-extension-stripe",
+      "category": "DevTools",
+      "stars": 15,
+      "author": "programmarchy",
+      "avatar": "https://avatars.githubusercontent.com/u/622192?v=4",
+      "desc": "A Directus extension that supports building flows for Stripe webhooks",
+      "demo": null,
+      "repoUrl": "https://github.com/programmarchy/directus-extension-stripe",
+      "long1": "A Directus extension that supports building flows for Stripe webhooks. Maintained by programmarchy on GitHub, where it has earned 15 stars from the community.",
+      "long2": "It's actively developed around directus, directus-extension, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Directus",
+        "Directus Extension"
+      ],
+      "updated": "1 year ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 98,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 2,
+          "name": "HTML"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/programmarchy/directus-extension-stripe/releases/tag/1.3.0",
+          "name": "1.3.0"
+        },
+        {
+          "url": "https://github.com/programmarchy/directus-extension-stripe/releases/tag/1.2.0",
+          "name": "1.2.0"
+        }
+      ],
+      "topics": [
+        "directus",
+        "directus-extension"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -3044,7 +4022,7 @@
       "category": "DevTools",
       "stars": 15,
       "author": "freekrai",
-      "avatar": "https://avatars.githubusercontent.com/u/21484?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/21484?u=d9c450f0cbf71581fdd03da8628dbe4067c4fcd6&v=4",
       "desc": "Starter to deploy Directus on railway",
       "demo": null,
       "repoUrl": "https://github.com/freekrai/directus-railway",
@@ -3060,9 +4038,12 @@
       "license": "—",
       "langs": [
         {
-          "name": "JavaScript",
-          "pct": 100,
-          "size": 100
+          "pct": 96,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 4,
+          "name": "Procfile"
         }
       ],
       "versions": [],
@@ -3092,192 +4073,44 @@
         "Directus",
         "Extension"
       ],
-      "updated": "12 months ago",
+      "updated": "1 year ago",
       "license": "Apache-2.0",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 92,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 8,
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/antonko/directus-extension-blurhasher/releases/tag/v2.0.2",
+          "name": "v2.0.2"
+        },
+        {
+          "url": "https://github.com/antonko/directus-extension-blurhasher/releases/tag/v2.0.1",
+          "name": "v2.0.1"
+        },
+        {
+          "url": "https://github.com/antonko/directus-extension-blurhasher/releases/tag/v2.0.0",
+          "name": "v2.0.0"
+        },
+        {
+          "url": "https://github.com/antonko/directus-extension-blurhasher/releases/tag/v1.1.5",
+          "name": "v1.1.5"
+        },
+        {
+          "url": "https://github.com/antonko/directus-extension-blurhasher/releases/tag/v1.0.0",
+          "name": "v1.0.0"
+        }
+      ],
       "topics": [
         "blurhash",
         "directus",
         "extension"
-      ],
-      "addedAt": "2026-07-15T22:28:32.829738+00:00"
-    },
-    {
-      "slug": "directus-super-table",
-      "name": "directus-super-table",
-      "fullName": "smartlabsAT/directus-super-table",
-      "category": "UI Kits",
-      "stars": 15,
-      "author": "smartlabsAT",
-      "avatar": "https://avatars.githubusercontent.com/u/47238451?v=4",
-      "desc": "Powerful table layout extension for Directus 11+ featuring inline editing, quick filters with colors & icons, bookmarks, translation support, manual sorting with drag & drop, and advanced cell renderers",
-      "demo": null,
-      "repoUrl": "https://github.com/smartlabsAT/directus-super-table",
-      "long1": "Powerful table layout extension for Directus 11+ featuring inline editing, quick filters with colors & icons, bookmarks, translation support, manual sorting with drag & drop, and advanced cell renderers. Maintained by smartlabsAT on GitHub, where it has earned 15 stars from the community.",
-      "long2": "It's actively developed around data-table, directus, directus-11, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Data Table",
-        "Directus",
-        "Directus 11",
-        "Directus Extension"
-      ],
-      "updated": "3 weeks ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "TypeScript",
-          "pct": 62.546,
-          "size": 424060
-        },
-        {
-          "name": "Vue",
-          "pct": 34.991,
-          "size": 237237
-        },
-        {
-          "name": "JavaScript",
-          "pct": 2.463,
-          "size": 16698
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "data-table",
-        "directus",
-        "directus-11",
-        "directus-extension",
-        "directus-layout",
-        "filter-management",
-        "i18n",
-        "inline-editing",
-        "multi-language",
-        "quick-filters",
-        "super-table",
-        "typescript",
-        "vue3"
-      ],
-      "addedAt": "2026-07-15T22:28:32.829738+00:00"
-    },
-    {
-      "slug": "directus-extension-stripe",
-      "name": "directus-extension-stripe",
-      "fullName": "programmarchy/directus-extension-stripe",
-      "category": "DevTools",
-      "stars": 15,
-      "author": "programmarchy",
-      "avatar": "https://avatars.githubusercontent.com/u/622192?v=4",
-      "desc": "A Directus extension that supports building flows for Stripe webhooks",
-      "demo": null,
-      "repoUrl": "https://github.com/programmarchy/directus-extension-stripe",
-      "long1": "A Directus extension that supports building flows for Stripe webhooks. Maintained by programmarchy on GitHub, where it has earned 15 stars from the community.",
-      "long2": "It's actively developed around directus, directus-extension, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Directus",
-        "Directus Extension"
-      ],
-      "updated": "1 year ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "directus",
-        "directus-extension"
-      ],
-      "addedAt": "2026-07-15T22:28:32.829738+00:00"
-    },
-    {
-      "slug": "directus-expo",
-      "name": "directus-expo",
-      "fullName": "martijnmichel/directus-expo",
-      "category": "Mobile",
-      "stars": 14,
-      "author": "martijnmichel",
-      "avatar": "https://avatars.githubusercontent.com/u/38880192?v=4",
-      "desc": "Directus Mobile app for ios/android",
-      "demo": "https://directusmobile.app",
-      "repoUrl": "https://github.com/martijnmichel/directus-expo",
-      "long1": "Directus Mobile app for ios/android. Maintained by martijnmichel on GitHub, where it has earned 14 stars from the community.",
-      "long2": "It's actively developed around android, app, cms, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Android",
-        "App",
-        "Cms",
-        "Directus"
-      ],
-      "updated": "3 months ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "android",
-        "app",
-        "cms",
-        "directus",
-        "ios",
-        "mobile"
-      ],
-      "addedAt": "2026-07-15T22:28:32.829738+00:00"
-    },
-    {
-      "slug": "directus-extension-tab-group",
-      "name": "directus-extension-tab-group",
-      "fullName": "formfcw/directus-extension-tab-group",
-      "category": "DevTools",
-      "stars": 14,
-      "author": "formfcw",
-      "avatar": "https://avatars.githubusercontent.com/u/78852214?v=4",
-      "desc": "A group interface with a tab menu for toggling the visibility of fields within the group.",
-      "demo": "https://www.npmjs.com/package/directus-extension-tab-group",
-      "repoUrl": "https://github.com/formfcw/directus-extension-tab-group",
-      "long1": "A group interface with a tab menu for toggling the visibility of fields within the group. Maintained by formfcw on GitHub, where it has earned 14 stars from the community.",
-      "long2": "It's actively developed around directus, directus-extension, directus-extension-interface, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Vue",
-        "Directus",
-        "Directus Extension",
-        "Directus Extension Interface",
-        "Fields"
-      ],
-      "updated": "2 years ago",
-      "license": "GPL-3.0",
-      "langs": [
-        {
-          "name": "Vue",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "directus",
-        "directus-extension",
-        "directus-extension-interface",
-        "fields",
-        "group",
-        "tabs",
-        "translation"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -3288,7 +4121,7 @@
       "category": "DevTools",
       "stars": 14,
       "author": "dwaring87",
-      "avatar": "https://avatars.githubusercontent.com/u/7526014?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/7526014?u=93eb39624e1d6dc2ba6e86ede3bc6341db1b6478&v=4",
       "desc": "A Directus v9 extension (module & endpoint) for initiating a node-based build of a locally-installed site from within the Directus app.",
       "demo": null,
       "repoUrl": "https://github.com/dwaring87/directus-extension-publish-node",
@@ -3305,9 +4138,16 @@
       "license": "—",
       "langs": [
         {
-          "name": "Vue",
-          "pct": 100,
-          "size": 100
+          "pct": 60,
+          "name": "Vue"
+        },
+        {
+          "pct": 40,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 0,
+          "name": "Shell"
         }
       ],
       "versions": [],
@@ -3331,30 +4171,288 @@
       "demo": null,
       "repoUrl": "https://github.com/BIX-Digital/directus-version-control-changelog",
       "long1": "A Directus hook extension to push user written change summaries (from a singleton collection text field) to a changelog in a VCS server. Maintained by BIX-Digital on GitHub, where it has earned 14 stars from the community.",
-      "long2": "It's actively developed around bitbucket, changelog, directus, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around directus-extension, directus, version-control, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Bitbucket",
-        "Changelog",
+        "Directus Extension",
         "Directus",
-        "Directus Extension"
+        "Version Control",
+        "Bitbucket"
       ],
       "updated": "4 years ago",
       "license": "Apache-2.0",
       "langs": [
         {
-          "name": "TypeScript",
           "pct": 100,
-          "size": 100
+          "name": "TypeScript"
+        },
+        {
+          "pct": 0,
+          "name": "JavaScript"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/BIX-Digital/directus-version-control-changelog/releases/tag/v0.8.1",
+          "name": "v0.8.1"
+        },
+        {
+          "url": "https://github.com/BIX-Digital/directus-version-control-changelog/releases/tag/v0.8.0",
+          "name": "v0.8.0"
+        }
+      ],
+      "topics": [
+        "directus-extension",
+        "directus",
+        "version-control",
+        "bitbucket",
+        "changelog"
+      ],
+      "addedAt": "2026-07-15T22:28:32.829738+00:00"
+    },
+    {
+      "slug": "directus-expo",
+      "name": "directus-expo",
+      "fullName": "martijnmichel/directus-expo",
+      "category": "Mobile",
+      "stars": 14,
+      "author": "martijnmichel",
+      "avatar": "https://avatars.githubusercontent.com/u/38880192?u=afd39c1b241200743c792498cb5124f38d41d0bc&v=4",
+      "desc": "Directus Mobile app for ios/android",
+      "demo": "https://directusmobile.app",
+      "repoUrl": "https://github.com/martijnmichel/directus-expo",
+      "long1": "Directus Mobile app for ios/android. Maintained by martijnmichel on GitHub, where it has earned 14 stars from the community.",
+      "long2": "It's actively developed around android, app, cms, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Android",
+        "App",
+        "Cms",
+        "Directus"
+      ],
+      "updated": "4 months ago",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 91,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 5,
+          "name": "Kotlin"
+        },
+        {
+          "pct": 4,
+          "name": "Swift"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/martijnmichel/directus-expo/releases/tag/v0.14.0",
+          "name": "v0.14.0"
+        },
+        {
+          "url": "https://github.com/martijnmichel/directus-expo/releases/tag/v0.13.0",
+          "name": "v0.13.0"
+        },
+        {
+          "url": "https://github.com/martijnmichel/directus-expo/releases/tag/v0.12.10",
+          "name": "v0.12.10"
+        },
+        {
+          "url": "https://github.com/martijnmichel/directus-expo/releases/tag/v0.12.9",
+          "name": "v0.12.9"
+        },
+        {
+          "url": "https://github.com/martijnmichel/directus-expo/releases/tag/v0.12.8",
+          "name": "v0.12.8"
+        }
+      ],
+      "topics": [
+        "android",
+        "app",
+        "cms",
+        "directus",
+        "ios",
+        "mobile"
+      ],
+      "addedAt": "2026-07-15T22:28:32.829738+00:00"
+    },
+    {
+      "slug": "directus-extension-tab-group",
+      "name": "directus-extension-tab-group",
+      "fullName": "formfcw/directus-extension-tab-group",
+      "category": "DevTools",
+      "stars": 14,
+      "author": "formfcw",
+      "avatar": "https://avatars.githubusercontent.com/u/78852214?u=42b7bba1e0cc4096860f327002391b95918eaf2a&v=4",
+      "desc": "A group interface with a tab menu for toggling the visibility of fields within the group.",
+      "demo": "https://www.npmjs.com/package/directus-extension-tab-group",
+      "repoUrl": "https://github.com/formfcw/directus-extension-tab-group",
+      "long1": "A group interface with a tab menu for toggling the visibility of fields within the group. Maintained by formfcw on GitHub, where it has earned 14 stars from the community.",
+      "long2": "It's actively developed around directus, directus-extension, directus-extension-interface, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Vue",
+        "Directus",
+        "Directus Extension",
+        "Directus Extension Interface",
+        "Fields"
+      ],
+      "updated": "2 years ago",
+      "license": "GPL-3.0",
+      "langs": [
+        {
+          "pct": 63,
+          "name": "Vue"
+        },
+        {
+          "pct": 37,
+          "name": "TypeScript"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/formfcw/directus-extension-tab-group/releases/tag/v1.1.5",
+          "name": "v1.1.5"
+        },
+        {
+          "url": "https://github.com/formfcw/directus-extension-tab-group/releases/tag/v1.1.4",
+          "name": "v1.1.4"
+        },
+        {
+          "url": "https://github.com/formfcw/directus-extension-tab-group/releases/tag/v1.1.3",
+          "name": "v1.1.3"
+        },
+        {
+          "url": "https://github.com/formfcw/directus-extension-tab-group/releases/tag/v1.1.2",
+          "name": "v1.1.2"
+        },
+        {
+          "url": "https://github.com/formfcw/directus-extension-tab-group/releases/tag/v1.1.1",
+          "name": "v1.1.1"
+        }
+      ],
+      "topics": [
+        "directus",
+        "directus-extension",
+        "directus-extension-interface",
+        "fields",
+        "group",
+        "tabs",
+        "translation"
+      ],
+      "addedAt": "2026-07-15T22:28:32.829738+00:00"
+    },
+    {
+      "slug": "app",
+      "name": "app",
+      "fullName": "prodkt/app",
+      "category": "UI Kits",
+      "stars": 13,
+      "author": "prodkt",
+      "avatar": "https://avatars.githubusercontent.com/u/101760605?u=877fc18513110321c2de3573d1b3e687552f1324&v=4",
+      "desc": "Turborepo for building SSR Astro websites & components in isolation with Storybook using Supabase for Data & Directus as CMS",
+      "demo": "https://prodkt.cloud",
+      "repoUrl": "https://github.com/prodkt/app",
+      "long1": "Turborepo for building SSR Astro websites & components in isolation with Storybook using Supabase for Data & Directus as CMS. Maintained by prodkt on GitHub, where it has earned 13 stars from the community.",
+      "long2": "It's actively developed around astro, directus, radix-ui, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Astro",
+        "Directus",
+        "Radix Ui",
+        "React"
+      ],
+      "updated": "3 weeks ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 66,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 26,
+          "name": "CSS"
+        },
+        {
+          "pct": 8,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
       "topics": [
-        "bitbucket",
-        "changelog",
+        "astro",
         "directus",
+        "radix-ui",
+        "react",
+        "shadcn",
+        "storybook",
+        "supabase",
+        "tailwindcss",
+        "turborepo",
+        "ssr"
+      ],
+      "addedAt": "2026-07-15T22:28:32.829738+00:00"
+    },
+    {
+      "slug": "directus-extension-classified-group",
+      "name": "directus-extension-classified-group",
+      "fullName": "formfcw/directus-extension-classified-group",
+      "category": "DevTools",
+      "stars": 13,
+      "author": "formfcw",
+      "avatar": "https://avatars.githubusercontent.com/u/78852214?u=42b7bba1e0cc4096860f327002391b95918eaf2a&v=4",
+      "desc": "A group to which a class can be assigned for custom styling",
+      "demo": "https://www.npmjs.com/package/directus-extension-classified-group",
+      "repoUrl": "https://github.com/formfcw/directus-extension-classified-group",
+      "long1": "A group to which a class can be assigned for custom styling. Maintained by formfcw on GitHub, where it has earned 13 stars from the community.",
+      "long2": "It's actively developed around directus, directus-custom-interface, directus-extension, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Directus",
+        "Directus Custom Interface",
+        "Directus Extension",
+        "Group"
+      ],
+      "updated": "2 years ago",
+      "license": "GPL-3.0",
+      "langs": [
+        {
+          "pct": 59,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 41,
+          "name": "Vue"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/formfcw/directus-extension-classified-group/releases/tag/v1.0.6",
+          "name": "v1.0.6"
+        },
+        {
+          "url": "https://github.com/formfcw/directus-extension-classified-group/releases/tag/v1.0.5",
+          "name": "v1.0.5"
+        },
+        {
+          "url": "https://github.com/formfcw/directus-extension-classified-group/releases/tag/v1.0.4",
+          "name": "v1.0.4"
+        },
+        {
+          "url": "https://github.com/formfcw/directus-extension-classified-group/releases/tag/v1.0.3",
+          "name": "v1.0.3"
+        },
+        {
+          "url": "https://github.com/formfcw/directus-extension-classified-group/releases/tag/v1.0.2",
+          "name": "v1.0.2"
+        }
+      ],
+      "topics": [
+        "directus",
+        "directus-custom-interface",
         "directus-extension",
-        "version-control"
+        "group"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -3365,7 +4463,7 @@
       "category": "Real-time",
       "stars": 13,
       "author": "codihaus",
-      "avatar": "https://avatars.githubusercontent.com/u/68498487?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/68498487?u=b2f398bb5c5100c13d955f1712fdad800c1eef01&v=4",
       "desc": "Live Editor: Headless real-time frontend content editing for instant, seamless updates.",
       "demo": null,
       "repoUrl": "https://github.com/codihaus/live-editor",
@@ -3381,13 +4479,15 @@
       "langs": [
         {
           "name": "JavaScript",
-          "pct": 71.429,
-          "size": 20
+          "pct": 72
+        },
+        {
+          "name": "JavaScript",
+          "pct": 20
         },
         {
           "name": "Other",
-          "pct": 28.571,
-          "size": 8
+          "pct": 8
         }
       ],
       "versions": [],
@@ -3422,12 +4522,32 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "JavaScript",
           "pct": 100,
-          "size": 100
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/somaromero/directus-extension-pdf-builder/releases/tag/v1.2.0",
+          "name": "v1.2.0"
+        },
+        {
+          "url": "https://github.com/somaromero/directus-extension-pdf-builder/releases/tag/v1.1.0",
+          "name": "v1.1.0"
+        },
+        {
+          "url": "https://github.com/somaromero/directus-extension-pdf-builder/releases/tag/v1.0.6",
+          "name": "v1.0.6"
+        },
+        {
+          "url": "https://github.com/somaromero/directus-extension-pdf-builder/releases/tag/v1.0.5",
+          "name": "v1.0.5"
+        },
+        {
+          "url": "https://github.com/somaromero/directus-extension-pdf-builder/releases/tag/v1.0.4",
+          "name": "v1.0.4"
+        }
+      ],
       "topics": [
         "directus",
         "directus-extension",
@@ -3444,7 +4564,7 @@
       "category": "Dashboards",
       "stars": 13,
       "author": "smokeyfro",
-      "avatar": "https://avatars.githubusercontent.com/u/109826?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/109826?u=8ee03126d24ba0e65997c58cb5ee272907ed6acf&v=4",
       "desc": "Connect to the 3rd-party api's, then add them to your configured collection.",
       "demo": null,
       "repoUrl": "https://github.com/smokeyfro/directus-extension-bundle-api-fetch",
@@ -3461,9 +4581,12 @@
       "license": "—",
       "langs": [
         {
-          "name": "Vue",
-          "pct": 100,
-          "size": 100
+          "pct": 63,
+          "name": "Vue"
+        },
+        {
+          "pct": 37,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
@@ -3476,51 +4599,13 @@
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
     {
-      "slug": "directus-extension-classified-group",
-      "name": "directus-extension-classified-group",
-      "fullName": "formfcw/directus-extension-classified-group",
-      "category": "DevTools",
-      "stars": 13,
-      "author": "formfcw",
-      "avatar": "https://avatars.githubusercontent.com/u/78852214?v=4",
-      "desc": "A group to which a class can be assigned for custom styling",
-      "demo": "https://www.npmjs.com/package/directus-extension-classified-group",
-      "repoUrl": "https://github.com/formfcw/directus-extension-classified-group",
-      "long1": "A group to which a class can be assigned for custom styling. Maintained by formfcw on GitHub, where it has earned 13 stars from the community.",
-      "long2": "It's actively developed around directus, directus-custom-interface, directus-extension, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Directus",
-        "Directus Custom Interface",
-        "Directus Extension",
-        "Group"
-      ],
-      "updated": "2 years ago",
-      "license": "GPL-3.0",
-      "langs": [
-        {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "directus",
-        "directus-custom-interface",
-        "directus-extension",
-        "group"
-      ],
-      "addedAt": "2026-07-15T22:28:32.829738+00:00"
-    },
-    {
       "slug": "next-js-directus-starter",
       "name": "next-js-directus-starter",
       "fullName": "fredygerman/next-js-directus-starter",
       "category": "Templates",
       "stars": 13,
       "author": "fredygerman",
-      "avatar": "https://avatars.githubusercontent.com/u/26197540?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/26197540?u=786e033a01811d1395f626a46135bba31ab8a250&v=4",
       "desc": "A Next Js 13 with App router starter web app with Directus as a headless Cms and tailwind css for styling.  This will include examples for common uses like authentication, data fetching, web sockets, file uploads, and more. Follow along on Twitter for updates.",
       "demo": "https://next-js-directus-starter-femmcn5zj-fdagreat.vercel.app/",
       "repoUrl": "https://github.com/fredygerman/next-js-directus-starter",
@@ -3537,133 +4622,41 @@
       "license": "—",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 95,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 4,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 1,
+          "name": "CSS"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/fredygerman/next-js-directus-starter/releases/tag/1.0.1",
+          "name": "1.0.1"
+        },
+        {
+          "url": "https://github.com/fredygerman/next-js-directus-starter/releases/tag/1.0.0",
+          "name": "1.0.0"
+        }
+      ],
       "topics": [
         "cms",
         "cms-frontend",
         "directus",
         "directus-cms",
         "directus-custom-interface",
-        "hacktoberfest",
-        "hacktoberfest2023",
         "next-js-13",
         "next-js-starter-template",
         "nextjs",
         "starter",
-        "tailwindcss"
-      ],
-      "addedAt": "2026-07-15T22:28:32.829738+00:00"
-    },
-    {
-      "slug": "directus-starter",
-      "name": "directus-starter",
-      "fullName": "becem-gharbi/directus-starter",
-      "category": "UI Kits",
-      "stars": 12,
-      "author": "becem-gharbi",
-      "avatar": "https://avatars.githubusercontent.com/u/99251251?v=4",
-      "desc": "Directus starter for Nuxt 3",
-      "demo": null,
-      "repoUrl": "https://github.com/becem-gharbi/directus-starter",
-      "long1": "Directus starter for Nuxt 3. Maintained by becem-gharbi on GitHub, where it has earned 12 stars from the community.",
-      "long2": "It's actively developed around directus, naive-ui, nuxt, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Directus",
-        "Naive Ui",
-        "Nuxt",
-        "Starter"
-      ],
-      "updated": "2 years ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "directus",
-        "naive-ui",
-        "nuxt",
-        "starter",
-        "tailwindcss"
-      ],
-      "addedAt": "2026-07-15T22:28:32.829738+00:00"
-    },
-    {
-      "slug": "app",
-      "name": "app",
-      "fullName": "prodkt/app",
-      "category": "UI Kits",
-      "stars": 12,
-      "author": "prodkt",
-      "avatar": "https://avatars.githubusercontent.com/u/101760605?v=4",
-      "desc": "Turborepo for building SSR Astro websites & components in isolation with Storybook using Supabase for Data & Directus as CMS",
-      "demo": "https://prodkt.cloud",
-      "repoUrl": "https://github.com/prodkt/app",
-      "long1": "Turborepo for building SSR Astro websites & components in isolation with Storybook using Supabase for Data & Directus as CMS. Maintained by prodkt on GitHub, where it has earned 12 stars from the community.",
-      "long2": "It's actively developed around astro, directus, radix-ui, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Astro",
-        "Directus",
-        "Radix Ui",
-        "React"
-      ],
-      "updated": "5 days ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "TypeScript",
-          "pct": 61.432,
-          "size": 3585078
-        },
-        {
-          "name": "CSS",
-          "pct": 26.22,
-          "size": 1530140
-        },
-        {
-          "name": "JavaScript",
-          "pct": 7.829,
-          "size": 456895
-        },
-        {
-          "name": "Astro",
-          "pct": 2.676,
-          "size": 156151
-        },
-        {
-          "name": "MDX",
-          "pct": 1.598,
-          "size": 93233
-        },
-        {
-          "name": "SCSS",
-          "pct": 0.246,
-          "size": 14378
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "astro",
-        "directus",
-        "radix-ui",
-        "react",
-        "shadcn",
-        "ssr",
-        "storybook",
-        "supabase",
         "tailwindcss",
-        "turborepo"
+        "hacktoberfest",
+        "hacktoberfest2023"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -3674,7 +4667,7 @@
       "category": "Authentication",
       "stars": 12,
       "author": "formfcw",
-      "avatar": "https://avatars.githubusercontent.com/u/78852214?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/78852214?u=42b7bba1e0cc4096860f327002391b95918eaf2a&v=4",
       "desc": "An endpoint that adds an active auth token to your preview URL",
       "demo": "https://www.npmjs.com/package/directus-extension-tokenized-preview",
       "repoUrl": "https://github.com/formfcw/directus-extension-tokenized-preview",
@@ -3691,12 +4684,28 @@
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "TypeScript",
           "pct": 100,
-          "size": 100
+          "name": "TypeScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/formfcw/directus-extension-tokenized-preview/releases/tag/v1.1.1",
+          "name": "v1.1.1"
+        },
+        {
+          "url": "https://github.com/formfcw/directus-extension-tokenized-preview/releases/tag/v1.1.0",
+          "name": "v1.1.0"
+        },
+        {
+          "url": "https://github.com/formfcw/directus-extension-tokenized-preview/releases/tag/v1.0.1",
+          "name": "v1.0.1"
+        },
+        {
+          "url": "https://github.com/formfcw/directus-extension-tokenized-preview/releases/tag/v1.0.0",
+          "name": "v1.0.0"
+        }
+      ],
       "topics": [
         "directus",
         "directus-extension",
@@ -3707,13 +4716,117 @@
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
     {
+      "slug": "directus-starter",
+      "name": "directus-starter",
+      "fullName": "becem-gharbi/directus-starter",
+      "category": "UI Kits",
+      "stars": 12,
+      "author": "becem-gharbi",
+      "avatar": "https://avatars.githubusercontent.com/u/99251251?u=857573c00b96c9d278342bf6cb3a4005741401a3&v=4",
+      "desc": "Directus starter for Nuxt 3",
+      "demo": null,
+      "repoUrl": "https://github.com/becem-gharbi/directus-starter",
+      "long1": "Directus starter for Nuxt 3. Maintained by becem-gharbi on GitHub, where it has earned 12 stars from the community.",
+      "long2": "It's actively developed around directus, nuxt, starter, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Directus",
+        "Nuxt",
+        "Starter",
+        "Naive Ui"
+      ],
+      "updated": "2 years ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 59,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 40,
+          "name": "Vue"
+        },
+        {
+          "pct": 1,
+          "name": "JavaScript"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/becem-gharbi/directus-starter/releases/tag/v1.0.5",
+          "name": "v1.0.5"
+        },
+        {
+          "url": "https://github.com/becem-gharbi/directus-starter/releases/tag/v1.0.4",
+          "name": "v1.0.4"
+        },
+        {
+          "url": "https://github.com/becem-gharbi/directus-starter/releases/tag/v1.0.3",
+          "name": "v1.0.3"
+        },
+        {
+          "url": "https://github.com/becem-gharbi/directus-starter/releases/tag/v1.0.2",
+          "name": "v1.0.2"
+        },
+        {
+          "url": "https://github.com/becem-gharbi/directus-starter/releases/tag/v1.0.1",
+          "name": "v1.0.1"
+        }
+      ],
+      "topics": [
+        "directus",
+        "nuxt",
+        "starter",
+        "naive-ui",
+        "tailwindcss"
+      ],
+      "addedAt": "2026-07-15T22:28:32.829738+00:00"
+    },
+    {
+      "slug": "directus-extension-bundle-systeminfo",
+      "name": "directus-extension-bundle-systeminfo",
+      "fullName": "FloMaetschke/directus-extension-bundle-systeminfo",
+      "category": "Dashboards",
+      "stars": 11,
+      "author": "FloMaetschke",
+      "avatar": "https://avatars.githubusercontent.com/u/7500948?v=4",
+      "desc": "A Directus Extension Bundle with a Panel for System Informations of the directus instance.",
+      "demo": null,
+      "repoUrl": "https://github.com/FloMaetschke/directus-extension-bundle-systeminfo",
+      "long1": "A Directus Extension Bundle with a Panel for System Informations of the directus instance. Maintained by FloMaetschke on GitHub, where it has earned 11 stars from the community.",
+      "long2": "It's actively developed around directus, directus-panel-quest, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Directus",
+        "Directus Panel Quest"
+      ],
+      "updated": "3 years ago",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 51,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 49,
+          "name": "Vue"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "directus",
+        "directus-panel-quest"
+      ],
+      "addedAt": "2026-07-15T22:28:32.829738+00:00"
+    },
+    {
       "slug": "directus-extension-deepl-translator",
       "name": "directus-extension-deepl-translator",
       "fullName": "bevis-hp/directus-extension-deepl-translator",
       "category": "Dashboards",
       "stars": 11,
       "author": "bevis-hp",
-      "avatar": "https://avatars.githubusercontent.com/u/9295559?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/9295559?u=ba9bc6b1578ed8a66d03e2de0df00712f3159746&v=4",
       "desc": "A directus panel extension for translation",
       "demo": null,
       "repoUrl": "https://github.com/bevis-hp/directus-extension-deepl-translator",
@@ -3728,9 +4841,12 @@
       "license": "—",
       "langs": [
         {
-          "name": "JavaScript",
-          "pct": 100,
-          "size": 100
+          "pct": 62,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 38,
+          "name": "Vue"
         }
       ],
       "versions": [],
@@ -3763,12 +4879,20 @@
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "Vue",
-          "pct": 100,
-          "size": 100
+          "pct": 87,
+          "name": "Vue"
+        },
+        {
+          "pct": 13,
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/K3-Network/directus-display-qrcode/releases/tag/1.0.0",
+          "name": "1.0.0"
+        }
+      ],
       "topics": [
         "directus",
         "directus-extension",
@@ -3777,36 +4901,110 @@
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
     {
-      "slug": "directus-extension-bundle-systeminfo",
-      "name": "directus-extension-bundle-systeminfo",
-      "fullName": "FloMaetschke/directus-extension-bundle-systeminfo",
-      "category": "Dashboards",
-      "stars": 11,
-      "author": "FloMaetschke",
-      "avatar": "https://avatars.githubusercontent.com/u/7500948?v=4",
-      "desc": "A Directus Extension Bundle with a Panel for System Informations of the directus instance.",
+      "slug": "directus-extension-upload-limiter",
+      "name": "directus-extension-upload-limiter",
+      "fullName": "utomic-media/directus-extension-upload-limiter",
+      "category": "Blogs",
+      "stars": 10,
+      "author": "utomic-media",
+      "avatar": "https://avatars.githubusercontent.com/u/75736556?v=4",
+      "desc": "Track data of file uploads / deletions on user base",
       "demo": null,
-      "repoUrl": "https://github.com/FloMaetschke/directus-extension-bundle-systeminfo",
-      "long1": "A Directus Extension Bundle with a Panel for System Informations of the directus instance. Maintained by FloMaetschke on GitHub, where it has earned 11 stars from the community.",
-      "long2": "It's actively developed around directus, directus-panel-quest, and is a solid reference for anyone building with these tools.",
+      "repoUrl": "https://github.com/utomic-media/directus-extension-upload-limiter",
+      "long1": "Track data of file uploads / deletions on user base. Maintained by utomic-media on GitHub, where it has earned 10 stars from the community.",
+      "long2": "It's actively developed around directus, directus-extension, directus-hooks, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
         "Directus",
-        "Directus Panel Quest"
+        "Directus Extension",
+        "Directus Hooks",
+        "Directus Cms"
       ],
-      "updated": "3 years ago",
+      "updated": "11 months ago",
       "license": "—",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 96,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 4,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
       "topics": [
         "directus",
-        "directus-panel-quest"
+        "directus-extension",
+        "directus-hooks",
+        "directus-cms"
+      ],
+      "addedAt": "2026-07-15T22:28:32.829738+00:00"
+    },
+    {
+      "slug": "drcts",
+      "name": "drcts",
+      "fullName": "Piitschy/drcts",
+      "category": "DevTools",
+      "stars": 10,
+      "author": "Piitschy",
+      "avatar": "https://avatars.githubusercontent.com/u/55839828?v=4",
+      "desc": "Directus Data Model CLI to migrate schemas from one instance to an other without the need for a server component.",
+      "demo": null,
+      "repoUrl": "https://github.com/Piitschy/drcts",
+      "long1": "Directus Data Model CLI to migrate schemas from one instance to an other without the need for a server component. Maintained by Piitschy on GitHub, where it has earned 10 stars from the community.",
+      "long2": "It's actively developed around cli, databse, directus, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Go",
+        "Cli",
+        "Databse",
+        "Directus",
+        "Migration"
+      ],
+      "updated": "2 years ago",
+      "license": "GPL-3.0",
+      "langs": [
+        {
+          "pct": 98,
+          "name": "Go"
+        },
+        {
+          "pct": 1,
+          "name": "Makefile"
+        },
+        {
+          "pct": 1,
+          "name": "Shell"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/Piitschy/drcts/releases/tag/v0.1.7",
+          "name": "v0.1.7"
+        },
+        {
+          "url": "https://github.com/Piitschy/drcts/releases/tag/v0.1.6",
+          "name": "v0.1.6"
+        },
+        {
+          "url": "https://github.com/Piitschy/drcts/releases/tag/v0.1.5",
+          "name": "v0.1.5"
+        },
+        {
+          "url": "https://github.com/Piitschy/drcts/releases/tag/v0.1.4",
+          "name": "v0.1.4"
+        },
+        {
+          "url": "https://github.com/Piitschy/drcts/releases/tag/v0.1.3",
+          "name": "v0.1.3"
+        }
+      ],
+      "topics": [
+        "cli",
+        "databse",
+        "directus",
+        "migration",
+        "migration-tool"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     },
@@ -3817,7 +5015,7 @@
       "category": "DevTools",
       "stars": 10,
       "author": "formfcw",
-      "avatar": "https://avatars.githubusercontent.com/u/78852214?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/78852214?u=42b7bba1e0cc4096860f327002391b95918eaf2a&v=4",
       "desc": "A notice field that is only visible in the drawer.",
       "demo": "https://www.npmjs.com/package/directus-extension-drawer-notice",
       "repoUrl": "https://github.com/formfcw/directus-extension-drawer-notice",
@@ -3833,12 +5031,36 @@
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 76,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 24,
+          "name": "Vue"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/formfcw/directus-extension-drawer-notice/releases/tag/v1.0.5",
+          "name": "v1.0.5"
+        },
+        {
+          "url": "https://github.com/formfcw/directus-extension-drawer-notice/releases/tag/v1.0.4",
+          "name": "v1.0.4"
+        },
+        {
+          "url": "https://github.com/formfcw/directus-extension-drawer-notice/releases/tag/v1.0.3",
+          "name": "v1.0.3"
+        },
+        {
+          "url": "https://github.com/formfcw/directus-extension-drawer-notice/releases/tag/v1.0.2",
+          "name": "v1.0.2"
+        },
+        {
+          "url": "https://github.com/formfcw/directus-extension-drawer-notice/releases/tag/v1.0.1",
+          "name": "v1.0.1"
+        }
+      ],
       "topics": [
         "directus",
         "directus-extension",
@@ -3870,13 +5092,15 @@
       "langs": [
         {
           "name": "JavaScript",
-          "pct": 71.429,
-          "size": 20
+          "pct": 72
+        },
+        {
+          "name": "JavaScript",
+          "pct": 20
         },
         {
           "name": "Other",
-          "pct": 28.571,
-          "size": 8
+          "pct": 8
         }
       ],
       "versions": [],
@@ -3885,87 +5109,10 @@
         "database",
         "deploy",
         "directus",
-        "directusbr",
         "postgresql",
         "render",
-        "sqlite"
-      ],
-      "addedAt": "2026-07-15T22:28:32.829738+00:00"
-    },
-    {
-      "slug": "drcts",
-      "name": "drcts",
-      "fullName": "Piitschy/drcts",
-      "category": "DevTools",
-      "stars": 10,
-      "author": "Piitschy",
-      "avatar": "https://avatars.githubusercontent.com/u/55839828?v=4",
-      "desc": "Directus Data Model CLI to migrate schemas from one instance to an other without the need for a server component.",
-      "demo": null,
-      "repoUrl": "https://github.com/Piitschy/drcts",
-      "long1": "Directus Data Model CLI to migrate schemas from one instance to an other without the need for a server component. Maintained by Piitschy on GitHub, where it has earned 10 stars from the community.",
-      "long2": "It's actively developed around cli, databse, directus, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Go",
-        "Cli",
-        "Databse",
-        "Directus",
-        "Migration"
-      ],
-      "updated": "2 years ago",
-      "license": "GPL-3.0",
-      "langs": [
-        {
-          "name": "Go",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "cli",
-        "databse",
-        "directus",
-        "migration",
-        "migration-tool"
-      ],
-      "addedAt": "2026-07-15T22:28:32.829738+00:00"
-    },
-    {
-      "slug": "directus-extension-upload-limiter",
-      "name": "directus-extension-upload-limiter",
-      "fullName": "utomic-media/directus-extension-upload-limiter",
-      "category": "Blogs",
-      "stars": 10,
-      "author": "utomic-media",
-      "avatar": "https://avatars.githubusercontent.com/u/75736556?v=4",
-      "desc": "Track data of file uploads / deletions on user base",
-      "demo": null,
-      "repoUrl": "https://github.com/utomic-media/directus-extension-upload-limiter",
-      "long1": "Track data of file uploads / deletions on user base. Maintained by utomic-media on GitHub, where it has earned 10 stars from the community.",
-      "long2": "It's actively developed around directus, directus-cms, directus-extension, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Directus",
-        "Directus Cms",
-        "Directus Extension",
-        "Directus Hooks"
-      ],
-      "updated": "10 months ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "directus",
-        "directus-cms",
-        "directus-extension",
-        "directus-hooks"
+        "sqlite",
+        "directusbr"
       ],
       "addedAt": "2026-07-15T22:28:32.829738+00:00"
     }

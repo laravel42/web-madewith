@@ -1,8 +1,8 @@
 {
   "slug": "vtiger",
-  "scrapedAt": "2026-07-22T09:29:07.779688+00:00",
+  "scrapedAt": "2026-08-05T04:38:16.304721+00:00",
   "source": "scrapy-github",
-  "totalRepos": 10,
+  "totalRepos": 12,
   "projects": [
     {
       "slug": "vtwsclib-php",
@@ -11,39 +11,42 @@
       "category": "APIs",
       "stars": 48,
       "author": "salaros",
-      "avatar": "https://avatars.githubusercontent.com/u/675348?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/675348?u=3d3ec3f5bbb88c043538105c423495a124d0757e&v=4",
       "desc": "A PHP client for vTiger's Web Services APIs. Works well vTiger forks such as VTE CRM.",
       "demo": "https://codecave.pro/#projects",
       "repoUrl": "https://github.com/salaros/vtwsclib-php",
       "long1": "A PHP client for vTiger's Web Services APIs. Works well vTiger forks such as VTE CRM. Maintained by salaros on GitHub, where it has earned 48 stars from the community.",
-      "long2": "It's actively developed around api, client, crm, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around vtigercrm, vtiger, php, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "PHP",
-        "Api",
-        "Client",
-        "Crm",
-        "Guzzle"
+        "Vtigercrm",
+        "Vtiger",
+        "Php",
+        "Api"
       ],
       "updated": "4 years ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "PHP",
           "pct": 100,
-          "size": 100
+          "name": "PHP"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/salaros/vtwsclib-php/releases/tag/0.1",
+          "name": "0.1"
+        }
+      ],
       "topics": [
+        "vtigercrm",
+        "vtiger",
+        "php",
         "api",
         "client",
-        "crm",
-        "guzzle",
-        "php",
         "restful-webservices",
-        "vtiger",
-        "vtigercrm",
-        "webservices"
+        "webservices",
+        "guzzle",
+        "crm"
       ],
       "addedAt": "2026-07-15T22:28:33.031105+00:00"
     },
@@ -59,29 +62,32 @@
       "demo": null,
       "repoUrl": "https://github.com/javanile/vtiger-demo",
       "long1": "😎 vtiger demo. Maintained by javanile on GitHub, where it has earned 40 stars from the community.",
-      "long2": "It's actively developed around demo, docker-compose, vtiger, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around vtiger, vtigercrm, demo, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Shell",
-        "Demo",
-        "Docker Compose",
         "Vtiger",
-        "Vtigercrm"
+        "Vtigercrm",
+        "Demo",
+        "Docker Compose"
       ],
-      "updated": "5 months ago",
+      "updated": "6 months ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "Shell",
-          "pct": 100,
-          "size": 100
+          "pct": 73,
+          "name": "Shell"
+        },
+        {
+          "pct": 27,
+          "name": "PHP"
         }
       ],
       "versions": [],
       "topics": [
-        "demo",
-        "docker-compose",
         "vtiger",
-        "vtigercrm"
+        "vtigercrm",
+        "demo",
+        "docker-compose"
       ],
       "addedAt": "2026-07-15T22:28:33.031105+00:00"
     },
@@ -97,31 +103,55 @@
       "demo": "https://vtc.javanile.org",
       "repoUrl": "https://github.com/javanile/vtiger-client",
       "long1": "🏭 Industry Standard Vtiger API Client. Maintained by javanile on GitHub, where it has earned 12 stars from the community.",
-      "long2": "It's actively developed around http-client, rest-api, system-integration, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around vtiger, vtigercrm, webservice-client, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Http Client",
-        "Rest Api",
-        "System Integration",
-        "Vtiger"
+        "Vtiger",
+        "Vtigercrm",
+        "Webservice Client",
+        "Rest Api"
       ],
-      "updated": "3 months ago",
+      "updated": "4 months ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 96,
+          "name": "PHP"
+        },
+        {
+          "pct": 4,
+          "name": "Makefile"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/javanile/vtiger-client/releases/tag/0.1.0",
+          "name": "0.1.0"
+        },
+        {
+          "url": "https://github.com/javanile/vtiger-client/releases/tag/0.0.28",
+          "name": "0.0.28"
+        },
+        {
+          "url": "https://github.com/javanile/vtiger-client/releases/tag/0.0.27",
+          "name": "0.0.27"
+        },
+        {
+          "url": "https://github.com/javanile/vtiger-client/releases/tag/0.0.26",
+          "name": "0.0.26"
+        },
+        {
+          "url": "https://github.com/javanile/vtiger-client/releases/tag/0.0.25",
+          "name": "0.0.25"
+        }
+      ],
       "topics": [
-        "http-client",
-        "rest-api",
-        "system-integration",
         "vtiger",
         "vtigercrm",
-        "webservice-client"
+        "webservice-client",
+        "rest-api",
+        "http-client",
+        "system-integration"
       ],
       "addedAt": "2026-07-15T22:28:33.031105+00:00"
     },
@@ -132,35 +162,34 @@
       "category": "DevTools",
       "stars": 11,
       "author": "Kayoti",
-      "avatar": "https://avatars.githubusercontent.com/u/3899197?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/3899197?u=7844670556be6ae286da083c33fa2bcd7a07312a&v=4",
       "desc": "Vtiger REST API PHP Wrapper (webservices), Vtiger open source v5,v6, v7, v8",
       "demo": null,
       "repoUrl": "https://github.com/Kayoti/Vtiger-API-PHP",
       "long1": "Vtiger REST API PHP Wrapper (webservices), Vtiger open source v5,v6, v7, v8. Maintained by Kayoti on GitHub, where it has earned 11 stars from the community.",
-      "long2": "It's actively developed around api, client, crm, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around vtigercrm, vtiger, php, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "Api",
-        "Client",
-        "Crm",
-        "Php"
+        "Vtigercrm",
+        "Vtiger",
+        "Php",
+        "Api"
       ],
       "updated": "3 years ago",
       "license": "GPL-2.0",
       "langs": [
         {
-          "name": "PHP",
           "pct": 100,
-          "size": 100
+          "name": "PHP"
         }
       ],
       "versions": [],
       "topics": [
+        "vtigercrm",
+        "vtiger",
+        "php",
         "api",
         "client",
         "crm",
-        "php",
-        "vtiger",
-        "vtigercrm",
         "webservice"
       ],
       "addedAt": "2026-07-15T22:28:33.031105+00:00"
@@ -177,29 +206,36 @@
       "demo": null,
       "repoUrl": "https://github.com/roovyshapiro/VTiger_KPI_Dashboard",
       "long1": "A Django-powered web-based dashboard which gathers stats from VTiger API to track users' activity throughout the day. Easily view how well your sales and support teams are doing. Maintained by roovyshapiro on GitHub, where it has earned 10 stars from the community.",
-      "long2": "It's actively developed around crm, vtiger, vtiger-api, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around vtiger, vtigercrm, vtiger-api, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Python",
-        "Crm",
         "Vtiger",
+        "Vtigercrm",
         "Vtiger Api",
-        "Vtigercrm"
+        "Crm"
       ],
       "updated": "2 years ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "Python",
-          "pct": 100,
-          "size": 100
+          "pct": 66,
+          "name": "Python"
+        },
+        {
+          "pct": 18,
+          "name": "HTML"
+        },
+        {
+          "pct": 16,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
       "topics": [
-        "crm",
         "vtiger",
+        "vtigercrm",
         "vtiger-api",
-        "vtigercrm"
+        "crm"
       ],
       "addedAt": "2026-07-15T22:28:33.031105+00:00"
     },
@@ -215,29 +251,41 @@
       "demo": null,
       "repoUrl": "https://github.com/InnoDevTM/vTiger-SMSNotifier-module",
       "long1": "SMS Notifier module for vTiger CRM & SalesPlatform fork. Maintained by InnoDevTM on GitHub, where it has earned 8 stars from the community.",
-      "long2": "It's actively developed around crm, module, vtiger, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around vtigercrm, vtiger, crm, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Crm",
-        "Module",
+        "Vtigercrm",
         "Vtiger",
-        "Vtigercrm"
+        "Crm",
+        "Module"
       ],
       "updated": "9 years ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 85,
+          "name": "PHP"
+        },
+        {
+          "pct": 9,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 6,
+          "name": "Smarty"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/InnoDevTM/vTiger-SMSNotifier-module/releases/tag/1.9.0",
+          "name": "1.9.0"
+        }
+      ],
       "topics": [
-        "crm",
-        "module",
+        "vtigercrm",
         "vtiger",
-        "vtigercrm"
+        "crm",
+        "module"
       ],
       "addedAt": "2026-07-15T22:28:33.031105+00:00"
     },
@@ -248,39 +296,45 @@
       "category": "DevTools",
       "stars": 8,
       "author": "DanielRivera03",
-      "avatar": "https://avatars.githubusercontent.com/u/44457989?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/44457989?u=cf104b60147136c865ec18d30b8cc7ffc1c2079d&v=4",
       "desc": "Sistema gestión de casos CRM desarrollado en php Puro bajo el patrón modelo vista controlador MVC + MySQL",
       "demo": null,
       "repoUrl": "https://github.com/DanielRivera03/SistemaGestionDeCasosCRM",
       "long1": "Sistema gestión de casos CRM desarrollado en php Puro bajo el patrón modelo vista controlador MVC + MySQL. Maintained by DanielRivera03 on GitHub, where it has earned 8 stars from the community.",
-      "long2": "It's actively developed around css-grid, css3, html-css-javascript, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around php, mysql, mysql-database, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "PHP",
-        "Css Grid",
-        "Css3",
-        "Html Css Javascript",
-        "Jquery"
+        "Php",
+        "Mysql",
+        "Mysql Database",
+        "Mvc"
       ],
       "updated": "6 years ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 88,
+          "name": "PHP"
+        },
+        {
+          "pct": 7,
+          "name": "HTML"
+        },
+        {
+          "pct": 5,
+          "name": "CSS"
         }
       ],
       "versions": [],
       "topics": [
-        "css-grid",
-        "css3",
-        "html-css-javascript",
-        "jquery",
-        "mvc",
+        "php",
         "mysql",
         "mysql-database",
-        "php",
+        "mvc",
         "poo",
+        "html-css-javascript",
+        "css3",
+        "css-grid",
+        "jquery",
         "vtiger",
         "vtigercrm"
       ],
@@ -293,33 +347,32 @@
       "category": "Dashboards",
       "stars": 7,
       "author": "canguruhh",
-      "avatar": "https://avatars.githubusercontent.com/u/21195529?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/21195529?u=f8168f6d32e93d322654fe6d8ac49f36383041a4&v=4",
       "desc": "Inofficial client for the Vtiger Webservice API",
       "demo": null,
       "repoUrl": "https://github.com/canguruhh/vtiger-node-api",
       "long1": "Inofficial client for the Vtiger Webservice API. Maintained by canguruhh on GitHub, where it has earned 7 stars from the community.",
-      "long2": "It's actively developed around crm, typescript, vtiger, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around vtiger, vtigercrm, crm, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Crm",
         "Vtiger",
-        "Vtigercrm"
+        "Vtigercrm",
+        "Crm"
       ],
       "updated": "4 years ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
           "pct": 100,
-          "size": 100
+          "name": "TypeScript"
         }
       ],
       "versions": [],
       "topics": [
-        "crm",
-        "typescript",
         "vtiger",
-        "vtigercrm"
+        "vtigercrm",
+        "crm",
+        "typescript"
       ],
       "addedAt": "2026-07-15T22:28:33.031105+00:00"
     },
@@ -330,40 +383,47 @@
       "category": "Dashboards",
       "stars": 6,
       "author": "EmreOvunc",
-      "avatar": "https://avatars.githubusercontent.com/u/15659223?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/15659223?u=39daa098c0ee0ba81c8946215f1e32e1af2a5e3c&v=4",
       "desc": "Vtiger CRM v7.2.0 has Cross-Site Scripting (XSS) and directory listing vulnerabilities.",
       "demo": null,
       "repoUrl": "https://github.com/EmreOvunc/Vtiger-CRM-Vulnerabilities",
       "long1": "Vtiger CRM v7.2.0 has Cross-Site Scripting (XSS) and directory listing vulnerabilities. Maintained by EmreOvunc on GitHub, where it has earned 6 stars from the community.",
-      "long2": "It's actively developed around cve-2020-19362, cve-2020-19363, vtiger, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around vtiger, vtigercrm, vtiger-crm-exploit, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "Cve 2020 19362",
-        "Cve 2020 19363",
         "Vtiger",
-        "Vtiger Crm Exploit"
+        "Vtigercrm",
+        "Vtiger Crm Exploit",
+        "Vtiger Xss"
       ],
       "updated": "6 years ago",
       "license": "—",
       "langs": [
         {
           "name": "JavaScript",
-          "pct": 71.429,
-          "size": 20
+          "pct": 72
+        },
+        {
+          "name": "JavaScript",
+          "pct": 20
         },
         {
           "name": "Other",
-          "pct": 28.571,
-          "size": 8
+          "pct": 8
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/EmreOvunc/Vtiger-CRM-Vulnerabilities/releases/tag/v7.2.0",
+          "name": "v7.2.0"
+        }
+      ],
       "topics": [
-        "cve-2020-19362",
-        "cve-2020-19363",
         "vtiger",
+        "vtigercrm",
         "vtiger-crm-exploit",
         "vtiger-xss",
-        "vtigercrm"
+        "cve-2020-19362",
+        "cve-2020-19363"
       ],
       "addedAt": "2026-07-15T22:28:33.031105+00:00"
     },
@@ -379,37 +439,61 @@
       "demo": "https://hamper.javanile.org",
       "repoUrl": "https://github.com/javanile/hamper",
       "long1": "📚 Modern database library for vtiger. Maintained by javanile on GitHub, where it has earned 5 stars from the community.",
-      "long2": "It's actively developed around adodb, code-quality, database-library, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around adodb, vtigercrm, database-library, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
         "Adodb",
-        "Code Quality",
+        "Vtigercrm",
         "Database Library",
-        "Database Manipulation"
+        "Developer Friendly"
       ],
       "updated": "4 years ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "PHP",
           "pct": 100,
-          "size": 100
+          "name": "PHP"
+        },
+        {
+          "pct": 0,
+          "name": "Makefile"
+        },
+        {
+          "pct": 0,
+          "name": "Shell"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/javanile/hamper/releases/tag/0.0.4",
+          "name": "0.0.4"
+        },
+        {
+          "url": "https://github.com/javanile/hamper/releases/tag/0.0.3",
+          "name": "0.0.3"
+        },
+        {
+          "url": "https://github.com/javanile/hamper/releases/tag/0.0.2",
+          "name": "0.0.2"
+        },
+        {
+          "url": "https://github.com/javanile/hamper/releases/tag/0.0.1",
+          "name": "0.0.1"
+        }
+      ],
       "topics": [
         "adodb",
-        "code-quality",
+        "vtigercrm",
         "database-library",
-        "database-manipulation",
-        "db",
         "developer-friendly",
+        "code-quality",
         "modern-php",
         "php",
         "php8",
+        "database-manipulation",
+        "db",
         "vtiger",
-        "vtiger-crm-exploit",
-        "vtigercrm"
+        "vtiger-crm-exploit"
       ],
       "addedAt": "2026-07-15T22:28:33.031105+00:00"
     }

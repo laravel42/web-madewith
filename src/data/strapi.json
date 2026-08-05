@@ -1,56 +1,80 @@
 {
   "slug": "strapi",
-  "scrapedAt": "2026-07-22T09:29:07.508190+00:00",
+  "scrapedAt": "2026-08-05T04:38:15.996571+00:00",
   "source": "scrapy-github",
-  "totalRepos": 131,
+  "totalRepos": 149,
   "projects": [
     {
       "slug": "luban-h5",
       "name": "luban-h5",
       "fullName": "ly525/luban-h5",
-      "category": "DevTools",
+      "category": "UI Kits",
       "stars": 6242,
       "author": "ly525",
-      "avatar": "https://avatars.githubusercontent.com/u/12668546?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/12668546?u=63034292816490d0f4fd9fbf1bb53434cb9980c7&v=4",
       "desc": "[WIP]en: web design tool || mobile page builder/editor || mini webflow for mobile page. zh: 类似易企秀的H5制作、建站工具、可视化搭建系统.",
       "demo": "https://h5.luban.website/",
       "repoUrl": "https://github.com/ly525/luban-h5",
       "long1": "[WIP]en: web design tool || mobile page builder/editor || mini webflow for mobile page. zh: 类似易企秀的H5制作、建站工具、可视化搭建系统. Maintained by ly525 on GitHub, where it has earned 6,242 stars from the community.",
-      "long2": "It's actively developed around ant-design, design-tool, editor, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around h5, page-builder, page-maker, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
-        "Ant Design",
-        "Design Tool",
-        "Editor",
-        "H5"
+        "H5",
+        "Page Builder",
+        "Page Maker",
+        "Page Generator"
       ],
       "updated": "7 months ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "JavaScript",
-          "pct": 100,
-          "size": 100
+          "pct": 83,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 12,
+          "name": "Vue"
+        },
+        {
+          "pct": 5,
+          "name": "Shell"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/ly525/luban-h5/releases/tag/v1.14.1",
+          "name": "v1.14.1"
+        },
+        {
+          "url": "https://github.com/ly525/luban-h5/releases/tag/v1.13.0",
+          "name": "v1.13.0"
+        },
+        {
+          "url": "https://github.com/ly525/luban-h5/releases/tag/v1.12.0",
+          "name": "v1.12.0"
+        },
+        {
+          "url": "https://github.com/ly525/luban-h5/releases/tag/v1.11.0",
+          "name": "v1.11.0"
+        },
+        {
+          "url": "https://github.com/ly525/luban-h5/releases/tag/v1.10.2",
+          "name": "v1.10.2"
+        }
+      ],
       "topics": [
-        "ant-design",
-        "design-tool",
-        "editor",
         "h5",
-        "mobile-page-maker",
         "page-builder",
-        "page-editor",
-        "page-generator",
         "page-maker",
-        "strapi",
-        "vue",
+        "page-generator",
+        "mobile-page-maker",
+        "page-editor",
+        "editor",
         "vuejs",
         "vuejs2",
-        "web-design",
-        "web-design-framework",
-        "webflow"
+        "vue",
+        "ant-design",
+        "strapi"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -59,58 +83,66 @@
       "name": "documentation",
       "fullName": "strapi/documentation",
       "category": "Docs",
-      "stars": 1283,
+      "stars": 1284,
       "author": "strapi",
       "avatar": "https://avatars.githubusercontent.com/u/19872173?v=4",
       "desc": "Strapi Documentation",
       "demo": "https://docs.strapi.io",
       "repoUrl": "https://github.com/strapi/documentation",
-      "long1": "Strapi Documentation. Maintained by strapi on GitHub, where it has earned 1,283 stars from the community.",
-      "long2": "It's actively developed around cms, documentation, docusaurus-v2, and is a solid reference for anyone building with these tools.",
+      "long1": "Strapi Documentation. Maintained by strapi on GitHub, where it has earned 1,284 stars from the community.",
+      "long2": "It's actively developed around strapi, documentation, nodejs, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
-        "Cms",
+        "Strapi",
         "Documentation",
-        "Docusaurus V2",
-        "Headless Cms"
+        "Node",
+        "Docusaurus V2"
       ],
-      "updated": "1 week ago",
+      "updated": "today",
       "license": "—",
       "langs": [
         {
-          "name": "JavaScript",
-          "pct": 57.319,
-          "size": 592598
+          "pct": 58,
+          "name": "JavaScript"
         },
         {
-          "name": "SCSS",
-          "pct": 36.176,
-          "size": 374005
+          "pct": 37,
+          "name": "SCSS"
         },
         {
-          "name": "Shell",
-          "pct": 5.454,
-          "size": 56382
-        },
-        {
-          "name": "Mermaid",
-          "pct": 0.802,
-          "size": 8294
-        },
-        {
-          "name": "CSS",
-          "pct": 0.249,
-          "size": 2578
+          "pct": 5,
+          "name": "Shell"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/strapi/documentation/releases/tag/v7.0.1",
+          "name": "v7.0.1"
+        },
+        {
+          "url": "https://github.com/strapi/documentation/releases/tag/v7.0.0",
+          "name": "v7.0.0"
+        },
+        {
+          "url": "https://github.com/strapi/documentation/releases/tag/v6.28.0",
+          "name": "v6.28.0"
+        },
+        {
+          "url": "https://github.com/strapi/documentation/releases/tag/v6.27.0",
+          "name": "v6.27.0"
+        },
+        {
+          "url": "https://github.com/strapi/documentation/releases/tag/v6.26.0",
+          "name": "v6.26.0"
+        }
+      ],
       "topics": [
-        "cms",
+        "strapi",
         "documentation",
-        "docusaurus-v2",
-        "headless-cms",
         "nodejs",
-        "strapi"
+        "docusaurus-v2",
+        "cms",
+        "headless-cms"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -119,50 +151,43 @@
       "name": "startpack",
       "fullName": "tldr-devops/startpack",
       "category": "DevTools",
-      "stars": 1250,
+      "stars": 1249,
       "author": "tldr-devops",
       "avatar": "https://avatars.githubusercontent.com/u/68926815?v=4",
       "desc": "Selfhosted tech starter pack for development of new project or startup",
       "demo": null,
       "repoUrl": "https://github.com/tldr-devops/startpack",
-      "long1": "Selfhosted tech starter pack for development of new project or startup. Maintained by tldr-devops on GitHub, where it has earned 1,250 stars from the community.",
-      "long2": "It's actively developed around appwrite, bitwarden, docker-compose, and is a solid reference for anyone building with these tools.",
+      "long1": "Selfhosted tech starter pack for development of new project or startup. Maintained by tldr-devops on GitHub, where it has earned 1,249 stars from the community.",
+      "long2": "It's actively developed around starter, starter-kit, startup, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Shell",
-        "Appwrite",
-        "Bitwarden",
-        "Docker Compose",
-        "Docker Swarm"
+        "Starter",
+        "Starter Kit",
+        "Startup",
+        "Docker Compose"
       ],
       "updated": "3 years ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "Shell",
           "pct": 100,
-          "size": 100
+          "name": "Shell"
         }
       ],
       "versions": [],
       "topics": [
-        "appwrite",
-        "bitwarden",
-        "docker-compose",
-        "docker-swarm",
-        "gitlab",
-        "mariadb",
-        "minio",
-        "monitoring",
-        "nocodb",
-        "openproject",
-        "portainer",
-        "postgresql",
         "starter",
         "starter-kit",
         "startup",
-        "strapi",
-        "taiga",
-        "traefic"
+        "docker-compose",
+        "docker-swarm",
+        "traefic",
+        "portainer",
+        "monitoring",
+        "mariadb",
+        "postgresql",
+        "minio",
+        "gitlab"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -178,32 +203,56 @@
       "demo": null,
       "repoUrl": "https://github.com/strapi-community/strapi-tool-dockerize",
       "long1": "Easy add support for docker to your strapi project. Maintained by strapi-community on GitHub, where it has earned 621 stars from the community.",
-      "long2": "It's actively developed around docker, docker-compose, hacktoberfest, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around node, node-js, strapi, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
-        "Docker",
-        "Docker Compose",
         "Node",
-        "Node Js"
+        "Node Js",
+        "Strapi",
+        "Strapi4"
       ],
-      "updated": "2 weeks ago",
+      "updated": "4 weeks ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "JavaScript",
-          "pct": 100,
-          "size": 100
+          "pct": 88,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 12,
+          "name": "Liquid"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/strapi-community/strapi-tool-dockerize/releases/tag/v1.16.2",
+          "name": "v1.16.2"
+        },
+        {
+          "url": "https://github.com/strapi-community/strapi-tool-dockerize/releases/tag/v1.16.1",
+          "name": "v1.16.1"
+        },
+        {
+          "url": "https://github.com/strapi-community/strapi-tool-dockerize/releases/tag/v1.16.0",
+          "name": "v1.16.0"
+        },
+        {
+          "url": "https://github.com/strapi-community/strapi-tool-dockerize/releases/tag/v1.15.3",
+          "name": "v1.15.3"
+        },
+        {
+          "url": "https://github.com/strapi-community/strapi-tool-dockerize/releases/tag/v1.15.2",
+          "name": "v1.15.2"
+        }
+      ],
       "topics": [
-        "docker",
-        "docker-compose",
-        "hacktoberfest",
         "node",
         "node-js",
         "strapi",
-        "strapi4"
+        "strapi4",
+        "docker",
+        "docker-compose",
+        "hacktoberfest"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -219,32 +268,60 @@
       "demo": null,
       "repoUrl": "https://github.com/VirtusLab-Open-Source/strapi-plugin-comments",
       "long1": "A plugin for Strapi Headless CMS that provides end to end comments feature with their moderation panel, bad words filtering, abuse reporting and more. Maintained by VirtusLab-Open-Source on GitHub, where it has earned 437 stars from the community.",
-      "long2": "It's actively developed around api, comments, customizable, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around strapi, strapi-plugin, strapi-admin-panel, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Api",
-        "Comments",
-        "Customizable",
-        "Rest"
+        "Strapi",
+        "Strapi Plugin",
+        "Strapi Admin Panel",
+        "Comments"
       ],
-      "updated": "2 weeks ago",
+      "updated": "5 days ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 99,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 1,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 0,
+          "name": "Shell"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/VirtusLab-Open-Source/strapi-plugin-comments/releases/tag/v3.2.4",
+          "name": "v3.2.4"
+        },
+        {
+          "url": "https://github.com/VirtusLab-Open-Source/strapi-plugin-comments/releases/tag/v3.2.3",
+          "name": "v3.2.3"
+        },
+        {
+          "url": "https://github.com/VirtusLab-Open-Source/strapi-plugin-comments/releases/tag/v3.2.3-beta.2",
+          "name": "v3.2.3-beta.2"
+        },
+        {
+          "url": "https://github.com/VirtusLab-Open-Source/strapi-plugin-comments/releases/tag/v3.2.3-beta.3",
+          "name": "v3.2.3-beta.3"
+        },
+        {
+          "url": "https://github.com/VirtusLab-Open-Source/strapi-plugin-comments/releases/tag/v3.2.2",
+          "name": "v3.2.2"
+        }
+      ],
       "topics": [
-        "api",
-        "comments",
-        "customizable",
-        "rest",
         "strapi",
+        "strapi-plugin",
         "strapi-admin-panel",
-        "strapi-plugin"
+        "comments",
+        "api",
+        "rest",
+        "customizable"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -253,13 +330,13 @@
       "name": "markdown-ninja",
       "fullName": "skerkour/markdown-ninja",
       "category": "Blogs",
-      "stars": 411,
+      "stars": 413,
       "author": "skerkour",
-      "avatar": "https://avatars.githubusercontent.com/u/272466603?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/272466603?u=c954bf081f495ae9a4538c8e5005261655d1e792&v=4",
       "desc": "Markdown-first CMS for bloggers, minimalists and startups. Open Source alternative to Medium, Mailchimp and Substack - https://markdown.ninja",
       "demo": "https://markdown.ninja",
       "repoUrl": "https://github.com/skerkour/markdown-ninja",
-      "long1": "Markdown-first CMS for bloggers, minimalists and startups. Open Source alternative to Medium, Mailchimp and Substack - https://markdown.ninja. Maintained by skerkour on GitHub, where it has earned 411 stars from the community.",
+      "long1": "Markdown-first CMS for bloggers, minimalists and startups. Open Source alternative to Medium, Mailchimp and Substack - https://markdown.ninja. Maintained by skerkour on GitHub, where it has earned 413 stars from the community.",
       "long2": "It's actively developed around blog, blogging, cms, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Go",
@@ -268,73 +345,20 @@
         "Cms",
         "Email"
       ],
-      "updated": "2 weeks ago",
+      "updated": "4 weeks ago",
       "license": "AGPL-3.0",
       "langs": [
         {
-          "name": "Go",
-          "pct": 55.979,
-          "size": 1159301
+          "pct": 63,
+          "name": "Go"
         },
         {
-          "name": "Vue",
-          "pct": 27.339,
-          "size": 566170
+          "pct": 27,
+          "name": "Vue"
         },
         {
-          "name": "TypeScript",
-          "pct": 10.427,
-          "size": 215936
-        },
-        {
-          "name": "HTML",
-          "pct": 2.743,
-          "size": 56803
-        },
-        {
-          "name": "JavaScript",
-          "pct": 1.5,
-          "size": 31061
-        },
-        {
-          "name": "CSS",
-          "pct": 1.163,
-          "size": 24079
-        },
-        {
-          "name": "Makefile",
-          "pct": 0.353,
-          "size": 7303
-        },
-        {
-          "name": "Dockerfile",
-          "pct": 0.313,
-          "size": 6472
-        },
-        {
-          "name": "PLpgSQL",
-          "pct": 0.137,
-          "size": 2844
-        },
-        {
-          "name": "TeX",
-          "pct": 0.02,
-          "size": 418
-        },
-        {
-          "name": "Shell",
-          "pct": 0.019,
-          "size": 394
-        },
-        {
-          "name": "WebAssembly",
-          "pct": 0.008,
-          "size": 162
-        },
-        {
-          "name": "Vim Script",
-          "pct": 0.001,
-          "size": 19
+          "pct": 10,
+          "name": "TypeScript"
         }
       ],
       "versions": [],
@@ -347,17 +371,10 @@
         "golang",
         "headless",
         "headless-cms",
-        "hosting",
         "jamstack",
         "markdown",
-        "netlify",
         "newsletter",
-        "publishing",
-        "static-site-generator",
-        "strapi",
-        "website",
-        "website-builder",
-        "wordpress"
+        "publishing"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -366,47 +383,66 @@
       "name": "strapi-plugin-navigation",
       "fullName": "VirtusLab-Open-Source/strapi-plugin-navigation",
       "category": "Dashboards",
-      "stars": 365,
+      "stars": 364,
       "author": "VirtusLab-Open-Source",
       "avatar": "https://avatars.githubusercontent.com/u/82149253?v=4",
       "desc": "A plugin for Strapi Headless CMS that provides navigation / menu builder feature with their possibility to control the audience and different output structure renderers like (flat, tree and RFR - ready for handling by Redux First Router)",
       "demo": null,
       "repoUrl": "https://github.com/VirtusLab-Open-Source/strapi-plugin-navigation",
-      "long1": "A plugin for Strapi Headless CMS that provides navigation / menu builder feature with their possibility to control the audience and different output structure renderers like (flat, tree and RFR - ready for handling by Redux First Router). Maintained by VirtusLab-Open-Source on GitHub, where it has earned 365 stars from the community.",
-      "long2": "It's actively developed around api, customizable, information-structures, and is a solid reference for anyone building with these tools.",
+      "long1": "A plugin for Strapi Headless CMS that provides navigation / menu builder feature with their possibility to control the audience and different output structure renderers like (flat, tree and RFR - ready for handling by Redux First Router). Maintained by VirtusLab-Open-Source on GitHub, where it has earned 364 stars from the community.",
+      "long2": "It's actively developed around api, rest, customizable, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
         "Api",
+        "Rest",
         "Customizable",
-        "Information Structures",
-        "Menu"
+        "Navigation"
       ],
-      "updated": "3 weeks ago",
+      "updated": "2 weeks ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 99.059,
-          "size": 654331
+          "pct": 99,
+          "name": "TypeScript"
         },
         {
-          "name": "JavaScript",
-          "pct": 0.941,
-          "size": 6216
+          "pct": 1,
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/VirtusLab-Open-Source/strapi-plugin-navigation/releases/tag/v3.3.7",
+          "name": "v3.3.7"
+        },
+        {
+          "url": "https://github.com/VirtusLab-Open-Source/strapi-plugin-navigation/releases/tag/v3.3.6",
+          "name": "v3.3.6"
+        },
+        {
+          "url": "https://github.com/VirtusLab-Open-Source/strapi-plugin-navigation/releases/tag/v3.3.5",
+          "name": "v3.3.5"
+        },
+        {
+          "url": "https://github.com/VirtusLab-Open-Source/strapi-plugin-navigation/releases/tag/v3.3.5-beta.1",
+          "name": "v3.3.5-beta.1"
+        },
+        {
+          "url": "https://github.com/VirtusLab-Open-Source/strapi-plugin-navigation/releases/tag/v3.3.4",
+          "name": "v3.3.4"
+        }
+      ],
       "topics": [
         "api",
-        "customizable",
-        "information-structures",
-        "menu",
-        "navigation",
-        "redux-first-router",
         "rest",
+        "customizable",
+        "navigation",
+        "menu",
         "strapi",
         "strapi-admin-panel",
-        "strapi-plugin"
+        "strapi-plugin",
+        "information-structures",
+        "redux-first-router"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -417,31 +453,51 @@
       "category": "Dashboards",
       "stars": 326,
       "author": "alexzaganelli",
-      "avatar": "https://avatars.githubusercontent.com/u/1064582?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/1064582?u=0798374475d096e35c8586e355bd9d1192c035a3&v=4",
       "desc": "Design your own email templates w/ visual composer directly inside the Strapi admin panel and send composed emails programmatically from your controllers / services.",
       "demo": null,
       "repoUrl": "https://github.com/alexzaganelli/strapi-plugin-email-designer",
       "long1": "Design your own email templates w/ visual composer directly inside the Strapi admin panel and send composed emails programmatically from your controllers / services. Maintained by alexzaganelli on GitHub, where it has earned 326 stars from the community.",
-      "long2": "It's actively developed around email, strapi, templates-design, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around strapi, email, templates-design, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
-        "Email",
         "Strapi",
+        "Email",
         "Templates Design"
       ],
       "updated": "2 years ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "JavaScript",
           "pct": 100,
-          "size": 100
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/alexzaganelli/strapi-plugin-email-designer/releases/tag/2.0.9",
+          "name": "2.0.9"
+        },
+        {
+          "url": "https://github.com/alexzaganelli/strapi-plugin-email-designer/releases/tag/2.0.0",
+          "name": "2.0.0"
+        },
+        {
+          "url": "https://github.com/alexzaganelli/strapi-plugin-email-designer/releases/tag/1.1.9",
+          "name": "1.1.9"
+        },
+        {
+          "url": "https://github.com/alexzaganelli/strapi-plugin-email-designer/releases/tag/1.1.6",
+          "name": "1.1.6"
+        },
+        {
+          "url": "https://github.com/alexzaganelli/strapi-plugin-email-designer/releases/tag/1.1.5",
+          "name": "1.1.5"
+        }
+      ],
       "topics": [
-        "email",
         "strapi",
+        "email",
         "templates-design"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
@@ -453,35 +509,63 @@
       "category": "Templates",
       "stars": 325,
       "author": "ghoshnirmalya",
-      "avatar": "https://avatars.githubusercontent.com/u/6391763?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/6391763?u=eae8f69b365cb3544a470a76ebaa149dab8096dd&v=4",
       "desc": ":art: Boilerplate for building applications using Strapi and Next.js",
       "demo": "https://nextjs-strapi-boilerplate.vercel.app",
       "repoUrl": "https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate",
       "long1": ":art: Boilerplate for building applications using Strapi and Next.js. Maintained by ghoshnirmalya on GitHub, where it has earned 325 stars from the community.",
-      "long2": "It's actively developed around apollo, graphql, next, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around strapi, react, graphql, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Apollo",
+        "Strapi",
+        "React",
         "GraphQL",
-        "Next",
-        "React"
+        "Next"
       ],
       "updated": "2 years ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 91,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 8,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 1,
+          "name": "Dockerfile"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate/releases/tag/0.3.0",
+          "name": "0.3.0"
+        },
+        {
+          "url": "https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate/releases/tag/0.2.1",
+          "name": "0.2.1"
+        },
+        {
+          "url": "https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate/releases/tag/0.2.0",
+          "name": "0.2.0"
+        },
+        {
+          "url": "https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate/releases/tag/0.1.0",
+          "name": "0.1.0"
+        },
+        {
+          "url": "https://github.com/ghoshnirmalya/nextjs-strapi-boilerplate/releases/tag/0.0.3",
+          "name": "0.0.3"
+        }
+      ],
       "topics": [
-        "apollo",
+        "strapi",
+        "react",
         "graphql",
         "next",
-        "react",
-        "strapi"
+        "apollo"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -490,13 +574,13 @@
       "name": "strapi-next-monorepo-starter",
       "fullName": "notum-cz/strapi-next-monorepo-starter",
       "category": "UI Kits",
-      "stars": 299,
+      "stars": 307,
       "author": "notum-cz",
       "avatar": "https://avatars.githubusercontent.com/u/63238072?v=4",
       "desc": "This is a ready-to-go starter for page builder projects built with Strapi and Next.js.",
-      "demo": "https://notum-cz.github.io/strapi-next-monorepo-starter/",
+      "demo": "https://strapinextjs.docs.notum.tech",
       "repoUrl": "https://github.com/notum-cz/strapi-next-monorepo-starter",
-      "long1": "This is a ready-to-go starter for page builder projects built with Strapi and Next.js. Maintained by notum-cz on GitHub, where it has earned 299 stars from the community.",
+      "long1": "This is a ready-to-go starter for page builder projects built with Strapi and Next.js. Maintained by notum-cz on GitHub, where it has earned 307 stars from the community.",
       "long2": "It's actively developed around nextjs, shadcn-ui, strapi, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
@@ -505,47 +589,51 @@
         "Strapi",
         "Tailwind CSS"
       ],
-      "updated": "1 week ago",
+      "updated": "yesterday",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 85.314,
-          "size": 784224
+          "pct": 90,
+          "name": "TypeScript"
         },
         {
-          "name": "CSS",
-          "pct": 4.831,
-          "size": 44409
+          "pct": 5,
+          "name": "CSS"
         },
         {
-          "name": "JavaScript",
-          "pct": 4.685,
-          "size": 43066
-        },
-        {
-          "name": "Shell",
-          "pct": 4.458,
-          "size": 40979
-        },
-        {
-          "name": "Dockerfile",
-          "pct": 0.706,
-          "size": 6488
-        },
-        {
-          "name": "Procfile",
-          "pct": 0.006,
-          "size": 58
+          "pct": 5,
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/notum-cz/strapi-next-monorepo-starter/releases/tag/v3.4.1",
+          "name": "v3.4.1"
+        },
+        {
+          "url": "https://github.com/notum-cz/strapi-next-monorepo-starter/releases/tag/v3.4.0",
+          "name": "v3.4.0"
+        },
+        {
+          "url": "https://github.com/notum-cz/strapi-next-monorepo-starter/releases/tag/v3.3.1",
+          "name": "v3.3.1"
+        },
+        {
+          "url": "https://github.com/notum-cz/strapi-next-monorepo-starter/releases/tag/v3.3.0",
+          "name": "v3.3.0"
+        },
+        {
+          "url": "https://github.com/notum-cz/strapi-next-monorepo-starter/releases/tag/v3.2.2",
+          "name": "v3.2.2"
+        }
+      ],
       "topics": [
         "nextjs",
         "shadcn-ui",
         "strapi",
         "tailwindcss",
-        "turborepo"
+        "turborepo",
+        "page-builder"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -554,89 +642,66 @@
       "name": "strapi-plugin-config-sync",
       "fullName": "pluginpal/strapi-plugin-config-sync",
       "category": "DevTools",
-      "stars": 280,
+      "stars": 278,
       "author": "pluginpal",
       "avatar": "https://avatars.githubusercontent.com/u/135427648?v=4",
       "desc": ":recycle: CLI & GUI for continuous migration of config data across environments",
       "demo": "https://www.pluginpal.io/plugin/config-sync",
       "repoUrl": "https://github.com/pluginpal/strapi-plugin-config-sync",
-      "long1": ":recycle: CLI & GUI for continuous migration of config data across environments. Maintained by pluginpal on GitHub, where it has earned 280 stars from the community.",
-      "long2": "It's actively developed around config, config-sync, data, and is a solid reference for anyone building with these tools.",
+      "long1": ":recycle: CLI & GUI for continuous migration of config data across environments. Maintained by pluginpal on GitHub, where it has earned 278 stars from the community.",
+      "long2": "It's actively developed around strapi, strapi-plugin, environments, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
-        "Config",
-        "Config Sync",
-        "Data",
-        "Dtap"
+        "Strapi",
+        "Strapi Plugin",
+        "Environments",
+        "Sync"
       ],
-      "updated": "1 month ago",
+      "updated": "2 months ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "JavaScript",
-          "pct": 95.302,
-          "size": 86382
+          "pct": 95,
+          "name": "JavaScript"
         },
         {
-          "name": "TypeScript",
-          "pct": 4.698,
-          "size": 4258
+          "pct": 5,
+          "name": "TypeScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/pluginpal/strapi-plugin-config-sync/releases/tag/3.2.0",
+          "name": "3.2.0"
+        },
+        {
+          "url": "https://github.com/pluginpal/strapi-plugin-config-sync/releases/tag/3.1.2",
+          "name": "3.1.2"
+        },
+        {
+          "url": "https://github.com/pluginpal/strapi-plugin-config-sync/releases/tag/3.1.2-beta.2",
+          "name": "3.1.2-beta.2"
+        },
+        {
+          "url": "https://github.com/pluginpal/strapi-plugin-config-sync/releases/tag/3.1.2-beta.1",
+          "name": "3.1.2-beta.1"
+        },
+        {
+          "url": "https://github.com/pluginpal/strapi-plugin-config-sync/releases/tag/3.1.1",
+          "name": "3.1.1"
+        }
+      ],
       "topics": [
+        "strapi",
+        "strapi-plugin",
+        "environments",
+        "sync",
+        "dtap",
+        "migrate",
         "config",
         "config-sync",
         "data",
-        "dtap",
-        "dump",
-        "environments",
-        "migrate",
-        "strapi",
-        "strapi-plugin",
-        "sync"
-      ],
-      "addedAt": "2026-07-15T22:28:32.821506+00:00"
-    },
-    {
-      "slug": "strapi-plugin-sitemap",
-      "name": "strapi-plugin-sitemap",
-      "fullName": "pluginpal/strapi-plugin-sitemap",
-      "category": "DevTools",
-      "stars": 272,
-      "author": "pluginpal",
-      "avatar": "https://avatars.githubusercontent.com/u/135427648?v=4",
-      "desc": "🔌 Generate a highly customizable sitemap XML in Strapi CMS",
-      "demo": "https://www.pluginpal.io/plugin/sitemap",
-      "repoUrl": "https://github.com/pluginpal/strapi-plugin-sitemap",
-      "long1": "🔌 Generate a highly customizable sitemap XML in Strapi CMS. Maintained by pluginpal on GitHub, where it has earned 272 stars from the community.",
-      "long2": "It's actively developed around plugin, seo, sitemap, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "JavaScript",
-        "Plugin",
-        "Seo",
-        "Sitemap",
-        "Strapi"
-      ],
-      "updated": "3 months ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "JavaScript",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "plugin",
-        "seo",
-        "sitemap",
-        "strapi",
-        "strapi-plugin",
-        "strapi-sitemap",
-        "uid",
-        "xml"
+        "dump"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -652,44 +717,57 @@
       "demo": "https://meilisearch.com",
       "repoUrl": "https://github.com/meilisearch/strapi-plugin-meilisearch",
       "long1": "A strapi plugin to add your collections to Meilisearch. Maintained by meilisearch on GitHub, where it has earned 244 stars from the community.",
-      "long2": "It's actively developed around meilisearch, plugin, search, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around strapi, plugin, search, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
-        "Meilisearch",
+        "Strapi",
         "Plugin",
         "Search",
-        "Strapi"
+        "Meilisearch"
       ],
-      "updated": "3 weeks ago",
+      "updated": "4 days ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "JavaScript",
-          "pct": 99.253,
-          "size": 409069
+          "pct": 100,
+          "name": "JavaScript"
         },
         {
-          "name": "HTML",
-          "pct": 0.367,
-          "size": 1511
+          "pct": 0,
+          "name": "HTML"
         },
         {
-          "name": "TypeScript",
-          "pct": 0.336,
-          "size": 1386
-        },
-        {
-          "name": "Dockerfile",
-          "pct": 0.044,
-          "size": 182
+          "pct": 0,
+          "name": "TypeScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/meilisearch/strapi-plugin-meilisearch/releases/tag/v0.16.5",
+          "name": "v0.16.5"
+        },
+        {
+          "url": "https://github.com/meilisearch/strapi-plugin-meilisearch/releases/tag/v0.16.4",
+          "name": "v0.16.4"
+        },
+        {
+          "url": "https://github.com/meilisearch/strapi-plugin-meilisearch/releases/tag/v0.16.3",
+          "name": "v0.16.3"
+        },
+        {
+          "url": "https://github.com/meilisearch/strapi-plugin-meilisearch/releases/tag/v0.16.2",
+          "name": "v0.16.2"
+        },
+        {
+          "url": "https://github.com/meilisearch/strapi-plugin-meilisearch/releases/tag/v0.16.1",
+          "name": "v0.16.1"
+        }
+      ],
       "topics": [
-        "meilisearch",
+        "strapi",
         "plugin",
         "search",
-        "strapi",
+        "meilisearch",
         "strapi-plugin"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
@@ -701,57 +779,70 @@
       "category": "DevTools",
       "stars": 223,
       "author": "TriPSs",
-      "avatar": "https://avatars.githubusercontent.com/u/7668692?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/7668692?u=79c0a218351f15b49a81197b69cce38f3898181d&v=4",
       "desc": "Nx Workspaces builders and tools",
       "demo": null,
       "repoUrl": "https://github.com/TriPSs/nx-extend",
       "long1": "Nx Workspaces builders and tools. Maintained by TriPSs on GitHub, where it has earned 223 stars from the community.",
-      "long2": "It's actively developed around cloud-functions, cloud-run, firebase, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around nx, strapi, workspace, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Cloud Functions",
-        "Cloud Run",
-        "Firebase",
-        "Firebase Hosting"
+        "Nx",
+        "Strapi",
+        "Workspace",
+        "Monorepo"
       ],
-      "updated": "1 week ago",
+      "updated": "yesterday",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 99.723,
-          "size": 412133
+          "pct": 100,
+          "name": "TypeScript"
         },
         {
-          "name": "JavaScript",
-          "pct": 0.256,
-          "size": 1060
+          "pct": 0,
+          "name": "JavaScript"
         },
         {
-          "name": "Shell",
-          "pct": 0.02,
-          "size": 83
+          "pct": 0,
+          "name": "Shell"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/TriPSs/nx-extend/releases/tag/vercel@16.2.3",
+          "name": "vercel@16.2.3"
+        },
+        {
+          "url": "https://github.com/TriPSs/nx-extend/releases/tag/translations@17.2.6",
+          "name": "translations@17.2.6"
+        },
+        {
+          "url": "https://github.com/TriPSs/nx-extend/releases/tag/terraform@10.4.0",
+          "name": "terraform@10.4.0"
+        },
+        {
+          "url": "https://github.com/TriPSs/nx-extend/releases/tag/strapi@14.2.2",
+          "name": "strapi@14.2.2"
+        },
+        {
+          "url": "https://github.com/TriPSs/nx-extend/releases/tag/shadcn-ui@6.2.5",
+          "name": "shadcn-ui@6.2.5"
+        }
+      ],
       "topics": [
+        "nx",
+        "strapi",
+        "workspace",
+        "monorepo",
+        "vercel",
         "cloud-functions",
         "cloud-run",
         "firebase",
         "firebase-hosting",
         "google-cloud",
-        "monorepo",
-        "nx",
-        "playwright",
-        "playwright-typescript",
-        "secrets",
         "simplelocalize",
-        "strapi",
-        "transifex",
-        "translations",
-        "vercel",
-        "vercel-hosting",
-        "workspace"
+        "transifex"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -759,52 +850,52 @@
       "slug": "react-bank",
       "name": "react-bank",
       "fullName": "jurkian/react-bank",
-      "category": "DevTools",
+      "category": "Authentication",
       "stars": 208,
       "author": "jurkian",
-      "avatar": "https://avatars.githubusercontent.com/u/12557150?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/12557150?u=9bfc2135a14f1b71d4ae3d8c0bbc5233234a6f5f&v=4",
       "desc": "Banking app built in React, Redux, TypeScript, Node, Strapi",
       "demo": null,
       "repoUrl": "https://github.com/jurkian/react-bank",
       "long1": "Banking app built in React, Redux, TypeScript, Node, Strapi. Maintained by jurkian on GitHub, where it has earned 208 stars from the community.",
-      "long2": "It's actively developed around banking, css, database, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around react, redux, javascript, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
+        "React",
+        "Redux",
         "Banking",
-        "Css",
-        "Database",
         "Firebase"
       ],
       "updated": "4 years ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 56,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 34,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 10,
+          "name": "SCSS"
         }
       ],
       "versions": [],
       "topics": [
-        "banking",
-        "css",
-        "database",
-        "firebase",
-        "formik",
-        "html",
+        "react",
+        "redux",
         "javascript",
-        "jwt-tokens",
-        "mariadb",
-        "mongodb",
-        "mysql",
+        "banking",
+        "firebase",
+        "html",
+        "css",
+        "formik",
         "node",
         "nodejs",
-        "react",
-        "reactjs",
-        "redux",
-        "sql",
-        "strapi",
-        "typescript"
+        "mongodb",
+        "jwt-tokens"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -820,40 +911,42 @@
       "demo": null,
       "repoUrl": "https://github.com/61FINTECH/deploy-strapi-on-aws",
       "long1": "Deploying a Strapi API on AWS (EC2 & RDS & S3). Maintained by 61FINTECH on GitHub, where it has earned 195 stars from the community.",
-      "long2": "It's actively developed around aws, cms, ec2, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around strapi, tutorial, aws, and is a solid reference for anyone building with these tools.",
       "stack": [
+        "Strapi",
+        "Tutorial",
         "Aws",
-        "Cms",
-        "Ec2",
-        "GraphQL"
+        "Ec2"
       ],
       "updated": "4 years ago",
       "license": "—",
       "langs": [
         {
           "name": "JavaScript",
-          "pct": 71.429,
-          "size": 20
+          "pct": 72
+        },
+        {
+          "name": "JavaScript",
+          "pct": 20
         },
         {
           "name": "Other",
-          "pct": 28.571,
-          "size": 8
+          "pct": 8
         }
       ],
       "versions": [],
       "topics": [
+        "strapi",
+        "tutorial",
         "aws",
-        "cms",
         "ec2",
-        "graphql",
-        "https",
-        "pm2",
-        "postgresql",
         "rds",
         "s3",
-        "strapi",
-        "tutorial"
+        "cms",
+        "https",
+        "postgresql",
+        "pm2",
+        "graphql"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -862,47 +955,51 @@
       "name": "next-projects",
       "fullName": "solygambas/next-projects",
       "category": "Blogs",
-      "stars": 187,
+      "stars": 186,
       "author": "solygambas",
-      "avatar": "https://avatars.githubusercontent.com/u/51904909?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/51904909?u=9a087a78a1f69441f48dd9dad390194970b549f4&v=4",
       "desc": "7 projects to understand Next.js core concepts, using MongoDB, Firebase and NextAuth.js.",
       "demo": "https://next-dagny.vercel.app/",
       "repoUrl": "https://github.com/solygambas/next-projects",
-      "long1": "7 projects to understand Next.js core concepts, using MongoDB, Firebase and NextAuth.js. Maintained by solygambas on GitHub, where it has earned 187 stars from the community.",
-      "long2": "It's actively developed around firebase, javascript, mongodb, and is a solid reference for anyone building with these tools.",
+      "long1": "7 projects to understand Next.js core concepts, using MongoDB, Firebase and NextAuth.js. Maintained by solygambas on GitHub, where it has earned 186 stars from the community.",
+      "long2": "It's actively developed around react, reactjs, nextjs, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Firebase",
-        "MongoDB",
-        "Next",
-        "Nextauth"
+        "React",
+        "React",
+        "Next.js",
+        "Next"
       ],
       "updated": "1 year ago",
       "license": "—",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 54,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 38,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 8,
+          "name": "CSS"
         }
       ],
       "versions": [],
       "topics": [
-        "firebase",
-        "javascript",
-        "mongodb",
-        "next",
-        "nextauth",
-        "nextjs",
         "react",
         "reactjs",
-        "shadcn-ui",
+        "nextjs",
+        "next",
+        "javascript",
+        "mongodb",
+        "nextauth",
+        "firebase",
         "strapi",
         "strapi-cms",
-        "tailwind",
         "tailwindcss",
-        "typescript",
-        "xstate"
+        "tailwind"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -910,82 +1007,73 @@
       "slug": "openselfservice",
       "name": "openselfservice",
       "fullName": "o2sdev/openselfservice",
-      "category": "Blogs",
-      "stars": 177,
+      "category": "DevTools",
+      "stars": 179,
       "author": "o2sdev",
       "avatar": "https://avatars.githubusercontent.com/u/200747769?v=4",
       "desc": "Open Self Service - The Open Source Composable Frontend for Customer Portals",
       "demo": "https://www.openselfservice.com",
       "repoUrl": "https://github.com/o2sdev/openselfservice",
-      "long1": "Open Self Service - The Open Source Composable Frontend for Customer Portals. Maintained by o2sdev on GitHub, where it has earned 177 stars from the community.",
-      "long2": "It's actively developed around composable, customer-account, frontend, and is a solid reference for anyone building with these tools.",
+      "long1": "Open Self Service - The Open Source Composable Frontend for Customer Portals. Maintained by o2sdev on GitHub, where it has earned 179 stars from the community.",
+      "long2": "It's actively developed around frontend, headless, nestjs, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Composable",
-        "Customer Account",
         "Frontend",
-        "Headless"
+        "Headless",
+        "Nestjs",
+        "Next.js"
       ],
-      "updated": "1 week ago",
+      "updated": "4 days ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 96.644,
-          "size": 6954845
+          "pct": 97,
+          "name": "TypeScript"
         },
         {
-          "name": "JavaScript",
-          "pct": 1.816,
-          "size": 130661
+          "pct": 2,
+          "name": "JavaScript"
         },
         {
-          "name": "CSS",
-          "pct": 0.813,
-          "size": 58523
-        },
-        {
-          "name": "Handlebars",
-          "pct": 0.586,
-          "size": 42190
-        },
-        {
-          "name": "SCSS",
-          "pct": 0.064,
-          "size": 4602
-        },
-        {
-          "name": "Dockerfile",
-          "pct": 0.039,
-          "size": 2838
-        },
-        {
-          "name": "MDX",
-          "pct": 0.034,
-          "size": 2419
-        },
-        {
-          "name": "HTML",
-          "pct": 0.004,
-          "size": 271
+          "pct": 1,
+          "name": "CSS"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/o2sdev/openselfservice/releases/tag/%40o2s/modules.surveyjs%401.0.0",
+          "name": "@o2s/modules.surveyjs@1.0.0"
+        },
+        {
+          "url": "https://github.com/o2sdev/openselfservice/releases/tag/%40o2s/blocks.product-list%401.0.0",
+          "name": "@o2s/blocks.product-list@1.0.0"
+        },
+        {
+          "url": "https://github.com/o2sdev/openselfservice/releases/tag/%40o2s/integrations.strapi-cms%403.0.0",
+          "name": "@o2s/integrations.strapi-cms@3.0.0"
+        },
+        {
+          "url": "https://github.com/o2sdev/openselfservice/releases/tag/%40o2s/utils.frontend%401.0.0",
+          "name": "@o2s/utils.frontend@1.0.0"
+        },
+        {
+          "url": "https://github.com/o2sdev/openselfservice/releases/tag/%40o2s/utils.api-harmonization%401.0.0",
+          "name": "@o2s/utils.api-harmonization@1.0.0"
+        }
+      ],
       "topics": [
-        "composable",
-        "customer-account",
         "frontend",
         "headless",
-        "headless-cms",
         "nestjs",
         "nextjs",
-        "portal",
-        "react",
-        "self-service",
         "selfservice",
+        "composable",
+        "react",
         "shadcn-ui",
-        "strapi",
-        "typescript"
+        "typescript",
+        "customer-account",
+        "portal",
+        "self-service"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -996,36 +1084,56 @@
       "category": "DevTools",
       "stars": 163,
       "author": "nicolashmln",
-      "avatar": "https://avatars.githubusercontent.com/u/22435892?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/22435892?u=7bf90470e7ec75075188e57d126ded9672d6330c&v=4",
       "desc": "Custom responsive image formats for https://strapi.io",
       "demo": null,
       "repoUrl": "https://github.com/nicolashmln/strapi-plugin-responsive-image",
       "long1": "Custom responsive image formats for https://strapi.io. Maintained by nicolashmln on GitHub, where it has earned 163 stars from the community.",
-      "long2": "It's actively developed around plugin, resizing-images, responsive, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around strapi, strapijs, plugin, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
+        "Strapi",
+        "Strapijs",
         "Plugin",
-        "Resizing Images",
-        "Responsive",
-        "Responsive Images"
+        "Responsive"
       ],
       "updated": "2 years ago",
       "license": "—",
       "langs": [
         {
-          "name": "JavaScript",
           "pct": 100,
-          "size": 100
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/nicolashmln/strapi-plugin-responsive-image/releases/tag/v1.2.0",
+          "name": "v1.2.0"
+        },
+        {
+          "url": "https://github.com/nicolashmln/strapi-plugin-responsive-image/releases/tag/v1.1.0",
+          "name": "v1.1.0"
+        },
+        {
+          "url": "https://github.com/nicolashmln/strapi-plugin-responsive-image/releases/tag/v1.0.1",
+          "name": "v1.0.1"
+        },
+        {
+          "url": "https://github.com/nicolashmln/strapi-plugin-responsive-image/releases/tag/v1.0.0",
+          "name": "v1.0.0"
+        },
+        {
+          "url": "https://github.com/nicolashmln/strapi-plugin-responsive-image/releases/tag/v0.5.0",
+          "name": "v0.5.0"
+        }
+      ],
       "topics": [
+        "strapi",
+        "strapijs",
         "plugin",
-        "resizing-images",
         "responsive",
         "responsive-images",
-        "strapi",
-        "strapijs"
+        "resizing-images"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -1034,46 +1142,65 @@
       "name": "docker-strapi",
       "fullName": "naskio/docker-strapi",
       "category": "Blogs",
-      "stars": 156,
+      "stars": 157,
       "author": "naskio",
-      "avatar": "https://avatars.githubusercontent.com/u/18899702?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/18899702?u=09a533512cd4200800d01b678af51937c352dc11&v=4",
       "desc": "Docker image for strapi v4 (latest version)",
       "demo": "https://hub.docker.com/r/naskio/strapi",
       "repoUrl": "https://github.com/naskio/docker-strapi",
-      "long1": "Docker image for strapi v4 (latest version). Maintained by naskio on GitHub, where it has earned 156 stars from the community.",
-      "long2": "It's actively developed around cms, compose, docker, and is a solid reference for anyone building with these tools.",
+      "long1": "Docker image for strapi v4 (latest version). Maintained by naskio on GitHub, where it has earned 157 stars from the community.",
+      "long2": "It's actively developed around strapi, strapi-cms, docker, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Shell",
-        "Cms",
-        "Compose",
+        "Strapi",
+        "Strapi Cms",
         "Docker",
         "Docker Compose"
       ],
-      "updated": "2 weeks ago",
+      "updated": "6 days ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "Shell",
-          "pct": 72.043,
-          "size": 2394
+          "pct": 72,
+          "name": "Shell"
         },
         {
-          "name": "Dockerfile",
-          "pct": 27.957,
-          "size": 929
+          "pct": 28,
+          "name": "Dockerfile"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/naskio/docker-strapi/releases/tag/v5.30.1",
+          "name": "v5.30.1"
+        },
+        {
+          "url": "https://github.com/naskio/docker-strapi/releases/tag/v5.30.0",
+          "name": "v5.30.0"
+        },
+        {
+          "url": "https://github.com/naskio/docker-strapi/releases/tag/v5.28.0",
+          "name": "v5.28.0"
+        },
+        {
+          "url": "https://github.com/naskio/docker-strapi/releases/tag/v5.27.0",
+          "name": "v5.27.0"
+        },
+        {
+          "url": "https://github.com/naskio/docker-strapi/releases/tag/v5.26.0",
+          "name": "v5.26.0"
+        }
+      ],
       "topics": [
-        "cms",
-        "compose",
+        "strapi",
+        "strapi-cms",
         "docker",
         "docker-compose",
         "docker-image",
-        "headless",
+        "cms",
+        "compose",
         "image",
-        "strapi",
-        "strapi-cms",
+        "headless",
         "v4"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
@@ -1090,27 +1217,51 @@
       "demo": "https://strapi-community.github.io/plugin-rest-cache/",
       "repoUrl": "https://github.com/strapi-community/plugin-rest-cache",
       "long1": "Speed-up HTTP requests with LRU cache. Maintained by strapi-community on GitHub, where it has earned 153 stars from the community.",
-      "long2": "It's actively developed around cache, rest, strapi, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around cache, strapi, rest, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
         "Cache",
-        "Rest",
-        "Strapi"
+        "Strapi",
+        "Rest"
       ],
-      "updated": "10 months ago",
+      "updated": "11 months ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "JavaScript",
-          "pct": 100,
-          "size": 100
+          "pct": 99,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 1,
+          "name": "TypeScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/strapi-community/plugin-rest-cache/releases/tag/v5.0.0",
+          "name": "v5.0.0"
+        },
+        {
+          "url": "https://github.com/strapi-community/plugin-rest-cache/releases/tag/v4.2.9",
+          "name": "v4.2.9"
+        },
+        {
+          "url": "https://github.com/strapi-community/plugin-rest-cache/releases/tag/v4.2.8",
+          "name": "v4.2.8"
+        },
+        {
+          "url": "https://github.com/strapi-community/plugin-rest-cache/releases/tag/v4.2.7",
+          "name": "v4.2.7"
+        },
+        {
+          "url": "https://github.com/strapi-community/plugin-rest-cache/releases/tag/v4.2.6",
+          "name": "v4.2.6"
+        }
+      ],
       "topics": [
         "cache",
-        "rest",
-        "strapi"
+        "strapi",
+        "rest"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -1119,13 +1270,13 @@
       "name": "strapi-plugin-ckeditor",
       "fullName": "nshenderov/strapi-plugin-ckeditor",
       "category": "DevTools",
-      "stars": 148,
+      "stars": 146,
       "author": "nshenderov",
       "avatar": "https://avatars.githubusercontent.com/u/103522779?v=4",
       "desc": "Integrates CKEditor 5 into your Strapi project as a fully customizable custom field.",
       "demo": "https://www.npmjs.com/package/@_sh/strapi-plugin-ckeditor",
       "repoUrl": "https://github.com/nshenderov/strapi-plugin-ckeditor",
-      "long1": "Integrates CKEditor 5 into your Strapi project as a fully customizable custom field. Maintained by nshenderov on GitHub, where it has earned 148 stars from the community.",
+      "long1": "Integrates CKEditor 5 into your Strapi project as a fully customizable custom field. Maintained by nshenderov on GitHub, where it has earned 146 stars from the community.",
       "long2": "It's actively developed around ckeditor, ckeditor5, strapi, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
@@ -1138,12 +1289,32 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
           "pct": 100,
-          "size": 100
+          "name": "TypeScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/nshenderov/strapi-plugin-ckeditor/releases/tag/v7.1.1",
+          "name": "v7.1.1"
+        },
+        {
+          "url": "https://github.com/nshenderov/strapi-plugin-ckeditor/releases/tag/v7.1.0",
+          "name": "v7.1.0"
+        },
+        {
+          "url": "https://github.com/nshenderov/strapi-plugin-ckeditor/releases/tag/v7.0.0",
+          "name": "v7.0.0"
+        },
+        {
+          "url": "https://github.com/nshenderov/strapi-plugin-ckeditor/releases/tag/v6.0.3",
+          "name": "v6.0.3"
+        },
+        {
+          "url": "https://github.com/nshenderov/strapi-plugin-ckeditor/releases/tag/v6.0.2",
+          "name": "v6.0.2"
+        }
+      ],
       "topics": [
         "ckeditor",
         "ckeditor5",
@@ -1160,13 +1331,13 @@
       "name": "shoes-ecommerce",
       "fullName": "kriziu/shoes-ecommerce",
       "category": "E-commerce",
-      "stars": 139,
+      "stars": 140,
       "author": "kriziu",
-      "avatar": "https://avatars.githubusercontent.com/u/39315916?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/39315916?u=234f72c9d5762ee1c7ae5f169a7045627595392c&v=4",
       "desc": "Shop made in Next.JS and Strapi containing products from https://nike.com",
       "demo": "https://shoes-ecommerce.herokuapp.com",
       "repoUrl": "https://github.com/kriziu/shoes-ecommerce",
-      "long1": "Shop made in Next.JS and Strapi containing products from https://nike.com. Maintained by kriziu on GitHub, where it has earned 139 stars from the community.",
+      "long1": "Shop made in Next.JS and Strapi containing products from https://nike.com. Maintained by kriziu on GitHub, where it has earned 140 stars from the community.",
       "long2": "It's actively developed around ecommerce, framer-motion, graphql, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
@@ -1179,9 +1350,16 @@
       "license": "—",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 98,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 1,
+          "name": "CSS"
+        },
+        {
+          "pct": 1,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
@@ -1220,12 +1398,32 @@
       "license": "—",
       "langs": [
         {
-          "name": "JavaScript",
           "pct": 100,
-          "size": 100
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/notum-cz/strapi-plugin-content-versioning/releases/tag/v1.3.2",
+          "name": "v1.3.2"
+        },
+        {
+          "url": "https://github.com/notum-cz/strapi-plugin-content-versioning/releases/tag/v1.3.0",
+          "name": "v1.3.0"
+        },
+        {
+          "url": "https://github.com/notum-cz/strapi-plugin-content-versioning/releases/tag/v1.2.12",
+          "name": "v1.2.12"
+        },
+        {
+          "url": "https://github.com/notum-cz/strapi-plugin-content-versioning/releases/tag/v1.2.9",
+          "name": "v1.2.9"
+        },
+        {
+          "url": "https://github.com/notum-cz/strapi-plugin-content-versioning/releases/tag/v1.2.8",
+          "name": "v1.2.8"
+        }
+      ],
       "topics": [
         "content-versioning",
         "strapi",
@@ -1237,7 +1435,7 @@
       "slug": "monorepo",
       "name": "monorepo",
       "fullName": "zero-one-group/monorepo",
-      "category": "Testing",
+      "category": "Templates",
       "stars": 125,
       "author": "zero-one-group",
       "avatar": "https://avatars.githubusercontent.com/u/60282968?v=4",
@@ -1245,103 +1443,65 @@
       "demo": "https://oss.zero-one-group.com/monorepo",
       "repoUrl": "https://github.com/zero-one-group/monorepo",
       "long1": "The Zero One Group approach to Monorepo uses a standardized boilerplate for building new projects, ensuring consistency and scalability. Maintained by zero-one-group on GitHub, where it has earned 125 stars from the community.",
-      "long2": "It's actively developed around astro, biomejs, boilerplate, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around golang, monorepo, moonrepo, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Astro",
-        "Biomejs",
-        "Boilerplate",
-        "Docker"
+        "Golang",
+        "Monorepo",
+        "Moonrepo",
+        "React"
       ],
       "updated": "1 week ago",
       "license": "—",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 41.449,
-          "size": 862038
+          "pct": 63,
+          "name": "TypeScript"
         },
         {
-          "name": "Go",
-          "pct": 32.347,
-          "size": 672744
+          "pct": 32,
+          "name": "Go"
         },
         {
-          "name": "CSS",
-          "pct": 5.242,
-          "size": 109024
-        },
-        {
-          "name": "HCL",
-          "pct": 4.182,
-          "size": 86985
-        },
-        {
-          "name": "Shell",
-          "pct": 3.924,
-          "size": 81604
-        },
-        {
-          "name": "Dockerfile",
-          "pct": 3.916,
-          "size": 81441
-        },
-        {
-          "name": "MDX",
-          "pct": 3.808,
-          "size": 79196
-        },
-        {
-          "name": "Python",
-          "pct": 2.675,
-          "size": 55637
-        },
-        {
-          "name": "JavaScript",
-          "pct": 0.873,
-          "size": 18166
-        },
-        {
-          "name": "HTML",
-          "pct": 0.8,
-          "size": 16628
-        },
-        {
-          "name": "Astro",
-          "pct": 0.572,
-          "size": 11902
-        },
-        {
-          "name": "PLpgSQL",
-          "pct": 0.146,
-          "size": 3036
-        },
-        {
-          "name": "Mako",
-          "pct": 0.066,
-          "size": 1378
+          "pct": 5,
+          "name": "CSS"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/zero-one-group/monorepo/releases/tag/2026.1",
+          "name": "2026.1"
+        },
+        {
+          "url": "https://github.com/zero-one-group/monorepo/releases/tag/2025.9",
+          "name": "2025.9"
+        },
+        {
+          "url": "https://github.com/zero-one-group/monorepo/releases/tag/2025.8",
+          "name": "2025.8"
+        },
+        {
+          "url": "https://github.com/zero-one-group/monorepo/releases/tag/2025.7",
+          "name": "2025.7"
+        },
+        {
+          "url": "https://github.com/zero-one-group/monorepo/releases/tag/2025.6",
+          "name": "2025.6"
+        }
+      ],
       "topics": [
-        "astro",
-        "biomejs",
-        "boilerplate",
-        "docker",
         "golang",
         "monorepo",
         "moonrepo",
-        "nextjs",
-        "nodejs",
-        "playwright",
         "react",
-        "reactjs",
-        "storybook",
-        "strapi",
-        "tailwdindcss",
         "typescript",
+        "nextjs",
         "vite",
-        "vitest"
+        "astro",
+        "docker",
+        "strapi",
+        "playwright",
+        "storybook"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -1352,36 +1512,43 @@
       "category": "DevTools",
       "stars": 117,
       "author": "Elvincth",
-      "avatar": "https://avatars.githubusercontent.com/u/6602723?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/6602723?u=6df1d84e8fa8df97ea4e25fffad69470534c8abe&v=4",
       "desc": "A Turborepo with Strapi v4 (w/ postgres database) + Next.js powered by docker and docker-compose",
       "demo": null,
       "repoUrl": "https://github.com/Elvincth/turbo-strapi-nextjs",
       "long1": "A Turborepo with Strapi v4 (w/ postgres database) + Next.js powered by docker and docker-compose. Maintained by Elvincth on GitHub, where it has earned 117 stars from the community.",
-      "long2": "It's actively developed around docker, docker-compose, nextjs, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around docker, docker-compose, strapi, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
         "Docker",
         "Docker Compose",
-        "Next.js",
-        "Strapi"
+        "Strapi",
+        "Next.js"
       ],
       "updated": "2 years ago",
       "license": "—",
       "langs": [
         {
-          "name": "JavaScript",
-          "pct": 100,
-          "size": 100
+          "pct": 83,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 12,
+          "name": "Dockerfile"
+        },
+        {
+          "pct": 5,
+          "name": "TypeScript"
         }
       ],
       "versions": [],
       "topics": [
         "docker",
         "docker-compose",
-        "nextjs",
         "strapi",
-        "turbo",
-        "turborepo"
+        "nextjs",
+        "turborepo",
+        "turbo"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -1390,41 +1557,53 @@
       "name": "next-bookstore",
       "fullName": "satnaing/next-bookstore",
       "category": "E-commerce",
-      "stars": 111,
+      "stars": 110,
       "author": "satnaing",
-      "avatar": "https://avatars.githubusercontent.com/u/53733092?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/53733092?u=0ffa5d0b278a593593059e99de2efa9035f2d8b9&v=4",
       "desc": "An online bookstore developed using NextJS 13 with appDir and StrapiCMS. (Still in Beta)",
       "demo": "https://nextbookstore.vercel.app",
       "repoUrl": "https://github.com/satnaing/next-bookstore",
-      "long1": "An online bookstore developed using NextJS 13 with appDir and StrapiCMS. (Still in Beta). Maintained by satnaing on GitHub, where it has earned 111 stars from the community.",
-      "long2": "It's actively developed around ecommerce, headless-cms, nextjs, and is a solid reference for anyone building with these tools.",
+      "long1": "An online bookstore developed using NextJS 13 with appDir and StrapiCMS. (Still in Beta). Maintained by satnaing on GitHub, where it has earned 110 stars from the community.",
+      "long2": "It's actively developed around nextjs, react, strapi, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Ecommerce",
-        "Headless Cms",
         "Next.js",
-        "React"
+        "React",
+        "Strapi",
+        "Headless Cms"
       ],
       "updated": "2 years ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 92,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 6,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 2,
+          "name": "CSS"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/satnaing/next-bookstore/releases/tag/v0.1.0",
+          "name": "v0.1.0"
+        }
+      ],
       "topics": [
-        "ecommerce",
-        "headless-cms",
         "nextjs",
         "react",
         "strapi",
+        "headless-cms",
         "tailwindcss",
         "tanstack-query",
         "typescript",
-        "zustand"
+        "zustand",
+        "ecommerce"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -1435,32 +1614,35 @@
       "category": "Blogs",
       "stars": 106,
       "author": "jbeuckm",
-      "avatar": "https://avatars.githubusercontent.com/u/137068?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/137068?u=533b3e6209aa6076c277f75db5c3830a7619e1f2&v=4",
       "desc": "Import plugin for Strapi CMS",
       "demo": null,
       "repoUrl": "https://github.com/jbeuckm/strapi-plugin-import-content",
       "long1": "Import plugin for Strapi CMS. Maintained by jbeuckm on GitHub, where it has earned 106 stars from the community.",
-      "long2": "It's actively developed around cms, import, strapi, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around strapi, cms, import, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
+        "Strapi",
         "Cms",
-        "Import",
-        "Strapi"
+        "Import"
       ],
       "updated": "5 years ago",
       "license": "—",
       "langs": [
         {
-          "name": "JavaScript",
-          "pct": 100,
-          "size": 100
+          "pct": 99,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 1,
+          "name": "CSS"
         }
       ],
       "versions": [],
       "topics": [
+        "strapi",
         "cms",
-        "import",
-        "strapi"
+        "import"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -1481,13 +1663,20 @@
         "JavaScript",
         "Strapi"
       ],
-      "updated": "8 months ago",
+      "updated": "9 months ago",
       "license": "—",
       "langs": [
         {
-          "name": "JavaScript",
-          "pct": 100,
-          "size": 100
+          "pct": 50,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 36,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 14,
+          "name": "Shell"
         }
       ],
       "versions": [],
@@ -1503,7 +1692,7 @@
       "category": "DevTools",
       "stars": 86,
       "author": "buraste",
-      "avatar": "https://avatars.githubusercontent.com/u/44535256?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/44535256?u=f11bcdbbc06d080f9bc35848bb46453d1fbc4fdd&v=4",
       "desc": "🎨 Boilerplate for building Dockerized 🐳 applications using Strapi v4 + Next.js + Postgres +Nginx",
       "demo": "https://github.com/burakibis/strapi-nextjs-docker-boilerplate",
       "repoUrl": "https://github.com/buraste/strapi-nextjs-docker-boilerplate",
@@ -1520,9 +1709,16 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "JavaScript",
-          "pct": 100,
-          "size": 100
+          "pct": 52,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 24,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 24,
+          "name": "Dockerfile"
         }
       ],
       "versions": [],
@@ -1541,36 +1737,64 @@
       "name": "strapi-plugin-publisher",
       "fullName": "pluginpal/strapi-plugin-publisher",
       "category": "Blogs",
-      "stars": 85,
+      "stars": 84,
       "author": "pluginpal",
       "avatar": "https://avatars.githubusercontent.com/u/135427648?v=4",
       "desc": "A plugin for Strapi Headless CMS that provides the ability provides the ability to easily schedule publishing and unpublishing of any content type.",
       "demo": "https://www.pluginpal.io/plugin/publisher",
       "repoUrl": "https://github.com/pluginpal/strapi-plugin-publisher",
-      "long1": "A plugin for Strapi Headless CMS that provides the ability provides the ability to easily schedule publishing and unpublishing of any content type. Maintained by pluginpal on GitHub, where it has earned 85 stars from the community.",
-      "long2": "It's actively developed around publisher, publishing, strapi, and is a solid reference for anyone building with these tools.",
+      "long1": "A plugin for Strapi Headless CMS that provides the ability provides the ability to easily schedule publishing and unpublishing of any content type. Maintained by pluginpal on GitHub, where it has earned 84 stars from the community.",
+      "long2": "It's actively developed around strapi, strapi-plugin, publishing, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
-        "Publisher",
-        "Publishing",
         "Strapi",
-        "Strapi Plugin"
+        "Strapi Plugin",
+        "Publishing",
+        "Publisher"
       ],
       "updated": "4 months ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "JavaScript",
-          "pct": 100,
-          "size": 100
+          "pct": 56,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 44,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 0,
+          "name": "CSS"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/pluginpal/strapi-plugin-publisher/releases/tag/2.0.9",
+          "name": "2.0.9"
+        },
+        {
+          "url": "https://github.com/pluginpal/strapi-plugin-publisher/releases/tag/2.0.8",
+          "name": "2.0.8"
+        },
+        {
+          "url": "https://github.com/pluginpal/strapi-plugin-publisher/releases/tag/2.0.7",
+          "name": "2.0.7"
+        },
+        {
+          "url": "https://github.com/pluginpal/strapi-plugin-publisher/releases/tag/v2.0.6",
+          "name": "v2.0.6"
+        },
+        {
+          "url": "https://github.com/pluginpal/strapi-plugin-publisher/releases/tag/2.0.5",
+          "name": "2.0.5"
+        }
+      ],
       "topics": [
-        "publisher",
-        "publishing",
         "strapi",
         "strapi-plugin",
+        "publishing",
+        "publisher",
         "strapi-publisher"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
@@ -1591,18 +1815,20 @@
       "stack": [
         "Strapi"
       ],
-      "updated": "11 months ago",
+      "updated": "12 months ago",
       "license": "Apache-2.0",
       "langs": [
         {
           "name": "JavaScript",
-          "pct": 71.429,
-          "size": 20
+          "pct": 72
+        },
+        {
+          "name": "JavaScript",
+          "pct": 20
         },
         {
           "name": "Other",
-          "pct": 28.571,
-          "size": 8
+          "pct": 8
         }
       ],
       "versions": [],
@@ -1618,7 +1844,7 @@
       "category": "DevTools",
       "stars": 83,
       "author": "DomDew",
-      "avatar": "https://avatars.githubusercontent.com/u/72755955?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/72755955?u=8760da523af540b9008a696b0054aab18d393b31&v=4",
       "desc": "Register a weighted fuzzy search endpoint for Strapi Headless CMS you can add your content types to in no time",
       "demo": "https://www.npmjs.com/package/strapi-plugin-fuzzy-search",
       "repoUrl": "https://github.com/DomDew/strapi-plugin-fuzzy-search",
@@ -1629,25 +1855,53 @@
         "Fuzzy Search",
         "Fuzzy Sorting",
         "Fuzzysearch",
-        "Search"
+        "Strapi"
       ],
       "updated": "5 months ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 96,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 4,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 0,
+          "name": "Dockerfile"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/DomDew/strapi-plugin-fuzzy-search/releases/tag/v4.1.0",
+          "name": "v4.1.0"
+        },
+        {
+          "url": "https://github.com/DomDew/strapi-plugin-fuzzy-search/releases/tag/v4.0.1",
+          "name": "v4.0.1"
+        },
+        {
+          "url": "https://github.com/DomDew/strapi-plugin-fuzzy-search/releases/tag/v4.0.0",
+          "name": "v4.0.0"
+        },
+        {
+          "url": "https://github.com/DomDew/strapi-plugin-fuzzy-search/releases/tag/v4.0.0-beta.1",
+          "name": "v4.0.0-beta.1"
+        },
+        {
+          "url": "https://github.com/DomDew/strapi-plugin-fuzzy-search/releases/tag/v3.1.0-beta.1",
+          "name": "v3.1.0-beta.1"
+        }
+      ],
       "topics": [
         "fuzzy-search",
         "fuzzy-sorting",
         "fuzzysearch",
-        "search",
         "strapi",
-        "strapi-plugin"
+        "strapi-plugin",
+        "search"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -1658,35 +1912,55 @@
       "category": "Authentication",
       "stars": 82,
       "author": "kucherenko",
-      "avatar": "https://avatars.githubusercontent.com/u/159307?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/159307?u=bccf13525bd614f627550807804ccf79a9ccd4a7&v=4",
       "desc": "A plugin for Strapi Headless CMS that provides ability to sign-in/sign-up to an application by link had sent to email.",
       "demo": null,
       "repoUrl": "https://github.com/kucherenko/strapi-plugin-passwordless",
       "long1": "A plugin for Strapi Headless CMS that provides ability to sign-in/sign-up to an application by link had sent to email. Maintained by kucherenko on GitHub, where it has earned 82 stars from the community.",
-      "long2": "It's actively developed around authentication, passwordless, passwordless-authentication, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around strapi, plugin, authentication, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
+        "Strapi",
+        "Plugin",
         "Authentication",
-        "Passwordless",
-        "Passwordless Authentication",
-        "Plugin"
+        "Passwordless"
       ],
       "updated": "2 years ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "JavaScript",
           "pct": 100,
-          "size": 100
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/kucherenko/strapi-plugin-passwordless/releases/tag/v4.0.15",
+          "name": "v4.0.15"
+        },
+        {
+          "url": "https://github.com/kucherenko/strapi-plugin-passwordless/releases/tag/v4.0.14",
+          "name": "v4.0.14"
+        },
+        {
+          "url": "https://github.com/kucherenko/strapi-plugin-passwordless/releases/tag/v4.0.13",
+          "name": "v4.0.13"
+        },
+        {
+          "url": "https://github.com/kucherenko/strapi-plugin-passwordless/releases/tag/v4.0.12",
+          "name": "v4.0.12"
+        },
+        {
+          "url": "https://github.com/kucherenko/strapi-plugin-passwordless/releases/tag/v4.0.11",
+          "name": "v4.0.11"
+        }
+      ],
       "topics": [
+        "strapi",
+        "plugin",
         "authentication",
         "passwordless",
         "passwordless-authentication",
-        "plugin",
-        "strapi",
         "strapi-plugin"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
@@ -1696,37 +1970,61 @@
       "name": "strapi-plugin-translate",
       "fullName": "Fekide/strapi-plugin-translate",
       "category": "DevTools",
-      "stars": 79,
+      "stars": 80,
       "author": "Fekide",
       "avatar": "https://avatars.githubusercontent.com/u/1044978?v=4",
       "desc": "Strapi plugin for automated translations using different Translate Providers",
       "demo": "https://market.strapi.io/plugins/strapi-plugin-translate",
       "repoUrl": "https://github.com/Fekide/strapi-plugin-translate",
-      "long1": "Strapi plugin for automated translations using different Translate Providers. Maintained by Fekide on GitHub, where it has earned 79 stars from the community.",
-      "long2": "It's actively developed around deepl, i18n, strapi, and is a solid reference for anyone building with these tools.",
+      "long1": "Strapi plugin for automated translations using different Translate Providers. Maintained by Fekide on GitHub, where it has earned 80 stars from the community.",
+      "long2": "It's actively developed around strapi, strapi-plugin, deepl, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
-        "Deepl",
-        "I18N",
         "Strapi",
-        "Strapi Plugin"
+        "Strapi Plugin",
+        "Deepl",
+        "Translation"
       ],
-      "updated": "7 months ago",
+      "updated": "8 months ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "JavaScript",
           "pct": 100,
-          "size": 100
+          "name": "JavaScript"
+        },
+        {
+          "pct": 0,
+          "name": "Shell"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/Fekide/strapi-plugin-translate/releases/tag/strapi-provider-translate-libretranslate%401.2.0-next.4",
+          "name": "strapi-provider-translate-libretranslate@1.2.0-next.4"
+        },
+        {
+          "url": "https://github.com/Fekide/strapi-plugin-translate/releases/tag/strapi-provider-translate-deepl%401.3.0-next.4",
+          "name": "strapi-provider-translate-deepl@1.3.0-next.4"
+        },
+        {
+          "url": "https://github.com/Fekide/strapi-plugin-translate/releases/tag/strapi-plugin-translate%402.0.0-next.4",
+          "name": "strapi-plugin-translate@2.0.0-next.4"
+        },
+        {
+          "url": "https://github.com/Fekide/strapi-plugin-translate/releases/tag/strapi-provider-translate-libretranslate%401.1.6",
+          "name": "strapi-provider-translate-libretranslate@1.1.6"
+        },
+        {
+          "url": "https://github.com/Fekide/strapi-plugin-translate/releases/tag/strapi-provider-translate-deepl%401.2.8",
+          "name": "strapi-provider-translate-deepl@1.2.8"
+        }
+      ],
       "topics": [
-        "deepl",
-        "i18n",
         "strapi",
         "strapi-plugin",
-        "translation"
+        "deepl",
+        "translation",
+        "i18n"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -1750,7 +2048,7 @@
         "Esa",
         "Nasa"
       ],
-      "updated": "1 week ago",
+      "updated": "3 weeks ago",
       "license": "—",
       "langs": [
         {
@@ -1802,42 +2100,62 @@
       "category": "E-commerce",
       "stars": 77,
       "author": "zreecespieces",
-      "avatar": "https://avatars.githubusercontent.com/u/26676255?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/26676255?u=350e788beee6510e5e0e18bb86689cbaf14ea788&v=4",
       "desc": "A Complete Guide to the JAMstack and React E-Commerce",
       "demo": null,
       "repoUrl": "https://github.com/zreecespieces/jamstack-ecommerce-course",
       "long1": "A Complete Guide to the JAMstack and React E-Commerce. Maintained by zreecespieces on GitHub, where it has earned 77 stars from the community.",
-      "long2": "It's actively developed around e-commerce, e-learning, gatsby, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around jamstack, javascript, react, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
-        "E Commerce",
-        "E Learning",
+        "Jamstack",
+        "React",
         "Gatsby",
-        "Jamstack"
+        "Strapi"
       ],
       "updated": "5 years ago",
       "license": "—",
       "langs": [
         {
-          "name": "JavaScript",
           "pct": 100,
-          "size": 100
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/zreecespieces/jamstack-ecommerce-course/releases/tag/v1.0.0",
+          "name": "v1.0.0"
+        },
+        {
+          "url": "https://github.com/zreecespieces/jamstack-ecommerce-course/releases/tag/v0.0.7",
+          "name": "v0.0.7"
+        },
+        {
+          "url": "https://github.com/zreecespieces/jamstack-ecommerce-course/releases/tag/v0.0.6",
+          "name": "v0.0.6"
+        },
+        {
+          "url": "https://github.com/zreecespieces/jamstack-ecommerce-course/releases/tag/v0.0.5",
+          "name": "v0.0.5"
+        },
+        {
+          "url": "https://github.com/zreecespieces/jamstack-ecommerce-course/releases/tag/v0.0.4",
+          "name": "v0.0.4"
+        }
+      ],
       "topics": [
-        "e-commerce",
-        "e-learning",
-        "gatsby",
         "jamstack",
         "javascript",
-        "material-ui",
         "react",
+        "gatsby",
         "strapi",
+        "material-ui",
         "stripe",
         "udemy",
         "udemy-course",
-        "udemy-course-project"
+        "udemy-course-project",
+        "e-commerce",
+        "e-learning"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -1853,32 +2171,52 @@
       "demo": "https://market.strapi.io/plugins/@ckeditor-strapi-plugin-ckeditor",
       "repoUrl": "https://github.com/ckeditor/strapi-plugin-ckeditor",
       "long1": "CKEditor 5 - Official Integration for Strapi. Maintained by ckeditor on GitHub, where it has earned 77 stars from the community.",
-      "long2": "It's actively developed around ckeditor, ckeditor5, rich-text-editor, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around ckeditor, wysiwyg, ckeditor5, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
         "Ckeditor",
+        "Wysiwyg",
         "Ckeditor5",
-        "Rich Text Editor",
         "Strapi"
       ],
-      "updated": "5 months ago",
+      "updated": "6 months ago",
       "license": "—",
       "langs": [
         {
-          "name": "JavaScript",
           "pct": 100,
-          "size": 100
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/ckeditor/strapi-plugin-ckeditor/releases/tag/v1.1.2",
+          "name": "v1.1.2"
+        },
+        {
+          "url": "https://github.com/ckeditor/strapi-plugin-ckeditor/releases/tag/v0.2.2",
+          "name": "v0.2.2"
+        },
+        {
+          "url": "https://github.com/ckeditor/strapi-plugin-ckeditor/releases/tag/v1.1.1",
+          "name": "v1.1.1"
+        },
+        {
+          "url": "https://github.com/ckeditor/strapi-plugin-ckeditor/releases/tag/v0.2.1",
+          "name": "v0.2.1"
+        },
+        {
+          "url": "https://github.com/ckeditor/strapi-plugin-ckeditor/releases/tag/v0.2.0",
+          "name": "v0.2.0"
+        }
+      ],
       "topics": [
         "ckeditor",
+        "wysiwyg",
         "ckeditor5",
-        "rich-text-editor",
         "strapi",
-        "strapi-cms",
+        "rich-text-editor",
         "strapi-plugin",
-        "wysiwyg"
+        "strapi-cms"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -1894,28 +2232,44 @@
       "demo": null,
       "repoUrl": "https://github.com/ijsto/strapi-plugin-migrate",
       "long1": "Strapi-Plugin-Migrate helps to migrate Strapi data from one environment of your app to another. For example development > staging. Maintained by ijsto on GitHub, where it has earned 75 stars from the community.",
-      "long2": "It's actively developed around strapi, strapi-cms, strapi-plugin, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around strapi, strapi-plugin, strapi-cms, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
         "Strapi",
-        "Strapi Cms",
         "Strapi Plugin",
+        "Strapi Cms",
         "Strapijs"
       ],
       "updated": "5 years ago",
       "license": "—",
       "langs": [
         {
-          "name": "JavaScript",
           "pct": 100,
-          "size": 100
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/ijsto/strapi-plugin-migrate/releases/tag/v3.6.3",
+          "name": "v3.6.3"
+        },
+        {
+          "url": "https://github.com/ijsto/strapi-plugin-migrate/releases/tag/v3.6.2",
+          "name": "v3.6.2"
+        },
+        {
+          "url": "https://github.com/ijsto/strapi-plugin-migrate/releases/tag/v3.5.30",
+          "name": "v3.5.30"
+        },
+        {
+          "url": "https://github.com/ijsto/strapi-plugin-migrate/releases/tag/v3.0.0",
+          "name": "v3.0.0"
+        }
+      ],
       "topics": [
         "strapi",
-        "strapi-cms",
         "strapi-plugin",
+        "strapi-cms",
         "strapijs"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
@@ -1932,31 +2286,38 @@
       "demo": "https://snipcart.com/blog/node-js-react-strapi-tutorial",
       "repoUrl": "https://github.com/snipcart/strapi-react-snipcart",
       "long1": "React E-Commerce App Built on Top of Strapi. Maintained by snipcart on GitHub, where it has earned 73 stars from the community.",
-      "long2": "It's actively developed around demo, nodejs, react, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around strapi, demo, react, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
+        "Strapi",
         "Demo",
-        "Node",
         "React",
-        "Single Page App"
+        "Node"
       ],
       "updated": "7 years ago",
       "license": "—",
       "langs": [
         {
-          "name": "JavaScript",
-          "pct": 100,
-          "size": 100
+          "pct": 92,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 5,
+          "name": "CSS"
+        },
+        {
+          "pct": 3,
+          "name": "HTML"
         }
       ],
       "versions": [],
       "topics": [
+        "strapi",
         "demo",
-        "nodejs",
         "react",
-        "single-page-app",
+        "nodejs",
         "snipcart",
-        "strapi"
+        "single-page-app"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -1967,38 +2328,45 @@
       "category": "Blogs",
       "stars": 72,
       "author": "edgarlr",
-      "avatar": "https://avatars.githubusercontent.com/u/22602440?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/22602440?u=c0a3203714f5774c0e9882b8ff4842dc827774a3&v=4",
       "desc": "Next.js Digital Magazine Starter Kit",
       "demo": "https://magazine-starter.vercel.app",
       "repoUrl": "https://github.com/edgarlr/magazine",
       "long1": "Next.js Digital Magazine Starter Kit. Maintained by edgarlr on GitHub, where it has earned 72 stars from the community.",
-      "long2": "It's actively developed around google-analytics, magazine, nextjs, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around nextjs, typescript, tailwindcss, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Google Analytics",
-        "Magazine",
         "Next.js",
-        "React"
+        "Tailwind CSS",
+        "Strapi",
+        "Strapi Cms"
       ],
       "updated": "5 years ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 84,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 9,
+          "name": "CSS"
+        },
+        {
+          "pct": 7,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
       "topics": [
-        "google-analytics",
-        "magazine",
         "nextjs",
-        "react",
+        "typescript",
+        "tailwindcss",
         "strapi",
         "strapi-cms",
-        "tailwindcss",
-        "typescript"
+        "google-analytics",
+        "magazine",
+        "react"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -2024,54 +2392,40 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 98,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 2,
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/mancku/strapi-plugin-schemas-to-ts/releases/tag/v1.3.2",
+          "name": "v1.3.2"
+        },
+        {
+          "url": "https://github.com/mancku/strapi-plugin-schemas-to-ts/releases/tag/v1.3.1",
+          "name": "v1.3.1"
+        },
+        {
+          "url": "https://github.com/mancku/strapi-plugin-schemas-to-ts/releases/tag/v1.3.0",
+          "name": "v1.3.0"
+        },
+        {
+          "url": "https://github.com/mancku/strapi-plugin-schemas-to-ts/releases/tag/v1.2.0",
+          "name": "v1.2.0"
+        },
+        {
+          "url": "https://github.com/mancku/strapi-plugin-schemas-to-ts/releases/tag/v1.1.10",
+          "name": "v1.1.10"
+        }
+      ],
       "topics": [
         "plugin",
         "strapi",
         "typescript"
-      ],
-      "addedAt": "2026-07-15T22:28:32.821506+00:00"
-    },
-    {
-      "slug": "strapi-provider-upload-oss",
-      "name": "strapi-provider-upload-oss",
-      "fullName": "hezzze/strapi-provider-upload-oss",
-      "category": "DevTools",
-      "stars": 67,
-      "author": "hezzze",
-      "avatar": "https://avatars.githubusercontent.com/u/2413682?v=4",
-      "desc": "A provider for strapi server to upload file to Aliyun OSS",
-      "demo": null,
-      "repoUrl": "https://github.com/hezzze/strapi-provider-upload-oss",
-      "long1": "A provider for strapi server to upload file to Aliyun OSS. Maintained by hezzze on GitHub, where it has earned 67 stars from the community.",
-      "long2": "It's actively developed around aliyun, oss, provider, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "JavaScript",
-        "Aliyun",
-        "Oss",
-        "Provider",
-        "Strapi"
-      ],
-      "updated": "2 months ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "JavaScript",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "aliyun",
-        "oss",
-        "provider",
-        "strapi"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -2087,27 +2441,101 @@
       "demo": "https://strapi-community.github.io/strapi-plugin-local-image-sharp/",
       "repoUrl": "https://github.com/strapi-community/strapi-plugin-local-image-sharp",
       "long1": "Dynamically resize, format and optimize images based on url modifiers. Maintained by strapi-community on GitHub, where it has earned 67 stars from the community.",
-      "long2": "It's actively developed around ipx, sharp, strapi, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around strapi, ipx, sharp, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
+        "Strapi",
         "Ipx",
-        "Sharp",
-        "Strapi"
+        "Sharp"
       ],
       "updated": "2 years ago",
       "license": "—",
       "langs": [
         {
-          "name": "JavaScript",
           "pct": 100,
-          "size": 100
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/strapi-community/strapi-plugin-local-image-sharp/releases/tag/v1.7.0",
+          "name": "v1.7.0"
+        },
+        {
+          "url": "https://github.com/strapi-community/strapi-plugin-local-image-sharp/releases/tag/v1.6.0",
+          "name": "v1.6.0"
+        },
+        {
+          "url": "https://github.com/strapi-community/strapi-plugin-local-image-sharp/releases/tag/v1.4.0",
+          "name": "v1.4.0"
+        },
+        {
+          "url": "https://github.com/strapi-community/strapi-plugin-local-image-sharp/releases/tag/v1.3.0",
+          "name": "v1.3.0"
+        },
+        {
+          "url": "https://github.com/strapi-community/strapi-plugin-local-image-sharp/releases/tag/v1.2.1",
+          "name": "v1.2.1"
+        }
+      ],
       "topics": [
+        "strapi",
         "ipx",
-        "sharp",
-        "strapi"
+        "sharp"
+      ],
+      "addedAt": "2026-07-15T22:28:32.821506+00:00"
+    },
+    {
+      "slug": "strapi-provider-upload-oss",
+      "name": "strapi-provider-upload-oss",
+      "fullName": "hezzze/strapi-provider-upload-oss",
+      "category": "DevTools",
+      "stars": 67,
+      "author": "hezzze",
+      "avatar": "https://avatars.githubusercontent.com/u/2413682?u=86a860acc6e6d2dfc933860b9ffcd0016b8d706f&v=4",
+      "desc": "A provider for strapi server to upload file to Aliyun OSS",
+      "demo": null,
+      "repoUrl": "https://github.com/hezzze/strapi-provider-upload-oss",
+      "long1": "A provider for strapi server to upload file to Aliyun OSS. Maintained by hezzze on GitHub, where it has earned 67 stars from the community.",
+      "long2": "It's actively developed around strapi, provider, aliyun, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "JavaScript",
+        "Strapi",
+        "Provider",
+        "Aliyun",
+        "Oss"
+      ],
+      "updated": "2 months ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "JavaScript"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/hezzze/strapi-provider-upload-oss/releases/tag/v0.2.3",
+          "name": "v0.2.3"
+        },
+        {
+          "url": "https://github.com/hezzze/strapi-provider-upload-oss/releases/tag/v0.2.1",
+          "name": "v0.2.1"
+        },
+        {
+          "url": "https://github.com/hezzze/strapi-provider-upload-oss/releases/tag/v0.2.0",
+          "name": "v0.2.0"
+        },
+        {
+          "url": "https://github.com/hezzze/strapi-provider-upload-oss/releases/tag/v0.1.7",
+          "name": "v0.1.7"
+        }
+      ],
+      "topics": [
+        "strapi",
+        "provider",
+        "aliyun",
+        "oss"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -2118,7 +2546,7 @@
       "category": "DevTools",
       "stars": 65,
       "author": "dasmikko",
-      "avatar": "https://avatars.githubusercontent.com/u/4254869?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/4254869?u=78215a661ee6182fcd9bc5f3da9187c833bcafc4&v=4",
       "desc": "A drop-in replacement for the strapi editor",
       "demo": null,
       "repoUrl": "https://github.com/dasmikko/strapi-tiptap-editor",
@@ -2130,16 +2558,36 @@
         "Strapi Cms",
         "Strapi Plugin"
       ],
-      "updated": "9 months ago",
+      "updated": "10 months ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "JavaScript",
           "pct": 100,
-          "size": 100
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/dasmikko/strapi-tiptap-editor/releases/tag/0.9.12",
+          "name": "0.9.12"
+        },
+        {
+          "url": "https://github.com/dasmikko/strapi-tiptap-editor/releases/tag/0.9.11",
+          "name": "0.9.11"
+        },
+        {
+          "url": "https://github.com/dasmikko/strapi-tiptap-editor/releases/tag/0.9.10",
+          "name": "0.9.10"
+        },
+        {
+          "url": "https://github.com/dasmikko/strapi-tiptap-editor/releases/tag/0.9.8",
+          "name": "0.9.8"
+        },
+        {
+          "url": "https://github.com/dasmikko/strapi-tiptap-editor/releases/tag/0.9.7",
+          "name": "0.9.7"
+        }
+      ],
       "topics": [
         "strapi",
         "strapi-cms",
@@ -2159,40 +2607,44 @@
       "demo": "https://canopas.com/blog",
       "repoUrl": "https://github.com/canopas/canopas-blog-admin",
       "long1": "Feature-Rich blogs admin panel built with strapi CMS. Maintained by canopas on GitHub, where it has earned 64 stars from the community.",
-      "long2": "It's actively developed around admin-panel, backend-development, blog-platform, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around blog-website, designing, development, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
-        "Admin Panel",
-        "Backend Development",
-        "Blog Platform",
-        "Blog Website"
+        "Blog Website",
+        "Designing",
+        "Development",
+        "React"
       ],
-      "updated": "2 months ago",
+      "updated": "3 months ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "JavaScript",
-          "pct": 100,
-          "size": 100
+          "pct": 90,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 8,
+          "name": "HTML"
+        },
+        {
+          "pct": 2,
+          "name": "CSS"
         }
       ],
       "versions": [],
       "topics": [
-        "admin-panel",
-        "backend-development",
-        "blog-platform",
         "blog-website",
-        "cms",
-        "cms-backend",
-        "content-creation",
         "designing",
         "development",
         "reactjs",
+        "web",
+        "web-development",
+        "admin-panel",
+        "backend-development",
         "seo",
         "strapi",
         "strapi-cms",
-        "web",
-        "web-development"
+        "blog-platform"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -2208,68 +2660,65 @@
       "demo": "https://www.pluginpal.io/plugin/webtools",
       "repoUrl": "https://github.com/pluginpal/strapi-webtools",
       "long1": "🔗 Unique, flexible and autogenerated URLs for your Strapi managed web content. Maintained by pluginpal on GitHub, where it has earned 59 stars from the community.",
-      "long2": "It's actively developed around dynamic-urls, link, links, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around permalink, seo, seo-friendly, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Dynamic Urls",
-        "Link",
-        "Links",
-        "Permalink"
+        "Permalink",
+        "Seo",
+        "Seo Friendly",
+        "Slug"
       ],
-      "updated": "2 weeks ago",
+      "updated": "3 days ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 51.919,
-          "size": 227842
+          "pct": 54,
+          "name": "TypeScript"
         },
         {
-          "name": "JavaScript",
-          "pct": 33.009,
-          "size": 144857
+          "pct": 33,
+          "name": "JavaScript"
         },
         {
-          "name": "SCSS",
-          "pct": 13.074,
-          "size": 57372
-        },
-        {
-          "name": "XSLT",
-          "pct": 1.321,
-          "size": 5799
-        },
-        {
-          "name": "CSS",
-          "pct": 0.361,
-          "size": 1585
-        },
-        {
-          "name": "Dockerfile",
-          "pct": 0.198,
-          "size": 871
-        },
-        {
-          "name": "MDX",
-          "pct": 0.117,
-          "size": 512
+          "pct": 13,
+          "name": "SCSS"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/pluginpal/strapi-webtools/releases/tag/strapi-plugin-webtools%401.10.3",
+          "name": "strapi-plugin-webtools@1.10.3"
+        },
+        {
+          "url": "https://github.com/pluginpal/strapi-webtools/releases/tag/strapi-plugin-webtools%401.10.2",
+          "name": "strapi-plugin-webtools@1.10.2"
+        },
+        {
+          "url": "https://github.com/pluginpal/strapi-webtools/releases/tag/strapi-plugin-webtools%401.10.1",
+          "name": "strapi-plugin-webtools@1.10.1"
+        },
+        {
+          "url": "https://github.com/pluginpal/strapi-webtools/releases/tag/strapi-plugin-webtools%401.10.0",
+          "name": "strapi-plugin-webtools@1.10.0"
+        },
+        {
+          "url": "https://github.com/pluginpal/strapi-webtools/releases/tag/strapi-plugin-webtools%401.9.1",
+          "name": "strapi-plugin-webtools@1.9.1"
+        }
+      ],
       "topics": [
-        "dynamic-urls",
-        "link",
-        "links",
         "permalink",
-        "router",
         "seo",
         "seo-friendly",
-        "sitemap",
         "slug",
         "strapi",
         "strapi-plugin",
+        "webtools",
+        "dynamic-urls",
+        "router",
         "website",
-        "webtools"
+        "link",
+        "links"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -2285,29 +2734,102 @@
       "demo": "https://www.npmjs.com/package/vue-strapi-blocks-renderer",
       "repoUrl": "https://github.com/niklasfjeldberg/vue-strapi-blocks-renderer",
       "long1": "A Vue renderer for the Strapi's Blocks rich text editor. Maintained by niklasfjeldberg on GitHub, where it has earned 59 stars from the community.",
-      "long2": "It's actively developed around blocks, renderer, strapi, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around strapi, blocks, renderer, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
+        "Strapi",
         "Blocks",
         "Renderer",
-        "Strapi",
         "Vue"
       ],
       "updated": "6 months ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
+          "pct": 96,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 2,
+          "name": "Vue"
+        },
+        {
+          "pct": 2,
+          "name": "JavaScript"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/niklasfjeldberg/vue-strapi-blocks-renderer/releases/tag/v1.1.1",
+          "name": "v1.1.1"
+        },
+        {
+          "url": "https://github.com/niklasfjeldberg/vue-strapi-blocks-renderer/releases/tag/v1.1.0",
+          "name": "v1.1.0"
+        },
+        {
+          "url": "https://github.com/niklasfjeldberg/vue-strapi-blocks-renderer/releases/tag/v0.2.2",
+          "name": "v0.2.2"
+        },
+        {
+          "url": "https://github.com/niklasfjeldberg/vue-strapi-blocks-renderer/releases/tag/v0.2.1",
+          "name": "v0.2.1"
+        },
+        {
+          "url": "https://github.com/niklasfjeldberg/vue-strapi-blocks-renderer/releases/tag/v0.2.0",
+          "name": "v0.2.0"
+        }
+      ],
+      "topics": [
+        "strapi",
+        "blocks",
+        "renderer",
+        "vue"
+      ],
+      "addedAt": "2026-07-15T22:28:32.821506+00:00"
+    },
+    {
+      "slug": "next-js-strapi-blog",
+      "name": "Next.js-Strapi-Blog",
+      "fullName": "AlexTechNoir/Next.js-Strapi-Blog",
+      "category": "Blogs",
+      "stars": 58,
+      "author": "AlexTechNoir",
+      "avatar": "https://avatars.githubusercontent.com/u/43852391?u=50a74e5ebe0adf4783c2d68e81b97471de067e39&v=4",
+      "desc": "Static blog with Next.js + Strapi Headless CMS",
+      "demo": "https://next-js-strapi-blog.vercel.app/",
+      "repoUrl": "https://github.com/AlexTechNoir/Next.js-Strapi-Blog",
+      "long1": "Static blog with Next.js + Strapi Headless CMS. Maintained by AlexTechNoir on GitHub, where it has earned 58 stars from the community.",
+      "long2": "It's actively developed around nextjs, blog, strapi, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "JavaScript",
+        "Next.js",
+        "Blog",
+        "Strapi",
+        "Vercel"
+      ],
+      "updated": "4 years ago",
+      "license": "MIT",
+      "langs": [
+        {
           "pct": 100,
-          "size": 100
+          "name": "JavaScript"
         }
       ],
       "versions": [],
       "topics": [
-        "blocks",
-        "renderer",
+        "nextjs",
+        "blog",
         "strapi",
-        "vue"
+        "vercel",
+        "heroku",
+        "load-more",
+        "load-more-button",
+        "load-more-data",
+        "disqus",
+        "disqus-comments",
+        "highlight-text",
+        "highlight-words"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -2320,88 +2842,54 @@
       "author": "strapi-community",
       "avatar": "https://avatars.githubusercontent.com/u/97644256?v=4",
       "desc": "A plugin for Socket IO integration with Strapi CMS.",
-      "demo": "https://strapi-plugin-io.netlify.app",
+      "demo": "https://strapi-community.github.io/plugin-io/",
       "repoUrl": "https://github.com/strapi-community/plugin-io",
       "long1": "A plugin for Socket IO integration with Strapi CMS. Maintained by strapi-community on GitHub, where it has earned 58 stars from the community.",
-      "long2": "It's actively developed around io, socket-io, socketio, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around strapi, strapi-plugin, socket-io, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
-        "Io",
+        "Strapi",
+        "Strapi Plugin",
         "Socket Io",
-        "Socketio",
-        "Strapi"
+        "Io"
       ],
-      "updated": "3 months ago",
+      "updated": "3 days ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "JavaScript",
           "pct": 100,
-          "size": 100
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/strapi-community/plugin-io/releases/tag/5.8.3",
+          "name": "5.8.3"
+        },
+        {
+          "url": "https://github.com/strapi-community/plugin-io/releases/tag/5.8.2",
+          "name": "5.8.2"
+        },
+        {
+          "url": "https://github.com/strapi-community/plugin-io/releases/tag/5.8.1",
+          "name": "5.8.1"
+        },
+        {
+          "url": "https://github.com/strapi-community/plugin-io/releases/tag/5.8.0",
+          "name": "5.8.0"
+        },
+        {
+          "url": "https://github.com/strapi-community/plugin-io/releases/tag/5.7.1",
+          "name": "5.7.1"
+        }
+      ],
       "topics": [
-        "io",
+        "strapi",
+        "strapi-plugin",
         "socket-io",
+        "io",
         "socketio",
-        "strapi",
-        "strapi-cms",
-        "strapi-plugin"
-      ],
-      "addedAt": "2026-07-15T22:28:32.821506+00:00"
-    },
-    {
-      "slug": "next-js-strapi-blog",
-      "name": "Next.js-Strapi-Blog",
-      "fullName": "AlexTechNoir/Next.js-Strapi-Blog",
-      "category": "Blogs",
-      "stars": 58,
-      "author": "AlexTechNoir",
-      "avatar": "https://avatars.githubusercontent.com/u/43852391?v=4",
-      "desc": "Static blog with Next.js + Strapi Headless CMS",
-      "demo": "https://next-js-strapi-blog.vercel.app/",
-      "repoUrl": "https://github.com/AlexTechNoir/Next.js-Strapi-Blog",
-      "long1": "Static blog with Next.js + Strapi Headless CMS. Maintained by AlexTechNoir on GitHub, where it has earned 58 stars from the community.",
-      "long2": "It's actively developed around babel-plugin, blog, disqus, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "JavaScript",
-        "Babel Plugin",
-        "Blog",
-        "Disqus",
-        "Disqus Comments"
-      ],
-      "updated": "4 years ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "JavaScript",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "babel-plugin",
-        "blog",
-        "disqus",
-        "disqus-comments",
-        "heroku",
-        "highlight-text",
-        "highlight-words",
-        "load-more",
-        "load-more-button",
-        "load-more-data",
-        "material-ui",
-        "nextjs",
-        "react-font-awesome",
-        "react-fontawesome",
-        "react-markdown",
-        "showdown",
-        "strapi",
-        "styled-components",
-        "swr",
-        "vercel"
+        "strapi-cms"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -2412,7 +2900,7 @@
       "category": "Blogs",
       "stars": 55,
       "author": "Marktawa",
-      "avatar": "https://avatars.githubusercontent.com/u/10741941?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/10741941?u=d46b069621f59e8f27f07bba38f27c254d4515b9&v=4",
       "desc": "Blog website using Strapi for the backend and Next.js for the frontend",
       "demo": "https://strapi.io/blog/build-a-blog-with-next-react-js-strapi",
       "repoUrl": "https://github.com/Marktawa/blog-strapi",
@@ -2429,9 +2917,16 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 73,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 22,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 5,
+          "name": "CSS"
         }
       ],
       "versions": [],
@@ -2449,43 +2944,62 @@
       "name": "fastify-raw-body",
       "fullName": "Eomm/fastify-raw-body",
       "category": "DevTools",
-      "stars": 52,
+      "stars": 53,
       "author": "Eomm",
-      "avatar": "https://avatars.githubusercontent.com/u/11404065?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/11404065?u=b491aa951de42e0c1fcd8f0a75dc731073f1bc5d&v=4",
       "desc": "Request raw body",
       "demo": null,
       "repoUrl": "https://github.com/Eomm/fastify-raw-body",
-      "long1": "Request raw body. Maintained by Eomm on GitHub, where it has earned 52 stars from the community.",
-      "long2": "It's actively developed around body-parser, fastify, fastify-plugin, and is a solid reference for anyone building with these tools.",
+      "long1": "Request raw body. Maintained by Eomm on GitHub, where it has earned 53 stars from the community.",
+      "long2": "It's actively developed around fastify-plugin, raw, body-parser, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
-        "Body Parser",
-        "Fastify",
         "Fastify Plugin",
-        "Raw"
+        "Raw",
+        "Body Parser",
+        "Strapi"
       ],
-      "updated": "1 week ago",
+      "updated": "3 days ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "JavaScript",
-          "pct": 95.495,
-          "size": 20073
+          "pct": 95,
+          "name": "JavaScript"
         },
         {
-          "name": "TypeScript",
-          "pct": 4.505,
-          "size": 947
+          "pct": 5,
+          "name": "TypeScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/Eomm/fastify-raw-body/releases/tag/v5.0.0",
+          "name": "v5.0.0"
+        },
+        {
+          "url": "https://github.com/Eomm/fastify-raw-body/releases/tag/v4.3.0",
+          "name": "v4.3.0"
+        },
+        {
+          "url": "https://github.com/Eomm/fastify-raw-body/releases/tag/v4.2.2",
+          "name": "v4.2.2"
+        },
+        {
+          "url": "https://github.com/Eomm/fastify-raw-body/releases/tag/v4.2.1",
+          "name": "v4.2.1"
+        },
+        {
+          "url": "https://github.com/Eomm/fastify-raw-body/releases/tag/v4.2.0",
+          "name": "v4.2.0"
+        }
+      ],
       "topics": [
-        "body-parser",
-        "fastify",
         "fastify-plugin",
-        "hacktoberfest",
         "raw",
-        "strapi"
+        "body-parser",
+        "strapi",
+        "fastify",
+        "hacktoberfest"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -2501,51 +3015,118 @@
       "demo": "https://app.caroster.io",
       "repoUrl": "https://github.com/octree-gva/caroster",
       "long1": "Group carpool to your event. This is a mirror of https://git.octree.ch/p/caroster. Maintained by octree-gva on GitHub, where it has earned 52 stars from the community.",
-      "long2": "It's actively developed around carpool, carpooling, graphql, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around carpool, carpooling, react, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
         "Carpool",
         "Carpooling",
-        "GraphQL",
-        "Next.js"
+        "React",
+        "Strapi"
       ],
-      "updated": "1 month ago",
+      "updated": "3 weeks ago",
       "license": "AGPL-3.0",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 98.013,
-          "size": 636968
+          "pct": 99,
+          "name": "TypeScript"
         },
         {
-          "name": "JavaScript",
-          "pct": 1.446,
-          "size": 9397
+          "pct": 1,
+          "name": "JavaScript"
         },
         {
-          "name": "HTML",
-          "pct": 0.441,
-          "size": 2868
-        },
-        {
-          "name": "CSS",
-          "pct": 0.075,
-          "size": 485
-        },
-        {
-          "name": "Dockerfile",
-          "pct": 0.026,
-          "size": 166
+          "pct": 0,
+          "name": "HTML"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/octree-gva/caroster/releases/tag/v3.7",
+          "name": "v3.7"
+        },
+        {
+          "url": "https://github.com/octree-gva/caroster/releases/tag/v3.6",
+          "name": "v3.6"
+        },
+        {
+          "url": "https://github.com/octree-gva/caroster/releases/tag/v3.5",
+          "name": "v3.5"
+        },
+        {
+          "url": "https://github.com/octree-gva/caroster/releases/tag/v3.4",
+          "name": "v3.4"
+        },
+        {
+          "url": "https://github.com/octree-gva/caroster/releases/tag/v3.3",
+          "name": "v3.3"
+        }
+      ],
       "topics": [
         "carpool",
         "carpooling",
-        "graphql",
-        "nextjs",
         "react",
-        "strapi"
+        "strapi",
+        "graphql",
+        "nextjs"
+      ],
+      "addedAt": "2026-07-15T22:28:32.821506+00:00"
+    },
+    {
+      "slug": "laravel-strapi",
+      "name": "laravel-strapi",
+      "fullName": "dbfx/laravel-strapi",
+      "category": "DevTools",
+      "stars": 51,
+      "author": "dbfx",
+      "avatar": "https://avatars.githubusercontent.com/u/182394?u=d7d4c79d9639aebfff698d3e3a457dc25b9cafef&v=4",
+      "desc": "Laravel wrapper for using the Strapi headless CMS",
+      "demo": "https://blakey.co",
+      "repoUrl": "https://github.com/dbfx/laravel-strapi",
+      "long1": "Laravel wrapper for using the Strapi headless CMS. Maintained by dbfx on GitHub, where it has earned 51 stars from the community.",
+      "long2": "It's actively developed around laravel, laravel-package, strapi, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Laravel",
+        "Laravel Package",
+        "Strapi",
+        "Strapi Cms"
+      ],
+      "updated": "1 year ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "PHP"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/dbfx/laravel-strapi/releases/tag/v4.0.1",
+          "name": "v4.0.1"
+        },
+        {
+          "url": "https://github.com/dbfx/laravel-strapi/releases/tag/v4.0.0",
+          "name": "v4.0.0"
+        },
+        {
+          "url": "https://github.com/dbfx/laravel-strapi/releases/tag/v3.0.0",
+          "name": "v3.0.0"
+        },
+        {
+          "url": "https://github.com/dbfx/laravel-strapi/releases/tag/v2.0.2",
+          "name": "v2.0.2"
+        },
+        {
+          "url": "https://github.com/dbfx/laravel-strapi/releases/tag/v2.0.1",
+          "name": "v2.0.1"
+        }
+      ],
+      "topics": [
+        "laravel",
+        "laravel-package",
+        "strapi",
+        "strapi-cms",
+        "hacktoberfest"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -2553,7 +3134,7 @@
       "slug": "school-website",
       "name": "school-website",
       "fullName": "ElektronPlus/school-website",
-      "category": "Templates",
+      "category": "DevTools",
       "stars": 51,
       "author": "ElektronPlus",
       "avatar": "https://avatars.githubusercontent.com/u/89214656?v=4",
@@ -2561,44 +3142,44 @@
       "demo": "https://dev.elektronplus.pl",
       "repoUrl": "https://github.com/ElektronPlus/school-website",
       "long1": "🎒 Accessible and extremely user-friendly website template for schools in Poland, built on fun and modern stack. Maintained by ElektronPlus on GitHub, where it has earned 51 stars from the community.",
-      "long2": "It's actively developed around chakra-ui, chromatic, docker, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around nextjs, school, school-project, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Chakra Ui",
-        "Chromatic",
-        "Docker",
-        "Headless Cms"
+        "Next.js",
+        "School",
+        "School Project",
+        "School Website"
       ],
-      "updated": "7 months ago",
+      "updated": "8 months ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 79,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 15,
+          "name": "CSS"
+        },
+        {
+          "pct": 6,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
       "topics": [
-        "chakra-ui",
-        "chromatic",
-        "docker",
-        "headless-cms",
-        "jamstack",
         "nextjs",
-        "nextjs-blog",
-        "nextjs-boilerplate",
-        "nextjs-starter",
-        "nextjs-template",
-        "poland",
-        "react",
         "school",
         "school-project",
         "school-website",
+        "jamstack",
         "storybook",
         "strapi",
-        "typescript",
-        "vercel"
+        "docker",
+        "react",
+        "chromatic",
+        "vercel",
+        "poland"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -2626,61 +3207,41 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 95.135,
-          "size": 164729
+          "pct": 95,
+          "name": "TypeScript"
         },
         {
-          "name": "JavaScript",
-          "pct": 4.865,
-          "size": 8424
+          "pct": 5,
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/TupiC/strapi-cache/releases/tag/v1.12.1",
+          "name": "v1.12.1"
+        },
+        {
+          "url": "https://github.com/TupiC/strapi-cache/releases/tag/v1.12.0",
+          "name": "v1.12.0"
+        },
+        {
+          "url": "https://github.com/TupiC/strapi-cache/releases/tag/v1.11.2",
+          "name": "v1.11.2"
+        },
+        {
+          "url": "https://github.com/TupiC/strapi-cache/releases/tag/v1.11.1",
+          "name": "v1.11.1"
+        },
+        {
+          "url": "https://github.com/TupiC/strapi-cache/releases/tag/v1.11.0",
+          "name": "v1.11.0"
+        }
+      ],
       "topics": [
         "cache",
         "strapi",
         "strapi-v5",
         "strapi5"
-      ],
-      "addedAt": "2026-07-15T22:28:32.821506+00:00"
-    },
-    {
-      "slug": "laravel-strapi",
-      "name": "laravel-strapi",
-      "fullName": "dbfx/laravel-strapi",
-      "category": "DevTools",
-      "stars": 50,
-      "author": "dbfx",
-      "avatar": "https://avatars.githubusercontent.com/u/182394?v=4",
-      "desc": "Laravel wrapper for using the Strapi headless CMS",
-      "demo": "https://blakey.co",
-      "repoUrl": "https://github.com/dbfx/laravel-strapi",
-      "long1": "Laravel wrapper for using the Strapi headless CMS. Maintained by dbfx on GitHub, where it has earned 50 stars from the community.",
-      "long2": "It's actively developed around hacktoberfest, laravel, laravel-package, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Laravel",
-        "Laravel Package",
-        "Strapi",
-        "Strapi Cms"
-      ],
-      "updated": "1 year ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "hacktoberfest",
-        "laravel",
-        "laravel-package",
-        "strapi",
-        "strapi-cms"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -2691,7 +3252,7 @@
       "category": "DevTools",
       "stars": 50,
       "author": "Zaydme",
-      "avatar": "https://avatars.githubusercontent.com/u/46847212?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/46847212?u=9f198585a7c3f005b3eeea440a79dd690bf885b1&v=4",
       "desc": "A strapi custom field for a multi select input.",
       "demo": "https://www.npmjs.com/package/strapi-plugin-multi-select",
       "repoUrl": "https://github.com/Zaydme/strapi-plugin-multi-select",
@@ -2708,9 +3269,8 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
           "pct": 100,
-          "size": 100
+          "name": "TypeScript"
         }
       ],
       "versions": [],
@@ -2742,7 +3302,7 @@
         "Hosting",
         "Render"
       ],
-      "updated": "5 months ago",
+      "updated": "6 months ago",
       "license": "MIT",
       "langs": [
         {
@@ -2911,7 +3471,7 @@
         "Headless Cms",
         "Hosting"
       ],
-      "updated": "5 months ago",
+      "updated": "6 months ago",
       "license": "MIT",
       "langs": [
         {
@@ -3304,7 +3864,7 @@
         "React",
         "Strapi"
       ],
-      "updated": "1 week ago",
+      "updated": "3 weeks ago",
       "license": "EUPL-1.2",
       "langs": [
         {
@@ -3449,7 +4009,7 @@
         "Plugin",
         "Strapi"
       ],
-      "updated": "1 week ago",
+      "updated": "3 weeks ago",
       "license": "MIT",
       "langs": [
         {
@@ -3468,6 +4028,45 @@
         "location",
         "plugin",
         "strapi"
+      ],
+      "addedAt": "2026-07-15T22:28:32.821506+00:00"
+    },
+    {
+      "slug": "strapi-docker-compose-example",
+      "name": "strapi-docker-compose-example",
+      "fullName": "demystifying-dev/strapi-docker-compose-example",
+      "category": "DevTools",
+      "stars": 35,
+      "author": "demystifying-dev",
+      "avatar": "https://avatars.githubusercontent.com/u/50531062?v=4",
+      "desc": "Straightforward self-contained docker compose based strapi + mongodb stack for local development on your laptop or workstation.",
+      "demo": null,
+      "repoUrl": "https://github.com/demystifying-dev/strapi-docker-compose-example",
+      "long1": "Straightforward self-contained docker compose based strapi + mongodb stack for local development on your laptop or workstation. Maintained by demystifying-dev on GitHub, where it has earned 35 stars from the community.",
+      "long2": "It's actively developed around docker, docker-compose, mongodb, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "JavaScript",
+        "Docker",
+        "Docker Compose",
+        "MongoDB",
+        "Strapi"
+      ],
+      "updated": "6 years ago",
+      "license": "GPL-3.0",
+      "langs": [
+        {
+          "name": "JavaScript",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "docker",
+        "docker-compose",
+        "mongodb",
+        "strapi",
+        "strapijs"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -3522,45 +4121,6 @@
         "styled-components",
         "swr",
         "yup"
-      ],
-      "addedAt": "2026-07-15T22:28:32.821506+00:00"
-    },
-    {
-      "slug": "strapi-docker-compose-example",
-      "name": "strapi-docker-compose-example",
-      "fullName": "demystifying-dev/strapi-docker-compose-example",
-      "category": "DevTools",
-      "stars": 35,
-      "author": "demystifying-dev",
-      "avatar": "https://avatars.githubusercontent.com/u/50531062?v=4",
-      "desc": "Straightforward self-contained docker compose based strapi + mongodb stack for local development on your laptop or workstation.",
-      "demo": null,
-      "repoUrl": "https://github.com/demystifying-dev/strapi-docker-compose-example",
-      "long1": "Straightforward self-contained docker compose based strapi + mongodb stack for local development on your laptop or workstation. Maintained by demystifying-dev on GitHub, where it has earned 35 stars from the community.",
-      "long2": "It's actively developed around docker, docker-compose, mongodb, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "JavaScript",
-        "Docker",
-        "Docker Compose",
-        "MongoDB",
-        "Strapi"
-      ],
-      "updated": "6 years ago",
-      "license": "GPL-3.0",
-      "langs": [
-        {
-          "name": "JavaScript",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "docker",
-        "docker-compose",
-        "mongodb",
-        "strapi",
-        "strapijs"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -3666,7 +4226,7 @@
         "Strapi",
         "Strapi Plugin"
       ],
-      "updated": "3 years ago",
+      "updated": "4 years ago",
       "license": "MIT",
       "langs": [
         {
@@ -3727,6 +4287,46 @@
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
     {
+      "slug": "strapi-postgres",
+      "name": "strapi-postgres",
+      "fullName": "render-examples/strapi-postgres",
+      "category": "DevTools",
+      "stars": 31,
+      "author": "render-examples",
+      "avatar": "https://avatars.githubusercontent.com/u/42682871?v=4",
+      "desc": "Deploy Strapi with PostgreSQL on Render",
+      "demo": "https://render.com/docs/deploy-strapi",
+      "repoUrl": "https://github.com/render-examples/strapi-postgres",
+      "long1": "Deploy Strapi with PostgreSQL on Render. Maintained by render-examples on GitHub, where it has earned 31 stars from the community.",
+      "long2": "It's actively developed around deployment, headless-cms, hosting, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "JavaScript",
+        "Deployment",
+        "Headless Cms",
+        "Hosting",
+        "PostgreSQL"
+      ],
+      "updated": "6 months ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "JavaScript",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "deployment",
+        "headless-cms",
+        "hosting",
+        "postgresql",
+        "render",
+        "strapi"
+      ],
+      "addedAt": "2026-07-15T22:28:32.821506+00:00"
+    },
+    {
       "slug": "get-started-with-strapi",
       "name": "Get-Started-With-Strapi",
       "fullName": "mohymenulmo/Get-Started-With-Strapi",
@@ -3758,46 +4358,6 @@
         "javascript",
         "strapi",
         "strapi-cms"
-      ],
-      "addedAt": "2026-07-15T22:28:32.821506+00:00"
-    },
-    {
-      "slug": "strapi-postgres",
-      "name": "strapi-postgres",
-      "fullName": "render-examples/strapi-postgres",
-      "category": "DevTools",
-      "stars": 31,
-      "author": "render-examples",
-      "avatar": "https://avatars.githubusercontent.com/u/42682871?v=4",
-      "desc": "Deploy Strapi with PostgreSQL on Render",
-      "demo": "https://render.com/docs/deploy-strapi",
-      "repoUrl": "https://github.com/render-examples/strapi-postgres",
-      "long1": "Deploy Strapi with PostgreSQL on Render. Maintained by render-examples on GitHub, where it has earned 31 stars from the community.",
-      "long2": "It's actively developed around deployment, headless-cms, hosting, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "JavaScript",
-        "Deployment",
-        "Headless Cms",
-        "Hosting",
-        "PostgreSQL"
-      ],
-      "updated": "5 months ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "JavaScript",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "deployment",
-        "headless-cms",
-        "hosting",
-        "postgresql",
-        "render",
-        "strapi"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -3882,6 +4442,44 @@
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
     {
+      "slug": "strapi-import-export",
+      "name": "strapi-import-export",
+      "fullName": "Prototypr/strapi-import-export",
+      "category": "DevTools",
+      "stars": 29,
+      "author": "Prototypr",
+      "avatar": "https://avatars.githubusercontent.com/u/84325445?v=4",
+      "desc": "Import/Export data from and to your database for Strapi 5",
+      "demo": "https://www.npmjs.com/package/strapi-import-export",
+      "repoUrl": "https://github.com/Prototypr/strapi-import-export",
+      "long1": "Import/Export data from and to your database for Strapi 5. Maintained by Prototypr on GitHub, where it has earned 29 stars from the community.",
+      "long2": "It's actively developed around strapi, strapi-cms, strapi-plugin, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "JavaScript",
+        "Strapi",
+        "Strapi Cms",
+        "Strapi Plugin",
+        "Strapi V5"
+      ],
+      "updated": "2 years ago",
+      "license": "—",
+      "langs": [
+        {
+          "name": "JavaScript",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "strapi",
+        "strapi-cms",
+        "strapi-plugin",
+        "strapi-v5"
+      ],
+      "addedAt": "2026-07-15T22:28:32.821506+00:00"
+    },
+    {
       "slug": "shoes",
       "name": "shoes",
       "fullName": "atapas/shoes",
@@ -3961,40 +4559,38 @@
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
     {
-      "slug": "strapi-import-export",
-      "name": "strapi-import-export",
-      "fullName": "Prototypr/strapi-import-export",
+      "slug": "strapi-plugin-record-locking",
+      "name": "strapi-plugin-record-locking",
+      "fullName": "notum-cz/strapi-plugin-record-locking",
       "category": "DevTools",
-      "stars": 29,
-      "author": "Prototypr",
-      "avatar": "https://avatars.githubusercontent.com/u/84325445?v=4",
-      "desc": "Import/Export data from and to your database for Strapi 5",
-      "demo": "https://www.npmjs.com/package/strapi-import-export",
-      "repoUrl": "https://github.com/Prototypr/strapi-import-export",
-      "long1": "Import/Export data from and to your database for Strapi 5. Maintained by Prototypr on GitHub, where it has earned 29 stars from the community.",
-      "long2": "It's actively developed around strapi, strapi-cms, strapi-plugin, and is a solid reference for anyone building with these tools.",
+      "stars": 28,
+      "author": "notum-cz",
+      "avatar": "https://avatars.githubusercontent.com/u/63238072?v=4",
+      "desc": "This plugin provides the functionality to prevent data loss in cases where multiple users are simultaneously editing the same record within STRAPI v5.",
+      "demo": null,
+      "repoUrl": "https://github.com/notum-cz/strapi-plugin-record-locking",
+      "long1": "This plugin provides the functionality to prevent data loss in cases where multiple users are simultaneously editing the same record within STRAPI v5. Maintained by notum-cz on GitHub, where it has earned 28 stars from the community.",
+      "long2": "It's actively developed around record-locking, strapi, strapi-plugin, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "JavaScript",
+        "TypeScript",
+        "Record Locking",
         "Strapi",
-        "Strapi Cms",
-        "Strapi Plugin",
-        "Strapi V5"
+        "Strapi Plugin"
       ],
-      "updated": "2 years ago",
-      "license": "—",
+      "updated": "2 months ago",
+      "license": "MIT",
       "langs": [
         {
-          "name": "JavaScript",
+          "name": "TypeScript",
           "pct": 100,
-          "size": 100
+          "size": 22168
         }
       ],
       "versions": [],
       "topics": [
+        "record-locking",
         "strapi",
-        "strapi-cms",
-        "strapi-plugin",
-        "strapi-v5"
+        "strapi-plugin"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -4018,7 +4614,7 @@
         "Google Analytics",
         "Netlify"
       ],
-      "updated": "2 weeks ago",
+      "updated": "1 month ago",
       "license": "MIT",
       "langs": [
         {
@@ -4119,7 +4715,7 @@
         "Strapi",
         "Strapi Cms"
       ],
-      "updated": "1 month ago",
+      "updated": "2 months ago",
       "license": "MIT",
       "langs": [
         {
@@ -4139,38 +4735,134 @@
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
     {
-      "slug": "strapi-plugin-record-locking",
-      "name": "strapi-plugin-record-locking",
-      "fullName": "notum-cz/strapi-plugin-record-locking",
-      "category": "DevTools",
-      "stars": 28,
-      "author": "notum-cz",
-      "avatar": "https://avatars.githubusercontent.com/u/63238072?v=4",
-      "desc": "This plugin provides the functionality to prevent data loss in cases where multiple users are simultaneously editing the same record within STRAPI v5.",
+      "slug": "nextjs-directus-vps-config",
+      "name": "nextjs-directus-vps-config",
+      "fullName": "nomaddan/nextjs-directus-vps-config",
+      "category": "APIs",
+      "stars": 27,
+      "author": "nomaddan",
+      "avatar": "https://avatars.githubusercontent.com/u/21957456?u=03655bdab9a63841cce28ee632d9b2e93b926623&v=4",
+      "desc": "Guide deploying Next.js and Directus fullstack app on VPS with simple CI/CD",
       "demo": null,
-      "repoUrl": "https://github.com/notum-cz/strapi-plugin-record-locking",
-      "long1": "This plugin provides the functionality to prevent data loss in cases where multiple users are simultaneously editing the same record within STRAPI v5. Maintained by notum-cz on GitHub, where it has earned 28 stars from the community.",
-      "long2": "It's actively developed around record-locking, strapi, strapi-plugin, and is a solid reference for anyone building with these tools.",
+      "repoUrl": "https://github.com/nomaddan/nextjs-directus-vps-config",
+      "long1": "Guide deploying Next.js and Directus fullstack app on VPS with simple CI/CD. Maintained by nomaddan on GitHub, where it has earned 27 stars from the community.",
+      "long2": "It's actively developed around vps, vps-setup, ubuntu, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "TypeScript",
-        "Record Locking",
-        "Strapi",
-        "Strapi Plugin"
+        "Vps",
+        "Vps Setup",
+        "Ubuntu",
+        "React"
       ],
-      "updated": "1 month ago",
-      "license": "MIT",
+      "updated": "5 years ago",
+      "license": "—",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 22168
+          "name": "JavaScript",
+          "pct": 72
+        },
+        {
+          "name": "JavaScript",
+          "pct": 20
+        },
+        {
+          "name": "Other",
+          "pct": 8
         }
       ],
       "versions": [],
       "topics": [
-        "record-locking",
+        "vps",
+        "vps-setup",
+        "ubuntu",
+        "react",
+        "nextjs",
+        "directus",
         "strapi",
-        "strapi-plugin"
+        "ci-cd",
+        "webhooks",
+        "vps-ubuntu",
+        "vps-server",
+        "ovh"
+      ],
+      "addedAt": "2026-07-15T22:28:32.821506+00:00"
+    },
+    {
+      "slug": "strapi-plugin-scheduler",
+      "name": "strapi-plugin-scheduler",
+      "fullName": "webbio/strapi-plugin-scheduler",
+      "category": "DevTools",
+      "stars": 27,
+      "author": "webbio",
+      "avatar": "https://avatars.githubusercontent.com/u/8155391?v=4",
+      "desc": "Strapi V4 Plugin to schedule publish and depublish actions",
+      "demo": null,
+      "repoUrl": "https://github.com/webbio/strapi-plugin-scheduler",
+      "long1": "Strapi V4 Plugin to schedule publish and depublish actions. Maintained by webbio on GitHub, where it has earned 27 stars from the community.",
+      "long2": "It's actively developed around plugin, schedule, strapi, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Plugin",
+        "Schedule",
+        "Strapi",
+        "Strapi Plugin"
+      ],
+      "updated": "3 weeks ago",
+      "license": "—",
+      "langs": [
+        {
+          "name": "TypeScript",
+          "pct": 99.213,
+          "size": 15384
+        },
+        {
+          "name": "JavaScript",
+          "pct": 0.787,
+          "size": 122
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "plugin",
+        "schedule",
+        "strapi",
+        "strapi-plugin",
+        "strapi-v4"
+      ],
+      "addedAt": "2026-07-15T22:28:32.821506+00:00"
+    },
+    {
+      "slug": "ckeditor5-build-strapi-wysiwyg",
+      "name": "ckeditor5-build-strapi-wysiwyg",
+      "fullName": "Roslovets-Inc/ckeditor5-build-strapi-wysiwyg",
+      "category": "DevTools",
+      "stars": 27,
+      "author": "Roslovets-Inc",
+      "avatar": "https://avatars.githubusercontent.com/u/71938168?v=4",
+      "desc": "Enhanced build of CKEditor 5 to replace default Strapi WYSIWYG editor",
+      "demo": "https://www.npmjs.com/package/ckeditor5-build-strapi-wysiwyg",
+      "repoUrl": "https://github.com/Roslovets-Inc/ckeditor5-build-strapi-wysiwyg",
+      "long1": "Enhanced build of CKEditor 5 to replace default Strapi WYSIWYG editor. Maintained by Roslovets-Inc on GitHub, where it has earned 27 stars from the community.",
+      "long2": "It's actively developed around ckeditor5, strapi, strapi-wysiwyg, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "JavaScript",
+        "Ckeditor5",
+        "Strapi",
+        "Strapi Wysiwyg"
+      ],
+      "updated": "4 years ago",
+      "license": "—",
+      "langs": [
+        {
+          "name": "JavaScript",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "ckeditor5",
+        "strapi",
+        "strapi-wysiwyg"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -4228,140 +4920,6 @@
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
     {
-      "slug": "strapi-plugin-scheduler",
-      "name": "strapi-plugin-scheduler",
-      "fullName": "webbio/strapi-plugin-scheduler",
-      "category": "DevTools",
-      "stars": 27,
-      "author": "webbio",
-      "avatar": "https://avatars.githubusercontent.com/u/8155391?v=4",
-      "desc": "Strapi V4 Plugin to schedule publish and depublish actions",
-      "demo": null,
-      "repoUrl": "https://github.com/webbio/strapi-plugin-scheduler",
-      "long1": "Strapi V4 Plugin to schedule publish and depublish actions. Maintained by webbio on GitHub, where it has earned 27 stars from the community.",
-      "long2": "It's actively developed around plugin, schedule, strapi, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Plugin",
-        "Schedule",
-        "Strapi",
-        "Strapi Plugin"
-      ],
-      "updated": "6 days ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "TypeScript",
-          "pct": 99.213,
-          "size": 15384
-        },
-        {
-          "name": "JavaScript",
-          "pct": 0.787,
-          "size": 122
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "plugin",
-        "schedule",
-        "strapi",
-        "strapi-plugin",
-        "strapi-v4"
-      ],
-      "addedAt": "2026-07-15T22:28:32.821506+00:00"
-    },
-    {
-      "slug": "nextjs-directus-vps-config",
-      "name": "nextjs-directus-vps-config",
-      "fullName": "nomaddan/nextjs-directus-vps-config",
-      "category": "APIs",
-      "stars": 27,
-      "author": "nomaddan",
-      "avatar": "https://avatars.githubusercontent.com/u/21957456?v=4",
-      "desc": "Guide deploying Next.js and Directus fullstack app on VPS with simple CI/CD",
-      "demo": null,
-      "repoUrl": "https://github.com/nomaddan/nextjs-directus-vps-config",
-      "long1": "Guide deploying Next.js and Directus fullstack app on VPS with simple CI/CD. Maintained by nomaddan on GitHub, where it has earned 27 stars from the community.",
-      "long2": "It's actively developed around ci-cd, cicd, digitalocean, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Ci Cd",
-        "Cicd",
-        "Digitalocean",
-        "Directus"
-      ],
-      "updated": "5 years ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "JavaScript",
-          "pct": 71.429,
-          "size": 20
-        },
-        {
-          "name": "Other",
-          "pct": 28.571,
-          "size": 8
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "ci-cd",
-        "cicd",
-        "digitalocean",
-        "directus",
-        "nextjs",
-        "nodejs",
-        "ovh",
-        "ovhcloud",
-        "react",
-        "strapi",
-        "ubuntu",
-        "vps",
-        "vps-server",
-        "vps-setup",
-        "vps-ubuntu",
-        "webhooks"
-      ],
-      "addedAt": "2026-07-15T22:28:32.821506+00:00"
-    },
-    {
-      "slug": "ckeditor5-build-strapi-wysiwyg",
-      "name": "ckeditor5-build-strapi-wysiwyg",
-      "fullName": "Roslovets-Inc/ckeditor5-build-strapi-wysiwyg",
-      "category": "DevTools",
-      "stars": 27,
-      "author": "Roslovets-Inc",
-      "avatar": "https://avatars.githubusercontent.com/u/71938168?v=4",
-      "desc": "Enhanced build of CKEditor 5 to replace default Strapi WYSIWYG editor",
-      "demo": "https://www.npmjs.com/package/ckeditor5-build-strapi-wysiwyg",
-      "repoUrl": "https://github.com/Roslovets-Inc/ckeditor5-build-strapi-wysiwyg",
-      "long1": "Enhanced build of CKEditor 5 to replace default Strapi WYSIWYG editor. Maintained by Roslovets-Inc on GitHub, where it has earned 27 stars from the community.",
-      "long2": "It's actively developed around ckeditor5, strapi, strapi-wysiwyg, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "JavaScript",
-        "Ckeditor5",
-        "Strapi",
-        "Strapi Wysiwyg"
-      ],
-      "updated": "4 years ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "JavaScript",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "ckeditor5",
-        "strapi",
-        "strapi-wysiwyg"
-      ],
-      "addedAt": "2026-07-15T22:28:32.821506+00:00"
-    },
-    {
       "slug": "strapi-plugin-remote-select",
       "name": "strapi-plugin-remote-select",
       "fullName": "nvxdm/strapi-plugin-remote-select",
@@ -4380,7 +4938,7 @@
         "Select",
         "Strapi"
       ],
-      "updated": "4 months ago",
+      "updated": "5 months ago",
       "license": "MIT",
       "langs": [
         {
@@ -4417,7 +4975,7 @@
         "Strapi",
         "Typegen"
       ],
-      "updated": "1 week ago",
+      "updated": "3 weeks ago",
       "license": "MIT",
       "langs": [
         {
@@ -4443,27 +5001,27 @@
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
     {
-      "slug": "strapi-plugins",
-      "name": "strapi-plugins",
-      "fullName": "surgeharb/strapi-plugins",
-      "category": "Dashboards",
+      "slug": "strapi-blurhash",
+      "name": "strapi-blurhash",
+      "fullName": "emil-petras/strapi-blurhash",
+      "category": "DevTools",
       "stars": 26,
-      "author": "surgeharb",
-      "avatar": "https://avatars.githubusercontent.com/u/22060043?v=4",
-      "desc": "🚀  Open source plugins for Strapi - Node.js Headless CMS",
-      "demo": null,
-      "repoUrl": "https://github.com/surgeharb/strapi-plugins",
-      "long1": "🚀  Open source plugins for Strapi - Node.js Headless CMS. Maintained by surgeharb on GitHub, where it has earned 26 stars from the community.",
-      "long2": "It's actively developed around admin-panel, cms, cms-plugin, and is a solid reference for anyone building with these tools.",
+      "author": "emil-petras",
+      "avatar": "https://avatars.githubusercontent.com/u/11830617?v=4",
+      "desc": "A plugin for Strapi CMS that generates blurhash for your uploaded images",
+      "demo": "https://www.npmjs.com/package/strapi-blurhash",
+      "repoUrl": "https://github.com/emil-petras/strapi-blurhash",
+      "long1": "A plugin for Strapi CMS that generates blurhash for your uploaded images. Maintained by emil-petras on GitHub, where it has earned 26 stars from the community.",
+      "long2": "It's actively developed around blurhash, media, plugin, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
-        "Admin Panel",
-        "Cms",
-        "Cms Plugin",
-        "Customization"
+        "Blurhash",
+        "Media",
+        "Plugin",
+        "Strapi"
       ],
-      "updated": "3 years ago",
-      "license": "MIT",
+      "updated": "1 year ago",
+      "license": "—",
       "langs": [
         {
           "name": "JavaScript",
@@ -4473,56 +5031,10 @@
       ],
       "versions": [],
       "topics": [
-        "admin-panel",
-        "cms",
-        "cms-plugin",
-        "customization",
-        "dashboard",
-        "headless-cms",
-        "nodejs",
-        "plugins",
+        "blurhash",
+        "media",
+        "plugin",
         "strapi"
-      ],
-      "addedAt": "2026-07-15T22:28:32.821506+00:00"
-    },
-    {
-      "slug": "strapi-plugin-mux-video-uploader",
-      "name": "strapi-plugin-mux-video-uploader",
-      "fullName": "muxinc/strapi-plugin-mux-video-uploader",
-      "category": "DevTools",
-      "stars": 26,
-      "author": "muxinc",
-      "avatar": "https://avatars.githubusercontent.com/u/16199997?v=4",
-      "desc": "A Strapi plugin for managing uploads to Mux.",
-      "demo": "https://mux.com",
-      "repoUrl": "https://github.com/muxinc/strapi-plugin-mux-video-uploader",
-      "long1": "A Strapi plugin for managing uploads to Mux. Maintained by muxinc on GitHub, where it has earned 26 stars from the community.",
-      "long2": "It's actively developed around mux, strapi, strapi-cms, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Mux",
-        "Strapi",
-        "Strapi Cms",
-        "Strapi Plugin"
-      ],
-      "updated": "10 months ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "mux",
-        "strapi",
-        "strapi-cms",
-        "strapi-plugin",
-        "video",
-        "video-processing",
-        "video-streaming"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -4563,27 +5075,27 @@
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
     {
-      "slug": "strapi-blurhash",
-      "name": "strapi-blurhash",
-      "fullName": "emil-petras/strapi-blurhash",
-      "category": "DevTools",
+      "slug": "strapi-plugins",
+      "name": "strapi-plugins",
+      "fullName": "surgeharb/strapi-plugins",
+      "category": "Dashboards",
       "stars": 26,
-      "author": "emil-petras",
-      "avatar": "https://avatars.githubusercontent.com/u/11830617?v=4",
-      "desc": "A plugin for Strapi CMS that generates blurhash for your uploaded images",
-      "demo": "https://www.npmjs.com/package/strapi-blurhash",
-      "repoUrl": "https://github.com/emil-petras/strapi-blurhash",
-      "long1": "A plugin for Strapi CMS that generates blurhash for your uploaded images. Maintained by emil-petras on GitHub, where it has earned 26 stars from the community.",
-      "long2": "It's actively developed around blurhash, media, plugin, and is a solid reference for anyone building with these tools.",
+      "author": "surgeharb",
+      "avatar": "https://avatars.githubusercontent.com/u/22060043?v=4",
+      "desc": "🚀  Open source plugins for Strapi - Node.js Headless CMS",
+      "demo": null,
+      "repoUrl": "https://github.com/surgeharb/strapi-plugins",
+      "long1": "🚀  Open source plugins for Strapi - Node.js Headless CMS. Maintained by surgeharb on GitHub, where it has earned 26 stars from the community.",
+      "long2": "It's actively developed around admin-panel, cms, cms-plugin, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
-        "Blurhash",
-        "Media",
-        "Plugin",
-        "Strapi"
+        "Admin Panel",
+        "Cms",
+        "Cms Plugin",
+        "Customization"
       ],
-      "updated": "1 year ago",
-      "license": "—",
+      "updated": "4 years ago",
+      "license": "MIT",
       "langs": [
         {
           "name": "JavaScript",
@@ -4593,9 +5105,14 @@
       ],
       "versions": [],
       "topics": [
-        "blurhash",
-        "media",
-        "plugin",
+        "admin-panel",
+        "cms",
+        "cms-plugin",
+        "customization",
+        "dashboard",
+        "headless-cms",
+        "nodejs",
+        "plugins",
         "strapi"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
@@ -4639,73 +5156,27 @@
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
     {
-      "slug": "jamstack-sync-stream-video",
-      "name": "jamstack-sync-stream-video",
-      "fullName": "ably-labs/jamstack-sync-stream-video",
-      "category": "Real-time",
-      "stars": 25,
-      "author": "ably-labs",
-      "avatar": "https://avatars.githubusercontent.com/u/73881329?v=4",
-      "desc": "A live watch party app to watch videos with your friends remotely, built with the Jamstack architecture.",
-      "demo": "https://jamstack-watch-party.ably.dev/",
-      "repoUrl": "https://github.com/ably-labs/jamstack-sync-stream-video",
-      "long1": "A live watch party app to watch videos with your friends remotely, built with the Jamstack architecture. Maintained by ably-labs on GitHub, where it has earned 25 stars from the community.",
-      "long2": "It's actively developed around ably, audience-engagement, demo, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Vue",
-        "Ably",
-        "Audience Engagement",
-        "Demo",
-        "Jamstack"
-      ],
-      "updated": "4 years ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "Vue",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "ably",
-        "audience-engagement",
-        "demo",
-        "jamstack",
-        "jamstack-architecture",
-        "javascript",
-        "netlify",
-        "nuxt",
-        "realtime",
-        "shared-experience",
-        "strapi",
-        "video-streaming"
-      ],
-      "addedAt": "2026-07-15T22:28:32.821506+00:00"
-    },
-    {
-      "slug": "ra-strapi-v4-rest",
-      "name": "ra-strapi-v4-rest",
-      "fullName": "garridorafa/ra-strapi-v4-rest",
-      "category": "Dashboards",
-      "stars": 25,
-      "author": "garridorafa",
-      "avatar": "https://avatars.githubusercontent.com/u/49374670?v=4",
-      "desc": "React Admin REST data provider for Strapi.js v4",
-      "demo": null,
-      "repoUrl": "https://github.com/garridorafa/ra-strapi-v4-rest",
-      "long1": "React Admin REST data provider for Strapi.js v4. Maintained by garridorafa on GitHub, where it has earned 25 stars from the community.",
-      "long2": "It's actively developed around react, react-admin, reactjs, and is a solid reference for anyone building with these tools.",
+      "slug": "strapi-plugin-mux-video-uploader",
+      "name": "strapi-plugin-mux-video-uploader",
+      "fullName": "muxinc/strapi-plugin-mux-video-uploader",
+      "category": "DevTools",
+      "stars": 26,
+      "author": "muxinc",
+      "avatar": "https://avatars.githubusercontent.com/u/16199997?v=4",
+      "desc": "A Strapi plugin for managing uploads to Mux.",
+      "demo": "https://mux.com",
+      "repoUrl": "https://github.com/muxinc/strapi-plugin-mux-video-uploader",
+      "long1": "A Strapi plugin for managing uploads to Mux. Maintained by muxinc on GitHub, where it has earned 26 stars from the community.",
+      "long2": "It's actively developed around mux, strapi, strapi-cms, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "React",
-        "React Admin",
-        "React",
-        "Rest"
+        "Mux",
+        "Strapi",
+        "Strapi Cms",
+        "Strapi Plugin"
       ],
-      "updated": "2 years ago",
-      "license": "MIT",
+      "updated": "11 months ago",
+      "license": "—",
       "langs": [
         {
           "name": "TypeScript",
@@ -4715,11 +5186,13 @@
       ],
       "versions": [],
       "topics": [
-        "react",
-        "react-admin",
-        "reactjs",
-        "rest",
-        "strapi"
+        "mux",
+        "strapi",
+        "strapi-cms",
+        "strapi-plugin",
+        "video",
+        "video-processing",
+        "video-streaming"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -4837,6 +5310,91 @@
         "flutter",
         "strapi",
         "stripe"
+      ],
+      "addedAt": "2026-07-15T22:28:32.821506+00:00"
+    },
+    {
+      "slug": "jamstack-sync-stream-video",
+      "name": "jamstack-sync-stream-video",
+      "fullName": "ably-labs/jamstack-sync-stream-video",
+      "category": "Real-time",
+      "stars": 25,
+      "author": "ably-labs",
+      "avatar": "https://avatars.githubusercontent.com/u/73881329?v=4",
+      "desc": "A live watch party app to watch videos with your friends remotely, built with the Jamstack architecture.",
+      "demo": "https://jamstack-watch-party.ably.dev/",
+      "repoUrl": "https://github.com/ably-labs/jamstack-sync-stream-video",
+      "long1": "A live watch party app to watch videos with your friends remotely, built with the Jamstack architecture. Maintained by ably-labs on GitHub, where it has earned 25 stars from the community.",
+      "long2": "It's actively developed around ably, audience-engagement, demo, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Vue",
+        "Ably",
+        "Audience Engagement",
+        "Demo",
+        "Jamstack"
+      ],
+      "updated": "4 years ago",
+      "license": "—",
+      "langs": [
+        {
+          "name": "Vue",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "ably",
+        "audience-engagement",
+        "demo",
+        "jamstack",
+        "jamstack-architecture",
+        "javascript",
+        "netlify",
+        "nuxt",
+        "realtime",
+        "shared-experience",
+        "strapi",
+        "video-streaming"
+      ],
+      "addedAt": "2026-07-15T22:28:32.821506+00:00"
+    },
+    {
+      "slug": "ra-strapi-v4-rest",
+      "name": "ra-strapi-v4-rest",
+      "fullName": "garridorafa/ra-strapi-v4-rest",
+      "category": "Dashboards",
+      "stars": 25,
+      "author": "garridorafa",
+      "avatar": "https://avatars.githubusercontent.com/u/49374670?v=4",
+      "desc": "React Admin REST data provider for Strapi.js v4",
+      "demo": null,
+      "repoUrl": "https://github.com/garridorafa/ra-strapi-v4-rest",
+      "long1": "React Admin REST data provider for Strapi.js v4. Maintained by garridorafa on GitHub, where it has earned 25 stars from the community.",
+      "long2": "It's actively developed around react, react-admin, reactjs, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "React",
+        "React Admin",
+        "React",
+        "Rest"
+      ],
+      "updated": "2 years ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "TypeScript",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "react",
+        "react-admin",
+        "reactjs",
+        "rest",
+        "strapi"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -5031,7 +5589,7 @@
         "Generate",
         "Strapi"
       ],
-      "updated": "1 month ago",
+      "updated": "2 months ago",
       "license": "MIT",
       "langs": [
         {
@@ -5109,7 +5667,7 @@
         "Strapi",
         "Strapi Cms"
       ],
-      "updated": "1 month ago",
+      "updated": "2 months ago",
       "license": "MIT",
       "langs": [
         {
@@ -5126,6 +5684,85 @@
         "strapi-cms",
         "strapi-plugin",
         "user-engagement"
+      ],
+      "addedAt": "2026-07-15T22:28:32.821506+00:00"
+    },
+    {
+      "slug": "strapi-plugin",
+      "name": "strapi-plugin",
+      "fullName": "localazy/strapi-plugin",
+      "category": "DevTools",
+      "stars": 22,
+      "author": "localazy",
+      "avatar": "https://avatars.githubusercontent.com/u/59409404?v=4",
+      "desc": "The official Strapi Plugin by Localazy",
+      "demo": "https://localazy.com",
+      "repoUrl": "https://github.com/localazy/strapi-plugin",
+      "long1": "The official Strapi Plugin by Localazy. Maintained by localazy on GitHub, where it has earned 22 stars from the community.",
+      "long2": "It's actively developed around localazy, strapi, strapi-plugin, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Localazy",
+        "Strapi",
+        "Strapi Plugin"
+      ],
+      "updated": "1 month ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "TypeScript",
+          "pct": 98.195,
+          "size": 518684
+        },
+        {
+          "name": "JavaScript",
+          "pct": 1.805,
+          "size": 9534
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "localazy",
+        "strapi",
+        "strapi-plugin"
+      ],
+      "addedAt": "2026-07-15T22:28:32.821506+00:00"
+    },
+    {
+      "slug": "cyber-security",
+      "name": "cyber-security",
+      "fullName": "prawee/cyber-security",
+      "category": "DevTools",
+      "stars": 22,
+      "author": "prawee",
+      "avatar": "https://avatars.githubusercontent.com/u/3203937?v=4",
+      "desc": "Note for cyber security class",
+      "demo": "https://github.com/prawee",
+      "repoUrl": "https://github.com/prawee/cyber-security",
+      "long1": "Note for cyber security class. Maintained by prawee on GitHub, where it has earned 22 stars from the community.",
+      "long2": "It's actively developed around docker, git, security, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Dockerfile",
+        "Docker",
+        "Git",
+        "Security",
+        "Strapi"
+      ],
+      "updated": "8 months ago",
+      "license": "—",
+      "langs": [
+        {
+          "name": "Dockerfile",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "docker",
+        "git",
+        "security",
+        "strapi"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -5210,44 +5847,6 @@
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
     {
-      "slug": "cyber-security",
-      "name": "cyber-security",
-      "fullName": "prawee/cyber-security",
-      "category": "DevTools",
-      "stars": 22,
-      "author": "prawee",
-      "avatar": "https://avatars.githubusercontent.com/u/3203937?v=4",
-      "desc": "Note for cyber security class",
-      "demo": "https://github.com/prawee",
-      "repoUrl": "https://github.com/prawee/cyber-security",
-      "long1": "Note for cyber security class. Maintained by prawee on GitHub, where it has earned 22 stars from the community.",
-      "long2": "It's actively developed around docker, git, security, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Dockerfile",
-        "Docker",
-        "Git",
-        "Security",
-        "Strapi"
-      ],
-      "updated": "8 months ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "Dockerfile",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "docker",
-        "git",
-        "security",
-        "strapi"
-      ],
-      "addedAt": "2026-07-15T22:28:32.821506+00:00"
-    },
-    {
       "slug": "isstrapiready",
       "name": "isstrapiready",
       "fullName": "Stun3R/isstrapiready",
@@ -5280,47 +5879,6 @@
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
     {
-      "slug": "strapi-plugin",
-      "name": "strapi-plugin",
-      "fullName": "localazy/strapi-plugin",
-      "category": "DevTools",
-      "stars": 22,
-      "author": "localazy",
-      "avatar": "https://avatars.githubusercontent.com/u/59409404?v=4",
-      "desc": "The official Strapi Plugin by Localazy",
-      "demo": "https://localazy.com",
-      "repoUrl": "https://github.com/localazy/strapi-plugin",
-      "long1": "The official Strapi Plugin by Localazy. Maintained by localazy on GitHub, where it has earned 22 stars from the community.",
-      "long2": "It's actively developed around localazy, strapi, strapi-plugin, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Localazy",
-        "Strapi",
-        "Strapi Plugin"
-      ],
-      "updated": "3 weeks ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "TypeScript",
-          "pct": 98.195,
-          "size": 518684
-        },
-        {
-          "name": "JavaScript",
-          "pct": 1.805,
-          "size": 9534
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "localazy",
-        "strapi",
-        "strapi-plugin"
-      ],
-      "addedAt": "2026-07-15T22:28:32.821506+00:00"
-    },
-    {
       "slug": "covid19-pr-api",
       "name": "covid19-pr-api",
       "fullName": "Code4PuertoRico/covid19-pr-api",
@@ -5340,7 +5898,7 @@
         "Coronavirus",
         "Covid 19"
       ],
-      "updated": "3 years ago",
+      "updated": "4 years ago",
       "license": "—",
       "langs": [
         {
@@ -5409,6 +5967,41 @@
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
     {
+      "slug": "voting-advice-application",
+      "name": "voting-advice-application",
+      "fullName": "OpenVAA/voting-advice-application",
+      "category": "DevTools",
+      "stars": 20,
+      "author": "OpenVAA",
+      "avatar": "https://avatars.githubusercontent.com/u/115159211?v=4",
+      "desc": "An open-source platform for creating Voting Advice Applications (VAAs)",
+      "demo": "https://openvaa.org/en",
+      "repoUrl": "https://github.com/OpenVAA/voting-advice-application",
+      "long1": "An open-source platform for creating Voting Advice Applications (VAAs). Maintained by OpenVAA on GitHub, where it has earned 20 stars from the community.",
+      "long2": "It's actively developed around strapi, svelte, typescript, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Strapi",
+        "Svelte"
+      ],
+      "updated": "2 months ago",
+      "license": "GPL-3.0",
+      "langs": [
+        {
+          "name": "TypeScript",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "strapi",
+        "svelte",
+        "typescript"
+      ],
+      "addedAt": "2026-07-15T22:28:32.821506+00:00"
+    },
+    {
       "slug": "notes-to-strapi-export-article-ai",
       "name": "notes-to-strapi-export-article-ai",
       "fullName": "CinquinAndy/notes-to-strapi-export-article-ai",
@@ -5428,7 +6021,7 @@
         "Obsidian Plugin",
         "Strapi"
       ],
-      "updated": "2 weeks ago",
+      "updated": "4 weeks ago",
       "license": "MIT",
       "langs": [
         {
@@ -5453,25 +6046,26 @@
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
     {
-      "slug": "voting-advice-application",
-      "name": "voting-advice-application",
-      "fullName": "OpenVAA/voting-advice-application",
+      "slug": "plugin-todo",
+      "name": "plugin-todo",
+      "fullName": "strapi-community/plugin-todo",
       "category": "DevTools",
       "stars": 20,
-      "author": "OpenVAA",
-      "avatar": "https://avatars.githubusercontent.com/u/115159211?v=4",
-      "desc": "An open-source platform for creating Voting Advice Applications (VAAs)",
-      "demo": "https://openvaa.org/en",
-      "repoUrl": "https://github.com/OpenVAA/voting-advice-application",
-      "long1": "An open-source platform for creating Voting Advice Applications (VAAs). Maintained by OpenVAA on GitHub, where it has earned 20 stars from the community.",
-      "long2": "It's actively developed around strapi, svelte, typescript, and is a solid reference for anyone building with these tools.",
+      "author": "strapi-community",
+      "avatar": "https://avatars.githubusercontent.com/u/97644256?v=4",
+      "desc": "Keep track of your content management in Strapi",
+      "demo": null,
+      "repoUrl": "https://github.com/strapi-community/plugin-todo",
+      "long1": "Keep track of your content management in Strapi. Maintained by strapi-community on GitHub, where it has earned 20 stars from the community.",
+      "long2": "It's actively developed around strapi, strapi-plugin, todolist, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
         "Strapi",
-        "Svelte"
+        "Strapi Plugin",
+        "Todolist"
       ],
-      "updated": "1 month ago",
-      "license": "GPL-3.0",
+      "updated": "7 months ago",
+      "license": "—",
       "langs": [
         {
           "name": "TypeScript",
@@ -5482,8 +6076,8 @@
       "versions": [],
       "topics": [
         "strapi",
-        "svelte",
-        "typescript"
+        "strapi-plugin",
+        "todolist"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     },
@@ -5564,42 +6158,6 @@
         "mongodb",
         "nodejs-server",
         "strapi"
-      ],
-      "addedAt": "2026-07-15T22:28:32.821506+00:00"
-    },
-    {
-      "slug": "plugin-todo",
-      "name": "plugin-todo",
-      "fullName": "strapi-community/plugin-todo",
-      "category": "DevTools",
-      "stars": 20,
-      "author": "strapi-community",
-      "avatar": "https://avatars.githubusercontent.com/u/97644256?v=4",
-      "desc": "Keep track of your content management in Strapi",
-      "demo": null,
-      "repoUrl": "https://github.com/strapi-community/plugin-todo",
-      "long1": "Keep track of your content management in Strapi. Maintained by strapi-community on GitHub, where it has earned 20 stars from the community.",
-      "long2": "It's actively developed around strapi, strapi-plugin, todolist, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Strapi",
-        "Strapi Plugin",
-        "Todolist"
-      ],
-      "updated": "7 months ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "strapi",
-        "strapi-plugin",
-        "todolist"
       ],
       "addedAt": "2026-07-15T22:28:32.821506+00:00"
     }

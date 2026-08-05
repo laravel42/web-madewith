@@ -1,105 +1,80 @@
 {
   "slug": "qwik",
-  "scrapedAt": "2026-07-22T09:29:06.804342+00:00",
+  "scrapedAt": "2026-08-05T04:38:15.245507+00:00",
   "source": "scrapy-github",
-  "totalRepos": 41,
+  "totalRepos": 47,
   "projects": [
     {
       "slug": "builder",
       "name": "builder",
       "fullName": "BuilderIO/builder",
-      "category": "Mobile",
-      "stars": 8772,
+      "category": "E-commerce",
+      "stars": 8793,
       "author": "BuilderIO",
       "avatar": "https://avatars.githubusercontent.com/u/35700027?v=4",
       "desc": "Visual Development for React, Vue, Svelte, Qwik, and more",
       "demo": "https://builder.io",
       "repoUrl": "https://github.com/BuilderIO/builder",
-      "long1": "Visual Development for React, Vue, Svelte, Qwik, and more. Maintained by BuilderIO on GitHub, where it has earned 8,772 stars from the community.",
-      "long2": "It's actively developed around angular, builder, cms, and is a solid reference for anyone building with these tools.",
+      "long1": "Visual Development for React, Vue, Svelte, Qwik, and more. Maintained by BuilderIO on GitHub, where it has earned 8,793 stars from the community.",
+      "long2": "It's actively developed around react, webcomponents, wysiwyg, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Angular",
-        "Builder",
-        "Cms",
-        "Drag Drop"
+        "React",
+        "Webcomponents",
+        "Wysiwyg",
+        "Frontend"
       ],
-      "updated": "2 weeks ago",
+      "updated": "yesterday",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 92.511,
-          "size": 3633102
+          "pct": 95,
+          "name": "TypeScript"
         },
         {
-          "name": "JavaScript",
-          "pct": 4.24,
-          "size": 166519
+          "pct": 4,
+          "name": "JavaScript"
         },
         {
-          "name": "Vue",
-          "pct": 0.985,
-          "size": 38679
-        },
-        {
-          "name": "Svelte",
-          "pct": 0.715,
-          "size": 28061
-        },
-        {
-          "name": "CSS",
-          "pct": 0.597,
-          "size": 23441
-        },
-        {
-          "name": "Kotlin",
-          "pct": 0.492,
-          "size": 19307
-        },
-        {
-          "name": "HTML",
-          "pct": 0.255,
-          "size": 10031
-        },
-        {
-          "name": "Shell",
-          "pct": 0.188,
-          "size": 7375
-        },
-        {
-          "name": "Earthly",
-          "pct": 0.011,
-          "size": 435
-        },
-        {
-          "name": "Makefile",
-          "pct": 0.007,
-          "size": 270
+          "pct": 1,
+          "name": "Vue"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/BuilderIO/builder/releases/tag/%40builder.io/sdk-angular%400.25.7",
+          "name": "@builder.io/sdk-angular@0.25.7"
+        },
+        {
+          "url": "https://github.com/BuilderIO/builder/releases/tag/%40builder.io/sdk-react-nextjs%400.25.6",
+          "name": "@builder.io/sdk-react-nextjs@0.25.6"
+        },
+        {
+          "url": "https://github.com/BuilderIO/builder/releases/tag/%40builder.io/sdk-solid%405.2.5",
+          "name": "@builder.io/sdk-solid@5.2.5"
+        },
+        {
+          "url": "https://github.com/BuilderIO/builder/releases/tag/%40builder.io/sdk-react-native%405.2.5",
+          "name": "@builder.io/sdk-react-native@5.2.5"
+        },
+        {
+          "url": "https://github.com/BuilderIO/builder/releases/tag/%40builder.io/sdk-react%405.2.5",
+          "name": "@builder.io/sdk-react@5.2.5"
+        }
+      ],
       "topics": [
-        "angular",
-        "builder",
-        "cms",
-        "drag-drop",
-        "frontend",
-        "gatsby",
-        "headless",
-        "headless-cms",
-        "landing-pages",
-        "next-js",
-        "nocode",
-        "page-builder",
-        "pwa",
-        "qwik",
         "react",
-        "react-native",
-        "shopify",
-        "vue",
         "webcomponents",
-        "wysiwyg"
+        "wysiwyg",
+        "frontend",
+        "angular",
+        "vue",
+        "shopify",
+        "next-js",
+        "landing-pages",
+        "page-builder",
+        "drag-drop",
+        "builder"
       ],
       "addedAt": "2026-07-15T22:28:32.282438+00:00"
     },
@@ -108,79 +83,56 @@
       "name": "component-party.dev",
       "fullName": "matschik/component-party.dev",
       "category": "UI Kits",
-      "stars": 3329,
+      "stars": 3332,
       "author": "matschik",
-      "avatar": "https://avatars.githubusercontent.com/u/34612598?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/34612598?u=9f37889df1c2ab1030d90ebf817adc25f59fa047&v=4",
       "desc": "🎉 Web component JS frameworks overview by their syntax and features",
       "demo": "https://component-party.dev",
       "repoUrl": "https://github.com/matschik/component-party.dev",
-      "long1": "🎉 Web component JS frameworks overview by their syntax and features. Maintained by matschik on GitHub, where it has earned 3,329 stars from the community.",
-      "long2": "It's actively developed around alpine, angular, aurelia, and is a solid reference for anyone building with these tools.",
+      "long1": "🎉 Web component JS frameworks overview by their syntax and features. Maintained by matschik on GitHub, where it has earned 3,332 stars from the community.",
+      "long2": "It's actively developed around react, svelte, vue, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Alpine",
-        "Angular",
-        "Aurelia",
-        "Ember"
+        "React",
+        "Svelte",
+        "Vue",
+        "Angular"
       ],
-      "updated": "3 weeks ago",
+      "updated": "1 month ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 53.7,
-          "size": 192152
+          "pct": 66,
+          "name": "TypeScript"
         },
         {
-          "name": "JavaScript",
-          "pct": 17.518,
-          "size": 62684
+          "pct": 18,
+          "name": "JavaScript"
         },
         {
-          "name": "Svelte",
-          "pct": 16.47,
-          "size": 58935
-        },
-        {
-          "name": "HTML",
-          "pct": 5.116,
-          "size": 18308
-        },
-        {
-          "name": "Vue",
-          "pct": 4.632,
-          "size": 16574
-        },
-        {
-          "name": "Marko",
-          "pct": 1.323,
-          "size": 4734
-        },
-        {
-          "name": "Handlebars",
-          "pct": 1.03,
-          "size": 3684
-        },
-        {
-          "name": "CSS",
-          "pct": 0.21,
-          "size": 752
+          "pct": 16,
+          "name": "Svelte"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/matschik/component-party.dev/releases/tag/v2.0.0",
+          "name": "v2.0.0"
+        }
+      ],
       "topics": [
-        "alpine",
-        "angular",
-        "aurelia",
-        "ember",
-        "lit",
-        "qwik",
         "react",
-        "ripple",
-        "solidjs",
         "svelte",
+        "vue",
+        "angular",
+        "solidjs",
+        "alpine",
+        "lit",
+        "ember",
+        "qwik",
+        "aurelia",
         "vite",
-        "vue"
+        "ripple"
       ],
       "addedAt": "2026-07-15T22:28:32.282438+00:00"
     },
@@ -189,68 +141,71 @@
       "name": "unpic-img",
       "fullName": "ascorbic/unpic-img",
       "category": "UI Kits",
-      "stars": 2062,
+      "stars": 2067,
       "author": "ascorbic",
-      "avatar": "https://avatars.githubusercontent.com/u/213306?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/213306?u=82654af51549dc9ed1544157a9f879b89e7b1d48&v=4",
       "desc": "Multi-framework responsive image component",
       "demo": "https://unpic.pics",
       "repoUrl": "https://github.com/ascorbic/unpic-img",
-      "long1": "Multi-framework responsive image component. Maintained by ascorbic on GitHub, where it has earned 2,062 stars from the community.",
-      "long2": "It's actively developed around angular, astro, images, and is a solid reference for anyone building with these tools.",
+      "long1": "Multi-framework responsive image component. Maintained by ascorbic on GitHub, where it has earned 2,067 stars from the community.",
+      "long2": "It's actively developed around images, react, vue, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Angular",
-        "Astro",
         "Images",
-        "Lit"
+        "React",
+        "Vue",
+        "Astro"
       ],
-      "updated": "1 week ago",
+      "updated": "3 days ago",
       "license": "—",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 86.337,
-          "size": 91639
+          "pct": 91,
+          "name": "TypeScript"
         },
         {
-          "name": "Astro",
-          "pct": 5.105,
-          "size": 5418
+          "pct": 5,
+          "name": "Astro"
         },
         {
-          "name": "Vue",
-          "pct": 3.73,
-          "size": 3959
-        },
-        {
-          "name": "Svelte",
-          "pct": 3.107,
-          "size": 3298
-        },
-        {
-          "name": "JavaScript",
-          "pct": 1.441,
-          "size": 1529
-        },
-        {
-          "name": "HTML",
-          "pct": 0.281,
-          "size": 298
+          "pct": 4,
+          "name": "Vue"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/ascorbic/unpic-img/releases/tag/%40unpic/svelte%401.0.1",
+          "name": "@unpic/svelte@1.0.1"
+        },
+        {
+          "url": "https://github.com/ascorbic/unpic-img/releases/tag/%40unpic/react%401.0.2",
+          "name": "@unpic/react@1.0.2"
+        },
+        {
+          "url": "https://github.com/ascorbic/unpic-img/releases/tag/%40unpic/astro%401.0.2",
+          "name": "@unpic/astro@1.0.2"
+        },
+        {
+          "url": "https://github.com/ascorbic/unpic-img/releases/tag/%40unpic/core%401.0.3",
+          "name": "@unpic/core@1.0.3"
+        },
+        {
+          "url": "https://github.com/ascorbic/unpic-img/releases/tag/%40unpic/astro%401.0.1",
+          "name": "@unpic/astro@1.0.1"
+        }
+      ],
       "topics": [
-        "angular",
-        "astro",
         "images",
-        "lit",
+        "react",
+        "vue",
+        "astro",
         "preact",
         "qwik",
-        "react",
         "solidjs",
         "svelte",
-        "vue",
-        "webc"
+        "webc",
+        "lit",
+        "angular"
       ],
       "addedAt": "2026-07-15T22:28:32.282438+00:00"
     },
@@ -259,44 +214,72 @@
       "name": "modular-forms",
       "fullName": "fabian-hiller/modular-forms",
       "category": "DevTools",
-      "stars": 1214,
+      "stars": 1213,
       "author": "fabian-hiller",
-      "avatar": "https://avatars.githubusercontent.com/u/35291865?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/35291865?u=cce90fe5d67d25b3b77c82a0d7b7adaec1d25828&v=4",
       "desc": "The modular and type-safe form library for SolidJS, Qwik and Preact",
       "demo": "https://modularforms.dev",
       "repoUrl": "https://github.com/fabian-hiller/modular-forms",
-      "long1": "The modular and type-safe form library for SolidJS, Qwik and Preact. Maintained by fabian-hiller on GitHub, where it has earned 1,214 stars from the community.",
-      "long2": "It's actively developed around bundle-size, form, form-validation, and is a solid reference for anyone building with these tools.",
+      "long1": "The modular and type-safe form library for SolidJS, Qwik and Preact. Maintained by fabian-hiller on GitHub, where it has earned 1,213 stars from the community.",
+      "long2": "It's actively developed around bundle-size, forms, performance, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
         "Bundle Size",
-        "Form",
-        "Form Validation",
-        "Forms"
+        "Forms",
+        "Performance",
+        "Solid"
       ],
       "updated": "2 months ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 76,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 23,
+          "name": "MDX"
+        },
+        {
+          "pct": 1,
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/fabian-hiller/modular-forms/releases/tag/v0.12.0-react",
+          "name": "v0.12.0-react"
+        },
+        {
+          "url": "https://github.com/fabian-hiller/modular-forms/releases/tag/v0.25.1-solid",
+          "name": "v0.25.1-solid"
+        },
+        {
+          "url": "https://github.com/fabian-hiller/modular-forms/releases/tag/v0.11.1-react",
+          "name": "v0.11.1-react"
+        },
+        {
+          "url": "https://github.com/fabian-hiller/modular-forms/releases/tag/v0.29.1-qwik",
+          "name": "v0.29.1-qwik"
+        },
+        {
+          "url": "https://github.com/fabian-hiller/modular-forms/releases/tag/v0.12.1-preact",
+          "name": "v0.12.1-preact"
+        }
+      ],
       "topics": [
         "bundle-size",
-        "form",
-        "form-validation",
         "forms",
         "performance",
-        "preact",
-        "qwik",
-        "signals",
         "solid",
-        "type-safe",
         "typescript",
-        "validation"
+        "validation",
+        "type-safe",
+        "qwik",
+        "form",
+        "form-validation",
+        "preact",
+        "signals"
       ],
       "addedAt": "2026-07-15T22:28:32.282438+00:00"
     },
@@ -305,67 +288,61 @@
       "name": "formisch",
       "fullName": "open-circle/formisch",
       "category": "DevTools",
-      "stars": 1048,
+      "stars": 1082,
       "author": "open-circle",
       "avatar": "https://avatars.githubusercontent.com/u/162486767?v=4",
       "desc": "The lightweight, schema-first, and fully type-safe form library for React, Solid, Vue, Svelte and more.",
       "demo": "https://formisch.dev",
       "repoUrl": "https://github.com/open-circle/formisch",
-      "long1": "The lightweight, schema-first, and fully type-safe form library for React, Solid, Vue, Svelte and more. Maintained by open-circle on GitHub, where it has earned 1,048 stars from the community.",
-      "long2": "It's actively developed around bundle-size, form, form-validation, and is a solid reference for anyone building with these tools.",
+      "long1": "The lightweight, schema-first, and fully type-safe form library for React, Solid, Vue, Svelte and more. Maintained by open-circle on GitHub, where it has earned 1,082 stars from the community.",
+      "long2": "It's actively developed around form, preact, qwik, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Bundle Size",
         "Form",
-        "Form Validation",
-        "Forms"
+        "Preact",
+        "Qwik",
+        "React"
       ],
-      "updated": "4 weeks ago",
+      "updated": "3 days ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 62.574,
-          "size": 1621081
+          "pct": 58,
+          "name": "TypeScript"
         },
         {
-          "name": "MDX",
-          "pct": 32.031,
-          "size": 829824
+          "pct": 40,
+          "name": "MDX"
         },
         {
-          "name": "Svelte",
-          "pct": 2.213,
-          "size": 57334
-        },
-        {
-          "name": "Vue",
-          "pct": 1.866,
-          "size": 48333
-        },
-        {
-          "name": "JavaScript",
-          "pct": 0.908,
-          "size": 23514
-        },
-        {
-          "name": "CSS",
-          "pct": 0.322,
-          "size": 8352
-        },
-        {
-          "name": "HTML",
-          "pct": 0.086,
-          "size": 2223
+          "pct": 2,
+          "name": "Svelte"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/open-circle/formisch/releases/tag/v0.1.0-angular",
+          "name": "v0.1.0-angular"
+        },
+        {
+          "url": "https://github.com/open-circle/formisch/releases/tag/v1.0.0-rc.0-vue",
+          "name": "v1.0.0-rc.0-vue"
+        },
+        {
+          "url": "https://github.com/open-circle/formisch/releases/tag/v1.0.0-rc.0-svelte",
+          "name": "v1.0.0-rc.0-svelte"
+        },
+        {
+          "url": "https://github.com/open-circle/formisch/releases/tag/v1.0.0-rc.0-solid",
+          "name": "v1.0.0-rc.0-solid"
+        },
+        {
+          "url": "https://github.com/open-circle/formisch/releases/tag/v1.0.0-rc.0-react",
+          "name": "v1.0.0-rc.0-react"
+        }
+      ],
       "topics": [
-        "bundle-size",
         "form",
-        "form-validation",
-        "forms",
-        "modular",
         "preact",
         "qwik",
         "react",
@@ -373,13 +350,86 @@
         "signals",
         "solid",
         "svelte",
-        "type-safe",
         "typescript",
-        "valibot",
         "validation",
-        "vue"
+        "vue",
+        "valibot"
       ],
       "addedAt": "2026-07-15T22:28:32.282438+00:00"
+    },
+    {
+      "slug": "phantom-ui",
+      "name": "phantom-ui",
+      "fullName": "Aejkatappaja/phantom-ui",
+      "category": "UI Kits",
+      "stars": 770,
+      "author": "Aejkatappaja",
+      "avatar": "https://avatars.githubusercontent.com/u/119339477?u=c96cccc02eaf722353b95f1d1785d955f1851cad&v=4",
+      "desc": "Structure-aware skeleton loader. One Web Component, every framework.",
+      "demo": "https://aejkatappaja.github.io/phantom-ui/demo",
+      "repoUrl": "https://github.com/Aejkatappaja/phantom-ui",
+      "long1": "Structure-aware skeleton loader. One Web Component, every framework. Maintained by Aejkatappaja on GitHub, where it has earned 770 stars from the community.",
+      "long2": "It's actively developed around lit, typescript, webcomponent, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Lit",
+        "Webcomponent",
+        "Angular",
+        "Custom Element"
+      ],
+      "updated": "4 days ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 70,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 23,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 7,
+          "name": "HTML"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/Aejkatappaja/phantom-ui/releases/tag/v1.6.1",
+          "name": "v1.6.1"
+        },
+        {
+          "url": "https://github.com/Aejkatappaja/phantom-ui/releases/tag/v1.6.0",
+          "name": "v1.6.0"
+        },
+        {
+          "url": "https://github.com/Aejkatappaja/phantom-ui/releases/tag/v1.5.0",
+          "name": "v1.5.0"
+        },
+        {
+          "url": "https://github.com/Aejkatappaja/phantom-ui/releases/tag/v1.5.0-beta.1",
+          "name": "v1.5.0-beta.1"
+        },
+        {
+          "url": "https://github.com/Aejkatappaja/phantom-ui/releases/tag/v1.5.0-beta.0",
+          "name": "v1.5.0-beta.0"
+        }
+      ],
+      "topics": [
+        "lit",
+        "typescript",
+        "webcomponent",
+        "angular",
+        "custom-element",
+        "loading",
+        "placeholder",
+        "react",
+        "shimmer",
+        "skeleton",
+        "solidjs",
+        "vue"
+      ],
+      "addedAt": "2026-08-05T04:38:15.245507+00:00"
     },
     {
       "slug": "qwik-ui",
@@ -393,33 +443,61 @@
       "demo": "https://qwikui.com",
       "repoUrl": "https://github.com/qwikifiers/qwik-ui",
       "long1": "Qwik's Headless and styled component library. Maintained by qwikifiers on GitHub, where it has earned 696 stars from the community.",
-      "long2": "It's actively developed around a11y, headless, qwik, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around headless, qwik, qwik-city, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "A11Y",
         "Headless",
         "Qwik",
-        "Qwik City"
+        "Qwik City",
+        "Qwik Framework"
       ],
-      "updated": "1 month ago",
+      "updated": "2 months ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 65,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 26,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 9,
+          "name": "MDX"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/qwikifiers/qwik-ui/releases/tag/%40qwik-ui/headless%400.7.4",
+          "name": "@qwik-ui/headless@0.7.4"
+        },
+        {
+          "url": "https://github.com/qwikifiers/qwik-ui/releases/tag/qwik-ui%400.4.3",
+          "name": "qwik-ui@0.4.3"
+        },
+        {
+          "url": "https://github.com/qwikifiers/qwik-ui/releases/tag/%40qwik-ui/styled%400.4.1",
+          "name": "@qwik-ui/styled@0.4.1"
+        },
+        {
+          "url": "https://github.com/qwikifiers/qwik-ui/releases/tag/qwik-ui%400.4.2",
+          "name": "qwik-ui@0.4.2"
+        },
+        {
+          "url": "https://github.com/qwikifiers/qwik-ui/releases/tag/%40qwik-ui/themes%400.1.3",
+          "name": "@qwik-ui/themes@0.1.3"
+        }
+      ],
       "topics": [
-        "a11y",
         "headless",
         "qwik",
         "qwik-city",
         "qwik-framework",
-        "styled",
+        "ui",
+        "a11y",
         "tailwind",
-        "ui"
+        "styled"
       ],
       "addedAt": "2026-07-15T22:28:32.282438+00:00"
     },
@@ -428,44 +506,72 @@
       "name": "papanasi",
       "fullName": "CKGrafico/papanasi",
       "category": "UI Kits",
-      "stars": 603,
+      "stars": 602,
       "author": "CKGrafico",
-      "avatar": "https://avatars.githubusercontent.com/u/2048511?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/2048511?u=e36937916be03dbe1a3cb898827ed106d4cdcf27&v=4",
       "desc": "🥯Papanasi is the Frontend UI library to use cross Frameworks. A set of components to use in Angular, Preact, Qwik, React, Solid, Svelte, Vue and Web Components",
       "demo": "http://papanasi.js.org",
       "repoUrl": "https://github.com/CKGrafico/papanasi",
-      "long1": "🥯Papanasi is the Frontend UI library to use cross Frameworks. A set of components to use in Angular, Preact, Qwik, React, Solid, Svelte, Vue and Web Components. Maintained by CKGrafico on GitHub, where it has earned 603 stars from the community.",
-      "long2": "It's actively developed around angular, bem, components, and is a solid reference for anyone building with these tools.",
+      "long1": "🥯Papanasi is the Frontend UI library to use cross Frameworks. A set of components to use in Angular, Preact, Qwik, React, Solid, Svelte, Vue and Web Components. Maintained by CKGrafico on GitHub, where it has earned 602 stars from the community.",
+      "long2": "It's actively developed around angular, components, mitosis, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
         "Angular",
-        "Bem",
         "Components",
-        "Mitosis"
+        "Mitosis",
+        "React"
       ],
       "updated": "5 months ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 58,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 23,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 19,
+          "name": "CSS"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/CKGrafico/papanasi/releases/tag/v1.1.0",
+          "name": "v1.1.0"
+        },
+        {
+          "url": "https://github.com/CKGrafico/papanasi/releases/tag/v1.0.0",
+          "name": "v1.0.0"
+        },
+        {
+          "url": "https://github.com/CKGrafico/papanasi/releases/tag/v1.0.0-rc.18",
+          "name": "v1.0.0-rc.18"
+        },
+        {
+          "url": "https://github.com/CKGrafico/papanasi/releases/tag/v1.0.0-rc.8",
+          "name": "v1.0.0-rc.8"
+        },
+        {
+          "url": "https://github.com/CKGrafico/papanasi/releases/tag/v1.0.0-rc.1",
+          "name": "v1.0.0-rc.1"
+        }
+      ],
       "topics": [
         "angular",
-        "bem",
         "components",
         "mitosis",
-        "preact",
-        "qwik",
         "react",
-        "solidjs",
-        "svelte",
         "universal",
         "vue",
-        "w3c"
+        "solidjs",
+        "bem",
+        "svelte",
+        "w3c",
+        "qwik",
+        "preact"
       ],
       "addedAt": "2026-07-15T22:28:32.282438+00:00"
     },
@@ -474,44 +580,72 @@
       "name": "zoom-image",
       "fullName": "willnguyen1312/zoom-image",
       "category": "DevTools",
-      "stars": 354,
+      "stars": 356,
       "author": "willnguyen1312",
-      "avatar": "https://avatars.githubusercontent.com/u/17794897?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/17794897?u=fab8ed00e30a9fb3cdb5bcc7a9b36564fbfb83cb&v=4",
       "desc": "A little yet powerful framework agnostic headless library to zoom images on the web",
       "demo": "https://willnguyen1312.github.io/zoom-image/",
       "repoUrl": "https://github.com/willnguyen1312/zoom-image",
-      "long1": "A little yet powerful framework agnostic headless library to zoom images on the web. Maintained by willnguyen1312 on GitHub, where it has earned 354 stars from the community.",
-      "long2": "It's actively developed around frameworks, headless, nextjs, and is a solid reference for anyone building with these tools.",
+      "long1": "A little yet powerful framework agnostic headless library to zoom images on the web. Maintained by willnguyen1312 on GitHub, where it has earned 356 stars from the community.",
+      "long2": "It's actively developed around zoom, frameworks, preact, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
+        "Zoom",
         "Frameworks",
-        "Headless",
-        "Next.js",
-        "Preact"
+        "Preact",
+        "React"
       ],
-      "updated": "2 months ago",
+      "updated": "3 months ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 89,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 11,
+          "name": "Vue"
+        },
+        {
+          "pct": 0,
+          "name": "CSS"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/willnguyen1312/zoom-image/releases/tag/%40zoom-image/angular%400.4.0",
+          "name": "@zoom-image/angular@0.4.0"
+        },
+        {
+          "url": "https://github.com/willnguyen1312/zoom-image/releases/tag/%40zoom-image/react%400.6.0",
+          "name": "@zoom-image/react@0.6.0"
+        },
+        {
+          "url": "https://github.com/willnguyen1312/zoom-image/releases/tag/%40zoom-image/vue%400.2.32",
+          "name": "@zoom-image/vue@0.2.32"
+        },
+        {
+          "url": "https://github.com/willnguyen1312/zoom-image/releases/tag/%40zoom-image/react%400.5.10",
+          "name": "@zoom-image/react@0.5.10"
+        },
+        {
+          "url": "https://github.com/willnguyen1312/zoom-image/releases/tag/%40zoom-image/core%400.42.0",
+          "name": "@zoom-image/core@0.42.0"
+        }
+      ],
       "topics": [
+        "zoom",
         "frameworks",
+        "preact",
+        "react",
+        "svelte",
+        "vue",
         "headless",
         "nextjs",
-        "preact",
         "qwik",
-        "react",
         "remix",
         "solidjs",
-        "svelte",
-        "vanilla-js",
-        "vue",
-        "zoom"
+        "vanilla-js"
       ],
       "addedAt": "2026-07-15T22:28:32.282438+00:00"
     },
@@ -520,47 +654,72 @@
       "name": "discord-components",
       "fullName": "skyra-project/discord-components",
       "category": "Docs",
-      "stars": 343,
+      "stars": 345,
       "author": "skyra-project",
       "avatar": "https://avatars.githubusercontent.com/u/59655788?v=4",
       "desc": "Discord Webcomponents for real looking messages on the web",
       "demo": "https://discord-components.js.org",
       "repoUrl": "https://github.com/skyra-project/discord-components",
-      "long1": "Discord Webcomponents for real looking messages on the web. Maintained by skyra-project on GitHub, where it has earned 343 stars from the community.",
-      "long2": "It's actively developed around angular, astro, discord, and is a solid reference for anyone building with these tools.",
+      "long1": "Discord Webcomponents for real looking messages on the web. Maintained by skyra-project on GitHub, where it has earned 345 stars from the community.",
+      "long2": "It's actively developed around discord, vue, react, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Angular",
-        "Astro",
         "Discord",
-        "Docusaurus"
+        "Vue",
+        "React",
+        "Angular"
       ],
-      "updated": "2 months ago",
+      "updated": "4 days ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 82,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 14,
+          "name": "HTML"
+        },
+        {
+          "pct": 4,
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/skyra-project/discord-components/releases/tag/v4.0.2",
+          "name": "v4.0.2"
+        },
+        {
+          "url": "https://github.com/skyra-project/discord-components/releases/tag/v4.0.1",
+          "name": "v4.0.1"
+        },
+        {
+          "url": "https://github.com/skyra-project/discord-components/releases/tag/v4.0.0",
+          "name": "v4.0.0"
+        },
+        {
+          "url": "https://github.com/skyra-project/discord-components/releases/tag/v4.0.0-alpha.39",
+          "name": "v4.0.0-alpha.39"
+        },
+        {
+          "url": "https://github.com/skyra-project/discord-components/releases/tag/v4.0.0-alpha.38",
+          "name": "v4.0.0-alpha.38"
+        }
+      ],
       "topics": [
+        "discord",
+        "vue",
+        "react",
         "angular",
         "astro",
-        "discord",
         "docusaurus",
         "lit",
         "nextjs",
         "nuxt",
         "qwik",
-        "react",
         "solid",
-        "svelte",
-        "sveltekit",
-        "vitepres",
-        "vue",
-        "webcomponents"
+        "svelte"
       ],
       "addedAt": "2026-07-15T22:28:32.282438+00:00"
     },
@@ -569,45 +728,72 @@
       "name": "astro",
       "fullName": "QwikDev/astro",
       "category": "DevTools",
-      "stars": 288,
+      "stars": 289,
       "author": "QwikDev",
       "avatar": "https://avatars.githubusercontent.com/u/138123704?v=4",
       "desc": "Qwik + Astro",
       "demo": "https://qwik.dev/astro",
       "repoUrl": "https://github.com/QwikDev/astro",
-      "long1": "Qwik + Astro. Maintained by QwikDev on GitHub, where it has earned 288 stars from the community.",
-      "long2": "It's actively developed around astro, astro-integration, astro-template, and is a solid reference for anyone building with these tools.",
+      "long1": "Qwik + Astro. Maintained by QwikDev on GitHub, where it has earned 289 stars from the community.",
+      "long2": "It's actively developed around astro, astro-integration, cli-app, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
         "Astro",
         "Astro Integration",
-        "Astro Template",
-        "Cli App"
+        "Cli App",
+        "Qwik"
       ],
-      "updated": "2 months ago",
+      "updated": "3 months ago",
       "license": "—",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 76,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 12,
+          "name": "Astro"
+        },
+        {
+          "pct": 12,
+          "name": "MDX"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/QwikDev/astro/releases/tag/1.0",
+          "name": "1.0"
+        },
+        {
+          "url": "https://github.com/QwikDev/astro/releases/tag/%40qwikdev/astro%400.8.3",
+          "name": "@qwikdev/astro@0.8.3"
+        },
+        {
+          "url": "https://github.com/QwikDev/astro/releases/tag/%40qwikdev/create-astro%400.2.3",
+          "name": "@qwikdev/create-astro@0.2.3"
+        },
+        {
+          "url": "https://github.com/QwikDev/astro/releases/tag/%40qwikdev/astro%400.8.2",
+          "name": "@qwikdev/astro@0.8.2"
+        },
+        {
+          "url": "https://github.com/QwikDev/astro/releases/tag/%40qwikdev/astro%400.8.1",
+          "name": "@qwikdev/astro@0.8.1"
+        }
+      ],
       "topics": [
         "astro",
         "astro-integration",
-        "astro-template",
         "cli-app",
-        "create-qwikdev-astro",
-        "javascript",
-        "jsx",
         "qwik",
+        "create-qwikdev-astro",
         "qwikdev",
         "qwikdev-astro",
         "tsx",
         "typescript",
-        "withastro"
+        "astro-template",
+        "javascript",
+        "jsx"
       ],
       "addedAt": "2026-07-15T22:28:32.282438+00:00"
     },
@@ -615,7 +801,7 @@
       "slug": "qwind",
       "name": "qwind",
       "fullName": "arthelokyo/qwind",
-      "category": "Templates",
+      "category": "DevTools",
       "stars": 282,
       "author": "arthelokyo",
       "avatar": "https://avatars.githubusercontent.com/u/106269169?v=4",
@@ -623,36 +809,44 @@
       "demo": "https://qwind.pages.dev",
       "repoUrl": "https://github.com/arthelokyo/qwind",
       "long1": "⭕️ Qwind: A template to make your website using Qwik + Tailwind CSS. Maintained by arthelokyo on GitHub, where it has earned 282 stars from the community.",
-      "long2": "It's actively developed around astrowind, javascript, landing-page, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around javascript, landing-page, qwik, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Astrowind",
         "Landing Page",
         "Qwik",
-        "Qwik City"
+        "Qwik City",
+        "Qwik Framework"
       ],
       "updated": "2 years ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 94,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 4,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 2,
+          "name": "CSS"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/arthelokyo/qwind/releases/tag/v0.1.0",
+          "name": "v0.1.0"
+        }
+      ],
       "topics": [
-        "astrowind",
         "javascript",
         "landing-page",
         "qwik",
         "qwik-city",
         "qwik-framework",
-        "qwik-starter",
-        "qwind",
         "static-site",
         "static-site-generator",
-        "tailnext",
         "tailwind",
         "tailwind-css-template",
         "tailwindcss",
@@ -680,13 +874,20 @@
         "Headless",
         "Qwik"
       ],
-      "updated": "7 months ago",
+      "updated": "8 months ago",
       "license": "—",
       "langs": [
         {
-          "name": "TypeScript",
           "pct": 100,
-          "size": 100
+          "name": "TypeScript"
+        },
+        {
+          "pct": 0,
+          "name": "Dockerfile"
+        },
+        {
+          "pct": 0,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
@@ -704,7 +905,7 @@
       "category": "DevTools",
       "stars": 145,
       "author": "robisim74",
-      "avatar": "https://avatars.githubusercontent.com/u/14012361?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/14012361?u=fc86f9d2892d2687a3cb7ffcbc174f672d90aec8&v=4",
       "desc": "Translate your Qwik apps into any language",
       "demo": "https://robisim74.gitbook.io/qwik-speak/",
       "repoUrl": "https://github.com/robisim74/qwik-speak",
@@ -716,16 +917,44 @@
         "Qwik",
         "Translate"
       ],
-      "updated": "7 months ago",
+      "updated": "8 months ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 98,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 1,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 1,
+          "name": "CSS"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/robisim74/qwik-speak/releases/tag/v0.24.0",
+          "name": "v0.24.0"
+        },
+        {
+          "url": "https://github.com/robisim74/qwik-speak/releases/tag/v0.23.2",
+          "name": "v0.23.2"
+        },
+        {
+          "url": "https://github.com/robisim74/qwik-speak/releases/tag/v0.23.1",
+          "name": "v0.23.1"
+        },
+        {
+          "url": "https://github.com/robisim74/qwik-speak/releases/tag/v0.23.0",
+          "name": "v0.23.0"
+        },
+        {
+          "url": "https://github.com/robisim74/qwik-speak/releases/tag/v0.22.1",
+          "name": "v0.22.1"
+        }
+      ],
       "topics": [
         "i18n",
         "qwik",
@@ -751,15 +980,22 @@
         "Angular",
         "Apollo Client",
         "Astro",
-        "Chakra Ui"
+        "Next.js"
       ],
       "updated": "2 years ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 87,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 10,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 3,
+          "name": "Astro"
         }
       ],
       "versions": [],
@@ -767,23 +1003,15 @@
         "angular",
         "apollo-client",
         "astro",
-        "chakra-ui",
-        "jest",
         "nextjs",
         "ngrx",
-        "nuxt",
-        "pinia",
-        "qwik",
-        "react-query",
         "reactjs",
         "rxjs",
-        "starter-kit",
-        "storybook",
         "styled-components",
         "tailwindcss",
-        "tanstack-query",
-        "typescript",
-        "vue"
+        "vue",
+        "chakra-ui",
+        "nuxt"
       ],
       "addedAt": "2026-07-15T22:28:32.282438+00:00"
     },
@@ -799,7 +1027,7 @@
       "demo": null,
       "repoUrl": "https://github.com/wmertens/styled-vanilla-extract",
       "long1": "A 0-runtime styled-components-like API for Qwik using vanilla-extract. Maintained by wmertens on GitHub, where it has earned 134 stars from the community.",
-      "long2": "It's actively developed around css-in-js, hacktoberfest, qwik, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around hacktoberfest, css-in-js, qwik, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
         "Css In Js",
@@ -811,15 +1039,39 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 93,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 7,
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/wmertens/styled-vanilla-extract/releases/tag/v1.0.1",
+          "name": "v1.0.1"
+        },
+        {
+          "url": "https://github.com/wmertens/styled-vanilla-extract/releases/tag/v1.0.0",
+          "name": "v1.0.0"
+        },
+        {
+          "url": "https://github.com/wmertens/styled-vanilla-extract/releases/tag/v0.5.13",
+          "name": "v0.5.13"
+        },
+        {
+          "url": "https://github.com/wmertens/styled-vanilla-extract/releases/tag/v0.5.12",
+          "name": "v0.5.12"
+        },
+        {
+          "url": "https://github.com/wmertens/styled-vanilla-extract/releases/tag/v0.5.11",
+          "name": "v0.5.11"
+        }
+      ],
       "topics": [
-        "css-in-js",
         "hacktoberfest",
+        "css-in-js",
         "qwik",
         "styled-components",
         "vanilla-extract"
@@ -850,9 +1102,12 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 94,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 6,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
@@ -880,35 +1135,42 @@
       "demo": "https://framework.dev",
       "repoUrl": "https://github.com/thisdot/framework.dev",
       "long1": "A set of websites that act as collections of popular libraries and learning content for the web ecosystem. Maintained by thisdot on GitHub, where it has earned 103 stars from the community.",
-      "long2": "It's actively developed around angular, astro, graphql, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around angular, astro, react, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
         "Angular",
         "Astro",
-        "GraphQL",
-        "Node"
+        "React",
+        "Vanilla Extract"
       ],
       "updated": "2 years ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 98,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 1,
+          "name": "Astro"
+        },
+        {
+          "pct": 1,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
       "topics": [
         "angular",
         "astro",
+        "react",
+        "vanilla-extract",
+        "vue",
         "graphql",
         "nodejs",
         "qwik",
-        "react",
         "solidjs",
-        "svelte",
-        "vanilla-extract",
-        "vue"
+        "svelte"
       ],
       "addedAt": "2026-07-15T22:28:32.282438+00:00"
     },
@@ -936,9 +1198,16 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 82,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 10,
+          "name": "PHP"
+        },
+        {
+          "pct": 8,
+          "name": "Blade"
         }
       ],
       "versions": [],
@@ -954,12 +1223,7 @@
         "python",
         "quasar-framework",
         "qwik",
-        "remix",
-        "rust",
-        "sveltekit",
-        "tauri",
-        "turso",
-        "typescript"
+        "remix"
       ],
       "addedAt": "2026-07-15T22:28:32.282438+00:00"
     },
@@ -985,12 +1249,40 @@
       "license": "—",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 94,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 4,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 2,
+          "name": "CSS"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/qwikest/icons/releases/tag/v0.0.13",
+          "name": "v0.0.13"
+        },
+        {
+          "url": "https://github.com/qwikest/icons/releases/tag/v0.0.12",
+          "name": "v0.0.12"
+        },
+        {
+          "url": "https://github.com/qwikest/icons/releases/tag/v0.0.11",
+          "name": "v0.0.11"
+        },
+        {
+          "url": "https://github.com/qwikest/icons/releases/tag/v0.0.10",
+          "name": "v0.0.10"
+        },
+        {
+          "url": "https://github.com/qwikest/icons/releases/tag/v0.0.9",
+          "name": "v0.0.9"
+        }
+      ],
       "topics": [
         "icons",
         "qwik"
@@ -1004,7 +1296,7 @@
       "category": "DevTools",
       "stars": 87,
       "author": "Nitwel",
-      "avatar": "https://avatars.githubusercontent.com/u/22577866?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/22577866?u=8702ba85479a4c5f33d7348bc7159d4a97889eb9&v=4",
       "desc": "JavaScript Signals for Godot!",
       "demo": null,
       "repoUrl": "https://github.com/Nitwel/Rdot",
@@ -1021,9 +1313,8 @@
       "license": "Apache-2.0",
       "langs": [
         {
-          "name": "GDScript",
           "pct": 100,
-          "size": 100
+          "name": "GDScript"
         }
       ],
       "versions": [],
@@ -1048,29 +1339,36 @@
       "demo": null,
       "repoUrl": "https://github.com/x-ploration-of-mars/x-stack",
       "long1": "The cross-platform serverless bleeding-edge stack that scales. Maintained by x-ploration-of-mars on GitHub, where it has earned 84 stars from the community.",
-      "long2": "It's actively developed around authjs, cloudflare, ga4, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around hacktoberbest, authjs, cloudflare, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
+        "Hacktoberbest",
         "Authjs",
         "Cloudflare",
-        "Ga4",
-        "Hacktoberbest"
+        "Ga4"
       ],
-      "updated": "2 years ago",
+      "updated": "3 years ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 88,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 10,
+          "name": "MDX"
+        },
+        {
+          "pct": 2,
+          "name": "CSS"
         }
       ],
       "versions": [],
       "topics": [
+        "hacktoberbest",
         "authjs",
         "cloudflare",
         "ga4",
-        "hacktoberbest",
         "neon",
         "netlify",
         "planetscale",
@@ -1078,8 +1376,7 @@
         "qwik",
         "qwik-city",
         "turso",
-        "umami",
-        "vercel"
+        "umami"
       ],
       "addedAt": "2026-07-15T22:28:32.282438+00:00"
     },
@@ -1090,39 +1387,46 @@
       "category": "APIs",
       "stars": 81,
       "author": "wmalarski",
-      "avatar": "https://avatars.githubusercontent.com/u/17483221?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/17483221?u=328067d05f6eba1a9dd2dc6fbb334ba4c535e890&v=4",
       "desc": "Learning Qwik and Qwik City",
       "demo": null,
       "repoUrl": "https://github.com/wmalarski/qwik-trpc-supabase",
       "long1": "Learning Qwik and Qwik City. Maintained by wmalarski on GitHub, where it has earned 81 stars from the community.",
-      "long2": "It's actively developed around daisyui, prisma, qwik, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around prisma, qwik, supabase, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Daisyui",
         "Prisma",
         "Qwik",
-        "Qwik City"
+        "Supabase",
+        "Trpc"
       ],
       "updated": "3 years ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 96,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 4,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 0,
+          "name": "CSS"
         }
       ],
       "versions": [],
       "topics": [
-        "daisyui",
         "prisma",
         "qwik",
-        "qwik-city",
         "supabase",
-        "supabase-js",
-        "tailwindcss",
         "trpc",
-        "typescript"
+        "typescript",
+        "qwik-city",
+        "daisyui",
+        "supabase-js",
+        "tailwindcss"
       ],
       "addedAt": "2026-07-15T22:28:32.282438+00:00"
     },
@@ -1133,65 +1437,63 @@
       "category": "DevTools",
       "stars": 78,
       "author": "LuggaPugga",
-      "avatar": "https://avatars.githubusercontent.com/u/45566784?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/45566784?u=590c739d01bf407a4122e261a21ddc24b6bd873b&v=4",
       "desc": "Framework-agnostic wrappers for a bunch of captcha providers",
       "demo": "https://better-captcha.dev",
       "repoUrl": "https://github.com/LuggaPugga/better-captcha",
       "long1": "Framework-agnostic wrappers for a bunch of captcha providers. Maintained by LuggaPugga on GitHub, where it has earned 78 stars from the community.",
-      "long2": "It's actively developed around captcha, framework-agnostic, qwik, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around captcha, react, solidjs, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
         "Captcha",
-        "Framework Agnostic",
-        "Qwik",
-        "React"
+        "React",
+        "Solidjs",
+        "Framework Agnostic"
       ],
-      "updated": "1 week ago",
+      "updated": "today",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 61.778,
-          "size": 398250
+          "pct": 69,
+          "name": "TypeScript"
         },
         {
-          "name": "MDX",
-          "pct": 26.139,
-          "size": 168507
+          "pct": 26,
+          "name": "MDX"
         },
         {
-          "name": "Svelte",
-          "pct": 5.082,
-          "size": 32763
-        },
-        {
-          "name": "Vue",
-          "pct": 4.664,
-          "size": 30067
-        },
-        {
-          "name": "CSS",
-          "pct": 1.944,
-          "size": 12534
-        },
-        {
-          "name": "HTML",
-          "pct": 0.345,
-          "size": 2225
-        },
-        {
-          "name": "JavaScript",
-          "pct": 0.047,
-          "size": 300
+          "pct": 5,
+          "name": "Svelte"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/LuggaPugga/better-captcha/releases/tag/%40better-captcha/qwik%400.7.0",
+          "name": "@better-captcha/qwik@0.7.0"
+        },
+        {
+          "url": "https://github.com/LuggaPugga/better-captcha/releases/tag/%40better-captcha/lit%400.7.0",
+          "name": "@better-captcha/lit@0.7.0"
+        },
+        {
+          "url": "https://github.com/LuggaPugga/better-captcha/releases/tag/%40better-captcha/solidjs%400.7.0",
+          "name": "@better-captcha/solidjs@0.7.0"
+        },
+        {
+          "url": "https://github.com/LuggaPugga/better-captcha/releases/tag/%40better-captcha/preact%400.7.0",
+          "name": "@better-captcha/preact@0.7.0"
+        },
+        {
+          "url": "https://github.com/LuggaPugga/better-captcha/releases/tag/%40better-captcha/vue%400.7.0",
+          "name": "@better-captcha/vue@0.7.0"
+        }
+      ],
       "topics": [
         "captcha",
-        "framework-agnostic",
-        "qwik",
         "react",
         "solidjs",
+        "framework-agnostic",
+        "qwik",
         "svelte",
         "turnstile",
         "vue"
@@ -1210,35 +1512,63 @@
       "demo": "https://flowbite-qwik.com",
       "repoUrl": "https://github.com/qwikerx/flowbite-qwik",
       "long1": "Official Qwik components built for Flowbite and Tailwind CSS. Maintained by qwikerx on GitHub, where it has earned 69 stars from the community.",
-      "long2": "It's actively developed around component-library, components, components-qwik, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around component-library, components, flowbite, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
         "Component Library",
         "Components",
-        "Components Qwik",
-        "Flowbite"
+        "Flowbite",
+        "Qwik"
       ],
       "updated": "1 year ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 98,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 1,
+          "name": "CSS"
+        },
+        {
+          "pct": 1,
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/qwikerx/flowbite-qwik/releases/tag/flowbite-qwik-cli%400.1.2",
+          "name": "flowbite-qwik-cli@0.1.2"
+        },
+        {
+          "url": "https://github.com/qwikerx/flowbite-qwik/releases/tag/flowbite-qwik%401.1.2",
+          "name": "flowbite-qwik@1.1.2"
+        },
+        {
+          "url": "https://github.com/qwikerx/flowbite-qwik/releases/tag/flowbite-qwik%401.1.1",
+          "name": "flowbite-qwik@1.1.1"
+        },
+        {
+          "url": "https://github.com/qwikerx/flowbite-qwik/releases/tag/flowbite-qwik%401.1.0",
+          "name": "flowbite-qwik@1.1.0"
+        },
+        {
+          "url": "https://github.com/qwikerx/flowbite-qwik/releases/tag/flowbite-qwik%401.0.4",
+          "name": "flowbite-qwik@1.0.4"
+        }
+      ],
       "topics": [
         "component-library",
         "components",
-        "components-qwik",
         "flowbite",
         "qwik",
-        "qwik-city",
-        "qwik-framework",
         "qwikjs",
         "tailwindcss",
         "typescript",
+        "components-qwik",
+        "qwik-city",
+        "qwik-framework",
         "ui"
       ],
       "addedAt": "2026-07-15T22:28:32.282438+00:00"
@@ -1250,7 +1580,7 @@
       "category": "DevTools",
       "stars": 56,
       "author": "wmalarski",
-      "avatar": "https://avatars.githubusercontent.com/u/17483221?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/17483221?u=328067d05f6eba1a9dd2dc6fbb334ba4c535e890&v=4",
       "desc": "Qwik City Movies - Learning Qwik City Framework",
       "demo": "https://qwik-movies.pages.dev/",
       "repoUrl": "https://github.com/wmalarski/qwik-city-movies",
@@ -1267,9 +1597,16 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 98,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 2,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 0,
+          "name": "CSS"
         }
       ],
       "versions": [],
@@ -1291,37 +1628,57 @@
       "category": "DevTools",
       "stars": 55,
       "author": "flamrdevs",
-      "avatar": "https://avatars.githubusercontent.com/u/71713464?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/71713464?u=5c38b16c78896ea1999c418183e6f560fdf0df79&v=4",
       "desc": "Class variant utility library",
       "demo": null,
       "repoUrl": "https://github.com/flamrdevs/klass",
       "long1": "Class variant utility library. Maintained by flamrdevs on GitHub, where it has earned 55 stars from the community.",
-      "long2": "It's actively developed around mastercss, preact, qwik, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around react, solid, tailwindcss, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Mastercss",
-        "Preact",
-        "Qwik",
-        "React"
+        "React",
+        "Solid",
+        "Tailwind CSS",
+        "Unocss"
       ],
-      "updated": "11 months ago",
+      "updated": "12 months ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
           "pct": 100,
-          "size": 100
+          "name": "TypeScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/flamrdevs/klass/releases/tag/%40klass/solid%403.4.8",
+          "name": "@klass/solid@3.4.8"
+        },
+        {
+          "url": "https://github.com/flamrdevs/klass/releases/tag/%40klass/react%403.4.8",
+          "name": "@klass/react@3.4.8"
+        },
+        {
+          "url": "https://github.com/flamrdevs/klass/releases/tag/%40klass/preact%403.4.8",
+          "name": "@klass/preact@3.4.8"
+        },
+        {
+          "url": "https://github.com/flamrdevs/klass/releases/tag/%40klass/core%403.4.8",
+          "name": "@klass/core@3.4.8"
+        },
+        {
+          "url": "https://github.com/flamrdevs/klass/releases/tag/%40klass/solid%403.4.7",
+          "name": "@klass/solid@3.4.7"
+        }
+      ],
       "topics": [
-        "mastercss",
-        "preact",
-        "qwik",
         "react",
         "solid",
         "tailwindcss",
         "unocss",
+        "mastercss",
+        "preact",
+        "qwik",
         "vue"
       ],
       "addedAt": "2026-07-15T22:28:32.282438+00:00"
@@ -1333,7 +1690,7 @@
       "category": "UI Kits",
       "stars": 51,
       "author": "voluntadpear",
-      "avatar": "https://avatars.githubusercontent.com/u/10501948?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/10501948?u=7781a1d52e8ec58a5c39c4f78e4bf426d0575842&v=4",
       "desc": "Light-weight custom Qwik hook for adding smooth CSS transitions to your Qwik components.",
       "demo": null,
       "repoUrl": "https://github.com/voluntadpear/qwik-transition",
@@ -1349,9 +1706,16 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 75,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 16,
+          "name": "CSS"
+        },
+        {
+          "pct": 9,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
@@ -1385,50 +1749,44 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 85,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 9,
+          "name": "Vue"
+        },
+        {
+          "pct": 6,
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/qwikifiers/qwik-storefront-ui/releases/tag/qwik-storefront-ui-0.0.8",
+          "name": "qwik-storefront-ui-0.0.8"
+        },
+        {
+          "url": "https://github.com/qwikifiers/qwik-storefront-ui/releases/tag/qwik-storefront-ui-0.0.7",
+          "name": "qwik-storefront-ui-0.0.7"
+        },
+        {
+          "url": "https://github.com/qwikifiers/qwik-storefront-ui/releases/tag/qwik-storefront-ui-0.0.6",
+          "name": "qwik-storefront-ui-0.0.6"
+        },
+        {
+          "url": "https://github.com/qwikifiers/qwik-storefront-ui/releases/tag/qwik-storefront-ui-0.0.5",
+          "name": "qwik-storefront-ui-0.0.5"
+        },
+        {
+          "url": "https://github.com/qwikifiers/qwik-storefront-ui/releases/tag/qwik-storefront-ui-0.0.4",
+          "name": "qwik-storefront-ui-0.0.4"
+        }
+      ],
       "topics": [
         "qwik",
         "storefront",
         "uikit"
-      ],
-      "addedAt": "2026-07-15T22:28:32.282438+00:00"
-    },
-    {
-      "slug": "shadcn-music-qwik",
-      "name": "shadcn-music-qwik",
-      "fullName": "FlatMapIO/shadcn-music-qwik",
-      "category": "DevTools",
-      "stars": 41,
-      "author": "FlatMapIO",
-      "avatar": "https://avatars.githubusercontent.com/u/1720349?v=4",
-      "desc": "The @shadcn/ui Music App version of qwik and unocss",
-      "demo": "https://shadcn-music-qwik.pages.dev/",
-      "repoUrl": "https://github.com/FlatMapIO/shadcn-music-qwik",
-      "long1": "The @shadcn/ui Music App version of qwik and unocss. Maintained by FlatMapIO on GitHub, where it has earned 41 stars from the community.",
-      "long2": "It's actively developed around qwik, radix-ui, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Qwik",
-        "Radix Ui"
-      ],
-      "updated": "3 years ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "qwik",
-        "radix-ui"
       ],
       "addedAt": "2026-07-15T22:28:32.282438+00:00"
     },
@@ -1444,27 +1802,75 @@
       "demo": null,
       "repoUrl": "https://github.com/kinsta/hello-world-qwik",
       "long1": "An example of how to set your Qwik application up to enable deployment at Kinsta. Maintained by kinsta on GitHub, where it has earned 41 stars from the community.",
-      "long2": "It's actively developed around kinsta-app-hosting, kinsta-static-site-hosting, qwik, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around kinsta-app-hosting, qwik, kinsta-static-site-hosting, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
         "Kinsta App Hosting",
-        "Kinsta Static Site Hosting",
-        "Qwik"
+        "Qwik",
+        "Kinsta Static Site Hosting"
       ],
       "updated": "3 years ago",
       "license": "—",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 72,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 24,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 4,
+          "name": "CSS"
         }
       ],
       "versions": [],
       "topics": [
         "kinsta-app-hosting",
-        "kinsta-static-site-hosting",
-        "qwik"
+        "qwik",
+        "kinsta-static-site-hosting"
+      ],
+      "addedAt": "2026-07-15T22:28:32.282438+00:00"
+    },
+    {
+      "slug": "shadcn-music-qwik",
+      "name": "shadcn-music-qwik",
+      "fullName": "FlatMapIO/shadcn-music-qwik",
+      "category": "DevTools",
+      "stars": 41,
+      "author": "FlatMapIO",
+      "avatar": "https://avatars.githubusercontent.com/u/1720349?u=c2717d11f8960987e30864044cf44054b894ea2c&v=4",
+      "desc": "The @shadcn/ui Music App version of qwik and unocss",
+      "demo": "https://shadcn-music-qwik.pages.dev/",
+      "repoUrl": "https://github.com/FlatMapIO/shadcn-music-qwik",
+      "long1": "The @shadcn/ui Music App version of qwik and unocss. Maintained by FlatMapIO on GitHub, where it has earned 41 stars from the community.",
+      "long2": "It's actively developed around qwik, radix-ui, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Qwik",
+        "Radix Ui"
+      ],
+      "updated": "3 years ago",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 92,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 7,
+          "name": "CSS"
+        },
+        {
+          "pct": 1,
+          "name": "JavaScript"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "qwik",
+        "radix-ui"
       ],
       "addedAt": "2026-07-15T22:28:32.282438+00:00"
     },
@@ -1473,13 +1879,13 @@
       "name": "qwik-sonner",
       "fullName": "diecodev/qwik-sonner",
       "category": "UI Kits",
-      "stars": 40,
+      "stars": 39,
       "author": "diecodev",
-      "avatar": "https://avatars.githubusercontent.com/u/51871681?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/51871681?u=811d23e54611fb33949d744185277376404200a7&v=4",
       "desc": "An opinionated toast component for qwik.",
       "demo": "https://qwik-sonner.dieco.dev/",
       "repoUrl": "https://github.com/diecodev/qwik-sonner",
-      "long1": "An opinionated toast component for qwik. Maintained by diecodev on GitHub, where it has earned 40 stars from the community.",
+      "long1": "An opinionated toast component for qwik. Maintained by diecodev on GitHub, where it has earned 39 stars from the community.",
       "long2": "It's actively developed around notifications, qwik, qwik-city, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
@@ -1488,26 +1894,44 @@
         "Qwik City",
         "Qwik Component"
       ],
-      "updated": "1 month ago",
+      "updated": "5 days ago",
       "license": "—",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 72.763,
-          "size": 87607
+          "pct": 73,
+          "name": "TypeScript"
         },
         {
-          "name": "CSS",
-          "pct": 23.941,
-          "size": 28825
+          "pct": 24,
+          "name": "CSS"
         },
         {
-          "name": "JavaScript",
-          "pct": 3.296,
-          "size": 3968
+          "pct": 3,
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/diecodev/qwik-sonner/releases/tag/v2.0.0-beta.1",
+          "name": "v2.0.0-beta.1"
+        },
+        {
+          "url": "https://github.com/diecodev/qwik-sonner/releases/tag/v1.0.3",
+          "name": "v1.0.3"
+        },
+        {
+          "url": "https://github.com/diecodev/qwik-sonner/releases/tag/v1.0.2",
+          "name": "v1.0.2"
+        },
+        {
+          "url": "https://github.com/diecodev/qwik-sonner/releases/tag/v1.0.1",
+          "name": "v1.0.1"
+        },
+        {
+          "url": "https://github.com/diecodev/qwik-sonner/releases/tag/v1.0.0",
+          "name": "v1.0.0"
+        }
+      ],
       "topics": [
         "notifications",
         "qwik",
@@ -1526,7 +1950,7 @@
       "category": "DevTools",
       "stars": 37,
       "author": "literalpie",
-      "avatar": "https://avatars.githubusercontent.com/u/20398475?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/20398475?u=7562c8167d527dfd2bcb088aa6c83f483b34dbd6&v=4",
       "desc": "Server paginated, virtual scrolling list with Zero JS executed until you scroll",
       "demo": "https://qwik-virtual-scroll.netlify.app",
       "repoUrl": "https://github.com/literalpie/qwik-virtual-scroll",
@@ -1543,9 +1967,16 @@
       "license": "—",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 80,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 14,
+          "name": "CSS"
+        },
+        {
+          "pct": 6,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
@@ -1564,7 +1995,7 @@
       "category": "DevTools",
       "stars": 30,
       "author": "BernardoQuina",
-      "avatar": "https://avatars.githubusercontent.com/u/66028036?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/66028036?u=fcf0675c79e00b5810e6d56e9ec3c82526f88bc5&v=4",
       "desc": "A twitter clone built with Qwik and drizzle ORM, inspired by  chirp (github.com/t3dotgg/chirp)",
       "demo": "https://queeker.vercel.app",
       "repoUrl": "https://github.com/BernardoQuina/queeker",
@@ -1579,9 +2010,16 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 96,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 3,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 1,
+          "name": "CSS"
         }
       ],
       "versions": [],
@@ -1598,7 +2036,7 @@
       "category": "DevTools",
       "stars": 28,
       "author": "harshmangalam",
-      "avatar": "https://avatars.githubusercontent.com/u/57381638?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/57381638?u=b3d6af1ff15d1240676e1bb7e590939ed007cbc4&v=4",
       "desc": "Social media web app like Twitter build with Qwikcity",
       "demo": null,
       "repoUrl": "https://github.com/harshmangalam/qwik-x",
@@ -1609,15 +2047,22 @@
         "Authentication",
         "Daisyui",
         "Drizzle Orm",
-        "Hacktoberfest10"
+        "PostgreSQL"
       ],
       "updated": "2 years ago",
       "license": "—",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 85,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 14,
+          "name": "Python"
+        },
+        {
+          "pct": 1,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
@@ -1625,19 +2070,15 @@
         "authentication",
         "daisyui",
         "drizzle-orm",
-        "hacktoberfest",
-        "hacktoberfest10",
-        "hacktoberfest2023",
         "javascript",
-        "plotly",
-        "postgres",
         "postgresql",
-        "python",
         "qwik",
         "qwikcity",
-        "streamlit",
         "tailwindcss",
-        "typescript"
+        "typescript",
+        "postgres",
+        "hacktoberfest",
+        "hacktoberfest10"
       ],
       "addedAt": "2026-07-15T22:28:32.282438+00:00"
     },
@@ -1646,41 +2087,48 @@
       "name": "js-framework-comparison",
       "fullName": "MarioVieilledent/js-framework-comparison",
       "category": "DevTools",
-      "stars": 26,
+      "stars": 27,
       "author": "MarioVieilledent",
-      "avatar": "https://avatars.githubusercontent.com/u/46054351?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/46054351?u=3c6923de16703022a7d1b0aace2c8b1e59e272cc&v=4",
       "desc": "Comparison of JS Frameworks in terms of size of built js file",
       "demo": null,
       "repoUrl": "https://github.com/MarioVieilledent/js-framework-comparison",
-      "long1": "Comparison of JS Frameworks in terms of size of built js file. Maintained by MarioVieilledent on GitHub, where it has earned 26 stars from the community.",
-      "long2": "It's actively developed around angular, benchmark, bundle-size, and is a solid reference for anyone building with these tools.",
+      "long1": "Comparison of JS Frameworks in terms of size of built js file. Maintained by MarioVieilledent on GitHub, where it has earned 27 stars from the community.",
+      "long2": "It's actively developed around benchmark, bundle-size, framework, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Angular",
         "Benchmark",
         "Bundle Size",
-        "Framework"
+        "Framework",
+        "Js"
       ],
       "updated": "3 years ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 76,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 15,
+          "name": "CSS"
+        },
+        {
+          "pct": 9,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
       "topics": [
-        "angular",
         "benchmark",
         "bundle-size",
         "framework",
         "js",
+        "size-optimization",
+        "angular",
         "preact",
         "qwik",
         "react",
-        "size-optimization",
         "solidjs",
         "svelte",
         "vite"
@@ -1694,37 +2142,44 @@
       "category": "DevTools",
       "stars": 26,
       "author": "wmalarski",
-      "avatar": "https://avatars.githubusercontent.com/u/17483221?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/17483221?u=328067d05f6eba1a9dd2dc6fbb334ba4c535e890&v=4",
       "desc": "Next-Auth.js + Qwik example integration",
       "demo": null,
       "repoUrl": "https://github.com/wmalarski/qwik-authjs-example",
       "long1": "Next-Auth.js + Qwik example integration. Maintained by wmalarski on GitHub, where it has earned 26 stars from the community.",
-      "long2": "It's actively developed around authjs, next-auth, qwik, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around next-auth, qwik, qwik-city, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Authjs",
         "Next Auth",
         "Qwik",
-        "Qwik City"
+        "Qwik City",
+        "Vite"
       ],
       "updated": "3 years ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 89,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 7,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 4,
+          "name": "CSS"
         }
       ],
       "versions": [],
       "topics": [
-        "authjs",
         "next-auth",
         "qwik",
         "qwik-city",
-        "typescript",
         "vite",
-        "zod"
+        "zod",
+        "authjs",
+        "typescript"
       ],
       "addedAt": "2026-07-15T22:28:32.282438+00:00"
     },
@@ -1735,7 +2190,7 @@
       "category": "UI Kits",
       "stars": 25,
       "author": "harshmangalam",
-      "avatar": "https://avatars.githubusercontent.com/u/57381638?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/57381638?u=b3d6af1ff15d1240676e1bb7e590939ed007cbc4&v=4",
       "desc": "Simple Qwik Component That Makes Titles More Readable",
       "demo": null,
       "repoUrl": "https://github.com/harshmangalam/qwik-wrap-balancer",
@@ -1750,9 +2205,12 @@
       "license": "—",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 80,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 20,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
@@ -1769,7 +2227,7 @@
       "category": "Templates",
       "stars": 24,
       "author": "RajaRakoto",
-      "avatar": "https://avatars.githubusercontent.com/u/50679389?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/50679389?u=96e29807228684abb3640b6d28a414688e7bbb07&v=4",
       "desc": "Minimalistic fullstack boilerplate for developing Qwik + QwikCity applications in TypeScript, optimized for blazing-fast performance using Bun & Vite 🚀",
       "demo": null,
       "repoUrl": "https://github.com/RajaRakoto/qwik-boilerplate",
@@ -1780,15 +2238,22 @@
         "Boilerplate",
         "Bun",
         "Bunjs",
-        "Fullstack"
+        "Minimalist"
       ],
-      "updated": "1 year ago",
+      "updated": "yesterday",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 61,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 23,
+          "name": "SCSS"
+        },
+        {
+          "pct": 16,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
@@ -1796,7 +2261,6 @@
         "boilerplate",
         "bun",
         "bunjs",
-        "fullstack",
         "minimalist",
         "qwik",
         "qwik-city",
@@ -1816,34 +2280,46 @@
       "category": "DevTools",
       "stars": 23,
       "author": "gilf",
-      "avatar": "https://avatars.githubusercontent.com/u/1590253?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/1590253?u=cfd7374c88c37bf20b8cf20db59670463716d375&v=4",
       "desc": "A small library exposes a d3 container that you can use in order to incorporate d3 generated visualization inside your qwik project. It also includes some pre made diagrams.",
       "demo": null,
       "repoUrl": "https://github.com/gilf/qwik-d3",
       "long1": "A small library exposes a d3 container that you can use in order to incorporate d3 generated visualization inside your qwik project. It also includes some pre made diagrams. Maintained by gilf on GitHub, where it has earned 23 stars from the community.",
-      "long2": "It's actively developed around charts, d3, data-visualization, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around d3, qwik, charts, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Charts",
         "D3",
-        "Data Visualization",
-        "Qwik"
+        "Qwik",
+        "Charts",
+        "Data Visualization"
       ],
       "updated": "3 years ago",
       "license": "—",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 97,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 3,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 0,
+          "name": "CSS"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/gilf/qwik-d3/releases/tag/v0.0.20",
+          "name": "v0.0.20"
+        }
+      ],
       "topics": [
-        "charts",
         "d3",
-        "data-visualization",
         "qwik",
+        "charts",
+        "data-visualization",
         "svg",
         "vizualisation"
       ],
@@ -1856,46 +2332,70 @@
       "category": "AI & ML",
       "stars": 20,
       "author": "vanvuongngo",
-      "avatar": "https://avatars.githubusercontent.com/u/20791239?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/20791239?u=e0b01b99b71da35d1e163d29d1fbf5d4abaf8757&v=4",
       "desc": "ClaraN — Privacy-first, fully local AI workspace with Ollama LLM chat, tool calling, agent builder, Stable Diffusion, and embedded n8n-style automation. Backend in Rust. Just your stack, your machines.",
       "demo": null,
       "repoUrl": "https://github.com/vanvuongngo/ClaraN",
       "long1": "ClaraN — Privacy-first, fully local AI workspace with Ollama LLM chat, tool calling, agent builder, Stable Diffusion, and embedded n8n-style automation. Backend in Rust. Just your stack, your machines. Maintained by vanvuongngo on GitHub, where it has earned 20 stars from the community.",
-      "long2": "It's actively developed around ai, android, clara, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around ai, llm, ollama, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Kotlin",
         "Ai",
-        "Android",
-        "Clara",
-        "Daisyui"
+        "Llm",
+        "Ollama",
+        "Clara"
       ],
       "updated": "8 months ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "Kotlin",
-          "pct": 100,
-          "size": 100
+          "pct": 50,
+          "name": "Kotlin"
+        },
+        {
+          "pct": 40,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 10,
+          "name": "Rust"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/vanvuongngo/ClaraN/releases/tag/app-v0.2.8",
+          "name": "app-v0.2.8"
+        },
+        {
+          "url": "https://github.com/vanvuongngo/ClaraN/releases/tag/app-v0.2.7",
+          "name": "app-v0.2.7"
+        },
+        {
+          "url": "https://github.com/vanvuongngo/ClaraN/releases/tag/app-v0.2.6",
+          "name": "app-v0.2.6"
+        },
+        {
+          "url": "https://github.com/vanvuongngo/ClaraN/releases/tag/app-v0.2.5",
+          "name": "app-v0.2.5"
+        },
+        {
+          "url": "https://github.com/vanvuongngo/ClaraN/releases/tag/app-v0.2.4",
+          "name": "app-v0.2.4"
+        }
+      ],
       "topics": [
         "ai",
-        "android",
-        "clara",
-        "daisyui",
-        "desktop",
-        "ios",
-        "linux",
         "llm",
-        "macos",
-        "mobile",
         "ollama",
-        "qwik",
-        "tailwindcss",
-        "tauri",
+        "clara",
+        "android",
+        "desktop",
+        "mobile",
         "ui",
-        "windows"
+        "windows",
+        "qwik",
+        "tauri",
+        "daisyui"
       ],
       "addedAt": "2026-07-15T22:28:32.282438+00:00"
     }

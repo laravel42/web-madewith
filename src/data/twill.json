@@ -1,8 +1,8 @@
 {
   "slug": "twill",
-  "scrapedAt": "2026-07-22T09:29:07.600112+00:00",
+  "scrapedAt": "2026-08-05T04:38:16.099443+00:00",
   "source": "scrapy-github",
-  "totalRepos": 35,
+  "totalRepos": 40,
   "projects": [
     {
       "slug": "twill-metadata",
@@ -26,12 +26,36 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 86,
+          "name": "PHP"
+        },
+        {
+          "pct": 14,
+          "name": "Blade"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/cwsdigital/twill-metadata/releases/tag/v1.4.1",
+          "name": "v1.4.1"
+        },
+        {
+          "url": "https://github.com/cwsdigital/twill-metadata/releases/tag/v1.4.0",
+          "name": "v1.4.0"
+        },
+        {
+          "url": "https://github.com/cwsdigital/twill-metadata/releases/tag/v1.3.0",
+          "name": "v1.3.0"
+        },
+        {
+          "url": "https://github.com/cwsdigital/twill-metadata/releases/tag/v1.2.2",
+          "name": "v1.2.2"
+        },
+        {
+          "url": "https://github.com/cwsdigital/twill-metadata/releases/tag/v1.2.1",
+          "name": "v1.2.1"
+        }
+      ],
       "topics": [
         "laravel",
         "twill"
@@ -75,44 +99,6 @@
       "addedAt": "2026-07-15T22:28:32.902657+00:00"
     },
     {
-      "slug": "twill-graphql",
-      "name": "twill-graphql",
-      "fullName": "kallefrombosnia/twill-graphql",
-      "category": "APIs",
-      "stars": 8,
-      "author": "kallefrombosnia",
-      "avatar": "https://avatars.githubusercontent.com/u/30219259?v=4",
-      "desc": "twill-graphql provides GraphQL wrapper for Twill CMS",
-      "demo": null,
-      "repoUrl": "https://github.com/kallefrombosnia/twill-graphql",
-      "long1": "twill-graphql provides GraphQL wrapper for Twill CMS. Maintained by kallefrombosnia on GitHub, where it has earned 8 stars from the community.",
-      "long2": "It's actively developed around api, graphql, laravel, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Api",
-        "GraphQL",
-        "Laravel",
-        "Php"
-      ],
-      "updated": "3 years ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "api",
-        "graphql",
-        "laravel",
-        "php",
-        "twill"
-      ],
-      "addedAt": "2026-07-15T22:28:32.902657+00:00"
-    },
-    {
       "slug": "twill-redirects",
       "name": "twill-redirects",
       "fullName": "Sevendays-Digital/twill-redirects",
@@ -143,6 +129,48 @@
       "topics": [
         "twill",
         "twill-package"
+      ],
+      "addedAt": "2026-07-15T22:28:32.902657+00:00"
+    },
+    {
+      "slug": "twill-graphql",
+      "name": "twill-graphql",
+      "fullName": "kallefrombosnia/twill-graphql",
+      "category": "APIs",
+      "stars": 8,
+      "author": "kallefrombosnia",
+      "avatar": "https://avatars.githubusercontent.com/u/30219259?u=a4a859591ee7ad11d24a82bc8c7fe609f37f3303&v=4",
+      "desc": "twill-graphql provides GraphQL wrapper for Twill CMS",
+      "demo": null,
+      "repoUrl": "https://github.com/kallefrombosnia/twill-graphql",
+      "long1": "twill-graphql provides GraphQL wrapper for Twill CMS. Maintained by kallefrombosnia on GitHub, where it has earned 8 stars from the community.",
+      "long2": "It's actively developed around graphql, laravel, twill, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "GraphQL",
+        "Laravel",
+        "Twill",
+        "Api"
+      ],
+      "updated": "3 years ago",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "PHP"
+        },
+        {
+          "pct": 0,
+          "name": "Blade"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "graphql",
+        "laravel",
+        "twill",
+        "api",
+        "php"
       ],
       "addedAt": "2026-07-15T22:28:32.902657+00:00"
     },
@@ -198,29 +226,36 @@
       "demo": null,
       "repoUrl": "https://github.com/area17/made-with-twill-tutorials",
       "long1": "Source code for Made with Twill tutorials on https://twill.io/tutorials. Maintained by area17 on GitHub, where it has earned 7 stars from the community.",
-      "long2": "It's actively developed around cms, laravel, tutorial, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around twill, laravel, tutorial, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Cms",
+        "Twill",
         "Laravel",
         "Tutorial",
-        "Twill"
+        "Cms"
       ],
       "updated": "3 years ago",
       "license": "—",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 81,
+          "name": "PHP"
+        },
+        {
+          "pct": 18,
+          "name": "Blade"
+        },
+        {
+          "pct": 1,
+          "name": "Shell"
         }
       ],
       "versions": [],
       "topics": [
-        "cms",
+        "twill",
         "laravel",
         "tutorial",
-        "twill"
+        "cms"
       ],
       "addedAt": "2026-07-15T22:28:32.902657+00:00"
     },
@@ -263,7 +298,7 @@
       "category": "DevTools",
       "stars": 2,
       "author": "luislavena",
-      "avatar": "https://avatars.githubusercontent.com/u/4182?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/4182?u=baab980311df526d41631de7362837955f474076&v=4",
       "desc": "Debian-based PHP container image for production usage, tailored for Laravel Vapor & Twill CMS",
       "demo": null,
       "repoUrl": "https://github.com/luislavena/greek-steam",
@@ -276,130 +311,16 @@
       "license": "Apache-2.0",
       "langs": [
         {
-          "name": "Dockerfile",
           "pct": 94,
-          "size": 94
+          "name": "Dockerfile"
         },
         {
-          "name": "Makefile",
           "pct": 3,
-          "size": 3
+          "name": "Makefile"
         },
         {
-          "name": "PHP",
           "pct": 3,
-          "size": 3
-        }
-      ],
-      "versions": [],
-      "topics": [],
-      "addedAt": "2026-07-15T22:28:32.902657+00:00"
-    },
-    {
-      "slug": "blog",
-      "name": "blog",
-      "fullName": "katelynnbarlowe/blog",
-      "category": "Blogs",
-      "stars": 1,
-      "author": "katelynnbarlowe",
-      "avatar": "https://avatars.githubusercontent.com/u/31631674?v=4",
-      "desc": "This will be a place for me to experiment with Twill and other fun things while also keeping a basic blog.",
-      "demo": null,
-      "repoUrl": "https://github.com/katelynnbarlowe/blog",
-      "long1": "This will be a place for me to experiment with Twill and other fun things while also keeping a basic blog. Maintained by katelynnbarlowe on GitHub, where it has earned 1 stars from the community.",
-      "long2": "It's actively developed around headless-cms, laravel, twill, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "JavaScript",
-        "Headless Cms",
-        "Laravel",
-        "Twill"
-      ],
-      "updated": "4 years ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "JavaScript",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "headless-cms",
-        "laravel",
-        "twill"
-      ],
-      "addedAt": "2026-07-15T22:28:32.902657+00:00"
-    },
-    {
-      "slug": "personal-homepage",
-      "name": "personal-homepage",
-      "fullName": "hackur/personal-homepage",
-      "category": "Blogs",
-      "stars": 1,
-      "author": "hackur",
-      "avatar": "https://avatars.githubusercontent.com/u/161835?v=4",
-      "desc": "Personal Homepage Web Application",
-      "demo": "http://jeremysarda.com/credits",
-      "repoUrl": "https://github.com/hackur/personal-homepage",
-      "long1": "Personal Homepage Web Application. Maintained by hackur on GitHub, where it has earned 1 stars from the community.",
-      "long2": "It's actively developed around cms, cms-framework, content-management-system, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Cms",
-        "Cms Framework",
-        "Content Management System",
-        "Laravel"
-      ],
-      "updated": "4 years ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "cms",
-        "cms-framework",
-        "content-management-system",
-        "laravel",
-        "personal-homepage",
-        "twill",
-        "vue"
-      ],
-      "addedAt": "2026-07-15T22:28:32.902657+00:00"
-    },
-    {
-      "slug": "twill-laravel-experiments",
-      "name": "Twill-Laravel-Experiments",
-      "fullName": "MichaelAdamBerry/Twill-Laravel-Experiments",
-      "category": "DevTools",
-      "stars": 1,
-      "author": "MichaelAdamBerry",
-      "avatar": "https://avatars.githubusercontent.com/u/29025685?v=4",
-      "desc": "New to Laravel + trying to get my feet wet with Twill CMS.",
-      "demo": null,
-      "repoUrl": "https://github.com/MichaelAdamBerry/Twill-Laravel-Experiments",
-      "long1": "New to Laravel + trying to get my feet wet with Twill CMS. Maintained by MichaelAdamBerry on GitHub, where it has earned 1 stars from the community.",
-      "long2": "It's actively developed and a solid reference for anyone building on this stack.",
-      "stack": [
-        "PHP"
-      ],
-      "updated": "4 years ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 97,
-          "size": 97
-        },
-        {
-          "name": "HTML",
-          "pct": 3,
-          "size": 3
+          "name": "PHP"
         }
       ],
       "versions": [],
@@ -443,39 +364,71 @@
       "addedAt": "2026-07-15T22:28:32.902657+00:00"
     },
     {
-      "slug": "twill-croppa",
-      "name": "twill-croppa",
-      "fullName": "C2H6-383/twill-croppa",
-      "category": "DevTools",
+      "slug": "blog",
+      "name": "blog",
+      "fullName": "katelynnbarlowe/blog",
+      "category": "Blogs",
       "stars": 1,
-      "author": "C2H6-383",
-      "avatar": "https://avatars.githubusercontent.com/u/49997018?v=4",
-      "desc": "Use Croppa as media rendering service in Twill applications",
+      "author": "katelynnbarlowe",
+      "avatar": "https://avatars.githubusercontent.com/u/31631674?v=4",
+      "desc": "This will be a place for me to experiment with Twill and other fun things while also keeping a basic blog.",
       "demo": null,
-      "repoUrl": "https://github.com/C2H6-383/twill-croppa",
-      "long1": "Use Croppa as media rendering service in Twill applications. Maintained by C2H6-383 on GitHub, where it has earned 1 stars from the community.",
-      "long2": "It's actively developed around croppa, laravel-framework, twill, and is a solid reference for anyone building with these tools.",
+      "repoUrl": "https://github.com/katelynnbarlowe/blog",
+      "long1": "This will be a place for me to experiment with Twill and other fun things while also keeping a basic blog. Maintained by katelynnbarlowe on GitHub, where it has earned 1 stars from the community.",
+      "long2": "It's actively developed around headless-cms, laravel, twill, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "PHP",
-        "Croppa",
-        "Laravel Framework",
+        "JavaScript",
+        "Headless Cms",
+        "Laravel",
         "Twill"
       ],
-      "updated": "9 months ago",
-      "license": "MIT",
+      "updated": "4 years ago",
+      "license": "—",
       "langs": [
         {
-          "name": "PHP",
+          "name": "JavaScript",
           "pct": 100,
           "size": 100
         }
       ],
       "versions": [],
       "topics": [
-        "croppa",
-        "laravel-framework",
+        "headless-cms",
+        "laravel",
         "twill"
       ],
+      "addedAt": "2026-07-15T22:28:32.902657+00:00"
+    },
+    {
+      "slug": "twill-laravel-experiments",
+      "name": "Twill-Laravel-Experiments",
+      "fullName": "MichaelAdamBerry/Twill-Laravel-Experiments",
+      "category": "DevTools",
+      "stars": 1,
+      "author": "MichaelAdamBerry",
+      "avatar": "https://avatars.githubusercontent.com/u/29025685?u=28f1653eb3379b45000dc6b5e492c9809f0d429a&v=4",
+      "desc": "New to Laravel + trying to get my feet wet with Twill CMS.",
+      "demo": null,
+      "repoUrl": "https://github.com/MichaelAdamBerry/Twill-Laravel-Experiments",
+      "long1": "New to Laravel + trying to get my feet wet with Twill CMS. Maintained by MichaelAdamBerry on GitHub, where it has earned 1 stars from the community.",
+      "long2": "It's actively developed and a solid reference for anyone building on this stack.",
+      "stack": [
+        "PHP"
+      ],
+      "updated": "4 years ago",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 97,
+          "name": "PHP"
+        },
+        {
+          "pct": 3,
+          "name": "HTML"
+        }
+      ],
+      "versions": [],
+      "topics": [],
       "addedAt": "2026-07-15T22:28:32.902657+00:00"
     },
     {
@@ -490,16 +443,85 @@
       "demo": "https://www.ctdd.org.uk",
       "repoUrl": "https://github.com/stuartmcgill/ctdd",
       "long1": "Twill CMS website for Christians Together in Didcot and District. Maintained by stuartmcgill on GitHub, where it has earned 1 stars from the community.",
-      "long2": "It's actively developed around church, cms, didcot, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around church, cms, laravel, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
         "Church",
         "Cms",
-        "Didcot",
-        "Laravel"
+        "Laravel",
+        "Oxfordshire"
       ],
-      "updated": "1 month ago",
+      "updated": "2 months ago",
       "license": "—",
+      "langs": [
+        {
+          "pct": 82,
+          "name": "PHP"
+        },
+        {
+          "pct": 17,
+          "name": "Blade"
+        },
+        {
+          "pct": 1,
+          "name": "CSS"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/stuartmcgill/ctdd/releases/tag/v2.2.4",
+          "name": "v2.2.4"
+        },
+        {
+          "url": "https://github.com/stuartmcgill/ctdd/releases/tag/v2.2.0",
+          "name": "v2.2.0"
+        },
+        {
+          "url": "https://github.com/stuartmcgill/ctdd/releases/tag/v2.1.0",
+          "name": "v2.1.0"
+        },
+        {
+          "url": "https://github.com/stuartmcgill/ctdd/releases/tag/v2.0.1",
+          "name": "v2.0.1"
+        },
+        {
+          "url": "https://github.com/stuartmcgill/ctdd/releases/tag/v2.0.0",
+          "name": "v2.0.0"
+        }
+      ],
+      "topics": [
+        "church",
+        "cms",
+        "laravel",
+        "oxfordshire",
+        "php",
+        "twill",
+        "didcot"
+      ],
+      "addedAt": "2026-07-15T22:28:32.902657+00:00"
+    },
+    {
+      "slug": "laravel-twill-docker-template",
+      "name": "laravel-twill-docker-template",
+      "fullName": "dgpatterson/laravel-twill-docker-template",
+      "category": "Templates",
+      "stars": 1,
+      "author": "dgpatterson",
+      "avatar": "https://avatars.githubusercontent.com/u/24204094?v=4",
+      "desc": "A Laravel + Twill starter with Vite and Docker for fast local development",
+      "demo": null,
+      "repoUrl": "https://github.com/dgpatterson/laravel-twill-docker-template",
+      "long1": "A Laravel + Twill starter with Vite and Docker for fast local development. Maintained by dgpatterson on GitHub, where it has earned 1 stars from the community.",
+      "long2": "It's actively developed around docker, laravel, starter, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Docker",
+        "Laravel",
+        "Starter",
+        "Template"
+      ],
+      "updated": "6 months ago",
+      "license": "MIT",
       "langs": [
         {
           "name": "PHP",
@@ -509,13 +531,12 @@
       ],
       "versions": [],
       "topics": [
-        "church",
-        "cms",
-        "didcot",
+        "docker",
         "laravel",
-        "oxfordshire",
-        "php",
-        "twill"
+        "starter",
+        "template",
+        "twill",
+        "vite"
       ],
       "addedAt": "2026-07-15T22:28:32.902657+00:00"
     },
@@ -559,26 +580,73 @@
       "addedAt": "2026-07-15T22:28:32.902657+00:00"
     },
     {
-      "slug": "laravel-twill-docker-template",
-      "name": "laravel-twill-docker-template",
-      "fullName": "dgpatterson/laravel-twill-docker-template",
-      "category": "Templates",
+      "slug": "personal-homepage",
+      "name": "personal-homepage",
+      "fullName": "hackur/personal-homepage",
+      "category": "Blogs",
       "stars": 1,
-      "author": "dgpatterson",
-      "avatar": "https://avatars.githubusercontent.com/u/24204094?v=4",
-      "desc": "A Laravel + Twill starter with Vite and Docker for fast local development",
-      "demo": null,
-      "repoUrl": "https://github.com/dgpatterson/laravel-twill-docker-template",
-      "long1": "A Laravel + Twill starter with Vite and Docker for fast local development. Maintained by dgpatterson on GitHub, where it has earned 1 stars from the community.",
-      "long2": "It's actively developed around docker, laravel, starter, and is a solid reference for anyone building with these tools.",
+      "author": "hackur",
+      "avatar": "https://avatars.githubusercontent.com/u/161835?u=078e7a4811185ac3168844407e8282e3958dedac&v=4",
+      "desc": "Personal Homepage Web Application",
+      "demo": "http://jeremysarda.com/credits",
+      "repoUrl": "https://github.com/hackur/personal-homepage",
+      "long1": "Personal Homepage Web Application. Maintained by hackur on GitHub, where it has earned 1 stars from the community.",
+      "long2": "It's actively developed around personal-homepage, twill, laravel, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Docker",
+        "Personal Homepage",
+        "Twill",
         "Laravel",
-        "Starter",
-        "Template"
+        "Vue"
       ],
-      "updated": "5 months ago",
+      "updated": "4 years ago",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 62,
+          "name": "PHP"
+        },
+        {
+          "pct": 34,
+          "name": "Vue"
+        },
+        {
+          "pct": 4,
+          "name": "HTML"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "personal-homepage",
+        "twill",
+        "laravel",
+        "vue",
+        "cms",
+        "content-management-system",
+        "cms-framework"
+      ],
+      "addedAt": "2026-07-15T22:28:32.902657+00:00"
+    },
+    {
+      "slug": "twill-croppa",
+      "name": "twill-croppa",
+      "fullName": "C2H6-383/twill-croppa",
+      "category": "DevTools",
+      "stars": 1,
+      "author": "C2H6-383",
+      "avatar": "https://avatars.githubusercontent.com/u/49997018?v=4",
+      "desc": "Use Croppa as media rendering service in Twill applications",
+      "demo": null,
+      "repoUrl": "https://github.com/C2H6-383/twill-croppa",
+      "long1": "Use Croppa as media rendering service in Twill applications. Maintained by C2H6-383 on GitHub, where it has earned 1 stars from the community.",
+      "long2": "It's actively developed around croppa, laravel-framework, twill, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Croppa",
+        "Laravel Framework",
+        "Twill"
+      ],
+      "updated": "9 months ago",
       "license": "MIT",
       "langs": [
         {
@@ -589,109 +657,8 @@
       ],
       "versions": [],
       "topics": [
-        "docker",
-        "laravel",
-        "starter",
-        "template",
-        "twill",
-        "vite"
-      ],
-      "addedAt": "2026-07-15T22:28:32.902657+00:00"
-    },
-    {
-      "slug": "twill-capsule-pages",
-      "name": "twill-capsule-pages",
-      "fullName": "cwsdigital/twill-capsule-pages",
-      "category": "DevTools",
-      "stars": 0,
-      "author": "cwsdigital",
-      "avatar": "https://avatars.githubusercontent.com/u/7569716?v=4",
-      "desc": "Pages Capsule for Twilll CMS to provide a base for managing site pages",
-      "demo": null,
-      "repoUrl": "https://github.com/cwsdigital/twill-capsule-pages",
-      "long1": "Pages Capsule for Twilll CMS to provide a base for managing site pages. Maintained by cwsdigital on GitHub, where it has earned 0 stars from the community.",
-      "long2": "It's actively developed around twill, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Twill"
-      ],
-      "updated": "5 years ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "twill"
-      ],
-      "addedAt": "2026-07-15T22:28:32.902657+00:00"
-    },
-    {
-      "slug": "xelif-export-ghost",
-      "name": "xelif-export-ghost",
-      "fullName": "FelixOnline/xelif-export-ghost",
-      "category": "Blogs",
-      "stars": 0,
-      "author": "FelixOnline",
-      "avatar": "https://avatars.githubusercontent.com/u/1172421?v=4",
-      "desc": "Exporter from custom Twill CMS to Ghost",
-      "demo": null,
-      "repoUrl": "https://github.com/FelixOnline/xelif-export-ghost",
-      "long1": "Exporter from custom Twill CMS to Ghost. Maintained by FelixOnline on GitHub, where it has earned 0 stars from the community.",
-      "long2": "It's actively developed around ghost-cms, twill, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Ghost Cms",
-        "Twill"
-      ],
-      "updated": "2 years ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "ghost-cms",
-        "twill"
-      ],
-      "addedAt": "2026-07-15T22:28:32.902657+00:00"
-    },
-    {
-      "slug": "twill-capsule-homepages",
-      "name": "twill-capsule-homepages",
-      "fullName": "cwsdigital/twill-capsule-homepages",
-      "category": "Blogs",
-      "stars": 0,
-      "author": "cwsdigital",
-      "avatar": "https://avatars.githubusercontent.com/u/7569716?v=4",
-      "desc": "Homepage Capsule for Twill CMS to provide a base for site homepages",
-      "demo": null,
-      "repoUrl": "https://github.com/cwsdigital/twill-capsule-homepages",
-      "long1": "Homepage Capsule for Twill CMS to provide a base for site homepages. Maintained by cwsdigital on GitHub, where it has earned 0 stars from the community.",
-      "long2": "It's actively developed around twill, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Twill"
-      ],
-      "updated": "5 years ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
+        "croppa",
+        "laravel-framework",
         "twill"
       ],
       "addedAt": "2026-07-15T22:28:32.902657+00:00"
@@ -703,7 +670,7 @@
       "category": "DevTools",
       "stars": 0,
       "author": "analia-mok",
-      "avatar": "https://avatars.githubusercontent.com/u/17514083?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/17514083?u=093cd734721d7e20625c07af207f96b5900823b3&v=4",
       "desc": "[Incomplete] Brain Fuel Site implemented using Laravel 5.8 and Twill CMS",
       "demo": null,
       "repoUrl": "https://github.com/analia-mok/brain-fuel-twill",
@@ -718,9 +685,16 @@
       "license": "—",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 96,
+          "name": "PHP"
+        },
+        {
+          "pct": 4,
+          "name": "HTML"
+        },
+        {
+          "pct": 0,
+          "name": "Vue"
         }
       ],
       "versions": [],
@@ -728,155 +702,6 @@
         "laravel",
         "twill"
       ],
-      "addedAt": "2026-07-15T22:28:32.902657+00:00"
-    },
-    {
-      "slug": "monopoly",
-      "name": "Monopoly",
-      "fullName": "Eason-Jin/Monopoly",
-      "category": "DevTools",
-      "stars": 0,
-      "author": "Eason-Jin",
-      "avatar": "https://avatars.githubusercontent.com/u/113957740?v=4",
-      "desc": "Monopoly game made with Laravel / Twill CMS",
-      "demo": null,
-      "repoUrl": "https://github.com/Eason-Jin/Monopoly",
-      "long1": "Monopoly game made with Laravel / Twill CMS. Maintained by Eason-Jin on GitHub, where it has earned 0 stars from the community.",
-      "long2": "It's actively developed and a solid reference for anyone building on this stack.",
-      "stack": [
-        "PHP"
-      ],
-      "updated": "2 years ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 58,
-          "size": 58
-        },
-        {
-          "name": "Blade",
-          "pct": 42,
-          "size": 42
-        },
-        {
-          "name": "JavaScript",
-          "pct": 0,
-          "size": 0
-        }
-      ],
-      "versions": [],
-      "topics": [],
-      "addedAt": "2026-07-15T22:28:32.902657+00:00"
-    },
-    {
-      "slug": "twillcmstest",
-      "name": "twillCMSTest",
-      "fullName": "b-wilkins/twillCMSTest",
-      "category": "DevTools",
-      "stars": 0,
-      "author": "b-wilkins",
-      "avatar": "https://avatars.githubusercontent.com/u/65542557?v=4",
-      "desc": "Laravel Twill CMS Testing",
-      "demo": null,
-      "repoUrl": "https://github.com/b-wilkins/twillCMSTest",
-      "long1": "Laravel Twill CMS Testing. Maintained by b-wilkins on GitHub, where it has earned 0 stars from the community.",
-      "long2": "It's actively developed and a solid reference for anyone building on this stack.",
-      "stack": [
-        "PHP"
-      ],
-      "updated": "5 years ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 67,
-          "size": 67
-        },
-        {
-          "name": "Blade",
-          "pct": 32,
-          "size": 32
-        },
-        {
-          "name": "Shell",
-          "pct": 1,
-          "size": 1
-        }
-      ],
-      "versions": [],
-      "topics": [],
-      "addedAt": "2026-07-15T22:28:32.902657+00:00"
-    },
-    {
-      "slug": "twill-blog-ryze",
-      "name": "twill-blog-ryze",
-      "fullName": "sjardim/twill-blog-ryze",
-      "category": "Blogs",
-      "stars": 0,
-      "author": "sjardim",
-      "avatar": "https://avatars.githubusercontent.com/u/125217?v=4",
-      "desc": "A simple blog made with Twill CMS / Laravel 12",
-      "demo": null,
-      "repoUrl": "https://github.com/sjardim/twill-blog-ryze",
-      "long1": "A simple blog made with Twill CMS / Laravel 12. Maintained by sjardim on GitHub, where it has earned 0 stars from the community.",
-      "long2": "It's actively developed and a solid reference for anyone building on this stack.",
-      "stack": [
-        "Blade"
-      ],
-      "updated": "6 months ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "Blade",
-          "pct": 53,
-          "size": 53
-        },
-        {
-          "name": "PHP",
-          "pct": 47,
-          "size": 47
-        },
-        {
-          "name": "JavaScript",
-          "pct": 0,
-          "size": 0
-        }
-      ],
-      "versions": [],
-      "topics": [],
-      "addedAt": "2026-07-15T22:28:32.902657+00:00"
-    },
-    {
-      "slug": "basic-twill-cms",
-      "name": "basic_twill_cms",
-      "fullName": "mcylinder/basic_twill_cms",
-      "category": "DevTools",
-      "stars": 0,
-      "author": "mcylinder",
-      "avatar": "https://avatars.githubusercontent.com/u/118254?v=4",
-      "desc": "A simple proof of cocept CMS using Twill & Laravel.",
-      "demo": null,
-      "repoUrl": "https://github.com/mcylinder/basic_twill_cms",
-      "long1": "A simple proof of cocept CMS using Twill & Laravel. Maintained by mcylinder on GitHub, where it has earned 0 stars from the community.",
-      "long2": "It's actively developed and a solid reference for anyone building on this stack.",
-      "stack": [],
-      "updated": "6 years ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "JavaScript",
-          "pct": 71.429,
-          "size": 20
-        },
-        {
-          "name": "Other",
-          "pct": 28.571,
-          "size": 8
-        }
-      ],
-      "versions": [],
-      "topics": [],
       "addedAt": "2026-07-15T22:28:32.902657+00:00"
     },
     {
@@ -985,13 +810,49 @@
       "addedAt": "2026-07-15T22:28:32.902657+00:00"
     },
     {
+      "slug": "twill-blog-ryze",
+      "name": "twill-blog-ryze",
+      "fullName": "sjardim/twill-blog-ryze",
+      "category": "Blogs",
+      "stars": 0,
+      "author": "sjardim",
+      "avatar": "https://avatars.githubusercontent.com/u/125217?u=7c137c7902a37de1f39aa763e539d61db5573272&v=4",
+      "desc": "A simple blog made with Twill CMS / Laravel 12",
+      "demo": null,
+      "repoUrl": "https://github.com/sjardim/twill-blog-ryze",
+      "long1": "A simple blog made with Twill CMS / Laravel 12. Maintained by sjardim on GitHub, where it has earned 0 stars from the community.",
+      "long2": "It's actively developed and a solid reference for anyone building on this stack.",
+      "stack": [
+        "Blade"
+      ],
+      "updated": "6 months ago",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 53,
+          "name": "Blade"
+        },
+        {
+          "pct": 47,
+          "name": "PHP"
+        },
+        {
+          "pct": 0,
+          "name": "JavaScript"
+        }
+      ],
+      "versions": [],
+      "topics": [],
+      "addedAt": "2026-07-15T22:28:32.902657+00:00"
+    },
+    {
       "slug": "twilltranslationhandler",
       "name": "TwillTranslationHandler",
       "fullName": "BrunosCode/TwillTranslationHandler",
       "category": "DevTools",
       "stars": 0,
       "author": "BrunosCode",
-      "avatar": "https://avatars.githubusercontent.com/u/78606186?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/78606186?u=8d83d424e3f055c481ae7cd00e194d67e07b0b19&v=4",
       "desc": "A Twill CMS capsule for managing Laravel translations directly from the admin panel.",
       "demo": null,
       "repoUrl": "https://github.com/BrunosCode/TwillTranslationHandler",
@@ -1008,12 +869,36 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 87,
+          "name": "PHP"
+        },
+        {
+          "pct": 13,
+          "name": "Blade"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/BrunosCode/TwillTranslationHandler/releases/tag/v2.3.0",
+          "name": "v2.3.0"
+        },
+        {
+          "url": "https://github.com/BrunosCode/TwillTranslationHandler/releases/tag/v2.2.0",
+          "name": "v2.2.0"
+        },
+        {
+          "url": "https://github.com/BrunosCode/TwillTranslationHandler/releases/tag/v2.1.2",
+          "name": "v2.1.2"
+        },
+        {
+          "url": "https://github.com/BrunosCode/TwillTranslationHandler/releases/tag/v2.1.1",
+          "name": "v2.1.1"
+        },
+        {
+          "url": "https://github.com/BrunosCode/TwillTranslationHandler/releases/tag/v2.1.0",
+          "name": "v2.1.0"
+        }
+      ],
       "topics": [
         "laravel",
         "laravel-package",
@@ -1022,6 +907,112 @@
         "mcp-tools",
         "twill"
       ],
+      "addedAt": "2026-07-15T22:28:32.902657+00:00"
+    },
+    {
+      "slug": "twillcmstest",
+      "name": "twillCMSTest",
+      "fullName": "b-wilkins/twillCMSTest",
+      "category": "DevTools",
+      "stars": 0,
+      "author": "b-wilkins",
+      "avatar": "https://avatars.githubusercontent.com/u/65542557?v=4",
+      "desc": "Laravel Twill CMS Testing",
+      "demo": null,
+      "repoUrl": "https://github.com/b-wilkins/twillCMSTest",
+      "long1": "Laravel Twill CMS Testing. Maintained by b-wilkins on GitHub, where it has earned 0 stars from the community.",
+      "long2": "It's actively developed and a solid reference for anyone building on this stack.",
+      "stack": [
+        "PHP"
+      ],
+      "updated": "5 years ago",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 67,
+          "name": "PHP"
+        },
+        {
+          "pct": 32,
+          "name": "Blade"
+        },
+        {
+          "pct": 1,
+          "name": "Shell"
+        }
+      ],
+      "versions": [],
+      "topics": [],
+      "addedAt": "2026-07-15T22:28:32.902657+00:00"
+    },
+    {
+      "slug": "monopoly",
+      "name": "Monopoly",
+      "fullName": "Eason-Jin/Monopoly",
+      "category": "DevTools",
+      "stars": 0,
+      "author": "Eason-Jin",
+      "avatar": "https://avatars.githubusercontent.com/u/113957740?u=04f067eedea6259569472e022a189c058ee7b52a&v=4",
+      "desc": "Monopoly game made with Laravel / Twill CMS",
+      "demo": null,
+      "repoUrl": "https://github.com/Eason-Jin/Monopoly",
+      "long1": "Monopoly game made with Laravel / Twill CMS. Maintained by Eason-Jin on GitHub, where it has earned 0 stars from the community.",
+      "long2": "It's actively developed and a solid reference for anyone building on this stack.",
+      "stack": [
+        "PHP"
+      ],
+      "updated": "2 years ago",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 58,
+          "name": "PHP"
+        },
+        {
+          "pct": 42,
+          "name": "Blade"
+        },
+        {
+          "pct": 0,
+          "name": "JavaScript"
+        }
+      ],
+      "versions": [],
+      "topics": [],
+      "addedAt": "2026-07-15T22:28:32.902657+00:00"
+    },
+    {
+      "slug": "basic-twill-cms",
+      "name": "basic_twill_cms",
+      "fullName": "mcylinder/basic_twill_cms",
+      "category": "DevTools",
+      "stars": 0,
+      "author": "mcylinder",
+      "avatar": "https://avatars.githubusercontent.com/u/118254?v=4",
+      "desc": "A simple proof of cocept CMS using Twill & Laravel.",
+      "demo": null,
+      "repoUrl": "https://github.com/mcylinder/basic_twill_cms",
+      "long1": "A simple proof of cocept CMS using Twill & Laravel. Maintained by mcylinder on GitHub, where it has earned 0 stars from the community.",
+      "long2": "It's actively developed and a solid reference for anyone building on this stack.",
+      "stack": [],
+      "updated": "6 years ago",
+      "license": "—",
+      "langs": [
+        {
+          "name": "JavaScript",
+          "pct": 72
+        },
+        {
+          "name": "JavaScript",
+          "pct": 20
+        },
+        {
+          "name": "Other",
+          "pct": 8
+        }
+      ],
+      "versions": [],
+      "topics": [],
       "addedAt": "2026-07-15T22:28:32.902657+00:00"
     },
     {
@@ -1036,65 +1027,29 @@
       "demo": null,
       "repoUrl": "https://github.com/cwsdigital/twill-capsule-articles",
       "long1": "Articles Capsule for Twilll CMS to provide a base for site blogs/news. Maintained by cwsdigital on GitHub, where it has earned 0 stars from the community.",
-      "long2": "It's actively developed around laravel, twill, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around twill, laravel, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Laravel",
-        "Twill"
+        "Twill",
+        "Laravel"
       ],
       "updated": "5 years ago",
       "license": "—",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 85,
+          "name": "PHP"
+        },
+        {
+          "pct": 15,
+          "name": "Blade"
         }
       ],
       "versions": [],
       "topics": [
-        "laravel",
-        "twill"
+        "twill",
+        "laravel"
       ],
-      "addedAt": "2026-07-15T22:28:32.902657+00:00"
-    },
-    {
-      "slug": "laravel-with-twill-cms",
-      "name": "laravel_with_twill_cms",
-      "fullName": "xcelance/laravel_with_twill_cms",
-      "category": "DevTools",
-      "stars": 0,
-      "author": "xcelance",
-      "avatar": "https://avatars.githubusercontent.com/u/16537585?v=4",
-      "desc": "A project worth exploring.",
-      "demo": null,
-      "repoUrl": "https://github.com/xcelance/laravel_with_twill_cms",
-      "long1": "A project worth exploring. Maintained by xcelance on GitHub, where it has earned 0 stars from the community.",
-      "long2": "It's actively developed and a solid reference for anyone building on this stack.",
-      "stack": [
-        "PHP"
-      ],
-      "updated": "6 years ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 80,
-          "size": 80
-        },
-        {
-          "name": "Blade",
-          "pct": 20,
-          "size": 20
-        },
-        {
-          "name": "Vue",
-          "pct": 0,
-          "size": 0
-        }
-      ],
-      "versions": [],
-      "topics": [],
       "addedAt": "2026-07-15T22:28:32.902657+00:00"
     },
     {
@@ -1104,7 +1059,7 @@
       "category": "DevTools",
       "stars": 0,
       "author": "Michael-Njoroge",
-      "avatar": "https://avatars.githubusercontent.com/u/93155563?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/93155563?u=28d153f31556746b8cb129f5131cf1c51f9b8e14&v=4",
       "desc": "A project worth exploring.",
       "demo": null,
       "repoUrl": "https://github.com/Michael-Njoroge/Laravel-Twill-CMS",
@@ -1117,19 +1072,124 @@
       "license": "MIT",
       "langs": [
         {
-          "name": "PHP",
           "pct": 60,
-          "size": 60
+          "name": "PHP"
         },
         {
-          "name": "Blade",
           "pct": 40,
-          "size": 40
+          "name": "Blade"
         },
         {
-          "name": "JavaScript",
           "pct": 0,
-          "size": 0
+          "name": "JavaScript"
+        }
+      ],
+      "versions": [],
+      "topics": [],
+      "addedAt": "2026-07-15T22:28:32.902657+00:00"
+    },
+    {
+      "slug": "laravel-with-twill-cms",
+      "name": "laravel_with_twill_cms",
+      "fullName": "xcelance/laravel_with_twill_cms",
+      "category": "DevTools",
+      "stars": 0,
+      "author": "xcelance",
+      "avatar": "https://avatars.githubusercontent.com/u/16537585?u=14385bf35220e671494a5b3f8b07b342f05fdd4b&v=4",
+      "desc": "A project worth exploring.",
+      "demo": null,
+      "repoUrl": "https://github.com/xcelance/laravel_with_twill_cms",
+      "long1": "A project worth exploring. Maintained by xcelance on GitHub, where it has earned 0 stars from the community.",
+      "long2": "It's actively developed and a solid reference for anyone building on this stack.",
+      "stack": [
+        "PHP"
+      ],
+      "updated": "6 years ago",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 80,
+          "name": "PHP"
+        },
+        {
+          "pct": 20,
+          "name": "Blade"
+        },
+        {
+          "pct": 0,
+          "name": "Vue"
+        }
+      ],
+      "versions": [],
+      "topics": [],
+      "addedAt": "2026-07-15T22:28:32.902657+00:00"
+    },
+    {
+      "slug": "laravel-twill-cms-blank",
+      "name": "laravel-twill-cms-blank",
+      "fullName": "ejklock/laravel-twill-cms-blank",
+      "category": "DevTools",
+      "stars": 0,
+      "author": "ejklock",
+      "avatar": "https://avatars.githubusercontent.com/u/8179907?u=df5b48c92c8af7513cb5ced1f25740ce72ad7896&v=4",
+      "desc": "A project worth exploring.",
+      "demo": null,
+      "repoUrl": "https://github.com/ejklock/laravel-twill-cms-blank",
+      "long1": "A project worth exploring. Maintained by ejklock on GitHub, where it has earned 0 stars from the community.",
+      "long2": "It's actively developed and a solid reference for anyone building on this stack.",
+      "stack": [
+        "PHP"
+      ],
+      "updated": "2 years ago",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 86,
+          "name": "PHP"
+        },
+        {
+          "pct": 9,
+          "name": "Blade"
+        },
+        {
+          "pct": 5,
+          "name": "SCSS"
+        }
+      ],
+      "versions": [],
+      "topics": [],
+      "addedAt": "2026-07-15T22:28:32.902657+00:00"
+    },
+    {
+      "slug": "twill-cms-docker",
+      "name": "twill-cms-docker",
+      "fullName": "Tatsumi0000/twill-cms-docker",
+      "category": "DevTools",
+      "stars": 0,
+      "author": "Tatsumi0000",
+      "avatar": "https://avatars.githubusercontent.com/u/19218690?u=9431b17672722d562d960a63706e1fdd338e09e5&v=4",
+      "desc": "TwillをDocker（Laravel Sail）で動かすためのリポジトリ",
+      "demo": null,
+      "repoUrl": "https://github.com/Tatsumi0000/twill-cms-docker",
+      "long1": "TwillをDocker（Laravel Sail）で動かすためのリポジトリ. Maintained by Tatsumi0000 on GitHub, where it has earned 0 stars from the community.",
+      "long2": "It's actively developed and a solid reference for anyone building on this stack.",
+      "stack": [
+        "PHP"
+      ],
+      "updated": "3 years ago",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 73,
+          "name": "PHP"
+        },
+        {
+          "pct": 26,
+          "name": "Blade"
+        },
+        {
+          "pct": 1,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
@@ -1156,97 +1216,16 @@
       "license": "—",
       "langs": [
         {
-          "name": "PHP",
           "pct": 97,
-          "size": 97
+          "name": "PHP"
         },
         {
-          "name": "JavaScript",
           "pct": 2,
-          "size": 2
+          "name": "JavaScript"
         },
         {
-          "name": "Shell",
           "pct": 1,
-          "size": 1
-        }
-      ],
-      "versions": [],
-      "topics": [],
-      "addedAt": "2026-07-15T22:28:32.902657+00:00"
-    },
-    {
-      "slug": "twill-cms-docker",
-      "name": "twill-cms-docker",
-      "fullName": "Tatsumi0000/twill-cms-docker",
-      "category": "DevTools",
-      "stars": 0,
-      "author": "Tatsumi0000",
-      "avatar": "https://avatars.githubusercontent.com/u/19218690?v=4",
-      "desc": "TwillをDocker（Laravel Sail）で動かすためのリポジトリ",
-      "demo": null,
-      "repoUrl": "https://github.com/Tatsumi0000/twill-cms-docker",
-      "long1": "TwillをDocker（Laravel Sail）で動かすためのリポジトリ. Maintained by Tatsumi0000 on GitHub, where it has earned 0 stars from the community.",
-      "long2": "It's actively developed and a solid reference for anyone building on this stack.",
-      "stack": [
-        "PHP"
-      ],
-      "updated": "3 years ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 73,
-          "size": 73
-        },
-        {
-          "name": "Blade",
-          "pct": 26,
-          "size": 26
-        },
-        {
-          "name": "JavaScript",
-          "pct": 1,
-          "size": 1
-        }
-      ],
-      "versions": [],
-      "topics": [],
-      "addedAt": "2026-07-15T22:28:32.902657+00:00"
-    },
-    {
-      "slug": "laravel-twill-cms-blank",
-      "name": "laravel-twill-cms-blank",
-      "fullName": "ejklock/laravel-twill-cms-blank",
-      "category": "DevTools",
-      "stars": 0,
-      "author": "ejklock",
-      "avatar": "https://avatars.githubusercontent.com/u/8179907?v=4",
-      "desc": "A project worth exploring.",
-      "demo": null,
-      "repoUrl": "https://github.com/ejklock/laravel-twill-cms-blank",
-      "long1": "A project worth exploring. Maintained by ejklock on GitHub, where it has earned 0 stars from the community.",
-      "long2": "It's actively developed and a solid reference for anyone building on this stack.",
-      "stack": [
-        "PHP"
-      ],
-      "updated": "2 years ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 86,
-          "size": 86
-        },
-        {
-          "name": "Blade",
-          "pct": 9,
-          "size": 9
-        },
-        {
-          "name": "SCSS",
-          "pct": 5,
-          "size": 5
+          "name": "Shell"
         }
       ],
       "versions": [],
@@ -1265,6 +1244,104 @@
       "demo": null,
       "repoUrl": "https://github.com/cwsdigital/twill-capsule-categories",
       "long1": "Categories Capsule for Twilll CMS to provide a base for sitewide categorization. Maintained by cwsdigital on GitHub, where it has earned 0 stars from the community.",
+      "long2": "It's actively developed around twill, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Twill"
+      ],
+      "updated": "5 years ago",
+      "license": "—",
+      "langs": [
+        {
+          "name": "PHP",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "twill"
+      ],
+      "addedAt": "2026-07-15T22:28:32.902657+00:00"
+    },
+    {
+      "slug": "twill-capsule-pages",
+      "name": "twill-capsule-pages",
+      "fullName": "cwsdigital/twill-capsule-pages",
+      "category": "DevTools",
+      "stars": 0,
+      "author": "cwsdigital",
+      "avatar": "https://avatars.githubusercontent.com/u/7569716?v=4",
+      "desc": "Pages Capsule for Twilll CMS to provide a base for managing site pages",
+      "demo": null,
+      "repoUrl": "https://github.com/cwsdigital/twill-capsule-pages",
+      "long1": "Pages Capsule for Twilll CMS to provide a base for managing site pages. Maintained by cwsdigital on GitHub, where it has earned 0 stars from the community.",
+      "long2": "It's actively developed around twill, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Twill"
+      ],
+      "updated": "5 years ago",
+      "license": "—",
+      "langs": [
+        {
+          "name": "PHP",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "twill"
+      ],
+      "addedAt": "2026-07-15T22:28:32.902657+00:00"
+    },
+    {
+      "slug": "xelif-export-ghost",
+      "name": "xelif-export-ghost",
+      "fullName": "FelixOnline/xelif-export-ghost",
+      "category": "Blogs",
+      "stars": 0,
+      "author": "FelixOnline",
+      "avatar": "https://avatars.githubusercontent.com/u/1172421?v=4",
+      "desc": "Exporter from custom Twill CMS to Ghost",
+      "demo": null,
+      "repoUrl": "https://github.com/FelixOnline/xelif-export-ghost",
+      "long1": "Exporter from custom Twill CMS to Ghost. Maintained by FelixOnline on GitHub, where it has earned 0 stars from the community.",
+      "long2": "It's actively developed around ghost-cms, twill, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Ghost Cms",
+        "Twill"
+      ],
+      "updated": "2 years ago",
+      "license": "—",
+      "langs": [
+        {
+          "name": "TypeScript",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "ghost-cms",
+        "twill"
+      ],
+      "addedAt": "2026-07-15T22:28:32.902657+00:00"
+    },
+    {
+      "slug": "twill-capsule-homepages",
+      "name": "twill-capsule-homepages",
+      "fullName": "cwsdigital/twill-capsule-homepages",
+      "category": "Blogs",
+      "stars": 0,
+      "author": "cwsdigital",
+      "avatar": "https://avatars.githubusercontent.com/u/7569716?v=4",
+      "desc": "Homepage Capsule for Twill CMS to provide a base for site homepages",
+      "demo": null,
+      "repoUrl": "https://github.com/cwsdigital/twill-capsule-homepages",
+      "long1": "Homepage Capsule for Twill CMS to provide a base for site homepages. Maintained by cwsdigital on GitHub, where it has earned 0 stars from the community.",
       "long2": "It's actively developed around twill, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",

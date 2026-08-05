@@ -1,34 +1,41 @@
 {
   "slug": "dolibarr",
-  "scrapedAt": "2026-07-22T09:29:07.772377+00:00",
+  "scrapedAt": "2026-08-05T04:38:16.294081+00:00",
   "source": "scrapy-github",
-  "totalRepos": 32,
+  "totalRepos": 35,
   "projects": [
     {
       "slug": "dolibarr-docker",
       "name": "dolibarr-docker",
       "fullName": "Dolibarr/dolibarr-docker",
       "category": "DevTools",
-      "stars": 117,
+      "stars": 119,
       "author": "Dolibarr",
       "avatar": "https://avatars.githubusercontent.com/u/877491?v=4",
       "desc": "Official Dolibarr docker images. Based on the work of Garcia MICHEL (tuxgasy)",
       "demo": "https://hub.docker.com/r/dolibarr/dolibarr",
       "repoUrl": "https://github.com/Dolibarr/dolibarr-docker",
-      "long1": "Official Dolibarr docker images. Based on the work of Garcia MICHEL (tuxgasy). Maintained by Dolibarr on GitHub, where it has earned 117 stars from the community.",
+      "long1": "Official Dolibarr docker images. Based on the work of Garcia MICHEL (tuxgasy). Maintained by Dolibarr on GitHub, where it has earned 119 stars from the community.",
       "long2": "It's actively developed around docker, dolibarr, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Shell",
         "Docker",
         "Dolibarr"
       ],
-      "updated": "4 weeks ago",
+      "updated": "1 month ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "Shell",
-          "pct": 100,
-          "size": 100
+          "pct": 85,
+          "name": "Shell"
+        },
+        {
+          "pct": 10,
+          "name": "Dockerfile"
+        },
+        {
+          "pct": 5,
+          "name": "PHP"
         }
       ],
       "versions": [],
@@ -50,30 +57,33 @@
       "demo": "https://github.com/Dolibarr/dolibarr",
       "repoUrl": "https://github.com/Monogramm/docker-dolibarr",
       "long1": ":whale: :elephant: Docker image for Dolibarr. Maintained by Monogramm on GitHub, where it has earned 71 stars from the community.",
-      "long2": "It's actively developed around alpine, debian, docker, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around docker, dolibarr, php, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Shell",
-        "Alpine",
-        "Debian",
         "Docker",
-        "Dolibarr"
+        "Dolibarr",
+        "Php",
+        "Debian"
       ],
       "updated": "3 years ago",
       "license": "AGPL-3.0",
       "langs": [
         {
-          "name": "Shell",
-          "pct": 100,
-          "size": 100
+          "pct": 80,
+          "name": "Shell"
+        },
+        {
+          "pct": 20,
+          "name": "Dockerfile"
         }
       ],
       "versions": [],
       "topics": [
-        "alpine",
-        "debian",
         "docker",
         "dolibarr",
-        "php"
+        "php",
+        "debian",
+        "alpine"
       ],
       "addedAt": "2026-07-15T22:28:33.025070+00:00"
     },
@@ -82,129 +92,41 @@
       "name": "DoliMods",
       "fullName": "DoliCloud/DoliMods",
       "category": "Dashboards",
-      "stars": 66,
+      "stars": 69,
       "author": "DoliCloud",
       "avatar": "https://avatars.githubusercontent.com/u/95892431?v=4",
       "desc": "The DoliMods is the repository of the Dolibarr ERP CRM modules, developed by the DoliCloud.com team.",
       "demo": "https://www.dolibarr.org",
       "repoUrl": "https://github.com/DoliCloud/DoliMods",
-      "long1": "The DoliMods is the repository of the Dolibarr ERP CRM modules, developed by the DoliCloud.com team. Maintained by DoliCloud on GitHub, where it has earned 66 stars from the community.",
-      "long2": "It's actively developed around addons, dolibarr, modules, and is a solid reference for anyone building with these tools.",
+      "long1": "The DoliMods is the repository of the Dolibarr ERP CRM modules, developed by the DoliCloud.com team. Maintained by DoliCloud on GitHub, where it has earned 69 stars from the community.",
+      "long2": "It's actively developed around dolibarr, modules, addons, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Addons",
         "Dolibarr",
-        "Modules"
+        "Modules",
+        "Addons"
       ],
-      "updated": "3 weeks ago",
+      "updated": "today",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 69.807,
-          "size": 11570582
+          "pct": 74,
+          "name": "PHP"
         },
         {
-          "name": "HTML",
-          "pct": 16.586,
-          "size": 2749127
+          "pct": 17,
+          "name": "HTML"
         },
         {
-          "name": "XSLT",
-          "pct": 8.707,
-          "size": 1443211
-        },
-        {
-          "name": "JavaScript",
-          "pct": 3.552,
-          "size": 588704
-        },
-        {
-          "name": "CSS",
-          "pct": 0.708,
-          "size": 117391
-        },
-        {
-          "name": "Perl",
-          "pct": 0.148,
-          "size": 24467
-        },
-        {
-          "name": "Python",
-          "pct": 0.112,
-          "size": 18640
-        },
-        {
-          "name": "Shell",
-          "pct": 0.092,
-          "size": 15304
-        },
-        {
-          "name": "TeX",
-          "pct": 0.07,
-          "size": 11633
-        },
-        {
-          "name": "TSQL",
-          "pct": 0.063,
-          "size": 10367
-        },
-        {
-          "name": "Makefile",
-          "pct": 0.047,
-          "size": 7812
-        },
-        {
-          "name": "Batchfile",
-          "pct": 0.047,
-          "size": 7796
-        },
-        {
-          "name": "Lasso",
-          "pct": 0.014,
-          "size": 2280
-        },
-        {
-          "name": "Classic ASP",
-          "pct": 0.01,
-          "size": 1632
-        },
-        {
-          "name": "Java",
-          "pct": 0.008,
-          "size": 1403
-        },
-        {
-          "name": "Ruby",
-          "pct": 0.008,
-          "size": 1276
-        },
-        {
-          "name": "Dockerfile",
-          "pct": 0.007,
-          "size": 1192
-        },
-        {
-          "name": "C",
-          "pct": 0.007,
-          "size": 1089
-        },
-        {
-          "name": "ASP.NET",
-          "pct": 0.006,
-          "size": 1006
-        },
-        {
-          "name": "Hack",
-          "pct": 0.001,
-          "size": 90
+          "pct": 9,
+          "name": "XSLT"
         }
       ],
       "versions": [],
       "topics": [
-        "addons",
         "dolibarr",
-        "modules"
+        "modules",
+        "addons"
       ],
       "addedAt": "2026-07-15T22:28:33.025070+00:00"
     },
@@ -213,71 +135,43 @@
       "name": "DoliDroid",
       "fullName": "DoliCloud/DoliDroid",
       "category": "Dashboards",
-      "stars": 66,
+      "stars": 67,
       "author": "DoliCloud",
       "avatar": "https://avatars.githubusercontent.com/u/95892431?v=4",
       "desc": "DoliDroid is the free Android client for Dolibarr ERP CRM. It is not a standalone program. It is a front end to use an online hosted Dolibarr ERP CRM https://www.dolibarr.org",
       "demo": null,
       "repoUrl": "https://github.com/DoliCloud/DoliDroid",
-      "long1": "DoliDroid is the free Android client for Dolibarr ERP CRM. It is not a standalone program. It is a front end to use an online hosted Dolibarr ERP CRM https://www.dolibarr.org. Maintained by DoliCloud on GitHub, where it has earned 66 stars from the community.",
-      "long2": "It's actively developed around android, crm, dolibarr, and is a solid reference for anyone building with these tools.",
+      "long1": "DoliDroid is the free Android client for Dolibarr ERP CRM. It is not a standalone program. It is a front end to use an online hosted Dolibarr ERP CRM https://www.dolibarr.org. Maintained by DoliCloud on GitHub, where it has earned 67 stars from the community.",
+      "long2": "It's actively developed around android, dolibarr, erp, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
         "Android",
-        "Crm",
         "Dolibarr",
-        "Erp"
+        "Erp",
+        "Crm"
       ],
-      "updated": "1 month ago",
+      "updated": "2 months ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "JavaScript",
-          "pct": 27.753,
-          "size": 343449
+          "pct": 62,
+          "name": "JavaScript"
         },
         {
-          "name": "Java",
-          "pct": 19.119,
-          "size": 236599
+          "pct": 19,
+          "name": "Java"
         },
         {
-          "name": "SCSS",
-          "pct": 18.578,
-          "size": 229899
-        },
-        {
-          "name": "Less",
-          "pct": 16.877,
-          "size": 208848
-        },
-        {
-          "name": "CSS",
-          "pct": 14.809,
-          "size": 183263
-        },
-        {
-          "name": "PHP",
-          "pct": 1.653,
-          "size": 20461
-        },
-        {
-          "name": "Perl",
-          "pct": 0.965,
-          "size": 11948
-        },
-        {
-          "name": "Shell",
-          "pct": 0.245,
-          "size": 3031
+          "pct": 19,
+          "name": "SCSS"
         }
       ],
       "versions": [],
       "topics": [
         "android",
-        "crm",
         "dolibarr",
         "erp",
+        "crm",
         "mobile",
         "smartphone"
       ],
@@ -288,13 +182,13 @@
       "name": "dolibarr-community-modules",
       "fullName": "Dolibarr/dolibarr-community-modules",
       "category": "DevTools",
-      "stars": 45,
+      "stars": 46,
       "author": "Dolibarr",
       "avatar": "https://avatars.githubusercontent.com/u/877491?v=4",
       "desc": "The repository for community some official modules that can't be embedded into the core",
       "demo": null,
       "repoUrl": "https://github.com/Dolibarr/dolibarr-community-modules",
-      "long1": "The repository for community some official modules that can't be embedded into the core. Maintained by Dolibarr on GitHub, where it has earned 45 stars from the community.",
+      "long1": "The repository for community some official modules that can't be embedded into the core. Maintained by Dolibarr on GitHub, where it has earned 46 stars from the community.",
       "long2": "It's actively developed around community, dolibarr, modules, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
@@ -302,26 +196,24 @@
         "Dolibarr",
         "Modules"
       ],
-      "updated": "1 week ago",
+      "updated": "yesterday",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 99.899,
-          "size": 17307882
+          "pct": 100,
+          "name": "PHP"
         },
         {
-          "name": "Perl",
-          "pct": 0.074,
-          "size": 12806
-        },
-        {
-          "name": "Shell",
-          "pct": 0.027,
-          "size": 4704
+          "pct": 0,
+          "name": "Shell"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/Dolibarr/dolibarr-community-modules/releases/tag/einvoicing_1.0.3",
+          "name": "einvoicing_1.0.3"
+        }
+      ],
       "topics": [
         "community",
         "dolibarr",
@@ -341,34 +233,46 @@
       "demo": "https://www.dolimed.com",
       "repoUrl": "https://github.com/DoliCloud/DoliMed",
       "long1": "This project is the offical repository to store sources of the DoliMed module, a module for Dolibarr ERP CRM Open Source software, to manage a medical center. Maintained by DoliCloud on GitHub, where it has earned 38 stars from the community.",
-      "long2": "It's actively developed around cabinet, consultation, dolibarr, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around dolimed, dolibarr, module, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Cabinet",
-        "Consultation",
+        "Dolimed",
         "Dolibarr",
-        "Dolimed"
+        "Module",
+        "Medecine"
       ],
       "updated": "2 months ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 87,
+          "name": "PHP"
+        },
+        {
+          "pct": 7,
+          "name": "Inno Setup"
+        },
+        {
+          "pct": 6,
+          "name": "Perl"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/DoliCloud/DoliMed/releases/tag/17.0",
+          "name": "17.0"
+        }
+      ],
       "topics": [
-        "cabinet",
-        "consultation",
-        "dolibarr",
         "dolimed",
-        "management",
-        "medecine",
-        "medical",
+        "dolibarr",
         "module",
-        "software"
+        "medecine",
+        "software",
+        "consultation",
+        "management",
+        "cabinet",
+        "medical"
       ],
       "addedAt": "2026-07-15T22:28:33.025070+00:00"
     },
@@ -379,86 +283,70 @@
       "category": "Dashboards",
       "stars": 25,
       "author": "ptibogxiv",
-      "avatar": "https://avatars.githubusercontent.com/u/3135833?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/3135833?u=a4757fb33fc6cc1b170d7edecb2c3d31e4b765d5&v=4",
       "desc": "This plugin will interface your Dolibarr within a customer interface in WordPress",
       "demo": "https://www.ptibogxiv.eu",
       "repoUrl": "https://github.com/ptibogxiv/doliconnect",
       "long1": "This plugin will interface your Dolibarr within a customer interface in WordPress. Maintained by ptibogxiv on GitHub, where it has earned 25 stars from the community.",
-      "long2": "It's actively developed around crm, customer, dashboard, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around dolibarr, erp, crm, and is a solid reference for anyone building with these tools.",
       "stack": [
         "JavaScript",
+        "Dolibarr",
+        "Erp",
         "Crm",
-        "Customer",
-        "Dashboard",
-        "Dolibarr"
+        "Php"
       ],
-      "updated": "3 weeks ago",
+      "updated": "today",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "JavaScript",
-          "pct": 51.726,
-          "size": 4687735
+          "pct": 58,
+          "name": "JavaScript"
         },
         {
-          "name": "Fluent",
-          "pct": 27.006,
-          "size": 2447442
+          "pct": 27,
+          "name": "Fluent"
         },
         {
-          "name": "PHP",
-          "pct": 14.636,
-          "size": 1326390
-        },
-        {
-          "name": "CSS",
-          "pct": 2.825,
-          "size": 255979
-        },
-        {
-          "name": "SCSS",
-          "pct": 2.238,
-          "size": 202801
-        },
-        {
-          "name": "HTML",
-          "pct": 1.49,
-          "size": 135009
-        },
-        {
-          "name": "Less",
-          "pct": 0.057,
-          "size": 5131
-        },
-        {
-          "name": "Python",
-          "pct": 0.021,
-          "size": 1883
-        },
-        {
-          "name": "Shell",
-          "pct": 0.003,
-          "size": 258
+          "pct": 15,
+          "name": "PHP"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/ptibogxiv/doliconnect/releases/tag/10.5.0",
+          "name": "10.5.0"
+        },
+        {
+          "url": "https://github.com/ptibogxiv/doliconnect/releases/tag/10.4.1",
+          "name": "10.4.1"
+        },
+        {
+          "url": "https://github.com/ptibogxiv/doliconnect/releases/tag/10.4.0",
+          "name": "10.4.0"
+        },
+        {
+          "url": "https://github.com/ptibogxiv/doliconnect/releases/tag/10.3.2",
+          "name": "10.3.2"
+        },
+        {
+          "url": "https://github.com/ptibogxiv/doliconnect/releases/tag/10.3.1",
+          "name": "10.3.1"
+        }
+      ],
       "topics": [
-        "crm",
-        "customer",
-        "dashboard",
         "dolibarr",
-        "donation",
-        "ecommerce",
         "erp",
-        "gdpr",
-        "invoice",
-        "management",
-        "membership",
-        "order",
+        "crm",
         "php",
+        "invoice",
+        "order",
+        "dashboard",
+        "customer",
+        "donation",
         "proposal",
-        "stripe",
-        "wordpress"
+        "management",
+        "gdpr"
       ],
       "addedAt": "2026-07-15T22:28:33.025070+00:00"
     },
@@ -474,27 +362,34 @@
       "demo": "https://www.dolistore.com/en/modules/1121-Advanced-Module-Builder.html",
       "repoUrl": "https://github.com/DolibarrLabs/damb",
       "long1": "An advanced module builder for Dolibarr ERP/CRM. Maintained by DolibarrLabs on GitHub, where it has earned 24 stars from the community.",
-      "long2": "It's actively developed around builder, dolibarr, module, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around dolibarr, module, builder, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Builder",
         "Dolibarr",
-        "Module"
+        "Module",
+        "Builder"
       ],
       "updated": "5 years ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "PHP",
           "pct": 100,
-          "size": 100
+          "name": "PHP"
+        },
+        {
+          "pct": 0,
+          "name": "CSS"
+        },
+        {
+          "pct": 0,
+          "name": "JavaScript"
         }
       ],
       "versions": [],
       "topics": [
-        "builder",
         "dolibarr",
-        "module"
+        "module",
+        "builder"
       ],
       "addedAt": "2026-07-15T22:28:33.025070+00:00"
     },
@@ -510,28 +405,35 @@
       "demo": null,
       "repoUrl": "https://github.com/Dolibarr/dolibarr-integration-resources",
       "long1": "A project to contains all Open source resources for integration or migration from/to external applications. Maintained by Dolibarr on GitHub, where it has earned 20 stars from the community.",
-      "long2": "It's actively developed around dolibarr, integration, migration, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around dolibarr, migration, integration, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Python",
         "Dolibarr",
-        "Integration",
         "Migration",
+        "Integration",
         "Open Source"
       ],
       "updated": "9 months ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "Python",
-          "pct": 100,
-          "size": 100
+          "pct": 50,
+          "name": "Python"
+        },
+        {
+          "pct": 30,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 20,
+          "name": "TypeScript"
         }
       ],
       "versions": [],
       "topics": [
         "dolibarr",
-        "integration",
         "migration",
+        "integration",
         "open-source"
       ],
       "addedAt": "2026-07-15T22:28:33.025070+00:00"
@@ -548,27 +450,51 @@
       "demo": "https://www.dolibarr.org/",
       "repoUrl": "https://github.com/YunoHost-Apps/dolibarr_ynh",
       "long1": "Dolibarr ERP & CRM is a modern software to manage your organization's activity. This is an integration of Dolibarr in YunoHost. Maintained by YunoHost-Apps on GitHub, where it has earned 17 stars from the community.",
-      "long2": "It's actively developed around dolibarr, yunohost, yunohost-apps, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around dolibarr, yunohost-apps, yunohost, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Shell",
         "Dolibarr",
-        "Yunohost",
-        "Yunohost Apps"
+        "Yunohost Apps",
+        "Yunohost"
       ],
-      "updated": "2 months ago",
+      "updated": "1 week ago",
       "license": "AGPL-3.0",
       "langs": [
         {
-          "name": "Shell",
-          "pct": 100,
-          "size": 100
+          "pct": 51,
+          "name": "Shell"
+        },
+        {
+          "pct": 49,
+          "name": "PHP"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/YunoHost-Apps/dolibarr_ynh/releases/tag/16.0.5",
+          "name": "16.0.5"
+        },
+        {
+          "url": "https://github.com/YunoHost-Apps/dolibarr_ynh/releases/tag/16.0.4",
+          "name": "16.0.4"
+        },
+        {
+          "url": "https://github.com/YunoHost-Apps/dolibarr_ynh/releases/tag/16.0.3",
+          "name": "16.0.3"
+        },
+        {
+          "url": "https://github.com/YunoHost-Apps/dolibarr_ynh/releases/tag/15.0.3",
+          "name": "15.0.3"
+        },
+        {
+          "url": "https://github.com/YunoHost-Apps/dolibarr_ynh/releases/tag/14.0.3",
+          "name": "14.0.3"
+        }
+      ],
       "topics": [
         "dolibarr",
-        "yunohost",
-        "yunohost-apps"
+        "yunohost-apps",
+        "yunohost"
       ],
       "addedAt": "2026-07-15T22:28:33.025070+00:00"
     },
@@ -579,34 +505,54 @@
       "category": "Dashboards",
       "stars": 16,
       "author": "ptibogxiv",
-      "avatar": "https://avatars.githubusercontent.com/u/3135833?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/3135833?u=a4757fb33fc6cc1b170d7edecb2c3d31e4b765d5&v=4",
       "desc": "New adherent module for Dolibarr, comptible with my module Doliconnect for Wordpress/Dolibarr sync",
       "demo": "https://www.ptibogxiv.net",
       "repoUrl": "https://github.com/ptibogxiv/adherentsplus",
       "long1": "New adherent module for Dolibarr, comptible with my module Doliconnect for Wordpress/Dolibarr sync. Maintained by ptibogxiv on GitHub, where it has earned 16 stars from the community.",
-      "long2": "It's actively developed around crm, dolibarr, erp, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around dolibarr, erp, membership, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Crm",
         "Dolibarr",
         "Erp",
-        "Membership"
+        "Membership",
+        "Crm"
       ],
       "updated": "4 months ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "PHP",
           "pct": 100,
-          "size": 100
+          "name": "PHP"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/ptibogxiv/adherentsplus/releases/tag/19.0.2",
+          "name": "19.0.2"
+        },
+        {
+          "url": "https://github.com/ptibogxiv/adherentsplus/releases/tag/18.0.3",
+          "name": "18.0.3"
+        },
+        {
+          "url": "https://github.com/ptibogxiv/adherentsplus/releases/tag/18.0.1",
+          "name": "18.0.1"
+        },
+        {
+          "url": "https://github.com/ptibogxiv/adherentsplus/releases/tag/18.0.0",
+          "name": "18.0.0"
+        },
+        {
+          "url": "https://github.com/ptibogxiv/adherentsplus/releases/tag/17.0.3",
+          "name": "17.0.3"
+        }
+      ],
       "topics": [
-        "crm",
         "dolibarr",
         "erp",
         "membership",
+        "crm",
         "subscription"
       ],
       "addedAt": "2026-07-15T22:28:33.025070+00:00"
@@ -631,21 +577,40 @@
         "Fa3",
         "Ksef"
       ],
-      "updated": "2 weeks ago",
+      "updated": "4 weeks ago",
       "license": "AGPL-3.0",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 99.939,
-          "size": 1631284
+          "pct": 100,
+          "name": "PHP"
         },
         {
-          "name": "Shell",
-          "pct": 0.061,
-          "size": 988
+          "pct": 0,
+          "name": "Shell"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/InPoint-Automation/Dolibarr-KSeF-Module/releases/tag/v1.4.4",
+          "name": "v1.4.4"
+        },
+        {
+          "url": "https://github.com/InPoint-Automation/Dolibarr-KSeF-Module/releases/tag/v1.4.3",
+          "name": "v1.4.3"
+        },
+        {
+          "url": "https://github.com/InPoint-Automation/Dolibarr-KSeF-Module/releases/tag/v1.4.2",
+          "name": "v1.4.2"
+        },
+        {
+          "url": "https://github.com/InPoint-Automation/Dolibarr-KSeF-Module/releases/tag/v1.4.1",
+          "name": "v1.4.1"
+        },
+        {
+          "url": "https://github.com/InPoint-Automation/Dolibarr-KSeF-Module/releases/tag/v1.4.0",
+          "name": "v1.4.0"
+        }
+      ],
       "topics": [
         "dolibarr",
         "e-invoicing",
@@ -662,32 +627,52 @@
       "category": "DevTools",
       "stars": 12,
       "author": "ksar-ksar",
-      "avatar": "https://avatars.githubusercontent.com/u/35605507?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/35605507?u=5b38ad4511f26df9ba5e57eec9298891625f555c&v=4",
       "desc": "Module to remove the confirmation pop-up for Dolibarr > V9.0",
       "demo": null,
       "repoUrl": "https://github.com/ksar-ksar/Dolibarr_removeconf",
       "long1": "Module to remove the confirmation pop-up for Dolibarr > V9.0. Maintained by ksar-ksar on GitHub, where it has earned 12 stars from the community.",
-      "long2": "It's actively developed around dolibarr, popup, remove, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around dolibarr, remove, popup, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
         "Dolibarr",
-        "Popup",
-        "Remove"
+        "Remove",
+        "Popup"
       ],
       "updated": "1 year ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "PHP",
           "pct": 100,
-          "size": 100
+          "name": "PHP"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/ksar-ksar/Dolibarr_removeconf/releases/tag/2.2.1",
+          "name": "2.2.1"
+        },
+        {
+          "url": "https://github.com/ksar-ksar/Dolibarr_removeconf/releases/tag/2.2.0",
+          "name": "2.2.0"
+        },
+        {
+          "url": "https://github.com/ksar-ksar/Dolibarr_removeconf/releases/tag/2.1.0",
+          "name": "2.1.0"
+        },
+        {
+          "url": "https://github.com/ksar-ksar/Dolibarr_removeconf/releases/tag/2.0.2",
+          "name": "2.0.2"
+        },
+        {
+          "url": "https://github.com/ksar-ksar/Dolibarr_removeconf/releases/tag/2.0.1",
+          "name": "2.0.1"
+        }
+      ],
       "topics": [
         "dolibarr",
-        "popup",
-        "remove"
+        "remove",
+        "popup"
       ],
       "addedAt": "2026-07-15T22:28:33.025070+00:00"
     },
@@ -698,34 +683,58 @@
       "category": "Dashboards",
       "stars": 10,
       "author": "ptibogxiv",
-      "avatar": "https://avatars.githubusercontent.com/u/3135833?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/3135833?u=a4757fb33fc6cc1b170d7edecb2c3d31e4b765d5&v=4",
       "desc": "Sync Dolibarr with Wordpress via Doliconnect",
       "demo": "https://www.ptibogxiv.net",
       "repoUrl": "https://github.com/ptibogxiv/doliconnector",
       "long1": "Sync Dolibarr with Wordpress via Doliconnect. Maintained by ptibogxiv on GitHub, where it has earned 10 stars from the community.",
-      "long2": "It's actively developed around crm, dolibarr, erp, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around php, erp, wordpress, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "Crm",
-        "Dolibarr",
+        "Php",
         "Erp",
-        "Php"
+        "Wordpress",
+        "Dolibarr"
       ],
-      "updated": "2 months ago",
+      "updated": "6 days ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "PHP",
           "pct": 100,
-          "size": 100
+          "name": "PHP"
+        },
+        {
+          "pct": 0,
+          "name": "Hack"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/ptibogxiv/doliconnector/releases/tag/2026.0.2",
+          "name": "2026.0.2"
+        },
+        {
+          "url": "https://github.com/ptibogxiv/doliconnector/releases/tag/2026.0.1",
+          "name": "2026.0.1"
+        },
+        {
+          "url": "https://github.com/ptibogxiv/doliconnector/releases/tag/2026.0.0",
+          "name": "2026.0.0"
+        },
+        {
+          "url": "https://github.com/ptibogxiv/doliconnector/releases/tag/22.0.0",
+          "name": "22.0.0"
+        },
+        {
+          "url": "https://github.com/ptibogxiv/doliconnector/releases/tag/19.0.2",
+          "name": "19.0.2"
+        }
+      ],
       "topics": [
-        "crm",
-        "dolibarr",
-        "erp",
         "php",
-        "wordpress"
+        "erp",
+        "wordpress",
+        "dolibarr",
+        "crm"
       ],
       "addedAt": "2026-07-15T22:28:33.025070+00:00"
     },
@@ -753,12 +762,40 @@
       "license": "AGPL-3.0",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 95,
+          "name": "PHP"
+        },
+        {
+          "pct": 3,
+          "name": "Shell"
+        },
+        {
+          "pct": 2,
+          "name": "CSS"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/bohdanpotuzhnyi/talerbarr/releases/tag/v0.3.2",
+          "name": "v0.3.2"
+        },
+        {
+          "url": "https://github.com/bohdanpotuzhnyi/talerbarr/releases/tag/v0.3.1",
+          "name": "v0.3.1"
+        },
+        {
+          "url": "https://github.com/bohdanpotuzhnyi/talerbarr/releases/tag/v0.3.0",
+          "name": "v0.3.0"
+        },
+        {
+          "url": "https://github.com/bohdanpotuzhnyi/talerbarr/releases/tag/v0.2.1",
+          "name": "v0.2.1"
+        },
+        {
+          "url": "https://github.com/bohdanpotuzhnyi/talerbarr/releases/tag/v0.2.0",
+          "name": "v0.2.0"
+        }
+      ],
       "topics": [
         "dolibarr",
         "erp",
@@ -779,7 +816,7 @@
       "category": "DevTools",
       "stars": 9,
       "author": "dollarboysushil",
-      "avatar": "https://avatars.githubusercontent.com/u/48991715?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/48991715?u=b5b4c1abf43a39c7d683416246da5d8d3c8f2a31&v=4",
       "desc": "In Dolibarr 17.0.0 with the CMS Website plugin (core) enabled, an authenticated attacker can obtain remote command execution via php code injection bypassing the application restrictions.",
       "demo": null,
       "repoUrl": "https://github.com/dollarboysushil/Dolibarr-17.0.0-Exploit-CVE-2023-30253",
@@ -795,9 +832,8 @@
       "license": "—",
       "langs": [
         {
-          "name": "Python",
           "pct": 100,
-          "size": 100
+          "name": "Python"
         }
       ],
       "versions": [],
@@ -805,6 +841,124 @@
         "cve-2023-30253",
         "dolibarr",
         "dolibarr-exploit"
+      ],
+      "addedAt": "2026-07-15T22:28:33.025070+00:00"
+    },
+    {
+      "slug": "dolidock",
+      "name": "dolidock",
+      "fullName": "ismogroup/dolidock",
+      "category": "DevTools",
+      "stars": 8,
+      "author": "ismogroup",
+      "avatar": "https://avatars.githubusercontent.com/u/122733895?u=828df0d1cb37d72deedb4d1d7cccc2fa9c06e382&v=4",
+      "desc": "our Dolibarr k8s install",
+      "demo": null,
+      "repoUrl": "https://github.com/ismogroup/dolidock",
+      "long1": "our Dolibarr k8s install. Maintained by ismogroup on GitHub, where it has earned 8 stars from the community.",
+      "long2": "It's actively developed around docker, dolibarr, kubernetes, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Shell",
+        "Docker",
+        "Dolibarr",
+        "Kubernetes",
+        "Okteto"
+      ],
+      "updated": "6 months ago",
+      "license": "GPL-3.0",
+      "langs": [
+        {
+          "pct": 71,
+          "name": "Shell"
+        },
+        {
+          "pct": 18,
+          "name": "Perl"
+        },
+        {
+          "pct": 11,
+          "name": "Dockerfile"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/ismogroup/dolidock/releases/tag/22.0.4.1",
+          "name": "22.0.4.1"
+        },
+        {
+          "url": "https://github.com/ismogroup/dolidock/releases/tag/22.0.4.0",
+          "name": "22.0.4.0"
+        },
+        {
+          "url": "https://github.com/ismogroup/dolidock/releases/tag/22.0.2.4",
+          "name": "22.0.2.4"
+        },
+        {
+          "url": "https://github.com/ismogroup/dolidock/releases/tag/22.0.2.3",
+          "name": "22.0.2.3"
+        },
+        {
+          "url": "https://github.com/ismogroup/dolidock/releases/tag/22.0.2.2",
+          "name": "22.0.2.2"
+        }
+      ],
+      "topics": [
+        "docker",
+        "dolibarr",
+        "kubernetes",
+        "okteto"
+      ],
+      "addedAt": "2026-07-15T22:28:33.025070+00:00"
+    },
+    {
+      "slug": "doliwpshop",
+      "name": "doliwpshop",
+      "fullName": "Eoxia/doliwpshop",
+      "category": "DevTools",
+      "stars": 8,
+      "author": "Eoxia",
+      "avatar": "https://avatars.githubusercontent.com/u/3227847?v=4",
+      "desc": "Module de connexion entre WPShop et Dolibarr",
+      "demo": "https://www.wpshop.fr",
+      "repoUrl": "https://github.com/Eoxia/doliwpshop",
+      "long1": "Module de connexion entre WPShop et Dolibarr. Maintained by Eoxia on GitHub, where it has earned 8 stars from the community.",
+      "long2": "It's actively developed around dolibarr, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Dolibarr"
+      ],
+      "updated": "9 months ago",
+      "license": "GPL-3.0",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "PHP"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/Eoxia/doliwpshop/releases/tag/1.2.0",
+          "name": "1.2.0"
+        },
+        {
+          "url": "https://github.com/Eoxia/doliwpshop/releases/tag/1.1.1",
+          "name": "1.1.1"
+        },
+        {
+          "url": "https://github.com/Eoxia/doliwpshop/releases/tag/1.1.0",
+          "name": "1.1.0"
+        },
+        {
+          "url": "https://github.com/Eoxia/doliwpshop/releases/tag/1.0.0",
+          "name": "1.0.0"
+        },
+        {
+          "url": "https://github.com/Eoxia/doliwpshop/releases/tag/module_doliwpshop-1.0.1",
+          "name": "module_doliwpshop-1.0.1"
+        }
+      ],
+      "topics": [
+        "dolibarr"
       ],
       "addedAt": "2026-07-15T22:28:33.025070+00:00"
     },
@@ -832,9 +986,16 @@
       "license": "—",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
+          "pct": 94,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 4,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 2,
+          "name": "Shell"
         }
       ],
       "versions": [],
@@ -853,106 +1014,58 @@
       "addedAt": "2026-07-15T22:28:33.025070+00:00"
     },
     {
-      "slug": "autoverifactu",
-      "name": "autoverifactu",
-      "fullName": "codeccoop/autoverifactu",
-      "category": "DevTools",
-      "stars": 8,
-      "author": "codeccoop",
-      "avatar": "https://avatars.githubusercontent.com/u/100711814?v=4",
-      "desc": "Auto Veri*Factu es un módulo de Dolibarr sencillo que permite generar registros de facturación según el sistema Veri*Factu",
-      "demo": null,
-      "repoUrl": "https://github.com/codeccoop/autoverifactu",
-      "long1": "Auto Veri*Factu es un módulo de Dolibarr sencillo que permite generar registros de facturación según el sistema Veri*Factu. Maintained by codeccoop on GitHub, where it has earned 8 stars from the community.",
-      "long2": "It's actively developed around dolibarr, verifactu, and is a solid reference for anyone building with these tools.",
+      "slug": "dolibarr-multicompany",
+      "name": "dolibarr_multicompany",
+      "fullName": "hregis/dolibarr_multicompany",
+      "category": "Dashboards",
+      "stars": 7,
+      "author": "hregis",
+      "avatar": "https://avatars.githubusercontent.com/u/454387?u=616fca2f00d5c7a6bc0bdde058376bd20cb02881&v=4",
+      "desc": "Dolibarr optimized for Multicompany",
+      "demo": "https://www.inodbox.com",
+      "repoUrl": "https://github.com/hregis/dolibarr_multicompany",
+      "long1": "Dolibarr optimized for Multicompany. Maintained by hregis on GitHub, where it has earned 7 stars from the community.",
+      "long2": "It's actively developed around dolibarr, dolibarr-erp, multicompany, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
         "Dolibarr",
-        "Verifactu"
+        "Dolibarr Erp",
+        "Multicompany"
       ],
-      "updated": "1 week ago",
+      "updated": "1 year ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 313765
+          "pct": 79,
+          "name": "PHP"
+        },
+        {
+          "pct": 21,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 0,
+          "name": "CSS"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/hregis/dolibarr_multicompany/releases/tag/20.0.4.3-MC",
+          "name": "20.0.4.3-MC"
+        },
+        {
+          "url": "https://github.com/hregis/dolibarr_multicompany/releases/tag/20.0.4.2-MC",
+          "name": "20.0.4.2-MC"
+        },
+        {
+          "url": "https://github.com/hregis/dolibarr_multicompany/releases/tag/20.0.4.1-MC",
+          "name": "20.0.4.1-MC"
+        }
+      ],
       "topics": [
         "dolibarr",
-        "verifactu"
-      ],
-      "addedAt": "2026-07-15T22:28:33.025070+00:00"
-    },
-    {
-      "slug": "dolidock",
-      "name": "dolidock",
-      "fullName": "ismogroup/dolidock",
-      "category": "DevTools",
-      "stars": 8,
-      "author": "ismogroup",
-      "avatar": "https://avatars.githubusercontent.com/u/122733895?v=4",
-      "desc": "our Dolibarr k8s install",
-      "demo": null,
-      "repoUrl": "https://github.com/ismogroup/dolidock",
-      "long1": "our Dolibarr k8s install. Maintained by ismogroup on GitHub, where it has earned 8 stars from the community.",
-      "long2": "It's actively developed around docker, dolibarr, kubernetes, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Shell",
-        "Docker",
-        "Dolibarr",
-        "Kubernetes",
-        "Okteto"
-      ],
-      "updated": "6 months ago",
-      "license": "GPL-3.0",
-      "langs": [
-        {
-          "name": "Shell",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "docker",
-        "dolibarr",
-        "kubernetes",
-        "okteto"
-      ],
-      "addedAt": "2026-07-15T22:28:33.025070+00:00"
-    },
-    {
-      "slug": "doliwpshop",
-      "name": "doliwpshop",
-      "fullName": "Eoxia/doliwpshop",
-      "category": "DevTools",
-      "stars": 8,
-      "author": "Eoxia",
-      "avatar": "https://avatars.githubusercontent.com/u/3227847?v=4",
-      "desc": "Module de connexion entre WPShop et Dolibarr",
-      "demo": "https://www.wpshop.fr",
-      "repoUrl": "https://github.com/Eoxia/doliwpshop",
-      "long1": "Module de connexion entre WPShop et Dolibarr. Maintained by Eoxia on GitHub, where it has earned 8 stars from the community.",
-      "long2": "It's actively developed around dolibarr, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Dolibarr"
-      ],
-      "updated": "8 months ago",
-      "license": "GPL-3.0",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "dolibarr"
+        "dolibarr-erp",
+        "multicompany"
       ],
       "addedAt": "2026-07-15T22:28:33.025070+00:00"
     },
@@ -963,30 +1076,38 @@
       "category": "DevTools",
       "stars": 7,
       "author": "ksar-ksar",
-      "avatar": "https://avatars.githubusercontent.com/u/35605507?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/35605507?u=5b38ad4511f26df9ba5e57eec9298891625f555c&v=4",
       "desc": "Dolibarr database administration tool based on Adminer",
       "demo": null,
       "repoUrl": "https://github.com/ksar-ksar/Dolibarr_DbAdmin",
       "long1": "Dolibarr database administration tool based on Adminer. Maintained by ksar-ksar on GitHub, where it has earned 7 stars from the community.",
-      "long2": "It's actively developed around adminer, dolibarr, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around dolibarr, adminer, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Adminer",
-        "Dolibarr"
+        "Dolibarr",
+        "Adminer"
       ],
       "updated": "5 years ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "PHP",
           "pct": 100,
-          "size": 100
+          "name": "PHP"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/ksar-ksar/Dolibarr_DbAdmin/releases/tag/1.1",
+          "name": "1.1"
+        },
+        {
+          "url": "https://github.com/ksar-ksar/Dolibarr_DbAdmin/releases/tag/1.0",
+          "name": "1.0"
+        }
+      ],
       "topics": [
-        "adminer",
-        "dolibarr"
+        "dolibarr",
+        "adminer"
       ],
       "addedAt": "2026-07-15T22:28:33.025070+00:00"
     },
@@ -997,34 +1118,108 @@
       "category": "Dashboards",
       "stars": 7,
       "author": "rycks",
-      "avatar": "https://avatars.githubusercontent.com/u/1468823?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/1468823?u=f08efbf11960e24417f7de58fdf7a6e9299b31a6&v=4",
       "desc": "Access to your Dolibarr objects from Laravel app",
       "demo": null,
       "repoUrl": "https://github.com/rycks/laravel-dolibarr",
       "long1": "Access to your Dolibarr objects from Laravel app. Maintained by rycks on GitHub, where it has earned 7 stars from the community.",
-      "long2": "It's actively developed around dolibarr, dolibarr-erp, laravel, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around dolibarr, laravel, laravel-package, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
         "Dolibarr",
-        "Dolibarr Erp",
         "Laravel",
-        "Laravel Package"
+        "Laravel Package",
+        "Dolibarr Erp"
       ],
       "updated": "2 years ago",
       "license": "LGPL-3.0",
       "langs": [
         {
-          "name": "PHP",
           "pct": 100,
-          "size": 100
+          "name": "PHP"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/rycks/laravel-dolibarr/releases/tag/v1.0.6",
+          "name": "v1.0.6"
+        },
+        {
+          "url": "https://github.com/rycks/laravel-dolibarr/releases/tag/v1.0.5",
+          "name": "v1.0.5"
+        },
+        {
+          "url": "https://github.com/rycks/laravel-dolibarr/releases/tag/v1.0.4",
+          "name": "v1.0.4"
+        },
+        {
+          "url": "https://github.com/rycks/laravel-dolibarr/releases/tag/v1.0.3",
+          "name": "v1.0.3"
+        },
+        {
+          "url": "https://github.com/rycks/laravel-dolibarr/releases/tag/v1.0.2",
+          "name": "v1.0.2"
+        }
+      ],
       "topics": [
         "dolibarr",
-        "dolibarr-erp",
         "laravel",
-        "laravel-package"
+        "laravel-package",
+        "dolibarr-erp"
+      ],
+      "addedAt": "2026-07-15T22:28:33.025070+00:00"
+    },
+    {
+      "slug": "autoverifactu",
+      "name": "autoverifactu",
+      "fullName": "codeccoop/autoverifactu",
+      "category": "DevTools",
+      "stars": 7,
+      "author": "codeccoop",
+      "avatar": "https://avatars.githubusercontent.com/u/100711814?v=4",
+      "desc": "Auto Veri*Factu es un módulo de Dolibarr sencillo que permite generar registros de facturación según el sistema Veri*Factu",
+      "demo": null,
+      "repoUrl": "https://github.com/codeccoop/autoverifactu",
+      "long1": "Auto Veri*Factu es un módulo de Dolibarr sencillo que permite generar registros de facturación según el sistema Veri*Factu. Maintained by codeccoop on GitHub, where it has earned 7 stars from the community.",
+      "long2": "It's actively developed around dolibarr, verifactu, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Dolibarr",
+        "Verifactu"
+      ],
+      "updated": "6 days ago",
+      "license": "GPL-3.0",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "PHP"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/codeccoop/autoverifactu/releases/tag/0.0.10",
+          "name": "0.0.10"
+        },
+        {
+          "url": "https://github.com/codeccoop/autoverifactu/releases/tag/0.0.9",
+          "name": "0.0.9"
+        },
+        {
+          "url": "https://github.com/codeccoop/autoverifactu/releases/tag/0.0.8",
+          "name": "0.0.8"
+        },
+        {
+          "url": "https://github.com/codeccoop/autoverifactu/releases/tag/0.0.7",
+          "name": "0.0.7"
+        },
+        {
+          "url": "https://github.com/codeccoop/autoverifactu/releases/tag/0.0.6",
+          "name": "0.0.6"
+        }
+      ],
+      "topics": [
+        "dolibarr",
+        "verifactu"
       ],
       "addedAt": "2026-07-15T22:28:33.025070+00:00"
     },
@@ -1040,28 +1235,172 @@
       "demo": null,
       "repoUrl": "https://github.com/vold-lu/dolidev",
       "long1": "Easily setup a local dev environment for Dolibarr. Maintained by vold-lu on GitHub, where it has earned 6 stars from the community.",
-      "long2": "It's actively developed around developer-tools, docker, docker-compose, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around dolibarr, docker, docker-compose, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Shell",
-        "Developer Tools",
+        "Dolibarr",
         "Docker",
         "Docker Compose",
-        "Dolibarr"
+        "Developer Tools"
       ],
       "updated": "1 year ago",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "Shell",
-          "pct": 100,
-          "size": 100
+          "pct": 81,
+          "name": "Shell"
+        },
+        {
+          "pct": 19,
+          "name": "Dockerfile"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/vold-lu/dolidev/releases/tag/0.4.0",
+          "name": "0.4.0"
+        },
+        {
+          "url": "https://github.com/vold-lu/dolidev/releases/tag/0.3.0",
+          "name": "0.3.0"
+        },
+        {
+          "url": "https://github.com/vold-lu/dolidev/releases/tag/0.2.2",
+          "name": "0.2.2"
+        },
+        {
+          "url": "https://github.com/vold-lu/dolidev/releases/tag/0.2.1",
+          "name": "0.2.1"
+        },
+        {
+          "url": "https://github.com/vold-lu/dolidev/releases/tag/0.2.0",
+          "name": "0.2.0"
+        }
+      ],
       "topics": [
-        "developer-tools",
+        "dolibarr",
         "docker",
         "docker-compose",
+        "developer-tools"
+      ],
+      "addedAt": "2026-07-15T22:28:33.025070+00:00"
+    },
+    {
+      "slug": "dolibarr-front-react",
+      "name": "Dolibarr-front-react",
+      "fullName": "LaplancheMaxime/Dolibarr-front-react",
+      "category": "Dashboards",
+      "stars": 6,
+      "author": "LaplancheMaxime",
+      "avatar": "https://avatars.githubusercontent.com/u/43656574?u=db9c03be1ad706790760decb6576a80657efa8b8&v=4",
+      "desc": "Dolibarr-front-REACT is an application in ReactJS offering a customer space interface to your customers.",
+      "demo": null,
+      "repoUrl": "https://github.com/LaplancheMaxime/Dolibarr-front-react",
+      "long1": "Dolibarr-front-REACT is an application in ReactJS offering a customer space interface to your customers. Maintained by LaplancheMaxime on GitHub, where it has earned 6 stars from the community.",
+      "long2": "It's actively developed around react, dolibarr, dolibarr-erp, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "JavaScript",
+        "React",
+        "Dolibarr",
+        "Dolibarr Erp",
+        "Docker"
+      ],
+      "updated": "4 years ago",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 93,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 5,
+          "name": "CSS"
+        },
+        {
+          "pct": 2,
+          "name": "HTML"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/LaplancheMaxime/Dolibarr-front-react/releases/tag/1.0.8",
+          "name": "1.0.8"
+        },
+        {
+          "url": "https://github.com/LaplancheMaxime/Dolibarr-front-react/releases/tag/1.0.5",
+          "name": "1.0.5"
+        },
+        {
+          "url": "https://github.com/LaplancheMaxime/Dolibarr-front-react/releases/tag/1.0.0",
+          "name": "1.0.0"
+        }
+      ],
+      "topics": [
+        "react",
+        "dolibarr",
+        "dolibarr-erp",
+        "docker",
+        "docker-compose",
+        "adminlte3"
+      ],
+      "addedAt": "2026-07-15T22:28:33.025070+00:00"
+    },
+    {
+      "slug": "reedcrm",
+      "name": "reedcrm",
+      "fullName": "Eoxia/reedcrm",
+      "category": "Dashboards",
+      "stars": 6,
+      "author": "Eoxia",
+      "avatar": "https://avatars.githubusercontent.com/u/3227847?v=4",
+      "desc": "simplification de la crm pour Dolibarr",
+      "demo": null,
+      "repoUrl": "https://github.com/Eoxia/reedcrm",
+      "long1": "simplification de la crm pour Dolibarr. Maintained by Eoxia on GitHub, where it has earned 6 stars from the community.",
+      "long2": "It's actively developed around dolibarr, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Dolibarr"
+      ],
+      "updated": "today",
+      "license": "GPL-3.0",
+      "langs": [
+        {
+          "pct": 82,
+          "name": "PHP"
+        },
+        {
+          "pct": 14,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 4,
+          "name": "SCSS"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/Eoxia/reedcrm/releases/tag/23.1.1",
+          "name": "23.1.1"
+        },
+        {
+          "url": "https://github.com/Eoxia/reedcrm/releases/tag/23.1.0",
+          "name": "23.1.0"
+        },
+        {
+          "url": "https://github.com/Eoxia/reedcrm/releases/tag/23.0.0",
+          "name": "23.0.0"
+        },
+        {
+          "url": "https://github.com/Eoxia/reedcrm/releases/tag/22.1.0",
+          "name": "22.1.0"
+        },
+        {
+          "url": "https://github.com/Eoxia/reedcrm/releases/tag/22.0.0",
+          "name": "22.0.0"
+        }
+      ],
+      "topics": [
         "dolibarr"
       ],
       "addedAt": "2026-07-15T22:28:33.025070+00:00"
@@ -1088,12 +1427,32 @@
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "PHP",
           "pct": 100,
-          "size": 100
+          "name": "PHP"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/TechnickSysAid/mask4greece/releases/tag/4.0.2",
+          "name": "4.0.2"
+        },
+        {
+          "url": "https://github.com/TechnickSysAid/mask4greece/releases/tag/4.0.1",
+          "name": "4.0.1"
+        },
+        {
+          "url": "https://github.com/TechnickSysAid/mask4greece/releases/tag/4.0.0",
+          "name": "4.0.0"
+        },
+        {
+          "url": "https://github.com/TechnickSysAid/mask4greece/releases/tag/3.0.0",
+          "name": "3.0.0"
+        },
+        {
+          "url": "https://github.com/TechnickSysAid/mask4greece/releases/tag/2.0.2",
+          "name": "2.0.2"
+        }
+      ],
       "topics": [
         "dolibarr",
         "invoice-mask"
@@ -1112,157 +1471,86 @@
       "demo": "https://www.dolistore.com/en/modules/996-Debug-bar.html",
       "repoUrl": "https://github.com/DolibarrLabs/dolibarr-debugbar-module",
       "long1": "Debug Bar module for Dolibarr ERP/CRM. Maintained by DolibarrLabs on GitHub, where it has earned 6 stars from the community.",
-      "long2": "It's actively developed around debugbar, dolibarr, module, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around dolibarr, module, debugbar, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
-        "Debugbar",
         "Dolibarr",
-        "Module"
+        "Module",
+        "Debugbar"
       ],
       "updated": "6 years ago",
       "license": "MIT",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 78,
+          "name": "PHP"
+        },
+        {
+          "pct": 16,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 6,
+          "name": "CSS"
         }
       ],
       "versions": [],
       "topics": [
-        "debugbar",
         "dolibarr",
-        "module"
+        "module",
+        "debugbar"
       ],
       "addedAt": "2026-07-15T22:28:33.025070+00:00"
     },
     {
-      "slug": "dolibarr-front-react",
-      "name": "Dolibarr-front-react",
-      "fullName": "LaplancheMaxime/Dolibarr-front-react",
+      "slug": "crm",
+      "name": "CRM",
+      "fullName": "txuswashere/CRM",
       "category": "Dashboards",
-      "stars": 6,
-      "author": "LaplancheMaxime",
-      "avatar": "https://avatars.githubusercontent.com/u/43656574?v=4",
-      "desc": "Dolibarr-front-REACT is an application in ReactJS offering a customer space interface to your customers.",
+      "stars": 5,
+      "author": "txuswashere",
+      "avatar": "https://avatars.githubusercontent.com/u/48863796?u=3fd1b80f8b0cab1e40f0122ad17c0b5e4051a15c&v=4",
+      "desc": "CRM, Customer Relationship Management.",
       "demo": null,
-      "repoUrl": "https://github.com/LaplancheMaxime/Dolibarr-front-react",
-      "long1": "Dolibarr-front-REACT is an application in ReactJS offering a customer space interface to your customers. Maintained by LaplancheMaxime on GitHub, where it has earned 6 stars from the community.",
-      "long2": "It's actively developed around adminlte3, docker, docker-compose, and is a solid reference for anyone building with these tools.",
+      "repoUrl": "https://github.com/txuswashere/CRM",
+      "long1": "CRM, Customer Relationship Management. Maintained by txuswashere on GitHub, where it has earned 5 stars from the community.",
+      "long2": "It's actively developed around crm, customer-relationship-management, dolibarr, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "JavaScript",
-        "Adminlte3",
-        "Docker",
-        "Docker Compose",
-        "Dolibarr"
+        "Crm",
+        "Customer Relationship Management",
+        "Dolibarr",
+        "Egain"
       ],
-      "updated": "4 years ago",
+      "updated": "2 years ago",
       "license": "—",
       "langs": [
         {
           "name": "JavaScript",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "adminlte3",
-        "docker",
-        "docker-compose",
-        "dolibarr",
-        "dolibarr-erp",
-        "react"
-      ],
-      "addedAt": "2026-07-15T22:28:33.025070+00:00"
-    },
-    {
-      "slug": "reedcrm",
-      "name": "reedcrm",
-      "fullName": "Eoxia/reedcrm",
-      "category": "Dashboards",
-      "stars": 6,
-      "author": "Eoxia",
-      "avatar": "https://avatars.githubusercontent.com/u/3227847?v=4",
-      "desc": "simplification de la crm pour Dolibarr",
-      "demo": null,
-      "repoUrl": "https://github.com/Eoxia/reedcrm",
-      "long1": "simplification de la crm pour Dolibarr. Maintained by Eoxia on GitHub, where it has earned 6 stars from the community.",
-      "long2": "It's actively developed around dolibarr, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Dolibarr"
-      ],
-      "updated": "1 week ago",
-      "license": "GPL-3.0",
-      "langs": [
-        {
-          "name": "PHP",
-          "pct": 77.931,
-          "size": 782744
+          "pct": 72
         },
         {
           "name": "JavaScript",
-          "pct": 12.07,
-          "size": 121231
+          "pct": 20
         },
         {
-          "name": "CSS",
-          "pct": 5.326,
-          "size": 53497
-        },
-        {
-          "name": "SCSS",
-          "pct": 4.673,
-          "size": 46938
+          "name": "Other",
+          "pct": 8
         }
       ],
       "versions": [],
       "topics": [
-        "dolibarr"
-      ],
-      "addedAt": "2026-07-15T22:28:33.025070+00:00"
-    },
-    {
-      "slug": "nstools",
-      "name": "nstools",
-      "fullName": "agenium-scale/nstools",
-      "category": "DevTools",
-      "stars": 5,
-      "author": "agenium-scale",
-      "avatar": "https://avatars.githubusercontent.com/u/451929?v=4",
-      "desc": "Agenium Scale IT & dev tools",
-      "demo": null,
-      "repoUrl": "https://github.com/agenium-scale/nstools",
-      "long1": "Agenium Scale IT & dev tools. Maintained by agenium-scale on GitHub, where it has earned 5 stars from the community.",
-      "long2": "It's actively developed around build-system, dolibarr, install-script, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "C++",
-        "Build System",
-        "Dolibarr",
-        "Install Script",
-        "Json"
-      ],
-      "updated": "4 years ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "C++",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "build-system",
+        "crm",
+        "customer-relationship-management",
         "dolibarr",
-        "install-script",
-        "json",
-        "json-parser",
-        "markdown",
-        "markdown-to-html",
-        "slowloris",
-        "ssh"
+        "egain",
+        "odoo",
+        "pegasystems",
+        "salesforce",
+        "servicenow",
+        "sugarcrm",
+        "zendesk",
+        "zoho-crm",
+        "appain"
       ],
       "addedAt": "2026-07-15T22:28:33.025070+00:00"
     },
@@ -1273,7 +1561,7 @@
       "category": "Dashboards",
       "stars": 5,
       "author": "BaadMaro",
-      "avatar": "https://avatars.githubusercontent.com/u/72421091?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/72421091?u=98c0992f1a12d0699835cbb4597ff7594c7e9cba&v=4",
       "desc": "DoliBrute is a login brute force tool with captcha bypass for Dolibarr login page.",
       "demo": null,
       "repoUrl": "https://github.com/BaadMaro/DoliBrute",
@@ -1290,9 +1578,8 @@
       "license": "—",
       "langs": [
         {
-          "name": "Python",
           "pct": 100,
-          "size": 100
+          "name": "Python"
         }
       ],
       "versions": [],
@@ -1302,58 +1589,6 @@
         "captcha-solver",
         "dolibarr",
         "dolibarr-erp"
-      ],
-      "addedAt": "2026-07-15T22:28:33.025070+00:00"
-    },
-    {
-      "slug": "crm",
-      "name": "CRM",
-      "fullName": "txuswashere/CRM",
-      "category": "Dashboards",
-      "stars": 5,
-      "author": "txuswashere",
-      "avatar": "https://avatars.githubusercontent.com/u/48863796?v=4",
-      "desc": "CRM, Customer Relationship Management.",
-      "demo": null,
-      "repoUrl": "https://github.com/txuswashere/CRM",
-      "long1": "CRM, Customer Relationship Management. Maintained by txuswashere on GitHub, where it has earned 5 stars from the community.",
-      "long2": "It's actively developed around appain, crm, customer-relationship-management, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Appain",
-        "Crm",
-        "Customer Relationship Management",
-        "Dolibarr"
-      ],
-      "updated": "2 years ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "JavaScript",
-          "pct": 71.429,
-          "size": 20
-        },
-        {
-          "name": "Other",
-          "pct": 28.571,
-          "size": 8
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "appain",
-        "crm",
-        "customer-relationship-management",
-        "dolibarr",
-        "egain",
-        "odoo",
-        "pdf",
-        "pegasystems",
-        "resources",
-        "salesforce",
-        "servicenow",
-        "sugarcrm",
-        "zendesk",
-        "zoho-crm"
       ],
       "addedAt": "2026-07-15T22:28:33.025070+00:00"
     },
@@ -1369,66 +1604,125 @@
       "demo": null,
       "repoUrl": "https://github.com/sismics/play-dolibarr",
       "long1": "This plugin adds Dolibarr API support to Play! Framework 1 applications. Maintained by sismics on GitHub, where it has earned 5 stars from the community.",
-      "long2": "It's actively developed around api, dolibarr, module, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around play, play-framework, api, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Java",
+        "Play",
+        "Play Framework",
         "Api",
-        "Dolibarr",
-        "Module",
-        "Play"
+        "Dolibarr"
       ],
-      "updated": "1 year ago",
+      "updated": "2 years ago",
       "license": "Apache-2.0",
       "langs": [
         {
-          "name": "Java",
-          "pct": 100,
-          "size": 100
+          "pct": 98,
+          "name": "Java"
+        },
+        {
+          "pct": 2,
+          "name": "Python"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/sismics/play-dolibarr/releases/tag/v1.8.4",
+          "name": "v1.8.4"
+        },
+        {
+          "url": "https://github.com/sismics/play-dolibarr/releases/tag/v1.8.3.1",
+          "name": "v1.8.3.1"
+        },
+        {
+          "url": "https://github.com/sismics/play-dolibarr/releases/tag/v1.8.2",
+          "name": "v1.8.2"
+        },
+        {
+          "url": "https://github.com/sismics/play-dolibarr/releases/tag/v1.8.1",
+          "name": "v1.8.1"
+        },
+        {
+          "url": "https://github.com/sismics/play-dolibarr/releases/tag/v1.8.0",
+          "name": "v1.8.0"
+        }
+      ],
       "topics": [
+        "play",
+        "play-framework",
         "api",
         "dolibarr",
-        "module",
-        "play",
-        "play-framework"
+        "module"
       ],
       "addedAt": "2026-07-15T22:28:33.025070+00:00"
     },
     {
-      "slug": "dolibarr-multicompany",
-      "name": "dolibarr_multicompany",
-      "fullName": "hregis/dolibarr_multicompany",
-      "category": "Dashboards",
+      "slug": "nstools",
+      "name": "nstools",
+      "fullName": "agenium-scale/nstools",
+      "category": "DevTools",
       "stars": 5,
-      "author": "hregis",
-      "avatar": "https://avatars.githubusercontent.com/u/454387?v=4",
-      "desc": "Dolibarr optimized for Multicompany",
-      "demo": "https://www.inodbox.com",
-      "repoUrl": "https://github.com/hregis/dolibarr_multicompany",
-      "long1": "Dolibarr optimized for Multicompany. Maintained by hregis on GitHub, where it has earned 5 stars from the community.",
-      "long2": "It's actively developed around dolibarr, dolibarr-erp, multicompany, and is a solid reference for anyone building with these tools.",
+      "author": "agenium-scale",
+      "avatar": "https://avatars.githubusercontent.com/u/451929?v=4",
+      "desc": "Agenium Scale IT & dev tools",
+      "demo": null,
+      "repoUrl": "https://github.com/agenium-scale/nstools",
+      "long1": "Agenium Scale IT & dev tools. Maintained by agenium-scale on GitHub, where it has earned 5 stars from the community.",
+      "long2": "It's actively developed around json, markdown, markdown-to-html, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "PHP",
-        "Dolibarr",
-        "Dolibarr Erp",
-        "Multicompany"
+        "C++",
+        "Json",
+        "Markdown",
+        "Markdown To Html",
+        "Json Parser"
       ],
-      "updated": "1 year ago",
-      "license": "GPL-3.0",
+      "updated": "4 years ago",
+      "license": "MIT",
       "langs": [
         {
-          "name": "PHP",
-          "pct": 100,
-          "size": 100
+          "pct": 87,
+          "name": "C++"
+        },
+        {
+          "pct": 7,
+          "name": "Shell"
+        },
+        {
+          "pct": 6,
+          "name": "PHP"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/agenium-scale/nstools/releases/tag/v3.0",
+          "name": "v3.0"
+        },
+        {
+          "url": "https://github.com/agenium-scale/nstools/releases/tag/v2.2",
+          "name": "v2.2"
+        },
+        {
+          "url": "https://github.com/agenium-scale/nstools/releases/tag/v2.1",
+          "name": "v2.1"
+        },
+        {
+          "url": "https://github.com/agenium-scale/nstools/releases/tag/v2.0",
+          "name": "v2.0"
+        },
+        {
+          "url": "https://github.com/agenium-scale/nstools/releases/tag/v1.0",
+          "name": "v1.0"
+        }
+      ],
       "topics": [
+        "json",
+        "markdown",
+        "markdown-to-html",
+        "json-parser",
+        "build-system",
         "dolibarr",
-        "dolibarr-erp",
-        "multicompany"
+        "ssh",
+        "install-script",
+        "slowloris"
       ],
       "addedAt": "2026-07-15T22:28:33.025070+00:00"
     }
