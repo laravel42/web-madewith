@@ -1,6 +1,7 @@
-/** Public newsletter signup: validate, rate-limit, persist to Postgres. */
+/** Public newsletter signup: validate, rate-limit, persist to Postgres + PostHog. */
 import { Db } from "./db";
 import { DOMAIN_SLUGS } from "./domains";
+import { noopAnalytics, type Analytics } from "./posthog";
 import type { Kv } from "./types";
 import { json, clientIp } from "./util";
 
@@ -42,7 +43,13 @@ async function rateLimited(kv: Kv, ip: string, day: string, limit = 10): Promise
   return n > limit;
 }
 
-export async function handleNewsletter(req: Request, db: Db, kv: Kv, nowIso: string): Promise<Response> {
+export async function handleNewsletter(
+  req: Request,
+  db: Db,
+  kv: Kv,
+  nowIso: string,
+  analytics: Analytics = noopAnalytics,
+): Promise<Response> {
   let body: unknown;
   try {
     body = await req.json();
@@ -57,6 +64,19 @@ export async function handleNewsletter(req: Request, db: Db, kv: Kv, nowIso: str
   if (await rateLimited(kv, clientIp(req), day)) return json({ error: "rate limit — try again tomorrow" }, 429);
 
   const status = await db.upsertNewsletterSubscriber({ ...validated.value, created_at: nowIso });
+
+  // Mirror the stored record into PostHog. Prefer the browser's distinct_id
+  // (forwarded by the form) so the event lands on the visitor's existing
+  // person; $set makes that person searchable by email either way.
+  const { email, scope, slug } = validated.value;
+  analytics.capture("newsletter_subscription_recorded", cap((body as any).distinct_id, 200) || email, {
+    email,
+    scope,
+    slug: slug || null,
+    subscription_status: status,
+    $set: { email },
+  });
+
   const code = status === "subscribed" ? 201 : 200;
   return json({ ok: true, status }, code);
 }

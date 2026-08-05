@@ -47,8 +47,12 @@ export function createApp(env: AppEnv) {
 
   // Public form POSTs may come from the static site origin (Pages / local Astro)
   // when PUBLIC_API_BASE points at this host. Same-origin proxy skips CORS.
+  // /api/* are the canonical paths (no static-page collision); the bare
+  // /newsletter and /submit aliases predate them and are kept for old clients.
   app.use("/newsletter", corsPublic);
   app.use("/submit", corsPublic);
+  app.use("/api/newsletter", corsPublic);
+  app.use("/api/submit", corsPublic);
   app.use("/api/chat", corsPublic);
 
   app.get("/health", (c) => c.json({ ok: true, domains: DOMAINS.map((d) => d.slug) }));
@@ -71,8 +75,12 @@ export function createApp(env: AppEnv) {
   });
 
   // Public APIs.
-  app.post("/submit", (c) => handleSubmit(c.req.raw, env.db, env.kv, new Date().toISOString()));
-  app.post("/newsletter", (c) => handleNewsletter(c.req.raw, env.db, env.kv, new Date().toISOString()));
+  for (const path of ["/submit", "/api/submit"]) {
+    app.post(path, (c) => handleSubmit(c.req.raw, env.db, env.kv, new Date().toISOString(), env.analytics));
+  }
+  for (const path of ["/newsletter", "/api/newsletter"]) {
+    app.post(path, (c) => handleNewsletter(c.req.raw, env.db, env.kv, new Date().toISOString(), env.analytics));
+  }
   app.post("/api/chat", (c) => handleChat(c.req.raw, env));
 
   // Admin auth + API (specific routes before the wildcard).

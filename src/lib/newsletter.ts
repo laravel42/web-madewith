@@ -1,5 +1,3 @@
-import { publicApiBase } from "./public-api";
-
 export type NewsletterScope = "network" | "domain";
 
 export interface NewsletterSubscribeInput {
@@ -13,35 +11,37 @@ export interface NewsletterSubscribeResult {
   status: "subscribed" | "already_subscribed" | "reactivated";
 }
 
-/** @deprecated Prefer publicApiBase from ./public-api */
-export function newsletterApiBase(): string {
-  return publicApiBase();
-}
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+/**
+ * Newsletter signup, captured straight from the browser to PostHog — no
+ * backend hop. The `newsletter_subscriptions` data warehouse view in PostHog
+ * is built from this event, so it doubles as the subscriber store. The event
+ * lands on the visitor's existing PostHog person; `$set` makes that person
+ * searchable by email.
+ */
 export async function subscribeNewsletter(input: NewsletterSubscribeInput): Promise<NewsletterSubscribeResult> {
-  const email = input.email.trim();
-  if (!email) throw new Error("Enter your email address.");
+  const email = input.email.trim().toLowerCase();
+  if (!email || !EMAIL_RE.test(email)) throw new Error("Enter a valid email address.");
 
-  const body: Record<string, string> = { email };
-  if (input.slug) {
-    body.slug = input.slug;
-    body.scope = "domain";
-  } else {
-    body.scope = input.scope ?? "network";
+  const slug = input.slug?.trim().toLowerCase() ?? "";
+  const scope: NewsletterScope = slug ? "domain" : (input.scope ?? "network");
+
+  const posthog = (globalThis as { posthog?: { capture?: (event: string, properties?: Record<string, unknown>) => unknown } }).posthog;
+  if (typeof posthog?.capture !== "function") {
+    // No PostHog snippet on the page (missing token or blocked before the stub
+    // ran) — fail visibly rather than pretending the signup was stored.
+    throw new Error("Subscriptions are unavailable right now — please try again later.");
   }
 
-  const res = await fetch(`${publicApiBase()}/newsletter`, {
-    method: "POST",
-    headers: { "content-type": "application/json" },
-    body: JSON.stringify(body),
+  posthog.capture("newsletter_subscription_recorded", {
+    email,
+    scope,
+    slug: slug || null,
+    subscription_status: "subscribed",
+    $set: { email },
   });
-  const data = (await res.json().catch(() => ({}))) as { error?: string; status?: string };
-  if (!res.ok) throw new Error(data.error || `Subscription failed (${res.status})`);
 
-  const status = data.status;
-  if (status === "already_subscribed" || status === "reactivated" || status === "subscribed") {
-    return { ok: true, status };
-  }
   return { ok: true, status: "subscribed" };
 }
 

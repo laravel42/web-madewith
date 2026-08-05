@@ -8,7 +8,11 @@ import tailwindcss from "@tailwindcss/vite";
 // Local dev proxies the API paths to the Node app (server/). In production
 // nginx does the same reverse-proxy in front of the built static site.
 const apiServerUrl = process.env.API_SERVER_URL || "http://127.0.0.1:8787";
-const apiProxyPaths = ["/admin/api", "/submit", "/newsletter", "/api/chat", "/data", "/config"];
+// /api covers chat + the form endpoints (/api/newsletter, /api/submit). The
+// bare /newsletter and /submit paths are NOT proxied: they are static pages,
+// and prefix-proxying them shadowed those pages in dev (and collided with the
+// static directories behind nginx in production).
+const apiProxyPaths = ["/admin/api", "/api", "/data", "/config"];
 
 export default defineConfig({
   site: "https://madewithwhat.net",

@@ -10,6 +10,7 @@ import { fileURLToPath } from "node:url";
 import { Db } from "./db";
 import { fsStore } from "./storage";
 import { createRedis, redisKv } from "./kv";
+import { createAnalytics, type Analytics } from "./posthog";
 import type { ObjectStore, Kv } from "./types";
 
 const REPO_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
@@ -18,6 +19,8 @@ export interface AppEnv {
   db: Db;
   store: ObjectStore;
   kv: Kv;
+  /** Server-side PostHog capture (no-op when no token is configured). */
+  analytics: Analytics;
   githubToken: string;
   refreshSecret: string;
   /** OpenRouter (low-confidence category refinement). */
@@ -56,11 +59,17 @@ export function createRuntime(): Runtime {
   const store = fsStore(dataDir);
   const kv = redisKv(redis);
   const db = new Db(pool);
+  // Reuses the site token from the root .env; POSTHOG_* overrides for server-only setups.
+  const analytics = createAnalytics(
+    process.env.POSTHOG_PROJECT_TOKEN || process.env.PUBLIC_POSTHOG_PROJECT_TOKEN,
+    process.env.POSTHOG_HOST || process.env.PUBLIC_POSTHOG_HOST,
+  );
 
   const env: AppEnv = {
     db,
     store,
     kv,
+    analytics,
     githubToken: process.env.GITHUB_TOKEN || "",
     refreshSecret: process.env.REFRESH_SECRET || "",
     openrouterApiKey: process.env.OPENROUTER_API_KEY || undefined,
@@ -81,7 +90,7 @@ export function createRuntime(): Runtime {
     env,
     pool,
     async close() {
-      await Promise.allSettled([pool.end(), redis.quit()]);
+      await Promise.allSettled([analytics.shutdown(), pool.end(), redis.quit()]);
     },
   };
 }

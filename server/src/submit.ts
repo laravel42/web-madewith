@@ -1,7 +1,8 @@
-/** Public project submission: validate, rate-limit, store as pending for moderation. */
+/** Public project submission: validate, rate-limit, store as pending for moderation (Postgres + PostHog). */
 import { Db } from "./db";
 import { DOMAIN_SLUGS } from "./domains";
 import { CATEGORIES } from "./classify";
+import { noopAnalytics, type Analytics } from "./posthog";
 import type { Kv } from "./types";
 import { json, clientIp } from "./util";
 
@@ -43,7 +44,13 @@ async function rateLimited(kv: Kv, ip: string, day: string, limit = 20): Promise
   return n > limit;
 }
 
-export async function handleSubmit(req: Request, db: Db, kv: Kv, nowIso: string): Promise<Response> {
+export async function handleSubmit(
+  req: Request,
+  db: Db,
+  kv: Kv,
+  nowIso: string,
+  analytics: Analytics = noopAnalytics,
+): Promise<Response> {
   let body: any;
   try { body = await req.json(); } catch { return json({ error: "invalid JSON" }, 400); }
   const v = validateSubmission(body);
@@ -53,5 +60,19 @@ export async function handleSubmit(req: Request, db: Db, kv: Kv, nowIso: string)
   if (await rateLimited(kv, clientIp(req), day)) return json({ error: "rate limit — try again tomorrow" }, 429);
 
   const id = await db.insertSubmission({ ...v.value, created_at: nowIso });
+
+  // Mirror the stored record into PostHog, attached to the submitter's person
+  // when the form forwarded their browser distinct_id.
+  analytics.capture("project_submission_recorded", cap(body.distinct_id, 200) || `submission:${id}`, {
+    submission_id: id,
+    slug: v.value.slug,
+    repo_url: v.value.repo_url,
+    name: v.value.name,
+    description: v.value.description,
+    category: v.value.category,
+    demo_url: v.value.demo_url,
+    submission_status: "pending",
+  });
+
   return json({ ok: true, id, status: "pending" }, 201);
 }

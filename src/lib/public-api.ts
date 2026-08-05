@@ -1,11 +1,25 @@
 /**
- * Base URL for public POST /newsletter and /submit.
+ * Base URL for public POST /api/newsletter and /api/submit (the /api prefix
+ * avoids colliding with the static /newsletter and /submit pages).
  * Prefer same-origin (Astro/nginx proxies to the Node app). PUBLIC_API_BASE
  * overrides when the browser must hit an absolute host.
  */
 export function publicApiBase(): string {
   const base = import.meta.env.PUBLIC_API_BASE;
   return typeof base === "string" && base.trim() ? base.replace(/\/$/, "") : "";
+}
+
+/**
+ * Browser PostHog distinct_id (set by PostHog.astro), forwarded with form
+ * POSTs so the server-side capture lands on the same person.
+ */
+export function posthogDistinctId(): string | undefined {
+  try {
+    const id = (globalThis as { posthog?: { get_distinct_id?: () => string } }).posthog?.get_distinct_id?.();
+    return typeof id === "string" && id ? id : undefined;
+  } catch {
+    return undefined;
+  }
 }
 
 export interface ProjectSubmitInput {
@@ -42,8 +56,10 @@ export async function submitProject(input: ProjectSubmitInput): Promise<ProjectS
   if (description) body.description = description;
   if (category) body.category = category;
   if (demoUrl) body.demo_url = demoUrl;
+  const distinctId = posthogDistinctId();
+  if (distinctId) body.distinct_id = distinctId;
 
-  const res = await fetch(`${publicApiBase()}/submit`, {
+  const res = await fetch(`${publicApiBase()}/api/submit`, {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(body),
