@@ -173,6 +173,7 @@ def _synthetic_github_id(full_name: str) -> int:
 _REFRESHABLE_COLUMNS = (
     "github_repository_id",
     "name",
+    "full_name",
     "description",
     "repository_url",
     "homepage_url",
@@ -435,6 +436,7 @@ def _update_repository_row(cur, repo_id: int, gh_id: int, catalog_slug: str, rep
         UPDATE repositories SET
           {"github_repository_id = %s," if next_gh is not None else ""}
           name = %s,
+          full_name = COALESCE(%s, full_name),
           description = %s,
           repository_url = %s,
           homepage_url = %s,
@@ -454,6 +456,7 @@ def _update_repository_row(cur, repo_id: int, gh_id: int, catalog_slug: str, rep
         (
             *((next_gh,) if next_gh is not None else ()),
             repo.get("name") or (repo.get("full_name", "").split("/")[-1] if repo.get("full_name") else None),
+            repo.get("full_name") or repo.get("nameWithOwner"),
             repo.get("description"),
             repo.get("html_url") or repo.get("url"),
             repo.get("homepage") or repo.get("homepageUrl"),
@@ -498,6 +501,17 @@ def upsert_repository(conn, catalog_slug: str, repo: dict[str, Any]) -> str:
             (full_name,),
         )
         existing = cur.fetchone()
+
+        if existing is None and gh_id > 0:
+            # Renamed/transferred repos keep their GitHub id but change
+            # full_name; without this match the INSERT below violates the
+            # unique index on github_repository_id. Synthetic ids (<= 0) are
+            # hash-derived from full_name and must not match other rows.
+            cur.execute(
+                "SELECT id, metadata FROM repositories WHERE github_repository_id = %s",
+                (gh_id,),
+            )
+            existing = cur.fetchone()
 
         if existing:
             repo_id = existing["id"]
