@@ -10,7 +10,7 @@ const subcopy = heroSubcopy(theme, total);
 const accent = theme.accent;
 const accentText = `color-mix(in srgb, ${accent} 55%, #ffffff)`;
 ---
-<div style="max-width:1200px; margin:0 auto; padding:48px 32px 30px;">
+<div class="mw-full-bleed" style={`max-width:1200px; margin:0 auto; padding:48px 32px 30px; background:${theme.bg};`}>
   <div style={`font-family:'JetBrains Mono',monospace; font-size:13px; color:${accentText}; margin-bottom:16px;`}>// {total} open-source projects indexed</div>
   <h1 class="disp" style="margin:0; font-family:'JetBrains Mono',monospace; font-size:clamp(30px, 6vw, 40px); font-weight:700; letter-spacing:-0.02em; line-height:1.1; color:#f1f6f2; max-width:820px;">
     <span style={`color:${accentText};`}>$</span> {theme.heroTitle}

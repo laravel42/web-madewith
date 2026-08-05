@@ -2,6 +2,10 @@
  * Mobile page edge inset is owned by `body` (20px each side).
  * Nested horizontal padding is for desktop gutters — cleared on mobile so
  * every page keeps a consistent 20px side inset.
+ *
+ * Exception: `.hero-panel`, `.mw-full-bleed`, `.mw-header`, and `.mw-footer`
+ * break out to full viewport width so colored backgrounds are edge-to-edge;
+ * content padding is restored in CatalogLayout.
  */
 
 @media (max-width: 560px) {
@@ -21,7 +25,6 @@
   .rss-feeds-section,
   .rss-preview-section,
   .shell-pad-x,
-  .hero-panel,
   .mw-footer-inner {
     padding-left: 0 !important;
     padding-right: 0 !important;

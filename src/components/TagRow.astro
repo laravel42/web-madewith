@@ -24,7 +24,7 @@ const hash = (l: string) => "#" + l.toLowerCase().replace(/[^a-z0-9]/g, "");
 
 const pills = [{ label: "All", count: null as number | null }, ...categories.map((c) => ({ label: c.label, count: c.count }))];
 ---
-<div style={`display:flex; gap:${gap}px; flex-wrap:wrap;`}>
+<div class="tag-row" style={`display:flex; gap:${gap}px; flex-wrap:wrap;`}>
   {pills.map(({ label, count }) => {
     const meta = label === "All" ? null : CATEGORY_META[label];
     const active = label === "All";
@@ -36,7 +36,7 @@ const pills = [{ label: "All", count: null as number | null }, ...categories.map
         style={meta && !active ? `display:inline-flex; align-items:center; background:${meta.bg}; color:${meta.ink}; border-color:color-mix(in srgb, ${meta.color} 25%, transparent);` : "display:inline-flex; align-items:center;"}
       >
         {meta && !isTerminal && (
-          <span style="display:inline-flex; vertical-align:middle; margin-right:6px;">
+          <span class="tag-glyph" style="display:inline-flex; vertical-align:middle; margin-right:6px;">
             <Glyph name={label} size={14} color={active ? "var(--accentInk)" : meta.color} />
           </span>
         )}
@@ -44,7 +44,7 @@ const pills = [{ label: "All", count: null as number | null }, ...categories.map
         {count != null && (
           // No opacity here: dimming the label is what pushed the count under AA
           // (DevTools fell to 2.16:1), and the hue has no headroom to spare.
-          <span style="margin-left:6px; font-size:0.88em; font-weight:700;">{count}</span>
+          <span class="tag-count" style="margin-left:6px; font-size:0.88em; font-weight:700;">{count}</span>
         )}
       </span>
     );

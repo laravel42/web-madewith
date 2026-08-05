@@ -15,10 +15,11 @@ const countInitial = countFormat === "terminal" ? `// ${n} result${n === 1 ? "" 
 // grey flips with the shell: #5c665f clears AA on #fbfcfb, #9aa69e on #000 and
 // on the terminal #0c0f0e (the value the terminal variant already used).
 const muted = theme.darkShell ? "#9aa69e" : "#5c665f";
+const gridPadTop = theme.editorial ? "0" : theme.variant === "terminal" ? "12px" : "14px";
 ---
 
 {theme.editorial ? (
-  <div class="shell-pad-x" style="max-width:1200px; margin:0 auto; padding:0 32px 80px;">
+  <div class="shell-pad-x mw-project-grid mw-full-bleed" style={`max-width:1200px; margin:0 auto; padding:0 32px 80px; background:${theme.bg};`}>
     <div data-role="count" data-format="minimal" style={`font-size:13px; color:${muted}; margin:18px 0;`}>{countInitial}</div>
     <div data-role="grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:10px;">
       {projects.map((p, i) => <ProjectCard theme={theme} project={p} rank={(i < 9 ? "0" : "") + (i + 1)} priority={i < 3} />)}
@@ -28,7 +29,7 @@ const muted = theme.darkShell ? "#9aa69e" : "#5c665f";
     <div data-role="pager" class="pager" hidden></div>
   </div>
 ) : (
-  <div class="shell-pad-x" style={`max-width:1200px; margin:0 auto; padding:${theme.variant === "terminal" ? "12px" : "14px"} 32px 80px;`}>
+  <div class="shell-pad-x mw-project-grid mw-full-bleed" style={`max-width:1200px; margin:0 auto; padding:${gridPadTop} 32px 80px; background:${theme.bg};`}>
     <div data-role="count" data-format={countFormat} style={`font-size:${theme.variant === "terminal" ? "12px" : "13px"}; color:${muted}; margin-bottom:${theme.variant === "terminal" ? "16px" : "18px"};`}>{countInitial}</div>
     <div data-role="grid" style={`display:grid; grid-template-columns:repeat(3,1fr); gap:${theme.variant === "terminal" ? "18px" : "24px"};`}>
       {projects.map((p, i) => <ProjectCard theme={theme} project={p} rank={(i < 9 ? "0" : "") + (i + 1)} priority={i < 3} />)}

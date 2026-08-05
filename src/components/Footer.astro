@@ -19,7 +19,7 @@ const wordmarkBrand = theme.darkShell ? "#3775ec" : "#2c68dd";
 ---
 
 {theme.variant === "terminal" ? (
-  <div style={`border-top:${theme.footerBorder}; background:${theme.footerBg}; margin-top:auto;`}>
+  <div class="mw-footer" style={`border-top:${theme.footerBorder}; background:${theme.footerBg}; margin-top:auto;`}>
     <div class="mw-footer-inner" style="max-width:1200px; margin:0 auto; padding:16px 32px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
       <div style="display:flex; align-items:center; gap:9px; font-size:13px; color:#a8b2ab;">
         <span style="color:var(--accent-text);">$</span> made-with-{techSlug}
@@ -37,7 +37,7 @@ const wordmarkBrand = theme.darkShell ? "#3775ec" : "#2c68dd";
     </div>
   </div>
 ) : (
-  <div style={`border-top:${theme.footerBorder}; background:${theme.footerBg}; margin-top:auto;`}>
+  <div class="mw-footer" style={`border-top:${theme.footerBorder}; background:${theme.footerBg}; margin-top:auto;`}>
     <div class="mw-footer-inner" style="max-width:1200px; margin:0 auto; padding:18px 32px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
       <div style="display:flex; align-items:center; gap:10px;">
         <div class="disp" style={`width:26px; height:26px; border-radius:7px; background:var(--accent-solid); color:${theme.accentInk}; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:13px;`}>{logo}</div>

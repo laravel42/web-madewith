@@ -9,7 +9,7 @@ const subcopy = heroSubcopy(theme, total);
 const headline = theme.heroHeadline ?? `MADE WITH<br>${theme.techName.toUpperCase()}`;
 const accent = theme.accent;
 ---
-<div style="max-width:1200px; margin:0 auto; padding:50px 32px 30px; border-bottom:1px solid #e8e8e8;">
+<div class="mw-full-bleed" style={`max-width:1200px; margin:0 auto; padding:50px 32px 30px; border-bottom:1px solid #e8e8e8; background:${theme.bg};`}>
   <h1 class="disp" style="margin:0; font-weight:800; font-size:clamp(44px, 9vw, 78px); line-height:0.92; letter-spacing:-0.04em; color:#0a0a0a; text-transform:uppercase;" set:html={headline}></h1>
   <div style="display:flex; align-items:flex-end; justify-content:space-between; margin-top:26px; gap:40px; flex-wrap:wrap;">
     <div style="font-size:18px; color:#444; max-width:520px; line-height:1.5;">{subcopy}</div>

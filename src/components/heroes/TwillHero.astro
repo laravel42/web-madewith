@@ -7,7 +7,7 @@ interface Props { theme: Theme; total: string; categories: CategoryFilter[]; }
 const { theme, total, categories } = Astro.props;
 const subcopy = heroSubcopy(theme, total);
 ---
-<div style="max-width:1200px; margin:0 auto; padding:60px 32px 30px;">
+<div class="mw-full-bleed" style={`max-width:1200px; margin:0 auto; padding:60px 32px 30px; background:${theme.bg};`}>
   <div style={`font-size:13px; font-weight:600; color:color-mix(in srgb, ${theme.accent} 45%, #16202a); letter-spacing:.05em; text-transform:uppercase; margin-bottom:14px;`}>{theme.eyebrow}</div>
   <h1 class="disp" style="margin:0; font-size:clamp(36px, 7.5vw, 52px); font-weight:800; letter-spacing:-0.03em; line-height:1.03; max-width:780px;">{theme.heroTitle}</h1>
   <div style="font-size:18px; color:#5c665f; margin-top:18px; max-width:640px; line-height:1.55;">{subcopy}</div>
