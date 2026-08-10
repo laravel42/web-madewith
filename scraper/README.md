@@ -43,10 +43,24 @@ Spider arguments:
 | Argument | Default | Description |
 | --- | --- | --- |
 | `domains` | all | Comma-separated catalog slugs |
-| `keep` | 1000 | Maximum published projects per domain |
 | `clean` | 0 | `1` removes existing `spawn:*` search runs before discovery |
+| `page_size` | 25 | Repositories requested per GraphQL page (capped at 100) |
+| `max_pages` | 40 | Pages per shard; `page_size x max_pages` is the shard's result budget, capped at GitHub's 1,000-result ceiling |
 
 Scrapy AutoThrottle and download delay control request pacing.
+
+### 502 Bad Gateway means the page is too big
+
+GitHub's search backend times out on large pages of the discovery query and
+nginx answers with an HTML `502 Bad Gateway` rather than a GraphQL error. The
+page size is the lever: `first: 100` times out reliably, `first: 25` does not.
+The spider halves the page size (down to 10) and re-requests the same cursor
+whenever a page 502s or GraphQL reports a timeout, so a slow shard costs extra
+requests instead of returning nothing. Because the budget is counted in results
+rather than pages, shrinking the page does not shrink coverage.
+
+Raising `page_size` past the default invites those timeouts; lower it further if
+a domain still fails.
 
 ### GitHub’s 1,000-result ceiling
 
