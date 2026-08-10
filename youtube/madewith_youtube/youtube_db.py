@@ -253,7 +253,8 @@ def load_videos_for_slug(conn, slug: str, limit: int = 24) -> list[dict]:
             """
             SELECT youtube_video_id, title, description, channel_id, channel_title,
                    channel_subscriber_count, published_at, duration_seconds, view_count,
-                   like_count, thumbnail_url, video_url, quality_score, definition
+                   like_count, thumbnail_url, video_url, quality_score, definition,
+                   discovered_at
             FROM youtube_videos
             WHERE catalog_slug = %s
             ORDER BY quality_score DESC, view_count DESC

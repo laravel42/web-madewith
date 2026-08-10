@@ -6,6 +6,8 @@ import { allVideoEntries, type Video, type VideoEntry } from "./videos";
 
 export interface VideoCardItem {
   slug: string;
+  /** When the video entered our catalog (discovered_at); drives list order. */
+  addedIso: string;
   href: string;
   title: string;
   excerpt: string;
@@ -162,6 +164,7 @@ function toItem(entry: VideoEntry): VideoCardItem {
     views: video.views,
     viewsLabel: formatViews(video.views),
     dateIso: video.publishedAt,
+    addedIso: video.discoveredAt ?? video.publishedAt,
     dateLabel: formatBlogDate(video.publishedAt),
     duration: video.duration,
     durationSeconds: video.durationSeconds,
@@ -179,7 +182,9 @@ export function allVideoCards(): VideoCardItem[] {
   if (!CARDS) {
     CARDS = allVideoEntries()
       .map(toItem)
-      .sort((a, b) => Date.parse(b.dateIso) - Date.parse(a.dateIso));
+      // Newest in OUR catalog first: a decade-old classic scraped today should
+      // lead, so sort by when we discovered it, not the YouTube publish date.
+      .sort((a, b) => Date.parse(b.addedIso) - Date.parse(a.addedIso) || Date.parse(b.dateIso) - Date.parse(a.dateIso));
   }
   return CARDS;
 }

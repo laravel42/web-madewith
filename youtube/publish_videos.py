@@ -107,6 +107,7 @@ def serialize(row: dict) -> dict:
         "url": row.get("video_url"),
         "thumbnail": row.get("thumbnail_url"),
         "publishedAt": row["published_at"].isoformat() if row.get("published_at") else None,
+        "discoveredAt": row["discovered_at"].isoformat() if row.get("discovered_at") else None,
         "duration": format_duration(seconds),
         "durationSeconds": seconds,
         "views": row.get("view_count") or 0,

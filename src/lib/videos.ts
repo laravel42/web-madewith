@@ -9,6 +9,8 @@ export interface Video {
   url: string;
   thumbnail: string;
   publishedAt: string;
+  /** When the video entered the catalog (DB discovered_at); absent on old datasets. */
+  discoveredAt?: string;
   duration: string;
   durationSeconds: number;
   views: number;
