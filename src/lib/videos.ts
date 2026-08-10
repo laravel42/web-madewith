@@ -10,6 +10,8 @@ export interface Video {
   thumbnail: string;
   /** YouTube `snippet.publishedAt` — upload time, not catalog scrape time. */
   publishedAt: string;
+  /** When the video entered the catalog (DB discovered_at); absent on old datasets. */
+  discoveredAt?: string;
   duration: string;
   durationSeconds: number;
   views: number;

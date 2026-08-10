@@ -6,6 +6,8 @@ import { allVideoEntries, byYoutubePublishedAtDesc, type Video, type VideoEntry 
 
 export interface VideoCardItem {
   slug: string;
+  /** When the video entered our catalog (discovered_at); drives list order. */
+  addedIso: string;
   href: string;
   title: string;
   excerpt: string;
@@ -162,6 +164,7 @@ function toItem(entry: VideoEntry): VideoCardItem {
     views: video.views,
     viewsLabel: formatViews(video.views),
     dateIso: video.publishedAt,
+    addedIso: video.discoveredAt ?? video.publishedAt,
     dateLabel: formatBlogDate(video.publishedAt),
     duration: video.duration,
     durationSeconds: video.durationSeconds,
