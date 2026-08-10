@@ -13,6 +13,7 @@
     "scrape:youtube:publish": "bash youtube/publish_videos.sh",
     "dev": "astro dev",
     "generate:blog": "cd factory && .venv/bin/python content_factory.py",
+    "test:blog": "cd factory && .venv/bin/python tests/run.py",
     "hydrate:blog": "node scripts/hydrate-blog.mjs",
     "predev": "node scripts/hydrate-blog.mjs",
     "prebuild": "node scripts/pull-data.mjs && node scripts/hydrate-blog.mjs",

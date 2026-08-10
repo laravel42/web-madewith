@@ -39,6 +39,13 @@ Override it with:
 python content_factory.py --start-date 2026-01-12
 ```
 
+Or let the engine resume where the last batch stopped — it continues from the
+newest published date, filling that date's remaining slots before rolling over:
+
+```bash
+python content_factory.py --start-date auto
+```
+
 ## Install
 
 ```bash
@@ -67,6 +74,9 @@ Overrides (env):
 | `FACTORY_MODEL` | Model for this tool only | `anthropic/claude-sonnet-4.5` (OpenRouter) / `gpt-5-mini` (OpenAI) |
 | `FACTORY_BASE_URL` | Any OpenAI-compatible endpoint | OpenRouter when its key is set |
 | `FACTORY_MAX_TOKENS` | Output cap per article (chat path) | `32000` |
+| `FACTORY_MAX_RETRIES` | Attempts per LLM call before giving up | `5` |
+| `FACTORY_MIN_BODY_CHARS` | Reject-and-retry threshold for stub bodies | `6000` |
+| `FACTORY_CONCURRENCY` | Default for `--concurrency` | `1` |
 
 `GITHUB_TOKEN` is also required (repository facts), and an LLM key —
 `OPENROUTER_API_KEY` or `OPENAI_API_KEY` — must be present unless `--dry-run`.
@@ -91,6 +101,19 @@ to abort on the first failure instead.
 python content_factory.py \
   --count 50 \
   --seed 42
+```
+
+### Generate in parallel
+
+`--concurrency` overlaps the LLM calls only. Validation, duplicate detection,
+and every write stay on the main thread, and each slot keeps the pairing the
+seed assigned it, so publication dates stay a gapless five-per-day run. Each
+candidate is still scored against everything already accepted, so two
+in-flight near-duplicates cannot both land. What can differ from a serial run
+is which attempt finishes first, and therefore which of a colliding pair wins:
+
+```bash
+python content_factory.py --count 50 --concurrency 4
 ```
 
 ## Generate a smaller test batch
@@ -120,7 +143,7 @@ output/
 After generating articles, sync factory output into the site content tree:
 
 ```bash
-pnpm run hydrate-blog
+pnpm run hydrate:blog
 ```
 
 This copies:
@@ -128,7 +151,45 @@ This copies:
 - `factory/output/articles/**` → `src/content/blog/**`
 - `factory/output/assets/**` → `public/assets/**`
 
-`hydrate-blog` runs automatically before `pnpm dev` and `pnpm run build`. If `factory/output/articles` is absent, the command exits successfully and keeps committed `src/content/blog` content.
+`hydrate:blog` runs automatically before `pnpm dev` and `pnpm run build`. If `factory/output/articles` is absent, the command exits successfully and keeps committed `src/content/blog` content.
+
+## Housekeeping
+
+Cover and data images are written only once an article is accepted, so failed
+and rejected attempts no longer leave files behind. To clear orphans from
+earlier batches:
+
+```bash
+python content_factory.py --prune-assets --dry-run   # list them
+python content_factory.py --prune-assets             # delete them
+```
+
+## Tests
+
+No API keys or network access needed — GitHub and the LLM are stubbed:
+
+```bash
+pnpm run test:blog          # or: python tests/run.py
+python tests/run.py finalize --verbose
+```
+
+## What the engine guarantees about the body
+
+The model writes the article; finalisation then repairs the defects that
+recur regardless of prompt wording, and `validate_article` fails anything still
+broken (one repair round trip, then the pairing is retried):
+
+- bare section labels (`Executive answer` on its own line) become real `##`
+  headings, so they get an anchor and a table-of-contents entry
+- the table of contents is discarded and rebuilt last, from the headings that
+  actually shipped, using the same anchor ids as `src/lib/blog-markdown.ts`
+- asset paths are copied verbatim into the prompt and repaired on the way out
+  (`//assets/…`, `./assets/…`, unsubstituted placeholder tokens)
+- a missing cover or data image is injected rather than silently dropped
+- leaked SEO / Open Graph / JSON-LD sections are stripped from the body — they
+  belong in the front matter, which is generated separately
+- duplicate FAQ blocks collapse to one `## FAQ`, which also becomes the
+  `FAQPage` JSON-LD alongside `TechArticle`
 
 Each article contains:
 
