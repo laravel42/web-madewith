@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 3,
+  "videoId": "kFmhSTh167U",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to build a fully offline, portable AI voice assistant using a Raspberry Pi 5. This comprehensive tutorial guides you through the hardware assembly, including the Wisplay Hat and Pi Sugar battery pack, and the complete software setup. Discover how to install and configure local AI services like Whisper for speech-to-text, Ollama for running large language models like Phi-3, and Piper for text-to-speech. Create a private, responsive, and playful AI gadget that talks, listens, and thinks entirely on-device, without needing an internet connection.",
+  "chapters": [
+    {
+      "title": "Project Introduction",
+      "description": "This chapter introduces the offline AI voice assistant project built on a Raspberry Pi 5, showcasing its capabilities and core components.",
+      "startTime": 0.0,
+      "endTime": 32.0,
+      "slug": "project-introduction"
+    },
+    {
+      "title": "Assembling the Hardware",
+      "description": "This chapter provides a checklist and step-by-step guide for assembling the Raspberry Pi 5, active cooler, Pi Sugar battery, and Wisplay Hat.",
+      "startTime": 32.0,
+      "endTime": 111.0,
+      "slug": "assembling-the-hardware"
+    },
+    {
+      "title": "Flashing Raspberry Pi OS",
+      "description": "This chapter details how to use the Raspberry Pi Imager to flash the operating system onto an SD card, including pre-configuration of key settings.",
+      "startTime": 111.0,
+      "endTime": 161.0,
+      "slug": "flashing-raspberry-pi-os"
+    },
+    {
+      "title": "First Boot & SSH Connection",
+      "description": "This chapter covers powering on the Raspberry Pi for the first time, finding its IP address on the network, and connecting to it via SSH.",
+      "startTime": 161.0,
+      "endTime": 211.0,
+      "slug": "first-boot-ssh-connection"
+    },
+    {
+      "title": "Installing the Wisplay Hat Driver",
+      "description": "This chapter walks through installing the necessary drivers for the Wisplay Hat and running a test program to verify the screen and speaker are working.",
+      "startTime": 211.0,
+      "endTime": 276.0,
+      "slug": "installing-the-wisplay-hat-driver"
+    },
+    {
+      "title": "Configuring the Chatbot Application",
+      "description": "This chapter explains how to clone the chatbot's code repository and configure the core AI services (Whisper, Ollama, Piper) in the .env file.",
+      "startTime": 276.0,
+      "endTime": 413.0,
+      "slug": "configuring-the-chatbot-application"
+    },
+    {
+      "title": "Installing Ollama for Local LLM",
+      "description": "This chapter covers the installation of Ollama, a service for running local large language models, and downloading the Phi-3 model.",
+      "startTime": 413.0,
+      "endTime": 549.0,
+      "slug": "installing-ollama-for-local-llm"
+    },
+    {
+      "title": "Installing PiSugar Power Manager",
+      "description": "This chapter shows the quick installation of the PiSugar power manager, which is required for the chatbot's battery indicator to function.",
+      "startTime": 549.0,
+      "endTime": 590.0,
+      "slug": "installing-pisugar-power-manager"
+    },
+    {
+      "title": "Installing Whisper for ASR",
+      "description": "This chapter guides you through installing OpenAI's Whisper for offline speech-to-text and testing it to download the 'tiny' model.",
+      "startTime": 590.0,
+      "endTime": 663.0,
+      "slug": "installing-whisper-for-asr"
+    },
+    {
+      "title": "Installing Piper for TTS",
+      "description": "This chapter details how to install the Piper text-to-speech engine, download a voice model, and update the configuration file with the correct paths.",
+      "startTime": 663.0,
+      "endTime": 789.0,
+      "slug": "installing-piper-for-tts"
+    },
+    {
+      "title": "Live Demonstration of the AI Assistant",
+      "description": "This chapter shows the fully assembled and configured AI assistant in action, demonstrating its ability to answer questions and tell jokes.",
+      "startTime": 789.0,
+      "endTime": 1102.0,
+      "slug": "live-demonstration-of-the-ai-assistant"
+    },
+    {
+      "title": "Creating a Startup Service & Conclusion",
+      "description": "This chapter explains how to make the chatbot application run automatically on boot as a system service and concludes the project.",
+      "startTime": 1102.0,
+      "endTime": 1169.0,
+      "slug": "creating-a-startup-service-conclusion"
+    }
+  ],
+  "summary": "## Project Overview\n\nThis tutorial demonstrates how to build a **fully offline AI voice assistant** using a Raspberry Pi 5. The device can listen, process language, and speak responses without any internet connection, ensuring privacy and portability.\n\n## Hardware Components\n\n- **Raspberry Pi 5**: The core computer for the project.\n  > [!IMPORTANT]\n  > An **8GB RAM model** is recommended, as the full software stack uses around 4GB of memory.\n- **Active Cooler**: Essential for maintaining stable performance, as the Pi 5 will run hot.\n- **Pi Sugar 3 Plus**: A battery pack that makes the device portable.\n- **Wisplay Hat**: An all-in-one display with a built-in speaker and buttons.\n- **Stackable GPIO Header**: Needed to connect both the Pi Sugar and the Wisplay Hat to the Pi.\n\n## Core Software Services\n\nThe project relies on three key local services to function offline:\n\n- **Speech-to-Text (ASR)**: **Whisper**, OpenAI's model, transcribes spoken audio into text. The `tiny` model is used for efficiency.\n- **Large Language Model (LLM)**: **Ollama** is used to serve the **Phi-3 1.7B** model, which generates text-based responses.\n- **Text-to-Speech (TTS)**: **Piper** is a fast, offline TTS engine optimized for Raspberry Pi that converts the LLM's text into audible speech.\n\n## Installation & Configuration Workflow\n\n1.  **Hardware Assembly**: Connect the active cooler, Pi Sugar battery, and Wisplay Hat to the Raspberry Pi 5.\n2.  **OS Setup**: Flash **Raspberry Pi OS** using the imager, pre-configuring the hostname, Wi-Fi, and enabling SSH.\n3.  **Driver Installation**: Install the drivers for the **Wisplay Hat** to enable the screen and speaker.\n4.  **Chatbot App Setup**: Clone the project's GitHub repository and create a `.env` file from the provided template to configure the services.\n5.  **Service Installation**:\n    - **Ollama**: Install the Ollama service and download the `phi-3:1.7b` model.\n      > [!TIP]\n      > To significantly speed up the Ollama installation, download the large package on a separate computer and transfer it to the Pi via FTP before running the local install script.\n    - **Whisper**: Install Whisper and its dependencies.\n    - **Piper**: Install the Piper TTS engine and download a voice model (both `.onnx` and `.json` files).\n6.  **Final Configuration**: Update the `.env` file with the correct paths to the Piper executable and the downloaded voice model.\n7.  **Run the Application**: Launch the main chatbot script to start the assistant.\n8.  **Create a Startup Service**: Use the provided script to make the chatbot application launch automatically whenever the Raspberry Pi boots up.",
+  "transcription": "## Project Introduction\n\nHello everyone, welcome back to the channel. Today we are building a next level AI gadget, a fully offline voice assistant that can talk, listen, and show emotions on the mini display. It runs on the Raspberry Pi 5B with the Wisplay hat and the Pi Super 3 Plus battery pack. This little buddy works anywhere without internet. Private, portable, and playful. So, let's get started to make your own AI friend.\n\n## Assembling the Hardware\n\nHere is our setup checklist for the Raspberry Pi 5B. I recommend using the model with 8 GB of RAM or more because running all the AI software together typically use around 4 GB of memory on its own. This setup gets hot enough to cook breakfast. So, an active cooler is a must if you want stable performance and a happy Raspberry Pi.\n\nSince we are installing the Pi Sugar underneath the Pi, the cooler's push pin is a little too tall. We need to gently bend it outward and press it to reduce the height.\n\nThen add a stackable GPIO header so the Wisplay hat will fit perfectly on top.\n\nNext, install the Pi Sugar battery by aligning its pins with the GPIO side and securing it with the four screws.\n\nFinally, place the Wisplay head on the top of the GPIO header and gently press down the both sides until it fully sits on the pins.\n\nAnd just like that, the hardware assembly is complete.\n\n## Flashing Raspberry Pi OS\n\nNow, let's dive into the software parts.\n\nI'm using Raspberry Pi imager to flash the SD card. Pick Raspberry Pi model 5 and the latest OS version and make sure to set the device name, Wi-Fi, and enable SSH before flashing.\n\nAfter flashing the SD card, take it out and plug it into the Raspberry Pi.\n\n## First Boot & SSH Connection\n\nTurn on the Pi using Pi Sugar's power button.\n\nAfter the Pi starts up, it should join your Wi-Fi. Grab an IP scanner to find its IP.\n\nThen SSH into the Pi using the address we just found.\n\n## Installing the Wisplay Hat Driver\n\nFirst, let's install the display hat drivers.\n\nSimply copy the installation commands from the Wisplay project and run them.\n\nOnce the driver is installed, the Pi will reboot. Just wait a bit and then SSH back in.\n\nHead into the Wisplay example folder and run the text program.\n\nClick the Wisplay button and you will see the screen update and hear test voice.\n\n>> Transform your pie into a portable interactive device with the Pi Sugar Whisplay Hat.\n\n>> Transform your Pi into a portable interactive device with the Pi Sugar Whisplay Hat.\n\n## Configuring the Chatbot Application\n\nNow we are ready to install the chatbot program.\n\nGit clone the repository onto the Raspberry Pi.\n\nJust copy and execute the commands to install all the dependencies.\n\nUse the template to create a .env file. There you go.\n\nI'm using Whisper for ASR, Ollama for LLM, and Piper for TTS.\n\nWe won't need image generation this time. This feature requires an API.\n\nHere I turn on the thinking mode so responses come faster.\n\nFor Ollama I'm using Phi-3 1.7B model because D6 R1 talks too much. Setting serve Ollama to true will start the service when the chatbot launches.\n\nFor now we will leave the .env settings here. We will come back later to configure Piper. For now, just save the file.\n\n## Installing Ollama for Local LLM\n\nRun the build script for the chatbot program.\n\nNow that the main chatbot app is installed, we still have a few local service to set up. First up, Ollama.\n\nYou can install Ollama using the official script from GitHub, but that script downloads a huge compressed package directly on the Pi, which is super slow. So instead, I download that package on my laptop first. Transfer it to the Pi using the FTP tool.\n\nJust drop the file into the Pi folder and then run the install script that already included in the chatbot folder. This installs directly from the local compressed file. Way faster than letting the Pi download everything itself.\n\nOnce Ollama is installed, we can start it by running the `ollama serve` command.\n\nOpen a new SSH terminal and run `ollama run phi-3:1.7b`. The first time you do this, Ollama will download the corresponding model file. The download can take a while and if the speed drops significantly, just rerun the command. Ollama supports resuming from where it left off.\n\nNow we can try talking to the model. It will show its thinking process as well as the final answer.\n\nThe thinking process usually help the models give better answers. But with small models, the difference is pretty minor. So I made it optional. If you want to make your model to think before replying, just toggle it in the .env file.\n\n## Installing PiSugar Power Manager\n\nNext, we will install the PiSugar power manager, because the chatbot's battery indicator relies on it.\n\n## Installing Whisper for ASR\n\nAll right. Now, let's go ahead and install Whisper. Whisper is OpenAI's speech-to-text engine.\n\nIt can turn your voice into text completely offline which is perfect for our project.\n\nJust copy the whisper install command, add its system packages and execute it.\n\nGive the whisper command a try to make sure it's working.\n\nNow I am testing whisper with an MP3 from the Wisplay example folder. By setting the model size to tiny, it will download the model immediately instead of waiting the chatbot to do it later.\n\nYou can see it accurately transcribes the content of the audio file.\n\n## Installing Piper for TTS\n\nNext, we will install the final service, Piper. Piper is a local text-to-speech engine. It can convert text into neural sounding speech entirely offline and it's optimized for the Raspberry Pi. Just like whisper.\n\nSimply copy the piper install command, add its bracket system packages and execute it.\n\nRun which command to find where piper is installed. We will use this path in the .env file.\n\nNext up we need piper model files. Head over to Piper's GitHub voice page. You can listen to samples and grab the download links.\n\n>> A rainbow is a meteorological phenomenon that is caused by reflection, refraction, and dispersion of light in water droplets resulting in a spectrum.\n\nMake sure to get both the ONNX and JSON files and put them together.\n\nI will place them in a new folder called Piper.\n\nCopy the path of the model file. We need to add Piper's path and the model path to the .env file.\n\nAnd that's it for the software setup and configuration.\n\n## Live Demonstration of the AI Assistant\n\nAll right, time to launch the chatbot and see it in action.\n\nUse `bash run chatbox` script to start.\n\nHello.\n\nHello. How are you today?\n\nWhat would you like to do? I'm excited to help you learn and have fun. Let's chat and explore together.\n\nHow to make a pizza.\n\nMaking a pizza is fun and easy. Here's a simple recipe: One. Get your ingredients. Flour, salt, olive oil, tomato sauce, cheese, and toppings like pepperoni or mushrooms. Two, roll out the dough. Mix flour and salt. Knead and roll out into a rectangle. Three, add sauce and toppings. Spread tomato sauce. Add cheese and put your favorite toppings. Four. Bake. Heat the oven and bake until the cheese is golden and bubbly. Five. Enjoy.\n\nLet me know if you'd like a detailed step-by-step or a pizza recipe for a specific type.\n\nNow, I will turn on the thinking mode. Let's give it another try.\n\nHello. Could you please tell me a joke?\n\nYou can see the model's thinking process showing up on the screen.\n\nHere's a light-hearted joke. Why did the scarecrow win an award? Because he was outstanding in his field. Hey pal, let me know if you'd like another.\n\nTell me another one.\n\nYou can hear the fan kicking in. The CPU is getting pretty warm now.\n\nHere's a quick joke. Why did the dog wear a hat? Because he was a dog in a hat. Let me know if you'd like another.\n\nWhat's your name?\n\nHi there. I'm Leela, your friendly chatbot. I love helping you learn, laugh, and have fun. Let me know if you'd like another joke, a story, or just a fun conversation together. We can explore the world with curiosity and joy.\n\n## Creating a Startup Service & Conclusion\n\nEverything looks good. Now, for the final step, we will use the startup script to make the chatbot run as a system service. So, it automatically starts up when the Pi powers on.\n\nAnd that's our offline AI build. Everything from voice recognition to response generation and speech runs locally on the Raspberry Pi. No Wi-Fi, no server, just your Pi thinking on its own. Offline is the new smart. I believe the future holds even more possibilities for small self-contained devices like this. If you enjoy this project, hit like, subscribe, and I will see you in the next one."
+}

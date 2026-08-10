@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 3,
+  "videoId": "4OecY45bzM4",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to create a complete WordPress website for free using InfinityFree web hosting. This step-by-step tutorial guides you through setting up your account, creating a hosting plan with a free subdomain, and installing WordPress with the Softaculous installer. You will also learn the crucial process of generating and installing a free SSL certificate to secure your site with HTTPS, transforming it from a basic installation into a professional-ready online presence.",
+  "chapters": [
+    {
+      "title": "Introduction to InfinityFree Hosting",
+      "description": "This chapter provides an overview of InfinityFree, a free web hosting provider, and highlights its key features like 99.9% uptime and ad-free hosting.",
+      "startTime": 0.0,
+      "endTime": 43.0,
+      "slug": "introduction-to-infinityfree-hosting"
+    },
+    {
+      "title": "Account Registration and Dashboard",
+      "description": "This chapter shows how to register for a new InfinityFree account or sign into an existing one to access the main dashboard.",
+      "startTime": 43.0,
+      "endTime": 97.0,
+      "slug": "account-registration-and-dashboard"
+    },
+    {
+      "title": "Creating a Hosting Account & Subdomain",
+      "description": "This chapter walks through creating a new hosting account and choosing a free subdomain for your website.",
+      "startTime": 97.0,
+      "endTime": 185.0,
+      "slug": "creating-a-hosting-account-subdomain"
+    },
+    {
+      "title": "Accessing the Control Panel and Softaculous",
+      "description": "This chapter covers how to access the website's control panel and locate the Softaculous Apps Installer to begin the WordPress setup.",
+      "startTime": 185.0,
+      "endTime": 258.0,
+      "slug": "accessing-the-control-panel-and-softaculous"
+    },
+    {
+      "title": "Installing WordPress with Softaculous",
+      "description": "This chapter provides a step-by-step guide to installing WordPress, including setting the HTTP prefix and admin credentials.",
+      "startTime": 258.0,
+      "endTime": 312.0,
+      "slug": "installing-wordpress-with-softaculous"
+    },
+    {
+      "title": "First Look and The Need for SSL",
+      "description": "This chapter shows the newly installed WordPress site and explains the importance of fixing the 'Not Secure' warning by installing an SSL certificate.",
+      "startTime": 312.0,
+      "endTime": 360.0,
+      "slug": "first-look-and-the-need-for-ssl"
+    },
+    {
+      "title": "Generating a Free SSL Certificate",
+      "description": "This chapter details the process of creating a new SSL certificate order and verifying domain ownership using automatic CNAME setup.",
+      "startTime": 360.0,
+      "endTime": 418.0,
+      "slug": "generating-a-free-ssl-certificate"
+    },
+    {
+      "title": "Installing the SSL Certificate and Final Review",
+      "description": "This chapter covers the final steps of automatically installing the generated SSL certificate and verifying that the website is secure with HTTPS.",
+      "startTime": 418.0,
+      "endTime": 497.919,
+      "slug": "installing-the-ssl-certificate-and-final-review"
+    }
+  ],
+  "summary": "## What is InfinityFree?\nInfinityFree is a free web hosting provider with over 10 years of service. Key features include:\n- **Completely Free:** No cost for hosting.\n- **Fast Hosting & High Uptime:** Offers a 99.9% uptime guarantee.\n- **No Ads:** They do not place ads on your website.\n- **Custom Domains:** You can use your own custom domain or a free subdomain.\n- **Full Features:** Provides PHP, MySQL, and cPanel access.\n\n## Creating a Free Website: Step-by-Step\n1.  **Register:** Sign up for an InfinityFree account.\n2.  **Create a Hosting Account:** From the dashboard, create a new account. You can either use a free subdomain or connect a custom domain you own.\n3.  **Access the Control Panel:** After the account is created, navigate to the control panel (cPanel).\n4.  **Install WordPress:** Use the **Softaculous Apps Installer** found in the software section of the control panel.\n\n> [!NOTE]\n> After creating a hosting account, it may take 2-3 minutes for the control panel to be fully set up. If you see an error in Softaculous, wait a few minutes and refresh.\n\n## Installing WordPress via Softaculous\nFollow the installer prompts to set up your WordPress site.\n\n- **Choose Protocol:** Select `http://` for the initial installation.\n- **Set Admin Credentials:** Choose a secure admin username and password. You will need these to log into your WordPress dashboard.\n\n> [!IMPORTANT]\n> Start with **HTTP** instead of HTTPS during the WordPress installation to avoid a common issue with InfinityFree. You will add SSL (HTTPS) in a later step.\n\n## Securing Your Website with a Free SSL Certificate\nA website is not complete without SSL. InfinityFree provides a tool to install one for free.\n\n- **Navigate to Free SSL Certificate:** From your InfinityFree client area, select your site and go to the \"Free SSL Certificate\" section.\n- **Create New Certificate:** Add your domain name and create the order.\n- **Verify Domain Ownership:** The easiest method is to use the **\"Set up CNAME records automatically\"** button. This will prove you own the domain.\n- **Request & Install:** Once the domain is verified (shows a \"Ready\" status), request the certificate. After it's generated, click the button to **install it automatically**.\n- **Wait for Propagation:** It may take several minutes for the SSL certificate to become active on your site.\n\n## Final Result\nAfter following these steps, you will have a fully functional and secure WordPress website hosted for free on InfinityFree, indicated by the padlock icon and **HTTPS** in the browser's address bar.",
+  "transcription": "## Introduction to InfinityFree Hosting\n\nIn this video, we will learn how to create a WordPress website with InfinityFree. This complete step-by-step tutorial on InfinityFree web hosting will help you to build a full website for free.\n\nInfinitiFree is a free web hosting provider that allows you to host any website here. If you scroll down, you will see this company has been providing a free hosting service for 10 years. This hosting is fast, 99.99% uptime guarantee. Also, even if it's a free service, they will not display any ads on your website, and you can add any custom domain to this hosting. You can see all additional features here too.\n\n## Account Registration and Dashboard\n\nSo, let's jump into how to create a WordPress website with InfinityFree web hosting. If you don't have an existing account, then click on Register. The registration process is very easy. Just give your email address and desired password, mark tick on terms and conditions, and sign up. The process is so easy, I am sure you can do it. This time I already have an account, that's why I clicked on Sign In.\n\n## Creating a Hosting Account & Subdomain\n\nAfter logging in, you may see ads in the InfinityFree dashboard. Actually, this is one kind of income source for them. That's how they are capable of giving you free website hosting. Here I have some previously created free websites. To create a new website, click on Create Account.\n\nUnder the custom domain section, you can host any custom domain in this free web hosting. We have a complete tutorial named 'How to add custom domain in InfinityFree.' You can watch that if you want. I will give the video link in the description. Right now, I will show you the free subdomain method.\n\nChoose a suitable domain from here. Write the website name you want to create. Click on check availability. This domain is not available. Try a different name. No need to touch here. Go next.\n\n## Accessing the Control Panel and Softaculous\n\nThe account creation is done. We need to make this visible by installing WordPress. Click on the Control Panel. A notice will come for the first time, just approve this.\n\nOn the right side, you will see your web hosting usage. Under the software section, click on Softaculous Apps Installer. Here they are saying that we should wait for at least 20 minutes because the control panel setup may take some time. From my experience, it takes only 2 or 3 minutes. Let's wait. Look, the account creation is not finished yet. After 2 minutes, we refresh the page. Look, the account creation process is completed. Oh, by the way, you can also go to the control panel by clicking here. Go to Softaculous Installer.\n\n## Installing WordPress with Softaculous\n\nClick on Install under WordPress. Choose the domain prefix. Normally, we use https, but this time we will use HTTP to avoid an issue that occurs on InfinityFree. We will convert it to HTTPS later. Type your desired WP admin username and password and remember this for future WP admin login. Then click install. WordPress is installed. Our website looks good now.\n\n## First Look and The Need for SSL\n\nLet's log in. Now you can install any WordPress theme or plugin and start working on it. So our free website creation is done. You see this is showing 'not secure' here. This time we will make it secure because an SSL certificate is a necessary thing for any publicly available website.\n\n## Generating a Free SSL Certificate\n\nTo install SSL in InfinityFree, come to the dashboard. Click on the free SSL certificate. To install the new SSL, click here. Paste the domain name. Click on create order.\n\nThis time you need to verify your domain. Just click on Set up CNAME records automatically. After that, you need to wait about 5 to 10 minutes. After waiting, you will see this green signal of 'Ready,' which means verification is done. Then click on request certificate. Now you have to wait again. Two or three minutes is enough here.\n\n## Installing the SSL Certificate and Final Review\n\nAfter refreshing 3 minutes later, you will see this interface. SSL certificate is generated. Just click on this install SSL certificate automatically. The SSL certificate is installed. To see the effect, you need to wait several minutes.\n\nAfter successful installation, this green status will appear. Just refresh our website. Look, the 'Not Secure' is gone. The SSL is activated. Our website is now fully ready to use professionally. So this is the video on how to create a WordPress website with InfinityFree web hosting. If you have any questions or suggestions, then feel free to ask me in the comment section. And please don't forget to subscribe to my channel."
+}

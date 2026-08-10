@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 3,
+  "videoId": "fA9b4D8IsPQ",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Get started with LangSmith, the observability and evaluation platform for AI applications. This guide covers the fundamentals of tracing, demonstrating how to monitor your app's behavior. Learn to set up your environment, create API keys, and use the `@traceable` decorator to log function calls. Explore the LangSmith UI to analyze traces, inspect inputs/outputs, view the run tree for a detailed breakdown, and identify performance bottlenecks like latency and token usage. See the seamless tracing integration with LangChain and LangGraph.",
+  "chapters": [
+    {
+      "title": "Introduction to LangSmith and Tracing",
+      "description": "Introduces LangSmith as an observability and evaluation platform for AI applications and defines the concept of a tracing project.",
+      "startTime": 0.0,
+      "endTime": 45.0,
+      "slug": "introduction-to-langsmith-and-tracing"
+    },
+    {
+      "title": "Setting Up Your LangSmith Project",
+      "description": "This chapter shows how to create an API key in the LangSmith settings to connect your application for tracing.",
+      "startTime": 45.0,
+      "endTime": 91.0,
+      "slug": "setting-up-your-langsmith-project"
+    },
+    {
+      "title": "The Example Application & Environment Setup",
+      "description": "This chapter introduces the \"Explain Like I'm Five\" example application and details the required environment variables for LangSmith, OpenAI, and Tavily.",
+      "startTime": 91.0,
+      "endTime": 156.0,
+      "slug": "the-example-application-environment-setup"
+    },
+    {
+      "title": "Implementing Manual Tracing with @traceable",
+      "description": "Learn how to add the `@traceable` decorator to Python functions to manually enable tracing for specific parts of your application.",
+      "startTime": 156.0,
+      "endTime": 222.0,
+      "slug": "implementing-manual-tracing-with-traceable"
+    },
+    {
+      "title": "Running the Traced Application",
+      "description": "This chapter demonstrates running the application with a sample question to generate trace data in LangSmith.",
+      "startTime": 222.0,
+      "endTime": 248.0,
+      "slug": "running-the-traced-application"
+    },
+    {
+      "title": "Analyzing Traces in the LangSmith UI",
+      "description": "Explore the LangSmith UI to see the generated trace, including the high-level inputs and outputs, and the detailed run tree of application steps.",
+      "startTime": 248.0,
+      "endTime": 342.0,
+      "slug": "analyzing-traces-in-the-langsmith-ui"
+    },
+    {
+      "title": "Diagnosing Performance with Telemetry",
+      "description": "This chapter covers how to use LangSmith's telemetry data, such as token counts and latency, and the waterfall view to identify performance bottlenecks.",
+      "startTime": 342.0,
+      "endTime": 398.0,
+      "slug": "diagnosing-performance-with-telemetry"
+    },
+    {
+      "title": "Automatic Tracing with LangChain and LangGraph",
+      "description": "Discover how using open-source libraries like LangChain or LangGraph enables automatic, out-of-the-box tracing without needing any decorators.",
+      "startTime": 398.0,
+      "endTime": 449.0,
+      "slug": "automatic-tracing-with-langchain-and-langgraph"
+    },
+    {
+      "title": "Verifying the LangGraph Trace and Conclusion",
+      "description": "This final chapter shows the LangGraph application running and confirms that its trace appears in LangSmith with full detail, followed by a wrap-up.",
+      "startTime": 449.0,
+      "endTime": 503.72,
+      "slug": "verifying-the-langgraph-trace-and-conclusion"
+    }
+  ],
+  "summary": "## Key Concepts for Tracing with LangSmith\n\nLangSmith is an observability and evaluation platform for AI applications. This document outlines the key concepts for getting started with its **tracing** features.\n\n### ## Getting Started: Setup & Configuration\n\n1.  **Create an Account**: Sign up for LangSmith (e.g., via Google account).\n2.  **Generate an API Key**: In the **Settings** menu, create a new **API Key**. This key connects your application to your LangSmith account.\n3.  **Set Environment Variables**: To enable tracing, your application environment needs the following variables:\n    *   `LANGSMITH_TRACING=\"true\"`\n    *   `LANGSMITH_ENDPOINT=\"https://api.smith.langchain.com\"`\n    *   `LANGSMITH_API_KEY=\"YOUR_API_KEY\"`\n    *   `LANGSMITH_PROJECT=\"YOUR_PROJECT_NAME\"` (Optional: If not set, a default project is used).\n\n> [!IMPORTANT]\n> Each LangSmith **project** is a collection of traces that corresponds one-to-one with a specific AI application you are monitoring.\n\n### ## Implementing Tracing\n\nLangSmith is designed to be **framework-agnostic**.\n\n#### Manual Tracing\n\nFor any Python application, you can trace specific functions by using the `@traceable` decorator.\n\n*   Import the decorator: `from langsmith.run_trees import traceable`\n*   Apply it to any function you want to monitor: `@traceable`\n*   This allows you to create a hierarchical view of your application's execution by decorating both high-level functions and their sub-components.\n\n#### Automatic Tracing with LangChain & LangGraph\n\n> [!TIP]\n> If your application is built using the **LangChain** or **LangGraph** open-source libraries, tracing is enabled automatically. You do not need to use the `@traceable` decorator. Just ensure the environment variables are set, and LangSmith will work out-of-the-box.\n\n### ## Analyzing Traces in the UI\n\nOnce your application runs, a new trace will appear in your LangSmith project.\n\n*   **Trace View**: The main view shows the top-level **input** and final **output** of your application run.\n*   **Run Tree**: The left-hand sidebar displays the **run tree**, a detailed, hierarchical breakdown of every traced function and LLM call that occurred during the run.\n*   **Step Details**: Clicking on any step (e.g., an `OpenAIChat` call) in the run tree reveals its specific inputs (like the system prompt and context) and its output.\n\n### ## Diagnosing Performance\n\nLangSmith provides key telemetry for performance analysis.\n\n*   **Token Usage**: Hovering over an LLM call shows the number of tokens used.\n*   **Latency**: The latency (duration) of each step is also displayed on hover.\n*   **Waterfall View**: Accessible via a button in the UI, the **waterfall view** provides a visual Gantt chart-style representation of your application's run. This makes it easy to identify which steps are the slowest and are the primary sources of **latency**.",
+  "transcription": "## Introduction to LangSmith and Tracing\n\nHello, my name is Robert and I'm an engineer at LangChain. Welcome to our intro to LangSmith. LangSmith is an observability and evaluation platform for AI applications. And today we'll be using LangSmith to peek under the hood of an application that we've made using a feature called tracing. Let's get started.\n\nTo use LangSmith, the first thing you need to do is create an account. I've already connected my Google account, so I'll be using that. Once you've logged into LangSmith, you should see a screen that looks like this. There's a lot going on here, but don't worry, we'll be covering it all in future videos. For now, let's focus on this tab on the left called tracing projects.\n\n## Setting Up Your LangSmith Project\n\nA tracing project is just a collection of traces or logs associated with your application, and each project corresponds roughly one-to-one with the application that you're building. The natural next question is how can we send traces from our application to LangSmith so that they can be recorded in these projects?\n\nTo do so, you first need to create an API key. You can create one by heading to the settings and clicking this create API key button in the top right. Personal access token is fine. I've already created some API keys for this demo, so I'll be using that. Next, let's hop over to my Jupyter notebook to see our application.\n\n## The Example Application & Environment Setup\n\nThis notebook contains a basic AI application that I've created. It's designed to explain a concept like I'm five. It's going to take in a question, do a web search on the answer, and then summarize that answer so that even a 5-year-old could understand it, at least theoretically. It's then going to give me that answer so that I can understand it. We're going to use LangSmith to trace this project. \n\nAnd I want to highlight that LangSmith is framework agnostic. The LangChain engineering team strongly believes that you should be able to effectively monitor and observe your AI applications no matter how you've built them under the hood. So, we've made LangSmith easy to set up and use no matter how you've chosen to build your application.\n\nThe first step is to import some environment variables into your project. This includes `LANGSMITH_TRACING`, `LANGSMITH_ENDPOINT`, and your `LANGSMITH_API_KEY`. You can also optionally specify the `LANGSMITH_PROJECT` you would like to use. My project uses OpenAI and a tool called Tavily to search the web, so I'm going to import some API keys for them as well. Let's load them all in through an .env file.\n\n## Implementing Manual Tracing with @traceable\n\nNext, before we start tracing, let's set up our project. So, I'm going to give our application access to the web and I'm going to define our prompt. You can see that the prompt for our application is that it's an expert in explaining complex topics in a way that's easy to understand. And its job is to answer the provided questions so that even a 5-year-old could understand it.\n\nNow, we're ready to actually create our application and trace it with LangSmith. So once you've set up LangSmith by importing the environment variables, it's very easy to trace your application. The only thing you need to do is to add the `traceable` decorator to any function that you want to trace. In this case, I have a couple of functions that I want to trace for my application. The first is the web search step where I search the web. The second is the explanation step where I ask OpenAI to summarize the answer. And then finally, I want to trace our entire process from end to end. The full explain like I'm five experience.\n\n## Running the Traced Application\n\nLet's put that together and actually test our application. And I'll give it a real question of what is complexity economics.\n\nAnd after running for a little bit, you can see it's come up with a pretty decent answer. It's used simple, friendly terms like Lego blocks to explain the concept of complexity economics. Let's move back to LangSmith to see what happened in our tracing project.\n\n## Analyzing Traces in the LangSmith UI\n\nBack in LangSmith, let's check out our projects. We can see that there's been a new project generated for us, the explain like I'm 5 bot project representing our application.\n\nClicking into it, we can see what happened when we ran our application. There's a new trace that has been generated representing the question that we asked our chatbot. If we want some more detail, let's click in. Here we can see a high-level breakdown of everything that happened when we ran our application. At the top level, we can see the input, which is the question, what is complexity economics? As well as the final output, which is the answer our AI generated using Lego blocks as an analogy.\n\nIf you look into the left-hand sidebar, you can also see a detailed breakdown of every single step that happened within your application. This is known as the run tree and it gives you a breakdown of each individual run that comprises your application's overall flow. For us, there's two steps that we had in our application. A search step where we searched the web and an explanation step where we asked OpenAI to summarize the answers. If you want to see more detail on a particular step, you can click into it as shown. For example, in our OpenAI step, we can now dig into exactly what happened when we called OpenAI. We can see the exact input we provided, including our system prompt and the context we supplied from the web, as well as the AI's output, which was the final answer we eventually returned to the user.\n\n## Diagnosing Performance with Telemetry\n\nThis isn't the only thing that LangSmith shows in its tracing capabilities. If you hover over any individual step, you can also see some helpful telemetry on that step. This includes how many tokens that step cost you or the overall latency of that step. And a great way to view latency is through the waterfall view accessible through this button.\n\nThis gives a nice visual representation of where the highest sources of latency in your project are. For example, if we wanted to make our chatbot a little bit more responsive to the user, we should probably start by looking at this explanation step because the slowest step with the highest latency was our call to OpenAI.\n\nThat's tracing with LangSmith. And next, I want to go back to our project to show how using one of our open-source libraries, LangGraph or LangChain, can make tracing even easier.\n\n## Automatic Tracing with LangChain and LangGraph\n\nIf you're not familiar, LangChain and LangGraph are LangChain's open-source libraries for building AI agents. And while they're not required, they do work out of the box with LangSmith. If you are using LangGraph or LangChain, you don't even need to set the `traceable` decorator in your application. All you need to do is import those same environment variables we imported earlier and LangSmith will work out of the box. To demonstrate this, I've created the same application using LangGraph. Let's go through the setup steps.\n\nYou can see that once I've compiled my application, it follows the exact same flow that we showed earlier. You ask a question, conduct a web search, and then summarize the answers using OpenAI. That final answer is output to the user.\n\n## Verifying the LangGraph Trace and Conclusion\n\nLet's see it in action. We're going to ask the same question about complexity economics and we'll be able to view the trace in LangSmith afterwards.\n\nSo, it took a little bit to run, but you can see it's also generated a pretty decent answer to the question, what is complexity economics? Let's take a look one last time back at LangSmith.\n\nBack in our project, you can see we have a new trace representing our call to our new application implemented using LangGraph. If we click in, we can see that we have all the same tracing capabilities. We can see the input, the output, and every step in between.\n\nThat's tracing with LangSmith. I want to thank you for joining me today and I'll see you in the next one."
+}

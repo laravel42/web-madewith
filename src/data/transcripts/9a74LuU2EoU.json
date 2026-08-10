@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 3,
+  "videoId": "9a74LuU2EoU",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to deploy a Nest.js application cheaply and easily using the Serverless Framework on AWS. This guide walks you through the entire process, from installing dependencies like `serverless-express` to configuring your `serverless.yaml` file for different environments. Discover how to adapt your Nest.js app for AWS Lambda, handle environment variables for development and production, test locally with `serverless-offline`, and deploy your API to the cloud, significantly reducing hosting costs for low-traffic applications.",
+  "chapters": [
+    {
+      "title": "Introduction: Why Serverless?",
+      "description": "The video introduces the cost-saving benefits of deploying low-traffic Nest.js APIs with the Serverless Framework compared to traditional hosting like Heroku.",
+      "startTime": 0.0,
+      "endTime": 56.0,
+      "slug": "introduction-why-serverless"
+    },
+    {
+      "title": "Project Setup and Dependencies",
+      "description": "This chapter covers the initial project setup, including checking out a new branch and installing the necessary npm dependencies for serverless deployment.",
+      "startTime": 56.0,
+      "endTime": 100.0,
+      "slug": "project-setup-and-dependencies"
+    },
+    {
+      "title": "Installing Development Dependencies",
+      "description": "This section shows how to install the development dependencies, including type definitions and the serverless-offline plugin for local testing.",
+      "startTime": 100.0,
+      "endTime": 140.0,
+      "slug": "installing-development-dependencies"
+    },
+    {
+      "title": "Creating the Serverless Entrypoint",
+      "description": "Learn how to create a `serverless.ts` file to initialize the Nest.js application without a listening port and wrap it for AWS Lambda using `serverless-express`.",
+      "startTime": 140.0,
+      "endTime": 273.0,
+      "slug": "creating-the-serverless-entrypoint"
+    },
+    {
+      "title": "Implementing the Lambda Handler",
+      "description": "This chapter demonstrates how to export an AWS Lambda handler, implement a caching mechanism for the server instance, and integrate the bootstrap logic.",
+      "startTime": 273.0,
+      "endTime": 311.0,
+      "slug": "implementing-the-lambda-handler"
+    },
+    {
+      "title": "Caching the Server Instance",
+      "description": "This section details how to implement a simple caching strategy for the server instance to improve performance for subsequent requests.",
+      "startTime": 311.0,
+      "endTime": 348.0,
+      "slug": "caching-the-server-instance"
+    },
+    {
+      "title": "Configuring serverless.yaml: Service and Plugins",
+      "description": "This chapter walks through creating the `serverless.yaml` file, defining the service name, enabling `.env` file usage, and adding the `serverless-offline` plugin.",
+      "startTime": 348.0,
+      "endTime": 396.0,
+      "slug": "configuring-serverless-yaml-service-and-plugins"
+    },
+    {
+      "title": "Configuring the Provider and Environment",
+      "description": "Here, you will configure the AWS provider settings, including the runtime and how to map environment variables from your `.env` file to the Lambda function.",
+      "startTime": 396.0,
+      "endTime": 462.0,
+      "slug": "configuring-the-provider-and-environment"
+    },
+    {
+      "title": "Handling Production Environments",
+      "description": "Learn how to use a stage-specific `.env.prod` file to manage different configurations, such as pointing to a production MongoDB database.",
+      "startTime": 462.0,
+      "endTime": 525.0,
+      "slug": "handling-production-environments"
+    },
+    {
+      "title": "Defining the Lambda Function",
+      "description": "This section covers configuring the `functions` section in `serverless.yaml` to define the function handler and the HTTP events that trigger it.",
+      "startTime": 525.0,
+      "endTime": 573.0,
+      "slug": "defining-the-lambda-function"
+    },
+    {
+      "title": "Configuring HTTP Event Proxying",
+      "description": "Configure the HTTP events to accept any method and use a proxy path to forward all incoming API requests to the Nest.js application.",
+      "startTime": 573.0,
+      "endTime": 602.0,
+      "slug": "configuring-http-event-proxying"
+    },
+    {
+      "title": "Final Project Adjustments",
+      "description": "This chapter explains necessary project-specific fixes, like replacing `bcrypt` with `bcryptjs` for Lambda compatibility and updating the TypeScript configuration.",
+      "startTime": 602.0,
+      "endTime": 648.0,
+      "slug": "final-project-adjustments"
+    },
+    {
+      "title": "Local Testing with Serverless Offline",
+      "description": "Learn how to run and test the serverless application on your local machine using the `serverless-offline` plugin and Postman.",
+      "startTime": 648.0,
+      "endTime": 689.0,
+      "slug": "local-testing-with-serverless-offline"
+    },
+    {
+      "title": "Deploying to AWS Production",
+      "description": "Follow the steps to deploy the Nest.js application to a production environment on AWS using a single Serverless Framework command.",
+      "startTime": 689.0,
+      "endTime": 719.0,
+      "slug": "deploying-to-aws-production"
+    },
+    {
+      "title": "Verifying and Debugging in Production",
+      "description": "This final chapter shows how to test the live production endpoint with Postman, use `sls logs` to check for errors, and concludes with a summary of the pros and cons.",
+      "startTime": 719.0,
+      "endTime": 745.48,
+      "slug": "verifying-and-debugging-in-production"
+    }
+  ],
+  "summary": "## Why Use Serverless for Nest.js?\n\nThe primary motivation is **cost savings** for APIs with infrequent traffic. Instead of paying a flat monthly fee for an always-on server (like on Heroku), a serverless deployment on AWS Lambda bills only for the execution time of each API request. This is ideal for projects that are available but not constantly in use.\n\n## Core Dependencies\nTo connect Nest.js with AWS Lambda, you'll need a few key packages:\n*   `@vendia/serverless-express`: A library to wrap your Express-based Nest.js app for serverless environments.\n*   `aws-lambda` & `@types/aws-lambda`: Provides the necessary types for the Lambda handler.\n*   `serverless-offline`: A Serverless Framework plugin for local development and testing.\n\n## Serverless Entrypoint (`serverless.ts`)\nThis file adapts your application to run in a Lambda environment.\n1.  **Initialize, Don't Listen**: Instead of `app.listen()`, you call `app.init()` to bootstrap the Nest.js application without starting an HTTP server.\n2.  **Wrap with Express**: Get the underlying Express instance using `app.get(HttpAdapterHost).httpAdapter.getInstance()` and pass it to `serverlessExpress()`.\n3.  **Export a Handler**: Create and export an `async` function named `handler` that conforms to the AWS Lambda `Handler` type. This handler will receive the `event`, `context`, and `callback`.\n\n> [!TIP]\n> Implement a simple caching mechanism by storing the initialized server instance in a top-level variable. This prevents the entire Nest.js application from re-bootstrapping on every single invocation within a short timeframe (warm starts).\n\n## Configuration (`serverless.yaml`)\nThis file is the blueprint for your serverless deployment.\n\n#### `provider`\n*   **`name: aws`**: Specifies the cloud provider.\n*   **`runtime: nodejs12.x`**: Sets the Node.js runtime for the Lambda function.\n*   **`environment`**: Defines environment variables for your function. Use `${env:YOUR_VAR}` to pull values from your `.env` file.\n\n#### `plugins`\n*   `serverless-offline`: Must be listed here to enable local testing.\n\n#### `functions`\n*   **`handler: dist/serverless.handler`**: Points to the compiled JavaScript file and the exported handler function.\n*   **`events`**: Maps HTTP requests to your function. Using `{proxy+}` in the path creates a catch-all route, forwarding all requests to your Nest.js application.\n\n> [!IMPORTANT]\n> Use `useDotenv: true` at the root of your `serverless.yaml` to automatically load variables from `.env` files. You can create stage-specific files like `.env.prod` which will be used when deploying with `--stage prod`.\n\n## Local Development & Deployment\n\n*   **Local Testing**: Run `sls offline` to start a local server that simulates the AWS Lambda environment.\n*   **Deployment**: Run `sls deploy --stage prod` to package and deploy your application to AWS.\n*   **Check Logs**: Use `sls logs -f main --stage prod` to tail the logs for your deployed function for debugging.\n\n## Important Considerations\n\n*   **Native Dependencies**: Some npm packages with native C++ bindings (like `bcrypt`) are not compatible with the Lambda runtime. Use pure JavaScript alternatives like **`bcryptjs`**.\n*   **TypeScript Config**: Ensure `\"esModuleInterop\": true` is set in your `tsconfig.json` to handle module imports correctly.\n*   **Cold Starts**: Serverless functions can experience a slight delay on the first request after a period of inactivity (a \"cold start\"). This is the trade-off for not paying for an always-on server.",
+  "transcription": "## Introduction: Why Serverless?\n\nHey there. Today we're going to look at deploying an sjs application using serverless. I have a number of APIs that I have deployed using Heroku, and these APIs cost me about eight dollars a month to keep running, and they don't get a lot of traffic. So a lot of times I end up paying this fee and it's not so great because the API just sits around being unused.\n\nHowever, utilizing serverless, I have now moved all my APIs over to the serverless framework, where I'm only billed for each time the API is actually used instead of being charged a flat rate each month. So it ends up saving a lot of money if you have APIs deployed that aren't used very frequently but you still want them sitting around and available to your users. So it's quite simple to deploy an sjs application with serverless.\n\n## Project Setup and Dependencies\n\nThe first thing we're going to go ahead and do is install a few dependencies. Now I'm working on my cryptostats backend project that I've finished in my previous video, so I'll include a link to this GitHub repo in the description so you can follow along. And then I'm also going to check out on a new branch called `serverless`.\n\nSo if you'd like to see the repo, make sure you check out on that branch. So we're going to go ahead and `yarn add` these packages here: `vendia/serverless-express` and then `aws-lambda`.\n\n## Installing Development Dependencies\n\nAnd then we'll go ahead and also install some development dependencies to get the types. So make sure we `yarn add -D @types/aws-lambda` and then `serverless-offline`.\n\n## Creating the Serverless Entrypoint\n\nOkay, so the first thing we have to go ahead and do is actually create a new file in our source directory and I'll call this `serverless.ts`. And this is going to be very similar to our `main.ts`, our bootstrap method here, except we're not going to be listening on a port like an HTTP server would. Instead, we're going to be creating our server and then exposing it to serverless so that it can be invoked, the API request can be completed, and then the API then shuts down so that it's not being billed beyond the current request that it's being executed.\n\nSo what I'll do is I'll just copy our `main.ts` and paste it in the `serverless.ts`. So instead of calling `await app.listen`, we're just going to call `app.init()` here, which will initialize the application. Okay, and after we initialize the app we're going to need to get a handle to the HTTP adapter of our app. So we can call `app.get(HttpAdapterHost).httpAdapter.getInstance()` here. So now that we have an instance of the express app, what we're going to do is we're going to return `serverlessExpress` which expects the Express app to be passed in. So we'll do just that.\n\n## Implementing the Lambda Handler\n\nAnd then we need to go ahead and obviously import this here. So above we'll add an import, so `import serverlessExpress from '@vendia/serverless-express'`. So now we're properly returning the serverless express instance here. We're also no longer going to call bootstrap here and instead we need to export a handler that serverless will invoke when the API is called. So we're going to have a handler here and this handler is going to come from `aws-lambda`. Okay, it's going to be an async method that gets access to the current event, the context as well, we import this from `aws-lambda`, and then we get the callback, which is from `aws-lambda` as well. So we have all these imports up here from `aws-lambda`.\n\n## Caching the Server Instance\n\nAnd inside of the handler, what we're going to do is we're going to actually declare a `let` at the top of this file called `server` which will be of type `Handler`, and this will be essentially a cached instance of our server so that we don't have to recreate it if we have a lot of subsequent requests coming in at once. So we'll first check to see if the server has been initialized, and if it hasn't, then we're going to call `await bootstrap()` which will set our `server` equal to the serverless express instance. And then we can finally return the server here, pass in the event, context, and callback all coming in from the serverless API request.\n\n## Configuring serverless.yaml: Service and Plugins\n\nSo now we've properly set up our `serverless` file, we're gonna go ahead and create a `serverless.yaml` at the root of our project here. And this is going to be a YAML file which describes to serverless how to deploy and use our application. So let's go ahead and start filling this out. Firstly, we're going to give the name of the service here, so I'm just going to call this `cryptostats-backend`. And then we're going to specify another property here called `useDotenv`. And what `useDotenv` will do is it will automatically pick up all of the environment variables we've defined in our `.env` file here and allow us to use them in our `serverless.yaml` here, which will be important because we need to provide these environment variables to our code.\n\nSo we're also going to go ahead and now define a `plugins` section here, and we're going to add `serverless-offline`, which is a plugin which will allow us to run our application offline.\n\n## Configuring the Provider and Environment\n\nSo with that, we can finally start filling out the `provider` section here. And the provider section is going to be some basic information: the name of the service, we're going to specify the runtime, so this will be `nodejs12.x` in our case, and then importantly, we're going to specify the `environment` section. And these are going to be the environment variables which will be exposed to our Lambda code or our sjs code. So the easiest thing to do here is actually just copy all these environment variables we have here. We'll indent this, make sure the indentation matches, and now what we're going to do is specify each environment variable. We'll have a dollar sign and then brackets, and then specify `env` colon and then the name of the environment variable. So in this case, it's `AUTH_REDIRECT_URI`. So we're going to do the same thing for all these environment variables. So let's go ahead and fill out the rest of these environment variables so that they are available. And then lastly, make sure we replace the actual environment variable with the correct one here, each one of these.\n\n## Handling Production Environments\n\nSo when we deploy our serverless application, if we don't specify a stage, it's going to use this `.env` by default. However, when we deploy to the production stage, we want to use some different variables here. So for example, our MongoDB URI, we want to point this towards a production database. So in order to do that, what we can do is we can specify a `.env.prod`, copy over all of these environment variables and just change the ones we want for the production stage only.\n\nNow I've gone ahead and created a production Atlas cluster for MongoDB so that I can use a MongoDB database in prod. I'll leave the link to where you can sign up and get a free Atlas cluster yourself and create your own database instance to use in production. So once you create that or you have your own database listening somewhere, you simply need to get the connection URI and then paste it in here as the environment variable as I've done so.\n\n## Defining the Lambda Function\n\nSo now we have all of the environment variables we need set for our production environment. We can lastly fill in the final section of our `serverless.yaml`, and this is the `functions` section, which will essentially describe the lambdas that we wish to expose to the outside world. So we're going to have one function here called `main`. Okay, and then we can specify the `handler`, which is the bit of code that's going to get executed when an API request comes through. So in our case, it's going to be `dist/serverless.handler`. And this corresponds to the serverless file we set up here, and then the name of the function we're exporting, `handler` here. So once we build our Nest application, this serverless handler will be exposed in our `dist` folder.\n\n## Configuring HTTP Event Proxying\n\nNext, we need to specify an `events` section to specify which HTTP events we want to allow this lambda to respond to. So in our case, we're going to have two HTTP methods. This method's going to be type `any` and the path will be at the root. And then lastly, we're going to have another HTTP method, and this method will be `any`. And then we're going to go ahead and importantly add a path here, and this path is going to be `{proxy+}`, which specifies any route is going to be proxied on to our serverless handler.\n\n## Final Project Adjustments\n\nSo lastly, this is specific to just this project I have set up here, the bcrypt library is actually not compatible with the Lambda runtime, so I'm going to have to replace this with an alternative called `bcryptjs`, which exposes the same functions but allows us to run this in a Lambda. And then I'll go ahead and remove my `yarn.lock` so this is recreated after we run `yarn`.\n\nSo I'm going to open up a terminal here and then run a fresh `yarn`. Okay, and lastly, before we rebuild our application, make sure in your `tsconfig.json` here we need to add another property called `esModuleInterop` and make sure you set this to `true`. Now after we do that, we can open up a terminal again and run `yarn build`.\n\n## Local Testing with Serverless Offline\n\nSo after we've built our application, we can run `sls offline`, which will start our application using the serverless offline plugin. If you don't have the Serverless CLI already installed, I'll include a link in the description for how to get that set up. So after we run this command, we can see here that our server is listening at http://localhost:3000 and the stage `dev`. So if we open up a Postman application and try to execute a request that we have listening, so for example, I have a route called `/users` and then we send off this request, we can see that we get back a response. And looking at the logs here, you can see as soon as a request is sent, we get the Nest application starting up, and then after it completes, we get a request ID, a duration, and then the amount of time we would be billed for when this is deployed to production.\n\n## Deploying to AWS Production\n\nSo now we see that our application is working locally, we can run `sls deploy --stage prod` and this is going to package our application and then upload it to S3 and create all the necessary resources for us in AWS on the stage that we specify here. And once it completes, we'll get an API URL that we can test out and use in production. So after our application is deployed here, we can get some information and notice we get the endpoint here that we can use to make requests to this lambda in production.\n\n## Verifying and Debugging in Production\n\nSo if we open up Postman and now we replace the URL with the production URL, and we get back a response after we create a user here, which is great. And if you have any problems with your lambda, it can be helpful to type in `sls logs` and then you provide the function, so in our case `main`, and then the stage, which is in our case `prod`. So if we scroll up here, we can see this is the Nest application starting up for our request, and then it finishes here and we get that same information where we can see the duration of the request as well as the billed duration.\n\nI hope this short video about how to set up an sjs with serverless was useful. I plan on moving all my APIs over to serverless in the future just because of the cost effectiveness. They can be a bit slower because of this process of having to start the application up for each request, but in my case, this is a small price to pay given that I don't have to pay a fixed rate each month for my APIs. So I hope you enjoyed it and I'll see you in the next one."
+}

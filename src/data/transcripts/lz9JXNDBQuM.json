@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 3,
+  "videoId": "lz9JXNDBQuM",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to download and install DeepSeek R1 and DeepSeek AI locally on your Windows PC for a completely private and secure experience. This step-by-by-step guide walks you through using Ollama to run the AI model from the command prompt, selecting the right parameters for your system, and then upgrading your setup with the AnythingLLM user interface for a more intuitive chat experience. Run a powerful AI assistant directly on your machine without relying on external servers or cloud services.",
+  "chapters": [
+    {
+      "title": "Introduction",
+      "description": "The video introduces how to install the DeepSeek R1 AI model locally for a private and secure experience.",
+      "startTime": 0.0,
+      "endTime": 17.0,
+      "slug": "introduction"
+    },
+    {
+      "title": "Installing Ollama",
+      "description": "This chapter shows how to download and install Ollama from its official website.",
+      "startTime": 17.0,
+      "endTime": 35.0,
+      "slug": "installing-ollama"
+    },
+    {
+      "title": "Finding DeepSeek & Choosing Parameters",
+      "description": "Learn how to find the DeepSeek R1 model on the Ollama website and select the right model parameters for your computer.",
+      "startTime": 35.0,
+      "endTime": 73.0,
+      "slug": "finding-deepseek-choosing-parameters"
+    },
+    {
+      "title": "Downloading DeepSeek via Command Prompt",
+      "description": "This section covers how to copy the Ollama command, open the Command Prompt (CMD), and start the DeepSeek model download.",
+      "startTime": 73.0,
+      "endTime": 123.0,
+      "slug": "downloading-deepseek-via-command-prompt"
+    },
+    {
+      "title": "First Test in the Terminal",
+      "description": "The video demonstrates interacting with the newly downloaded DeepSeek model directly within the command prompt and explains basic commands.",
+      "startTime": 123.0,
+      "endTime": 189.0,
+      "slug": "first-test-in-the-terminal"
+    },
+    {
+      "title": "Introducing a Better UI: AnythingLLM",
+      "description": "The command line interface is criticized, and AnythingLLM is introduced as a more user-friendly graphical interface for interacting with the local model.",
+      "startTime": 189.0,
+      "endTime": 237.0,
+      "slug": "introducing-a-better-ui-anythingllm"
+    },
+    {
+      "title": "Installing AnythingLLM",
+      "description": "Follow the steps to download, run the installer for AnythingLLM, and handle the Windows security prompt.",
+      "startTime": 237.0,
+      "endTime": 285.0,
+      "slug": "installing-anythingllm"
+    },
+    {
+      "title": "Configuring AnythingLLM for Ollama",
+      "description": "This chapter details the setup process within AnythingLLM to connect it with the Ollama service and select the installed DeepSeek model.",
+      "startTime": 285.0,
+      "endTime": 353.0,
+      "slug": "configuring-anythingllm-for-ollama"
+    },
+    {
+      "title": "Using the AnythingLLM Interface",
+      "description": "Explore how to chat with DeepSeek using the AnythingLLM graphical interface and customize its appearance with dark mode.",
+      "startTime": 353.0,
+      "endTime": 441.0,
+      "slug": "using-the-anythingllm-interface"
+    },
+    {
+      "title": "Final Features and Outro",
+      "description": "This concluding chapter reaffirms the local and secure nature of the setup, shows how to create new chats, and provides a final sign-off.",
+      "startTime": 441.0,
+      "endTime": 481.0,
+      "slug": "final-features-and-outro"
+    }
+  ],
+  "summary": "## Running DeepSeek R1 Locally\n\nThis guide outlines the process of downloading and running the **DeepSeek R1** AI model on your local machine using **Ollama** and **AnythingLLM** for a private and user-friendly experience.\n\n> [!IMPORTANT]\n> The entire setup is 100% private and secure. The AI model, your chats, and all data remain on your local PC and are not sent to any external servers.\n\n### ## Part 1: Install the Local AI Engine (Ollama)\n\n1.  **Download Ollama**: Navigate to the `ollama.com` website and download the installer for your operating system.\n2.  **Install Ollama**: Run the downloaded setup file to install the Ollama service on your computer.\n\n### ## Part 2: Download and Run DeepSeek\n\n1.  **Find the Model**: On the Ollama website, search for the **DeepSeek R1** model.\n2.  **Choose Parameters**: Select the desired model size. The **7 billion parameter** (`7b`) model is recommended for most users as it provides a good balance of performance and resource requirements.\n3.  **Copy Command**: Copy the provided `ollama run deepseek-coder:7b` command from the website.\n4.  **Open Terminal**: Launch the **Command Prompt** (CMD) on Windows.\n5.  **Run and Download**: Right-click in the CMD window to paste the command and press Enter. Ollama will now download and prepare the DeepSeek model.\n6.  **Interact**: Once the download is complete, you can immediately start chatting with the AI in the terminal. To exit the chat session, press `Ctrl + D`.\n\n### ## Part 3: Upgrade to a Graphical Interface (AnythingLLM)\n\nFor a more pleasant user experience than the terminal, you can install **AnythingLLM**.\n\n1.  **Download AnythingLLM**: Go to the AnythingLLM website and download the application for your desktop (Windows, Mac, or Linux).\n2.  **Install AnythingLLM**: Run the installer. If a security warning appears, click `More info` -> `Run anyway`.\n3.  **Initial Setup**: Launch AnythingLLM and click \"Get Started\".\n    *   **LLM Preference**: Select **Ollama** as your provider.\n    *   **Model Selection**: Choose your downloaded DeepSeek model from the list (e.g., `deepseek-coder:7b`).\n    *   **Workspace**: Skip the survey and create a name for your new workspace.\n\n> [!TIP]\n> Once set up, you can customize the **AnythingLLM** interface, including switching to a **dark theme** by going to `Settings` -> `Customization`.\n\nNow you have a fully functional, local, and private AI chat powered by DeepSeek R1 with a clean graphical user interface.",
+  "transcription": "## Introduction\n\nYogomo guys. This is how to download DeepSeek R1 locally and install DeepSeek AI locally. This is 100% safe and you don't have to worry about China or the CCP. And it's totally private on your PC. So let's start, BING CHILLING, shall we?\n\n## Installing Ollama\n\nSo first, we need to go on the Ollama website and then click on download. And then it's going to ask you, download Ollama? Just click on download. Then you want to launch the Ollama setup. There you go, you guys. Then you just want to install Ollama, and then it's going to do its thing.\n\n## Finding DeepSeek & Choosing Parameters\n\nThen after that you want to go back on the Ollama website and you want to go on search, and you want to just find DeepSeek R1. Once I already got it here, but if you can't find it, then just search DeepSeek and one of the models should show up. \n\nSo I'm going to select R1. And then you can see that we got DeepSeek over here. And we can pick whichever parameters we want. So by default, it actually tells you to have 7 billion parameters. And the more you have the bigger default size of the model, however, you're going to need a much stronger computer to run it. So for most people, I would recommend you use 7 billion parameters.\n\n## Downloading DeepSeek via Command Prompt\n\nBut if you have a super strong PC, then you might be able to do higher than that. So I'm going to select 7 billion parameters. And that's like the sweet spot for most people. \n\nAnd then after that you got this command line over here which actually tells you Ollama run DeepSeek blah blah blah. We're going to click on copy over here. Then we're going to go on search and search up “CMD” which is the command prompt. Then click on it. Then we're just going to click on the command prompt. And then we're going to right click on our mouse. And it's going to paste it just like that. And then you just want to select enter. \n\nAnd then it's going to say pulling manifest. So let it download right now. So as you can see that our DeepSeek R1 is being downloaded. So once it's downloaded, that's going to say success and all that. So just let it do its thing.\n\n## First Test in the Terminal\n\nIt might have this sort of thing showing up which is spinning. And then it should tell you that it's sending a message. So you can send whatever message you want. This is like your beginning of your chat. So I can say hello. Hi. Who are you? Let's just say that and then it's going to tell you that it's DeepSeek R1. So it's an artificial intelligence assistant. So that's pretty cool. \n\nAnd then if I ask it what's one plus one. Let's see what it says. So it's going to think first. So you can see there's a thinking portion first. And then it's going to actually, you know, give you the answer after a thing. So it's actually pretty odd that it thinks quite a long time to give you the answer, but afterwards it tells you that it equals two. So that's pretty cool that you've got like an AI assistant that actually is locally on your PC. \n\nSo when you close out of your command prompt, then you can actually run it again by just pasting the same command, and then it'll just load up immediately because you already got it loaded up. And then if you want to exit out of it, then you can do Ctrl D and it will exit out of it.\n\n## Introducing a Better UI: AnythingLLM\n\nBut let's be honest, this is not really that pleasant looking. I mean, look at that. It's on a terminal. That's not cool, man. This is not right. This is not cool. I want it like on a nice User Interface. Don't worry, guys, because your boy Zortec got the solution for you. \n\nYou want to get AnythingLLM and then download it for your desktop. Then it's going to ask you to get it for your Mac, Windows or Linux. We're going to get it for our Windows because that's the one I'm using.\n\n## Installing AnythingLLM\n\nAnd then you want to launch AnythingLLM installer. So we're going to just launch this baby up. And then it's going to ask you this maybe. So just click on more info and then click on run anyway, okay? \n\nOkay guys. So you can see we got the setup ready. So it's going to ask you to choose this so anyone can use it. But I'm just going to select only for me. And then click on next. And then click on install here. Unless you want to change the directory of your program, I'm just going to click on install. And then it's going to start installing AnythingLLM. So just let it do its thing. Maybe watch some Skibidi Toilet or you know, have some coffee or something or touch some grass. \n\nSo after it's installed then you want to launch AnythingLLM. And then it's going to bring the AnythingLLM up for you.\n\n## Configuring AnythingLLM for Ollama\n\nSo you want to click on Get Started now and then it's going to ask you for your LLM preference. What you want to do is look for Ollama over here and then click over here. And then if you scroll down, it's going to tell you the Ollama models over here. So this is the one we already installed. But I highly suggest you get the one that's the latest one which is like “7b” unless you want to do a higher one. So I'm just going to pick this one which is the “7b”.\n\nAnd then after that you just want to click on next. It's just going to tell you that, you know, your models and chat is only accessible on the machine that runs it. And then it'll just tell you all this, which is all local on your PC. So just click on next after that and then it's going to ask you what is your email, blah blah. But you don't have to do that. You can just skip the survey. And then it's going to ask you for your workspace name. I'm just going to call it Zortec’s workspace. Okay. You can name it whatever you want, but I'm just going to name it that and let's go. Zoinks. And there you go you guys.\n\n## Using the AnythingLLM Interface\n\nWe got AnythingLLM set up right over here. Then we can just start clicking over to our workspace and then click on default, which is already there. And then you just start, you know, doing your thing. So you can say, hi, who are you? And look at that, you guys. It's going to work just like that. \n\nSo it's gonna... this is the thinking phase. You can see it's got the brain thing over here, which means a model's thinking. And then it should start bringing an answer for you guys. So it's going to say, hi, I am an AI assistant. So you can see this is actually pretty cool. You don't need to do any of this Docker Desktop or anything like that. This is a very easy and nice setup, and if you guys don't like the white color, you can simply change it by going on settings. And then you can go on customization, which is like the Theme section over here. And then click on default, which is like the Dark theme. So you can see that now it is Dark. Now look at that you guys. We just click over here and we got a nice looking User Interface for our DeepSeek R1.\n\n## Final Features and Outro\n\nAnd this is all done locally on your PC. It's not going to China or the CCP, is all on your computer and it's 100% secure and locally stored on your PC. \n\nIf you want to start up a new chat window, you can click on new threads and then it's going to start a new one so you can upload your documents. Or you can click over here and attach a file. And then you've got like these commands over here. You can even change the text size over here. \n\nI hope you enjoyed this Poo-fessional tutorial on how to download DeepSeek R1 and install DeepSeek AI locally. Please check out my other videos, like and subscribe and have a Yogomolicious Day."
+}

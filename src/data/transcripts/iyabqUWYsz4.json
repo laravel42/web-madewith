@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 3,
+  "videoId": "iyabqUWYsz4",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn the fundamentals of data binding in Angular template-driven forms. This tutorial walks you through enabling form features by importing the FormsModule and explores how Angular automatically uses the ngForm directive. Discover how to gain access to your form's state and values using a template reference variable. You'll understand the critical roles of the ngModel directive and the name attribute for tracking individual form controls, and see how to group related fields into a nested object with ngModelGroup.",
+  "chapters": [
+    {
+      "title": "Enabling Angular Forms with FormsModule",
+      "description": "This chapter covers the first step to enable Angular form features by importing the FormsModule into your application module.",
+      "startTime": 0.0,
+      "endTime": 67.0,
+      "slug": "enabling-angular-forms-with-formsmodule"
+    },
+    {
+      "title": "Accessing the ngForm Directive",
+      "description": "Learn how to get a reference to the automatically attached ngForm directive using a template reference variable to inspect the form's value.",
+      "startTime": 67.0,
+      "endTime": 149.0,
+      "slug": "accessing-the-ngform-directive"
+    },
+    {
+      "title": "Tracking Form Controls with ngModel",
+      "description": "Discover why the form object is initially empty and how to use the ngModel directive to explicitly tell Angular which form controls to track.",
+      "startTime": 149.0,
+      "endTime": 176.0,
+      "slug": "tracking-form-controls-with-ngmodel"
+    },
+    {
+      "title": "The Necessity of the `name` Attribute",
+      "description": "This chapter explains why adding ngModel is not enough and demonstrates the requirement of adding a unique name attribute to each form control.",
+      "startTime": 176.0,
+      "endTime": 246.0,
+      "slug": "the-necessity-of-the-name-attribute"
+    },
+    {
+      "title": "Implementing a Working Data-Bound Form",
+      "description": "Watch as the name attribute is added to each control, finally enabling real-time two-way data binding between the form fields and the underlying data object.",
+      "startTime": 246.0,
+      "endTime": 304.0,
+      "slug": "implementing-a-working-data-bound-form"
+    },
+    {
+      "title": "How Different Control Values are Represented",
+      "description": "Understand how values from different HTML input types, like text fields, radio buttons, and checkboxes, are represented in the final form data object.",
+      "startTime": 304.0,
+      "endTime": 364.0,
+      "slug": "how-different-control-values-are-represented"
+    },
+    {
+      "title": "Grouping Fields with ngModelGroup",
+      "description": "Learn how to create nested data objects within your form by grouping related fields using the ngModelGroup directive, shown with an address example.",
+      "startTime": 364.0,
+      "endTime": 492.0,
+      "slug": "grouping-fields-with-ngmodelgroup"
+    },
+    {
+      "title": "Summary and Next Steps",
+      "description": "This chapter recaps the three key data-binding directives (ngForm, ngModel, ngModelGroup) and introduces the next topic: binding form data to a custom model.",
+      "startTime": 492.0,
+      "endTime": 538.96,
+      "slug": "summary-and-next-steps"
+    }
+  ],
+  "summary": "## Key Concepts: Data Binding in Angular Template-Driven Forms\n\nThis document outlines the core directives and concepts for binding data in Angular's template-driven forms.\n\n### 1. Enabling Angular Forms\n\nTo begin working with template-driven forms, you must first import the **`FormsModule`** into your `AppModule`.\n\n```typescript\nimport { FormsModule } from '@angular/forms';\n\n@NgModule({\n  imports: [\n    BrowserModule,\n    FormsModule // Add FormsModule here\n  ],\n  ...\n})\nexport class AppModule { }\n```\n\n> [!NOTE]\n> Without `FormsModule`, none of the form-specific directives like `ngForm` or `ngModel` will work.\n\n### 2. The `ngForm` Directive\n\n- Angular automatically attaches the **`ngForm`** directive to any `<form>` tag in your template.\n- This directive tracks the overall state and validity of the form.\n- To access the directive's instance, you use a **template reference variable**.\n\n```html\n<form #userForm=\"ngForm\">\n  <!-- Form controls go here -->\n</form>\n```\n\n### 3. Tracking Form Controls\n\nBy default, Angular does not track any controls inside a form. You must explicitly opt-in controls for tracking.\n\n> [!IMPORTANT]\n> For Angular to track a form control and include it in the form's data object, you must add **both** the **`ngModel` directive** and a **`name` attribute**.\n\n- **`ngModel`**: Signals to Angular that this is a form control it should manage.\n- **`name`**: Provides a unique key for the control within the form's data object.\n\n```html\n<input type=\"text\" ngModel name=\"username\">\n```\n\n### 4. Accessing Form Data\n\nOnce controls are tracked, you can access the entire form's data as a single object through the `ngForm` reference's **`.value`** property.\n\n```html\n<!-- Display the form's data object in real-time -->\n<pre>{{ userForm.value | json }}</pre>\n```\n\n- **Text inputs** bind their string value.\n- **Radio buttons** and **`<select>`** elements bind the value of their `value` attribute.\n- **Checkboxes** bind a boolean `true`/`false` value.\n\n### 5. Grouping Fields with `ngModelGroup`\n\n- The **`ngModelGroup`** directive allows you to create a nested object within your main form data object.\n- This is useful for organizing related fields, such as components of an address.\n\n```html\n<div ngModelGroup=\"address\">\n  <input type=\"text\" ngModel name=\"street\">\n  <input type=\"text\" ngModel name=\"city\">\n</div>\n```\n\nThis will produce a value object like: `{ \"address\": { \"street\": \"...\", \"city\": \"...\" } }`.",
+  "transcription": "## Enabling Angular Forms with FormsModule\n\nIn this video, let's see how the data binding is happening with the form fields. So far we have just created a basic HTML form, nothing related to Angular. The first step to start working with Angular forms is to import the `FormsModule`. So open `app.module.ts` and then import `FormsModule`. Let's also add `FormsModule` to the imports array.\n\nNow if we go back to `app.component.html`, we still have what seems like a basic HTML form, but behind the scenes, Angular's magic is already happening. Anytime we use a form tag, Angular attaches an `ngForm` directive to the form tag, which gives us valuable information about that particular form. It tells what the values of the different form controls are and whether the values are valid or invalid.\n\n## Accessing the ngForm Directive\n\nAnd how do we get a hold of a reference to this `ngForm` directive? Using a template reference variable. So to the form tag, I'm going to add a template reference variable. I'm going to call it `userForm` and to this, I'm going to assign the string `ngForm`.\n\nSo the `ngForm` directive exports itself as the string `ngForm`, and by assigning it to a reference variable, we have a reference to the directive itself. Now I just mentioned that the directive gives us access to the values of the form controls. It does so using the `value` property. So in the HTML, I'm going to use interpolation to take a peek at the form control values. So double curly braces and then `userForm.value` and then pass it through the JSON pipe.\n\n## Tracking Form Controls with ngModel\n\nNow if I save this and take a look at the browser, you can see that we have an empty object. I start typing the name, which was, and it still is an empty object. You might be wondering why it doesn't work.\n\nNow if we ask Angular why the value is an empty object, it is going to tell you, \"Hey, I am not going to track every single form control in your HTML. Let me know which of the form controls have to be tracked, only then will I do that.\"\n\n## The Necessity of the `name` Attribute\n\nAnd how do we let Angular know of the controls to be tracked? Using the `ngModel` directive. So to each of the form controls, let's place the `ngModel` directive. So to the input, `ngModel`, `ngModel`, `ngModel`. To the select tag, `ngModel`. To the radio buttons, `ngModel`. And finally for the checkbox. Let's save this and take a look at the browser.\n\nNow if I start typing, we don't see the expected result. So if I open the developer tools, go to the console, you can see that we have an error. And the error is that if `ngModel` is used within a form tag, either the `name` attribute must be set or the form control must be defined as standalone. And we see that time preference works because we do have a name for time preference, but for rest of the form fields, we don't have a name attribute. So along with the `ngModel` directive, the `name` attribute is very much necessary.\n\n## Implementing a Working Data-Bound Form\n\nLet's add the `name` attribute to each of the form controls. The first one is going to be `name=\"userName\"`. The second one, `name=\"email\"`. `name=\"phone\"`. `name=\"topic\"`. We already have the name `timePreference` on the radio button. And finally, `name=\"subscribe\"` on the checkbox.\n\nNow let's save this and go back to the browser. And right away you can see there is a difference in how the object is being displayed. All the form controls are present as properties of this particular object. Let's start filling in the form and see what happens. So enter a name and you can see that name is updated. Email, and you can see that email is updated. Similarly, phone gets updated. The select dropdown, select a value and then that gets updated. Select a time preference, you can see that that works as well. And finally select the checkbox and you can see that a value of true is set in the object. Uncheck and it changes to false.\n\n## How Different Control Values are Represented\n\nSo we are able to retrieve the different form control values by making use of `ngForm` and `ngModel` directives. Input values correspond to the text in the field, radio button values correspond to the `value` attribute, select tag corresponds to the `value` attribute if present, else it just corresponds to the text that is there, and finally checkbox corresponds to either true or false.\n\n## Grouping Fields with ngModelGroup\n\nNow in addition to `ngModel`, Angular also provides the `ngModelGroup` directive. We use the `ngModelGroup` directive if we would like to group together or create a subgroup within a form. For example, consider an address. Address can have Street, City, State, and Postal Code. We can group all of those fields into an address object using the `ngModelGroup` directive. Let me quickly show you how the code looks. So I'm going to copy paste the HTML and go through the code.\n\nSo right at the very top, I'm going to paste the HTML. So as you can see, we have four input elements: one for Street, one for City, one for State, and finally Postal Code. And all the four elements are enclosed in a div tag that has the `ngModelGroup` directive. To the directive, we assign a name called `address`. Now if we go back to the browser, take a look at the form value, you can see that we have the individual field names: email, phone, topic, and so on. But at the start, we now have a group of properties, and that group is the address object. Address contains four different properties: Street, City, State and Postal Code. So if you ever want to group together form fields, make use of this directive. Now to understand template-driven forms, though, we really don't have to focus on the `ngModelGroup` directive. I also want to keep the form as short as possible, and that is why I am going to remove the code that we have just added.\n\n## Summary and Next Steps\n\nBut please do keep in mind when it comes to data binding in template driven forms, we have three directives: `ngForm`, `ngModel`, and `ngModelGroup`. All right, so we are able to bind data using the `ngModel` directive and we can send this bound data to the server when required using `userForm.value`. Although this works completely fine, a better approach is to bind the data to a user-defined model and send that model data to the server. Let's see how to do that in the next video."
+}

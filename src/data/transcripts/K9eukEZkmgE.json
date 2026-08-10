@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 3,
+  "videoId": "K9eukEZkmgE",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn to dynamically manipulate your web pages with jQuery. This tutorial covers essential methods for changing HTML elements and attributes. Discover how to modify content using .text() and .html(), understanding the key difference when inserting HTML tags. Explore adding content with .append(), .prepend(), .after(), and .before(). Learn to clear content with .empty(), replace elements with .replaceWith(), and modify element attributes, like an image's source, with .attr().",
+  "chapters": [
+    {
+      "title": "Introduction to jQuery HTML Manipulation",
+      "description": "This chapter introduces the concept of HTML manipulation with jQuery and sets up the example document and click event handler.",
+      "startTime": 0.0,
+      "endTime": 47.0,
+      "slug": "introduction-to-jquery-html-manipulation"
+    },
+    {
+      "title": "Changing Content with the .text() Method",
+      "description": "Learn how to use the .text() method to change the text content of an HTML element, using the `this` keyword to target the clicked element.",
+      "startTime": 47.0,
+      "endTime": 127.0,
+      "slug": "changing-content-with-the-text-method"
+    },
+    {
+      "title": "Targeting and Modifying Multiple Elements",
+      "description": "This chapter demonstrates how changing the jQuery selector allows you to modify the text of multiple elements at once.",
+      "startTime": 127.0,
+      "endTime": 160.0,
+      "slug": "targeting-and-modifying-multiple-elements"
+    },
+    {
+      "title": "The Difference Between .text() and .html()",
+      "description": "Explore the critical difference between the .text() method, which displays HTML tags as text, and the .html() method, which renders them.",
+      "startTime": 160.0,
+      "endTime": 245.0,
+      "slug": "the-difference-between-text-and-html"
+    },
+    {
+      "title": "Adding Attributes and Handling Nested Quotes",
+      "description": "Learn how to use the .html() method to insert HTML with attributes, and see how to correctly handle nested quotation marks in JavaScript.",
+      "startTime": 245.0,
+      "endTime": 326.0,
+      "slug": "adding-attributes-and-handling-nested-quotes"
+    },
+    {
+      "title": "Replacing Content in a Container Element",
+      "description": "This chapter shows how to use the .html() method to replace all content within a container element like a div.",
+      "startTime": 326.0,
+      "endTime": 365.0,
+      "slug": "replacing-content-in-a-container-element"
+    },
+    {
+      "title": "Removing All Content with .empty()",
+      "description": "This section introduces the .empty() method as a quick way to remove all child elements from a selected element.",
+      "startTime": 365.0,
+      "endTime": 393.0,
+      "slug": "removing-all-content-with-empty"
+    },
+    {
+      "title": "Adding Content with .append()",
+      "description": "Learn to add new content or HTML elements to the end of a selected element using the .append() method.",
+      "startTime": 393.0,
+      "endTime": 488.0,
+      "slug": "adding-content-with-append"
+    },
+    {
+      "title": "Inserting with .after(), .prepend(), and .before()",
+      "description": "Discover how to insert content outside an element with .after() and .before(), and how .prepend() inserts content at the start, inside the element.",
+      "startTime": 488.0,
+      "endTime": 620.0,
+      "slug": "inserting-with-after-prepend-and-before"
+    },
+    {
+      "title": "Replacing Elements with .replaceWith()",
+      "description": "This chapter demonstrates how to use the .replaceWith() method to completely replace selected elements with new HTML content.",
+      "startTime": 620.0,
+      "endTime": 663.0,
+      "slug": "replacing-elements-with-replacewith"
+    },
+    {
+      "title": "Modifying Attributes with .attr()",
+      "description": "Learn to change an element's attributes, such as an image's 'src' attribute, by using the .attr() method.",
+      "startTime": 663.0,
+      "endTime": 777.0,
+      "slug": "modifying-attributes-with-attr"
+    },
+    {
+      "title": "Conclusion",
+      "description": "The video concludes with a summary and provides links to find more information and the sample code used in the tutorial.",
+      "startTime": 777.0,
+      "endTime": 801.92,
+      "slug": "conclusion"
+    }
+  ],
+  "summary": "## Manipulating HTML with jQuery\n\nThis tutorial covers jQuery methods used to dynamically get, set, and manipulate HTML elements and their attributes.\n\n## Changing Content\n\n- **`.text()`**: Sets or returns the **text content** of selected elements. It will display any HTML tags as literal text.\n- **`.html()`**: Sets or returns the **inner HTML** (content including HTML markup) of selected elements. This method will render any HTML tags it is given.\n\n> [!IMPORTANT]\n> Use `.text()` when you want to insert plain text to prevent potential script injection. Use `.html()` only when you specifically need to render HTML markup from a trusted source.\n\n## Adding New Content\n\njQuery provides several methods to insert new content around existing elements.\n\n> [!TIP]\n> `append()` and `prepend()` add content **inside** the selected element. `after()` and `before()` add content **outside** (as a sibling) to the selected element.\n\n- **`.append()`**: Inserts content at the **end** of the selected elements.\n- **`.prepend()`**: Inserts content at the **beginning** of the selected elements.\n- **`.after()`**: Inserts content **after** the selected elements.\n- **`.before()`**: Inserts content **before** the selected elements.\n\n## Removing & Replacing Content\n\n- **`.empty()`**: Removes all child nodes and content from the selected elements, leaving the elements themselves intact.\n- **`.replaceWith()`**: Replaces the selected elements entirely with the new content provided.\n\n```javascript\n// Example: Replace all <p> elements with <h2> elements\n$('p').replaceWith('<h2>New Heading</h2>');\n```\n\n## Modifying Attributes\n\n- **`.attr(attributeName, value)`**: Sets the value for a specific attribute on the selected elements.\n\n```javascript\n// Example: Change the 'src' attribute of an image with id=\"picture\"\n$('#picture').attr('src', 'new-image.gif');\n```\n\n> [!NOTE]\n> When setting an attribute that itself requires quotes (like an inline `style`), you must use a different type of quote. The common practice is to use single quotes inside a string defined by double quotes: `\"<b style='color:red;'>Text</b>\"`.",
+  "transcription": "## Introduction to jQuery HTML Manipulation\n\nIn this video I'll be covering jQuery HTML manipulation. This allows us to change the HTML elements and attributes of our document. Let's start by looking at the HTML document that we'll be using. We have an H1 tag followed by two P tags, and the H1 tag and the two P tags are enclosed inside this div element. And up here in the head section we have a style that changes the background color of the div element to yellow.\n\nAnd here's the JavaScript code that we'll be using. As you can see, we are using a click event with the H1 element. So the code that we put right here will be run whenever the user clicks on our H1 element.\n\n## Changing Content with the .text() Method\n\nSo now let's add some code that will change the text of our H1 heading element when it's clicked. So we'll start with a selector and as usual we'll use a dollar sign followed by a pair of parentheses, and we want to specify the element that brought us here. So we'll use the keyword `this`. And remember that we don't use quotation marks when we use the keyword `this`.\n\nThe next we type `.text()` and then a pair of parentheses, and then we end the statement with a semicolon. This `text` method will allow us to change the text inside of an HTML element. So we're going to be entering a string here and we need to enclose this string inside quotation marks. And so let's just enter the word 'clicked'.\n\nAnd so now what should happen is whenever we click on the H1 element, the text inside that HTML element will now change to the word 'clicked'. So let's try this out. So our H1 heading element right now just says 'Heading' and now when I click on it, the text changed to 'clicked'.\n\n## Targeting and Modifying Multiple Elements\n\nNow since we use the keyword `this` right here, this changed the text of the H1 element that we clicked on. But now let's use the selector for P tags. So I just enclose a P in quotation marks. And now when I click on the H1 heading tag, the text for all of the P tags will be changed to 'clicked'.\n\nSo let's look at this. And so here in our browser, this first line of text and the second line of text are both P tags. And so when I click on the heading tag, the text in both of these P elements changed.\n\n## The Difference Between .text() and .html()\n\nBut what would happen if I were to try and include HTML text within this? For example, if I change this to 'new text' and then let's say that I wanted to make the word 'text' bold. So I would add the B tag and then close the B tag here.\n\nSo if my intent were to add the text 'new text' and to make the word 'text' bold, then this would not actually work. If we look at this in the browser we can see what would happen. So I'll click on the heading tag here and you can see that the text that was changed for the paragraph tag just displays the B tag, but it doesn't actually make the word text bold.\n\nBut if your intent was to actually display these HTML elements, then this is how you would do it. But let's say that you did not want to display these elements, that you actually wanted to use these elements to make the word 'text' bold. I'll show you how to do that. You can do that by changing this `text` method to `html`.\n\n## Adding Attributes and Handling Nested Quotes\n\nSo let's try this in the browser. I'll click on the heading tag and now you can see that it did not display the B tag, but it actually used the B tag to make the word text bold. So this is how you can actually insert more HTML tags within an element like the paragraph element here. And not only can you add HTML tags this way, but you can even give them attributes. For example, for this B tag, I'll add a style attribute. For this style, I'll set the color to red.\n\nNow there's something important here that I need to point out. For this style we use quotation marks, but we already have a set of quotation marks here. The JavaScript does not allow you to enclose a pair of quotation marks inside of another pair of quotation marks that are the same type of quotation marks. So the way to solve this is we can use single quotation marks. So I can change this quotation mark right here to a single quotation mark, and then the matching quotation mark over here is also changed to a single quotation mark. And now this will work just fine.\n\nSo let's take a look at this in the browser. So I'll click on the H1 heading element and we can see that the word 'text' is not only bold but the color was changed to red.\n\n## Replacing Content in a Container Element\n\nAnd so now let's come back over here and instead of applying this to the P element, let's apply it to the div element. And if you recall, in our HTML code, our H1 tag and these two P tags were all enclosed within this div element. So now when we click on the H1 heading element in our browser, all of these tags right here will be replaced with this right here. So let's look at this in the browser. I'll click on the heading element and you can see that now everything within the div element was replaced.\n\n## Removing All Content with .empty()\n\nAnd we can also remove everything from an element. So let's come back over here and delete all of this and then type `empty` and follow that with a pair of parentheses. This will remove everything from our div element when the user clicks on the H1 heading. So let's take a look at this. So I'll click on the H1 heading and then everything within that div was removed.\n\n## Adding Content with .append()\n\nSo now let's say that instead of removing elements or instead of replacing elements, we want to append some HTML. So we can do that by using the `append` method. So let's change our selector from `div` to `P` so we can select the P elements. And then we want to append a string of text. So we enclose this in quotation marks and I'll type in a string that says 'more text'. And let's try this out.\n\nSo our paragraph tags already say 'first line of text' and 'second line of text'. Now I'll click on our heading element and here you can see that we've appended the words 'more text'. But we can also append HTML code. So let's come back over here and change our selector from P to div, and then we'll still use the `append` method here, but in the quotation marks I'm going to add some HTML code. So I'll add a paragraph element and I'll just type 'new text' and then I'll close the paragraph element. And now let's look at this.\n\n## Inserting with .after(), .prepend(), and .before()\n\nSo I'll click on our heading element and you can see that 'new txt' was appended to the end of this div. And if you recall back in our HTML code, we have a style set for the div that sets the background color to yellow. So over here in the browser you can see that the new text was appended to the end of the div but it's still included inside of the div, and we can tell that because the background of the div is set to yellow.\n\nBut what if we wanted this new text to be on the outside of the div instead of inside of the div? We can do that if we change the word `append` to `after`. And now when we look at this in the browser and I click on the H1 heading element, we can see that the new text was added after the div. And we can tell that because again, the background color of the div is set to yellow. So now let's go back over here and change our div selector to a P selector and let's look at this.\n\nSo here we already have two P elements: the first line of text and the second line of text. So now I'll click our heading element. Now this added our new text after the first line of text and it also added it after our second line of text. So you can use this to add HTML code after multiple elements. We can also add HTML code using the `prepend` method. And let's change our selector back to div again and let's look at this in the browser. Now when I click on the H1 heading element, we can see that it added text to the beginning of the div element. And again, this is inside the div element, and we can tell that because of the yellow background. Now if we wanted to add the text before the div element instead of including it within the div element, we can change the word `prepend` to `before`. And so let's look at this. So I'll click on the H1 heading element and now our text was added before the div.\n\n## Replacing Elements with .replaceWith()\n\nAnd now I'll show you how we can replace some HTML code. To do this, we use a method called `replaceWith`. And you should note that the W here is capitalized. And let's change our selector from `div` to `P`. And what we want to do is to replace our P tags with H2 tags. So I'll change this P tag here to an H2 tag and then I'll also close the H2 tag here. And now let's look at this in the browser. So I'll click on the H1 heading element and now our two P elements changed to 2 H2 elements.\n\n## Modifying Attributes with .attr()\n\nAnd now we'll look at how to change an attribute of an element. So for this, we're going to make a change to our HTML code, and I'm going to remove both of these P elements here and I'm going to replace it with an image element. So this tag will just load in an image called 8-ball and notice here that I have the ID attribute set and I have it set to a value of 'picture'. So now let's go back to our JavaScript code. And here we're going to change the selector and we want to use a selector for our image. And since I set the image ID attribute to 'picture', I'll just use the selector for that ID value. So to specify an ID, I start out by using a pound sign, and then I just type the name of the ID attribute which is 'picture'.\n\nNow to change an attribute we need to change this method to `attr`. And then let me get rid of everything inside these parentheses here. And then we need to first specify the attribute that we want to change, and so we'll be changing the source attribute. So I enclose that in quotation marks and then I put a comma outside of the quotation marks and I specify the new value that I want to change the source attribute to. And I'll put that in quotation marks, and this will be called floating ball gif. So now when we click on the H1 heading element, it'll change the source attribute to floating ball gif, which will change the picture. So let's take a look at this in the browser.\n\nWe can see that we have the image of the eight ball and now when I click on the heading element, it changes to the image of the floating ball.\n\n## Conclusion\n\nWell that concludes this video. For more information on jQuery HTML manipulation visit jQuery.com, and you can find the sample code used in this video at littlewebhut.com. Thanks for watching and please subscribe and leave a comment."
+}
