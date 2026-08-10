@@ -4,7 +4,7 @@ import { blogTechFor } from "../../lib/blog-tech";
 import { formatStars } from "../../lib/catalog";
 import { networkProjectEntries } from "../../lib/feed";
 import { englishDisplayText, projectDisplayName, projectPreviewExcerpt, truncatePreviewText, videoDisplayDescription, videoDisplayTitle } from "../../lib/preview-text";
-import { allVideoEntries } from "../../lib/videos";
+import { allVideoEntries, byYoutubePublishedAtDesc } from "../../lib/videos";
 import NavIcon from "../NavIcon.astro";
 
 const PREVIEW_LIMIT = 50;
@@ -92,7 +92,7 @@ const feedPreview: Record<FeedId, PreviewItem[]> = {
       meta: item.dateLabel,
     })),
   video: allVideoEntries()
-    .sort((a, b) => Date.parse(b.video.publishedAt) - Date.parse(a.video.publishedAt))
+    .sort((a, b) => byYoutubePublishedAtDesc(a.video, b.video))
     .slice(0, PREVIEW_LIMIT)
     .map(({ techName, video }) => {
       const tech = blogTechFor(techName);

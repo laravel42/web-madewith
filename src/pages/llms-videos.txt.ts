@@ -1,12 +1,12 @@
 import type { APIRoute } from "astro";
-import { allVideoEntries } from "../lib/videos";
+import { allVideoEntries, byYoutubePublishedAtDesc } from "../lib/videos";
 import { videoSlug } from "../lib/video-view";
 import { videoDisplayTitle, videoDisplayDescription } from "../lib/preview-text";
 
 /** Machine-readable video index — one line per curated video (AI crawlers + the chat bot). */
 export const GET: APIRoute = ({ site }) => {
   const base = site ?? new URL("https://madewithwhat.net");
-  const entries = allVideoEntries();
+  const entries = allVideoEntries().sort((a, b) => byYoutubePublishedAtDesc(a.video, b.video));
   const lines = [
     "# MadeWithWhat videos — all curated tutorials",
     "",

@@ -2,7 +2,7 @@ import { GROUP_META, getResolvedTheme, type DomainGroup } from "../config/domain
 import { blogTechFor } from "./blog-tech";
 import { formatBlogDate } from "./blog-dates";
 import { videoDisplayDescription, videoDisplayTitle, truncatePreviewText, stripIcons, videoDescriptionParagraphs } from "./preview-text";
-import { allVideoEntries, type Video, type VideoEntry } from "./videos";
+import { allVideoEntries, byYoutubePublishedAtDesc, type Video, type VideoEntry } from "./videos";
 
 export interface VideoCardItem {
   slug: string;
@@ -174,12 +174,12 @@ function toItem(entry: VideoEntry): VideoCardItem {
 
 let CARDS: VideoCardItem[] | null = null;
 
-/** Every relevant video as a card item, newest first. */
+/** Every relevant video as a card item, newest YouTube upload first. */
 export function allVideoCards(): VideoCardItem[] {
   if (!CARDS) {
     CARDS = allVideoEntries()
       .map(toItem)
-      .sort((a, b) => Date.parse(b.dateIso) - Date.parse(a.dateIso));
+      .sort((a, b) => byYoutubePublishedAtDesc({ publishedAt: a.dateIso }, { publishedAt: b.dateIso }));
   }
   return CARDS;
 }

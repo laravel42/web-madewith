@@ -1,23 +1,24 @@
 ---
 import AdminLayout from "../../admin/layouts/AdminLayout.astro";
 import { DOMAINS } from "../../config/domains";
-import { getVideoCatalog } from "../../lib/videos";
+import { getVideoCatalog, byYoutubePublishedAtDesc } from "../../lib/videos";
 import { getTranscript } from "../../lib/transcripts";
 
-const rows: Array<{ id: string; title: string; channel: string; tech: string; slug: string; duration: string; views: number; enriched: boolean; href: string }> = [];
+const rows: Array<{ id: string; title: string; channel: string; tech: string; slug: string; duration: string; views: number; publishedAt: string; enriched: boolean; href: string }> = [];
 for (const d of DOMAINS) {
   try {
     const cat = getVideoCatalog(d.slug);
     for (const v of cat.videos) {
       rows.push({
         id: v.id, title: v.title, channel: v.channel ?? "", tech: d.techName, slug: d.slug,
-        duration: v.duration ?? "—", views: v.views ?? 0, enriched: !!getTranscript(v.id),
+        duration: v.duration ?? "—", views: v.views ?? 0, publishedAt: v.publishedAt ?? "",
+        enriched: !!getTranscript(v.id),
         href: `/video/`,
       });
     }
   } catch { /* no videos for this domain */ }
 }
-rows.sort((a, b) => b.views - a.views);
+rows.sort((a, b) => byYoutubePublishedAtDesc(a, b) || b.views - a.views);
 const enrichedCount = rows.filter((r) => r.enriched).length;
 ---
 

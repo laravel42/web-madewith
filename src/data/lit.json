@@ -1,6 +1,6 @@
 {
   "slug": "lit",
-  "scrapedAt": "2026-08-05T04:38:15.261689+00:00",
+  "scrapedAt": "2026-08-10T12:07:30.914980+00:00",
   "source": "scrapy-github",
   "totalRepos": 109,
   "projects": [
@@ -9,110 +9,73 @@
       "name": "clients",
       "fullName": "bitwarden/clients",
       "category": "DevTools",
-      "stars": 13268,
+      "stars": 13515,
       "author": "bitwarden",
       "avatar": "https://avatars.githubusercontent.com/u/15990069?v=4",
       "desc": "Bitwarden client apps (web, browser extension, desktop, and cli).",
       "demo": "https://bitwarden.com",
       "repoUrl": "https://github.com/bitwarden/clients",
-      "long1": "Bitwarden client apps (web, browser extension, desktop, and cli). Maintained by bitwarden on GitHub, where it has earned 13,268 stars from the community.",
-      "long2": "It's actively developed around angular, bitwarden, browser-extension, and is a solid reference for anyone building with these tools.",
+      "long1": "Bitwarden client apps (web, browser extension, desktop, and cli). Maintained by bitwarden on GitHub, where it has earned 13,515 stars from the community.",
+      "long2": "It's actively developed around webextension, javascript, bitwarden, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
-        "Angular",
+        "Webextension",
         "Bitwarden",
-        "Browser Extension",
+        "Safari",
         "Chrome"
       ],
-      "updated": "3 weeks ago",
+      "updated": "5 days ago",
+      "pushedAt": "2026-08-05T03:31:59Z",
       "license": "—",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 88.255,
-          "size": 27606734
+          "pct": 92,
+          "name": "TypeScript"
         },
         {
-          "name": "HTML",
-          "pct": 4.97,
-          "size": 1554640
+          "pct": 5,
+          "name": "HTML"
         },
         {
-          "name": "Rust",
-          "pct": 2.855,
-          "size": 893036
-        },
-        {
-          "name": "SCSS",
-          "pct": 1.553,
-          "size": 485814
-        },
-        {
-          "name": "MDX",
-          "pct": 0.983,
-          "size": 307447
-        },
-        {
-          "name": "JavaScript",
-          "pct": 0.793,
-          "size": 248117
-        },
-        {
-          "name": "CSS",
-          "pct": 0.208,
-          "size": 65031
-        },
-        {
-          "name": "Swift",
-          "pct": 0.137,
-          "size": 43001
-        },
-        {
-          "name": "PowerShell",
-          "pct": 0.091,
-          "size": 28607
-        },
-        {
-          "name": "Objective-C",
-          "pct": 0.088,
-          "size": 27675
-        },
-        {
-          "name": "Shell",
-          "pct": 0.052,
-          "size": 16274
-        },
-        {
-          "name": "Dockerfile",
-          "pct": 0.01,
-          "size": 3129
-        },
-        {
-          "name": "NSIS",
-          "pct": 0.003,
-          "size": 858
-        },
-        {
-          "name": "EJS",
-          "pct": 0.001,
-          "size": 408
+          "pct": 3,
+          "name": "Rust"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/bitwarden/clients/releases/tag/web-v2026.7.1",
+          "name": "web-v2026.7.1"
+        },
+        {
+          "url": "https://github.com/bitwarden/clients/releases/tag/cli-v2026.7.0",
+          "name": "cli-v2026.7.0"
+        },
+        {
+          "url": "https://github.com/bitwarden/clients/releases/tag/browser-v2026.7.0",
+          "name": "browser-v2026.7.0"
+        },
+        {
+          "url": "https://github.com/bitwarden/clients/releases/tag/desktop-v2026.7.0",
+          "name": "desktop-v2026.7.0"
+        },
+        {
+          "url": "https://github.com/bitwarden/clients/releases/tag/web-v2026.7.0",
+          "name": "web-v2026.7.0"
+        }
+      ],
       "topics": [
-        "angular",
+        "webextension",
+        "javascript",
         "bitwarden",
-        "browser-extension",
+        "typescript",
+        "safari",
         "chrome",
+        "firefox",
+        "angular",
+        "browser-extension",
         "cli",
         "desktop",
-        "electron",
-        "firefox",
-        "javascript",
-        "nodejs",
-        "safari",
-        "typescript",
-        "webextension"
+        "electron"
       ],
       "addedAt": "2026-07-15T22:28:32.290247+00:00"
     },
@@ -136,7 +99,8 @@
         "Lit",
         "Lit Element"
       ],
-      "updated": "today",
+      "updated": "5 days ago",
+      "pushedAt": "2026-08-05T01:04:12Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -209,7 +173,8 @@
         "Urp",
         "Shader"
       ],
-      "updated": "1 month ago",
+      "updated": "6 weeks ago",
+      "pushedAt": "2026-07-02T12:14:30Z",
       "license": "MIT",
       "langs": [
         {
@@ -254,7 +219,8 @@
         "Form",
         "Hooks"
       ],
-      "updated": "yesterday",
+      "updated": "6 days ago",
+      "pushedAt": "2026-08-04T06:12:58Z",
       "license": "MIT",
       "langs": [
         {
@@ -328,7 +294,8 @@
         "Vue",
         "Angular"
       ],
-      "updated": "1 month ago",
+      "updated": "5 weeks ago",
+      "pushedAt": "2026-07-03T23:30:17Z",
       "license": "MIT",
       "langs": [
         {
@@ -386,7 +353,8 @@
         "Jabber",
         "Chat"
       ],
-      "updated": "yesterday",
+      "updated": "6 days ago",
+      "pushedAt": "2026-08-04T12:22:14Z",
       "license": "MPL-2.0",
       "langs": [
         {
@@ -454,7 +422,8 @@
         "Grapesjs",
         "Jamstack"
       ],
-      "updated": "3 weeks ago",
+      "updated": "4 weeks ago",
+      "pushedAt": "2026-07-13T16:36:38-06:00",
       "license": "AGPL-3.0",
       "langs": [
         {
@@ -542,7 +511,8 @@
         "Angular2",
         "Material"
       ],
-      "updated": "3 weeks ago",
+      "updated": "4 weeks ago",
+      "pushedAt": "2026-07-13T13:11:02-06:00",
       "license": "MIT",
       "langs": [
         {
@@ -619,6 +589,7 @@
         "Moveable"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-06-17T18:43:06Z",
       "license": "MIT",
       "langs": [
         {
@@ -692,7 +663,8 @@
         "Vue",
         "Astro"
       ],
-      "updated": "3 days ago",
+      "updated": "1 week ago",
+      "pushedAt": "2026-08-02T16:35:11Z",
       "license": "—",
       "langs": [
         {
@@ -765,7 +737,8 @@
         "Family Tree",
         "Gedcom"
       ],
-      "updated": "1 week ago",
+      "updated": "2 weeks ago",
+      "pushedAt": "2026-07-29T15:04:34Z",
       "license": "AGPL-3.0",
       "langs": [
         {
@@ -837,7 +810,8 @@
         "Web Components",
         "Lit"
       ],
-      "updated": "2 days ago",
+      "updated": "1 week ago",
+      "pushedAt": "2026-08-03T11:30:51Z",
       "license": "MIT",
       "langs": [
         {
@@ -906,7 +880,8 @@
         "Pwabuilder",
         "Pwa"
       ],
-      "updated": "3 weeks ago",
+      "updated": "4 weeks ago",
+      "pushedAt": "2026-07-16T20:38:39Z",
       "license": "—",
       "langs": [
         {
@@ -950,7 +925,8 @@
         "Lit",
         "Lit Element"
       ],
-      "updated": "today",
+      "updated": "5 days ago",
+      "pushedAt": "2026-08-05T03:06:37Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -1023,7 +999,8 @@
         "Ios",
         "Chrome"
       ],
-      "updated": "1 month ago",
+      "updated": "6 weeks ago",
+      "pushedAt": "2026-06-26T23:13:38Z",
       "license": "MIT",
       "langs": [
         {
@@ -1095,7 +1072,8 @@
         "Accessibility",
         "Lit"
       ],
-      "updated": "1 month ago",
+      "updated": "6 weeks ago",
+      "pushedAt": "2026-06-30T19:42:00Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -1169,6 +1147,7 @@
         "Lit Html"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-10-16T16:41:49Z",
       "license": "MIT",
       "langs": [
         {
@@ -1242,7 +1221,8 @@
         "Angular",
         "Custom Element"
       ],
-      "updated": "4 days ago",
+      "updated": "1 week ago",
+      "pushedAt": "2026-07-31T23:45:57Z",
       "license": "MIT",
       "langs": [
         {
@@ -1316,6 +1296,7 @@
         "Hlsl"
       ],
       "updated": "1 year ago",
+      "pushedAt": "2025-03-29T05:31:57Z",
       "license": "MIT",
       "langs": [
         {
@@ -1368,6 +1349,7 @@
         "Preact"
       ],
       "updated": "3 years ago",
+      "pushedAt": "2023-02-26T06:20:44Z",
       "license": "MIT",
       "langs": [
         {
@@ -1418,6 +1400,7 @@
         "Editor"
       ],
       "updated": "6 months ago",
+      "pushedAt": "2026-02-16T07:21:51Z",
       "license": "MIT",
       "langs": [
         {
@@ -1482,6 +1465,7 @@
         "Tampermonkey"
       ],
       "updated": "4 weeks ago",
+      "pushedAt": "2026-07-10T14:30:56-06:00",
       "license": "—",
       "langs": [
         {
@@ -1532,7 +1516,8 @@
         "Webcomponents",
         "Lit Element"
       ],
-      "updated": "yesterday",
+      "updated": "1 week ago",
+      "pushedAt": "2026-08-03T18:00:22Z",
       "license": "MIT",
       "langs": [
         {
@@ -1603,6 +1588,7 @@
         "React"
       ],
       "updated": "1 year ago",
+      "pushedAt": "2025-04-19T09:19:13Z",
       "license": "MIT",
       "langs": [
         {
@@ -1674,7 +1660,8 @@
         "Github App",
         "Pglite"
       ],
-      "updated": "yesterday",
+      "updated": "6 days ago",
+      "pushedAt": "2026-08-04T12:29:13Z",
       "license": "MIT",
       "langs": [
         {
@@ -1731,13 +1718,13 @@
       "name": "discord-components",
       "fullName": "skyra-project/discord-components",
       "category": "Docs",
-      "stars": 345,
+      "stars": 346,
       "author": "skyra-project",
       "avatar": "https://avatars.githubusercontent.com/u/59655788?v=4",
       "desc": "Discord Webcomponents for real looking messages on the web",
       "demo": "https://discord-components.js.org",
       "repoUrl": "https://github.com/skyra-project/discord-components",
-      "long1": "Discord Webcomponents for real looking messages on the web. Maintained by skyra-project on GitHub, where it has earned 345 stars from the community.",
+      "long1": "Discord Webcomponents for real looking messages on the web. Maintained by skyra-project on GitHub, where it has earned 346 stars from the community.",
       "long2": "It's actively developed around discord, vue, react, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
@@ -1746,7 +1733,8 @@
         "React",
         "Angular"
       ],
-      "updated": "4 days ago",
+      "updated": "2 days ago",
+      "pushedAt": "2026-08-08T21:38:49Z",
       "license": "MIT",
       "langs": [
         {
@@ -1818,7 +1806,8 @@
         "Python",
         "Wagtail"
       ],
-      "updated": "3 weeks ago",
+      "updated": "4 weeks ago",
+      "pushedAt": "2026-07-13T09:31:59-06:00",
       "license": "CC0-1.0",
       "langs": [
         {
@@ -1886,7 +1875,8 @@
         "Css",
         "Carbon Design System"
       ],
-      "updated": "today",
+      "updated": "5 days ago",
+      "pushedAt": "2026-08-05T03:36:25Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -1956,6 +1946,7 @@
         "Tools"
       ],
       "updated": "2 months ago",
+      "pushedAt": "2026-06-06T16:51:06Z",
       "license": "MIT",
       "langs": [
         {
@@ -2026,7 +2017,8 @@
         "Lit",
         "Ssr"
       ],
-      "updated": "today",
+      "updated": "5 days ago",
+      "pushedAt": "2026-08-05T01:20:07Z",
       "license": "MPL-2.0",
       "langs": [
         {
@@ -2092,6 +2084,7 @@
         "Orchestrator"
       ],
       "updated": "10 months ago",
+      "pushedAt": "2025-10-02T14:19:57Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -2161,7 +2154,8 @@
         "Responsive Images",
         "Sharp"
       ],
-      "updated": "1 week ago",
+      "updated": "2 weeks ago",
+      "pushedAt": "2026-07-27T23:06:52Z",
       "license": "MIT",
       "langs": [
         {
@@ -2236,6 +2230,7 @@
         "Lit"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-11-20T12:49:11Z",
       "license": "MIT",
       "langs": [
         {
@@ -2310,6 +2305,7 @@
         "React"
       ],
       "updated": "3 months ago",
+      "pushedAt": "2026-05-09T19:33:06Z",
       "license": "ISC",
       "langs": [
         {
@@ -2375,62 +2371,66 @@
       "demo": "https://juntossomosmais.github.io/atomium/",
       "repoUrl": "https://github.com/juntossomosmais/atomium",
       "long1": "Atomium is an internal design system for 'Juntos Somos Mais' using Web Components. Maintained by juntossomosmais on GitHub, where it has earned 181 stars from the community.",
-      "long2": "It's actively developed around custom-elements, design-system, design-systems, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around custom-elements, design-system, ionic, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
         "Custom Elements",
         "Design System",
-        "Design Systems",
-        "Design Tokens"
+        "Ionic",
+        "Stenciljs"
       ],
-      "updated": "3 weeks ago",
+      "updated": "2 weeks ago",
+      "pushedAt": "2026-07-29T19:45:09Z",
       "license": "MIT",
       "langs": [
         {
-          "name": "TypeScript",
-          "pct": 79.009,
-          "size": 522252
+          "pct": 82,
+          "name": "TypeScript"
         },
         {
-          "name": "MDX",
-          "pct": 9.103,
-          "size": 60169
+          "pct": 9,
+          "name": "MDX"
         },
         {
-          "name": "SCSS",
-          "pct": 8.674,
-          "size": 57333
-        },
-        {
-          "name": "JavaScript",
-          "pct": 2.799,
-          "size": 18501
-        },
-        {
-          "name": "CSS",
-          "pct": 0.304,
-          "size": 2011
-        },
-        {
-          "name": "HTML",
-          "pct": 0.111,
-          "size": 733
+          "pct": 9,
+          "name": "SCSS"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/juntossomosmais/atomium/releases/tag/atomium-v4.4.1",
+          "name": "atomium-v4.4.1"
+        },
+        {
+          "url": "https://github.com/juntossomosmais/atomium/releases/tag/atomium-v4.4.0",
+          "name": "atomium-v4.4.0"
+        },
+        {
+          "url": "https://github.com/juntossomosmais/atomium/releases/tag/atomium-v4.3.3",
+          "name": "atomium-v4.3.3"
+        },
+        {
+          "url": "https://github.com/juntossomosmais/atomium/releases/tag/atomium-v4.3.2",
+          "name": "atomium-v4.3.2"
+        },
+        {
+          "url": "https://github.com/juntossomosmais/atomium/releases/tag/atomium-v4.3.1",
+          "name": "atomium-v4.3.1"
+        }
+      ],
       "topics": [
         "custom-elements",
         "design-system",
-        "design-systems",
-        "design-tokens",
-        "designsystem",
         "ionic",
-        "nx",
         "stenciljs",
+        "web-components",
+        "webcomponents",
+        "nx",
         "storybook",
         "typescript",
-        "web-components",
-        "webcomponents"
+        "design-systems",
+        "design-tokens",
+        "designsystem"
       ],
       "addedAt": "2026-07-15T22:28:32.290247+00:00"
     },
@@ -2454,7 +2454,8 @@
         "Material Design",
         "Material You"
       ],
-      "updated": "today",
+      "updated": "5 days ago",
+      "pushedAt": "2026-08-05T02:57:35Z",
       "license": "MIT",
       "langs": [
         {
@@ -2519,7 +2520,8 @@
         "Lit",
         "Arangodb"
       ],
-      "updated": "yesterday",
+      "updated": "6 days ago",
+      "pushedAt": "2026-08-04T04:08:44Z",
       "license": "—",
       "langs": [
         {
@@ -2572,6 +2574,7 @@
         "Lit"
       ],
       "updated": "8 months ago",
+      "pushedAt": "2025-12-08T14:33:00Z",
       "license": "MIT",
       "langs": [
         {
@@ -2642,7 +2645,8 @@
         "React",
         "Svelte"
       ],
-      "updated": "1 year ago",
+      "updated": "2 years ago",
+      "pushedAt": "2025-02-08T03:59:46Z",
       "license": "MIT",
       "langs": [
         {
@@ -2711,7 +2715,8 @@
         "Web Components",
         "Eslint"
       ],
-      "updated": "4 days ago",
+      "updated": "1 week ago",
+      "pushedAt": "2026-08-01T05:13:04Z",
       "license": "MIT",
       "langs": [
         {
@@ -2776,6 +2781,7 @@
         "Lit Element"
       ],
       "updated": "4 years ago",
+      "pushedAt": "2022-12-26T16:00:47Z",
       "license": "MIT",
       "langs": [
         {
@@ -2836,6 +2842,7 @@
         "Lit"
       ],
       "updated": "9 months ago",
+      "pushedAt": "2025-11-11T15:46:08Z",
       "license": "MIT",
       "langs": [
         {
@@ -2888,7 +2895,8 @@
         "Lit Element",
         "Lit Html"
       ],
-      "updated": "today",
+      "updated": "5 days ago",
+      "pushedAt": "2026-08-05T02:24:18Z",
       "license": "MIT",
       "langs": [
         {
@@ -2957,7 +2965,8 @@
         "Node",
         "Css"
       ],
-      "updated": "yesterday",
+      "updated": "1 week ago",
+      "pushedAt": "2026-08-04T00:00:20Z",
       "license": "MIT",
       "langs": [
         {
@@ -3032,6 +3041,7 @@
         "Lit Element"
       ],
       "updated": "2 weeks ago",
+      "pushedAt": "2026-07-25T09:05:36Z",
       "license": "MIT",
       "langs": [
         {
@@ -3099,6 +3109,7 @@
         "Pi Coding Agent"
       ],
       "updated": "4 months ago",
+      "pushedAt": "2026-04-13T20:25:01Z",
       "license": "MIT",
       "langs": [
         {
@@ -3167,7 +3178,8 @@
         "Lit Element",
         "Lit Html Element"
       ],
-      "updated": "1 month ago",
+      "updated": "6 weeks ago",
+      "pushedAt": "2026-06-30T20:52:55Z",
       "license": "—",
       "langs": [
         {
@@ -3234,6 +3246,7 @@
         "React"
       ],
       "updated": "1 year ago",
+      "pushedAt": "2025-05-15T02:28:04Z",
       "license": "MIT",
       "langs": [
         {
@@ -3304,7 +3317,8 @@
         "Catalog",
         "Custom"
       ],
-      "updated": "today",
+      "updated": "6 days ago",
+      "pushedAt": "2026-08-04T22:56:41Z",
       "license": "MIT",
       "langs": [
         {
@@ -3378,7 +3392,8 @@
         "Forms",
         "Json"
       ],
-      "updated": "yesterday",
+      "updated": "6 days ago",
+      "pushedAt": "2026-08-04T15:24:55Z",
       "license": "MIT",
       "langs": [
         {
@@ -3450,6 +3465,7 @@
         "Elmish"
       ],
       "updated": "3 years ago",
+      "pushedAt": "2023-02-12T15:16:15Z",
       "license": "MIT",
       "langs": [
         {
@@ -3495,6 +3511,7 @@
         "Storybook"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-07-24T21:11:18Z",
       "license": "MIT",
       "langs": [
         {
@@ -3561,7 +3578,8 @@
         "Design System",
         "Lit"
       ],
-      "updated": "today",
+      "updated": "6 days ago",
+      "pushedAt": "2026-08-04T17:55:11Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -3631,7 +3649,8 @@
         "Formatter",
         "Html"
       ],
-      "updated": "3 weeks ago",
+      "updated": "4 weeks ago",
+      "pushedAt": "2026-07-13T14:30:02-06:00",
       "license": "MIT",
       "langs": [
         {
@@ -3708,7 +3727,8 @@
         "Geocoding Api",
         "Leaflet"
       ],
-      "updated": "1 month ago",
+      "updated": "5 weeks ago",
+      "pushedAt": "2026-07-03T08:10:06-06:00",
       "license": "BSD-3-Clause",
       "langs": [
         {
@@ -3772,6 +3792,7 @@
         "Css"
       ],
       "updated": "3 years ago",
+      "pushedAt": "2023-07-25T11:18:41Z",
       "license": "MIT",
       "langs": [
         {
@@ -3842,6 +3863,7 @@
         "Lit Elements"
       ],
       "updated": "3 years ago",
+      "pushedAt": "2023-04-19T22:45:53Z",
       "license": "—",
       "langs": [
         {
@@ -3890,6 +3912,7 @@
         "Frontend"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-09-26T21:06:33Z",
       "license": "MIT",
       "langs": [
         {
@@ -3939,7 +3962,8 @@
         "Lit",
         "Ui"
       ],
-      "updated": "4 weeks ago",
+      "updated": "5 weeks ago",
+      "pushedAt": "2026-07-08T05:59:24Z",
       "license": "—",
       "langs": [
         {
@@ -4007,7 +4031,8 @@
         "Open Source",
         "Spring Application"
       ],
-      "updated": "3 weeks ago",
+      "updated": "4 weeks ago",
+      "pushedAt": "2026-07-14T00:24:20-06:00",
       "license": "—",
       "langs": [
         {
@@ -4065,6 +4090,7 @@
         "Responsive"
       ],
       "updated": "6 months ago",
+      "pushedAt": "2026-02-08T21:01:36Z",
       "license": "MIT",
       "langs": [
         {
@@ -4127,7 +4153,8 @@
         "Storybook",
         "Lit"
       ],
-      "updated": "2 days ago",
+      "updated": "1 week ago",
+      "pushedAt": "2026-08-03T13:31:28Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -4193,7 +4220,8 @@
         "Webcomponents",
         "Limette"
       ],
-      "updated": "1 month ago",
+      "updated": "7 weeks ago",
+      "pushedAt": "2026-06-24T10:42:42Z",
       "license": "MIT",
       "langs": [
         {
@@ -4255,6 +4283,7 @@
         "Webcomponents"
       ],
       "updated": "4 months ago",
+      "pushedAt": "2026-04-11T07:34:11Z",
       "license": "MIT",
       "langs": [
         {
@@ -4320,7 +4349,8 @@
         "Web Components",
         "Lit"
       ],
-      "updated": "2 weeks ago",
+      "updated": "3 weeks ago",
+      "pushedAt": "2026-07-21T10:14:34Z",
       "license": "MIT",
       "langs": [
         {
@@ -4387,6 +4417,7 @@
         "Benchmark"
       ],
       "updated": "9 months ago",
+      "pushedAt": "2025-11-03T14:00:34Z",
       "license": "MIT",
       "langs": [
         {
@@ -4439,7 +4470,8 @@
         "Meta Framework",
         "Mpa"
       ],
-      "updated": "2 months ago",
+      "updated": "8 weeks ago",
+      "pushedAt": "2026-06-15T21:41:17Z",
       "license": "ISC",
       "langs": [
         {
@@ -4511,6 +4543,7 @@
         "React"
       ],
       "updated": "1 year ago",
+      "pushedAt": "2025-05-19T06:01:56Z",
       "license": "ISC",
       "langs": [
         {
@@ -4579,7 +4612,8 @@
         "Devtools",
         "Fabric8"
       ],
-      "updated": "2 weeks ago",
+      "updated": "3 weeks ago",
+      "pushedAt": "2026-07-18T14:20:15-06:00",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -4650,7 +4684,8 @@
         "Lit",
         "Next.js"
       ],
-      "updated": "1 month ago",
+      "updated": "6 weeks ago",
+      "pushedAt": "2026-06-29T09:55:37Z",
       "license": "MIT",
       "langs": [
         {
@@ -4704,6 +4739,7 @@
         "Lit"
       ],
       "updated": "3 years ago",
+      "pushedAt": "2023-12-30T21:56:20Z",
       "license": "MIT",
       "langs": [
         {
@@ -4740,7 +4776,8 @@
         "Test",
         "Web"
       ],
-      "updated": "yesterday",
+      "updated": "6 days ago",
+      "pushedAt": "2026-08-04T06:06:15Z",
       "license": "MIT",
       "langs": [
         {
@@ -4810,6 +4847,7 @@
         "Jira"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-10-31T23:52:30Z",
       "license": "MIT",
       "langs": [
         {
@@ -4874,6 +4912,7 @@
         "React"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-12-17T17:12:36Z",
       "license": "MIT",
       "langs": [
         {
@@ -4912,6 +4951,64 @@
       "addedAt": "2026-07-15T22:28:32.290247+00:00"
     },
     {
+      "slug": "wm-project-astro-components",
+      "name": "wm-project-astro-components",
+      "fullName": "arnoldwender/wm-project-astro-components",
+      "category": "UI Kits",
+      "stars": 45,
+      "author": "arnoldwender",
+      "avatar": "https://avatars.githubusercontent.com/u/443812?v=4",
+      "desc": "150+ production-ready, accessible, GDPR-compliant Astro components",
+      "demo": "https://www.wendermedia.com",
+      "repoUrl": "https://github.com/arnoldwender/wm-project-astro-components",
+      "long1": "150+ production-ready, accessible, GDPR-compliant Astro components. Maintained by arnoldwender on GitHub, where it has earned 45 stars from the community.",
+      "long2": "It's actively developed around astro, component-library, design-system, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Astro",
+        "Component Library",
+        "Design System",
+        "React"
+      ],
+      "updated": "2 days ago",
+      "pushedAt": "2026-08-08T22:18:32Z",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 62,
+          "name": "Astro"
+        },
+        {
+          "pct": 35,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 3,
+          "name": "JavaScript"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/arnoldwender/wm-project-astro-components/releases/tag/v3.0.0",
+          "name": "v3.0.0"
+        }
+      ],
+      "topics": [
+        "astro",
+        "component-library",
+        "design-system",
+        "react",
+        "storybook",
+        "svelte",
+        "typescript",
+        "vue",
+        "accessibility",
+        "astro-components",
+        "components",
+        "design-tokens"
+      ],
+      "addedAt": "2026-07-15T22:28:32.290247+00:00"
+    },
+    {
       "slug": "wc-github-corners",
       "name": "wc-github-corners",
       "fullName": "YunYouJun/wc-github-corners",
@@ -4931,6 +5028,7 @@
         "Github Corners"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-02-12T12:45:00Z",
       "license": "MIT",
       "langs": [
         {
@@ -4960,89 +5058,6 @@
       "addedAt": "2026-07-15T22:28:32.290247+00:00"
     },
     {
-      "slug": "wm-project-astro-components",
-      "name": "wm-project-astro-components",
-      "fullName": "arnoldwender/wm-project-astro-components",
-      "category": "UI Kits",
-      "stars": 44,
-      "author": "arnoldwender",
-      "avatar": "https://avatars.githubusercontent.com/u/443812?v=4",
-      "desc": "150+ production-ready, accessible, GDPR-compliant Astro components",
-      "demo": "https://www.wendermedia.com",
-      "repoUrl": "https://github.com/arnoldwender/wm-project-astro-components",
-      "long1": "150+ production-ready, accessible, GDPR-compliant Astro components. Maintained by arnoldwender on GitHub, where it has earned 44 stars from the community.",
-      "long2": "It's actively developed around accessibility, astro, astro-components, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Accessibility",
-        "Astro",
-        "Astro Components",
-        "Component Library"
-      ],
-      "updated": "1 month ago",
-      "license": "—",
-      "langs": [
-        {
-          "name": "Astro",
-          "pct": 58.076,
-          "size": 2124689
-        },
-        {
-          "name": "TypeScript",
-          "pct": 35.027,
-          "size": 1281428
-        },
-        {
-          "name": "JavaScript",
-          "pct": 3.067,
-          "size": 112217
-        },
-        {
-          "name": "CSS",
-          "pct": 3.063,
-          "size": 112072
-        },
-        {
-          "name": "Vue",
-          "pct": 0.207,
-          "size": 7558
-        },
-        {
-          "name": "HTML",
-          "pct": 0.196,
-          "size": 7164
-        },
-        {
-          "name": "MDX",
-          "pct": 0.191,
-          "size": 6999
-        },
-        {
-          "name": "Svelte",
-          "pct": 0.172,
-          "size": 6306
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "accessibility",
-        "astro",
-        "astro-components",
-        "component-library",
-        "components",
-        "design-system",
-        "design-tokens",
-        "gdpr",
-        "react",
-        "seo",
-        "storybook",
-        "svelte",
-        "typescript",
-        "vue",
-        "wcag"
-      ],
-      "addedAt": "2026-07-15T22:28:32.290247+00:00"
-    },
-    {
       "slug": "profiles",
       "name": "profiles",
       "fullName": "holochain-open-dev/profiles",
@@ -5062,7 +5077,8 @@
         "Holochain",
         "Lit"
       ],
-      "updated": "today",
+      "updated": "6 days ago",
+      "pushedAt": "2026-08-04T18:37:25Z",
       "license": "MIT",
       "langs": [
         {
@@ -5128,6 +5144,7 @@
         "Raspberry Pi"
       ],
       "updated": "3 years ago",
+      "pushedAt": "2024-01-27T01:42:28Z",
       "license": "GPL-3.0",
       "langs": [
         {
@@ -5158,6 +5175,60 @@
       "addedAt": "2026-07-15T22:28:32.290247+00:00"
     },
     {
+      "slug": "starter-lit-with-tailwind",
+      "name": "starter-lit-with-tailwind",
+      "fullName": "running-grass/starter-lit-with-tailwind",
+      "category": "Templates",
+      "stars": 33,
+      "author": "running-grass",
+      "avatar": "https://avatars.githubusercontent.com/u/17241154?u=49dae62abfa2832195cddb6f3f20d591349cc5b2&v=4",
+      "desc": "A boilerplate using Vite, Lit and Tailwind CSS.",
+      "demo": null,
+      "repoUrl": "https://github.com/running-grass/starter-lit-with-tailwind",
+      "long1": "A boilerplate using Vite, Lit and Tailwind CSS. Maintained by running-grass on GitHub, where it has earned 33 stars from the community.",
+      "long2": "It's actively developed around vite, lit, lit-element, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Vite",
+        "Lit",
+        "Lit Element",
+        "Lit Html"
+      ],
+      "updated": "4 years ago",
+      "pushedAt": "2022-07-23T16:03:19Z",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 70,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 17,
+          "name": "HTML"
+        },
+        {
+          "pct": 13,
+          "name": "JavaScript"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "vite",
+        "lit",
+        "lit-element",
+        "lit-html",
+        "pnpm",
+        "postcss",
+        "tailwind",
+        "tailwindcss",
+        "ts",
+        "twind",
+        "typescript",
+        "stylesheet"
+      ],
+      "addedAt": "2026-07-15T22:28:32.290247+00:00"
+    },
+    {
       "slug": "ai-taxonomist-webcomponent",
       "name": "ai-taxonomist-webcomponent",
       "fullName": "plantnet/ai-taxonomist-webcomponent",
@@ -5177,6 +5248,7 @@
         "Lit"
       ],
       "updated": "1 year ago",
+      "pushedAt": "2025-03-31T14:17:16Z",
       "license": "MIT",
       "langs": [
         {
@@ -5222,59 +5294,6 @@
       "addedAt": "2026-07-15T22:28:32.290247+00:00"
     },
     {
-      "slug": "starter-lit-with-tailwind",
-      "name": "starter-lit-with-tailwind",
-      "fullName": "running-grass/starter-lit-with-tailwind",
-      "category": "Templates",
-      "stars": 33,
-      "author": "running-grass",
-      "avatar": "https://avatars.githubusercontent.com/u/17241154?u=49dae62abfa2832195cddb6f3f20d591349cc5b2&v=4",
-      "desc": "A boilerplate using Vite, Lit and Tailwind CSS.",
-      "demo": null,
-      "repoUrl": "https://github.com/running-grass/starter-lit-with-tailwind",
-      "long1": "A boilerplate using Vite, Lit and Tailwind CSS. Maintained by running-grass on GitHub, where it has earned 33 stars from the community.",
-      "long2": "It's actively developed around vite, lit, lit-element, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Vite",
-        "Lit",
-        "Lit Element",
-        "Lit Html"
-      ],
-      "updated": "4 years ago",
-      "license": "—",
-      "langs": [
-        {
-          "pct": 70,
-          "name": "TypeScript"
-        },
-        {
-          "pct": 17,
-          "name": "HTML"
-        },
-        {
-          "pct": 13,
-          "name": "JavaScript"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "vite",
-        "lit",
-        "lit-element",
-        "lit-html",
-        "pnpm",
-        "postcss",
-        "tailwind",
-        "tailwindcss",
-        "ts",
-        "twind",
-        "typescript",
-        "stylesheet"
-      ],
-      "addedAt": "2026-07-15T22:28:32.290247+00:00"
-    },
-    {
       "slug": "hello-web-components",
       "name": "hello-web-components",
       "fullName": "fernandopasik/hello-web-components",
@@ -5294,7 +5313,8 @@
         "Lit Element",
         "Hello World"
       ],
-      "updated": "yesterday",
+      "updated": "6 days ago",
+      "pushedAt": "2026-08-04T14:23:50Z",
       "license": "MIT",
       "langs": [
         {
@@ -5368,6 +5388,7 @@
         "Htmx"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-04-20T08:25:38Z",
       "license": "—",
       "langs": [
         {
@@ -5406,6 +5427,7 @@
         "Web Components"
       ],
       "updated": "4 months ago",
+      "pushedAt": "2026-04-10T01:54:05Z",
       "license": "MIT",
       "langs": [
         {
@@ -5470,7 +5492,8 @@
         "Web Component",
         "Lit"
       ],
-      "updated": "3 weeks ago",
+      "updated": "4 weeks ago",
+      "pushedAt": "2026-07-15T00:14:54Z",
       "license": "ISC",
       "langs": [
         {
@@ -5535,6 +5558,7 @@
         "Lit Html"
       ],
       "updated": "4 years ago",
+      "pushedAt": "2022-10-11T16:23:37Z",
       "license": "MIT",
       "langs": [
         {
@@ -5583,6 +5607,7 @@
         "Lit"
       ],
       "updated": "3 months ago",
+      "pushedAt": "2026-04-30T04:30:01Z",
       "license": "MIT",
       "langs": [
         {
@@ -5649,6 +5674,7 @@
         "Message Box"
       ],
       "updated": "5 years ago",
+      "pushedAt": "2021-10-21T16:18:33Z",
       "license": "BSD-3-Clause",
       "langs": [
         {
@@ -5697,6 +5723,7 @@
         "Electron"
       ],
       "updated": "1 year ago",
+      "pushedAt": "2025-05-19T17:18:09Z",
       "license": "—",
       "langs": [
         {
@@ -5764,6 +5791,7 @@
         "Liveblocks"
       ],
       "updated": "3 years ago",
+      "pushedAt": "2023-11-27T12:31:10Z",
       "license": "—",
       "langs": [
         {
@@ -5810,6 +5838,7 @@
         "Svg"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-12-18T10:53:32Z",
       "license": "—",
       "langs": [
         {
@@ -5871,7 +5900,8 @@
         "Lit",
         "Security Scan"
       ],
-      "updated": "2 weeks ago",
+      "updated": "3 weeks ago",
+      "pushedAt": "2026-07-23T22:54:09Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -5937,7 +5967,8 @@
         "Iptv Channels",
         "Iptv Download"
       ],
-      "updated": "1 year ago",
+      "updated": "2 years ago",
+      "pushedAt": "2025-02-06T21:04:27Z",
       "license": "—",
       "langs": [
         {

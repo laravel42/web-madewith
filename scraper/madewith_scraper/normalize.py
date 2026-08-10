@@ -44,13 +44,14 @@ def relative_time(iso: str | None) -> str:
         return "yesterday"
     if days < 7:
         return f"{days} days ago"
-    if days < 30:
-        w = round(days / 7)
+    # Keep week precision through ~2 months (matches site `timeAgo`).
+    if days < 60:
+        w = max(1, round(days / 7))
         return f"{w} week{'s' if w != 1 else ''} ago"
     if days < 365:
-        m = round(days / 30)
+        m = max(1, round(days / 30.44))
         return f"{m} month{'s' if m != 1 else ''} ago"
-    y = round(days / 365)
+    y = max(1, round(days / 365))
     return f"{y} year{'s' if y != 1 else ''} ago"
 
 
@@ -200,6 +201,10 @@ def normalise(repo: dict) -> dict:
         "long2": long2,
         "stack": stack_from(repo),
         "updated": relative_time(repo.get("pushed_at")),
+        # ISO timestamp of last commit on the default branch (falls back to
+        # GitHub pushedAt). Cards render this via timeAgo(); `updated` stays
+        # the human string for the detail sidebar.
+        "pushedAt": repo.get("pushed_at"),
         "license": spdx if spdx and spdx != "NOASSERTION" else "—",
         "langs": repo.get("_langs") or synth_langs(repo.get("language")),
         "versions": repo.get("_versions") or [],

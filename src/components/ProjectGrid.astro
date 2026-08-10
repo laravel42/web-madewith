@@ -64,11 +64,12 @@ const gridPadTop = theme.editorial ? "0" : theme.variant === "terminal" ? "12px"
     let destroyMarquee = () => {};
 
     let query = "";
-    let sort: "stars" | "name" = "stars";
+    let sort: "stars" | "updated" | "name" = "stars";
     let page = 1;
     // A single active filter spanning dimensions; type "tag" covers category + stack.
     let active: { type: "all" | "tag" | "author" | "lang" | "license"; value: string } = { type: "all", value: "All" };
     const PREP: Record<string, string> = { tag: "in", author: "by", lang: "written in", license: "under" };
+    const SORT_CYCLE = ["stars", "updated", "name"] as const;
 
     function matchActive(c: HTMLElement) {
       const v = active.value.toLowerCase();
@@ -101,9 +102,23 @@ const gridPadTop = theme.editorial ? "0" : theme.variant === "terminal" ? "12px"
     syncPills();
 
     const stars = (el: HTMLElement) => Number(el.dataset.stars || "0");
+    const pushed = (el: HTMLElement) => Number(el.dataset.pushed || "0");
     const name = (el: HTMLElement) => el.dataset.name || "";
     const hayOf = (c: HTMLElement) =>
       `${c.dataset.name} ${c.dataset.desc} ${c.dataset.author} ${c.dataset.category} ${c.dataset.stack} ${c.dataset.langs} ${c.dataset.license}`.toLowerCase();
+
+    function sortLabelText(mode: typeof sort) {
+      if (!sortLabel) return "";
+      if (mode === "stars") return sortLabel.dataset.labelStars || "Most stars";
+      if (mode === "updated") return sortLabel.dataset.labelUpdated || "Last updated";
+      return sortLabel.dataset.labelName || "A–Z";
+    }
+
+    function compareCards(a: HTMLElement, b: HTMLElement) {
+      if (sort === "stars") return stars(b) - stars(a);
+      if (sort === "updated") return pushed(b) - pushed(a) || stars(b) - stars(a);
+      return name(a).localeCompare(name(b));
+    }
 
     function goTo(p: number) {
       page = p;
@@ -149,9 +164,7 @@ const gridPadTop = theme.editorial ? "0" : theme.variant === "terminal" ? "12px"
 
     function apply() {
       // sort the DOM so pages read in the chosen order
-      const ordered = [...cards].sort((a, b) =>
-        sort === "stars" ? stars(b) - stars(a) : name(a).localeCompare(name(b))
-      );
+      const ordered = [...cards].sort(compareCards);
       ordered.forEach((c) => grid!.appendChild(c));
       if (empty) grid!.appendChild(empty);
 
@@ -190,12 +203,9 @@ const gridPadTop = theme.editorial ? "0" : theme.variant === "terminal" ? "12px"
     search?.addEventListener("input", () => { query = search.value.trim().toLowerCase(); page = 1; apply(); });
 
     sortBtn?.addEventListener("click", () => {
-      sort = sort === "stars" ? "name" : "stars";
-      if (sortLabel) {
-        sortLabel.textContent = sort === "stars"
-          ? sortLabel.dataset.labelStars || "Most stars"
-          : sortLabel.dataset.labelName || "A–Z";
-      }
+      const i = SORT_CYCLE.indexOf(sort);
+      sort = SORT_CYCLE[(i + 1) % SORT_CYCLE.length];
+      if (sortLabel) sortLabel.textContent = sortLabelText(sort);
       page = 1;
       apply();
     });

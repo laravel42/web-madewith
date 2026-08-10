@@ -18,6 +18,11 @@ export interface Project {
   long2: string;
   stack: string[];
   updated: string;
+  /**
+   * ISO datetime of the last commit on the default branch (or GitHub
+   * `pushedAt` when the tip isn't available). Used for card time-ago.
+   */
+  pushedAt?: string;
   /** When the project first entered this catalog (stamped at publish; feeds sort by it). */
   addedAt?: string;
   license: string;
@@ -58,7 +63,7 @@ export function formatStars(n: number): string {
   return n >= 1000 ? (n / 1000).toFixed(1).replace(/\.0$/, "") + "k" : "" + n;
 }
 
-/** Compact relative time ("3d ago", "5mo ago"), baked at build. Empty for bad/absent input. */
+/** Compact relative time ("3d ago", "5w ago"), computed at render. Empty for bad/absent input. */
 export function timeAgo(iso?: string | null): string {
   if (!iso) return "";
   const t = Date.parse(iso);
@@ -72,8 +77,10 @@ export function timeAgo(iso?: string | null): string {
   if (h < 24) return `${Math.floor(h)}h ago`;
   const d = h / 24;
   if (d < 7) return `${Math.floor(d)}d ago`;
-  if (d < 30) return `${Math.floor(d / 7)}w ago`;
-  if (d < 365) return `${Math.floor(d / 30)}mo ago`;
+  // Keep week precision through ~2 months — flooring to months at day 30
+  // turned 5–7 week-old commits into a misleading "1mo ago".
+  if (d < 60) return `${Math.floor(d / 7)}w ago`;
+  if (d < 365) return `${Math.max(1, Math.round(d / 30.44))}mo ago`;
   return `${Math.floor(d / 365)}y ago`;
 }
 

@@ -256,7 +256,8 @@ def load_videos_for_slug(conn, slug: str, limit: int = 24) -> list[dict]:
                    like_count, thumbnail_url, video_url, quality_score, definition
             FROM youtube_videos
             WHERE catalog_slug = %s
-            ORDER BY quality_score DESC, view_count DESC
+            ORDER BY published_at DESC NULLS LAST, quality_score DESC
+            -- published_at = YouTube snippet.publishedAt (upload time), not discovered_at / scrape time
             LIMIT %s
             """,
             (slug, limit),

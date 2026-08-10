@@ -1,6 +1,6 @@
 {
   "slug": "llamaindex",
-  "scrapedAt": "2026-08-05T04:38:16.535061+00:00",
+  "scrapedAt": "2026-08-10T12:07:32.586498+00:00",
   "source": "scrapy-github",
   "totalRepos": 147,
   "projects": [
@@ -9,13 +9,13 @@
       "name": "agents-course",
       "fullName": "huggingface/agents-course",
       "category": "AI & ML",
-      "stars": 30681,
+      "stars": 30682,
       "author": "huggingface",
       "avatar": "https://avatars.githubusercontent.com/u/25720743?v=4",
       "desc": "This repository contains the Hugging Face Agents Course.",
       "demo": null,
       "repoUrl": "https://github.com/huggingface/agents-course",
-      "long1": "This repository contains the Hugging Face Agents Course. Maintained by huggingface on GitHub, where it has earned 30,681 stars from the community.",
+      "long1": "This repository contains the Hugging Face Agents Course. Maintained by huggingface on GitHub, where it has earned 30,682 stars from the community.",
       "long2": "It's actively developed around agentic-ai, agents, course, and is a solid reference for anyone building with these tools.",
       "stack": [
         "MDX",
@@ -24,7 +24,8 @@
         "Course",
         "Huggingface"
       ],
-      "updated": "1 month ago",
+      "updated": "6 weeks ago",
+      "pushedAt": "2026-06-30T00:53:26Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -53,55 +54,63 @@
       "name": "LEANN",
       "fullName": "StarTrail-org/LEANN",
       "category": "AI & ML",
-      "stars": 12678,
+      "stars": 12761,
       "author": "StarTrail-org",
       "avatar": "https://avatars.githubusercontent.com/u/288858980?v=4",
       "desc": "[MLsys2026]: RAG on Everything with LEANN. Enjoy 97% storage savings while running a fast, accurate, and 100% private RAG application on your personal device.",
       "demo": "https://arxiv.org/abs/2506.08276",
       "repoUrl": "https://github.com/StarTrail-org/LEANN",
-      "long1": "[MLsys2026]: RAG on Everything with LEANN. Enjoy 97% storage savings while running a fast, accurate, and 100% private RAG application on your personal device. Maintained by StarTrail-org on GitHub, where it has earned 12,678 stars from the community.",
-      "long2": "It's actively developed around ai, faiss, gpt-oss, and is a solid reference for anyone building with these tools.",
+      "long1": "[MLsys2026]: RAG on Everything with LEANN. Enjoy 97% storage savings while running a fast, accurate, and 100% private RAG application on your personal device. Maintained by StarTrail-org on GitHub, where it has earned 12,761 stars from the community.",
+      "long2": "It's actively developed around ai, faiss, langchain, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Python",
         "Ai",
         "Faiss",
-        "Gpt Oss",
-        "Langchain"
+        "Langchain",
+        "Llama Index"
       ],
-      "updated": "1 month ago",
+      "updated": "1 week ago",
+      "pushedAt": "2026-07-31T18:53:24Z",
       "license": "MIT",
       "langs": [
         {
-          "name": "Python",
-          "pct": 99.048,
-          "size": 1843618
+          "pct": 100,
+          "name": "Python"
         },
         {
-          "name": "Shell",
-          "pct": 0.439,
-          "size": 8168
+          "pct": 0,
+          "name": "Shell"
         },
         {
-          "name": "CMake",
-          "pct": 0.287,
-          "size": 5340
-        },
-        {
-          "name": "Jupyter Notebook",
-          "pct": 0.188,
-          "size": 3506
-        },
-        {
-          "name": "Dockerfile",
-          "pct": 0.038,
-          "size": 705
+          "pct": 0,
+          "name": "CMake"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/StarTrail-org/LEANN/releases/tag/v0.3.7",
+          "name": "v0.3.7"
+        },
+        {
+          "url": "https://github.com/StarTrail-org/LEANN/releases/tag/v0.3.6",
+          "name": "v0.3.6"
+        },
+        {
+          "url": "https://github.com/StarTrail-org/LEANN/releases/tag/v0.3.5",
+          "name": "v0.3.5"
+        },
+        {
+          "url": "https://github.com/StarTrail-org/LEANN/releases/tag/v0.3.4",
+          "name": "v0.3.4"
+        },
+        {
+          "url": "https://github.com/StarTrail-org/LEANN/releases/tag/v0.3.3",
+          "name": "v0.3.3"
+        }
+      ],
       "topics": [
         "ai",
         "faiss",
-        "gpt-oss",
         "langchain",
         "llama-index",
         "llm",
@@ -111,10 +120,7 @@
         "privacy",
         "python",
         "rag",
-        "retrieval-augmented-generation",
-        "vector-database",
-        "vector-search",
-        "vectors"
+        "retrieval-augmented-generation"
       ],
       "addedAt": "2026-07-15T22:28:33.149859+00:00"
     },
@@ -138,7 +144,8 @@
         "Ai Observability",
         "Llm Eval"
       ],
-      "updated": "today",
+      "updated": "5 days ago",
+      "pushedAt": "2026-08-05T05:31:14Z",
       "license": "—",
       "langs": [
         {
@@ -156,6 +163,10 @@
       ],
       "versions": [
         {
+          "url": "https://github.com/Arize-ai/phoenix/releases/tag/arize-phoenix-sqlean-v0.1.0",
+          "name": "arize-phoenix-sqlean-v0.1.0"
+        },
+        {
           "url": "https://github.com/Arize-ai/phoenix/releases/tag/arize-phoenix-v19.17.0",
           "name": "arize-phoenix-v19.17.0"
         },
@@ -170,10 +181,6 @@
         {
           "url": "https://github.com/Arize-ai/phoenix/releases/tag/arize-phoenix-v19.14.0",
           "name": "arize-phoenix-v19.14.0"
-        },
-        {
-          "url": "https://github.com/Arize-ai/phoenix/releases/tag/arize-phoenix-v19.13.0",
-          "name": "arize-phoenix-v19.13.0"
         }
       ],
       "topics": [
@@ -213,6 +220,7 @@
         "Gpts"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-04-05T05:36:59Z",
       "license": "MIT",
       "langs": [
         {
@@ -259,6 +267,7 @@
         "Docker"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2025-01-22T14:23:25Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -326,7 +335,8 @@
         "Deep Learning",
         "Langchain"
       ],
-      "updated": "yesterday",
+      "updated": "6 days ago",
+      "pushedAt": "2026-08-04T15:07:25Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -400,7 +410,8 @@
         "Ai Agents",
         "Copy On Write"
       ],
-      "updated": "today",
+      "updated": "5 days ago",
+      "pushedAt": "2026-08-05T02:24:49Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -475,6 +486,7 @@
         "Tutorial"
       ],
       "updated": "7 months ago",
+      "pushedAt": "2026-01-15T13:06:06Z",
       "license": "—",
       "langs": [
         {
@@ -525,6 +537,7 @@
         "Llamaindex"
       ],
       "updated": "4 months ago",
+      "pushedAt": "2026-04-06T20:36:41Z",
       "license": "MIT",
       "langs": [
         {
@@ -592,7 +605,8 @@
         "Aiops",
         "Llms"
       ],
-      "updated": "today",
+      "updated": "5 days ago",
+      "pushedAt": "2026-08-05T04:18:15Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -667,6 +681,7 @@
         "Langchain Python"
       ],
       "updated": "6 months ago",
+      "pushedAt": "2026-02-20T10:42:19Z",
       "license": "MIT",
       "langs": [
         {
@@ -713,7 +728,8 @@
         "Apptainer",
         "Llamaindex"
       ],
-      "updated": "2 weeks ago",
+      "updated": "3 weeks ago",
+      "pushedAt": "2026-07-22T04:42:46Z",
       "license": "MIT",
       "langs": [
         {
@@ -778,6 +794,7 @@
         "Langchain"
       ],
       "updated": "6 months ago",
+      "pushedAt": "2026-01-25T18:13:23Z",
       "license": "—",
       "langs": [
         {
@@ -819,7 +836,8 @@
         "Document Parsing",
         "Evaluation"
       ],
-      "updated": "today",
+      "updated": "6 days ago",
+      "pushedAt": "2026-08-04T23:01:55Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -870,7 +888,8 @@
         "Openai",
         "Python"
       ],
-      "updated": "today",
+      "updated": "6 days ago",
+      "pushedAt": "2026-08-04T19:22:58Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -944,7 +963,8 @@
         "Azure",
         "Container"
       ],
-      "updated": "today",
+      "updated": "6 days ago",
+      "pushedAt": "2026-08-04T23:54:53Z",
       "license": "MIT",
       "langs": [
         {
@@ -998,6 +1018,7 @@
         "Kafka Connect"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-07-03T19:47:17Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -1072,6 +1093,7 @@
         "Pydantic Ai"
       ],
       "updated": "10 months ago",
+      "pushedAt": "2025-10-24T15:34:18Z",
       "license": "MIT",
       "langs": [
         {
@@ -1135,7 +1157,8 @@
         "Openrouter",
         "Planning"
       ],
-      "updated": "3 days ago",
+      "updated": "1 week ago",
+      "pushedAt": "2026-08-02T01:22:43Z",
       "license": "MIT",
       "langs": [
         {
@@ -1194,6 +1217,7 @@
         "Moonshot"
       ],
       "updated": "6 months ago",
+      "pushedAt": "2026-01-28T07:10:56Z",
       "license": "MIT",
       "langs": [
         {
@@ -1239,6 +1263,7 @@
         "Llm"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-11-26T18:20:45Z",
       "license": "MIT",
       "langs": [
         {
@@ -1312,7 +1337,8 @@
         "Fetchai",
         "Langchain"
       ],
-      "updated": "3 months ago",
+      "updated": "4 months ago",
+      "pushedAt": "2026-04-23T13:48:54Z",
       "license": "MIT",
       "langs": [
         {
@@ -1365,6 +1391,7 @@
         "Langchain"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-07-12T22:18:50Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -1405,6 +1432,7 @@
         "Llamaindex"
       ],
       "updated": "2 months ago",
+      "pushedAt": "2026-06-02T16:40:45Z",
       "license": "MIT-0",
       "langs": [
         {
@@ -1475,7 +1503,8 @@
         "Agentic Ai",
         "Agents"
       ],
-      "updated": "yesterday",
+      "updated": "6 days ago",
+      "pushedAt": "2026-08-04T00:38:48Z",
       "license": "—",
       "langs": [
         {
@@ -1524,6 +1553,7 @@
         "Anthropic"
       ],
       "updated": "3 months ago",
+      "pushedAt": "2026-05-08T23:28:23Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -1578,6 +1608,7 @@
         "Llm"
       ],
       "updated": "4 months ago",
+      "pushedAt": "2026-04-22T12:13:00Z",
       "license": "—",
       "langs": [
         {
@@ -1620,7 +1651,8 @@
         "Claude",
         "Claude Code"
       ],
-      "updated": "3 weeks ago",
+      "updated": "4 weeks ago",
+      "pushedAt": "2026-07-12T10:32:04-06:00",
       "license": "MIT",
       "langs": [
         {
@@ -1684,7 +1716,8 @@
         "Llms",
         "Langchain"
       ],
-      "updated": "today",
+      "updated": "5 days ago",
+      "pushedAt": "2026-08-05T04:22:19Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -1755,6 +1788,7 @@
         "MongoDB"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-08-30T15:40:36Z",
       "license": "—",
       "langs": [
         {
@@ -1803,7 +1837,8 @@
         "Pdf",
         "Pdf Generation"
       ],
-      "updated": "2 days ago",
+      "updated": "1 week ago",
+      "pushedAt": "2026-08-02T20:40:07Z",
       "license": "MIT",
       "langs": [
         {
@@ -1878,6 +1913,7 @@
         "Rag"
       ],
       "updated": "2 months ago",
+      "pushedAt": "2026-06-03T06:23:53Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -1935,7 +1971,8 @@
         "Knowledge Graph",
         "Llamaindex"
       ],
-      "updated": "2 weeks ago",
+      "updated": "3 weeks ago",
+      "pushedAt": "2026-07-23T04:59:25Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -2009,7 +2046,8 @@
         "Api Wrapper",
         "Doubao"
       ],
-      "updated": "2 months ago",
+      "updated": "8 weeks ago",
+      "pushedAt": "2026-06-15T14:03:42Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -2060,6 +2098,7 @@
         "Arxiv"
       ],
       "updated": "1 year ago",
+      "pushedAt": "2025-05-18T22:32:22Z",
       "license": "MIT",
       "langs": [
         {
@@ -2093,6 +2132,81 @@
       "addedAt": "2026-07-15T22:28:33.149859+00:00"
     },
     {
+      "slug": "docmind-ai-llm",
+      "name": "docmind-ai-llm",
+      "fullName": "BjornMelin/docmind-ai-llm",
+      "category": "AI & ML",
+      "stars": 145,
+      "author": "BjornMelin",
+      "avatar": "https://avatars.githubusercontent.com/u/48079573?u=d46d8880465a8538acb872455485340d3e93e50c&v=4",
+      "desc": "DocMind AI is a powerful, open-source Streamlit application leveraging LlamaIndex, LangGraph, and local Large Language Models (LLMs) via Ollama, LMStudio, llama.cpp, or vLLM for advanced document analysis. Analyze, summarize, and extract insights from a wide array of file formats, securely and privately, all offline.",
+      "demo": "https://github.com/BjornMelin/docmind-ai-llm",
+      "repoUrl": "https://github.com/BjornMelin/docmind-ai-llm",
+      "long1": "DocMind AI is a powerful, open-source Streamlit application leveraging LlamaIndex, LangGraph, and local Large Language Models (LLMs) via Ollama, LMStudio, llama.cpp, or vLLM for advanced document analysis. Analyze, summarize, and extract insights from a wide array of file formats, securely and privately, all offline. Maintained by BjornMelin on GitHub, where it has earned 145 stars from the community.",
+      "long2": "It's actively developed around ai-agents, document-analysis, hybrid-search, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Python",
+        "Ai Agents",
+        "Document Analysis",
+        "Hybrid Search",
+        "Langchain"
+      ],
+      "updated": "5 days ago",
+      "pushedAt": "2026-08-05T00:26:52Z",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "Python"
+        },
+        {
+          "pct": 0,
+          "name": "Dockerfile"
+        },
+        {
+          "pct": 0,
+          "name": "Shell"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/BjornMelin/docmind-ai-llm/releases/tag/v2.0.1",
+          "name": "v2.0.1"
+        },
+        {
+          "url": "https://github.com/BjornMelin/docmind-ai-llm/releases/tag/v2.0.0",
+          "name": "v2.0.0"
+        },
+        {
+          "url": "https://github.com/BjornMelin/docmind-ai-llm/releases/tag/v1.0.0",
+          "name": "v1.0.0"
+        },
+        {
+          "url": "https://github.com/BjornMelin/docmind-ai-llm/releases/tag/v0.9.0",
+          "name": "v0.9.0"
+        },
+        {
+          "url": "https://github.com/BjornMelin/docmind-ai-llm/releases/tag/v0.8.2",
+          "name": "v0.8.2"
+        }
+      ],
+      "topics": [
+        "ai-agents",
+        "document-analysis",
+        "hybrid-search",
+        "langchain",
+        "llama-cpp",
+        "local-llm",
+        "multimodal-embeddings",
+        "ollama",
+        "private-ai-agents",
+        "python",
+        "qdrant",
+        "sentence-transformers"
+      ],
+      "addedAt": "2026-07-15T22:28:33.149859+00:00"
+    },
+    {
       "slug": "llamaindex-omakase-rag",
       "name": "llamaindex-omakase-rag",
       "fullName": "ammirsm/llamaindex-omakase-rag",
@@ -2113,6 +2227,7 @@
         "Google Drive"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-04-10T17:17:04Z",
       "license": "MIT",
       "langs": [
         {
@@ -2165,7 +2280,8 @@
         "Databricks",
         "Docker"
       ],
-      "updated": "2 weeks ago",
+      "updated": "3 weeks ago",
+      "pushedAt": "2026-07-21T07:54:13Z",
       "license": "—",
       "langs": [
         {
@@ -2199,69 +2315,6 @@
       "addedAt": "2026-07-15T22:28:33.149859+00:00"
     },
     {
-      "slug": "docmind-ai-llm",
-      "name": "docmind-ai-llm",
-      "fullName": "BjornMelin/docmind-ai-llm",
-      "category": "AI & ML",
-      "stars": 137,
-      "author": "BjornMelin",
-      "avatar": "https://avatars.githubusercontent.com/u/48079573?v=4",
-      "desc": "DocMind AI is a powerful, open-source Streamlit application leveraging LlamaIndex, LangGraph, and local Large Language Models (LLMs) via Ollama, LMStudio, llama.cpp, or vLLM for advanced document analysis. Analyze, summarize, and extract insights from a wide array of file formats, securely and privately, all offline.",
-      "demo": "https://github.com/BjornMelin/docmind-ai-llm",
-      "repoUrl": "https://github.com/BjornMelin/docmind-ai-llm",
-      "long1": "DocMind AI is a powerful, open-source Streamlit application leveraging LlamaIndex, LangGraph, and local Large Language Models (LLMs) via Ollama, LMStudio, llama.cpp, or vLLM for advanced document analysis. Analyze, summarize, and extract insights from a wide array of file formats, securely and privately, all offline. Maintained by BjornMelin on GitHub, where it has earned 137 stars from the community.",
-      "long2": "It's actively developed around ai-agents, document-analysis, hybrid-search, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Python",
-        "Ai Agents",
-        "Document Analysis",
-        "Hybrid Search",
-        "Langchain"
-      ],
-      "updated": "3 weeks ago",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "Python",
-          "pct": 99.79,
-          "size": 2868394
-        },
-        {
-          "name": "Dockerfile",
-          "pct": 0.11,
-          "size": 3166
-        },
-        {
-          "name": "Shell",
-          "pct": 0.1,
-          "size": 2876
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "ai-agents",
-        "document-analysis",
-        "hybrid-search",
-        "langchain",
-        "langgraph-supervisor-py",
-        "llama-cpp",
-        "llamacpp",
-        "lmstudio",
-        "local-llm",
-        "multimodal-embeddings",
-        "ollama",
-        "private-ai-agents",
-        "python",
-        "qdrant",
-        "sentence-transformers",
-        "streamlit",
-        "torch",
-        "transformers",
-        "vllm"
-      ],
-      "addedAt": "2026-07-15T22:28:33.149859+00:00"
-    },
-    {
       "slug": "ragrabbit",
       "name": "ragrabbit",
       "fullName": "madarco/ragrabbit",
@@ -2282,6 +2335,7 @@
         "Rag"
       ],
       "updated": "7 months ago",
+      "pushedAt": "2026-01-05T12:17:27Z",
       "license": "MIT",
       "langs": [
         {
@@ -2331,6 +2385,7 @@
         "Rag"
       ],
       "updated": "1 year ago",
+      "pushedAt": "2025-05-16T16:56:26Z",
       "license": "—",
       "langs": [
         {
@@ -2376,6 +2431,7 @@
         "Orca 2"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-02-25T10:11:58Z",
       "license": "—",
       "langs": [
         {
@@ -2421,6 +2477,7 @@
         "Vector Database"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2025-01-06T13:46:40Z",
       "license": "—",
       "langs": [
         {
@@ -2474,6 +2531,7 @@
         "Gpt4"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-08-16T08:38:26Z",
       "license": "—",
       "langs": [
         {
@@ -2516,6 +2574,7 @@
         "Recommendation System"
       ],
       "updated": "3 years ago",
+      "pushedAt": "2023-12-21T09:23:45Z",
       "license": "—",
       "langs": [
         {
@@ -2564,7 +2623,8 @@
         "Deep Learning",
         "Generative Ai"
       ],
-      "updated": "3 days ago",
+      "updated": "1 week ago",
+      "pushedAt": "2026-08-01T19:31:56Z",
       "license": "MIT",
       "langs": [
         {
@@ -2619,6 +2679,7 @@
         "Open Source"
       ],
       "updated": "3 months ago",
+      "pushedAt": "2026-05-19T17:55:18Z",
       "license": "MIT",
       "langs": [
         {
@@ -2693,6 +2754,7 @@
         "Llm"
       ],
       "updated": "1 year ago",
+      "pushedAt": "2025-02-16T13:41:43Z",
       "license": "MIT",
       "langs": [
         {
@@ -2739,6 +2801,7 @@
         "Autogen"
       ],
       "updated": "3 months ago",
+      "pushedAt": "2026-05-12T12:36:40Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -2791,7 +2854,8 @@
         "Artificial Intelligence",
         "Docker"
       ],
-      "updated": "today",
+      "updated": "5 days ago",
+      "pushedAt": "2026-08-05T02:26:15Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -2854,6 +2918,7 @@
         "Llamaindex"
       ],
       "updated": "1 year ago",
+      "pushedAt": "2025-05-17T20:40:42Z",
       "license": "MIT",
       "langs": [
         {
@@ -2919,6 +2984,7 @@
         "Langgraph"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-09-08T01:47:26Z",
       "license": "—",
       "langs": [
         {
@@ -2966,6 +3032,7 @@
         "Rag"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-04-13T09:44:37Z",
       "license": "MIT",
       "langs": [
         {
@@ -3002,7 +3069,8 @@
         "Ai Safety",
         "Autogen"
       ],
-      "updated": "3 weeks ago",
+      "updated": "4 weeks ago",
+      "pushedAt": "2026-07-13T19:00:07-06:00",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -3062,7 +3130,8 @@
         "Ocr",
         "Pdf"
       ],
-      "updated": "today",
+      "updated": "5 days ago",
+      "pushedAt": "2026-08-05T01:53:55Z",
       "license": "MIT",
       "langs": [
         {
@@ -3136,7 +3205,8 @@
         "Langchain",
         "Langchain Js"
       ],
-      "updated": "yesterday",
+      "updated": "6 days ago",
+      "pushedAt": "2026-08-04T12:39:32Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -3207,6 +3277,7 @@
         "Azure Openai"
       ],
       "updated": "4 weeks ago",
+      "pushedAt": "2026-07-10T01:14:01-06:00",
       "license": "MIT",
       "langs": [
         {
@@ -3270,6 +3341,7 @@
         "Data Masking"
       ],
       "updated": "3 months ago",
+      "pushedAt": "2026-05-18T15:59:46Z",
       "license": "MIT",
       "langs": [
         {
@@ -3319,7 +3391,8 @@
         "Automated Trading",
         "Backtesting"
       ],
-      "updated": "1 week ago",
+      "updated": "2 weeks ago",
+      "pushedAt": "2026-07-25T20:45:23Z",
       "license": "—",
       "langs": [
         {
@@ -3362,6 +3435,7 @@
         "Gh"
       ],
       "updated": "1 year ago",
+      "pushedAt": "2025-07-30T11:48:40Z",
       "license": "MIT",
       "langs": [
         {
@@ -3424,6 +3498,7 @@
         "Rag"
       ],
       "updated": "5 months ago",
+      "pushedAt": "2026-03-12T19:11:00Z",
       "license": "—",
       "langs": [
         {
@@ -3470,6 +3545,7 @@
         "Openbb"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2025-01-05T18:27:56Z",
       "license": "MIT",
       "langs": [
         {
@@ -3538,6 +3614,7 @@
         "Langgraph"
       ],
       "updated": "4 weeks ago",
+      "pushedAt": "2026-07-10T09:37:10Z",
       "license": "—",
       "langs": [
         {
@@ -3587,6 +3664,7 @@
         "Qdrant"
       ],
       "updated": "1 year ago",
+      "pushedAt": "2025-04-05T13:20:45Z",
       "license": "MIT",
       "langs": [
         {
@@ -3635,7 +3713,8 @@
         "Ai Agents",
         "Ai Memory"
       ],
-      "updated": "today",
+      "updated": "6 days ago",
+      "pushedAt": "2026-08-04T19:36:56Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -3693,7 +3772,8 @@
         "N8N",
         "N8N Nodes"
       ],
-      "updated": "3 weeks ago",
+      "updated": "4 weeks ago",
+      "pushedAt": "2026-07-13T11:29:53Z",
       "license": "MIT",
       "langs": [
         {
@@ -3761,6 +3841,7 @@
         "Linkup"
       ],
       "updated": "1 year ago",
+      "pushedAt": "2025-05-18T22:09:38Z",
       "license": "MIT",
       "langs": [
         {
@@ -3810,7 +3891,8 @@
         "Autogen",
         "Beeai"
       ],
-      "updated": "6 days ago",
+      "updated": "2 weeks ago",
+      "pushedAt": "2026-07-30T07:46:35Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -3863,6 +3945,7 @@
         "Huggingface"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2025-01-27T20:15:05Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -3907,6 +3990,7 @@
         "Langchain"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-02-23T20:04:04Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -3947,6 +4031,7 @@
         "Python"
       ],
       "updated": "3 years ago",
+      "pushedAt": "2023-10-18T13:00:32Z",
       "license": "—",
       "langs": [
         {
@@ -3992,7 +4077,8 @@
         "Converter",
         "Documentation"
       ],
-      "updated": "1 month ago",
+      "updated": "5 weeks ago",
+      "pushedAt": "2026-07-03T14:40:04Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -4063,6 +4149,7 @@
         "Gradio"
       ],
       "updated": "1 year ago",
+      "pushedAt": "2025-04-05T13:37:21Z",
       "license": "MIT",
       "langs": [
         {
@@ -4125,6 +4212,7 @@
         "Aiagent"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-11-25T15:40:37Z",
       "license": "MIT",
       "langs": [
         {
@@ -4191,6 +4279,7 @@
         "Openai"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-10-22T21:48:04Z",
       "license": "—",
       "langs": [
         {
@@ -4256,6 +4345,7 @@
         "Nyse"
       ],
       "updated": "3 years ago",
+      "pushedAt": "2023-11-28T19:10:26Z",
       "license": "MIT",
       "langs": [
         {
@@ -4295,6 +4385,7 @@
         "Langgraph"
       ],
       "updated": "2 months ago",
+      "pushedAt": "2026-06-10T07:08:42Z",
       "license": "MIT",
       "langs": [
         {
@@ -4345,7 +4436,8 @@
         "Agentic Search",
         "Chinese Search"
       ],
-      "updated": "today",
+      "updated": "6 days ago",
+      "pushedAt": "2026-08-04T23:09:31Z",
       "license": "MIT",
       "langs": [
         {
@@ -4420,6 +4512,7 @@
         "Llamaindex"
       ],
       "updated": "1 year ago",
+      "pushedAt": "2025-06-02T02:13:22Z",
       "license": "—",
       "langs": [
         {
@@ -4471,7 +4564,8 @@
         "Automation",
         "Crewai"
       ],
-      "updated": "1 month ago",
+      "updated": "6 weeks ago",
+      "pushedAt": "2026-06-29T22:34:54Z",
       "license": "—",
       "langs": [
         {
@@ -4515,7 +4609,8 @@
         "Automation",
         "Cli"
       ],
-      "updated": "6 months ago",
+      "updated": "7 months ago",
+      "pushedAt": "2026-01-23T14:50:18Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -4590,6 +4685,7 @@
         "Llama"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-08-02T22:39:53Z",
       "license": "MIT",
       "langs": [
         {
@@ -4638,6 +4734,7 @@
         "Rag"
       ],
       "updated": "1 year ago",
+      "pushedAt": "2025-05-29T06:59:29Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -4676,6 +4773,7 @@
         "Llamaindex"
       ],
       "updated": "1 year ago",
+      "pushedAt": "2025-04-23T15:52:20Z",
       "license": "MIT",
       "langs": [
         {
@@ -4719,6 +4817,7 @@
         "Containers"
       ],
       "updated": "3 years ago",
+      "pushedAt": "2023-10-27T01:17:21Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -4777,6 +4876,7 @@
         "Llamaindex"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-12-12T08:08:34Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -4851,6 +4951,7 @@
         "Serpapi"
       ],
       "updated": "2 months ago",
+      "pushedAt": "2026-06-02T23:50:26Z",
       "license": "MIT",
       "langs": [
         {
@@ -4923,6 +5024,7 @@
         "Electronjs"
       ],
       "updated": "1 year ago",
+      "pushedAt": "2025-02-10T10:37:14Z",
       "license": "—",
       "langs": [
         {
@@ -4976,6 +5078,7 @@
         "Llm"
       ],
       "updated": "1 year ago",
+      "pushedAt": "2025-05-06T15:25:45Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -5021,6 +5124,7 @@
         "Rag"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-12-13T23:54:24Z",
       "license": "MIT",
       "langs": [
         {
@@ -5061,7 +5165,8 @@
         "Gaussian Splatting",
         "Gpu Computing"
       ],
-      "updated": "1 month ago",
+      "updated": "5 weeks ago",
+      "pushedAt": "2026-07-05T02:55:54Z",
       "license": "AGPL-3.0",
       "langs": [
         {
@@ -5135,7 +5240,8 @@
         "Rag",
         "Streamlit"
       ],
-      "updated": "1 month ago",
+      "updated": "6 weeks ago",
+      "pushedAt": "2026-06-26T08:50:45Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -5177,6 +5283,7 @@
         "Guardrails"
       ],
       "updated": "11 months ago",
+      "pushedAt": "2025-09-04T17:16:37Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -5231,6 +5338,7 @@
         "Llamaindex"
       ],
       "updated": "5 months ago",
+      "pushedAt": "2026-03-08T07:03:51Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -5278,6 +5386,7 @@
         "Langchain"
       ],
       "updated": "2 months ago",
+      "pushedAt": "2026-06-08T16:00:03Z",
       "license": "MIT",
       "langs": [
         {
@@ -5343,7 +5452,8 @@
         "Fact Checking",
         "Hallucination Prevention"
       ],
-      "updated": "3 days ago",
+      "updated": "1 week ago",
+      "pushedAt": "2026-08-02T09:15:52Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -5409,7 +5519,8 @@
         "Datarobot",
         "Langgraph"
       ],
-      "updated": "5 days ago",
+      "updated": "1 week ago",
+      "pushedAt": "2026-07-31T15:56:17Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -5470,6 +5581,7 @@
         "Index"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-05-28T07:29:38Z",
       "license": "—",
       "langs": [
         {
@@ -5515,6 +5627,7 @@
         "Langchain"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-07-23T13:56:56Z",
       "license": "MIT",
       "langs": [
         {
@@ -5556,7 +5669,8 @@
         "Eu Ai Act",
         "Mica"
       ],
-      "updated": "4 weeks ago",
+      "updated": "5 weeks ago",
+      "pushedAt": "2026-07-09T03:52:58Z",
       "license": "MIT",
       "langs": [
         {
@@ -5610,6 +5724,7 @@
         "Llamaindex"
       ],
       "updated": "8 months ago",
+      "pushedAt": "2025-12-07T02:24:44Z",
       "license": "—",
       "langs": [
         {
@@ -5657,6 +5772,7 @@
         "Autogen"
       ],
       "updated": "5 months ago",
+      "pushedAt": "2026-03-10T22:09:30Z",
       "license": "MIT",
       "langs": [
         {
@@ -5706,6 +5822,7 @@
         "Europe Pmc"
       ],
       "updated": "2 months ago",
+      "pushedAt": "2026-05-29T18:52:44Z",
       "license": "—",
       "langs": [
         {
@@ -5751,6 +5868,7 @@
         "Hybrid Search"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-11-22T15:28:14Z",
       "license": "MIT",
       "langs": [
         {
@@ -5799,6 +5917,7 @@
         "Llm Inference"
       ],
       "updated": "1 year ago",
+      "pushedAt": "2025-04-04T14:15:07Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -5841,6 +5960,7 @@
         "Groq Api"
       ],
       "updated": "1 year ago",
+      "pushedAt": "2025-06-27T12:00:05Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -5893,6 +6013,7 @@
         "Llm"
       ],
       "updated": "1 year ago",
+      "pushedAt": "2025-06-10T13:42:02Z",
       "license": "—",
       "langs": [
         {
@@ -5933,6 +6054,7 @@
         "Llamaindex"
       ],
       "updated": "6 months ago",
+      "pushedAt": "2026-01-29T18:18:42Z",
       "license": "MIT",
       "langs": [
         {
@@ -5982,6 +6104,7 @@
         "Llm"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-11-08T16:25:44Z",
       "license": "MIT",
       "langs": [
         {
@@ -6033,6 +6156,7 @@
         "Llamaindex"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-05-31T01:48:45Z",
       "license": "—",
       "langs": [
         {
@@ -6081,6 +6205,7 @@
         "Rag Model"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-05-21T17:08:10Z",
       "license": "—",
       "langs": [
         {
@@ -6122,6 +6247,7 @@
         "Langchain Rag"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-07-28T12:58:54Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -6167,6 +6293,7 @@
         "Personalized Learning"
       ],
       "updated": "1 year ago",
+      "pushedAt": "2025-05-26T10:47:51Z",
       "license": "MIT",
       "langs": [
         {
@@ -6212,6 +6339,7 @@
         "Llamaindex"
       ],
       "updated": "3 years ago",
+      "pushedAt": "2023-09-25T15:10:58Z",
       "license": "MIT",
       "langs": [
         {
@@ -6251,6 +6379,7 @@
         "Pyodide"
       ],
       "updated": "1 year ago",
+      "pushedAt": "2025-02-21T12:47:39Z",
       "license": "GPL-3.0",
       "langs": [
         {
@@ -6303,7 +6432,8 @@
         "File Format",
         "Llm"
       ],
-      "updated": "3 days ago",
+      "updated": "1 week ago",
+      "pushedAt": "2026-08-02T02:54:40Z",
       "license": "MIT",
       "langs": [
         {
@@ -6378,6 +6508,7 @@
         "Google Gemini"
       ],
       "updated": "3 years ago",
+      "pushedAt": "2023-12-22T16:45:38Z",
       "license": "—",
       "langs": [
         {
@@ -6418,7 +6549,8 @@
         "Cli",
         "Llm"
       ],
-      "updated": "today",
+      "updated": "6 days ago",
+      "pushedAt": "2026-08-04T21:54:44Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -6489,6 +6621,7 @@
         "Fastapi"
       ],
       "updated": "5 months ago",
+      "pushedAt": "2026-02-24T17:10:42Z",
       "license": "—",
       "langs": [
         {
@@ -6547,6 +6680,7 @@
         "Llamaindex"
       ],
       "updated": "2 months ago",
+      "pushedAt": "2026-06-03T03:29:05Z",
       "license": "—",
       "langs": [
         {
@@ -6591,6 +6725,7 @@
         "Function Calling"
       ],
       "updated": "6 months ago",
+      "pushedAt": "2026-01-30T21:36:43Z",
       "license": "MIT",
       "langs": [
         {
@@ -6639,6 +6774,7 @@
         "Nvidia"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-10-14T07:42:42Z",
       "license": "MIT",
       "langs": [
         {
@@ -6683,6 +6819,7 @@
         "Llm Architecture"
       ],
       "updated": "6 months ago",
+      "pushedAt": "2026-01-31T06:23:33Z",
       "license": "MIT",
       "langs": [
         {
@@ -6730,7 +6867,8 @@
         "Fastapi",
         "Langchain"
       ],
-      "updated": "5 days ago",
+      "updated": "1 week ago",
+      "pushedAt": "2026-07-31T07:52:36Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -6805,6 +6943,7 @@
         "Llamaindex"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-04-07T02:43:02Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -6854,6 +6993,7 @@
         "Openai"
       ],
       "updated": "3 years ago",
+      "pushedAt": "2023-11-29T18:49:27Z",
       "license": "MIT",
       "langs": [
         {
@@ -6896,6 +7036,7 @@
         "Llama2"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-07-19T06:10:32Z",
       "license": "MIT",
       "langs": [
         {
@@ -6945,6 +7086,7 @@
         "Discord"
       ],
       "updated": "1 year ago",
+      "pushedAt": "2025-03-27T22:38:36Z",
       "license": "MIT",
       "langs": [
         {
@@ -6995,6 +7137,7 @@
         "Llamaindex"
       ],
       "updated": "9 months ago",
+      "pushedAt": "2025-11-08T01:23:56Z",
       "license": "MIT",
       "langs": [
         {
@@ -7048,7 +7191,8 @@
         "Openai Agents",
         "Llamaindex"
       ],
-      "updated": "2 weeks ago",
+      "updated": "3 weeks ago",
+      "pushedAt": "2026-07-21T13:25:56Z",
       "license": "MIT",
       "langs": [
         {
@@ -7105,6 +7249,7 @@
         "Knowledge Base"
       ],
       "updated": "8 months ago",
+      "pushedAt": "2025-12-08T06:09:15Z",
       "license": "—",
       "langs": [
         {
@@ -7154,6 +7299,7 @@
         "Llamaindex"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-02-23T02:13:59Z",
       "license": "—",
       "langs": [
         {
@@ -7199,6 +7345,7 @@
         "Llamaindex"
       ],
       "updated": "1 year ago",
+      "pushedAt": "2025-06-08T21:49:25Z",
       "license": "MIT",
       "langs": [
         {
@@ -7238,6 +7385,7 @@
         "Fastapi"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-12-02T17:47:45Z",
       "license": "MIT",
       "langs": [
         {
@@ -7287,6 +7435,7 @@
         "Investment"
       ],
       "updated": "2 years ago",
+      "pushedAt": "2024-09-13T11:28:09Z",
       "license": "—",
       "langs": [
         {

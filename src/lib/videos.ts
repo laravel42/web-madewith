@@ -8,6 +8,7 @@ export interface Video {
   channelUrl: string;
   url: string;
   thumbnail: string;
+  /** YouTube `snippet.publishedAt` — upload time, not catalog scrape time. */
   publishedAt: string;
   duration: string;
   durationSeconds: number;
@@ -20,10 +21,26 @@ export interface Video {
 export interface VideoCatalog {
   slug: string;
   techName: string;
+  /** When this catalog JSON was last written from Postgres — not a video date. */
   scrapedAt: string;
   source: string;
   videoCount: number;
   videos: Video[];
+}
+
+/** Epoch ms for YouTube upload time; invalid/missing → 0. */
+export function youtubePublishedAtMs(value: string | null | undefined): number {
+  if (!value) return 0;
+  const t = Date.parse(value);
+  return Number.isFinite(t) ? t : 0;
+}
+
+/** Newest YouTube upload first. Never uses catalog `scrapedAt`. */
+export function byYoutubePublishedAtDesc(
+  a: { publishedAt?: string | null },
+  b: { publishedAt?: string | null },
+): number {
+  return youtubePublishedAtMs(b.publishedAt) - youtubePublishedAtMs(a.publishedAt);
 }
 
 const files = import.meta.glob<VideoCatalog>("../data/videos/*.json", {
@@ -34,7 +51,7 @@ const files = import.meta.glob<VideoCatalog>("../data/videos/*.json", {
 const BY_SLUG: Record<string, VideoCatalog> = {};
 for (const path in files) {
   const data = files[path];
-  const videos = filterRelevantVideos(data.slug, data.techName, data.videos);
+  const videos = filterRelevantVideos(data.slug, data.techName, data.videos).sort(byYoutubePublishedAtDesc);
   BY_SLUG[data.slug] = {
     ...data,
     videos,
@@ -62,7 +79,8 @@ export function allVideoEntries(): VideoEntry[] {
       entries.push({ domainSlug: catalog.slug, techName: catalog.techName, video });
     }
   }
-  return entries;
+  // Catalogs load already sorted; re-sort across domains by YouTube upload time.
+  return entries.sort((a, b) => byYoutubePublishedAtDesc(a.video, b.video));
 }
 
 export function videoCount(): number {

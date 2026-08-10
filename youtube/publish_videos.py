@@ -133,11 +133,10 @@ def main() -> None:
         for domain in domains:
             slug = domain["slug"]
             rows = youtube_db.load_videos_for_slug(conn, slug, KEEP)
-            # Gate on the RAW description (tech mentions often live in the link
-            # lines the display sanitizer strips), then serialize survivors
-            # with the cleaned editorial description.
-            relevant = [
-                serialize(r)
+            # Keep YouTube upload order (snippet.publishedAt). Catalog scrapedAt
+            # is only stamped on the JSON envelope below — never used for ranking.
+            accepted = [
+                r
                 for r in rows
                 if passes_relevance_gate(slug, domain["techName"], {
                     "title": r["title"],
@@ -145,6 +144,9 @@ def main() -> None:
                     "channel_title": r.get("channel_title") or "",
                 })[0]
             ]
+            _epoch = datetime.min.replace(tzinfo=timezone.utc)
+            accepted.sort(key=lambda r: r.get("published_at") or _epoch, reverse=True)
+            relevant = [serialize(r) for r in accepted]
             if not relevant:
                 print(f"• {slug:<14} no relevant videos")
                 continue

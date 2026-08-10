@@ -11,8 +11,9 @@ const base = `/${theme.slug}`;
 const href = `${base}/project/${project.slug}`;
 const initial = (project.author || "").charAt(0).toUpperCase();
 const displayDesc = projectPreviewExcerpt(project);
-// "Scraped date" — when this project entered the catalog, shown as time-ago.
-const scraped = timeAgo(project.addedAt);
+// Last commit on the default branch → compact time-ago. Older publishes only
+// have the preformatted `updated` string (from the same GitHub timestamp).
+const activity = timeAgo(project.pushedAt) || project.updated || "";
 const dark = theme.variant === "terminal";
 const shotBg = dark ? "#0e120f" : theme.editorial ? "#f5f5f5" : "#f4f6f5";
 const shotBorder = dark ? "#1f2622" : theme.editorial ? "#e8e8e8" : "#eef0ef";
@@ -24,6 +25,7 @@ const dataAttrs = {
   "data-author": project.author.toLowerCase(),
   "data-category": project.category,
   "data-stars": String(project.stars),
+  "data-pushed": String(Date.parse(project.pushedAt || "") || 0),
   "data-stack": (project.stack || []).join("|").toLowerCase(),
   "data-langs": (project.langs || []).map((l) => l.name).join("|").toLowerCase(),
   "data-license": (project.license || "").toLowerCase(),
@@ -44,9 +46,9 @@ const catBadge = `position:absolute; bottom:12px; right:12px; z-index:2; font-si
       <div style="font-size:12px; color:#9aa69e; line-height:1.5; margin-bottom:13px; min-height:36px;">{displayDesc}</div>
       <div class="card-foot" style="display:flex; align-items:center; justify-content:space-between; font-size:12px;">
         <span style="color:#9aa69e;">@{project.author}</span>
-        {scraped && (
+        {activity && (
           <span style="display:flex; align-items:center; gap:4px; color:#7c887f;">
-            <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d={clockPath}/></svg>{scraped}
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d={clockPath}/></svg>{activity}
           </span>
         )}
       </div>
@@ -63,9 +65,9 @@ const catBadge = `position:absolute; bottom:12px; right:12px; z-index:2; font-si
       <div style="font-size:13.5px; color:#666; line-height:1.45; margin-bottom:15px; min-height:38px;">{displayDesc}</div>
       <div class="card-foot" style="display:flex; align-items:center; justify-content:space-between; border-top:1px solid #f0f0f0; padding-top:13px;">
         <span style="font-size:13px; font-weight:600;">@{project.author}</span>
-        {scraped && (
+        {activity && (
           <span style="display:flex; align-items:center; gap:4px; font-size:12.5px; color:#888;">
-            <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d={clockPath}/></svg>{scraped}
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d={clockPath}/></svg>{activity}
           </span>
         )}
       </div>
@@ -84,9 +86,9 @@ const catBadge = `position:absolute; bottom:12px; right:12px; z-index:2; font-si
           <span style={`width:22px; height:22px; border-radius:50%; background:var(--accent-solid); color:${theme.accentInk}; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center;`}>{initial}</span>
           <span style="font-size:13px; color:#68716c;">{project.author}</span>
         </div>
-        {scraped && (
+        {activity && (
           <span style="display:flex; align-items:center; gap:4px; font-size:12.5px; color:#68716c;">
-            <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d={clockPath}/></svg>{scraped}
+            <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor"><path d={clockPath}/></svg>{activity}
           </span>
         )}
       </div>

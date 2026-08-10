@@ -9,7 +9,7 @@ import {
   videoDisplayDescription,
   videoDisplayTitle,
 } from "./preview-text";
-import { allVideoEntries, latestVideoScrapedAt, type VideoEntry } from "./videos";
+import { allVideoEntries, byYoutubePublishedAtDesc, latestVideoScrapedAt, type VideoEntry } from "./videos";
 
 function escapeXml(s: string): string {
   return s
@@ -383,7 +383,7 @@ export function buildVideosRssXml(site: URL, limit = 100): string {
   const base = new URL("/", site).href;
   const feedUrl = new URL("/video/rss.xml", site).href;
   const videos = allVideoEntries()
-    .sort((a, b) => Date.parse(b.video.publishedAt) - Date.parse(a.video.publishedAt))
+    .sort((a, b) => byYoutubePublishedAtDesc(a.video, b.video))
     .slice(0, limit);
   const updated = new Date(latestVideoScrapedAt()).toUTCString();
   const items = videos

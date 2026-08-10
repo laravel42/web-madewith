@@ -11,6 +11,8 @@ export interface Project {
   demo: string | null; repoUrl: string; long1: string; long2: string;
   stack: string[]; updated: string; license: string; langs: Lang[];
   topics: string[]; score: number;
+  /** ISO datetime of last commit on the default branch (falls back to pushedAt). */
+  pushedAt?: string;
   /** Repo stats for the generated cover (captured at scrape time; may be 0). */
   forks?: number; issues?: number; discussions?: number;
   /** Set by editorial overrides at publish time. */
@@ -27,6 +29,7 @@ query($q: String!, $n: Int!) {
     nodes { ... on Repository {
       databaseId name nameWithOwner description stargazerCount forkCount homepageUrl url
       isFork isArchived pushedAt
+      defaultBranchRef { target { ... on Commit { committedDate } } }
       issues(states: OPEN) { totalCount }
       discussions { totalCount }
       owner { login avatarUrl }
@@ -42,6 +45,7 @@ interface RepoNode {
   databaseId: number; name: string; nameWithOwner: string; description: string | null;
   stargazerCount: number; forkCount: number; homepageUrl: string | null; url: string;
   isFork: boolean; isArchived: boolean; pushedAt: string | null;
+  defaultBranchRef: { target: { committedDate: string } | null } | null;
   issues: { totalCount: number } | null;
   discussions: { totalCount: number } | null;
   owner: { login: string; avatarUrl: string };
@@ -57,9 +61,17 @@ function relativeTime(iso: string | null, now: number): string {
   if (days <= 0) return "today";
   if (days === 1) return "yesterday";
   if (days < 7) return `${days} days ago`;
-  if (days < 30) return `${Math.round(days / 7)} week${days < 14 ? "" : "s"} ago`;
-  if (days < 365) return `${Math.round(days / 30)} month${days < 60 ? "" : "s"} ago`;
-  return `${Math.round(days / 365)} year${days < 730 ? "" : "s"} ago`;
+  // Keep week precision through ~2 months (matches site `timeAgo`).
+  if (days < 60) {
+    const w = Math.max(1, Math.round(days / 7));
+    return `${w} week${w === 1 ? "" : "s"} ago`;
+  }
+  if (days < 365) {
+    const m = Math.max(1, Math.round(days / 30.44));
+    return `${m} month${m === 1 ? "" : "s"} ago`;
+  }
+  const y = Math.max(1, Math.round(days / 365));
+  return `${y} year${y === 1 ? "" : "s"} ago`;
 }
 
 function stackFrom(node: RepoNode): string[] {
@@ -100,6 +112,7 @@ function longCopy(node: RepoNode) {
 function normalise(node: RepoNode, now: number): Project {
   const topics = node.repositoryTopics?.nodes?.map((t) => t.topic.name) ?? [];
   const { long1, long2 } = longCopy(node);
+  const lastCommit = node.defaultBranchRef?.target?.committedDate || node.pushedAt;
   return {
     githubId: node.databaseId,
     slug: node.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") || String(node.databaseId),
@@ -114,7 +127,8 @@ function normalise(node: RepoNode, now: number): Project {
     repoUrl: node.url,
     long1, long2,
     stack: stackFrom(node),
-    updated: relativeTime(node.pushedAt, now),
+    updated: relativeTime(lastCommit, now),
+    pushedAt: lastCommit || undefined,
     license: node.licenseInfo?.spdxId && node.licenseInfo.spdxId !== "NOASSERTION" ? node.licenseInfo.spdxId : "—",
     langs: languages(node),
     topics,
@@ -122,7 +136,7 @@ function normalise(node: RepoNode, now: number): Project {
     issues: node.issues?.totalCount,
     discussions: node.discussions?.totalCount,
     score: qualityScore({
-      stars: node.stargazerCount, pushedAt: node.pushedAt, hasHomepage: !!node.homepageUrl,
+      stars: node.stargazerCount, pushedAt: lastCommit, hasHomepage: !!node.homepageUrl,
       hasLicense: !!node.licenseInfo?.spdxId, topicCount: topics.length, hasDescription: !!node.description,
     }, now),
   };
@@ -244,6 +258,7 @@ query($owner: String!, $name: String!) {
   repository(owner: $owner, name: $name) {
     databaseId name nameWithOwner description stargazerCount forkCount homepageUrl url
     isFork isArchived pushedAt
+    defaultBranchRef { target { ... on Commit { committedDate } } }
     issues(states: OPEN) { totalCount }
     discussions { totalCount }
     owner { login avatarUrl }

@@ -27,6 +27,11 @@ query($q: String!, $n: Int!, $after: String) {
         databaseId
         name nameWithOwner description stargazerCount homepageUrl url
         isFork isArchived pushedAt
+        defaultBranchRef {
+          target {
+            ... on Commit { committedDate }
+          }
+        }
         owner { login avatarUrl }
         licenseInfo { spdxId }
         primaryLanguage { name }
@@ -43,6 +48,18 @@ query($q: String!, $n: Int!, $after: String) {
 """
 
 
+# GitHub's search backend times out on large pages of this query and nginx
+# answers with a 502 HTML body; halving the page size until it responds is the
+# only reliable recovery. 100 results/page reliably 502s, 25 is comfortable.
+DEFAULT_PAGE_SIZE = 25
+MIN_PAGE_SIZE = 10
+TIMEOUT_STATUSES = {502, 504}
+
+# GitHub search never returns more than the first 1,000 results for one query,
+# so a shard's budget is counted in results and capped there.
+SEARCH_RESULT_CEILING = 1000
+
+
 class GitHubSpider(scrapy.Spider):
     name = "github"
 
@@ -51,12 +68,15 @@ class GitHubSpider(scrapy.Spider):
         "DOWNLOAD_DELAY": 5,
     }
 
-    def __init__(self, domains: str | None = None, clean: str = "0", page_size: str = "100", max_pages: str = "10", *args, **kwargs):
+    def __init__(self, domains: str | None = None, clean: str = "0", page_size: str = str(DEFAULT_PAGE_SIZE), max_pages: str = "40", *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.filter_slugs = {s.strip() for s in domains.split(",") if s.strip()} if domains else None
         self.clean = clean in ("1", "true", "yes")
-        self.page_size = int(page_size)
+        self.page_size = max(1, min(int(page_size), 100))
         self.max_pages = int(max_pages)
+        # Budget the shard by results, not pages, so shrinking the page size
+        # after a timeout costs latency instead of coverage.
+        self.max_results = min(self.page_size * self.max_pages, SEARCH_RESULT_CEILING)
         self.token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN") or ""
 
     async def start(self):
@@ -100,10 +120,11 @@ class GitHubSpider(scrapy.Spider):
         finally:
             conn.close()
 
-    def _gql_request(self, *, domain, partition, shard, query, after, page, repos):
+    def _gql_request(self, *, domain, partition, shard, query, after, page, repos, page_size=None):
+        size = page_size or self.page_size
         body = json.dumps({
             "query": GQL_SEARCH,
-            "variables": {"q": query, "n": self.page_size, "after": after},
+            "variables": {"q": query, "n": size, "after": after},
         })
         return scrapy.Request(
             url="https://api.github.com/graphql",
@@ -123,6 +144,7 @@ class GitHubSpider(scrapy.Spider):
                 "after": after,
                 "page": page,
                 "repos": repos,
+                "page_size": size,
             },
             dont_filter=True,
         )
@@ -143,6 +165,11 @@ class GitHubSpider(scrapy.Spider):
 
         if payload.get("errors"):
             msg = "; ".join(e.get("message", "") for e in payload["errors"])
+            if "timeout" in msg.lower():
+                smaller = self._downgraded_request(meta, reason="GraphQL timeout")
+                if smaller is not None:
+                    yield smaller
+                    return
             yield ShardFailedItem(catalog_slug=slug, shard_id=shard, error=msg)
             return
 
@@ -157,7 +184,7 @@ class GitHubSpider(scrapy.Spider):
             yield RepoItem(catalog_slug=slug, repo=repo)
 
         page = meta["page"] + 1
-        if page_info.get("hasNextPage") and page < self.max_pages:
+        if page_info.get("hasNextPage") and len(repos) < self.max_results:
             yield self._gql_request(
                 domain=domain,
                 partition=meta["partition"],
@@ -166,6 +193,7 @@ class GitHubSpider(scrapy.Spider):
                 after=page_info.get("endCursor"),
                 page=page,
                 repos=repos,
+                page_size=meta["page_size"],
             )
             return
 
@@ -180,10 +208,37 @@ class GitHubSpider(scrapy.Spider):
 
     def errback_search(self, failure):
         meta = failure.request.meta
+        status = getattr(getattr(failure.value, "response", None), "status", None)
+        if status in TIMEOUT_STATUSES:
+            smaller = self._downgraded_request(meta, reason=f"HTTP {status}")
+            if smaller is not None:
+                yield smaller
+                return
         yield ShardFailedItem(
             catalog_slug=meta["domain"]["slug"],
             shard_id=meta["shard"],
             error=str(failure.value),
+        )
+
+    def _downgraded_request(self, meta, *, reason):
+        """Re-request the same cursor with a smaller page, or None if already minimal."""
+        current = meta["page_size"]
+        if current <= MIN_PAGE_SIZE:
+            return None
+        smaller = max(MIN_PAGE_SIZE, current // 2)
+        self.logger.warning(
+            "%s on %s shard %s at page size %s — retrying page at %s",
+            reason, meta["domain"]["slug"], meta["shard"], current, smaller,
+        )
+        return self._gql_request(
+            domain=meta["domain"],
+            partition=meta["partition"],
+            shard=meta["shard"],
+            query=meta["query"],
+            after=meta["after"],
+            page=meta["page"],
+            repos=meta["repos"],
+            page_size=smaller,
         )
 
     @staticmethod
@@ -223,7 +278,11 @@ class GitHubSpider(scrapy.Spider):
             "html_url": node.get("url"),
             "fork": node.get("isFork"),
             "archived": node.get("isArchived"),
-            "pushed_at": node.get("pushedAt"),
+            # Prefer tip of default branch (usually main) over any-branch pushedAt.
+            "pushed_at": (
+                ((node.get("defaultBranchRef") or {}).get("target") or {}).get("committedDate")
+                or node.get("pushedAt")
+            ),
             "owner": {
                 "login": (node.get("owner") or {}).get("login"),
                 "avatar_url": (node.get("owner") or {}).get("avatarUrl"),
