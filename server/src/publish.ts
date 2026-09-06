@@ -10,9 +10,9 @@ import type { ObjectStore, Kv } from "./types";
 export interface RefineOpts {
   /** Redis KV for the per-repo AI-answer cache. */
   kv?: Kv;
-  /** OpenRouter key — low-confidence categories get an LLM second opinion. */
-  openrouterApiKey?: string;
-  openrouterModel?: string;
+  /** OpenAI key — low-confidence categories get an LLM second opinion. */
+  openaiApiKey?: string;
+  openaiModel?: string;
 }
 
 /** Re-publish from the stored raw scrape (re-applies approved entries + overrides). No GitHub calls. */
@@ -28,8 +28,8 @@ export async function publishFromRaw(store: ObjectStore, db: Db, slug: string, k
 /** Scrape a domain from GitHub, store raw, then merge + publish. */
 export async function scrapeAndPublish(gh: GitHub, store: ObjectStore, db: Db, domain: DomainDiscovery, now: number, refine?: RefineOpts): Promise<DomainDataset> {
   const raw = await scrapeDomain(gh, domain, now);
-  if (refine?.kv && refine.openrouterApiKey) {
-    const n = await refineCategories(refine.kv, raw.projects, { apiKey: refine.openrouterApiKey, model: refine.openrouterModel });
+  if (refine?.kv && refine.openaiApiKey) {
+    const n = await refineCategories(refine.kv, raw.projects, { apiKey: refine.openaiApiKey, model: refine.openaiModel });
     if (n) console.log(`ai reclassified ${n} low-confidence repos in ${domain.slug}`);
   }
   await writeRaw(store, raw);

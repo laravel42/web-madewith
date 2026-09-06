@@ -23,9 +23,9 @@ export interface AppEnv {
   analytics: Analytics;
   githubToken: string;
   refreshSecret: string;
-  /** OpenRouter (low-confidence category refinement). */
-  openrouterApiKey?: string;
-  openrouterModel?: string;
+  /** OpenAI (low-confidence category refinement + the chat widget). */
+  openaiApiKey?: string;
+  openaiClassifyModel?: string;
   /** Admin auth. */
   adminPassword?: string;
   adminToken?: string;
@@ -72,8 +72,8 @@ export function createRuntime(): Runtime {
     analytics,
     githubToken: process.env.GITHUB_TOKEN || "",
     refreshSecret: process.env.REFRESH_SECRET || "",
-    openrouterApiKey: process.env.OPENROUTER_API_KEY || undefined,
-    openrouterModel: process.env.OPENROUTER_CLASSIFY_MODEL || undefined,
+    openaiApiKey: process.env.OPENAI_API_KEY || undefined,
+    openaiClassifyModel: process.env.OPENAI_CLASSIFY_MODEL || undefined,
     adminPassword: process.env.ADMIN_PASSWORD || undefined,
     adminToken: process.env.ADMIN_TOKEN || undefined,
     sessionSecret: process.env.SESSION_SECRET || "",

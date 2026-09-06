@@ -247,7 +247,7 @@ export async function handleAdmin(req: Request, env: AppEnv, path: string): Prom
         const started = Date.now();
         logs.push(`[${d.slug}] scrape started`);
         try {
-          const ds = await scrapeAndPublish(gh, store, db, d, Date.now(), { kv: env.kv, openrouterApiKey: env.openrouterApiKey, openrouterModel: env.openrouterModel });
+          const ds = await scrapeAndPublish(gh, store, db, d, Date.now(), { kv: env.kv, openaiApiKey: env.openaiApiKey, openaiModel: env.openaiClassifyModel });
           const ms = Date.now() - started;
           const line = `[${d.slug}] ok — ${ds.projects.length} projects, ecosystem ${ds.totalRepos} (${ms}ms)`;
           logs.push(line);

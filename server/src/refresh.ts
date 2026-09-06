@@ -20,8 +20,8 @@ export async function refreshAll(env: AppEnv): Promise<Array<{ slug: string; pub
     try {
       const ds = await scrapeAndPublish(gh, env.store, env.db, domain, now, {
         kv: env.kv,
-        openrouterApiKey: env.openrouterApiKey,
-        openrouterModel: env.openrouterModel,
+        openaiApiKey: env.openaiApiKey,
+        openaiModel: env.openaiClassifyModel,
       });
       summary.push({ slug: domain.slug, published: ds.projects.length, total: ds.totalRepos });
     } catch (e) {

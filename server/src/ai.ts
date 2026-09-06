@@ -1,18 +1,18 @@
 /**
- * OpenRouter fallback for low-confidence classifications — the Workers AI
+ * OpenAI fallback for low-confidence classifications — the Workers AI
  * replacement. The rule engine (shared/classify.mjs) handles clear cases; repos
  * below LOW_CONFIDENCE get a one-label second opinion from a small model over
- * OpenRouter's OpenAI-compatible API. Results are cached in Redis by repo id.
+ * OpenAI's official Chat Completions API. Results are cached in Redis by repo id.
  *
- * Entirely optional: when OPENROUTER_API_KEY is absent or a call fails, the
+ * Entirely optional: when OPENAI_API_KEY is absent or a call fails, the
  * rule engine's answer stands.
  */
 import { CATEGORIES, CATEGORY_BLURBS, LOW_CONFIDENCE, classifyDetailed, type Category } from "./classify";
 import type { Project } from "./scrape";
 import type { Kv } from "./types";
 
-const ENDPOINT = "https://openrouter.ai/api/v1/chat/completions";
-const DEFAULT_MODEL = "meta-llama/llama-3.1-8b-instruct";
+const ENDPOINT = "https://api.openai.com/v1/chat/completions";
+const DEFAULT_MODEL = "gpt-4o-mini";
 const CACHE_TTL = 60 * 60 * 24 * 30;
 
 /** Prompt is generated from categories.json so it always matches the taxonomy. */
@@ -57,7 +57,7 @@ async function askModel(apiKey: string, model: string, project: Project): Promis
       ],
     }),
   });
-  if (!res.ok) throw new Error(`OpenRouter ${res.status}`);
+  if (!res.ok) throw new Error(`OpenAI ${res.status}`);
   const data = (await res.json()) as { choices?: Array<{ message?: { content?: string } }> };
   return data.choices?.[0]?.message?.content ?? null;
 }

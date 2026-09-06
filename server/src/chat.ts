@@ -5,10 +5,10 @@
  * Self-hosted RAG-lite, no chatbot vendor (replaces the broken Infobip
  * assistant): retrieval reads the site's own machine-readable exports
  * (per-domain llms-full.txt — one compact line per project), filters lines
- * against the question, and asks an LLM via OpenRouter to answer strictly
- * from that context. Env: OPENROUTER_API_KEY (required), CHAT_MODEL
- * (default google/gemini-2.5-flash), SITE_ORIGIN (where the built site is
- * served; default https://madewithwhat.net).
+ * against the question, and asks an LLM via OpenAI's official API to answer
+ * strictly from that context. Env: OPENAI_API_KEY (required), CHAT_MODEL
+ * (default gpt-4o-mini), SITE_ORIGIN (where the built site is served;
+ * default https://madewithwhat.net).
  */
 import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -139,19 +139,19 @@ export async function handleChat(req: Request, env: AppEnv): Promise<Response> {
   const message = typeof body.message === "string" ? body.message.trim().slice(0, MAX_MESSAGE) : "";
   if (!message) return sseOnce({ error: "Please type a message first." });
 
-  if (!env.openrouterApiKey) {
-    return sseOnce({ error: "The assistant isn't configured yet. Set OPENROUTER_API_KEY on the server." });
+  if (!env.openaiApiKey) {
+    return sseOnce({ error: "The assistant isn't configured yet. Set OPENAI_API_KEY on the server." });
   }
 
   const contextText = await buildContext(message);
 
   let upstream: Response;
   try {
-    upstream = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+    upstream = await fetch("https://api.openai.com/v1/chat/completions", {
       method: "POST",
-      headers: { Authorization: `Bearer ${env.openrouterApiKey}`, "Content-Type": "application/json" },
+      headers: { Authorization: `Bearer ${env.openaiApiKey}`, "Content-Type": "application/json" },
       body: JSON.stringify({
-        model: process.env.CHAT_MODEL || "google/gemini-2.5-flash",
+        model: process.env.CHAT_MODEL || "gpt-4o-mini",
         stream: true,
         max_tokens: 700,
         messages: [
@@ -174,7 +174,7 @@ export async function handleChat(req: Request, env: AppEnv): Promise<Response> {
     return sseOnce({ error: `The assistant returned an error (${upstream.status}). Please try again.` });
   }
 
-  // Re-emit OpenRouter's SSE deltas in the widget's {chunk}/{done} shape.
+  // Re-emit OpenAI's SSE deltas in the widget's {chunk}/{done} shape.
   const reader = upstream.body.getReader();
   const decoder = new TextDecoder();
   let buffer = "";
