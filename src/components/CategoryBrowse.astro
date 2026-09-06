@@ -21,7 +21,7 @@ const muted = theme.darkShell ? "#9aa69e" : "#5c665f";
 {theme.variant === "terminal" ? (
   <div style="max-width:1200px; margin:0 auto; padding:48px 32px 80px;">
     <div style={`font-size:12px; color:${muted}; margin-bottom:14px;`}><a href={`${base}/`} style="cursor:pointer; text-decoration:none; color:inherit;">~</a> / categories</div>
-    <div class="disp" style="font-size:38px; font-weight:700; letter-spacing:-0.02em; color:#f1f6f2;">Browse by category</div>
+    <h1 class="disp" style="font-size:38px; font-weight:700; letter-spacing:-0.02em; color:#f1f6f2; margin:0;">Browse by category</h1>
     <div style="font-size:14px; color:#8b948d; margin-top:10px; max-width:560px;">ls the {theme.techName} ecosystem — {total} projects across {catCount} categories.</div>
     <div class="mw-grid3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:32px;">
       {cats.map((c) => {
@@ -45,7 +45,7 @@ const muted = theme.darkShell ? "#9aa69e" : "#5c665f";
 ) : (
   <div style="max-width:1200px; margin:0 auto; padding:48px 32px 80px;">
     <div style={`font-size:13px; color:${muted}; margin-bottom:14px;`}><a href={`${base}/`} style="cursor:pointer; text-decoration:none; color:inherit;">Home</a> &nbsp;/&nbsp; Categories</div>
-    <div class="disp" style="font-size:40px; font-weight:800; letter-spacing:-0.03em;">Browse by category</div>
+    <h1 class="disp" style="font-size:40px; font-weight:800; letter-spacing:-0.03em; margin:0;">Browse by category</h1>
     <div style={`font-size:16px; color:${muted}; margin-top:10px; max-width:560px;`}>Jump into a slice of the {theme.techName} ecosystem. {total} projects across {catCount} categories.</div>
     <div class="mw-grid3" style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:34px;">
       {cats.map((c) => {

@@ -393,6 +393,9 @@ function opaqueBg(color: string): string {
   .mw-header-global-nav {
     display: flex;
     align-items: center;
+    padding-right: 10px;
+    margin-right: 4px;
+    border-right: 1px solid color-mix(in srgb, currentColor 14%, transparent);
   }
 
   .mw-header-global-nav :global(.global-site-nav) {
@@ -486,6 +489,8 @@ function opaqueBg(color: string): string {
       width: 100%;
       gap: 2px;
       margin: 0;
+      padding-right: 0;
+      border-right: none;
     }
 
     .mw-header-global-nav::before,

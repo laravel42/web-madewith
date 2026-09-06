@@ -22,14 +22,15 @@ const labels = isTerminal
       <div style={`width:64px; height:64px; border-radius:12px; background:color-mix(in srgb, ${theme.accent} 22%, #0c0f0e); border:1px solid ${theme.accent}; display:flex; align-items:center; justify-content:center; margin:0 auto 22px;`}>
         <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4 10-10" stroke={theme.accent} stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
-      <div class="disp" style="font-size:28px; font-weight:700; color:#f1f6f2;">✓ submission queued</div>
+      <h2 class="disp" style="font-size:28px; font-weight:700; color:#f1f6f2; margin:0;">✓ submission queued</h2>
       <div style="font-size:14px; color:#8b948d; margin-top:12px; max-width:440px; margin-inline:auto; line-height:1.6;">We'll review your repo and merge it into the {theme.techName} index within 48h. Thanks for contributing.</div>
       <a href={`${base}/`} style="border:1px solid var(--accent-text); color:var(--accent-text); background:transparent; padding:12px 22px; border-radius:8px; text-decoration:none; font-size:14px; display:inline-block; margin-top:26px;">cd ../gallery</a>
     </div>
     <form data-role="submit-form" data-slug={theme.slug}>
       <div style="font-size:13px; color:var(--accent-text); margin-bottom:16px;">// contribute</div>
-      <div class="disp" style="font-size:38px; font-weight:700; letter-spacing:-0.02em; color:#f1f6f2;">Submit your project</div>
+      <h1 class="disp" style="font-size:38px; font-weight:700; letter-spacing:-0.02em; color:#f1f6f2; margin:0;">Submit your project</h1>
       <div style="font-size:14px; color:#8b948d; margin-top:10px; line-height:1.6;">Shipped something with {theme.techName}? Add it to the index — free, and great for backlinks.</div>
+      <div data-role="submit-error" role="alert" hidden style="margin-top:20px; padding:13px 16px; border-radius:8px; border:1px solid #7a2e2e; background:color-mix(in srgb, #ff5c5c 12%, #121614); color:#ffb3b3; font-size:13.5px; line-height:1.5;"></div>
       <div style="margin-top:32px; display:flex; flex-direction:column; gap:20px;">
         <div><label for="t-repo" style="display:block; font-size:12px; color:#7c887f; margin-bottom:8px;">{labels.repo}</label><input id="t-repo" name="repo" type="url" required placeholder="https://github.com/you/your-project" style="width:100%; border:1px solid #232a26; border-radius:8px; padding:13px 15px; font-size:14px; outline:none; background:#121614; color:#e8efe9;"/></div>
         <div><label for="t-name" style="display:block; font-size:12px; color:#7c887f; margin-bottom:8px;">{labels.name}</label><input id="t-name" name="name" required placeholder="e.g. Pulse" style="width:100%; border:1px solid #232a26; border-radius:8px; padding:13px 15px; font-size:14px; outline:none; background:#121614; color:#e8efe9;"/></div>
@@ -48,14 +49,15 @@ const labels = isTerminal
       <div style={`width:64px; height:64px; border-radius:50%; background:var(--accent-solid); display:flex; align-items:center; justify-content:center; margin:0 auto 22px;`}>
         <svg width="30" height="30" viewBox="0 0 24 24" fill="none"><path d="m5 13 4 4 10-10" stroke={theme.accentInk} stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
-      <div class="disp" style="font-size:30px; font-weight:800; letter-spacing:-0.02em;">Submission received!</div>
+      <h2 class="disp" style="font-size:30px; font-weight:800; letter-spacing:-0.02em; margin:0;">Submission received!</h2>
       <div style={`font-size:16px; color:${bodyInk}; margin-top:12px; max-width:420px; margin-inline:auto; line-height:1.55;`}>We'll review your project and add it to the {theme.techName} gallery within 48 hours. Thanks for contributing.</div>
       <a href={`${base}/`} class="btn btn-primary" style="padding:13px 22px; font-size:15px; margin-top:26px;">Back to gallery</a>
     </div>
     <form data-role="submit-form" data-slug={theme.slug}>
       <div style="font-size:13px; font-weight:600; color:var(--accent-text); letter-spacing:.05em; text-transform:uppercase; margin-bottom:14px;">Contribute</div>
-      <div class="disp" style="font-size:40px; font-weight:800; letter-spacing:-0.03em;">Submit your project</div>
+      <h1 class="disp" style="font-size:40px; font-weight:800; letter-spacing:-0.03em; margin:0;">Submit your project</h1>
       <div style={`font-size:16px; color:${bodyInk}; margin-top:10px; line-height:1.55;`}>Built something with {theme.techName}? Add it to the gallery — free, and great for backlinks.</div>
+      <div data-role="submit-error" role="alert" hidden style="margin-top:20px; padding:13px 16px; border-radius:8px; border:1px solid #e3a3a3; background:#fdf2f2; color:#8a2c2c; font-size:14px; line-height:1.5;"></div>
       <div style="margin-top:34px; display:flex; flex-direction:column; gap:20px;">
         <div><label for="l-repo" style={`display:block; font-size:13px; font-weight:600; color:${labelInk}; margin-bottom:8px;`}>{labels.repo}</label><input id="l-repo" name="repo" type="url" required placeholder="https://github.com/you/your-project" style={`width:100%; border:1px solid #e0e5e2; border-radius:${btnRadius}; padding:13px 15px; font-size:15px; outline:none; background:#fff; color:#16201b;`}/></div>
         <div><label for="l-name" style={`display:block; font-size:13px; font-weight:600; color:${labelInk}; margin-bottom:8px;`}>{labels.name}</label><input id="l-name" name="name" required placeholder="e.g. Pulse" style={`width:100%; border:1px solid #e0e5e2; border-radius:${btnRadius}; padding:13px 15px; font-size:15px; outline:none; background:#fff; color:#16201b;`}/></div>
@@ -76,10 +78,19 @@ const labels = isTerminal
   function initSubmit() {
     const form = document.querySelector<HTMLFormElement>('[data-role="submit-form"]');
     const success = document.querySelector<HTMLElement>('[data-role="submit-success"]');
+    const errorBox = document.querySelector<HTMLElement>('[data-role="submit-error"]');
     if (!form || !success || form.dataset.submitInitialized) return;
     form.dataset.submitInitialized = "true";
 
     const val = (name: string) => (form.querySelector(`[name="${name}"]`) as HTMLInputElement | null)?.value.trim() || "";
+
+    // Network/CORS failures reject with a generic "Failed to fetch"-style
+    // TypeError that means nothing to a contributor; every other throw in
+    // submitProject() is already a message written for this form.
+    const friendlyMessage = (err: unknown) =>
+      err instanceof TypeError
+        ? "Couldn't reach the server. Check your connection and try again."
+        : (err as Error).message || "Something went wrong. Please try again.";
 
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
@@ -87,6 +98,7 @@ const labels = isTerminal
       const slug = form.dataset.slug || "";
       const label = btn?.textContent || "Submit";
 
+      if (errorBox) errorBox.hidden = true;
       if (btn) {
         btn.disabled = true;
         btn.dataset.label = label;
@@ -111,7 +123,11 @@ const labels = isTerminal
           tech_name: slug,
           error: (err as Error).message,
         });
-        alert((err as Error).message);
+        if (errorBox) {
+          errorBox.textContent = friendlyMessage(err);
+          errorBox.hidden = false;
+          errorBox.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
         if (btn) {
           btn.disabled = false;
           btn.textContent = btn.dataset.label || label;
