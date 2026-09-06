@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 3,
+  "videoId": "yt6bzZoovgM",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how ASP.NET Core serves static files (HTML, images, CSS, JavaScript) by configuring the content root and web root, registering the UseStaticFiles middleware, and controlling default documents with UseDefaultFiles or the combined UseFileServer. This tutorial covers web root structure (wwwroot), middleware order, customizing default file names via options objects, directory browsing, and practical troubleshooting like browser caching.",
+  "chapters": [
+    {
+      "title": "Introduction: static files in ASP.NET Core",
+      "description": "Overview of what static files are and the default behavior of an ASP.NET Core app regarding static file serving.",
+      "startTime": 0.0,
+      "endTime": 50.0,
+      "slug": "introduction-static-files-in-asp-net-core"
+    },
+    {
+      "title": "Content root and web root folders",
+      "description": "Explains the content root and web root (wwwroot) folders and where static files must reside to be served.",
+      "startTime": 50.0,
+      "endTime": 120.0,
+      "slug": "content-root-and-web-root-folders"
+    },
+    {
+      "title": "Accessing static files via the browser",
+      "description": "How to form the URL to access a static file and what happens when static file middleware isn't registered.",
+      "startTime": 120.0,
+      "endTime": 210.0,
+      "slug": "accessing-static-files-via-the-browser"
+    },
+    {
+      "title": "Registering UseStaticFiles and simplifying the pipeline",
+      "description": "Registers UseStaticFiles middleware and simplifies the request pipeline to demonstrate serving static files.",
+      "startTime": 210.0,
+      "endTime": 300.0,
+      "slug": "registering-usestaticfiles-and-simplifying-the-pipeline"
+    },
+    {
+      "title": "Organizing static assets (images, CSS, JS)",
+      "description": "Demonstrates organizing static files into folders like css, images, and js and accessing them via paths.",
+      "startTime": 300.0,
+      "endTime": 420.0,
+      "slug": "organizing-static-assets-images-css-js"
+    },
+    {
+      "title": "Default document and UseDefaultFiles middleware",
+      "description": "Covers default documents, adding a default.html, and the UseDefaultFiles middleware behavior.",
+      "startTime": 420.0,
+      "endTime": 540.0,
+      "slug": "default-document-and-usedefaultfiles-middleware"
+    },
+    {
+      "title": "Middleware order matters: UseDefaultFiles before UseStaticFiles",
+      "description": "Explains why UseDefaultFiles must be registered before UseStaticFiles and how it rewrites the request path.",
+      "startTime": 540.0,
+      "endTime": 660.0,
+      "slug": "middleware-order-matters-usedefaultfiles-before-usestaticfiles"
+    },
+    {
+      "title": "Customizing default filenames with options",
+      "description": "Shows how to change the default filename to foo.html by using DefaultFilesOptions and adding it to middleware.",
+      "startTime": 660.0,
+      "endTime": 740.0,
+      "slug": "customizing-default-filenames-with-options"
+    },
+    {
+      "title": "UseFileServer and FileServerOptions",
+      "description": "Introduces UseFileServer, which combines multiple middlewares, and demonstrates customizing it with FileServerOptions.",
+      "startTime": 740.0,
+      "endTime": 766.0,
+      "slug": "usefileserver-and-fileserveroptions"
+    }
+  ],
+  "summary": "## Key Concepts\n\n- **Static files**: non-server-generated assets such as HTML, images, CSS, and JavaScript.\n\n- **Content root vs web root**\n  - The project **content root** is the project folder.\n  - The **web root** (default: **wwwroot**) is where static files must live to be served by default.\n\n- **Middleware to serve files**\n  - **UseStaticFiles**: serves static files from the web root.\n  - **UseDefaultFiles**: rewrites the request path to a default document (does not serve it itself).\n  - **UseFileServer**: combines **UseDefaultFiles**, **UseStaticFiles**, and **UseDirectoryBrowser**.\n\n> [!IMPORTANT]\n> Always register **UseDefaultFiles** before **UseStaticFiles**; order matters because DefaultFiles only rewrites the path and relies on the static files middleware to serve the file.\n\n- **Customizing default documents**\n  - Use **DefaultFilesOptions** with **UseDefaultFiles** or **FileServerOptions** with **UseFileServer** to change default file names (e.g., foo.html, home.html).\n\n- **Organizing assets**\n  - Place CSS in a **css** folder, images in an **images** folder, and JavaScript in a **js** folder under **wwwroot**; reference them by path (e.g., /images/image1.jpg).\n\n> [!TIP]\n> If you change the default file but still see the old response, hard-reload the browser (Ctrl+R) to clear caching.\n\n- **Directory browsing**\n  - **UseDirectoryBrowser** (available via UseFileServer) exposes a directory listing to the user; include it intentionally and be aware of the security implications.\n\n## Takeaways\n\n- By default ASP.NET Core does not serve static files; add **UseStaticFiles** and place files in **wwwroot**.\n- Customize default file behavior with options objects and respect middleware registration order.\n- Use **UseFileServer** when you want combined behavior and optional directory browsing.",
+  "transcription": "## Introduction: static files in ASP.NET Core\n\nThis is part ... well of ASP.NET Core tutorial. In this video we'll discuss how to make an ASP.NET Core application serve static files such as HTML, images, CSS, and JavaScript files. By default an ASP.NET Core application will not be able to serve static files.\n\n## Content root and web root folders\n\nTo be able to serve static files our application should meet two requirements. First, all the static files must be present in this folder. Whoa, this folder is called the content root folder and it must be directly inside the root project folder. In our case the root project folder is EmployeeManagement, and a web root folder wwwroot is directly within that project root folder. All the static files that you want to be able to serve from this ASP.NET Core application should be within this wwwroot folder. At the moment I have this banner image, so let's copy this and paste it within our wwwroot folder.\n\n## Accessing static files via the browser\n\nTo be able to access this image from the browser we first specify the name of the server. In our case we are running the application on our local machine so localhost colon a port number. This port number may be slightly different on your machine and then a slash and the name of the image. In our case the name of the image is banner.jpg. Notice we don't see the image and we still see the response that is produced by the middleware that we have registered using this Run method. This is because at the moment, as it stands right now, the request processing pipeline that we have for our application does not have the capability to serve static files. To be able to serve static files we have to register another piece of middleware and that is UseStaticFiles middleware.\n\n## Registering UseStaticFiles and simplifying the pipeline\n\nBefore we add that middleware to our application's request processing pipeline let's clean this a bit. We don't need these two app.UseMiddleware so let's get rid of them, and we also don't need these logging statements right here. All we want the application to do is print this message HelloWorld and it also does not need the logger that we have injected. Remember two requirements to be able to serve static files: first, all our static files must be present in the web root folder wwwroot, and the second requirement is to add UseStaticFiles middleware to our application's request processing pipeline. Notice we still see HelloWorld, the response that is produced by the middleware that we have registered using Run method. But when we navigate to /banner.jpg we see the image as expected.\n\n## Organizing static assets (images, CSS, JS)\n\nInstead of having all static files like images, CSS, and JavaScript files flat in this wwwroot folder, typically CSS files will be in a css folder. Similarly all images will be in an images folder and then all JavaScript files will be in a js folder. Now let's copy this image1.jpg to the images folder. To be able to access this image1.jpg from the browser we have to specify the correct path in the address bar. Here we know all of our images are in the images folder so we have to specify the folder path and then the name of the image which is image1.jpg. There we go. By default this UseStaticFiles middleware will only serve static files that are present in this wwwroot folder. It's also possible to serve static files that are outside of this web root folder if you want to, but discuss how to do this in our upcoming videos.\n\n## Default document and UseDefaultFiles middleware\n\nMost web applications also have a default document and it is that default document that is displayed when we navigate to the root URL of our application. For example when we navigate to localhost colon 15410 without any other URL segments we want to serve the default document. But at the moment we see the response produced by the middleware that is registered using Run. First let's add a default page for our application. By default the name of the default page for our application should be one of the following: default.htm, default.html, index.htm, or index.html. Let's add a page with the name default.html and then within the body let's include an h1 element that displays Hello from default.html. Notice even after adding the default document when we navigate to the root URL we still see HelloWorld and not our default document. That's because to be able to serve the default document we should add another piece of middleware to our application's request processing pipeline and that is UseDefaultFiles.\n\n## Middleware order matters: UseDefaultFiles before UseStaticFiles\n\nNotice even now when we navigate to the root URL we still do not see our default document. This is because the order in which these two pieces of middleware are registered is very important. UseDefaultFiles must be registered before UseStaticFiles middleware. Let's change the order and see if it works as expected. There we go. We now see the default document. The reason it didn't work before is because UseDefaultFiles doesn't actually serve the default file; it only changes the request path to point to the default document, in our case to point to default.html, which will then be served by the next piece which is StaticFiles middleware. Like any other document, if we have the order reversed then the DefaultFiles middleware will change the request path but we do not have StaticFiles middleware next in the pipeline to be able to serve that default file and that's the reason we were not able to see this default document. Notice the browser address bar still reflects the route URL that we have requested and not the rewritten URL.\n\n## Customizing default filenames with options\n\nNow what if we do not want default.html to be our default document. Instead we want foo.html or more commonly we may have home.html which we want to be our default document. To achieve that we have to customize the behavior of UseDefaultFiles middleware. From IntelliSense we can see there are overloads of this method. I'm going to use the overloaded version which takes a DefaultFilesOptions object as a parameter. First let's create an instance of that class and the first thing that we are going to do here is clear the default default file names by calling the Clear method on DefaultFileNames property and then we want to add foo.html as our default filename. For that we use the Add method and then specify the name of our default document which is foo.html. Finally let's pass this DefaultFilesOptions object to UseDefaultFiles middleware. With all these changes let's run our project. There we go: foo.html is the default document for our application.\n\n## UseFileServer and FileServerOptions\n\nRight now there is another piece of middleware called UseFileServer middleware. This UseFileServer middleware combines the functionality of UseDefaultFiles, UseStaticFiles, and UseDirectoryBrowser middleware. As the name implies DirectoryBrowser middleware enables directory browsing and the end user to see the list of files and folders in a specified directory. Now we can replace these two middlewares with UseFileServer middleware. Notice we're back to using default.html as the default document. But even that file server, we want to use foo.html as our default document. For that we need to customize UseFileServer middleware and for that we can use an overloaded version where we can pass FileServerOptions object as the parameter. So instead of creating DefaultFilesOptions object we create FileServerOptions object and specify foo.html as our default document and pass that object as a parameter to this middleware. With all these changes let's run our project one more time. Notice we still see the response from default.html and not from foo.html. This might be because the browser may have cached the response. To fix it reload the browser by clicking this button or using the keyboard shortcut Ctrl+R. Notice now we see the response from foo.html."
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 3,
+  "videoId": "umJXXUtSCNw",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to localize WooCommerce prices and convert currency per customer country using the free plugin WooCommerce Price Based on Country. This tutorial covers plugin installation, activation, allowing diagnostic data, configuring WooCommerce geolocation, creating pricing zones and currencies (example: BRL), enabling test mode, using the customer currency widget, and verification tips to ensure product prices update correctly at checkout.",
+  "chapters": [
+    {
+      "title": "Introduction: What you'll learn",
+      "description": "Overview of the goal—displaying store prices in different currencies based on customer location and the example we'll follow.",
+      "startTime": 0.0,
+      "endTime": 31.0,
+      "slug": "introduction-what-you-ll-learn"
+    },
+    {
+      "title": "Preparing WordPress and prerequisites",
+      "description": "Confirm WooCommerce is active and products exist, then open the Plugins panel to add the required currency plugin.",
+      "startTime": 31.0,
+      "endTime": 117.0,
+      "slug": "preparing-wordpress-and-prerequisites"
+    },
+    {
+      "title": "Activate plugin and allow diagnostic data",
+      "description": "Activate the plugin and allow non-sensitive diagnostic data collection so the plugin can enable full functionality.",
+      "startTime": 117.0,
+      "endTime": 210.0,
+      "slug": "activate-plugin-and-allow-diagnostic-data"
+    },
+    {
+      "title": "Enable WooCommerce geolocation",
+      "description": "Configure WooCommerce general settings to set customer location to geolocate so currency conversion can function.",
+      "startTime": 210.0,
+      "endTime": 270.0,
+      "slug": "enable-woocommerce-geolocation"
+    },
+    {
+      "title": "Open the plugin Zone Pricing tab",
+      "description": "Find the new Zone Pricing tab added by the plugin and review basic options like pricing based on billing and exchange rates.",
+      "startTime": 270.0,
+      "endTime": 360.0,
+      "slug": "open-the-plugin-zone-pricing-tab"
+    },
+    {
+      "title": "Create a pricing zone and set currency (example: Brazil)",
+      "description": "Add a pricing zone for a target country, set its currency to BRL, and save exchange rate settings to map USD to BRL.",
+      "startTime": 360.0,
+      "endTime": 420.0,
+      "slug": "create-a-pricing-zone-and-set-currency-example-brazil"
+    },
+    {
+      "title": "Test mode and customer behavior",
+      "description": "Enable test mode to simulate being in another country, check product prices update, and explain checkout behavior when location is set by billing/shipping info.",
+      "startTime": 420.0,
+      "endTime": 516.0,
+      "slug": "test-mode-and-customer-behavior"
+    },
+    {
+      "title": "Extra resources, themes, and closing",
+      "description": "Recommendations for Visualmodo plugins and themes, where to get prebuilt sites, support, and final sign-off.",
+      "startTime": 516.0,
+      "endTime": 530.0,
+      "slug": "extra-resources-themes-and-closing"
+    }
+  ],
+  "summary": "## Key Concepts\n\n- **WooCommerce Price Based on Country**: A free plugin that displays product prices in a customer's local currency by mapping pricing zones to countries and currencies.\n\n- **Prerequisites**:\n  - Active **WooCommerce** plugin.\n  - Products added to your store.\n\n- **Setup Steps**:\n  - Install and activate the plugin from Plugins → Add New.\n  - Allow non-sensitive diagnostic data when prompted to enable full features.\n  - In WooCommerce → Settings → General, set **Default customer location** to **Geolocate** and save changes.\n  - Open the new **Zone Pricing** tab to configure behavior (price based on billing, apply exchange rates to shipping).\n  - Create **Pricing Zones**: add a zone (e.g., Brazil), select country, assign currency (e.g., BRL), set exchange rate, and save.\n\n- **Testing & Behavior**:\n  - Use the plugin **Test Mode** to simulate a customer location and verify front-end pricing.\n  - Prices normally update on the checkout page after the customer enters billing or shipping details.\n\n> [!TIP]\n> Use the plugin's currency widget to let customers change or confirm their location; it works well with multilingual plugins.\n\n> [!NOTE]\n> If prices don't show immediately, verify geolocation settings and test by entering billing/shipping info at checkout.\n\n> [!IMPORTANT]\n> Allowing non-sensitive diagnostic data is required by the plugin to enable full functionality.\n\n- **Extras & Resources**:\n  - Visualmodo offers free plugins, themes (like \"Zoo\"), preview sites, and a premium pass for more templates and support.\n\n- **Takeaway**:\n  - With the free plugin and WooCommerce geolocation you can localize prices per country quickly, test using Test Mode, and provide a better checkout experience by showing local currency to customers.",
+  "transcription": "## Introduction: What you'll learn\n\nWhat's up guys, there's Claudio from Visualmodo WordPress themes. In today's video we're gonna learn how to localize your WooCommerce store. We're going to learn how to display the shop prices on your WordPress website in different currencies according to the localization of your customer. For example, in this store the prices are displayed in US dollars but located in Brazil so it should show the amount in Brazilian reais. How to do this and change it according to any possible customer location is what you'll learn here. Before I start please take a moment to hit the Subscribe button, like this video, and share this content with a friend of yours. You have no idea how much it helps us. Okay, let's get started.\n\n## Preparing WordPress and prerequisites\n\nFirst of all go to the WordPress dashboard. Always restart the video on the dashboard to make it equal for everyone and let's review the left side menus. Into the left side menus we're gonna go to Plugins and Add New. But before we continue make sure that you have the WooCommerce plugin active and you have some products on your store so you can have this look on your website already. Because we're gonna be installing WooCommerce Price Based on Country. Into the upper right corner field we're gonna search for \"Price Based on Country for WooCommerce.\" This is the plugin by Oscar Gare, thank you guys for your great plugin. So click on Install Now.\n\n## Activate plugin and allow diagnostic data\n\nAfter installing click on Activate. The plugin will direct you to the plugin page and here we go into the plugins list of our WordPress website. The very first thing you need to do is allow the plugin to collect non-sensitive diagnostic data and usage information to improve features and functionality. You must allow this to make it work. After this we'll be able to see the getting started guides or go to the settings. We're going to move to Settings.\n\n## Enable WooCommerce geolocation\n\nAs you can see WooCommerce needs geolocation. Set default customer location. Click right here and this will move you to the WooCommerce settings. Under the General tab, scroll down a little bit and in General options you can see Default customer location. Select 'Geolocate' or the full customer location option. Let's save changes.\n\n## Open the plugin Zone Pricing tab\n\nNow you will see a message at the top of your WordPress dashboard, but we will use the General settings page. After this we're gonna move to the new tab that appears in the WooCommerce settings as soon as we start the plugin. That is the 'Zone Pricing' tab. Here you can choose price based on consumer billing, apply exchange rates in shipping cost, and other options. Let's save changes. Now we have a new option called Pricing Zones.\n\n## Create a pricing zone and set currency (example: Brazil)\n\nLet me go to Pricing Zones and now I can select some pricing zones, for example Europe or America. This zone is gonna be called Brazil. Select the country. The currency is going to be BRL, Brazilian real. One dollar is almost like six, this is just an example. It's five and some change but let me use a real number. Save changes. Now we have one pricing zone, it's already set and working.\n\n## Test mode and customer behavior\n\nNow we can enable the Test Mode to see the location. Let's test the country for example Brazil. Save changes. Now let's review. As you can check, if you are in Brazil this store will display prices in BRL, in Brazilian reais. So a product that should cost one dollar will now appear as that local amount. Simple, easy and effective. If the product does not appear properly set, normally as soon as the customer adds the billing information or the shipping information the price is going to be updated on the checkout page. So no need to worry, but it's always good to do some tests. Moreover, and this is a nice tip, they have a widget to let customers change the currency based on their location so customers can input their own location. That is friendly with multilingual plugins. I can explain this in another video, but for this one I think it's already good to go. You already know how to use the plugin and already see it's working, so it's worth a try.\n\n## Extra resources, themes, and closing\n\nIf you have any questions use the comments below. If you need more widgets, elements, templates, tools, or pre-built websites you can import with one click go to the WordPress dashboard Plugins, Add New, and search for Visualmodo WordPress plugin—it's completely free. For a free WordPress theme go to Appearance > Themes and search for 'Zoo' WordPress theme, click install and activate. You'll be amazed at the customization options even in the free version and it gives you more preview websites you can import with one click. For premium options and full support visit visualmodo.com and purchase the Visualmodo Pass. I hope you enjoyed this video and I see you tomorrow. All the best."
+}

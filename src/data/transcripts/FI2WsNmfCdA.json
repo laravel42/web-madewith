@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 3,
+  "videoId": "FI2WsNmfCdA",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Step-by-step Magento installation on Windows using XAMPP: learn how to download and install XAMPP (Apache, MariaDB/MySQL, PHP), create a database in phpMyAdmin, download Magento with sample data, move and extract files into the XAMPP htdocs folder, run the Magento web setup, configure database, web and admin settings, and complete installation with notes on common options and security considerations.",
+  "chapters": [
+    {
+      "title": "Introduction and required components",
+      "description": "Overview of what is needed to install Magento on Windows and a quick explanation of XAMPP components.",
+      "startTime": 0.0,
+      "endTime": 17.0,
+      "slug": "introduction-and-required-components"
+    },
+    {
+      "title": "What XAMPP is and why it's used",
+      "description": "Explain XAMPP as a cross-platform web server package and the services it provides for Magento.",
+      "startTime": 17.0,
+      "endTime": 60.0,
+      "slug": "what-xampp-is-and-why-it-s-used"
+    },
+    {
+      "title": "Downloading XAMPP for Windows",
+      "description": "Walk through the Apache Friends website to download the Windows XAMPP installer.",
+      "startTime": 60.0,
+      "endTime": 154.0,
+      "slug": "downloading-xampp-for-windows"
+    },
+    {
+      "title": "Installing XAMPP and launching control panel",
+      "description": "Run the XAMPP installer, step through the setup wizard, choose installation folder, and open the control panel.",
+      "startTime": 154.0,
+      "endTime": 258.0,
+      "slug": "installing-xampp-and-launching-control-panel"
+    },
+    {
+      "title": "Verify XAMPP and create a database in phpMyAdmin",
+      "description": "Open localhost to verify XAMPP installation and use phpMyAdmin to create the Magento database.",
+      "startTime": 258.0,
+      "endTime": 330.0,
+      "slug": "verify-xampp-and-create-a-database-in-phpmyadmin"
+    },
+    {
+      "title": "Downloading Magento with sample data",
+      "description": "Navigate to Magento downloads, choose the full release with sample data, create an account if needed, and download the ZIP file.",
+      "startTime": 330.0,
+      "endTime": 462.0,
+      "slug": "downloading-magento-with-sample-data"
+    },
+    {
+      "title": "Move Magento ZIP into XAMPP and extract",
+      "description": "Save the Magento ZIP, move it into XAMPP's htdocs project folder, and extract the files into your demo website folder.",
+      "startTime": 462.0,
+      "endTime": 540.0,
+      "slug": "move-magento-zip-into-xampp-and-extract"
+    },
+    {
+      "title": "Start Magento web setup",
+      "description": "Open the demo website via localhost, begin Magento setup, accept terms, and run the readiness check.",
+      "startTime": 540.0,
+      "endTime": 660.0,
+      "slug": "start-magento-web-setup"
+    },
+    {
+      "title": "Database configuration in Magento setup",
+      "description": "Configure the database settings in the Magento installer for a localhost installation and enter the database name.",
+      "startTime": 660.0,
+      "endTime": 724.0,
+      "slug": "database-configuration-in-magento-setup"
+    },
+    {
+      "title": "Web configuration and store customization",
+      "description": "Set the Magento web and admin address, advanced options like URL rewrites and encryption, and customize timezone, currency, and language.",
+      "startTime": 724.0,
+      "endTime": 792.0,
+      "slug": "web-configuration-and-store-customization"
+    },
+    {
+      "title": "Create admin account and run installer",
+      "description": "Add Magento admin username, email and password, then run the installer and monitor progress.",
+      "startTime": 792.0,
+      "endTime": 826.0,
+      "slug": "create-admin-account-and-run-installer"
+    },
+    {
+      "title": "Silence / end of recording",
+      "description": "No spoken content; closing silence at the end of the video.",
+      "startTime": 826.0,
+      "endTime": 831.76,
+      "slug": "silence-end-of-recording"
+    }
+  ],
+  "summary": "## Key concepts\n\n- **XAMPP**: a cross-platform web server stack (Apache, MariaDB/MySQL, PHP, Perl) used to host Magento locally.\n\n- **phpMyAdmin**: web interface to create and manage the database. Create a database (example: MDB) before running Magento setup.\n\n- **Magento package**: download the full release with **sample data** or plain archive; login to Magento account may be required to download.\n\n- **Project placement**: place and extract Magento files under XAMPP's htdocs inside a project folder (e.g., demo-website).\n\n- **Magento web setup steps**:\n  - **Readiness check**: validates PHP version, extensions, settings, and file permissions.\n  - **Database configuration**: host (localhost), username (root), optional password, and database name (MDB); table prefix is optional.\n  - **Web configuration**: store address, admin URL, enable URL rewrites, HTTPS option, and encryption key choices.\n  - **Store customization**: timezone, currency, and language selection.\n  - **Module configuration**: choose modules to install; selecting all installs full functionality.\n  - **Admin account**: set username, email, and password for backend access.\n\n> [!TIP] Keep URL rewrites enabled for cleaner URLs and proper mapping between URLs and filesystem.\n\n> [!NOTE] For local development, leaving the MySQL root password empty is acceptable, but set a strong password for production servers.\n\n> [!IMPORTANT] When moving to a live server, update database credentials, enable HTTPS, secure the admin URL, and preserve the encryption key shown after installation.\n\n## Takeaways\n\n- Installing Magento locally involves preparing XAMPP, creating a database, placing Magento files in htdocs, and following the web-based installer through readiness, DB, web, locale/module, and admin steps.\n- The installer provides console logs during installation; save the encryption key and admin/store URLs presented after completion.",
+  "transcription": "## Introduction and required components\n\nIn this video we will learn about the installation of Magento on a Windows system. In the previous video we learned about the overview of Magento with its feature advantages as well as disadvantages. So now first I will walk upon the installation components we need for Magento.\n\n## What XAMPP is and why it's used\n\nHere you can see first one is firstly you need XAMPP. XAMPP is basically our webserver solution package through which you can easily work upon the installation of Magento. This will provide you the database as well as the server as well as it is written in PHP. So XAMPP is basically known for it is cross-platform. X is for Apache, M is for MySQL which is now known as MariaDB, P is for PHP and the last P is for Perl. So basically it is a web server solution package provided by Apache Friends. So now we will see that after we have installed XAMPP we will first create a database in MySQL which is now known as MariaDB. Now then we will start Apache and MySQL. After that we will link our Magento installation with XAMPP. So now we will see how we can install XAMPP.\n\n## Downloading XAMPP for Windows\n\nFor XAMPP we have started a website. We have opened the website known as Apache Friends. Just download the XAMPP. After entering the link just press Enter. Here you can see the download link is available for XAMPP. Here is for Windows. It is available XAMPP for Linux is also available and XAMPP for OS X which is Mac is also available. This is why it is known as a cross-platform package. So we are working on a Windows system right now, so firstly we will click on the first one that is download. Click on download. Here you can see it is asking for saving the exe file for XAMPP. Click on save file. On the left you can see the installation started. Here you can see the download has been completed. So now we will install it. Click on it.\n\n## Installing XAMPP and launching control panel\n\nSo here you can see the installation of XAMPP as we started. Here you can see welcome to XAMPP setup wizard. Now click on Next. Here you can see if you remember I have told you that XAMPP is basically a web server package, web solution package. Here you can see it is providing you with the server, programming languages as well as it is also providing you with phpMyAdmin page. You can see. So after checking the changes here you can see we need programming language PHP, we need database server which is Apache as well as database MySQL. So now we will click on Next. Here you can see it is asking to choose the folder to install XAMPP. So now we will select a folder. So now here you can see we have selected a folder which is under C drive. So now we will click on Next. So now you can see XAMPP is ready to install. Setup is now ready to begin installing XAMPP on your computer. So here now click on Next or Install. Next here you can see it is unpacking files for installing XAMPP on your Windows machine. So here you can see the installation of XAMPP has been completed. Setup has finished. Install XAMPP on your computer. Do you want to start the control panel? Yes. We want to start the control panel because from there only we will start our server as well as local database. So now click on Finish. Here is a scheme of selecting a language. Go for a default and click on Save. Now here you can see our control panel is visible. Here you can see all the sections of XAMPP. Right now we only need the server as well as a database which is MySQL now known as MariaDB. Now we need to click on Start. Click on Start here Apache. Now after starting Apache start MySQL. So now here you can see status change detected running. It means the MySQL and Apache here you can see is running successfully.\n\n## Verify XAMPP and create a database in phpMyAdmin\n\nSo now we will go to phpMyAdmin. First we will check that our XAMPP has been installed correctly or not by going through the browser and typing localhost then pressing Enter. So let us go for it. So here you can see we have reached the browser and here we have typed localhost. After typing localhost you just need to press Enter. So here you can see on pressing Enter it means that we have successfully installed XAMPP. Here you can read about its community and other application. On the left you can see the sections are visible. Here you can see an application phpMyAdmin is visible through which you can easily create a database. So click on it. Now here you can see after clicking a section is visible through which you can easily create a database. Here you can check the default databases. If you want to create a new database right now click on New. So here we are creating a database to link it with our Magento. So now here I will type database name. So let's type it. So here you can see I have typed a database name MDB. Here you can see now you just have to click on Create. Click on it. Here you can see after clicking Create on the left our MDB database is visible and under that the structure is visible. Right now there are no tables because we haven't linked it with Magento.\n\n## Downloading Magento with sample data\n\nSo now we will learn how we can easily install Magento. For installing Magento you need to open a link. Here you can see the link magento.com/tech-resources/download. From here we can easily download the installer file then we can install it and link it with the database. So let's go for it. Press Enter. So now here you can see on pressing Enter the section is visible for Magento resources. From here you can download it. Here you can see the section if you want to download a zip file of Magento with no sample data you can go for these versions. But right now we will go for full release with sample data. So here you can see every sample data on the left you can see the section from where you can download. Here you can select the format. The current version is Magento Community Edition 2.1.5 with sample data. So click on it. After clicking here you can see click on download to download it. Here you can see for downloading it you need to login. You need to first create an account here to download it. So let's first create an account and then go for the email and password and click on Enter. On clicking Enter the download zip file will be visible. So let's go for it.\n\n## Move Magento ZIP into XAMPP and extract\n\nSo after creating a free account there you need to login and here the link for downloading Magento zip file will be visible. Click on Save. I'm clicking Save. On the left you can see and downloading here you can see it has been completed. So now we will move this folder to the XAMPP folder. So let's see where we need to move it. So here you can see the zip file is now downloaded. Right click on it. Now you can see to cut it. After cutting you need to go to a folder where we need to paste it. So here you can see the folder. Right now you can see if you remember we downloaded XAMPP in C drive. Here you can see C:\\XAMPP. Under XAMPP go to htdocs directory. Then under the htdocs you need to create a new folder which would be your website folder, that is your project directory. Here we create a demo website folder. Now you need to paste your Magento files under it. So right click and paste it here. Now after pasting it you need to unzip it. So let us go for it. Here you can see Extract. Here you can see it is extracting. So as you can see the process is going on for extraction. So here you can see we have successfully unzipped our Magento files. Here you can see the directory. If you remember that we created a folder demo website and we unzipped the Magento files here.\n\n## Start Magento web setup\n\nSo now we'll go to the browser again and type localhost as the website name and press Enter and let's see what happens. So here you can see now we need to type the name. So we'll type it now. So here you can see we type the name localhost/demo-website and press Enter. So now we will see our setup that is visible. Here you can see the setup for Magento is started. Here you can see welcome to Magento. Agree to setup Magento. Click on it. Here you can leave the terms and agreement also. Now you can see all the steps are visible so that Magento is installed. The first one is readiness check and here are the other steps. So we will go to the first step. First step one here you can see you need to click on the readiness check. It will check your PHP versions and extensions and the other stuff. So click on it. So here you can see the readiness check has been completed and it is saying that everything is fine. You can now move to the next step. It has gone through the PHP version check, the settings check, the extension check as well as a file permission check. So now here you can see we will click on Next.\n\n## Database configuration in Magento setup\n\nHere you can see the section is visible to add a database. This is the second step. So our host right now we are working on localhost. We are creating a website on local system. So we will add it as localhost. Server name as it is localhost. Go for root. Password you don't need to add it; it is written not always necessary. Right now we are not uploading to an external server. When we will upload a personal server we need to add database password also. Right now you can leave it. Here you need to add a database name as well as that table prefix. Here you can see we will add the database name which we created in phpMyAdmin which is MDB. So let's add it.\n\n## Web configuration and store customization\n\nSo here you can see we have added the database name MDB. Now you can also add a table prefix. This prefix will be added to your table names in the database so there is no need to add it now. After doing all the changes here on the left you can see Next is visible. Click on it. So here you can see the next step is visible, Web Configuration. Here is the store address. You can save it. Here is the Magento admin address. It has by default come with it. You can change it from here. So I will change it now, but first look at the Advanced option. If you want to enable the HTTPS option you can enable it, but right now we are not uploading it on server so we will keep it as HTTP. Rewrites are quite important for mapping the URL with the filesystem so keep it as checked. If you want to make it more secure you can also add an encryption key. These are default options and we won't change them. If we want to save the session on the files you can easily set it. So after doing the changes click on Next. Let's first give it a proper name. So here you can see I have added the admin address as admin_omit2017. Now I'll click on Next and let's see what happens. So here you can see the next step is visible. Here you can customize your store. Set the default timezone. Here you can see you can set a default timezone. Here we will change it. Here you can see we will be adding in this general timezone data. Here you can see default currency. You can add it here or you can change it here. Here is the default language. We are keeping it English right now. If you want to change it you can easily change it. If you remember in the overview we discussed that we can easily create multiple languages. Right now we will go for the default one English. Here is the advanced module configuration. Here you can check. You need to select all; it will install all the modules. Modules are basically what expand the functionality of a website. So after doing the changes on the left here you can see the option is visible. Click on Next.\n\n## Create admin account and run installer\n\nSo now you can see the option is visible to create an admin account. Here you need to add the username as well as the email ID of the admin, password as well as confirm password. So let's add it. So here you can see we have added the username for admin as 'admin', the email ID, password, confirm password. After doing the changes on the left click on Next. Now here you can see the last step is visible. You are ready. Just click on Install and that's it. Click on Install now. So here you can see the installation has been started. If you want to check the console log you can check it from here. Here you can see installing 2 percent so I need to wait for some minutes. So now you can see Magento has been successfully installed. Here is the admin info. You can learn about it. Two important links, store address as well as the Magento admin address is visible. There is the encryption key. Here is the database info. If you remember we added a database MDB which you can see here. So in this video we basically learned how we can create a database for our website. We created database firstly based on XAMPP then we linked the database with the Magento installation. Thank you for watching.\n\n## Silence / end of recording\n\ninstallation thank you for watching"
+}

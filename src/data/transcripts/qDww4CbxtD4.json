@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 3,
+  "videoId": "qDww4CbxtD4",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Build a responsive image slider using only HTML5 and CSS3, with no JavaScript or jQuery required. Learn how to structure the markup with a container and figure, size and float images using percentage widths, create a continuous sliding effect via CSS animations and keyframes, and use a duplicated first/last slide technique for seamless looping—fully responsive and lightweight for modern web projects.",
+  "chapters": [
+    {
+      "title": "Demo and Responsive Behavior",
+      "description": "Shows the final slider behavior and confirms responsiveness across viewport widths.",
+      "startTime": 0.0,
+      "endTime": 35.0,
+      "slug": "demo-and-responsive-behavior"
+    },
+    {
+      "title": "Starter Files and Tools",
+      "description": "Explains the starter files included, the editor and browser used for development, and confirms the live connection.",
+      "startTime": 35.0,
+      "endTime": 90.0,
+      "slug": "starter-files-and-tools"
+    },
+    {
+      "title": "HTML Structure: Slider Container and Images",
+      "description": "Adds the slider container and a figure element, then inserts five image tags, noting why the first and last are the same.",
+      "startTime": 90.0,
+      "endTime": 150.0,
+      "slug": "html-structure-slider-container-and-images"
+    },
+    {
+      "title": "CSS: Slider Container and Figure Layout",
+      "description": "Styles the slider container to hide overflow, makes the figure position relative, and sets a wide width to hold all slides.",
+      "startTime": 150.0,
+      "endTime": 240.0,
+      "slug": "css-slider-container-and-figure-layout"
+    },
+    {
+      "title": "Image Sizing, Float, and Animation Setup",
+      "description": "Sets each image to float left at 20% width and defines the animation duration and infinite loop.",
+      "startTime": 240.0,
+      "endTime": 300.0,
+      "slug": "image-sizing-float-and-animation-setup"
+    },
+    {
+      "title": "Keyframes: From First to Third Slide",
+      "description": "Creates the keyframes to move left in percentage steps, holding each slide for the correct portion of the animation to produce the sliding effect up to the third slide.",
+      "startTime": 300.0,
+      "endTime": 390.0,
+      "slug": "keyframes-from-first-to-third-slide"
+    },
+    {
+      "title": "Keyframes: Fourth and Fifth Slides and Looping Trick",
+      "description": "Adds keyframes for the fourth and fifth slides, then explains duplicating the first image as the last for a seamless loop so the slider appears to cycle through four images.",
+      "startTime": 390.0,
+      "endTime": 470.0,
+      "slug": "keyframes-fourth-and-fifth-slides-and-looping-trick"
+    },
+    {
+      "title": "Wrap Up, Call to Action, and Outro",
+      "description": "Finishes the tutorial with thanks and standard YouTube calls to action, then closes the video.",
+      "startTime": 470.0,
+      "endTime": 517.0,
+      "slug": "wrap-up-call-to-action-and-outro"
+    }
+  ],
+  "summary": "## Key Concepts\n\n- **HTML5 structure**\n  - Use a container div with an ID (e.g., **#slider**) and a **figure** element to hold slide images.\n  - Include an extra duplicate image (first image repeated as the last) to create a seamless loop.\n\n- **CSS layout**\n  - Set the figure to **position: relative** and a width equal to 100% times the number of images (e.g., **500%** for five images).\n  - Use **overflow: hidden** on the container to hide non-visible slides.\n  - Style images with **float: left** and a width of **20%** when using five total images (i.e., 100% / number of images).\n\n- **Animation and keyframes**\n  - Use **animation: 20s slider infinite** to create the continuous sliding effect.\n  - Define **@keyframes slider** with percentage-based steps that hold each slide for the correct portion of the animation (e.g., 0%–20% at left: 0, 25% at left: -100%, etc.).\n  - Move the figure left by increments of the slide width (e.g., **-100%**, **-200%**, **-300%**, **-400%**) at the appropriate keyframe percentages to advance slides.\n\n> [!TIP]\n> Match animation timing with keyframe percentages so each slide remains visible for the intended duration; holding the first frame at both 0% and an early percentage (like 20%) helps smooth looping.\n\n> [!NOTE]\n> The slider uses no JavaScript or jQuery; all motion is driven by CSS animations and percentage-based positioning, which keeps it lightweight and responsive.\n\n> [!IMPORTANT]\n> Keep the image count and the figure width in sync (figure width = number of images × 100%; image width = 100% / number of images) to avoid layout issues.\n\n## Takeaways\n\n- A pure CSS slider can be fully responsive and loop seamlessly using a duplicated slide and carefully timed keyframes.\n- Proper percentage math for widths and keyframes is crucial: consistency between the number of images, figure width, image width, and keyframe offsets produces the correct sliding behavior.\n- This approach is ideal for simple, lightweight sliders where JavaScript is not required.",
+  "transcription": "## Demo and Responsive Behavior\n\nIn this video we'll create a responsive image slider using HTML5 and CSS3.\nSo let's take a look at it here before we get started with our image slider. As you can see it's going to slide through four different plant images here that we have laid out, and then if we flex the web browser down we're going to see that the image slides will stay 100% of the width no matter how wide or narrow we flex it to.\n\n## Starter Files and Tools\n\nOkay so let's go ahead and flex this back up and then I'll show you what we need to get started. In the description of this video will be the HTML5 CSS3 slider starter files where I'm going to open up index.html with the free text editor called Sublime Text and then I'm also going to have index.html open in Google Chrome as my web browser as we're building the image slider. Also in the starter files will be all of the images included inside of the slider.\nOkay so I'm going to put this down beneath the video here and then we can go over to index.html to get started. So I'm just going to write a little bit of text in here to make sure that index.html is connected to Google Chrome, which it is right here.\n\n## HTML Structure: Slider Container and Images\n\nOkay so now let's go ahead and get started with our first tag. So the first thing that we're going to add is a div ID and we're going to call this slider. Then inside of our div ID we're going to use the HTML5 tag called figure which will contain all of our slider images.\nOkay so img src and then img for the IMG folder followed by plant.png. So all of the names for our images are basically the same, so I'm going to go ahead and just copy this and paste it four times over to save us some time. So the first and last image will be the same, just plant.png, and we'll find out later when we're laying out our CSS why we have the first and last the same. For now let's go ahead and check Google Chrome and make sure that we have all five images displaying here, which we do.\n\n## CSS: Slider Container and Figure Layout\n\nOkay so now we can get started with our CSS. So let's go ahead and reference our div ID slider here with #slider and then we're going to say overflow: hidden. And then we're going to reference our figure tag here, so #slider figure, and then position: relative and we're going to give this a width of 500% so each slide image takes only 100% or one fifth of our slider.\nOkay so we're seeing a little bit on the side here of the next slide, so let's push the first slide off to the left with margin: 0 and left: 0, and that's going to move it off to the left and we're still seeing a little bit of that slide here, the second image.\n\n## Image Sizing, Float, and Animation Setup\n\nSo next let's say animation: 20s because that's how long our slider duration is until it completes its rotation. Then we'll reference the slider ID name there and say infinite so it never stops.\nOkay so next let's go ahead and style our images here. So we'll say #slider figure img and then we'll tell them to float to the left and we'll say width: 20% because when we divide 100% by five we get 20. So now if we refresh this second slide we're not going to see any of it; we'll have our first slide taking up the whole screen here aside from a little bit of padding off to the sides.\n\n## Keyframes: From First to Third Slide\n\nOkay so now we can move down to the fun part: the keyframes which will allow for the slide movement along with the animation style. So we're going to say @keyframes slider to reference our slider ID and then open and close our curly brackets and then we'll say 0% left: 0.\nOkay so then we'll say 20% left: 0. So as we know our first slide takes up twenty percent of the screen, so at 0% and 20% we don't want it moving to the next slide yet, so it's just going to keep us there on the first slide to start with, which is important for when we go around the full rotation back to 0%/20%.\nSo next let's say left: -100% at the 25% mark — so slide number two — and 45% mark. Okay so now if we refresh it's going to sit here on the first slide for a moment, then it's going to go to slide two and then slowly but surely it's going to slide back to slide one.\nAll right so let's keep going here. So next we'll say 50% left: -200% and then 70% left: -200%. This is going to bring us to the third slide here. Okay so now if we refresh we go from the first slide to the second and then to the third and it's going to bring us all the way back to the first slide but it's going to move a little quicker now as you can see.\n\n## Keyframes: Fourth and Fifth Slides and Looping Trick\n\nSo let's go ahead and get us to the fourth slide now at the 75% mark and 95% mark we'll say left: -300%.\nOkay so left: -300% and now if we refresh we go from the first slide to the second slide, then the third and then the fourth. Now it's going to bring us all the way back to the first but a little quicker.\nOkay so then lastly to get us to the fifth slide we'll say 100% left: -400% and then let me just show you why we have the last image the same as the first. So let's say that we call this plant3, so that is this image right here that we're seeing.\nOkay so we'll go from the first slide to the second slide to the third to the fourth and then watch once we get to the fifth. So we'll land on the fifth and then it's going to change back to the first. Okay so what we're going to do is we're going to change that back to just plant.png and then once we get to the fifth slide it's going to change back to the first slide so we see that slide for the full duration. So while we have five images it's really a four-image image slider.\n\n## Wrap Up, Call to Action, and Outro\n\nOkay so that does it. I want to thank you for sticking around with me through the tutorial. Please remember to like the video, comment, subscribe, and turn on your notifications. Then I'll see you in the next video. Thanks for watching."
+}

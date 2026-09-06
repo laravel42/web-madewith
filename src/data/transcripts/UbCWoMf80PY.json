@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 3,
+  "videoId": "UbCWoMf80PY",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn a practical, end-to-end method to deploy a machine learning regression model using Flask, with steps covering data cleaning and feature engineering (handling missing values and converting categorical experience to integers), training a linear regression model, serializing with pickle, building Flask routes for HTML form and JSON API endpoints, and running a local demo; ideal for developers building simple ML web APIs and prototypes.",
+  "chapters": [
+    {
+      "title": "Introduction and project overview",
+      "description": "Author introduces the goal: deploying a machine learning model with Flask and outlines the files required for the project.",
+      "startTime": 0.0,
+      "endTime": 30.0,
+      "slug": "introduction-and-project-overview"
+    },
+    {
+      "title": "Required files and project structure",
+      "description": "Explains the three main files: model-building Python script, index.html frontend, and the Flask app script, and mentions GitHub availability.",
+      "startTime": 30.0,
+      "endTime": 90.0,
+      "slug": "required-files-and-project-structure"
+    },
+    {
+      "title": "Additional scripts and API endpoints",
+      "description": "Introduces the Flask API file (app.py) and the planned endpoints: a form-based predict route and a JSON-based predict API for programmatic access.",
+      "startTime": 90.0,
+      "endTime": 150.0,
+      "slug": "additional-scripts-and-api-endpoints"
+    },
+    {
+      "title": "Dataset description: hiring.csv",
+      "description": "Describes the hiring.csv dataset fields: experience, test score, interview score as inputs and salary as the target.",
+      "startTime": 150.0,
+      "endTime": 210.0,
+      "slug": "dataset-description-hiring-csv"
+    },
+    {
+      "title": "Feature engineering: handling 'NaN' and 'None'",
+      "description": "Shows how to replace 'None' experience with zero and fill missing test scores and interview scores using the mean.",
+      "startTime": 210.0,
+      "endTime": 300.0,
+      "slug": "feature-engineering-handling-nan-and-none"
+    },
+    {
+      "title": "Applying transformations and preparing X and y",
+      "description": "Demonstrates converting experience strings to integers using a lambda, assembling independent features X and dependent y, and previewing transformed data.",
+      "startTime": 300.0,
+      "endTime": 360.0,
+      "slug": "applying-transformations-and-preparing-x-and-y"
+    },
+    {
+      "title": "Training a linear regression and serializing the model",
+      "description": "Fits a linear regression model, then uses pickle to serialize and save the trained model to a .pkl file for later use.",
+      "startTime": 360.0,
+      "endTime": 430.0,
+      "slug": "training-a-linear-regression-and-serializing-the-model"
+    },
+    {
+      "title": "Creating the Flask app and loading the model",
+      "description": "Shows the Flask app imports (numpy, pickle, Flask utilities) and loading the pickled model into the app to serve predictions.",
+      "startTime": 430.0,
+      "endTime": 510.0,
+      "slug": "creating-the-flask-app-and-loading-the-model"
+    },
+    {
+      "title": "Defining routes: home and /predict (form)",
+      "description": "Defines a root route that renders index.html and a POST /predict route that reads form fields, constructs an input array, calls model.predict, and renders output into the template.",
+      "startTime": 510.0,
+      "endTime": 600.0,
+      "slug": "defining-routes-home-and-predict-form"
+    },
+    {
+      "title": "Adding a JSON-based predict API and test client",
+      "description": "Adds a programmatic /predict API that accepts JSON; demonstrates a request.py script that posts hard-coded JSON to the API to test programmatic access.",
+      "startTime": 600.0,
+      "endTime": 690.0,
+      "slug": "adding-a-json-based-predict-api-and-test-client"
+    },
+    {
+      "title": "File layout and running the Flask app locally",
+      "description": "Explains the project folder structure (static, templates, app.py, model files) and how to run the Flask app with python app.py to test locally in a browser.",
+      "startTime": 690.0,
+      "endTime": 750.0,
+      "slug": "file-layout-and-running-the-flask-app-locally"
+    },
+    {
+      "title": "Demo: using the form and API to get salary predictions",
+      "description": "Demonstrates entering experience, test score, and interview score into the form to get a salary prediction, and how the JSON API can be used for programmatic predictions.",
+      "startTime": 750.0,
+      "endTime": 796.0,
+      "slug": "demo-using-the-form-and-api-to-get-salary-predictions"
+    },
+    {
+      "title": "Conclusion and closing remarks",
+      "description": "Wraps up: encourages building on this simple example, customizing HTML, validating inputs, and continuing to learn.",
+      "startTime": 796.0,
+      "endTime": 801.22,
+      "slug": "conclusion-and-closing-remarks"
+    }
+  ],
+  "summary": "## Key Concepts\n\n- **Files to prepare**\n  - model-building script (.py) for feature engineering and training\n  - **model.pkl** file containing the serialized model (pickle)\n  - **app.py** Flask application to expose form and API endpoints\n  - **index.html** under templates and static assets (CSS) for the front end\n\n- **Feature engineering**\n  - Replace experience 'None' with **0** and convert strings to integers.\n  - Fill missing **test_score** and **interview_score** values with the column **mean**.\n  - Ensure score ranges (0–10) are respected before prediction.\n\n- **Model training and serialization**\n  - Train a simple **LinearRegression** model (or any estimator).\n  - Serialize the trained model using **pickle.dump(model, open('model.pkl','wb'))**.\n\n- **Flask application design**\n  - Initialize app: **app = Flask(__name__)**.\n  - Load model on start: **model = pickle.load(open('model.pkl','rb'))**.\n  - Define root route to render **index.html** with a **prediction_text** placeholder.\n  - Define **/predict** route with **methods=['POST']** to accept form inputs via **request.form**, build a numpy array, call **model.predict**, and render the result back.\n  - Optionally add a JSON API endpoint (e.g., **/predict_api**) that accepts **request.json** and returns JSON responses for programmatic access.\n\n> [!TIP]\n> Validate and coerce input types (ints/floats) and ranges before calling model.predict to prevent runtime errors.\n\n> [!NOTE]\n> For local testing use the built-in Flask server (python app.py), but it is not recommended for production deployment.\n\n> [!IMPORTANT]\n> Ensure the model.pkl file matches the preprocessing pipeline expected by the Flask app; serialization saves the trained model state only.\n\n- **Testing approaches**\n  - Test via browser by filling the HTML form and submitting to /predict.\n  - Test programmatically with a small client script (requests.post) sending JSON to the API endpoint.\n\n- **Takeaways**\n  - The workflow is: prepare data → train and pickle model → build Flask endpoints → create simple HTML front end → test locally.\n  - This pattern scales: replace the model or augment preprocessing as needed; ensure robust input validation and production-ready server for deployment.",
+  "transcription": "## Introduction and project overview\n\nHello all. Today we'll be discussing how we can deploy a machine learning model by using Flask. This is one of the videos that most of my subscribers were requesting. I'm really sorry that it's delayed because I was busy, but today I'm going to show you how you can deploy a machine learning model using Flask. It is a very simple technique altogether.\n\n## Required files and project structure\n\nMake sure the most important components you require in this session are: one model-building file — one .py file responsible for creating your model including feature engineering and preprocessing. The second thing is an index.html file that will act as your front-end web app so any request to your model, which will be in the form of an API hosted through Flask, will interact and get the output. I have included some styling and I'm going to put all this code on GitHub; the URL will be in the description box.\n\n## Additional scripts and API endpoints\n\nI also have one more .py file called app.py. In this I will be writing my Flask code where I will be creating the APIs. One URL will look like our localhost address slash reading, and another API will be slash predict API. We'll discuss model.py first, where we'll see how the model is created.\n\n## Dataset description: hiring.csv\n\nFor this I have taken a dataset called hiring.csv. This dataset has fields like experience, test score, interview score, and based on these parameters you have to provide a salary to the candidate. You have experience, test score, interview score as independent features and salary as the dependent feature. Experience is number of years; test score and interview score usually range between 0 to 10.\n\n## Feature engineering: handling 'NaN' and 'None'\n\nOne feature-engineering step is to replace 'None' with 0 because 'None' means zero experience and convert strings to integers. In test score there are NaNs; we fix this by replacing NaN with the mean of the test score. Do the same for interview score if there are NaNs. Remember test and interview scores typically range from 0 to 10, and based on that you can predict the salary. This is a small dataset; the goal is to show deployment, so I used a simple linear regression.\n\n## Applying transformations and preparing X and y\n\nSo, for experience I fill the NaN value with 0. For test score I calculate the mean and replace NaNs in place. In X I have all my independent features. I convert experience from string to integer by making a function and applying it with a lambda. This is all feature engineering. You can download the code from the GitHub link in the description. After these replacements, manual values are replaced with mean and 'None' becomes zero.\n\n## Training a linear regression and serializing the model\n\nThen my y, which is the dependent feature, I lock as the last column. After this you can apply linear regression. After doing a fit my model will be ready. I use pickle.dump. This pickle is from the pickle library; it helps create a pre-compiled format model file with an extension like .pkl. Here I have model.pkl. If you want to test it you can do pickle.load and test it. Your model.pkl file is ready. Execute this to create your model.pkl file.\n\n## Creating the Flask app and loading the model\n\nNow let's create our Flask environment where we will read this .pkl file and give input to the pickle model and get output. In app.py I have three import statements: numpy, pickle, and Flask. From Flask I import Flask, request, jsonify, render_template to redirect to the home page. Always initialize the Flask app first. Then do pickle.load(open(your model file, 'rb')). Once you read it, your model is ready.\n\n## Defining routes: home and /predict (form)\n\nCreate a function defined home for the root node, which will render index.html as the home page. Then create another API /predict and use app.route with methods=['POST']. In predict we will provide three inputs matching our independent features. Since it's a POST, read values from request.form. Convert them into an array and call model.predict on the features. Get the output and don't round it off. Then return render_template('index.html', prediction_text=that_value). In index.html have a placeholder called prediction_text which will be replaced with the predicted employee salary.\n\n## Adding a JSON-based predict API and test client\n\nI'll also create a direct API where I directly pass a hard-coded JSON — the endpoint is predict_api. You need a source for the JSON so I created request.py. In that file I give the URL and do requests.post(url, json=payload) with experience, test score, and interview score provided, and print the response. When this runs, it sends the JSON to the Flask endpoint and you get the output back. Remember when creating Flask deployments, import request and jsonify and use templates. You can create any number of routes and write the logic accordingly.\n\n## File layout and running the Flask app locally\n\nMake sure your file explorer looks like this: a static folder with CSS, a templates folder with index.html, app.py, the CSV and model.pkl. You need not run model.py again if model.pkl exists. Go to a command prompt and run python app.py to execute the Flask API. You'll see a warning not to use the deployment server, but that's fine for local testing. Then copy the local URL and open it in a browser. This is your home page with three simple fields.\n\n## Demo: using the form and API to get salary predictions\n\nEnter years of experience, test score between 0 and 10, and interview score between 0 and 10. For example, eight years experience, test score nine, interview score eight will predict a salary around seventy-four thousand six hundred fifty dollars. You can also call the predict_api with hard-coded JSON from request.py. Some request.py errors are normal if not run as a running Flask server; focus on running app.py and testing via browser or a running requests client.\n\n## Conclusion and closing remarks\n\nThis is a basic example. You can apply any model and use the same template. Make sure each field is properly handled and input types are validated. I hope you liked this video. Sorry for the delay. I'll upload more on deployment. Please subscribe if you're not subscribed. Keep learning and never give up. God bless you—thank you."
+}

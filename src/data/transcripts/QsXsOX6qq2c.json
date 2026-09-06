@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 3,
+  "videoId": "QsXsOX6qq2c",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Clear, practical explanation of ASP.NET Core hosting models—contrast in-process and out-of-process hosting, how to configure the ASPNETCORE_HOSTINGMODEL, and how Kestrel, IIS (w3wp.exe and iisexpress.exe), and reverse proxies (Nginx/Apache) interact. Covers running via dotnet CLI and Visual Studio, performance trade-offs, proxying behavior, and when Kestrel is or isn't required for production hosting.",
+  "chapters": [
+    {
+      "title": "Introduction and in-process hosting setup",
+      "description": "Introduces the topic and shows how to configure in-process hosting by setting ASPNETCORE_HOSTINGMODEL in the project file.",
+      "startTime": 0.0,
+      "endTime": 26.0,
+      "slug": "introduction-and-in-process-hosting-setup"
+    },
+    {
+      "title": "What in-process hosting means and default Visual Studio behavior",
+      "description": "Explains that in-process hosting runs the app inside the IIS worker process and notes Visual Studio uses IIS Express by default.",
+      "startTime": 26.0,
+      "endTime": 63.0,
+      "slug": "what-in-process-hosting-means-and-default-visual-studio-behavior"
+    },
+    {
+      "title": "Overview of deploying to IIS and performance hint",
+      "description": "Mentions upcoming IIS deployment videos and states that in-process hosting performs better than out-of-process hosting.",
+      "startTime": 63.0,
+      "endTime": 108.0,
+      "slug": "overview-of-deploying-to-iis-and-performance-hint"
+    },
+    {
+      "title": "How to enable out-of-process hosting",
+      "description": "Shows two ways to use out-of-process hosting: set ASPNETCORE_HOSTINGMODEL to OutOfProcess or remove the element, noting OutOfProcess is the default.",
+      "startTime": 108.0,
+      "endTime": 182.0,
+      "slug": "how-to-enable-out-of-process-hosting"
+    },
+    {
+      "title": "Internal and external web servers in out-of-process hosting",
+      "description": "Describes that out-of-process hosting uses two servers: the internal Kestrel server and an optional external server like IIS, Nginx, or Apache.",
+      "startTime": 182.0,
+      "endTime": 279.0,
+      "slug": "internal-and-external-web-servers-in-out-of-process-hosting"
+    },
+    {
+      "title": "Kestrel usage models: direct internet-facing",
+      "description": "Explains Kestrel can be internet-facing and when it handles requests directly via dotnet run.",
+      "startTime": 279.0,
+      "endTime": 348.0,
+      "slug": "kestrel-usage-models-direct-internet-facing"
+    },
+    {
+      "title": "Demo: running out-of-process with dotnet CLI",
+      "description": "Demonstrates changing the hosting model, running dotnet run, and observing dotnet.exe as the hosting process on localhost:5000.",
+      "startTime": 348.0,
+      "endTime": 417.0,
+      "slug": "demo-running-out-of-process-with-dotnet-cli"
+    },
+    {
+      "title": "Kestrel with a reverse proxy (IIS, Nginx, Apache)",
+      "description": "Describes the reverse proxy scenario where Kestrel is internal and a reverse proxy like IIS takes client requests and forwards them to Kestrel, including reasons to use a reverse proxy.",
+      "startTime": 417.0,
+      "endTime": 513.0,
+      "slug": "kestrel-with-a-reverse-proxy-iis-nginx-apache"
+    },
+    {
+      "title": "IIS Express as a reverse proxy and CLI behavior",
+      "description": "Explains that IIS Express acts as a reverse proxy when running from Visual Studio, demonstrates running from Visual Studio, and shows that the ASPNETCORE_HOSTINGMODEL setting is ignored by dotnet CLI which uses out-of-process by default.",
+      "startTime": 513.0,
+      "endTime": 556.0,
+      "slug": "iis-express-as-a-reverse-proxy-and-cli-behavior"
+    },
+    {
+      "title": "Proof and comparisons: in-process vs out-of-process",
+      "description": "Proves CLI ignores the hosting setting, compares process names and server counts for in-process and out-of-process, and summarizes performance and Kestrel usage.",
+      "startTime": 556.0,
+      "endTime": 582.27,
+      "slug": "proof-and-comparisons-in-process-vs-out-of-process"
+    }
+  ],
+  "summary": "## Key Concepts\n\n- **Hosting models:** ASP.NET Core supports **InProcess** and **OutOfProcess** hosting configured via the **ASPNETCORE_HOSTINGMODEL** project setting. Removing the setting defaults to OutOfProcess.\n\n- **In-process hosting:** The app runs inside the IIS worker process (**w3wp.exe**) or **iisexpress.exe**; only one server is involved and this model gives **higher throughput** and lower latency.\n\n- **Out-of-process hosting:** The app runs in **dotnet.exe** with an embedded **Kestrel** server (internal). An optional external reverse proxy (IIS, **Nginx**, **Apache**) can forward requests to Kestrel.\n\n- **Kestrel usage modes:** Kestrel can be internet-facing (dotnet run) or run behind a reverse proxy. Reverse proxies provide **configuration, security, infrastructure integration, and load balancing**.\n\n- **Visual Studio vs CLI behavior:** Visual Studio often uses **IIS Express** as a reverse proxy while the app still runs under dotnet.exe. The **dotnet CLI ignores the project hosting setting** and uses out-of-process hosting by default.\n\n> [!TIP]\n> Use **InProcess** when hosting under IIS for better throughput; use **OutOfProcess** with Kestrel behind a reverse proxy when you need cross-platform hosting or integration with existing proxy infrastructure.\n\n> [!NOTE]\n> Running without Kestrel is possible only with **InProcess** hosting under IIS; otherwise Kestrel is required as the internal server.\n\n> [!IMPORTANT]\n> Out-of-process hosting adds proxying overhead; measure throughput and latency to choose the right model for your deployment.",
+  "transcription": "## Introduction and in-process hosting setup\n\nThey say ASP.NET Core. Tutorial. In this video we'll discuss out-of-process hosting in ASP.NET Core. This is a continuation to our previous video in which we discussed in-process hosting. To configure in-process hosting within our ASP.NET Core project file, we include this element ASPNETCORE_HOSTINGMODEL and set its value to InProcess.\n\n## What in-process hosting means and default Visual Studio behavior\n\nSo with in-process hosting in place we have our ASP.NET Core application hosted inside the IIS worker process which is w3wp.exe. At the moment we are running our ASP.NET Core application directly from Visual Studio and we know by default Visual Studio uses IIS Express to host and run our application. So in this case the process that's hosting and running our ASP.NET Core application is iisexpress.exe.\n\n## Overview of deploying to IIS and performance hint\n\nWe'll discuss deploying an ASP.NET Core application to IIS instead of using IIS Express in our upcoming videos. With in-process hosting there's only one web server and that one web server is this IIS server which faces the network including the internet to handle and process the incoming HTTP client requests. From a performance standpoint, in-process hosting is better than out-of-process hosting. More on this performance aspect in a bit.\n\n## How to enable out-of-process hosting\n\nTo configure out-of-process hosting there are two options. One option is to set the value of this ASPNETCORE_HOSTINGMODEL element to OutOfProcess. The other option is to remove this ASPNETCORE_HOSTINGMODEL element altogether from the project file. The default is out-of-process hosting, so if this ASPNETCORE_HOSTINGMODEL element is not present within the project file then by default it uses out-of-process hosting.\n\n## Internal and external web servers in out-of-process hosting\n\nWith out-of-process hosting there are two web servers: an internal web server and an external web server. The internal web server is Kestrel and the external web server can be IIS, Nginx, or Apache depending on how you are running your ASP.NET Core application. The external web server may or may not be used. We discussed Kestrel in detail in our previous video. As we already know, Kestrel is a cross-platform web server that is embedded in our ASP.NET Core application.\n\n## Kestrel usage models: direct internet-facing\n\nWith the out-of-process hosting model Kestrel can be used in one of the following two ways. Kestrel can be used as the internet-facing web server that processes the incoming HTTP requests directly. In this model we are not using an external web server; only Kestrel is used and it is this server that faces the internet to directly handle the incoming HTTP requests. So when we run our ASP.NET Core application using the .NET Core CLI, Kestrel is the only web server that is used to handle and process the incoming HTTP requests. So in this model of hosting the process that's hosting and running our ASP.NET Core application is dotnet.exe.\n\n## Demo: running out-of-process with dotnet CLI\n\nAt the moment we have configured our application to use out-of-process hosting, so let's save these changes and then flip over to command prompt and run our project using the .NET Core CLI. The command is dotnet run. There we go. We have our application up and running and it's listening for incoming HTTP requests at localhost:5000. So let's launch a browser window and navigate to localhost:5000. Notice the name of the process that is hosting and running our ASP.NET Core application is dotnet, and we are getting this output because within Startup.cs we included the code required to get the process name. And here is that line of code.\n\n## Kestrel with a reverse proxy (IIS, Nginx, Apache)\n\nAnother way Kestrel can be used is in combination with a reverse proxy server such as IIS, Nginx, or Apache. Notice in this model of hosting Kestrel is not facing the internet. Between the internet and the Kestrel server we have a reverse proxy server such as IIS, Nginx, or Apache. It is this reverse proxy server that takes the incoming HTTP requests and forwards it to the Kestrel server that's hosting and running our ASP.NET application. Now once the Kestrel server processes the request it sends that response back to the reverse proxy server and this reverse proxy server in turn sends that response to the client who made that request. At this point you might be wondering: well, if Kestrel can be used by itself as a web server then why do we need this reverse proxy server between the client and our internal web server Kestrel? Well that's because a reverse proxy server such as IIS provides an additional layer of configuration and security. It might integrate better with our existing infrastructure. It can also be used for load balancing.\n\n## IIS Express as a reverse proxy and CLI behavior\n\nWe'll discuss deploying our ASP.NET Core application to IIS and using IIS as a reverse proxy server in our upcoming videos. When we run an ASP.NET Core application directly from Visual Studio, by default it uses IIS Express. So at the moment IIS Express is acting as a reverse proxy server. Our application is still running at the command line. So let's shut this down by pressing Ctrl+C. Now let's run our ASP.NET Core project directly from Visual Studio by pressing Ctrl+F5. The output should not be anything different. The process name should still be dotnet because at the moment IIS Express is only acting as a reverse proxy; it is a Kestrel server that is still hosting and running our ASP.NET Core application. So the process name is dotnet.\n\n## Proof and comparisons: in-process vs out-of-process\n\nNow another important point to keep in mind is when we run our ASP.NET Core project using the .NET Core CLI the hosting setting that we have specified in our project file is ignored. Irrespective of the value that we have here — InProcess or OutOfProcess — by default when we run this ASP.NET Core project using the .NET Core CLI it's going to use out-of-process hosting because it's the Kestrel server that's hosting and running our ASP.NET Core application. If we are running our project using the .NET Core CLI let's actually prove this. First let's change the hosting model setting to InProcess, save our changes, and then run our project using the .NET Core CLI. Launch another browser tab and navigate to localhost:5000. Notice the process name is still dotnet and not iisexpress. This proves we're using out-of-process hosting and not in-process hosting. Now let's quickly compare in-process and out-of-process hosting. With in-process hosting the process name that is used to host and run our ASP.NET Core application is w3wp.exe in case of IIS, and in case of IIS Express it is iisexpress.exe. With out-of-process hosting the process name is dotnet.exe. Within in-process hosting there's only one web server whereas with out-of-process hosting we have two web servers: an internal web server and an external web server. The internal web server is the Kestrel server and the external web server is the reverse proxy server and it can be IIS, Nginx, or Apache. Finally, from a performance standpoint, in-process hosting delivers significantly higher throughput than out-of-process hosting. With out-of-process hosting we also have the penalty of proxying requests between internal and external web server. Now one common question that I keep getting is: can we run an ASP.NET Core application without using the built-in Kestrel web server? The answer is yes. If we use the in-process hosting model the application is hosted inside of the IIS worker process that is w3wp.exe, so Kestrel is not used with the in-process hosting model. So yes, it's absolutely possible to run an ASP.NET Core application without using the built-in Kestrel web server. That's it. Thank you for watching."
+}

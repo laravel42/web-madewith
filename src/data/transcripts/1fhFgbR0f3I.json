@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 3,
+  "videoId": "1fhFgbR0f3I",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Step-by-step guide to installing and configuring Email and Upload providers in Strapi, showing how to add the SendGrid email provider and the AWS S3 upload provider, install official @strapi provider packages, configure plugins.js and environment variables, update security middleware for S3-hosted media, and verify sending test emails and asset uploads for persistent external storage and working thumbnails.",
+  "chapters": [
+    {
+      "title": "Introduction and project setup",
+      "description": "Overview of the goal—setting up email and upload providers—and initial Strapi project creation and admin access.",
+      "startTime": 0.0,
+      "endTime": 36.0,
+      "slug": "introduction-and-project-setup"
+    },
+    {
+      "title": "Creating plugins.js and choosing providers",
+      "description": "Create the config/plugins.js file and decide which officially supported providers to use for uploads and email.",
+      "startTime": 36.0,
+      "endTime": 120.0,
+      "slug": "creating-plugins-js-and-choosing-providers"
+    },
+    {
+      "title": "Installing provider packages",
+      "description": "Install @strapi/provider-email-sendgrid and @strapi/provider-upload-aws-s3 via npm and confirm they appear in package.json.",
+      "startTime": 120.0,
+      "endTime": 240.0,
+      "slug": "installing-provider-packages"
+    },
+    {
+      "title": "Configuring SendGrid and S3 in plugins.js",
+      "description": "Add the SendGrid API key and default from/reply-to addresses, and set AWS access key, secret, region, and bucket in the plugins.js configuration.",
+      "startTime": 240.0,
+      "endTime": 300.0,
+      "slug": "configuring-sendgrid-and-s3-in-plugins-js"
+    },
+    {
+      "title": "Adding environment variables",
+      "description": "Add AWS keys, S3 bucket name, region, and SendGrid API key to the .env file and wire the variables into plugins.js.",
+      "startTime": 300.0,
+      "endTime": 360.0,
+      "slug": "adding-environment-variables"
+    },
+    {
+      "title": "Testing email and uploading an asset",
+      "description": "Verify SendGrid configuration by sending a test email from Strapi and try uploading a media asset to the media library.",
+      "startTime": 360.0,
+      "endTime": 420.0,
+      "slug": "testing-email-and-uploading-an-asset"
+    },
+    {
+      "title": "Fixing S3 preview by updating middleware security",
+      "description": "Troubleshoot broken media previews by updating the Strapi security middleware to allow S3 URLs, inserting bucket names and adjusting directives.",
+      "startTime": 420.0,
+      "endTime": 477.0,
+      "slug": "fixing-s3-preview-by-updating-middleware-security"
+    },
+    {
+      "title": "Confirming thumbnails and final recap",
+      "description": "Reload the media library to confirm thumbnails load and recap the steps to add providers, plugins.js, env vars, and middleware adjustments for S3.",
+      "startTime": 477.0,
+      "endTime": 482.28,
+      "slug": "confirming-thumbnails-and-final-recap"
+    }
+  ],
+  "summary": "## Key Concepts\n\n**Providers**\n\n- Strapi supports pluggable providers for **email** and **file uploads**. Official email providers include **SendGrid**, **SES**, **Mailgun**, **Nodemailer**, and **Sendmail**. Upload providers include **AWS S3**, **Cloudinary**, **Rackspace**, and local uploads.\n\n**Installation**\n\n- Install provider packages via npm, e.g., npm install @strapi/provider-email-sendgrid @strapi/provider-upload-aws-s3. These entries appear in **package.json**.\n\n**Configuration**\n\n- Create a config/plugins.js file and export provider configuration using environment variables (process.env) for secrets and keys.\n- Common fields for S3: **accessKeyId**, **accessKeySecret**, **region**, **bucket**. For SendGrid: **apiKey**, plus default **from** and **replyTo** addresses.\n\n> [!TIP]\n> Keep sensitive values in the .env file and reference them in plugins.js to avoid committing secrets.\n\n**Testing**\n\n- Verify email provider by sending a test message from Strapi Settings → Email. Confirm receipt via the provider (SendGrid).\n- Verify upload provider by uploading an asset in the Media Library and checking the object in the S3 bucket.\n\n**S3 previews and security middleware**\n\n- If media thumbnails or previews are broken, update middleware.js to override Strapi's default security policy and allow your S3 bucket URLs in the content security directives.\n- Insert your exact S3 bucket name into the security configuration; region parts in example docs may be incorrect for global buckets—adjust accordingly.\n\n> [!IMPORTANT]\n> After changing middleware or plugins.js, Strapi will restart; reloading the admin UI may be required to see media thumbnails.\n\n## Takeaways\n\n- Adding providers requires three steps: install the npm provider package, configure plugins.js with env variables, and add any provider-specific middleware/security changes (notably for S3). Once configured, test email sending and asset uploads to confirm functionality.",
+  "transcription": "## Introduction and project setup\n\nHello everyone. My name is Braden Gerrard, and today we're going to look at how you can set up both an email and upload provider with Strapi so that we can send emails from Strapi using a provider as well as upload files in our Strapi CMS so that they can persist inside of our external provider. First I ran our npx create-strapi-app@latest with the quick start command into an email-upload-providers folder, and we have that opened up here now in Visual Studio Code. I'm currently running the project so that you can see my local development environment running here. I've just created my first admin user and I'm into my fresh Strapi install here.\n\n## Creating plugins.js and choosing providers\n\nSo what we're going to do from this point is we're going to go back over and we're going to open up the config folder. Inside of the config folder we're going to create a new file called plugins.js. Now inside of this file is where we're going to put all of our configuration for our providers. Now before we do that we need to install the two providers that we're going to use. So we're going to use a provider called aws-s3 which uploads your files to an Amazon Web Services S3 bucket, and we're also going to use the SendGrid provider so that we can send emails using SendGrid. Now both of these providers are officially supported by Strapi. Strapi also supports additional providers for both uploading files as well as sending email. For file uploads Strapi supports Amazon S3, Cloudinary, Rackspace, as well as local file upload. For email Strapi supports SES, SendGrid, Nodemailer, Mailgun, and Sendmail. So you can install any of these providers. Like I said, today we're going to look at AWS S3 for uploads and SendGrid for sending email.\n\n## Installing provider packages\n\nWe'll install those provider packages by running npm install @strapi/provider-email-sendgrid and we're also going to install @strapi/provider-upload-aws-s3. So we'll hit enter to install those two additional providers into our project, and those providers once they install will automatically be saved into our package.json. So you can see now that we have our provider-email-sendgrid here and our provider-upload-aws-s3. So now that we have those providers installed from in our node_modules, we can go back and we can open up our plugins.js file and we can add in the configurations that will configure our Strapi instance to use those providers. This is things like credentials and default addresses and whatnot. So in this file we'll start with a module.exports and pass in the environment variable so we can get those secret keys and stuff that we need to configure our providers, and then we will just close this out and we will put our configurations between the object here that gets passed to this plugins.js. So first our email config and then after that we will put in our upload provider config.\n\n## Configuring SendGrid and S3 in plugins.js\n\nSo there's our upload provider config, and you can see this is the default for AWS S3. We need an accessKeyId, an accessKeySecret, a region, and a bucket. So we will go over to our .env file and add these in, and while we're doing that we'll also add in the configurations that we need for our email provider which is a SendGrid API key, and then these we can hard code as our default from addresses. So let's set those quickly. I'm going to be sending from no-reply@bradengerrard as this is an email address that I have set up inside of my SendGrid account, and I'll also set that as the default reply-to.\n\n## Adding environment variables\n\nOkay, so we'll go over to the .env file and inside of here we need to add in those environment variables for the AWS access key and secret as well as our SendGrid API key. So I'm going to add those keys in here. So I have all three of them now in our .env file and we'll save that and go back to our plugins.js. So that covers our SendGrid API key right here. That covers our AWS access key ID which is this, so I'll just change out that environment variable, and then we'll have our AWS secret key here. AWS secret key. And then we have our AWS region, so we'll just set that to us-east-1, and then our AWS bucket which I've already created in our S3 account and it's called strapi-tutorial-bucket-braden-gerrard. So we'll save that. We've added in our keys now: our region, bucket name, as well as our SendGrid API key and our default sending from addresses.\n\n## Testing email and uploading an asset\n\nSo that's all that you need by default to set up the email and upload providers. So now we can flip over to our admin, and if we go into our settings we can look at our email configuration and we'll see that it's now set up to send through SendGrid. So if I send that test email to my email, the test email—we can go over here and we'll see that we just got a new test email coming from Strapi. So the SendGrid provider is working. So that's awesome. We can also go over and we can test out our media library by uploading a new asset. Okay, so that file is being uploaded now.\n\n## Fixing S3 preview by updating middleware security\n\nYou're noticing here that we're going to have a broken preview image. If I actually get the link of the file and I put that into my browser, we can see that the file is indeed being hosted on S3, and I can check here inside of my S3 bucket and you'll see that we have the different versions of the cat.jpeg here, different sizes that Sharp has created, but for some reason our preview link is broken. So the reason this is happening is because we need to update our security middleware inside of our Strapi application. So if we go to our middleware.js file and we configure this to allow it by overwriting our default Strapi security configuration here, so we'll paste in the updated configuration which lets us specify exactly what we want to adjust in our Strapi security here. This is from the Strapi documentation on the S3 plugin. We have these directives here that allow certain security policies for our S3 bucket. So you do need to put in your S3 bucket here. So if we go back to our plugins.js file and we take our bucket name here and we bring that over here, we put in our bucket name. Now that I've put that bucket name in there, dot s3 dot—now the docs say to use your region, this is actually incorrect for a global bucket that I have set up here, so I'm removing that. And then I also want to use the same bucket down here, and again I'll remove the your-region part of the URL and save that. That's going to reboot our server here.\n\n## Confirming thumbnails and final recap\n\nIf we go back over to our Strapi media library here and refresh, we'll see that our cat image is now working as a thumbnail here, and if we were to embed that into a page somewhere we would have our cat image. So that is how you set up the upload provider and the email provider for Strapi using S3 and SendGrid. Again, you can use many different providers that are officially supported by Strapi, so all you have to do is go in and modify your plugins.js file or create a plugins.js file in the config folder, install the appropriate npm modules, and then add in your environment variables for your keys. And then if you are using S3 for uploads add the middleware piece to allow your preview images to work, and that's all there is to it to add an upload provider as well as an email provider in Strapi."
+}

@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 3,
+  "videoId": "lHPJF5LHBKY",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn step-by-step how to create, install, and customize a Frappe/ERPNext app from the bench: generating a new app, understanding the app folder structure and manifest, installing it on a site, creating modules and doctypes, designing form layout, configuring naming series and read-only fields, and using the app to create and manage help desk tickets — practical guidance for low-code ERPNext customizations and app development.",
+  "chapters": [
+    {
+      "title": "Intro: What You'll Build",
+      "description": "Overview of the video goals: creating a new Frappe/ERPNext app for custom modules and doctypes.",
+      "startTime": 0.0,
+      "endTime": 32.0,
+      "slug": "intro-what-you-ll-build"
+    },
+    {
+      "title": "Preparing the Bench Environment",
+      "description": "Confirming apps exist on the Ubuntu server and navigating to the bench directory to start app creation.",
+      "startTime": 32.0,
+      "endTime": 120.0,
+      "slug": "preparing-the-bench-environment"
+    },
+    {
+      "title": "Inspecting the New App Files",
+      "description": "Locate the new app in the apps folder and review the generated file and folder structure including manifest and templates.",
+      "startTime": 120.0,
+      "endTime": 182.0,
+      "slug": "inspecting-the-new-app-files"
+    },
+    {
+      "title": "Installing the App on a Site and Launching",
+      "description": "Install the newly created app on an ERPNext site, start the bench, and open the site in the browser.",
+      "startTime": 182.0,
+      "endTime": 249.0,
+      "slug": "installing-the-app-on-a-site-and-launching"
+    },
+    {
+      "title": "Verifying App and Starting Customization",
+      "description": "Confirm the app is present in About, then begin creating a new module and doctype for the app.",
+      "startTime": 249.0,
+      "endTime": 311.0,
+      "slug": "verifying-app-and-starting-customization"
+    },
+    {
+      "title": "Creating Help Topic and Fields",
+      "description": "Design help topic and topic name fields, link help topic to the help desk doctype, and add subject and description fields.",
+      "startTime": 311.0,
+      "endTime": 358.0,
+      "slug": "creating-help-topic-and-fields"
+    },
+    {
+      "title": "Layout, Attachments, and Form Design",
+      "description": "Add attachments, adjust layout with section and column breaks, and polish the form for ticket creation.",
+      "startTime": 358.0,
+      "endTime": 396.0,
+      "slug": "layout-attachments-and-form-design"
+    },
+    {
+      "title": "User Field, Naming Series, and Read-Only Settings",
+      "description": "Configure user selection, set fields to read-only, and define the naming series format for tickets.",
+      "startTime": 396.0,
+      "endTime": 433.0,
+      "slug": "user-field-naming-series-and-read-only-settings"
+    },
+    {
+      "title": "Creating and Managing Tickets; Closing Remarks",
+      "description": "Demonstrate creating a help ticket, assigning it, adding comments and attachments, and wrap up with final suggestions.",
+      "startTime": 433.0,
+      "endTime": 481.0,
+      "slug": "creating-and-managing-tickets-closing-remarks"
+    }
+  ],
+  "summary": "## Key Concepts\n\n- **Frappe Bench new-app**: Use `bench new-app <app-name>` to scaffold a Frappe/ERPNext app; provide title, description, publisher, email, icon, color, and license during prompts.\n\n- **App file structure**: Generated app contains a root with files like **manifest.in**, folders for **templates**, **pages**, and Python modules—follow the scaffolded structure for extensions.\n\n- **Installing on a site**: Install with `bench --site <site-name> install-app <app-name>` and start the bench to load the app in the site UI.\n\n- **Modules and Doctypes**: Create a new module (select your app) and add doctypes like **Employee Help Desk** and **Help Topic** to model tickets and categories.\n\n- **Form design and layout**: Use **section breaks** and **column breaks** to design organized forms; ensure attachments and required fields are configured.\n\n- **Naming series and permissions**: Configure **naming series** for predictable document IDs and set fields like the naming series to **read-only** so IDs are assigned automatically.\n\n- **Ticket workflow**: Support assignment, comments, attachments, and workflows for submittable documents to enable tracking and approvals.\n\n> [!TIP] Keep the app's manifest and templates organized; templates go into the templates folder and page templates into pages.\n\n> [!NOTE] Setting the user field to read-only lets the session user populate automatically during ticket creation.\n\n> [!IMPORTANT] Test the installed app on a development bench first and confirm naming series and workflow settings before deploying to production.",
+  "transcription": "## Intro: What You'll Build\n\nHey everyone. Welcome to another video of Sync Picks. In today's video I'll show you how we can create a new app in Frappe Bench and this app can be used in any Frappe website or even for ERPNext. I'll be using this app to create custom modules and to create custom doctype types in ERPNext, so stay tuned till end of this video to see how we can create a new app in ERPNext.\n\n## Preparing the Bench Environment\n\nSo all my apps are already installed in the Ubuntu Server 20.04, so if I take you to the bench directory and let me show you the list of content here. So, series apps. So you can see these two apps ERPNext and Frappe. So inside this I need to create the app. So I'll be again going to my Frappe bench directory here, rapidashbench, and inside this now I'll be creating the app. And in order to create the app we'll be typing the command bench new-app and then the app name. It will ask for the title of the app, so my default title is of course Sync because I already gave it in the beginning, so I'll type it again just to show you. And then app description. So I'll be creating various utilities inside this, so Sync utilities. This will be the app I'll be using it for ERPNext mainly. And then app publisher I'll give my name and then the email I can use or I'll give a name app@syncbricks.com. And then the default icon I will leave it default and then the app color I'll leave it default as three and enter. And here is the default license which is MIT. I'll name it sync. All right, Sync Bricks, and enter. And now it has created the app. It is installing the app in the apps directory.\n\n## Inspecting the New App Files\n\nNow if I show you this app has been created right now and if I take you back to apps and if I show you the apps you can see here ERPNext, Frappe, and Sync is created. So I'll see the content of this. So I'll be taking you to the Frappe bench and inside bench there is a folder called apps and inside apps this new app is created which is Sync and by default it will create all these files and folders which are properly structured. And you can see here inside the Sync Bricks app these are the files and folders on the root. There is a file called manifest.in. This includes various files which include like python, SVG, txt and all of this here. And here you can add the license text, so whatever you want to add you can add it here. So all the templates are stored in templates and all the page templates are stored in pages. So this way you have to structure your files and folders the way it has been automatically structured.\n\n## Installing the App on a Site and Launching\n\nI'll be installing this app in my ERPNext so I'll be going again here cd frappe-bench then bench --site and then of course the site name. I'll be typing here simplex.com and then I'll be installing the app install-app Sync Bricks. Sync Bricks is installed on my website, so I'll be loading the site now on my browser. So I'll start bench now which is of course in the development mode right now. All right, so site is ready to be launched now, so I'll be opening the site again in default user and password and after a quick setup now here you can see the site is loaded.\n\n## Verifying App and Starting Customization\n\nLoaded. And if I take you here to Help, here you can see About and here Sync Picks version 0.0.0 master is already installed. Inside this app I can create various modules, various doctype types, various reports and so on. So I'll be creating a new doctype here, add a new doctype. Module I'll be choosing Sync Bricks. And now inside this I'll be creating a new doctype called Employee Help Desk. So this is the employee help desk that I need to create. How to create doctype, set up the fields, and how to load the default values in the fields. I have created a detailed video on creating the new doctype; I have provided the link in the description.\n\n## Creating Help Topic and Fields\n\nNow of course this is based on the general understanding of how a help desk should work. So in help desk there are different fields that you need to create. Of course I'm creating now a new doctype which will be the Help Topic and the topic name I'll be giving here: topic description. Now if you see here if I create a new Help Topic here and this is the IT support, it's description, then ERP support its description. And now I'll be linking this to the Help Desk as a help topic and linking the topic type here. Now if you see here Help Topic is created then subject, description required on, and all of these fields are created now.\n\n## Layout, Attachments, and Form Design\n\nAnd then of course I want the attachment also to be added to the Help Desk and here I need to now format it properly. I'll be creating a new... so it should have been a column break to divide the columns. Now this was a section break that I had to create, so I'll be creating a section grid. And now you can see here a nicely designed form that will definitely be helpful to create the ticket. Here you can see you can organize all the fields and all the sections here.\n\n## User Field, Naming Series, and Read-Only Settings\n\nOr some error is there. Okay, users, use it. Yeah. So now you can see the user can also be chosen here and I'll move the user here. And of course user could be the read-only field and it will load the default Frappe user or the Frappe session user also. Here is the naming series. Of course I have chosen the naming series and this is the way you can format the naming series. I want the help-dash-year-dash-number of that, so how many tickets we resolved during the year. So these can be added here. So now naming series is updated. And after this I'll make this read-only field as naming series. It should be read-only so that once the new ticket is created it will automatically fetch their number.\n\n## Creating and Managing Tickets; Closing Remarks\n\nYou can see here now I can create the ticket. I'll enter the email and then choose the help topic and this is the field which I have just created but it will be again automatically resolved and I save it. And now you can see here it has automatically assigned ticket number based on the help here and the ticket number: first ticket in this year. And then I can assign it to the person who has to resolve this ticket and enter the comment, for example, \"Please resolve,\" and add another ticket has been assigned. Complete tracking can be done through this particular application and you can see you can add various attachments into this. You can add the comments, you can add it to multiple people, and then of course you can assign the workflow to this also because this is a submittable document. So in case you want to assign this a workflow you can do that also. So this was just a basic app that I created and I thought it will be helpful for those who really want to use this low-code platform to customize various apps and customize various doctypes. So hope you like this video. If you like this video please share it with others, hit the like button and subscribe to the channel to get more updates like this. See you in next video. Take care and goodbye."
+}

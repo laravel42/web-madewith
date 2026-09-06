@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 3,
+  "videoId": "qVTAB8Z2VmA",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Clear, practical introduction to REST APIs and web services, explaining core concepts such as resources, HTTP methods (GET, POST, PUT, DELETE), JSON payloads, endpoints, statelessness, status codes, versioning, authentication, caching, and best practices for designing scalable RESTful services. Useful for developers learning API design, integration, and how REST compares to other web service approaches.",
+  "chapters": [
+    {
+      "title": "Introduction and Overview",
+      "description": "Opening remarks and the initial topic mention that begins the presentation.",
+      "startTime": 0.0,
+      "endTime": 688.0,
+      "slug": "introduction-and-overview"
+    }
+  ],
+  "summary": "## Key Concepts\n\n**REST (Representational State Transfer)**\n\n- REST is an architectural style for web services focused on **resources** and their representations.\n- Resources are identified by **endpoints** (URLs) and manipulated using standard **HTTP methods**.\n\n**HTTP Methods and CRUD Mapping**\n\n- **GET**: Retrieve a representation of a resource.\n- **POST**: Create a new resource or trigger operations.\n- **PUT/PATCH**: Update an existing resource (PUT for full replace, PATCH for partial updates).\n- **DELETE**: Remove a resource.\n\n> [!TIP]\n> Use the appropriate HTTP method to communicate intent clearly and enable predictable client-server interactions.\n\n**Representations and Formats**\n\n- **JSON** is the most common payload format for REST APIs; XML is another option.\n- Representations carry the state of resources between client and server.\n\n**Statelessness**\n\n- RESTful interactions should be **stateless**: each request contains all information necessary to process it.\n- Statelessness improves scalability and simplifies server design.\n\n**Status Codes**\n\n- Use standard HTTP status codes: **200** (OK), **201** (Created), **204** (No Content), **400** (Bad Request), **401** (Unauthorized), **403** (Forbidden), **404** (Not Found), **500** (Server Error).\n\n> [!NOTE]\n> Meaningful status codes and error payloads help clients handle outcomes correctly.\n\n**Authentication & Authorization**\n\n- Common approaches: **API keys**, **OAuth 2.0**, **JWT** tokens.\n- Secure endpoints and avoid sending sensitive data in URLs.\n\n**Versioning**\n\n- Version APIs to avoid breaking changes (URI versioning, header versioning, or media type versioning).\n\n**Caching & Performance**\n\n- Apply HTTP caching headers (Cache-Control, ETag) to improve performance.\n- Rate limiting protects services from abuse and overload.\n\n**Hypermedia (HATEOAS)**\n\n- Optional: include hyperlinks in representations so clients can discover available actions.\n\n**Design Best Practices**\n\n- Keep endpoints resource-focused and consistent.\n- Document APIs with OpenAPI/Swagger for clear client integration.\n- Validate inputs server-side and provide clear error messages.\n\n> [!IMPORTANT]\n> Prioritize clear resource modeling, consistent use of HTTP semantics, and secure, documented interfaces to create robust, maintainable REST APIs.",
+  "transcription": "## Introduction and Overview\n\n*Spring"
+}

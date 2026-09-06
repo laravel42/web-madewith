@@ -1,0 +1,158 @@
+{
+  "schemaVersion": 3,
+  "videoId": "KnCNOp5Pbfs",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Explore the redesigned Nuxt 4 directory structure, migration steps, and practical tips to opt into the new app/server split. Learn how to configure sourceDir, keep legacy layouts, leverage top-level folders like public and modules, and adopt Layers for reusable mini-apps. Includes performance, IDE/type-safety benefits, alias adjustments, and a hands-on example migrating a small demo project.",
+  "chapters": [
+    {
+      "title": "Introduction and Purpose",
+      "description": "Host introduces the video topic: Nuxt 4's new directory structure, migration concerns, and what will be covered.",
+      "startTime": 0.0,
+      "endTime": 18.0,
+      "slug": "introduction-and-purpose"
+    },
+    {
+      "title": "Context: Nuxt 4 & Migration Reassurance",
+      "description": "Overview of Nuxt 4 progress, reassurance about migration effort and reference to prior videos about opting into changes.",
+      "startTime": 18.0,
+      "endTime": 62.0,
+      "slug": "context-nuxt-4-migration-reassurance"
+    },
+    {
+      "title": "Demo Project Setup and Version Check",
+      "description": "Open demo application, check Nuxt version is 3.12+ and start the dev server before opting into compatibility changes.",
+      "startTime": 62.0,
+      "endTime": 120.0,
+      "slug": "demo-project-setup-and-version-check"
+    },
+    {
+      "title": "Opting Into Compatibility Version 4",
+      "description": "Set the compatibility flag in next.config to 4 to opt into the new directory structure and see validation output.",
+      "startTime": 120.0,
+      "endTime": 172.0,
+      "slug": "opting-into-compatibility-version-4"
+    },
+    {
+      "title": "Why No Immediate Errors and Fall-back to Old Structure",
+      "description": "Explain why Nuxt doesn't immediately complain about old structure and that old projects keep working until migrated.",
+      "startTime": 172.0,
+      "endTime": 214.0,
+      "slug": "why-no-immediate-errors-and-fall-back-to-old-structure"
+    },
+    {
+      "title": "Creating the app Source Directory",
+      "description": "Create an app folder to hold Nuxt-specific assets like components and pages and show how they move under app.",
+      "startTime": 214.0,
+      "endTime": 294.0,
+      "slug": "creating-the-app-source-directory"
+    },
+    {
+      "title": "Customizing the Source Directory",
+      "description": "Show how to rename app to a custom folder via next.config's sourceDir option and verify the app still runs.",
+      "startTime": 294.0,
+      "endTime": 308.0,
+      "slug": "customizing-the-source-directory"
+    },
+    {
+      "title": "Recommendation on Defaults and Flexibility",
+      "description": "Recommendation to stick to defaults unless necessary, while highlighting the flexibility to rename directories for internal structures.",
+      "startTime": 308.0,
+      "endTime": 336.0,
+      "slug": "recommendation-on-defaults-and-flexibility"
+    },
+    {
+      "title": "What Belongs Outside app: server Folder",
+      "description": "Explain why server-related files stay separate in a top-level server folder to clarify front-end vs server responsibilities.",
+      "startTime": 336.0,
+      "endTime": 372.0,
+      "slug": "what-belongs-outside-app-server-folder"
+    },
+    {
+      "title": "Reasons for Separating server and app",
+      "description": "Discuss benefits: clearer imports, guidance to avoid client-only APIs on server, and reduced friction.",
+      "startTime": 372.0,
+      "endTime": 438.0,
+      "slug": "reasons-for-separating-server-and-app"
+    },
+    {
+      "title": "Performance Benefits of a Split Source Directory",
+      "description": "Explain file-watching performance improvements during dev by narrowing watched folders to avoid watching node_modules and large top-level folders.",
+      "startTime": 438.0,
+      "endTime": 474.0,
+      "slug": "performance-benefits-of-a-split-source-directory"
+    },
+    {
+      "title": "Top-level Folders: public and types",
+      "description": "Describe top-level folders that remain at project root like public for static assets, and the ability to add other top-level folders for shared types.",
+      "startTime": 474.0,
+      "endTime": 516.0,
+      "slug": "top-level-folders-public-and-types"
+    },
+    {
+      "title": "Modules Folder and Automatic Registration",
+      "description": "Explain modules folder behavior: Nuxt can auto-register modules placed there and it's a top-level folder usable in Nuxt 3 as well.",
+      "startTime": 516.0,
+      "endTime": 558.0,
+      "slug": "modules-folder-and-automatic-registration"
+    },
+    {
+      "title": "New in Nuxt 4: Layers Folder",
+      "description": "Introduce the new layers folder available with Nuxt 4 and explain the concept of Layers for composing mini-applications.",
+      "startTime": 558.0,
+      "endTime": 606.0,
+      "slug": "new-in-nuxt-4-layers-folder"
+    },
+    {
+      "title": "Demonstrating Layers: Create a Layer",
+      "description": "Create a layers/my-awesome-layer folder with a nuxt.config and a component, then use that component in the main app.",
+      "startTime": 606.0,
+      "endTime": 676.0,
+      "slug": "demonstrating-layers-create-a-layer"
+    },
+    {
+      "title": "Why Layers Matter",
+      "description": "Emphasize that Layers enable structuring and slicing large monoliths; note that few other meta-frameworks offer this pattern.",
+      "startTime": 676.0,
+      "endTime": 702.0,
+      "slug": "why-layers-matter"
+    },
+    {
+      "title": "Official Upgrade Guide and Migration Notes",
+      "description": "Refer to Nuxt's official upgrade guide for migrating to Nuxt 4 and the directory structure impact, recommending migration for benefits.",
+      "startTime": 702.0,
+      "endTime": 756.0,
+      "slug": "official-upgrade-guide-and-migration-notes"
+    },
+    {
+      "title": "Clarifying Existing app Folder Usage",
+      "description": "Clarify that an existing app folder in older projects used for router options or SPA loading doesn't conflict with the new app source directory and can be relocated.",
+      "startTime": 756.0,
+      "endTime": 810.0,
+      "slug": "clarifying-existing-app-folder-usage"
+    },
+    {
+      "title": "Adjusting Aliases and Auto Imports",
+      "description": "Explain alias changes: single-tilde/at now point to app directory while double-tilde/at point to project root, and how this affects imports and types.",
+      "startTime": 810.0,
+      "endTime": 930.0,
+      "slug": "adjusting-aliases-and-auto-imports"
+    },
+    {
+      "title": "Final Recommendation and Migration Summary",
+      "description": "Recommend opting into the new structure for dev performance, IDE/type-safety gains, and provide pointers to the exhaustive migration checklist.",
+      "startTime": 930.0,
+      "endTime": 991.0,
+      "slug": "final-recommendation-and-migration-summary"
+    },
+    {
+      "title": "Outro and Links",
+      "description": "Closing remarks: solicit feedback, promote related content, and preview upcoming videos.",
+      "startTime": 991.0,
+      "endTime": 1010.0,
+      "slug": "outro-and-links"
+    }
+  ],
+  "summary": "## Key Concepts\n\n- **New app/sourceDir split**: Nuxt 4 introduces a clear separation between the front-end source directory (default: app) and server code (server). This reduces confusion about what runs where and improves developer guidance.\n\n- **Compatibility flag (compatibility: 4)**: Opt into Nuxt 4 behavior by setting the compatibility version in next.config. You can keep legacy structure until ready.\n\n- **Performance benefits**: Narrowing file watchers to the app and server folders reduces dev-mode file-watch overhead (especially on Windows), improving responsiveness.\n\n- **Top-level folders retained**: **public** and **modules** remain at project root. Use public for static assets mapped to domain root; modules auto-register from a root modules folder.\n\n- **Layers**: Use **layers/** to compose reusable mini-apps or base apps. Layers enable overrides and clean multi-tenant or domain-driven designs without extra nuxt.config entries.\n\n- **Custom sourceDir**: You may rename the app folder (e.g., my-fancy-app) and point next.config sourceDir to it. Defaults are recommended unless you have a strong internal reason.\n\n- **Existing app folder files**: Prior app/ contents like router.options.ts or SPA loading templates should be colocated with the new sourceDir or configured via the directories option.\n\n- **Alias changes**: Single tilde/@ now point to the app (sourceDir); double tilde/@@ point to project root. Update imports for types or top-level assets accordingly.\n\n> [!TIP]\n> Opt into compatibility: 4 early in a small demo to surface alias/type issues before migrating larger projects.\n\n> [!NOTE]\n> The new structure is opt-in and non-breaking until you choose to migrate; Nuxt falls back to the legacy layout when appropriate.\n\n> [!IMPORTANT]\n> After migrating, verify imports and IDE type checks — missing aliases will be obvious from build errors or editor diagnostics.\n\n## Takeaways\n\n- Migrating yields better dev performance and clearer separation of concerns.\n- Layers offer a powerful composition mechanism unique among many meta-frameworks.\n- Keep defaults unless necessary, and use the official upgrade guide checklist to move assets, components, and composables into the app folder.",
+  "transcription": "## Introduction and Purpose\n\nHey everybody, welcome back to another video on this channel. Yes, the mic is here; the sound is better, I hope. Right in the comments if not. Today we will have a look at the new improved directory structure of Nuxt 4: why it is there, how to migrate over, and can you keep the old one. All these answers right now.\n\n## Context: Nuxt 4 & Migration Reassurance\n\nGo. Nuxt 4 is taking more and more shape and I hope you're not afraid of the migration because, well, I'm not. Lots of people around me are not because it will just be a few tiny breaking changes, nothing as big as Nuxt 2 to Nuxt 3. Don't worry. You can opt into them already as I've shown you in a video a few weeks ago; link as usual in the description up there. Today we have a look at the new directory structure that Nuxt 4 brings with it: why the Nuxt team decided to change things up, the benefits of it, and whether you can keep the old one or not.\n\n## Demo Project Setup and Version Check\n\nSo let's jump into the demo application and have a look. As usual the demo application is pretty minimal but there are a few things: we have our next.config, some things in server as shown in the last video, and some pages. If you haven't watched the last video about dynamic rendering, don't worry — this is just a good example to see how we migrate. We start with the most important thing first: we want to check if we are Nuxt 3.12 or higher. Nuxt 4 probably, but 3.12 is required; otherwise you have to use the nightly mode. We can use pnpm nuxt to figure it out and it says Nuxt 3.12, so we're good. Now we can start the server as usual, pnpm dev or whatever package manager you use, and it will just start 3.12.\n\n## Opting Into Compatibility Version 4\n\nNow we want to opt into the changes as I've shown you a couple weeks ago by setting the future object in next.config and the compatibility version flag to 4 as a number. We save and see the validation running with compatibility version 4. Now we can opt into the new directory structure.\n\n## Why No Immediate Errors and Fall-back to Old Structure\n\nYou see there's no error thrown saying you're doing things wrong or there's a new structure, mainly because we make sure you can keep your old projects without immediately migrating. You don't have to adapt to the new structure now. If you have a top-level pages folder, that's fine; Nuxt will fall back to the old structure. But we will migrate to see what the new structure brings.\n\n## Creating the app Source Directory\n\nThe first thing we want to do is create a new folder called app. All our Nuxt-specific things will live in this app folder: components, pages, and so on. Now we have app/pages and, for example, users within it. Technically, if you have a components folder it would also live here, e.g. components/my-component.vue. The same applies to middleware, layouts, and app.vue — app.vue will also live in the app folder. This might look strange, like app/app.vue, but naming is hard and there was an RFC to think about a readable name. Eventually we landed on app because other names like UI, web, front-end, Nuxt and Nitro felt off.\n\n## Customizing the Source Directory\n\nYou can customize the name. If app is not a nice name for you, name it my-fancy-app and point sourceDir in next.config to that folder. Save, wait for Nuxt to restart, and refresh the browser — it's still working as expected.\n\n## Recommendation on Defaults and Flexibility\n\nI always recommend sticking with the recommendations unless you have a good reason not to, but if you want different naming because of internal structures you can do it. Nuxt gives freedom of choice while offering good defaults.\n\n## What Belongs Outside app: server Folder\n\nNow, what might not belong in that app folder and are there other folders to consider? The server folder I never moved out. With the new structure we have the Nuxt front-oriented part and the server part, which consists of API routes, server routes, Nitro middleware, Nitro plugins, and so on. The idea is to have them in two separate folders for clarity.\n\n## Reasons for Separating server and app\n\nThere are a bunch of reasons. First, it's nice to separate the front-end part from the server part to avoid accidental imports from server code that you shouldn't do. For example, Vue composables shouldn't be used on the server. This separation reduces friction and makes it clearer which part is which, including server rendering concerns.\n\n## Performance Benefits of a Split Source Directory\n\nAnother reason is performance. If you watch the whole project root, file watchers must monitor many nested files like .git and node_modules. On Linux and Mac this mostly works, but on Windows it caused severe performance issues during dev. File watching is only during dev, but a poor dev experience is painful. That's why we suggest having usually one folder called app and one called server, separated.\n\n## Top-level Folders: public and types\n\nThere are top-level folders that will stay. One is public. If you have public/test.txt, it maps to the domain root, so localhost:3000/test.txt serves that file. Public doesn't belong to Nuxt or Nitro specifically, so it makes sense to keep it at the root. You can also create other top-level folders, for example types that apply to both server and app parts.\n\n## Modules Folder and Automatic Registration\n\nThere's also a modules folder. Nuxt can automatically register modules placed in a modules folder; this works in Nuxt 3 right now without any compatibility flag. That folder can contain server middleware like Nitro things or Nuxt-specific modules, so it sits at the root as well.\n\n## New in Nuxt 4: Layers Folder\n\nThere's one more folder that's new and only possible with the Nuxt 4 compatibility flag: the layers folder. If you haven't heard of Layers, check the layers beginner guide video. The idea is to extract parts of an application into mini-applications or build on top of a base app. Layers are great for different designs, multi-tenant setups, or domain-driven design.\n\n## Demonstrating Layers: Create a Layer\n\nLet's create a layers folder and inside add my-awesome-layer. Add a nuxt.config and a components/layer-component.vue file with an H1 saying 'Hey from layer'. Save and use that component from our app's pages/index.vue. Refresh and you will see 'Hey from layer'. You can override layer components in the main application. You don't need an entry in nuxt.config.ts to use layers; they can be very convenient.\n\n## Why Layers Matter\n\nIf you wondered why there's a component in a layer and how that makes sense, check the layers video — it's worth it. Layers is a feature that I don't think any other meta-framework has in the same way and it makes maintaining design systems or slicing up a big monolith really easy.\n\n## Official Upgrade Guide and Migration Notes\n\nHave a look at the official upgrade guide for Nuxt 4 where the directory structure is mentioned. Migrating to the new structure has a significant impact but it's recommended and worth it. The RFC link and the source directory explanation are in the guide. Nuxt 3's source directory is now called app, but you can rename it via sourceDir. Modules and public remain in the root.\n\n## Clarifying Existing app Folder Usage\n\nYou might already have an app folder in your Nuxt application from before. That older app folder commonly contains router.options.ts or an SPA loading template. Those files are mentioned in the upgrade guide and commonly belong to the source directory now, so you can put them in app. If you prefer, you can configure a different directory via next.config's directories option like appOptions or appExtras.\n\n## Adjusting Aliases and Auto Imports\n\nIf you're not using auto imports and use aliases like the tilde or @, you might have to change them. Previously tilde and double-tilde or single-@ and double-@ pointed to the same place. Now the double tilde or double @ points to the project root and the single tilde or single @ points to the app folder (or whatever you named it). That means you might need to rename imports if you're importing a type from a top-level folder; use the double alias. You'll notice quickly because your IDE, type checks, or the build will complain if it can't find a file.\n\n## Final Recommendation and Migration Summary\n\nThat's basically all about the new improved directory structure. You don't have to opt in right away, but I highly recommend it for performance gains during dev, IDE type safety, and better type checks. This split structure is a start and we might add more features. You can rename things as you want. There's a bigger migration guide in the upgrade guide on nuxt.com showing exactly how to move assets, components, and composables into the app folder with an exhaustive checklist.\n\n## Outro and Links\n\nLet me know what you think about the new directory structure. Is it good? Do you like it better than before? Better name for app? Bring them all in. I'm curious to read them and will answer. Don't forget to check out the newest Deja Vu app episode with Daniel Roe talking about Nuxt 4 changes and his journey. Check other videos and links everywhere, and stay tuned — next week there's another video coming. Thanks a lot for watching, let me know what you're missing or want to know, and stay tuned. Happy hacking."
+}

@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 3,
+  "videoId": "QjtW-wnXlUY",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to install and use Flask on Windows with step-by-step guidance: installing Python prerequisites, creating a project directory, setting up a Python virtual environment, activating it, installing Flask with pip, writing a minimal Flask app with routes and dynamic URL parameters, running the development server, and cleaning up by stopping and deactivating the environment. Perfect for beginners using Sublime Text or VS Code.",
+  "chapters": [
+    {
+      "title": "Intro and prerequisites",
+      "description": "Overview of what you'll need to follow along: Python and a code editor, plus the goal of the tutorial.",
+      "startTime": 0.0,
+      "endTime": 60.0,
+      "slug": "intro-and-prerequisites"
+    },
+    {
+      "title": "Create project directory and open Command Prompt",
+      "description": "Set up a project folder and open a Windows command prompt, then navigate into the Flask project directory.",
+      "startTime": 60.0,
+      "endTime": 120.0,
+      "slug": "create-project-directory-and-open-command-prompt"
+    },
+    {
+      "title": "Create a virtual environment",
+      "description": "Why virtual environments matter and the pip command to create one for your project.",
+      "startTime": 120.0,
+      "endTime": 200.0,
+      "slug": "create-a-virtual-environment"
+    },
+    {
+      "title": "Inspect environment and activate it",
+      "description": "Confirm the venv folder is created and activate the virtual environment using the Scripts\\activate command.",
+      "startTime": 200.0,
+      "endTime": 260.0,
+      "slug": "inspect-environment-and-activate-it"
+    },
+    {
+      "title": "Install Flask with pip",
+      "description": "Use pip inside the activated virtual environment to install the Flask package.",
+      "startTime": 260.0,
+      "endTime": 340.0,
+      "slug": "install-flask-with-pip"
+    },
+    {
+      "title": "Write a minimal Flask application",
+      "description": "Import Flask, instantiate the app, define a route for '/' and return simple HTML content.",
+      "startTime": 340.0,
+      "endTime": 410.0,
+      "slug": "write-a-minimal-flask-application"
+    },
+    {
+      "title": "Return HTML and run the Flask server",
+      "description": "Return an H1 from the route, run the Flask development server, and open the local URL in a browser.",
+      "startTime": 410.0,
+      "endTime": 470.0,
+      "slug": "return-html-and-run-the-flask-server"
+    },
+    {
+      "title": "Add a dynamic route parameter",
+      "description": "Modify the route to accept a name parameter, update the function to use it, and restart the server to test dynamic URLs.",
+      "startTime": 470.0,
+      "endTime": 520.0,
+      "slug": "add-a-dynamic-route-parameter"
+    },
+    {
+      "title": "Test dynamic URL, stop server, and cleanup",
+      "description": "Demonstrate visiting /name to see personalized output, explain stopping the server, deactivating the venv, and final remarks.",
+      "startTime": 520.0,
+      "endTime": 546.62,
+      "slug": "test-dynamic-url-stop-server-and-cleanup"
+    }
+  ],
+  "summary": "## Key Concepts\n\n- **Python**: Required runtime; the presenter uses Python 3.7.\n- **Code editor**: Use a code-aware editor like **Sublime Text** or **VS Code** to preserve Python indentation.\n- **Project folder**: Create a dedicated directory (example: `flask_app`) for each Flask project.\n- **Virtual environment (`venv`)**: Use `py -m venv env` to create an isolated environment so dependencies don't affect other projects.\n\n> [!IMPORTANT]\n> Always create and activate a virtual environment per project to avoid global package conflicts.\n\n## Commands and Workflow\n\n- Create venv: `py -m venv env`.\n- Activate venv on Windows: `env\\Scripts\\activate` (look for `(env)` in the prompt).\n- Install Flask: `pip install Flask` while the venv is activated.\n- Set Flask entry point: `set FLASK_APP=app.py` in the Command Prompt.\n- Run server: `flask run` and open the provided URL (typically `127.0.0.1:5000`).\n- Stop server: `Ctrl-C`.\n- Deactivate venv: `deactivate`.\n\n> [!TIP]\n> Restart the server when you change code, or enable auto-reload (covered in other tutorials) to avoid manual restarts.\n\n## Minimal app example\n\n- Import and instantiate: `from flask import Flask` then `app = Flask(__name__)`.\n- Define a route: `@app.route('/')` then `def index(): return '<h1>Hello</h1>'`.\n- Dynamic route: `@app.route('/<name>')` with `def index(name): return '<h1>Hello {}</h1>'.format(name)` to display URL-provided values.\n\n> [!NOTE]\n> Placeholders in the route (like `<name>`) must match parameters in the view function signature.\n\n## Takeaways\n\n- This sequence—create folder, venv, activate, pip install Flask, set FLASK_APP, write the app, run—is the standard starting workflow for Flask on Windows.\n- Once the development server runs, further learning is primarily about writing Flask routes, templates, and application logic.",
+  "transcription": "## Intro and prerequisites\n\nHey everyone, it's An the—from Pretty Printed here. In today's video I'm going to show you how to get up and running with Flask on Windows. So a prerequisite for this is you need to have Python installed. I have the latest version of Python at the recording of this video, which is Python 3.7. You also need to have some kind of text editor. I have Sublime Text as a text editor, just something that is designed for handling code files because of the way that Python works the spacing between the characters and the lines actually mean something, so you want a text editor that can take that into account. So I'm using Sublime. I'll put a link to Sublime in the description below so you can download it if you don't already have a text editor. Another good one is VS Code.\n\n## Create project directory and open Command Prompt\n\nSo the first thing I've done is I've created a directory where I'm going to have my Flask app. I have it in my Documents folder and I named it flask_app. So now what I want to do is I want to open up a Command Prompt. I just typed CMD here in the search and I'm going to change directory to My Documents. So for me I'm starting in my user folder, so if I change directory to Documents it takes me there and then CD will take me to my flask_app and this is the directory that I created. And then CLS will clear out the screen so I have everything at the top so it's easier to read.\n\n## Create a virtual environment\n\nSo the first thing I need to do is I need to create something called a virtual environment and this will allow me to keep all of the things I need to install for my Flask app contained to just this one project instead of being global to where they would affect all the projects that I'm working on at the same time. Having a virtual environment keeps everything contained so you would just have one virtual environment per product per project. So to install a virtual environment you do py -m venv and then give it a name. So typical name is just env for environment and of course the venv here just a short for virtual environment. So you hit enter once you have that py -m venv and then the name of the virtual environment and the name in my case is env and you just wait for it to install.\n\n## Inspect environment and activate it\n\nOkay, so once this comes back you know it's installed and you can look in your folder and there should be a new directory that's called env and you'll see these folders in there. You don't have to worry about working with it directly from the file explorer here and said you want to use the Command Prompt. So now that I have that I want to activate this environment. So what I'm going to do is I'm going to type the name of the directory, so env, which is the name of the virtual environment, backslash Scripts with the capital S, backslash activate with a lowercase a. So I'll just type that and hit enter and it will turn on your virtual environment and you'll see env or whatever the name of your virtual environment is over here in parentheses.\n\n## Install Flask with pip\n\nAnd now you can install Flask. So to install Flask you use the Python package installer which is called pip. You type pip install and then Flask and it's going to go ahead and install Flask for you. Should only take a moment and then once it's installed we can go ahead and actually write a simple Flask app. So I'm going to hit type CLS again to clear that out and then I'm going to create a file in my flask_app directory and I'm just going to name it app.py. So this is going to be my Flask app and because this is my main app file I'm going to set an environment variable in my Command Prompt. So sets and this variable is FLASK_APP in all caps equals and then whatever the name of the file is. So in my case app.py and this will allow Flask to know what file to look for when it wants to run.\n\n## Write a minimal Flask application\n\nSo now to write the code, first I need to import Flask. So from flask import Flask. So the first flask here is lowercase, this is the library, and then the second class here is uppercase F and that's the class for Flask. And then you want to instantiate that class and by convention it's just app = Flask(__name__). And this references the name of the current module that you're working in which is app.py. And then I'm going to create something called a route which is just basically the URL endpoint for a particular thing in my app. So this won't have one so it's just slash but you can put whatever you want here. It can be something like hello, files, profile, whatever you want. But I'll just leave it a slash and then give this function under it a name. So you put a function here, the name can be whatever you want really. So you just name it something that is descriptive. In this case this is the index which means the base URL for whatever your site is.\n\n## Return HTML and run the Flask server\n\nSo you have this decorator at app.route and then the slash and then you have a function directly underneath it called index and then I'm going to write a return statement and then I'm going to return an h1 tag. So this is HTML: the word hello and then a closing h1 tag. So what this is doing is this is returning directly to the browser and since this is HTML the browser will interpret it as HTML and show it to you. So this is it for a very simple Flask app. So to run it you type flask run and because you set this FLASK_APP equal to the name of your file here, flask run knows what to run. So you hit enter, it's going to tell you where it is, so says running on 127.0.0.1 and port 5000. So just copy that and put it into your browser and then you'll see hello.\n\n## Add a dynamic route parameter\n\nNow to make this a little more interesting let's make a small change. What I'm going to do now is allow for a name, so I'll put this bracket here in the name. So this is not HTML, this is basically like a placeholder and any placeholder that you have here in the endpoint you need to have in your function here as a parameter. And then what I'll do is I'll put that name inside of the HTML so I'll put a placeholder for a string and I'll just put format and then I'll pass in the name. So that's the change. But now when I run, so I want to go back here I'll hit Ctrl-C to stop the server and then flask run again because I made a change I want to restart the server. There's a way to do it automatically but I'll talk about that in a different video. But for now just stop the server with Ctrl-C and then do flask run again and it's going to restart.\n\n## Test dynamic URL, stop server, and cleanup\n\nAnd then here if I try going to this I get not found and the reason is because that endpoint no longer exists because I have this placeholder. So now I have to pass in something and then Flask will read it for me. So I'll just pass in my name. So the same URL 5000 and slash some name, so slash Anthony. When I see hello Anthony here. So anything I put in the URL it will appear here. So any name that you put or any word that you put in general it will appear here. So that's it for creating a very simple Flask app on Windows. If you Ctrl-C the app will stop, so if I try running this again nothing will happen or it just gives me an error message problem loading page because the server isn't running. And to get out of the virtual environment I just type deactivate and that's it. So I hope this video helped you get started with Flask on Windows and basically if you can do this then you'll be able to do or follow any other tutorial on Flask because the beginning process is always going to be the same. After that it just depends on the code that you're writing, but to actually get an app up and running is the most important part because once you can do that then it's basically just writing whatever code that you need to write. So if you have any questions about this feel free to leave a comment down below. If you liked this video please give me a thumbs up and if you haven't subscribed to my channel already please subscribe. So thank you for watching and I will talk to you next time."
+}

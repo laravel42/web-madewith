@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 3,
+  "videoId": "qySZIzZvZOY",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how the React useMemo hook improves performance by caching expensive computations and preventing unnecessary recalculations across re-renders. This tutorial demonstrates building two counters with useState, introducing a slow isEven computation, and replacing repeated work with useMemo dependency arrays. It contrasts useMemo with useCallback and shows practical patterns to speed up UI updates when only some state changes.",
+  "chapters": [
+    {
+      "title": "Introduction and component setup",
+      "description": "Creates a new Counter component file, scaffolds a functional component, and sets up two state variables with useState.",
+      "startTime": 0.0,
+      "endTime": 50.0,
+      "slug": "introduction-and-component-setup"
+    },
+    {
+      "title": "Increment functions and rendering buttons",
+      "description": "Adds increment functions for each counter and renders two buttons wired to these functions to display and update counts.",
+      "startTime": 50.0,
+      "endTime": 150.0,
+      "slug": "increment-functions-and-rendering-buttons"
+    },
+    {
+      "title": "New requirement: show odd or even and initial implementation",
+      "description": "Adds an isEven function to show whether counter one is odd or even and integrates it into the JSX with a span showing 'even' or 'odd'.",
+      "startTime": 150.0,
+      "endTime": 270.0,
+      "slug": "new-requirement-show-odd-or-even-and-initial-implementation"
+    },
+    {
+      "title": "Simulating expensive computation and noticing slowness",
+      "description": "Introduces an artificial heavy loop in isEven to simulate an expensive computation and observes UI delays when counters update.",
+      "startTime": 270.0,
+      "endTime": 420.0,
+      "slug": "simulating-expensive-computation-and-noticing-slowness"
+    },
+    {
+      "title": "Why other updates are slow and need for caching",
+      "description": "Demonstrates that updating counter two also becomes slow because the component re-renders and re-executes the expensive isEven, motivating caching.",
+      "startTime": 420.0,
+      "endTime": 540.0,
+      "slug": "why-other-updates-are-slow-and-need-for-caching"
+    },
+    {
+      "title": "Using useMemo to cache results",
+      "description": "Explains useMemo, shows how to import and replace the function call with useMemo providing the computation and a dependency array to cache the result.",
+      "startTime": 540.0,
+      "endTime": 639.0,
+      "slug": "using-usememo-to-cache-results"
+    },
+    {
+      "title": "useMemo versus useCallback and wrap up",
+      "description": "Summarizes the distinction between useCallback and useMemo, when to use each, and closes the tutorial.",
+      "startTime": 639.0,
+      "endTime": 644.07,
+      "slug": "usememo-versus-usecallback-and-wrap-up"
+    }
+  ],
+  "summary": "## Key Concepts\n\n- **useMemo**: caches the *result* of a computation and only recomputes when dependencies change, preventing expensive recalculations on every render.\n\n- **useState**: used to store the two counters in the example: **counterOne** and **counterTwo**.\n\n- Expensive computations: heavy CPU work (loops, large array operations, sorting/filtering) can block UI updates if re-run on every render.\n\n- Example workflow:\n  - Build two counters with increment handlers.\n  - Implement an **isEven** function to compute parity of counterOne.\n  - Simulate slowness by adding a heavy loop to illustrate UI lag.\n  - Replace direct call with **useMemo(() => expensiveComputation, [dependency])** to cache the value.\n\n> [!TIP]\n> Wrap only truly expensive computations with **useMemo**; unnecessary memoization adds complexity and minimal benefit.\n\n> [!NOTE]\n> **useMemo** returns the cached value. After applying useMemo, remove function-call parentheses in JSX because the value, not a function, is stored.\n\n> [!IMPORTANT]\n> Component re-renders cause all contained functions to re-run unless their results are cached; updating unrelated state can still trigger expensive work unless memoized.\n\n## When to use useMemo vs useCallback\n\n- Use **useCallback** to memoize a function instance (e.g., to avoid re-creating a callback passed to child components).\n- Use **useMemo** to memoize the *result* of a function invocation (e.g., an expensive derived value).",
+  "transcription": "## Introduction and component setup\n\nIn the last video we had a look at the useCallback hook which is used for performance optimization. As it turns out there is another hook which is also concerned with performance optimization and that is the useMemo hook. In this video let's understand with an example how to make use of the useMemo hook. I'm going to start off by creating a new file called Counter.js. Within the file I'm going to use the snippet RFC to create a functional component. Within the component I'm going to create two state variables using the useState hook so import useState and then within the component we create two counter variables: const [counterOne, setCounterOne] initial value of zero and the second const [counterTwo, setCounterTwo] initial value of zero.\n\n## Increment functions and rendering buttons\n\nNext I'm going to create two functions to increment the count value. incrementOne which is equal to an arrow function where we call setCounterOne passing in counterOne + 1. Similarly const incrementTwo which is again an arrow function we call setCounterTwo passing in counterTwo + 1. Finally in the JSX we need to add two buttons to display the respective count values along with a click handler to increment the count values. So a div tag, button: Count 1 which is {counterOne} onClick we call incrementOne. Similarly the second button, the tag button Count 2 onClick incrementTwo. All right let's include the component in App.js and head to the browser. You can see that we have two counters. I click on the first button and its count value increments. Click on the second button the second count value increments, nothing new to learn already.\n\n## New requirement: show odd or even and initial implementation\n\nNow we have a new requirement: next to the first counter we need to indicate whether the count value is an odd number or an even number. Sounds simple again. So let's go back to VS Code and create a function that contains the logic: const isEven which is an arrow function and within the body we return counterOne % 2 === 0. Next in the JSX we include a span tag and then we check isEven ? we display 'even' else we display 'odd'. All right let's save this and test it out. Initially you can see that counterOne is 0 which is even. I increment counterOne and the text changes to odd. Increment again and it toggles between odd and even. If I increment counterTwo on the other hand you can see that the text remains unaffected.\n\n## Simulating expensive computation and noticing slowness\n\nNow let's take our example to the next level. At the moment we have a simple isEven function which takes hardly any time to execute. In real world applications though you will sometimes come across logic that takes considerable amount of time for execution. That is a function that isn't so good with performance. It could be for example fetching thousands of items, mapping that array, filtering that array and even sorting that array. Now we don't really have the kind of logic here so let's induce some slowness into our function. So within the isEven function I need to declare a variable let i = 0 and then add a while loop that simply iterates for a long time. So while i is less than 2 followed by 9 zeros you're simply going to increment i so i++. So the loop doesn't really affect a return value but it does slow down the rate at which we compute whether counterOne is odd or even. Now let's save the file and see what happens in the browser. To start off we have initial count set to zero for both the counters. I click on increment counterOne and you can see that there is now a second or two delay before the UI updates. I'll click again so watch closely. See that the UI is slow in updating and this is because in the UI we are rendering whether the number is odd or even and that logic is from the isEven function which as it turns out is really slow. And this of course is expected: if the number changes React needs to check if the new number is odd or even.\n\n## Why other updates are slow and need for caching\n\nBut take a look at this: I now click on incrementTwo and still there is a delay with the UI updates. Watch closely. I click and after a second or two counterTwo increments. This is strange though isn't it? Why is counterTwo slow as well? Well that is because every time the state updates the component re-renders and when the component re-renders this isEven function is called again. The function is slow and hence even when we update counterTwo the UI update is slow. So what we need is a way to tell React not to recalculate certain values when unnecessary, especially the ones which take a long time to compute. In our example we need to tell React not to calculate whether counterOne is odd or even when we are changing counterTwo values. This is where the useMemo hook comes into the picture.\n\n## Using useMemo to cache results\n\nYes, useMemo is a hook that will only recompute the cached value when one of the dependencies has changed. This optimization helps to avoid expensive calculations on every render. The way useMemo works is very similar to how useCallback works. First import useMemo from React. Next within the component call the useMemo hook. As the first argument we pass in the function whose return value needs to be cached. In our example this would be the arrow function to calculate if a number is odd or even. I'm going to cut this arrow function and paste it as the first argument. As a second parameter we need to specify the dependencies our function depends on: the value of counterOne. That is whenever counterOne changes we are telling React to recompute the value and not use the cached value. So in the array specify counterOne. useMemo returns a cached value which we are going to assign to the variable isEven. Finally in the JSX I'm going to remove the parentheses: isEven is not going to be a function call because it now stores a value. All right let's save the file and test it out. I'm going to click on counterOne and you can see that the delay is still present now that is because we need to recalculate is odd or even when the value changes. When I click on counterTwo however you can see that the updates are way faster. This is because React is now using the cached value of isEven to display whether counterOne is odd or even. Since the value never changed for counterOne there is no need to recompute this odd or even value. React will simply use the cached value from the previous render. This is how useMemo hook can be used for performance optimization.\n\n## useMemo versus useCallback and wrap up\n\nNow if I go back to the code you might feel that useCallback and useMemo are very similar. What is the difference? The difference is that useCallback caches the provided function instance itself whereas useMemo invokes the provided function and caches its result. So if you need to cache a function useCallback, and when you need to cache the result of an invoked function useMemo. All right that is about useCallback, useMemo and performance optimization with hooks. Thank you for watching; feel free to subscribe. I'll see you in the next video."
+}

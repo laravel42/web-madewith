@@ -1,6 +1,6 @@
 {
   "slug": "actix-web",
-  "scrapedAt": "2026-08-10T12:07:31.545396+00:00",
+  "scrapedAt": "2026-09-06T02:26:45.325819+00:00",
   "source": "scrapy-github",
   "totalRepos": 121,
   "projects": [
@@ -23,7 +23,7 @@
         "Examples",
         "Actix"
       ],
-      "updated": "1 week ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-08-03T18:40:37Z",
       "license": "Apache-2.0",
       "langs": [
@@ -69,7 +69,7 @@
         "PostgreSQL",
         "Qdrant"
       ],
-      "updated": "6 months ago",
+      "updated": "7 months ago",
       "pushedAt": "2026-01-25T23:25:46Z",
       "license": "MIT",
       "langs": [
@@ -144,7 +144,7 @@
         "Proof Of Work",
         "Privacy"
       ],
-      "updated": "10 months ago",
+      "updated": "11 months ago",
       "pushedAt": "2025-10-07T08:47:27Z",
       "license": "AGPL-3.0",
       "langs": [
@@ -205,7 +205,7 @@
         "Frontend",
         "Backend"
       ],
-      "updated": "2 weeks ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-07-30T06:50:59Z",
       "license": "Apache-2.0",
       "langs": [
@@ -265,7 +265,7 @@
         "Zoom",
         "Actix Web"
       ],
-      "updated": "2 weeks ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-07-30T15:45:12Z",
       "license": "Apache-2.0",
       "langs": [
@@ -324,13 +324,13 @@
       "name": "django-bolt",
       "fullName": "dj-bolt/django-bolt",
       "category": "APIs",
-      "stars": 1591,
+      "stars": 1619,
       "author": "dj-bolt",
       "avatar": "https://avatars.githubusercontent.com/u/261637427?v=4",
       "desc": "Rust-powered API framework for Django achieving 60k+ RPS. Uses Actix Web for HTTP, PyO3 for Python bridging, msgspec for serialization. Decorator-based routing with built-in auth and middleware.",
       "demo": null,
       "repoUrl": "https://github.com/dj-bolt/django-bolt",
-      "long1": "Rust-powered API framework for Django achieving 60k+ RPS. Uses Actix Web for HTTP, PyO3 for Python bridging, msgspec for serialization. Decorator-based routing with built-in auth and middleware. Maintained by dj-bolt on GitHub, where it has earned 1,591 stars from the community.",
+      "long1": "Rust-powered API framework for Django achieving 60k+ RPS. Uses Actix Web for HTTP, PyO3 for Python bridging, msgspec for serialization. Decorator-based routing with built-in auth and middleware. Maintained by dj-bolt on GitHub, where it has earned 1,619 stars from the community.",
       "long2": "It's actively developed around actix-web, api, api-rest, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Python",
@@ -339,16 +339,16 @@
         "Api Rest",
         "Asyncio"
       ],
-      "updated": "1 week ago",
-      "pushedAt": "2026-08-02T18:37:45Z",
+      "updated": "4 weeks ago",
+      "pushedAt": "2026-08-08T18:34:34Z",
       "license": "—",
       "langs": [
         {
-          "pct": 84,
+          "pct": 83,
           "name": "Python"
         },
         {
-          "pct": 14,
+          "pct": 15,
           "name": "Rust"
         },
         {
@@ -357,6 +357,10 @@
         }
       ],
       "versions": [
+        {
+          "url": "https://github.com/dj-bolt/django-bolt/releases/tag/v0.10.0",
+          "name": "v0.10.0"
+        },
         {
           "url": "https://github.com/dj-bolt/django-bolt/releases/tag/v0.10.0-alpha2",
           "name": "v0.10.0-alpha2"
@@ -372,10 +376,6 @@
         {
           "url": "https://github.com/dj-bolt/django-bolt/releases/tag/v0.9.0",
           "name": "v0.9.0"
-        },
-        {
-          "url": "https://github.com/dj-bolt/django-bolt/releases/tag/v0.8.4",
-          "name": "v0.8.4"
         }
       ],
       "topics": [
@@ -466,7 +466,7 @@
         "Search Engine",
         "Fast"
       ],
-      "updated": "6 days ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-08-04T04:42:05Z",
       "license": "AGPL-3.0",
       "langs": [
@@ -541,7 +541,7 @@
         "Url Shortener",
         "Actix Web"
       ],
-      "updated": "2 weeks ago",
+      "updated": "6 weeks ago",
       "pushedAt": "2026-07-24T04:14:55Z",
       "license": "MIT",
       "langs": [
@@ -615,7 +615,7 @@
         "Async",
         "Actix Web"
       ],
-      "updated": "1 week ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-08-01T20:45:23Z",
       "license": "Apache-2.0",
       "langs": [
@@ -718,53 +718,66 @@
       "name": "vllora",
       "fullName": "vllora/vllora",
       "category": "AI & ML",
-      "stars": 810,
+      "stars": 813,
       "author": "vllora",
       "avatar": "https://avatars.githubusercontent.com/u/240452051?v=4",
       "desc": "Debug your AI agents",
       "demo": "https://vllora.dev",
       "repoUrl": "https://github.com/vllora/vllora",
-      "long1": "Debug your AI agents. Maintained by vllora on GitHub, where it has earned 810 stars from the community.",
-      "long2": "It's actively developed around agents, ai-agents, ai-gateway, and is a solid reference for anyone building with these tools.",
+      "long1": "Debug your AI agents. Maintained by vllora on GitHub, where it has earned 813 stars from the community.",
+      "long2": "It's actively developed around agents, anthropic, claude, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Rust",
         "Agents",
-        "Ai Agents",
-        "Ai Gateway",
-        "Anthropic"
+        "Anthropic",
+        "Claude",
+        "Deepseek"
       ],
-      "updated": "6 weeks ago",
-      "pushedAt": "2026-06-30T06:18:48-06:00",
+      "updated": "5 months ago",
+      "pushedAt": "2026-04-07T13:10:12Z",
       "license": "—",
       "langs": [
         {
-          "name": "Rust",
-          "pct": 99.862,
-          "size": 1880669
+          "pct": 100,
+          "name": "Rust"
         },
         {
-          "name": "Shell",
-          "pct": 0.138,
-          "size": 2606
+          "pct": 0,
+          "name": "Shell"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/vllora/vllora/releases/tag/v0.1.23",
+          "name": "v0.1.23"
+        },
+        {
+          "url": "https://github.com/vllora/vllora/releases/tag/v0.1.22",
+          "name": "v0.1.22"
+        },
+        {
+          "url": "https://github.com/vllora/vllora/releases/tag/v0.1.21",
+          "name": "v0.1.21"
+        },
+        {
+          "url": "https://github.com/vllora/vllora/releases/tag/v0.1.20",
+          "name": "v0.1.20"
+        },
+        {
+          "url": "https://github.com/vllora/vllora/releases/tag/v0.1.19",
+          "name": "v0.1.19"
+        }
+      ],
       "topics": [
         "agents",
-        "ai-agents",
-        "ai-gateway",
         "anthropic",
-        "azure",
         "claude",
         "deepseek",
         "gemini",
-        "google-adk",
         "langchain",
         "llm",
-        "llm-gateway",
         "model-context-protocol",
         "openai",
-        "router",
         "rust-lang",
         "tracing",
         "vercelaisdk"
@@ -790,7 +803,7 @@
         "Web",
         "Web Development"
       ],
-      "updated": "6 months ago",
+      "updated": "7 months ago",
       "pushedAt": "2026-01-31T17:31:10Z",
       "license": "—",
       "langs": [
@@ -930,6 +943,74 @@
       "addedAt": "2026-07-15T22:28:32.668300+00:00"
     },
     {
+      "slug": "axolotl",
+      "name": "Axolotl",
+      "fullName": "Mystic-Stars/Axolotl",
+      "category": "DevTools",
+      "stars": 431,
+      "author": "Mystic-Stars",
+      "avatar": "https://avatars.githubusercontent.com/u/97295993?u=e5a1b6af12a9bcb998525f6881d5ad2a25284103&v=4",
+      "desc": "开源，跨平台的下一代启动器",
+      "demo": "https://axlmc.org",
+      "repoUrl": "https://github.com/Mystic-Stars/Axolotl",
+      "long1": "开源，跨平台的下一代启动器. Maintained by Mystic-Stars on GitHub, where it has earned 431 stars from the community.",
+      "long2": "It's actively developed around minecraft, minecraft-launcher, rust, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "HTML",
+        "Minecraft",
+        "Minecraft Launcher",
+        "Rust",
+        "Tauri"
+      ],
+      "updated": "yesterday",
+      "pushedAt": "2026-09-05T13:32:03Z",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 51,
+          "name": "HTML"
+        },
+        {
+          "pct": 30,
+          "name": "Rust"
+        },
+        {
+          "pct": 19,
+          "name": "Vue"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/Mystic-Stars/Axolotl/releases/tag/v1.9.6-beta.1",
+          "name": "v1.9.6-beta.1"
+        },
+        {
+          "url": "https://github.com/Mystic-Stars/Axolotl/releases/tag/v1.9.5",
+          "name": "v1.9.5"
+        },
+        {
+          "url": "https://github.com/Mystic-Stars/Axolotl/releases/tag/v1.9.5-beta.6",
+          "name": "v1.9.5-beta.6"
+        },
+        {
+          "url": "https://github.com/Mystic-Stars/Axolotl/releases/tag/v1.9.5-beta.5",
+          "name": "v1.9.5-beta.5"
+        },
+        {
+          "url": "https://github.com/Mystic-Stars/Axolotl/releases/tag/v1.9.5-beta.4",
+          "name": "v1.9.5-beta.4"
+        }
+      ],
+      "topics": [
+        "minecraft",
+        "minecraft-launcher",
+        "rust",
+        "tauri",
+        "vue"
+      ],
+      "addedAt": "2026-07-21T11:09:08.764444+00:00"
+    },
+    {
       "slug": "rust-mlops-template",
       "name": "rust-mlops-template",
       "fullName": "nogibjj/rust-mlops-template",
@@ -1003,7 +1084,7 @@
         "React",
         "Actix Web"
       ],
-      "updated": "10 months ago",
+      "updated": "11 months ago",
       "pushedAt": "2025-10-01T08:07:04Z",
       "license": "Apache-2.0",
       "langs": [
@@ -1068,7 +1149,7 @@
         "Access Control",
         "Authorization"
       ],
-      "updated": "6 months ago",
+      "updated": "7 months ago",
       "pushedAt": "2026-02-02T12:53:02Z",
       "license": "Apache-2.0",
       "langs": [
@@ -1133,7 +1214,7 @@
         "Api",
         "Openapi Documentation"
       ],
-      "updated": "1 week ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-07-31T04:17:55Z",
       "license": "MIT",
       "langs": [
@@ -1270,7 +1351,7 @@
         "Actix Web",
         "Actix"
       ],
-      "updated": "1 week ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-08-01T08:21:07Z",
       "license": "Apache-2.0",
       "langs": [
@@ -1327,7 +1408,7 @@
         "Homelab",
         "Linux Server"
       ],
-      "updated": "6 days ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-08-04T08:01:11Z",
       "license": "—",
       "langs": [
@@ -1454,7 +1535,7 @@
         "Llm",
         "Milvus"
       ],
-      "updated": "3 months ago",
+      "updated": "4 months ago",
       "pushedAt": "2026-05-14T02:49:31Z",
       "license": "—",
       "langs": [
@@ -1518,7 +1599,7 @@
         "Rust",
         "Sdk"
       ],
-      "updated": "7 months ago",
+      "updated": "8 months ago",
       "pushedAt": "2026-01-13T02:23:33Z",
       "license": "MIT",
       "langs": [
@@ -1651,7 +1732,7 @@
         "P2P",
         "Peer To Peer"
       ],
-      "updated": "2 weeks ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-07-30T06:00:06Z",
       "license": "MIT",
       "langs": [
@@ -1767,7 +1848,7 @@
         "Actix Web",
         "Rate Limiting"
       ],
-      "updated": "4 months ago",
+      "updated": "5 months ago",
       "pushedAt": "2026-04-06T19:46:50Z",
       "license": "GPL-3.0",
       "langs": [
@@ -1824,7 +1905,7 @@
         "Actix Web",
         "Experimental"
       ],
-      "updated": "6 days ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-08-04T12:49:22Z",
       "license": "Apache-2.0",
       "langs": [
@@ -1989,7 +2070,7 @@
         "Middleware",
         "Actix Web"
       ],
-      "updated": "2 months ago",
+      "updated": "3 months ago",
       "pushedAt": "2026-06-05T15:50:25Z",
       "license": "MIT",
       "langs": [
@@ -2090,13 +2171,13 @@
       "name": "litellm-rs",
       "fullName": "majiayu000/litellm-rs",
       "category": "AI & ML",
-      "stars": 102,
+      "stars": 104,
       "author": "majiayu000",
-      "avatar": "https://avatars.githubusercontent.com/u/19658300?v=4",
+      "avatar": "https://avatars.githubusercontent.com/u/19658300?u=1eb9733a3d6f5752d800c90a8c9bdb086e7823ce&v=4",
       "desc": "A high-performance AI Gateway written in Rust — call 100+ LLM APIs using OpenAI format",
       "demo": null,
       "repoUrl": "https://github.com/majiayu000/litellm-rs",
-      "long1": "A high-performance AI Gateway written in Rust — call 100+ LLM APIs using OpenAI format. Maintained by majiayu000 on GitHub, where it has earned 102 stars from the community.",
+      "long1": "A high-performance AI Gateway written in Rust — call 100+ LLM APIs using OpenAI format. Maintained by majiayu000 on GitHub, where it has earned 104 stars from the community.",
       "long2": "It's actively developed around ai-gateway, anthropic, api-client, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Rust",
@@ -2106,41 +2187,28 @@
         "Async Rust"
       ],
       "updated": "4 weeks ago",
-      "pushedAt": "2026-07-13T23:53:55-06:00",
+      "pushedAt": "2026-08-11T12:12:22Z",
       "license": "MIT",
       "langs": [
         {
-          "name": "Rust",
-          "pct": 99.031,
-          "size": 11428738
+          "pct": 100,
+          "name": "Rust"
         },
         {
-          "name": "Shell",
-          "pct": 0.422,
-          "size": 48747
+          "pct": 0,
+          "name": "Shell"
         },
         {
-          "name": "Python",
-          "pct": 0.272,
-          "size": 31380
-        },
-        {
-          "name": "PLpgSQL",
-          "pct": 0.137,
-          "size": 15757
-        },
-        {
-          "name": "Makefile",
-          "pct": 0.116,
-          "size": 13432
-        },
-        {
-          "name": "Dockerfile",
-          "pct": 0.022,
-          "size": 2568
+          "pct": 0,
+          "name": "JavaScript"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/majiayu000/litellm-rs/releases/tag/v0.5.0",
+          "name": "v0.5.0"
+        }
+      ],
       "topics": [
         "ai-gateway",
         "anthropic",
@@ -2153,9 +2221,7 @@
         "load-balancing",
         "multi-provider",
         "ollama",
-        "openai",
-        "rust",
-        "streaming"
+        "openai"
       ],
       "addedAt": "2026-07-15T22:28:32.668300+00:00"
     },
@@ -2178,7 +2244,7 @@
         "Actix Web",
         "Monitoring"
       ],
-      "updated": "1 week ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-08-03T06:32:59Z",
       "license": "Apache-2.0",
       "langs": [
@@ -2473,7 +2539,7 @@
         "Rust Lang",
         "Template Engine"
       ],
-      "updated": "6 months ago",
+      "updated": "7 months ago",
       "pushedAt": "2026-02-06T18:52:20Z",
       "license": "MIT",
       "langs": [
@@ -2605,7 +2671,7 @@
         "Gitlab Pipelines",
         "Gitlab Runner"
       ],
-      "updated": "2 weeks ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-07-29T22:41:15Z",
       "license": "MIT",
       "langs": [
@@ -2789,7 +2855,7 @@
         "Grpc",
         "Rust"
       ],
-      "updated": "4 weeks ago",
+      "updated": "8 weeks ago",
       "pushedAt": "2026-07-11T12:27:19Z",
       "license": "MIT",
       "langs": [
@@ -2883,7 +2949,7 @@
         "Next.js",
         "Pastebin"
       ],
-      "updated": "1 week ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-07-31T06:17:11Z",
       "license": "GPL-3.0",
       "langs": [
@@ -2971,7 +3037,7 @@
         "Nix",
         "Nixos"
       ],
-      "updated": "4 weeks ago",
+      "updated": "7 weeks ago",
       "pushedAt": "2026-07-16T03:02:32-06:00",
       "license": "MIT",
       "langs": [
@@ -3080,7 +3146,7 @@
         "Axum",
         "Rust Validator"
       ],
-      "updated": "11 months ago",
+      "updated": "1 year ago",
       "pushedAt": "2025-09-02T05:06:54Z",
       "license": "Apache-2.0",
       "langs": [
@@ -3145,7 +3211,7 @@
         "Actix",
         "Casbin Rs"
       ],
-      "updated": "3 months ago",
+      "updated": "4 months ago",
       "pushedAt": "2026-05-15T19:05:46Z",
       "license": "—",
       "langs": [
@@ -3212,7 +3278,7 @@
         "Full Stack",
         "Pgadmin"
       ],
-      "updated": "2 years ago",
+      "updated": "3 years ago",
       "pushedAt": "2024-02-15T09:01:33Z",
       "license": "—",
       "langs": [
@@ -3244,105 +3310,6 @@
         "rust-fullstack"
       ],
       "addedAt": "2026-07-15T22:28:32.668300+00:00"
-    },
-    {
-      "slug": "axolotl",
-      "name": "Axolotl",
-      "fullName": "Mystic-Stars/Axolotl",
-      "category": "DevTools",
-      "stars": 54,
-      "author": "Mystic-Stars",
-      "avatar": "https://avatars.githubusercontent.com/u/97295993?v=4",
-      "desc": "A free, cross-platform Minecraft launcher",
-      "demo": "https://www.axlmc.org",
-      "repoUrl": "https://github.com/Mystic-Stars/Axolotl",
-      "long1": "A free, cross-platform Minecraft launcher. Maintained by Mystic-Stars on GitHub, where it has earned 54 stars from the community.",
-      "long2": "It's actively developed around minecraft, minecraft-launcher, rust, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Minecraft",
-        "Minecraft Launcher",
-        "Rust",
-        "Tauri"
-      ],
-      "updated": "3 weeks ago",
-      "pushedAt": "2026-07-18T23:39:33-06:00",
-      "license": "—",
-      "langs": [
-        {
-          "name": "Rust",
-          "pct": 38.528,
-          "size": 5707340
-        },
-        {
-          "name": "Vue",
-          "pct": 36.9,
-          "size": 5466103
-        },
-        {
-          "name": "TypeScript",
-          "pct": 21.154,
-          "size": 3133630
-        },
-        {
-          "name": "HTML",
-          "pct": 1.481,
-          "size": 219407
-        },
-        {
-          "name": "JavaScript",
-          "pct": 0.857,
-          "size": 126884
-        },
-        {
-          "name": "SCSS",
-          "pct": 0.716,
-          "size": 106036
-        },
-        {
-          "name": "Java",
-          "pct": 0.166,
-          "size": 24555
-        },
-        {
-          "name": "PLpgSQL",
-          "pct": 0.066,
-          "size": 9848
-        },
-        {
-          "name": "CSS",
-          "pct": 0.058,
-          "size": 8631
-        },
-        {
-          "name": "Python",
-          "pct": 0.046,
-          "size": 6823
-        },
-        {
-          "name": "NSIS",
-          "pct": 0.018,
-          "size": 2685
-        },
-        {
-          "name": "Dockerfile",
-          "pct": 0.008,
-          "size": 1127
-        },
-        {
-          "name": "MDX",
-          "pct": 0.002,
-          "size": 356
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "minecraft",
-        "minecraft-launcher",
-        "rust",
-        "tauri",
-        "vue"
-      ],
-      "addedAt": "2026-07-21T11:09:08.764444+00:00"
     },
     {
       "slug": "rust-postgres-crud-sqlx",
@@ -3395,56 +3362,6 @@
         "rust",
         "rust-lang",
         "sqlx"
-      ],
-      "addedAt": "2026-07-15T22:28:32.668300+00:00"
-    },
-    {
-      "slug": "complete-restful-api-in-rust",
-      "name": "complete-restful-api-in-rust",
-      "fullName": "wpcodevo/complete-restful-api-in-rust",
-      "category": "DevTools",
-      "stars": 52,
-      "author": "wpcodevo",
-      "avatar": "https://avatars.githubusercontent.com/u/58881120?u=5ca9e608edbfbc347b28048041b02ba40a068837&v=4",
-      "desc": "In this article, you will learn how to build a Rust API with unit testing in mind. This means we will take a modular approach, which will make our lives easier when writing unit tests.",
-      "demo": "https://codevoweb.com/building-a-rust-api-with-unit-testing-in-mind/",
-      "repoUrl": "https://github.com/wpcodevo/complete-restful-api-in-rust",
-      "long1": "In this article, you will learn how to build a Rust API with unit testing in mind. This means we will take a modular approach, which will make our lives easier when writing unit tests. Maintained by wpcodevo on GitHub, where it has earned 52 stars from the community.",
-      "long2": "It's actively developed around actix-web, actix-web-middleware, docker, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Rust",
-        "Actix Web",
-        "Actix Web Middleware",
-        "Docker",
-        "Github Actions"
-      ],
-      "updated": "3 years ago",
-      "pushedAt": "2024-01-07T06:42:22Z",
-      "license": "—",
-      "langs": [
-        {
-          "pct": 98,
-          "name": "Rust"
-        },
-        {
-          "pct": 1,
-          "name": "Makefile"
-        },
-        {
-          "pct": 1,
-          "name": "Dockerfile"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "actix-web",
-        "actix-web-middleware",
-        "docker",
-        "github-actions",
-        "postgresql",
-        "rust",
-        "unit-testing",
-        "unit-tests"
       ],
       "addedAt": "2026-07-15T22:28:32.668300+00:00"
     },
@@ -3515,6 +3432,104 @@
       "addedAt": "2026-07-15T22:28:32.668300+00:00"
     },
     {
+      "slug": "complete-restful-api-in-rust",
+      "name": "complete-restful-api-in-rust",
+      "fullName": "wpcodevo/complete-restful-api-in-rust",
+      "category": "DevTools",
+      "stars": 52,
+      "author": "wpcodevo",
+      "avatar": "https://avatars.githubusercontent.com/u/58881120?u=5ca9e608edbfbc347b28048041b02ba40a068837&v=4",
+      "desc": "In this article, you will learn how to build a Rust API with unit testing in mind. This means we will take a modular approach, which will make our lives easier when writing unit tests.",
+      "demo": "https://codevoweb.com/building-a-rust-api-with-unit-testing-in-mind/",
+      "repoUrl": "https://github.com/wpcodevo/complete-restful-api-in-rust",
+      "long1": "In this article, you will learn how to build a Rust API with unit testing in mind. This means we will take a modular approach, which will make our lives easier when writing unit tests. Maintained by wpcodevo on GitHub, where it has earned 52 stars from the community.",
+      "long2": "It's actively developed around actix-web, actix-web-middleware, docker, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Rust",
+        "Actix Web",
+        "Actix Web Middleware",
+        "Docker",
+        "Github Actions"
+      ],
+      "updated": "3 years ago",
+      "pushedAt": "2024-01-07T06:42:22Z",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 98,
+          "name": "Rust"
+        },
+        {
+          "pct": 1,
+          "name": "Makefile"
+        },
+        {
+          "pct": 1,
+          "name": "Dockerfile"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "actix-web",
+        "actix-web-middleware",
+        "docker",
+        "github-actions",
+        "postgresql",
+        "rust",
+        "unit-testing",
+        "unit-tests"
+      ],
+      "addedAt": "2026-07-15T22:28:32.668300+00:00"
+    },
+    {
+      "slug": "hackernews-prism",
+      "name": "hackernews-prism",
+      "fullName": "kaleidawave/hackernews-prism",
+      "category": "DevTools",
+      "stars": 51,
+      "author": "kaleidawave",
+      "avatar": "https://avatars.githubusercontent.com/u/26967284?u=85278e229e2d2f8a00c04510d7f4640e12e2af60&v=4",
+      "desc": "A clone of Hacker News built with Prism, Rust and Actix-web",
+      "demo": "https://kaleidawave.github.io/posts/hackernews-clone-prism-rust/",
+      "repoUrl": "https://github.com/kaleidawave/hackernews-prism",
+      "long1": "A clone of Hacker News built with Prism, Rust and Actix-web. Maintained by kaleidawave on GitHub, where it has earned 51 stars from the community.",
+      "long2": "It's actively developed around hackernews-clone, prism-compiler, isomorphic, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Rust",
+        "Hackernews Clone",
+        "Prism Compiler",
+        "Isomorphic",
+        "Hydration"
+      ],
+      "updated": "5 years ago",
+      "pushedAt": "2021-03-22T20:15:30Z",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 95,
+          "name": "Rust"
+        },
+        {
+          "pct": 3,
+          "name": "HTML"
+        },
+        {
+          "pct": 2,
+          "name": "CSS"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "hackernews-clone",
+        "prism-compiler",
+        "isomorphic",
+        "hydration",
+        "rust-lang",
+        "actix-web"
+      ],
+      "addedAt": "2026-07-15T22:28:32.668300+00:00"
+    },
+    {
       "slug": "rust-cms",
       "name": "rust_cms",
       "fullName": "TianLangStudio/rust_cms",
@@ -3566,54 +3581,6 @@
         "seo-friendly",
         "website",
         "website-development"
-      ],
-      "addedAt": "2026-07-15T22:28:32.668300+00:00"
-    },
-    {
-      "slug": "hackernews-prism",
-      "name": "hackernews-prism",
-      "fullName": "kaleidawave/hackernews-prism",
-      "category": "DevTools",
-      "stars": 51,
-      "author": "kaleidawave",
-      "avatar": "https://avatars.githubusercontent.com/u/26967284?u=85278e229e2d2f8a00c04510d7f4640e12e2af60&v=4",
-      "desc": "A clone of Hacker News built with Prism, Rust and Actix-web",
-      "demo": "https://kaleidawave.github.io/posts/hackernews-clone-prism-rust/",
-      "repoUrl": "https://github.com/kaleidawave/hackernews-prism",
-      "long1": "A clone of Hacker News built with Prism, Rust and Actix-web. Maintained by kaleidawave on GitHub, where it has earned 51 stars from the community.",
-      "long2": "It's actively developed around hackernews-clone, prism-compiler, isomorphic, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Rust",
-        "Hackernews Clone",
-        "Prism Compiler",
-        "Isomorphic",
-        "Hydration"
-      ],
-      "updated": "5 years ago",
-      "pushedAt": "2021-03-22T20:15:30Z",
-      "license": "—",
-      "langs": [
-        {
-          "pct": 95,
-          "name": "Rust"
-        },
-        {
-          "pct": 3,
-          "name": "HTML"
-        },
-        {
-          "pct": 2,
-          "name": "CSS"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "hackernews-clone",
-        "prism-compiler",
-        "isomorphic",
-        "hydration",
-        "rust-lang",
-        "actix-web"
       ],
       "addedAt": "2026-07-15T22:28:32.668300+00:00"
     },
@@ -3711,48 +3678,6 @@
       "addedAt": "2026-07-15T22:28:32.668300+00:00"
     },
     {
-      "slug": "openapi-rs",
-      "name": "openapi-rs",
-      "fullName": "baerwang/openapi-rs",
-      "category": "APIs",
-      "stars": 45,
-      "author": "baerwang",
-      "avatar": "https://avatars.githubusercontent.com/u/52104949?u=0291b66f0106fcdbec8b31b69412e645f571c1cb&v=4",
-      "desc": "A powerful Rust library for OpenAPI 3.1,3.2 specification parsing, validation, and request handling.",
-      "demo": null,
-      "repoUrl": "https://github.com/baerwang/openapi-rs",
-      "long1": "A powerful Rust library for OpenAPI 3.1,3.2 specification parsing, validation, and request handling. Maintained by baerwang on GitHub, where it has earned 45 stars from the community.",
-      "long2": "It's actively developed around openapi, validator, rust, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Openapi",
-        "Validator",
-        "Rust",
-        "Api"
-      ],
-      "updated": "7 weeks ago",
-      "pushedAt": "2026-06-22T09:56:24Z",
-      "license": "Apache-2.0",
-      "langs": [
-        {
-          "pct": 100,
-          "name": "Rust"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "openapi",
-        "validator",
-        "rust",
-        "api",
-        "gateway-api",
-        "apis",
-        "actix-web",
-        "web",
-        "axum"
-      ],
-      "addedAt": "2026-07-15T22:28:32.668300+00:00"
-    },
-    {
       "slug": "google-github-oauth2-rust",
       "name": "google-github-oauth2-rust",
       "fullName": "wpcodevo/google-github-oauth2-rust",
@@ -3772,7 +3697,7 @@
         "Google Oauth",
         "Google Oauth2"
       ],
-      "updated": "3 years ago",
+      "updated": "4 years ago",
       "pushedAt": "2023-02-16T13:46:43Z",
       "license": "—",
       "langs": [
@@ -3805,27 +3730,27 @@
       "addedAt": "2026-07-15T22:28:32.668300+00:00"
     },
     {
-      "slug": "rayspace-dev",
-      "name": "rayspace.dev",
-      "fullName": "rxsp/rayspace.dev",
-      "category": "Blogs",
-      "stars": 44,
-      "author": "rxsp",
-      "avatar": "https://avatars.githubusercontent.com/u/83374176?u=25ab9da5d3f4edaa19e07c0b3dc21613e7cbf9cd&v=4",
-      "desc": "🦀 My portfolio built with Rust and core web technologies.",
-      "demo": "https://rayspace.dev",
-      "repoUrl": "https://github.com/rxsp/rayspace.dev",
-      "long1": "🦀 My portfolio built with Rust and core web technologies. Maintained by rxsp on GitHub, where it has earned 44 stars from the community.",
-      "long2": "It's actively developed around blog, portfolio, rust, and is a solid reference for anyone building with these tools.",
+      "slug": "openapi-rs",
+      "name": "openapi-rs",
+      "fullName": "baerwang/openapi-rs",
+      "category": "APIs",
+      "stars": 45,
+      "author": "baerwang",
+      "avatar": "https://avatars.githubusercontent.com/u/52104949?u=0291b66f0106fcdbec8b31b69412e645f571c1cb&v=4",
+      "desc": "A powerful Rust library for OpenAPI 3.1,3.2 specification parsing, validation, and request handling.",
+      "demo": null,
+      "repoUrl": "https://github.com/baerwang/openapi-rs",
+      "long1": "A powerful Rust library for OpenAPI 3.1,3.2 specification parsing, validation, and request handling. Maintained by baerwang on GitHub, where it has earned 45 stars from the community.",
+      "long2": "It's actively developed around openapi, validator, rust, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "Blog",
-        "Portfolio",
+        "Openapi",
+        "Validator",
         "Rust",
-        "Actix Web"
+        "Api"
       ],
-      "updated": "11 months ago",
-      "pushedAt": "2025-09-14T15:31:10Z",
-      "license": "AGPL-3.0",
+      "updated": "2 months ago",
+      "pushedAt": "2026-06-22T09:56:24Z",
+      "license": "Apache-2.0",
       "langs": [
         {
           "pct": 100,
@@ -3834,10 +3759,89 @@
       ],
       "versions": [],
       "topics": [
-        "blog",
-        "portfolio",
+        "openapi",
+        "validator",
         "rust",
-        "actix-web"
+        "api",
+        "gateway-api",
+        "apis",
+        "actix-web",
+        "web",
+        "axum"
+      ],
+      "addedAt": "2026-07-15T22:28:32.668300+00:00"
+    },
+    {
+      "slug": "nika",
+      "name": "nika",
+      "fullName": "supernovae-st/nika",
+      "category": "DevTools",
+      "stars": 44,
+      "author": "supernovae-st",
+      "avatar": "https://avatars.githubusercontent.com/u/33066282?v=4",
+      "desc": "Intent as Code | the workflow language for AI. One file, 4 verbs, one Rust binary. Local-first, any model, AGPL-3.0. 🦋",
+      "demo": "https://nika.sh",
+      "repoUrl": "https://github.com/supernovae-st/nika",
+      "long1": "Intent as Code | the workflow language for AI. One file, 4 verbs, one Rust binary. Local-first, any model, AGPL-3.0. 🦋. Maintained by supernovae-st on GitHub, where it has earned 44 stars from the community.",
+      "long2": "It's actively developed around automation, cli, devops, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Automation",
+        "Cli",
+        "Devops",
+        "Rust"
+      ],
+      "updated": "4 weeks ago",
+      "pushedAt": "2026-08-11T16:15:47Z",
+      "license": "AGPL-3.0",
+      "langs": [
+        {
+          "pct": 96,
+          "name": "Rust"
+        },
+        {
+          "pct": 3,
+          "name": "Shell"
+        },
+        {
+          "pct": 1,
+          "name": "HTML"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/supernovae-st/nika/releases/tag/v0.108.0",
+          "name": "v0.108.0"
+        },
+        {
+          "url": "https://github.com/supernovae-st/nika/releases/tag/v0.107.2",
+          "name": "v0.107.2"
+        },
+        {
+          "url": "https://github.com/supernovae-st/nika/releases/tag/v0.107.1",
+          "name": "v0.107.1"
+        },
+        {
+          "url": "https://github.com/supernovae-st/nika/releases/tag/v0.107.0",
+          "name": "v0.107.0"
+        },
+        {
+          "url": "https://github.com/supernovae-st/nika/releases/tag/v0.106.1",
+          "name": "v0.106.1"
+        }
+      ],
+      "topics": [
+        "automation",
+        "cli",
+        "devops",
+        "rust",
+        "workflow-engine",
+        "yaml",
+        "agents",
+        "ai",
+        "dag",
+        "llm",
+        "workflow",
+        "mcp"
       ],
       "addedAt": "2026-07-15T22:28:32.668300+00:00"
     },
@@ -3861,7 +3865,7 @@
         "Authentication",
         "Authorization"
       ],
-      "updated": "5 months ago",
+      "updated": "6 months ago",
       "pushedAt": "2026-03-08T09:01:55Z",
       "license": "MIT",
       "langs": [
@@ -3899,6 +3903,101 @@
         "authorization",
         "axum",
         "crate",
+        "rust"
+      ],
+      "addedAt": "2026-07-15T22:28:32.668300+00:00"
+    },
+    {
+      "slug": "rayspace-dev",
+      "name": "rayspace.dev",
+      "fullName": "rxsp/rayspace.dev",
+      "category": "Blogs",
+      "stars": 44,
+      "author": "rxsp",
+      "avatar": "https://avatars.githubusercontent.com/u/83374176?u=25ab9da5d3f4edaa19e07c0b3dc21613e7cbf9cd&v=4",
+      "desc": "🦀 My portfolio built with Rust and core web technologies.",
+      "demo": "https://rayspace.dev",
+      "repoUrl": "https://github.com/rxsp/rayspace.dev",
+      "long1": "🦀 My portfolio built with Rust and core web technologies. Maintained by rxsp on GitHub, where it has earned 44 stars from the community.",
+      "long2": "It's actively developed around blog, portfolio, rust, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Blog",
+        "Portfolio",
+        "Rust",
+        "Actix Web"
+      ],
+      "updated": "12 months ago",
+      "pushedAt": "2025-09-14T15:31:10Z",
+      "license": "AGPL-3.0",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "Rust"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "blog",
+        "portfolio",
+        "rust",
+        "actix-web"
+      ],
+      "addedAt": "2026-07-15T22:28:32.668300+00:00"
+    },
+    {
+      "slug": "kairos-rs",
+      "name": "kairos-rs",
+      "fullName": "DanielSarmiento04/kairos-rs",
+      "category": "APIs",
+      "stars": 41,
+      "author": "DanielSarmiento04",
+      "avatar": "https://avatars.githubusercontent.com/u/90324959?u=b99b81a165a27ebf529696977e6a319547e42669&v=4",
+      "desc": "Powerful Api Gateway written in Rust",
+      "demo": "https://danielsarmiento04.github.io/kairos-rs/",
+      "repoUrl": "https://github.com/DanielSarmiento04/kairos-rs",
+      "long1": "Powerful Api Gateway written in Rust. Maintained by DanielSarmiento04 on GitHub, where it has earned 41 stars from the community.",
+      "long2": "It's actively developed around actix-web, apigateway, reqwest, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Actix Web",
+        "Apigateway",
+        "Reqwest",
+        "Rust"
+      ],
+      "updated": "4 months ago",
+      "pushedAt": "2026-05-10T20:20:59Z",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 93,
+          "name": "Rust"
+        },
+        {
+          "pct": 6,
+          "name": "SCSS"
+        },
+        {
+          "pct": 1,
+          "name": "Shell"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/DanielSarmiento04/kairos-rs/releases/tag/v0.2.17",
+          "name": "v0.2.17"
+        },
+        {
+          "url": "https://github.com/DanielSarmiento04/kairos-rs/releases/tag/v0.2.10",
+          "name": "v0.2.10"
+        },
+        {
+          "url": "https://github.com/DanielSarmiento04/kairos-rs/releases/tag/v0.1",
+          "name": "v0.1"
+        }
+      ],
+      "topics": [
+        "actix-web",
+        "apigateway",
+        "reqwest",
         "rust"
       ],
       "addedAt": "2026-07-15T22:28:32.668300+00:00"
@@ -3944,64 +4043,6 @@
         "bcrypt",
         "microservices",
         "restful-api"
-      ],
-      "addedAt": "2026-07-15T22:28:32.668300+00:00"
-    },
-    {
-      "slug": "kairos-rs",
-      "name": "kairos-rs",
-      "fullName": "DanielSarmiento04/kairos-rs",
-      "category": "APIs",
-      "stars": 41,
-      "author": "DanielSarmiento04",
-      "avatar": "https://avatars.githubusercontent.com/u/90324959?u=b99b81a165a27ebf529696977e6a319547e42669&v=4",
-      "desc": "Powerful Api Gateway written in Rust",
-      "demo": "https://danielsarmiento04.github.io/kairos-rs/",
-      "repoUrl": "https://github.com/DanielSarmiento04/kairos-rs",
-      "long1": "Powerful Api Gateway written in Rust. Maintained by DanielSarmiento04 on GitHub, where it has earned 41 stars from the community.",
-      "long2": "It's actively developed around actix-web, apigateway, reqwest, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Actix Web",
-        "Apigateway",
-        "Reqwest",
-        "Rust"
-      ],
-      "updated": "3 months ago",
-      "pushedAt": "2026-05-10T20:20:59Z",
-      "license": "MIT",
-      "langs": [
-        {
-          "pct": 93,
-          "name": "Rust"
-        },
-        {
-          "pct": 6,
-          "name": "SCSS"
-        },
-        {
-          "pct": 1,
-          "name": "Shell"
-        }
-      ],
-      "versions": [
-        {
-          "url": "https://github.com/DanielSarmiento04/kairos-rs/releases/tag/v0.2.17",
-          "name": "v0.2.17"
-        },
-        {
-          "url": "https://github.com/DanielSarmiento04/kairos-rs/releases/tag/v0.2.10",
-          "name": "v0.2.10"
-        },
-        {
-          "url": "https://github.com/DanielSarmiento04/kairos-rs/releases/tag/v0.1",
-          "name": "v0.1"
-        }
-      ],
-      "topics": [
-        "actix-web",
-        "apigateway",
-        "reqwest",
-        "rust"
       ],
       "addedAt": "2026-07-15T22:28:32.668300+00:00"
     },
@@ -4205,7 +4246,7 @@
         "Leptos",
         "Tauri"
       ],
-      "updated": "11 months ago",
+      "updated": "1 year ago",
       "pushedAt": "2025-09-02T06:27:57Z",
       "license": "MIT",
       "langs": [
@@ -4337,37 +4378,45 @@
         "Flask",
         "Performance"
       ],
-      "updated": "7 weeks ago",
-      "pushedAt": "2026-06-18T23:10:48-06:00",
+      "updated": "6 weeks ago",
+      "pushedAt": "2026-07-23T16:19:47Z",
       "license": "MIT",
       "langs": [
         {
-          "name": "Python",
-          "pct": 76.176,
-          "size": 538852
+          "pct": 75,
+          "name": "Python"
         },
         {
-          "name": "Rust",
-          "pct": 23.546,
-          "size": 166556
+          "pct": 25,
+          "name": "Rust"
         },
         {
-          "name": "HTML",
-          "pct": 0.149,
-          "size": 1051
-        },
-        {
-          "name": "Dockerfile",
-          "pct": 0.106,
-          "size": 751
-        },
-        {
-          "name": "CSS",
-          "pct": 0.023,
-          "size": 166
+          "pct": 0,
+          "name": "HTML"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/RUSTxPY/BustAPI/releases/tag/v0.15.0-rc2",
+          "name": "v0.15.0-rc2"
+        },
+        {
+          "url": "https://github.com/RUSTxPY/BustAPI/releases/tag/v0.15.0-rc1",
+          "name": "v0.15.0-rc1"
+        },
+        {
+          "url": "https://github.com/RUSTxPY/BustAPI/releases/tag/v0.14.4",
+          "name": "v0.14.4"
+        },
+        {
+          "url": "https://github.com/RUSTxPY/BustAPI/releases/tag/v0.14.3",
+          "name": "v0.14.3"
+        },
+        {
+          "url": "https://github.com/RUSTxPY/BustAPI/releases/tag/v0.14.2",
+          "name": "v0.14.2"
+        }
+      ],
       "topics": [
         "bustapi",
         "fastapi",
@@ -4557,7 +4606,7 @@
         "Clean Architecture",
         "Dart"
       ],
-      "updated": "9 months ago",
+      "updated": "10 months ago",
       "pushedAt": "2025-11-14T14:24:48Z",
       "license": "—",
       "langs": [
@@ -4605,7 +4654,7 @@
         "Realworld",
         "Rust"
       ],
-      "updated": "4 months ago",
+      "updated": "5 months ago",
       "pushedAt": "2026-04-10T10:14:43Z",
       "license": "—",
       "langs": [
@@ -4720,7 +4769,7 @@
         "Rust",
         "Rust Lang"
       ],
-      "updated": "6 months ago",
+      "updated": "7 months ago",
       "pushedAt": "2026-02-18T08:11:08Z",
       "license": "MIT",
       "langs": [
@@ -4747,101 +4796,6 @@
         "deployment",
         "hosting",
         "todo"
-      ],
-      "addedAt": "2026-07-15T22:28:32.668300+00:00"
-    },
-    {
-      "slug": "nika",
-      "name": "nika",
-      "fullName": "supernovae-st/nika",
-      "category": "DevTools",
-      "stars": 29,
-      "author": "supernovae-st",
-      "avatar": "https://avatars.githubusercontent.com/u/33066282?v=4",
-      "desc": "Intent as Code | the workflow language for AI. One file, 4 verbs, one Rust binary. Local-first, any model, AGPL-3.0. 🦋",
-      "demo": "https://nika.sh",
-      "repoUrl": "https://github.com/supernovae-st/nika",
-      "long1": "Intent as Code | the workflow language for AI. One file, 4 verbs, one Rust binary. Local-first, any model, AGPL-3.0. 🦋. Maintained by supernovae-st on GitHub, where it has earned 29 stars from the community.",
-      "long2": "It's actively developed around agents, ai, ai-agents, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Rust",
-        "Agents",
-        "Ai",
-        "Ai Agents",
-        "Ai Workflows"
-      ],
-      "updated": "4 weeks ago",
-      "pushedAt": "2026-07-13T17:47:54-06:00",
-      "license": "AGPL-3.0",
-      "langs": [
-        {
-          "name": "Rust",
-          "pct": 95.247,
-          "size": 8648796
-        },
-        {
-          "name": "Shell",
-          "pct": 3.229,
-          "size": 293172
-        },
-        {
-          "name": "HTML",
-          "pct": 0.877,
-          "size": 79633
-        },
-        {
-          "name": "Python",
-          "pct": 0.399,
-          "size": 36256
-        },
-        {
-          "name": "JavaScript",
-          "pct": 0.127,
-          "size": 11561
-        },
-        {
-          "name": "CSS",
-          "pct": 0.067,
-          "size": 6104
-        },
-        {
-          "name": "Nix",
-          "pct": 0.027,
-          "size": 2496
-        },
-        {
-          "name": "Dockerfile",
-          "pct": 0.021,
-          "size": 1921
-        },
-        {
-          "name": "Mermaid",
-          "pct": 0.005,
-          "size": 453
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "agents",
-        "ai",
-        "ai-agents",
-        "ai-workflows",
-        "automation",
-        "cli",
-        "dag",
-        "developer-tools",
-        "devops",
-        "llm",
-        "local-ai",
-        "mcp",
-        "ollama",
-        "rust",
-        "self-hosted",
-        "structured-output",
-        "workflow",
-        "workflow-automation",
-        "workflow-engine",
-        "yaml"
       ],
       "addedAt": "2026-07-15T22:28:32.668300+00:00"
     },
@@ -4892,6 +4846,99 @@
         "restful-api",
         "rust",
         "rust-api"
+      ],
+      "addedAt": "2026-07-15T22:28:32.668300+00:00"
+    },
+    {
+      "slug": "actix-web-async-graphql-rbatis",
+      "name": "actix-web-async-graphql-rbatis",
+      "fullName": "zzy/actix-web-async-graphql-rbatis",
+      "category": "DevTools",
+      "stars": 28,
+      "author": "zzy",
+      "avatar": "https://avatars.githubusercontent.com/u/1492400?u=6be061f71e196cee256848c8f59614950db9f2a3&v=4",
+      "desc": "Clean boilerplate for graphql services using actix-web, rhai, async-graphql, surf, rbatis, graphql-client, handlebars-rust, jsonwebtoken, and mysql / postgresql.",
+      "demo": "https://blog.budshome.com/topics/graphql",
+      "repoUrl": "https://github.com/zzy/actix-web-async-graphql-rbatis",
+      "long1": "Clean boilerplate for graphql services using actix-web, rhai, async-graphql, surf, rbatis, graphql-client, handlebars-rust, jsonwebtoken, and mysql / postgresql. Maintained by zzy on GitHub, where it has earned 28 stars from the community.",
+      "long2": "It's actively developed around rust, actix-web, async-graphql, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Rust",
+        "Actix Web",
+        "Async Graphql",
+        "PostgreSQL"
+      ],
+      "updated": "4 years ago",
+      "pushedAt": "2022-06-07T01:22:31Z",
+      "license": "Apache-2.0",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "Rust"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "rust",
+        "actix-web",
+        "async-graphql",
+        "postgresql",
+        "mysql",
+        "graphql-server",
+        "graphql-client",
+        "surf",
+        "jwt-authentication",
+        "jsonwebtoken",
+        "rhai",
+        "embbeded-scripting-rust"
+      ],
+      "addedAt": "2026-07-15T22:28:32.668300+00:00"
+    },
+    {
+      "slug": "fluent-reader",
+      "name": "fluent-reader",
+      "fullName": "nramos0/fluent-reader",
+      "category": "Docs",
+      "stars": 28,
+      "author": "nramos0",
+      "avatar": "https://avatars.githubusercontent.com/u/35410160?v=4",
+      "desc": "Language learning app similar to https://lingq.com/, but open source and free written in Typescript and Rust. Supports English and Chinese.",
+      "demo": "https://fluentreader.cc",
+      "repoUrl": "https://github.com/nramos0/fluent-reader",
+      "long1": "Language learning app similar to https://lingq.com/, but open source and free written in Typescript and Rust. Supports English and Chinese. Maintained by nramos0 on GitHub, where it has earned 28 stars from the community.",
+      "long2": "It's actively developed around language, language-learning, react, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Language",
+        "Language Learning",
+        "React",
+        "Rust"
+      ],
+      "updated": "3 years ago",
+      "pushedAt": "2023-03-24T15:21:38Z",
+      "license": "GPL-3.0",
+      "langs": [
+        {
+          "pct": 62,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 37,
+          "name": "Rust"
+        },
+        {
+          "pct": 1,
+          "name": "JavaScript"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "language",
+        "language-learning",
+        "react",
+        "typescript",
+        "rust",
+        "actix-web"
       ],
       "addedAt": "2026-07-15T22:28:32.668300+00:00"
     },
@@ -4950,140 +4997,6 @@
       "addedAt": "2026-07-15T22:28:32.668300+00:00"
     },
     {
-      "slug": "fluent-reader",
-      "name": "fluent-reader",
-      "fullName": "nramos0/fluent-reader",
-      "category": "Docs",
-      "stars": 28,
-      "author": "nramos0",
-      "avatar": "https://avatars.githubusercontent.com/u/35410160?v=4",
-      "desc": "Language learning app similar to https://lingq.com/, but open source and free written in Typescript and Rust. Supports English and Chinese.",
-      "demo": "https://fluentreader.cc",
-      "repoUrl": "https://github.com/nramos0/fluent-reader",
-      "long1": "Language learning app similar to https://lingq.com/, but open source and free written in Typescript and Rust. Supports English and Chinese. Maintained by nramos0 on GitHub, where it has earned 28 stars from the community.",
-      "long2": "It's actively developed around language, language-learning, react, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Language",
-        "Language Learning",
-        "React",
-        "Rust"
-      ],
-      "updated": "3 years ago",
-      "pushedAt": "2023-03-24T15:21:38Z",
-      "license": "GPL-3.0",
-      "langs": [
-        {
-          "pct": 62,
-          "name": "TypeScript"
-        },
-        {
-          "pct": 37,
-          "name": "Rust"
-        },
-        {
-          "pct": 1,
-          "name": "JavaScript"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "language",
-        "language-learning",
-        "react",
-        "typescript",
-        "rust",
-        "actix-web"
-      ],
-      "addedAt": "2026-07-15T22:28:32.668300+00:00"
-    },
-    {
-      "slug": "actix-web-async-graphql-rbatis",
-      "name": "actix-web-async-graphql-rbatis",
-      "fullName": "zzy/actix-web-async-graphql-rbatis",
-      "category": "DevTools",
-      "stars": 28,
-      "author": "zzy",
-      "avatar": "https://avatars.githubusercontent.com/u/1492400?u=6be061f71e196cee256848c8f59614950db9f2a3&v=4",
-      "desc": "Clean boilerplate for graphql services using actix-web, rhai, async-graphql, surf, rbatis, graphql-client, handlebars-rust, jsonwebtoken, and mysql / postgresql.",
-      "demo": "https://blog.budshome.com/topics/graphql",
-      "repoUrl": "https://github.com/zzy/actix-web-async-graphql-rbatis",
-      "long1": "Clean boilerplate for graphql services using actix-web, rhai, async-graphql, surf, rbatis, graphql-client, handlebars-rust, jsonwebtoken, and mysql / postgresql. Maintained by zzy on GitHub, where it has earned 28 stars from the community.",
-      "long2": "It's actively developed around rust, actix-web, async-graphql, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Rust",
-        "Actix Web",
-        "Async Graphql",
-        "PostgreSQL"
-      ],
-      "updated": "4 years ago",
-      "pushedAt": "2022-06-07T01:22:31Z",
-      "license": "Apache-2.0",
-      "langs": [
-        {
-          "pct": 100,
-          "name": "Rust"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "rust",
-        "actix-web",
-        "async-graphql",
-        "postgresql",
-        "mysql",
-        "graphql-server",
-        "graphql-client",
-        "surf",
-        "jwt-authentication",
-        "jsonwebtoken",
-        "rhai",
-        "embbeded-scripting-rust"
-      ],
-      "addedAt": "2026-07-15T22:28:32.668300+00:00"
-    },
-    {
-      "slug": "yolov5-api-rust",
-      "name": "yolov5-api-rust",
-      "fullName": "masc-it/yolov5-api-rust",
-      "category": "DevTools",
-      "stars": 27,
-      "author": "masc-it",
-      "avatar": "https://avatars.githubusercontent.com/u/40116397?u=47c554296dc786be6c8a6b2d539c37797a985154&v=4",
-      "desc": "Rust API to run predictions with YoloV5 models.",
-      "demo": null,
-      "repoUrl": "https://github.com/masc-it/yolov5-api-rust",
-      "long1": "Rust API to run predictions with YoloV5 models. Maintained by masc-it on GitHub, where it has earned 27 stars from the community.",
-      "long2": "It's actively developed around actix-web, onnx, rust, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Actix Web",
-        "Onnx",
-        "Rust",
-        "Yolov5"
-      ],
-      "updated": "4 years ago",
-      "pushedAt": "2022-08-04T20:51:09Z",
-      "license": "MIT",
-      "langs": [
-        {
-          "pct": 90,
-          "name": "Rust"
-        },
-        {
-          "pct": 10,
-          "name": "Dockerfile"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "actix-web",
-        "onnx",
-        "rust",
-        "yolov5"
-      ],
-      "addedAt": "2026-07-15T22:28:32.668300+00:00"
-    },
-    {
       "slug": "ceobe-canteen-serve",
       "name": "Ceobe-Canteen-Serve",
       "fullName": "Enraged-Dun-Cookie-Development-Team/Ceobe-Canteen-Serve",
@@ -5102,7 +5015,7 @@
         "MongoDB",
         "Rust"
       ],
-      "updated": "2 months ago",
+      "updated": "3 months ago",
       "pushedAt": "2026-06-10T13:29:49Z",
       "license": "AGPL-3.0",
       "langs": [
@@ -5152,144 +5065,43 @@
       "addedAt": "2026-07-15T22:28:32.668300+00:00"
     },
     {
-      "slug": "dagpi",
-      "name": "dagpi",
-      "fullName": "daggy1234/dagpi",
-      "category": "APIs",
-      "stars": 25,
-      "author": "daggy1234",
-      "avatar": "https://avatars.githubusercontent.com/u/60603110?u=660c0603330931fa8838005b465e32de58cbad3b&v=4",
-      "desc": "Dagpi is a powerful and fast api that does image manipulation as well as serves datasets. It is fast and written in rust and python. Perfect for discord bots, social media apps, camera apps and more.",
-      "demo": "http://dagpi.xyz",
-      "repoUrl": "https://github.com/daggy1234/dagpi",
-      "long1": "Dagpi is a powerful and fast api that does image manipulation as well as serves datasets. It is fast and written in rust and python. Perfect for discord bots, social media apps, camera apps and more. Maintained by daggy1234 on GitHub, where it has earned 25 stars from the community.",
-      "long2": "It's actively developed around api, serverless, aws, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "API Blueprint",
-        "Api",
-        "Serverless",
-        "Aws",
-        "Rust"
-      ],
-      "updated": "5 years ago",
-      "pushedAt": "2021-07-24T08:03:24Z",
-      "license": "—",
-      "langs": [
-        {
-          "pct": 100,
-          "name": "API Blueprint"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "api",
-        "serverless",
-        "aws",
-        "rust",
-        "actix-web",
-        "python3",
-        "pillow",
-        "image",
-        "image-processing",
-        "image-manipulation",
-        "datasets",
-        "discord"
-      ],
-      "addedAt": "2026-07-15T22:28:32.668300+00:00"
-    },
-    {
-      "slug": "actix-graphql-react",
-      "name": "actix-graphql-react",
-      "fullName": "zzy/actix-graphql-react",
+      "slug": "yolov5-api-rust",
+      "name": "yolov5-api-rust",
+      "fullName": "masc-it/yolov5-api-rust",
       "category": "DevTools",
-      "stars": 25,
-      "author": "zzy",
-      "avatar": "https://avatars.githubusercontent.com/u/1492400?u=6be061f71e196cee256848c8f59614950db9f2a3&v=4",
-      "desc": "Clean boilerplate for GraphQL server & react-app built with Rust & TypeScript. Backend: actix-web + juniper(GraphQL server) + diesel(ORM); Frontend: react + apollo(GraphQL client).",
-      "demo": "https://blog.budshome.com",
-      "repoUrl": "https://github.com/zzy/actix-graphql-react",
-      "long1": "Clean boilerplate for GraphQL server & react-app built with Rust & TypeScript. Backend: actix-web + juniper(GraphQL server) + diesel(ORM); Frontend: react + apollo(GraphQL client). Maintained by zzy on GitHub, where it has earned 25 stars from the community.",
-      "long2": "It's actively developed around rust-graphql-server, actix-web, juniper, and is a solid reference for anyone building with these tools.",
+      "stars": 27,
+      "author": "masc-it",
+      "avatar": "https://avatars.githubusercontent.com/u/40116397?u=47c554296dc786be6c8a6b2d539c37797a985154&v=4",
+      "desc": "Rust API to run predictions with YoloV5 models.",
+      "demo": null,
+      "repoUrl": "https://github.com/masc-it/yolov5-api-rust",
+      "long1": "Rust API to run predictions with YoloV5 models. Maintained by masc-it on GitHub, where it has earned 27 stars from the community.",
+      "long2": "It's actively developed around actix-web, onnx, rust, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "Rust",
-        "Rust Graphql Server",
         "Actix Web",
-        "Juniper",
-        "Diesel"
-      ],
-      "updated": "6 months ago",
-      "pushedAt": "2026-02-13T17:44:00Z",
-      "license": "Apache-2.0",
-      "langs": [
-        {
-          "pct": 100,
-          "name": "Rust"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "rust-graphql-server",
-        "actix-web",
-        "juniper",
-        "diesel",
-        "postgresql",
-        "typescript-react",
-        "apollo-graphql-client",
-        "mysql"
-      ],
-      "addedAt": "2026-07-15T22:28:32.668300+00:00"
-    },
-    {
-      "slug": "scap-rs",
-      "name": "scap-rs",
-      "fullName": "emo-crab/scap-rs",
-      "category": "DevTools",
-      "stars": 25,
-      "author": "emo-crab",
-      "avatar": "https://avatars.githubusercontent.com/u/99640169?v=4",
-      "desc": "National Vulnerability Database (NVD) implemented by rust",
-      "demo": "https://scap.kali-team.cn/",
-      "repoUrl": "https://github.com/emo-crab/scap-rs",
-      "long1": "National Vulnerability Database (NVD) implemented by rust. Maintained by emo-crab on GitHub, where it has earned 25 stars from the community.",
-      "long2": "It's actively developed around cpe, cve, cvss, and is a solid reference for anyone building with these tools.",
-      "stack": [
+        "Onnx",
         "Rust",
-        "Cpe",
-        "Cve",
-        "Cvss",
-        "Nvd"
+        "Yolov5"
       ],
-      "updated": "3 months ago",
-      "pushedAt": "2026-05-01T07:54:15Z",
-      "license": "GPL-3.0",
+      "updated": "4 years ago",
+      "pushedAt": "2022-08-04T20:51:09Z",
+      "license": "MIT",
       "langs": [
         {
-          "pct": 100,
+          "pct": 90,
           "name": "Rust"
         },
         {
-          "pct": 0,
+          "pct": 10,
           "name": "Dockerfile"
-        },
-        {
-          "pct": 0,
-          "name": "HTML"
         }
       ],
       "versions": [],
       "topics": [
-        "cpe",
-        "cve",
-        "cvss",
-        "nvd",
-        "rust",
-        "cwe",
-        "cvssv3",
-        "cvssv4",
         "actix-web",
-        "yew",
-        "scap",
-        "exploit"
+        "onnx",
+        "rust",
+        "yolov5"
       ],
       "addedAt": "2026-07-15T22:28:32.668300+00:00"
     },
@@ -5336,6 +5148,148 @@
         "rust-lang",
         "seaorm",
         "webapp"
+      ],
+      "addedAt": "2026-07-15T22:28:32.668300+00:00"
+    },
+    {
+      "slug": "actix-graphql-react",
+      "name": "actix-graphql-react",
+      "fullName": "zzy/actix-graphql-react",
+      "category": "DevTools",
+      "stars": 25,
+      "author": "zzy",
+      "avatar": "https://avatars.githubusercontent.com/u/1492400?u=6be061f71e196cee256848c8f59614950db9f2a3&v=4",
+      "desc": "Clean boilerplate for GraphQL server & react-app built with Rust & TypeScript. Backend: actix-web + juniper(GraphQL server) + diesel(ORM); Frontend: react + apollo(GraphQL client).",
+      "demo": "https://blog.budshome.com",
+      "repoUrl": "https://github.com/zzy/actix-graphql-react",
+      "long1": "Clean boilerplate for GraphQL server & react-app built with Rust & TypeScript. Backend: actix-web + juniper(GraphQL server) + diesel(ORM); Frontend: react + apollo(GraphQL client). Maintained by zzy on GitHub, where it has earned 25 stars from the community.",
+      "long2": "It's actively developed around rust-graphql-server, actix-web, juniper, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Rust",
+        "Rust Graphql Server",
+        "Actix Web",
+        "Juniper",
+        "Diesel"
+      ],
+      "updated": "7 months ago",
+      "pushedAt": "2026-02-13T17:44:00Z",
+      "license": "Apache-2.0",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "Rust"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "rust-graphql-server",
+        "actix-web",
+        "juniper",
+        "diesel",
+        "postgresql",
+        "typescript-react",
+        "apollo-graphql-client",
+        "mysql"
+      ],
+      "addedAt": "2026-07-15T22:28:32.668300+00:00"
+    },
+    {
+      "slug": "scap-rs",
+      "name": "scap-rs",
+      "fullName": "emo-crab/scap-rs",
+      "category": "DevTools",
+      "stars": 25,
+      "author": "emo-crab",
+      "avatar": "https://avatars.githubusercontent.com/u/99640169?v=4",
+      "desc": "National Vulnerability Database (NVD) implemented by rust",
+      "demo": "https://scap.kali-team.cn/",
+      "repoUrl": "https://github.com/emo-crab/scap-rs",
+      "long1": "National Vulnerability Database (NVD) implemented by rust. Maintained by emo-crab on GitHub, where it has earned 25 stars from the community.",
+      "long2": "It's actively developed around cpe, cve, cvss, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Rust",
+        "Cpe",
+        "Cve",
+        "Cvss",
+        "Nvd"
+      ],
+      "updated": "4 months ago",
+      "pushedAt": "2026-05-01T07:54:15Z",
+      "license": "GPL-3.0",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "Rust"
+        },
+        {
+          "pct": 0,
+          "name": "Dockerfile"
+        },
+        {
+          "pct": 0,
+          "name": "HTML"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "cpe",
+        "cve",
+        "cvss",
+        "nvd",
+        "rust",
+        "cwe",
+        "cvssv3",
+        "cvssv4",
+        "actix-web",
+        "yew",
+        "scap",
+        "exploit"
+      ],
+      "addedAt": "2026-07-15T22:28:32.668300+00:00"
+    },
+    {
+      "slug": "dagpi",
+      "name": "dagpi",
+      "fullName": "daggy1234/dagpi",
+      "category": "APIs",
+      "stars": 25,
+      "author": "daggy1234",
+      "avatar": "https://avatars.githubusercontent.com/u/60603110?u=660c0603330931fa8838005b465e32de58cbad3b&v=4",
+      "desc": "Dagpi is a powerful and fast api that does image manipulation as well as serves datasets. It is fast and written in rust and python. Perfect for discord bots, social media apps, camera apps and more.",
+      "demo": "http://dagpi.xyz",
+      "repoUrl": "https://github.com/daggy1234/dagpi",
+      "long1": "Dagpi is a powerful and fast api that does image manipulation as well as serves datasets. It is fast and written in rust and python. Perfect for discord bots, social media apps, camera apps and more. Maintained by daggy1234 on GitHub, where it has earned 25 stars from the community.",
+      "long2": "It's actively developed around api, serverless, aws, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "API Blueprint",
+        "Api",
+        "Serverless",
+        "Aws",
+        "Rust"
+      ],
+      "updated": "5 years ago",
+      "pushedAt": "2021-07-24T08:03:24Z",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "API Blueprint"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "api",
+        "serverless",
+        "aws",
+        "rust",
+        "actix-web",
+        "python3",
+        "pillow",
+        "image",
+        "image-processing",
+        "image-manipulation",
+        "datasets",
+        "discord"
       ],
       "addedAt": "2026-07-15T22:28:32.668300+00:00"
     },
@@ -5393,6 +5347,54 @@
       "addedAt": "2026-07-15T22:28:32.668300+00:00"
     },
     {
+      "slug": "oganesson-rs",
+      "name": "oganesson-rs",
+      "fullName": "noble-gase/oganesson-rs",
+      "category": "APIs",
+      "stars": 24,
+      "author": "noble-gase",
+      "avatar": "https://avatars.githubusercontent.com/u/202591505?u=766478bd4e0c3bfbf1eac084691e8af0b646468a&v=4",
+      "desc": "Rust 开发脚手架",
+      "demo": "https://crates.io/crates/oganesson-rs",
+      "repoUrl": "https://github.com/noble-gase/oganesson-rs",
+      "long1": "Rust 开发脚手架. Maintained by noble-gase on GitHub, where it has earned 24 stars from the community.",
+      "long2": "It's actively developed around api, axum, rust, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Api",
+        "Axum",
+        "Rust",
+        "Salvo"
+      ],
+      "updated": "7 weeks ago",
+      "pushedAt": "2026-07-17T03:35:31Z",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 99,
+          "name": "Rust"
+        },
+        {
+          "pct": 1,
+          "name": "Shell"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/noble-gase/oganesson-rs/releases/tag/v0.1.0",
+          "name": "v0.1.0"
+        }
+      ],
+      "topics": [
+        "api",
+        "axum",
+        "rust",
+        "salvo",
+        "web",
+        "actix-web"
+      ],
+      "addedAt": "2026-07-15T22:28:32.668300+00:00"
+    },
+    {
       "slug": "actix-web-cron-example",
       "name": "actix-web-cron-example",
       "fullName": "patrick-fitzgerald/actix-web-cron-example",
@@ -5427,54 +5429,6 @@
       "addedAt": "2026-07-15T22:28:32.668300+00:00"
     },
     {
-      "slug": "oganesson-rs",
-      "name": "oganesson-rs",
-      "fullName": "noble-gase/oganesson-rs",
-      "category": "APIs",
-      "stars": 24,
-      "author": "noble-gase",
-      "avatar": "https://avatars.githubusercontent.com/u/202591505?u=766478bd4e0c3bfbf1eac084691e8af0b646468a&v=4",
-      "desc": "Rust 开发脚手架",
-      "demo": "https://crates.io/crates/oganesson-rs",
-      "repoUrl": "https://github.com/noble-gase/oganesson-rs",
-      "long1": "Rust 开发脚手架. Maintained by noble-gase on GitHub, where it has earned 24 stars from the community.",
-      "long2": "It's actively developed around api, axum, rust, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Api",
-        "Axum",
-        "Rust",
-        "Salvo"
-      ],
-      "updated": "3 weeks ago",
-      "pushedAt": "2026-07-17T03:35:31Z",
-      "license": "MIT",
-      "langs": [
-        {
-          "pct": 99,
-          "name": "Rust"
-        },
-        {
-          "pct": 1,
-          "name": "Shell"
-        }
-      ],
-      "versions": [
-        {
-          "url": "https://github.com/noble-gase/oganesson-rs/releases/tag/v0.1.0",
-          "name": "v0.1.0"
-        }
-      ],
-      "topics": [
-        "api",
-        "axum",
-        "rust",
-        "salvo",
-        "web",
-        "actix-web"
-      ],
-      "addedAt": "2026-07-15T22:28:32.668300+00:00"
-    },
-    {
       "slug": "rust-mysql-crud-sqlx",
       "name": "rust-mysql-crud-sqlx",
       "fullName": "wpcodevo/rust-mysql-crud-sqlx",
@@ -5494,7 +5448,7 @@
         "Backend Api",
         "Crud"
       ],
-      "updated": "3 years ago",
+      "updated": "4 years ago",
       "pushedAt": "2023-03-02T08:32:19Z",
       "license": "—",
       "langs": [
@@ -5548,7 +5502,7 @@
         "Link Management",
         "Redirect"
       ],
-      "updated": "3 weeks ago",
+      "updated": "7 weeks ago",
       "pushedAt": "2026-07-21T15:36:23Z",
       "license": "MIT",
       "langs": [
@@ -5622,7 +5576,7 @@
         "Rust",
         "Swagger Ui"
       ],
-      "updated": "3 years ago",
+      "updated": "4 years ago",
       "pushedAt": "2023-03-01T12:21:33Z",
       "license": "MIT",
       "langs": [
@@ -5655,67 +5609,6 @@
         "rust",
         "swagger-ui",
         "sea-orm"
-      ],
-      "addedAt": "2026-07-15T22:28:32.668300+00:00"
-    },
-    {
-      "slug": "rust-actix-rest-api-boilerplate",
-      "name": "rust-actix-rest-api-boilerplate",
-      "fullName": "ihahoo/rust-actix-rest-api-boilerplate",
-      "category": "APIs",
-      "stars": 23,
-      "author": "ihahoo",
-      "avatar": "https://avatars.githubusercontent.com/u/18023147?u=7aa714ad42cdcc0b6ff29e48b5f0e48a10cf9e60&v=4",
-      "desc": "A Rust RESTful API server with actix-web",
-      "demo": null,
-      "repoUrl": "https://github.com/ihahoo/rust-actix-rest-api-boilerplate",
-      "long1": "A Rust RESTful API server with actix-web. Maintained by ihahoo on GitHub, where it has earned 23 stars from the community.",
-      "long2": "It's actively developed around rust, actix-web, slog-rs, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Rust",
-        "Actix Web",
-        "Slog Rs",
-        "Tokio"
-      ],
-      "updated": "3 months ago",
-      "pushedAt": "2026-05-04T16:59:13Z",
-      "license": "MIT",
-      "langs": [
-        {
-          "pct": 100,
-          "name": "Rust"
-        }
-      ],
-      "versions": [
-        {
-          "url": "https://github.com/ihahoo/rust-actix-rest-api-boilerplate/releases/tag/v0.3.0",
-          "name": "v0.3.0"
-        },
-        {
-          "url": "https://github.com/ihahoo/rust-actix-rest-api-boilerplate/releases/tag/v0.2.1",
-          "name": "v0.2.1"
-        },
-        {
-          "url": "https://github.com/ihahoo/rust-actix-rest-api-boilerplate/releases/tag/v0.2.0",
-          "name": "v0.2.0"
-        },
-        {
-          "url": "https://github.com/ihahoo/rust-actix-rest-api-boilerplate/releases/tag/v0.1.0",
-          "name": "v0.1.0"
-        }
-      ],
-      "topics": [
-        "rust",
-        "actix-web",
-        "slog-rs",
-        "tokio",
-        "config-rs",
-        "sqlx",
-        "redis-rs",
-        "mobc",
-        "postgres",
-        "rest-api",
-        "docker"
       ],
       "addedAt": "2026-07-15T22:28:32.668300+00:00"
     },
@@ -5762,6 +5655,67 @@
         "api-rest",
         "rust-lang",
         "web"
+      ],
+      "addedAt": "2026-07-15T22:28:32.668300+00:00"
+    },
+    {
+      "slug": "rust-actix-rest-api-boilerplate",
+      "name": "rust-actix-rest-api-boilerplate",
+      "fullName": "ihahoo/rust-actix-rest-api-boilerplate",
+      "category": "APIs",
+      "stars": 23,
+      "author": "ihahoo",
+      "avatar": "https://avatars.githubusercontent.com/u/18023147?u=7aa714ad42cdcc0b6ff29e48b5f0e48a10cf9e60&v=4",
+      "desc": "A Rust RESTful API server with actix-web",
+      "demo": null,
+      "repoUrl": "https://github.com/ihahoo/rust-actix-rest-api-boilerplate",
+      "long1": "A Rust RESTful API server with actix-web. Maintained by ihahoo on GitHub, where it has earned 23 stars from the community.",
+      "long2": "It's actively developed around rust, actix-web, slog-rs, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Rust",
+        "Actix Web",
+        "Slog Rs",
+        "Tokio"
+      ],
+      "updated": "4 months ago",
+      "pushedAt": "2026-05-04T16:59:13Z",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "Rust"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/ihahoo/rust-actix-rest-api-boilerplate/releases/tag/v0.3.0",
+          "name": "v0.3.0"
+        },
+        {
+          "url": "https://github.com/ihahoo/rust-actix-rest-api-boilerplate/releases/tag/v0.2.1",
+          "name": "v0.2.1"
+        },
+        {
+          "url": "https://github.com/ihahoo/rust-actix-rest-api-boilerplate/releases/tag/v0.2.0",
+          "name": "v0.2.0"
+        },
+        {
+          "url": "https://github.com/ihahoo/rust-actix-rest-api-boilerplate/releases/tag/v0.1.0",
+          "name": "v0.1.0"
+        }
+      ],
+      "topics": [
+        "rust",
+        "actix-web",
+        "slog-rs",
+        "tokio",
+        "config-rs",
+        "sqlx",
+        "redis-rs",
+        "mobc",
+        "postgres",
+        "rest-api",
+        "docker"
       ],
       "addedAt": "2026-07-15T22:28:32.668300+00:00"
     },
@@ -5819,6 +5773,53 @@
       "addedAt": "2026-07-15T22:28:32.668300+00:00"
     },
     {
+      "slug": "retro-tools-backend",
+      "name": "retro.tools-backend",
+      "fullName": "d0x2f/retro.tools-backend",
+      "category": "DevTools",
+      "stars": 22,
+      "author": "d0x2f",
+      "avatar": "https://avatars.githubusercontent.com/u/8149130?u=75040f9cc894d220a07ed6e7f71b40c5abe62f60&v=4",
+      "desc": "Web backend for retro.tools",
+      "demo": "https://retro.tools",
+      "repoUrl": "https://github.com/d0x2f/retro.tools-backend",
+      "long1": "Web backend for retro.tools. Maintained by d0x2f on GitHub, where it has earned 22 stars from the community.",
+      "long2": "It's actively developed around rust, agile-development, agile, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Rust",
+        "Agile Development",
+        "Agile",
+        "Agile Methodologies"
+      ],
+      "updated": "4 months ago",
+      "pushedAt": "2026-05-17T16:12:51Z",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 97,
+          "name": "Rust"
+        },
+        {
+          "pct": 2,
+          "name": "Shell"
+        },
+        {
+          "pct": 1,
+          "name": "JavaScript"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "rust",
+        "agile-development",
+        "agile",
+        "agile-methodologies",
+        "actix-web",
+        "firestore"
+      ],
+      "addedAt": "2026-07-15T22:28:32.668300+00:00"
+    },
+    {
       "slug": "dalted",
       "name": "dalted",
       "fullName": "carrascomj/dalted",
@@ -5837,7 +5838,7 @@
         "Image Processing",
         "Color Blindness"
       ],
-      "updated": "3 months ago",
+      "updated": "4 months ago",
       "pushedAt": "2026-05-08T15:57:47Z",
       "license": "Apache-2.0",
       "langs": [
@@ -5865,49 +5866,52 @@
       "addedAt": "2026-07-15T22:28:32.668300+00:00"
     },
     {
-      "slug": "retro-tools-backend",
-      "name": "retro.tools-backend",
-      "fullName": "d0x2f/retro.tools-backend",
+      "slug": "actix-angular-project-template",
+      "name": "actix-angular-project-template",
+      "fullName": "stav121/actix-angular-project-template",
       "category": "DevTools",
-      "stars": 22,
-      "author": "d0x2f",
-      "avatar": "https://avatars.githubusercontent.com/u/8149130?u=75040f9cc894d220a07ed6e7f71b40c5abe62f60&v=4",
-      "desc": "Web backend for retro.tools",
-      "demo": "https://retro.tools",
-      "repoUrl": "https://github.com/d0x2f/retro.tools-backend",
-      "long1": "Web backend for retro.tools. Maintained by d0x2f on GitHub, where it has earned 22 stars from the community.",
-      "long2": "It's actively developed around rust, agile-development, agile, and is a solid reference for anyone building with these tools.",
+      "stars": 21,
+      "author": "stav121",
+      "avatar": "https://avatars.githubusercontent.com/u/25911578?u=2ce789457a2a5817c46796668bfed37ffcc14168&v=4",
+      "desc": "🦀 Project template that uses Actix Web and Angular",
+      "demo": null,
+      "repoUrl": "https://github.com/stav121/actix-angular-project-template",
+      "long1": "🦀 Project template that uses Actix Web and Angular. Maintained by stav121 on GitHub, where it has earned 21 stars from the community.",
+      "long2": "It's actively developed around actix, actix-web, angular, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "Rust",
-        "Agile Development",
-        "Agile",
-        "Agile Methodologies"
+        "TypeScript",
+        "Actix",
+        "Actix Web",
+        "Angular",
+        "Docker"
       ],
-      "updated": "3 months ago",
-      "pushedAt": "2026-05-17T16:12:51Z",
-      "license": "—",
+      "updated": "1 year ago",
+      "pushedAt": "2025-07-01T10:13:03Z",
+      "license": "MIT",
       "langs": [
         {
-          "pct": 97,
+          "pct": 49,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 35,
           "name": "Rust"
         },
         {
-          "pct": 2,
-          "name": "Shell"
-        },
-        {
-          "pct": 1,
-          "name": "JavaScript"
+          "pct": 16,
+          "name": "HTML"
         }
       ],
       "versions": [],
       "topics": [
-        "rust",
-        "agile-development",
-        "agile",
-        "agile-methodologies",
+        "actix",
         "actix-web",
-        "firestore"
+        "angular",
+        "docker",
+        "jwt",
+        "postgresql",
+        "rust",
+        "web"
       ],
       "addedAt": "2026-07-15T22:28:32.668300+00:00"
     },
@@ -5969,56 +5973,6 @@
         "rust-lang"
       ],
       "addedAt": "2026-08-05T04:38:15.797953+00:00"
-    },
-    {
-      "slug": "actix-angular-project-template",
-      "name": "actix-angular-project-template",
-      "fullName": "stav121/actix-angular-project-template",
-      "category": "DevTools",
-      "stars": 21,
-      "author": "stav121",
-      "avatar": "https://avatars.githubusercontent.com/u/25911578?u=2ce789457a2a5817c46796668bfed37ffcc14168&v=4",
-      "desc": "🦀 Project template that uses Actix Web and Angular",
-      "demo": null,
-      "repoUrl": "https://github.com/stav121/actix-angular-project-template",
-      "long1": "🦀 Project template that uses Actix Web and Angular. Maintained by stav121 on GitHub, where it has earned 21 stars from the community.",
-      "long2": "It's actively developed around actix, actix-web, angular, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Actix",
-        "Actix Web",
-        "Angular",
-        "Docker"
-      ],
-      "updated": "1 year ago",
-      "pushedAt": "2025-07-01T10:13:03Z",
-      "license": "MIT",
-      "langs": [
-        {
-          "pct": 49,
-          "name": "TypeScript"
-        },
-        {
-          "pct": 35,
-          "name": "Rust"
-        },
-        {
-          "pct": 16,
-          "name": "HTML"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "actix",
-        "actix-web",
-        "angular",
-        "docker",
-        "jwt",
-        "postgresql",
-        "rust",
-        "web"
-      ],
-      "addedAt": "2026-07-15T22:28:32.668300+00:00"
     },
     {
       "slug": "flashswipe",

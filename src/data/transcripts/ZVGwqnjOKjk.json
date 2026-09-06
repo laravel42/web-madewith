@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 3,
+  "videoId": "ZVGwqnjOKjk",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to build a basic web application using Flask, a lightweight Python web framework. This tutorial covers installing Flask with pip or via an IDE, creating the Flask app object, routing URLs to Python functions, returning responses, and running the development server (including debug mode). Ideal for developers with basic Python knowledge who want to create web pages, serve HTML or JSON, and understand app startup and module guards.",
+  "chapters": [
+    {
+      "title": "Introduction: What is Flask?",
+      "description": "Overview of the instructor and a concise definition of Flask as a Python web framework, plus prerequisites for the series.",
+      "startTime": 0.0,
+      "endTime": 60.0,
+      "slug": "introduction-what-is-flask"
+    },
+    {
+      "title": "Why Learn by Example and Installing Flask",
+      "description": "Rationale for learning via hands-on examples and instructions for installing Flask via pip or through an IDE.",
+      "startTime": 60.0,
+      "endTime": 150.0,
+      "slug": "why-learn-by-example-and-installing-flask"
+    },
+    {
+      "title": "Creating the Flask App Object",
+      "description": "Importing Flask and creating the main app object with the __name__ argument to help Flask determine root paths.",
+      "startTime": 150.0,
+      "endTime": 264.0,
+      "slug": "creating-the-flask-app-object"
+    },
+    {
+      "title": "Routing: Mapping URLs to Python Functions",
+      "description": "How Flask routes tie URLs to Python functions using the @app.route decorator and defining a function that returns a response.",
+      "startTime": 264.0,
+      "endTime": 372.0,
+      "slug": "routing-mapping-urls-to-python-functions"
+    },
+    {
+      "title": "What Returning a Response Means and Starting the Server",
+      "description": "Explanation of returning content (HTML or JSON) to users and the use of the module guard and app.run to start the development server with debug mode.",
+      "startTime": 372.0,
+      "endTime": 509.0,
+      "slug": "what-returning-a-response-means-and-starting-the-server"
+    },
+    {
+      "title": "Closing and Next Steps",
+      "description": "Final reminder about upcoming topics and a brief sign-off.",
+      "startTime": 509.0,
+      "endTime": 514.879,
+      "slug": "closing-and-next-steps"
+    }
+  ],
+  "summary": "## Key Concepts\n\n- **Flask**: A lightweight Python web framework used to build web applications and APIs.\n\n- **Installation**:\n  - Use **pip install flask** or your IDE's package manager (e.g., PyCharm Project Interpreter).\n\n- **App Object**:\n  - Create your app with **app = Flask(__name__)**. Passing **__name__** helps Flask determine the root path for static files and templates.\n\n- **Routing / Mapping**:\n  - Use the decorator **@app.route('path')** to map URLs to Python functions.\n  - Define a function (commonly named after the route, e.g., **index** for '/') and **return** the response (plain text, HTML, or JSON).\n\n- **Running the Server**:\n  - Protect startup with **if __name__ == '__main__': app.run(debug=True)** so the server only starts when the script is executed directly.\n  - **debug=True** enables developer features while developing locally; access the site at **127.0.0.1:5000**.\n\n> [!TIP]\n> Use simple string returns while learning, then switch to templates and static files for real pages.\n\n> [!NOTE]\n> The module guard (__name__ check) prevents the server from auto-starting when the file is imported into other code.\n\n> [!IMPORTANT]\n> Ensure you have a basic Python background before starting Flask; otherwise the concepts and code may be confusing.\n\n## Next Steps\n\n- Explore decorators in more depth, serve HTML templates, add CSS and images, and learn how to return JSON for APIs.",
+  "transcription": "## Introduction: What is Flask?\n\nWhat is going on guys? My name is Bucky Roberts from The New Boston. In this video series I am going to teach you guys how to use Flask. But first of all, WTF is Flask? Well, Flask is a web framework for Python. So in case you guys didn't know, you can actually use Python to make websites. So that's what we're going to be learning in this tutorial. Make sure that you have a firm background knowledge of Python. You don't need to be an expert by any means, but have some background in Python or else the rest of this probably isn't going to make sense.\n\n## Why Learn by Example and Installing Flask\n\nI was actually thinking about just making an entire video at the beginning going over all the features and explaining why Flask is awesome, but then I was like, might as well just hop right into it showing you guys a bunch of examples and then, you know, it's going to become apparent why it's so useful and handy. So that's what we're going to be doing. And of course to use Flask we need to install it on our computer. Make sure that you have Python installed on your computer, of course. If you're using pip then you can just write pip install flask. Or if you're using an IDE, probably PyCharm, and you go to File, Settings, Project Interpreter, you can go ahead and click this button. I already have it installed right here, but if you click this button then you can install Flask. Just search for it and hit install. But I already have it installed. Basically install it just like you do any other package. If you're using Python I'm sure you've done it a hundred times before.\n\n## Creating the Flask App Object\n\nThe very first line of code we actually need to import it, so: from flask import Flask. The first line of actual code that we have to write after the import is app equals Flask. This app is pretty much your Flask object. Inside here what we're going to do is we're going to pass in __name__. A lot of people get confused about why we're passing this in. We actually just pass it in to help out Flask. Think of this as our main app, our main entire website. Whenever we pass in __name__ what we do is we actually help it determine the root path, because later on we're going to be adding images, we're going to be adding CSS to our web pages, and whenever we help Flask determine the root path it helps it find the other files a whole lot easier. So just throw it in there and you're going to be good to go.\n\n## Routing: Mapping URLs to Python Functions\n\nAfter this you're going to be seeing this a lot, and I'm just going to give you guys a real quick overview of what's going on right now. Whenever we have a website we're going to have a bunch of pages: the homepage, a profile section, an about section. All of those different pages we're going to actually connect them to a Python function. This is called routing or mapping. For example: @app.route('/') — forward slash is just the root directory. This is the homepage of your website. If we wanted a profile page it would be something like @app.route('/profile'); a user about page would be @app.route('/about'). Remember, app.route's argument is whatever web page you want to connect. Under here just write def index(): The common convention is to name the function whatever your web page is. Since it's the root homepage we can just name it index. Then we're going to return something, like: return 'This is the homepage.'\n\n## What Returning a Response Means and Starting the Server\n\nThis process is called routing or mapping — it's tying a URL on your website to a Python function. What you need to do whenever you deliver a web page is you need a return statement. This means whenever the user goes to your homepage it's going to return this; in other words, this is what they're going to see. Eventually it'll be HTML, or if you're making some API we might send some JSON, but for this simple example whenever we launch our web server and they go to the homepage it's just going to say 'This is the homepage' on their screen. Now we actually need two more lines of code just to kick off our server and make sure that our website actually runs whenever we run the script, and that is: if __name__ == '__main__': app.run(debug=True). When I say __name__ I really mean dunder name — there are actually two underscores. This says start this app, start this web server. We're developing on our own local computer, but eventually it'll kick off some web server and then your website's going to start running, start delivering all these pages. This line of code is a quick check to make sure that we only start the web server whenever this file is called directly. Sometimes people import this file into another file; this prevents the app from starting in that case. Now check it out: I'm going to right-click and run this and we're going to get a little indicator that it is running. How do we look at it? Go to 127.0.0.1 or localhost on port 5000, refresh, and it's going to say 'This is the homepage.' If you stop the script and go to it, it says this web page is not available. That's another cool thing about Flask — everything is nice and built in. That's how we'll be testing our web pages from here on out: write some code, boot it off, and go to 127.0.0.1:5000. Simple enough; looking good. We understand the basics of this already, but there are a few other things we need to cover, like why we have a decorator, how to get more web pages, and how to add CSS and images. We're going to be covering that. For now I'm actually cooking a lasagna, and if I don't take it out right now it might burn, so I'm going to go do that. You guys play around with it and I'll see you guys in the next video.\n\n## Closing and Next Steps\n\nPlay around with it and I'll see you guys in the next video."
+}

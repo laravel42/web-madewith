@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 3,
+  "videoId": "kJrCd5RcC0g",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to set up a Symfony 6 project from scratch: install the Symfony CLI (or Composer), configure your environment, create a new project, verify PHP and Symfony requirements, run the built-in web server, and explore the project directory including bin, config, public, src, var, and vendor. Practical tips on PATH configuration, version flags, and best practices for working with vendor packages are included.",
+  "chapters": [
+    {
+      "title": "Introduction and goals",
+      "description": "Overview of the video's purpose: creating the first Symfony project and inspecting the project directory.",
+      "startTime": 0.0,
+      "endTime": 8.0,
+      "slug": "introduction-and-goals"
+    },
+    {
+      "title": "Support and project creation approaches",
+      "description": "Author invites support and explains there are four ways to create a Symfony project, recommending the Symfony installer or Composer.",
+      "startTime": 8.0,
+      "endTime": 38.0,
+      "slug": "support-and-project-creation-approaches"
+    },
+    {
+      "title": "Downloading and installing Symfony CLI",
+      "description": "Walkthrough of downloading the Symfony CLI from symfony.com and running the macOS install command in the terminal.",
+      "startTime": 38.0,
+      "endTime": 96.0,
+      "slug": "downloading-and-installing-symfony-cli"
+    },
+    {
+      "title": "Configuring the Symfony CLI path",
+      "description": "Shows options to configure Symfony locally and demonstrates adding the export line to the bashrc file.",
+      "startTime": 96.0,
+      "endTime": 156.0,
+      "slug": "configuring-the-symfony-cli-path"
+    },
+    {
+      "title": "Creating a new project with Symfony CLI",
+      "description": "Navigate to the workspace directory and create a new Symfony project using the symfony new command, including notes on version flags.",
+      "startTime": 156.0,
+      "endTime": 264.0,
+      "slug": "creating-a-new-project-with-symfony-cli"
+    },
+    {
+      "title": "Verifying project creation and Composer alternative",
+      "description": "Checks the created project folder, demonstrates deleting it, and recreating the project using Composer create-project with the skeleton package.",
+      "startTime": 264.0,
+      "endTime": 360.0,
+      "slug": "verifying-project-creation-and-composer-alternative"
+    },
+    {
+      "title": "Project directory, requirements check, and Symfony version",
+      "description": "Change into the new project, remind to run commands from inside the project, check PHP/Symfony requirements, and display the project's Symfony version.",
+      "startTime": 360.0,
+      "endTime": 432.0,
+      "slug": "project-directory-requirements-check-and-symfony-version"
+    },
+    {
+      "title": "Starting the Symfony local web server",
+      "description": "Start the built-in Symfony web server in the background, interpret the output, open the project in the browser, and handle port conflicts.",
+      "startTime": 432.0,
+      "endTime": 460.0,
+      "slug": "starting-the-symfony-local-web-server"
+    },
+    {
+      "title": "Accessing the app and server troubleshooting",
+      "description": "Explains the localhost address and port, how to open the browser via command, and how to stop a conflicting server.",
+      "startTime": 460.0,
+      "endTime": 502.0,
+      "slug": "accessing-the-app-and-server-troubleshooting"
+    },
+    {
+      "title": "Exploring the Symfony project structure",
+      "description": "Go through the default folders and files in a Symfony skeleton project and explain the purpose of bin, config, public, src, var, and vendor.",
+      "startTime": 502.0,
+      "endTime": 629.0,
+      "slug": "exploring-the-symfony-project-structure"
+    },
+    {
+      "title": "Wrap-up and call to action",
+      "description": "Concluding remarks summarizing the video and asking viewers to like and subscribe.",
+      "startTime": 629.0,
+      "endTime": 634.839,
+      "slug": "wrap-up-and-call-to-action"
+    }
+  ],
+  "summary": "## Key Concepts\n\n- **Symfony CLI & Composer**: Two primary ways to create Symfony projects. The Symfony CLI simplifies project creation and local server management; Composer create-project with the **skeleton** package produces a minimal project.\n\n- **Environment prerequisites**:\n  - **PHP 8+** is required for Symfony 6.\n  - Use `symfony check:requirements` to verify your environment.\n\n- **Installing Symfony CLI**:\n  - Download from symfony.com and follow OS-specific instructions.\n  - Add the provided export to your shell config (e.g., **.bashrc**) so the `symfony` command is available.\n\n- **Creating projects**:\n  - `symfony new <name>` creates a new project (defaults to latest Symfony version).\n  - Use `--version=4.0` to specify an older Symfony version if needed.\n  - `composer create-project symfony/skeleton <name>` creates a minimal project via Composer.\n\n- **Local server**:\n  - `symfony server:start -d` runs the web server in the background.\n  - Access via `127.0.0.1:8000` or use `symfony open:local` to open the browser.\n  - If ports conflict, run `symfony server:stop` before starting.\n\n- **Project structure & purposes**:\n  - **bin/**: CLI entry points (`console`).\n  - **config/**: Default application configuration.\n  - **public/**: Document root; `index.php` is the HTTP entry point.\n  - **src/**: Application code folder; classes under the **App** namespace, core application logic.\n  - **var/**: Runtime-generated cache and logs.\n  - **vendor/**: Third-party packages installed by Composer — do not modify directly; extend or override instead.\n\n> [!TIP]\n> Always run project-related commands from inside the project directory.\n\n> [!NOTE]\n> The project skeleton keeps dependencies minimal; additional Symfony components come in as you add functionality.\n\n> [!IMPORTANT]\n> Avoid editing files in **vendor/** to prevent update conflicts; use inheritance or decoration to modify behavior.\n\nSummary: configure the CLI, confirm requirements, create a project with Symfony or Composer, run the local server, and understand the role of each top-level directory to start building Symfony applications safely and efficiently.",
+  "transcription": "## Introduction and goals\n\nWhat's up developers and welcome back to a new video where we're going to set up our first Symfony project and then we'll be diving into our project directory.\n\n## Support and project creation approaches\n\nQuick pause. Do you want to support the channel and want me to continue on creating content? You can support the channel on Patreon right now where you get benefits such as a private Discord group where you can share your coding issues and other developers will help you out. If you are interested to join the link will be in the description down below. Symfony has four different ways on how you could create a project. I won't be covering them all because most of the time you'll be sticking to one or two ways and in my opinion using the Symfony installer or the Composer installer are the way to go.\n\n## Downloading and installing Symfony CLI\n\nBefore we can make use of the Symfony installer we need to create a binary. Currently I'm on Symfony's official website which is symfony.com and in the right corner you'll see a download button. Let's click on it. Right there you'll find an in-depth description on how you can install it on Mac, Linux, or Windows. If you're a Windows user, pause the video, download the setup.exe, and I'll see you back in a bit. If you're a Mac user like I am, let's click on macOS, copy the curl that we have right here, navigate to the CLI — our terminal — and paste it right here. As the URL implies, we're going to get Symfony and we're going to install the Symfony CLI which allows us to install Symfony projects through the CLI. So let's hit enter. Right now you can see that Symfony CLI version 4.26.9 was installed but it's asking us to configure Symfony on our local system.\n\n## Configuring the Symfony CLI path\n\nNow as you can see there are three different ways on how you could do that. Personally, I prefer to add the export inside my bashrc file. So what we can do is to basically copy this line of code that we have, then we need to say well nano .bashrc, go to the bottom and paste it right here, press Ctrl+X and save it, press Y, hit Enter and we're finally ready to create our first project.\n\n## Creating a new project with Symfony CLI\n\nAs you could see I have a folder on my desktop called workspace and this is basically the location where I store coding projects. I also want to save my Symfony project right there. So what we need to do is to change up our directory inside the terminal to my workspace. Now it's pretty simple to do that. We need to write down cd to change directories to our desktop first followed by our workspace. Hit Enter and as you can see we're inside my workspace right now. With the Symfony CLI tool that we just downloaded we should be able to create a new project. To do that we simply need to perform symfony space followed with the keyword new space followed with the project name. For now let's call this project movies. Before we hit Enter and create our first project I want to let you know that you can adjust your Symfony project's version number. By default it will always grab the most up-to-date project version, which will be 6 at this point. If you want to define, let's say, a Symfony 4 project — I don't understand why but sometimes you do — you need to add a flag to your command. How do we define that? Well, that can be done by adding a space double dash version and we need to set it equal to something. In our case we want to set it equal to version 4.0. We're not going to hit Enter because I want the most up-to-date version, so let's remove our flag and let's hit Enter.\n\n## Verifying project creation and Composer alternative\n\nNow as you can see our project is ready inside the workspace folder where it has created a folder called movies. Now let's cd into movies to double check it. Alright, we're in movies so the folder exists. Let's write down an ls and we got our first Symfony project. We did not only install Composer to pull in packages but it also gave us the opportunity to create a Symfony project through the CLI. So what we can do is to go back one directory into our workspace folder by saying cd dot dot. Inside the workspace folder we need to remove our movies folder and create a new project true Composer. So what we can do is to say rm space dash rf — the r stands for recursive removal and the f stands for force — so we're going to force a remove of the folder called movies. Let's hit Enter. Alright. To create a project through Composer we need to write down composer space create dash project. We're going to make a Symfony project forward slash skeleton. We're not done yet because we do need to define the project name so in our case it will be movies again. Now if we hit Enter it's going to install our new project but this might take a second before it's done.\n\n## Project directory, requirements check, and Symfony version\n\nNow let's change directories back into our movies folder. Be aware that if you want to do anything with your project — think about pulling in packages or starting it on your localhost — you do need to be inside the project directory. So you can't run a command that has something to do with your project inside another folder. Like I've mentioned in the previous video, we need PHP 8 or higher installed on our local machine in order to run a Symfony 6 project in the browser. If you're not sure if your local machine is ready to run a Symfony project you can always do a check by saying symfony space check colon requirements. That's it, Enter. Now if you indeed have set up your environment in the right way you can see that you're getting back a message where your system is saying that it's ready to run your Symfony projects. This will look at the version inside your composer file in the root of our project and compare it to the version you got on your local machine. Now there is a command where you can check what the version number of your Symfony project is — that's by saying bin forward slash console space double dash version. As you can see we have set up a Symfony 6.0.0 project.\n\n## Starting the Symfony local web server\n\nI think that we're ready to run our project in the browser. Symfony single line comes with a cool web server that is very easy to use. For this you once again need to be located inside your project directory called movies and perform the symfony space server colon start command and let's also add a flag of d. What this flag will do is starting the web server in the background. Let's hit Enter. It's giving us a warning which is all right, but the most important thing is this right here: it has returned a green box which says that our web server is listening right here and it can be accessed through our localhost right here.\n\n## Accessing the app and server troubleshooting\n\nIf you somehow have a web server running on your localhost and you're getting an error make sure that you run the symfony server colon stop command before you perform this command. The 127.0.0.1 is the standard IPv4 address for your project that you need to run on your localhost. The colon 8000 is a random number but it's the first available port that you have. You can copy this link and place it in the browser or if you're a lazy person as I am there is a command that can do that for you which is called symfony open colon local. All right, it has opened my project in a different browser so let me close it off and go to Brave and as you can see right here our project is up and running.\n\n## Exploring the Symfony project structure\n\nNow what I want to do right now is to go over the project structure that we have so let me navigate back to Visual Studio Code. All right, we have pulled in our Symfony project but there aren't that many folders inside the root of our project. Well, that happened because it uses the project skeleton that we pulled in which won't bring tons of dependencies with it but only the Symfony components that are needed to run your project. At the top of our project directory we've got the bin directory. This folder has only one file and it contains the main CLI entry point which is the console. Below our bin we have a config folder which we honestly won't be using that much since there are some default and sensible configurations right here. There is a public folder which is the root of our directory. You'll find one file right here which is the index.php file and this file will be the main entry point for all dynamic HTTP resources. The most important directory is the src folder right here. Pretty much all code that you'll be writing will be stored right here. If we open the Kernel.php file you'll see that it has a namespace called App and this will be the same for all classes inside the src directory. This is the heart of your application where all the logic happens. Then we have the var folder right here and you'll basically see what this directory is all about: it contains all cache and all log files that are generated at runtime by the application. Finally we have the vendor folder which is a pretty important folder since all packages that are installed through Composer and Symfony itself will be located right here. A tip for you is to never touch this directory. The main reason is that whenever you want to update those packages you'll be running into conflicts. The best way to work with the vendor directory is to simply extend or overwrite functions but we will get there later on.\n\n## Wrap-up and call to action\n\nyou"
+}

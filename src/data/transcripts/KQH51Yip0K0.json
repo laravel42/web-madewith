@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 3,
+  "videoId": "KQH51Yip0K0",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to configure ASP.NET Core MVC by registering MVC services with the built-in dependency injection container and adding the MVC middleware into the request pipeline. This tutorial covers AddMvc vs AddMvcCore, correct middleware ordering (static files before MVC), default routing behavior, creating a Home controller and Index action, diagnosing missing services errors, and environment-based error pages for effective troubleshooting.",
+  "chapters": [
+    {
+      "title": "Overview and purpose",
+      "description": "Introduces the project and explains the two-step process to set up MVC in ASP.NET Core.",
+      "startTime": 0.0,
+      "endTime": 27.0,
+      "slug": "overview-and-purpose"
+    },
+    {
+      "title": "Register MVC services",
+      "description": "Shows where and how to add MVC services to the IServiceCollection inside ConfigureServices using AddMvc.",
+      "startTime": 27.0,
+      "endTime": 66.0,
+      "slug": "register-mvc-services"
+    },
+    {
+      "title": "Add MVC middleware and ordering",
+      "description": "Explains adding the MVC middleware in Configure and why static files middleware must come before MVC middleware.",
+      "startTime": 66.0,
+      "endTime": 166.0,
+      "slug": "add-mvc-middleware-and-ordering"
+    },
+    {
+      "title": "Temporary run middleware and default response",
+      "description": "Shows a temporary Run middleware returning Hello World, demonstrates request flow, and explains default route behavior when controller is missing.",
+      "startTime": 166.0,
+      "endTime": 250.0,
+      "slug": "temporary-run-middleware-and-default-response"
+    },
+    {
+      "title": "Add Home controller and default action",
+      "description": "Creates a Controllers folder and HomeController with an Index action returning a string to satisfy the default route.",
+      "startTime": 250.0,
+      "endTime": 366.0,
+      "slug": "add-home-controller-and-default-action"
+    },
+    {
+      "title": "Routing misses and removing Run middleware",
+      "description": "Demonstrates a routing miss to About controller, shows Hello World fallback, then removes Run middleware to reveal 404 behavior.",
+      "startTime": 366.0,
+      "endTime": 470.0,
+      "slug": "routing-misses-and-removing-run-middleware"
+    },
+    {
+      "title": "Missing MVC services error and development diagnostics",
+      "description": "Shows the error when MVC services are not registered, explains enabling the Developer Exception Page by setting environment to Development, and reads the exception guidance.",
+      "startTime": 470.0,
+      "endTime": 560.0,
+      "slug": "missing-mvc-services-error-and-development-diagnostics"
+    },
+    {
+      "title": "Recap and final steps",
+      "description": "Rebuilds the project to verify everything works again and summarizes the two essential steps to set up MVC.",
+      "startTime": 560.0,
+      "endTime": 630.05,
+      "slug": "recap-and-final-steps"
+    }
+  ],
+  "summary": "## Key Concepts\n\n- **MVC setup steps**\n  - Add the **MVC services** to the dependency injection container by calling **services.AddMvc()** inside **ConfigureServices**.\n  - Add the **MVC middleware** (for example **UseMvcWithDefaultRoute**) to the request pipeline in **Configure**.\n\n> [!IMPORTANT]\n> The MVC middleware requires MVC services to be registered first; otherwise the application throws an exception advising to call AddMvc on IServiceCollection.\n\n## Middleware ordering\n\n- Place **UseStaticFiles** before MVC middleware so static requests (images, CSS, JS) are handled early and short-circuit the pipeline.\n- If a request matches an MVC route, the MVC middleware becomes terminal and subsequent middleware (like a Run handler) will not execute.\n\n## Routing behavior\n\n- **UseMvcWithDefaultRoute** expects a controller and action; with no controller or missing action, it passes the request along the pipeline.\n- If no middleware handles the request, the server returns **404 Not Found**.\n\n## Debugging and environment\n\n- Developer exception details are only shown when **ASPNETCORE_ENVIRONMENT** is **Development** (configured in launchSettings.json).\n\n> [!TIP]\n> Use explicit controllers (e.g., **HomeController** with an **Index** action) to satisfy default routing during initial setup.\n\n## Takeaways\n\n- Two required steps: register services, then wire middleware in the correct order.\n- Use exception details in Development to quickly identify missing registrations or pipeline misconfiguration.",
+  "transcription": "## Overview and purpose\n\nThey say spot 16 of ASP.NET Core tutorial. In this video we'll discuss setting up MVC in ASP.NET Core. This is the same project that we've been working with so far in this video series. We created this project using the MD project template. At the moment we do not have MVC set up for this project. To set up MVC there are two simple steps. The first step is to add the required MVC services to the built-in dependency injection container in ASP.NET Core. We will discuss dependency injection in detail in our upcoming videos. For now let's add all the required MVC services to the dependency injection container.\n\n## Register MVC services\n\nWe do that in this ConfigureServices method of our Startup class and the Startup class is present in this Startup.cs file. To add the MVC services to the dependency injection container all we need to do is on this IServiceCollection instance, which is services, just call AddMvc method. Notice we have two methods: AddMvc and AddMvcCore. We'll discuss the difference between these two methods in detail in our next video. For now let's just understand to add all the required MVC services to the dependency injection container we need to use this AddMvc method.\n\n## Add MVC middleware and ordering\n\nAfter we have the MVC services added to the dependency injection container we need to add MVC middleware to our application's request processing pipeline. We configure our application's request pipeline in this Configure method. I'm going to add the MVC middleware to our application's request processing pipeline after this UseStaticFiles middleware. There's a specific reason for that, we'll discuss that in just a bit. Notice we've got two MVC middlewares: UseMvc and UseMvcWithDefaultRoute. Well this is the difference between these two middlewares in detail in our upcoming videos. For now let's use this middleware UseMvcWithDefaultRoute. We deliberately placed this StaticFiles middleware before the MVC middleware. This order is important because if the request is for a static file like an image, CSS, or JavaScript file then StaticFiles middleware will handle the request and short-circuit the rest of the pipeline. So if the request is for a static file, UseMvcWithDefaultRoute middleware is not executed thereby avoiding unnecessary processing. On the other hand, if the request is an MVC request, StaticFiles middleware will pass that request to UseMvcWithDefaultRoute middleware which will handle the request and produce the response.\n\n## Temporary run middleware and default response\n\nNow I'm going to make another change to keep things simple. Instead of writing the hosting environment name to the response stream let's simply write Hello World. With all these changes in place let's run our application. Notice the request is issued to our application's root URL and in spite of having the MVC middleware configured in our application's request processing pipeline we still see a Hello World message and we know this message is produced by this middleware we have registered using Run method. Now let's understand how this request to our application root URL is processed. We know this request is not for a static file so the StaticFiles middleware will pass that request to the MVC middleware. Now if we take a look at this UseMvcWithDefaultRoute middleware, notice the route we have right here. As the name implies UseMvcWithDefaultRoute middleware configures this default route for our application. If we take a look at the URL we have not explicitly specified the name of the controller or the index action method within the URL. So by default this middleware UseMvcWithDefaultRoute will look for the Home controller and an Index action method within that Home controller. At the moment within our project we don't have a Home controller, so this middleware UseMvcWithDefaultRoute will give up processing the request and passes that request to the next piece of middleware. In this case to the middleware that we have registered using this Run method and this middleware is writing this message Hello World to the response stream. So that's what we see at the moment within the browser.\n\n## Add Home controller and default action\n\nNow let's go ahead and add Home controller to our project. I'm going to place all of our controllers for this project within the Controllers folder. So first let's add a new folder to our project, the Controllers folder. Let's add a new class file. I'm going to name this HomeController. We know UseMvcWithDefaultRoute middleware looks for Index action method within this Home controller class, so let's include a public method. This method is going to return a string and the name of the method is Index and for now all we want this method to do is return a string. With all these changes in place let's run our project again. Notice now we see Hello from MVC. When this request to our application's root URL arrives at this MVC middleware it looks for the Home controller which it will find and then execute this default action, the Index action, so it returns the response from this action method. So when a matching route is found this middleware will become a terminal piece of middleware. That means the pipeline will reverse from this point so the middleware that we have here which we have registered using the Run method will not get the chance to execute and now we see the response produced by the Index action within the Home controller.\n\n## Routing misses and removing Run middleware\n\nNow let's see what's going to happen if we try to invoke the About controller and Index action within that About controller. Notice we are back to the Hello World message and we know this message is produced by this Run middleware. So in this case this UseMvcWithDefaultRoute middleware is not able to find the About controller within our project so it gives up processing the request and passes that to this Run middleware and this middleware is writing this Hello World message which is what we see in the browser. Now let's remove this Run middleware from our application's request processing pipeline, build our solution and reload our webpage. Notice now we see HTTP Not Found error 404. And this makes sense because at the moment we're issuing a request to the Index action within the About controller but if we take a look at our project we do not have About controller. So this MVC middleware will give up processing the request and we do not have any other middlewares in our application's request processing pipeline, so we see this 404 error. On the other hand if we issue a request to the Index action within the Home controller or to the root application URL in both cases we see this message Hello from MVC as expected.\n\n## Missing MVC services error and development diagnostics\n\nNow let's see what's going to happen if we don't add MVC services to the dependency injection container. So let's comment this line, build our solution and then reload this webpage. Notice we see an error page and we don't have much information here. All we see is an error occurred while studying the application. If we take a look at our application's request processing pipeline we have the Developer Exception Page configured but it will only be displayed if the environment is Development. So if we take a look at our launchSettings.json file notice we have set the ASPNETCORE_ENVIRONMENT to Staging and that's the reason we don't see the Developer Exception Page. So let's change this environment variable value to Development, save our changes and then reload this page one more time. Notice now we see the exception details and these details are very useful. The message that we have here: Unable to find the required services. Please add all the required services by calling AddMvc method on the IServiceCollection instance. And this message even tells us where we need to do this. We need to do this inside ConfigureServices method. We have this error because we are trying to use the MVC middleware without first adding the MVC services to the dependency injection container. So the important point to keep in mind is before we use this MVC middleware within our application's request processing pipeline we have to add the MVC services to the dependency injection container by calling the AddMvc method on IServiceCollection instance.\n\n## Recap and final steps\n\nLet's build a solution one more time and reload our page. Notice now everything works again. So two simple steps to set up MVC in ASP.NET Core: first add the MVC services to the dependency injection container, and then add the MVC middleware to our application's request processing pipeline. That's it. Thank you for watching. You."
+}

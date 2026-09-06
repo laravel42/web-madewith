@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 3,
+  "videoId": "pLEq9C07qK0",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Step-by-step deployment of a Laravel application to shared hosting using Hostinger/HPanel, covering compressing the project, uploading via File Manager, unarchiving into public_html, moving files, creating and importing a MySQL database via phpMyAdmin, and wiring credentials in the .env file. Practical tips include manual ZIP deployment, common cPanel/HPanel differences, exporting from local XAMPP, and testing the live site connectivity.",
+  "chapters": [
+    {
+      "title": "Introduction and overview",
+      "description": "Presenter introduces the tutorial purpose, Hostinger HPanel context, and notes about other hosting panels.",
+      "startTime": 0.0,
+      "endTime": 17.0,
+      "slug": "introduction-and-overview"
+    },
+    {
+      "title": "Accessing Hostinger and selecting the domain",
+      "description": "Log into Hostinger, locate the target domain, and open the File Manager in HPanel to prepare for upload.",
+      "startTime": 17.0,
+      "endTime": 60.0,
+      "slug": "accessing-hostinger-and-selecting-the-domain"
+    },
+    {
+      "title": "Preparing and compressing the Laravel project",
+      "description": "Locate the local project folder and compress it into a ZIP archive before uploading to the hosting File Manager.",
+      "startTime": 60.0,
+      "endTime": 240.0,
+      "slug": "preparing-and-compressing-the-laravel-project"
+    },
+    {
+      "title": "Uploading ZIP to public_html and extracting",
+      "description": "Upload the ZIP archive to public_html using File Manager, then unarchive and move project files to the root public_html.",
+      "startTime": 240.0,
+      "endTime": 420.0,
+      "slug": "uploading-zip-to-public-html-and-extracting"
+    },
+    {
+      "title": "Verify site is live and initial database error",
+      "description": "Confirm the Laravel site loads from the domain, then attempt a form action which shows a database connection error indicating missing DB configuration.",
+      "startTime": 420.0,
+      "endTime": 552.0,
+      "slug": "verify-site-is-live-and-initial-database-error"
+    },
+    {
+      "title": "Creating the live MySQL database in Hostinger",
+      "description": "Use Hostinger's Database section to create a new MySQL database and a username with a secure password; save credentials for later.",
+      "startTime": 552.0,
+      "endTime": 660.0,
+      "slug": "creating-the-live-mysql-database-in-hostinger"
+    },
+    {
+      "title": "Exporting local DB and importing to live phpMyAdmin",
+      "description": "Export the local MySQL database from XAMPP/phpMyAdmin as an SQL file, then import that SQL into the newly created live database via phpMyAdmin.",
+      "startTime": 660.0,
+      "endTime": 744.0,
+      "slug": "exporting-local-db-and-importing-to-live-phpmyadmin"
+    },
+    {
+      "title": "Update .env credentials and test connectivity",
+      "description": "Edit the Laravel .env file in public_html to set DB_DATABASE, DB_USERNAME, and DB_PASSWORD to the live credentials, save, then retest a form to confirm success.",
+      "startTime": 744.0,
+      "endTime": 752.0,
+      "slug": "update-env-credentials-and-test-connectivity"
+    },
+    {
+      "title": "Recap and closing notes",
+      "description": "Recap the manual deployment steps and reiterate that the process is the same for other hosting panels; final closing.",
+      "startTime": 752.0,
+      "endTime": 757.22,
+      "slug": "recap-and-closing-notes"
+    }
+  ],
+  "summary": "## Key Concepts\n\n- **Manual ZIP deployment**: Compress your Laravel project into a ZIP archive and upload via hosting File Manager when you don't use FTP or SSH.\n\n- **File placement**: Extract the project into **public_html** (or site root) so the site is accessible from the domain.\n\n- **Database setup**: Create a MySQL database and user in hosting control panel and securely record credentials.\n\n- **Export/Import DB**: Use local phpMyAdmin (XAMPP) to **Export** your local DB as an SQL file and **Import** it into the live phpMyAdmin.\n\n- **Configure .env**: Update **DB_DATABASE**, **DB_USERNAME**, and **DB_PASSWORD** in the Laravel .env file on the server to connect the app to the live database.\n\n- **Test and validate**: Trigger a form or action that uses the DB to confirm connectivity and correct configuration.\n\n> [!TIP] Keep a secure copy of database credentials and backup SQL exports before importing.\n\n> [!NOTE] Different hosts may use cPanel or HPanel; steps are the same but menus differ.\n\n> [!IMPORTANT] Ensure files are moved to the public web root (public_html) so Laravel's public directory is served correctly; incorrect placement can cause 500 errors.",
+  "transcription": "## Introduction and overview\n\nSo today I'm going to show you how you can host or deploy your Laravel application to hosting. The one that I'm going to use in this video is Hostinger hosting. This is not my hosting; actually, this is the hosting of one of my clients and he wants me to deploy his Laravel application. If you have any other hosting then the process will be the same—just the difference is the whole cPanel or HPanel.\n\n## Accessing Hostinger and selecting the domain\n\nWhen you log into Hostinger you will see the home page. To host your application you need to go to Hosting and then find the domain on which you want to host your Laravel application. As you can see I have different domains here; I need to choose the domain on which I want to host my Laravel application. I want to host my Laravel application on this domain, so let's click Manage and it will go to the dashboard of this domain. When you go to this domain you need to click File Manager and this will open up in a new tab. This will actually open a File Manager where your application will be hosted.\n\n## Preparing and compressing the Laravel project\n\nLet me show you the application that I want to host—this is the Laravel application. There are different ways to host your Laravel application, like with FTP or SSH keys, but the one that I am going to use and show you is the manual way. What I need to do is go to the destination folder where my project is located. This is my project, Emerging Publishers. I need to convert this application folder into a compressed ZIP folder. Right click on the application folder, choose the Send to option, and then choose Compressed (zipped) folder. This will convert it into a ZIP folder. Whenever you host your application manually you need to first convert your application folder into a ZIP folder. Let's wait while it compresses. Now the folder has been compressed successfully. Now I need to upload this folder into the public_html folder.\n\n## Uploading ZIP to public_html and extracting\n\nGo to the public_html folder. Currently I just have this .htx s file here. If I go to the domain where I want to upload this application, it is giving a 500 Internal Server Error because I don't have anything uploaded in public_html. Click the Upload button in File Manager, then choose File and navigate to the compressed application. Select the ZIP file and upload it. Upload time depends on internet speed and application size. The folder has been uploaded. Now this folder is a ZIP folder; we need to unarchive it. Right click the ZIP and select Unarchive. It will ask the folder in which you want to unarchive; I want to unarchive into the current folder, public_html, so click Unarchive. The folder is unarchived. Now select all of the application files and move them to public_html. To move into the parent folder (public_html), click the folder icon and then click Move.\n\n## Verify site is live and initial database error\n\nNow we are in the public_html folder and these are the complete folders of our application. If I go to the domain and refresh, our application is live and we do not see any error. This is how we host our application. Now how can we connect this application to the database? If I go to the Contact Us page and fill out some data—some dummy data—and submit, we get an error saying access denied for user. This means the application is not connected to the database. To connect the application to the database we first need to create a database.\n\n## Creating the live MySQL database in Hostinger\n\nGo back to Hosting and click the Database option. You can create multiple databases here. I have some databases already. Let's create a new one and name it EP because the site name is Emerging Publisher, then EP_admin. You can generate a password or add your own; I'll add my own, then adjust to meet requirements with numbers and uppercase. Create the database. Whenever you create a database you should save the credentials in a separate file so you can fetch the information later if you forget. I have created the database and if I scroll down you can see the database we created. Click Enter phpMyAdmin to go to phpMyAdmin for that database.\n\n## Exporting local DB and importing to live phpMyAdmin\n\nThis is our database. I need to upload my database to this live database. First open XAMPP because I have my database on my local machine. I need to export the database from local and import it into the live database. Go to localhost phpMyAdmin and the local database EPDB. Click Export, choose Custom to display all options, then click Export to save the SQL file to Downloads. To upload this SQL database, click Import on the live database server and upload the exported SQL file. Click Go. This will upload the whole database into the live database. Now we have deployed our application, created our database, and deployed our database from localhost to the live server.\n\n## Update .env credentials and test connectivity\n\nTo connect the live database to the application, go to public_html where you uploaded the application and open the .env file of your Laravel application. Find the database credentials and add all credentials of the database you created. Copy the database name, username, and password from the hosting database panel and paste them into the .env file. Save the file. Now send the request again. The request is received successfully, which means our application is running and connected to the database.\n\n## Recap and closing notes\n\nThis is how you can easily deploy or host your Laravel application manually. In this video I used Hostinger, but the process is the same on any cPanel or HPanel: convert your application folder into a ZIP, upload it into your file manager, unarchive it, and ensure your application files are in public_html to be live on your domain."
+}

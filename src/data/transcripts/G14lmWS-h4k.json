@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 3,
+  "videoId": "G14lmWS-h4k",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "A clear walkthrough of Entity Framework Core migrations showing how to create and apply migrations, configure the connection string to a LocalDB instance, inspect databases with SQL Server Object Explorer, use Package Manager Console commands (Add-Migration, Update-Database, Get-Help), and understand how migrations map entity classes and properties to database tables and columns, including respecting attributes like MaxLength.",
+  "chapters": [
+    {
+      "title": "Introduction to EF Core migrations",
+      "description": "Overview of the video series context and the migration concept in Entity Framework Core.",
+      "startTime": 0.0,
+      "endTime": 11.0,
+      "slug": "introduction-to-ef-core-migrations"
+    },
+    {
+      "title": "What migrations do and why they matter",
+      "description": "Define migrations as the mechanism that keeps the database and application entity classes in sync, introduced with an example.",
+      "startTime": 11.0,
+      "endTime": 29.0,
+      "slug": "what-migrations-do-and-why-they-matter"
+    },
+    {
+      "title": "Running the sample and checking the connection string",
+      "description": "Run the sample, observe the SQL exception, and locate the database name in appsettings.json to see where EF Core expects the database.",
+      "startTime": 29.0,
+      "endTime": 72.0,
+      "slug": "running-the-sample-and-checking-the-connection-string"
+    },
+    {
+      "title": "Inspecting LocalDB with SQL Server Object Explorer",
+      "description": "Use SQL Server Object Explorer to look for the EmployeeDB database and confirm it is not present.",
+      "startTime": 72.0,
+      "endTime": 111.0,
+      "slug": "inspecting-localdb-with-sql-server-object-explorer"
+    },
+    {
+      "title": "Using Package Manager Console and Get-Help",
+      "description": "Open the Package Manager Console and explore migration-related commands using Get-Help and IntelliSense.",
+      "startTime": 111.0,
+      "endTime": 200.0,
+      "slug": "using-package-manager-console-and-get-help"
+    },
+    {
+      "title": "Creating the initial migration",
+      "description": "Use Add-Migration to create an initial migration and observe the generated Migrations folder and migration file.",
+      "startTime": 200.0,
+      "endTime": 260.0,
+      "slug": "creating-the-initial-migration"
+    },
+    {
+      "title": "Understanding migration code and model mapping",
+      "description": "Inspect the generated migration code to see how it creates the Employees table and maps entity properties and attributes to columns and constraints.",
+      "startTime": 260.0,
+      "endTime": 358.0,
+      "slug": "understanding-migration-code-and-model-mapping"
+    },
+    {
+      "title": "Applying migrations with Update-Database",
+      "description": "Run Update-Database to apply migrations, create the database and table, and confirm changes in SQL Server Object Explorer.",
+      "startTime": 358.0,
+      "endTime": 440.0,
+      "slug": "applying-migrations-with-update-database"
+    },
+    {
+      "title": "Running the app, empty table, and seeding teaser",
+      "description": "Run the application to show the page loads without the earlier error, verify the table is empty, and mention seeding data in the next video.",
+      "startTime": 440.0,
+      "endTime": 485.0,
+      "slug": "running-the-app-empty-table-and-seeding-teaser"
+    }
+  ],
+  "summary": "## Key Concepts\n\n- **EF Core Migrations**: A mechanism to keep the database schema in sync with application entity classes by generating and applying migration files.\n- **Connection String & LocalDB**: The target database name (EmployeeDB) is specified in appsettings.json; EF Core connects to LocalDB (LocalDB\\MSSQLLocalDB) by that connection string.\n- **Package Manager Console vs .NET CLI**: You can manage migrations from Visual Studio using Package Manager Console or cross-platform with the .NET Core CLI.\n\n## Common Commands\n\n- **Get-Help**: Use Get-Help to discover EF Core commands and arguments. > [!TIP] Use Tab for IntelliSense and autocompletion in Package Manager Console.\n- **Add-Migration <Name>**: Generates a new migration class and adds it to the Migrations folder. The migration reflects DbContext and entity model changes.\n- **Update-Database [Migration]**: Applies migrations to the database; if no migration is specified, the latest is applied. > [!NOTE] Update-Database will create the database if it doesn't exist and then apply schema changes.\n\n## Migration Output and Mapping\n\n- Migrations create SQL to build tables that mirror your **DbSet** names and entity properties.\n- Property types, constraints, and attributes like **MaxLength** are preserved in the generated schema (e.g., Name column with max length 50).\n\n## Verification & Workflow\n\n- After applying migrations, refresh SQL Server Object Explorer to confirm the database and tables exist and inspect columns and data.\n- If the table is empty, you can add rows manually via the UI or implement **data seeding** to populate initial data. > [!IMPORTANT] Applying migrations modifies the database schema—ensure backups or a versioned migration strategy for production.\n\n## Takeaways\n\n- Use migrations to evolve schema reliably alongside code.\n- Keep migrations under source control and apply them using Update-Database or CI/CD database steps.\n- Leverage Get-Help and IntelliSense to learn and run commands safely.",
+  "transcription": "## Introduction to EF Core migrations\n\nThis is part fifty of a ASP.NET Core tutorial. In this video we'll discuss the concept of migrations in Entity Framework Core. What is a migration?\n\n## What migrations do and why they matter\n\nMigration is an Entity Framework Core feature that keeps the database and our application model classes, also called entity classes, in sync with each other. Let's understand what we mean by this with an example.\n\n## Running the sample and checking the connection string\n\nWhen we run the sample project that we have been working with so far in this video series we get this SQL exception: cannot open database EmployeeDB. This error makes sense because we don't have this database created yet. One way to create this database is by creating a migration first and then executing that migration. At this point one question you might have is how does our application know it has to work with this database called EmployeeDB? Well that's because if we take a look at our application configuration file, that is this appsettings.json file, notice we have our connection string right here and we have specified the database name as EmployeeDB and our application is looking for this EmployeeDB database in Microsoft SQL Server LocalDB.\n\n## Inspecting LocalDB with SQL Server Object Explorer\n\nOne of the easiest ways to look at what databases we have within Microsoft SQL Server LocalDB is by using SQL Server Object Explorer. Notice we have the SQL Server node here. When I expand that we see SQL Server LocalDB, LocalDB\\MSSQLLocalDB. When we expand that we have the Databases folder. When we expand that notice we don't see a database with name EmployeeDB and that's the reason we are getting this SQL exception cannot open database EmployeeDB. To have this database created we first have to create a migration.\n\n## Using Package Manager Console and Get-Help\n\nTo work with migrations in ASP.NET Core we can either use the Package Manager Console or the .NET Core CLI. The .NET Core CLI is a cross-platform tool so it works on Windows, macOS, and Linux. Since we are using Visual Studio let's use the Package Manager Console. Click on View -> Other Windows -> Package Manager Console. There are many commands related to migrations. Let's look at some of the common ones. First we have Get-Help command. As the name implies this command provides help. If we want help about EF Core itself then supply this argument about underscore and Entity Framework Core. Let's look at this command in action. The command is Get-Help. Notice when I type Get-Help and then press the Tab key we get IntelliSense. We have Get-Help highlighted. When I press the Tab key again the command is autocompleted to Get-Help about. We want help about Entity Framework Core so I supply the argument about_EntityFrameworkCore and then press the Enter key. There we go. The command completed and we see a lot of help text related to Entity Framework Core and we also have a list of commands that we could use. If we want help with any of these commands we could again use Get-Help. For example if we want help with using Add-Migration command we supply Add-Migration command as the argument to Get-Help. When I hit the Enter key we get help related to using Add-Migration command.\n\n## Creating the initial migration\n\nWe use Add-Migration command to add a new migration. Let's use the command Add-Migration. Again when I press Tab the command is autocompleted. We have to supply a name for the migration. If we don't supply a name let's see what's going to happen. Notice we have a prompt: supply values for the following parameters: name. We have to supply a name to create the migration. Since this is our initial migration let's name our migration InitialMigration and then hit the Enter key. There we go. The command completed successfully and if we take a look at the Solution Explorer, notice we have a folder named Migrations created within our project and inside this folder we have a file with name InitialMigration.\n\n## Understanding migration code and model mapping\n\nIn this file we have code to create a table with name Employees and inside this table we have these columns: ID, Name, Email, Department. At this point you might be thinking why is Entity Framework Core creating a table with name Employees? That's because if we take a look at this AppDbContext file, notice we have a DbSet property on our Employee model class. We named this DbSet property Employees, so the table name here in the migration is Employees and the columns in this table correspond to the properties that we have in our Employee model class. Within our Employee model class we have these properties: ID, Name, Email, and Department. So within the migration code we have the corresponding columns. If we take a look at the Name column for example, it's a data type of string because the Name property data type within our model class is also string. It even respects this MaxLength attribute, so if you look at the Name column within the database notice the column will be created with a maximum length of 50 characters.\n\n## Applying migrations with Update-Database\n\nNow to add this migration we have used Add-Migration command. We don't have this Employees table created yet because we have not executed the migration. To execute the migration we use Update-Database command. Let's look at this in action in the Package Manager Console window. Let's execute Update-Database command. There we go. The command completed. With the Update-Database command we can specify a migration. When we specify a migration then that specific migration will be applied. In our case we did not specify a migration. When a migration is not specified then by default the latest migration will be applied. In our case we only have one migration, the InitialMigration, so that InitialMigration is applied. When this command is executed it first created the EmployeeDB database because we don't have the database. Notice here we have the CREATE DATABASE command. After the database is created it created the Employees table within that database. We can confirm that by refreshing the Databases. Here notice we have EmployeeDB database. Within that we have Employees table and the Employees table has ID, Name, Email, and Department columns. Notice the Name column: it is created with a maximum length of 50 characters.\n\n## Running the app, empty table, and seeding teaser\n\nNow let's run our project and see what's going to happen. Notice now we don't have the SQL exception cannot open database EmployeeDB anymore because we have the database already created. But the page is empty. That's because at the moment our Employees table does not have any data. We can confirm that by right-clicking on the Employees table and then select this option View Data. Notice the table is empty and that's the reason we don't see anything here. If we want we can add a new employee to the Employees table by using this Create Employee form but we are going to take a different approach. We'll discuss how to seed this Employees table with some initial data in our next video. That's it in this video. Thank you for listening."
+}

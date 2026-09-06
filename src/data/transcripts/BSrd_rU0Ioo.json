@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 3,
+  "videoId": "BSrd_rU0Ioo",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to build a productive monorepo using Turborepo to combine Next.js (web) and NestJS (API) projects, manage shared dependencies via root-level workspaces, run and build all apps with a single command, and resolve common issues like dev script alignment and port conflicts. Includes installing global CLIs, adding shared packages such as Zod, and practical tips for organizing apps and node_modules for faster development and simpler dependency sharing.",
+  "chapters": [
+    {
+      "title": "Introduction and goals",
+      "description": "Presenter introduces the tutorial scope: creating a monorepo with Turborepo combining Next.js and NestJS projects.",
+      "startTime": 0.0,
+      "endTime": 30.0,
+      "slug": "introduction-and-goals"
+    },
+    {
+      "title": "Install Turborepo and create the monorepo",
+      "description": "Install the Turbo CLI globally and scaffold a new Turborepo project with the Next.js template.",
+      "startTime": 30.0,
+      "endTime": 96.0,
+      "slug": "install-turborepo-and-create-the-monorepo"
+    },
+    {
+      "title": "Explore generated apps and node_modules layout",
+      "description": "Inspect the apps directory, remove unused sample app, and explain how root node_modules holds shared packages for the monorepo.",
+      "startTime": 96.0,
+      "endTime": 174.0,
+      "slug": "explore-generated-apps-and-node-modules-layout"
+    },
+    {
+      "title": "Install NestJS CLI and create API app",
+      "description": "Install Nest CLI globally and scaffold a new NestJS application inside apps to add an API to the monorepo.",
+      "startTime": 174.0,
+      "endTime": 285.0,
+      "slug": "install-nestjs-cli-and-create-api-app"
+    },
+    {
+      "title": "Share packages from root and explain workspace behavior",
+      "description": "Demonstrate that installing dependencies at the repo root shares them across projects and describe workspaces and why apps live in apps directory.",
+      "startTime": 285.0,
+      "endTime": 354.0,
+      "slug": "share-packages-from-root-and-explain-workspace-behavior"
+    },
+    {
+      "title": "Add dev script and run both apps together",
+      "description": "Modify the NestJS script to match Turborepo expectations, then run npm run dev to start both Next.js and NestJS and switch consoles.",
+      "startTime": 354.0,
+      "endTime": 444.0,
+      "slug": "add-dev-script-and-run-both-apps-together"
+    },
+    {
+      "title": "Install and use shared Zod package",
+      "description": "Install Zod at the repository root and demonstrate using it in both Next.js and NestJS without per-project installation.",
+      "startTime": 444.0,
+      "endTime": 516.0,
+      "slug": "install-and-use-shared-zod-package"
+    },
+    {
+      "title": "Build both projects and final notes on workspaces",
+      "description": "Run a single build command to build all apps, then explain package.json workspaces and conclude the tutorial.",
+      "startTime": 516.0,
+      "endTime": 521.919,
+      "slug": "build-both-projects-and-final-notes-on-workspaces"
+    }
+  ],
+  "summary": "## Key Concepts\n\n- **Monorepo with Turborepo**: Use Turborepo to scaffold and manage multiple apps (Next.js front end and NestJS API) inside a single repository.\n\n- **Workspace layout**:\n  - Place apps under an **apps/** directory.\n  - Root **node_modules** holds shared dependencies for all workspaces.\n  - package.json **workspaces** array declares the contained projects.\n\n- **CLI and scaffolding**:\n  - Install **turbo** globally or use npx to create the repo.\n  - Install **@nestjs/cli** globally to scaffold the NestJS app.\n\n- **Running and scripts**:\n  - Turborepo's dev command scans each workspace's package.json for a **dev** script.\n  - Ensure each app exposes the expected script name (e.g., \"dev\") so Turborepo can run it.\n  - Use arrow keys to toggle between app consoles when running multiple dev servers.\n\n- **Ports and conflicts**:\n  - Avoid port collisions by configuring distinct ports (NestJS changed to 8000 while Next.js used 3000).\n\n- **Sharing packages**:\n  - Install shared libraries (example: **Zod**) at the repo root and import from any app without reinstalling per project.\n  - Confirm the package exists in the root node_modules, not each app's node_modules.\n\n- **Building**:\n  - Running a root-level **npm run build** triggers build scripts across all apps listed in apps/.\n\n> [!TIP]\n> Install commonly used libraries at the repo root to reduce duplication and simplify updates.\n\n> [!NOTE]\n> Turborepo relies on each workspace's package.json scripts—align script names to ensure coordinated runs.\n\n> [!IMPORTANT]\n> Always verify dev ports for each app to prevent runtime conflicts when running multiple servers concurrently.\n\n## Takeaways\n\n- Turborepo simplifies running and building multiple projects together.\n- Workspaces and a shared root node_modules make dependency sharing straightforward.\n- Small config steps—script names and port settings—are crucial for a smooth monorepo developer experience.",
+  "transcription": "## Introduction and goals\n\nIn this video I'm going to show you how you can create a monorepo with Turborepo. We'll be combining a Next.js project and a NestJS project into a single repository using Turborepo. Hi everyone, my name is Vahid and I'm your host on the Sakur channel. If you're interested in learning more about NestJS and Next.js be sure to subscribe to my channel for in-depth tutorials and courses. I'll also be covering more monorepo projects in the future, so let's get started.\n\n## Install Turborepo and create the monorepo\n\nAll right. In the first step we need to install the turbo package. So I want to install it with npm: npm i -g turbo, and then -D? Global because we need to install it globally, right? So let's install that. As you can see it is installed and now we can create a monorepo project with the turbo. So I'm going to say npx create-turbo@latest and it asks where we want to create our turbo repo. I'm going to say install it inside the count directory and then slash nest-next-turbo and then choose the package manager or choose npm. We need to wait until it downloads the packages. It will actually create two applications for us: apps.doc and apps.web. These two projects are actually Next.js projects, and there are packages that can be shared between the projects. Inside this repo we're going to create our Nest application. After installing and installing dependencies of this turbo repo, all right it's done and let's open the monorepo with VS Code.\n\n## Explore generated apps and node_modules layout\n\nAll right. So as you can see we have an apps directory here and inside it we have the doc which is a Next project. As you can see it uses the app directory and it has the latest version of Next. The other project is web that we can use for developing our front-end application. In our use case we don't need these docs here so we can just easily remove docs from our apps directory. If I take a look at our web project you can see there is not a node_modules inside it. The node_modules is in the root path of our turbo repo and it contains all the packages that are required by all the projects inside our monorepo.\n\n## Install NestJS CLI and create API app\n\nSo now let's install NestJS in our monorepo. I open up the terminal and go to the apps directory and inside it we can easily create a new Nest project. First we're going to install the Nest CLI: npm i -g @nestjs/cli because we want to install it globally. All right. Now we can create our NestJS application. As you can see we are inside the apps directory of our turbo repo, so here inside it we're going to say nest new and then put the name of our project. I'm going to go ahead with api and choose the package manager, go with npm. All right it's done and if I go to the apps directory now you can see we have an api project and it is the NestJS application. If I look at the node_modules here you can see it does not contain the packages for our NestJS application, but if I go to the node_modules in the root path of our turbo repo you can see it has the packages for our NestJS project. The @nestjs package is here inside the node_modules within the root path of our application.\n\n## Share packages from root and explain workspace behavior\n\nSo as I said, if we want to share a package between all projects inside our monorepo you can install it in the root path of our turbo repo and then use that package in both projects without installing that package in both projects. We just install it once and use it in both projects. So now let's close the node_modules here and here let's open the turbo.json. Let's close off the terminal. We have a dev object here, and if I open up the terminal again, get back to the root path of our monorepo and let's clear this first, and here let's run npm run dev. As you can see now the web project is running, but the NestJS application is not running. Actually this npm run dev will look for the package.json file in all of the projects that are inside the apps directory. For example it looks for the package.json file inside the Next.js application and it looks for the dev script here and runs this script for us. But if I go to the api directory which contains the NestJS application, open up the package.json, there you can see it doesn't contain the dev script inside the scripts section of the package.json, so Turborepo can't run this application with the dev command.\n\n## Add dev script and run both apps together\n\nSo if I change the start:dev here to just dev and restart our monorepo, so again let's run npm run dev. It runs both applications: api and the web. So we can navigate between these two consoles with arrow keys on the keyboard. This is the Next.js application that is running on port 3000 and this is the Nest application. We have an error here and that's because it tries to run the application on port 3000, but this port is already taken by the Next.js application. So if I go to the src directory of our NestJS application and open up the main.ts file and change the port to, for example, 8000 and save it, you can see now it runs the application without an error. And again with the arrow keys we can navigate between the consoles of our two projects. That's a great tool for creating monorepos.\n\n## Install and use shared Zod package\n\nNow let's install Zod package in the root path of our application and use it in both projects. So let's stop the monorepo and here as you can see we are in the root path of our turbo repo. Let's install Zod package: npm i zod. All right. Now let's go to our Next.js application in the web directory and here inside the homepage let's use the Zod package. So for example let's say const schema = zod.object and then let's create a simple schema: for example name is going to be z.string. Right, it works without any error. So let's run the application again: npm run dev. The Next.js application is running without any error. And now let's use the Zod package inside our NestJS application. So I go to the apps directory and I go to app.service here and let's just create a z schema: const schema = z.object and let's create a simple schema for here again it is going to be z.string. All right. Now if I open up the terminal and navigate to the api project you can see our api application is running without any error, and if I go to the node_modules of the api application we can see that the Zod package is not there but instead it's on the node_modules of our turbo repo project. It's here inside the turbo repo's node_modules. So yeah, that's it for sharing a package between our projects.\n\n## Build both projects and final notes on workspaces\n\nNow let's build our application. So let's stop the server and let's say npm run build. It looks for the build script inside the package.json file of all the projects inside the apps directory. If I run that you can see now our Next.js is in the building process, and in this way we can just build both projects with just one command with Turborepo. As a last thing let's take a look at the package.json file inside the turbo repo and as you can see we have a workspaces array here which actually specifies the workspaces in our application. Simply put, a workspace is a self-contained project inside our monorepo that can be independently developed. That's why we installed the NestJS application in the apps directory; it actually contains all projects inside our mono. That's it for this video. We have created a monorepo with two projects: Next.js and NestJS using Turborepo. If this video was helpful for you please hit the like button and if you haven't subscribed to the channel I have a lot of comprehensive courses and tutorials about Node.js frameworks mainly on Next.js and NestJS. You can consider subscribing to my channel to get informed about updates. Have a nice time and stay tuned for my next video. Bye-bye."
+}

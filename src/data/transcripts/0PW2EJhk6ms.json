@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 3,
+  "videoId": "0PW2EJhk6ms",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn how to call an ASP.NET Web API from jQuery using AJAX, including adding an HTML client, referencing jQuery, wiring click handlers, issuing GET requests to the /api/employees endpoint, parsing JSON results, and updating the DOM. The tutorial covers selecting elements, clearing lists, appending <li> items with employee full names, and explains same-origin concerns when client and API are hosted in different projects.",
+  "chapters": [
+    {
+      "title": "Introduction and goal",
+      "description": "Overview of the lesson: call ASP.NET Web API from jQuery AJAX and update an unordered list with employee names.",
+      "startTime": 0.0,
+      "endTime": 15.0,
+      "slug": "introduction-and-goal"
+    },
+    {
+      "title": "User interaction and desired behavior",
+      "description": "Describe what should happen when the Get All Employees and Clear buttons are clicked.",
+      "startTime": 15.0,
+      "endTime": 90.0,
+      "slug": "user-interaction-and-desired-behavior"
+    },
+    {
+      "title": "Add HTML page and reference jQuery",
+      "description": "Create employees.html in the project and include the jQuery script reference so the page can call the Web API.",
+      "startTime": 90.0,
+      "endTime": 180.0,
+      "slug": "add-html-page-and-reference-jquery"
+    },
+    {
+      "title": "HTML markup: buttons and unordered list",
+      "description": "Add two buttons (Get All Employees and Clear) and an unordered list with IDs for DOM selection.",
+      "startTime": 180.0,
+      "endTime": 300.0,
+      "slug": "html-markup-buttons-and-unordered-list"
+    },
+    {
+      "title": "Select DOM elements and wire click handlers",
+      "description": "Use jQuery to select the unordered list, attach click handlers for the Get All Employees button, and prepare for AJAX calls.",
+      "startTime": 300.0,
+      "endTime": 420.0,
+      "slug": "select-dom-elements-and-wire-click-handlers"
+    },
+    {
+      "title": "AJAX options and success processing",
+      "description": "Configure jQuery.ajax with type GET, the relative /api/employees URL, expect JSON, loop through results, and append list items.",
+      "startTime": 420.0,
+      "endTime": 480.0,
+      "slug": "ajax-options-and-success-processing"
+    },
+    {
+      "title": "Compose full name and append list items",
+      "description": "Build the full name from value.firstName and value.lastName, then append <li> elements to the unordered list.",
+      "startTime": 480.0,
+      "endTime": 504.0,
+      "slug": "compose-full-name-and-append-list-items"
+    },
+    {
+      "title": "Clear button, run demo, and hosting note",
+      "description": "Attach clear button handler to empty the list, run the project to see results, and explain same-project requirement for AJAX.",
+      "startTime": 504.0,
+      "endTime": 509.4,
+      "slug": "clear-button-run-demo-and-hosting-note"
+    }
+  ],
+  "summary": "## Key Concepts\n\n- **jQuery AJAX**: Use $.ajax to call an ASP.NET Web API endpoint. Set `type: 'GET'`, `url: 'api/employees'`, and `dataType: 'json'` for a GET that returns JSON.\n\n- **DOM selection and caching**: Select frequently used elements once (for example, `var employees = $('#unorderedListEmployees')`) to avoid repeated DOM queries.\n\n- **Event handlers**: Wire click handlers with jQuery selectors (`$('#btn').click(function() { ... })`) to trigger AJAX requests and UI updates.\n\n- **Processing results**: Iterate returned JSON with `$.each(data, function(index, value) { ... })`, build a **fullName** from `value.firstName + ' ' + value.lastName`, and append `<li>` items to the unordered list.\n\n- **Clearing content**: Use `empty()` on the cached jQuery collection to clear the list before appending new items or in response to a Clear button.\n\n> [!TIP]\n> Cache selectors (like the unordered list) in a variable to improve readability and performance.\n\n> [!NOTE]\n> The example uses a relative URL (`api/employees`) because the HTML client and Web API are hosted in the same project.\n\n> [!IMPORTANT]\n> If the client and the Web API are hosted in different projects/origins, AJAX requests may fail due to same-origin restrictions; additional configuration (CORS or proxying) is required to allow cross-origin calls.\n\n## Takeaways\n\n- Combine simple HTML controls with jQuery to call Web API endpoints and update the UI.\n- Always expect JSON when calling Web API and use `dataType: 'json'` to let jQuery parse the response.\n- Clear the UI before populating new data to avoid duplicates and stale entries.\n- Understand hosting context: same-project simplifies relative URLs; cross-project calls require handling CORS or other solutions.",
+  "transcription": "## Introduction and goal\n\nThis is part 13 of ASP.NET Web API tutorial. In this video we'll discuss how to call ASP.NET Web API service using jQuery AJAX. So here is what we want to do: we want to design a very simple HTML page with two buttons and an unordered list.\n\n## User interaction and desired behavior\n\nAs you can see here when we click this Get All Employees button we want to call the ASP.NET Web API service using jQuery AJAX, retrieve the employee details, and then display the first and last name within the unordered list. When we click this Clear button we want to clear the unordered list. So let's see how to achieve this. Let's flip to Visual Studio.\n\n## Add HTML page and reference jQuery\n\nThe first thing that we want to do here is add an HTML page to our employee service project. So let's right-click on the project, Add, and we want to add an HTML page. Let's name the page employees.html. We are going to use jQuery to call the ASP.NET Web API service, so we need to reference jQuery on this page. Within our Scripts folder we've got jQuery, so let's drag and drop this on the employees.html page.\n\n## HTML markup: buttons and unordered list\n\nWithin our body section we need two buttons and an unordered list, so let's include the HTML markup required for that. Let's include an input element, let's give it an ID, let's call it btn, and the type is button. Value on the button is Get All Employees. Let's make another copy of this button. The ID of this button is btnClear. The value on the button is Clear. And finally we need an unordered list. Let's give it an ID, let's call it unorderedListEmployees. Within the head section let's include another section for script. We are going to use this section to write the jQuery code to call our ASP.NET Web API service. So when the document is ready we want to execute some code which is going to be part of this anonymous function.\n\n## Select DOM elements and wire click handlers\n\nThe first thing that we want to do here is find this unordered list using its ID, so let's use the jQuery ID selector which is hash, find the unordered list, and then we're going to store the reference in a variable. Let's call the variable employees. We need this unordered list multiple times, so instead of finding it in the DOM every time we're going to use this variable. Now let's associate a click event handler with this Get All Employees button. The ID of the button is btn, so let's use the jQuery ID selector again, find the button, and then wire up click event handler. So when we click the button we want to execute some code which is going to be part of this anonymous function. When we click the button what do we want to do? We want to call the ASP.NET Web API service using jQuery AJAX.\n\n## AJAX options and success processing\n\nLet's use the jQuery ajax function and we'll have to specify a few options to be able to call the ASP.NET Web API service. First we have to tell the type of request that we want to issue. We want to issue a GET request, so type is going to be GET. And the next thing is we want to specify the URL for our ASP.NET Web API service. Notice the HTML page and the ASP.NET Web API service both of them are in the same project, so we can use relative URLs or the full URI. I'm going to use a relative URL. So the URL here for our services API is api/employees. Then when the service returns data we are expecting JSON data, so let's tell that by using dataType option. So the type of data that we are expecting is JSON. When the request completes successfully we want to execute some code which is going to be part of this success function. When the request completes the data will be passed to this anonymous function. What do we want to do with the data? We want to loop through each employee object, retrieve their first and last name, and then display their full name within the unordered list like this. But before that we want to clear, if at all, if there is anything within this unordered list. So what we are going to do here is find the unorderedListEmployees and then empty it out. And now let's use the jQuery each function and then we want to iterate over the data, and as we are iterating over we want to execute some code which is going to be part of this anonymous function. To this function the index of the employee object and the employee object itself are passed.\n\n## Compose full name and append list items\n\nWhat do we want to do with the employee object? We want to retrieve the full name. So first let's create a variable fullName equals: we have the employee object that we are currently iterating over in this variable, so value.firstName plus a space and then value.lastName. So we have the fullName. What do we want to do with this fullName? We want to display that within the unordered list. This variable already has a reference for that, so employees.append a list item and the text within the list item is going to be fullName. And then we want to close the list item.\n\n## Clear button, run demo, and hosting note\n\nNow we need to associate a click event handler for the Clear button as well. The ID for the Clear button is btnClear, so let's again use the jQuery ID selector, find the Clear button, and wire up click event handler. When we click the button we want to execute some code which is going to be part of this anonymous function. What do we want to do when we click the button? We want to clear the unordered list, so we have the variable on that. Let's call empty function. Let's give our solution a build. Build succeeded. Let's run the project by pressing Ctrl+F5. When we click this Get All Employees button notice we get the employee details as expected. When we click the Clear button the unordered list is cleared. Here is the HTML and the jQuery code that we just discussed in this example. Both the client, that is the HTML page which contains our jQuery code, and the ASP.NET Web API service, they are present in the same project that is our employee service project. So the AJAX call is working as expected. But if these two are present in different projects, that is if the client is present in a different project and if the web service is present in a different project, then the AJAX call wouldn't work. In our next video we'll discuss the reasons why the AJAX call wouldn't work if the client and Web API service are in two different projects and we'll also discuss how to get it to work. Please stay tuned. Thank you for listening and have a great day."
+}

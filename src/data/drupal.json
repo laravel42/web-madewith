@@ -1,6 +1,6 @@
 {
   "slug": "drupal",
-  "scrapedAt": "2026-08-10T12:07:31.760934+00:00",
+  "scrapedAt": "2026-09-06T02:26:45.653345+00:00",
   "source": "scrapy-github",
   "totalRepos": 325,
   "projects": [
@@ -127,8 +127,8 @@
         "Environment",
         "Docker"
       ],
-      "updated": "5 weeks ago",
-      "pushedAt": "2026-07-03T05:53:56Z",
+      "updated": "2 months ago",
+      "pushedAt": "2026-06-24T00:24:51Z",
       "license": "MIT",
       "langs": [
         {
@@ -146,6 +146,10 @@
       ],
       "versions": [
         {
+          "url": "https://github.com/lando/lando/releases/tag/v3.26.8",
+          "name": "v3.26.8"
+        },
+        {
           "url": "https://github.com/lando/lando/releases/tag/v3.26.7",
           "name": "v3.26.7"
         },
@@ -160,10 +164,6 @@
         {
           "url": "https://github.com/lando/lando/releases/tag/v3.26.4",
           "name": "v3.26.4"
-        },
-        {
-          "url": "https://github.com/lando/lando/releases/tag/v3.26.3",
-          "name": "v3.26.3"
         }
       ],
       "topics": [
@@ -187,13 +187,13 @@
       "name": "ddev",
       "fullName": "ddev/ddev",
       "category": "DevTools",
-      "stars": 3729,
+      "stars": 3734,
       "author": "ddev",
       "avatar": "https://avatars.githubusercontent.com/u/595986?v=4",
       "desc": "Docker-based local PHP+Node.js web development environments",
       "demo": "https://ddev.com",
       "repoUrl": "https://github.com/ddev/ddev",
-      "long1": "Docker-based local PHP+Node.js web development environments. Maintained by ddev on GitHub, where it has earned 3,729 stars from the community.",
+      "long1": "Docker-based local PHP+Node.js web development environments. Maintained by ddev on GitHub, where it has earned 3,734 stars from the community.",
       "long2": "It's actively developed around drupal, wordpress, development, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Go",
@@ -202,16 +202,16 @@
         "Development",
         "Docker"
       ],
-      "updated": "5 days ago",
-      "pushedAt": "2026-08-05T01:22:46Z",
+      "updated": "4 weeks ago",
+      "pushedAt": "2026-08-11T17:20:05Z",
       "license": "Apache-2.0",
       "langs": [
         {
-          "pct": 83,
+          "pct": 82,
           "name": "Go"
         },
         {
-          "pct": 10,
+          "pct": 11,
           "name": "Shell"
         },
         {
@@ -276,7 +276,7 @@
         "Drupal",
         "Symfony"
       ],
-      "updated": "2 weeks ago",
+      "updated": "6 weeks ago",
       "pushedAt": "2026-07-25T19:35:17Z",
       "license": "—",
       "langs": [
@@ -434,7 +434,7 @@
         "Agriculture",
         "Mapping"
       ],
-      "updated": "4 weeks ago",
+      "updated": "7 weeks ago",
       "pushedAt": "2026-07-16T15:11:12Z",
       "license": "GPL-2.0",
       "langs": [
@@ -506,7 +506,7 @@
         "Docker Compose",
         "Alpine"
       ],
-      "updated": "5 days ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-08-05T03:06:05Z",
       "license": "MIT",
       "langs": [
@@ -551,6 +551,77 @@
         "docker-compose",
         "alpine",
         "arm64"
+      ],
+      "addedAt": "2026-07-15T22:28:32.790199+00:00"
+    },
+    {
+      "slug": "phpantom-lsp",
+      "name": "phpantom_lsp",
+      "fullName": "PHPantom-dev/phpantom_lsp",
+      "category": "DevTools",
+      "stars": 1092,
+      "author": "PHPantom-dev",
+      "avatar": "https://avatars.githubusercontent.com/u/285812083?v=4",
+      "desc": "Fast PHP language server with deep type intelligence. Generics, Laravel, PHPStan annotations. Ready in an instant.",
+      "demo": "https://phpantom-dev.github.io/phpantom_lsp/",
+      "repoUrl": "https://github.com/PHPantom-dev/phpantom_lsp",
+      "long1": "Fast PHP language server with deep type intelligence. Generics, Laravel, PHPStan annotations. Ready in an instant. Maintained by PHPantom-dev on GitHub, where it has earned 1,092 stars from the community.",
+      "long2": "It's actively developed around lsp, lsp-server, php, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Rust",
+        "Lsp",
+        "Lsp Server",
+        "Php",
+        "Laravel"
+      ],
+      "updated": "4 weeks ago",
+      "pushedAt": "2026-08-11T15:40:25Z",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 97,
+          "name": "Rust"
+        },
+        {
+          "pct": 3,
+          "name": "PHP"
+        },
+        {
+          "pct": 0,
+          "name": "Python"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/PHPantom-dev/phpantom_lsp/releases/tag/0.9.0",
+          "name": "0.9.0"
+        },
+        {
+          "url": "https://github.com/PHPantom-dev/phpantom_lsp/releases/tag/0.8.0",
+          "name": "0.8.0"
+        },
+        {
+          "url": "https://github.com/PHPantom-dev/phpantom_lsp/releases/tag/0.7.0",
+          "name": "0.7.0"
+        },
+        {
+          "url": "https://github.com/PHPantom-dev/phpantom_lsp/releases/tag/0.6.0",
+          "name": "0.6.0"
+        },
+        {
+          "url": "https://github.com/PHPantom-dev/phpantom_lsp/releases/tag/0.5.0",
+          "name": "0.5.0"
+        }
+      ],
+      "topics": [
+        "lsp",
+        "lsp-server",
+        "php",
+        "laravel",
+        "neovim-plugin",
+        "phpstorm-plugin",
+        "vscode-extension",
+        "drupal"
       ],
       "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
@@ -601,77 +672,6 @@
         "automation",
         "devsecops",
         "security-dashboard"
-      ],
-      "addedAt": "2026-07-15T22:28:32.790199+00:00"
-    },
-    {
-      "slug": "phpantom-lsp",
-      "name": "phpantom_lsp",
-      "fullName": "PHPantom-dev/phpantom_lsp",
-      "category": "DevTools",
-      "stars": 1068,
-      "author": "PHPantom-dev",
-      "avatar": "https://avatars.githubusercontent.com/u/285812083?v=4",
-      "desc": "Fast PHP language server with deep type intelligence. Generics, Laravel, PHPStan annotations. Ready in an instant.",
-      "demo": "https://phpantom-dev.github.io/phpantom_lsp/",
-      "repoUrl": "https://github.com/PHPantom-dev/phpantom_lsp",
-      "long1": "Fast PHP language server with deep type intelligence. Generics, Laravel, PHPStan annotations. Ready in an instant. Maintained by PHPantom-dev on GitHub, where it has earned 1,068 stars from the community.",
-      "long2": "It's actively developed around lsp, lsp-server, php, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Rust",
-        "Lsp",
-        "Lsp Server",
-        "Php",
-        "Laravel"
-      ],
-      "updated": "6 days ago",
-      "pushedAt": "2026-08-04T20:39:50Z",
-      "license": "MIT",
-      "langs": [
-        {
-          "pct": 96,
-          "name": "Rust"
-        },
-        {
-          "pct": 4,
-          "name": "PHP"
-        },
-        {
-          "pct": 0,
-          "name": "Python"
-        }
-      ],
-      "versions": [
-        {
-          "url": "https://github.com/PHPantom-dev/phpantom_lsp/releases/tag/0.9.0",
-          "name": "0.9.0"
-        },
-        {
-          "url": "https://github.com/PHPantom-dev/phpantom_lsp/releases/tag/0.8.0",
-          "name": "0.8.0"
-        },
-        {
-          "url": "https://github.com/PHPantom-dev/phpantom_lsp/releases/tag/0.7.0",
-          "name": "0.7.0"
-        },
-        {
-          "url": "https://github.com/PHPantom-dev/phpantom_lsp/releases/tag/0.6.0",
-          "name": "0.6.0"
-        },
-        {
-          "url": "https://github.com/PHPantom-dev/phpantom_lsp/releases/tag/0.5.0",
-          "name": "0.5.0"
-        }
-      ],
-      "topics": [
-        "lsp",
-        "lsp-server",
-        "php",
-        "laravel",
-        "neovim-plugin",
-        "phpstorm-plugin",
-        "vscode-extension",
-        "drupal"
       ],
       "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
@@ -764,7 +764,7 @@
         "Java",
         "Jetbrains"
       ],
-      "updated": "3 weeks ago",
+      "updated": "6 weeks ago",
       "pushedAt": "2026-07-22T16:37:09Z",
       "license": "MIT",
       "langs": [
@@ -839,7 +839,7 @@
         "Drupal",
         "Wordpress"
       ],
-      "updated": "8 months ago",
+      "updated": "9 months ago",
       "pushedAt": "2025-12-19T12:16:50Z",
       "license": "MIT",
       "langs": [
@@ -890,13 +890,13 @@
       "name": "next-drupal",
       "fullName": "chapter-three/next-drupal",
       "category": "APIs",
-      "stars": 710,
+      "stars": 711,
       "author": "chapter-three",
       "avatar": "https://avatars.githubusercontent.com/u/697697?v=4",
       "desc": "Next.js for Drupal has everything you need to build a next-generation front-end for your Drupal site: SSG, SSR, and ISR, Multi-site, Authentication, Webforms, Search API, I18n and Preview mode (works with JSON:API and GraphQL).",
       "demo": "https://next-drupal.org",
       "repoUrl": "https://github.com/chapter-three/next-drupal",
-      "long1": "Next.js for Drupal has everything you need to build a next-generation front-end for your Drupal site: SSG, SSR, and ISR, Multi-site, Authentication, Webforms, Search API, I18n and Preview mode (works with JSON:API and GraphQL). Maintained by chapter-three on GitHub, where it has earned 710 stars from the community.",
+      "long1": "Next.js for Drupal has everything you need to build a next-generation front-end for your Drupal site: SSG, SSR, and ISR, Multi-site, Authentication, Webforms, Search API, I18n and Preview mode (works with JSON:API and GraphQL). Maintained by chapter-three on GitHub, where it has earned 711 stars from the community.",
       "long2": "It's actively developed around nextjs, drupal, drupal-modules, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
@@ -905,8 +905,8 @@
         "Drupal Modules",
         "Next Plugin"
       ],
-      "updated": "6 days ago",
-      "pushedAt": "2026-08-04T06:11:53Z",
+      "updated": "4 months ago",
+      "pushedAt": "2026-05-11T20:18:01Z",
       "license": "MIT",
       "langs": [
         {
@@ -977,8 +977,8 @@
         "Joomla",
         "Phalcon"
       ],
-      "updated": "3 months ago",
-      "pushedAt": "2026-04-29T06:49:51Z",
+      "updated": "4 years ago",
+      "pushedAt": "2022-07-03T09:20:40Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -1036,7 +1036,7 @@
         "Coop",
         "Platformcoop"
       ],
-      "updated": "5 days ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-08-05T09:32:39Z",
       "license": "—",
       "langs": [
@@ -1146,7 +1146,7 @@
         "Cms",
         "Phpcms"
       ],
-      "updated": "8 years ago",
+      "updated": "9 years ago",
       "pushedAt": "2018-03-02T06:41:12Z",
       "license": "—",
       "langs": [
@@ -1171,13 +1171,13 @@
       "name": "web-builder",
       "fullName": "biaogebusy/web-builder",
       "category": "UI Kits",
-      "stars": 576,
+      "stars": 578,
       "author": "biaogebusy",
       "avatar": "https://avatars.githubusercontent.com/u/13775821?u=7023b5b5ea2125d32b19e5c7323b7c5ef7b4fa73&v=4",
       "desc": "AI 驱动 UI 生成和发布的低代码平台，基于TailwindCss，通过拖拽可视化快速构建现代化响应式UI、动态自定义组件、多主题、多语言的网站应用。AI-powered UI generation and publishing low code platform, built on TailwindCSS, enabling rapid drag-and-drop visual creation of modern responsive UIs, dynamic customizable components, multi-theme, and multi-language web applications.",
       "demo": "https://builder.design",
       "repoUrl": "https://github.com/biaogebusy/web-builder",
-      "long1": "AI 驱动 UI 生成和发布的低代码平台，基于TailwindCss，通过拖拽可视化快速构建现代化响应式UI、动态自定义组件、多主题、多语言的网站应用。AI-powered UI generation and publishing low code platform, built on TailwindCSS, enabling rapid drag-and-drop visual creation of modern responsive UIs, dynamic customizable components, multi-theme, and multi-language web applications. Maintained by biaogebusy on GitHub, where it has earned 576 stars from the community.",
+      "long1": "AI 驱动 UI 生成和发布的低代码平台，基于TailwindCss，通过拖拽可视化快速构建现代化响应式UI、动态自定义组件、多主题、多语言的网站应用。AI-powered UI generation and publishing low code platform, built on TailwindCSS, enabling rapid drag-and-drop visual creation of modern responsive UIs, dynamic customizable components, multi-theme, and multi-language web applications. Maintained by biaogebusy on GitHub, where it has earned 578 stars from the community.",
       "long2": "It's actively developed around angular, drupal, frond-end, and is a solid reference for anyone building with these tools.",
       "stack": [
         "TypeScript",
@@ -1186,8 +1186,8 @@
         "Frond End",
         "Storybook"
       ],
-      "updated": "2 weeks ago",
-      "pushedAt": "2026-07-26T04:04:06Z",
+      "updated": "4 weeks ago",
+      "pushedAt": "2026-08-07T14:03:08Z",
       "license": "AGPL-3.0",
       "langs": [
         {
@@ -1205,6 +1205,10 @@
       ],
       "versions": [
         {
+          "url": "https://github.com/biaogebusy/web-builder/releases/tag/V11.4.0",
+          "name": "V11.4.0"
+        },
+        {
           "url": "https://github.com/biaogebusy/web-builder/releases/tag/V11.3.0",
           "name": "V11.3.0"
         },
@@ -1219,10 +1223,6 @@
         {
           "url": "https://github.com/biaogebusy/web-builder/releases/tag/V11.2.0",
           "name": "V11.2.0"
-        },
-        {
-          "url": "https://github.com/biaogebusy/web-builder/releases/tag/V11.0.0",
-          "name": "V11.0.0"
         }
       ],
       "topics": [
@@ -1381,7 +1381,7 @@
         "Nginx",
         "Php"
       ],
-      "updated": "6 days ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-08-04T22:57:24Z",
       "license": "—",
       "langs": [
@@ -1455,7 +1455,7 @@
         "Drupal",
         "Open Data"
       ],
-      "updated": "6 days ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-08-04T15:00:31Z",
       "license": "GPL-2.0",
       "langs": [
@@ -1522,8 +1522,8 @@
         "Symfony",
         "Drupal"
       ],
-      "updated": "7 months ago",
-      "pushedAt": "2026-01-16T02:55:29Z",
+      "updated": "8 months ago",
+      "pushedAt": "2026-01-16T02:55:22Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -1662,7 +1662,7 @@
         "Drupal 8",
         "Phpstan"
       ],
-      "updated": "7 weeks ago",
+      "updated": "2 months ago",
       "pushedAt": "2026-06-22T12:22:31Z",
       "license": "GPL-2.0",
       "langs": [
@@ -1724,7 +1724,7 @@
         "Symfony Console",
         "Php"
       ],
-      "updated": "4 months ago",
+      "updated": "5 months ago",
       "pushedAt": "2026-03-29T17:10:43Z",
       "license": "GPL-2.0",
       "langs": [
@@ -1773,72 +1773,6 @@
       "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
     {
-      "slug": "drupalgap",
-      "name": "DrupalGap",
-      "fullName": "signalpoint/DrupalGap",
-      "category": "Mobile",
-      "stars": 233,
-      "author": "signalpoint",
-      "avatar": "https://avatars.githubusercontent.com/u/671140?v=4",
-      "desc": "An application development kit for Drupal websites.",
-      "demo": "https://www.drupalgap.org",
-      "repoUrl": "https://github.com/signalpoint/DrupalGap",
-      "long1": "An application development kit for Drupal websites. Maintained by signalpoint on GitHub, where it has earned 233 stars from the community.",
-      "long2": "It's actively developed around drupal, mobile-app, web-app, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "JavaScript",
-        "Drupal",
-        "Mobile App",
-        "Web App"
-      ],
-      "updated": "10 months ago",
-      "pushedAt": "2025-10-12T13:17:46Z",
-      "license": "GPL-2.0",
-      "langs": [
-        {
-          "pct": 89,
-          "name": "JavaScript"
-        },
-        {
-          "pct": 9,
-          "name": "Shell"
-        },
-        {
-          "pct": 2,
-          "name": "HTML"
-        }
-      ],
-      "versions": [
-        {
-          "url": "https://github.com/signalpoint/DrupalGap/releases/tag/8.0.5",
-          "name": "8.0.5"
-        },
-        {
-          "url": "https://github.com/signalpoint/DrupalGap/releases/tag/8.0.4",
-          "name": "8.0.4"
-        },
-        {
-          "url": "https://github.com/signalpoint/DrupalGap/releases/tag/8.0.3",
-          "name": "8.0.3"
-        },
-        {
-          "url": "https://github.com/signalpoint/DrupalGap/releases/tag/8.0.2",
-          "name": "8.0.2"
-        },
-        {
-          "url": "https://github.com/signalpoint/DrupalGap/releases/tag/8.0.1",
-          "name": "8.0.1"
-        }
-      ],
-      "topics": [
-        "drupal",
-        "mobile-app",
-        "web-app",
-        "javascript"
-      ],
-      "addedAt": "2026-07-15T22:28:32.790199+00:00"
-    },
-    {
       "slug": "lemper",
       "name": "LEMPer",
       "fullName": "joglomedia/LEMPer",
@@ -1858,7 +1792,7 @@
         "Nginx",
         "Php"
       ],
-      "updated": "6 months ago",
+      "updated": "7 months ago",
       "pushedAt": "2026-02-01T10:59:43Z",
       "license": "GPL-3.0",
       "langs": [
@@ -1910,6 +1844,72 @@
         "nginx-installation",
         "mysql",
         "lnmp"
+      ],
+      "addedAt": "2026-07-15T22:28:32.790199+00:00"
+    },
+    {
+      "slug": "drupalgap",
+      "name": "DrupalGap",
+      "fullName": "signalpoint/DrupalGap",
+      "category": "Mobile",
+      "stars": 233,
+      "author": "signalpoint",
+      "avatar": "https://avatars.githubusercontent.com/u/671140?v=4",
+      "desc": "An application development kit for Drupal websites.",
+      "demo": "https://www.drupalgap.org",
+      "repoUrl": "https://github.com/signalpoint/DrupalGap",
+      "long1": "An application development kit for Drupal websites. Maintained by signalpoint on GitHub, where it has earned 233 stars from the community.",
+      "long2": "It's actively developed around drupal, mobile-app, web-app, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "JavaScript",
+        "Drupal",
+        "Mobile App",
+        "Web App"
+      ],
+      "updated": "11 months ago",
+      "pushedAt": "2025-10-12T13:17:46Z",
+      "license": "GPL-2.0",
+      "langs": [
+        {
+          "pct": 89,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 9,
+          "name": "Shell"
+        },
+        {
+          "pct": 2,
+          "name": "HTML"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/signalpoint/DrupalGap/releases/tag/8.0.5",
+          "name": "8.0.5"
+        },
+        {
+          "url": "https://github.com/signalpoint/DrupalGap/releases/tag/8.0.4",
+          "name": "8.0.4"
+        },
+        {
+          "url": "https://github.com/signalpoint/DrupalGap/releases/tag/8.0.3",
+          "name": "8.0.3"
+        },
+        {
+          "url": "https://github.com/signalpoint/DrupalGap/releases/tag/8.0.2",
+          "name": "8.0.2"
+        },
+        {
+          "url": "https://github.com/signalpoint/DrupalGap/releases/tag/8.0.1",
+          "name": "8.0.1"
+        }
+      ],
+      "topics": [
+        "drupal",
+        "mobile-app",
+        "web-app",
+        "javascript"
       ],
       "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
@@ -1986,7 +1986,7 @@
         "Behat Extension",
         "Php"
       ],
-      "updated": "7 weeks ago",
+      "updated": "2 months ago",
       "pushedAt": "2026-06-22T05:40:57Z",
       "license": "GPL-2.0",
       "langs": [
@@ -2052,7 +2052,7 @@
         "Static Analysis",
         "Php"
       ],
-      "updated": "6 days ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-08-04T14:59:54Z",
       "license": "MIT",
       "langs": [
@@ -2097,13 +2097,13 @@
       "name": "Fail2Ban.WebExploits",
       "fullName": "mitchellkrogza/Fail2Ban.WebExploits",
       "category": "DevTools",
-      "stars": 198,
+      "stars": 199,
       "author": "mitchellkrogza",
       "avatar": "https://avatars.githubusercontent.com/u/9961541?u=7c4a14998c6e978de924c0ee039c803bfbff278b&v=4",
       "desc": "This custom Fail2Ban filter and jail will deal with all scans for common Wordpress, Joomla and other Web Exploits being scanned for by automated bots and those seeking to find exploitable web sites.",
       "demo": null,
       "repoUrl": "https://github.com/mitchellkrogza/Fail2Ban.WebExploits",
-      "long1": "This custom Fail2Ban filter and jail will deal with all scans for common Wordpress, Joomla and other Web Exploits being scanned for by automated bots and those seeking to find exploitable web sites. Maintained by mitchellkrogza on GitHub, where it has earned 198 stars from the community.",
+      "long1": "This custom Fail2Ban filter and jail will deal with all scans for common Wordpress, Joomla and other Web Exploits being scanned for by automated bots and those seeking to find exploitable web sites. Maintained by mitchellkrogza on GitHub, where it has earned 199 stars from the community.",
       "long2": "It's actively developed around fail2ban, fail2ban-filter, exploits, and is a solid reference for anyone building with these tools.",
       "stack": [
         "Shell",
@@ -2112,7 +2112,7 @@
         "Exploits",
         "Web Exploits"
       ],
-      "updated": "4 years ago",
+      "updated": "5 years ago",
       "pushedAt": "2022-03-05T06:51:56Z",
       "license": "—",
       "langs": [
@@ -2156,7 +2156,7 @@
         "Distribution",
         "Social"
       ],
-      "updated": "2 months ago",
+      "updated": "3 months ago",
       "pushedAt": "2026-06-09T18:49:15Z",
       "license": "GPL-2.0",
       "langs": [
@@ -2340,55 +2340,6 @@
       "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
     {
-      "slug": "drupalpod",
-      "name": "DrupalPod",
-      "fullName": "shaal/DrupalPod",
-      "category": "DevTools",
-      "stars": 164,
-      "author": "shaal",
-      "avatar": "https://avatars.githubusercontent.com/u/22901?u=ec27e9edeba38c88ab01c726346a6cbe598ebfcd&v=4",
-      "desc": "Start Drupal contributions with 1 click.",
-      "demo": "https://shaal.github.io/DrupalPod",
-      "repoUrl": "https://github.com/shaal/DrupalPod",
-      "long1": "Start Drupal contributions with 1 click. Maintained by shaal on GitHub, where it has earned 164 stars from the community.",
-      "long2": "It's actively developed around drupal, gitpod, dx, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Shell",
-        "Drupal",
-        "Gitpod",
-        "Dx",
-        "Ddev"
-      ],
-      "updated": "5 months ago",
-      "pushedAt": "2026-03-20T14:14:23Z",
-      "license": "MIT",
-      "langs": [
-        {
-          "pct": 61,
-          "name": "Shell"
-        },
-        {
-          "pct": 23,
-          "name": "PHP"
-        },
-        {
-          "pct": 16,
-          "name": "TypeScript"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "drupal",
-        "gitpod",
-        "dx",
-        "ddev",
-        "contributions",
-        "hacktoberfest",
-        "drupalpod"
-      ],
-      "addedAt": "2026-07-15T22:28:32.790199+00:00"
-    },
-    {
       "slug": "drupalorg-cli",
       "name": "drupalorg-cli",
       "fullName": "mglaman/drupalorg-cli",
@@ -2406,7 +2357,7 @@
         "Drupal",
         "Cli"
       ],
-      "updated": "6 days ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-08-04T18:29:56Z",
       "license": "—",
       "langs": [
@@ -2448,6 +2399,55 @@
       "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
     {
+      "slug": "drupalpod",
+      "name": "DrupalPod",
+      "fullName": "shaal/DrupalPod",
+      "category": "DevTools",
+      "stars": 164,
+      "author": "shaal",
+      "avatar": "https://avatars.githubusercontent.com/u/22901?u=ec27e9edeba38c88ab01c726346a6cbe598ebfcd&v=4",
+      "desc": "Start Drupal contributions with 1 click.",
+      "demo": "https://shaal.github.io/DrupalPod",
+      "repoUrl": "https://github.com/shaal/DrupalPod",
+      "long1": "Start Drupal contributions with 1 click. Maintained by shaal on GitHub, where it has earned 164 stars from the community.",
+      "long2": "It's actively developed around drupal, gitpod, dx, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Shell",
+        "Drupal",
+        "Gitpod",
+        "Dx",
+        "Ddev"
+      ],
+      "updated": "6 months ago",
+      "pushedAt": "2026-03-20T14:14:23Z",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 61,
+          "name": "Shell"
+        },
+        {
+          "pct": 23,
+          "name": "PHP"
+        },
+        {
+          "pct": 16,
+          "name": "TypeScript"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "drupal",
+        "gitpod",
+        "dx",
+        "ddev",
+        "contributions",
+        "hacktoberfest",
+        "drupalpod"
+      ],
+      "addedAt": "2026-07-15T22:28:32.790199+00:00"
+    },
+    {
       "slug": "drupal-rector",
       "name": "drupal-rector",
       "fullName": "palantirnet/drupal-rector",
@@ -2465,7 +2465,7 @@
         "Drupal",
         "Php"
       ],
-      "updated": "1 week ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-07-31T09:34:18Z",
       "license": "—",
       "langs": [
@@ -2582,7 +2582,7 @@
         "Drupal",
         "Symfony Console"
       ],
-      "updated": "5 months ago",
+      "updated": "6 months ago",
       "pushedAt": "2026-03-10T22:56:47Z",
       "license": "GPL-2.0",
       "langs": [
@@ -2652,7 +2652,7 @@
         "Composer",
         "Drupal"
       ],
-      "updated": "5 months ago",
+      "updated": "6 months ago",
       "pushedAt": "2026-03-20T20:29:18Z",
       "license": "GPL-2.0",
       "langs": [
@@ -2709,7 +2709,7 @@
         "Composer",
         "Test"
       ],
-      "updated": "5 days ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-08-05T04:15:59Z",
       "license": "GPL-3.0",
       "langs": [
@@ -2782,7 +2782,7 @@
         "Drupal",
         "Next.js"
       ],
-      "updated": "3 months ago",
+      "updated": "4 months ago",
       "pushedAt": "2026-05-14T12:45:08Z",
       "license": "GPL-2.0",
       "langs": [
@@ -3025,8 +3025,8 @@
         "Json Api",
         "Vue"
       ],
-      "updated": "1 week ago",
-      "pushedAt": "2026-08-03T16:15:15Z",
+      "updated": "4 weeks ago",
+      "pushedAt": "2026-08-11T10:37:30Z",
       "license": "MIT",
       "langs": [
         {
@@ -3094,7 +3094,7 @@
         "Commerce Platform",
         "Drupal Commerce"
       ],
-      "updated": "3 years ago",
+      "updated": "4 years ago",
       "pushedAt": "2023-03-04T01:44:08Z",
       "license": "GPL-2.0",
       "langs": [
@@ -3140,7 +3140,7 @@
         "Php",
         "Versions"
       ],
-      "updated": "3 weeks ago",
+      "updated": "6 weeks ago",
       "pushedAt": "2026-07-22T14:50:55Z",
       "license": "MIT",
       "langs": [
@@ -3213,7 +3213,7 @@
         "Localgov",
         "Localgovdrupal"
       ],
-      "updated": "4 months ago",
+      "updated": "5 months ago",
       "pushedAt": "2026-04-17T08:36:12Z",
       "license": "GPL-2.0",
       "langs": [
@@ -3318,7 +3318,7 @@
         "Fuzz"
       ],
       "updated": "2 years ago",
-      "pushedAt": "2024-06-10T10:01:36Z",
+      "pushedAt": "2024-06-10T10:01:30Z",
       "license": "MIT",
       "langs": [
         {
@@ -3410,7 +3410,7 @@
         "Drupal 8",
         "Vardot"
       ],
-      "updated": "6 days ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-08-04T10:50:03Z",
       "license": "—",
       "langs": [
@@ -3481,7 +3481,7 @@
         "Drupal",
         "Cms"
       ],
-      "updated": "8 months ago",
+      "updated": "9 months ago",
       "pushedAt": "2025-11-28T04:11:59Z",
       "license": "MIT",
       "langs": [
@@ -3552,7 +3552,7 @@
         "Scanner"
       ],
       "updated": "7 years ago",
-      "pushedAt": "2019-06-16T01:57:17Z",
+      "pushedAt": "2019-06-16T01:57:16Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -3686,7 +3686,7 @@
         "Cursorrules",
         "Drupal"
       ],
-      "updated": "9 months ago",
+      "updated": "10 months ago",
       "pushedAt": "2025-10-27T08:35:37Z",
       "license": "MIT",
       "langs": [
@@ -3754,7 +3754,7 @@
         "Wsl2"
       ],
       "updated": "1 week ago",
-      "pushedAt": "2026-08-01T06:48:58Z",
+      "pushedAt": "2026-08-27T03:48:56Z",
       "license": "MIT",
       "langs": [
         {
@@ -3934,7 +3934,7 @@
         "Mobile App",
         "Web App"
       ],
-      "updated": "9 months ago",
+      "updated": "10 months ago",
       "pushedAt": "2025-11-12T19:22:24Z",
       "license": "GPL-2.0",
       "langs": [
@@ -4001,7 +4001,7 @@
         "Biological Data",
         "Cms Extension"
       ],
-      "updated": "5 days ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-08-05T01:34:36Z",
       "license": "GPL-2.0",
       "langs": [
@@ -4069,7 +4069,7 @@
         "Php",
         "Drupal 8"
       ],
-      "updated": "2 weeks ago",
+      "updated": "6 weeks ago",
       "pushedAt": "2026-07-28T09:28:28Z",
       "license": "GPL-2.0",
       "langs": [
@@ -4127,7 +4127,7 @@
         "Personal",
         "Website"
       ],
-      "updated": "1 week ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-07-31T13:59:49Z",
       "license": "—",
       "langs": [
@@ -4194,7 +4194,7 @@
         "Ai Tools",
         "Drupal"
       ],
-      "updated": "2 months ago",
+      "updated": "3 months ago",
       "pushedAt": "2026-06-05T14:35:48Z",
       "license": "MIT",
       "langs": [
@@ -4240,7 +4240,7 @@
         "Docker",
         "Alpine"
       ],
-      "updated": "1 week ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-08-03T03:07:47Z",
       "license": "MIT",
       "langs": [
@@ -4307,7 +4307,7 @@
         "Drupal 8",
         "Drupal Profile"
       ],
-      "updated": "6 days ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-08-04T13:40:28Z",
       "license": "—",
       "langs": [
@@ -4374,7 +4374,7 @@
         "Drupal",
         "Kanban Board"
       ],
-      "updated": "1 week ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-07-31T21:48:01Z",
       "license": "GPL-2.0",
       "langs": [
@@ -4467,7 +4467,7 @@
         "Drupal 8",
         "Drupal 10"
       ],
-      "updated": "5 months ago",
+      "updated": "6 months ago",
       "pushedAt": "2026-03-07T18:26:05Z",
       "license": "ISC",
       "langs": [
@@ -4778,7 +4778,7 @@
         "GraphQL",
         "Headless"
       ],
-      "updated": "2 weeks ago",
+      "updated": "6 weeks ago",
       "pushedAt": "2026-07-24T20:31:29Z",
       "license": "—",
       "langs": [
@@ -4847,7 +4847,7 @@
         "Drupal",
         "Distribution"
       ],
-      "updated": "6 weeks ago",
+      "updated": "2 months ago",
       "pushedAt": "2026-07-02T15:42:07Z",
       "license": "GPL-2.0",
       "langs": [
@@ -4976,7 +4976,7 @@
         "Drupal",
         "Drupal 7"
       ],
-      "updated": "11 months ago",
+      "updated": "1 year ago",
       "pushedAt": "2025-08-26T12:55:59Z",
       "license": "MIT",
       "langs": [
@@ -5040,8 +5040,8 @@
         "Joomla",
         "Syntax Highlight"
       ],
-      "updated": "4 years ago",
-      "pushedAt": "2022-02-10T19:26:11Z",
+      "updated": "6 years ago",
+      "pushedAt": "2020-04-06T01:07:29Z",
       "license": "—",
       "langs": [
         {
@@ -5110,7 +5110,7 @@
         "Drupal",
         "Cli"
       ],
-      "updated": "6 days ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-08-04T10:38:15Z",
       "license": "GPL-2.0",
       "langs": [
@@ -5240,7 +5240,7 @@
         "Ddev",
         "Drupal Developers"
       ],
-      "updated": "4 months ago",
+      "updated": "5 months ago",
       "pushedAt": "2026-04-18T14:23:36Z",
       "license": "MIT",
       "langs": [
@@ -5332,7 +5332,7 @@
         "Sonarqube",
         "Sonar"
       ],
-      "updated": "8 years ago",
+      "updated": "9 years ago",
       "pushedAt": "2018-02-26T19:52:18Z",
       "license": "—",
       "langs": [
@@ -5404,7 +5404,7 @@
         "Jekyll",
         "Drupal"
       ],
-      "updated": "3 months ago",
+      "updated": "4 months ago",
       "pushedAt": "2026-04-27T01:07:30Z",
       "license": "MIT",
       "langs": [
@@ -5473,7 +5473,7 @@
         "Bash",
         "Drupal"
       ],
-      "updated": "3 weeks ago",
+      "updated": "7 weeks ago",
       "pushedAt": "2026-07-18T07:59:43Z",
       "license": "GPL-2.0",
       "langs": [
@@ -5811,7 +5811,7 @@
         "Symfony Console",
         "Cli"
       ],
-      "updated": "4 months ago",
+      "updated": "5 months ago",
       "pushedAt": "2026-03-31T11:12:51Z",
       "license": "GPL-3.0",
       "langs": [
@@ -5879,7 +5879,7 @@
         "Lando",
         "Kubernetes"
       ],
-      "updated": "4 weeks ago",
+      "updated": "7 weeks ago",
       "pushedAt": "2026-07-16T20:27:22Z",
       "license": "GPL-2.0",
       "langs": [
@@ -5950,8 +5950,8 @@
         "Drupal",
         "Symfony"
       ],
-      "updated": "6 weeks ago",
-      "pushedAt": "2026-06-29T16:07:34Z",
+      "updated": "2 months ago",
+      "pushedAt": "2026-06-29T16:07:20Z",
       "license": "MIT",
       "langs": [
         {
@@ -6081,7 +6081,7 @@
         "Project Management",
         "Drupal Developers"
       ],
-      "updated": "3 months ago",
+      "updated": "4 months ago",
       "pushedAt": "2026-05-21T08:28:44Z",
       "license": "MIT",
       "langs": [
@@ -6128,7 +6128,7 @@
         "Apigee",
         "Api Client"
       ],
-      "updated": "5 days ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-08-05T09:37:22Z",
       "license": "GPL-2.0",
       "langs": [
@@ -6198,7 +6198,7 @@
         "Charts",
         "Drupal"
       ],
-      "updated": "4 weeks ago",
+      "updated": "8 weeks ago",
       "pushedAt": "2026-07-13T03:04:57Z",
       "license": "MIT",
       "langs": [
@@ -6313,7 +6313,7 @@
         "Php",
         "Components"
       ],
-      "updated": "1 year ago",
+      "updated": "2 years ago",
       "pushedAt": "2025-03-02T13:35:56Z",
       "license": "—",
       "langs": [
@@ -6380,7 +6380,7 @@
         "Drush",
         "Drupal"
       ],
-      "updated": "8 months ago",
+      "updated": "9 months ago",
       "pushedAt": "2025-11-28T05:16:15Z",
       "license": "MIT",
       "langs": [
@@ -6512,16 +6512,16 @@
         "Drupal",
         "Ffi"
       ],
-      "updated": "2 days ago",
-      "pushedAt": "2026-08-08T23:06:41Z",
+      "updated": "4 weeks ago",
+      "pushedAt": "2026-08-11T05:36:52Z",
       "license": "MIT",
       "langs": [
         {
-          "pct": 95,
+          "pct": 94,
           "name": "Rust"
         },
         {
-          "pct": 4,
+          "pct": 5,
           "name": "C"
         },
         {
@@ -6585,7 +6585,7 @@
         "Drupal",
         "Drupal Module"
       ],
-      "updated": "9 years ago",
+      "updated": "10 years ago",
       "pushedAt": "2017-02-25T15:27:25Z",
       "license": "—",
       "langs": [
@@ -6630,7 +6630,7 @@
         "Docker"
       ],
       "updated": "7 years ago",
-      "pushedAt": "2019-09-19T15:17:52Z",
+      "pushedAt": "2019-09-19T15:17:29Z",
       "license": "MIT",
       "langs": [
         {
@@ -6690,7 +6690,7 @@
         "Automated Testing",
         "Continuous Integration"
       ],
-      "updated": "2 days ago",
+      "updated": "4 weeks ago",
       "pushedAt": "2026-08-08T08:17:10Z",
       "license": "GPL-2.0",
       "langs": [
@@ -6755,8 +6755,8 @@
         "Langgraph",
         "Python"
       ],
-      "updated": "6 months ago",
-      "pushedAt": "2026-01-26T07:25:32Z",
+      "updated": "7 months ago",
+      "pushedAt": "2026-01-26T07:25:31Z",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -6822,7 +6822,7 @@
         "Ckan",
         "Ckanext"
       ],
-      "updated": "7 months ago",
+      "updated": "8 months ago",
       "pushedAt": "2026-01-02T11:21:08Z",
       "license": "—",
       "langs": [
@@ -6885,7 +6885,7 @@
         "Distribution",
         "Framework"
       ],
-      "updated": "4 years ago",
+      "updated": "5 years ago",
       "pushedAt": "2022-02-10T17:31:08Z",
       "license": "—",
       "langs": [
@@ -7021,7 +7021,7 @@
         "Drupal"
       ],
       "updated": "2 years ago",
-      "pushedAt": "2024-11-21T07:48:07Z",
+      "pushedAt": "2024-11-21T07:48:06Z",
       "license": "—",
       "langs": [
         {
@@ -7061,7 +7061,7 @@
         "Drupal",
         "Lupus Decoupled"
       ],
-      "updated": "3 days ago",
+      "updated": "4 weeks ago",
       "pushedAt": "2026-08-07T21:59:58Z",
       "license": "MIT",
       "langs": [
@@ -7181,7 +7181,7 @@
         "Boilerplate",
         "Docker"
       ],
-      "updated": "5 months ago",
+      "updated": "6 months ago",
       "pushedAt": "2026-03-19T08:28:44Z",
       "license": "—",
       "langs": [
@@ -7300,7 +7300,7 @@
         "Installation Profile",
         "Drupal 9"
       ],
-      "updated": "3 days ago",
+      "updated": "4 weeks ago",
       "pushedAt": "2026-08-07T08:50:49Z",
       "license": "GPL-2.0",
       "langs": [
@@ -7367,7 +7367,7 @@
         "Test",
         "Bdd"
       ],
-      "updated": "1 week ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-07-31T16:32:02Z",
       "license": "GPL-3.0",
       "langs": [
@@ -7552,7 +7552,7 @@
         "Drupal",
         "Code Generation"
       ],
-      "updated": "5 days ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-08-05T08:35:40Z",
       "license": "GPL-2.0",
       "langs": [
@@ -7719,7 +7719,7 @@
         "Php Qa",
         "Sass Lint"
       ],
-      "updated": "7 weeks ago",
+      "updated": "2 months ago",
       "pushedAt": "2026-06-22T12:35:42Z",
       "license": "GPL-3.0",
       "langs": [
@@ -7895,7 +7895,7 @@
         "Drush",
         "Maintenance Scripts"
       ],
-      "updated": "3 months ago",
+      "updated": "4 months ago",
       "pushedAt": "2026-05-19T08:59:05Z",
       "license": "—",
       "langs": [
@@ -7954,7 +7954,7 @@
         "Aljibe",
         "Ddev"
       ],
-      "updated": "1 week ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-08-03T12:23:20Z",
       "license": "Apache-2.0",
       "langs": [
@@ -7999,51 +7999,6 @@
         "aljibe",
         "ddev",
         "ddev-aljibe"
-      ],
-      "addedAt": "2026-07-15T22:28:32.790199+00:00"
-    },
-    {
-      "slug": "drupal-8-example-pix-migrate",
-      "name": "drupal-8-example-pix_migrate",
-      "fullName": "geerlingguy/drupal-8-example-pix_migrate",
-      "category": "DevTools",
-      "stars": 24,
-      "author": "geerlingguy",
-      "avatar": "https://avatars.githubusercontent.com/u/481677?u=d430bda7f20ac8c31b29d9a687a1d84c9abd30e0&v=4",
-      "desc": "Drupal 6 to Drupal 8 media gallery example migration.",
-      "demo": "http://www.jeffgeerling.com/blog/2016/migrating-20000-images-audio-clips-and-video-clips-drupal-8",
-      "repoUrl": "https://github.com/geerlingguy/drupal-8-example-pix_migrate",
-      "long1": "Drupal 6 to Drupal 8 media gallery example migration. Maintained by geerlingguy on GitHub, where it has earned 24 stars from the community.",
-      "long2": "It's actively developed around drupal, migrate, pictures, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Drupal",
-        "Migrate",
-        "Pictures",
-        "Migration"
-      ],
-      "updated": "10 years ago",
-      "pushedAt": "2016-10-04T16:34:08Z",
-      "license": "GPL-2.0",
-      "langs": [
-        {
-          "pct": 100,
-          "name": "PHP"
-        }
-      ],
-      "versions": [
-        {
-          "url": "https://github.com/geerlingguy/drupal-8-example-pix_migrate/releases/tag/8.x-1.0",
-          "name": "8.x-1.0"
-        }
-      ],
-      "topics": [
-        "drupal",
-        "migrate",
-        "pictures",
-        "migration",
-        "data",
-        "examples"
       ],
       "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
@@ -8108,6 +8063,51 @@
         "intellij",
         "simpletest",
         "phpunit"
+      ],
+      "addedAt": "2026-07-15T22:28:32.790199+00:00"
+    },
+    {
+      "slug": "drupal-8-example-pix-migrate",
+      "name": "drupal-8-example-pix_migrate",
+      "fullName": "geerlingguy/drupal-8-example-pix_migrate",
+      "category": "DevTools",
+      "stars": 24,
+      "author": "geerlingguy",
+      "avatar": "https://avatars.githubusercontent.com/u/481677?u=d430bda7f20ac8c31b29d9a687a1d84c9abd30e0&v=4",
+      "desc": "Drupal 6 to Drupal 8 media gallery example migration.",
+      "demo": "http://www.jeffgeerling.com/blog/2016/migrating-20000-images-audio-clips-and-video-clips-drupal-8",
+      "repoUrl": "https://github.com/geerlingguy/drupal-8-example-pix_migrate",
+      "long1": "Drupal 6 to Drupal 8 media gallery example migration. Maintained by geerlingguy on GitHub, where it has earned 24 stars from the community.",
+      "long2": "It's actively developed around drupal, migrate, pictures, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Drupal",
+        "Migrate",
+        "Pictures",
+        "Migration"
+      ],
+      "updated": "10 years ago",
+      "pushedAt": "2016-10-04T16:34:08Z",
+      "license": "GPL-2.0",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "PHP"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/geerlingguy/drupal-8-example-pix_migrate/releases/tag/8.x-1.0",
+          "name": "8.x-1.0"
+        }
+      ],
+      "topics": [
+        "drupal",
+        "migrate",
+        "pictures",
+        "migration",
+        "data",
+        "examples"
       ],
       "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
@@ -8231,52 +8231,6 @@
       "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
     {
-      "slug": "xeno-hero",
-      "name": "xeno_hero",
-      "fullName": "xenomedia/xeno_hero",
-      "category": "DevTools",
-      "stars": 23,
-      "author": "xenomedia",
-      "avatar": "https://avatars.githubusercontent.com/u/10727786?v=4",
-      "desc": "Drupal 8 module that creates a Hero Paragraphs bundle.",
-      "demo": null,
-      "repoUrl": "https://github.com/xenomedia/xeno_hero",
-      "long1": "Drupal 8 module that creates a Hero Paragraphs bundle. Maintained by xenomedia on GitHub, where it has earned 23 stars from the community.",
-      "long2": "It's actively developed around drupal-8, drupal-module, drupal, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Twig",
-        "Drupal 8",
-        "Drupal Module",
-        "Drupal",
-        "Drupal Paragraphs"
-      ],
-      "updated": "2 years ago",
-      "pushedAt": "2024-02-11T16:39:02Z",
-      "license": "GPL-2.0",
-      "langs": [
-        {
-          "pct": 48,
-          "name": "Twig"
-        },
-        {
-          "pct": 38,
-          "name": "CSS"
-        },
-        {
-          "pct": 14,
-          "name": "JavaScript"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "drupal-8",
-        "drupal-module",
-        "drupal",
-        "drupal-paragraphs"
-      ],
-      "addedAt": "2026-07-15T22:28:32.790199+00:00"
-    },
-    {
       "slug": "react-and-drupal-examples",
       "name": "react-and-drupal-examples",
       "fullName": "OsioLabs/react-and-drupal-examples",
@@ -8319,71 +8273,48 @@
       "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
     {
-      "slug": "next-drupal-basic-starter",
-      "name": "next-drupal-basic-starter",
-      "fullName": "chapter-three/next-drupal-basic-starter",
-      "category": "Templates",
-      "stars": 22,
-      "author": "chapter-three",
-      "avatar": "https://avatars.githubusercontent.com/u/697697?v=4",
-      "desc": "A simple starter for building your site with Next.js and Drupal.",
-      "demo": "http://next-drupal.org",
-      "repoUrl": "https://github.com/chapter-three/next-drupal-basic-starter",
-      "long1": "A simple starter for building your site with Next.js and Drupal. Maintained by chapter-three on GitHub, where it has earned 22 stars from the community.",
-      "long2": "It's actively developed around drupal, nextjs, headless, and is a solid reference for anyone building with these tools.",
+      "slug": "xeno-hero",
+      "name": "xeno_hero",
+      "fullName": "xenomedia/xeno_hero",
+      "category": "DevTools",
+      "stars": 23,
+      "author": "xenomedia",
+      "avatar": "https://avatars.githubusercontent.com/u/10727786?v=4",
+      "desc": "Drupal 8 module that creates a Hero Paragraphs bundle.",
+      "demo": null,
+      "repoUrl": "https://github.com/xenomedia/xeno_hero",
+      "long1": "Drupal 8 module that creates a Hero Paragraphs bundle. Maintained by xenomedia on GitHub, where it has earned 23 stars from the community.",
+      "long2": "It's actively developed around drupal-8, drupal-module, drupal, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "TypeScript",
+        "Twig",
+        "Drupal 8",
+        "Drupal Module",
         "Drupal",
-        "Next.js",
-        "Headless",
-        "Decoupled"
+        "Drupal Paragraphs"
       ],
-      "updated": "5 months ago",
-      "pushedAt": "2026-03-13T21:04:53Z",
-      "license": "—",
+      "updated": "3 years ago",
+      "pushedAt": "2024-02-11T16:39:02Z",
+      "license": "GPL-2.0",
       "langs": [
         {
-          "pct": 96,
-          "name": "TypeScript"
+          "pct": 48,
+          "name": "Twig"
         },
         {
-          "pct": 4,
-          "name": "JavaScript"
-        },
-        {
-          "pct": 0,
+          "pct": 38,
           "name": "CSS"
+        },
+        {
+          "pct": 14,
+          "name": "JavaScript"
         }
       ],
-      "versions": [
-        {
-          "url": "https://github.com/chapter-three/next-drupal-basic-starter/releases/tag/2.0.0",
-          "name": "2.0.0"
-        },
-        {
-          "url": "https://github.com/chapter-three/next-drupal-basic-starter/releases/tag/2.0.0-rc.0",
-          "name": "2.0.0-rc.0"
-        },
-        {
-          "url": "https://github.com/chapter-three/next-drupal-basic-starter/releases/tag/2.0.0-beta.0",
-          "name": "2.0.0-beta.0"
-        },
-        {
-          "url": "https://github.com/chapter-three/next-drupal-basic-starter/releases/tag/2.0.0-alpha.0",
-          "name": "2.0.0-alpha.0"
-        },
-        {
-          "url": "https://github.com/chapter-three/next-drupal-basic-starter/releases/tag/1.6.0",
-          "name": "1.6.0"
-        }
-      ],
+      "versions": [],
       "topics": [
+        "drupal-8",
+        "drupal-module",
         "drupal",
-        "nextjs",
-        "headless",
-        "decoupled",
-        "starter",
-        "template"
+        "drupal-paragraphs"
       ],
       "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
@@ -8406,7 +8337,7 @@
         "Task Runner",
         "Drupal"
       ],
-      "updated": "6 months ago",
+      "updated": "7 months ago",
       "pushedAt": "2026-02-05T16:51:37Z",
       "license": "MIT",
       "langs": [
@@ -8443,51 +8374,6 @@
         "task-runner",
         "drupal",
         "drush"
-      ],
-      "addedAt": "2026-07-15T22:28:32.790199+00:00"
-    },
-    {
-      "slug": "drupalqa",
-      "name": "drupalqa",
-      "fullName": "hussainweb/drupalqa",
-      "category": "DevTools",
-      "stars": 22,
-      "author": "hussainweb",
-      "avatar": "https://avatars.githubusercontent.com/u/1040271?u=e0f10ae81f87f0a96b27a66150013a16b08db566&v=4",
-      "desc": "Docker image with quality analysis tools for Drupal",
-      "demo": "https://hub.docker.com/r/hussainweb/drupalqa",
-      "repoUrl": "https://github.com/hussainweb/drupalqa",
-      "long1": "Docker image with quality analysis tools for Drupal. Maintained by hussainweb on GitHub, where it has earned 22 stars from the community.",
-      "long2": "It's actively developed around drupal, phpcs, coder, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Dockerfile",
-        "Drupal",
-        "Phpcs",
-        "Coder",
-        "Docker"
-      ],
-      "updated": "5 weeks ago",
-      "pushedAt": "2026-07-06T22:46:57Z",
-      "license": "MIT",
-      "langs": [
-        {
-          "pct": 57,
-          "name": "Dockerfile"
-        },
-        {
-          "pct": 43,
-          "name": "Shell"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "drupal",
-        "phpcs",
-        "coder",
-        "docker",
-        "docker-image",
-        "phpstan",
-        "phpcbf"
       ],
       "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
@@ -8548,6 +8434,75 @@
         "composer",
         "drupal-console",
         "docker-container"
+      ],
+      "addedAt": "2026-07-15T22:28:32.790199+00:00"
+    },
+    {
+      "slug": "next-drupal-basic-starter",
+      "name": "next-drupal-basic-starter",
+      "fullName": "chapter-three/next-drupal-basic-starter",
+      "category": "Templates",
+      "stars": 22,
+      "author": "chapter-three",
+      "avatar": "https://avatars.githubusercontent.com/u/697697?v=4",
+      "desc": "A simple starter for building your site with Next.js and Drupal.",
+      "demo": "http://next-drupal.org",
+      "repoUrl": "https://github.com/chapter-three/next-drupal-basic-starter",
+      "long1": "A simple starter for building your site with Next.js and Drupal. Maintained by chapter-three on GitHub, where it has earned 22 stars from the community.",
+      "long2": "It's actively developed around drupal, nextjs, headless, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "TypeScript",
+        "Drupal",
+        "Next.js",
+        "Headless",
+        "Decoupled"
+      ],
+      "updated": "6 months ago",
+      "pushedAt": "2026-03-13T21:04:53Z",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 96,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 4,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 0,
+          "name": "CSS"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/chapter-three/next-drupal-basic-starter/releases/tag/2.0.0",
+          "name": "2.0.0"
+        },
+        {
+          "url": "https://github.com/chapter-three/next-drupal-basic-starter/releases/tag/2.0.0-rc.0",
+          "name": "2.0.0-rc.0"
+        },
+        {
+          "url": "https://github.com/chapter-three/next-drupal-basic-starter/releases/tag/2.0.0-beta.0",
+          "name": "2.0.0-beta.0"
+        },
+        {
+          "url": "https://github.com/chapter-three/next-drupal-basic-starter/releases/tag/2.0.0-alpha.0",
+          "name": "2.0.0-alpha.0"
+        },
+        {
+          "url": "https://github.com/chapter-three/next-drupal-basic-starter/releases/tag/1.6.0",
+          "name": "1.6.0"
+        }
+      ],
+      "topics": [
+        "drupal",
+        "nextjs",
+        "headless",
+        "decoupled",
+        "starter",
+        "template"
       ],
       "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
@@ -8615,57 +8570,93 @@
       "addedAt": "2026-08-10T12:07:31.760934+00:00"
     },
     {
-      "slug": "skilld-docker-container",
-      "name": "skilld-docker-container",
-      "fullName": "skilld-labs/skilld-docker-container",
+      "slug": "drupalqa",
+      "name": "drupalqa",
+      "fullName": "hussainweb/drupalqa",
       "category": "DevTools",
-      "stars": 21,
-      "author": "skilld-labs",
-      "avatar": "https://avatars.githubusercontent.com/u/13232614?v=4",
-      "desc": "Starterkit for drupal development",
-      "demo": null,
-      "repoUrl": "https://github.com/skilld-labs/skilld-docker-container",
-      "long1": "Starterkit for drupal development. Maintained by skilld-labs on GitHub, where it has earned 21 stars from the community.",
-      "long2": "It's actively developed around docker, docker-compose, php, and is a solid reference for anyone building with these tools.",
+      "stars": 22,
+      "author": "hussainweb",
+      "avatar": "https://avatars.githubusercontent.com/u/1040271?u=e0f10ae81f87f0a96b27a66150013a16b08db566&v=4",
+      "desc": "Docker image with quality analysis tools for Drupal",
+      "demo": "https://hub.docker.com/r/hussainweb/drupalqa",
+      "repoUrl": "https://github.com/hussainweb/drupalqa",
+      "long1": "Docker image with quality analysis tools for Drupal. Maintained by hussainweb on GitHub, where it has earned 22 stars from the community.",
+      "long2": "It's actively developed around drupal, phpcs, coder, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "Makefile",
-        "Docker",
-        "Docker Compose",
-        "Php",
-        "Drupal"
+        "Dockerfile",
+        "Drupal",
+        "Phpcs",
+        "Coder",
+        "Docker"
       ],
-      "updated": "2 weeks ago",
-      "pushedAt": "2026-07-30T13:53:15Z",
+      "updated": "2 months ago",
+      "pushedAt": "2026-07-06T22:46:57Z",
       "license": "MIT",
       "langs": [
         {
-          "pct": 39,
-          "name": "Makefile"
+          "pct": 57,
+          "name": "Dockerfile"
         },
         {
-          "pct": 31,
-          "name": "PHP"
-        },
-        {
-          "pct": 30,
+          "pct": 43,
           "name": "Shell"
         }
       ],
-      "versions": [
+      "versions": [],
+      "topics": [
+        "drupal",
+        "phpcs",
+        "coder",
+        "docker",
+        "docker-image",
+        "phpstan",
+        "phpcbf"
+      ],
+      "addedAt": "2026-07-15T22:28:32.790199+00:00"
+    },
+    {
+      "slug": "display-fake-technology-of-site",
+      "name": "display-fake-technology-of-site",
+      "fullName": "mohammadhasananisi/display-fake-technology-of-site",
+      "category": "Blogs",
+      "stars": 21,
+      "author": "mohammadhasananisi",
+      "avatar": "https://avatars.githubusercontent.com/u/47121464?u=293b66cae097034f92c6970afc731ebcb026b0b0&v=4",
+      "desc": "You can showing fake data in wappalyzer - like python or ruby or other programming language",
+      "demo": "https://mohammadhasananisi.github.io/display-fake-technology-of-site/",
+      "repoUrl": "https://github.com/mohammadhasananisi/display-fake-technology-of-site",
+      "long1": "You can showing fake data in wappalyzer - like python or ruby or other programming language. Maintained by mohammadhasananisi on GitHub, where it has earned 21 stars from the community.",
+      "long2": "It's actively developed around fake-data, wappalyzer, fake-wappalyzer, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "HTML",
+        "Fake Data",
+        "Wappalyzer",
+        "Fake Wappalyzer",
+        "Perl"
+      ],
+      "updated": "1 year ago",
+      "pushedAt": "2025-07-03T12:44:14Z",
+      "license": "—",
+      "langs": [
         {
-          "url": "https://github.com/skilld-labs/skilld-docker-container/releases/tag/v1.0.rc",
-          "name": "v1.0.rc"
-        },
-        {
-          "url": "https://github.com/skilld-labs/skilld-docker-container/releases/tag/v1.0.beta",
-          "name": "v1.0.beta"
+          "pct": 100,
+          "name": "HTML"
         }
       ],
+      "versions": [],
       "topics": [
-        "docker",
-        "docker-compose",
-        "php",
-        "drupal"
+        "fake-data",
+        "wappalyzer",
+        "fake-wappalyzer",
+        "perl",
+        "ruby",
+        "cakephp",
+        "drupal",
+        "gatsby",
+        "hexo",
+        "jekyll",
+        "joomla-cms",
+        "modx"
       ],
       "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
@@ -8688,7 +8679,7 @@
         "Vscode Extension",
         "Snippets"
       ],
-      "updated": "4 months ago",
+      "updated": "5 months ago",
       "pushedAt": "2026-04-14T13:09:35Z",
       "license": "MIT",
       "langs": [
@@ -8724,6 +8715,61 @@
         "drupal",
         "vscode-extension",
         "snippets"
+      ],
+      "addedAt": "2026-07-15T22:28:32.790199+00:00"
+    },
+    {
+      "slug": "docker-apache-php",
+      "name": "docker-apache-php",
+      "fullName": "keopx/docker-apache-php",
+      "category": "DevTools",
+      "stars": 21,
+      "author": "keopx",
+      "avatar": "https://avatars.githubusercontent.com/u/537583?u=ee985b7995f8e3cc8c54ee3a77f8727140cdc6f3&v=4",
+      "desc": "Debian 10 Buster based Apache 2.4 and PHP 7.4/7.3/7.2/7.1/7.0/5.6",
+      "demo": "https://hub.docker.com/r/keopx/apache-php/",
+      "repoUrl": "https://github.com/keopx/docker-apache-php",
+      "long1": "Debian 10 Buster based Apache 2.4 and PHP 7.4/7.3/7.2/7.1/7.0/5.6. Maintained by keopx on GitHub, where it has earned 21 stars from the community.",
+      "long2": "It's actively developed around drupal, drupal-8, docker, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Dockerfile",
+        "Drupal",
+        "Drupal 8",
+        "Docker",
+        "Docker4Drupal"
+      ],
+      "updated": "4 years ago",
+      "pushedAt": "2022-11-22T16:30:43Z",
+      "license": "GPL-3.0",
+      "langs": [
+        {
+          "pct": 89,
+          "name": "Dockerfile"
+        },
+        {
+          "pct": 11,
+          "name": "Shell"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/keopx/docker-apache-php/releases/tag/olg_stable",
+          "name": "olg_stable"
+        }
+      ],
+      "topics": [
+        "drupal",
+        "drupal-8",
+        "docker",
+        "docker4drupal",
+        "php-7",
+        "php-56",
+        "php71",
+        "php72",
+        "debian",
+        "debian-stretch",
+        "debian9",
+        "php73"
       ],
       "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
@@ -8784,48 +8830,46 @@
       "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
     {
-      "slug": "display-fake-technology-of-site",
-      "name": "display-fake-technology-of-site",
-      "fullName": "mohammadhasananisi/display-fake-technology-of-site",
-      "category": "Blogs",
+      "slug": "php-apache-ubuntu",
+      "name": "php-apache-ubuntu",
+      "fullName": "rsubr/php-apache-ubuntu",
+      "category": "DevTools",
       "stars": 21,
-      "author": "mohammadhasananisi",
-      "avatar": "https://avatars.githubusercontent.com/u/47121464?u=293b66cae097034f92c6970afc731ebcb026b0b0&v=4",
-      "desc": "You can showing fake data in wappalyzer - like python or ruby or other programming language",
-      "demo": "https://mohammadhasananisi.github.io/display-fake-technology-of-site/",
-      "repoUrl": "https://github.com/mohammadhasananisi/display-fake-technology-of-site",
-      "long1": "You can showing fake data in wappalyzer - like python or ruby or other programming language. Maintained by mohammadhasananisi on GitHub, where it has earned 21 stars from the community.",
-      "long2": "It's actively developed around fake-data, wappalyzer, fake-wappalyzer, and is a solid reference for anyone building with these tools.",
+      "author": "rsubr",
+      "avatar": "https://avatars.githubusercontent.com/u/5857788?u=93524d06f8453d56cf1cdf2983aababdaa7c8ece&v=4",
+      "desc": "Docker image for PHP, Apache using Ubuntu core. This image is suitable for running WordPress, Drupal, phpmyadmin, applications with high density and security.",
+      "demo": null,
+      "repoUrl": "https://github.com/rsubr/php-apache-ubuntu",
+      "long1": "Docker image for PHP, Apache using Ubuntu core. This image is suitable for running WordPress, Drupal, phpmyadmin, applications with high density and security. Maintained by rsubr on GitHub, where it has earned 21 stars from the community.",
+      "long2": "It's actively developed around docker, php-apache-ubuntu, aws-lambda-php, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "HTML",
-        "Fake Data",
-        "Wappalyzer",
-        "Fake Wappalyzer",
-        "Perl"
+        "Dockerfile",
+        "Docker",
+        "Php Apache Ubuntu",
+        "Aws Lambda Php",
+        "Serverless"
       ],
-      "updated": "1 year ago",
-      "pushedAt": "2025-07-03T12:44:14Z",
-      "license": "—",
+      "updated": "4 months ago",
+      "pushedAt": "2026-04-25T04:35:59Z",
+      "license": "MIT",
       "langs": [
         {
-          "pct": 100,
-          "name": "HTML"
+          "pct": 99,
+          "name": "Dockerfile"
+        },
+        {
+          "pct": 1,
+          "name": "PHP"
         }
       ],
       "versions": [],
       "topics": [
-        "fake-data",
-        "wappalyzer",
-        "fake-wappalyzer",
-        "perl",
-        "ruby",
-        "cakephp",
-        "drupal",
-        "gatsby",
-        "hexo",
-        "jekyll",
-        "joomla-cms",
-        "modx"
+        "docker",
+        "php-apache-ubuntu",
+        "aws-lambda-php",
+        "serverless",
+        "wordpress",
+        "drupal"
       ],
       "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
@@ -8876,57 +8920,57 @@
       "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
     {
-      "slug": "docker-apache-php",
-      "name": "docker-apache-php",
-      "fullName": "keopx/docker-apache-php",
+      "slug": "skilld-docker-container",
+      "name": "skilld-docker-container",
+      "fullName": "skilld-labs/skilld-docker-container",
       "category": "DevTools",
       "stars": 21,
-      "author": "keopx",
-      "avatar": "https://avatars.githubusercontent.com/u/537583?u=ee985b7995f8e3cc8c54ee3a77f8727140cdc6f3&v=4",
-      "desc": "Debian 10 Buster based Apache 2.4 and PHP 7.4/7.3/7.2/7.1/7.0/5.6",
-      "demo": "https://hub.docker.com/r/keopx/apache-php/",
-      "repoUrl": "https://github.com/keopx/docker-apache-php",
-      "long1": "Debian 10 Buster based Apache 2.4 and PHP 7.4/7.3/7.2/7.1/7.0/5.6. Maintained by keopx on GitHub, where it has earned 21 stars from the community.",
-      "long2": "It's actively developed around drupal, drupal-8, docker, and is a solid reference for anyone building with these tools.",
+      "author": "skilld-labs",
+      "avatar": "https://avatars.githubusercontent.com/u/13232614?v=4",
+      "desc": "Starterkit for drupal development",
+      "demo": null,
+      "repoUrl": "https://github.com/skilld-labs/skilld-docker-container",
+      "long1": "Starterkit for drupal development. Maintained by skilld-labs on GitHub, where it has earned 21 stars from the community.",
+      "long2": "It's actively developed around docker, docker-compose, php, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "Dockerfile",
-        "Drupal",
-        "Drupal 8",
+        "Makefile",
         "Docker",
-        "Docker4Drupal"
+        "Docker Compose",
+        "Php",
+        "Drupal"
       ],
-      "updated": "4 years ago",
-      "pushedAt": "2022-11-22T16:30:43Z",
-      "license": "GPL-3.0",
+      "updated": "5 weeks ago",
+      "pushedAt": "2026-07-30T13:53:15Z",
+      "license": "MIT",
       "langs": [
         {
-          "pct": 89,
-          "name": "Dockerfile"
+          "pct": 39,
+          "name": "Makefile"
         },
         {
-          "pct": 11,
+          "pct": 31,
+          "name": "PHP"
+        },
+        {
+          "pct": 30,
           "name": "Shell"
         }
       ],
       "versions": [
         {
-          "url": "https://github.com/keopx/docker-apache-php/releases/tag/olg_stable",
-          "name": "olg_stable"
+          "url": "https://github.com/skilld-labs/skilld-docker-container/releases/tag/v1.0.rc",
+          "name": "v1.0.rc"
+        },
+        {
+          "url": "https://github.com/skilld-labs/skilld-docker-container/releases/tag/v1.0.beta",
+          "name": "v1.0.beta"
         }
       ],
       "topics": [
-        "drupal",
-        "drupal-8",
         "docker",
-        "docker4drupal",
-        "php-7",
-        "php-56",
-        "php71",
-        "php72",
-        "debian",
-        "debian-stretch",
-        "debian9",
-        "php73"
+        "docker-compose",
+        "php",
+        "drupal"
       ],
       "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
@@ -8950,7 +8994,7 @@
         "Headless",
         "Low Code"
       ],
-      "updated": "7 weeks ago",
+      "updated": "2 months ago",
       "pushedAt": "2026-06-24T14:30:07Z",
       "license": "GPL-3.0",
       "langs": [
@@ -9131,50 +9175,6 @@
       "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
     {
-      "slug": "php-apache-ubuntu",
-      "name": "php-apache-ubuntu",
-      "fullName": "rsubr/php-apache-ubuntu",
-      "category": "DevTools",
-      "stars": 20,
-      "author": "rsubr",
-      "avatar": "https://avatars.githubusercontent.com/u/5857788?u=93524d06f8453d56cf1cdf2983aababdaa7c8ece&v=4",
-      "desc": "Docker image for PHP, Apache using Ubuntu core. This image is suitable for running WordPress, Drupal, phpmyadmin, applications with high density and security.",
-      "demo": null,
-      "repoUrl": "https://github.com/rsubr/php-apache-ubuntu",
-      "long1": "Docker image for PHP, Apache using Ubuntu core. This image is suitable for running WordPress, Drupal, phpmyadmin, applications with high density and security. Maintained by rsubr on GitHub, where it has earned 20 stars from the community.",
-      "long2": "It's actively developed around docker, php-apache-ubuntu, aws-lambda-php, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Dockerfile",
-        "Docker",
-        "Php Apache Ubuntu",
-        "Aws Lambda Php",
-        "Serverless"
-      ],
-      "updated": "4 months ago",
-      "pushedAt": "2026-04-25T04:36:04Z",
-      "license": "MIT",
-      "langs": [
-        {
-          "pct": 99,
-          "name": "Dockerfile"
-        },
-        {
-          "pct": 1,
-          "name": "PHP"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "docker",
-        "php-apache-ubuntu",
-        "aws-lambda-php",
-        "serverless",
-        "wordpress",
-        "drupal"
-      ],
-      "addedAt": "2026-07-15T22:28:32.790199+00:00"
-    },
-    {
       "slug": "platform",
       "name": "Platform",
       "fullName": "Qbix/Platform",
@@ -9194,8 +9194,8 @@
         "Drupal",
         "Facebook"
       ],
-      "updated": "yesterday",
-      "pushedAt": "2026-08-09T22:48:51Z",
+      "updated": "4 weeks ago",
+      "pushedAt": "2026-08-11T00:35:44Z",
       "license": "AGPL-3.0",
       "langs": [
         {
@@ -9229,132 +9229,63 @@
       "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
     {
-      "slug": "acquia-cloud-vm",
-      "name": "acquia-cloud-vm",
-      "fullName": "geerlingguy/acquia-cloud-vm",
+      "slug": "dogit",
+      "name": "dogit",
+      "fullName": "dpi/dogit",
       "category": "DevTools",
       "stars": 19,
-      "author": "geerlingguy",
-      "avatar": "https://avatars.githubusercontent.com/u/481677?u=d430bda7f20ac8c31b29d9a687a1d84c9abd30e0&v=4",
-      "desc": "VirtualBox/Vagrant-based VM to closely match Acquia Cloud environment.",
+      "author": "dpi",
+      "avatar": "https://avatars.githubusercontent.com/u/21850?v=4",
+      "desc": "Drupal.org Git CLI",
       "demo": null,
-      "repoUrl": "https://github.com/geerlingguy/acquia-cloud-vm",
-      "long1": "VirtualBox/Vagrant-based VM to closely match Acquia Cloud environment. Maintained by geerlingguy on GitHub, where it has earned 19 stars from the community.",
-      "long2": "It's actively developed around acquia, cloud, acquia-cloud, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Acquia",
-        "Cloud",
-        "Acquia Cloud",
-        "Vagrant"
-      ],
-      "updated": "11 years ago",
-      "pushedAt": "2015-07-01T03:25:28Z",
-      "license": "—",
-      "langs": [
-        {
-          "name": "JavaScript",
-          "pct": 72
-        },
-        {
-          "name": "JavaScript",
-          "pct": 20
-        },
-        {
-          "name": "Other",
-          "pct": 8
-        }
-      ],
-      "versions": [
-        {
-          "url": "https://github.com/geerlingguy/acquia-cloud-vm/releases/tag/1.0.6",
-          "name": "1.0.6"
-        },
-        {
-          "url": "https://github.com/geerlingguy/acquia-cloud-vm/releases/tag/1.0.5",
-          "name": "1.0.5"
-        },
-        {
-          "url": "https://github.com/geerlingguy/acquia-cloud-vm/releases/tag/1.0.4",
-          "name": "1.0.4"
-        },
-        {
-          "url": "https://github.com/geerlingguy/acquia-cloud-vm/releases/tag/1.0.3",
-          "name": "1.0.3"
-        },
-        {
-          "url": "https://github.com/geerlingguy/acquia-cloud-vm/releases/tag/1.0.2",
-          "name": "1.0.2"
-        }
-      ],
-      "topics": [
-        "acquia",
-        "cloud",
-        "acquia-cloud",
-        "vagrant",
-        "virtualbox",
-        "vm",
-        "drupal"
-      ],
-      "addedAt": "2026-07-15T22:28:32.790199+00:00"
-    },
-    {
-      "slug": "drupal-kit",
-      "name": "Drupal-KIT",
-      "fullName": "WPP-Public/Drupal-KIT",
-      "category": "Templates",
-      "stars": 19,
-      "author": "WPP-Public",
-      "avatar": "https://avatars.githubusercontent.com/u/91149275?v=4",
-      "desc": "VMLY&R's Drupal  KIT is a project scaffold distribution which helps build and maintain Drupal projects.",
-      "demo": null,
-      "repoUrl": "https://github.com/WPP-Public/Drupal-KIT",
-      "long1": "VMLY&R's Drupal  KIT is a project scaffold distribution which helps build and maintain Drupal projects. Maintained by WPP-Public on GitHub, where it has earned 19 stars from the community.",
-      "long2": "It's actively developed around drupal, composer, vmlyrna, and is a solid reference for anyone building with these tools.",
+      "repoUrl": "https://github.com/dpi/dogit",
+      "long1": "Drupal.org Git CLI. Maintained by dpi on GitHub, where it has earned 19 stars from the community.",
+      "long2": "It's actively developed around drupal, drupalorg, cli, and is a solid reference for anyone building with these tools.",
       "stack": [
         "PHP",
         "Drupal",
-        "Composer",
-        "Vmlyrna"
+        "Drupalorg",
+        "Cli"
       ],
-      "updated": "2 years ago",
-      "pushedAt": "2024-04-06T01:08:04Z",
-      "license": "GPL-2.0",
+      "updated": "10 months ago",
+      "pushedAt": "2025-10-30T01:02:07Z",
+      "license": "—",
       "langs": [
         {
-          "pct": 50,
+          "pct": 100,
           "name": "PHP"
         },
         {
-          "pct": 39,
-          "name": "Shell"
-        },
-        {
-          "pct": 11,
-          "name": "JavaScript"
+          "pct": 0,
+          "name": "Makefile"
         }
       ],
       "versions": [
         {
-          "url": "https://github.com/WPP-Public/Drupal-KIT/releases/tag/10.0.0",
-          "name": "10.0.0"
+          "url": "https://github.com/dpi/dogit/releases/tag/1.4.0",
+          "name": "1.4.0"
         },
         {
-          "url": "https://github.com/WPP-Public/Drupal-KIT/releases/tag/9.0.2",
-          "name": "9.0.2"
+          "url": "https://github.com/dpi/dogit/releases/tag/1.3.0",
+          "name": "1.3.0"
         },
         {
-          "url": "https://github.com/WPP-Public/Drupal-KIT/releases/tag/8.0.29",
-          "name": "8.0.29"
+          "url": "https://github.com/dpi/dogit/releases/tag/1.2.0",
+          "name": "1.2.0"
         },
         {
-          "url": "https://github.com/WPP-Public/Drupal-KIT/releases/tag/8.0.28",
-          "name": "8.0.28"
+          "url": "https://github.com/dpi/dogit/releases/tag/1.1.4",
+          "name": "1.1.4"
+        },
+        {
+          "url": "https://github.com/dpi/dogit/releases/tag/1.1.3",
+          "name": "1.1.3"
         }
       ],
       "topics": [
         "drupal",
-        "composer",
-        "vmlyrna"
+        "drupalorg",
+        "cli"
       ],
       "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
@@ -9436,7 +9367,7 @@
         "Drupal Theme",
         "Theme"
       ],
-      "updated": "today",
+      "updated": "4 weeks ago",
       "pushedAt": "2026-08-10T07:31:30Z",
       "license": "GPL-2.0",
       "langs": [
@@ -9483,6 +9414,67 @@
       "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
     {
+      "slug": "drupal-kit",
+      "name": "Drupal-KIT",
+      "fullName": "WPP-Public/Drupal-KIT",
+      "category": "Templates",
+      "stars": 19,
+      "author": "WPP-Public",
+      "avatar": "https://avatars.githubusercontent.com/u/91149275?v=4",
+      "desc": "VMLY&R's Drupal  KIT is a project scaffold distribution which helps build and maintain Drupal projects.",
+      "demo": null,
+      "repoUrl": "https://github.com/WPP-Public/Drupal-KIT",
+      "long1": "VMLY&R's Drupal  KIT is a project scaffold distribution which helps build and maintain Drupal projects. Maintained by WPP-Public on GitHub, where it has earned 19 stars from the community.",
+      "long2": "It's actively developed around drupal, composer, vmlyrna, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Drupal",
+        "Composer",
+        "Vmlyrna"
+      ],
+      "updated": "2 years ago",
+      "pushedAt": "2024-04-06T01:08:04Z",
+      "license": "GPL-2.0",
+      "langs": [
+        {
+          "pct": 50,
+          "name": "PHP"
+        },
+        {
+          "pct": 39,
+          "name": "Shell"
+        },
+        {
+          "pct": 11,
+          "name": "JavaScript"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/WPP-Public/Drupal-KIT/releases/tag/10.0.0",
+          "name": "10.0.0"
+        },
+        {
+          "url": "https://github.com/WPP-Public/Drupal-KIT/releases/tag/9.0.2",
+          "name": "9.0.2"
+        },
+        {
+          "url": "https://github.com/WPP-Public/Drupal-KIT/releases/tag/8.0.29",
+          "name": "8.0.29"
+        },
+        {
+          "url": "https://github.com/WPP-Public/Drupal-KIT/releases/tag/8.0.28",
+          "name": "8.0.28"
+        }
+      ],
+      "topics": [
+        "drupal",
+        "composer",
+        "vmlyrna"
+      ],
+      "addedAt": "2026-07-15T22:28:32.790199+00:00"
+    },
+    {
       "slug": "atelier-cms",
       "name": "atelier-cms",
       "fullName": "aincient-labs/atelier-cms",
@@ -9502,7 +9494,7 @@
         "Cms",
         "Content Management"
       ],
-      "updated": "yesterday",
+      "updated": "4 weeks ago",
       "pushedAt": "2026-08-09T20:48:19Z",
       "license": "—",
       "langs": [
@@ -9558,275 +9550,71 @@
       "addedAt": "2026-08-10T12:07:31.760934+00:00"
     },
     {
-      "slug": "dogit",
-      "name": "dogit",
-      "fullName": "dpi/dogit",
+      "slug": "acquia-cloud-vm",
+      "name": "acquia-cloud-vm",
+      "fullName": "geerlingguy/acquia-cloud-vm",
       "category": "DevTools",
       "stars": 19,
-      "author": "dpi",
-      "avatar": "https://avatars.githubusercontent.com/u/21850?v=4",
-      "desc": "Drupal.org Git CLI",
+      "author": "geerlingguy",
+      "avatar": "https://avatars.githubusercontent.com/u/481677?u=d430bda7f20ac8c31b29d9a687a1d84c9abd30e0&v=4",
+      "desc": "VirtualBox/Vagrant-based VM to closely match Acquia Cloud environment.",
       "demo": null,
-      "repoUrl": "https://github.com/dpi/dogit",
-      "long1": "Drupal.org Git CLI. Maintained by dpi on GitHub, where it has earned 19 stars from the community.",
-      "long2": "It's actively developed around drupal, drupalorg, cli, and is a solid reference for anyone building with these tools.",
+      "repoUrl": "https://github.com/geerlingguy/acquia-cloud-vm",
+      "long1": "VirtualBox/Vagrant-based VM to closely match Acquia Cloud environment. Maintained by geerlingguy on GitHub, where it has earned 19 stars from the community.",
+      "long2": "It's actively developed around acquia, cloud, acquia-cloud, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "PHP",
-        "Drupal",
-        "Drupalorg",
-        "Cli"
+        "Acquia",
+        "Cloud",
+        "Acquia Cloud",
+        "Vagrant"
       ],
-      "updated": "9 months ago",
-      "pushedAt": "2025-10-30T01:02:07Z",
+      "updated": "11 years ago",
+      "pushedAt": "2015-07-01T03:25:28Z",
       "license": "—",
       "langs": [
         {
-          "pct": 100,
-          "name": "PHP"
+          "name": "JavaScript",
+          "pct": 72
         },
         {
-          "pct": 0,
-          "name": "Makefile"
+          "name": "JavaScript",
+          "pct": 20
+        },
+        {
+          "name": "Other",
+          "pct": 8
         }
       ],
       "versions": [
         {
-          "url": "https://github.com/dpi/dogit/releases/tag/1.4.0",
-          "name": "1.4.0"
+          "url": "https://github.com/geerlingguy/acquia-cloud-vm/releases/tag/1.0.6",
+          "name": "1.0.6"
         },
         {
-          "url": "https://github.com/dpi/dogit/releases/tag/1.3.0",
-          "name": "1.3.0"
+          "url": "https://github.com/geerlingguy/acquia-cloud-vm/releases/tag/1.0.5",
+          "name": "1.0.5"
         },
         {
-          "url": "https://github.com/dpi/dogit/releases/tag/1.2.0",
-          "name": "1.2.0"
+          "url": "https://github.com/geerlingguy/acquia-cloud-vm/releases/tag/1.0.4",
+          "name": "1.0.4"
         },
         {
-          "url": "https://github.com/dpi/dogit/releases/tag/1.1.4",
-          "name": "1.1.4"
+          "url": "https://github.com/geerlingguy/acquia-cloud-vm/releases/tag/1.0.3",
+          "name": "1.0.3"
         },
         {
-          "url": "https://github.com/dpi/dogit/releases/tag/1.1.3",
-          "name": "1.1.3"
+          "url": "https://github.com/geerlingguy/acquia-cloud-vm/releases/tag/1.0.2",
+          "name": "1.0.2"
         }
       ],
       "topics": [
-        "drupal",
-        "drupalorg",
-        "cli"
-      ],
-      "addedAt": "2026-07-15T22:28:32.790199+00:00"
-    },
-    {
-      "slug": "docker-php7",
-      "name": "docker-php7",
-      "fullName": "touch4it/docker-php7",
-      "category": "DevTools",
-      "stars": 18,
-      "author": "touch4it",
-      "avatar": "https://avatars.githubusercontent.com/u/28871098?v=4",
-      "desc": "Docker image tailed to run PHP application",
-      "demo": "https://hub.docker.com/r/touch4it/docker-php7/",
-      "repoUrl": "https://github.com/touch4it/docker-php7",
-      "long1": "Docker image tailed to run PHP application. Maintained by touch4it on GitHub, where it has earned 18 stars from the community.",
-      "long2": "It's actively developed around docker-images, php, nginx, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Dockerfile",
-        "Docker Images",
-        "Php",
-        "Nginx",
-        "Drupal"
-      ],
-      "updated": "6 weeks ago",
-      "pushedAt": "2026-07-02T09:08:40Z",
-      "license": "MIT",
-      "langs": [
-        {
-          "pct": 68,
-          "name": "Dockerfile"
-        },
-        {
-          "pct": 18,
-          "name": "Shell"
-        },
-        {
-          "pct": 14,
-          "name": "Python"
-        }
-      ],
-      "versions": [
-        {
-          "url": "https://github.com/touch4it/docker-php7/releases/tag/php8.4.6",
-          "name": "php8.4.6"
-        },
-        {
-          "url": "https://github.com/touch4it/docker-php7/releases/tag/php8.3.20",
-          "name": "php8.3.20"
-        },
-        {
-          "url": "https://github.com/touch4it/docker-php7/releases/tag/php8.2.28",
-          "name": "php8.2.28"
-        },
-        {
-          "url": "https://github.com/touch4it/docker-php7/releases/tag/php8.1.32",
-          "name": "php8.1.32"
-        },
-        {
-          "url": "https://github.com/touch4it/docker-php7/releases/tag/php8.0.30",
-          "name": "php8.0.30"
-        }
-      ],
-      "topics": [
-        "docker-images",
-        "php",
-        "nginx",
-        "drupal",
-        "symfony",
-        "docker-image",
-        "yii2",
-        "php7"
-      ],
-      "addedAt": "2026-07-15T22:28:32.790199+00:00"
-    },
-    {
-      "slug": "dkan2",
-      "name": "dkan2",
-      "fullName": "GetDKAN/dkan2",
-      "category": "DevTools",
-      "stars": 18,
-      "author": "GetDKAN",
-      "avatar": "https://avatars.githubusercontent.com/u/25395768?v=4",
-      "desc": "Deprecated: please use the 2.x branch of the dkan repo",
-      "demo": "https://github.com/GetDKAN/dkan",
-      "repoUrl": "https://github.com/GetDKAN/dkan2",
-      "long1": "Deprecated: please use the 2.x branch of the dkan repo. Maintained by GetDKAN on GitHub, where it has earned 18 stars from the community.",
-      "long2": "It's actively developed around dkan, opendata, civic-tech, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Dkan",
-        "Opendata",
-        "Civic Tech",
-        "Drupal"
-      ],
-      "updated": "4 years ago",
-      "pushedAt": "2022-02-10T22:16:14Z",
-      "license": "GPL-2.0",
-      "langs": [
-        {
-          "pct": 85,
-          "name": "PHP"
-        },
-        {
-          "pct": 14,
-          "name": "JavaScript"
-        },
-        {
-          "pct": 1,
-          "name": "HTML"
-        }
-      ],
-      "versions": [
-        {
-          "url": "https://github.com/GetDKAN/dkan2/releases/tag/3.0.0-rc17",
-          "name": "3.0.0-rc17"
-        },
-        {
-          "url": "https://github.com/GetDKAN/dkan2/releases/tag/3.0.0-rc16",
-          "name": "3.0.0-rc16"
-        },
-        {
-          "url": "https://github.com/GetDKAN/dkan2/releases/tag/3.0.0-rc15",
-          "name": "3.0.0-rc15"
-        },
-        {
-          "url": "https://github.com/GetDKAN/dkan2/releases/tag/3.0.0-rc14",
-          "name": "3.0.0-rc14"
-        },
-        {
-          "url": "https://github.com/GetDKAN/dkan2/releases/tag/3.0.0-rc13",
-          "name": "3.0.0-rc13"
-        }
-      ],
-      "topics": [
-        "dkan",
-        "opendata",
-        "civic-tech",
-        "drupal",
-        "drupal-8",
-        "deprecated"
-      ],
-      "addedAt": "2026-07-15T22:28:32.790199+00:00"
-    },
-    {
-      "slug": "drupal-extension-scaffold",
-      "name": "drupal_extension_scaffold",
-      "fullName": "AlexSkrypnyk/drupal_extension_scaffold",
-      "category": "DevTools",
-      "stars": 18,
-      "author": "AlexSkrypnyk",
-      "avatar": "https://avatars.githubusercontent.com/u/378794?u=1465baa759d107f18f02f904fa9adc2e6eb9d870&v=4",
-      "desc": "💧 Template for a contributed Drupal module or theme with CI and mirroring to Drupal.org",
-      "demo": null,
-      "repoUrl": "https://github.com/AlexSkrypnyk/drupal_extension_scaffold",
-      "long1": "💧 Template for a contributed Drupal module or theme with CI and mirroring to Drupal.org. Maintained by AlexSkrypnyk on GitHub, where it has earned 18 stars from the community.",
-      "long2": "It's actively developed around circleci, drupal, testing, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Circleci",
-        "Drupal",
-        "Testing",
-        "Template"
-      ],
-      "updated": "1 week ago",
-      "pushedAt": "2026-08-01T22:08:46Z",
-      "license": "GPL-2.0",
-      "langs": [
-        {
-          "pct": 96,
-          "name": "PHP"
-        },
-        {
-          "pct": 2,
-          "name": "JavaScript"
-        },
-        {
-          "pct": 2,
-          "name": "Makefile"
-        }
-      ],
-      "versions": [
-        {
-          "url": "https://github.com/AlexSkrypnyk/drupal_extension_scaffold/releases/tag/4.17.0",
-          "name": "4.17.0"
-        },
-        {
-          "url": "https://github.com/AlexSkrypnyk/drupal_extension_scaffold/releases/tag/4.16.4",
-          "name": "4.16.4"
-        },
-        {
-          "url": "https://github.com/AlexSkrypnyk/drupal_extension_scaffold/releases/tag/4.16.3",
-          "name": "4.16.3"
-        },
-        {
-          "url": "https://github.com/AlexSkrypnyk/drupal_extension_scaffold/releases/tag/4.16.2",
-          "name": "4.16.2"
-        },
-        {
-          "url": "https://github.com/AlexSkrypnyk/drupal_extension_scaffold/releases/tag/4.16.1",
-          "name": "4.16.1"
-        }
-      ],
-      "topics": [
-        "circleci",
-        "drupal",
-        "testing",
-        "template",
-        "bolierplate",
-        "gha",
-        "github-actions",
-        "scaffold",
-        "drupal-contrib"
+        "acquia",
+        "cloud",
+        "acquia-cloud",
+        "vagrant",
+        "virtualbox",
+        "vm",
+        "drupal"
       ],
       "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
@@ -9887,131 +9675,94 @@
       "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
     {
-      "slug": "phabalicious",
-      "name": "phabalicious",
-      "fullName": "factorial-io/phabalicious",
-      "category": "DevTools",
+      "slug": "th3-monster",
+      "name": "Th3_Monster",
+      "fullName": "Moat3zKadd3chy/Th3_Monster",
+      "category": "E-commerce",
       "stars": 18,
-      "author": "factorial-io",
-      "avatar": "https://avatars.githubusercontent.com/u/11006857?v=4",
-      "desc": "Supports your deployments and every-day devops-tasks",
-      "demo": "http://docs.phab.io",
-      "repoUrl": "https://github.com/factorial-io/phabalicious",
-      "long1": "Supports your deployments and every-day devops-tasks. Maintained by factorial-io on GitHub, where it has earned 18 stars from the community.",
-      "long2": "It's actively developed around fabfile, deployment, drupal, and is a solid reference for anyone building with these tools.",
+      "author": "Moat3zKadd3chy",
+      "avatar": "https://avatars.githubusercontent.com/u/33345385?u=0f111817a081c3abe1f6ff65d266a7571960aace&v=4",
+      "desc": "Th3_Monster Tool 2.5 ☣ Website Vulnerability Scanner & Auto Exploiter Bot ☣ .",
+      "demo": "https://prnt.sc/kgszp5",
+      "repoUrl": "https://github.com/Moat3zKadd3chy/Th3_Monster",
+      "long1": "Th3_Monster Tool 2.5 ☣ Website Vulnerability Scanner & Auto Exploiter Bot ☣ . Maintained by Moat3zKadd3chy on GitHub, where it has earned 18 stars from the community.",
+      "long2": "It's actively developed around vulnerability-scanners, cms-detector, auto-exploiter, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "PHP",
-        "Fabfile",
-        "Deployment",
-        "Drupal",
-        "Docker"
-      ],
-      "updated": "2 days ago",
-      "pushedAt": "2026-08-08T13:46:50Z",
-      "license": "MIT",
-      "langs": [
-        {
-          "pct": 100,
-          "name": "PHP"
-        },
-        {
-          "pct": 0,
-          "name": "JavaScript"
-        },
-        {
-          "pct": 0,
-          "name": "Shell"
-        }
-      ],
-      "versions": [
-        {
-          "url": "https://github.com/factorial-io/phabalicious/releases/tag/v4.0.3",
-          "name": "v4.0.3"
-        },
-        {
-          "url": "https://github.com/factorial-io/phabalicious/releases/tag/v4.0.1",
-          "name": "v4.0.1"
-        },
-        {
-          "url": "https://github.com/factorial-io/phabalicious/releases/tag/v4.0.0",
-          "name": "v4.0.0"
-        },
-        {
-          "url": "https://github.com/factorial-io/phabalicious/releases/tag/4.0.0-beta.3",
-          "name": "4.0.0-beta.3"
-        },
-        {
-          "url": "https://github.com/factorial-io/phabalicious/releases/tag/4.0.0-beta.2",
-          "name": "4.0.0-beta.2"
-        }
-      ],
-      "topics": [
-        "fabfile",
-        "deployment",
-        "drupal",
-        "docker",
-        "kubernetes",
-        "phabalicious",
-        "phab"
-      ],
-      "addedAt": "2026-07-15T22:28:32.790199+00:00"
-    },
-    {
-      "slug": "jwt",
-      "name": "jwt",
-      "fullName": "gabesullice/jwt",
-      "category": "Authentication",
-      "stars": 18,
-      "author": "gabesullice",
-      "avatar": "https://avatars.githubusercontent.com/u/4500265?u=bce8e757dd4a1c1c96717b8396c5afc29b0182db&v=4",
-      "desc": "A project worth exploring.",
-      "demo": "https://www.drupal.org/project/jwt",
-      "repoUrl": "https://github.com/gabesullice/jwt",
-      "long1": "A project worth exploring. Maintained by gabesullice on GitHub, where it has earned 18 stars from the community.",
-      "long2": "It's actively developed around drupal, drupal-8, jwt, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Drupal",
-        "Drupal 8",
-        "Jwt",
-        "Json Web Token"
+        "Perl",
+        "Vulnerability Scanners",
+        "Cms Detector",
+        "Auto Exploiter",
+        "Hacking Tool"
       ],
       "updated": "8 years ago",
-      "pushedAt": "2018-08-02T19:48:55Z",
+      "pushedAt": "2018-08-11T12:45:38Z",
       "license": "—",
       "langs": [
         {
           "pct": 100,
-          "name": "PHP"
+          "name": "Perl"
         }
       ],
-      "versions": [
-        {
-          "url": "https://github.com/gabesullice/jwt/releases/tag/8.x-1.0-alpha6",
-          "name": "8.x-1.0-alpha6"
-        },
-        {
-          "url": "https://github.com/gabesullice/jwt/releases/tag/8.x-1.0-alpha5",
-          "name": "8.x-1.0-alpha5"
-        },
-        {
-          "url": "https://github.com/gabesullice/jwt/releases/tag/8.x-1.0-alpha4",
-          "name": "8.x-1.0-alpha4"
-        },
-        {
-          "url": "https://github.com/gabesullice/jwt/releases/tag/8.x-1.0-alpha3",
-          "name": "8.x-1.0-alpha3"
-        },
-        {
-          "url": "https://github.com/gabesullice/jwt/releases/tag/8.x-1.0-alpha2",
-          "name": "8.x-1.0-alpha2"
-        }
-      ],
+      "versions": [],
       "topics": [
+        "vulnerability-scanners",
+        "cms-detector",
+        "auto-exploiter",
+        "hacking-tool",
+        "pentesting",
+        "joomla",
+        "wordpress",
         "drupal",
-        "drupal-8",
-        "jwt",
-        "json-web-token"
+        "woocommerce",
+        "scanner",
+        "exploitation",
+        "prestashop"
+      ],
+      "addedAt": "2026-07-15T22:28:32.790199+00:00"
+    },
+    {
+      "slug": "lxd-images",
+      "name": "lxd-images",
+      "fullName": "drubb/lxd-images",
+      "category": "DevTools",
+      "stars": 18,
+      "author": "drubb",
+      "avatar": "https://avatars.githubusercontent.com/u/2177749?u=8f161cbb94cc9dc871e883acb358800601e8188b&v=4",
+      "desc": "Collection of LXD images for local development environments",
+      "demo": null,
+      "repoUrl": "https://github.com/drubb/lxd-images",
+      "long1": "Collection of LXD images for local development environments. Maintained by drubb on GitHub, where it has earned 18 stars from the community.",
+      "long2": "It's actively developed around lxd, lxc, containers, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Shell",
+        "Lxd",
+        "Lxc",
+        "Containers",
+        "Drupal"
+      ],
+      "updated": "8 years ago",
+      "pushedAt": "2018-07-23T15:34:13Z",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "Shell"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "lxd",
+        "lxc",
+        "containers",
+        "drupal",
+        "vuejs",
+        "vue",
+        "development-environment",
+        "python",
+        "nodejs",
+        "angular",
+        "react",
+        "golang"
       ],
       "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
@@ -10083,97 +9834,61 @@
       "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
     {
-      "slug": "th3-monster",
-      "name": "Th3_Monster",
-      "fullName": "Moat3zKadd3chy/Th3_Monster",
-      "category": "E-commerce",
+      "slug": "jwt",
+      "name": "jwt",
+      "fullName": "gabesullice/jwt",
+      "category": "Authentication",
       "stars": 18,
-      "author": "Moat3zKadd3chy",
-      "avatar": "https://avatars.githubusercontent.com/u/33345385?u=0f111817a081c3abe1f6ff65d266a7571960aace&v=4",
-      "desc": "Th3_Monster Tool 2.5 ☣ Website Vulnerability Scanner & Auto Exploiter Bot ☣ .",
-      "demo": "https://prnt.sc/kgszp5",
-      "repoUrl": "https://github.com/Moat3zKadd3chy/Th3_Monster",
-      "long1": "Th3_Monster Tool 2.5 ☣ Website Vulnerability Scanner & Auto Exploiter Bot ☣ . Maintained by Moat3zKadd3chy on GitHub, where it has earned 18 stars from the community.",
-      "long2": "It's actively developed around vulnerability-scanners, cms-detector, auto-exploiter, and is a solid reference for anyone building with these tools.",
+      "author": "gabesullice",
+      "avatar": "https://avatars.githubusercontent.com/u/4500265?u=bce8e757dd4a1c1c96717b8396c5afc29b0182db&v=4",
+      "desc": "A project worth exploring.",
+      "demo": "https://www.drupal.org/project/jwt",
+      "repoUrl": "https://github.com/gabesullice/jwt",
+      "long1": "A project worth exploring. Maintained by gabesullice on GitHub, where it has earned 18 stars from the community.",
+      "long2": "It's actively developed around drupal, drupal-8, jwt, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "Perl",
-        "Vulnerability Scanners",
-        "Cms Detector",
-        "Auto Exploiter",
-        "Hacking Tool"
+        "PHP",
+        "Drupal",
+        "Drupal 8",
+        "Jwt",
+        "Json Web Token"
       ],
       "updated": "8 years ago",
-      "pushedAt": "2018-08-11T12:45:38Z",
+      "pushedAt": "2018-08-02T19:48:55Z",
       "license": "—",
       "langs": [
         {
           "pct": 100,
-          "name": "Perl"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "vulnerability-scanners",
-        "cms-detector",
-        "auto-exploiter",
-        "hacking-tool",
-        "pentesting",
-        "joomla",
-        "wordpress",
-        "drupal",
-        "woocommerce",
-        "scanner",
-        "exploitation",
-        "prestashop"
-      ],
-      "addedAt": "2026-07-15T22:28:32.790199+00:00"
-    },
-    {
-      "slug": "dresktop",
-      "name": "dresktop",
-      "fullName": "dresktop/dresktop",
-      "category": "DevTools",
-      "stars": 18,
-      "author": "dresktop",
-      "avatar": "https://avatars.githubusercontent.com/u/165629357?v=4",
-      "desc": "Dresktop",
-      "demo": "https://dresktop.com",
-      "repoUrl": "https://github.com/dresktop/dresktop",
-      "long1": "Dresktop. Maintained by dresktop on GitHub, where it has earned 18 stars from the community.",
-      "long2": "It's actively developed around docker, drupal, management, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Vue",
-        "Docker",
-        "Drupal",
-        "Management"
-      ],
-      "updated": "2 years ago",
-      "pushedAt": "2024-11-08T05:45:39Z",
-      "license": "Apache-2.0",
-      "langs": [
-        {
-          "pct": 60,
-          "name": "Vue"
-        },
-        {
-          "pct": 38,
-          "name": "TypeScript"
-        },
-        {
-          "pct": 2,
-          "name": "JavaScript"
+          "name": "PHP"
         }
       ],
       "versions": [
         {
-          "url": "https://github.com/dresktop/dresktop/releases/tag/v1.0.1-beta.3",
-          "name": "v1.0.1-beta.3"
+          "url": "https://github.com/gabesullice/jwt/releases/tag/8.x-1.0-alpha6",
+          "name": "8.x-1.0-alpha6"
+        },
+        {
+          "url": "https://github.com/gabesullice/jwt/releases/tag/8.x-1.0-alpha5",
+          "name": "8.x-1.0-alpha5"
+        },
+        {
+          "url": "https://github.com/gabesullice/jwt/releases/tag/8.x-1.0-alpha4",
+          "name": "8.x-1.0-alpha4"
+        },
+        {
+          "url": "https://github.com/gabesullice/jwt/releases/tag/8.x-1.0-alpha3",
+          "name": "8.x-1.0-alpha3"
+        },
+        {
+          "url": "https://github.com/gabesullice/jwt/releases/tag/8.x-1.0-alpha2",
+          "name": "8.x-1.0-alpha2"
         }
       ],
       "topics": [
-        "docker",
         "drupal",
-        "management"
+        "drupal-8",
+        "jwt",
+        "json-web-token"
       ],
       "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
@@ -10237,48 +9952,333 @@
       "addedAt": "2026-08-10T12:07:31.760934+00:00"
     },
     {
-      "slug": "lxd-images",
-      "name": "lxd-images",
-      "fullName": "drubb/lxd-images",
+      "slug": "dresktop",
+      "name": "dresktop",
+      "fullName": "dresktop/dresktop",
       "category": "DevTools",
       "stars": 18,
-      "author": "drubb",
-      "avatar": "https://avatars.githubusercontent.com/u/2177749?u=8f161cbb94cc9dc871e883acb358800601e8188b&v=4",
-      "desc": "Collection of LXD images for local development environments",
-      "demo": null,
-      "repoUrl": "https://github.com/drubb/lxd-images",
-      "long1": "Collection of LXD images for local development environments. Maintained by drubb on GitHub, where it has earned 18 stars from the community.",
-      "long2": "It's actively developed around lxd, lxc, containers, and is a solid reference for anyone building with these tools.",
+      "author": "dresktop",
+      "avatar": "https://avatars.githubusercontent.com/u/165629357?v=4",
+      "desc": "Dresktop",
+      "demo": "https://dresktop.com",
+      "repoUrl": "https://github.com/dresktop/dresktop",
+      "long1": "Dresktop. Maintained by dresktop on GitHub, where it has earned 18 stars from the community.",
+      "long2": "It's actively developed around docker, drupal, management, and is a solid reference for anyone building with these tools.",
       "stack": [
-        "Shell",
-        "Lxd",
-        "Lxc",
-        "Containers",
+        "Vue",
+        "Docker",
+        "Drupal",
+        "Management"
+      ],
+      "updated": "2 years ago",
+      "pushedAt": "2024-11-08T05:45:39Z",
+      "license": "Apache-2.0",
+      "langs": [
+        {
+          "pct": 60,
+          "name": "Vue"
+        },
+        {
+          "pct": 38,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 2,
+          "name": "JavaScript"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/dresktop/dresktop/releases/tag/v1.0.1-beta.3",
+          "name": "v1.0.1-beta.3"
+        }
+      ],
+      "topics": [
+        "docker",
+        "drupal",
+        "management"
+      ],
+      "addedAt": "2026-07-15T22:28:32.790199+00:00"
+    },
+    {
+      "slug": "drupal-extension-scaffold",
+      "name": "drupal_extension_scaffold",
+      "fullName": "AlexSkrypnyk/drupal_extension_scaffold",
+      "category": "DevTools",
+      "stars": 18,
+      "author": "AlexSkrypnyk",
+      "avatar": "https://avatars.githubusercontent.com/u/378794?u=1465baa759d107f18f02f904fa9adc2e6eb9d870&v=4",
+      "desc": "💧 Template for a contributed Drupal module or theme with CI and mirroring to Drupal.org",
+      "demo": null,
+      "repoUrl": "https://github.com/AlexSkrypnyk/drupal_extension_scaffold",
+      "long1": "💧 Template for a contributed Drupal module or theme with CI and mirroring to Drupal.org. Maintained by AlexSkrypnyk on GitHub, where it has earned 18 stars from the community.",
+      "long2": "It's actively developed around circleci, drupal, testing, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Circleci",
+        "Drupal",
+        "Testing",
+        "Template"
+      ],
+      "updated": "5 weeks ago",
+      "pushedAt": "2026-08-01T22:08:46Z",
+      "license": "GPL-2.0",
+      "langs": [
+        {
+          "pct": 96,
+          "name": "PHP"
+        },
+        {
+          "pct": 2,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 2,
+          "name": "Makefile"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/AlexSkrypnyk/drupal_extension_scaffold/releases/tag/4.17.0",
+          "name": "4.17.0"
+        },
+        {
+          "url": "https://github.com/AlexSkrypnyk/drupal_extension_scaffold/releases/tag/4.16.4",
+          "name": "4.16.4"
+        },
+        {
+          "url": "https://github.com/AlexSkrypnyk/drupal_extension_scaffold/releases/tag/4.16.3",
+          "name": "4.16.3"
+        },
+        {
+          "url": "https://github.com/AlexSkrypnyk/drupal_extension_scaffold/releases/tag/4.16.2",
+          "name": "4.16.2"
+        },
+        {
+          "url": "https://github.com/AlexSkrypnyk/drupal_extension_scaffold/releases/tag/4.16.1",
+          "name": "4.16.1"
+        }
+      ],
+      "topics": [
+        "circleci",
+        "drupal",
+        "testing",
+        "template",
+        "bolierplate",
+        "gha",
+        "github-actions",
+        "scaffold",
+        "drupal-contrib"
+      ],
+      "addedAt": "2026-07-15T22:28:32.790199+00:00"
+    },
+    {
+      "slug": "docker-php7",
+      "name": "docker-php7",
+      "fullName": "touch4it/docker-php7",
+      "category": "DevTools",
+      "stars": 18,
+      "author": "touch4it",
+      "avatar": "https://avatars.githubusercontent.com/u/28871098?v=4",
+      "desc": "Docker image tailed to run PHP application",
+      "demo": "https://hub.docker.com/r/touch4it/docker-php7/",
+      "repoUrl": "https://github.com/touch4it/docker-php7",
+      "long1": "Docker image tailed to run PHP application. Maintained by touch4it on GitHub, where it has earned 18 stars from the community.",
+      "long2": "It's actively developed around docker-images, php, nginx, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "Dockerfile",
+        "Docker Images",
+        "Php",
+        "Nginx",
         "Drupal"
       ],
-      "updated": "8 years ago",
-      "pushedAt": "2018-07-23T15:34:13Z",
+      "updated": "2 months ago",
+      "pushedAt": "2026-07-02T09:08:40Z",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 68,
+          "name": "Dockerfile"
+        },
+        {
+          "pct": 18,
+          "name": "Shell"
+        },
+        {
+          "pct": 14,
+          "name": "Python"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/touch4it/docker-php7/releases/tag/php8.4.6",
+          "name": "php8.4.6"
+        },
+        {
+          "url": "https://github.com/touch4it/docker-php7/releases/tag/php8.3.20",
+          "name": "php8.3.20"
+        },
+        {
+          "url": "https://github.com/touch4it/docker-php7/releases/tag/php8.2.28",
+          "name": "php8.2.28"
+        },
+        {
+          "url": "https://github.com/touch4it/docker-php7/releases/tag/php8.1.32",
+          "name": "php8.1.32"
+        },
+        {
+          "url": "https://github.com/touch4it/docker-php7/releases/tag/php8.0.30",
+          "name": "php8.0.30"
+        }
+      ],
+      "topics": [
+        "docker-images",
+        "php",
+        "nginx",
+        "drupal",
+        "symfony",
+        "docker-image",
+        "yii2",
+        "php7"
+      ],
+      "addedAt": "2026-07-15T22:28:32.790199+00:00"
+    },
+    {
+      "slug": "dkan2",
+      "name": "dkan2",
+      "fullName": "GetDKAN/dkan2",
+      "category": "DevTools",
+      "stars": 18,
+      "author": "GetDKAN",
+      "avatar": "https://avatars.githubusercontent.com/u/25395768?v=4",
+      "desc": "Deprecated: please use the 2.x branch of the dkan repo",
+      "demo": "https://github.com/GetDKAN/dkan",
+      "repoUrl": "https://github.com/GetDKAN/dkan2",
+      "long1": "Deprecated: please use the 2.x branch of the dkan repo. Maintained by GetDKAN on GitHub, where it has earned 18 stars from the community.",
+      "long2": "It's actively developed around dkan, opendata, civic-tech, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Dkan",
+        "Opendata",
+        "Civic Tech",
+        "Drupal"
+      ],
+      "updated": "5 years ago",
+      "pushedAt": "2022-02-10T22:16:14Z",
+      "license": "GPL-2.0",
+      "langs": [
+        {
+          "pct": 85,
+          "name": "PHP"
+        },
+        {
+          "pct": 14,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 1,
+          "name": "HTML"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/GetDKAN/dkan2/releases/tag/3.0.0-rc17",
+          "name": "3.0.0-rc17"
+        },
+        {
+          "url": "https://github.com/GetDKAN/dkan2/releases/tag/3.0.0-rc16",
+          "name": "3.0.0-rc16"
+        },
+        {
+          "url": "https://github.com/GetDKAN/dkan2/releases/tag/3.0.0-rc15",
+          "name": "3.0.0-rc15"
+        },
+        {
+          "url": "https://github.com/GetDKAN/dkan2/releases/tag/3.0.0-rc14",
+          "name": "3.0.0-rc14"
+        },
+        {
+          "url": "https://github.com/GetDKAN/dkan2/releases/tag/3.0.0-rc13",
+          "name": "3.0.0-rc13"
+        }
+      ],
+      "topics": [
+        "dkan",
+        "opendata",
+        "civic-tech",
+        "drupal",
+        "drupal-8",
+        "deprecated"
+      ],
+      "addedAt": "2026-07-15T22:28:32.790199+00:00"
+    },
+    {
+      "slug": "phabalicious",
+      "name": "phabalicious",
+      "fullName": "factorial-io/phabalicious",
+      "category": "DevTools",
+      "stars": 18,
+      "author": "factorial-io",
+      "avatar": "https://avatars.githubusercontent.com/u/11006857?v=4",
+      "desc": "Supports your deployments and every-day devops-tasks",
+      "demo": "http://docs.phab.io",
+      "repoUrl": "https://github.com/factorial-io/phabalicious",
+      "long1": "Supports your deployments and every-day devops-tasks. Maintained by factorial-io on GitHub, where it has earned 18 stars from the community.",
+      "long2": "It's actively developed around fabfile, deployment, drupal, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Fabfile",
+        "Deployment",
+        "Drupal",
+        "Docker"
+      ],
+      "updated": "4 weeks ago",
+      "pushedAt": "2026-08-08T13:46:50Z",
       "license": "MIT",
       "langs": [
         {
           "pct": 100,
+          "name": "PHP"
+        },
+        {
+          "pct": 0,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 0,
           "name": "Shell"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/factorial-io/phabalicious/releases/tag/v4.0.3",
+          "name": "v4.0.3"
+        },
+        {
+          "url": "https://github.com/factorial-io/phabalicious/releases/tag/v4.0.1",
+          "name": "v4.0.1"
+        },
+        {
+          "url": "https://github.com/factorial-io/phabalicious/releases/tag/v4.0.0",
+          "name": "v4.0.0"
+        },
+        {
+          "url": "https://github.com/factorial-io/phabalicious/releases/tag/4.0.0-beta.3",
+          "name": "4.0.0-beta.3"
+        },
+        {
+          "url": "https://github.com/factorial-io/phabalicious/releases/tag/4.0.0-beta.2",
+          "name": "4.0.0-beta.2"
+        }
+      ],
       "topics": [
-        "lxd",
-        "lxc",
-        "containers",
+        "fabfile",
+        "deployment",
         "drupal",
-        "vuejs",
-        "vue",
-        "development-environment",
-        "python",
-        "nodejs",
-        "angular",
-        "react",
-        "golang"
+        "docker",
+        "kubernetes",
+        "phabalicious",
+        "phab"
       ],
       "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
@@ -10329,74 +10329,6 @@
       "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
     {
-      "slug": "drupal-starter",
-      "name": "drupal-starter",
-      "fullName": "kanopi/drupal-starter",
-      "category": "Templates",
-      "stars": 17,
-      "author": "kanopi",
-      "avatar": "https://avatars.githubusercontent.com/u/8863513?v=4",
-      "desc": "A project starter for Drupal using Docksal, Composer, and CircleCI customized for Pantheon. NOTE: Releases for 10.4 and 11.1",
-      "demo": null,
-      "repoUrl": "https://github.com/kanopi/drupal-starter",
-      "long1": "A project starter for Drupal using Docksal, Composer, and CircleCI customized for Pantheon. NOTE: Releases for 10.4 and 11.1. Maintained by kanopi on GitHub, where it has earned 17 stars from the community.",
-      "long2": "It's actively developed around drupal, docksal, do-not-archive, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "PHP",
-        "Drupal",
-        "Docksal",
-        "Do Not Archive",
-        "Internal Tool"
-      ],
-      "updated": "2 weeks ago",
-      "pushedAt": "2026-07-29T16:56:31Z",
-      "license": "—",
-      "langs": [
-        {
-          "pct": 77,
-          "name": "PHP"
-        },
-        {
-          "pct": 15,
-          "name": "JavaScript"
-        },
-        {
-          "pct": 8,
-          "name": "Shell"
-        }
-      ],
-      "versions": [
-        {
-          "url": "https://github.com/kanopi/drupal-starter/releases/tag/11.2.2",
-          "name": "11.2.2"
-        },
-        {
-          "url": "https://github.com/kanopi/drupal-starter/releases/tag/11.2.1",
-          "name": "11.2.1"
-        },
-        {
-          "url": "https://github.com/kanopi/drupal-starter/releases/tag/11.2.0",
-          "name": "11.2.0"
-        },
-        {
-          "url": "https://github.com/kanopi/drupal-starter/releases/tag/11.1.4",
-          "name": "11.1.4"
-        },
-        {
-          "url": "https://github.com/kanopi/drupal-starter/releases/tag/11.1.3",
-          "name": "11.1.3"
-        }
-      ],
-      "topics": [
-        "drupal",
-        "docksal",
-        "do-not-archive",
-        "internal-tool",
-        "archbee"
-      ],
-      "addedAt": "2026-07-15T22:28:32.790199+00:00"
-    },
-    {
       "slug": "shepherd",
       "name": "shepherd",
       "fullName": "universityofadelaide/shepherd",
@@ -10416,7 +10348,7 @@
         "Docker",
         "Kubernetes"
       ],
-      "updated": "6 months ago",
+      "updated": "7 months ago",
       "pushedAt": "2026-02-13T07:06:00Z",
       "license": "GPL-2.0",
       "langs": [
@@ -10467,7 +10399,7 @@
         "Drupal",
         "Skill"
       ],
-      "updated": "4 weeks ago",
+      "updated": "8 weeks ago",
       "pushedAt": "2026-07-10T15:02:57Z",
       "license": "MIT",
       "langs": [
@@ -10499,6 +10431,74 @@
         "skills"
       ],
       "addedAt": "2026-08-10T12:07:31.760934+00:00"
+    },
+    {
+      "slug": "drupal-starter",
+      "name": "drupal-starter",
+      "fullName": "kanopi/drupal-starter",
+      "category": "Templates",
+      "stars": 17,
+      "author": "kanopi",
+      "avatar": "https://avatars.githubusercontent.com/u/8863513?v=4",
+      "desc": "A project starter for Drupal using Docksal, Composer, and CircleCI customized for Pantheon. NOTE: Releases for 10.4 and 11.1",
+      "demo": null,
+      "repoUrl": "https://github.com/kanopi/drupal-starter",
+      "long1": "A project starter for Drupal using Docksal, Composer, and CircleCI customized for Pantheon. NOTE: Releases for 10.4 and 11.1. Maintained by kanopi on GitHub, where it has earned 17 stars from the community.",
+      "long2": "It's actively developed around drupal, docksal, do-not-archive, and is a solid reference for anyone building with these tools.",
+      "stack": [
+        "PHP",
+        "Drupal",
+        "Docksal",
+        "Do Not Archive",
+        "Internal Tool"
+      ],
+      "updated": "5 weeks ago",
+      "pushedAt": "2026-07-29T16:56:31Z",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 77,
+          "name": "PHP"
+        },
+        {
+          "pct": 15,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 8,
+          "name": "Shell"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/kanopi/drupal-starter/releases/tag/11.2.2",
+          "name": "11.2.2"
+        },
+        {
+          "url": "https://github.com/kanopi/drupal-starter/releases/tag/11.2.1",
+          "name": "11.2.1"
+        },
+        {
+          "url": "https://github.com/kanopi/drupal-starter/releases/tag/11.2.0",
+          "name": "11.2.0"
+        },
+        {
+          "url": "https://github.com/kanopi/drupal-starter/releases/tag/11.1.4",
+          "name": "11.1.4"
+        },
+        {
+          "url": "https://github.com/kanopi/drupal-starter/releases/tag/11.1.3",
+          "name": "11.1.3"
+        }
+      ],
+      "topics": [
+        "drupal",
+        "docksal",
+        "do-not-archive",
+        "internal-tool",
+        "archbee"
+      ],
+      "addedAt": "2026-07-15T22:28:32.790199+00:00"
     },
     {
       "slug": "boilerplate-drupal9-composer",
@@ -10606,7 +10606,7 @@
         "Moodle",
         "Drupal"
       ],
-      "updated": "4 days ago",
+      "updated": "4 weeks ago",
       "pushedAt": "2026-08-06T11:02:52Z",
       "license": "MIT",
       "langs": [
@@ -10672,7 +10672,7 @@
         "Cspell",
         "Ddev Addon"
       ],
-      "updated": "yesterday",
+      "updated": "4 weeks ago",
       "pushedAt": "2026-08-09T07:54:32Z",
       "license": "Apache-2.0",
       "langs": [
@@ -10784,7 +10784,7 @@
         "Drupal",
         "Composer"
       ],
-      "updated": "4 weeks ago",
+      "updated": "8 weeks ago",
       "pushedAt": "2026-07-15T04:39:11Z",
       "license": "GPL-2.0",
       "langs": [
@@ -11250,7 +11250,7 @@
         "Answer Engine Optimization",
         "Avl"
       ],
-      "updated": "4 days ago",
+      "updated": "4 weeks ago",
       "pushedAt": "2026-08-06T10:38:23Z",
       "license": "MIT",
       "langs": [
@@ -11325,7 +11325,7 @@
         "Lando Recipe",
         "Pantheon"
       ],
-      "updated": "4 days ago",
+      "updated": "4 weeks ago",
       "pushedAt": "2026-08-06T21:54:02Z",
       "license": "MIT",
       "langs": [
@@ -11442,7 +11442,7 @@
         "Drupal",
         "Drupal Module"
       ],
-      "updated": "6 weeks ago",
+      "updated": "2 months ago",
       "pushedAt": "2026-07-02T08:14:10Z",
       "license": "—",
       "langs": [
@@ -11707,7 +11707,7 @@
         "PHP",
         "Drupal"
       ],
-      "updated": "1 year ago",
+      "updated": "2 years ago",
       "pushedAt": "2025-02-25T02:56:39Z",
       "license": "—",
       "langs": [
@@ -11842,7 +11842,7 @@
         "Drupal",
         "Drupal 9"
       ],
-      "updated": "7 weeks ago",
+      "updated": "2 months ago",
       "pushedAt": "2026-06-23T05:59:55Z",
       "license": "GPL-2.0",
       "langs": [
@@ -11944,7 +11944,7 @@
         "Sustainable Software",
         "Drupal"
       ],
-      "updated": "6 months ago",
+      "updated": "7 months ago",
       "pushedAt": "2026-02-18T00:09:42Z",
       "license": "GPL-3.0",
       "langs": [
@@ -11992,7 +11992,7 @@
         "Grumphp",
         "Git"
       ],
-      "updated": "5 months ago",
+      "updated": "6 months ago",
       "pushedAt": "2026-03-16T04:29:46Z",
       "license": "—",
       "langs": [
@@ -12216,7 +12216,7 @@
         "Drupal",
         "Gitpod"
       ],
-      "updated": "4 days ago",
+      "updated": "4 weeks ago",
       "pushedAt": "2026-08-06T17:01:53Z",
       "license": "MIT",
       "langs": [
@@ -12301,7 +12301,7 @@
         "Makefile",
         "Drupal"
       ],
-      "updated": "7 weeks ago",
+      "updated": "2 months ago",
       "pushedAt": "2026-06-25T07:26:23Z",
       "license": "MIT",
       "langs": [
@@ -12341,7 +12341,7 @@
         "Revit Addins",
         "Revit Addin"
       ],
-      "updated": "3 months ago",
+      "updated": "4 months ago",
       "pushedAt": "2026-05-06T02:50:44Z",
       "license": "GPL-3.0",
       "langs": [
@@ -12440,7 +12440,7 @@
         "Module",
         "Bet"
       ],
-      "updated": "2 months ago",
+      "updated": "3 months ago",
       "pushedAt": "2026-05-27T18:57:26Z",
       "license": "—",
       "langs": [
@@ -12508,7 +12508,7 @@
         "Drupal",
         "Drupal 10"
       ],
-      "updated": "7 weeks ago",
+      "updated": "2 months ago",
       "pushedAt": "2026-06-24T14:58:46Z",
       "license": "Apache-2.0",
       "langs": [
@@ -12634,7 +12634,7 @@
         "Ddev",
         "Drupal"
       ],
-      "updated": "3 months ago",
+      "updated": "4 months ago",
       "pushedAt": "2026-05-12T12:21:38Z",
       "license": "MIT",
       "langs": [
@@ -12743,7 +12743,7 @@
         "Json Api",
         "Druxtjs"
       ],
-      "updated": "5 days ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-08-05T02:54:39Z",
       "license": "—",
       "langs": [
@@ -12959,7 +12959,7 @@
         "Schema",
         "Drupal 8"
       ],
-      "updated": "12 months ago",
+      "updated": "1 year ago",
       "pushedAt": "2025-08-13T05:18:52Z",
       "license": "GPL-2.0",
       "langs": [
@@ -13018,7 +13018,7 @@
         "Composer",
         "Drupal"
       ],
-      "updated": "5 days ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-08-05T05:50:54Z",
       "license": "GPL-2.0",
       "langs": [
@@ -13176,7 +13176,7 @@
         "Drupal",
         "Tailwind CSS"
       ],
-      "updated": "4 months ago",
+      "updated": "5 months ago",
       "pushedAt": "2026-03-29T02:21:09Z",
       "license": "GPL-2.0",
       "langs": [
@@ -13220,7 +13220,7 @@
         "Documen",
         "Documentation"
       ],
-      "updated": "1 week ago",
+      "updated": "5 weeks ago",
       "pushedAt": "2026-08-03T00:26:50Z",
       "license": "—",
       "langs": [
@@ -13335,7 +13335,7 @@
         "Php",
         "Drupal"
       ],
-      "updated": "7 months ago",
+      "updated": "8 months ago",
       "pushedAt": "2026-01-13T22:52:22Z",
       "license": "AGPL-3.0",
       "langs": [
@@ -13425,7 +13425,7 @@
         "Node",
         "Sdk"
       ],
-      "updated": "11 months ago",
+      "updated": "1 year ago",
       "pushedAt": "2025-09-04T17:08:33Z",
       "license": "MIT",
       "langs": [
@@ -13819,7 +13819,7 @@
         "Redis",
         "Drupal"
       ],
-      "updated": "8 years ago",
+      "updated": "9 years ago",
       "pushedAt": "2018-03-06T05:36:39Z",
       "license": "—",
       "langs": [
@@ -13981,7 +13981,7 @@
         "Drupal",
         "Bitcoin"
       ],
-      "updated": "9 months ago",
+      "updated": "10 months ago",
       "pushedAt": "2025-11-03T10:03:42Z",
       "license": "—",
       "langs": [

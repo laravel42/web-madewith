@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 3,
+  "videoId": "GUdASBoDSm0",
+  "language": "en",
+  "source": "auto",
+  "seoDescription": "Learn warehouse management in ERPNext including put away rules for automated warehouse assignment, pick lists for organized order fulfillment, and auto reorder for maintaining optimal inventory levels. The chapter covers defining warehouse layout and priorities, creating put away rules, generating pick lists from sales and work orders, configuring auto reorder in the Item Master, and monitoring capacities and notifications to streamline operations with ERPNext.",
+  "chapters": [
+    {
+      "title": "Introduction and chapter goals",
+      "description": "Overview of warehouse management topics covered: put away rules, pick lists, and auto reorder in ERPNext.",
+      "startTime": 0.0,
+      "endTime": 35.0,
+      "slug": "introduction-and-chapter-goals"
+    },
+    {
+      "title": "Why warehouse management matters and feature overview",
+      "description": "Explains challenges of multiple products and defines put away rules, pick lists, and auto reorder with their benefits.",
+      "startTime": 35.0,
+      "endTime": 197.0,
+      "slug": "why-warehouse-management-matters-and-feature-overview"
+    },
+    {
+      "title": "Creating a Put Away Rule in ERPNext",
+      "description": "Step-by-step walkthrough of the Put Away Rule form: company, item, warehouse, capacity, UOM, priority, and saving.",
+      "startTime": 197.0,
+      "endTime": 304.0,
+      "slug": "creating-a-put-away-rule-in-erpnext"
+    },
+    {
+      "title": "Put Away Rule example: applying rules on a Purchase Receipt",
+      "description": "Demonstrates prerequisites, splitting incoming stock across warehouses by put away rule priority, and how assignment fills capacity.",
+      "startTime": 304.0,
+      "endTime": 341.0,
+      "slug": "put-away-rule-example-applying-rules-on-a-purchase-receipt"
+    },
+    {
+      "title": "Warehouse Capacity Summary report",
+      "description": "Shows how to view warehouse capacities and stock levels and edit put away capacities from the report.",
+      "startTime": 341.0,
+      "endTime": 452.0,
+      "slug": "warehouse-capacity-summary-report"
+    },
+    {
+      "title": "Creating Pick Lists from Sales Orders",
+      "description": "Create a pick list from a sales order: eligibility, fetching data, saving, submitting, and creating delivery note.",
+      "startTime": 452.0,
+      "endTime": 478.0,
+      "slug": "creating-pick-lists-from-sales-orders"
+    },
+    {
+      "title": "Creating Pick Lists from Work Orders",
+      "description": "Generate pick lists from work orders, required statuses, entering finished goods quantity, and submitting the pick list.",
+      "startTime": 478.0,
+      "endTime": 621.0,
+      "slug": "creating-pick-lists-from-work-orders"
+    },
+    {
+      "title": "Configuring Auto Reorder in Item Master",
+      "description": "Explain enabling auto reorder, material requests, notifications, and how to set check-in, request-for, reorder level, and reorder quantity.",
+      "startTime": 621.0,
+      "endTime": 660.0,
+      "slug": "configuring-auto-reorder-in-item-master"
+    },
+    {
+      "title": "Closing remarks",
+      "description": "Concludes the chapter, points to ERPNext docs, and previews next chapter on reports and dashboard.",
+      "startTime": 660.0,
+      "endTime": 665.959,
+      "slug": "closing-remarks"
+    }
+  ],
+  "summary": "## Key Concepts\n\n- **Put Away Rules**\n  - Define how incoming stock is assigned to warehouses and locations based on **capacity** and **priority**.\n  - Each rule is unique to an item-warehouse combination and can use alternate **UOMs**; priority 1 is highest.\n  - Use the **Awesome Bar** to access the Put Away Rule list and create rules with company, item, warehouse, capacity, UOM, and priority.\n\n> [!TIP] Use put away rules for capacity management in large warehouses to automatically distribute stock across locations.\n\n- **Applying Put Away Rules**\n  - When creating a Purchase Receipt, enable **Apply Put Away Rule** to split incoming quantities across warehouses per rule priority and capacity.\n  - Verify results in the **Warehouse Capacity Summary** report and adjust capacities via the Edit Capacity button.\n\n- **Pick Lists**\n  - Organize picking for fulfillment and internal transfers; useful when order volumes or SKUs are high.\n  - Create from **Sales Orders** (only if picked percentage < 100) or from **Work Orders** (only if Not Started or In Progress).\n  - Pick lists fetch required data automatically; once stock is picked, save and submit, then create Delivery Note as needed.\n\n> [!NOTE] When creating a pick list from a work order, you must specify finished goods quantity to calculate raw material requirements.\n\n- **Auto Reorder**\n  - Enable in Stock Settings to automatically raise **Material Requests** when stock drops below the **Reorder Level**.\n  - Configure per item in the Item Master: **Check-in** (warehouses to check), **Request For** (where to stock), **Reorder Level**, and **Reorder Quantity**.\n  - Reorder Quantity balances ordering and holding costs and may differ from Reorder Level depending on lead time, discounts, transportation, supplier minimums, and average consumption.\n  - Material Requests are created at midnight per reorder settings; Purchase Managers receive email alerts and error notifications.\n\n> [!IMPORTANT] Set realistic reorder levels and quantities based on lead time and consumption to avoid stockouts or excess holding costs.\n\n## Takeaways\n\n- Combine put away rules, pick lists, and auto reorder to streamline warehouse operations in ERPNext.\n- Monitor capacities with the Warehouse Capacity Summary report and adjust rules or capacities as your inventory and demand change.\n- Use role-based notifications (Purchase Manager, Stock Manager) to ensure timely action on auto-generated Material Requests.",
+  "transcription": "## Introduction and chapter goals\n\nHi everyone. Welcome back to Frappe School. This is the ninth chapter in our inventory management course. In this chapter we will be discussing warehouse management. By the end of this chapter you will be able to understand what are put away rules, what is a pick list, what is auto reorder, and how to set these in ERPNext.\n\n## Why warehouse management matters and feature overview\n\nIf you have multiple products stored in your warehouse it might become difficult to decide where to store them and where to pick the items from. A put away rule defines a warehouse assignment strategy for the incoming stock. It takes warehouse capacity and priority into consideration. In order to define these rules you should first decide the warehouse layout and decide which items should go in which location. You can decide the location based on different criterias. A pick list on the other hand helps you organize the picking of items from a warehouse where it is for order fulfillment or internal transfers. This is useful in case the volume of orders is high, inventory carried by the organization is high, or when there are too many SKUs that are involved. Pick list provides a list that mentions which items need to be picked from which location, simplifying the fulfillment process for pickers. Auto reorder helps you maintain optimum levels of inventory so that you do not have to block capital by overstocking or lose business due to understocking. Let us see how to use these warehouse management features in ERPNext.\n\n## Creating a Put Away Rule in ERPNext\n\nA put away rule defines a warehouse assignment strategy for any incoming stock. It takes the warehouse's capacity and priority into consideration. This is useful for capacity management in large warehouses with multiple locations. We can use the awesome bar to navigate to the Put Away Rule list. Here we can see any previously created rules and we can add a new one by clicking on the Add Put Away Rule button. First we need to select the company and select the item. Next we will need to define the warehouse for which this rule will be applicable. Now we can set the capacity for this item in this particular warehouse. We can even add a unit of measurement if we want to set the capacity for the warehouse in a different UOM. If we add a new UOM then the capacity in Stock UOM field will be set automatically. Next we can set the priority for this rule, 1 being the highest, so we can set it like we want. Once we have added all our details we can save this rule. Once we save a disabled check box will appear if we want to disable this rule in the future. Every rule is unique to each item-warehouse combination.\n\n## Put Away Rule example: applying rules on a Purchase Receipt\n\nLet's see how the put away rule works. First some prerequisites. We have a purchase order with a requirement of 100 pieces of item UPI-003. Next we have two active put away rules with a capacity of 600 pieces each. One has a higher priority than the other. Let's now open the purchase order and create a Purchase Receipt using the Create button. Once the Purchase Receipt opens we can select the Apply Put Away Rule check box here. When we do that we can see that the hundred units are split and assigned according to the rules mentioned. As we can see here the first 10 pieces are added to the first warehouse and once the first one is full the others are added to the next warehouse.\n\n## Warehouse Capacity Summary report\n\nLet's have a look at the Warehouse Capacity Summary report. We can search for it using the awesome bar. This report shows us the capacities of all the warehouses and their respective stock levels. Only warehouses that have put away rules assigned to them will be shown in this report. Edit Capacity button here lets us edit the put away rule capacity.\n\n## Creating Pick Lists from Sales Orders\n\nIn chapter 6 we understood the function of a pick list and how we can create a delivery note from it. Here we will see how we can create a pick list from an existing sales order or a work order. First let's create a pick list from a sales order. Let's go to the Sales Order list and open the sales order we want. Using the Create button we can select Pick List. Only sales orders with a picked percentage less than 100 can be used to create a pick list. Once the pick list opens we can see that all the data required is fetched from the sales order. Once the stock is picked we can save and permanently submit this document. Further we can also create a delivery note once submitted.\n\n## Creating Pick Lists from Work Orders\n\nTo create a pick list from a work order we can navigate to the Work Order list using the awesome bar and open the work order we want to use to create the pick list. Like we did in the sales order we can use the Create button and select Pick List. Pick lists can only be created from work orders whose status is Not Started or In Progress. Pick lists can't be created for completed work orders. Once the pick list opens we can see that all the data required is fetched from the work order. We can see a dialog box asking for the quantity of finished goods. We need to add it here since it is necessary to calculate the amount of raw materials we require. Once we have added all the details and picked the stock we can save and permanently submit this pick list.\n\n## Configuring Auto Reorder in Item Master\n\nWhen the stock of an item dips under a certain quantity you can set an automatic reorder under Auto Reorder section in the Item Master. Firstly it should be enabled in Stock Settings. This will raise a Material Request for the item. The user with roles Purchase Manager and Stock Manager will be notified when the Material Request is created. Since we have enabled the settings let's add the details in the Item Master. Select the item where we want to configure auto reordering and scroll down to the Auto Reorder section. Click on Add Row and fill in the following fields. Check-in field will define which group warehouses we need to check for the quantity of the item. Request For field will let us know which warehouses to stock the item. Reorder When this quantity is reached the reorder will be triggered. Reorder level can be determined based on the lead time and the average daily consumption; for example, we can set the reorder level at 50. When only 50 units are remaining in stock the system will either automatically create a Material Request in our ERPNext account. Reorder quantity defines the number of units to be reordered so that the sum of reordering cost and holding cost is at its minimum. The reorder quantity is based on the minimum order quantity specified by the supplier and many other factors; for example, if reorder level is 200 units our reorder quantity may not necessarily be 200. The reorder quantity can be greater than or equal to the reorder level; it may depend upon lead time, discount, transportation, and average daily consumption. The Material Request type with which the stock will be reordered depends on whether you buy the item, manufacture it yourself, or transfer it between warehouses. The Material Request is created at 12 midnight depending on the set reorder level. A separate Material Request will be created for each item. User with Purchase Manager's role will receive email alert about these Material Requests. If auto creation of Material Request is failed, user with Purchase Manager role will be informed about the error message.\n\n## Closing remarks\n\nThis brings us to the end of the ninth chapter of our inventory management course. I hope this helped you understand how to manage your warehouse in an efficient way with ERPNext. You can learn more about ERPNext on docs.erpnext.com. In the next chapter we will discuss reports and dashboard. Thank you. You"
+}
