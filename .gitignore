@@ -8,19 +8,19 @@ dist/
 .tmp-import/
 
 # scraper etag cache
-scripts/.cache/
-scripts/.scrape-work/
-scraper/data/transcripts/
-youtube/data/transcripts/
+workers/utils/.cache/
+workers/utils/.scrape-work/
+workers/projects/data/transcripts/
+workers/videos/data/transcripts/
 *.sqlite3
 *.sqlite3-shm
 *.sqlite3-wal
 
 # content factory (generated output + local state)
-factory/output/
-factory/*.sqlite3
-factory/.venv/
-factory/__pycache__/
+workers/posts/output/
+workers/posts/*.sqlite3
+workers/.venv/
+workers/**/__pycache__/
 
 # python
 __pycache__/
@@ -48,4 +48,6 @@ npm-debug.log*
 
 # OS
 .DS_Store
-github/logs/
+workers/github/logs/
+workers/github/src/*.egg-info/
+workers/github/.pytest_cache/

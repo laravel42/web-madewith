@@ -129,7 +129,7 @@ This matters for trust — the assistant should represent it honestly.
   classification engine and cross-domain scrubbing, so a gallery contains projects that
   *belong* to that technology, correctly categorized — not just anything mentioning it.
 - **Videos** come from the **YouTube Data API**, quality- and relevance-gated, then
-  optionally AI-enriched (transcripts/chapters/summaries).
+  optionally AI-enriched (tranworkers/utils/chapters/summaries).
 - The scraper **only reads GitHub/YouTube metadata**; it never clones or executes
   discovered repositories.
 

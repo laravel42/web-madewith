@@ -40,7 +40,7 @@ Browser ── /admin (UI, static) ─────────────┐   
   LLM rewrite → sanitized raw), network totals/coverage cards, and a runbook of
   the six pipeline stages with their commands. This panel is a snapshot of the
   last build; live queue counts (pending transcripts, DB status) come from
-  `./pipeline.sh status` on the machine holding Postgres — the Worker cannot
+  `./workers/pipeline.py status` on the machine holding Postgres — the Worker cannot
   reach the local database by design.
 - **Settings** — read-only status for worker secrets (`GITHUB_TOKEN`, deploy hook,
   Access), bindings (R2/KV/D1), and site env vars (`ADMIN_WORKER_URL`, etc.).

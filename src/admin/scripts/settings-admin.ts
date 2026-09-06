@@ -47,7 +47,7 @@ const SITE_GROUPS = [
         key: "DATABASE_URL",
         label: "Postgres (build hydration)",
         required: false,
-        purpose: "scripts/pull-data.mjs publishes src/data/*.json from repositories before astro build.",
+        purpose: "workers/utils/pull-data.mjs publishes src/data/*.json from repositories before astro build.",
         configure: "Root .env DATABASE_URL=postgresql://…",
       },
       {

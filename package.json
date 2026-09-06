@@ -4,39 +4,46 @@
   "version": "1.0.0",
   "private": true,
   "description": "MadeWith… — a replicable, per-domain showcase catalog of open-source projects, fed by real GitHub data.",
+  "engines": {
+    "node": ">=26"
+  },
   "scripts": {
-    "scrape": "bash scraper/crawl.sh",
-    "scrape:publish": "bash scraper/publish.sh",
-    "scrape:status": "cd scraper && .venv/bin/python status.py",
-    "scrape:migrate:json": "bash scraper/migrate_json.sh",
-    "scrape:youtube": "bash youtube/crawl_youtube.sh",
-    "scrape:youtube:publish": "bash youtube/publish_videos.sh",
+    "projects:scrape": "workers/.venv/bin/python workers/pipeline.py projects:scrape",
+    "projects:publish": "workers/.venv/bin/python workers/pipeline.py projects:publish",
+    "projects:status": "workers/.venv/bin/python workers/projects/status.py",
+    "github:discover": "workers/.venv/bin/python workers/github/scheduled.py discover",
+    "github:import": "workers/.venv/bin/python workers/github/scheduled.py import",
+    "github:cli": "workers/.venv/bin/madewith-github",
+    "youtube:scrape": "workers/.venv/bin/python workers/pipeline.py videos:scrape",
+    "youtube:publish": "workers/.venv/bin/python workers/pipeline.py videos:publish",
+    "blog:generate": "workers/.venv/bin/python workers/pipeline.py blog:generate",
+    "blog:hydrate": "workers/.venv/bin/python workers/pipeline.py blog:hydrate",
+    "blog:test": "workers/.venv/bin/python workers/posts/tests/run.py",
+    "pipeline": "workers/.venv/bin/python workers/pipeline.py",
     "dev": "astro dev",
-    "generate:blog": "cd factory && .venv/bin/python content_factory.py",
-    "test:blog": "cd factory && .venv/bin/python tests/run.py",
-    "hydrate:blog": "node scripts/hydrate-blog.mjs",
-    "predev": "node scripts/hydrate-blog.mjs",
-    "prebuild": "node scripts/pull-data.mjs && node scripts/hydrate-blog.mjs",
+    "predev": "node workers/utils/hydrate-blog.mjs",
+    "prebuild": "node workers/utils/pull-data.mjs && node workers/utils/hydrate-blog.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "deploy:s3": "workers/.venv/bin/python workers/utils/deploy_s3.py",
     "server": "pnpm --dir server start",
     "server:dev": "pnpm --dir server dev",
     "server:refresh": "pnpm --dir server refresh",
     "server:migrate": "pnpm --dir server migrate"
   },
   "dependencies": {
-    "@astrojs/sitemap": "3.7.3",
+    "@astrojs/sitemap": "3.7.4",
     "@tailwindcss/vite": "^4.3.3",
-    "astro": "^7.1.6",
+    "astro": "^7.3.1",
     "astro-chat-widget": "^0.1.2",
     "flowbite": "^4.0.2",
-    "marked": "^18.0.7",
-    "posthog-js": "^1.410.6",
+    "marked": "^18.0.11",
+    "posthog-js": "^1.427.2",
     "tailwindcss": "^4.3.3"
   },
   "devDependencies": {
-    "sharp": "^0.35.3"
+    "sharp": "^0.35.4"
   },
   "packageManager": "pnpm@11.17.0"
 }

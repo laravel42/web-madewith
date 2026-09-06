@@ -47,7 +47,7 @@ const SRC_DESC = CONFIG.source_multipliers.description;
 /**
  * Signal table: term → [category, weight] — loaded from classify-signals.json,
  * the single source of truth shared with the Python publish pipeline
- * (scraper/madewith_scraper/classify_engine.py). Terms are lowercase unigrams
+ * (workers/projects/madewith_scraper/classify_engine.py). Terms are lowercase unigrams
  * or hyphen-joined phrases; weights: 4 = definitive, 3 = strong, 2 = solid,
  * ≤1.5 = weak supporting evidence. Framework/domain names are deliberately
  * absent — they appear on every repo of that domain.

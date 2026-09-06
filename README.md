@@ -30,18 +30,18 @@ pnpm dev                    # http://localhost:4321
 pnpm run build              # canonical full validation → dist/
 ```
 
-> `pnpm run build` is the canonical end-to-end check. Its `prebuild` runs `scripts/pull-data.mjs` (with the cross-domain scrub and `addedAt` stamping) and `scripts/hydrate-blog.mjs` before Astro compiles the static site.
+> `pnpm run build` is the canonical end-to-end check. Its `prebuild` runs `workers/utils/pull-data.mjs` (with the cross-domain scrub and `addedAt` stamping) and `workers/utils/hydrate-blog.mjs` before Astro compiles the static site.
 
 ### One-command operations
 
-`./pipeline.sh` aggregates the day-to-day flows; every step is idempotent, so each command resumes where the last run stopped:
+`pnpm pipeline` aggregates the day-to-day flows; every step is idempotent, so each command resumes where the last run stopped:
 
 ```bash
-./pipeline.sh status     # DB queue counts + local coverage
-./pipeline.sh videos     # transcribe → enrich → rewrite descriptions → publish video JSON
-./pipeline.sh projects   # publish project catalogs (scrub + addedAt included)
-./pipeline.sh build      # full site build
-./pipeline.sh ship       # videos + build + commit src/data + push
+pnpm pipeline status     # DB queue counts + local coverage
+pnpm pipeline videos     # transcribe → enrich → rewrite descriptions → publish video JSON
+pnpm pipeline projects   # publish project catalogs (scrub + addedAt included)
+pnpm pipeline build      # full site build
+pnpm pipeline ship       # videos + build + commit src/data + push
 ```
 
 ## Current data flow
@@ -52,20 +52,20 @@ GitHub API ── Scrapy discovery ──▶ PostgreSQL
 YouTube Data API ── discovery ────────┤
 YouTube transcript endpoint ──────────┤
                                       ▼
-                           scripts/pull-data.mjs
-                            ├─ scraper/publish.py
-                            └─ youtube/publish_videos.py
+                           workers/utils/pull-data.mjs
+                            ├─ workers/projects/publish.py
+                            └─ workers/videos/publish_videos.py
                                       │
                          src/data/*.json
                          src/data/videos/*.json
-                         src/data/transcripts/*.json
+                         src/data/tranworkers/utils/*.json
                                       │
                           Astro static build → dist/
 ```
 
-PostgreSQL is the primary repository store when `DATABASE_URL` is configured. `scripts/pull-data.mjs` publishes projects and video catalogs from PostgreSQL. If PostgreSQL is unavailable, it can use the optional Cloudflare Worker/R2 source configured by `MADEWITH_DATA_BASE_URL`; otherwise committed JSON remains in place.
+PostgreSQL is the primary repository store when `DATABASE_URL` is configured. `workers/utils/pull-data.mjs` publishes projects and video catalogs from PostgreSQL. If PostgreSQL is unavailable, it can use the optional Cloudflare Worker/R2 source configured by `MADEWITH_DATA_BASE_URL`; otherwise committed JSON remains in place.
 
-Editorial content is separate. `scripts/hydrate-blog.mjs` copies `factory/output/articles/**` and `factory/output/assets/**` when present. If factory output is absent, it intentionally keeps committed `src/content/blog` and exits successfully.
+Editorial content is separate. `workers/utils/hydrate-blog.mjs` copies `workers/posts/output/articles/**` and `workers/posts/output/assets/**` when present. If factory output is absent, it intentionally keeps committed `src/content/blog` and exits successfully.
 
 ## GitHub repository pipeline
 
@@ -79,51 +79,49 @@ DATABASE_URL=
 Run discovery and publishing from the repository root:
 
 ```bash
-pnpm scrape                          # all catalog domains
-pnpm scrape -- -a domains=laravel   # one domain
-pnpm scrape:status                  # inspect shard progress
-pnpm scrape:publish                 # PostgreSQL → src/data/*.json
+pnpm projects:scrape                          # all catalog domains
+pnpm projects:scrape -- -a domains=laravel   # one domain
+pnpm projects:status                  # inspect shard progress
+pnpm projects:publish                 # PostgreSQL → src/data/*.json
 ```
 
 The Scrapy pipeline writes repository metadata, topics, languages, technology links, metric snapshots, and daily star snapshots to the existing PostgreSQL schema. Raw GitHub search-result metadata is preserved so the publisher can reconstruct the generated JSON shape.
 
 GitHub Search exposes at most **1,000 results per individual query**. Authentication improves the request limit but does not remove that cap. Broad discovery therefore needs bounded queries such as star ranges; increasing a single query past 1,000 returns HTTP 422.
 
-GitHub topics are candidate-discovery signals, not final proof of membership. Category assignment uses the shared weighted-signal engine (`shared/classify-signals.json`, consumed by both the Worker and the publish pipeline, golden-tested on both sides); domain membership is guarded by the `github/` qualification engine (shared-vendor dependency rules, topic-breadth limits) plus the post-publish `scripts/scrub-cross-domain.mjs` pass. Laravel additionally has a dedicated per-tech classifier that keeps Laravel projects, packages/plugins, and Laravel-specific tools while rejecting generic integrations and content-only repositories.
+GitHub topics are candidate-discovery signals, not final proof of membership. Category assignment uses the shared weighted-signal engine (`shared/classify-signals.json`, consumed by both the Worker and the publish pipeline, golden-tested on both sides); domain membership is guarded by the `github/` qualification engine (shared-vendor dependency rules, topic-breadth limits) plus the post-publish `workers/utils/scrub-cross-domain.mjs` pass. Laravel additionally has a dedicated per-tech classifier that keeps Laravel projects, packages/plugins, and Laravel-specific tools while rejecting generic integrations and content-only repositories.
 
 CSV imports are auxiliary replay tools, not the primary scraper:
 
 ```bash
-scraper/.venv/bin/python scraper/load_csv_to_pg.py \
   /path/to/github_laravel.csv laravel --ensure-tech --min-stars 50
 
-scraper/.venv/bin/python scraper/load_all_csv_to_pg.py \
   /path/to/csv-directory --ensure-tech
 ```
 
-See [`scraper/README.md`](scraper/README.md) for schema behavior, idempotency, tests, and operational details.
+See [`workers/projects/README.md`](workers/projects/README.md) for schema behavior, idempotency, tests, and operational details.
 
 ## YouTube videos and transcripts
 
 Discover and publish curated English tutorial videos:
 
 ```bash
-pnpm scrape:youtube -- -a domains=laravel
-pnpm scrape:youtube:publish -- laravel
+pnpm youtube:scrape -- -a domains=laravel
+pnpm youtube:publish -- laravel
 ```
 
 Video metadata is stored in `youtube_videos` and published to `src/data/videos/<slug>.json`. `/video/` and `/video/<generated-slug>/` render the catalog and individual video pages.
 
-Fetch raw caption segments for discovered videos, then structure them with AI (or run everything via `./pipeline.sh videos`):
+Fetch raw caption segments for discovered videos, then structure them with AI (or run everything via `pnpm pipeline videos`):
 
 ```bash
-youtube/transcribe_rotate.sh ~/vpn-wg 100 1 2       # bulk fetch with VPN location rotation
-youtube/.venv/bin/python youtube/transcribe_youtube.py --slug laravel --limit 20
-youtube/.venv/bin/python youtube/enrich_transcripts.py --limit 200 --workers 8 --max-output-tokens 32000
-youtube/.venv/bin/python youtube/rewrite_descriptions.py   # clean descriptions for non-enriched videos
+workers/videos/transcribe_rotate.py ~/vpn-wg 100 1 2       # bulk fetch with VPN location rotation
+workers/.venv/bin/python workers/videos/transcribe_youtube.py --slug laravel --limit 20
+workers/.venv/bin/python workers/videos/enrich_transcripts.py --limit 200 --workers 8 --max-output-tokens 32000
+workers/.venv/bin/python workers/videos/rewrite_descriptions.py   # clean descriptions for non-enriched videos
 ```
 
-Raw captions are cached locally at `youtube/data/transcripts/<youtube-video-id>.json`. `enrich_transcripts.py` sends timestamped captions to the configured model (OpenRouter → `google/gemini-2.5-pro` by default; see `youtube/README.md` for providers and overrides) and publishes schema-v3 files at `src/data/transcripts/<youtube-video-id>.json`: AI-generated chapters, an SEO description, a Markdown `summary`, and a literal Markdown `transcription`. `src/lib/transcripts.ts` includes those files at build time. Published video descriptions resolve best-source-first: enriched `seoDescription` → LLM rewrite (`src/data/video-descriptions.json`) → sanitized raw text.
+Raw captions are cached locally at `workers/videos/data/tranworkers/utils/<youtube-video-id>.json`. `enrich_transcripts.py` sends timestamped captions to the configured model (OpenRouter → `google/gemini-2.5-pro` by default; see `workers/videos/README.md` for providers and overrides) and publishes schema-v3 files at `src/data/tranworkers/utils/<youtube-video-id>.json`: AI-generated chapters, an SEO description, a Markdown `summary`, and a literal Markdown `transcription`. `src/lib/transcripts.ts` includes those files at build time. Published video descriptions resolve best-source-first: enriched `seoDescription` → LLM rewrite (`src/data/video-descriptions.json`) → sanitized raw text.
 
 `youtube-transcript-api` uses YouTube’s anonymous transcript endpoint rather than the official Data API; blocking is purely IP-based. The fetcher fails fast after consecutive block errors (exit 75, blocked videos stay `pending`), and `transcribe_rotate.sh` rotates through WireGuard location configs until the queue drains. Permanent no-caption cases are recorded as `unavailable`.
 
@@ -137,7 +135,7 @@ src/
   data/
     <slug>.json                 generated project catalogs
     videos/<slug>.json          generated video catalogs
-    transcripts/<video-id>.json AI chapters, summary, and Markdown transcription
+    tranworkers/utils/<video-id>.json AI chapters, summary, and Markdown transcription
   lib/
     catalog.ts                  build-time project loading/ranking helpers
     videos.ts                   build-time video catalog loader
@@ -147,11 +145,11 @@ src/
     [domain]/                   domain catalog routes
     video/                      video index, detail pages, RSS
     blog/                       editorial index, detail pages, RSS
-scraper/
-  madewith_scraper/             Scrapy spiders, PostgreSQL persistence, classify engine
+workers/projects/
+  madewith_workers/projects/             Scrapy spiders, PostgreSQL persistence, classify engine
   publish.py / publish.sh       PostgreSQL → project JSON (+ scrub + addedAt guards)
-youtube/
-  madewith_youtube/             YouTube discovery spider, relevance gate, DB access
+workers/videos/
+  madewith_workers/videos/             YouTube discovery spider, relevance gate, DB access
   transcribe_youtube.py         raw caption fetcher (workers, fail-fast on blocks)
   transcribe_rotate.sh          VPN location rotation for bulk caption fetching
   enrich_transcripts.py         raw captions → AI chapters/summary/transcription (v3)
@@ -160,14 +158,14 @@ youtube/
   cleanup_videos.py             retroactive relevance-gate purge
 github/                         repository qualification engine (membership rules)
 shared/                         classifier signal table + JS engine (single source of truth)
-scripts/
+workers/utils/
   pull-data.mjs                 build-time project/video hydration (+ guards)
   scrub-cross-domain.mjs        evict cross-domain contamination from published JSON
   stamp-added-at.mjs            preserve/assign per-project addedAt (RSS recency)
   hydrate-blog.mjs              optional factory-output hydration
-pipeline.sh                     one-command drivers (status/videos/projects/build/ship)
+workers/pipeline.py                     one-command drivers (status/videos/projects/build/ship)
 worker/                         optional Cloudflare Worker/R2/admin backend
-factory/                        editorial content generator (OpenRouter, Sonnet 4.5)
+workers/posts/                        editorial content generator (OpenRouter, Sonnet 4.5)
 ```
 
 Generated JSON can change substantially after a scrape or publish run. Review source-code changes separately from generated data before committing.
@@ -180,22 +178,22 @@ Generated JSON can change substantially after a scrape or publish run. Review so
 4. Run discovery for the slug, publish JSON, and build:
 
 ```bash
-pnpm scrape -- -a domains=<slug>
-pnpm scrape:publish -- <slug>
+pnpm projects:scrape -- -a domains=<slug>
+pnpm projects:publish -- <slug>
 pnpm run build
 ```
 
 ## Validation
 
 ```bash
-scraper/.venv/bin/python scraper/tests/test_categorize_laravel.py
-node scripts/pull-data.mjs
-node scripts/hydrate-blog.mjs
+workers/.venv/bin/python workers/projects/tests/test_categorize_laravel.py
+node workers/utils/pull-data.mjs
+node workers/utils/hydrate-blog.mjs
 pnpm run build
 ```
 
-- `node scripts/pull-data.mjs` validates PostgreSQL → project/video JSON hydration.
-- `node scripts/hydrate-blog.mjs` validates editorial hydration; “factory/output/articles not found” is a successful fallback to committed blog content.
+- `node workers/utils/pull-data.mjs` validates PostgreSQL → project/video JSON hydration.
+- `node workers/utils/hydrate-blog.mjs` validates editorial hydration; “workers/posts/output/articles not found” is a successful fallback to committed blog content.
 - `pnpm run build` validates the complete hydration and Astro generation pipeline.
 
 ## Optional Cloudflare backend
@@ -209,3 +207,35 @@ See [`worker/README.md`](worker/README.md), [`docs/data-pipeline.md`](docs/data-
 - Never commit `.env` or print credential values.
 - Keep `GITHUB_TOKEN`, `DATABASE_URL`, `YOUTUBE_API_KEY`, Cloudflare secrets, and proxy credentials out of generated logs and documentation.
 - The repository scraper uses GitHub APIs; it does not clone or execute discovered repositories.
+
+## Deploy to S3 + CDN invalidation
+
+```bash
+pnpm build
+pnpm deploy:s3 --dry-run    # plan only: what uploads, what gets purged
+pnpm deploy:s3                 # upload changed files, purge their URLs
+pnpm deploy:s3 --delete     # also remove remote keys no longer in dist/
+```
+
+Uploads only files whose content differs (one bucket LIST plus a local
+size/ETag compare), then invalidates exactly the URLs those files serve —
+deletions included, so a removed page stops being served from the edge.
+
+Whichever CDN is configured runs, and both may run at once, which is what a
+Cloudflare-to-CloudFront migration needs: the old edge keeps serving until DNS
+flips. Above `CF_PURGE_MAX_URLS` changed URLs it invalidates everything
+instead — on CloudFront that collapses to a single `/*` path, and on Cloudflare
+it beats batches of 100 against the per-plan rate limit.
+
+`S3_PREFIX` picks the folder inside the bucket and is stripped when building
+purge URLs. `--no-purge` uploads without touching the cache;
+`--purge-everything` forces a full-zone purge.
+
+Configuration lives in `.env` (see `.env.example`): `AWS_BUCKET`, `S3_PREFIX`,
+the AWS credentials, `SITE_URL`, then `AWS_CLOUDFRONT_DISTRIBUTION_ID` and/or
+`CLOUDFLARE_ZONE_ID` + `CLOUDFLARE_API_TOKEN`.
+
+The IAM identity needs `s3:ListBucket` on the bucket, `s3:PutObject` (and
+`s3:DeleteObject` for `--delete`) on its contents, and
+`cloudfront:CreateInvalidation`. A Cloudflare token needs only the zone-scoped
+**Cache Purge** permission. `--no-purge` uploads without touching any CDN.
