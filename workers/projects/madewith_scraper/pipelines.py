@@ -21,7 +21,9 @@ class PostgresPipeline:
         self.conn = db.connect()
 
     def close_spider(self, spider=None):
-        self.conn.close()
+        conn = getattr(self, "conn", None)
+        if conn is not None and not conn.closed:
+            conn.close()
 
     def process_item(self, item, spider=None):
         try:

@@ -28,8 +28,12 @@ query($q: String!, $n: Int!, $after: String) {
         name nameWithOwner description stargazerCount homepageUrl url
         isFork isArchived pushedAt
         defaultBranchRef {
+          name
           target {
-            ... on Commit { committedDate }
+            ... on Commit {
+              committedDate
+              history(first: 1) { nodes { committedDate } }
+            }
           }
         }
         owner { login avatarUrl }
@@ -46,6 +50,23 @@ query($q: String!, $n: Int!, $after: String) {
   }
 }
 """
+
+
+def default_branch_tip(node: dict) -> tuple[str | None, str | None]:
+    """Default-branch tip commit date + branch name.
+
+    Matches the "Latest commit" on the GitHub code tab (default branch), NOT
+    repository.pushedAt (any-branch push, often newer than main/master tip).
+    """
+    dbr = node.get("defaultBranchRef") or {}
+    branch = dbr.get("name")
+    target = dbr.get("target") or {}
+    hist = (target.get("history") or {}).get("nodes") or []
+    if hist and hist[0].get("committedDate"):
+        return hist[0]["committedDate"], branch
+    if target.get("committedDate"):
+        return target["committedDate"], branch
+    return None, branch
 
 
 # GitHub's search backend times out on large pages of this query and nginx
@@ -68,12 +89,24 @@ class GitHubSpider(scrapy.Spider):
         "DOWNLOAD_DELAY": 5,
     }
 
-    def __init__(self, domains: str | None = None, clean: str = "0", page_size: str = str(DEFAULT_PAGE_SIZE), max_pages: str = "40", *args, **kwargs):
+    def __init__(
+        self,
+        domains: str | None = None,
+        clean: str = "0",
+        page_size: str = str(DEFAULT_PAGE_SIZE),
+        max_pages: str = "40",
+        refresh_days: str = "7",
+        *args,
+        **kwargs,
+    ):
         super().__init__(*args, **kwargs)
         self.filter_slugs = {s.strip() for s in domains.split(",") if s.strip()} if domains else None
         self.clean = clean in ("1", "true", "yes")
         self.page_size = max(1, min(int(page_size), 100))
         self.max_pages = int(max_pages)
+        # Re-queue completed shards older than this many days so tip dates refresh.
+        # 0 = skip forever until clean=1 (legacy).
+        self.refresh_days = max(0, int(refresh_days))
         # Budget the shard by results, not pages, so shrinking the page size
         # after a timeout costs latency instead of coverage.
         self.max_results = min(self.page_size * self.max_pages, SEARCH_RESULT_CEILING)
@@ -97,12 +130,14 @@ class GitHubSpider(scrapy.Spider):
             domains = sort_domains_by_projects(domains, repo_counts)
             order = ", ".join(f"{d['slug']}({repo_counts.get(d['slug'], 0)})" for d in domains)
             self.logger.info("Domain order (fewest repos first): %s", order)
+            if self.refresh_days:
+                self.logger.info("Re-scraping shards completed more than %s day(s) ago", self.refresh_days)
 
             pending = 0
             for domain in domains:
                 for partition in partitions_for_domain(domain):
                     sid = shard_id(partition[0], partition[1])
-                    if db.is_shard_done(conn, domain["slug"], sid):
+                    if db.is_shard_done(conn, domain["slug"], sid, self.refresh_days):
                         continue
                     pending += 1
                     db.mark_shard_running(conn, domain["slug"], sid)
@@ -268,6 +303,8 @@ class GitHubSpider(scrapy.Spider):
                 {"name": "Other", "pct": 8},
             ]
 
+        tip_date, default_branch = default_branch_tip(node)
+
         return {
             "databaseId": node.get("databaseId"),
             "name": node.get("name"),
@@ -278,11 +315,10 @@ class GitHubSpider(scrapy.Spider):
             "html_url": node.get("url"),
             "fork": node.get("isFork"),
             "archived": node.get("isArchived"),
-            # Prefer tip of default branch (usually main) over any-branch pushedAt.
-            "pushed_at": (
-                ((node.get("defaultBranchRef") or {}).get("target") or {}).get("committedDate")
-                or node.get("pushedAt")
-            ),
+            # Default-branch tip only — never repository.pushedAt (any-branch).
+            "pushed_at": tip_date,
+            "default_branch": default_branch,
+            "_github_pushed_at": node.get("pushedAt"),
             "owner": {
                 "login": (node.get("owner") or {}).get("login"),
                 "avatar_url": (node.get("owner") or {}).get("avatarUrl"),

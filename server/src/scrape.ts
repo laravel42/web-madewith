@@ -11,7 +11,7 @@ export interface Project {
   demo: string | null; repoUrl: string; long1: string; long2: string;
   stack: string[]; updated: string; license: string; langs: Lang[];
   topics: string[]; score: number;
-  /** ISO datetime of last commit on the default branch (falls back to pushedAt). */
+  /** ISO datetime of the default-branch tip commit (not any-branch pushedAt). */
   pushedAt?: string;
   /** Repo stats for the generated cover (captured at scrape time; may be 0). */
   forks?: number; issues?: number; discussions?: number;
@@ -29,7 +29,15 @@ query($q: String!, $n: Int!) {
     nodes { ... on Repository {
       databaseId name nameWithOwner description stargazerCount forkCount homepageUrl url
       isFork isArchived pushedAt
-      defaultBranchRef { target { ... on Commit { committedDate } } }
+      defaultBranchRef {
+        name
+        target {
+          ... on Commit {
+            committedDate
+            history(first: 1) { nodes { committedDate } }
+          }
+        }
+      }
       issues(states: OPEN) { totalCount }
       discussions { totalCount }
       owner { login avatarUrl }
@@ -45,7 +53,13 @@ interface RepoNode {
   databaseId: number; name: string; nameWithOwner: string; description: string | null;
   stargazerCount: number; forkCount: number; homepageUrl: string | null; url: string;
   isFork: boolean; isArchived: boolean; pushedAt: string | null;
-  defaultBranchRef: { target: { committedDate: string } | null } | null;
+  defaultBranchRef: {
+    name?: string | null;
+    target: {
+      committedDate?: string | null;
+      history?: { nodes: Array<{ committedDate: string | null }> } | null;
+    } | null;
+  } | null;
   issues: { totalCount: number } | null;
   discussions: { totalCount: number } | null;
   owner: { login: string; avatarUrl: string };
@@ -109,10 +123,17 @@ function longCopy(node: RepoNode) {
   };
 }
 
+function defaultBranchTip(node: RepoNode): string | null {
+  const target = node.defaultBranchRef?.target;
+  const fromHistory = target?.history?.nodes?.[0]?.committedDate;
+  return fromHistory || target?.committedDate || null;
+}
+
 function normalise(node: RepoNode, now: number): Project {
   const topics = node.repositoryTopics?.nodes?.map((t) => t.topic.name) ?? [];
   const { long1, long2 } = longCopy(node);
-  const lastCommit = node.defaultBranchRef?.target?.committedDate || node.pushedAt;
+  // Default-branch tip only — never repository.pushedAt (any-branch activity).
+  const lastCommit = defaultBranchTip(node);
   return {
     githubId: node.databaseId,
     slug: node.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") || String(node.databaseId),
@@ -258,7 +279,15 @@ query($owner: String!, $name: String!) {
   repository(owner: $owner, name: $name) {
     databaseId name nameWithOwner description stargazerCount forkCount homepageUrl url
     isFork isArchived pushedAt
-    defaultBranchRef { target { ... on Commit { committedDate } } }
+    defaultBranchRef {
+      name
+      target {
+        ... on Commit {
+          committedDate
+          history(first: 1) { nodes { committedDate } }
+        }
+      }
+    }
     issues(states: OPEN) { totalCount }
     discussions { totalCount }
     owner { login avatarUrl }

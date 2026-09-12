@@ -46,6 +46,7 @@ Spider arguments:
 | `clean` | 0 | `1` removes existing `spawn:*` search runs before discovery |
 | `page_size` | 25 | Repositories requested per GraphQL page (capped at 100) |
 | `max_pages` | 40 | Pages per shard; `page_size x max_pages` is the shard's result budget, capped at GitHub's 1,000-result ceiling |
+| `refresh_days` | 7 | Re-queue completed shards older than N days so default-branch tip dates stay current; `0` keeps shards done forever until `clean=1` |
 
 Scrapy AutoThrottle and download delay control request pacing.
 
