@@ -7,6 +7,11 @@ dist/
 .tmp-madeWith/
 .tmp-import/
 
+# CDK
+infra/cdk.out/
+infra/dist/
+infra/.cdk.staging/
+
 # scraper etag cache
 workers/utils/.cache/
 workers/utils/.scrape-work/

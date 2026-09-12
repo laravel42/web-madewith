@@ -32,7 +32,11 @@
     "server": "pnpm --dir server start",
     "server:dev": "pnpm --dir server dev",
     "server:refresh": "pnpm --dir server refresh",
-    "server:migrate": "pnpm --dir server migrate"
+    "server:migrate": "pnpm --dir server migrate",
+    "infra:synth": "pnpm --dir infra run synth",
+    "infra:diff": "pnpm --dir infra run diff",
+    "infra:deploy": "pnpm --dir infra run deploy",
+    "infra:wire-cloudfront": "workers/.venv/bin/python workers/utils/cloudfront/add_api_origins.py"
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.4",
