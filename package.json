@@ -19,6 +19,8 @@
     "blog:generate": "workers/.venv/bin/python workers/pipeline.py blog:generate",
     "blog:hydrate": "workers/.venv/bin/python workers/pipeline.py blog:hydrate",
     "blog:test": "workers/.venv/bin/python workers/posts/tests/run.py",
+    "discovery:worker": "workers/.venv/bin/python workers/projects/discovery_worker.py",
+    "redeploy:worker": "workers/.venv/bin/python workers/utils/redeploy_worker.py",
     "pipeline": "workers/.venv/bin/python workers/pipeline.py",
     "dev": "astro dev",
     "predev": "node workers/utils/hydrate-blog.mjs",
