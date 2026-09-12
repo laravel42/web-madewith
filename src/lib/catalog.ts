@@ -16,11 +16,17 @@ export interface Project {
   repoUrl: string;
   long1: string;
   long2: string;
+  /**
+   * LLM-written project README (Markdown) from the discovery worker. When
+   * present it replaces the templated long1/long2 in the detail page's
+   * README/About block; long1/long2 stay the fallback for older entries.
+   */
+  descriptionMd?: string;
   stack: string[];
   updated: string;
   /**
-   * ISO datetime of the last commit on the default branch (or GitHub
-   * `pushedAt` when the tip isn't available). Used for card time-ago.
+   * ISO datetime of the default-branch tip commit (GitHub code-tab "Latest
+   * commit"). Not repository-level `pushedAt` (any-branch activity).
    */
   pushedAt?: string;
   /** When the project first entered this catalog (stamped at publish; feeds sort by it). */
@@ -29,11 +35,16 @@ export interface Project {
   langs: Lang[];
   versions?: { name: string; url: string }[];
   topics: string[];
-  /** Repository stats for the generated cover; absent until a scrape captures them. */
+  /** Repository stats for the detail header; absent until a scrape captures them. */
   forks?: number;
   issues?: number;
   discussions?: number;
+  /** Subscribers ("Watch"), not REST's watchers_count alias for stars. */
+  watchers?: number;
+  /** Contributor count. Needs a per-repo /contributors call — not collected yet. */
   contributors?: number;
+  /** GitHub "Used by" (dependents). No API exposes it; not collected yet. */
+  usedBy?: number;
 }
 
 export interface CatalogData {

@@ -16,8 +16,15 @@ _tech_cache: dict[str, int | None] = {}
 
 def database_url() -> str:
     import os
+    from pathlib import Path
+
     from dotenv import load_dotenv
 
+    # Prefer the repo-root .env (…/web-madewith/.env). Bare load_dotenv() only
+    # looks at CWD, which is workers/projects when launched via the pipeline.
+    root_env = Path(__file__).resolve().parents[3] / ".env"
+    if root_env.exists():
+        load_dotenv(root_env)
     load_dotenv()
     return os.environ.get("SCRAPE_DATABASE_URL") or os.environ.get("DATABASE_URL") or ""
 
@@ -29,8 +36,21 @@ def correlation_id(slug: str, shard: str) -> str:
 def connect():
     url = database_url()
     if not url:
-        raise RuntimeError("DATABASE_URL is required")
-    return psycopg.connect(url, row_factory=dict_row)
+        raise RuntimeError(
+            "DATABASE_URL is required (set it in the repo-root .env, "
+            "e.g. postgresql://USER:PASSWORD@127.0.0.1:5432/madewith)"
+        )
+    try:
+        return psycopg.connect(url, row_factory=dict_row)
+    except psycopg.OperationalError as exc:
+        msg = str(exc)
+        if "no password supplied" in msg or "password authentication failed" in msg:
+            raise RuntimeError(
+                "Postgres rejected the connection: DATABASE_URL is missing a password "
+                "(or the password is wrong). Update the repo-root .env, e.g. "
+                "DATABASE_URL=postgresql://postgres:YOUR_PASSWORD@127.0.0.1:5432/madewith"
+            ) from exc
+        raise
 
 
 def reset_spawn_runs(conn) -> None:
@@ -39,14 +59,32 @@ def reset_spawn_runs(conn) -> None:
     conn.commit()
 
 
-def is_shard_done(conn, slug: str, shard: str) -> bool:
+def is_shard_done(conn, slug: str, shard: str, refresh_days: int = 0) -> bool:
+    """True when this shard should be skipped.
+
+    `refresh_days`:
+      - 0 → completed shards stay done forever (until `clean=1`)
+      - N → re-queue when the completed run is older than N days so default-branch
+        tip dates (`pushed_at`) stay aligned with GitHub
+    """
     with conn.cursor() as cur:
         cur.execute(
-            "SELECT status FROM github_search_runs WHERE correlation_id = %s",
+            "SELECT status, finished_at FROM github_search_runs WHERE correlation_id = %s",
             (correlation_id(slug, shard),),
         )
         row = cur.fetchone()
-    return row and row["status"] == "completed"
+    if not row or row["status"] != "completed":
+        return False
+    if refresh_days <= 0:
+        return True
+    finished = row.get("finished_at")
+    if not finished:
+        return False
+    if finished.tzinfo is None:
+        finished = finished.replace(tzinfo=timezone.utc)
+    from datetime import timedelta
+
+    return (datetime.now(timezone.utc) - finished) < timedelta(days=refresh_days)
 
 
 def get_technology_id(conn, catalog_slug: str) -> int | None:
@@ -648,42 +686,102 @@ _PUBLISH_COLUMNS = """
     r.homepage_url, r.repository_url, r.license_spdx, r.pushed_at, r.primary_language, r.fork, r.archived,
     COALESCE((SELECT array_agg(tp.topic) FROM repository_topics tp WHERE tp.repository_id = r.id), '{}') AS topics,
     COALESCE((SELECT json_agg(json_build_object('name', l.language, 'pct', l.percentage, 'size', l.bytes)
-              ORDER BY l.bytes DESC NULLS LAST) FROM repository_languages l WHERE l.repository_id = r.id), '[]') AS langs
+              ORDER BY l.bytes DESC NULLS LAST) FROM repository_languages l WHERE l.repository_id = r.id), '[]') AS langs,
+    -- Forks and open issues are captured at scrape time but used to stop here;
+    -- the detail hero renders them beside the star count. Each column takes its
+    -- most recent NON-ZERO snapshot: not every scrape path fills these in, and
+    -- the zero it writes would otherwise erase a count we already had.
+    json_build_object(
+      'forks', (SELECT m.forks FROM repository_metrics m
+                 WHERE m.repository_id = r.id AND m.forks > 0
+                 ORDER BY m.captured_at DESC LIMIT 1),
+      'issues', (SELECT m.open_issues FROM repository_metrics m
+                  WHERE m.repository_id = r.id AND m.open_issues > 0
+                  ORDER BY m.captured_at DESC LIMIT 1),
+      'watchers', (SELECT m.watchers FROM repository_metrics m
+                    WHERE m.repository_id = r.id AND m.watchers > 0
+                    ORDER BY m.captured_at DESC LIMIT 1)
+    ) AS metrics
 """
 
 
 def _row_to_raw(row: dict) -> dict | None:
     """Return the legacy full GitHub payload (metadata.raw) if present, else
-    synthesise the same shape from the repository columns + topics/languages."""
+    synthesise the same shape from the repository columns + topics/languages.
+
+    `repositories.pushed_at` is always overlaid onto the payload: it stores the
+    default-branch tip commit date (not GitHub's any-branch `pushedAt`).
+    """
     meta = row.get("metadata")
     if isinstance(meta, str):
         try:
             meta = json.loads(meta)
         except json.JSONDecodeError:
             meta = None
+    raw: dict | None = None
     if meta and meta.get("raw"):
-        return meta["raw"]
-    if not row.get("full_name"):
+        raw = dict(meta["raw"])
+    elif row.get("full_name"):
+        raw = {
+            "name": row.get("name"),
+            "full_name": row.get("full_name"),
+            "description": row.get("description"),
+            "stargazers_count": row.get("stars") or 0,
+            "owner": {"login": row.get("owner_login"), "avatar_url": row.get("owner_avatar_url")},
+            "owner_login": row.get("owner_login"),
+            "language": row.get("primary_language"),
+            "primary_language": row.get("primary_language"),
+            "topics": list(row.get("topics") or []),
+            "license": {"spdx_id": row["license_spdx"]} if row.get("license_spdx") else None,
+            "homepage": row.get("homepage_url"),
+            "html_url": row.get("repository_url"),
+            "fork": bool(row.get("fork")),
+            "archived": bool(row.get("archived")),
+            "_langs": list(row.get("langs") or []),
+        }
+    else:
         return None
     pushed = row.get("pushed_at")
-    return {
-        "name": row.get("name"),
-        "full_name": row.get("full_name"),
-        "description": row.get("description"),
-        "stargazers_count": row.get("stars") or 0,
-        "owner": {"login": row.get("owner_login"), "avatar_url": row.get("owner_avatar_url")},
-        "owner_login": row.get("owner_login"),
-        "language": row.get("primary_language"),
-        "primary_language": row.get("primary_language"),
-        "topics": list(row.get("topics") or []),
-        "license": {"spdx_id": row["license_spdx"]} if row.get("license_spdx") else None,
-        "homepage": row.get("homepage_url"),
-        "html_url": row.get("repository_url"),
-        "pushed_at": pushed.isoformat() if hasattr(pushed, "isoformat") else pushed,
-        "fork": bool(row.get("fork")),
-        "archived": bool(row.get("archived")),
-        "_langs": list(row.get("langs") or []),
-    }
+    if pushed is not None:
+        raw["pushed_at"] = pushed.isoformat() if hasattr(pushed, "isoformat") else pushed
+    # repository_languages is the canonical language breakdown and the only
+    # source that carries percentages. A legacy `raw._langs` payload holds just
+    # name+size, so a repo re-scraped through that path published languages with
+    # no pct — the detail page then rendered a bare "%" and a zero-width bar.
+    row_langs = row.get("langs")
+    if isinstance(row_langs, str):
+        try:
+            row_langs = json.loads(row_langs)
+        except json.JSONDecodeError:
+            row_langs = None
+    if row_langs:
+        raw["_langs"] = row_langs
+    # The discovery worker's LLM-written description lives beside `raw` in
+    # metadata (so a re-scrape overwriting `raw` can't wipe it). Surface it
+    # into the payload normalise() sees, which prefers it over the templated
+    # long1/long2.
+    if meta and meta.get("generated_description"):
+        raw["_generated_description"] = meta["generated_description"]
+    if meta and meta.get("generated_abstract"):
+        raw["_generated_abstract"] = meta["generated_abstract"]
+    # Latest repository_metrics snapshot (see _PUBLISH_COLUMNS). Only fills gaps:
+    # a legacy `raw` payload that already carries the counts keeps its own.
+    metrics = row.get("metrics")
+    if isinstance(metrics, str):
+        try:
+            metrics = json.loads(metrics)
+        except json.JSONDecodeError:
+            metrics = None
+    if isinstance(metrics, dict):
+        if not raw.get("forks_count") and (metrics.get("forks") or 0) > 0:
+            raw["forks_count"] = int(metrics["forks"])
+        if not raw.get("open_issues") and (metrics.get("issues") or 0) > 0:
+            raw["open_issues"] = int(metrics["issues"])
+        # Real subscriber count. NOT GitHub REST's `watchers_count`, which is an
+        # alias for stars — the scrape stores subscribers_count in this column.
+        if not raw.get("subscribers_count") and (metrics.get("watchers") or 0) > 0:
+            raw["subscribers_count"] = int(metrics["watchers"])
+    return raw
 
 
 def load_repos_for_slug(conn, slug: str) -> list[dict]:

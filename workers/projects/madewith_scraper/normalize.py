@@ -183,6 +183,23 @@ def normalise(repo: dict) -> dict:
         if topics
         else "It's actively developed and a solid reference for anyone building on this stack."
     )
+    # The LLM-written project README (workers/projects/discovery_worker.py,
+    # stored in repositories.metadata and surfaced by db._row_to_raw). Rendered
+    # as Markdown in the detail page's README/About block; long1/long2 stay as
+    # the short templated fallback for cards and for projects not yet written.
+    generated = repo.get("_generated_description")
+    description_md = ""
+    if isinstance(generated, dict):
+        description_md = (generated.get("markdown") or "").strip()
+    # The LLM-rewritten one-liner (discovery_worker.generate_abstract) replaces
+    # the raw GitHub description wherever the site shows `desc`: the detail
+    # page's abstract band and every card. long1/long2 above stay built from the
+    # original text, so the templated fallback doesn't drift with it.
+    generated_abstract = repo.get("_generated_abstract")
+    if isinstance(generated_abstract, dict):
+        rewritten = (generated_abstract.get("text") or "").strip()
+        if rewritten:
+            desc = rewritten
     spdx = (repo.get("license") or {}).get("spdx_id")
     homepage = repo.get("homepage")
     slug = re.sub(r"(^-|-$)", "", re.sub(r"[^a-z0-9]+", "-", (repo.get("name") or "").lower())) or repo.get("name")
@@ -199,16 +216,23 @@ def normalise(repo: dict) -> dict:
         "repoUrl": repo.get("html_url"),
         "long1": long1,
         "long2": long2,
+        "descriptionMd": description_md,
         "stack": stack_from(repo),
         "updated": relative_time(repo.get("pushed_at")),
-        # ISO timestamp of last commit on the default branch (falls back to
-        # GitHub pushedAt). Cards render this via timeAgo(); `updated` stays
-        # the human string for the detail sidebar.
+        # ISO timestamp of the default-branch tip commit (not GitHub any-branch
+        # pushedAt). Cards render this via timeAgo(); `updated` stays the human
+        # string for the detail sidebar.
         "pushedAt": repo.get("pushed_at"),
         "license": spdx if spdx and spdx != "NOASSERTION" else "—",
         "langs": repo.get("_langs") or synth_langs(repo.get("language")),
         "versions": repo.get("_versions") or [],
         "topics": repo.get("topics") or [],
+        # Repo counters for the generated detail hero and card covers. Omitted
+        # (rather than zeroed) when the scrape never captured them, which is how
+        # the artifacts decide whether to draw the stat at all.
+        **({"forks": int(repo["forks_count"])} if (repo.get("forks_count") or 0) > 0 else {}),
+        **({"issues": int(repo["open_issues"])} if (repo.get("open_issues") or 0) > 0 else {}),
+        **({"watchers": int(repo["subscribers_count"])} if (repo.get("subscribers_count") or 0) > 0 else {}),
     }
 
 
