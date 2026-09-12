@@ -1,54 +1,52 @@
 ---
 import type { Theme } from "../config/domains";
-import { readableOnDark, readableOnSurfaceDark, tint } from "../config/accessible-color";
+import { readableOn, readableOnDark, readableOnSurfaceDark, solidSurface, tint } from "../config/accessible-color";
 import type { Project } from "../lib/catalog";
+import { installManagers } from "../lib/install-commands";
 
 interface Props { theme: Theme; project: Project; }
 const { theme, project } = Astro.props;
 
-const clone = `git clone ${project.repoUrl}.git`;
-const isPHP = theme.slug === "statamic" || theme.slug === "twill";
-// Best-effort package name: repo name on npm, vendor/package on Packagist.
-const managers = isPHP
-  ? [{ id: "composer", label: "composer", color: "#885630", cmd: `composer require ${project.fullName}` }]
-  : [
-      { id: "npm", label: "npm", color: "#cb3837", cmd: `npm install ${project.name}` },
-      { id: "pnpm", label: "pnpm", color: "#f69220", cmd: `pnpm add ${project.name}` },
-      { id: "yarn", label: "yarn", color: "#2c8ebb", cmd: `yarn add ${project.name}` },
-      { id: "bun", label: "bun", color: "#fbf0df", cmd: `bun add ${project.name}` },
-    ];
+// Package managers for this project's ecosystem (see lib/install-commands.ts).
+// Best-effort package name: repo name on npm/PyPI/crates, vendor/package on
+// Packagist, the module path on Go. Empty for ecosystems with no one-line
+// install (Java, Elixir, C…) — the widget then renders nothing at all.
+const managers = installManagers(project, theme.slug);
 // The widget is GitHub-dark on every shell — including the light editorial and
 // default pages — so the accent has to read on #0d1117, not on the page behind
 // it. Near-black brands (Ollama/Fastify/Payload) get lightened, and the active
 // tab is measured against its own 14% tint rather than the page.
+// Manager brand dots sit on the #0d1117 tab, and some brands are near-black —
+// Composer's #885630 lands around 1.9:1 there and reads as a greyed-out control
+// rather than a brand mark. Lift each dot until it registers on the dark field.
+const dot = (c: string) => readableOnDark(c);
 const accentBase = readableOnDark(theme.accent);
 const pmActiveBg = tint(accentBase, 14, "#0d1117");
 const accent = readableOnSurfaceDark(accentBase, pmActiveBg);
+// The selected tab is a filled, raised button rather than a tinted outline — at
+// 14% tint it read as inert, which is the whole problem for a single-manager
+// ecosystem whose one tab is always selected.
+const pmSolid = solidSurface(accentBase, theme.accentInk);
+const pmInk = readableOn(theme.accentInk, pmSolid);
 ---
 
-<div class="install" data-install data-tech={theme.slug} style={`--pm-accent:${accent}; --pm-active-bg:${pmActiveBg};`}>
-  <div class="row">
-    <input class="fld" data-clone readonly value={clone} aria-label="Clone command" />
-    <button class="cp" type="button" data-copy="[data-clone]" data-command-type="clone" aria-label="Copy clone command">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-    </button>
-  </div>
-
-  <div class="pms" role="radiogroup" aria-label="Package manager">
-    {managers.map((m, i) => (
-      <button class="pm" type="button" data-pm data-cmd={m.cmd} aria-pressed={i === 0 ? "true" : "false"}>
-        <span class="dot" style={`background:${m.color};`}></span>{m.label}
+{managers.length > 0 && (
+  <div class="install" data-install data-tech={theme.slug} style={`--pm-accent:${accent}; --pm-active-bg:${pmActiveBg}; --pm-solid:${pmSolid}; --pm-ink:${pmInk};`}>
+    <div class="pms" role="radiogroup" aria-label="Package manager">
+      {managers.map((m, i) => (
+        <button class="pm" type="button" data-pm data-cmd={m.cmd} aria-pressed={i === 0 ? "true" : "false"}>
+          <span class="dot" style={`background:${dot(m.color)};`}></span>{m.label}
+        </button>
+      ))}
+    </div>
+    <div class="row">
+      <code class="fld out" data-cmd-out>{managers[0].cmd}</code>
+      <button class="cp" type="button" data-copy="[data-cmd-out]" data-command-type="install" aria-label="Copy install command">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
       </button>
-    ))}
+    </div>
   </div>
-
-  <div class="row">
-    <code class="fld out" data-cmd-out>{managers[0].cmd}</code>
-    <button class="cp" type="button" data-copy="[data-cmd-out]" data-command-type="install" aria-label="Copy install command">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-    </button>
-  </div>
-</div>
+)}
 
 <style>
   .install { max-width: 100%; }
@@ -56,7 +54,7 @@ const accent = readableOnSurfaceDark(accentBase, pmActiveBg);
   .fld {
     flex: 1; min-width: 0; margin: 0;
     background: #0d1117; border: 1px solid #30363d; color: #e6edf3;
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12.5px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: var(--install-fz, 12.5px);
     padding: 10px 12px; border-radius: 8px 0 0 8px; outline: none;
     white-space: nowrap; overflow-x: auto;
   }
@@ -69,21 +67,30 @@ const accent = readableOnSurfaceDark(accentBase, pmActiveBg);
   .cp:hover { color: #e6edf3; }
   .cp.copied { color: #3fb950; }
 
-  .pms { display: flex; gap: 6px; margin: 12px 0; flex-wrap: wrap; }
+  .pms { display: flex; gap: 6px; margin: 0 0 12px; flex-wrap: wrap; }
   /* The tabs carry the same dark fill as the fields above and below: the
      GitHub-dark greys were 2.5:1 (label) and 1.15:1 (hover) when `transparent`
      let a light page through. */
   .pm {
     display: inline-flex; align-items: center; background: #0d1117;
     border: 1px solid #30363d; color: #9aa3b2;
-    font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px;
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: var(--install-fz, 12.5px);
     padding: 6px 12px; border-radius: 6px; cursor: pointer; transition: border-color .12s, color .12s, background .12s;
   }
   .pm:hover { border-color: var(--pm-accent); color: #e6edf3; }
   .pm[aria-pressed="true"] {
-    border-color: var(--pm-accent); color: var(--pm-accent);
-    background: var(--pm-active-bg); font-weight: 700;
+    border-color: var(--pm-solid); color: var(--pm-ink);
+    background: var(--pm-solid); font-weight: 700;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .22), 0 1px 2px rgba(0, 0, 0, .45);
   }
+  /* The selected tab still answers the pointer. Without this the source-order
+     rule above beat `.pm:hover`, so a lone tab (composer, luarocks) never moved
+     under the cursor and read as a disabled control. */
+  .pm[aria-pressed="true"]:hover { filter: brightness(1.1); }
+  .pm[aria-pressed="true"]:active { transform: translateY(1px); box-shadow: none; }
+  /* A brand dot on the filled tab needs its own edge to stay legible. */
+  .pm[aria-pressed="true"] .dot { box-shadow: 0 0 0 1.5px rgba(255, 255, 255, .55); }
+  .pm:focus-visible { outline: 2px solid var(--pm-accent); outline-offset: 2px; }
   .dot { width: 8px; height: 8px; border-radius: 50%; margin-right: 7px; }
 </style>
 
@@ -113,9 +120,6 @@ const accent = readableOnSurfaceDark(accentBase, pmActiveBg);
           });
         });
       });
-
-      const clone = root.querySelector<HTMLInputElement>("[data-clone]");
-      clone?.addEventListener("focus", () => clone.select());
 
       const out = root.querySelector<HTMLElement>("[data-cmd-out]");
       const pms = Array.from(root.querySelectorAll<HTMLElement>("[data-pm]"));
