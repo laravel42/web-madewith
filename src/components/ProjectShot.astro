@@ -18,6 +18,7 @@ interface Props {
   /** Repo stats for the generated cover (card / related sizes). */
   stars?: number;
   forks?: number;
+  watchers?: number;
   issues?: number;
   discussions?: number;
   contributors?: number;
@@ -25,7 +26,7 @@ interface Props {
 
 const {
   theme, fullName, name, size = "card", variant = "default", layout = "fill", priority = false, realCover = false,
-  stars, forks, issues, discussions, contributors,
+  stars, forks, watchers, issues, discussions, contributors,
 } = Astro.props;
 const wireframeVariant = variant === "editorial" ? "editorial" : "default";
 const autoLayout = layout === "auto";
@@ -36,7 +37,7 @@ const autoLayout = layout === "auto";
     {size === "detail" ? (
       <ProjectShotWireframe theme={theme} size={size} variant={wireframeVariant} seed={fullName} />
     ) : (
-      <ProjectCoverArtifact theme={theme} name={name} stars={stars} forks={forks} issues={issues} discussions={discussions} contributors={contributors} size={size} />
+      <ProjectCoverArtifact theme={theme} name={name} stars={stars} forks={forks} watchers={watchers} issues={issues} discussions={discussions} contributors={contributors} size={size} />
     )}
   </div>
   {realCover && (

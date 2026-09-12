@@ -1,12 +1,23 @@
 ---
 import type { Theme } from "../config/domains";
 import type { Project } from "../lib/catalog";
-import { timeAgo } from "../lib/catalog";
+import { formatStars, timeAgo } from "../lib/catalog";
 import { projectPreviewExcerpt } from "../lib/preview-text";
 import ProjectShot from "./ProjectShot.astro";
 
-interface Props { theme: Theme; project: Project; rank: string; priority?: boolean; }
-const { theme, project, rank, priority = false } = Astro.props;
+interface Props {
+  theme: Theme;
+  project: Project;
+  rank: string;
+  priority?: boolean;
+  /**
+   * Draw the generated SVG cover. Off for the author page, where 25 covers of
+   * one owner's repos are near-identical noise. The name and stats live inside
+   * that SVG, so the coverless card renders them as markup instead.
+   */
+  cover?: boolean;
+}
+const { theme, project, rank, priority = false, cover = true } = Astro.props;
 const base = `/${theme.slug}`;
 const href = `${base}/project/${project.slug}`;
 const initial = (project.author || "").charAt(0).toUpperCase();
@@ -17,6 +28,17 @@ const activity = timeAgo(project.pushedAt) || project.updated || "";
 const dark = theme.variant === "terminal";
 const shotBg = dark ? "#0e120f" : theme.editorial ? "#f5f5f5" : "#f4f6f5";
 const shotBorder = dark ? "#1f2622" : theme.editorial ? "#e8e8e8" : "#eef0ef";
+const gitHubPath = "M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z";
+const starPath = "M8 .25a.75.75 0 0 1 .673.418l1.882 3.815 4.21.612a.75.75 0 0 1 .416 1.279l-3.046 2.97.719 4.192a.751.751 0 0 1-1.088.791L8 12.347l-3.766 1.98a.75.75 0 0 1-1.088-.79l.72-4.194L.818 6.374a.75.75 0 0 1 .416-1.28l4.21-.611L7.327.668A.75.75 0 0 1 8 .25Z";
+const forkPath = "M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75v-.878a2.25 2.25 0 1 1 1.5 0v.878a2.25 2.25 0 0 1-2.25 2.25h-1.5v2.128a2.251 2.251 0 1 1-1.5 0V8.5h-1.5A2.25 2.25 0 0 1 3.5 6.25v-.878a2.25 2.25 0 1 1 1.5 0ZM5 3.25a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Zm6.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm-3 8.75a.75.75 0 1 0-1.5 0 .75.75 0 0 0 1.5 0Z";
+const eyePath = "M8 2c1.981 0 3.671.992 4.933 2.078 1.27 1.091 2.187 2.345 2.637 3.023a1.62 1.62 0 0 1 0 1.798c-.45.678-1.367 1.932-2.637 3.023C11.67 13.008 9.981 14 8 14c-1.981 0-3.671-.992-4.933-2.078C1.797 10.83.88 9.576.43 8.898a1.62 1.62 0 0 1 0-1.798c.45-.677 1.367-1.931 2.637-3.022C4.33 2.992 6.019 2 8 2ZM1.679 7.932a.12.12 0 0 0 0 .136c.411.622 1.241 1.75 2.366 2.717C5.176 11.758 6.527 12.5 8 12.5c1.473 0 2.825-.742 3.955-1.715 1.124-.967 1.954-2.096 2.366-2.717a.12.12 0 0 0 0-.136c-.412-.621-1.242-1.75-2.366-2.717C10.824 4.242 9.473 3.5 8 3.5c-1.473 0-2.825.742-3.955 1.715-1.124.967-1.954 2.096-2.366 2.717ZM8 10a2 2 0 1 1-.001-3.999A2 2 0 0 1 8 10Z";
+const coverStats = ([
+  { d: starPath, v: project.stars, tint: "#e3a008" },
+  { d: forkPath, v: project.forks },
+  { d: eyePath, v: project.watchers },
+] as Array<{ d: string; v?: number; tint?: string }>)
+  .filter((x) => typeof x.v === "number" && x.v > 0)
+  .map((x) => ({ ...x, label: formatStars(x.v as number) }));
 const clockPath = "M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0ZM1.5 8a6.5 6.5 0 1 0 13 0 6.5 6.5 0 0 0-13 0Zm7-3.25v2.992l2.028.812a.75.75 0 0 1-.557 1.392l-2.5-1A.751.751 0 0 1 7 8.25v-3.5a.75.75 0 0 1 1.5 0Z";
 const dataAttrs = {
   "data-role": "card",
@@ -36,14 +58,31 @@ const previewVariant = dark ? "terminal" : editorial ? "editorial" : "default";
 const catBadge = `position:absolute; bottom:12px; right:12px; z-index:2; font-size:10.5px; font-weight:700; color:${theme.accentInk}; background:var(--accent-solid); padding:3px 10px; border-radius:20px; max-width:64%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; box-shadow:0 1px 4px rgba(0,0,0,.22);`;
 ---
 
-{theme.variant === "terminal" ? (
+{!cover ? (
+  <a href={href} class="card" {...dataAttrs}>
+    <div class="card-body" style="padding:16px 17px 17px; overflow-wrap:anywhere;">
+      <div style="display:flex; align-items:center; gap:8px;">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style="flex:none; opacity:.75;"><path d={gitHubPath}/></svg>
+        <span class="disp" style="font-size:16px; font-weight:700; letter-spacing:-.01em; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">{project.name}</span>
+      </div>
+      <div style="display:flex; flex-wrap:wrap; align-items:center; gap:6px 14px; margin-top:9px; font-size:12.5px; font-weight:600; color:#68716c;">
+        {coverStats.map((x) => (
+          <span style="display:flex; align-items:center; gap:5px;">
+            <svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true" style={`fill:${x.tint || "#9aa29c"}; flex:none;`}><path d={x.d} fill-rule="evenodd"/></svg>{x.label}
+          </span>
+        ))}
+      </div>
+      <div style="font-size:13.5px; color:#68716c; line-height:1.45; margin-top:11px;">{displayDesc}</div>
+    </div>
+  </a>
+) : theme.variant === "terminal" ? (
   <a href={href} class="card" {...dataAttrs}>
     <div style={`height:116px; background:${shotBg}; border-bottom:1px solid ${shotBorder}; position:relative; overflow:hidden;`}>
-      <ProjectShot theme={theme} fullName={project.fullName} name={project.name} stars={project.stars} forks={project.forks} issues={project.issues} discussions={project.discussions} contributors={project.contributors} size="card" variant={previewVariant} priority={priority} />
+      <ProjectShot theme={theme} fullName={project.fullName} name={project.name} stars={project.stars} forks={project.forks} watchers={project.watchers} issues={project.issues} discussions={project.discussions} contributors={project.contributors} size="card" variant={previewVariant} priority={priority} />
       <span style={catBadge}>{project.category}</span>
     </div>
     <div class="card-body" style="padding:14px 15px 15px;">
-      <div style="font-size:12px; color:#9aa69e; line-height:1.5; margin-bottom:13px; min-height:36px;">{displayDesc}</div>
+      <div style="font-size:12px; color:#9aa69e; line-height:1.5; margin-bottom:13px; min-height:36px; overflow-wrap:anywhere;">{displayDesc}</div>
       <div class="card-foot" style="display:flex; align-items:center; justify-content:space-between; font-size:12px;">
         <span style="color:#9aa69e;">@{project.author}</span>
         {activity && (
@@ -57,12 +96,12 @@ const catBadge = `position:absolute; bottom:12px; right:12px; z-index:2; font-si
 ) : editorial ? (
   <a href={href} class="card-editorial" {...dataAttrs}>
     <div style={`height:120px; background:${shotBg}; position:relative; border-bottom:1px solid ${shotBorder}; overflow:hidden;`}>
-      <ProjectShot theme={theme} fullName={project.fullName} name={project.name} stars={project.stars} forks={project.forks} issues={project.issues} discussions={project.discussions} contributors={project.contributors} size="card" variant="editorial" priority={priority} />
+      <ProjectShot theme={theme} fullName={project.fullName} name={project.name} stars={project.stars} forks={project.forks} watchers={project.watchers} issues={project.issues} discussions={project.discussions} contributors={project.contributors} size="card" variant="editorial" priority={priority} />
       <div class="disp" style="position:absolute; top:14px; right:14px; z-index:2; font-weight:800; font-size:13px;">{rank}</div>
       <span style={catBadge}>{project.category}</span>
     </div>
     <div class="card-body" style="padding:18px 20px 20px;">
-      <div style="font-size:13.5px; color:#666; line-height:1.45; margin-bottom:15px; min-height:38px;">{displayDesc}</div>
+      <div style="font-size:13.5px; color:#666; line-height:1.45; margin-bottom:15px; min-height:38px; overflow-wrap:anywhere;">{displayDesc}</div>
       <div class="card-foot" style="display:flex; align-items:center; justify-content:space-between; border-top:1px solid #f0f0f0; padding-top:13px;">
         <span style="font-size:13px; font-weight:600;">@{project.author}</span>
         {activity && (
@@ -76,11 +115,11 @@ const catBadge = `position:absolute; bottom:12px; right:12px; z-index:2; font-si
 ) : (
   <a href={href} class="card" {...dataAttrs}>
     <div style={`height:116px; background:${shotBg}; border-bottom:1px solid ${shotBorder}; position:relative; overflow:hidden;`}>
-      <ProjectShot theme={theme} fullName={project.fullName} name={project.name} stars={project.stars} forks={project.forks} issues={project.issues} discussions={project.discussions} contributors={project.contributors} size="card" variant="default" priority={priority} />
+      <ProjectShot theme={theme} fullName={project.fullName} name={project.name} stars={project.stars} forks={project.forks} watchers={project.watchers} issues={project.issues} discussions={project.discussions} contributors={project.contributors} size="card" variant="default" priority={priority} />
       <span style={catBadge}>{project.category}</span>
     </div>
     <div class="card-body" style="padding:15px 16px 16px;">
-      <div style="font-size:13.5px; color:#68716c; line-height:1.45; margin-bottom:14px; min-height:38px;">{displayDesc}</div>
+      <div style="font-size:13.5px; color:#68716c; line-height:1.45; margin-bottom:14px; min-height:38px; overflow-wrap:anywhere;">{displayDesc}</div>
       <div class="card-foot" style="display:flex; align-items:center; justify-content:space-between;">
         <div style="display:flex; align-items:center; gap:8px;">
           <span style={`width:22px; height:22px; border-radius:50%; background:var(--accent-solid); color:${theme.accentInk}; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center;`}>{initial}</span>

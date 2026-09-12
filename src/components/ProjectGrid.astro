@@ -15,13 +15,13 @@ const countInitial = countFormat === "terminal" ? `// ${n} result${n === 1 ? "" 
 // grey flips with the shell: #5c665f clears AA on #fbfcfb, #9aa69e on #000 and
 // on the terminal #0c0f0e (the value the terminal variant already used).
 const muted = theme.darkShell ? "#9aa69e" : "#5c665f";
-const gridPadTop = theme.editorial ? "0" : theme.variant === "terminal" ? "12px" : "14px";
+const gridPadTop = theme.editorial ? "4px" : theme.variant === "terminal" ? "16px" : "18px";
 ---
 
 {theme.editorial ? (
-  <div class="shell-pad-x mw-project-grid mw-full-bleed" style={`max-width:1200px; margin:0 auto; padding:0 32px 80px; background:${theme.bg};`}>
+  <div class="shell-pad-x mw-project-grid mw-full-bleed" style={`max-width:1200px; margin:0 auto; padding:${gridPadTop} 32px 80px; background:${theme.bg};`}>
     <div data-role="count" data-format="minimal" style={`font-size:13px; color:${muted}; margin:18px 0;`}>{countInitial}</div>
-    <div data-role="grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:10px;">
+    <div data-role="grid" style="display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px;">
       {projects.map((p, i) => <ProjectCard theme={theme} project={p} rank={(i < 9 ? "0" : "") + (i + 1)} priority={i < 3} />)}
       <div data-role="empty" hidden style={`grid-column:1 / -1; padding:60px 20px; text-align:center; color:${muted}; font-size:15px; border-right:1px solid #e8e8e8; border-bottom:1px solid #e8e8e8;`}>No projects match your search.</div>
     </div>
@@ -31,7 +31,7 @@ const gridPadTop = theme.editorial ? "0" : theme.variant === "terminal" ? "12px"
 ) : (
   <div class="shell-pad-x mw-project-grid mw-full-bleed" style={`max-width:1200px; margin:0 auto; padding:${gridPadTop} 32px 80px; background:${theme.bg};`}>
     <div data-role="count" data-format={countFormat} style={`font-size:${theme.variant === "terminal" ? "12px" : "13px"}; color:${muted}; margin-bottom:${theme.variant === "terminal" ? "16px" : "18px"};`}>{countInitial}</div>
-    <div data-role="grid" style={`display:grid; grid-template-columns:repeat(3,1fr); gap:${theme.variant === "terminal" ? "18px" : "24px"};`}>
+    <div data-role="grid" style={`display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:${theme.variant === "terminal" ? "18px" : "24px"};`}>
       {projects.map((p, i) => <ProjectCard theme={theme} project={p} rank={(i < 9 ? "0" : "") + (i + 1)} priority={i < 3} />)}
       <div data-role="empty" hidden style={`grid-column:1 / -1; padding:60px 20px; text-align:center; color:${muted}; font-size:15px;`}>No projects match your search.</div>
     </div>
@@ -102,6 +102,7 @@ const gridPadTop = theme.editorial ? "0" : theme.variant === "terminal" ? "12px"
     syncPills();
 
     const stars = (el: HTMLElement) => Number(el.dataset.stars || "0");
+    // "Last updated" = most recent commit on the default branch (`pushedAt`).
     const pushed = (el: HTMLElement) => Number(el.dataset.pushed || "0");
     const name = (el: HTMLElement) => el.dataset.name || "";
     const hayOf = (c: HTMLElement) =>
