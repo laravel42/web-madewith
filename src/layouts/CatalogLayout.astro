@@ -1,6 +1,7 @@
 ---
 import type { Theme } from "../config/domains";
 import { readableOnDark, readableOnLight, solidSurface } from "../config/accessible-color";
+import { themeWrapperClass, themeWrapperStyle } from "../lib/theme-tokens";
 import { canonicalUrl } from "../config/domain-settings";
 import Header from "../components/Header.astro";
 import PostHog from "../components/PostHog.astro";
@@ -27,18 +28,10 @@ const seoDescription = description ?? theme.seoDescription;
 const canonical = canonicalUrl(theme, Astro.url.pathname, Astro.site!.href);
 const base = `/${theme.slug}`;
 const ogImageUrl = ogImage ?? new URL(`${base}/og.png`, Astro.site!.href).href;
-const wrapperClass = `mw v-${theme.variant}${theme.editorial ? " is-editorial" : ""}`;
-// soft accent tint differs between light (white base) and terminal (dark base)
-const softMix = theme.variant === "terminal" ? "22%, #0c0f0e" : "13%, #ffffff";
-// Bright brand colors (Haystack lime, React cyan, …) need darkening as text on
-// light UI — and lightening on the dark shells. Editorial used to pass the raw
-// accent straight through, which left Svelte orange at 3.4:1 and Next's white
-// accent invisible on its own white cards.
-const accentText = theme.darkShell ? readableOnDark(theme.accent) : readableOnLight(theme.accent);
-// Solid accent surfaces that carry --accentInk text (buttons, logo tile, active
-// pills). Shifts the accent only far enough that the ink clears AA, so brands
-// whose ink already worked (React, Nuxt, Haystack) are untouched.
-const accentSolid = solidSurface(theme.accent, theme.accentInk);
+// Wrapper class + tokens live in lib/theme-tokens.ts — the author page applies
+// the same set per card, since its cards come from different galleries.
+const wrapperClass = themeWrapperClass(theme);
+const wrapperStyle = themeWrapperStyle(theme);
 ---
 
 <!DOCTYPE html>
@@ -120,7 +113,9 @@ const accentSolid = solidSurface(theme.accent, theme.accentInk);
 
       /* ---- cards ---- */
       .card {
-        border: 1px solid #eef0ef; border-radius: var(--radius); overflow: hidden;
+        /* One radius on every gallery: --radius ranges 2px (Next) to 16px (Vue),
+           which made the same card look like a different component per tech. */
+        border: 1px solid #eef0ef; border-radius: 10px; overflow: hidden;
         background: #fff; cursor: pointer; text-decoration: none; display: flex; flex-direction: column; color: inherit;
         transition: transform .15s ease, box-shadow .15s ease;
       }
@@ -137,7 +132,7 @@ const accentSolid = solidSurface(theme.accent, theme.accentInk);
       .v-terminal .card:hover { transform: translateY(-3px); box-shadow: none; border-color: var(--accent); }
 
       .is-editorial .card-editorial {
-        border: 1px solid #e8e8e8;
+        border: 1px solid #e8e8e8; border-radius: 10px; overflow: hidden;
         background: #fff; cursor: pointer; text-decoration: none; color: inherit; display: flex; flex-direction: column;
         transition: background .12s;
       }
@@ -297,7 +292,7 @@ const accentSolid = solidSurface(theme.accent, theme.accentInk);
       /* ---- responsive: collapse the fixed 3-up grids + stack the detail
          split. Inline grid-template-columns needs !important to be overridden. */
       @media (max-width: 900px) {
-        [data-role="grid"], .mw-grid3 { grid-template-columns: repeat(2, 1fr) !important; }
+        [data-role="grid"], .mw-grid3 { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
         .mw-split { grid-template-columns: 1fr !important; gap: 32px !important; }
       }
       @media (max-width: 600px) {
@@ -307,7 +302,7 @@ const accentSolid = solidSurface(theme.accent, theme.accentInk);
     <slot name="head" />
   </head>
   <body>
-    <div class={wrapperClass} style={`--accent:${theme.accent}; --accentInk:${theme.accentInk}; --accent-text:${accentText}; --accent-solid:${accentSolid}; --radius:${theme.radius}px; --disp:${theme.dispFont}; --body:${theme.bodyFont}; --softMix:${softMix}; background:${theme.bg}; color:${theme.ink};`}>
+    <div class={wrapperClass} style={wrapperStyle}>
       <Header theme={theme} active={active} />
       <main class="mw-main">
         <slot />

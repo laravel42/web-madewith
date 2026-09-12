@@ -1,0 +1,162 @@
+---
+/**
+ * Network-wide author page — every catalogued repo by one GitHub owner, across
+ * all galleries. The per-gallery `?author=` filter only searches its own
+ * catalog, so owners spanning several galleries always under-reported there.
+ * Built only for authors with more than one project (see lib/authors.ts).
+ */
+import { formatStars, timeAgo } from "../../lib/catalog";
+import { pagedAuthors, type AuthorRecord } from "../../lib/authors";
+import { getResolvedTheme } from "../../config/domains";
+import { themeTokens } from "../../lib/theme-tokens";
+import { readableOnLight } from "../../config/accessible-color";
+import NetworkLayout from "../../layouts/NetworkLayout.astro";
+import ProjectCard from "../../components/ProjectCard.astro";
+
+export async function getStaticPaths() {
+  return pagedAuthors().map((author) => ({
+    params: { login: author.login },
+    props: { author },
+  }));
+}
+
+interface Props { author: AuthorRecord }
+const { author } = Astro.props;
+
+const site = Astro.site ?? new URL("https://madewithwhat.net");
+const canonical = new URL(`/author/${author.login}/`, site).href;
+const total = author.entries.length;
+const galleryNames = author.galleries.map((g) => g.techName);
+const seoTitle = `${author.display} — ${total} open-source projects on MadeWithWhat`;
+const seoDescription =
+  `Every catalogued open-source project by ${author.display}: ${total} repositories across ` +
+  `${galleryNames.slice(0, 4).join(", ")}${galleryNames.length > 4 ? ` and ${galleryNames.length - 4} more` : ""}, ` +
+  `with ${formatStars(author.stars)} stars in total.`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  url: canonical,
+  name: seoTitle,
+  description: seoDescription,
+  inLanguage: "en",
+  about: {
+    "@type": "Organization",
+    name: author.display,
+    url: `https://github.com/${author.display}`,
+    logo: { "@type": "ImageObject", url: author.avatar },
+  },
+  mainEntity: {
+    "@type": "ItemList",
+    numberOfItems: total,
+    itemListElement: author.entries.slice(0, 50).map((e, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: e.project.name,
+      url: new URL(`/${e.techSlug}/project/${e.project.slug}/`, site).href,
+    })),
+  },
+};
+---
+<NetworkLayout title={seoTitle} description={seoDescription} image={author.avatar} ogType="profile">
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
+  <main>
+    <div class="wrap">
+      <div class="hero">
+        <img class="avatar" src={author.avatar} alt={`${author.display} on GitHub`} width="84" height="84" />
+        <div>
+          <h1 class="disp">{author.display}</h1>
+          <div class="hero-meta">
+            <span><strong>{total}</strong> {total === 1 ? "project" : "projects"}</span>
+            <span><strong>{formatStars(author.stars)}</strong> stars</span>
+            <span>across <strong>{author.galleries.length}</strong> {author.galleries.length === 1 ? "gallery" : "galleries"}</span>
+          </div>
+          <a class="gh" href={`https://github.com/${author.display}`} target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            View profile on GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="list" id="projects">
+        {author.entries.map((e, i) => {
+          // One card style for the whole page. The gallery's own variant is
+          // dropped — a terminal-dark card beside an editorial one beside a
+          // light one read as three different components — but its accent is
+          // kept (darkened to stay legible on white) so the cover and category
+          // badge still say which ecosystem the project belongs to.
+          const t = getResolvedTheme(e.techSlug);
+          const cardTheme = { ...t, accent: readableOnLight(t.accent), variant: "light" as const, editorial: false, darkShell: false };
+          return (
+            <div class="card-theme mw v-light" style={themeTokens(cardTheme)}>
+              <ProjectCard theme={cardTheme} project={e.project} rank="" priority={i < 3} cover={false} />
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  </main>
+</NetworkLayout>
+
+<style>
+  main { flex: 1; padding-bottom: 72px; }
+  a { text-decoration: none; color: inherit; }
+
+  /* NetworkLayout declares .wrap and .disp, but its <style> is scoped to its
+     own elements — these are rendered by this page, so the rules never reached
+     them and every row sat flush against the body padding instead of lining up
+     with the header and footer. */
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 28px; width: 100%; }
+  .disp { font-family: "Bricolage Grotesque", "Hanken Grotesk", sans-serif; }
+  @media (max-width: 560px) {
+    .wrap { padding-left: 0; padding-right: 0; }
+  }
+
+  .hero { display: flex; align-items: center; gap: 22px; padding: 40px 0 30px; flex-wrap: wrap; }
+  .avatar {
+    width: 84px; height: 84px; border-radius: 18px; object-fit: cover;
+    border: 1px solid #e6e9e7; background: #f2f4f3; flex: none;
+  }
+  .hero h1 { font-size: 38px; font-weight: 800; letter-spacing: -.03em; margin: 0; line-height: 1.1; }
+  .hero-meta { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 10px; font-size: 14px; color: #5c665f; }
+  .hero-meta strong { color: #12161a; }
+  .gh {
+    display: inline-flex; align-items: center; gap: 7px; margin-top: 14px;
+    background: #24292f; color: #fff; font-size: 13px; font-weight: 600;
+    padding: 8px 14px; border-radius: 8px; text-decoration: none;
+  }
+
+  .list { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+
+  @media (max-width: 900px) {
+    .list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 640px) {
+    .hero { gap: 16px; padding-top: 28px; }
+    .avatar { width: 64px; height: 64px; border-radius: 14px; }
+    .hero h1 { font-size: 28px; }
+    .list { grid-template-columns: 1fr; gap: 16px; }
+  }
+</style>
+
+<style is:global>
+  /* ProjectCard reads these from CatalogLayout's global block on gallery pages.
+     This page has no CatalogLayout, so the rules it depends on are mirrored
+     here; the tokens they reference come from each card's own wrapper. */
+  .card-theme { display: flex; flex-direction: column; }
+  .card-theme > .card, .card-theme > .card-editorial { flex: 1; }
+  .card {
+    border: 1px solid #eceeed; border-radius: 10px; overflow: hidden;
+    background: #fff; cursor: pointer; text-decoration: none; display: flex;
+    flex-direction: column; color: #16201b;
+    box-shadow: 0 1px 2px rgba(20, 40, 30, .04), 0 4px 14px rgba(20, 40, 30, .045);
+    transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+  .card-body { flex: 1; display: flex; flex-direction: column; }
+  .card-foot { margin-top: auto; }
+  .card:hover {
+    transform: translateY(-3px); border-color: #e0e4e2;
+    box-shadow: 0 2px 4px rgba(20, 40, 30, .05), 0 12px 30px rgba(20, 40, 30, .10);
+  }
+  .card-theme .disp { font-family: var(--disp), "Bricolage Grotesque", sans-serif; }
+</style>
