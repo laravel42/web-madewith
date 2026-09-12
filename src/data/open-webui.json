@@ -1,22 +1,102 @@
 {
   "slug": "open-webui",
-  "scrapedAt": "2026-09-06T02:26:46.556008+00:00",
+  "scrapedAt": "2026-09-12T02:22:14.142546+00:00",
   "source": "scrapy-github",
-  "totalRepos": 81,
+  "totalRepos": 84,
   "projects": [
+    {
+      "slug": "ods",
+      "name": "ODS",
+      "fullName": "Osmantic/ODS",
+      "category": "AI & ML",
+      "stars": 6392,
+      "author": "Osmantic",
+      "avatar": "https://avatars.githubusercontent.com/u/262014141?v=4",
+      "desc": "Turn your PC, Mac, or Linux box into an AI server.  LLM inference, chat UI, voice, agents, workflows, RAG, and image generation.",
+      "demo": "https://discord.gg/qGVygYada3",
+      "repoUrl": "https://github.com/Osmantic/ODS",
+      "long1": "Turn your PC, Mac, or Linux box into an AI server.  LLM inference, chat UI, voice, agents, workflows, RAG, and image generation. Maintained by Osmantic on GitHub, where it has earned 6,392 stars from the community.",
+      "long2": "It's actively developed around ai-agents, llm, self-hosted, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Python",
+        "Ai Agents",
+        "Llm",
+        "Self Hosted",
+        "Amd"
+      ],
+      "updated": "1 week ago",
+      "pushedAt": "2026-09-04T18:08:29-06:00",
+      "license": "Apache-2.0",
+      "langs": [
+        {
+          "pct": 52,
+          "name": "Python"
+        },
+        {
+          "pct": 38,
+          "name": "Shell"
+        },
+        {
+          "pct": 10,
+          "name": "JavaScript"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/Osmantic/ODS/releases/tag/v2.6.0",
+          "name": "v2.6.0"
+        },
+        {
+          "url": "https://github.com/Osmantic/ODS/releases/tag/v2.5.3",
+          "name": "v2.5.3"
+        },
+        {
+          "url": "https://github.com/Osmantic/ODS/releases/tag/v2.5.2",
+          "name": "v2.5.2"
+        },
+        {
+          "url": "https://github.com/Osmantic/ODS/releases/tag/v2.5.1",
+          "name": "v2.5.1"
+        },
+        {
+          "url": "https://github.com/Osmantic/ODS/releases/tag/v2.5.0",
+          "name": "v2.5.0"
+        }
+      ],
+      "topics": [
+        "ai-agents",
+        "llm",
+        "self-hosted",
+        "amd",
+        "comfyui",
+        "docker",
+        "llama-cpp",
+        "local-ai",
+        "n8n",
+        "nvidia",
+        "open-webui",
+        "rag"
+      ],
+      "forks": 432,
+      "issues": 150,
+      "watchers": 20,
+      "addedAt": "2026-07-15T22:28:33.178349+00:00"
+    },
     {
       "slug": "mcpo",
       "name": "mcpo",
       "fullName": "open-webui/mcpo",
       "category": "APIs",
-      "stars": 4333,
+      "stars": 4370,
       "author": "open-webui",
       "avatar": "https://avatars.githubusercontent.com/u/158137808?v=4",
       "desc": "A simple, secure MCP-to-OpenAPI proxy server",
       "demo": "https://docs.openwebui.com/features/plugin/tools/openapi-servers/mcp",
       "repoUrl": "https://github.com/open-webui/mcpo",
-      "long1": "A simple, secure MCP-to-OpenAPI proxy server. Maintained by open-webui on GitHub, where it has earned 4,333 stars from the community.",
+      "long1": "A simple, secure MCP-to-OpenAPI proxy server. Maintained by open-webui on GitHub, where it has earned 4,370 stars from the community.",
       "long2": "It's actively developed around mcp, mcp-server, open-webui, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Python",
         "Mcp",
@@ -24,8 +104,8 @@
         "Open Webui",
         "Openapi"
       ],
-      "updated": "4 months ago",
-      "pushedAt": "2026-05-17T20:40:30Z",
+      "updated": "6 months ago",
+      "pushedAt": "2026-02-27T11:58:04-06:00",
       "license": "MIT",
       "langs": [
         {
@@ -70,81 +150,9 @@
         "openapi",
         "mcp-to-openapi"
       ],
-      "addedAt": "2026-07-15T22:28:33.178349+00:00"
-    },
-    {
-      "slug": "ods",
-      "name": "ODS",
-      "fullName": "Osmantic/ODS",
-      "category": "AI & ML",
-      "stars": 3960,
-      "author": "Osmantic",
-      "avatar": "https://avatars.githubusercontent.com/u/262014141?v=4",
-      "desc": "Turn your PC, Mac, or Linux box into an AI server.  LLM inference, chat UI, voice, agents, workflows, RAG, and image generation.",
-      "demo": "https://discord.gg/qGVygYada3",
-      "repoUrl": "https://github.com/Osmantic/ODS",
-      "long1": "Turn your PC, Mac, or Linux box into an AI server.  LLM inference, chat UI, voice, agents, workflows, RAG, and image generation. Maintained by Osmantic on GitHub, where it has earned 3,960 stars from the community.",
-      "long2": "It's actively developed around ai-agents, llm, self-hosted, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Python",
-        "Ai Agents",
-        "Llm",
-        "Self Hosted",
-        "Amd"
-      ],
-      "updated": "5 weeks ago",
-      "pushedAt": "2026-07-31T01:01:33Z",
-      "license": "Apache-2.0",
-      "langs": [
-        {
-          "pct": 53,
-          "name": "Python"
-        },
-        {
-          "pct": 37,
-          "name": "Shell"
-        },
-        {
-          "pct": 10,
-          "name": "JavaScript"
-        }
-      ],
-      "versions": [
-        {
-          "url": "https://github.com/Osmantic/ODS/releases/tag/v2.6.0",
-          "name": "v2.6.0"
-        },
-        {
-          "url": "https://github.com/Osmantic/ODS/releases/tag/v2.5.3",
-          "name": "v2.5.3"
-        },
-        {
-          "url": "https://github.com/Osmantic/ODS/releases/tag/v2.5.2",
-          "name": "v2.5.2"
-        },
-        {
-          "url": "https://github.com/Osmantic/ODS/releases/tag/v2.5.1",
-          "name": "v2.5.1"
-        },
-        {
-          "url": "https://github.com/Osmantic/ODS/releases/tag/v2.5.0",
-          "name": "v2.5.0"
-        }
-      ],
-      "topics": [
-        "ai-agents",
-        "llm",
-        "self-hosted",
-        "amd",
-        "comfyui",
-        "docker",
-        "llama-cpp",
-        "local-ai",
-        "n8n",
-        "nvidia",
-        "open-webui",
-        "rag"
-      ],
+      "forks": 471,
+      "issues": 48,
+      "watchers": 24,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
@@ -152,14 +160,15 @@
       "name": "open-terminal",
       "fullName": "open-webui/open-terminal",
       "category": "AI & ML",
-      "stars": 2946,
+      "stars": 3102,
       "author": "open-webui",
       "avatar": "https://avatars.githubusercontent.com/u/158137808?v=4",
       "desc": "A computer you can curl ⚡",
       "demo": "https://openterminal.sh/",
       "repoUrl": "https://github.com/open-webui/open-terminal",
-      "long1": "A computer you can curl ⚡. Maintained by open-webui on GitHub, where it has earned 2,946 stars from the community.",
+      "long1": "A computer you can curl ⚡. Maintained by open-webui on GitHub, where it has earned 3,102 stars from the community.",
       "long2": "It's actively developed around ai, open-webui, agentic-ai, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Python",
         "Ai",
@@ -167,16 +176,16 @@
         "Agentic Ai",
         "Ai Agents"
       ],
-      "updated": "2 months ago",
-      "pushedAt": "2026-06-22T22:09:00Z",
+      "updated": "3 days ago",
+      "pushedAt": "2026-09-08T18:37:16-06:00",
       "license": "MIT",
       "langs": [
         {
-          "pct": 87,
+          "pct": 88,
           "name": "Python"
         },
         {
-          "pct": 10,
+          "pct": 9,
           "name": "Shell"
         },
         {
@@ -186,24 +195,24 @@
       ],
       "versions": [
         {
-          "url": "https://github.com/open-webui/open-terminal/releases/tag/v0.11.34",
-          "name": "v0.11.34"
+          "url": "https://github.com/open-webui/open-terminal/releases/tag/v0.12.5",
+          "name": "v0.12.5"
         },
         {
-          "url": "https://github.com/open-webui/open-terminal/releases/tag/v0.11.33",
-          "name": "v0.11.33"
+          "url": "https://github.com/open-webui/open-terminal/releases/tag/v0.12.4",
+          "name": "v0.12.4"
         },
         {
-          "url": "https://github.com/open-webui/open-terminal/releases/tag/v0.11.32",
-          "name": "v0.11.32"
+          "url": "https://github.com/open-webui/open-terminal/releases/tag/v0.12.3",
+          "name": "v0.12.3"
         },
         {
-          "url": "https://github.com/open-webui/open-terminal/releases/tag/v0.11.31",
-          "name": "v0.11.31"
+          "url": "https://github.com/open-webui/open-terminal/releases/tag/v0.12.2",
+          "name": "v0.12.2"
         },
         {
-          "url": "https://github.com/open-webui/open-terminal/releases/tag/v0.11.30",
-          "name": "v0.11.30"
+          "url": "https://github.com/open-webui/open-terminal/releases/tag/v0.12.1",
+          "name": "v0.12.1"
         }
       ],
       "topics": [
@@ -213,6 +222,78 @@
         "ai-agents",
         "ai-tools"
       ],
+      "forks": 225,
+      "issues": 26,
+      "watchers": 19,
+      "addedAt": "2026-07-15T22:28:33.178349+00:00"
+    },
+    {
+      "slug": "desktop",
+      "name": "desktop",
+      "fullName": "open-webui/desktop",
+      "category": "DevTools",
+      "stars": 2741,
+      "author": "open-webui",
+      "avatar": "https://avatars.githubusercontent.com/u/158137808?v=4",
+      "desc": "Open WebUI Desktop 🌐",
+      "demo": "https://openwebui.com",
+      "repoUrl": "https://github.com/open-webui/desktop",
+      "long1": "Open WebUI Desktop 🌐. Maintained by open-webui on GitHub, where it has earned 2,741 stars from the community.",
+      "long2": "It's actively developed around app, desktop, open-webui, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Svelte",
+        "App",
+        "Desktop",
+        "Open Webui"
+      ],
+      "updated": "4 months ago",
+      "pushedAt": "2026-05-06T07:57:36-06:00",
+      "license": "AGPL-3.0",
+      "langs": [
+        {
+          "pct": 63,
+          "name": "Svelte"
+        },
+        {
+          "pct": 36,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 1,
+          "name": "CSS"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/open-webui/desktop/releases/tag/v0.0.20",
+          "name": "v0.0.20"
+        },
+        {
+          "url": "https://github.com/open-webui/desktop/releases/tag/v0.0.19",
+          "name": "v0.0.19"
+        },
+        {
+          "url": "https://github.com/open-webui/desktop/releases/tag/v0.0.18",
+          "name": "v0.0.18"
+        },
+        {
+          "url": "https://github.com/open-webui/desktop/releases/tag/v0.0.17",
+          "name": "v0.0.17"
+        },
+        {
+          "url": "https://github.com/open-webui/desktop/releases/tag/v0.0.16",
+          "name": "v0.0.16"
+        }
+      ],
+      "topics": [
+        "app",
+        "desktop",
+        "open-webui"
+      ],
+      "forks": 219,
+      "issues": 62,
+      "watchers": 37,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
@@ -220,14 +301,15 @@
       "name": "metamcp",
       "fullName": "metatool-ai/metamcp",
       "category": "APIs",
-      "stars": 2578,
+      "stars": 2654,
       "author": "metatool-ai",
       "avatar": "https://avatars.githubusercontent.com/u/196043485?v=4",
       "desc": "MCP Aggregator, Orchestrator, Middleware, Gateway in one docker",
       "demo": "https://docs.metamcp.com",
       "repoUrl": "https://github.com/metatool-ai/metamcp",
-      "long1": "MCP Aggregator, Orchestrator, Middleware, Gateway in one docker. Maintained by metatool-ai on GitHub, where it has earned 2,578 stars from the community.",
+      "long1": "MCP Aggregator, Orchestrator, Middleware, Gateway in one docker. Maintained by metatool-ai on GitHub, where it has earned 2,654 stars from the community.",
       "long2": "It's actively developed around mcp, mcp-server, mcp-servers, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "TypeScript",
         "Mcp",
@@ -235,8 +317,8 @@
         "Mcp Servers",
         "Vibe Coding"
       ],
-      "updated": "2 months ago",
-      "pushedAt": "2026-06-22T16:50:50Z",
+      "updated": "3 months ago",
+      "pushedAt": "2026-06-22T10:50:48-06:00",
       "license": "MIT",
       "langs": [
         {
@@ -288,71 +370,9 @@
         "openapi",
         "mcp-gateway"
       ],
-      "addedAt": "2026-07-15T22:28:33.178349+00:00"
-    },
-    {
-      "slug": "desktop",
-      "name": "desktop",
-      "fullName": "open-webui/desktop",
-      "category": "DevTools",
-      "stars": 2477,
-      "author": "open-webui",
-      "avatar": "https://avatars.githubusercontent.com/u/158137808?v=4",
-      "desc": "Open WebUI Desktop 🌐",
-      "demo": "https://openwebui.com",
-      "repoUrl": "https://github.com/open-webui/desktop",
-      "long1": "Open WebUI Desktop 🌐. Maintained by open-webui on GitHub, where it has earned 2,477 stars from the community.",
-      "long2": "It's actively developed around app, desktop, open-webui, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Svelte",
-        "App",
-        "Desktop",
-        "Open Webui"
-      ],
-      "updated": "4 months ago",
-      "pushedAt": "2026-05-06T13:57:37Z",
-      "license": "AGPL-3.0",
-      "langs": [
-        {
-          "pct": 63,
-          "name": "Svelte"
-        },
-        {
-          "pct": 36,
-          "name": "TypeScript"
-        },
-        {
-          "pct": 1,
-          "name": "CSS"
-        }
-      ],
-      "versions": [
-        {
-          "url": "https://github.com/open-webui/desktop/releases/tag/v0.0.20",
-          "name": "v0.0.20"
-        },
-        {
-          "url": "https://github.com/open-webui/desktop/releases/tag/v0.0.19",
-          "name": "v0.0.19"
-        },
-        {
-          "url": "https://github.com/open-webui/desktop/releases/tag/v0.0.18",
-          "name": "v0.0.18"
-        },
-        {
-          "url": "https://github.com/open-webui/desktop/releases/tag/v0.0.17",
-          "name": "v0.0.17"
-        },
-        {
-          "url": "https://github.com/open-webui/desktop/releases/tag/v0.0.16",
-          "name": "v0.0.16"
-        }
-      ],
-      "topics": [
-        "app",
-        "desktop",
-        "open-webui"
-      ],
+      "forks": 375,
+      "issues": 90,
+      "watchers": 21,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
@@ -360,20 +380,21 @@
       "name": "pipelines",
       "fullName": "open-webui/pipelines",
       "category": "DevTools",
-      "stars": 2424,
+      "stars": 2432,
       "author": "open-webui",
       "avatar": "https://avatars.githubusercontent.com/u/158137808?v=4",
       "desc": "Pipelines: Versatile, UI-Agnostic OpenAI-Compatible Plugin Framework",
       "demo": null,
       "repoUrl": "https://github.com/open-webui/pipelines",
-      "long1": "Pipelines: Versatile, UI-Agnostic OpenAI-Compatible Plugin Framework. Maintained by open-webui on GitHub, where it has earned 2,424 stars from the community.",
+      "long1": "Pipelines: Versatile, UI-Agnostic OpenAI-Compatible Plugin Framework. Maintained by open-webui on GitHub, where it has earned 2,432 stars from the community.",
       "long2": "It's actively developed around open-webui, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Python",
         "Open Webui"
       ],
       "updated": "1 year ago",
-      "pushedAt": "2025-08-18T23:05:01Z",
+      "pushedAt": "2025-08-18T17:05:01-06:00",
       "license": "MIT",
       "langs": [
         {
@@ -393,21 +414,104 @@
       "topics": [
         "open-webui"
       ],
+      "forks": 687,
+      "issues": 199,
+      "watchers": 29,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
+    },
+    {
+      "slug": "conduit",
+      "name": "conduit",
+      "fullName": "cogwheel0/conduit",
+      "category": "AI & ML",
+      "stars": 2121,
+      "author": "cogwheel0",
+      "avatar": "https://avatars.githubusercontent.com/u/172976095?v=4",
+      "desc": "Native iOS and Android client for Open WebUI, direct OpenAI-compatible, Ollama, and Hermes agents.",
+      "demo": "https://conduit.mobile",
+      "repoUrl": "https://github.com/cogwheel0/conduit",
+      "long1": "Native iOS and Android client for Open WebUI, direct OpenAI-compatible, Ollama, and Hermes agents. Maintained by cogwheel0 on GitHub, where it has earned 2,121 stars from the community.",
+      "long2": "It's actively developed around ollama, openwebui, selfhosted, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Dart",
+        "Ollama",
+        "Openwebui",
+        "Selfhosted",
+        "Ai Agents"
+      ],
+      "updated": "1 week ago",
+      "pushedAt": "2026-09-01T11:35:41-06:00",
+      "license": "GPL-3.0",
+      "langs": [
+        {
+          "pct": 93,
+          "name": "Dart"
+        },
+        {
+          "pct": 5,
+          "name": "Swift"
+        },
+        {
+          "pct": 2,
+          "name": "Kotlin"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/cogwheel0/conduit/releases/tag/v4.1.4",
+          "name": "v4.1.4"
+        },
+        {
+          "url": "https://github.com/cogwheel0/conduit/releases/tag/v4.1.3",
+          "name": "v4.1.3"
+        },
+        {
+          "url": "https://github.com/cogwheel0/conduit/releases/tag/v4.1.2",
+          "name": "v4.1.2"
+        },
+        {
+          "url": "https://github.com/cogwheel0/conduit/releases/tag/v4.1.1",
+          "name": "v4.1.1"
+        },
+        {
+          "url": "https://github.com/cogwheel0/conduit/releases/tag/v4.1.0",
+          "name": "v4.1.0"
+        }
+      ],
+      "topics": [
+        "ollama",
+        "openwebui",
+        "selfhosted",
+        "ai-agents",
+        "ai-assistant",
+        "android",
+        "chat",
+        "chatbot",
+        "cross-platform",
+        "dart",
+        "flutter",
+        "ios"
+      ],
+      "forks": 187,
+      "issues": 57,
+      "watchers": 7,
+      "addedAt": "2026-08-05T04:38:16.578542+00:00"
     },
     {
       "slug": "openai-edge-tts",
       "name": "openai-edge-tts",
       "fullName": "travisvn/openai-edge-tts",
       "category": "AI & ML",
-      "stars": 2019,
+      "stars": 2093,
       "author": "travisvn",
       "avatar": "https://avatars.githubusercontent.com/u/2686415?u=43bb1dd32348ce5ffbf7d84540a8ec23d8c1d2f6&v=4",
       "desc": "Free, high-quality text-to-speech API endpoint to replace OpenAI, Azure, or ElevenLabs",
       "demo": "https://tts.travisvn.com",
       "repoUrl": "https://github.com/travisvn/openai-edge-tts",
-      "long1": "Free, high-quality text-to-speech API endpoint to replace OpenAI, Azure, or ElevenLabs. Maintained by travisvn on GitHub, where it has earned 2,019 stars from the community.",
+      "long1": "Free, high-quality text-to-speech API endpoint to replace OpenAI, Azure, or ElevenLabs. Maintained by travisvn on GitHub, where it has earned 2,093 stars from the community.",
       "long2": "It's actively developed around ai, chatgpt, edge-tts, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Python",
         "Ai",
@@ -416,7 +520,7 @@
         "Llm"
       ],
       "updated": "1 year ago",
-      "pushedAt": "2025-07-01T23:56:27Z",
+      "pushedAt": "2025-07-01T17:56:25-06:00",
       "license": "GPL-3.0",
       "langs": [
         {
@@ -448,96 +552,25 @@
         "speech",
         "text-to-speech"
       ],
+      "forks": 301,
+      "issues": 11,
+      "watchers": 13,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
-    },
-    {
-      "slug": "conduit",
-      "name": "conduit",
-      "fullName": "cogwheel0/conduit",
-      "category": "AI & ML",
-      "stars": 1893,
-      "author": "cogwheel0",
-      "avatar": "https://avatars.githubusercontent.com/u/172976095?v=4",
-      "desc": "Native iOS and Android client for Open WebUI, plus direct OpenAI-compatible, Ollama, and OpenRouter connections and self-hosted Hermes agents.",
-      "demo": "https://conduit.mobile",
-      "repoUrl": "https://github.com/cogwheel0/conduit",
-      "long1": "Native iOS and Android client for Open WebUI, plus direct OpenAI-compatible, Ollama, and OpenRouter connections and self-hosted Hermes agents. Maintained by cogwheel0 on GitHub, where it has earned 1,893 stars from the community.",
-      "long2": "It's actively developed around ollama, openwebui, selfhosted, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Dart",
-        "Ollama",
-        "Openwebui",
-        "Selfhosted",
-        "Ai Agents"
-      ],
-      "updated": "5 weeks ago",
-      "pushedAt": "2026-08-05T04:54:55Z",
-      "license": "GPL-3.0",
-      "langs": [
-        {
-          "pct": 93,
-          "name": "Dart"
-        },
-        {
-          "pct": 5,
-          "name": "Swift"
-        },
-        {
-          "pct": 2,
-          "name": "Kotlin"
-        }
-      ],
-      "versions": [
-        {
-          "url": "https://github.com/cogwheel0/conduit/releases/tag/v4.0.2",
-          "name": "v4.0.2"
-        },
-        {
-          "url": "https://github.com/cogwheel0/conduit/releases/tag/v4.0.1",
-          "name": "v4.0.1"
-        },
-        {
-          "url": "https://github.com/cogwheel0/conduit/releases/tag/v4.0.0",
-          "name": "v4.0.0"
-        },
-        {
-          "url": "https://github.com/cogwheel0/conduit/releases/tag/v3.4.3",
-          "name": "v3.4.3"
-        },
-        {
-          "url": "https://github.com/cogwheel0/conduit/releases/tag/v3.4.2",
-          "name": "v3.4.2"
-        }
-      ],
-      "topics": [
-        "ollama",
-        "openwebui",
-        "selfhosted",
-        "ai-agents",
-        "ai-assistant",
-        "android",
-        "chat",
-        "chatbot",
-        "cross-platform",
-        "dart",
-        "flutter",
-        "ios"
-      ],
-      "addedAt": "2026-08-05T04:38:16.578542+00:00"
     },
     {
       "slug": "open-coreui",
       "name": "open-coreui",
       "fullName": "xxnuo/open-coreui",
       "category": "DevTools",
-      "stars": 1534,
+      "stars": 1536,
       "author": "xxnuo",
       "avatar": "https://avatars.githubusercontent.com/u/54252779?u=18676f3fc64fa87931c18d54b98ea69419fe8b97&v=4",
       "desc": "Open CoreUI - A rewritten Open WebUI in Rust, significantly reducing memory and resource usage, requiring no dependency services, no Docker, with both a server version and a Tauri-based desktop client. (formerly Open WebUI Lite)",
       "demo": null,
       "repoUrl": "https://github.com/xxnuo/open-coreui",
-      "long1": "Open CoreUI - A rewritten Open WebUI in Rust, significantly reducing memory and resource usage, requiring no dependency services, no Docker, with both a server version and a Tauri-based desktop client. (formerly Open WebUI Lite). Maintained by xxnuo on GitHub, where it has earned 1,534 stars from the community.",
+      "long1": "Open CoreUI - A rewritten Open WebUI in Rust, significantly reducing memory and resource usage, requiring no dependency services, no Docker, with both a server version and a Tauri-based desktop client. (formerly Open WebUI Lite). Maintained by xxnuo on GitHub, where it has earned 1,536 stars from the community.",
       "long2": "It's actively developed around open-webui-lite, open-webui, open-coreui, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Svelte",
         "Open Webui Lite",
@@ -545,7 +578,7 @@
         "Open Coreui"
       ],
       "updated": "5 months ago",
-      "pushedAt": "2026-04-02T10:28:05Z",
+      "pushedAt": "2026-04-02T03:23:54-06:00",
       "license": "—",
       "langs": [
         {
@@ -588,6 +621,9 @@
         "open-webui",
         "open-coreui"
       ],
+      "forks": 111,
+      "issues": 9,
+      "watchers": 16,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
@@ -595,14 +631,15 @@
       "name": "selfhost-ai",
       "fullName": "kossakovsky/selfhost-ai",
       "category": "DevTools",
-      "stars": 914,
+      "stars": 926,
       "author": "kossakovsky",
       "avatar": "https://avatars.githubusercontent.com/u/11432603?u=9a5b7895de275a50902c7e462a31ea18a209579e&v=4",
       "desc": "🚀 Self-hosted AI automation platform. Deploy n8n, Ollama, Flowise, RAG, Supabase & 30+ tools with one command. Auto HTTPS. Free Zapier/Make alternative.",
       "demo": "https://github.com/kossakovsky/selfhost-ai#readme",
       "repoUrl": "https://github.com/kossakovsky/selfhost-ai",
-      "long1": "🚀 Self-hosted AI automation platform. Deploy n8n, Ollama, Flowise, RAG, Supabase & 30+ tools with one command. Auto HTTPS. Free Zapier/Make alternative. Maintained by kossakovsky on GitHub, where it has earned 914 stars from the community.",
+      "long1": "🚀 Self-hosted AI automation platform. Deploy n8n, Ollama, Flowise, RAG, Supabase & 30+ tools with one command. Auto HTTPS. Free Zapier/Make alternative. Maintained by kossakovsky on GitHub, where it has earned 926 stars from the community.",
       "long2": "It's actively developed around automation, docker, flowise, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Shell",
         "Automation",
@@ -610,43 +647,43 @@
         "Flowise",
         "Homelab"
       ],
-      "updated": "6 weeks ago",
-      "pushedAt": "2026-07-24T18:51:33Z",
+      "updated": "today",
+      "pushedAt": "2026-09-11T12:39:16-06:00",
       "license": "Apache-2.0",
       "langs": [
         {
-          "pct": 75,
+          "pct": 78,
           "name": "Shell"
         },
         {
-          "pct": 15,
+          "pct": 13,
           "name": "JavaScript"
         },
         {
-          "pct": 10,
+          "pct": 9,
           "name": "Python"
         }
       ],
       "versions": [
         {
-          "url": "https://github.com/kossakovsky/selfhost-ai/releases/tag/v1.8.2",
-          "name": "v1.8.2"
+          "url": "https://github.com/kossakovsky/selfhost-ai/releases/tag/v1.12.0",
+          "name": "v1.12.0"
         },
         {
-          "url": "https://github.com/kossakovsky/selfhost-ai/releases/tag/v1.8.1",
-          "name": "v1.8.1"
+          "url": "https://github.com/kossakovsky/selfhost-ai/releases/tag/v1.11.0",
+          "name": "v1.11.0"
         },
         {
-          "url": "https://github.com/kossakovsky/selfhost-ai/releases/tag/v1.8.0",
-          "name": "v1.8.0"
+          "url": "https://github.com/kossakovsky/selfhost-ai/releases/tag/v1.10.1",
+          "name": "v1.10.1"
         },
         {
-          "url": "https://github.com/kossakovsky/selfhost-ai/releases/tag/v1.7.2",
-          "name": "v1.7.2"
+          "url": "https://github.com/kossakovsky/selfhost-ai/releases/tag/v1.10.0",
+          "name": "v1.10.0"
         },
         {
-          "url": "https://github.com/kossakovsky/selfhost-ai/releases/tag/v1.7.1",
-          "name": "v1.7.1"
+          "url": "https://github.com/kossakovsky/selfhost-ai/releases/tag/v1.9.0",
+          "name": "v1.9.0"
         }
       ],
       "topics": [
@@ -663,6 +700,52 @@
         "self-hosted",
         "vector-database"
       ],
+      "forks": 228,
+      "watchers": 26,
+      "addedAt": "2026-07-15T22:28:33.178349+00:00"
+    },
+    {
+      "slug": "docs",
+      "name": "docs",
+      "fullName": "open-webui/docs",
+      "category": "Docs",
+      "stars": 867,
+      "author": "open-webui",
+      "avatar": "https://avatars.githubusercontent.com/u/158137808?v=4",
+      "desc": "https://docs.openwebui.com",
+      "demo": "https://docs.openwebui.com",
+      "repoUrl": "https://github.com/open-webui/docs",
+      "long1": "https://docs.openwebui.com. Maintained by open-webui on GitHub, where it has earned 867 stars from the community.",
+      "long2": "It's actively developed around open-webui, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "JavaScript",
+        "Open Webui"
+      ],
+      "updated": "2 days ago",
+      "pushedAt": "2026-09-09T18:32:21-06:00",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 51,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 29,
+          "name": "CSS"
+        },
+        {
+          "pct": 20,
+          "name": "TypeScript"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "open-webui"
+      ],
+      "forks": 597,
+      "issues": 14,
+      "watchers": 18,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
@@ -670,14 +753,15 @@
       "name": "llm-server-docs",
       "fullName": "varunvasudeva1/llm-server-docs",
       "category": "AI & ML",
-      "stars": 829,
+      "stars": 833,
       "author": "varunvasudeva1",
       "avatar": "https://avatars.githubusercontent.com/u/37934117?u=aa4596d6de05e5b886b973edd4aaca575d92fca8&v=4",
       "desc": "End-to-end documentation to set up your own local & fully private LLM server on Debian. Equipped with chat, web search, RAG, model management, MCP servers, image generation, and TTS.",
       "demo": null,
       "repoUrl": "https://github.com/varunvasudeva1/llm-server-docs",
-      "long1": "End-to-end documentation to set up your own local & fully private LLM server on Debian. Equipped with chat, web search, RAG, model management, MCP servers, image generation, and TTS. Maintained by varunvasudeva1 on GitHub, where it has earned 829 stars from the community.",
+      "long1": "End-to-end documentation to set up your own local & fully private LLM server on Debian. Equipped with chat, web search, RAG, model management, MCP servers, image generation, and TTS. Maintained by varunvasudeva1 on GitHub, where it has earned 833 stars from the community.",
       "long2": "It's actively developed around linux, llm, ollama, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Linux",
         "Llm",
@@ -685,7 +769,7 @@
         "Open Webui"
       ],
       "updated": "2 months ago",
-      "pushedAt": "2026-06-30T23:25:09Z",
+      "pushedAt": "2026-06-30T17:25:09-06:00",
       "license": "MIT",
       "langs": [
         {
@@ -716,46 +800,9 @@
         "kokoro-fastapi",
         "mcpjungle"
       ],
-      "addedAt": "2026-07-15T22:28:33.178349+00:00"
-    },
-    {
-      "slug": "docs",
-      "name": "docs",
-      "fullName": "open-webui/docs",
-      "category": "Docs",
-      "stars": 827,
-      "author": "open-webui",
-      "avatar": "https://avatars.githubusercontent.com/u/158137808?v=4",
-      "desc": "https://docs.openwebui.com",
-      "demo": "https://docs.openwebui.com",
-      "repoUrl": "https://github.com/open-webui/docs",
-      "long1": "https://docs.openwebui.com. Maintained by open-webui on GitHub, where it has earned 827 stars from the community.",
-      "long2": "It's actively developed around open-webui, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "JavaScript",
-        "Open Webui"
-      ],
-      "updated": "5 weeks ago",
-      "pushedAt": "2026-08-04T03:45:16Z",
-      "license": "—",
-      "langs": [
-        {
-          "pct": 51,
-          "name": "JavaScript"
-        },
-        {
-          "pct": 28,
-          "name": "CSS"
-        },
-        {
-          "pct": 21,
-          "name": "TypeScript"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "open-webui"
-      ],
+      "forks": 60,
+      "issues": 2,
+      "watchers": 10,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
@@ -763,14 +810,15 @@
       "name": "open-webui-tools",
       "fullName": "Haervwe/open-webui-tools",
       "category": "AI & ML",
-      "stars": 786,
+      "stars": 808,
       "author": "Haervwe",
       "avatar": "https://avatars.githubusercontent.com/u/31465508?u=cfe06d956cd3d236caec00e849ec82295956727d&v=4",
       "desc": "Open‑WebUI Tools is a modular toolkit designed to extend and enrich your Open WebUI instance, turning it into a powerful AI workstation. With a suite of over 15 specialized tools, function pipelines, and filters, this project supports academic research, agentic autonomy, multimodal creativity, workflows, and more",
       "demo": null,
       "repoUrl": "https://github.com/Haervwe/open-webui-tools",
-      "long1": "Open‑WebUI Tools is a modular toolkit designed to extend and enrich your Open WebUI instance, turning it into a powerful AI workstation. With a suite of over 15 specialized tools, function pipelines, and filters, this project supports academic research, agentic autonomy, multimodal creativity, workflows, and more. Maintained by Haervwe on GitHub, where it has earned 786 stars from the community.",
+      "long1": "Open‑WebUI Tools is a modular toolkit designed to extend and enrich your Open WebUI instance, turning it into a powerful AI workstation. With a suite of over 15 specialized tools, function pipelines, and filters, this project supports academic research, agentic autonomy, multimodal creativity, workflows, and more. Maintained by Haervwe on GitHub, where it has earned 808 stars from the community.",
       "long2": "It's actively developed around ai-agents, comfyui, letta, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Python",
         "Ai Agents",
@@ -778,16 +826,16 @@
         "Letta",
         "Llm"
       ],
-      "updated": "5 weeks ago",
-      "pushedAt": "2026-08-05T14:00:49Z",
+      "updated": "2 weeks ago",
+      "pushedAt": "2026-08-29T17:39:20-06:00",
       "license": "MIT",
       "langs": [
         {
-          "pct": 98,
+          "pct": 99,
           "name": "Python"
         },
         {
-          "pct": 2,
+          "pct": 1,
           "name": "JavaScript"
         },
         {
@@ -810,6 +858,9 @@
         "ai-workstation",
         "arxiv"
       ],
+      "forks": 70,
+      "issues": 6,
+      "watchers": 12,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
@@ -817,14 +868,15 @@
       "name": "chatterbox-tts-api",
       "fullName": "travisvn/chatterbox-tts-api",
       "category": "AI & ML",
-      "stars": 665,
+      "stars": 678,
       "author": "travisvn",
       "avatar": "https://avatars.githubusercontent.com/u/2686415?u=43bb1dd32348ce5ffbf7d84540a8ec23d8c1d2f6&v=4",
       "desc": "Local, OpenAI-compatible text-to-speech (TTS) API using Chatterbox, enabling users to generate voice cloned speech anywhere the OpenAI API is used (e.g. Open WebUI, AnythingLLM, etc.)",
       "demo": "https://chatterboxtts.com",
       "repoUrl": "https://github.com/travisvn/chatterbox-tts-api",
-      "long1": "Local, OpenAI-compatible text-to-speech (TTS) API using Chatterbox, enabling users to generate voice cloned speech anywhere the OpenAI API is used (e.g. Open WebUI, AnythingLLM, etc.). Maintained by travisvn on GitHub, where it has earned 665 stars from the community.",
+      "long1": "Local, OpenAI-compatible text-to-speech (TTS) API using Chatterbox, enabling users to generate voice cloned speech anywhere the OpenAI API is used (e.g. Open WebUI, AnythingLLM, etc.). Maintained by travisvn on GitHub, where it has earned 678 stars from the community.",
       "long2": "It's actively developed around chatgpt, chatterbox, docker, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Python",
         "Chatgpt",
@@ -832,8 +884,8 @@
         "Docker",
         "Ollama"
       ],
-      "updated": "8 months ago",
-      "pushedAt": "2025-12-23T01:05:46Z",
+      "updated": "9 months ago",
+      "pushedAt": "2025-12-22T19:05:46-06:00",
       "license": "AGPL-3.0",
       "langs": [
         {
@@ -869,6 +921,9 @@
         "voice-cloning",
         "ai"
       ],
+      "forks": 145,
+      "issues": 16,
+      "watchers": 10,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
@@ -876,14 +931,15 @@
       "name": "open-webui-plugins",
       "fullName": "Classic298/open-webui-plugins",
       "category": "DevTools",
-      "stars": 496,
+      "stars": 543,
       "author": "Classic298",
       "avatar": "https://avatars.githubusercontent.com/u/27028174?u=8f6872cdde3a202ad2385ea6014510b0d47180c5&v=4",
       "desc": "A curated collection of Open WebUI plugins - tools, skills, filters, pipes, actions and events that extend your AI chat experience.",
       "demo": null,
       "repoUrl": "https://github.com/Classic298/open-webui-plugins",
-      "long1": "A curated collection of Open WebUI plugins - tools, skills, filters, pipes, actions and events that extend your AI chat experience. Maintained by Classic298 on GitHub, where it has earned 496 stars from the community.",
+      "long1": "A curated collection of Open WebUI plugins - tools, skills, filters, pipes, actions and events that extend your AI chat experience. Maintained by Classic298 on GitHub, where it has earned 543 stars from the community.",
       "long2": "It's actively developed around action, cusomization, filter, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Python",
         "Action",
@@ -891,12 +947,12 @@
         "Filter",
         "Function"
       ],
-      "updated": "5 weeks ago",
-      "pushedAt": "2026-08-04T13:12:40Z",
+      "updated": "5 days ago",
+      "pushedAt": "2026-09-07T03:38:34-06:00",
       "license": "BSD-3-Clause",
       "langs": [
         {
-          "pct": 99,
+          "pct": 98,
           "name": "Python"
         },
         {
@@ -904,30 +960,30 @@
           "name": "HTML"
         },
         {
-          "pct": 0,
+          "pct": 1,
           "name": "JavaScript"
         }
       ],
       "versions": [
         {
-          "url": "https://github.com/Classic298/open-webui-plugins/releases/tag/v1.0.31",
-          "name": "v1.0.31"
+          "url": "https://github.com/Classic298/open-webui-plugins/releases/tag/v1.0.36",
+          "name": "v1.0.36"
         },
         {
-          "url": "https://github.com/Classic298/open-webui-plugins/releases/tag/v1.0.30",
-          "name": "v1.0.30"
+          "url": "https://github.com/Classic298/open-webui-plugins/releases/tag/v1.0.35",
+          "name": "v1.0.35"
         },
         {
-          "url": "https://github.com/Classic298/open-webui-plugins/releases/tag/v1.0.29",
-          "name": "v1.0.29"
+          "url": "https://github.com/Classic298/open-webui-plugins/releases/tag/v1.0.34",
+          "name": "v1.0.34"
         },
         {
-          "url": "https://github.com/Classic298/open-webui-plugins/releases/tag/v1.0.28",
-          "name": "v1.0.28"
+          "url": "https://github.com/Classic298/open-webui-plugins/releases/tag/v1.0.33",
+          "name": "v1.0.33"
         },
         {
-          "url": "https://github.com/Classic298/open-webui-plugins/releases/tag/v1.0.27",
-          "name": "v1.0.27"
+          "url": "https://github.com/Classic298/open-webui-plugins/releases/tag/v1.0.32",
+          "name": "v1.0.32"
         }
       ],
       "topics": [
@@ -944,21 +1000,104 @@
         "plugin",
         "plugins"
       ],
+      "forks": 19,
+      "issues": 2,
+      "watchers": 12,
       "addedAt": "2026-08-05T04:38:16.578542+00:00"
+    },
+    {
+      "slug": "proxmoxmcp-plus",
+      "name": "ProxmoxMCP-Plus",
+      "fullName": "RekklesNA/ProxmoxMCP-Plus",
+      "category": "AI & ML",
+      "stars": 528,
+      "author": "RekklesNA",
+      "avatar": "https://avatars.githubusercontent.com/u/102507799?u=2af0e12692c90cfd813c0dfca4068be4e50465fe&v=4",
+      "desc": "Use MCP and OpenAPI to safely control Proxmox VE VMs, LXCs, backups, and snapshots from LLMs and AI agents.",
+      "demo": "https://github.com/RekklesNA/ProxmoxMCP-Plus#readme",
+      "repoUrl": "https://github.com/RekklesNA/ProxmoxMCP-Plus",
+      "long1": "Use MCP and OpenAPI to safely control Proxmox VE VMs, LXCs, backups, and snapshots from LLMs and AI agents. Maintained by RekklesNA on GitHub, where it has earned 528 stars from the community.",
+      "long2": "It's actively developed around ai-agent, automation, claude-desktop, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Python",
+        "Ai Agent",
+        "Automation",
+        "Claude Desktop",
+        "Homelab"
+      ],
+      "updated": "1 week ago",
+      "pushedAt": "2026-09-04T02:53:34-06:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "Python"
+        },
+        {
+          "pct": 0,
+          "name": "Shell"
+        },
+        {
+          "pct": 0,
+          "name": "Dockerfile"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/RekklesNA/ProxmoxMCP-Plus/releases/tag/v0.5.15",
+          "name": "v0.5.15"
+        },
+        {
+          "url": "https://github.com/RekklesNA/ProxmoxMCP-Plus/releases/tag/v0.5.14",
+          "name": "v0.5.14"
+        },
+        {
+          "url": "https://github.com/RekklesNA/ProxmoxMCP-Plus/releases/tag/v0.5.13",
+          "name": "v0.5.13"
+        },
+        {
+          "url": "https://github.com/RekklesNA/ProxmoxMCP-Plus/releases/tag/v0.5.12",
+          "name": "v0.5.12"
+        },
+        {
+          "url": "https://github.com/RekklesNA/ProxmoxMCP-Plus/releases/tag/v0.5.11",
+          "name": "v0.5.11"
+        }
+      ],
+      "topics": [
+        "ai-agent",
+        "automation",
+        "claude-desktop",
+        "homelab",
+        "llm",
+        "lxc",
+        "mcp",
+        "model-context-protocol",
+        "open-webui",
+        "openapi",
+        "proxmox",
+        "qemu"
+      ],
+      "forks": 66,
+      "issues": 2,
+      "watchers": 4,
+      "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
       "slug": "open-webui-functions",
       "name": "Open-WebUI-Functions",
       "fullName": "owndev/Open-WebUI-Functions",
       "category": "AI & ML",
-      "stars": 378,
+      "stars": 386,
       "author": "owndev",
       "avatar": "https://avatars.githubusercontent.com/u/69784886?u=b87898fa183a1e453cc9569e6fe4961a44798e7f&v=4",
       "desc": "Open-WebUI-Functions is a collection of custom pipelines, filters, and integrations designed to enhance Open WebUI. These functions enable seamless interactions with Azure AI, N8N, Google Gemini and other AI models, providing dynamic request handling, preprocessing, and automation.",
       "demo": "https://openwebui.com/u/owndev",
       "repoUrl": "https://github.com/owndev/Open-WebUI-Functions",
-      "long1": "Open-WebUI-Functions is a collection of custom pipelines, filters, and integrations designed to enhance Open WebUI. These functions enable seamless interactions with Azure AI, N8N, Google Gemini and other AI models, providing dynamic request handling, preprocessing, and automation. Maintained by owndev on GitHub, where it has earned 378 stars from the community.",
+      "long1": "Open-WebUI-Functions is a collection of custom pipelines, filters, and integrations designed to enhance Open WebUI. These functions enable seamless interactions with Azure AI, N8N, Google Gemini and other AI models, providing dynamic request handling, preprocessing, and automation. Maintained by owndev on GitHub, where it has earned 386 stars from the community.",
       "long2": "It's actively developed around open-webui, ai, azure-ai, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Python",
         "Open Webui",
@@ -966,8 +1105,8 @@
         "Azure Ai",
         "Azure Ai Foundry"
       ],
-      "updated": "4 months ago",
-      "pushedAt": "2026-05-12T09:34:15Z",
+      "updated": "3 weeks ago",
+      "pushedAt": "2026-08-19T01:40:59-06:00",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -997,205 +1136,9 @@
         "gemini",
         "google-ai"
       ],
-      "addedAt": "2026-07-15T22:28:33.178349+00:00"
-    },
-    {
-      "slug": "proxmoxmcp-plus",
-      "name": "ProxmoxMCP-Plus",
-      "fullName": "RekklesNA/ProxmoxMCP-Plus",
-      "category": "AI & ML",
-      "stars": 378,
-      "author": "RekklesNA",
-      "avatar": "https://avatars.githubusercontent.com/u/102507799?u=2af0e12692c90cfd813c0dfca4068be4e50465fe&v=4",
-      "desc": "Use MCP and OpenAPI to safely control Proxmox VE VMs, LXCs, backups, and snapshots from LLMs and AI agents.",
-      "demo": "https://github.com/RekklesNA/ProxmoxMCP-Plus#readme",
-      "repoUrl": "https://github.com/RekklesNA/ProxmoxMCP-Plus",
-      "long1": "Use MCP and OpenAPI to safely control Proxmox VE VMs, LXCs, backups, and snapshots from LLMs and AI agents. Maintained by RekklesNA on GitHub, where it has earned 378 stars from the community.",
-      "long2": "It's actively developed around ai-agent, automation, claude-desktop, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Python",
-        "Ai Agent",
-        "Automation",
-        "Claude Desktop",
-        "Homelab"
-      ],
-      "updated": "6 weeks ago",
-      "pushedAt": "2026-07-29T13:56:52Z",
-      "license": "MIT",
-      "langs": [
-        {
-          "pct": 100,
-          "name": "Python"
-        },
-        {
-          "pct": 0,
-          "name": "Shell"
-        },
-        {
-          "pct": 0,
-          "name": "Dockerfile"
-        }
-      ],
-      "versions": [
-        {
-          "url": "https://github.com/RekklesNA/ProxmoxMCP-Plus/releases/tag/v0.5.12",
-          "name": "v0.5.12"
-        },
-        {
-          "url": "https://github.com/RekklesNA/ProxmoxMCP-Plus/releases/tag/v0.5.11",
-          "name": "v0.5.11"
-        },
-        {
-          "url": "https://github.com/RekklesNA/ProxmoxMCP-Plus/releases/tag/v0.5.10",
-          "name": "v0.5.10"
-        },
-        {
-          "url": "https://github.com/RekklesNA/ProxmoxMCP-Plus/releases/tag/v0.5.9",
-          "name": "v0.5.9"
-        },
-        {
-          "url": "https://github.com/RekklesNA/ProxmoxMCP-Plus/releases/tag/v0.5.8",
-          "name": "v0.5.8"
-        }
-      ],
-      "topics": [
-        "ai-agent",
-        "automation",
-        "claude-desktop",
-        "homelab",
-        "llm",
-        "lxc",
-        "mcp",
-        "model-context-protocol",
-        "open-webui",
-        "openapi",
-        "proxmox",
-        "qemu"
-      ],
-      "addedAt": "2026-07-15T22:28:33.178349+00:00"
-    },
-    {
-      "slug": "openwebui-extensions",
-      "name": "openwebui-extensions",
-      "fullName": "Fu-Jie/openwebui-extensions",
-      "category": "DevTools",
-      "stars": 282,
-      "author": "Fu-Jie",
-      "avatar": "https://avatars.githubusercontent.com/u/33599649?u=1a8e936f584a8618a3581f2b23934885894df22e&v=4",
-      "desc": "A collection of enhancements, plugins, and prompts for Open WebUI, developed and curated for personal use to extend functionality and improve experience.",
-      "demo": "https://fu-jie.github.io/openwebui-extensions/",
-      "repoUrl": "https://github.com/Fu-Jie/openwebui-extensions",
-      "long1": "A collection of enhancements, plugins, and prompts for Open WebUI, developed and curated for personal use to extend functionality and improve experience. Maintained by Fu-Jie on GitHub, where it has earned 282 stars from the community.",
-      "long2": "It's actively developed around openwebui, context-engineering, excel, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Python",
-        "Openwebui",
-        "Context Engineering",
-        "Excel",
-        "Infographic"
-      ],
-      "updated": "8 weeks ago",
-      "pushedAt": "2026-07-14T10:03:26Z",
-      "license": "MIT",
-      "langs": [
-        {
-          "pct": 99,
-          "name": "Python"
-        },
-        {
-          "pct": 1,
-          "name": "HTML"
-        },
-        {
-          "pct": 0,
-          "name": "Shell"
-        }
-      ],
-      "versions": [
-        {
-          "url": "https://github.com/Fu-Jie/openwebui-extensions/releases/tag/release-2026.07.14",
-          "name": "release-2026.07.14"
-        },
-        {
-          "url": "https://github.com/Fu-Jie/openwebui-extensions/releases/tag/async-context-compression-v1.7.4",
-          "name": "async-context-compression-v1.7.4"
-        },
-        {
-          "url": "https://github.com/Fu-Jie/openwebui-extensions/releases/tag/release-2026.07.13",
-          "name": "release-2026.07.13"
-        },
-        {
-          "url": "https://github.com/Fu-Jie/openwebui-extensions/releases/tag/release-2026.07.09",
-          "name": "release-2026.07.09"
-        },
-        {
-          "url": "https://github.com/Fu-Jie/openwebui-extensions/releases/tag/smart-mind-map-v1.0.2",
-          "name": "smart-mind-map-v1.0.2"
-        }
-      ],
-      "topics": [
-        "openwebui",
-        "context-engineering",
-        "excel",
-        "infographic",
-        "memory",
-        "mindmap",
-        "openwebui-filter",
-        "openwebui-tool",
-        "word",
-        "agentic",
-        "openwebui-pipe",
-        "copilot-sdk"
-      ],
-      "addedAt": "2026-07-15T22:28:33.178349+00:00"
-    },
-    {
-      "slug": "burn-lm",
-      "name": "burn-lm",
-      "fullName": "tracel-ai/burn-lm",
-      "category": "AI & ML",
-      "stars": 265,
-      "author": "tracel-ai",
-      "avatar": "https://avatars.githubusercontent.com/u/111992358?v=4",
-      "desc": "Democratizing large model inference and training on any device.",
-      "demo": "https://burn.dev",
-      "repoUrl": "https://github.com/tracel-ai/burn-lm",
-      "long1": "Democratizing large model inference and training on any device. Maintained by tracel-ai on GitHub, where it has earned 265 stars from the community.",
-      "long2": "It's actively developed around burn, large-model-inference, open-webui, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Rust",
-        "Burn",
-        "Large Model Inference",
-        "Open Webui",
-        "Openai Api"
-      ],
-      "updated": "3 months ago",
-      "pushedAt": "2026-06-08T13:41:24Z",
-      "license": "—",
-      "langs": [
-        {
-          "pct": 100,
-          "name": "Rust"
-        },
-        {
-          "pct": 0,
-          "name": "RenderScript"
-        }
-      ],
-      "versions": [
-        {
-          "url": "https://github.com/tracel-ai/burn-lm/releases/tag/v0.0.1",
-          "name": "v0.0.1"
-        }
-      ],
-      "topics": [
-        "burn",
-        "large-model-inference",
-        "open-webui",
-        "openai-api",
-        "rust",
-        "tui"
-      ],
+      "forks": 53,
+      "issues": 10,
+      "watchers": 6,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
@@ -1203,20 +1146,21 @@
       "name": "oikb",
       "fullName": "open-webui/oikb",
       "category": "DevTools",
-      "stars": 244,
+      "stars": 309,
       "author": "open-webui",
       "avatar": "https://avatars.githubusercontent.com/u/158137808?v=4",
       "desc": "Sync anything to Open WebUI Knowledge Bases",
       "demo": null,
       "repoUrl": "https://github.com/open-webui/oikb",
-      "long1": "Sync anything to Open WebUI Knowledge Bases. Maintained by open-webui on GitHub, where it has earned 244 stars from the community.",
+      "long1": "Sync anything to Open WebUI Knowledge Bases. Maintained by open-webui on GitHub, where it has earned 309 stars from the community.",
       "long2": "It's actively developed around open-webui, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Python",
         "Open Webui"
       ],
-      "updated": "5 weeks ago",
-      "pushedAt": "2026-08-01T04:13:09Z",
+      "updated": "6 weeks ago",
+      "pushedAt": "2026-07-31T22:13:08-06:00",
       "license": "MIT",
       "langs": [
         {
@@ -1253,6 +1197,88 @@
       "topics": [
         "open-webui"
       ],
+      "forks": 39,
+      "issues": 51,
+      "watchers": 2,
+      "addedAt": "2026-07-15T22:28:33.178349+00:00"
+    },
+    {
+      "slug": "openwebui-extensions",
+      "name": "openwebui-extensions",
+      "fullName": "Fu-Jie/openwebui-extensions",
+      "category": "DevTools",
+      "stars": 308,
+      "author": "Fu-Jie",
+      "avatar": "https://avatars.githubusercontent.com/u/33599649?u=1a8e936f584a8618a3581f2b23934885894df22e&v=4",
+      "desc": "A collection of enhancements, plugins, and prompts for Open WebUI, developed and curated for personal use to extend functionality and improve experience.",
+      "demo": "https://fu-jie.github.io/openwebui-extensions/",
+      "repoUrl": "https://github.com/Fu-Jie/openwebui-extensions",
+      "long1": "A collection of enhancements, plugins, and prompts for Open WebUI, developed and curated for personal use to extend functionality and improve experience. Maintained by Fu-Jie on GitHub, where it has earned 308 stars from the community.",
+      "long2": "It's actively developed around openwebui, context-engineering, excel, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Python",
+        "Openwebui",
+        "Context Engineering",
+        "Excel",
+        "Infographic"
+      ],
+      "updated": "1 week ago",
+      "pushedAt": "2026-09-04T03:44:42-06:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 99,
+          "name": "Python"
+        },
+        {
+          "pct": 1,
+          "name": "HTML"
+        },
+        {
+          "pct": 0,
+          "name": "Shell"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/Fu-Jie/openwebui-extensions/releases/tag/release-2026.09.04",
+          "name": "release-2026.09.04"
+        },
+        {
+          "url": "https://github.com/Fu-Jie/openwebui-extensions/releases/tag/openwebui-skills-manager-v0.3.4",
+          "name": "openwebui-skills-manager-v0.3.4"
+        },
+        {
+          "url": "https://github.com/Fu-Jie/openwebui-extensions/releases/tag/release-2026.07.14",
+          "name": "release-2026.07.14"
+        },
+        {
+          "url": "https://github.com/Fu-Jie/openwebui-extensions/releases/tag/async-context-compression-v1.7.4",
+          "name": "async-context-compression-v1.7.4"
+        },
+        {
+          "url": "https://github.com/Fu-Jie/openwebui-extensions/releases/tag/release-2026.07.13",
+          "name": "release-2026.07.13"
+        }
+      ],
+      "topics": [
+        "openwebui",
+        "context-engineering",
+        "excel",
+        "infographic",
+        "memory",
+        "mindmap",
+        "openwebui-filter",
+        "openwebui-tool",
+        "word",
+        "agentic",
+        "openwebui-pipe",
+        "copilot-sdk"
+      ],
+      "forks": 24,
+      "issues": 8,
+      "watchers": 4,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
@@ -1260,14 +1286,15 @@
       "name": "open-webui-pipeline-for-ragflow",
       "fullName": "luyilong2015/open-webui-pipeline-for-ragflow",
       "category": "AI & ML",
-      "stars": 175,
+      "stars": 178,
       "author": "luyilong2015",
       "avatar": "https://avatars.githubusercontent.com/u/30279457?v=4",
       "desc": "使用open-webui中的pipelines技术在open-webui中调用ragflow的agent实现基于知识库的智能对话，并拥有美观的界面。",
       "demo": null,
       "repoUrl": "https://github.com/luyilong2015/open-webui-pipeline-for-ragflow",
-      "long1": "使用open-webui中的pipelines技术在open-webui中调用ragflow的agent实现基于知识库的智能对话，并拥有美观的界面。. Maintained by luyilong2015 on GitHub, where it has earned 175 stars from the community.",
+      "long1": "使用open-webui中的pipelines技术在open-webui中调用ragflow的agent实现基于知识库的智能对话，并拥有美观的界面。. Maintained by luyilong2015 on GitHub, where it has earned 178 stars from the community.",
       "long2": "It's actively developed around agent, open-webui, pipelines, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Python",
         "Agent",
@@ -1276,7 +1303,7 @@
         "Llm"
       ],
       "updated": "10 months ago",
-      "pushedAt": "2025-10-31T06:59:39Z",
+      "pushedAt": "2025-10-31T00:59:38-06:00",
       "license": "Unlicense",
       "langs": [
         {
@@ -1302,6 +1329,114 @@
         "ragflow",
         "webui"
       ],
+      "forks": 25,
+      "issues": 5,
+      "watchers": 2,
+      "addedAt": "2026-07-15T22:28:33.178349+00:00"
+    },
+    {
+      "slug": "llm-api-setup-guides",
+      "name": "llm-api-setup-guides",
+      "fullName": "18534516725/llm-api-setup-guides",
+      "category": "AI & ML",
+      "stars": 167,
+      "author": "18534516725",
+      "avatar": "https://avatars.githubusercontent.com/u/84071795?u=ea5b417d4213f371a37e677a9dda1c75413dbeaf&v=4",
+      "desc": "88篇中文 AI API中转站与工具配置教程：Codex API、Claude Code API、OpenAI-compatible API、Base URL、Cursor、Cherry Studio、计费验证与错误排查。",
+      "demo": "https://18534516725.github.io/llm-api-setup-guides/",
+      "repoUrl": "https://github.com/18534516725/llm-api-setup-guides",
+      "long1": "88篇中文 AI API中转站与工具配置教程：Codex API、Claude Code API、OpenAI-compatible API、Base URL、Cursor、Cherry Studio、计费验证与错误排查。. Maintained by 18534516725 on GitHub, where it has earned 167 stars from the community.",
+      "long2": "It's actively developed around ai-api, api-proxy, cherry-studio, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Python",
+        "Ai Api",
+        "Api Proxy",
+        "Cherry Studio",
+        "Chinese Tutorial"
+      ],
+      "updated": "1 week ago",
+      "pushedAt": "2026-09-02T03:49:49-06:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 66,
+          "name": "Python"
+        },
+        {
+          "pct": 23,
+          "name": "CSS"
+        },
+        {
+          "pct": 11,
+          "name": "JavaScript"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "ai-api",
+        "api-proxy",
+        "cherry-studio",
+        "chinese-tutorial",
+        "cline",
+        "codex-cli",
+        "dify",
+        "llm-api",
+        "setup-guide",
+        "api-testing",
+        "gemini-cli",
+        "qwen-code"
+      ],
+      "forks": 4,
+      "addedAt": "2026-07-21T11:09:09.517445+00:00"
+    },
+    {
+      "slug": "openwebui-tools",
+      "name": "OpenWebui-Tools",
+      "fullName": "iChristGit/OpenWebui-Tools",
+      "category": "AI & ML",
+      "stars": 142,
+      "author": "iChristGit",
+      "avatar": "https://avatars.githubusercontent.com/u/20077386?u=0688709e894c17f66b6d9a08847dbe289684b9d4&v=4",
+      "desc": "Custom tools to enhance your Open-Webui Experience! 🚀",
+      "demo": "https://openwebui.com/u/ichrist",
+      "repoUrl": "https://github.com/iChristGit/OpenWebui-Tools",
+      "long1": "Custom tools to enhance your Open-Webui Experience! 🚀. Maintained by iChristGit on GitHub, where it has earned 142 stars from the community.",
+      "long2": "It's actively developed around ai, chat, open-source, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Python",
+        "Ai",
+        "Chat",
+        "Open Source",
+        "Open Webui"
+      ],
+      "updated": "3 months ago",
+      "pushedAt": "2026-06-01T14:04:36-06:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "Python"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "ai",
+        "chat",
+        "open-source",
+        "open-webui",
+        "open-webui-functions",
+        "open-webui-tools",
+        "tools",
+        "comfyui",
+        "llm",
+        "llm-tools",
+        "llms",
+        "ai-tools"
+      ],
+      "forks": 6,
+      "watchers": 3,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
@@ -1309,14 +1444,15 @@
       "name": "ChatOpsLLM",
       "fullName": "bmd1905/ChatOpsLLM",
       "category": "AI & ML",
-      "stars": 140,
+      "stars": 142,
       "author": "bmd1905",
       "avatar": "https://avatars.githubusercontent.com/u/90423581?u=d2b5ea1b8fe1c33f4acbfbc97552fd69092033be&v=4",
       "desc": "To simplify and streamline LLM operations, empowering developers and organizations to harness the full potential of large language models with ease.",
       "demo": "https://bmd1905.github.io/ChatOpsLLM",
       "repoUrl": "https://github.com/bmd1905/ChatOpsLLM",
-      "long1": "To simplify and streamline LLM operations, empowering developers and organizations to harness the full potential of large language models with ease. Maintained by bmd1905 on GitHub, where it has earned 140 stars from the community.",
+      "long1": "To simplify and streamline LLM operations, empowering developers and organizations to harness the full potential of large language models with ease. Maintained by bmd1905 on GitHub, where it has earned 142 stars from the community.",
       "long2": "It's actively developed around chatbot, llm, litellm, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Svelte",
         "Chatbot",
@@ -1325,7 +1461,7 @@
         "Open Webui"
       ],
       "updated": "2 years ago",
-      "pushedAt": "2025-01-21T12:17:09Z",
+      "pushedAt": "2025-01-21T06:17:08-06:00",
       "license": "MIT",
       "langs": [
         {
@@ -1352,52 +1488,8 @@
         "devops",
         "langfuse"
       ],
-      "addedAt": "2026-07-15T22:28:33.178349+00:00"
-    },
-    {
-      "slug": "openwebui-tools",
-      "name": "OpenWebui-Tools",
-      "fullName": "iChristGit/OpenWebui-Tools",
-      "category": "AI & ML",
-      "stars": 136,
-      "author": "iChristGit",
-      "avatar": "https://avatars.githubusercontent.com/u/20077386?u=0688709e894c17f66b6d9a08847dbe289684b9d4&v=4",
-      "desc": "Custom tools to enhance your Open-Webui Experience! 🚀",
-      "demo": "https://openwebui.com/u/ichrist",
-      "repoUrl": "https://github.com/iChristGit/OpenWebui-Tools",
-      "long1": "Custom tools to enhance your Open-Webui Experience! 🚀. Maintained by iChristGit on GitHub, where it has earned 136 stars from the community.",
-      "long2": "It's actively developed around ai, chat, open-source, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Python",
-        "Ai",
-        "Chat",
-        "Open Source",
-        "Open Webui"
-      ],
-      "updated": "3 months ago",
-      "pushedAt": "2026-06-01T20:04:36Z",
-      "license": "MIT",
-      "langs": [
-        {
-          "pct": 100,
-          "name": "Python"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "ai",
-        "chat",
-        "open-source",
-        "open-webui",
-        "open-webui-functions",
-        "open-webui-tools",
-        "tools",
-        "comfyui",
-        "llm",
-        "llm-tools",
-        "llms",
-        "ai-tools"
-      ],
+      "forks": 31,
+      "watchers": 1,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
@@ -1413,6 +1505,7 @@
       "repoUrl": "https://github.com/Classic298/prune-open-webui",
       "long1": "🧹 An automizable or interactive pruning tool for Open WebUI: clean up orphaned files, old chats, inactive users, stale vector data and more!. Maintained by Classic298 on GitHub, where it has earned 135 stars from the community.",
       "long2": "It's actively developed around chromadb, cli-tool, database-cleanup, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Python",
         "Chromadb",
@@ -1421,7 +1514,7 @@
         "Maintenance"
       ],
       "updated": "7 weeks ago",
-      "pushedAt": "2026-07-21T17:15:18Z",
+      "pushedAt": "2026-07-21T11:10:16-06:00",
       "license": "BSD-3-Clause",
       "langs": [
         {
@@ -1469,6 +1562,8 @@
         "python",
         "sqlite"
       ],
+      "forks": 6,
+      "watchers": 2,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
@@ -1476,14 +1571,15 @@
       "name": "open-webui-embeddable-widget",
       "fullName": "taylorwilsdon/open-webui-embeddable-widget",
       "category": "AI & ML",
-      "stars": 121,
+      "stars": 123,
       "author": "taylorwilsdon",
       "avatar": "https://avatars.githubusercontent.com/u/6508528?u=744eca1ad57aa00d1b2d4f9924f630b08040f0af&v=4",
       "desc": "Lightweight, simple embedded Open WebUI widget, allowing you to easily implement chatbot capabilities and RAG workflows into your existing tools, apps and webpages!",
       "demo": null,
       "repoUrl": "https://github.com/taylorwilsdon/open-webui-embeddable-widget",
-      "long1": "Lightweight, simple embedded Open WebUI widget, allowing you to easily implement chatbot capabilities and RAG workflows into your existing tools, apps and webpages!. Maintained by taylorwilsdon on GitHub, where it has earned 121 stars from the community.",
+      "long1": "Lightweight, simple embedded Open WebUI widget, allowing you to easily implement chatbot capabilities and RAG workflows into your existing tools, apps and webpages!. Maintained by taylorwilsdon on GitHub, where it has earned 123 stars from the community.",
       "long2": "It's actively developed around ai, artifical-intelligence, llm, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Svelte",
         "Ai",
@@ -1492,7 +1588,7 @@
         "Open Webui"
       ],
       "updated": "1 year ago",
-      "pushedAt": "2025-09-03T18:08:42Z",
+      "pushedAt": "2025-09-03T12:08:32-06:00",
       "license": "—",
       "langs": [
         {
@@ -1517,6 +1613,9 @@
         "openwebui",
         "tools"
       ],
+      "forks": 23,
+      "issues": 8,
+      "watchers": 2,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
@@ -1524,14 +1623,15 @@
       "name": "bot",
       "fullName": "open-webui/bot",
       "category": "DevTools",
-      "stars": 118,
+      "stars": 119,
       "author": "open-webui",
       "avatar": "https://avatars.githubusercontent.com/u/158137808?v=4",
       "desc": "beep boop 🤖 (experimental)",
       "demo": null,
       "repoUrl": "https://github.com/open-webui/bot",
-      "long1": "beep boop 🤖 (experimental). Maintained by open-webui on GitHub, where it has earned 118 stars from the community.",
+      "long1": "beep boop 🤖 (experimental). Maintained by open-webui on GitHub, where it has earned 119 stars from the community.",
       "long2": "It's actively developed around bot, bots, open-webui, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Python",
         "Bot",
@@ -1539,7 +1639,7 @@
         "Open Webui"
       ],
       "updated": "2 years ago",
-      "pushedAt": "2025-01-08T10:03:35Z",
+      "pushedAt": "2025-01-08T04:03:34-06:00",
       "license": "MIT",
       "langs": [
         {
@@ -1553,6 +1653,9 @@
         "bots",
         "open-webui"
       ],
+      "forks": 28,
+      "issues": 3,
+      "watchers": 7,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
@@ -1568,6 +1671,7 @@
       "repoUrl": "https://github.com/ErickWendel/ollama-webui-traefik-docker",
       "long1": "A project worth exploring. Maintained by ErickWendel on GitHub, where it has earned 92 stars from the community.",
       "long2": "It's actively developed around deepseek-r1, docker, gemma, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Shell",
         "Deepseek R1",
@@ -1576,7 +1680,7 @@
         "Gemma 2B"
       ],
       "updated": "5 months ago",
-      "pushedAt": "2026-04-08T20:08:28Z",
+      "pushedAt": "2026-04-08T14:08:28-06:00",
       "license": "MIT",
       "langs": [
         {
@@ -1599,6 +1703,72 @@
         "letsencrypt",
         "vps"
       ],
+      "forks": 41,
+      "watchers": 1,
+      "addedAt": "2026-07-15T22:28:33.178349+00:00"
+    },
+    {
+      "slug": "openwebui-generate-documents",
+      "name": "openwebui-generate-documents",
+      "fullName": "ianustec/openwebui-generate-documents",
+      "category": "AI & ML",
+      "stars": 92,
+      "author": "ianustec",
+      "avatar": "https://avatars.githubusercontent.com/u/111279753?u=b53e6afbae7638da0b2c7b633cad36328268a29d&v=4",
+      "desc": "Native Word (.docx) generator tool for Open WebUI — Markdown/JSON in, cover pages, styled tables, callouts, TOC out. MIT.",
+      "demo": "https://ianustec.com",
+      "repoUrl": "https://github.com/ianustec/openwebui-generate-documents",
+      "long1": "Native Word (.docx) generator tool for Open WebUI — Markdown/JSON in, cover pages, styled tables, callouts, TOC out. MIT. Maintained by ianustec on GitHub, where it has earned 92 stars from the community.",
+      "long2": "It's actively developed around ai-tools, document-generation, docx, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Python",
+        "Ai Tools",
+        "Document Generation",
+        "Docx",
+        "Llm Tools"
+      ],
+      "updated": "4 weeks ago",
+      "pushedAt": "2026-08-17T10:03:52-06:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "Python"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/ianustec/openwebui-generate-documents/releases/tag/v1.2.4",
+          "name": "v1.2.4"
+        },
+        {
+          "url": "https://github.com/ianustec/openwebui-generate-documents/releases/tag/v1.2.0",
+          "name": "v1.2.0"
+        },
+        {
+          "url": "https://github.com/ianustec/openwebui-generate-documents/releases/tag/v1.1.1",
+          "name": "v1.1.1"
+        },
+        {
+          "url": "https://github.com/ianustec/openwebui-generate-documents/releases/tag/v1.1.0",
+          "name": "v1.1.0"
+        }
+      ],
+      "topics": [
+        "ai-tools",
+        "document-generation",
+        "docx",
+        "llm-tools",
+        "markdown-to-docx",
+        "open-webui",
+        "openwebui",
+        "python-docx",
+        "report-generation",
+        "word"
+      ],
+      "forks": 2,
+      "watchers": 2,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
@@ -1606,14 +1776,15 @@
       "name": "groundedllm",
       "fullName": "wsargent/groundedllm",
       "category": "AI & ML",
-      "stars": 81,
+      "stars": 82,
       "author": "wsargent",
       "avatar": "https://avatars.githubusercontent.com/u/71236?u=f6c2a4c84bd2b8c55babf867ae309bf9314a5580&v=4",
       "desc": "AI agent grounded with search and extract tools to reduce hallucination.",
       "demo": "https://tersesystems.com/blog/2025/04/13/writing-an-llm-that-just-works-for-my-brother/",
       "repoUrl": "https://github.com/wsargent/groundedllm",
-      "long1": "AI agent grounded with search and extract tools to reduce hallucination. Maintained by wsargent on GitHub, where it has earned 81 stars from the community.",
+      "long1": "AI agent grounded with search and extract tools to reduce hallucination. Maintained by wsargent on GitHub, where it has earned 82 stars from the community.",
       "long2": "It's actively developed around docker-compose, grounded-bot, haystack-ai, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Python",
         "Docker Compose",
@@ -1622,7 +1793,7 @@
         "Haystack Pipeline"
       ],
       "updated": "3 months ago",
-      "pushedAt": "2026-06-05T01:26:48Z",
+      "pushedAt": "2026-06-04T19:26:47-06:00",
       "license": "MIT",
       "langs": [
         {
@@ -1649,6 +1820,9 @@
         "open-webui",
         "hayhooks"
       ],
+      "forks": 12,
+      "issues": 7,
+      "watchers": 2,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
@@ -1656,14 +1830,15 @@
       "name": "rag-ops",
       "fullName": "T-Sunm/rag-ops",
       "category": "AI & ML",
-      "stars": 74,
+      "stars": 73,
       "author": "T-Sunm",
       "avatar": "https://avatars.githubusercontent.com/u/110208482?u=4a1f9ea33c441e39a429e77306bbf0fc697e9615&v=4",
       "desc": "This project applies the core knowledge from the LLMOps module, including the design and implementation of the API Layer, Inference Layer, Observability Layer, Cache Layer, Guardrails Layer, Routing Layer, and the Data Ingestion Pipeline.",
       "demo": null,
       "repoUrl": "https://github.com/T-Sunm/rag-ops",
-      "long1": "This project applies the core knowledge from the LLMOps module, including the design and implementation of the API Layer, Inference Layer, Observability Layer, Cache Layer, Guardrails Layer, Routing Layer, and the Data Ingestion Pipeline. Maintained by T-Sunm on GitHub, where it has earned 74 stars from the community.",
+      "long1": "This project applies the core knowledge from the LLMOps module, including the design and implementation of the API Layer, Inference Layer, Observability Layer, Cache Layer, Guardrails Layer, Routing Layer, and the Data Ingestion Pipeline. Maintained by T-Sunm on GitHub, where it has earned 73 stars from the community.",
       "long2": "It's actively developed around airflow, chatbot, chromadb, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Python",
         "Airflow",
@@ -1671,8 +1846,8 @@
         "Chromadb",
         "Devops"
       ],
-      "updated": "8 months ago",
-      "pushedAt": "2025-12-27T09:44:41Z",
+      "updated": "10 months ago",
+      "pushedAt": "2025-11-23T03:28:43-06:00",
       "license": "—",
       "langs": [
         {
@@ -1703,6 +1878,94 @@
         "nemo-guardrails",
         "open-webui"
       ],
+      "forks": 19,
+      "addedAt": "2026-07-15T22:28:33.178349+00:00"
+    },
+    {
+      "slug": "open-webui-extensions",
+      "name": "open-webui-extensions",
+      "fullName": "Skyzi000/open-webui-extensions",
+      "category": "AI & ML",
+      "stars": 73,
+      "author": "Skyzi000",
+      "avatar": "https://avatars.githubusercontent.com/u/38061609?u=6328e3ede2a042183f9d6572ffd5e57571c02b52&v=4",
+      "desc": "A collection of tools and filters for Open WebUI.",
+      "demo": null,
+      "repoUrl": "https://github.com/Skyzi000/open-webui-extensions",
+      "long1": "A collection of tools and filters for Open WebUI. Maintained by Skyzi000 on GitHub, where it has earned 73 stars from the community.",
+      "long2": "It's actively developed around ai, llm, open-webui, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Python",
+        "Ai",
+        "Llm",
+        "Open Webui",
+        "Open Webui Functions"
+      ],
+      "updated": "2 weeks ago",
+      "pushedAt": "2026-08-31T17:05:46-06:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "Python"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "ai",
+        "llm",
+        "open-webui",
+        "open-webui-functions",
+        "open-webui-tools"
+      ],
+      "forks": 6,
+      "issues": 3,
+      "watchers": 3,
+      "addedAt": "2026-07-15T22:28:33.178349+00:00"
+    },
+    {
+      "slug": "open-webui-cost-tracker",
+      "name": "open-webui-cost-tracker",
+      "fullName": "bgeneto/open-webui-cost-tracker",
+      "category": "DevTools",
+      "stars": 71,
+      "author": "bgeneto",
+      "avatar": "https://avatars.githubusercontent.com/u/473074?u=faca6c422dbfe1c256c4a20ad4e83b094ee54332&v=4",
+      "desc": "open-webui function designed to manage and calculate the costs associated with user interactions and model usage in a Open WebUI.",
+      "demo": "https://open-webui-cost-tracker.streamlit.app/",
+      "repoUrl": "https://github.com/bgeneto/open-webui-cost-tracker",
+      "long1": "open-webui function designed to manage and calculate the costs associated with user interactions and model usage in a Open WebUI. Maintained by bgeneto on GitHub, where it has earned 71 stars from the community.",
+      "long2": "It's actively developed around costs, models, open-webui, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Python",
+        "Costs",
+        "Models",
+        "Open Webui",
+        "Streamlit"
+      ],
+      "updated": "1 year ago",
+      "pushedAt": "2025-06-25T17:12:52-06:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "Python"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "costs",
+        "models",
+        "open-webui",
+        "streamlit",
+        "tokens",
+        "usage"
+      ],
+      "forks": 15,
+      "issues": 6,
+      "watchers": 4,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
@@ -1710,14 +1973,15 @@
       "name": "Better-Qwen3",
       "fullName": "AaronFeng753/Better-Qwen3",
       "category": "DevTools",
-      "stars": 72,
+      "stars": 70,
       "author": "AaronFeng753",
       "avatar": "https://avatars.githubusercontent.com/u/52553688?u=1483b65c2a0f6eef74af630fd4d6ca59d2072486&v=4",
       "desc": "Auto Thinking Mode switch for Qwen3 in Open webui",
       "demo": null,
       "repoUrl": "https://github.com/AaronFeng753/Better-Qwen3",
-      "long1": "Auto Thinking Mode switch for Qwen3 in Open webui. Maintained by AaronFeng753 on GitHub, where it has earned 72 stars from the community.",
+      "long1": "Auto Thinking Mode switch for Qwen3 in Open webui. Maintained by AaronFeng753 on GitHub, where it has earned 70 stars from the community.",
       "long2": "It's actively developed around open-webui, qwen, qwen3, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Python",
         "Open Webui",
@@ -1725,7 +1989,7 @@
         "Qwen3"
       ],
       "updated": "1 year ago",
-      "pushedAt": "2025-05-08T14:26:15Z",
+      "pushedAt": "2025-05-08T08:26:15-06:00",
       "license": "—",
       "langs": [
         {
@@ -1739,6 +2003,8 @@
         "qwen",
         "qwen3"
       ],
+      "forks": 2,
+      "watchers": 3,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
@@ -1754,6 +2020,7 @@
       "repoUrl": "https://github.com/karaketir16/openwebui-langfuse",
       "long1": "This repository provides resources and guidelines to facilitate the integration of Open-WebUI and Langfuse, enabling seamless monitoring and management of AI model usage statistics. Maintained by karaketir16 on GitHub, where it has earned 70 stars from the community.",
       "long2": "It's actively developed around docker, docker-compose, langfuse, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Python",
         "Docker",
@@ -1762,7 +2029,7 @@
         "Llm"
       ],
       "updated": "1 year ago",
-      "pushedAt": "2025-05-02T17:34:01Z",
+      "pushedAt": "2025-05-02T11:34:01-06:00",
       "license": "MIT",
       "langs": [
         {
@@ -1786,86 +2053,61 @@
         "open-webui",
         "pipelines"
       ],
+      "forks": 10,
+      "issues": 1,
+      "watchers": 1,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
-      "slug": "open-webui-cost-tracker",
-      "name": "open-webui-cost-tracker",
-      "fullName": "bgeneto/open-webui-cost-tracker",
-      "category": "DevTools",
-      "stars": 69,
-      "author": "bgeneto",
-      "avatar": "https://avatars.githubusercontent.com/u/473074?u=faca6c422dbfe1c256c4a20ad4e83b094ee54332&v=4",
-      "desc": "open-webui function designed to manage and calculate the costs associated with user interactions and model usage in a Open WebUI.",
-      "demo": "https://open-webui-cost-tracker.streamlit.app/",
-      "repoUrl": "https://github.com/bgeneto/open-webui-cost-tracker",
-      "long1": "open-webui function designed to manage and calculate the costs associated with user interactions and model usage in a Open WebUI. Maintained by bgeneto on GitHub, where it has earned 69 stars from the community.",
-      "long2": "It's actively developed around costs, models, open-webui, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Python",
-        "Costs",
-        "Models",
-        "Open Webui",
-        "Streamlit"
-      ],
-      "updated": "1 year ago",
-      "pushedAt": "2025-06-25T23:12:52Z",
-      "license": "MIT",
-      "langs": [
-        {
-          "pct": 100,
-          "name": "Python"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "costs",
-        "models",
-        "open-webui",
-        "streamlit",
-        "tokens",
-        "usage"
-      ],
-      "addedAt": "2026-07-15T22:28:33.178349+00:00"
-    },
-    {
-      "slug": "open-webui-extensions",
-      "name": "open-webui-extensions",
-      "fullName": "Skyzi000/open-webui-extensions",
+      "slug": "neura-office",
+      "name": "neura-office",
+      "fullName": "ianustec/neura-office",
       "category": "AI & ML",
-      "stars": 65,
-      "author": "Skyzi000",
-      "avatar": "https://avatars.githubusercontent.com/u/38061609?u=6328e3ede2a042183f9d6572ffd5e57571c02b52&v=4",
-      "desc": "A collection of tools and filters for Open WebUI.",
-      "demo": null,
-      "repoUrl": "https://github.com/Skyzi000/open-webui-extensions",
-      "long1": "A collection of tools and filters for Open WebUI. Maintained by Skyzi000 on GitHub, where it has earned 65 stars from the community.",
-      "long2": "It's actively developed around ai, llm, open-webui, and is a solid reference for anyone building with these tools.",
+      "stars": 68,
+      "author": "ianustec",
+      "avatar": "https://avatars.githubusercontent.com/u/111279753?u=b53e6afbae7638da0b2c7b633cad36328268a29d&v=4",
+      "desc": "NEURA Office: native Word, PowerPoint and Excel for Open WebUI. LibreOffice-compatible OOXML. MS365 assistant planned.",
+      "demo": "https://ianustec.com",
+      "repoUrl": "https://github.com/ianustec/neura-office",
+      "long1": "NEURA Office: native Word, PowerPoint and Excel for Open WebUI. LibreOffice-compatible OOXML. MS365 assistant planned. Maintained by ianustec on GitHub, where it has earned 68 stars from the community.",
+      "long2": "It's actively developed around docx, libreoffice, llm, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
-        "Python",
-        "Ai",
+        "Docx",
+        "Libreoffice",
         "Llm",
-        "Open Webui",
-        "Open Webui Functions"
+        "Microsoft 365"
       ],
-      "updated": "6 weeks ago",
-      "pushedAt": "2026-07-27T17:55:32Z",
+      "updated": "8 weeks ago",
+      "pushedAt": "2026-07-19T00:48:56-06:00",
       "license": "MIT",
       "langs": [
         {
-          "pct": 100,
-          "name": "Python"
+          "name": "JavaScript",
+          "pct": 72
+        },
+        {
+          "name": "JavaScript",
+          "pct": 20
+        },
+        {
+          "name": "Other",
+          "pct": 8
         }
       ],
       "versions": [],
       "topics": [
-        "ai",
+        "docx",
+        "libreoffice",
         "llm",
+        "microsoft-365",
+        "mit",
+        "office",
         "open-webui",
-        "open-webui-functions",
-        "open-webui-tools"
+        "pptx",
+        "xlsx"
       ],
-      "addedAt": "2026-07-15T22:28:33.178349+00:00"
+      "addedAt": "2026-08-05T04:38:16.578542+00:00"
     },
     {
       "slug": "superpowerswui",
@@ -1880,6 +2122,7 @@
       "repoUrl": "https://github.com/tkalevra/SuperPowersWUI",
       "long1": "Open WebUI tool port of Superpowers by Jesse Vincent — brainstorm → spec → plan → execute agentic dev workflow for local LLMs. Maintained by tkalevra on GitHub, where it has earned 63 stars from the community.",
       "long2": "It's actively developed around agentic, llm, lm-studio, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Python",
         "Agentic",
@@ -1887,8 +2130,8 @@
         "Lm Studio",
         "Local Llm"
       ],
-      "updated": "4 months ago",
-      "pushedAt": "2026-04-25T18:02:10Z",
+      "updated": "5 months ago",
+      "pushedAt": "2026-04-25T12:02:10-06:00",
       "license": "MIT",
       "langs": [
         {
@@ -1906,186 +2149,7 @@
         "open-webui",
         "superpowers"
       ],
-      "addedAt": "2026-07-15T22:28:33.178349+00:00"
-    },
-    {
-      "slug": "cto",
-      "name": "cto",
-      "fullName": "Luotianyi-0712/cto",
-      "category": "AI & ML",
-      "stars": 58,
-      "author": "Luotianyi-0712",
-      "avatar": "https://avatars.githubusercontent.com/u/111134328?v=4",
-      "desc": "将 cto.new Chat 代理为Oai ChatCompetition 格式，支持多模型列表映射、多轮对话、上下文记忆、输出思维链、会话ID管理、自动删除对话、多账号轮询、kv持久缓存",
-      "demo": "https://cto-news.deno.dev",
-      "repoUrl": "https://github.com/Luotianyi-0712/cto",
-      "long1": "将 cto.new Chat 代理为Oai ChatCompetition 格式，支持多模型列表映射、多轮对话、上下文记忆、输出思维链、会话ID管理、自动删除对话、多账号轮询、kv持久缓存. Maintained by Luotianyi-0712 on GitHub, where it has earned 58 stars from the community.",
-      "long2": "It's actively developed around chat2api, open-webui, openai, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Chat2Api",
-        "Open Webui",
-        "Openai"
-      ],
-      "updated": "11 months ago",
-      "pushedAt": "2025-10-19T08:10:44Z",
-      "license": "MIT",
-      "langs": [
-        {
-          "pct": 54,
-          "name": "TypeScript"
-        },
-        {
-          "pct": 46,
-          "name": "HTML"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "chat2api",
-        "open-webui",
-        "openai"
-      ],
-      "addedAt": "2026-07-15T22:28:33.178349+00:00"
-    },
-    {
-      "slug": "openwebui-generate-documents",
-      "name": "openwebui-generate-documents",
-      "fullName": "ianustec/openwebui-generate-documents",
-      "category": "AI & ML",
-      "stars": 55,
-      "author": "ianustec",
-      "avatar": "https://avatars.githubusercontent.com/u/111279753?u=b53e6afbae7638da0b2c7b633cad36328268a29d&v=4",
-      "desc": "Native Word (.docx) generator tool for Open WebUI — Markdown/JSON in, cover pages, styled tables, callouts, TOC out. MIT.",
-      "demo": "https://ianustec.com",
-      "repoUrl": "https://github.com/ianustec/openwebui-generate-documents",
-      "long1": "Native Word (.docx) generator tool for Open WebUI — Markdown/JSON in, cover pages, styled tables, callouts, TOC out. MIT. Maintained by ianustec on GitHub, where it has earned 55 stars from the community.",
-      "long2": "It's actively developed around ai-tools, document-generation, docx, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Python",
-        "Ai Tools",
-        "Document Generation",
-        "Docx",
-        "Llm Tools"
-      ],
-      "updated": "7 weeks ago",
-      "pushedAt": "2026-07-19T06:26:51Z",
-      "license": "MIT",
-      "langs": [
-        {
-          "pct": 100,
-          "name": "Python"
-        }
-      ],
-      "versions": [
-        {
-          "url": "https://github.com/ianustec/openwebui-generate-documents/releases/tag/v1.2.0",
-          "name": "v1.2.0"
-        },
-        {
-          "url": "https://github.com/ianustec/openwebui-generate-documents/releases/tag/v1.1.1",
-          "name": "v1.1.1"
-        },
-        {
-          "url": "https://github.com/ianustec/openwebui-generate-documents/releases/tag/v1.1.0",
-          "name": "v1.1.0"
-        }
-      ],
-      "topics": [
-        "ai-tools",
-        "document-generation",
-        "docx",
-        "llm-tools",
-        "markdown-to-docx",
-        "open-webui",
-        "openwebui",
-        "python-docx",
-        "report-generation",
-        "word"
-      ],
-      "addedAt": "2026-07-15T22:28:33.178349+00:00"
-    },
-    {
-      "slug": "openclaw-open-webui-channels",
-      "name": "openclaw-open-webui-channels",
-      "fullName": "Skyzi000/openclaw-open-webui-channels",
-      "category": "DevTools",
-      "stars": 55,
-      "author": "Skyzi000",
-      "avatar": "https://avatars.githubusercontent.com/u/38061609?u=6328e3ede2a042183f9d6572ffd5e57571c02b52&v=4",
-      "desc": "OpenClaw plugin to connect with Open WebUI Channels",
-      "demo": null,
-      "repoUrl": "https://github.com/Skyzi000/openclaw-open-webui-channels",
-      "long1": "OpenClaw plugin to connect with Open WebUI Channels. Maintained by Skyzi000 on GitHub, where it has earned 55 stars from the community.",
-      "long2": "It's actively developed around ai, open-webui, openclaw, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "TypeScript",
-        "Ai",
-        "Open Webui",
-        "Openclaw",
-        "Openclaw Plugin"
-      ],
-      "updated": "5 months ago",
-      "pushedAt": "2026-04-19T17:22:03Z",
-      "license": "MIT",
-      "langs": [
-        {
-          "pct": 100,
-          "name": "TypeScript"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "ai",
-        "open-webui",
-        "openclaw",
-        "openclaw-plugin"
-      ],
-      "addedAt": "2026-07-15T22:28:33.178349+00:00"
-    },
-    {
-      "slug": "ollama-webui-docker",
-      "name": "ollama-webui-docker",
-      "fullName": "codearrangertoo/ollama-webui-docker",
-      "category": "AI & ML",
-      "stars": 52,
-      "author": "codearrangertoo",
-      "avatar": "https://avatars.githubusercontent.com/u/1667027?u=7937d946dbd88c5e681ef63d951640af434d611c&v=4",
-      "desc": "Ollama Docker Compose Setup with WebUI and Remote Access via Cloudflare",
-      "demo": null,
-      "repoUrl": "https://github.com/codearrangertoo/ollama-webui-docker",
-      "long1": "Ollama Docker Compose Setup with WebUI and Remote Access via Cloudflare. Maintained by codearrangertoo on GitHub, where it has earned 52 stars from the community.",
-      "long2": "It's actively developed around ai, cloudflare-tunnel, ollama, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Ai",
-        "Cloudflare Tunnel",
-        "Ollama",
-        "Open Webui"
-      ],
-      "updated": "2 years ago",
-      "pushedAt": "2024-04-26T19:42:26Z",
-      "license": "—",
-      "langs": [
-        {
-          "name": "JavaScript",
-          "pct": 72
-        },
-        {
-          "name": "JavaScript",
-          "pct": 20
-        },
-        {
-          "name": "Other",
-          "pct": 8
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "ai",
-        "cloudflare-tunnel",
-        "ollama",
-        "open-webui"
-      ],
+      "forks": 2,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
@@ -2093,14 +2157,15 @@
       "name": "opencode-llm-proxy",
       "fullName": "KochC/opencode-llm-proxy",
       "category": "AI & ML",
-      "stars": 52,
+      "stars": 62,
       "author": "KochC",
       "avatar": "https://avatars.githubusercontent.com/u/4593754?u=88cf3d8f46a4d574bbaa4dcb3401fdbcd364ed1e&v=4",
       "desc": "Local OpenCode-backed LLM gateway for OpenAI, Anthropic, Gemini, and Responses API-compatible tools, with streaming and tool/function calling.",
       "demo": "https://www.npmjs.com/package/opencode-llm-proxy",
       "repoUrl": "https://github.com/KochC/opencode-llm-proxy",
-      "long1": "Local OpenCode-backed LLM gateway for OpenAI, Anthropic, Gemini, and Responses API-compatible tools, with streaming and tool/function calling. Maintained by KochC on GitHub, where it has earned 52 stars from the community.",
+      "long1": "Local OpenCode-backed LLM gateway for OpenAI, Anthropic, Gemini, and Responses API-compatible tools, with streaming and tool/function calling. Maintained by KochC on GitHub, where it has earned 62 stars from the community.",
       "long2": "It's actively developed around ai-gateway, anthropic, gemini, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "JavaScript",
         "Ai Gateway",
@@ -2108,8 +2173,8 @@
         "Gemini",
         "Github Copilot"
       ],
-      "updated": "5 weeks ago",
-      "pushedAt": "2026-07-31T22:50:00Z",
+      "updated": "3 weeks ago",
+      "pushedAt": "2026-08-25T01:08:14-06:00",
       "license": "MIT",
       "langs": [
         {
@@ -2153,46 +2218,90 @@
         "opencode-plugin",
         "coding-agent"
       ],
+      "forks": 10,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
-      "slug": "ask-open-webui-everywhere",
-      "name": "ask-open-webui-everywhere",
-      "fullName": "ToryPan/ask-open-webui-everywhere",
+      "slug": "cto",
+      "name": "cto",
+      "fullName": "Luotianyi-0712/cto",
       "category": "AI & ML",
-      "stars": 47,
-      "author": "ToryPan",
-      "avatar": "https://avatars.githubusercontent.com/u/59463198?u=9a1edcc1becb2d31174e5ed91b8ccc7b2ed41896&v=4",
-      "desc": "A browser extension that integrates Open WebUI into the side panel, enabling seamless AI interaction and Q&A with webpage content through automatic file attachments.",
-      "demo": null,
-      "repoUrl": "https://github.com/ToryPan/ask-open-webui-everywhere",
-      "long1": "A browser extension that integrates Open WebUI into the side panel, enabling seamless AI interaction and Q&A with webpage content through automatic file attachments. Maintained by ToryPan on GitHub, where it has earned 47 stars from the community.",
-      "long2": "It's actively developed around browser-extension, llm, open-webui, and is a solid reference for anyone building with these tools.",
+      "stars": 58,
+      "author": "Luotianyi-0712",
+      "avatar": "https://avatars.githubusercontent.com/u/111134328?v=4",
+      "desc": "将 cto.new Chat 代理为Oai ChatCompetition 格式，支持多模型列表映射、多轮对话、上下文记忆、输出思维链、会话ID管理、自动删除对话、多账号轮询、kv持久缓存",
+      "demo": "https://cto-news.deno.dev",
+      "repoUrl": "https://github.com/Luotianyi-0712/cto",
+      "long1": "将 cto.new Chat 代理为Oai ChatCompetition 格式，支持多模型列表映射、多轮对话、上下文记忆、输出思维链、会话ID管理、自动删除对话、多账号轮询、kv持久缓存. Maintained by Luotianyi-0712 on GitHub, where it has earned 58 stars from the community.",
+      "long2": "It's actively developed around chat2api, open-webui, openai, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
-        "JavaScript",
-        "Browser Extension",
-        "Llm",
-        "Open Webui"
+        "TypeScript",
+        "Chat2Api",
+        "Open Webui",
+        "Openai"
       ],
-      "updated": "8 months ago",
-      "pushedAt": "2026-01-05T02:38:00Z",
+      "updated": "11 months ago",
+      "pushedAt": "2025-10-19T02:10:43-06:00",
       "license": "MIT",
       "langs": [
         {
-          "pct": 60,
-          "name": "JavaScript"
+          "pct": 54,
+          "name": "TypeScript"
         },
         {
-          "pct": 40,
+          "pct": 46,
           "name": "HTML"
         }
       ],
       "versions": [],
       "topics": [
-        "browser-extension",
-        "llm",
-        "open-webui"
+        "chat2api",
+        "open-webui",
+        "openai"
       ],
+      "forks": 71,
+      "addedAt": "2026-07-15T22:28:33.178349+00:00"
+    },
+    {
+      "slug": "openclaw-open-webui-channels",
+      "name": "openclaw-open-webui-channels",
+      "fullName": "Skyzi000/openclaw-open-webui-channels",
+      "category": "DevTools",
+      "stars": 56,
+      "author": "Skyzi000",
+      "avatar": "https://avatars.githubusercontent.com/u/38061609?u=6328e3ede2a042183f9d6572ffd5e57571c02b52&v=4",
+      "desc": "OpenClaw plugin to connect with Open WebUI Channels",
+      "demo": null,
+      "repoUrl": "https://github.com/Skyzi000/openclaw-open-webui-channels",
+      "long1": "OpenClaw plugin to connect with Open WebUI Channels. Maintained by Skyzi000 on GitHub, where it has earned 56 stars from the community.",
+      "long2": "It's actively developed around ai, open-webui, openclaw, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "TypeScript",
+        "Ai",
+        "Open Webui",
+        "Openclaw",
+        "Openclaw Plugin"
+      ],
+      "updated": "7 months ago",
+      "pushedAt": "2026-02-17T09:34:27-06:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "TypeScript"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "ai",
+        "open-webui",
+        "openclaw",
+        "openclaw-plugin"
+      ],
+      "forks": 10,
+      "issues": 7,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
@@ -2200,14 +2309,15 @@
       "name": "openwebui-generate-slides",
       "fullName": "ianustec/openwebui-generate-slides",
       "category": "AI & ML",
-      "stars": 44,
+      "stars": 54,
       "author": "ianustec",
       "avatar": "https://avatars.githubusercontent.com/u/111279753?u=b53e6afbae7638da0b2c7b633cad36328268a29d&v=4",
       "desc": "Native PowerPoint (.pptx) generator tool for Open WebUI — JSON spec in, native charts/icons/layouts out. MIT.",
       "demo": "https://ianustec.com",
       "repoUrl": "https://github.com/ianustec/openwebui-generate-slides",
-      "long1": "Native PowerPoint (.pptx) generator tool for Open WebUI — JSON spec in, native charts/icons/layouts out. MIT. Maintained by ianustec on GitHub, where it has earned 44 stars from the community.",
+      "long1": "Native PowerPoint (.pptx) generator tool for Open WebUI — JSON spec in, native charts/icons/layouts out. MIT. Maintained by ianustec on GitHub, where it has earned 54 stars from the community.",
       "long2": "It's actively developed around ai-tools, llm, open-webui, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Python",
         "Ai Tools",
@@ -2215,8 +2325,8 @@
         "Open Webui",
         "Openwebui"
       ],
-      "updated": "7 weeks ago",
-      "pushedAt": "2026-07-19T06:26:53Z",
+      "updated": "8 weeks ago",
+      "pushedAt": "2026-07-19T00:26:51-06:00",
       "license": "MIT",
       "langs": [
         {
@@ -2248,30 +2358,32 @@
         "python-pptx",
         "self-hosted"
       ],
+      "forks": 3,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
-      "slug": "neura-office",
-      "name": "neura-office",
-      "fullName": "ianustec/neura-office",
+      "slug": "ollama-webui-docker",
+      "name": "ollama-webui-docker",
+      "fullName": "codearrangertoo/ollama-webui-docker",
       "category": "AI & ML",
-      "stars": 42,
-      "author": "ianustec",
-      "avatar": "https://avatars.githubusercontent.com/u/111279753?u=b53e6afbae7638da0b2c7b633cad36328268a29d&v=4",
-      "desc": "NEURA Office: native Word, PowerPoint and Excel for Open WebUI. LibreOffice-compatible OOXML. MS365 assistant planned.",
-      "demo": "https://ianustec.com",
-      "repoUrl": "https://github.com/ianustec/neura-office",
-      "long1": "NEURA Office: native Word, PowerPoint and Excel for Open WebUI. LibreOffice-compatible OOXML. MS365 assistant planned. Maintained by ianustec on GitHub, where it has earned 42 stars from the community.",
-      "long2": "It's actively developed around docx, libreoffice, llm, and is a solid reference for anyone building with these tools.",
+      "stars": 52,
+      "author": "codearrangertoo",
+      "avatar": "https://avatars.githubusercontent.com/u/1667027?u=7937d946dbd88c5e681ef63d951640af434d611c&v=4",
+      "desc": "Ollama Docker Compose Setup with WebUI and Remote Access via Cloudflare",
+      "demo": null,
+      "repoUrl": "https://github.com/codearrangertoo/ollama-webui-docker",
+      "long1": "Ollama Docker Compose Setup with WebUI and Remote Access via Cloudflare. Maintained by codearrangertoo on GitHub, where it has earned 52 stars from the community.",
+      "long2": "It's actively developed around ai, cloudflare-tunnel, ollama, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
-        "Docx",
-        "Libreoffice",
-        "Llm",
-        "Microsoft 365"
+        "Ai",
+        "Cloudflare Tunnel",
+        "Ollama",
+        "Open Webui"
       ],
-      "updated": "7 weeks ago",
-      "pushedAt": "2026-07-19T06:49:14Z",
-      "license": "MIT",
+      "updated": "2 years ago",
+      "pushedAt": "2024-04-26T13:42:26-06:00",
+      "license": "—",
       "langs": [
         {
           "name": "JavaScript",
@@ -2288,31 +2400,73 @@
       ],
       "versions": [],
       "topics": [
-        "docx",
-        "libreoffice",
-        "llm",
-        "microsoft-365",
-        "mit",
-        "office",
-        "open-webui",
-        "pptx",
-        "xlsx"
+        "ai",
+        "cloudflare-tunnel",
+        "ollama",
+        "open-webui"
       ],
-      "addedAt": "2026-08-05T04:38:16.578542+00:00"
+      "forks": 18,
+      "issues": 3,
+      "watchers": 3,
+      "addedAt": "2026-07-15T22:28:33.178349+00:00"
+    },
+    {
+      "slug": "ask-open-webui-everywhere",
+      "name": "ask-open-webui-everywhere",
+      "fullName": "ToryPan/ask-open-webui-everywhere",
+      "category": "AI & ML",
+      "stars": 49,
+      "author": "ToryPan",
+      "avatar": "https://avatars.githubusercontent.com/u/59463198?u=9a1edcc1becb2d31174e5ed91b8ccc7b2ed41896&v=4",
+      "desc": "A browser extension that integrates Open WebUI into the side panel, enabling seamless AI interaction and Q&A with webpage content through automatic file attachments.",
+      "demo": null,
+      "repoUrl": "https://github.com/ToryPan/ask-open-webui-everywhere",
+      "long1": "A browser extension that integrates Open WebUI into the side panel, enabling seamless AI interaction and Q&A with webpage content through automatic file attachments. Maintained by ToryPan on GitHub, where it has earned 49 stars from the community.",
+      "long2": "It's actively developed around browser-extension, llm, open-webui, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "JavaScript",
+        "Browser Extension",
+        "Llm",
+        "Open Webui"
+      ],
+      "updated": "8 months ago",
+      "pushedAt": "2026-01-04T20:37:42-06:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 60,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 40,
+          "name": "HTML"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "browser-extension",
+        "llm",
+        "open-webui"
+      ],
+      "forks": 6,
+      "issues": 1,
+      "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
       "slug": "agmind",
       "name": "AGmind",
       "fullName": "botAGI/AGmind",
       "category": "AI & ML",
-      "stars": 40,
+      "stars": 47,
       "author": "botAGI",
       "avatar": "https://avatars.githubusercontent.com/u/260352048?u=995eddc22238816dbc8f1e1224a901336ea3660f&v=4",
-      "desc": "Private LLM/RAG platform in one command for NVIDIA DGX Spark / GB10 (arm64). Validated on real hardware.",
-      "demo": "https://agmind.dev",
+      "desc": "Legacy: self-hosted LLM/RAG stack installer for DGX Spark (arm64). The work continued as AGmind Systems Lab — measured local-LLM performance evidence (Strix Halo, DGX Spark, llama.cpp, vLLM): https://agmind.ai",
+      "demo": "https://agmind.ai",
       "repoUrl": "https://github.com/botAGI/AGmind",
-      "long1": "Private LLM/RAG platform in one command for NVIDIA DGX Spark / GB10 (arm64). Validated on real hardware. Maintained by botAGI on GitHub, where it has earned 40 stars from the community.",
+      "long1": "Legacy: self-hosted LLM/RAG stack installer for DGX Spark (arm64). The work continued as AGmind Systems Lab — measured local-LLM performance evidence (Strix Halo, DGX Spark, llama.cpp, vLLM): https://agmind.ai. Maintained by botAGI on GitHub, where it has earned 47 stars from the community.",
       "long2": "It's actively developed around ai-stack, dify, docker, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Shell",
         "Ai Stack",
@@ -2320,8 +2474,8 @@
         "Docker",
         "Gpu"
       ],
-      "updated": "6 weeks ago",
-      "pushedAt": "2026-07-27T03:08:53Z",
+      "updated": "3 months ago",
+      "pushedAt": "2026-06-23T16:33:48-06:00",
       "license": "—",
       "langs": [
         {
@@ -2365,6 +2519,9 @@
         "docker-compose",
         "rag"
       ],
+      "forks": 4,
+      "issues": 4,
+      "watchers": 2,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
@@ -2372,21 +2529,22 @@
       "name": "open-webui-n8n-pipe",
       "fullName": "sboily/open-webui-n8n-pipe",
       "category": "DevTools",
-      "stars": 39,
+      "stars": 40,
       "author": "sboily",
       "avatar": "https://avatars.githubusercontent.com/u/5470187?u=16ddf501271c8e69feaa99efbf89b14a24dc4beb&v=4",
       "desc": "Asynchronous connector linking Open-WebUI chat interfaces with n8n workflows.",
       "demo": null,
       "repoUrl": "https://github.com/sboily/open-webui-n8n-pipe",
-      "long1": "Asynchronous connector linking Open-WebUI chat interfaces with n8n workflows. Maintained by sboily on GitHub, where it has earned 39 stars from the community.",
+      "long1": "Asynchronous connector linking Open-WebUI chat interfaces with n8n workflows. Maintained by sboily on GitHub, where it has earned 40 stars from the community.",
       "long2": "It's actively developed around n8n, open-webui, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Python",
         "N8N",
         "Open Webui"
       ],
-      "updated": "6 months ago",
-      "pushedAt": "2026-02-25T05:55:58Z",
+      "updated": "2 weeks ago",
+      "pushedAt": "2026-08-29T06:50:49-06:00",
       "license": "MIT",
       "langs": [
         {
@@ -2395,6 +2553,10 @@
         }
       ],
       "versions": [
+        {
+          "url": "https://github.com/sboily/open-webui-n8n-pipe/releases/tag/0.4.0",
+          "name": "0.4.0"
+        },
         {
           "url": "https://github.com/sboily/open-webui-n8n-pipe/releases/tag/0.3",
           "name": "0.3"
@@ -2408,6 +2570,9 @@
         "n8n",
         "open-webui"
       ],
+      "forks": 4,
+      "issues": 2,
+      "watchers": 3,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
@@ -2423,6 +2588,7 @@
       "repoUrl": "https://github.com/rw4lll/open-webui-docker-extension",
       "long1": "Docker Desktop extension that deploys Open WebUI with Docker Model Runner integration in one click. Maintained by rw4lll on GitHub, where it has earned 39 stars from the community.",
       "long2": "It's actively developed around docker, docker-desktop, docker-extension, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "TypeScript",
         "Docker",
@@ -2431,7 +2597,7 @@
         "Docker Model Runner"
       ],
       "updated": "5 months ago",
-      "pushedAt": "2026-04-12T19:36:24Z",
+      "pushedAt": "2026-04-12T13:35:46-06:00",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -2468,6 +2634,8 @@
         "docker-model-runner",
         "open-webui"
       ],
+      "forks": 11,
+      "issues": 4,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
@@ -2483,6 +2651,7 @@
       "repoUrl": "https://github.com/WaterPistolAI/ollama-toolkit",
       "long1": "The Ollama Toolkit is a collection of powerful tools designed to enhance your experience with the Ollama project, an open-source framework for deploying and scaling machine learning models. Think of it as your one-stop shop for streamlining workflows and unlocking the full potential of Ollama!. Maintained by WaterPistolAI on GitHub, where it has earned 33 stars from the community.",
       "long2": "It's actively developed around llamacpp, llm, ollama, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Shell",
         "Llamacpp",
@@ -2491,7 +2660,7 @@
         "Open Webui"
       ],
       "updated": "2 years ago",
-      "pushedAt": "2024-10-29T14:12:28Z",
+      "pushedAt": "2024-10-29T08:12:28-06:00",
       "license": "—",
       "langs": [
         {
@@ -2523,61 +2692,164 @@
         "ollama",
         "open-webui"
       ],
+      "forks": 4,
+      "watchers": 2,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
-      "slug": "llm-api-setup-guides",
-      "name": "llm-api-setup-guides",
-      "fullName": "18534516725/llm-api-setup-guides",
+      "slug": "openwebui-generate-spreadsheets",
+      "name": "openwebui-generate-spreadsheets",
+      "fullName": "ianustec/openwebui-generate-spreadsheets",
       "category": "AI & ML",
       "stars": 31,
-      "author": "18534516725",
-      "avatar": "https://avatars.githubusercontent.com/u/84071795?u=ea5b417d4213f371a37e677a9dda1c75413dbeaf&v=4",
-      "desc": "47篇中文 AI 工具自定义 API 教程：Claude Code、Codex CLI、Qwen Code、Gemini CLI、Cherry Studio、Dify、OpenAI Agents SDK，包含安装、配置、协议兼容与报错排查。",
-      "demo": "https://18534516725.github.io/llm-api-setup-guides/",
-      "repoUrl": "https://github.com/18534516725/llm-api-setup-guides",
-      "long1": "47篇中文 AI 工具自定义 API 教程：Claude Code、Codex CLI、Qwen Code、Gemini CLI、Cherry Studio、Dify、OpenAI Agents SDK，包含安装、配置、协议兼容与报错排查。. Maintained by 18534516725 on GitHub, where it has earned 31 stars from the community.",
-      "long2": "It's actively developed around ai-api, api-proxy, cherry-studio, and is a solid reference for anyone building with these tools.",
+      "author": "ianustec",
+      "avatar": "https://avatars.githubusercontent.com/u/111279753?u=b53e6afbae7638da0b2c7b633cad36328268a29d&v=4",
+      "desc": "Native Excel (.xlsx) generator tool for Open WebUI — multi-sheet, Tables, live formulas, charts. MIT.",
+      "demo": "https://ianustec.com",
+      "repoUrl": "https://github.com/ianustec/openwebui-generate-spreadsheets",
+      "long1": "Native Excel (.xlsx) generator tool for Open WebUI — multi-sheet, Tables, live formulas, charts. MIT. Maintained by ianustec on GitHub, where it has earned 31 stars from the community.",
+      "long2": "It's actively developed around ai-tools, excel, llm-tools, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
-        "CSS",
-        "Ai Api",
-        "Api Proxy",
-        "Cherry Studio",
-        "Chinese Tutorial"
+        "Python",
+        "Ai Tools",
+        "Excel",
+        "Llm Tools",
+        "Open Webui"
       ],
-      "updated": "4 weeks ago",
-      "pushedAt": "2026-08-11T15:26:56Z",
+      "updated": "8 weeks ago",
+      "pushedAt": "2026-07-19T00:48:15-06:00",
       "license": "MIT",
       "langs": [
         {
-          "pct": 53,
-          "name": "CSS"
-        },
-        {
-          "pct": 25,
+          "pct": 100,
           "name": "Python"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/ianustec/openwebui-generate-spreadsheets/releases/tag/v1.0.1",
+          "name": "v1.0.1"
         },
         {
-          "pct": 22,
-          "name": "HTML"
+          "url": "https://github.com/ianustec/openwebui-generate-spreadsheets/releases/tag/v1.0.0",
+          "name": "v1.0.0"
+        }
+      ],
+      "topics": [
+        "ai-tools",
+        "excel",
+        "llm-tools",
+        "open-webui",
+        "openpyxl",
+        "openwebui",
+        "spreadsheet",
+        "xlsx"
+      ],
+      "addedAt": "2026-08-05T04:38:16.578542+00:00"
+    },
+    {
+      "slug": "constructionai",
+      "name": "ConstructionAI",
+      "fullName": "MoAshour93/ConstructionAI",
+      "category": "AI & ML",
+      "stars": 30,
+      "author": "MoAshour93",
+      "avatar": "https://avatars.githubusercontent.com/u/122114299?v=4",
+      "desc": "This repository contains projects developed to showcase how to apply Generative AI and open-source LLMs in the construction industry",
+      "demo": "https://www.apcmasterypath.co.uk",
+      "repoUrl": "https://github.com/MoAshour93/ConstructionAI",
+      "long1": "This repository contains projects developed to showcase how to apply Generative AI and open-source LLMs in the construction industry. Maintained by MoAshour93 on GitHub, where it has earned 30 stars from the community.",
+      "long2": "It's actively developed around ai, chatbot, construction, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Jupyter Notebook",
+        "Ai",
+        "Chatbot",
+        "Construction",
+        "Genai"
+      ],
+      "updated": "10 months ago",
+      "pushedAt": "2025-11-12T08:40:51-06:00",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 99,
+          "name": "Jupyter Notebook"
+        },
+        {
+          "pct": 1,
+          "name": "Python"
         }
       ],
       "versions": [],
       "topics": [
-        "ai-api",
-        "api-proxy",
-        "cherry-studio",
-        "chinese-tutorial",
-        "cline",
-        "codex-cli",
-        "dify",
-        "llm-api",
-        "setup-guide",
-        "api-testing",
-        "crewai",
-        "gemini-cli"
+        "ai",
+        "chatbot",
+        "construction",
+        "genai",
+        "llama3-1",
+        "ml",
+        "open-webui"
       ],
-      "addedAt": "2026-07-21T11:09:09.517445+00:00"
+      "forks": 9,
+      "issues": 1,
+      "watchers": 1,
+      "addedAt": "2026-07-15T22:28:33.178349+00:00"
+    },
+    {
+      "slug": "openwebu-work",
+      "name": "openwebu-work",
+      "fullName": "CallSohail/openwebu-work",
+      "category": "AI & ML",
+      "stars": 29,
+      "author": "CallSohail",
+      "avatar": "https://avatars.githubusercontent.com/u/77721715?u=0ab5c17748ff4b71ff8ad3a7ac255ab30953e395&v=4",
+      "desc": "Production-ready Open WebUI extensions, including Tools, Filters, Pipes, Actions, and Events for agent workflows, RAG, learning, automation, and model enhancement.",
+      "demo": "https://openwebui.com/u/callsohail_",
+      "repoUrl": "https://github.com/CallSohail/openwebu-work",
+      "long1": "Production-ready Open WebUI extensions, including Tools, Filters, Pipes, Actions, and Events for agent workflows, RAG, learning, automation, and model enhancement. Maintained by CallSohail on GitHub, where it has earned 29 stars from the community.",
+      "long2": "It's actively developed around ai-agents, automation, function-calling, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Python",
+        "Ai Agents",
+        "Automation",
+        "Function Calling",
+        "Llm"
+      ],
+      "updated": "yesterday",
+      "pushedAt": "2026-09-11T07:54:52-06:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "Python",
+          "pct": 100
+        }
+      ],
+      "versions": [
+        {
+          "name": "quick-actions-v3.0.0",
+          "url": "https://github.com/CallSohail/openwebu-work/releases/tag/quick-actions-v3.0.0"
+        },
+        {
+          "name": "study-mode-v1.0.0",
+          "url": "https://github.com/CallSohail/openwebu-work/releases/tag/study-mode-v1.0.0"
+        }
+      ],
+      "topics": [
+        "ai-agents",
+        "automation",
+        "function-calling",
+        "llm",
+        "open-webui",
+        "open-webui-functions",
+        "open-webui-tools",
+        "openwebui",
+        "rich-ui",
+        "tool-calling"
+      ],
+      "addedAt": "2026-09-12T02:22:14.142546+00:00"
     },
     {
       "slug": "sample-ollama-server",
@@ -2592,14 +2864,15 @@
       "repoUrl": "https://github.com/aws-samples/sample-ollama-server",
       "long1": "Ollama on GPU EC2 instance with Open WebUI web interface and Bedrock access. Maintained by aws-samples on GitHub, where it has earned 29 stars from the community.",
       "long2": "It's actively developed around bedrock, nvidia-gpu, ollama, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Bedrock",
         "Nvidia Gpu",
         "Ollama",
         "Open Webui"
       ],
-      "updated": "5 weeks ago",
-      "pushedAt": "2026-08-01T10:40:22Z",
+      "updated": "4 weeks ago",
+      "pushedAt": "2026-08-16T03:35:40-06:00",
       "license": "MIT-0",
       "langs": [
         {
@@ -2624,6 +2897,272 @@
         "llm",
         "stable-diffusion"
       ],
+      "forks": 2,
+      "watchers": 4,
+      "addedAt": "2026-07-15T22:28:33.178349+00:00"
+    },
+    {
+      "slug": "voicebox",
+      "name": "voicebox",
+      "fullName": "agjs/voicebox",
+      "category": "AI & ML",
+      "stars": 29,
+      "author": "agjs",
+      "avatar": "https://avatars.githubusercontent.com/u/7226555?u=ca063d6ccbb7f92a13140417789062ad23e446ba&v=4",
+      "desc": "Self-hosted, OpenAI-compatible speech server: faster-whisper STT and Piper/Kokoro TTS. A local voice backend for Open WebUI, CLIs, and custom agents.",
+      "demo": null,
+      "repoUrl": "https://github.com/agjs/voicebox",
+      "long1": "Self-hosted, OpenAI-compatible speech server: faster-whisper STT and Piper/Kokoro TTS. A local voice backend for Open WebUI, CLIs, and custom agents. Maintained by agjs on GitHub, where it has earned 29 stars from the community.",
+      "long2": "It's actively developed around docker, fastapi, faster-whisper, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Python",
+        "Docker",
+        "Fastapi",
+        "Faster Whisper",
+        "Homelab"
+      ],
+      "updated": "4 weeks ago",
+      "pushedAt": "2026-08-12T02:11:41-06:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 95,
+          "name": "Python"
+        },
+        {
+          "pct": 4,
+          "name": "Shell"
+        },
+        {
+          "pct": 1,
+          "name": "Dockerfile"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/agjs/voicebox/releases/tag/v0.2.16",
+          "name": "v0.2.16"
+        },
+        {
+          "url": "https://github.com/agjs/voicebox/releases/tag/v0.2.15",
+          "name": "v0.2.15"
+        },
+        {
+          "url": "https://github.com/agjs/voicebox/releases/tag/v0.2.14",
+          "name": "v0.2.14"
+        },
+        {
+          "url": "https://github.com/agjs/voicebox/releases/tag/v0.2.13",
+          "name": "v0.2.13"
+        },
+        {
+          "url": "https://github.com/agjs/voicebox/releases/tag/v0.2.12",
+          "name": "v0.2.12"
+        }
+      ],
+      "topics": [
+        "docker",
+        "fastapi",
+        "faster-whisper",
+        "homelab",
+        "kokoro",
+        "local-ai",
+        "open-webui",
+        "openai-compatible",
+        "piper-tts",
+        "self-hosted",
+        "speech-to-text",
+        "stt"
+      ],
+      "addedAt": "2026-08-05T04:38:16.578542+00:00"
+    },
+    {
+      "slug": "open-webui-graphiti-memory",
+      "name": "open-webui-graphiti-memory",
+      "fullName": "Skyzi000/open-webui-graphiti-memory",
+      "category": "AI & ML",
+      "stars": 29,
+      "author": "Skyzi000",
+      "avatar": "https://avatars.githubusercontent.com/u/38061609?u=6328e3ede2a042183f9d6572ffd5e57571c02b52&v=4",
+      "desc": "Graphiti-based knowledge graph memory extensions for Open WebUI",
+      "demo": null,
+      "repoUrl": "https://github.com/Skyzi000/open-webui-graphiti-memory",
+      "long1": "Graphiti-based knowledge graph memory extensions for Open WebUI. Maintained by Skyzi000 on GitHub, where it has earned 29 stars from the community.",
+      "long2": "It's actively developed around ai, graphiti, knowledge-graph, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Python",
+        "Ai",
+        "Graphiti",
+        "Knowledge Graph",
+        "Llm"
+      ],
+      "updated": "2 weeks ago",
+      "pushedAt": "2026-08-26T09:16:50-06:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "Python"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "ai",
+        "graphiti",
+        "knowledge-graph",
+        "llm",
+        "memory",
+        "open-webui"
+      ],
+      "forks": 5,
+      "issues": 1,
+      "watchers": 3,
+      "addedAt": "2026-07-15T22:28:33.178349+00:00"
+    },
+    {
+      "slug": "rag-lcc",
+      "name": "RAG-LCC",
+      "fullName": "HarinezumIgel/RAG-LCC",
+      "category": "AI & ML",
+      "stars": 29,
+      "author": "HarinezumIgel",
+      "avatar": "https://avatars.githubusercontent.com/u/259837285?u=6b67290d6ead33c3f04fe024525f0c0c576b11f4&v=4",
+      "desc": "Experimental RAG playground for exploring retrieval quality, corpus construction, and filter-chain design. Features configurable ranking and filtering pipelines, visual document grounding, chat interfaces, web search, Open WebUI integration, and rich debugging insights. Ollama and vLLM, running in Dev Containers or natively on Linux and Windows.",
+      "demo": null,
+      "repoUrl": "https://github.com/HarinezumIgel/RAG-LCC",
+      "long1": "Experimental RAG playground for exploring retrieval quality, corpus construction, and filter-chain design. Features configurable ranking and filtering pipelines, visual document grounding, chat interfaces, web search, Open WebUI integration, and rich debugging insights. Ollama and vLLM, running in Dev Containers or natively on Linux and Windows. Maintained by HarinezumIgel on GitHub, where it has earned 29 stars from the community.",
+      "long2": "It's actively developed around rag, chunking, hybrid-search, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Python",
+        "Rag",
+        "Chunking",
+        "Hybrid Search",
+        "Information Retrieval"
+      ],
+      "updated": "5 weeks ago",
+      "pushedAt": "2026-08-06T01:30:24-06:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 96,
+          "name": "Python"
+        },
+        {
+          "pct": 4,
+          "name": "Standard ML"
+        },
+        {
+          "pct": 0,
+          "name": "Dockerfile"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/HarinezumIgel/RAG-LCC/releases/tag/v0.4.2",
+          "name": "v0.4.2"
+        },
+        {
+          "url": "https://github.com/HarinezumIgel/RAG-LCC/releases/tag/v0.2.0",
+          "name": "v0.2.0"
+        }
+      ],
+      "topics": [
+        "rag",
+        "chunking",
+        "hybrid-search",
+        "information-retrieval",
+        "multi-turn-chat",
+        "experimental",
+        "local-raglist",
+        "context-windows",
+        "llm",
+        "local-rag",
+        "open-webui",
+        "rag-pipeline"
+      ],
+      "forks": 2,
+      "watchers": 1,
+      "addedAt": "2026-07-15T22:28:33.178349+00:00"
+    },
+    {
+      "slug": "zer0fit",
+      "name": "Zer0Fit",
+      "fullName": "porespellar/Zer0Fit",
+      "category": "AI & ML",
+      "stars": 29,
+      "author": "porespellar",
+      "avatar": "https://avatars.githubusercontent.com/u/225092853?v=4",
+      "desc": "Zero-shot forecasting, tabular classification, and regression via MCP — exposes Google TimesFM 2.5 and TabFM v1.0.0 to AI assistants. Just attach a CSV and describe what you want to predict.",
+      "demo": null,
+      "repoUrl": "https://github.com/porespellar/Zer0Fit",
+      "long1": "Zero-shot forecasting, tabular classification, and regression via MCP — exposes Google TimesFM 2.5 and TabFM v1.0.0 to AI assistants. Just attach a CSV and describe what you want to predict. Maintained by porespellar on GitHub, where it has earned 29 stars from the community.",
+      "long2": "It's actively developed around classification, forecasting, machine-learning, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Python",
+        "Classification",
+        "Forecasting",
+        "Machine Learning",
+        "Mcp"
+      ],
+      "updated": "1 week ago",
+      "pushedAt": "2026-09-03T19:39:01-06:00",
+      "license": "Apache-2.0",
+      "langs": [
+        {
+          "pct": 73,
+          "name": "Python"
+        },
+        {
+          "pct": 23,
+          "name": "Shell"
+        },
+        {
+          "pct": 4,
+          "name": "Dockerfile"
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/porespellar/Zer0Fit/releases/tag/v1.2.4",
+          "name": "v1.2.4"
+        },
+        {
+          "url": "https://github.com/porespellar/Zer0Fit/releases/tag/v1.2.3",
+          "name": "v1.2.3"
+        },
+        {
+          "url": "https://github.com/porespellar/Zer0Fit/releases/tag/v1.2.2",
+          "name": "v1.2.2"
+        },
+        {
+          "url": "https://github.com/porespellar/Zer0Fit/releases/tag/v1.2.1",
+          "name": "v1.2.1"
+        },
+        {
+          "url": "https://github.com/porespellar/Zer0Fit/releases/tag/v1.2.0",
+          "name": "v1.2.0"
+        }
+      ],
+      "topics": [
+        "classification",
+        "forecasting",
+        "machine-learning",
+        "mcp",
+        "open-webui",
+        "regression",
+        "tabfm",
+        "timesfm",
+        "zero-shot",
+        "zer0fit",
+        "ai",
+        "foundation-models"
+      ],
+      "forks": 1,
+      "watchers": 1,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
@@ -2639,6 +3178,7 @@
       "repoUrl": "https://github.com/trevorsandy/ai-suite",
       "long1": "AI-Suite -  n8n, OpenClaw, Open WebUI, OpenCode, Llama.cpp/Ollama, Flowise, Langfuse, MCP Gateway and more!. Maintained by trevorsandy on GitHub, where it has earned 28 stars from the community.",
       "long2": "It's actively developed around ai, ai-agents, automation, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Python",
         "Ai",
@@ -2646,8 +3186,8 @@
         "Automation",
         "Cag"
       ],
-      "updated": "7 weeks ago",
-      "pushedAt": "2026-07-19T17:21:13Z",
+      "updated": "8 weeks ago",
+      "pushedAt": "2026-07-19T11:21:13-06:00",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -2695,177 +3235,8 @@
         "ollama",
         "open-webui"
       ],
-      "addedAt": "2026-07-15T22:28:33.178349+00:00"
-    },
-    {
-      "slug": "rag-lcc",
-      "name": "RAG-LCC",
-      "fullName": "HarinezumIgel/RAG-LCC",
-      "category": "AI & ML",
-      "stars": 27,
-      "author": "HarinezumIgel",
-      "avatar": "https://avatars.githubusercontent.com/u/259837285?u=6b67290d6ead33c3f04fe024525f0c0c576b11f4&v=4",
-      "desc": "Experimental RAG playground for exploring retrieval quality, corpus construction, and filter-chain design. Features configurable ranking and filtering pipelines, visual document grounding, chat interfaces, web search, Open WebUI integration, and rich debugging insights. Ollama and vLLM, running in Dev Containers or natively on Linux and Windows.",
-      "demo": null,
-      "repoUrl": "https://github.com/HarinezumIgel/RAG-LCC",
-      "long1": "Experimental RAG playground for exploring retrieval quality, corpus construction, and filter-chain design. Features configurable ranking and filtering pipelines, visual document grounding, chat interfaces, web search, Open WebUI integration, and rich debugging insights. Ollama and vLLM, running in Dev Containers or natively on Linux and Windows. Maintained by HarinezumIgel on GitHub, where it has earned 27 stars from the community.",
-      "long2": "It's actively developed around rag, chunking, hybrid-search, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Python",
-        "Rag",
-        "Chunking",
-        "Hybrid Search",
-        "Information Retrieval"
-      ],
-      "updated": "4 weeks ago",
-      "pushedAt": "2026-08-06T07:30:24Z",
-      "license": "MIT",
-      "langs": [
-        {
-          "pct": 96,
-          "name": "Python"
-        },
-        {
-          "pct": 4,
-          "name": "Standard ML"
-        },
-        {
-          "pct": 0,
-          "name": "Dockerfile"
-        }
-      ],
-      "versions": [
-        {
-          "url": "https://github.com/HarinezumIgel/RAG-LCC/releases/tag/v0.4.2",
-          "name": "v0.4.2"
-        },
-        {
-          "url": "https://github.com/HarinezumIgel/RAG-LCC/releases/tag/v0.2.0",
-          "name": "v0.2.0"
-        }
-      ],
-      "topics": [
-        "rag",
-        "chunking",
-        "hybrid-search",
-        "information-retrieval",
-        "multi-turn-chat",
-        "experimental",
-        "local-raglist",
-        "context-windows",
-        "llm",
-        "local-rag",
-        "open-webui",
-        "rag-pipeline"
-      ],
-      "addedAt": "2026-07-15T22:28:33.178349+00:00"
-    },
-    {
-      "slug": "zer0fit",
-      "name": "Zer0Fit",
-      "fullName": "porespellar/Zer0Fit",
-      "category": "AI & ML",
-      "stars": 27,
-      "author": "porespellar",
-      "avatar": "https://avatars.githubusercontent.com/u/225092853?v=4",
-      "desc": "Zero-shot forecasting, tabular classification, and regression via MCP — exposes Google TimesFM 2.5 and TabFM v1.0.0 to AI assistants. Just attach a CSV and describe what you want to predict.",
-      "demo": null,
-      "repoUrl": "https://github.com/porespellar/Zer0Fit",
-      "long1": "Zero-shot forecasting, tabular classification, and regression via MCP — exposes Google TimesFM 2.5 and TabFM v1.0.0 to AI assistants. Just attach a CSV and describe what you want to predict. Maintained by porespellar on GitHub, where it has earned 27 stars from the community.",
-      "long2": "It's actively developed around classification, forecasting, machine-learning, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Python",
-        "Classification",
-        "Forecasting",
-        "Machine Learning",
-        "Mcp"
-      ],
-      "updated": "8 weeks ago",
-      "pushedAt": "2026-07-12T19:08:29Z",
-      "license": "Apache-2.0",
-      "langs": [
-        {
-          "pct": 71,
-          "name": "Python"
-        },
-        {
-          "pct": 25,
-          "name": "Shell"
-        },
-        {
-          "pct": 4,
-          "name": "Dockerfile"
-        }
-      ],
-      "versions": [
-        {
-          "url": "https://github.com/porespellar/Zer0Fit/releases/tag/v1.0.1",
-          "name": "v1.0.1"
-        },
-        {
-          "url": "https://github.com/porespellar/Zer0Fit/releases/tag/v1.0.0",
-          "name": "v1.0.0"
-        }
-      ],
-      "topics": [
-        "classification",
-        "forecasting",
-        "machine-learning",
-        "mcp",
-        "open-webui",
-        "regression",
-        "tabfm",
-        "timesfm",
-        "zero-shot",
-        "zer0fit",
-        "ai",
-        "foundation-models"
-      ],
-      "addedAt": "2026-07-15T22:28:33.178349+00:00"
-    },
-    {
-      "slug": "constructionai",
-      "name": "ConstructionAI",
-      "fullName": "MoAshour93/ConstructionAI",
-      "category": "AI & ML",
-      "stars": 27,
-      "author": "MoAshour93",
-      "avatar": "https://avatars.githubusercontent.com/u/122114299?v=4",
-      "desc": "This repository contains projects developed to showcase how to apply Generative AI and open-source LLMs in the construction industry",
-      "demo": "https://www.apcmasterypath.co.uk",
-      "repoUrl": "https://github.com/MoAshour93/ConstructionAI",
-      "long1": "This repository contains projects developed to showcase how to apply Generative AI and open-source LLMs in the construction industry. Maintained by MoAshour93 on GitHub, where it has earned 27 stars from the community.",
-      "long2": "It's actively developed around ai, chatbot, construction, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Jupyter Notebook",
-        "Ai",
-        "Chatbot",
-        "Construction",
-        "Genai"
-      ],
-      "updated": "10 months ago",
-      "pushedAt": "2025-11-12T14:40:51Z",
-      "license": "—",
-      "langs": [
-        {
-          "pct": 99,
-          "name": "Jupyter Notebook"
-        },
-        {
-          "pct": 1,
-          "name": "Python"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "ai",
-        "chatbot",
-        "construction",
-        "genai",
-        "llama3-1",
-        "ml",
-        "open-webui"
-      ],
+      "forks": 8,
+      "issues": 1,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
@@ -2881,6 +3252,7 @@
       "repoUrl": "https://github.com/wszqkzqk/qt-web-extractor",
       "long1": "Multimodal web content extraction engine backed by Qt WebEngine. Maintained by wszqkzqk on GitHub, where it has earned 26 stars from the community.",
       "long2": "It's actively developed around chromium, content-extraction, headless-browser, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Python",
         "Chromium",
@@ -2888,16 +3260,16 @@
         "Headless Browser",
         "Open Webui"
       ],
-      "updated": "6 weeks ago",
-      "pushedAt": "2026-07-29T03:38:47Z",
+      "updated": "5 weeks ago",
+      "pushedAt": "2026-08-08T10:39:03-06:00",
       "license": "GPL-3.0",
       "langs": [
         {
-          "pct": 97,
+          "pct": 98,
           "name": "Python"
         },
         {
-          "pct": 3,
+          "pct": 2,
           "name": "Shell"
         }
       ],
@@ -2914,187 +3286,25 @@
         "mcp",
         "mcp-server"
       ],
+      "forks": 4,
+      "issues": 3,
+      "watchers": 1,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
-    },
-    {
-      "slug": "open-webui-graphiti-memory",
-      "name": "open-webui-graphiti-memory",
-      "fullName": "Skyzi000/open-webui-graphiti-memory",
-      "category": "AI & ML",
-      "stars": 26,
-      "author": "Skyzi000",
-      "avatar": "https://avatars.githubusercontent.com/u/38061609?u=6328e3ede2a042183f9d6572ffd5e57571c02b52&v=4",
-      "desc": "Graphiti-based knowledge graph memory extensions for Open WebUI",
-      "demo": null,
-      "repoUrl": "https://github.com/Skyzi000/open-webui-graphiti-memory",
-      "long1": "Graphiti-based knowledge graph memory extensions for Open WebUI. Maintained by Skyzi000 on GitHub, where it has earned 26 stars from the community.",
-      "long2": "It's actively developed around ai, graphiti, knowledge-graph, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Python",
-        "Ai",
-        "Graphiti",
-        "Knowledge Graph",
-        "Llm"
-      ],
-      "updated": "6 weeks ago",
-      "pushedAt": "2026-07-27T15:20:50Z",
-      "license": "MIT",
-      "langs": [
-        {
-          "pct": 100,
-          "name": "Python"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "ai",
-        "graphiti",
-        "knowledge-graph",
-        "llm",
-        "memory",
-        "open-webui"
-      ],
-      "addedAt": "2026-07-15T22:28:33.178349+00:00"
-    },
-    {
-      "slug": "voicebox",
-      "name": "voicebox",
-      "fullName": "agjs/voicebox",
-      "category": "AI & ML",
-      "stars": 25,
-      "author": "agjs",
-      "avatar": "https://avatars.githubusercontent.com/u/7226555?u=ca063d6ccbb7f92a13140417789062ad23e446ba&v=4",
-      "desc": "Self-hosted, OpenAI-compatible speech server: faster-whisper STT and Piper/Kokoro TTS. A local voice backend for Open WebUI, CLIs, and custom agents.",
-      "demo": null,
-      "repoUrl": "https://github.com/agjs/voicebox",
-      "long1": "Self-hosted, OpenAI-compatible speech server: faster-whisper STT and Piper/Kokoro TTS. A local voice backend for Open WebUI, CLIs, and custom agents. Maintained by agjs on GitHub, where it has earned 25 stars from the community.",
-      "long2": "It's actively developed around docker, fastapi, faster-whisper, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Python",
-        "Docker",
-        "Fastapi",
-        "Faster Whisper",
-        "Homelab"
-      ],
-      "updated": "5 weeks ago",
-      "pushedAt": "2026-08-02T20:31:59Z",
-      "license": "MIT",
-      "langs": [
-        {
-          "pct": 95,
-          "name": "Python"
-        },
-        {
-          "pct": 4,
-          "name": "Shell"
-        },
-        {
-          "pct": 1,
-          "name": "Dockerfile"
-        }
-      ],
-      "versions": [
-        {
-          "url": "https://github.com/agjs/voicebox/releases/tag/v0.2.15",
-          "name": "v0.2.15"
-        },
-        {
-          "url": "https://github.com/agjs/voicebox/releases/tag/v0.2.14",
-          "name": "v0.2.14"
-        },
-        {
-          "url": "https://github.com/agjs/voicebox/releases/tag/v0.2.13",
-          "name": "v0.2.13"
-        },
-        {
-          "url": "https://github.com/agjs/voicebox/releases/tag/v0.2.12",
-          "name": "v0.2.12"
-        },
-        {
-          "url": "https://github.com/agjs/voicebox/releases/tag/v0.2.11",
-          "name": "v0.2.11"
-        }
-      ],
-      "topics": [
-        "docker",
-        "fastapi",
-        "faster-whisper",
-        "homelab",
-        "kokoro",
-        "local-ai",
-        "open-webui",
-        "openai-compatible",
-        "piper-tts",
-        "self-hosted",
-        "speech-to-text",
-        "stt"
-      ],
-      "addedAt": "2026-08-05T04:38:16.578542+00:00"
-    },
-    {
-      "slug": "openwebui-generate-spreadsheets",
-      "name": "openwebui-generate-spreadsheets",
-      "fullName": "ianustec/openwebui-generate-spreadsheets",
-      "category": "AI & ML",
-      "stars": 22,
-      "author": "ianustec",
-      "avatar": "https://avatars.githubusercontent.com/u/111279753?u=b53e6afbae7638da0b2c7b633cad36328268a29d&v=4",
-      "desc": "Native Excel (.xlsx) generator tool for Open WebUI — multi-sheet, Tables, live formulas, charts. MIT.",
-      "demo": "https://ianustec.com",
-      "repoUrl": "https://github.com/ianustec/openwebui-generate-spreadsheets",
-      "long1": "Native Excel (.xlsx) generator tool for Open WebUI — multi-sheet, Tables, live formulas, charts. MIT. Maintained by ianustec on GitHub, where it has earned 22 stars from the community.",
-      "long2": "It's actively developed around ai-tools, excel, llm-tools, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Python",
-        "Ai Tools",
-        "Excel",
-        "Llm Tools",
-        "Open Webui"
-      ],
-      "updated": "7 weeks ago",
-      "pushedAt": "2026-07-19T06:51:54Z",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "Python",
-          "pct": 100
-        }
-      ],
-      "versions": [
-        {
-          "name": "v1.0.1",
-          "url": "https://github.com/ianustec/openwebui-generate-spreadsheets/releases/tag/v1.0.1"
-        },
-        {
-          "name": "v1.0.0",
-          "url": "https://github.com/ianustec/openwebui-generate-spreadsheets/releases/tag/v1.0.0"
-        }
-      ],
-      "topics": [
-        "ai-tools",
-        "excel",
-        "llm-tools",
-        "open-webui",
-        "openpyxl",
-        "openwebui",
-        "spreadsheet",
-        "xlsx"
-      ],
-      "addedAt": "2026-08-05T04:38:16.578542+00:00"
     },
     {
       "slug": "agmind64",
       "name": "AGmind64",
       "fullName": "botAGI/AGmind64",
       "category": "AI & ML",
-      "stars": 22,
+      "stars": 25,
       "author": "botAGI",
       "avatar": "https://avatars.githubusercontent.com/u/260352048?u=995eddc22238816dbc8f1e1224a901336ea3660f&v=4",
       "desc": "Self-hosted LLM/RAG stack in one command — AMD Strix Halo / x86_64 (ROCm/Vulkan, Docker Compose)",
       "demo": "https://agmind.dev",
       "repoUrl": "https://github.com/botAGI/AGmind64",
-      "long1": "Self-hosted LLM/RAG stack in one command — AMD Strix Halo / x86_64 (ROCm/Vulkan, Docker Compose). Maintained by botAGI on GitHub, where it has earned 22 stars from the community.",
+      "long1": "Self-hosted LLM/RAG stack in one command — AMD Strix Halo / x86_64 (ROCm/Vulkan, Docker Compose). Maintained by botAGI on GitHub, where it has earned 25 stars from the community.",
       "long2": "It's actively developed around agmind, ai, ai-agents, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Python",
         "Agmind",
@@ -3102,8 +3312,8 @@
         "Ai Agents",
         "Ai Stack"
       ],
-      "updated": "5 weeks ago",
-      "pushedAt": "2026-08-05T02:42:39Z",
+      "updated": "6 weeks ago",
+      "pushedAt": "2026-07-30T03:17:59-06:00",
       "license": "Apache-2.0",
       "langs": [
         {
@@ -3139,7 +3349,71 @@
         "open-webui",
         "rag"
       ],
+      "forks": 2,
+      "issues": 3,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
+    },
+    {
+      "slug": "rkllm-api-server",
+      "name": "RKLLM-API-Server",
+      "fullName": "GatekeeperZA/RKLLM-API-Server",
+      "category": "AI & ML",
+      "stars": 24,
+      "author": "GatekeeperZA",
+      "avatar": "https://avatars.githubusercontent.com/u/8686220?u=2e8ea4fa86e8db627b2b946f011b3673652e7657&v=4",
+      "desc": "OpenAI-compatible API server for Rockchip NPU (RK3588/RK3576) — local LLM inference on Orange Pi with Open WebUI support",
+      "demo": "https://github.com/GatekeeperZA/RKLLM-API-Server#readme",
+      "repoUrl": "https://github.com/GatekeeperZA/RKLLM-API-Server",
+      "long1": "OpenAI-compatible API server for Rockchip NPU (RK3588/RK3576) — local LLM inference on Orange Pi with Open WebUI support. Maintained by GatekeeperZA on GitHub, where it has earned 24 stars from the community.",
+      "long2": "It's actively developed around arm, inference-server, llm, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Python",
+        "Arm",
+        "Inference Server",
+        "Llm",
+        "Local Llm"
+      ],
+      "updated": "3 weeks ago",
+      "pushedAt": "2026-08-25T04:07:17-06:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "Python",
+          "pct": 94
+        },
+        {
+          "name": "Shell",
+          "pct": 6
+        },
+        {
+          "name": "Dockerfile",
+          "pct": 0
+        }
+      ],
+      "versions": [
+        {
+          "name": "v1.1-ctypes-text-only",
+          "url": "https://github.com/GatekeeperZA/RKLLM-API-Server/releases/tag/v1.1-ctypes-text-only"
+        },
+        {
+          "name": "v1.0-subprocess-stable",
+          "url": "https://github.com/GatekeeperZA/RKLLM-API-Server/releases/tag/v1.0-subprocess-stable"
+        }
+      ],
+      "topics": [
+        "arm",
+        "inference-server",
+        "llm",
+        "local-llm",
+        "npu",
+        "open-webui",
+        "openai-api",
+        "orange-pi",
+        "rk3588",
+        "rkllm"
+      ],
+      "addedAt": "2026-09-12T02:22:14.142546+00:00"
     },
     {
       "slug": "mnemolis",
@@ -3154,6 +3428,7 @@
       "repoUrl": "https://github.com/immortalbob/Mnemolis",
       "long1": "A self-hosted knowledge broker for homelabs. Routes and fuses queries across Kiwix, FreshRSS, Open-Meteo, SearXNG, Uptime Kuma, and Home Assistant — and tracks what changed over time. REST API and MCP server, integrates natively with Open WebUI and Home Assistant. Maintained by immortalbob on GitHub, where it has earned 20 stars from the community.",
       "long2": "It's actively developed around docker, home-assistant, homelab, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Python",
         "Docker",
@@ -3162,7 +3437,7 @@
         "Self Hosted"
       ],
       "updated": "2 months ago",
-      "pushedAt": "2026-07-05T21:50:51Z",
+      "pushedAt": "2026-07-05T15:50:51-06:00",
       "license": "MIT",
       "langs": [
         {
@@ -3213,6 +3488,52 @@
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
+      "slug": "openwebui-plugins",
+      "name": "openwebui-plugins",
+      "fullName": "daradib/openwebui-plugins",
+      "category": "AI & ML",
+      "stars": 20,
+      "author": "daradib",
+      "avatar": "https://avatars.githubusercontent.com/u/1525041?u=06085f5d09efd637d6a7aff7821cdeccbf0477c9&v=4",
+      "desc": "Native search and retrieval tools for Open WebUI",
+      "demo": null,
+      "repoUrl": "https://github.com/daradib/openwebui-plugins",
+      "long1": "Native search and retrieval tools for Open WebUI. Maintained by daradib on GitHub, where it has earned 20 stars from the community.",
+      "long2": "It's actively developed around open-webui, open-webui-tools, llm, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Python",
+        "Open Webui",
+        "Open Webui Tools",
+        "Llm",
+        "Llms"
+      ],
+      "updated": "11 months ago",
+      "pushedAt": "2025-10-12T12:10:11-06:00",
+      "license": "AGPL-3.0",
+      "langs": [
+        {
+          "pct": 98,
+          "name": "Python"
+        },
+        {
+          "pct": 2,
+          "name": "Dockerfile"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "open-webui",
+        "open-webui-tools",
+        "llm",
+        "llms",
+        "mcp"
+      ],
+      "forks": 3,
+      "watchers": 1,
+      "addedAt": "2026-07-15T22:28:33.178349+00:00"
+    },
+    {
       "slug": "open-webui-memory",
       "name": "open-webui-memory",
       "fullName": "rollecode/open-webui-memory",
@@ -3225,6 +3546,7 @@
       "repoUrl": "https://github.com/rollecode/open-webui-memory",
       "long1": "Automatically identify, retrieve and store memories from user conversations in Open WebUI. Maintained by rollecode on GitHub, where it has earned 19 stars from the community.",
       "long2": "It's actively developed around chatgpt, memory, open-webui, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Python",
         "Chatgpt",
@@ -3232,8 +3554,8 @@
         "Open Webui",
         "Openai"
       ],
-      "updated": "11 months ago",
-      "pushedAt": "2025-09-25T08:14:44Z",
+      "updated": "12 months ago",
+      "pushedAt": "2025-09-25T02:14:19-06:00",
       "license": "—",
       "langs": [
         {
@@ -3273,6 +3595,9 @@
         "python",
         "open-webui-functions"
       ],
+      "forks": 2,
+      "issues": 1,
+      "watchers": 1,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
@@ -3280,14 +3605,15 @@
       "name": "llm-lab",
       "fullName": "tecno-consultores/llm-lab",
       "category": "AI & ML",
-      "stars": 19,
+      "stars": 18,
       "author": "tecno-consultores",
       "avatar": "https://avatars.githubusercontent.com/u/185520196?v=4",
       "desc": "Docker Compose to install N8N, Openweb UI, Qdrant, Ollama, EvolutionAPI, Flowise, OpenCode, Hermes-agent and many more.",
       "demo": "https://www.tecnoconsultores.net/",
       "repoUrl": "https://github.com/tecno-consultores/llm-lab",
-      "long1": "Docker Compose to install N8N, Openweb UI, Qdrant, Ollama, EvolutionAPI, Flowise, OpenCode, Hermes-agent and many more. Maintained by tecno-consultores on GitHub, where it has earned 19 stars from the community.",
+      "long1": "Docker Compose to install N8N, Openweb UI, Qdrant, Ollama, EvolutionAPI, Flowise, OpenCode, Hermes-agent and many more. Maintained by tecno-consultores on GitHub, where it has earned 18 stars from the community.",
       "long2": "It's actively developed around n8n, ollama, postgresql, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Shell",
         "N8N",
@@ -3295,8 +3621,8 @@
         "PostgreSQL",
         "Open Webui"
       ],
-      "updated": "8 weeks ago",
-      "pushedAt": "2026-07-13T13:22:31Z",
+      "updated": "yesterday",
+      "pushedAt": "2026-09-10T18:49:53-06:00",
       "license": "GPL-2.0",
       "langs": [
         {
@@ -3309,6 +3635,10 @@
         }
       ],
       "versions": [
+        {
+          "url": "https://github.com/tecno-consultores/llm-lab/releases/tag/v1.20.0",
+          "name": "v1.20.0"
+        },
         {
           "url": "https://github.com/tecno-consultores/llm-lab/releases/tag/v1.19.0",
           "name": "v1.19.0"
@@ -3324,10 +3654,6 @@
         {
           "url": "https://github.com/tecno-consultores/llm-lab/releases/tag/v1.18.5",
           "name": "v1.18.5"
-        },
-        {
-          "url": "https://github.com/tecno-consultores/llm-lab/releases/tag/v1.18.4",
-          "name": "v1.18.4"
         }
       ],
       "topics": [
@@ -3344,50 +3670,105 @@
         "docker-compose",
         "n8n-runner"
       ],
+      "forks": 6,
+      "watchers": 4,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
-      "slug": "openwebui-plugins",
-      "name": "openwebui-plugins",
-      "fullName": "daradib/openwebui-plugins",
+      "slug": "agmind-macos",
+      "name": "AGmind-macos",
+      "fullName": "botAGI/AGmind-macos",
       "category": "AI & ML",
-      "stars": 19,
-      "author": "daradib",
-      "avatar": "https://avatars.githubusercontent.com/u/1525041?u=06085f5d09efd637d6a7aff7821cdeccbf0477c9&v=4",
-      "desc": "Native search and retrieval tools for Open WebUI",
-      "demo": null,
-      "repoUrl": "https://github.com/daradib/openwebui-plugins",
-      "long1": "Native search and retrieval tools for Open WebUI. Maintained by daradib on GitHub, where it has earned 19 stars from the community.",
-      "long2": "It's actively developed around open-webui, open-webui-tools, llm, and is a solid reference for anyone building with these tools.",
+      "stars": 17,
+      "author": "botAGI",
+      "avatar": "https://avatars.githubusercontent.com/u/260352048?u=995eddc22238816dbc8f1e1224a901336ea3660f&v=4",
+      "desc": "One-command local AI/RAG installer for macOS (Metal): Dify, Open WebUI, Ollama, Weaviate/Qdrant, Postgres, Redis. 230 tests.",
+      "demo": "https://agmind.dev/macos",
+      "repoUrl": "https://github.com/botAGI/AGmind-macos",
+      "long1": "One-command local AI/RAG installer for macOS (Metal): Dify, Open WebUI, Ollama, Weaviate/Qdrant, Postgres, Redis. 230 tests. Maintained by botAGI on GitHub, where it has earned 17 stars from the community.",
+      "long2": "It's actively developed around dify, installer, local-llm, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
-        "Python",
-        "Open Webui",
-        "Open Webui Tools",
-        "Llm",
-        "Llms"
+        "Shell",
+        "Dify",
+        "Installer",
+        "Local Llm",
+        "Macos"
       ],
-      "updated": "11 months ago",
-      "pushedAt": "2025-10-13T17:13:00Z",
-      "license": "AGPL-3.0",
+      "updated": "6 months ago",
+      "pushedAt": "2026-03-24T12:01:42-06:00",
+      "license": "Apache-2.0",
       "langs": [
         {
-          "pct": 98,
-          "name": "Python"
-        },
-        {
-          "pct": 2,
-          "name": "Dockerfile"
+          "pct": 100,
+          "name": "Shell"
         }
       ],
       "versions": [],
       "topics": [
+        "dify",
+        "installer",
+        "local-llm",
+        "macos",
+        "metal",
+        "ollama",
         "open-webui",
-        "open-webui-tools",
-        "llm",
-        "llms",
-        "mcp"
+        "rag",
+        "self-hosted"
       ],
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
+    },
+    {
+      "slug": "theme-designer-pro-presets",
+      "name": "theme-designer-pro-presets",
+      "fullName": "silentoplayz/theme-designer-pro-presets",
+      "category": "UI Kits",
+      "stars": 17,
+      "author": "silentoplayz",
+      "avatar": "https://avatars.githubusercontent.com/u/50341825?u=9a31949203a389c56aa20786f714e9ef3f3a172f&v=4",
+      "desc": "Curated presets for Theme Designer Pro — Canvas FX animations, CSS styling, themes, and gradients for Open WebUI",
+      "demo": "https://silentoplayz.github.io/theme-designer-pro-presets/",
+      "repoUrl": "https://github.com/silentoplayz/theme-designer-pro-presets",
+      "long1": "Curated presets for Theme Designer Pro — Canvas FX animations, CSS styling, themes, and gradients for Open WebUI. Maintained by silentoplayz on GitHub, where it has earned 17 stars from the community.",
+      "long2": "It's actively developed around animation, canvas, css, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Python",
+        "Animation",
+        "Canvas",
+        "Css",
+        "Open Webui"
+      ],
+      "updated": "1 week ago",
+      "pushedAt": "2026-09-02T15:09:42-06:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 65,
+          "name": "Python"
+        },
+        {
+          "pct": 33,
+          "name": "JavaScript"
+        },
+        {
+          "pct": 2,
+          "name": "CSS"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "animation",
+        "canvas",
+        "css",
+        "open-webui",
+        "open-webui-tools",
+        "presets",
+        "themes",
+        "theming",
+        "ui-customization-tool"
+      ],
+      "addedAt": "2026-07-21T11:09:09.517445+00:00"
     },
     {
       "slug": "openwebui-ab-mcts-pipeline",
@@ -3402,6 +3783,7 @@
       "repoUrl": "https://github.com/johnsonfarmsus/openwebui-ab-mcts-pipeline",
       "long1": "Open WebUI Logic Tree Multi-Model LLM Project - Advanced AI reasoning with Sakana AI's AB-MCTS and sophisticated multi-model collaboration. Maintained by johnsonfarmsus on GitHub, where it has earned 16 stars from the community.",
       "long2": "It's actively developed around ab-mcts, advanced-reasoning, ai, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Python",
         "Ab Mcts",
@@ -3409,8 +3791,8 @@
         "Ai",
         "Docker"
       ],
-      "updated": "2 months ago",
-      "pushedAt": "2026-07-04T20:44:52Z",
+      "updated": "11 months ago",
+      "pushedAt": "2025-10-09T22:26:58-06:00",
       "license": "AGPL-3.0",
       "langs": [
         {
@@ -3441,6 +3823,63 @@
         "open-webui-tools",
         "pipeline"
       ],
+      "forks": 4,
+      "issues": 3,
+      "addedAt": "2026-07-15T22:28:33.178349+00:00"
+    },
+    {
+      "slug": "openwebui-mcp-setup",
+      "name": "openwebui-mcp-setup",
+      "fullName": "sonzentherevolution/openwebui-mcp-setup",
+      "category": "AI & ML",
+      "stars": 16,
+      "author": "sonzentherevolution",
+      "avatar": "https://avatars.githubusercontent.com/u/112978441?v=4",
+      "desc": "Universal MCPO/MCP bridge for Open Web UI with AI-powered configuration. Automated setup generation, Docker support, beginner-friendly. Any AI assistant can instantly convert MCP configs to   working Open Web UI integrations.",
+      "demo": null,
+      "repoUrl": "https://github.com/sonzentherevolution/openwebui-mcp-setup",
+      "long1": "Universal MCPO/MCP bridge for Open Web UI with AI-powered configuration. Automated setup generation, Docker support, beginner-friendly. Any AI assistant can instantly convert MCP configs to   working Open Web UI integrations. Maintained by sonzentherevolution on GitHub, where it has earned 16 stars from the community.",
+      "long2": "It's actively developed around ai-automation, docker, llm-tools, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Python",
+        "Ai Automation",
+        "Docker",
+        "Llm Tools",
+        "Mcp"
+      ],
+      "updated": "1 year ago",
+      "pushedAt": "2025-07-25T20:05:01-06:00",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 80,
+          "name": "Python"
+        },
+        {
+          "pct": 12,
+          "name": "Shell"
+        },
+        {
+          "pct": 8,
+          "name": "Batchfile"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "ai-automation",
+        "docker",
+        "llm-tools",
+        "mcp",
+        "mcpo",
+        "model-context-protocol",
+        "open-webui",
+        "zero-config",
+        "agentic-setup"
+      ],
+      "forks": 5,
+      "issues": 2,
+      "watchers": 1,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
@@ -3451,17 +3890,18 @@
       "stars": 16,
       "author": "EntropyYue",
       "avatar": "https://avatars.githubusercontent.com/u/164553692?u=5a13fa6b1b851ce72a81061d93cff5b8534ed9c1&v=4",
-      "desc": "使用 SearXNG 搜索并抓取网页",
+      "desc": "使用 SearXNG 搜索并抓取网页（已弃用，使用 Native Function Calling）",
       "demo": null,
       "repoUrl": "https://github.com/EntropyYue/web_search",
-      "long1": "使用 SearXNG 搜索并抓取网页. Maintained by EntropyYue on GitHub, where it has earned 16 stars from the community.",
+      "long1": "使用 SearXNG 搜索并抓取网页（已弃用，使用 Native Function Calling）. Maintained by EntropyYue on GitHub, where it has earned 16 stars from the community.",
       "long2": "It's actively developed around open-webui, python, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Open Webui",
         "Python"
       ],
-      "updated": "8 months ago",
-      "pushedAt": "2026-01-06T11:38:13Z",
+      "updated": "9 months ago",
+      "pushedAt": "2025-12-13T05:43:55-06:00",
       "license": "MIT",
       "langs": [
         {
@@ -3499,252 +3939,8 @@
         "open-webui",
         "python"
       ],
-      "addedAt": "2026-07-15T22:28:33.178349+00:00"
-    },
-    {
-      "slug": "theme-designer-pro-presets",
-      "name": "theme-designer-pro-presets",
-      "fullName": "silentoplayz/theme-designer-pro-presets",
-      "category": "UI Kits",
-      "stars": 14,
-      "author": "silentoplayz",
-      "avatar": "https://avatars.githubusercontent.com/u/50341825?u=9a31949203a389c56aa20786f714e9ef3f3a172f&v=4",
-      "desc": "Curated presets for Theme Designer Pro — Canvas FX animations, CSS styling, themes, and gradients for Open WebUI",
-      "demo": "https://silentoplayz.github.io/theme-designer-pro-presets/",
-      "repoUrl": "https://github.com/silentoplayz/theme-designer-pro-presets",
-      "long1": "Curated presets for Theme Designer Pro — Canvas FX animations, CSS styling, themes, and gradients for Open WebUI. Maintained by silentoplayz on GitHub, where it has earned 14 stars from the community.",
-      "long2": "It's actively developed around animation, canvas, css, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Python",
-        "Animation",
-        "Canvas",
-        "Css",
-        "Open Webui"
-      ],
-      "updated": "6 weeks ago",
-      "pushedAt": "2026-07-26T23:28:31Z",
-      "license": "MIT",
-      "langs": [
-        {
-          "pct": 64,
-          "name": "Python"
-        },
-        {
-          "pct": 35,
-          "name": "JavaScript"
-        },
-        {
-          "pct": 1,
-          "name": "CSS"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "animation",
-        "canvas",
-        "css",
-        "open-webui",
-        "open-webui-tools",
-        "presets",
-        "themes",
-        "theming",
-        "ui-customization-tool"
-      ],
-      "addedAt": "2026-07-21T11:09:09.517445+00:00"
-    },
-    {
-      "slug": "open-webui-analytics",
-      "name": "open-webui-analytics",
-      "fullName": "taylorwilsdon/open-webui-analytics",
-      "category": "Dashboards",
-      "stars": 14,
-      "author": "taylorwilsdon",
-      "avatar": "https://avatars.githubusercontent.com/u/6508528?u=744eca1ad57aa00d1b2d4f9924f630b08040f0af&v=4",
-      "desc": "Analytics dashboard for Open WebUI - Track user activity, model usage, and system metrics with Svelte frontend and Express backend",
-      "demo": null,
-      "repoUrl": "https://github.com/taylorwilsdon/open-webui-analytics",
-      "long1": "Analytics dashboard for Open WebUI - Track user activity, model usage, and system metrics with Svelte frontend and Express backend. Maintained by taylorwilsdon on GitHub, where it has earned 14 stars from the community.",
-      "long2": "It's actively developed around analytics, dashboard, data-visualization, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Svelte",
-        "Analytics",
-        "Dashboard",
-        "Data Visualization",
-        "Express"
-      ],
-      "updated": "1 year ago",
-      "pushedAt": "2025-07-28T23:15:19Z",
-      "license": "—",
-      "langs": [
-        {
-          "pct": 71,
-          "name": "Svelte"
-        },
-        {
-          "pct": 25,
-          "name": "JavaScript"
-        },
-        {
-          "pct": 4,
-          "name": "CSS"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "analytics",
-        "dashboard",
-        "data-visualization",
-        "express",
-        "javascript",
-        "nodejs",
-        "open-webui",
-        "svelte"
-      ],
-      "addedAt": "2026-07-15T22:28:33.178349+00:00"
-    },
-    {
-      "slug": "open-webui-pipeline-wisdom-synthesizer",
-      "name": "open-webui-pipeline-wisdom-synthesizer",
-      "fullName": "Fu-Jie/open-webui-pipeline-wisdom-synthesizer",
-      "category": "AI & ML",
-      "stars": 14,
-      "author": "Fu-Jie",
-      "avatar": "https://avatars.githubusercontent.com/u/33599649?u=1a8e936f584a8618a3581f2b23934885894df22e&v=4",
-      "desc": "An external pipeline filter for Open WebUI that refactors aggregate requests with collective wisdom to output structured expert analysis reports.",
-      "demo": null,
-      "repoUrl": "https://github.com/Fu-Jie/open-webui-pipeline-wisdom-synthesizer",
-      "long1": "An external pipeline filter for Open WebUI that refactors aggregate requests with collective wisdom to output structured expert analysis reports. Maintained by Fu-Jie on GitHub, where it has earned 14 stars from the community.",
-      "long2": "It's actively developed around ai, filter, mixture-of-agents, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Python",
-        "Ai",
-        "Filter",
-        "Mixture Of Agents",
-        "Moa"
-      ],
-      "updated": "5 months ago",
-      "pushedAt": "2026-03-22T16:43:39Z",
-      "license": "MIT",
-      "langs": [
-        {
-          "pct": 100,
-          "name": "Python"
-        }
-      ],
-      "versions": [
-        {
-          "url": "https://github.com/Fu-Jie/open-webui-pipeline-wisdom-synthesizer/releases/tag/v0.1.0",
-          "name": "v0.1.0"
-        }
-      ],
-      "topics": [
-        "ai",
-        "filter",
-        "mixture-of-agents",
-        "moa",
-        "open-webui",
-        "pipeline",
-        "prompt-engineering",
-        "collective-wisdom",
-        "agents",
-        "aggregation",
-        "llm",
-        "summary"
-      ],
-      "addedAt": "2026-07-15T22:28:33.178349+00:00"
-    },
-    {
-      "slug": "openwebui-mcp-setup",
-      "name": "openwebui-mcp-setup",
-      "fullName": "sonzentherevolution/openwebui-mcp-setup",
-      "category": "AI & ML",
-      "stars": 14,
-      "author": "sonzentherevolution",
-      "avatar": "https://avatars.githubusercontent.com/u/112978441?v=4",
-      "desc": "Universal MCPO/MCP bridge for Open Web UI with AI-powered configuration. Automated setup generation, Docker support, beginner-friendly. Any AI assistant can instantly convert MCP configs to   working Open Web UI integrations.",
-      "demo": null,
-      "repoUrl": "https://github.com/sonzentherevolution/openwebui-mcp-setup",
-      "long1": "Universal MCPO/MCP bridge for Open Web UI with AI-powered configuration. Automated setup generation, Docker support, beginner-friendly. Any AI assistant can instantly convert MCP configs to   working Open Web UI integrations. Maintained by sonzentherevolution on GitHub, where it has earned 14 stars from the community.",
-      "long2": "It's actively developed around ai-automation, docker, llm-tools, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Python",
-        "Ai Automation",
-        "Docker",
-        "Llm Tools",
-        "Mcp"
-      ],
-      "updated": "1 year ago",
-      "pushedAt": "2025-07-26T02:05:02Z",
-      "license": "—",
-      "langs": [
-        {
-          "pct": 80,
-          "name": "Python"
-        },
-        {
-          "pct": 12,
-          "name": "Shell"
-        },
-        {
-          "pct": 8,
-          "name": "Batchfile"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "ai-automation",
-        "docker",
-        "llm-tools",
-        "mcp",
-        "mcpo",
-        "model-context-protocol",
-        "open-webui",
-        "zero-config",
-        "agentic-setup"
-      ],
-      "addedAt": "2026-07-15T22:28:33.178349+00:00"
-    },
-    {
-      "slug": "agmind-macos",
-      "name": "AGmind-macos",
-      "fullName": "botAGI/AGmind-macos",
-      "category": "AI & ML",
-      "stars": 14,
-      "author": "botAGI",
-      "avatar": "https://avatars.githubusercontent.com/u/260352048?u=995eddc22238816dbc8f1e1224a901336ea3660f&v=4",
-      "desc": "One-command local AI/RAG installer for macOS (Metal): Dify, Open WebUI, Ollama, Weaviate/Qdrant, Postgres, Redis. 230 tests.",
-      "demo": "https://agmind.dev/macos",
-      "repoUrl": "https://github.com/botAGI/AGmind-macos",
-      "long1": "One-command local AI/RAG installer for macOS (Metal): Dify, Open WebUI, Ollama, Weaviate/Qdrant, Postgres, Redis. 230 tests. Maintained by botAGI on GitHub, where it has earned 14 stars from the community.",
-      "long2": "It's actively developed around dify, installer, local-llm, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Shell",
-        "Dify",
-        "Installer",
-        "Local Llm",
-        "Macos"
-      ],
-      "updated": "5 months ago",
-      "pushedAt": "2026-03-24T18:01:43Z",
-      "license": "Apache-2.0",
-      "langs": [
-        {
-          "pct": 100,
-          "name": "Shell"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "dify",
-        "installer",
-        "local-llm",
-        "macos",
-        "metal",
-        "ollama",
-        "open-webui",
-        "rag",
-        "self-hosted"
-      ],
+      "forks": 6,
+      "watchers": 1,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
@@ -3752,22 +3948,23 @@
       "name": "open-webui-extensions",
       "fullName": "FAI-Solutions/open-webui-extensions",
       "category": "AI & ML",
-      "stars": 13,
+      "stars": 14,
       "author": "FAI-Solutions",
       "avatar": "https://avatars.githubusercontent.com/u/263631422?u=7d430caab4108c9891990ef25ebfadb48ff55f3e&v=4",
-      "desc": "A growing collection of practical filter, pipeline & tool extensions for Open WebUI — solving real usability gaps in local & cloud LLM workflows.",
+      "desc": "A growing collection of practical filter, pipeline & tool extensions for Open WebUI, solving real usability gaps in local & cloud LLM workflows.",
       "demo": null,
       "repoUrl": "https://github.com/FAI-Solutions/open-webui-extensions",
-      "long1": "A growing collection of practical filter, pipeline & tool extensions for Open WebUI — solving real usability gaps in local & cloud LLM workflows. Maintained by FAI-Solutions on GitHub, where it has earned 13 stars from the community.",
+      "long1": "A growing collection of practical filter, pipeline & tool extensions for Open WebUI, solving real usability gaps in local & cloud LLM workflows. Maintained by FAI-Solutions on GitHub, where it has earned 14 stars from the community.",
       "long2": "It's actively developed around ai-extensions, llm, ollama, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Ai Extensions",
         "Llm",
         "Ollama",
         "Ollama Cloud"
       ],
-      "updated": "3 months ago",
-      "pushedAt": "2026-05-30T11:51:33Z",
+      "updated": "2 days ago",
+      "pushedAt": "2026-09-09T14:51:22-06:00",
       "license": "MIT",
       "langs": [
         {
@@ -3798,146 +3995,113 @@
         "open-webui-extensions",
         "open-webui-filters"
       ],
+      "issues": 1,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
-      "slug": "gen-ai-template",
-      "name": "gen-ai-template",
-      "fullName": "FranzDiebold/gen-ai-template",
+      "slug": "open-webui-pipeline-wisdom-synthesizer",
+      "name": "open-webui-pipeline-wisdom-synthesizer",
+      "fullName": "Fu-Jie/open-webui-pipeline-wisdom-synthesizer",
       "category": "AI & ML",
-      "stars": 12,
-      "author": "FranzDiebold",
-      "avatar": "https://avatars.githubusercontent.com/u/35296779?u=6e615298b2c3d5ad33a7794824c48b4c54118aee&v=4",
-      "desc": "A template for your kickstart into GenAI!",
+      "stars": 14,
+      "author": "Fu-Jie",
+      "avatar": "https://avatars.githubusercontent.com/u/33599649?u=1a8e936f584a8618a3581f2b23934885894df22e&v=4",
+      "desc": "An external pipeline filter for Open WebUI that refactors aggregate requests with collective wisdom to output structured expert analysis reports.",
       "demo": null,
-      "repoUrl": "https://github.com/FranzDiebold/gen-ai-template",
-      "long1": "A template for your kickstart into GenAI!. Maintained by FranzDiebold on GitHub, where it has earned 12 stars from the community.",
-      "long2": "It's actively developed around gen-ai, genai, langchain, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Python",
-        "Gen Ai",
-        "Genai",
-        "Langchain",
-        "Langgraph"
-      ],
-      "updated": "5 months ago",
-      "pushedAt": "2026-04-10T17:40:30Z",
-      "license": "MIT",
-      "langs": [
-        {
-          "pct": 94,
-          "name": "Python"
-        },
-        {
-          "pct": 3,
-          "name": "Shell"
-        },
-        {
-          "pct": 3,
-          "name": "Dockerfile"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "gen-ai",
-        "genai",
-        "langchain",
-        "langgraph",
-        "open-webui",
-        "agent-inbox",
-        "mcp",
-        "marimo",
-        "n8n",
-        "docker-model-runner"
-      ],
-      "addedAt": "2026-07-15T22:28:33.178349+00:00"
-    },
-    {
-      "slug": "open-webui-tools",
-      "name": "open-webui-tools",
-      "fullName": "ay4t/open-webui-tools",
-      "category": "AI & ML",
-      "stars": 12,
-      "author": "ay4t",
-      "avatar": "https://avatars.githubusercontent.com/u/87152520?u=65c795b19d402cc2b92f236ea7c18e24d410e11f&v=4",
-      "desc": "A collection of custom tools and extensions for Open WebUI that enhance its capabilities",
-      "demo": "https://github.com/ay4t/open-webui-tools",
-      "repoUrl": "https://github.com/ay4t/open-webui-tools",
-      "long1": "A collection of custom tools and extensions for Open WebUI that enhance its capabilities. Maintained by ay4t on GitHub, where it has earned 12 stars from the community.",
-      "long2": "It's actively developed around ai, functions, llm, and is a solid reference for anyone building with these tools.",
+      "repoUrl": "https://github.com/Fu-Jie/open-webui-pipeline-wisdom-synthesizer",
+      "long1": "An external pipeline filter for Open WebUI that refactors aggregate requests with collective wisdom to output structured expert analysis reports. Maintained by Fu-Jie on GitHub, where it has earned 14 stars from the community.",
+      "long2": "It's actively developed around ai, filter, mixture-of-agents, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Python",
         "Ai",
-        "Functions",
-        "Llm",
-        "Open Webui"
+        "Filter",
+        "Mixture Of Agents",
+        "Moa"
       ],
-      "updated": "2 years ago",
-      "pushedAt": "2024-12-11T19:52:44Z",
-      "license": "—",
+      "updated": "6 months ago",
+      "pushedAt": "2026-03-22T10:43:34-06:00",
+      "license": "MIT",
       "langs": [
         {
           "pct": 100,
           "name": "Python"
         }
       ],
-      "versions": [],
+      "versions": [
+        {
+          "url": "https://github.com/Fu-Jie/open-webui-pipeline-wisdom-synthesizer/releases/tag/v0.1.0",
+          "name": "v0.1.0"
+        }
+      ],
       "topics": [
         "ai",
-        "functions",
-        "llm",
+        "filter",
+        "mixture-of-agents",
+        "moa",
         "open-webui",
-        "tools"
+        "pipeline",
+        "prompt-engineering",
+        "collective-wisdom",
+        "agents",
+        "aggregation",
+        "llm",
+        "summary"
       ],
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
-      "slug": "eva-ai",
-      "name": "eva-ai",
-      "fullName": "sp4rkiop/eva-ai",
-      "category": "AI & ML",
-      "stars": 12,
-      "author": "sp4rkiop",
-      "avatar": "https://avatars.githubusercontent.com/u/68564589?u=9637863d0a38a742d8ece8835f5644b974839387&v=4",
-      "desc": "LLM powered chat interface offering limitless experience.",
-      "demo": "https://eva.abhisheksinha.dev",
-      "repoUrl": "https://github.com/sp4rkiop/eva-ai",
-      "long1": "LLM powered chat interface offering limitless experience. Maintained by sp4rkiop on GitHub, where it has earned 12 stars from the community.",
-      "long2": "It's actively developed around ai, llm, nextjs, and is a solid reference for anyone building with these tools.",
+      "slug": "open-webui-analytics",
+      "name": "open-webui-analytics",
+      "fullName": "taylorwilsdon/open-webui-analytics",
+      "category": "Dashboards",
+      "stars": 14,
+      "author": "taylorwilsdon",
+      "avatar": "https://avatars.githubusercontent.com/u/6508528?u=744eca1ad57aa00d1b2d4f9924f630b08040f0af&v=4",
+      "desc": "Analytics dashboard for Open WebUI - Track user activity, model usage, and system metrics with Svelte frontend and Express backend",
+      "demo": null,
+      "repoUrl": "https://github.com/taylorwilsdon/open-webui-analytics",
+      "long1": "Analytics dashboard for Open WebUI - Track user activity, model usage, and system metrics with Svelte frontend and Express backend. Maintained by taylorwilsdon on GitHub, where it has earned 14 stars from the community.",
+      "long2": "It's actively developed around analytics, dashboard, data-visualization, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
-        "TypeScript",
-        "Ai",
-        "Llm",
-        "Next.js",
-        "Openai"
+        "Svelte",
+        "Analytics",
+        "Dashboard",
+        "Data Visualization",
+        "Express"
       ],
-      "updated": "12 months ago",
-      "pushedAt": "2025-09-19T18:15:10Z",
+      "updated": "1 year ago",
+      "pushedAt": "2025-07-28T17:15:05-06:00",
       "license": "—",
       "langs": [
         {
-          "pct": 67,
-          "name": "TypeScript"
+          "pct": 71,
+          "name": "Svelte"
         },
         {
-          "pct": 24,
-          "name": "Python"
+          "pct": 25,
+          "name": "JavaScript"
         },
         {
-          "pct": 9,
-          "name": "Jupyter Notebook"
+          "pct": 4,
+          "name": "CSS"
         }
       ],
       "versions": [],
       "topics": [
-        "ai",
-        "llm",
-        "nextjs",
-        "openai",
-        "chat",
-        "llm-ui",
-        "open-webui"
+        "analytics",
+        "dashboard",
+        "data-visualization",
+        "express",
+        "javascript",
+        "nodejs",
+        "open-webui",
+        "svelte"
       ],
+      "forks": 11,
+      "issues": 2,
+      "watchers": 1,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     },
     {
@@ -3945,21 +4109,22 @@
       "name": "open-webui-easysearch",
       "fullName": "x-hannibal/open-webui-easysearch",
       "category": "AI & ML",
-      "stars": 11,
+      "stars": 13,
       "author": "x-hannibal",
       "avatar": "https://avatars.githubusercontent.com/u/3263978?u=613f0ae850cd2db1213e6b7cf74a36073597f2af&v=4",
       "desc": "An intelligent, context-aware web search filter for Open WebUI. EasySearch bypasses noisy standard web scrapers, utilizing parallel fetching, structural HTML cleaning, and dynamic context-awareness to feed your LLM only the highest quality data.",
       "demo": "https://openwebui.com/posts/6e0e63b2-d86f-4fca-b079-a0efc96f1902",
       "repoUrl": "https://github.com/x-hannibal/open-webui-easysearch",
-      "long1": "An intelligent, context-aware web search filter for Open WebUI. EasySearch bypasses noisy standard web scrapers, utilizing parallel fetching, structural HTML cleaning, and dynamic context-awareness to feed your LLM only the highest quality data. Maintained by x-hannibal on GitHub, where it has earned 11 stars from the community.",
+      "long1": "An intelligent, context-aware web search filter for Open WebUI. EasySearch bypasses noisy standard web scrapers, utilizing parallel fetching, structural HTML cleaning, and dynamic context-awareness to feed your LLM only the highest quality data. Maintained by x-hannibal on GitHub, where it has earned 13 stars from the community.",
       "long2": "It's actively developed around open-webui, open-webui-functions, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Python",
         "Open Webui",
         "Open Webui Functions"
       ],
-      "updated": "4 months ago",
-      "pushedAt": "2026-04-24T01:08:00Z",
+      "updated": "5 months ago",
+      "pushedAt": "2026-04-23T19:06:42-06:00",
       "license": "MIT",
       "langs": [
         {
@@ -3993,7 +4158,219 @@
         "open-webui",
         "open-webui-functions"
       ],
+      "forks": 1,
+      "watchers": 1,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
+    },
+    {
+      "slug": "open-webui-tools",
+      "name": "open-webui-tools",
+      "fullName": "ay4t/open-webui-tools",
+      "category": "AI & ML",
+      "stars": 12,
+      "author": "ay4t",
+      "avatar": "https://avatars.githubusercontent.com/u/87152520?u=65c795b19d402cc2b92f236ea7c18e24d410e11f&v=4",
+      "desc": "A collection of custom tools and extensions for Open WebUI that enhance its capabilities",
+      "demo": "https://github.com/ay4t/open-webui-tools",
+      "repoUrl": "https://github.com/ay4t/open-webui-tools",
+      "long1": "A collection of custom tools and extensions for Open WebUI that enhance its capabilities. Maintained by ay4t on GitHub, where it has earned 12 stars from the community.",
+      "long2": "It's actively developed around ai, functions, llm, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Python",
+        "Ai",
+        "Functions",
+        "Llm",
+        "Open Webui"
+      ],
+      "updated": "2 years ago",
+      "pushedAt": "2024-12-11T13:52:05-06:00",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 100,
+          "name": "Python"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "ai",
+        "functions",
+        "llm",
+        "open-webui",
+        "tools"
+      ],
+      "forks": 1,
+      "watchers": 3,
+      "addedAt": "2026-07-15T22:28:33.178349+00:00"
+    },
+    {
+      "slug": "eva-ai",
+      "name": "eva-ai",
+      "fullName": "sp4rkiop/eva-ai",
+      "category": "AI & ML",
+      "stars": 12,
+      "author": "sp4rkiop",
+      "avatar": "https://avatars.githubusercontent.com/u/68564589?u=9637863d0a38a742d8ece8835f5644b974839387&v=4",
+      "desc": "LLM powered chat interface offering limitless experience.",
+      "demo": "https://eva.abhisheksinha.dev",
+      "repoUrl": "https://github.com/sp4rkiop/eva-ai",
+      "long1": "LLM powered chat interface offering limitless experience. Maintained by sp4rkiop on GitHub, where it has earned 12 stars from the community.",
+      "long2": "It's actively developed around ai, llm, nextjs, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "TypeScript",
+        "Ai",
+        "Llm",
+        "Next.js",
+        "Openai"
+      ],
+      "updated": "12 months ago",
+      "pushedAt": "2025-09-19T12:15:08-06:00",
+      "license": "—",
+      "langs": [
+        {
+          "pct": 67,
+          "name": "TypeScript"
+        },
+        {
+          "pct": 24,
+          "name": "Python"
+        },
+        {
+          "pct": 9,
+          "name": "Jupyter Notebook"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "ai",
+        "llm",
+        "nextjs",
+        "openai",
+        "chat",
+        "llm-ui",
+        "open-webui"
+      ],
+      "watchers": 1,
+      "addedAt": "2026-07-15T22:28:33.178349+00:00"
+    },
+    {
+      "slug": "gen-ai-template",
+      "name": "gen-ai-template",
+      "fullName": "FranzDiebold/gen-ai-template",
+      "category": "AI & ML",
+      "stars": 12,
+      "author": "FranzDiebold",
+      "avatar": "https://avatars.githubusercontent.com/u/35296779?u=6e615298b2c3d5ad33a7794824c48b4c54118aee&v=4",
+      "desc": "A template for your kickstart into GenAI!",
+      "demo": null,
+      "repoUrl": "https://github.com/FranzDiebold/gen-ai-template",
+      "long1": "A template for your kickstart into GenAI!. Maintained by FranzDiebold on GitHub, where it has earned 12 stars from the community.",
+      "long2": "It's actively developed around gen-ai, genai, langchain, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Python",
+        "Gen Ai",
+        "Genai",
+        "Langchain",
+        "Langgraph"
+      ],
+      "updated": "5 months ago",
+      "pushedAt": "2026-04-10T11:40:23-06:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "pct": 94,
+          "name": "Python"
+        },
+        {
+          "pct": 3,
+          "name": "Shell"
+        },
+        {
+          "pct": 3,
+          "name": "Dockerfile"
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "gen-ai",
+        "genai",
+        "langchain",
+        "langgraph",
+        "open-webui",
+        "agent-inbox",
+        "mcp",
+        "marimo",
+        "n8n",
+        "docker-model-runner"
+      ],
+      "forks": 1,
+      "watchers": 3,
+      "addedAt": "2026-07-15T22:28:33.178349+00:00"
+    },
+    {
+      "slug": "openwebui-skill-creator",
+      "name": "openwebui-skill-creator",
+      "fullName": "ianustec/openwebui-skill-creator",
+      "category": "AI & ML",
+      "stars": 10,
+      "author": "ianustec",
+      "avatar": "https://avatars.githubusercontent.com/u/111279753?u=b53e6afbae7638da0b2c7b633cad36328268a29d&v=4",
+      "desc": "Open WebUI tool: create Workspace Skills from SKILL.md (Claude-style) — interview, draft, validate, persist private by default. MIT.",
+      "demo": null,
+      "repoUrl": "https://github.com/ianustec/openwebui-skill-creator",
+      "long1": "Open WebUI tool: create Workspace Skills from SKILL.md (Claude-style) — interview, draft, validate, persist private by default. MIT. Maintained by ianustec on GitHub, where it has earned 10 stars from the community.",
+      "long2": "It's actively developed around ai-tools, mit-license, open-webui, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Python",
+        "Ai Tools",
+        "Mit License",
+        "Open Webui",
+        "Openwebui"
+      ],
+      "updated": "3 weeks ago",
+      "pushedAt": "2026-08-24T04:24:21-06:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "Python",
+          "pct": 100
+        }
+      ],
+      "versions": [
+        {
+          "name": "v1.3.0",
+          "url": "https://github.com/ianustec/openwebui-skill-creator/releases/tag/v1.3.0"
+        },
+        {
+          "name": "v1.2.1",
+          "url": "https://github.com/ianustec/openwebui-skill-creator/releases/tag/v1.2.1"
+        },
+        {
+          "name": "v1.2.0",
+          "url": "https://github.com/ianustec/openwebui-skill-creator/releases/tag/v1.2.0"
+        },
+        {
+          "name": "v1.1.0",
+          "url": "https://github.com/ianustec/openwebui-skill-creator/releases/tag/v1.1.0"
+        },
+        {
+          "name": "v1.0.0",
+          "url": "https://github.com/ianustec/openwebui-skill-creator/releases/tag/v1.0.0"
+        }
+      ],
+      "topics": [
+        "ai-tools",
+        "mit-license",
+        "open-webui",
+        "openwebui",
+        "python",
+        "skills"
+      ],
+      "addedAt": "2026-09-12T02:22:14.142546+00:00"
     },
     {
       "slug": "openwebui-stack",
@@ -4008,6 +4385,7 @@
       "repoUrl": "https://github.com/mhajder/openwebui-stack",
       "long1": "Docker Compose stack for Open WebUI with LiteLLM proxy, observability, and security best practices. Maintained by mhajder on GitHub, where it has earned 10 stars from the community.",
       "long2": "It's actively developed around ai, docker, docker-compose, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Shell",
         "Ai",
@@ -4015,13 +4393,13 @@
         "Docker Compose",
         "Litellm"
       ],
-      "updated": "3 months ago",
-      "pushedAt": "2026-06-19T05:12:49Z",
+      "updated": "4 months ago",
+      "pushedAt": "2026-05-07T14:14:27-06:00",
       "license": "MIT",
       "langs": [
         {
-          "name": "Shell",
-          "pct": 100
+          "pct": 100,
+          "name": "Shell"
         }
       ],
       "versions": [],
@@ -4051,6 +4429,7 @@
       "repoUrl": "https://github.com/The-Incredible-Gamma-Man/HomeLab_Dashboard_MCP_Integrated",
       "long1": "The ultimate home lab dash with agentic AI features bolted in. Single sign-on, HTTPS enforced, dockerised and modular. Can be run completely offline too!. Maintained by The-Incredible-Gamma-Man on GitHub, where it has earned 10 stars from the community.",
       "long2": "It's actively developed around agentic-ai, airgapped, caddy, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
       "stack": [
         "Shell",
         "Agentic Ai",
@@ -4059,7 +4438,7 @@
         "Dashboard"
       ],
       "updated": "5 months ago",
-      "pushedAt": "2026-04-01T22:47:35Z",
+      "pushedAt": "2026-04-01T16:47:35-06:00",
       "license": "MIT",
       "langs": [
         {
@@ -4082,6 +4461,8 @@
         "offline-first",
         "oidc"
       ],
+      "forks": 1,
+      "watchers": 1,
       "addedAt": "2026-07-15T22:28:33.178349+00:00"
     }
   ]

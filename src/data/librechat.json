@@ -1,151 +1,230 @@
 {
   "slug": "librechat",
-  "scrapedAt": "2026-09-06T02:26:46.563173+00:00",
+  "scrapedAt": "2026-09-12T04:29:57.740852+00:00",
   "source": "scrapy-github",
-  "totalRepos": 20,
+  "totalRepos": 21,
   "projects": [
     {
       "slug": "big-agi",
       "name": "big-AGI",
       "fullName": "enricoros/big-AGI",
       "category": "AI & ML",
-      "stars": 7076,
+      "stars": 7120,
       "author": "enricoros",
-      "avatar": "https://avatars.githubusercontent.com/u/32999?u=a1321c15b67f0f7de57813ba20be8562e8ffd67b&v=4",
-      "desc": "AI suite powered by state-of-the-art models and providing advanced AI/AGI functions. Includes AI personas, AGI functions, world-class Beam multi-model chats, text-to-image, voice, response streaming, code highlighting and execution, PDF import, presets for developers, much more. Deploy on-prem or in the cloud.",
+      "avatar": "https://avatars.githubusercontent.com/u/32999?v=4",
+      "desc": "Big-AGI is an advanced AI suite powered by state-of-the-art models, offering AGI functions, AI personas, multi-model chats, text-to-image, voice, response streaming, code highlighting and execution, PDF import, and presets for developers, with deployment options on-prem or in the cloud.",
       "demo": "https://big-agi.com",
       "repoUrl": "https://github.com/enricoros/big-AGI",
-      "long1": "AI suite powered by state-of-the-art models and providing advanced AI/AGI functions. Includes AI personas, AGI functions, world-class Beam multi-model chats, text-to-image, voice, response streaming, code highlighting and execution, PDF import, presets for developers, much more. Deploy on-prem or in the cloud. Maintained by enricoros on GitHub, where it has earned 7,076 stars from the community.",
-      "long2": "It's actively developed around agi, gpt, ai-agents, and is a solid reference for anyone building with these tools.",
+      "long1": "AI suite powered by state-of-the-art models and providing advanced AI/AGI functions. Includes AI personas, AGI functions, world-class Beam multi-model chats, text-to-image, voice, response streaming, code highlighting and execution, PDF import, presets for developers, much more. Deploy on-prem or in the cloud. Maintained by enricoros on GitHub, where it has earned 7,120 stars from the community.",
+      "long2": "It's actively developed around agi, ai-agents, ai-suite, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "# Introduction\n\n**big-AGI** is the expert's AI workspace, designed for professionals who demand intelligence, speed, and absolute control over AI interactions. Unlike single-model solutions, it enables parallel exploration of multiple frontier models, catching hallucinations and fusing responses into sharper, more reliable outputs. Built for high-stakes environments\u2014from emergency medicine to scientific research\u2014it provides a transparent, resilient, and vendor-agnostic platform to work with 800+ models across 30+ AI services, including OpenAI, Anthropic, Google Gemini, and local alternatives like Ollama and LM Studio.\n\n# Key Features\n\n- **Beam & Merge**: Send prompts to 2\u201324 models simultaneously, then fuse their responses into one refined answer. Agreement signals confidence; disagreement prompts deeper exploration.\n- **Absolute Technical Control**: Dial 44+ model parameters (effort, temperature, verbosity, reasoning budget, etc.) per request or persona. Inspect exact API calls before and after execution.\n- **Advanced Personas**: Codify expertise with custom personas\u2014attach documents, images, memory, and fixed models\u2014then reuse them across workflows.\n- **Zero-Latency Optimization**: Client-side processing ensures snappy performance, even with complex multimodal inputs (PDFs, PPTs, images, diagrams, voice).\n- **Resilient Architecture**: Auto-retry on provider timeouts, explicit error handling, and route-arounds keep work uninterrupted during cloud turbulence.\n- **Local-First, No Lock-In**: Data stays on your device; sync when needed. No intermediary billing or vendor restrictions\u2014own your keys, models, and rules.\n\n# Ecosystem and Community\n\n**big-AGI** thrives in high-stakes fields where accuracy is non-negotiable. Emergency physicians use it to double-check clinical decisions, generating 100% correct summaries and decision trees. Science Olympiad participants leverage it to design award-winning projects without prior expertise. AI researchers and developers rely on its carefully designed interface, which stands out for its bug-free, intuitive features and open-source transparency. The project is supported by GitHub Sponsors and a growing community of experts who demand precision, control, and no vendor lock-in.\n\n# Use Cases\n\n- **Critical Decision Making**: Emergency physicians use **big-AGI** to assimilate vast medical data into error-free summaries and decision trees, ensuring no hallucinations slip through.\n- **Scientific Research & Olympiads**: Novices achieve national-level results in science Olympiads, thanks to its ability to generate top-tier designs and consensus across models.\n- **AI Research & Development**: Researchers and developers use it to explore 800+ models in parallel, compare outputs, and fine-tune parameters with absolute control.\n- **Multimodal Workflows**: Process PDFs, PPTs, images, diagrams, and voice inputs\u2014all in one session\u2014with native support for PlantUML, Mermaid, and live transcripts.\n\n# Roadmap and Future Development\n\nThe project is in active development, with recent updates including:\n- Support for **DeepSeek V4.1** (beta) with 1M context and native image input.\n- **GPT-6 Astra** and **Meta AI Muse Spark** models with advanced reasoning controls.\n- **Gemini 3.8 Flash** and **Qwen3.8 Max** integrations.\n- **OpenRouter** enhancements (web search, fetch, and advanced config).\n- **Offline Mode** (experimental) for local-first workflows.\n- **Baseten models** support with reasoning controls.\n\nFuture updates may include more 0-day model support, expanded multimodal capabilities, and deeper integration with local AI services.\n\n# Conclusion\n\n**big-AGI** redefines AI interaction for experts who refuse to compromise on control, accuracy, or flexibility. Whether you're an ER physician, a scientist, or an AI researcher, it provides the tools to work with confidence\u2014no vendor lock-in, no hallucinations, and no limits. Join the community of professionals who trust **big-AGI** for their most critical work.",
       "stack": [
         "TypeScript",
         "Agi",
-        "Gpt",
         "Ai Agents",
-        "Ai Suite"
+        "Ai Suite",
+        "Ai Workspace"
       ],
-      "updated": "5 weeks ago",
-      "pushedAt": "2026-08-03T00:24:06Z",
+      "updated": "2 days ago",
+      "pushedAt": "2026-09-09T17:02:36-06:00",
       "license": "MIT",
       "langs": [
         {
-          "pct": 80,
-          "name": "TypeScript"
+          "name": "TypeScript",
+          "pct": 79.498,
+          "size": 6126847
         },
         {
-          "pct": 19,
-          "name": "JavaScript"
+          "name": "JavaScript",
+          "pct": 18.27,
+          "size": 1408067
         },
         {
-          "pct": 1,
-          "name": "HTML"
+          "name": "HTML",
+          "pct": 0.898,
+          "size": 69184
+        },
+        {
+          "name": "CSS",
+          "pct": 0.738,
+          "size": 56882
+        },
+        {
+          "name": "Shell",
+          "pct": 0.56,
+          "size": 43168
+        },
+        {
+          "name": "Dockerfile",
+          "pct": 0.036,
+          "size": 2807
         }
       ],
-      "versions": [
-        {
-          "url": "https://github.com/enricoros/big-AGI/releases/tag/v2.0.5",
-          "name": "v2.0.5"
-        },
-        {
-          "url": "https://github.com/enricoros/big-AGI/releases/tag/v2.0.4",
-          "name": "v2.0.4"
-        },
-        {
-          "url": "https://github.com/enricoros/big-AGI/releases/tag/v2.0.3",
-          "name": "v2.0.3"
-        },
-        {
-          "url": "https://github.com/enricoros/big-AGI/releases/tag/v2.0.2",
-          "name": "v2.0.2"
-        },
-        {
-          "url": "https://github.com/enricoros/big-AGI/releases/tag/v2.0.1",
-          "name": "v2.0.1"
-        }
-      ],
+      "versions": [],
       "topics": [
         "agi",
-        "gpt",
         "ai-agents",
         "ai-suite",
         "ai-workspace",
         "anthropic-api",
         "deepseek-api",
         "gemini-api",
+        "gpt",
         "gpt-5",
+        "librechat",
         "multi-modal",
         "multi-model",
-        "nano-banana"
+        "nano-banana",
+        "openai-responses-api",
+        "openwebui",
+        "perplexity-api",
+        "sonnet-4-5",
+        "xai-api"
       ],
-      "addedAt": "2026-07-15T22:28:33.182261+00:00"
+      "forks": 1595,
+      "issues": 170,
+      "watchers": 71
     },
     {
       "slug": "librechat-ai",
       "name": "librechat.ai",
       "fullName": "LibreChat-AI/librechat.ai",
       "category": "Docs",
-      "stars": 640,
+      "stars": 643,
       "author": "LibreChat-AI",
       "avatar": "https://avatars.githubusercontent.com/u/169401942?v=4",
-      "desc": "Official documentation, blog, and changelog for LibreChat. Built with Next.js and Fumadocs. Live at librechat.ai",
+      "desc": "LibreChat is an open-source AI platform that provides a unified, customizable interface for managing AI conversations, featuring advanced agents, code interpretation, model selection, and enterprise-ready authentication.",
       "demo": "https://www.librechat.ai",
       "repoUrl": "https://github.com/LibreChat-AI/librechat.ai",
-      "long1": "Official documentation, blog, and changelog for LibreChat. Built with Next.js and Fumadocs. Live at librechat.ai. Maintained by LibreChat-AI on GitHub, where it has earned 640 stars from the community.",
-      "long2": "It's actively developed around docs, librechat, ai, and is a solid reference for anyone building with these tools.",
+      "long1": "Official documentation, blog, and changelog for LibreChat. Built with Next.js and Fumadocs. Live at librechat.ai. Maintained by LibreChat-AI on GitHub, where it has earned 643 stars from the community.",
+      "long2": "It's actively developed around ai, chatbot, docs, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "# Introduction\n\nLibreChat.ai is an open-source AI platform that unifies AI-powered conversations, agents, and tools into a single, customizable interface. Designed for developers, researchers, and organizations, it provides a comprehensive solution for AI-driven interactions, including advanced agents, code interpretation, and persistent memory. This project is built on modern web technologies like Next.js, React, and TypeScript, offering a flexible and scalable architecture for AI applications.\n\n# Key Features\n\n- **Unified AI Interface**: Consolidates all AI conversations, models, and tools into one customizable platform.\n- **Advanced Agents**: Supports file handling, code interpretation, and API actions, enabling complex AI workflows.\n- **Code Interpreter**: Execute code in multiple languages securely with zero setup, integrating directly into chat.\n- **Model Flexibility**: Choose from a range of AI models, including Anthropic, AWS, OpenAI, and Azure, without vendor lock-in.\n- **Artifact Generation**: Create React components, HTML code, and Mermaid diagrams dynamically during conversations.\n- **Search and Memory**: Instantly search messages, files, and code snippets, with persistent context to maintain conversation continuity.\n- **MCP Support**: Connect to external tools or services using the Model Context Protocol (MCP) for extensibility.\n- **Web Search Integration**: Provide live internet access to any model with built-in search and reranking capabilities.\n- **Enterprise Authentication**: Secure with OAuth, SAML, LDAP, and two-factor authentication for production environments.\n\n# Ecosystem and Community\n\nLibreChat.ai thrives on its open-source, community-driven model, with thousands of developers and organizations contributing to its growth. The project is supported by a vibrant ecosystem, including documentation, internationalization (i18n), and integration with tools like Orama for efficient data handling. Contributors collaborate on features like FumaDocs for documentation generation and MDX for content management, ensuring the platform remains adaptable and user-friendly.\n\n# Use Cases\n\n- **AI Research and Development**: Ideal for experimenting with multiple AI models and agents in a unified environment.\n- **Enterprise AI Applications**: Deploy secure, scalable AI solutions with support for enterprise authentication and tool integration.\n- **Code Collaboration**: Use the built-in code interpreter and artifact generation to collaborate on development tasks in real time.\n- **Data Analysis and Visualization**: Leverage the code interpreter and diagram tools to analyze data and visualize results interactively.\n- **Customer Support Automation**: Integrate AI agents with file handling and API actions to streamline support workflows.\n\n# Roadmap and Future Development\n\nThe project\u2019s roadmap focuses on expanding its agentic capabilities, improving model interoperability, and enhancing the developer experience. Future updates may include more advanced tool integration, better support for distributed AI workloads, and additional features for enterprise users. However, specific roadmap details are not yet published, so progress will be announced in the project\u2019s official channels.\n\n# Conclusion\n\nLibreChat.ai stands out as a versatile, open-source AI platform that combines the power of modern AI models with a developer-friendly interface. Whether for research, enterprise deployment, or collaborative coding, it offers a robust solution for AI-driven applications. By fostering community collaboration and continuous innovation, LibreChat.ai is poised to remain a leading choice for AI development.",
       "stack": [
         "MDX",
-        "Docs",
-        "Librechat",
         "Ai",
-        "Chatbot"
+        "Chatbot",
+        "Docs",
+        "Documentation"
       ],
-      "updated": "2 days ago",
-      "pushedAt": "2026-09-04T14:25:53Z",
+      "updated": "5 days ago",
+      "pushedAt": "2026-09-06T13:24:41-06:00",
       "license": "MIT",
       "langs": [
         {
-          "pct": 94,
-          "name": "MDX"
+          "name": "MDX",
+          "pct": 93.991,
+          "size": 22934316
         },
         {
-          "pct": 6,
-          "name": "TypeScript"
+          "name": "TypeScript",
+          "pct": 5.53,
+          "size": 1349423
         },
         {
-          "pct": 0,
-          "name": "JavaScript"
+          "name": "JavaScript",
+          "pct": 0.373,
+          "size": 90913
+        },
+        {
+          "name": "CSS",
+          "pct": 0.092,
+          "size": 22495
+        },
+        {
+          "name": "Shell",
+          "pct": 0.014,
+          "size": 3486
         }
       ],
       "versions": [],
       "topics": [
-        "docs",
-        "librechat",
         "ai",
         "chatbot",
+        "docs",
         "documentation",
         "documentation-site",
         "fumadocs",
         "i18n",
+        "librechat",
         "mdx",
         "nextjs",
         "open-source",
-        "orama"
+        "orama",
+        "react",
+        "tailwindcss",
+        "typescript"
       ],
-      "addedAt": "2026-07-15T22:28:33.182261+00:00"
+      "forks": 456,
+      "issues": 90,
+      "watchers": 8
+    },
+    {
+      "slug": "lobe-chat-toolkit",
+      "name": "lobe-chat-toolkit",
+      "fullName": "Obsidiantrihack/lobe-chat-toolkit",
+      "category": "Real-time",
+      "stars": 190,
+      "author": "Obsidiantrihack",
+      "avatar": "https://avatars.githubusercontent.com/u/313668738?v=4",
+      "desc": "Lobe Chat Toolkit is an open-source AI platform for generating, editing, and enhancing content with machine learning, offering state-of-the-art models, customizable workflows, and API integration for both everyday and power users.",
+      "demo": null,
+      "repoUrl": "https://github.com/Obsidiantrihack/lobe-chat-toolkit",
+      "long1": "Lobe Chat Toolkit. Maintained by Obsidiantrihack on GitHub, where it has earned 190 stars from the community.",
+      "long2": "It's actively developed around chatgpt-clone, free-chatgpt, librechat, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "# Introduction\nLobe Chat Toolkit is an advanced artificial intelligence platform designed for generating, editing, and enhancing content using state-of-the-art machine learning models. It serves both everyday users and power users, offering a flexible and customizable environment for text, image, and content generation. The toolkit is built with a focus on accessibility, providing seamless integration with existing tools and automated pipelines through its robust API capabilities.\n\n# Key Features\n- **State-of-the-Art Models**: Access to the latest AI models for versatile content creation, ensuring high-quality outputs.\n- **Customizable Workflows**: Fine-tune parameters and prompts to achieve precise control over generated content, catering to both beginners and advanced users.\n- **API Integration**: Seamless integration with other tools and automated workflows, making it a powerful addition to any technical stack.\n- **User-Friendly Interface**: Designed with everyday users in mind, offering an intuitive experience without compromising on advanced features.\n\n# Ecosystem and Community\nLobe Chat Toolkit thrives in a vibrant ecosystem that supports both developers and end-users. The project is actively maintained and updated, with regular releases ensuring users always have access to the latest features and improvements. The community around the toolkit is engaged, providing support through documentation, forums, and direct feedback channels. While the project does not explicitly state its connection to LibreChat, it shares the same spirit of open-source innovation and user empowerment.\n\n# Use Cases\n- **Content Creation**: Ideal for generating high-quality text and image content, suitable for blogs, marketing materials, and creative projects.\n- **Automated Workflows**: Integrate with existing tools to automate content generation and editing, streamlining workflows in development and production environments.\n- **Custom AI Solutions**: Develop tailored AI solutions by leveraging the toolkit\u2019s customizable workflows and API, catering to both individual and enterprise needs.\n\n# Roadmap and Future Development\nThe future of Lobe Chat Toolkit is focused on expanding its capabilities while maintaining its user-friendly approach. Potential developments include enhanced model integration, improved API functionality, and additional customization options. The project\u2019s roadmap is guided by user feedback and community contributions, ensuring that it continues to evolve in a way that meets the needs of its diverse user base. While no specific roadmap is stated, the project\u2019s active status and regular updates suggest a commitment to ongoing improvement.\n\n# Conclusion\nLobe Chat Toolkit stands out as a versatile and powerful tool for anyone looking to harness the potential of artificial intelligence for content creation and automation. Its combination of advanced features, user-friendly design, and strong community support makes it an invaluable resource for both beginners and experienced users alike. Whether you're looking to generate content, automate workflows, or explore the possibilities of AI, Lobe Chat Toolkit provides the tools and flexibility to bring your vision to life.",
+      "stack": [
+        "Chatgpt Clone",
+        "Free Chatgpt",
+        "Librechat",
+        "Live Chat"
+      ],
+      "updated": "1 week ago",
+      "pushedAt": "2026-09-02T18:02:19-06:00",
+      "license": "\u2014",
+      "langs": [
+        {
+          "name": "JavaScript",
+          "pct": 72
+        },
+        {
+          "name": "JavaScript",
+          "pct": 20
+        },
+        {
+          "name": "Other",
+          "pct": 8
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "chatgpt-clone",
+        "free-chatgpt",
+        "librechat",
+        "live-chat",
+        "lobechat",
+        "lobehub",
+        "real-time-chat",
+        "real-time-chat-app",
+        "real-time-chat-application",
+        "realtime-chat",
+        "realtime-chat-app"
+      ],
+      "watchers": 190
     },
     {
       "slug": "claude-3",
       "name": "claude-3",
       "fullName": "galaxyapi/claude-3",
       "category": "AI & ML",
-      "stars": 126,
+      "stars": 127,
       "author": "galaxyapi",
-      "avatar": "https://avatars.githubusercontent.com/u/146201481?u=5dc9212d1a83fb8def84e4f3dbc1f3dddf5a9d50&v=4",
-      "desc": "Free Proxy to access Claude-3 API. Anthropic key not required 🔐. It uses OpenAI format api to easily integrate on any Openai supported frontend.",
+      "avatar": "https://avatars.githubusercontent.com/u/146201481?v=4",
+      "desc": "GalaxyAPI/claude-3 is a free proxy that provides OpenAI-compatible access to Claude-3 without requiring an Anthropic API key, enabling easy integration with any OpenAI-supported frontend.",
       "demo": "https://discord.com/invite/HGdtHgCMua",
       "repoUrl": "https://github.com/galaxyapi/claude-3",
-      "long1": "Free Proxy to access Claude-3 API. Anthropic key not required 🔐. It uses OpenAI format api to easily integrate on any Openai supported frontend. Maintained by galaxyapi on GitHub, where it has earned 126 stars from the community.",
+      "long1": "Free Proxy to access Claude-3 API. Anthropic key not required \ud83d\udd10. It uses OpenAI format api to easily integrate on any Openai supported frontend. Maintained by galaxyapi on GitHub, where it has earned 127 stars from the community.",
       "long2": "It's actively developed around anthropic, chatgpt, chatgpt-proxy, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "# Introduction\n**Claude-3 (galaxyapi/claude-3)** is a free, OpenAI-format API proxy that provides seamless access to Anthropic's Claude-3 models without requiring an Anthropic API key. Designed for developers and front-end integrators, it offers a cost-effective alternative for projects needing Claude-3's advanced capabilities, including roleplaying and technical diagram generation.\n\nThis project bridges the gap between Claude-3's powerful features and existing OpenAI-compatible front-ends like LibreChat, SillyTavern, and JanitorAI. With support for Python and Node.js, it enables easy integration while maintaining compatibility with OpenAI's API structure.\n\n# Key Features\n- **OpenAI-Compatible API**: Uses the familiar OpenAI format, making integration trivial for any OpenAI-supported frontend\n- **No Anthropic Key Required**: Eliminates the need for an Anthropic API key while maintaining full Claude-3 functionality\n- **Multi-Language Support**: Works with both Python (using the OpenAI SDK) and Node.js implementations\n- **Cost-Effective**: Provides access to Claude-3 models without additional costs beyond the Galaxy API key\n- **Simple Integration**: Requires just three steps for front-end integration, including replacing the proxy URL and adding your Galaxy API key\n\n# Ecosystem and Community\nThe project thrives within the open-source AI ecosystem, particularly serving developers working with Claude-3 models. It's actively used in communities like SillyTavern, LibreChat, and JanitorAI, where users benefit from its proxy architecture.\n\nCommunity engagement happens primarily through the [Galaxy API Discord](https://discord.com/invite/HGdtHgCMua), where users can report issues, share implementations, and collaborate on improvements. The project maintains strong ties with the broader AI development community, particularly those interested in alternative API solutions.\n\n# Use Cases\n- **AI Roleplaying**: Leverage Claude-3's advanced roleplaying capabilities in custom front-ends\n- **Technical Diagram Generation**: Process images into technical diagrams using Claude-3's vision capabilities\n- **OpenAI-Compatible Front-Ends**: Integrate with any OpenAI-supported frontend without modifying their codebase\n- **Cost-Sensitive Projects**: Access Claude-3 models without incurring additional API costs\n- **Multi-Model Workflows**: Combine Claude-3 with other OpenAI-compatible models in unified workflows\n\nExample use cases include:\n- Building custom AI companions with advanced roleplaying features\n- Creating technical documentation from hand-drawn diagrams\n- Developing AI applications that require both Claude-3 and OpenAI models\n\n# Roadmap and Future Development\nThe project's development is guided by community needs and the evolving capabilities of Claude-3 models. Future plans may include:\n- Expanded model support as Claude-3 evolves\n- Improved documentation and integration guides\n- Enhanced error handling and performance optimizations\n- Additional language support beyond Python and Node.js\n\nDevelopment is community-driven, with contributions welcome through the project's issue tracker and Discord channel. The roadmap remains flexible to accommodate new requirements from the AI development community.\n\n# Conclusion\n**Claude-3 (galaxyapi/claude-3)** represents an innovative solution for developers seeking to integrate Anthropic's advanced models with existing OpenAI-compatible infrastructure. Its simple architecture, cost-effectiveness, and broad compatibility make it a valuable tool for AI projects requiring Claude-3's capabilities without the constraints of traditional API access.\n\nFor those working with AI front-ends or exploring alternative API solutions, this project offers a practical path to leveraging Claude-3's powerful features while maintaining compatibility with established development workflows.",
       "stack": [
         "Anthropic",
         "Chatgpt",
@@ -153,8 +232,8 @@
         "Claude 3"
       ],
       "updated": "2 years ago",
-      "pushedAt": "2024-04-12T16:46:54Z",
-      "license": "—",
+      "pushedAt": "2024-04-12T10:46:54-06:00",
+      "license": "\u2014",
       "langs": [
         {
           "name": "JavaScript",
@@ -176,64 +255,30 @@
         "chatgpt-proxy",
         "claude-3",
         "claude-api",
+        "galaxyai",
         "gpt-4",
         "librechat",
+        "midjourney",
         "openai",
-        "galaxyai",
-        "sillytavern",
-        "midjourney"
+        "sillytavern"
       ],
-      "addedAt": "2026-07-15T22:28:33.182261+00:00"
-    },
-    {
-      "slug": "librechat-config-yaml",
-      "name": "librechat-config-yaml",
-      "fullName": "LibreChat-AI/librechat-config-yaml",
-      "category": "DevTools",
-      "stars": 84,
-      "author": "LibreChat-AI",
-      "avatar": "https://avatars.githubusercontent.com/u/169401942?v=4",
-      "desc": "LibreChat Config Files aka librechat.yaml Collection",
-      "demo": "https://chat.librechat.ai",
-      "repoUrl": "https://github.com/LibreChat-AI/librechat-config-yaml",
-      "long1": "LibreChat Config Files aka librechat.yaml Collection. Maintained by LibreChat-AI on GitHub, where it has earned 84 stars from the community.",
-      "long2": "It's actively developed around librechat, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Python",
-        "Librechat"
-      ],
-      "updated": "5 weeks ago",
-      "pushedAt": "2026-08-04T00:29:02Z",
-      "license": "—",
-      "langs": [
-        {
-          "pct": 96,
-          "name": "Python"
-        },
-        {
-          "pct": 4,
-          "name": "JavaScript"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "librechat"
-      ],
-      "addedAt": "2026-07-15T22:28:33.182261+00:00"
+      "forks": 7,
+      "watchers": 1
     },
     {
       "slug": "librechat-mobile",
       "name": "Librechat-Mobile",
       "fullName": "garfiec/Librechat-Mobile",
       "category": "AI & ML",
-      "stars": 74,
+      "stars": 92,
       "author": "garfiec",
       "avatar": "https://avatars.githubusercontent.com/u/25524401?v=4",
-      "desc": "Native Android & iOS client for LibreChat, built with Kotlin Multiplatform and Compose Multiplatform",
+      "desc": "LibreChat-Mobile is a native Android and iOS client for LibreChat, built with Kotlin Multiplatform and Compose Multiplatform, offering a smoother, faster, and more integrated mobile experience than the web app.",
       "demo": null,
       "repoUrl": "https://github.com/garfiec/Librechat-Mobile",
-      "long1": "Native Android & iOS client for LibreChat, built with Kotlin Multiplatform and Compose Multiplatform. Maintained by garfiec on GitHub, where it has earned 74 stars from the community.",
+      "long1": "Native Android & iOS client for LibreChat, built with Kotlin Multiplatform and Compose Multiplatform. Maintained by garfiec on GitHub, where it has earned 92 stars from the community.",
       "long2": "It's actively developed around ai-assistant, ai-chat, android, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "# Introduction\n\nLibrechat-Mobile is a native Android & iOS client for LibreChat, built with Kotlin Multiplatform and Compose Multiplatform. It offers a smoother, faster, and more mobile-friendly experience compared to the web app, with features like swipe-to-switch accounts, native predictive-back gestures, and on-device voice typing. This third-party client connects to any self-hosted LibreChat server without requiring backend modifications, supporting versions v0.8.4 to v0.8.8-rc1.\n\nDesigned for users who want a true mobile app experience, Librechat-Mobile provides a dual-pane layout that adapts to phones, tablets, and foldables, along with rich media viewing, pinning artifacts to the home screen, and deep integration with mobile device features like sharing and saving. It supports multiple accounts across different LibreChat servers, ensuring seamless switching without re-logging in.\n\n# Key Features\n\n- **Multi-Account & Multi-Server Support**: Sign in to multiple LibreChat servers and switch between accounts instantly with swipe gestures. Storage is fully scoped per account.\n- **Native Mobile Experience**: Adaptive UI for phones, tablets, and foldables, with predictive-back gestures and familiar mobile gestures like swipe-to-switch.\n- **Rich Media & Artifacts**: Full-screen viewer for images, Mermaid diagrams, SVG, HTML, React, and Markdown artifacts with pinch-to-zoom and swipe navigation.\n- **Voice & Dictation**: On-device live dictation with cloud fallback, plus text-to-speech playback.\n- **Themes & Personalization**: Choose accent colors to generate a Material 3 palette, with presets or custom HSV/hex values. Supports system/light/dark modes and Material You colors on Android 12+.\n- **Chat & Conversations**: Real-time streaming (SSE), message branching, stop/regenerate/continue, markdown with syntax highlighting, LaTeX math rendering, code blocks with copy, and file attachments.\n- **Model Selection & Agents**: Searchable bottom sheet for models grouped by endpoint, plus a marketplace for agents with search and categories.\n- **Settings & Accessibility**: In-app language switching, account management, data controls, and accessibility features like semantic headings and 48dp touch targets.\n\n# Ecosystem and Community\n\nLibrechat-Mobile is part of a broader ecosystem of third-party clients for LibreChat, offering a native mobile alternative to the web app. It is not affiliated with the official LibreChat project but is built to be fully compatible with self-hosted LibreChat servers, requiring no backend modifications. The project is maintained by the repository owner, garfiec, and is actively developed with contributions from the community.\n\nThe project supports a wide range of features, including multi-account and multi-server use, which makes it a versatile tool for users who manage multiple LibreChat instances. It is designed to be self-contained, with all chat data stored locally on the device, ensuring privacy and offline functionality.\n\n# Use Cases\n\n- **Power Users**: Ideal for users who need a fast, native mobile experience with advanced features like multi-account switching, rich media viewing, and on-device dictation.\n- **Self-Hosted LibreChat Users**: Perfect for those who self-host LibreChat and want a dedicated mobile client without relying on the web app.\n- **Developers & Tech Enthusiasts**: Offers deep integration with mobile features like sharing, saving, and pinning artifacts, making it a powerful tool for developers and tech-savvy users.\n- **Accessibility-Focused Users**: With features like semantic headings, content descriptions, and 48dp touch targets, it caters to users with accessibility needs.\n\n# Roadmap and Future Development\n\nThe project is currently focused on maintaining compatibility with the latest LibreChat releases, with best-effort support for newer versions. Future development may include additional features like improved model selection, enhanced agent support, and more advanced personalization options. However, the roadmap is not explicitly stated, and development is driven by community needs and contributions.\n\n# Conclusion\n\nLibrechat-Mobile is a powerful, native mobile client for LibreChat, offering a smoother, faster, and more mobile-friendly experience compared to the web app. With its extensive feature set, including multi-account support, rich media viewing, and on-device dictation, it is an excellent choice for users who want a true mobile app experience. Whether you are a power user, a self-hosted LibreChat user, or a developer, Librechat-Mobile provides the tools you need to make the most of your mobile device.",
       "stack": [
         "Kotlin",
         "Ai Assistant",
@@ -241,45 +286,37 @@
         "Android",
         "Anthropic"
       ],
-      "updated": "5 weeks ago",
-      "pushedAt": "2026-08-04T22:26:46Z",
+      "updated": "3 days ago",
+      "pushedAt": "2026-09-09T06:33:47-06:00",
       "license": "MIT",
       "langs": [
         {
-          "pct": 98,
-          "name": "Kotlin"
+          "name": "Kotlin",
+          "pct": 96.978,
+          "size": 7716344
         },
         {
-          "pct": 1,
-          "name": "Python"
+          "name": "Python",
+          "pct": 1.749,
+          "size": 139164
         },
         {
-          "pct": 1,
-          "name": "JavaScript"
+          "name": "JavaScript",
+          "pct": 0.893,
+          "size": 71056
+        },
+        {
+          "name": "Swift",
+          "pct": 0.224,
+          "size": 17794
+        },
+        {
+          "name": "Shell",
+          "pct": 0.157,
+          "size": 12477
         }
       ],
-      "versions": [
-        {
-          "url": "https://github.com/garfiec/Librechat-Mobile/releases/tag/v2026.08.0",
-          "name": "v2026.08.0"
-        },
-        {
-          "url": "https://github.com/garfiec/Librechat-Mobile/releases/tag/v2026.07.6",
-          "name": "v2026.07.6"
-        },
-        {
-          "url": "https://github.com/garfiec/Librechat-Mobile/releases/tag/v2026.07.5",
-          "name": "v2026.07.5"
-        },
-        {
-          "url": "https://github.com/garfiec/Librechat-Mobile/releases/tag/v2026.07.4",
-          "name": "v2026.07.4"
-        },
-        {
-          "url": "https://github.com/garfiec/Librechat-Mobile/releases/tag/v2026.07.3",
-          "name": "v2026.07.3"
-        }
-      ],
+      "versions": [],
       "topics": [
         "ai-assistant",
         "ai-chat",
@@ -292,9 +329,133 @@
         "compose-multiplatform",
         "gemini",
         "ios",
-        "kotlin-multiplaform"
+        "kotlin-multiplaform",
+        "librechat",
+        "librechat-client",
+        "llm",
+        "mcp",
+        "mobile-client",
+        "openai",
+        "self-hosted",
+        "third-party-clients"
       ],
-      "addedAt": "2026-07-15T22:28:33.182261+00:00"
+      "forks": 24,
+      "issues": 18,
+      "watchers": 92
+    },
+    {
+      "slug": "librechat-config-yaml",
+      "name": "librechat-config-yaml",
+      "fullName": "LibreChat-AI/librechat-config-yaml",
+      "category": "DevTools",
+      "stars": 87,
+      "author": "LibreChat-AI",
+      "avatar": "https://avatars.githubusercontent.com/u/169401942?v=4",
+      "desc": "This open-source project provides a collection of LibreChat configuration files in YAML format, supporting various API key strategies and deployment scenarios for production and testing environments.",
+      "demo": "https://chat.librechat.ai",
+      "repoUrl": "https://github.com/LibreChat-AI/librechat-config-yaml",
+      "long1": "LibreChat Config Files aka librechat.yaml Collection. Maintained by LibreChat-AI on GitHub, where it has earned 87 stars from the community.",
+      "long2": "It's actively developed around librechat, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "# Introduction\n**librechat-config-yaml** is a curated collection of pre-configured `librechat.yaml` files designed to streamline setup for applications using LibreChat's configuration system. This project provides ready-to-use configuration templates that cover production, staging, and user-provided API key scenarios, with support for both local and Firebase storage backends. Developers can quickly integrate these configurations by referencing raw URLs in their `.env` files, eliminating the need to manually craft configuration files from scratch.\n\nThe project maintains a schema version pinned to `1.3.11`, ensuring compatibility with LibreChat's core configuration schema. It serves as a practical resource for developers looking to accelerate deployment while maintaining flexibility in API key management and storage strategies.\n\n# Key Features\n- **Pre-configured Templates**: Five distinct `librechat.yaml` files tailored for different use cases, including production and staging environments.\n- **API Key Flexibility**: Supports both environment-based and user-provided API keys, with options for local and Firebase storage.\n- **Schema Compliance**: All configurations adhere to the `configSchema` version `1.3.11`, ensuring compatibility with LibreChat's configuration system.\n- **Quick Deployment**: Direct integration via raw URLs, allowing developers to set up configurations in minutes.\n- **Extensible Scripting**: Includes scripts in a dedicated folder for generating and updating configuration files, reducing manual effort.\n\n# Ecosystem and Community\n**librechat-config-yaml** thrives on community contributions, with a clear emphasis on maintaining consistency and scalability. Contributors are encouraged to use the provided scripts for file generation and updates, rather than manual edits. The project maintains a list of supported API providers, including options like Cohere, HuggingFace, and Groq, with clear instructions for obtaining API keys.\n\nThe community-driven approach ensures that the project remains adaptable to new endpoints and evolving requirements. Contributors are advised to alphabetize APIs and provide logos for new additions, fostering a structured and maintainable ecosystem.\n\n# Use Cases\n- **Production Deployments**: Use `librechat-env-l.yaml` or `librechat-env-f.yaml` for production environments with environment-based API keys.\n- **User-Provided Configurations**: Deploy `librechat-up-l.yaml` or `librechat-up-f.yaml` for setups where API keys are provided by users.\n- **Staging and Canary Testing**: Utilize `librechat-test.yaml` for staging environments, with the caveat that it is not recommended for downstream pinning.\n- **Quick Prototyping**: Leverage the pre-configured templates to rapidly prototype and test configurations without manual setup.\n\n# Roadmap and Future Development\nThe project's roadmap is shaped by community needs and the evolving landscape of API providers. Future development will focus on:\n- **Adding New Endpoints**: Expanding the list of supported API providers, with a focus on maintaining alphabetical order and providing logos.\n- **Script Enhancements**: Improving the scripts in the `scripts` folder to streamline file generation and updates.\n- **Schema Updates**: Ensuring that configurations remain compatible with the latest `configSchema` versions from LibreChat.\n\n# Conclusion\n**librechat-config-yaml** stands as a practical and community-driven resource for developers seeking to simplify the setup of LibreChat configurations. By providing pre-configured templates, flexible API key management, and robust scripting tools, the project empowers developers to focus on building rather than configuring. Whether for production, staging, or prototyping, this collection offers a versatile solution for integrating LibreChat's configuration system.",
+      "stack": [
+        "Python",
+        "Librechat"
+      ],
+      "updated": "today",
+      "pushedAt": "2026-09-11T18:17:30-06:00",
+      "license": "\u2014",
+      "langs": [
+        {
+          "name": "Python",
+          "pct": 96.45,
+          "size": 221809
+        },
+        {
+          "name": "JavaScript",
+          "pct": 3.55,
+          "size": 8164
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "librechat"
+      ],
+      "forks": 96,
+      "issues": 9,
+      "watchers": 3
+    },
+    {
+      "slug": "actual-mcp-server",
+      "name": "actual-mcp-server",
+      "fullName": "agigante80/actual-mcp-server",
+      "category": "DevTools",
+      "stars": 54,
+      "author": "agigante80",
+      "avatar": "https://avatars.githubusercontent.com/u/6804522?v=4",
+      "desc": "Actual MCP Server is a Model Context Protocol (MCP) server that bridges AI assistants like LibreChat, LobeChat, or Claude Desktop to self-hosted Actual Budget, providing 81 tools for transactions, budgets, rules, and bank sync via HTTP or stdio without requiring Docker for local use.",
+      "demo": null,
+      "repoUrl": "https://github.com/agigante80/actual-mcp-server",
+      "long1": "Talk to your self-hosted Actual Budget from any MCP client: a remote HTTP server for LibreChat/LobeChat or a local stdio process for Claude Desktop, with 71 tools for transactions, budgets, rules, and bank sync. No Docker needed for local use. Maintained by agigante80 on GitHub, where it has earned 54 stars from the community.",
+      "long2": "It's actively developed around actual-budget, ai-assistant, api-server, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "# Introduction\n\n**Actual MCP Server** is a Model Context Protocol (MCP) server that bridges self-hosted Actual Budget instances with AI assistants, enabling natural language budget management. It supports both remote HTTP-based clients (like LibreChat-compatible assistants) and local stdio processes (for Claude Desktop). With 81 tools covering transactions, budgets, rules, and bank sync, it offers the most comprehensive integration available for Actual Budget.\n\nDesigned for production-grade reliability, Actual MCP Server supports multi-budget switching, OIDC authentication, and efficient connection handling\u2014whether deployed via Docker or as a standalone Node.js application. Its architecture ensures low-latency performance even under high load, with features like connection pooling and exponential backoff retries.\n\n---\n\n# Key Features\n\n- **Comprehensive Tool Coverage (81 tools)**: Full access to Actual Budget\u2019s API, including accounts, transactions, categories, payees, tags, notes, rules, budgets, and bank sync\u2014with no gaps in functionality.\n- **Dual Transport Modes**:\n  - **HTTP/REST**: For remote AI assistants (e.g., LibreChat-compatible clients) via a persistent server.\n  - **stdio**: For local use with Claude Desktop, supporting long-lived processes to avoid per-call authentication overhead.\n- **ActualQL-Powered Tools**: Six exclusive tools that leverage Actual Budget\u2019s native query engine to search and summarize transactions by month, amount, category, or payee\u2014without dumping raw data into the AI context.\n- **Multi-Budget Switching**: Dynamically switch between configured budget files mid-conversation, with session-specific scoping for stdio clients (e.g., Claude Desktop).\n- **Production-Grade Security & Performance**:\n  - OIDC authentication with JWKS-validated JWTs and per-user budget ACLs.\n  - HTTP connection pooling (up to 15 concurrent sessions) and a long-lived stdio process to minimize authentication overhead.\n  - Automatic retry with exponential backoff and a full test suite (unit, E2E, and integration).\n\n---\n\n# Ecosystem and Community\n\nActual MCP Server integrates seamlessly with the Actual Budget ecosystem, leveraging its native API and query engine. It is verified to work with MCP-compatible AI assistants, including LibreChat, LobeChat, and Claude Desktop, though its design ensures compatibility with any MCP client.\n\nThe project maintains strong community ties, with active contributions to the Actual Budget ecosystem and participation in forums like the Unraid Community Apps catalog. Its Docker image is widely used, and the codebase is structured for easy extension or customization.\n\n---\n\n# Use Cases\n\n- **AI-Powered Budget Management**: Ask natural language questions, analyze spending, and create transactions without opening the Actual Budget UI.\n- **Remote Budget Access**: Securely expose your Actual Budget instance to remote AI assistants (e.g., LibreChat) via HTTP, with multi-user support.\n- **Local AI Integration**: Use with Claude Desktop or similar stdio-based clients for seamless, low-latency budget interactions.\n- **Bank Sync Automation**: Automate bank sync operations and rule-based adjustments via AI-driven workflows.\n- **Multi-User Environments**: Deploy in shared or production environments with OIDC authentication and per-user budget isolation.\n\n---\n\n# Roadmap and Future Development\n\nThe project\u2019s immediate focus is on stability and performance, with ongoing optimizations for connection handling and authentication. Future development may include:\n- Expanded support for additional MCP-compatible clients.\n- Enhanced tooling for advanced Actual Budget features (e.g., deeper bank sync integrations).\n- Improved documentation and onboarding for new users.\n\nNo specific roadmap is published, but the project\u2019s active development and community engagement suggest a focus on scalability and interoperability.\n\n---\n\n# Conclusion\n\nActual MCP Server is the most feature-complete and production-ready solution for integrating Actual Budget with AI assistants, offering unmatched tool coverage, dual transport modes, and robust security. Whether you need remote HTTP access for LibreChat-compatible clients or local stdio support for Claude Desktop, this project delivers a seamless, efficient, and secure experience\u2014backed by a strong community and a commitment to long-term maintenance.",
+      "stack": [
+        "JavaScript",
+        "Actual Budget",
+        "Ai Assistant",
+        "Api Server",
+        "Budget Management"
+      ],
+      "updated": "5 days ago",
+      "pushedAt": "2026-09-06T13:16:59-06:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "JavaScript",
+          "pct": 60.304,
+          "size": 1909403
+        },
+        {
+          "name": "TypeScript",
+          "pct": 36.211,
+          "size": 1146547
+        },
+        {
+          "name": "Shell",
+          "pct": 2.253,
+          "size": 71325
+        },
+        {
+          "name": "Python",
+          "pct": 1.15,
+          "size": 36424
+        },
+        {
+          "name": "Dockerfile",
+          "pct": 0.082,
+          "size": 2612
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "actual-budget",
+        "ai-assistant",
+        "api-server",
+        "budget-management",
+        "budget-tracking",
+        "conversation-ai",
+        "docker",
+        "finance-automation",
+        "financial-management",
+        "librechat",
+        "mcp",
+        "model-context-protocol",
+        "nodejs",
+        "personal-finance",
+        "typescript"
+      ],
+      "forks": 19,
+      "issues": 3,
+      "watchers": 54
     },
     {
       "slug": "librechatazuredeployment",
@@ -304,11 +465,12 @@
       "stars": 53,
       "author": "thunderbug1",
       "avatar": "https://avatars.githubusercontent.com/u/1395321?v=4",
-      "desc": "A Terraform setup to deploy LibreChat to Azure and setup all the necessary services.",
+      "desc": "This Terraform setup automates the deployment of LibreChat to Azure, provisioning all required services including a CosmosDB instance for data storage.",
       "demo": null,
       "repoUrl": "https://github.com/thunderbug1/LibreChatAzureDeployment",
       "long1": "A Terraform setup to deploy LibreChat to Azure and setup all the necessary services. Maintained by thunderbug1 on GitHub, where it has earned 53 stars from the community.",
       "long2": "It's actively developed around azure, librechat, terraform, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "# Introduction\n\n**LibreChatAzureDeployment** is a Terraform-based solution designed to deploy LibreChat to Microsoft Azure, automating the provisioning of all necessary cloud services. This project simplifies the deployment process for developers and organizations looking to host LibreChat on Azure infrastructure, with a focus on scalability, security, and ease of setup.\n\nBuilt using **HCL (HashiCorp Configuration Language)**, this repository provides a streamlined workflow for deploying LibreChat with Azure services like CosmosDB, ensuring a production-ready environment without manual configuration. Whether you're a developer deploying a chat application or an organization setting up a chatbot service, this project offers a robust, infrastructure-as-code approach to deployment.\n\n# Key Features\n\n- **Automated Azure Deployment**: Uses Terraform to provision all required Azure services, including networking, compute, and databases, in a single command.\n- **Customizable Configuration**: Edit `terraform.tfvars` to customize deployment parameters, such as MongoDB connection strings (defaulting to CosmosDB for simplicity).\n- **VS-Code Integration**: Designed for seamless development in VS-Code with Devcontainer support, streamlining the development and deployment workflow.\n- **Minimal Prerequisites**: Requires only an existing Azure subscription and basic CLI tools (e.g., `az login` for authentication).\n- **Efficient Teardown**: Clean up all deployed resources with `terraform destroy`, ensuring no residual cloud costs.\n\n# Ecosystem and Community\n\nThis project operates within the broader **Terraform ecosystem**, leveraging its infrastructure-as-code capabilities to deploy applications on Azure. While it is tailored for LibreChat deployments, its modular design allows for adaptation to other similar applications with minimal changes.\n\nThe project benefits from the active **Azure and Terraform communities**, providing access to extensive documentation, support forums, and best practices for cloud deployments. Contributions are welcome, particularly for improving deployment flexibility, adding support for additional Azure services, or enhancing documentation.\n\n# Use Cases\n\n- **Developers deploying chat applications**: Quickly set up a production-ready LibreChat instance on Azure with minimal effort.\n- **Organizations requiring chatbot services**: Deploy a scalable, secure chatbot solution with automated infrastructure provisioning.\n- **Experimentation with cloud-native applications**: Test and deploy cloud-native applications using Terraform and Azure, with LibreChat as a reference use case.\n- **Learning Terraform and Azure**: A practical example for learning how to deploy applications on Azure using Terraform, with clear documentation and step-by-step instructions.\n\n# Roadmap and Future Development\n\nFuture development may focus on expanding the project's flexibility, such as adding support for additional database options (e.g., MongoDB Atlas) or integrating more Azure services (e.g., AKS for Kubernetes-based deployments). However, the current scope is primarily centered on providing a straightforward, opinionated deployment solution for LibreChat on Azure.\n\nNo specific roadmap or development plans are stated in the source, so this section remains focused on plausible future directions based on the project's current capabilities.\n\n# Conclusion\n\n**LibreChatAzureDeployment** offers a powerful, developer-friendly solution for deploying LibreChat on Azure, combining the simplicity of Terraform with the robustness of Azure cloud services. Whether you're a developer, an organization, or a learner, this project provides a clear, efficient path to deploying a chat application in the cloud. For those looking to streamline their Azure deployments, this repository is a valuable resource, offering both automation and customization.",
       "stack": [
         "HCL",
         "Azure",
@@ -316,12 +478,13 @@
         "Terraform"
       ],
       "updated": "2 years ago",
-      "pushedAt": "2024-04-11T14:23:03Z",
+      "pushedAt": "2024-04-11T08:23:03-06:00",
       "license": "MIT",
       "langs": [
         {
-          "pct": 100,
-          "name": "HCL"
+          "name": "HCL",
+          "pct": 100.0,
+          "size": 23288
         }
       ],
       "versions": [],
@@ -330,21 +493,24 @@
         "librechat",
         "terraform"
       ],
-      "addedAt": "2026-07-15T22:28:33.182261+00:00"
+      "forks": 36,
+      "issues": 8,
+      "watchers": 3
     },
     {
       "slug": "network-mcp-docker-suite",
       "name": "network-mcp-docker-suite",
       "fullName": "pamosima/network-mcp-docker-suite",
       "category": "DevTools",
-      "stars": 49,
+      "stars": 53,
       "author": "pamosima",
-      "avatar": "https://avatars.githubusercontent.com/u/16715420?u=3b6581a2f146da1a68cc21564346de7a3cf918f5&v=4",
-      "desc": "Docker-based MCP server suite for AIOps - Cisco Meraki, Catalyst Center, IOS XE, ISE, ThousandEyes, Splunk & NetBox. AI-ready with LibreChat integration.",
+      "avatar": "https://avatars.githubusercontent.com/u/16715420?v=4",
+      "desc": "This open-source project provides a Docker-based MCP server suite for AIOps, integrating Cisco Meraki, Catalyst Center, IOS XE, ISE, ThousandEyes, Splunk, and NetBox with AI-ready LibreChat support.",
       "demo": "https://gblogs.cisco.com/ch-tech/mcp-protocol-ai-network-operations/",
       "repoUrl": "https://github.com/pamosima/network-mcp-docker-suite",
-      "long1": "Docker-based MCP server suite for AIOps - Cisco Meraki, Catalyst Center, IOS XE, ISE, ThousandEyes, Splunk & NetBox. AI-ready with LibreChat integration. Maintained by pamosima on GitHub, where it has earned 49 stars from the community.",
+      "long1": "Docker-based MCP server suite for AIOps - Cisco Meraki, Catalyst Center, IOS XE, ISE, ThousandEyes, Splunk & NetBox. AI-ready with LibreChat integration. Maintained by pamosima on GitHub, where it has earned 53 stars from the community.",
       "long2": "It's actively developed around aiops, catalyst, center, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "# Introduction\n\nThe **network-mcp-docker-suite** is an open-source toolbox designed to enable AI-driven network operations through the **Model Context Protocol (MCP)**. It provides a standardized, secure way for AI agents to interact with network infrastructure, including **Catalyst Center, IOS XE, NetBox, and Splunk**, without requiring direct API integration. This suite abstracts complex network APIs, making it easier for AI assistants\u2014such as those in **LibreChat** or other LLM-based environments\u2014to troubleshoot, monitor, and manage hybrid network environments efficiently.\n\nBuilt for **network engineers and DevOps teams**, this project bridges the gap between natural language queries and underlying network systems, reducing the need for manual CLI commands or API maintenance. It is particularly valuable in **AIOps** scenarios, where AI agents must correlate data across multiple platforms (e.g., **Cisco ISE, ThousandEyes, Meraki**) to resolve issues autonomously.\n\n# Key Features\n\n- **MCP Protocol Integration**: Seven MCP servers (e.g., **Catalyst Center MCP, IOS XE MCP, NetBox MCP**) act as translators, converting standardized MCP requests into native APIs (REST, SSH/CLI) for seamless AI-agent communication.\n- **API Abstraction**: Changes to backend APIs (e.g., **Cisco Catalyst, IOS XE**) do not break integrations, as MCP servers handle updates independently.\n- **Security and Control**: MCP servers manage authentication, authorization, and audit logs, ensuring secure access to network systems.\n- **Interoperability**: Works with multiple AI assistants (e.g., **Claude Desktop, Cursor IDE, LibreChat**) and LLM models, enabling context-rich troubleshooting.\n- **Dockerized Deployment**: Lightweight, containerized setup for easy integration into existing **NetDevOps** or **AgenticOps** workflows.\n\n# Ecosystem and Community\n\nThe **network-mcp-docker-suite** is part of a growing ecosystem exploring **AI-powered network management** through the **MCP protocol**. While it is a personal open-source project (not an official Cisco product), it aligns with broader initiatives in **AIOps, NetAIOps, and AgenticOps**, where AI agents automate network operations.\n\nThe project is maintained by **pamosima** and is designed to be extensible, allowing network engineers to add support for additional tools (e.g., **Splunk, ThousandEyes, Meraki**) by creating new MCP servers. Contributions are welcome, particularly for expanding MCP server coverage or improving integration with other AI platforms.\n\n# Use Cases\n\n- **Network Troubleshooting**: Ask an AI agent (e.g., in **LibreChat**) to diagnose a **P1 issue on Catalyst Center**, and the MCP suite will query relevant APIs, correlate data, and return actionable insights.\n- **Hybrid Infrastructure Management**: Simplify operations across **cloud and on-premises** environments by unifying access to **IOS XE, NetBox, and Splunk** through a single protocol.\n- **Automated Monitoring**: Deploy MCP servers to monitor **Cisco ISE, ThousandEyes, or Meraki** without manual scripting, reducing operational overhead.\n- **API-agnostic AI Integration**: Enable AI assistants to interact with legacy or proprietary network tools without requiring custom API clients for each.\n\n# Roadmap and Future Development\n\nThe project\u2019s immediate focus is on expanding MCP server support for additional network tools (e.g., **Splunk, ThousandEyes, Meraki**), as outlined in the [three-part blog series](https://www.cisco.com/c/en/us/about/technology-blog/2025/november/when-networks-understand-what-you-want-not-just-what-you-say-the-mcp-protocol-revolution.html). Future work may include:\n- Improving **authentication and authorization** mechanisms for MCP servers.\n- Enhancing **context-awareness** for AI agents to handle more complex queries.\n- Exploring **federated MCP deployments** for large-scale network environments.\n\nNo official roadmap has been published, but the project remains open to community contributions for new use cases.\n\n# Conclusion\n\nThe **network-mcp-docker-suite** represents a step forward in **AI-driven network operations**, leveraging the **MCP protocol** to simplify interactions between AI agents and network infrastructure. By abstracting APIs and enabling secure, standardized communication, it empowers network engineers to adopt **AIOps** and **AgenticOps** workflows without the complexity of traditional integrations. Whether for troubleshooting, monitoring, or automation, this toolbox provides a scalable foundation for the future of network management.",
       "stack": [
         "Python",
         "Aiops",
@@ -352,45 +518,27 @@
         "Center",
         "Cisco"
       ],
-      "updated": "5 weeks ago",
-      "pushedAt": "2026-08-04T14:34:03Z",
-      "license": "—",
+      "updated": "6 weeks ago",
+      "pushedAt": "2026-08-04T08:34:01-06:00",
+      "license": "\u2014",
       "langs": [
         {
-          "pct": 90,
-          "name": "Python"
+          "name": "Python",
+          "pct": 89.544,
+          "size": 183418
         },
         {
-          "pct": 6,
-          "name": "Shell"
+          "name": "Shell",
+          "pct": 6.408,
+          "size": 13126
         },
         {
-          "pct": 4,
-          "name": "Dockerfile"
+          "name": "Dockerfile",
+          "pct": 4.048,
+          "size": 8291
         }
       ],
-      "versions": [
-        {
-          "url": "https://github.com/pamosima/network-mcp-docker-suite/releases/tag/v1.4.3",
-          "name": "v1.4.3"
-        },
-        {
-          "url": "https://github.com/pamosima/network-mcp-docker-suite/releases/tag/v1.4.2",
-          "name": "v1.4.2"
-        },
-        {
-          "url": "https://github.com/pamosima/network-mcp-docker-suite/releases/tag/v1.4.1",
-          "name": "v1.4.1"
-        },
-        {
-          "url": "https://github.com/pamosima/network-mcp-docker-suite/releases/tag/v1.4.0",
-          "name": "v1.4.0"
-        },
-        {
-          "url": "https://github.com/pamosima/network-mcp-docker-suite/releases/tag/v1.3.0",
-          "name": "v1.3.0"
-        }
-      ],
+      "versions": [],
       "topics": [
         "aiops",
         "catalyst",
@@ -405,199 +553,69 @@
         "splunk",
         "thousandeyes"
       ],
-      "addedAt": "2026-07-15T22:28:33.182261+00:00"
-    },
-    {
-      "slug": "actual-mcp-server",
-      "name": "actual-mcp-server",
-      "fullName": "agigante80/actual-mcp-server",
-      "category": "DevTools",
-      "stars": 39,
-      "author": "agigante80",
-      "avatar": "https://avatars.githubusercontent.com/u/6804522?u=676fe7fdfd9f9daf6db12a5a2c2ceeaac660d4aa&v=4",
-      "desc": "Talk to your self-hosted Actual Budget from any MCP client: a remote HTTP server for LibreChat/LobeChat or a local stdio process for Claude Desktop, with 71 tools for transactions, budgets, rules, and bank sync. No Docker needed for local use.",
-      "demo": null,
-      "repoUrl": "https://github.com/agigante80/actual-mcp-server",
-      "long1": "Talk to your self-hosted Actual Budget from any MCP client: a remote HTTP server for LibreChat/LobeChat or a local stdio process for Claude Desktop, with 71 tools for transactions, budgets, rules, and bank sync. No Docker needed for local use. Maintained by agigante80 on GitHub, where it has earned 39 stars from the community.",
-      "long2": "It's actively developed around actual-budget, ai-assistant, api-server, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "JavaScript",
-        "Actual Budget",
-        "Ai Assistant",
-        "Api Server",
-        "Budget Management"
-      ],
-      "updated": "5 weeks ago",
-      "pushedAt": "2026-08-05T03:00:48Z",
-      "license": "MIT",
-      "langs": [
-        {
-          "pct": 59,
-          "name": "JavaScript"
-        },
-        {
-          "pct": 39,
-          "name": "TypeScript"
-        },
-        {
-          "pct": 2,
-          "name": "Shell"
-        }
-      ],
-      "versions": [
-        {
-          "url": "https://github.com/agigante80/actual-mcp-server/releases/tag/v0.9.5",
-          "name": "v0.9.5"
-        },
-        {
-          "url": "https://github.com/agigante80/actual-mcp-server/releases/tag/v0.9.4",
-          "name": "v0.9.4"
-        },
-        {
-          "url": "https://github.com/agigante80/actual-mcp-server/releases/tag/v0.9.3",
-          "name": "v0.9.3"
-        },
-        {
-          "url": "https://github.com/agigante80/actual-mcp-server/releases/tag/v0.9.2",
-          "name": "v0.9.2"
-        },
-        {
-          "url": "https://github.com/agigante80/actual-mcp-server/releases/tag/v0.9.1",
-          "name": "v0.9.1"
-        }
-      ],
-      "topics": [
-        "actual-budget",
-        "ai-assistant",
-        "api-server",
-        "budget-management",
-        "budget-tracking",
-        "conversation-ai",
-        "docker",
-        "finance-automation",
-        "financial-management",
-        "librechat",
-        "mcp",
-        "model-context-protocol"
-      ],
-      "addedAt": "2026-07-15T22:28:33.182261+00:00"
+      "forks": 24,
+      "issues": 4,
+      "watchers": 3
     },
     {
       "slug": "librechat-prom-exporter",
       "name": "librechat-prom-exporter",
       "fullName": "rubentalstra/librechat-prom-exporter",
       "category": "Dashboards",
-      "stars": 37,
+      "stars": 36,
       "author": "rubentalstra",
-      "avatar": "https://avatars.githubusercontent.com/u/14235001?u=ed70680705490da1c0590797603121dd6bf7ae10&v=4",
-      "desc": "A lightweight Node.js service built with Express, Mongoose, and prom-client that collects metrics from your LibreChat MongoDB database and exposes them on a \"/metrics\" endpoint for Prometheus scraping. Easily integrate with Grafana dashboards for comprehensive monitoring and visualization.",
+      "avatar": "https://avatars.githubusercontent.com/u/14235001?v=4",
+      "desc": "A lightweight Node.js service that connects to LibreChat's MongoDB database, collects key metrics, and exposes them on a `/metrics` endpoint for Prometheus scraping and Grafana visualization.",
       "demo": "https://rubentalstra.github.io/librechat-prom-exporter/",
       "repoUrl": "https://github.com/rubentalstra/librechat-prom-exporter",
-      "long1": "A lightweight Node.js service built with Express, Mongoose, and prom-client that collects metrics from your LibreChat MongoDB database and exposes them on a \"/metrics\" endpoint for Prometheus scraping. Easily integrate with Grafana dashboards for comprehensive monitoring and visualization. Maintained by rubentalstra on GitHub, where it has earned 37 stars from the community.",
+      "long1": "A lightweight Node.js service built with Express, Mongoose, and prom-client that collects metrics from your LibreChat MongoDB database and exposes them on a \"/metrics\" endpoint for Prometheus scraping. Easily integrate with Grafana dashboards for comprehensive monitoring and visualization. Maintained by rubentalstra on GitHub, where it has earned 36 stars from the community.",
       "long2": "It's actively developed around exporter, librechat, prometheus, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "# Introduction\n\n**librechat-prom-exporter** is a lightweight Node.js service designed to collect metrics from LibreChat MongoDB databases and expose them via a `/metrics` endpoint for Prometheus scraping. Built with Express, Mongoose, and prom-client, it enables seamless integration with Grafana for comprehensive monitoring and visualization. This tool is ideal for developers and system administrators who need to monitor LibreChat deployments efficiently without adding significant overhead.\n\nThe project is built with privacy in mind, exposing only aggregated metrics that avoid personally identifiable information (PII), making it suitable for GDPR-compliant environments. It supports both Docker and local installation, with a multi-arch image available for easy deployment.\n\n# Key Features\n\n- **Lightweight Architecture**: Built with Express, Mongoose, and prom-client, ensuring minimal resource usage while providing robust metric collection.\n- **Prometheus Integration**: Exposes metrics on a `/metrics` endpoint, compatible with Prometheus for scraping and Grafana for visualization.\n- **Easy Deployment**: Supports Docker with a prebuilt, multi-arch image (linux/amd64 + linux/arm64) available on GitHub Container Registry (GHCR).\n- **Security and Compliance**: Includes built-in authentication for the `/metrics` endpoint and adheres to GDPR principles by avoiding PII in exposed metrics.\n- **Scalability**: Optimized for performance, with tuning guides available to adapt to different deployment scales.\n- **Comprehensive Documentation**: Includes installation guides, environment variable references, metric details, and troubleshooting resources.\n\n# Ecosystem and Community\n\nThe **librechat-prom-exporter** project is part of a growing ecosystem focused on monitoring and analytics for MongoDB-based applications. It leverages the Prometheus monitoring system, a widely adopted standard in the open-source community, to provide actionable insights without the need for custom development.\n\nThe project maintains a strong commitment to open-source practices, including CI/CD pipelines, SLSA build-provenance attestation, and SBOM (Software Bill of Materials) for tagged releases. Contributions are welcome, with clear guidelines available for developers looking to extend functionality or improve documentation.\n\n# Use Cases\n\n- **Monitoring LibreChat Deployments**: Collect and visualize key metrics such as database performance, user activity, and system health in Grafana dashboards.\n- **Performance Optimization**: Use exposed metrics to identify bottlenecks and optimize LibreChat deployments for better scalability.\n- **Security and Compliance**: Ensure GDPR compliance by monitoring aggregated metrics without exposing sensitive user data.\n- **DevOps Integration**: Integrate with existing Prometheus setups to provide unified monitoring across multiple services, including LibreChat.\n- **Debugging and Troubleshooting**: Leverage detailed metric references and troubleshooting guides to diagnose issues quickly.\n\n# Roadmap and Future Development\n\nWhile the project is currently stable and well-documented, future development may focus on expanding the set of exposed metrics to cover more aspects of LibreChat performance. Potential improvements could include:\n\n- Adding support for additional monitoring tools beyond Prometheus and Grafana.\n- Enhancing the authentication mechanisms for the `/metrics` endpoint to support more granular access control.\n- Exploring ways to reduce the resource footprint further, making it suitable for edge deployments.\n- Improving the SBOM generation process to include more detailed dependency tracking.\n\nThese plans are subject to community feedback and contributor interest, ensuring that development remains aligned with user needs.\n\n# Conclusion\n\n**librechat-prom-exporter** is a powerful yet lightweight solution for monitoring LibreChat MongoDB databases with Prometheus and Grafana. Its focus on performance, security, and compliance makes it a valuable tool for developers and system administrators. Whether you're looking to optimize deployments, ensure GDPR compliance, or integrate with existing monitoring ecosystems, this project provides a robust and scalable foundation. For more details, visit the [full documentation](https://rubentalstra.github.io/librechat-prom-exporter/).",
       "stack": [
         "MDX",
         "Exporter",
         "Librechat",
         "Prometheus"
       ],
-      "updated": "5 weeks ago",
-      "pushedAt": "2026-08-03T02:06:28Z",
+      "updated": "6 weeks ago",
+      "pushedAt": "2026-07-29T06:40:13-06:00",
       "license": "MIT",
       "langs": [
         {
-          "pct": 53,
-          "name": "MDX"
+          "name": "MDX",
+          "pct": 50.773,
+          "size": 176016
         },
         {
-          "pct": 46,
-          "name": "TypeScript"
+          "name": "TypeScript",
+          "pct": 46.223,
+          "size": 160243
         },
         {
-          "pct": 1,
-          "name": "Dockerfile"
+          "name": "Dockerfile",
+          "pct": 1.351,
+          "size": 4685
+        },
+        {
+          "name": "JavaScript",
+          "pct": 1.067,
+          "size": 3698
+        },
+        {
+          "name": "CSS",
+          "pct": 0.585,
+          "size": 2029
         }
       ],
-      "versions": [
-        {
-          "url": "https://github.com/rubentalstra/librechat-prom-exporter/releases/tag/v0.10.2",
-          "name": "v0.10.2"
-        },
-        {
-          "url": "https://github.com/rubentalstra/librechat-prom-exporter/releases/tag/v0.10.1",
-          "name": "v0.10.1"
-        },
-        {
-          "url": "https://github.com/rubentalstra/librechat-prom-exporter/releases/tag/v0.10.0",
-          "name": "v0.10.0"
-        },
-        {
-          "url": "https://github.com/rubentalstra/librechat-prom-exporter/releases/tag/v0.9.0",
-          "name": "v0.9.0"
-        },
-        {
-          "url": "https://github.com/rubentalstra/librechat-prom-exporter/releases/tag/v0.8.0",
-          "name": "v0.8.0"
-        }
-      ],
+      "versions": [],
       "topics": [
         "exporter",
         "librechat",
         "prometheus"
       ],
-      "addedAt": "2026-07-15T22:28:33.182261+00:00"
-    },
-    {
-      "slug": "code-interpreter",
-      "name": "code-interpreter",
-      "fullName": "martvaha/code-interpreter",
-      "category": "AI & ML",
-      "stars": 36,
-      "author": "martvaha",
-      "avatar": "https://avatars.githubusercontent.com/u/8341598?u=be6f58647550c3261b3db0aca4cf833b26f53406&v=4",
-      "desc": "LibreChat compatible code interpreter",
-      "demo": null,
-      "repoUrl": "https://github.com/martvaha/code-interpreter",
-      "long1": "LibreChat compatible code interpreter. Maintained by martvaha on GitHub, where it has earned 36 stars from the community.",
-      "long2": "It's actively developed around codeinterpreter, librechat, code-interpreter, and is a solid reference for anyone building with these tools.",
-      "stack": [
-        "Python",
-        "Codeinterpreter",
-        "Librechat",
-        "Code Interpreter",
-        "Llm"
-      ],
-      "updated": "3 months ago",
-      "pushedAt": "2026-06-12T11:27:58Z",
-      "license": "—",
-      "langs": [
-        {
-          "pct": 100,
-          "name": "Python"
-        },
-        {
-          "pct": 0,
-          "name": "Dockerfile"
-        }
-      ],
-      "versions": [
-        {
-          "url": "https://github.com/martvaha/code-interpreter/releases/tag/librechat-v0.8.6",
-          "name": "librechat-v0.8.6"
-        }
-      ],
-      "topics": [
-        "codeinterpreter",
-        "librechat",
-        "code-interpreter",
-        "llm",
-        "python",
-        "r",
-        "bash",
-        "javascript",
-        "typescript"
-      ],
-      "addedAt": "2026-07-15T22:28:33.182261+00:00"
+      "forks": 8,
+      "issues": 13,
+      "watchers": 1
     },
     {
       "slug": "chatgpt-plugins",
@@ -606,37 +624,91 @@
       "category": "AI & ML",
       "stars": 36,
       "author": "izzoa",
-      "avatar": "https://avatars.githubusercontent.com/u/5224781?u=18064e2582d22f70f970d87d2d7ad18e8c3cf1b0&v=4",
-      "desc": "Repository of (most, [if not all?]) ChatGPT manifest files of plugins.",
+      "avatar": "https://avatars.githubusercontent.com/u/5224781?v=4",
+      "desc": "This project provides a collection of ChatGPT plugin manifest files, breaking down a large JSON blob into individual manifests for easier use with tools like LibreChat.",
       "demo": null,
       "repoUrl": "https://github.com/izzoa/chatgpt-plugins",
       "long1": "Repository of (most, [if not all?]) ChatGPT manifest files of plugins. Maintained by izzoa on GitHub, where it has earned 36 stars from the community.",
-      "long2": "It's actively developed around chatgpt, librechat, plugins, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around chatgpt, chatgpt-plugins, librechat, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "# Introduction\n\n**chatgpt-plugins** is a curated repository of ChatGPT plugin manifest files, designed to make it easier for developers and tools to work with these plugins. It breaks down a massive singular JSON blob into individual manifest files, ensuring compatibility with tools like LibreChat. This project serves as a consolidated resource for anyone looking to integrate or use ChatGPT plugins, providing a structured and accessible format for these manifests.\n\nThe repository is a valuable asset for developers working with ChatGPT plugins, offering a well-organized collection that simplifies the process of managing and utilizing these plugins. Whether you're a developer looking to integrate plugins into your projects or a user exploring the capabilities of ChatGPT plugins, this repository provides a comprehensive and user-friendly resource.\n\n# Key Features\n\n**chatgpt-plugins** offers several key features that make it a standout resource for developers and users alike:\n\n- **Comprehensive Collection**: The repository contains a large number of ChatGPT plugin manifest files, providing a one-stop solution for anyone looking to work with these plugins.\n- **Structured Format**: The manifests are broken down into individual files, making them easier to manage and integrate with tools like LibreChat.\n- **Diverse Use Cases**: The repository includes a wide range of plugins, covering various use cases such as document analysis, web browsing, and data visualization.\n- **Easy Integration**: The manifests are designed to be easily integrated into projects, with specific instructions provided for using them with LibreChat.\n\n# Ecosystem and Community\n\n**chatgpt-plugins** is part of a growing ecosystem that supports the development and use of ChatGPT plugins. The repository is a collaborative effort, with contributions from various developers and users who are passionate about advancing the capabilities of ChatGPT.\n\nThe community around this project is active and engaged, with discussions and contributions coming from developers and users who are interested in exploring the potential of ChatGPT plugins. This collaborative environment fosters innovation and continuous improvement, ensuring that the repository remains a valuable resource for anyone working with ChatGPT plugins.\n\n# Use Cases\n\n**chatgpt-plugins** is designed to serve a wide range of use cases, making it a versatile resource for developers and users. Some of the key use cases include:\n\n- **Document Analysis**: Plugins that allow for the analysis of documents, including PDFs, Word documents, and web pages.\n- **Web Browsing**: Plugins that enable web browsing, providing access to the latest information online.\n- **Data Visualization**: Plugins that help in the visualization of data, making it easier to understand and interpret complex information.\n- **Code Review and Generation**: Plugins that assist in code review, generation, and improvement, supporting developers in their work.\n\n# Roadmap and Future Development\n\nThe future development of **chatgpt-plugins** is focused on expanding the collection of manifests and improving the usability of the repository. While the current roadmap is not explicitly stated, the project is likely to continue growing, with a focus on adding more plugins and enhancing the integration with tools like LibreChat.\n\nFuture updates may include additional features to streamline the process of managing and using ChatGPT plugins, ensuring that the repository remains a valuable and up-to-date resource for developers and users. The project is committed to continuous improvement, with a focus on making the repository as comprehensive and user-friendly as possible.\n\n# Conclusion\n\n**chatgpt-plugins** is a valuable resource for anyone working with ChatGPT plugins, offering a comprehensive and structured collection of manifest files. Whether you're a developer looking to integrate plugins into your projects or a user exploring the capabilities of ChatGPT plugins, this repository provides a user-friendly and accessible resource.\n\nWith its focus on usability and continuous improvement, **chatgpt-plugins** is poised to remain a key resource in the ecosystem of ChatGPT plugins, supporting the development and use of these powerful tools.",
       "stack": [
         "JavaScript",
         "Chatgpt",
+        "Chatgpt Plugins",
         "Librechat",
-        "Plugins",
         "Openai"
       ],
       "updated": "2 years ago",
-      "pushedAt": "2024-09-05T13:14:37Z",
-      "license": "—",
+      "pushedAt": "2024-09-05T07:14:37-06:00",
+      "license": "\u2014",
       "langs": [
         {
-          "pct": 100,
-          "name": "JavaScript"
+          "name": "JavaScript",
+          "pct": 100.0,
+          "size": 11890
         }
       ],
       "versions": [],
       "topics": [
         "chatgpt",
+        "chatgpt-plugins",
         "librechat",
-        "plugins",
         "openai",
-        "chatgpt-plugins"
+        "plugins"
       ],
-      "addedAt": "2026-07-15T22:28:33.182261+00:00"
+      "forks": 8,
+      "watchers": 1
+    },
+    {
+      "slug": "code-interpreter",
+      "name": "code-interpreter",
+      "fullName": "martvaha/code-interpreter",
+      "category": "AI & ML",
+      "stars": 36,
+      "author": "martvaha",
+      "avatar": "https://avatars.githubusercontent.com/u/8341598?v=4",
+      "desc": "A FastAPI-based code interpreter service that provides isolated code execution and file management, compatible with LibreChat's API specification, supporting Python and R with Docker sandboxing.",
+      "demo": null,
+      "repoUrl": "https://github.com/martvaha/code-interpreter",
+      "long1": "LibreChat compatible code interpreter. Maintained by martvaha on GitHub, where it has earned 36 stars from the community.",
+      "long2": "It's actively developed around bash, code-interpreter, codeinterpreter, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "# Introduction\n\nThe **code-interpreter** project is a FastAPI-based code interpreter service designed for secure, isolated code execution and file management. It provides a RESTful API with OpenAPI documentation, supporting multiple programming languages and concurrent execution, all while maintaining compatibility with the LibreChat Code Interpreter API specification. This project is ideal for developers looking to integrate a robust, sandboxed code execution environment into their applications, with a focus on security, scalability, and ease of deployment.\n\nBuilt primarily in Python, the service leverages Docker for containerized code execution, ensuring isolation and customization options. It supports Python and R natively, with the flexibility to extend to other languages. The project is a proof of concept, not intended for production use, but serves as a foundation for those exploring code interpreter services with a focus on security and compatibility.\n\n# Key Features\n\n- **Isolated Execution Environment**: Code runs in Docker containers, providing strong isolation and customization through custom images.\n- **Multi-Language Support**: Primarily supports Python and R, with the architecture allowing for easy extension to other languages.\n- **File Management**: Supports file upload and download, with uploaded files automatically deleted after 24 hours by default.\n- **Concurrent Execution**: Handles multiple code execution requests simultaneously, improving performance for high-traffic scenarios.\n- **RESTful API with OpenAPI**: A well-documented API that adheres to REST principles, making integration straightforward.\n- **Easy Deployment**: Uses a single Docker Compose file for deployment, simplifying setup and configuration.\n- **Authentication**: Supports JWT-based authentication with LibreChat, using EdDSA/Ed25519 or RS256 algorithms, with configurable public keys and environment variables.\n\n# Ecosystem and Community\n\nThe **code-interpreter** project is part of a broader ecosystem focused on code execution and AI-driven development tools. While it is not a production-ready solution, it serves as a valuable reference for developers interested in building or integrating code interpreter services. The project\u2019s compatibility with the LibreChat API specification positions it as a useful tool for those exploring or extending LibreChat\u2019s capabilities.\n\nThe community around this project is small but active, with contributions from developers interested in sandboxed execution, API design, and security. The project\u2019s GitHub repository serves as the primary hub for discussions, issues, and contributions, fostering collaboration among developers with similar interests.\n\n# Use Cases\n\n- **Educational Platforms**: Ideal for platforms that require secure, isolated code execution for educational purposes, such as coding exercises or tutorials.\n- **AI-Assisted Development**: Can be integrated into AI-driven development tools to provide secure code execution environments, enhancing functionality without compromising security.\n- **Research and Prototyping**: Useful for researchers and developers who need a sandboxed environment to test and prototype code without risking system stability.\n- **API-Driven Services**: Suitable for services that require a robust, scalable API for code execution, such as cloud-based development environments or coding competition platforms.\n\n# Roadmap and Future Development\n\nThe current roadmap for the **code-interpreter** project focuses on refining the existing features and expanding language support. While the project is not intended for production use, future iterations may explore:\n- **Enhanced Language Support**: Adding support for more programming languages beyond Python and R, based on community demand.\n- **Improved Security**: Strengthening the isolation mechanisms and authentication protocols to ensure robust security.\n- **Performance Optimizations**: Optimizing the Docker-based execution environment to reduce overhead and improve response times.\n- **Production-Ready Features**: Exploring additional features that could make the project more viable for production environments, such as persistent storage options and advanced user management.\n\n# Conclusion\n\nThe **code-interpreter** project stands out as a versatile and secure solution for developers seeking a robust code execution environment. Its compatibility with the LibreChat API specification, combined with its focus on isolation, security, and ease of deployment, makes it a valuable tool for a wide range of use cases. While it is currently a proof of concept, its architecture and features provide a strong foundation for future development and integration into larger projects.",
+      "stack": [
+        "Python",
+        "Bash",
+        "Code Interpreter",
+        "Codeinterpreter",
+        "Librechat"
+      ],
+      "updated": "3 months ago",
+      "pushedAt": "2026-06-12T01:58:19-06:00",
+      "license": "\u2014",
+      "langs": [
+        {
+          "name": "Python",
+          "pct": 99.602,
+          "size": 196555
+        },
+        {
+          "name": "Dockerfile",
+          "pct": 0.398,
+          "size": 785
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "bash",
+        "code-interpreter",
+        "codeinterpreter",
+        "javascript",
+        "librechat",
+        "llm",
+        "python",
+        "r",
+        "typescript"
+      ],
+      "forks": 9,
+      "watchers": 1
     },
     {
       "slug": "librechatconfigurator",
@@ -646,11 +718,12 @@
       "stars": 30,
       "author": "Fritsl",
       "avatar": "https://avatars.githubusercontent.com/u/15021408?v=4",
-      "desc": "A configuration tool for LibreChat",
+      "desc": "LibreChatConfigurator is an open-source configuration tool for LibreChat, enabling users to customize and optimize their conversational AI experience.",
       "demo": "https://fritslyneborg.dk/",
       "repoUrl": "https://github.com/Fritsl/LibreChatConfigurator",
       "long1": "A configuration tool for LibreChat. Maintained by Fritsl on GitHub, where it has earned 30 stars from the community.",
       "long2": "It's actively developed around config, gui, librechat, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "# Introduction\n\nLibreChatConfigurator is a **YAML-based configuration GUI** designed to simplify and streamline the setup of LibreChat instances. It provides an intuitive interface for managing configurations, allowing users to define, edit, and deploy YAML-based settings without manual coding. This tool is ideal for developers, system administrators, and self-hosted AI enthusiasts who want to customize LibreChat deployments efficiently.\n\nBuilt with **Python** and **PyQt**, LibreChatConfigurator abstracts the complexity of YAML configuration, offering a visual editor that supports validation, preview, and export features. It is particularly useful for those working with **self-hosted AI solutions**, enabling rapid iteration and deployment of configurations tailored to specific use cases.\n\n# Key Features\n\n- **Visual YAML Editor**: A user-friendly interface for creating and editing YAML configurations, with real-time validation and syntax highlighting.\n- **Configuration Templates**: Predefined templates for common LibreChat setups, reducing setup time and ensuring consistency.\n- **Preview and Export**: Instantly preview configurations and export them in YAML format, ready for deployment.\n- **Cross-Platform Compatibility**: Works seamlessly on **Windows, macOS, and Linux**, making it accessible for a wide range of users.\n- **Modular Design**: Supports plugins and extensions, allowing for future enhancements and customization.\n\n# Ecosystem and Community\n\nLibreChatConfigurator is part of a broader ecosystem aimed at empowering developers and organizations to self-host AI solutions. While it is designed to work with LibreChat, it is not dependent on it and can be used independently for any YAML-based configuration needs. The project encourages community contributions, with a focus on making configuration management more accessible and less error-prone.\n\nThe tool is particularly valuable for those working in **open-source AI projects**, where configuration management is a critical but often overlooked aspect. It integrates well with existing workflows, whether for deploying AI models, managing system settings, or customizing user experiences.\n\n# Use Cases\n\n- **Self-Hosted AI Deployments**: Simplify the setup of LibreChat or other AI chatbots by providing a visual interface for configuration management.\n- **System Administration**: Manage complex YAML configurations for servers, containers, or cloud deployments without manual editing.\n- **Development Workflows**: Speed up development cycles by allowing rapid iteration of configurations, reducing the need for manual coding.\n- **Educational Purposes**: Teach users about YAML syntax and configuration management in an interactive and engaging way.\n\n# Roadmap and Future Development\n\nThe project is currently focused on refining the YAML editor and adding more templates for common use cases. Future developments may include:\n- **Advanced Validation**: More robust validation rules for YAML configurations, including custom schema support.\n- **Plugin System**: A more extensible plugin system to support additional configuration formats and integrations.\n- **Collaboration Features**: Multi-user editing and version control for team-based configuration management.\n\n# Conclusion\n\nLibreChatConfigurator bridges the gap between complex YAML configurations and user-friendly interfaces, making it an essential tool for developers and system administrators working with self-hosted AI solutions. By abstracting the complexity of manual configuration, it enables faster deployment, greater flexibility, and reduced errors. Whether you're setting up a LibreChat instance or managing configurations for other projects, this tool provides the necessary simplicity and power to get the job done efficiently.",
       "stack": [
         "TypeScript",
         "Config",
@@ -659,20 +732,38 @@
         "Self Hosted"
       ],
       "updated": "10 months ago",
-      "pushedAt": "2025-11-05T17:44:45Z",
+      "pushedAt": "2025-11-05T11:36:55-06:00",
       "license": "MIT",
       "langs": [
         {
-          "pct": 100,
-          "name": "TypeScript"
+          "name": "TypeScript",
+          "pct": 98.788,
+          "size": 1530396
         },
         {
-          "pct": 0,
-          "name": "HTML"
+          "name": "HTML",
+          "pct": 0.348,
+          "size": 5398
         },
         {
-          "pct": 0,
-          "name": "JavaScript"
+          "name": "JavaScript",
+          "pct": 0.321,
+          "size": 4978
+        },
+        {
+          "name": "Shell",
+          "pct": 0.275,
+          "size": 4254
+        },
+        {
+          "name": "CSS",
+          "pct": 0.212,
+          "size": 3279
+        },
+        {
+          "name": "Dockerfile",
+          "pct": 0.056,
+          "size": 872
         }
       ],
       "versions": [],
@@ -684,7 +775,8 @@
         "yaml",
         "yaml-configuration"
       ],
-      "addedAt": "2026-07-15T22:28:33.182261+00:00"
+      "forks": 10,
+      "watchers": 1
     },
     {
       "slug": "terraform-azurerm-openai-private-chatgpt",
@@ -693,122 +785,137 @@
       "category": "AI & ML",
       "stars": 26,
       "author": "Pwd9000-ML",
-      "avatar": "https://avatars.githubusercontent.com/u/44137582?u=019a7cbcd5c0281e4c19e46018763a40fa2a53e0&v=4",
-      "desc": "Terraform module to deploy a private ChatBot/ChatGPT-like solution (LibreChat) hosted on Azure OpenAI",
+      "avatar": "https://avatars.githubusercontent.com/u/44137582?v=4",
+      "desc": "This Terraform module deploys a private, self-contained ChatGPT-like solution using Azure OpenAI and LibreChat, ensuring data privacy and security without contributing to OpenAI's training datasets.",
       "demo": "https://registry.terraform.io/modules/Pwd9000-ML/openai-private-chatgpt/azurerm/latest",
       "repoUrl": "https://github.com/Pwd9000-ML/terraform-azurerm-openai-private-chatgpt",
       "long1": "Terraform module to deploy a private ChatBot/ChatGPT-like solution (LibreChat) hosted on Azure OpenAI. Maintained by Pwd9000-ML on GitHub, where it has earned 26 stars from the community.",
-      "long2": "It's actively developed around chatgpt, iac, openai, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around chatgpt, dall-e-3, gpt-4, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "# Introduction\n\n**terraform-azurerm-openai-private-chatgpt** is a Terraform module designed to deploy a private, self-hosted ChatGPT-like solution on Azure OpenAI, ensuring data privacy and security for enterprise use. This project provides a complete infrastructure-as-code (IaC) solution for deploying OpenAI models (including GPT-4 and DALL-E-3) with LibreChat, a user-friendly interface for interacting with AI models, while maintaining strict control over data flow and access.\n\nThis module is ideal for developers, DevOps teams, and security-conscious organizations that require a private, compliant alternative to OpenAI\u2019s public ChatGPT, avoiding the risk of prompts being used for further model training. By leveraging Azure OpenAI\u2019s infrastructure, the solution ensures that all interactions remain within your organization\u2019s control, with robust security features like role-based access controls and private endpoints.\n\n# Key Features\n\n- **Private Deployment**: Deploys OpenAI models (GPT-4, GPT-4-Vision, DALL-E-3) on Azure OpenAI, ensuring prompts never contribute to OpenAI\u2019s training data.\n- **LibreChat Integration**: Includes a pre-configured LibreChat interface for a seamless, user-friendly experience with OpenAI models.\n- **Enhanced Security**: Implements Azure OpenAI\u2019s security features, including private endpoints, IP whitelisting, and role-based access controls.\n- **Custom Domain Support**: Allows deployment with custom domains and managed certificates for enterprise-grade setups.\n- **Multi-Model Support**: Supports the latest Azure OpenAI models, including GPT-4-1106, GPT-4-Vision, and DALL-E-3.\n- **Cost-Effective**: Optimized for affordability, with conversations often costing under 10 cents per interaction.\n\n# Ecosystem and Community\n\nThe project is actively maintained with a focus on community contributions, welcoming pull requests for improvements or fixes. It follows a structured development approach, with clear versioning (e.g., 2.x) and a legacy branch for backward compatibility. The repository includes automated tests for dependencies and manual testing, ensuring reliability. Users can engage with the project through GitHub issues for support, and the codebase is documented with examples, such as a public deployment with custom domain and IP whitelisting.\n\n# Use Cases\n\n- **Enterprise AI Solutions**: Organizations requiring a private, secure alternative to public ChatGPT for internal use.\n- **Data Privacy Compliance**: Companies needing to ensure prompts and data never leave their controlled environment.\n- **AI Development and Testing**: Teams experimenting with OpenAI models (GPT-4, DALL-E-3) in a sandboxed, private setting.\n- **Custom AI Interfaces**: Projects integrating LibreChat or similar UIs with OpenAI models for tailored user experiences.\n\n# Roadmap and Future Development\n\nFuture versions (e.g., 2.7.x) aim to enhance privacy and security with features like private endpoint support, Front Door and WAF integration, and Azure AI Search/MeiliSearch integration. Additional support for DALL-E-3 and other OpenAI models is planned, along with improvements to the LibreChat UI. The current version (2.6.x) includes support for AzureRM provider v4.x.x, while earlier versions (2.3.x\u20132.5.x) focus on dependency updates and testing. The roadmap is subject to community feedback and contributions.\n\n# Conclusion\n\n**terraform-azurerm-openai-private-chatgpt** provides a robust, secure, and cost-effective way to deploy private ChatGPT-like solutions on Azure OpenAI, addressing the needs of organizations prioritizing data privacy and compliance. Whether for enterprise AI solutions, secure AI development, or custom interfaces, this module offers a complete IaC solution with a clear path for future enhancements.",
       "stack": [
         "HCL",
         "Chatgpt",
-        "Iac",
-        "Openai",
-        "Openai Chatgpt"
+        "Dall E 3",
+        "Gpt 4",
+        "Gpt 4 Vision Preview"
       ],
-      "updated": "1 year ago",
-      "pushedAt": "2025-04-13T01:01:53Z",
+      "updated": "2 years ago",
+      "pushedAt": "2024-12-27T05:18:12-06:00",
       "license": "MIT",
       "langs": [
         {
-          "pct": 100,
-          "name": "HCL"
+          "name": "HCL",
+          "pct": 100.0,
+          "size": 97790
         }
       ],
-      "versions": [
-        {
-          "url": "https://github.com/Pwd9000-ML/terraform-azurerm-openai-private-chatgpt/releases/tag/2.6.4",
-          "name": "2.6.4"
-        },
-        {
-          "url": "https://github.com/Pwd9000-ML/terraform-azurerm-openai-private-chatgpt/releases/tag/2.6.3",
-          "name": "2.6.3"
-        },
-        {
-          "url": "https://github.com/Pwd9000-ML/terraform-azurerm-openai-private-chatgpt/releases/tag/2.6.2",
-          "name": "2.6.2"
-        },
-        {
-          "url": "https://github.com/Pwd9000-ML/terraform-azurerm-openai-private-chatgpt/releases/tag/2.6.1",
-          "name": "2.6.1"
-        },
-        {
-          "url": "https://github.com/Pwd9000-ML/terraform-azurerm-openai-private-chatgpt/releases/tag/2.6.0",
-          "name": "2.6.0"
-        }
-      ],
+      "versions": [],
       "topics": [
         "chatgpt",
-        "iac",
-        "openai",
-        "openai-chatgpt",
-        "terraform",
-        "terraform-module",
         "dall-e-3",
         "gpt-4",
         "gpt-4-vision-preview",
-        "librechat"
+        "iac",
+        "librechat",
+        "openai",
+        "openai-chatgpt",
+        "terraform",
+        "terraform-module"
       ],
-      "addedAt": "2026-07-15T22:28:33.182261+00:00"
+      "forks": 12,
+      "issues": 7,
+      "watchers": 2
     },
     {
       "slug": "kyns",
       "name": "kyns",
       "fullName": "Kyns-ai/kyns",
       "category": "AI & ML",
-      "stars": 19,
+      "stars": 21,
       "author": "Kyns-ai",
-      "avatar": "https://avatars.githubusercontent.com/u/264296844?u=3a45d143db846ccb671f7aa9286cfb4fa5c4cc2b&v=4",
-      "desc": "Uncensored AI platform — chat, roleplay, image generation. Built on open-source models.",
+      "avatar": "https://avatars.githubusercontent.com/u/264296844?v=4",
+      "desc": "Kyns is an open-source, self-hostable AI platform offering uncensored chat, roleplay, and image generation powered by fine-tuned open-source models.",
       "demo": "https://kyns.ai",
       "repoUrl": "https://github.com/Kyns-ai/kyns",
-      "long1": "Uncensored AI platform — chat, roleplay, image generation. Built on open-source models. Maintained by Kyns-ai on GitHub, where it has earned 19 stars from the community.",
+      "long1": "Uncensored AI platform \u2014 chat, roleplay, image generation. Built on open-source models. Maintained by Kyns-ai on GitHub, where it has earned 21 stars from the community.",
       "long2": "It's actively developed around ai, chatbot, image-generation, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "# Introduction\n\nKyns is an open-source, uncensored AI chat platform designed for authentic, unfiltered conversations. Built on TypeScript and React, it offers self-hostable privacy-first features including roleplay, image generation, and real-time web search. Ideal for developers and users seeking an alternative to censored AI solutions, Kyns emphasizes transparency, customization, and persistent memory\u2014all while maintaining strict 24-hour data deletion policies.\n\nThis project stands out for its focus on uncensored interactions, high-quality image generation (FLUX-based), and immersive AI personas. Whether you're a developer looking to self-host or a user craving genuine AI responses, Kyns provides a flexible, community-driven solution. Its architecture leverages vLLM for efficient model inference, while supporting integrations like SearXNG for web search and Chatterbox for voice (TTS/STT).\n\n# Key Features\n\n- **Uncensored AI**: Fine-tuned open-source models deliver honest, uncensored responses without corporate filters.\n- **Image Generation**: High-quality FLUX-based image creation directly in chat, with no watermarks or restrictions.\n- **Web Search**: Real-time information retrieval via SearXNG and Firecrawl, ensuring up-to-date results.\n- **Persistent Memory**: AI learns user preferences across sessions (optional to disable), enabling personalized interactions.\n- **Privacy-First**: Automatic 24-hour deletion of conversations and images, with no data retention beyond sessions.\n- **Role-Play Characters**: Immersive AI personas for customizable roleplay experiences.\n- **Voice Support**: Chatterbox TTS and Whisper STT for voice-enabled conversations.\n- **Self-Hostable**: Full control over deployment, with Docker support for easy local setup.\n\nKyns\u2019s architecture is optimized for performance, combining TypeScript\u2019s type safety with React\u2019s component model. Its configuration is streamlined via `.env` files, requiring only essential secrets (e.g., JWT, AES keys) and MongoDB for data storage. The project\u2019s MIT license encourages contributions while maintaining clear branding guidelines.\n\n# Ecosystem and Community\n\nKyns thrives on a collaborative ecosystem, with active engagement through Discord and GitHub. Contributors are welcome to fork, submit issues, or propose features via the [CONTRIBUTING.md](CONTRIBUTING.md) guidelines. The project\u2019s transparent security policies (detailed in [SECURITY.md](SECURITY.md)) ensure responsible disclosure for vulnerabilities.\n\nWhile Kyns operates independently, its design aligns with broader open-source AI principles, prioritizing user control and ethical development. The community emphasizes inclusivity, with no barriers to participation beyond standard GitHub workflows. Whether you\u2019re a developer, researcher, or enthusiast, Kyns offers a platform to shape the future of uncensored AI.\n\n# Use Cases\n\n- **Developers**: Self-host Kyns for custom AI integrations, leveraging its modular architecture and Docker support.\n- **Privacy-Conscious Users**: Host locally to avoid third-party data collection, with 24-hour auto-deletion.\n- **Content Creators**: Generate uncensored images and text for projects, with FLUX-based high-quality outputs.\n- **Role-Play Enthusiasts**: Engage with AI personas for immersive storytelling or gaming scenarios.\n- **Researchers**: Experiment with fine-tuned models, persistent memory, and web search integrations.\n\nKyns\u2019s versatility extends to educational settings, where its uncensored approach can facilitate open discussions. Its voice support also makes it accessible for users with mobility or vision impairments, though this feature is optional and requires additional setup.\n\n# Roadmap and Future Development\n\nThe Kyns project\u2019s roadmap focuses on expanding its AI capabilities while maintaining its privacy-first ethos. Potential future developments include:\n- Enhanced image generation models (e.g., higher resolution, more styles).\n- Improved web search integrations (e.g., support for more search engines).\n- Advanced memory features (e.g., longer-term user preference tracking).\n- Mobile app support (e.g., native iOS/Android clients).\n\nNo official roadmap exists, but the community\u2019s Discord channel serves as a hub for discussing ideas. Contributors are encouraged to propose features, with a focus on maintaining Kyns\u2019s core values: uncensored interactions, privacy, and open-source transparency.\n\n# Conclusion\n\nKyns represents a bold step toward uncensored, privacy-respecting AI. Its combination of cutting-edge features\u2014image generation, roleplay, and real-time search\u2014with a developer-friendly architecture makes it a standout project in the open-source AI space. Whether you\u2019re a user seeking authentic conversations or a developer building on its foundation, Kyns offers a platform that values transparency, customization, and community collaboration.\n\nFor more information, explore the [live demo](https://kyns.ai), [GitHub repository](https://github.com/Kyns-ai/kyns), or join the [Discord](https://discord.gg/kyns) to engage with the community.",
       "stack": [
         "TypeScript",
         "Ai",
         "Chatbot",
         "Image Generation",
-        "Llm"
+        "Librechat"
       ],
-      "updated": "8 weeks ago",
-      "pushedAt": "2026-07-14T19:23:45Z",
+      "updated": "5 months ago",
+      "pushedAt": "2026-04-28T04:16:37-06:00",
       "license": "MIT",
       "langs": [
         {
-          "pct": 70,
-          "name": "TypeScript"
+          "name": "TypeScript",
+          "pct": 69.687,
+          "size": 10063166
         },
         {
-          "pct": 29,
-          "name": "JavaScript"
+          "name": "JavaScript",
+          "pct": 28.703,
+          "size": 4144861
         },
         {
-          "pct": 1,
-          "name": "CSS"
-        }
-      ],
-      "versions": [
+          "name": "CSS",
+          "pct": 0.601,
+          "size": 86739
+        },
         {
-          "url": "https://github.com/Kyns-ai/kyns/releases/tag/v1.0.0",
-          "name": "v1.0.0"
+          "name": "Handlebars",
+          "pct": 0.456,
+          "size": 65826
+        },
+        {
+          "name": "Python",
+          "pct": 0.235,
+          "size": 33931
+        },
+        {
+          "name": "Shell",
+          "pct": 0.197,
+          "size": 28492
+        },
+        {
+          "name": "Dockerfile",
+          "pct": 0.055,
+          "size": 7907
+        },
+        {
+          "name": "HTML",
+          "pct": 0.039,
+          "size": 5653
+        },
+        {
+          "name": "Go Template",
+          "pct": 0.027,
+          "size": 3871
         }
       ],
+      "versions": [],
       "topics": [
         "ai",
         "chatbot",
         "image-generation",
+        "librechat",
         "llm",
         "opensource",
+        "privacy",
         "react",
         "roleplay",
-        "typescript",
-        "librechat",
-        "privacy",
         "self-hosted",
-        "uncensored"
+        "typescript",
+        "uncensored",
+        "vllm"
       ],
-      "addedAt": "2026-07-15T22:28:33.182261+00:00"
+      "forks": 8,
+      "issues": 4,
+      "watchers": 21
     },
     {
       "slug": "librechat-discordbot",
@@ -818,89 +925,86 @@
       "stars": 16,
       "author": "LibreChat-AI",
       "avatar": "https://avatars.githubusercontent.com/u/169401942?v=4",
-      "desc": "This Discord bot allows users to trigger an update process for the LibreChat server directly from a Discord server. The bot provides a convenient way to perform server updates without the need for direct server access.",
+      "desc": "LibreChat-DiscordBot is a Python-based Discord bot that enables users to manage and update a LibreChat server directly from a Discord server, eliminating the need for direct server access.",
       "demo": null,
       "repoUrl": "https://github.com/LibreChat-AI/LibreChat-DiscordBot",
       "long1": "This Discord bot allows users to trigger an update process for the LibreChat server directly from a Discord server. The bot provides a convenient way to perform server updates without the need for direct server access. Maintained by LibreChat-AI on GitHub, where it has earned 16 stars from the community.",
       "long2": "It's actively developed around librechat, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "# Introduction\n\nLibreChat-DiscordBot is a Python-based Discord bot designed to streamline server management for LibreChat deployments. It provides a user-friendly interface to perform critical operations\u2014such as updates, Docker container control, and environment variable management\u2014directly from a Discord server, eliminating the need for manual terminal access. This tool is ideal for developers, system administrators, and community managers who want to maintain LibreChat servers without leaving their Discord environment.\n\nThe bot supports both local and Docker-based LibreChat installations, offering granular control over server state, configuration, and updates. With features like path configuration, environment file management, and credit balance tracking, LibreChat-DiscordBot bridges the gap between Discord interaction and backend server maintenance, enhancing productivity and security.\n\n# Key Features\n\nLibreChat-DiscordBot offers a comprehensive set of commands tailored for LibreChat server management:\n\n- **Server Updates**: Trigger updates for both local and Docker-based LibreChat installations with a single command.\n- **Docker Management**: Start, stop, and check the status of Docker containers, including support for `single-compose.yml` configurations.\n- **Environment Control**: Download, upload, and restore `.env` files with backup functionality, ensuring configuration integrity.\n- **Path Configuration**: Set LibreChat paths using absolute or relative references, simplifying deployment setups.\n- **Resource Access**: Quickly navigate to LibreChat\u2019s GitHub, documentation, Discord, and YouTube channels.\n- **Credit Management**: Set user credit balances (1000 credits = $0.001) by enabling the `CHECK_BALANCE` flag in the `.env` file.\n\nThe bot\u2019s design prioritizes security, with explicit warnings against exposing sensitive API keys and recommending the use of private Discord servers for trusted users only.\n\n# Ecosystem and Community\n\nLibreChat-DiscordBot integrates seamlessly with the broader LibreChat ecosystem, leveraging its Docker and local installation patterns. While the project does not explicitly depend on LibreChat, it is built to complement its workflows, offering a Discord-native alternative to terminal-based management.\n\nThe bot\u2019s community-driven development aligns with LibreChat\u2019s open-source ethos, providing a practical tool for users who prefer managing servers through Discord. Its commands are designed to be intuitive, reducing the learning curve for both new and experienced users.\n\n# Use Cases\n\nLibreChat-DiscordBot is particularly useful in scenarios where:\n\n- **Developers** want to automate LibreChat updates without manual intervention.\n- **System administrators** need to manage multiple LibreChat instances from a centralized Discord server.\n- **Community managers** require a secure way to handle server configurations and updates for their user base.\n- **Docker users** prefer managing containers and configurations through Discord commands.\n\nThe bot\u2019s support for both local and Docker deployments makes it versatile for different infrastructure setups, while its credit balance feature adds a layer of monetization for services that rely on LibreChat.\n\n# Roadmap and Future Development\n\nThe current roadmap for LibreChat-DiscordBot focuses on refining existing features and adding minor improvements, such as:\n\n- Enhancing the credit balance system with more granular controls.\n- Adding support for additional LibreChat deployment configurations.\n- Improving error handling and logging for better debugging.\n\nNo major new features or breaking changes are planned unless community feedback suggests a need for expansion. The project\u2019s development remains open to contributions, with a focus on maintaining stability and usability.\n\n# Conclusion\n\nLibreChat-DiscordBot is a powerful tool for managing LibreChat servers directly from Discord, combining convenience with robust functionality. Whether you\u2019re a developer, administrator, or community manager, this bot simplifies server maintenance and enhances collaboration. For installation instructions and advanced usage, refer to the [official Wiki](https://github.com/Berry-13/LibreChat-DiscordBot/wiki).",
       "stack": [
         "Python",
         "Librechat"
       ],
-      "updated": "1 year ago",
-      "pushedAt": "2025-06-10T08:20:19Z",
+      "updated": "2 years ago",
+      "pushedAt": "2024-06-02T08:21:53-06:00",
       "license": "MIT",
       "langs": [
         {
-          "pct": 100,
-          "name": "Python"
+          "name": "Python",
+          "pct": 100.0,
+          "size": 37518
         }
       ],
       "versions": [],
       "topics": [
         "librechat"
       ],
-      "addedAt": "2026-07-15T22:28:33.182261+00:00"
+      "forks": 3,
+      "issues": 1,
+      "watchers": 1
     },
     {
       "slug": "librechat-admin-dashboard",
       "name": "librechat-admin-dashboard",
       "fullName": "innFactory/librechat-admin-dashboard",
       "category": "AI & ML",
-      "stars": 14,
+      "stars": 15,
       "author": "innFactory",
       "avatar": "https://avatars.githubusercontent.com/u/24720191?v=4",
-      "desc": "CompanyGPT Admin Tools - Usage Metrics for the librechat component of the stack.",
+      "desc": "innFactory/librechat-admin-dashboard provides usage metrics and cost tracking for the librechat component in the CompanyGPT stack, enabling DSGVO- and AI-Act-compliant monitoring of KI-assistant deployments.",
       "demo": "https://company-gpt.com",
       "repoUrl": "https://github.com/innFactory/librechat-admin-dashboard",
-      "long1": "CompanyGPT Admin Tools - Usage Metrics for the librechat component of the stack. Maintained by innFactory on GitHub, where it has earned 14 stars from the community.",
-      "long2": "It's actively developed around chatgpt, gemini, librechat, and is a solid reference for anyone building with these tools.",
+      "long1": "CompanyGPT Admin Tools - Usage Metrics for the librechat component of the stack. Maintained by innFactory on GitHub, where it has earned 15 stars from the community.",
+      "long2": "It's actively developed around chatgpt, claude, gemini, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "# Introduction\n**librechat-admin-dashboard** is a DSGVO- and AI-Act-compliant administrative interface for managing **CompanyGPT**, a private, enterprise-grade AI assistant. Designed for seamless integration into Microsoft Azure or STACKIT environments, it provides centralized control over AI models, user access, and compliance features without per-user licensing costs. This project is ideal for organizations seeking a secure, scalable alternative to public AI tools while maintaining full data sovereignty.\n\nThe dashboard enables fine-grained role management, detailed usage analytics, and integration with multiple AI models\u2014including OpenAI, Google Gemini, Anthropic Claude, and sovereign alternatives\u2014all hosted in EU-compliant infrastructure. It supports native Office 365 add-ins for Word, Excel, PowerPoint, and Outlook, eliminating the need for Copilot licenses while offering similar functionality tailored to enterprise needs.\n\n# Key Features\n- **DSGVO & AI-Act Compliance**: Ensures data remains within EU infrastructure, with transparent pricing and no per-user fees.\n- **Multi-Model Integration**: Supports OpenAI (GPT-5.6), Google Gemini, Anthropic Claude, and sovereign models via STACKIT.\n- **Native Office 365 Add-ins**: Enables AI-assisted tasks directly in Word, Excel, PowerPoint, and Outlook without Copilot licensing.\n- **Advanced Analytics**: Tracks token usage, model performance, and costs with granular user-level reporting.\n- **Automated Document Processing**: Generates Excel, Word, PowerPoint, PDFs, and transcripts via natural language input (requires maintenance contract).\n- **Agent Marketplace & n8n Integration**: Centralizes internal AI agents and connects to low-code automation workflows.\n- **Comprehensive RAG Support**: Indexes large document repositories (e.g., SharePoint) for semantic search and KI-agent access.\n- **Memory & Context Functions**: Maintains conversation history and user preferences for context-aware interactions.\n\n# Ecosystem and Community\n**CompanyGPT** operates within a modular ecosystem built on the **Model Context Protocol (MCP) Server**, enabling seamless integration with Microsoft 365, SharePoint, ERP/CRM systems, and external data sources. The project leverages a growing community of MCP servers and pre-built solutions, fostering interoperability across enterprise AI tools.\n\nKey components include:\n- **companyM365**: Deep Microsoft 365 integration for emails, calendars, Teams, and OneDrive.\n- **companyRAG**: SharePoint synchronization with semantic search and unlimited indexing.\n- **companyFILES**: Automated document generation across multiple formats.\n- **companyTRANSLATE & companyTRANSCRIBE**: Built-in translation and transcription with speaker recognition.\n\nThe project\u2019s design emphasizes sovereignty, offering STACKIT as an alternative to Microsoft Azure for organizations prioritizing data control. While the source does not explicitly link to **LibreChat**, its architecture shares principles of modularity and compliance, making it a valuable reference for similar open-source AI management tools.\n\n# Use Cases\n- **Enterprise AI Governance**: Centralized management of AI models, user access, and compliance policies for large organizations.\n- **Cost-Efficient AI Deployment**: Token-based pricing with no per-user fees, reducing infrastructure costs while maintaining scalability.\n- **Office Productivity Enhancement**: AI-assisted tasks in Word, Excel, PowerPoint, and Outlook without Copilot dependencies.\n- **Document Automation**: Rapid generation of reports, presentations, and transcripts from unstructured data.\n- **Compliance Training**: Built-in KI-Leitlinie creation and employee training to meet EU AI-Act requirements.\n- **Agent-Based Workflows**: Integration with n8n and internal agent catalogs for automated business processes.\n\n# Roadmap and Future Development\nThe project\u2019s development is driven by enterprise needs for compliance, scalability, and interoperability. Future updates may focus on:\n- Expanding support for additional sovereign AI models (e.g., Llama, Gemma).\n- Enhancing the **Agent Marketplace** with more pre-built templates for common business use cases.\n- Improving **companyRAG** with advanced semantic search capabilities.\n- Adding more native integrations for other productivity tools beyond Microsoft 365.\n\nSince the source does not detail specific roadmap items, these directions are plausible based on current trends in enterprise AI. Contributors are encouraged to engage with the **innFactory/librechat-admin-dashboard** repository for collaboration opportunities.\n\n# Conclusion\n**librechat-admin-dashboard** delivers a robust, compliant solution for managing **CompanyGPT** in enterprise environments, prioritizing data sovereignty, cost efficiency, and deep Microsoft 365 integration. Its modular architecture and support for multiple AI models make it a versatile tool for organizations seeking to harness AI without compromising on privacy or control. For those looking to deploy a private, enterprise-grade AI assistant with full compliance and scalability, this project offers a compelling alternative to public AI services.",
       "stack": [
         "TypeScript",
         "Chatgpt",
+        "Claude",
         "Gemini",
-        "Librechat",
-        "Claude"
+        "Gpt"
       ],
-      "updated": "5 months ago",
-      "pushedAt": "2026-03-25T20:11:47Z",
+      "updated": "6 months ago",
+      "pushedAt": "2026-03-25T14:11:45-06:00",
       "license": "MIT",
       "langs": [
         {
-          "pct": 99,
-          "name": "TypeScript"
+          "name": "TypeScript",
+          "pct": 99.069,
+          "size": 423360
         },
         {
-          "pct": 1,
-          "name": "CSS"
+          "name": "CSS",
+          "pct": 0.583,
+          "size": 2490
         },
         {
-          "pct": 0,
-          "name": "Dockerfile"
+          "name": "Dockerfile",
+          "pct": 0.349,
+          "size": 1490
         }
       ],
-      "versions": [
-        {
-          "url": "https://github.com/innFactory/librechat-admin-dashboard/releases/tag/v1.1.1",
-          "name": "v1.1.1"
-        },
-        {
-          "url": "https://github.com/innFactory/librechat-admin-dashboard/releases/tag/v1.0.6",
-          "name": "v1.0.6"
-        },
-        {
-          "url": "https://github.com/innFactory/librechat-admin-dashboard/releases/tag/v1.0.3",
-          "name": "v1.0.3"
-        }
-      ],
+      "versions": [],
       "topics": [
         "chatgpt",
-        "gemini",
-        "librechat",
         "claude",
-        "gpt"
+        "gemini",
+        "gpt",
+        "librechat"
       ],
-      "addedAt": "2026-07-15T22:28:33.182261+00:00"
+      "forks": 5,
+      "issues": 3,
+      "watchers": 15
     },
     {
       "slug": "litellm-server-boilerplate",
@@ -909,57 +1013,65 @@
       "category": "AI & ML",
       "stars": 13,
       "author": "teremterem",
-      "avatar": "https://avatars.githubusercontent.com/u/5508002?u=4cf123c622391d4b382447ea3f15a001e48c2e83&v=4",
-      "desc": "A lightweight LiteLLM server boilerplate pre-configured with uv and Docker for hosting your own OpenAI- and Anthropic-compatible endpoints. Includes LibreChat as an optional web UI.",
+      "avatar": "https://avatars.githubusercontent.com/u/5508002?v=4",
+      "desc": "A lightweight LiteLLM server boilerplate pre-configured with uv and Docker for hosting OpenAI- and Anthropic-compatible endpoints, with LibreChat as an optional web UI.",
       "demo": null,
       "repoUrl": "https://github.com/teremterem/litellm-server-boilerplate",
       "long1": "A lightweight LiteLLM server boilerplate pre-configured with uv and Docker for hosting your own OpenAI- and Anthropic-compatible endpoints. Includes LibreChat as an optional web UI. Maintained by teremterem on GitHub, where it has earned 13 stars from the community.",
-      "long2": "It's actively developed around agentic-ai, ai-assistant, anthropic, and is a solid reference for anyone building with these tools.",
+      "long2": "It's actively developed around agentic-ai, ai, ai-assistant, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "# Introduction\n\nThe **litellm-server-boilerplate** is a lightweight, pre-configured server designed to host your own OpenAI- and Anthropic-compatible endpoints using LiteLLM. It provides a quick setup with `uv` and Docker, making it ideal for developers looking to deploy AI agents, assistants, or chatbots without the complexity of building a server from scratch. This boilerplate also includes LibreChat as an optional web UI, offering a ready-to-use interface for testing and interacting with your custom AI models.\n\nDevelopers and teams working on AI projects\u2014whether for research, production, or experimentation\u2014will find this boilerplate invaluable. It abstracts away the boilerplate code needed to serve large language models (LLMs) while providing flexibility to integrate custom providers, such as the included Yoda example, which demonstrates how to stylize responses for unique AI agents.\n\n# Key Features\n\n- **Pre-configured LiteLLM Server**: Ready-to-use setup with `uv` and Docker, eliminating the need to configure a server from scratch.\n- **OpenAI and Anthropic Compatibility**: Supports both OpenAI and Anthropic APIs, allowing seamless integration with existing clients or frameworks.\n- **Optional LibreChat UI**: Includes LibreChat as a web UI, providing a quick way to test and interact with your AI models without additional setup.\n- **Custom Provider Support**: Features an example of a custom provider (Yoda) to demonstrate how to stylize responses, serving as a foundation for building your own AI agents.\n- **Docker and `uv` Support**: Offers flexibility in deployment, whether you prefer containerization with Docker or a lightweight Python environment manager like `uv`.\n- **Environment Variable Configuration**: Easy setup with `.env` files, allowing developers to configure API keys and other settings without modifying the codebase.\n\n# Ecosystem and Community\n\nThe **litellm-server-boilerplate** is part of a growing ecosystem of open-source projects aimed at simplifying the deployment and management of AI models. While it does not explicitly tie itself to a specific community, its compatibility with OpenAI and Anthropic APIs ensures broad applicability across AI development workflows.\n\nDevelopers can leverage this boilerplate to experiment with different AI models, test custom providers, or deploy their own AI agents without the overhead of maintaining a server infrastructure. The inclusion of LibreChat as an optional UI further extends its utility, providing a ready-to-use interface for interaction.\n\n# Use Cases\n\n- **AI Agent Development**: Use the boilerplate to quickly prototype and deploy custom AI agents, such as the Yoda example, which demonstrates response styling.\n- **Chatbot Serving**: Deploy your own chatbots with OpenAI or Anthropic compatibility, allowing seamless integration with existing clients.\n- **Research and Experimentation**: Test different AI models and providers in a lightweight environment, accelerating development cycles.\n- **Production Deployment**: Scale your AI applications with the flexibility of Docker or `uv`, ensuring high performance and reliability.\n- **Custom Provider Integration**: Build and integrate custom providers for unique AI interactions, leveraging the boilerplate\u2019s example as a starting point.\n\n# Roadmap and Future Development\n\nWhile the **litellm-server-boilerplate** is currently focused on providing a lightweight, pre-configured server for AI model deployment, future updates may include additional features to enhance flexibility and usability. These could involve:\n\n- **Expanded Provider Support**: Adding support for more AI providers, such as Google\u2019s Gemini, to broaden compatibility.\n- **Improved Documentation**: Enhancing the existing documentation to include more detailed examples and best practices for custom provider development.\n- **Performance Optimizations**: Optimizing the server for better performance, particularly in high-traffic or production environments.\n- **Community Contributions**: Encouraging community contributions to expand the boilerplate\u2019s capabilities, such as adding more custom provider examples or integration with other AI frameworks.\n\n# Conclusion\n\nThe **litellm-server-boilerplate** is a powerful tool for developers looking to deploy AI models with minimal setup. Its pre-configured LiteLLM server, support for OpenAI and Anthropic APIs, and optional LibreChat UI make it a versatile choice for AI agent development, chatbot serving, and research. Whether you're a solo developer or part of a team, this boilerplate provides the foundation you need to bring your AI projects to life quickly and efficiently.",
       "stack": [
         "Python",
         "Agentic Ai",
+        "Ai",
         "Ai Assistant",
-        "Anthropic",
-        "Gemini"
+        "Ai Chatbot"
       ],
       "updated": "9 months ago",
-      "pushedAt": "2025-12-08T18:34:19Z",
+      "pushedAt": "2025-12-08T12:34:08-06:00",
       "license": "MIT",
       "langs": [
         {
-          "pct": 87,
-          "name": "Python"
+          "name": "Python",
+          "pct": 86.637,
+          "size": 25590
         },
         {
-          "pct": 8,
-          "name": "Shell"
+          "name": "Shell",
+          "pct": 8.037,
+          "size": 2374
         },
         {
-          "pct": 5,
-          "name": "Dockerfile"
+          "name": "Dockerfile",
+          "pct": 5.326,
+          "size": 1573
         }
       ],
-      "versions": [
-        {
-          "url": "https://github.com/teremterem/litellm-server-boilerplate/releases/tag/1.0.0b4",
-          "name": "1.0.0b4"
-        }
-      ],
+      "versions": [],
       "topics": [
         "agentic-ai",
+        "ai",
         "ai-assistant",
+        "ai-chatbot",
         "anthropic",
+        "boilerplate",
+        "chatgpt",
         "gemini",
         "genai",
         "generative-ai",
+        "librechat",
         "litellm",
         "litellm-proxy",
-        "openai",
+        "llm",
         "llm-server",
         "llm-serving",
-        "chatgpt"
+        "openai",
+        "python",
+        "setup",
+        "webchat"
       ],
-      "addedAt": "2026-07-15T22:28:33.182261+00:00"
+      "forks": 1,
+      "watchers": 13
     }
   ]
 }
