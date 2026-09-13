@@ -3,10 +3,9 @@ import type { Theme } from "../config/domains";
 import type { Project } from "../lib/catalog";
 import { readableOn, readableOnDark, readableOnLight, readableOnSurfaceDark, tint } from "../config/accessible-color";
 import { formatStars, timeAgo } from "../lib/catalog";
-import { projectDisplayLong, projectDisplayName, projectPreviewExcerpt } from "../lib/preview-text";
+import { projectDisplayLong, projectDisplayName } from "../lib/preview-text";
 import { renderArticle } from "../lib/markdown";
 import InstallBox from "./InstallBox.astro";
-import { installManagers } from "../lib/install-commands";
 import { authorHref, hasAuthorPage } from "../lib/authors";
 import ProjectCard from "./ProjectCard.astro";
 
@@ -17,15 +16,12 @@ const radius = `${theme.radius}px`;
 const stars = formatStars(project.stars || 0);
 const initial = (project.author || "").charAt(0).toUpperCase();
 const displayName = projectDisplayName(project);
-const displayDesc = projectPreviewExcerpt(project);
+const displayDesc = projectDisplayLong(project, "long1");
 const displayLong1 = projectDisplayLong(project, "long1");
 const displayLong2 = projectDisplayLong(project, "long2");
 // The discovery worker's Markdown README, when this project has one.
 const descriptionHtml = project.descriptionMd ? renderArticle(project.descriptionMd) : "";
 const relatedCards = related.map((p) => ({ project: p, name: projectDisplayName(p) }));
-// Ecosystems with no one-line install render no widget at all — skip its
-// wrapper too, so the sidebar doesn't open with an empty 16px gap.
-const hasInstall = installManagers(project, theme.slug).length > 0;
 // Owners with projects in more than one gallery get a network-wide page; the
 // in-gallery `?author=` filter can only ever show this gallery's share of them.
 const authorLink = hasAuthorPage(project.author)
@@ -143,19 +139,21 @@ const previewVariant = isTerminal ? "terminal" : editorial ? "editorial" : "defa
             <div style="font-size:14px; color:#a3ada7; line-height:1.75; margin-top:14px;">{displayLong2}</div>
           </>
         )}
-      </div>
-      <div>
-        {hasInstall && (
-          <div style="margin-bottom:16px; --install-fz:11px;">
-            <InstallBox theme={theme} project={project} />
+
+        {project.stack.length > 0 && (
+          <div style="margin-top:34px;">
+            <div class="disp" style="font-size:18px; font-weight:600; color:#f1f6f2; margin-bottom:14px;"># tags</div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              {project.stack.map((s) => <a href={`${base}/?tag=${encodeURIComponent(s)}`} class="tag-link" style={`font-size:11px; font-weight:600; color:${tagInk}; background:${tagBg}; border:1px solid color-mix(in srgb, ${accentText} 42%, #0c0f0e); padding:4px 10px; border-radius:999px;`}>{s}</a>)}
+            </div>
           </div>
         )}
-        <div style="background:#101410; border:1px solid #1f2622; border-radius:10px; padding:15px; margin-bottom:16px;">
-          <div style={`font-size:12px; color:${muted}; text-transform:uppercase; letter-spacing:.04em; margin-bottom:12px;`}>tags</div>
-          <div style="display:flex; gap:8px; flex-wrap:wrap;">
-            {project.stack.map((s) => <a href={`${base}/?tag=${encodeURIComponent(s)}`} class="tag-link" style={`font-size:11px; font-weight:600; color:${tagInk}; background:${tagBg}; border:1px solid color-mix(in srgb, ${accentText} 42%, #0c0f0e); padding:4px 10px; border-radius:999px;`}>{s}</a>)}
-          </div>
+        <div style="margin-top:34px; --install-fz:11px;">
+          <div class="disp" style="font-size:18px; font-weight:600; color:#f1f6f2; margin-bottom:14px;"># install</div>
+            <InstallBox theme={theme} project={project} />
         </div>
+      </div>
+      <div>
         <div style="background:#101410; border:1px solid #1f2622; border-radius:10px; padding:15px;">
           <div style={`font-size:12px; color:${muted}; text-transform:uppercase; letter-spacing:.04em; margin-bottom:16px;`}>languages</div>
           <div style="display:flex; height:8px; border-radius:6px; overflow:hidden; margin-bottom:16px; background:#0e120f;">
@@ -236,19 +234,21 @@ const previewVariant = isTerminal ? "terminal" : editorial ? "editorial" : "defa
             <div style={`font-size:15.5px; color:${pageBody}; line-height:1.7; margin-top:14px;`}>{displayLong2}</div>
           </>
         )}
-      </div>
-      <div>
-        {hasInstall && (
-          <div style="margin-bottom:16px; --install-fz:12px;">
-            <InstallBox theme={theme} project={project} />
+
+        {project.stack.length > 0 && (
+          <div style="margin-top:34px;">
+            <div class="disp" style="font-size:18px; font-weight:700; margin-bottom:14px;">Tags</div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              {project.stack.map((s) => <a href={`${base}/?tag=${encodeURIComponent(s)}`} class="tag-link" style={`font-size:12px; font-weight:600; color:${chipInk}; background:${chipBg}; border:1px solid color-mix(in srgb, ${chipColor} 30%, #fff); padding:4px 10px; border-radius:999px;`}>{s}</a>)}
+            </div>
           </div>
         )}
-        <div style={`background:#fff; color:${cardInk}; border:1px solid #eef0ef; border-radius:${radius}; padding:16px; margin-bottom:16px;`}>
-          <div style={`font-size:13px; font-weight:700; color:${cardMuted}; text-transform:uppercase; letter-spacing:.04em; margin-bottom:14px;`}>Tags</div>
-          <div style="display:flex; gap:8px; flex-wrap:wrap;">
-            {project.stack.map((s) => <a href={`${base}/?tag=${encodeURIComponent(s)}`} class="tag-link" style={`font-size:12px; font-weight:600; color:${chipInk}; background:${chipBg}; border:1px solid color-mix(in srgb, ${chipColor} 30%, #fff); padding:4px 10px; border-radius:999px;`}>{s}</a>)}
-          </div>
+        <div style="margin-top:34px; --install-fz:12px;">
+          <div class="disp" style="font-size:18px; font-weight:700; margin-bottom:14px;">Install</div>
+            <InstallBox theme={theme} project={project} />
         </div>
+      </div>
+      <div>
         <div style={`background:#fff; color:${cardInk}; border:1px solid #eef0ef; border-radius:${radius}; padding:16px;`}>
           <div style={`font-size:13px; font-weight:700; color:${cardMuted}; text-transform:uppercase; letter-spacing:.04em; margin-bottom:16px;`}>Languages</div>
           <div style="display:flex; height:8px; border-radius:6px; overflow:hidden; margin-bottom:16px;">

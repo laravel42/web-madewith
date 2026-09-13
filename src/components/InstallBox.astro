@@ -7,10 +7,13 @@ import { installManagers } from "../lib/install-commands";
 interface Props { theme: Theme; project: Project; }
 const { theme, project } = Astro.props;
 
+const clone = `git clone ${project.repoUrl}.git`;
+
 // Package managers for this project's ecosystem (see lib/install-commands.ts).
 // Best-effort package name: repo name on npm/PyPI/crates, vendor/package on
 // Packagist, the module path on Go. Empty for ecosystems with no one-line
-// install (Java, Elixir, C…) — the widget then renders nothing at all.
+// install (Java, Elixir, C…) — the widget then shows the clone line alone,
+// which is the one command that exists for every repository.
 const managers = installManagers(project, theme.slug);
 // The widget is GitHub-dark on every shell — including the light editorial and
 // default pages — so the accent has to read on #0d1117, not on the page behind
@@ -30,23 +33,32 @@ const pmSolid = solidSurface(accentBase, theme.accentInk);
 const pmInk = readableOn(theme.accentInk, pmSolid);
 ---
 
-{managers.length > 0 && (
-  <div class="install" data-install data-tech={theme.slug} style={`--pm-accent:${accent}; --pm-active-bg:${pmActiveBg}; --pm-solid:${pmSolid}; --pm-ink:${pmInk};`}>
-    <div class="pms" role="radiogroup" aria-label="Package manager">
-      {managers.map((m, i) => (
-        <button class="pm" type="button" data-pm data-cmd={m.cmd} aria-pressed={i === 0 ? "true" : "false"}>
-          <span class="dot" style={`background:${dot(m.color)};`}></span>{m.label}
-        </button>
-      ))}
-    </div>
-    <div class="row">
-      <code class="fld out" data-cmd-out>{managers[0].cmd}</code>
-      <button class="cp" type="button" data-copy="[data-cmd-out]" data-command-type="install" aria-label="Copy install command">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-      </button>
-    </div>
+<div class="install" data-install data-tech={theme.slug} style={`--pm-accent:${accent}; --pm-active-bg:${pmActiveBg}; --pm-solid:${pmSolid}; --pm-ink:${pmInk};`}>
+  <div class="row">
+    <input class="fld" data-clone readonly value={clone} aria-label="Clone command" />
+    <button class="cp" type="button" data-copy="[data-clone]" data-command-type="clone" aria-label="Copy clone command">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+    </button>
   </div>
-)}
+
+  {managers.length > 0 && (
+    <>
+      <div class="pms" role="radiogroup" aria-label="Package manager">
+        {managers.map((m, i) => (
+          <button class="pm" type="button" data-pm data-cmd={m.cmd} aria-pressed={i === 0 ? "true" : "false"}>
+            <span class="dot" style={`background:${dot(m.color)};`}></span>{m.label}
+          </button>
+        ))}
+      </div>
+      <div class="row">
+        <code class="fld out" data-cmd-out>{managers[0].cmd}</code>
+        <button class="cp" type="button" data-copy="[data-cmd-out]" data-command-type="install" aria-label="Copy install command">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        </button>
+      </div>
+    </>
+  )}
+</div>
 
 <style>
   .install { max-width: 100%; }
@@ -67,7 +79,7 @@ const pmInk = readableOn(theme.accentInk, pmSolid);
   .cp:hover { color: #e6edf3; }
   .cp.copied { color: #3fb950; }
 
-  .pms { display: flex; gap: 6px; margin: 0 0 12px; flex-wrap: wrap; }
+  .pms { display: flex; gap: 6px; margin: 12px 0; flex-wrap: wrap; }
   /* The tabs carry the same dark fill as the fields above and below: the
      GitHub-dark greys were 2.5:1 (label) and 1.15:1 (hover) when `transparent`
      let a light page through. */
@@ -120,6 +132,9 @@ const pmInk = readableOn(theme.accentInk, pmSolid);
           });
         });
       });
+
+      const clone = root.querySelector<HTMLInputElement>("[data-clone]");
+      clone?.addEventListener("focus", () => clone.select());
 
       const out = root.querySelector<HTMLElement>("[data-cmd-out]");
       const pms = Array.from(root.querySelectorAll<HTMLElement>("[data-pm]"));

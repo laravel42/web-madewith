@@ -115,25 +115,21 @@ export function getAuthor(login: string): AuthorRecord | undefined {
 }
 
 /**
- * Authors that get their own page: anyone the gallery filter cannot fully
- * answer for. That means more than one repo, OR a single repo catalogued in
- * several galleries — the page is then the only place that says where else it
- * appears. Owners of one repo in one gallery are excluded (~19,000 of them):
- * their filter is already complete, and the page would restate the project the
- * visitor just came from.
+ * Every author gets a page.
+ *
+ * This was capped to authors with more than one repo, which left 39% of project
+ * pages linking to the gallery's `?author=` filter while the rest linked to an
+ * author page — the same control behaving two different ways depending on the
+ * owner. Consistency is worth the extra pages: a single-repo author's page is
+ * thin, but it is never a dead end, and the link always means the same thing.
  */
-function qualifies(a: AuthorRecord): boolean {
-  return a.entries.length > 1 || (a.entries[0]?.galleries.length ?? 0) > 1;
-}
-
 export function pagedAuthors(): AuthorRecord[] {
-  return [...authorIndex().values()].filter(qualifies);
+  return [...authorIndex().values()];
 }
 
-/** True when this author has a page — decides whether to link to it. */
+/** True when this author has a page — every catalogued author does. */
 export function hasAuthorPage(login: string): boolean {
-  const rec = getAuthor(login);
-  return !!rec && qualifies(rec);
+  return !!getAuthor(login);
 }
 
 export function authorHref(login: string): string {
