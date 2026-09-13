@@ -2,7 +2,7 @@
 import type { Theme } from "../config/domains";
 import type { Project } from "../lib/catalog";
 import { formatStars, timeAgo } from "../lib/catalog";
-import { projectPreviewExcerpt } from "../lib/preview-text";
+import { projectDisplayLong } from "../lib/preview-text";
 import ProjectShot from "./ProjectShot.astro";
 
 interface Props {
@@ -21,7 +21,7 @@ const { theme, project, rank, priority = false, cover = true } = Astro.props;
 const base = `/${theme.slug}`;
 const href = `${base}/project/${project.slug}`;
 const initial = (project.author || "").charAt(0).toUpperCase();
-const displayDesc = projectPreviewExcerpt(project);
+const displayDesc = projectDisplayLong(project, "long1");
 // Last commit on the default branch → compact time-ago. Older publishes only
 // have the preformatted `updated` string (from the same GitHub timestamp).
 const activity = timeAgo(project.pushedAt) || project.updated || "";
