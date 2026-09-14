@@ -1,6 +1,6 @@
 {
   "slug": "suitecrm",
-  "scrapedAt": "2026-09-12T02:22:13.539770+00:00",
+  "scrapedAt": "2026-09-14T05:50:20.779137+00:00",
   "source": "scrapy-github",
   "totalRepos": 22,
   "projects": [
@@ -30,16 +30,19 @@
       "license": "AGPL-3.0",
       "langs": [
         {
+          "name": "JavaScript",
           "pct": 84,
-          "name": "JavaScript"
+          "size": 0
         },
         {
+          "name": "PHP",
           "pct": 13,
-          "name": "PHP"
+          "size": 0
         },
         {
+          "name": "Vue",
           "pct": 3,
-          "name": "Vue"
+          "size": 0
         }
       ],
       "versions": [
@@ -108,16 +111,19 @@
       "license": "MIT",
       "langs": [
         {
+          "name": "Go",
           "pct": 53,
-          "name": "Go"
+          "size": 0
         },
         {
+          "name": "PHP",
           "pct": 32,
-          "name": "PHP"
+          "size": 0
         },
         {
+          "name": "TypeScript",
           "pct": 15,
-          "name": "TypeScript"
+          "size": 0
         }
       ],
       "versions": [
@@ -179,16 +185,19 @@
       "license": "AGPL-3.0",
       "langs": [
         {
+          "name": "PHP",
           "pct": 98,
-          "name": "PHP"
+          "size": 0
         },
         {
+          "name": "Go Template",
           "pct": 1,
-          "name": "Go Template"
+          "size": 0
         },
         {
+          "name": "HTML",
           "pct": 1,
-          "name": "HTML"
+          "size": 0
         }
       ],
       "versions": [
@@ -254,16 +263,19 @@
       "license": "EUPL-1.1",
       "langs": [
         {
+          "name": "PHP",
           "pct": 68,
-          "name": "PHP"
+          "size": 0
         },
         {
+          "name": "Smarty",
           "pct": 29,
-          "name": "Smarty"
+          "size": 0
         },
         {
+          "name": "JavaScript",
           "pct": 3,
-          "name": "JavaScript"
+          "size": 0
         }
       ],
       "versions": [
@@ -308,16 +320,19 @@
       "license": "—",
       "langs": [
         {
+          "name": "JavaScript",
           "pct": 82,
-          "name": "JavaScript"
+          "size": 0
         },
         {
+          "name": "PHP",
           "pct": 16,
-          "name": "PHP"
+          "size": 0
         },
         {
+          "name": "CSS",
           "pct": 2,
-          "name": "CSS"
+          "size": 0
         }
       ],
       "versions": [
@@ -380,8 +395,9 @@
       "license": "MIT",
       "langs": [
         {
+          "name": "Python",
           "pct": 100,
-          "name": "Python"
+          "size": 0
         }
       ],
       "versions": [
@@ -432,12 +448,14 @@
       "license": "MIT",
       "langs": [
         {
+          "name": "Python",
           "pct": 93,
-          "name": "Python"
+          "size": 0
         },
         {
+          "name": "PHP",
           "pct": 7,
-          "name": "PHP"
+          "size": 0
         }
       ],
       "versions": [],
@@ -475,17 +493,19 @@
         "Curl",
         "Laravel"
       ],
-      "updated": "2 months ago",
+      "updated": "3 months ago",
       "pushedAt": "2026-06-29T09:16:54-06:00",
       "license": "MIT",
       "langs": [
         {
+          "name": "PHP",
           "pct": 87,
-          "name": "PHP"
+          "size": 0
         },
         {
+          "name": "Makefile",
           "pct": 13,
-          "name": "Makefile"
+          "size": 0
         }
       ],
       "versions": [
@@ -543,8 +563,9 @@
       "license": "MIT",
       "langs": [
         {
+          "name": "PHP",
           "pct": 100,
-          "name": "PHP"
+          "size": 0
         }
       ],
       "versions": [
@@ -568,6 +589,61 @@
         "sugarcrm"
       ],
       "addedAt": "2026-09-12T02:22:13.539770+00:00"
+    },
+    {
+      "slug": "mobileapp-suitecrm",
+      "name": "MobileApp_SuiteCRM",
+      "fullName": "jhoukem/MobileApp_SuiteCRM",
+      "category": "Mobile",
+      "stars": 15,
+      "author": "jhoukem",
+      "avatar": "https://avatars.githubusercontent.com/u/9862039?u=f3676919dce4980deda27e487028af9f96b9495f&v=4",
+      "desc": "A project worth exploring.",
+      "demo": null,
+      "repoUrl": "https://github.com/jhoukem/MobileApp_SuiteCRM",
+      "long1": "A project worth exploring. Maintained by jhoukem on GitHub, where it has earned 15 stars from the community.",
+      "long2": "It's actively developed around suitecrm, sugarcrm, react-native, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "JavaScript",
+        "Suitecrm",
+        "Sugarcrm",
+        "React Native"
+      ],
+      "updated": "9 years ago",
+      "pushedAt": "2017-05-31T10:18:29-05:00",
+      "license": "—",
+      "langs": [
+        {
+          "name": "JavaScript",
+          "pct": 90,
+          "size": 0
+        },
+        {
+          "name": "Objective-C",
+          "pct": 7,
+          "size": 0
+        },
+        {
+          "name": "Python",
+          "pct": 3,
+          "size": 0
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/jhoukem/MobileApp_SuiteCRM/releases/tag/v1.0",
+          "name": "v1.0"
+        }
+      ],
+      "topics": [
+        "suitecrm",
+        "sugarcrm",
+        "react-native"
+      ],
+      "forks": 7,
+      "watchers": 3,
+      "addedAt": "2026-07-15T22:28:33.017042+00:00"
     },
     {
       "slug": "cve-2022-23940",
@@ -595,8 +671,9 @@
       "license": "MIT",
       "langs": [
         {
+          "name": "Python",
           "pct": 100,
-          "name": "Python"
+          "size": 0
         }
       ],
       "versions": [],
@@ -612,58 +689,6 @@
       ],
       "forks": 7,
       "watchers": 1,
-      "addedAt": "2026-07-15T22:28:33.017042+00:00"
-    },
-    {
-      "slug": "mobileapp-suitecrm",
-      "name": "MobileApp_SuiteCRM",
-      "fullName": "jhoukem/MobileApp_SuiteCRM",
-      "category": "Mobile",
-      "stars": 15,
-      "author": "jhoukem",
-      "avatar": "https://avatars.githubusercontent.com/u/9862039?u=f3676919dce4980deda27e487028af9f96b9495f&v=4",
-      "desc": "A project worth exploring.",
-      "demo": null,
-      "repoUrl": "https://github.com/jhoukem/MobileApp_SuiteCRM",
-      "long1": "A project worth exploring. Maintained by jhoukem on GitHub, where it has earned 15 stars from the community.",
-      "long2": "It's actively developed around suitecrm, sugarcrm, react-native, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "JavaScript",
-        "Suitecrm",
-        "Sugarcrm",
-        "React Native"
-      ],
-      "updated": "9 years ago",
-      "pushedAt": "2017-05-31T10:18:29-05:00",
-      "license": "—",
-      "langs": [
-        {
-          "pct": 90,
-          "name": "JavaScript"
-        },
-        {
-          "pct": 7,
-          "name": "Objective-C"
-        },
-        {
-          "pct": 3,
-          "name": "Python"
-        }
-      ],
-      "versions": [
-        {
-          "url": "https://github.com/jhoukem/MobileApp_SuiteCRM/releases/tag/v1.0",
-          "name": "v1.0"
-        }
-      ],
-      "topics": [
-        "suitecrm",
-        "sugarcrm",
-        "react-native"
-      ],
-      "forks": 7,
-      "watchers": 3,
       "addedAt": "2026-07-15T22:28:33.017042+00:00"
     },
     {
@@ -691,8 +716,9 @@
       "license": "GPL-3.0",
       "langs": [
         {
+          "name": "PHP",
           "pct": 100,
-          "name": "PHP"
+          "size": 0
         }
       ],
       "versions": [],
@@ -730,8 +756,9 @@
       "license": "GPL-3.0",
       "langs": [
         {
+          "name": "Python",
           "pct": 100,
-          "name": "Python"
+          "size": 0
         }
       ],
       "versions": [
@@ -776,16 +803,19 @@
       "license": "—",
       "langs": [
         {
+          "name": "PHP",
           "pct": 80,
-          "name": "PHP"
+          "size": 0
         },
         {
+          "name": "Smarty",
           "pct": 18,
-          "name": "Smarty"
+          "size": 0
         },
         {
+          "name": "HTML",
           "pct": 2,
-          "name": "HTML"
+          "size": 0
         }
       ],
       "versions": [],
@@ -821,8 +851,9 @@
       "license": "—",
       "langs": [
         {
+          "name": "Python",
           "pct": 100,
-          "name": "Python"
+          "size": 0
         }
       ],
       "versions": [],
@@ -861,16 +892,19 @@
       "license": "—",
       "langs": [
         {
+          "name": "PHP",
           "pct": 87,
-          "name": "PHP"
+          "size": 0
         },
         {
+          "name": "Smarty",
           "pct": 8,
-          "name": "Smarty"
+          "size": 0
         },
         {
+          "name": "JavaScript",
           "pct": 5,
-          "name": "JavaScript"
+          "size": 0
         }
       ],
       "versions": [],
@@ -905,8 +939,9 @@
       "license": "—",
       "langs": [
         {
+          "name": "PHP",
           "pct": 100,
-          "name": "PHP"
+          "size": 0
         }
       ],
       "versions": [
@@ -954,17 +989,19 @@
         "Onlyoffice",
         "Suitecrm"
       ],
-      "updated": "8 weeks ago",
+      "updated": "2 months ago",
       "pushedAt": "2026-07-16T06:24:24-06:00",
       "license": "AGPL-3.0",
       "langs": [
         {
+          "name": "PHP",
           "pct": 90,
-          "name": "PHP"
+          "size": 0
         },
         {
+          "name": "Smarty",
           "pct": 10,
-          "name": "Smarty"
+          "size": 0
         }
       ],
       "versions": [

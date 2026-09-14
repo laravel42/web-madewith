@@ -4,7 +4,6 @@ import type { Project } from "../lib/catalog";
 import { readableOn, readableOnDark, readableOnLight, readableOnSurfaceDark, tint } from "../config/accessible-color";
 import { formatStars, timeAgo } from "../lib/catalog";
 import { projectDisplayLong, projectDisplayName } from "../lib/preview-text";
-import { renderArticle } from "../lib/markdown";
 import InstallBox from "./InstallBox.astro";
 import { authorHref, hasAuthorPage } from "../lib/authors";
 import ProjectCard from "./ProjectCard.astro";
@@ -18,9 +17,7 @@ const initial = (project.author || "").charAt(0).toUpperCase();
 const displayName = projectDisplayName(project);
 const displayDesc = projectDisplayLong(project, "long1");
 const displayLong1 = projectDisplayLong(project, "long1");
-const displayLong2 = projectDisplayLong(project, "long2");
 // The discovery worker's Markdown README, when this project has one.
-const descriptionHtml = project.descriptionMd ? renderArticle(project.descriptionMd) : "";
 const relatedCards = related.map((p) => ({ project: p, name: projectDisplayName(p) }));
 // Owners with projects in more than one gallery get a network-wide page; the
 // in-gallery `?author=` filter can only ever show this gallery's share of them.
@@ -130,32 +127,22 @@ const previewVariant = isTerminal ? "terminal" : editorial ? "editorial" : "defa
 
     <div class="mw-split" style="display:grid; grid-template-columns:minmax(0,2.25fr) minmax(0,1fr); gap:40px; margin-top:30px; padding-top:30px; border-top:1px solid #1f2622;">
       <div>
-        <div class="disp" style="font-size:21px; font-weight:600; color:#f1f6f2; margin-bottom:14px;"># README</div>
-        {descriptionHtml ? (
-          <div class="project-readme is-terminal" set:html={descriptionHtml} />
-        ) : (
-          <>
-            <div style="font-size:14px; color:#a3ada7; line-height:1.75;">{displayLong1}</div>
-            <div style="font-size:14px; color:#a3ada7; line-height:1.75; margin-top:14px;">{displayLong2}</div>
-          </>
-        )}
-
+        <div style="--install-fz:11px;">
+          <h2 class="disp" style="font-size:22px; font-weight:600; color:#f1f6f2; margin:0 0 14px;"># install</h2>
+          <InstallBox theme={theme} project={project} />
+        </div>
         {project.stack.length > 0 && (
           <div style="margin-top:34px;">
-            <div class="disp" style="font-size:18px; font-weight:600; color:#f1f6f2; margin-bottom:14px;"># tags</div>
+            <h2 class="disp" style="font-size:22px; font-weight:600; color:#f1f6f2; margin:0 0 14px;"># tags</h2>
             <div style="display:flex; gap:8px; flex-wrap:wrap;">
               {project.stack.map((s) => <a href={`${base}/?tag=${encodeURIComponent(s)}`} class="tag-link" style={`font-size:11px; font-weight:600; color:${tagInk}; background:${tagBg}; border:1px solid color-mix(in srgb, ${accentText} 42%, #0c0f0e); padding:4px 10px; border-radius:999px;`}>{s}</a>)}
             </div>
           </div>
         )}
-        <div style="margin-top:34px; --install-fz:11px;">
-          <div class="disp" style="font-size:18px; font-weight:600; color:#f1f6f2; margin-bottom:14px;"># install</div>
-            <InstallBox theme={theme} project={project} />
-        </div>
       </div>
       <div>
         <div style="background:#101410; border:1px solid #1f2622; border-radius:10px; padding:15px;">
-          <div style={`font-size:12px; color:${muted}; text-transform:uppercase; letter-spacing:.04em; margin-bottom:16px;`}>languages</div>
+          <h3 style={`font-size:12px; font-weight:400; color:${muted}; text-transform:uppercase; letter-spacing:.04em; margin:0 0 16px;`}>languages</h3>
           <div style="display:flex; height:8px; border-radius:6px; overflow:hidden; margin-bottom:16px; background:#0e120f;">
             {langs.map((l) => <span style={`width:${l.pct}%; background:${l.color}; height:100%;`}></span>)}
           </div>
@@ -170,7 +157,7 @@ const previewVariant = isTerminal ? "terminal" : editorial ? "editorial" : "defa
         </div>
         {versions.length > 0 && (
           <div style="background:#101410; border:1px solid #1f2622; border-radius:10px; padding:13px 15px; margin-top:16px;">
-            <div style={`font-size:12px; color:${muted}; text-transform:uppercase; letter-spacing:.04em; margin-bottom:10px;`}>latest versions</div>
+            <h3 style={`font-size:12px; font-weight:400; color:${muted}; text-transform:uppercase; letter-spacing:.04em; margin:0 0 10px;`}>latest versions</h3>
             {versions.map((v) => (
               <a href={v.url} target="_blank" rel="noopener" class="version-link" style="font-size:12.5px; color:#c7d0ca;"><span style={`color:${accentText};`}>{v.name}</span><span style={`color:${muted};`}>↗</span></a>
             ))}
@@ -179,7 +166,7 @@ const previewVariant = isTerminal ? "terminal" : editorial ? "editorial" : "defa
       </div>
     </div>
 
-    <div class="disp" style="font-size:21px; font-weight:600; color:#f1f6f2; margin:44px 0 18px;">more {theme.techName} repos</div>
+    <h2 class="disp" style="font-size:21px; font-weight:600; color:#f1f6f2; margin:44px 0 18px;">more {theme.techName} repos</h2>
     <div class="mw-grid3" style="display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px;">
       {relatedCards.map(({ project: p }, i) => (
         <ProjectCard theme={theme} project={p} rank={(i < 9 ? "0" : "") + (i + 1)} />
@@ -225,32 +212,22 @@ const previewVariant = isTerminal ? "terminal" : editorial ? "editorial" : "defa
 
     <div class="mw-split" style="display:grid; grid-template-columns:minmax(0,2.25fr) minmax(0,1fr); gap:40px; margin-top:30px; padding-top:30px; border-top:1px solid #eef0ef;">
       <div>
-        <div class="disp" style="font-size:22px; font-weight:700; margin-bottom:14px;">About this project</div>
-        {descriptionHtml ? (
-          <div class="project-readme" style={`--readme-body:${pageBody};`} set:html={descriptionHtml} />
-        ) : (
-          <>
-            <div style={`font-size:15.5px; color:${pageBody}; line-height:1.7;`}>{displayLong1}</div>
-            <div style={`font-size:15.5px; color:${pageBody}; line-height:1.7; margin-top:14px;`}>{displayLong2}</div>
-          </>
-        )}
-
+        <div style="--install-fz:12px;">
+          <h2 class="disp" style="font-size:22px; font-weight:700; margin:0 0 14px;">Install</h2>
+          <InstallBox theme={theme} project={project} />
+        </div>
         {project.stack.length > 0 && (
           <div style="margin-top:34px;">
-            <div class="disp" style="font-size:18px; font-weight:700; margin-bottom:14px;">Tags</div>
+            <h2 class="disp" style="font-size:22px; font-weight:700; margin:0 0 14px;">Tags</h2>
             <div style="display:flex; gap:8px; flex-wrap:wrap;">
               {project.stack.map((s) => <a href={`${base}/?tag=${encodeURIComponent(s)}`} class="tag-link" style={`font-size:12px; font-weight:600; color:${chipInk}; background:${chipBg}; border:1px solid color-mix(in srgb, ${chipColor} 30%, #fff); padding:4px 10px; border-radius:999px;`}>{s}</a>)}
             </div>
           </div>
         )}
-        <div style="margin-top:34px; --install-fz:12px;">
-          <div class="disp" style="font-size:18px; font-weight:700; margin-bottom:14px;">Install</div>
-            <InstallBox theme={theme} project={project} />
-        </div>
       </div>
       <div>
         <div style={`background:#fff; color:${cardInk}; border:1px solid #eef0ef; border-radius:${radius}; padding:16px;`}>
-          <div style={`font-size:13px; font-weight:700; color:${cardMuted}; text-transform:uppercase; letter-spacing:.04em; margin-bottom:16px;`}>Languages</div>
+          <h3 style={`font-size:13px; font-weight:700; color:${cardMuted}; text-transform:uppercase; letter-spacing:.04em; margin:0 0 16px;`}>Languages</h3>
           <div style="display:flex; height:8px; border-radius:6px; overflow:hidden; margin-bottom:16px;">
             {langs.map((l) => <span style={`width:${l.pct}%; background:${l.color}; height:100%;`}></span>)}
           </div>
@@ -265,7 +242,7 @@ const previewVariant = isTerminal ? "terminal" : editorial ? "editorial" : "defa
         </div>
         {versions.length > 0 && (
           <div style={`background:#fff; color:${cardInk}; border:1px solid #eef0ef; border-radius:${radius}; padding:13px 16px; margin-top:16px;`}>
-            <div style={`font-size:13px; font-weight:700; color:${cardMuted}; text-transform:uppercase; letter-spacing:.04em; margin-bottom:10px;`}>Latest versions</div>
+            <h3 style={`font-size:13px; font-weight:700; color:${cardMuted}; text-transform:uppercase; letter-spacing:.04em; margin:0 0 10px;`}>Latest versions</h3>
             {versions.map((v) => (
               <a href={v.url} target="_blank" rel="noopener" class="version-link" style="font-size:13.5px; color:#3a443f;"><span style="font-weight:600;">{v.name}</span><span style={`color:${cardMuted};`}>↗</span></a>
             ))}
@@ -274,7 +251,7 @@ const previewVariant = isTerminal ? "terminal" : editorial ? "editorial" : "defa
       </div>
     </div>
 
-    <div class="disp" style="font-size:22px; font-weight:700; margin:44px 0 18px;">More {theme.techName} projects</div>
+    <h2 class="disp" style="font-size:22px; font-weight:700; margin:44px 0 18px;">More {theme.techName} projects</h2>
     <div class="mw-grid3" style="display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px;">
       {relatedCards.map(({ project: p }, i) => (
         <ProjectCard theme={theme} project={p} rank={(i < 9 ? "0" : "") + (i + 1)} />

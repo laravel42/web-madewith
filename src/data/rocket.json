@@ -1,6 +1,6 @@
 {
   "slug": "rocket",
-  "scrapedAt": "2026-09-12T02:22:12.597575+00:00",
+  "scrapedAt": "2026-09-14T05:50:19.922131+00:00",
   "source": "scrapy-github",
   "totalRepos": 178,
   "projects": [
@@ -414,16 +414,19 @@
       "license": "MIT",
       "langs": [
         {
+          "name": "Rust",
           "pct": 86,
-          "name": "Rust"
+          "size": 0
         },
         {
+          "name": "CSS",
           "pct": 11,
-          "name": "CSS"
+          "size": 0
         },
         {
+          "name": "HTML",
           "pct": 3,
-          "name": "HTML"
+          "size": 0
         }
       ],
       "versions": [],
@@ -472,16 +475,19 @@
       "license": "MIT",
       "langs": [
         {
+          "name": "TypeScript",
           "pct": 66,
-          "name": "TypeScript"
+          "size": 0
         },
         {
+          "name": "JavaScript",
           "pct": 20,
-          "name": "JavaScript"
+          "size": 0
         },
         {
+          "name": "HTML",
           "pct": 14,
-          "name": "HTML"
+          "size": 0
         }
       ],
       "versions": [
@@ -672,11 +678,13 @@
       "langs": [
         {
           "name": "CSS",
-          "pct": 72
+          "pct": 72,
+          "size": 0
         },
         {
           "name": "Rust",
-          "pct": 28
+          "pct": 28,
+          "size": 0
         }
       ],
       "versions": [
@@ -827,7 +835,7 @@
         "Social",
         "Video"
       ],
-      "updated": "8 weeks ago",
+      "updated": "2 months ago",
       "pushedAt": "2026-07-15T16:45:28-06:00",
       "license": "AGPL-3.0",
       "langs": [
@@ -1061,8 +1069,9 @@
       "license": "Apache-2.0",
       "langs": [
         {
+          "name": "Rust",
           "pct": 100,
-          "name": "Rust"
+          "size": 0
         }
       ],
       "versions": [
@@ -1221,21 +1230,24 @@
         "Bot",
         "Rocket Rs"
       ],
-      "updated": "5 weeks ago",
+      "updated": "6 weeks ago",
       "pushedAt": "2026-08-04T14:35:24-06:00",
       "license": "Apache-2.0",
       "langs": [
         {
           "name": "Rust",
-          "pct": 96
+          "pct": 96,
+          "size": 0
         },
         {
           "name": "PLpgSQL",
-          "pct": 3
+          "pct": 3,
+          "size": 0
         },
         {
           "name": "Handlebars",
-          "pct": 1
+          "pct": 1,
+          "size": 0
         }
       ],
       "versions": [],
@@ -1502,8 +1514,9 @@
       "license": "MIT",
       "langs": [
         {
+          "name": "Rust",
           "pct": 100,
-          "name": "Rust"
+          "size": 0
         }
       ],
       "versions": [],
@@ -1548,15 +1561,18 @@
       "langs": [
         {
           "name": "Svelte",
-          "pct": 65
+          "pct": 65,
+          "size": 0
         },
         {
           "name": "Rust",
-          "pct": 26
+          "pct": 26,
+          "size": 0
         },
         {
           "name": "CSS",
-          "pct": 9
+          "pct": 9,
+          "size": 0
         }
       ],
       "versions": [
@@ -1969,15 +1985,18 @@
       "langs": [
         {
           "name": "Rust",
-          "pct": 89
+          "pct": 89,
+          "size": 0
         },
         {
           "name": "Dockerfile",
-          "pct": 7
+          "pct": 7,
+          "size": 0
         },
         {
           "name": "PLpgSQL",
-          "pct": 4
+          "pct": 4,
+          "size": 0
         }
       ],
       "versions": [],
@@ -1991,6 +2010,52 @@
         "docker"
       ],
       "addedAt": "2026-08-05T04:38:15.813733+00:00"
+    },
+    {
+      "slug": "mapleaf",
+      "name": "MAPLEAF",
+      "fullName": "henrystoldt/MAPLEAF",
+      "category": "DevTools",
+      "stars": 70,
+      "author": "henrystoldt",
+      "avatar": "https://avatars.githubusercontent.com/u/37560475?v=4",
+      "desc": "6-DOF Rocket Flight Simulation Framework",
+      "demo": "https://henrystoldt.github.io/MAPLEAF/",
+      "repoUrl": "https://github.com/henrystoldt/MAPLEAF",
+      "long1": "6-DOF Rocket Flight Simulation Framework. Maintained by henrystoldt on GitHub, where it has earned 70 stars from the community.",
+      "long2": "It's actively developed around aerodynamics, cython, montecarlo, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Python",
+        "Aerodynamics",
+        "Cython",
+        "Montecarlo",
+        "Physics"
+      ],
+      "updated": "3 years ago",
+      "pushedAt": "2023-12-27T14:51:09-06:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "Python",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "aerodynamics",
+        "cython",
+        "montecarlo",
+        "physics",
+        "python",
+        "rocket",
+        "simulator"
+      ],
+      "forks": 15,
+      "issues": 3,
+      "watchers": 5,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
       "slug": "tejas-rocket-flight-computer",
@@ -2038,52 +2103,6 @@
       "forks": 14,
       "issues": 2,
       "watchers": 8,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "mapleaf",
-      "name": "MAPLEAF",
-      "fullName": "henrystoldt/MAPLEAF",
-      "category": "DevTools",
-      "stars": 70,
-      "author": "henrystoldt",
-      "avatar": "https://avatars.githubusercontent.com/u/37560475?v=4",
-      "desc": "6-DOF Rocket Flight Simulation Framework",
-      "demo": "https://henrystoldt.github.io/MAPLEAF/",
-      "repoUrl": "https://github.com/henrystoldt/MAPLEAF",
-      "long1": "6-DOF Rocket Flight Simulation Framework. Maintained by henrystoldt on GitHub, where it has earned 70 stars from the community.",
-      "long2": "It's actively developed around aerodynamics, cython, montecarlo, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Python",
-        "Aerodynamics",
-        "Cython",
-        "Montecarlo",
-        "Physics"
-      ],
-      "updated": "3 years ago",
-      "pushedAt": "2023-12-27T14:51:09-06:00",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "Python",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "aerodynamics",
-        "cython",
-        "montecarlo",
-        "physics",
-        "python",
-        "rocket",
-        "simulator"
-      ],
-      "forks": 15,
-      "issues": 3,
-      "watchers": 5,
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
@@ -2478,15 +2497,18 @@
       "langs": [
         {
           "name": "Rust",
-          "pct": 86
+          "pct": 86,
+          "size": 0
         },
         {
           "name": "PLpgSQL",
-          "pct": 8
+          "pct": 8,
+          "size": 0
         },
         {
           "name": "Python",
-          "pct": 6
+          "pct": 6,
+          "size": 0
         }
       ],
       "versions": [],
@@ -2887,15 +2909,18 @@
       "langs": [
         {
           "name": "Rust",
-          "pct": 98
+          "pct": 98,
+          "size": 0
         },
         {
           "name": "Shell",
-          "pct": 1
+          "pct": 1,
+          "size": 0
         },
         {
           "name": "CSS",
-          "pct": 1
+          "pct": 1,
+          "size": 0
         }
       ],
       "versions": [],
@@ -2907,6 +2932,46 @@
         "maud"
       ],
       "addedAt": "2026-08-05T04:38:15.813733+00:00"
+    },
+    {
+      "slug": "rustyrockets",
+      "name": "RustyRockets",
+      "fullName": "rstropek/RustyRockets",
+      "category": "DevTools",
+      "stars": 38,
+      "author": "rstropek",
+      "avatar": "https://avatars.githubusercontent.com/u/2341573?v=4",
+      "desc": "This repository contains a sample that I used to do an introduction talk about Building Web APIs with Rust and Rocket at the Rust Linz meetup.",
+      "demo": null,
+      "repoUrl": "https://github.com/rstropek/RustyRockets",
+      "long1": "This repository contains a sample that I used to do an introduction talk about Building Web APIs with Rust and Rocket at the Rust Linz meetup. Maintained by rstropek on GitHub, where it has earned 38 stars from the community.",
+      "long2": "It's actively developed around rocket, rust-lang, webapi, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Rust",
+        "Rocket",
+        "Rust Lang",
+        "Webapi"
+      ],
+      "updated": "4 years ago",
+      "pushedAt": "2022-11-11T00:49:12-06:00",
+      "license": "—",
+      "langs": [
+        {
+          "name": "Rust",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "rocket",
+        "rust-lang",
+        "webapi"
+      ],
+      "forks": 8,
+      "watchers": 2,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
       "slug": "rocket-flight-simulator",
@@ -2963,46 +3028,6 @@
       ],
       "forks": 5,
       "watchers": 1,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "rustyrockets",
-      "name": "RustyRockets",
-      "fullName": "rstropek/RustyRockets",
-      "category": "DevTools",
-      "stars": 38,
-      "author": "rstropek",
-      "avatar": "https://avatars.githubusercontent.com/u/2341573?v=4",
-      "desc": "This repository contains a sample that I used to do an introduction talk about Building Web APIs with Rust and Rocket at the Rust Linz meetup.",
-      "demo": null,
-      "repoUrl": "https://github.com/rstropek/RustyRockets",
-      "long1": "This repository contains a sample that I used to do an introduction talk about Building Web APIs with Rust and Rocket at the Rust Linz meetup. Maintained by rstropek on GitHub, where it has earned 38 stars from the community.",
-      "long2": "It's actively developed around rocket, rust-lang, webapi, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Rust",
-        "Rocket",
-        "Rust Lang",
-        "Webapi"
-      ],
-      "updated": "4 years ago",
-      "pushedAt": "2022-11-11T00:49:12-06:00",
-      "license": "—",
-      "langs": [
-        {
-          "name": "Rust",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "rocket",
-        "rust-lang",
-        "webapi"
-      ],
-      "forks": 8,
-      "watchers": 2,
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
@@ -3100,58 +3125,6 @@
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
-      "slug": "rust-for-backend-development",
-      "name": "rust-for-backend-development",
-      "fullName": "security-union/rust-for-backend-development",
-      "category": "DevTools",
-      "stars": 36,
-      "author": "security-union",
-      "avatar": "https://avatars.githubusercontent.com/u/68698281?v=4",
-      "desc": "SWITCH TO RUST AND STOP WASTING YOUR TIME WITH JAVASCRIPT RUNTIME EXCEPTIONS",
-      "demo": null,
-      "repoUrl": "https://github.com/security-union/rust-for-backend-development",
-      "long1": "SWITCH TO RUST AND STOP WASTING YOUR TIME WITH JAVASCRIPT RUNTIME EXCEPTIONS. Maintained by security-union on GitHub, where it has earned 36 stars from the community.",
-      "long2": "It's actively developed around rust, rust-lang, rocket-rs, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Rust",
-        "Rust Lang",
-        "Rocket Rs",
-        "Rustlang"
-      ],
-      "updated": "4 years ago",
-      "pushedAt": "2022-05-29T19:35:22-05:00",
-      "license": "Apache-2.0",
-      "langs": [
-        {
-          "pct": 93,
-          "name": "Rust"
-        },
-        {
-          "pct": 4,
-          "name": "Makefile"
-        },
-        {
-          "pct": 3,
-          "name": "Shell"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "rust",
-        "rust-lang",
-        "rocket-rs",
-        "rustlang",
-        "youtube",
-        "rocket",
-        "postgresql"
-      ],
-      "forks": 5,
-      "issues": 1,
-      "watchers": 3,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
       "slug": "rust-cloud-run-demo",
       "name": "rust-cloud-run-demo",
       "fullName": "Ameobea/rust-cloud-run-demo",
@@ -3221,16 +3194,19 @@
       "license": "MPL-2.0",
       "langs": [
         {
+          "name": "Rust",
           "pct": 82,
-          "name": "Rust"
+          "size": 0
         },
         {
+          "name": "Kotlin",
           "pct": 11,
-          "name": "Kotlin"
+          "size": 0
         },
         {
+          "name": "Swift",
           "pct": 7,
-          "name": "Swift"
+          "size": 0
         }
       ],
       "versions": [
@@ -3267,59 +3243,98 @@
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
-      "slug": "rocket-launch-simulation",
-      "name": "Rocket-Launch-Simulation",
-      "fullName": "donutTheJedi/Rocket-Launch-Simulation",
+      "slug": "rust-for-backend-development",
+      "name": "rust-for-backend-development",
+      "fullName": "security-union/rust-for-backend-development",
       "category": "DevTools",
-      "stars": 35,
-      "author": "donutTheJedi",
-      "avatar": "https://avatars.githubusercontent.com/u/154908189?v=4",
-      "desc": "A 2D simulation of orbital mechanics and rocket launch from earth",
-      "demo": "https://www.donutthejedi.com/",
-      "repoUrl": "https://github.com/donutTheJedi/Rocket-Launch-Simulation",
-      "long1": "A 2D simulation of orbital mechanics and rocket launch from earth. Maintained by donutTheJedi on GitHub, where it has earned 35 stars from the community.",
-      "long2": "It's actively developed around aerospace, physics-simulation, rocket, and is a solid reference for anyone building with these tools.",
+      "stars": 36,
+      "author": "security-union",
+      "avatar": "https://avatars.githubusercontent.com/u/68698281?v=4",
+      "desc": "SWITCH TO RUST AND STOP WASTING YOUR TIME WITH JAVASCRIPT RUNTIME EXCEPTIONS",
+      "demo": null,
+      "repoUrl": "https://github.com/security-union/rust-for-backend-development",
+      "long1": "SWITCH TO RUST AND STOP WASTING YOUR TIME WITH JAVASCRIPT RUNTIME EXCEPTIONS. Maintained by security-union on GitHub, where it has earned 36 stars from the community.",
+      "long2": "It's actively developed around rust, rust-lang, rocket-rs, and is a solid reference for anyone building with these tools.",
       "descriptionMd": "",
       "stack": [
-        "JavaScript",
-        "Aerospace",
-        "Physics Simulation",
-        "Rocket",
-        "Rocket Dynamics"
+        "Rust",
+        "Rust Lang",
+        "Rocket Rs",
+        "Rustlang"
       ],
-      "updated": "2 months ago",
-      "pushedAt": "2026-07-03T11:31:59-06:00",
-      "license": "MIT",
+      "updated": "4 years ago",
+      "pushedAt": "2022-05-29T19:35:22-05:00",
+      "license": "Apache-2.0",
       "langs": [
         {
-          "name": "JavaScript",
-          "pct": 73.707,
-          "size": 424515
+          "name": "Rust",
+          "pct": 93,
+          "size": 0
         },
         {
-          "name": "CSS",
-          "pct": 15.425,
-          "size": 88838
+          "name": "Makefile",
+          "pct": 4,
+          "size": 0
         },
         {
-          "name": "HTML",
-          "pct": 10.869,
-          "size": 62599
+          "name": "Shell",
+          "pct": 3,
+          "size": 0
         }
       ],
       "versions": [],
       "topics": [
-        "aerospace",
-        "physics-simulation",
+        "rust",
+        "rust-lang",
+        "rocket-rs",
+        "rustlang",
+        "youtube",
         "rocket",
-        "rocket-dynamics",
-        "rocket-launch",
-        "rocket-science",
-        "rocket-simulation",
-        "simulator",
-        "trajectory-simulation"
+        "postgresql"
       ],
-      "forks": 2,
+      "forks": 5,
+      "issues": 1,
+      "watchers": 3,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "rocket-multipart-form-data",
+      "name": "rocket-multipart-form-data",
+      "fullName": "magiclen/rocket-multipart-form-data",
+      "category": "DevTools",
+      "stars": 35,
+      "author": "magiclen",
+      "avatar": "https://avatars.githubusercontent.com/u/5851348?v=4",
+      "desc": "This crate provides a multipart parser for the Rocket framework.",
+      "demo": null,
+      "repoUrl": "https://github.com/magiclen/rocket-multipart-form-data",
+      "long1": "This crate provides a multipart parser for the Rocket framework. Maintained by magiclen on GitHub, where it has earned 35 stars from the community.",
+      "long2": "It's actively developed around multipart-formdata, rocket, rust, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Multipart Formdata",
+        "Rocket",
+        "Rust"
+      ],
+      "updated": "10 months ago",
+      "pushedAt": "2025-11-24T05:38:14-06:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "Rust",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "multipart-formdata",
+        "rocket",
+        "rust"
+      ],
+      "forks": 15,
+      "issues": 5,
+      "watchers": 2,
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
@@ -3421,43 +3436,59 @@
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
-      "slug": "rocket-multipart-form-data",
-      "name": "rocket-multipart-form-data",
-      "fullName": "magiclen/rocket-multipart-form-data",
+      "slug": "rocket-launch-simulation",
+      "name": "Rocket-Launch-Simulation",
+      "fullName": "donutTheJedi/Rocket-Launch-Simulation",
       "category": "DevTools",
       "stars": 35,
-      "author": "magiclen",
-      "avatar": "https://avatars.githubusercontent.com/u/5851348?v=4",
-      "desc": "This crate provides a multipart parser for the Rocket framework.",
-      "demo": null,
-      "repoUrl": "https://github.com/magiclen/rocket-multipart-form-data",
-      "long1": "This crate provides a multipart parser for the Rocket framework. Maintained by magiclen on GitHub, where it has earned 35 stars from the community.",
-      "long2": "It's actively developed around multipart-formdata, rocket, rust, and is a solid reference for anyone building with these tools.",
+      "author": "donutTheJedi",
+      "avatar": "https://avatars.githubusercontent.com/u/154908189?v=4",
+      "desc": "A 2D simulation of orbital mechanics and rocket launch from earth",
+      "demo": "https://www.donutthejedi.com/",
+      "repoUrl": "https://github.com/donutTheJedi/Rocket-Launch-Simulation",
+      "long1": "A 2D simulation of orbital mechanics and rocket launch from earth. Maintained by donutTheJedi on GitHub, where it has earned 35 stars from the community.",
+      "long2": "It's actively developed around aerospace, physics-simulation, rocket, and is a solid reference for anyone building with these tools.",
       "descriptionMd": "",
       "stack": [
-        "Multipart Formdata",
+        "JavaScript",
+        "Aerospace",
+        "Physics Simulation",
         "Rocket",
-        "Rust"
+        "Rocket Dynamics"
       ],
-      "updated": "10 months ago",
-      "pushedAt": "2025-11-24T05:38:14-06:00",
+      "updated": "2 months ago",
+      "pushedAt": "2026-07-03T11:31:59-06:00",
       "license": "MIT",
       "langs": [
         {
-          "name": "Rust",
-          "pct": 100,
-          "size": 100
+          "name": "JavaScript",
+          "pct": 73.707,
+          "size": 424515
+        },
+        {
+          "name": "CSS",
+          "pct": 15.425,
+          "size": 88838
+        },
+        {
+          "name": "HTML",
+          "pct": 10.869,
+          "size": 62599
         }
       ],
       "versions": [],
       "topics": [
-        "multipart-formdata",
+        "aerospace",
+        "physics-simulation",
         "rocket",
-        "rust"
+        "rocket-dynamics",
+        "rocket-launch",
+        "rocket-science",
+        "rocket-simulation",
+        "simulator",
+        "trajectory-simulation"
       ],
-      "forks": 15,
-      "issues": 5,
-      "watchers": 2,
+      "forks": 2,
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
@@ -3697,6 +3728,49 @@
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
+      "slug": "rocket-rust-docker",
+      "name": "rocket-rust-docker",
+      "fullName": "renderinc/rocket-rust-docker",
+      "category": "DevTools",
+      "stars": 27,
+      "author": "renderinc",
+      "avatar": "https://avatars.githubusercontent.com/u/36424661?v=4",
+      "desc": "Render Docker Hub images for Rocket",
+      "demo": "https://render.com",
+      "repoUrl": "https://github.com/renderinc/rocket-rust-docker",
+      "long1": "Render Docker Hub images for Rocket. Maintained by renderinc on GitHub, where it has earned 27 stars from the community.",
+      "long2": "It's actively developed around rust, rocket-rs, cargo, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Dockerfile",
+        "Rust",
+        "Rocket Rs",
+        "Cargo",
+        "Rust Lang"
+      ],
+      "updated": "7 years ago",
+      "pushedAt": "2019-04-06T23:12:43-06:00",
+      "license": "—",
+      "langs": [
+        {
+          "name": "Dockerfile",
+          "pct": 100,
+          "size": 0
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "rust",
+        "rocket-rs",
+        "cargo",
+        "rust-lang",
+        "docker",
+        "docker-image",
+        "render"
+      ],
+      "addedAt": "2026-08-05T04:38:15.813733+00:00"
+    },
+    {
       "slug": "rocketry",
       "name": "rocketry",
       "fullName": "wwakabobik/rocketry",
@@ -3751,111 +3825,29 @@
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
-      "slug": "rocket-rust-docker",
-      "name": "rocket-rust-docker",
-      "fullName": "renderinc/rocket-rust-docker",
-      "category": "DevTools",
-      "stars": 27,
-      "author": "renderinc",
-      "avatar": "https://avatars.githubusercontent.com/u/36424661?v=4",
-      "desc": "Render Docker Hub images for Rocket",
-      "demo": "https://render.com",
-      "repoUrl": "https://github.com/renderinc/rocket-rust-docker",
-      "long1": "Render Docker Hub images for Rocket. Maintained by renderinc on GitHub, where it has earned 27 stars from the community.",
-      "long2": "It's actively developed around rust, rocket-rs, cargo, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Dockerfile",
-        "Rust",
-        "Rocket Rs",
-        "Cargo",
-        "Rust Lang"
-      ],
-      "updated": "7 years ago",
-      "pushedAt": "2019-04-06T23:12:43-06:00",
-      "license": "—",
-      "langs": [
-        {
-          "name": "Dockerfile",
-          "pct": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "rust",
-        "rocket-rs",
-        "cargo",
-        "rust-lang",
-        "docker",
-        "docker-image",
-        "render"
-      ],
-      "addedAt": "2026-08-05T04:38:15.813733+00:00"
-    },
-    {
-      "slug": "rocket-seek-stream",
-      "name": "rocket_seek_stream",
-      "fullName": "rydz/rocket_seek_stream",
-      "category": "DevTools",
+      "slug": "dpbriggs-blog",
+      "name": "dpbriggs-blog",
+      "fullName": "dpbriggs/dpbriggs-blog",
+      "category": "Blogs",
       "stars": 26,
-      "author": "rydz",
-      "avatar": "https://avatars.githubusercontent.com/u/42032342?u=5c735741e28a88f69462b9f4bc901c605c3a7708&v=4",
-      "desc": "Rocket-rs responder to range requests using types that implement Read + Seek",
-      "demo": null,
-      "repoUrl": "https://github.com/rydz/rocket_seek_stream",
-      "long1": "Rocket-rs responder to range requests using types that implement Read + Seek. Maintained by rydz on GitHub, where it has earned 26 stars from the community.",
-      "long2": "It's actively developed around rust, rocket, rocket-rs, and is a solid reference for anyone building with these tools.",
+      "author": "dpbriggs",
+      "avatar": "https://avatars.githubusercontent.com/u/5560032?v=4",
+      "desc": "My personal website and blog, written in Rust, Tera, and Bootstrap.",
+      "demo": "https://dpbriggs.ca",
+      "repoUrl": "https://github.com/dpbriggs/dpbriggs-blog",
+      "long1": "My personal website and blog, written in Rust, Tera, and Bootstrap. Maintained by dpbriggs on GitHub, where it has earned 26 stars from the community.",
+      "long2": "It's actively developed around blog, bootstrap, org-mode, and is a solid reference for anyone building with these tools.",
       "descriptionMd": "",
       "stack": [
         "Rust",
-        "Rocket",
-        "Rocket Rs",
-        "Partial Content"
+        "Blog",
+        "Bootstrap",
+        "Org Mode",
+        "Rocket"
       ],
-      "updated": "3 years ago",
-      "pushedAt": "2023-05-04T02:08:51-06:00",
-      "license": "MIT",
-      "langs": [
-        {
-          "pct": 100,
-          "name": "Rust"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "rust",
-        "rocket",
-        "rocket-rs",
-        "partial-content",
-        "range-requests"
-      ],
-      "forks": 9,
-      "watchers": 3,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "json-api-rs",
-      "name": "json-api-rs",
-      "fullName": "papa-zakari/json-api-rs",
-      "category": "APIs",
-      "stars": 26,
-      "author": "papa-zakari",
-      "avatar": "https://avatars.githubusercontent.com/u/7378772?v=4",
-      "desc": "Idiomatic types for building a robust JSON API with Rust",
-      "demo": "https://crates.io/crates/json-api",
-      "repoUrl": "https://github.com/papa-zakari/json-api-rs",
-      "long1": "Idiomatic types for building a robust JSON API with Rust. Maintained by papa-zakari on GitHub, where it has earned 26 stars from the community.",
-      "long2": "It's actively developed around json-api, rocket, rust, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Json Api",
-        "Rocket",
-        "Rust",
-        "Serde"
-      ],
-      "updated": "8 years ago",
-      "pushedAt": "2018-05-27T15:53:41-05:00",
-      "license": "Apache-2.0",
+      "updated": "4 months ago",
+      "pushedAt": "2026-05-21T17:07:44-06:00",
+      "license": "GPL-3.0",
       "langs": [
         {
           "name": "Rust",
@@ -3865,64 +3857,14 @@
       ],
       "versions": [],
       "topics": [
-        "json-api",
+        "blog",
+        "bootstrap",
+        "org-mode",
         "rocket",
         "rust",
-        "serde"
+        "tera"
       ],
-      "forks": 8,
-      "issues": 3,
-      "watchers": 2,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "launch-stats",
-      "name": "launch-stats",
-      "fullName": "Nosudrum/launch-stats",
-      "category": "DevTools",
-      "stars": 26,
-      "author": "Nosudrum",
-      "avatar": "https://avatars.githubusercontent.com/u/32609359?v=4",
-      "desc": "Space launch statistics, charts & infographics made in Python with the Launch Library 2 API.",
-      "demo": "https://thespacedevs.com/llapi",
-      "repoUrl": "https://github.com/Nosudrum/launch-stats",
-      "long1": "Space launch statistics, charts & infographics made in Python with the Launch Library 2 API. Maintained by Nosudrum on GitHub, where it has earned 26 stars from the community.",
-      "long2": "It's actively developed around launchlibrary, plots, plots-in-python, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Launchlibrary",
-        "Plots",
-        "Plots In Python",
-        "Python"
-      ],
-      "updated": "2 months ago",
-      "pushedAt": "2026-07-13T21:36:43-06:00",
-      "license": "Apache-2.0",
-      "langs": [
-        {
-          "name": "Python",
-          "pct": 93.24,
-          "size": 148820
-        },
-        {
-          "name": "MATLAB",
-          "pct": 6.76,
-          "size": 10789
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "launchlibrary",
-        "plots",
-        "plots-in-python",
-        "python",
-        "rocket",
-        "space",
-        "stats",
-        "thespacedevs"
-      ],
-      "forks": 1,
-      "issues": 12,
+      "forks": 3,
       "watchers": 1,
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
@@ -3978,29 +3920,79 @@
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
-      "slug": "dpbriggs-blog",
-      "name": "dpbriggs-blog",
-      "fullName": "dpbriggs/dpbriggs-blog",
-      "category": "Blogs",
+      "slug": "launch-stats",
+      "name": "launch-stats",
+      "fullName": "Nosudrum/launch-stats",
+      "category": "DevTools",
       "stars": 26,
-      "author": "dpbriggs",
-      "avatar": "https://avatars.githubusercontent.com/u/5560032?v=4",
-      "desc": "My personal website and blog, written in Rust, Tera, and Bootstrap.",
-      "demo": "https://dpbriggs.ca",
-      "repoUrl": "https://github.com/dpbriggs/dpbriggs-blog",
-      "long1": "My personal website and blog, written in Rust, Tera, and Bootstrap. Maintained by dpbriggs on GitHub, where it has earned 26 stars from the community.",
-      "long2": "It's actively developed around blog, bootstrap, org-mode, and is a solid reference for anyone building with these tools.",
+      "author": "Nosudrum",
+      "avatar": "https://avatars.githubusercontent.com/u/32609359?v=4",
+      "desc": "Space launch statistics, charts & infographics made in Python with the Launch Library 2 API.",
+      "demo": "https://thespacedevs.com/llapi",
+      "repoUrl": "https://github.com/Nosudrum/launch-stats",
+      "long1": "Space launch statistics, charts & infographics made in Python with the Launch Library 2 API. Maintained by Nosudrum on GitHub, where it has earned 26 stars from the community.",
+      "long2": "It's actively developed around launchlibrary, plots, plots-in-python, and is a solid reference for anyone building with these tools.",
       "descriptionMd": "",
       "stack": [
-        "Rust",
-        "Blog",
-        "Bootstrap",
-        "Org Mode",
-        "Rocket"
+        "Launchlibrary",
+        "Plots",
+        "Plots In Python",
+        "Python"
       ],
-      "updated": "4 months ago",
-      "pushedAt": "2026-05-21T17:07:44-06:00",
-      "license": "GPL-3.0",
+      "updated": "2 months ago",
+      "pushedAt": "2026-07-13T21:36:43-06:00",
+      "license": "Apache-2.0",
+      "langs": [
+        {
+          "name": "Python",
+          "pct": 93.24,
+          "size": 148820
+        },
+        {
+          "name": "MATLAB",
+          "pct": 6.76,
+          "size": 10789
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "launchlibrary",
+        "plots",
+        "plots-in-python",
+        "python",
+        "rocket",
+        "space",
+        "stats",
+        "thespacedevs"
+      ],
+      "forks": 1,
+      "issues": 12,
+      "watchers": 1,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "json-api-rs",
+      "name": "json-api-rs",
+      "fullName": "papa-zakari/json-api-rs",
+      "category": "APIs",
+      "stars": 26,
+      "author": "papa-zakari",
+      "avatar": "https://avatars.githubusercontent.com/u/7378772?v=4",
+      "desc": "Idiomatic types for building a robust JSON API with Rust",
+      "demo": "https://crates.io/crates/json-api",
+      "repoUrl": "https://github.com/papa-zakari/json-api-rs",
+      "long1": "Idiomatic types for building a robust JSON API with Rust. Maintained by papa-zakari on GitHub, where it has earned 26 stars from the community.",
+      "long2": "It's actively developed around json-api, rocket, rust, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Json Api",
+        "Rocket",
+        "Rust",
+        "Serde"
+      ],
+      "updated": "8 years ago",
+      "pushedAt": "2018-05-27T15:53:41-05:00",
+      "license": "Apache-2.0",
       "langs": [
         {
           "name": "Rust",
@@ -4010,15 +4002,56 @@
       ],
       "versions": [],
       "topics": [
-        "blog",
-        "bootstrap",
-        "org-mode",
+        "json-api",
         "rocket",
         "rust",
-        "tera"
+        "serde"
       ],
-      "forks": 3,
-      "watchers": 1,
+      "forks": 8,
+      "issues": 3,
+      "watchers": 2,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "rocket-seek-stream",
+      "name": "rocket_seek_stream",
+      "fullName": "rydz/rocket_seek_stream",
+      "category": "DevTools",
+      "stars": 26,
+      "author": "rydz",
+      "avatar": "https://avatars.githubusercontent.com/u/42032342?u=5c735741e28a88f69462b9f4bc901c605c3a7708&v=4",
+      "desc": "Rocket-rs responder to range requests using types that implement Read + Seek",
+      "demo": null,
+      "repoUrl": "https://github.com/rydz/rocket_seek_stream",
+      "long1": "Rocket-rs responder to range requests using types that implement Read + Seek. Maintained by rydz on GitHub, where it has earned 26 stars from the community.",
+      "long2": "It's actively developed around rust, rocket, rocket-rs, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Rust",
+        "Rocket",
+        "Rocket Rs",
+        "Partial Content"
+      ],
+      "updated": "3 years ago",
+      "pushedAt": "2023-05-04T02:08:51-06:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "Rust",
+          "pct": 100,
+          "size": 0
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "rust",
+        "rocket",
+        "rocket-rs",
+        "partial-content",
+        "range-requests"
+      ],
+      "forks": 9,
+      "watchers": 3,
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
@@ -4058,117 +4091,6 @@
       "forks": 3,
       "issues": 1,
       "watchers": 1,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "attackr",
-      "name": "attackr",
-      "fullName": "ricky8955555/attackr",
-      "category": "DevTools",
-      "stars": 24,
-      "author": "ricky8955555",
-      "avatar": "https://avatars.githubusercontent.com/u/24487646?u=747a87023fd7bdb2f2f6499d478af05c67408408&v=4",
-      "desc": "一个基于 Rust + Rocket.rs + MiniJinja 开发的 CTF 平台",
-      "demo": null,
-      "repoUrl": "https://github.com/ricky8955555/attackr",
-      "long1": "一个基于 Rust + Rocket.rs + MiniJinja 开发的 CTF 平台. Maintained by ricky8955555 on GitHub, where it has earned 24 stars from the community.",
-      "long2": "It's actively developed around ctf, ctf-platform, jinja, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Rust",
-        "Ctf",
-        "Ctf Platform",
-        "Jinja",
-        "Jinja2"
-      ],
-      "updated": "1 year ago",
-      "pushedAt": "2025-04-24T09:45:34-06:00",
-      "license": "Apache-2.0",
-      "langs": [
-        {
-          "pct": 71,
-          "name": "Rust"
-        },
-        {
-          "pct": 28,
-          "name": "Jinja"
-        },
-        {
-          "pct": 1,
-          "name": "JavaScript"
-        }
-      ],
-      "versions": [
-        {
-          "url": "https://github.com/ricky8955555/attackr/releases/tag/v0.1.1",
-          "name": "v0.1.1"
-        },
-        {
-          "url": "https://github.com/ricky8955555/attackr/releases/tag/v0.1.0",
-          "name": "v0.1.0"
-        }
-      ],
-      "topics": [
-        "ctf",
-        "ctf-platform",
-        "jinja",
-        "jinja2",
-        "koto",
-        "minijinja",
-        "rocket-rs",
-        "rust",
-        "diesel-rs",
-        "diesel",
-        "rocket"
-      ],
-      "watchers": 1,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "rocketbot",
-      "name": "rocketbot",
-      "fullName": "canva-public/rocketbot",
-      "category": "DevTools",
-      "stars": 24,
-      "author": "canva-public",
-      "avatar": "https://avatars.githubusercontent.com/u/82788749?v=4",
-      "desc": "Lambda to trigger Buildkite pipelines from GitHub comments",
-      "demo": null,
-      "repoUrl": "https://github.com/canva-public/rocketbot",
-      "long1": "Lambda to trigger Buildkite pipelines from GitHub comments. Maintained by canva-public on GitHub, where it has earned 24 stars from the community.",
-      "long2": "It's actively developed around aws, bot, buildkite, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "TypeScript",
-        "Aws",
-        "Bot",
-        "Buildkite",
-        "Comment"
-      ],
-      "updated": "2 years ago",
-      "pushedAt": "2024-06-18T00:33:11-06:00",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "aws",
-        "bot",
-        "buildkite",
-        "comment",
-        "github",
-        "lambda",
-        "pipeline",
-        "rocket"
-      ],
-      "forks": 1,
-      "issues": 12,
-      "watchers": 2,
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
@@ -4259,44 +4181,117 @@
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
-      "slug": "starship-landing-gym",
-      "name": "starship-landing-gym",
-      "fullName": "Armandpl/starship-landing-gym",
-      "category": "Docs",
-      "stars": 23,
-      "author": "Armandpl",
-      "avatar": "https://avatars.githubusercontent.com/u/14967758?v=4",
-      "desc": "A Gym env for propulsive rocket landing.",
+      "slug": "attackr",
+      "name": "attackr",
+      "fullName": "ricky8955555/attackr",
+      "category": "DevTools",
+      "stars": 24,
+      "author": "ricky8955555",
+      "avatar": "https://avatars.githubusercontent.com/u/24487646?u=747a87023fd7bdb2f2f6499d478af05c67408408&v=4",
+      "desc": "一个基于 Rust + Rocket.rs + MiniJinja 开发的 CTF 平台",
       "demo": null,
-      "repoUrl": "https://github.com/Armandpl/starship-landing-gym",
-      "long1": "A Gym env for propulsive rocket landing. Maintained by Armandpl on GitHub, where it has earned 23 stars from the community.",
-      "long2": "It's actively developed around gym-environment, reinforcement-learning, rocket, and is a solid reference for anyone building with these tools.",
+      "repoUrl": "https://github.com/ricky8955555/attackr",
+      "long1": "一个基于 Rust + Rocket.rs + MiniJinja 开发的 CTF 平台. Maintained by ricky8955555 on GitHub, where it has earned 24 stars from the community.",
+      "long2": "It's actively developed around ctf, ctf-platform, jinja, and is a solid reference for anyone building with these tools.",
       "descriptionMd": "",
       "stack": [
-        "Python",
-        "Gym Environment",
-        "Reinforcement Learning",
-        "Rocket"
+        "Rust",
+        "Ctf",
+        "Ctf Platform",
+        "Jinja",
+        "Jinja2"
       ],
-      "updated": "4 years ago",
-      "pushedAt": "2022-06-07T05:46:09-05:00",
-      "license": "—",
+      "updated": "1 year ago",
+      "pushedAt": "2025-04-24T09:45:34-06:00",
+      "license": "Apache-2.0",
       "langs": [
         {
-          "name": "Python",
+          "name": "Rust",
+          "pct": 71,
+          "size": 0
+        },
+        {
+          "name": "Jinja",
+          "pct": 28,
+          "size": 0
+        },
+        {
+          "name": "JavaScript",
+          "pct": 1,
+          "size": 0
+        }
+      ],
+      "versions": [
+        {
+          "url": "https://github.com/ricky8955555/attackr/releases/tag/v0.1.1",
+          "name": "v0.1.1"
+        },
+        {
+          "url": "https://github.com/ricky8955555/attackr/releases/tag/v0.1.0",
+          "name": "v0.1.0"
+        }
+      ],
+      "topics": [
+        "ctf",
+        "ctf-platform",
+        "jinja",
+        "jinja2",
+        "koto",
+        "minijinja",
+        "rocket-rs",
+        "rust",
+        "diesel-rs",
+        "diesel",
+        "rocket"
+      ],
+      "watchers": 1,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "rocketbot",
+      "name": "rocketbot",
+      "fullName": "canva-public/rocketbot",
+      "category": "DevTools",
+      "stars": 24,
+      "author": "canva-public",
+      "avatar": "https://avatars.githubusercontent.com/u/82788749?v=4",
+      "desc": "Lambda to trigger Buildkite pipelines from GitHub comments",
+      "demo": null,
+      "repoUrl": "https://github.com/canva-public/rocketbot",
+      "long1": "Lambda to trigger Buildkite pipelines from GitHub comments. Maintained by canva-public on GitHub, where it has earned 24 stars from the community.",
+      "long2": "It's actively developed around aws, bot, buildkite, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "TypeScript",
+        "Aws",
+        "Bot",
+        "Buildkite",
+        "Comment"
+      ],
+      "updated": "2 years ago",
+      "pushedAt": "2024-06-18T00:33:11-06:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "TypeScript",
           "pct": 100,
           "size": 100
         }
       ],
       "versions": [],
       "topics": [
-        "gym-environment",
-        "reinforcement-learning",
+        "aws",
+        "bot",
+        "buildkite",
+        "comment",
+        "github",
+        "lambda",
+        "pipeline",
         "rocket"
       ],
-      "forks": 2,
-      "issues": 4,
-      "watchers": 1,
+      "forks": 1,
+      "issues": 12,
+      "watchers": 2,
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
@@ -4346,28 +4341,28 @@
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
-      "slug": "orleg",
-      "name": "ORLEG",
-      "fullName": "SpaceTeam/ORLEG",
-      "category": "DevTools",
-      "stars": 22,
-      "author": "SpaceTeam",
-      "avatar": "https://avatars.githubusercontent.com/u/5277551?v=4",
-      "desc": "OpenRocket Liquid Engine Generator",
+      "slug": "starship-landing-gym",
+      "name": "starship-landing-gym",
+      "fullName": "Armandpl/starship-landing-gym",
+      "category": "Docs",
+      "stars": 23,
+      "author": "Armandpl",
+      "avatar": "https://avatars.githubusercontent.com/u/14967758?v=4",
+      "desc": "A Gym env for propulsive rocket landing.",
       "demo": null,
-      "repoUrl": "https://github.com/SpaceTeam/ORLEG",
-      "long1": "OpenRocket Liquid Engine Generator. Maintained by SpaceTeam on GitHub, where it has earned 22 stars from the community.",
-      "long2": "It's actively developed around engine, openrocket, rocket, and is a solid reference for anyone building with these tools.",
+      "repoUrl": "https://github.com/Armandpl/starship-landing-gym",
+      "long1": "A Gym env for propulsive rocket landing. Maintained by Armandpl on GitHub, where it has earned 23 stars from the community.",
+      "long2": "It's actively developed around gym-environment, reinforcement-learning, rocket, and is a solid reference for anyone building with these tools.",
       "descriptionMd": "",
       "stack": [
         "Python",
-        "Engine",
-        "Openrocket",
+        "Gym Environment",
+        "Reinforcement Learning",
         "Rocket"
       ],
-      "updated": "3 years ago",
-      "pushedAt": "2023-06-11T12:05:22-06:00",
-      "license": "GPL-3.0",
+      "updated": "4 years ago",
+      "pushedAt": "2022-06-07T05:46:09-05:00",
+      "license": "—",
       "langs": [
         {
           "name": "Python",
@@ -4377,13 +4372,13 @@
       ],
       "versions": [],
       "topics": [
-        "engine",
-        "openrocket",
+        "gym-environment",
+        "reinforcement-learning",
         "rocket"
       ],
-      "forks": 3,
-      "issues": 2,
-      "watchers": 7,
+      "forks": 2,
+      "issues": 4,
+      "watchers": 1,
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
@@ -4431,6 +4426,48 @@
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
+      "slug": "oration",
+      "name": "oration",
+      "fullName": "Libbum/oration",
+      "category": "DevTools",
+      "stars": 22,
+      "author": "Libbum",
+      "avatar": "https://avatars.githubusercontent.com/u/3059508?v=4",
+      "desc": "A Rocket/Elm self hosted commenting system for static sites",
+      "demo": null,
+      "repoUrl": "https://github.com/Libbum/oration",
+      "long1": "A Rocket/Elm self hosted commenting system for static sites. Maintained by Libbum on GitHub, where it has earned 22 stars from the community.",
+      "long2": "It's actively developed around comments, elm, rocket, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Comments",
+        "Elm",
+        "Rocket",
+        "Rust"
+      ],
+      "updated": "8 years ago",
+      "pushedAt": "2018-08-22T11:22:59-05:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "Rust",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "comments",
+        "elm",
+        "rocket",
+        "rust"
+      ],
+      "forks": 5,
+      "issues": 36,
+      "watchers": 2,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
       "slug": "skylab",
       "name": "skylab",
       "fullName": "SerhiiStets/skylab",
@@ -4475,45 +4512,44 @@
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
-      "slug": "oration",
-      "name": "oration",
-      "fullName": "Libbum/oration",
+      "slug": "orleg",
+      "name": "ORLEG",
+      "fullName": "SpaceTeam/ORLEG",
       "category": "DevTools",
       "stars": 22,
-      "author": "Libbum",
-      "avatar": "https://avatars.githubusercontent.com/u/3059508?v=4",
-      "desc": "A Rocket/Elm self hosted commenting system for static sites",
+      "author": "SpaceTeam",
+      "avatar": "https://avatars.githubusercontent.com/u/5277551?v=4",
+      "desc": "OpenRocket Liquid Engine Generator",
       "demo": null,
-      "repoUrl": "https://github.com/Libbum/oration",
-      "long1": "A Rocket/Elm self hosted commenting system for static sites. Maintained by Libbum on GitHub, where it has earned 22 stars from the community.",
-      "long2": "It's actively developed around comments, elm, rocket, and is a solid reference for anyone building with these tools.",
+      "repoUrl": "https://github.com/SpaceTeam/ORLEG",
+      "long1": "OpenRocket Liquid Engine Generator. Maintained by SpaceTeam on GitHub, where it has earned 22 stars from the community.",
+      "long2": "It's actively developed around engine, openrocket, rocket, and is a solid reference for anyone building with these tools.",
       "descriptionMd": "",
       "stack": [
-        "Comments",
-        "Elm",
-        "Rocket",
-        "Rust"
+        "Python",
+        "Engine",
+        "Openrocket",
+        "Rocket"
       ],
-      "updated": "8 years ago",
-      "pushedAt": "2018-08-22T11:22:59-05:00",
-      "license": "MIT",
+      "updated": "3 years ago",
+      "pushedAt": "2023-06-11T12:05:22-06:00",
+      "license": "GPL-3.0",
       "langs": [
         {
-          "name": "Rust",
+          "name": "Python",
           "pct": 100,
           "size": 100
         }
       ],
       "versions": [],
       "topics": [
-        "comments",
-        "elm",
-        "rocket",
-        "rust"
+        "engine",
+        "openrocket",
+        "rocket"
       ],
-      "forks": 5,
-      "issues": 36,
-      "watchers": 2,
+      "forks": 3,
+      "issues": 2,
+      "watchers": 7,
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
@@ -4556,46 +4592,6 @@
       ],
       "watchers": 2,
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "bunny",
-      "name": "bunny",
-      "fullName": "0x20F/bunny",
-      "category": "DevTools",
-      "stars": 20,
-      "author": "0x20F",
-      "avatar": "https://avatars.githubusercontent.com/u/10909659?u=13328f902adbc24632929de6d2a107b7ceee67ab&v=4",
-      "desc": "Smart bookmarking tool. Fast and customizable shortcuts for your browser.",
-      "demo": null,
-      "repoUrl": "https://github.com/0x20F/bunny",
-      "long1": "Smart bookmarking tool. Fast and customizable shortcuts for your browser. Maintained by 0x20F on GitHub, where it has earned 20 stars from the community.",
-      "long2": "It's actively developed around rust, rust-lang, rocket-rs, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Rust",
-        "Rust Lang",
-        "Rocket Rs",
-        "Server"
-      ],
-      "updated": "6 years ago",
-      "pushedAt": "2021-01-16T04:50:50-06:00",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "Rust",
-          "pct": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "rust",
-        "rust-lang",
-        "rocket-rs",
-        "server",
-        "bookmarks",
-        "simple"
-      ],
-      "addedAt": "2026-08-05T04:38:15.813733+00:00"
     },
     {
       "slug": "moonrocket3d",
@@ -4737,6 +4733,86 @@
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
+      "slug": "bunny",
+      "name": "bunny",
+      "fullName": "0x20F/bunny",
+      "category": "DevTools",
+      "stars": 20,
+      "author": "0x20F",
+      "avatar": "https://avatars.githubusercontent.com/u/10909659?u=13328f902adbc24632929de6d2a107b7ceee67ab&v=4",
+      "desc": "Smart bookmarking tool. Fast and customizable shortcuts for your browser.",
+      "demo": null,
+      "repoUrl": "https://github.com/0x20F/bunny",
+      "long1": "Smart bookmarking tool. Fast and customizable shortcuts for your browser. Maintained by 0x20F on GitHub, where it has earned 20 stars from the community.",
+      "long2": "It's actively developed around rust, rust-lang, rocket-rs, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Rust",
+        "Rust Lang",
+        "Rocket Rs",
+        "Server"
+      ],
+      "updated": "6 years ago",
+      "pushedAt": "2021-01-16T04:50:50-06:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "Rust",
+          "pct": 100,
+          "size": 0
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "rust",
+        "rust-lang",
+        "rocket-rs",
+        "server",
+        "bookmarks",
+        "simple"
+      ],
+      "addedAt": "2026-08-05T04:38:15.813733+00:00"
+    },
+    {
+      "slug": "rust-backend-tutorials",
+      "name": "rust-backend-tutorials",
+      "fullName": "elibroftw/rust-backend-tutorials",
+      "category": "Docs",
+      "stars": 19,
+      "author": "elibroftw",
+      "avatar": "https://avatars.githubusercontent.com/u/21298211?v=4",
+      "desc": "A sample project showing off how to use Axum (previously Rocket) effectively.",
+      "demo": "https://www.youtube.com/playlist?list=PLmWYh0f8jKSgv9FHydAWn9ZEdGmx0Ix_O",
+      "repoUrl": "https://github.com/elibroftw/rust-backend-tutorials",
+      "long1": "A sample project showing off how to use Axum (previously Rocket) effectively. Maintained by elibroftw on GitHub, where it has earned 19 stars from the community.",
+      "long2": "It's actively developed around rocket, rust, tauri, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Rocket",
+        "Rust",
+        "Tauri"
+      ],
+      "updated": "3 years ago",
+      "pushedAt": "2023-10-22T07:24:33-06:00",
+      "license": "—",
+      "langs": [
+        {
+          "name": "Rust",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "rocket",
+        "rust",
+        "tauri"
+      ],
+      "forks": 1,
+      "watchers": 3,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
       "slug": "rocket-validation",
       "name": "rocket-validation",
       "fullName": "somehowchris/rocket-validation",
@@ -4778,6 +4854,108 @@
       "forks": 6,
       "issues": 16,
       "watchers": 1,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "flare",
+      "name": "FLARE",
+      "fullName": "UBC-Rocket/FLARE",
+      "category": "DevTools",
+      "stars": 19,
+      "author": "UBC-Rocket",
+      "avatar": "https://avatars.githubusercontent.com/u/22730593?v=4",
+      "desc": "Flight Logging And REcovery - UBC Rocket Competition Avionics Firmware",
+      "demo": null,
+      "repoUrl": "https://github.com/UBC-Rocket/FLARE",
+      "long1": "Flight Logging And REcovery - UBC Rocket Competition Avionics Firmware. Maintained by UBC-Rocket on GitHub, where it has earned 19 stars from the community.",
+      "long2": "It's actively developed around arduino, avionics, c, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "C++",
+        "Arduino",
+        "Avionics",
+        "C",
+        "Cpp"
+      ],
+      "updated": "1 year ago",
+      "pushedAt": "2025-06-11T21:13:59-06:00",
+      "license": "GPL-3.0",
+      "langs": [
+        {
+          "name": "C++",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "arduino",
+        "avionics",
+        "c",
+        "cpp",
+        "irec",
+        "platformio",
+        "rocket",
+        "rocketry",
+        "spaceport-america-cup",
+        "stm32",
+        "teensy36",
+        "ubc-engineering",
+        "ubc-rocket"
+      ],
+      "forks": 3,
+      "watchers": 7,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "ilovereact",
+      "name": "ILoveReact",
+      "fullName": "jondjones/ILoveReact",
+      "category": "Testing",
+      "stars": 19,
+      "author": "jondjones",
+      "avatar": "https://avatars.githubusercontent.com/u/2204053?v=4",
+      "desc": "#ILOVEReact - This is a giant starter kit for anyone wanting to learn React.js.  This repo contains a roadmap for everything you need to learn to master react, a list of tutorials to help you get started, and a number of real-world project ideas to give you a starting point to apply your skills",
+      "demo": "http://www.jondjones.com",
+      "repoUrl": "https://github.com/jondjones/ILoveReact",
+      "long1": "#ILOVEReact - This is a giant starter kit for anyone wanting to learn React.js.  This repo contains a roadmap for everything you need to learn to master react, a list of tutorials to help you get started, and a number of real-world project ideas to give you a starting point to apply your skills. Maintained by jondjones on GitHub, where it has earned 19 stars from the community.",
+      "long2": "It's actively developed around apollo, cypress, enzyme-testing, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "JavaScript",
+        "Apollo",
+        "Cypress",
+        "Enzyme Testing",
+        "Hooks"
+      ],
+      "updated": "6 years ago",
+      "pushedAt": "2021-03-10T05:41:21-06:00",
+      "license": "—",
+      "langs": [
+        {
+          "name": "JavaScript",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "apollo",
+        "cypress",
+        "enzyme-testing",
+        "hooks",
+        "javascript",
+        "jest",
+        "react",
+        "react-redux",
+        "react-testing-library",
+        "reactcontext",
+        "reactjs",
+        "rocket",
+        "typescript"
+      ],
+      "forks": 4,
+      "watchers": 7,
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
@@ -4865,144 +5043,195 @@
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
-      "slug": "flare",
-      "name": "FLARE",
-      "fullName": "UBC-Rocket/FLARE",
+      "slug": "dataaccess",
+      "name": "DataAccess",
+      "fullName": "DataBooster/DataAccess",
       "category": "DevTools",
-      "stars": 19,
-      "author": "UBC-Rocket",
-      "avatar": "https://avatars.githubusercontent.com/u/22730593?v=4",
-      "desc": "Flight Logging And REcovery - UBC Rocket Competition Avionics Firmware",
-      "demo": null,
-      "repoUrl": "https://github.com/UBC-Rocket/FLARE",
-      "long1": "Flight Logging And REcovery - UBC Rocket Competition Avionics Firmware. Maintained by UBC-Rocket on GitHub, where it has earned 19 stars from the community.",
-      "long2": "It's actively developed around arduino, avionics, c, and is a solid reference for anyone building with these tools.",
+      "stars": 18,
+      "author": "DataBooster",
+      "avatar": "https://avatars.githubusercontent.com/u/10664961?v=4",
+      "desc": "(Migrated from CodePlex) The dbParallel DataBooster library is a high-performance extension to ADO.NET Data Provider. (DbAccess, OracleLauncher  and SqlLauncher for accessing mass data)",
+      "demo": "https://databooster.codeplex.com/",
+      "repoUrl": "https://github.com/DataBooster/DataAccess",
+      "long1": "(Migrated from CodePlex) The dbParallel DataBooster library is a high-performance extension to ADO.NET Data Provider. (DbAccess, OracleLauncher  and SqlLauncher for accessing mass data). Maintained by DataBooster on GitHub, where it has earned 18 stars from the community.",
+      "long2": "It's actively developed around ado-net, associative-array, entity-framework, and is a solid reference for anyone building with these tools.",
       "descriptionMd": "",
       "stack": [
-        "C++",
-        "Arduino",
-        "Avionics",
-        "C",
-        "Cpp"
+        "C#",
+        "Ado Net",
+        "Associative Array",
+        "Entity Framework",
+        "Faster"
       ],
-      "updated": "1 year ago",
-      "pushedAt": "2025-06-11T21:13:59-06:00",
+      "updated": "8 years ago",
+      "pushedAt": "2018-12-07T23:40:40-06:00",
+      "license": "Apache-2.0",
+      "langs": [
+        {
+          "name": "C#",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "ado-net",
+        "associative-array",
+        "entity-framework",
+        "faster",
+        "framework",
+        "high-performance",
+        "launcher",
+        "managed",
+        "odp-net",
+        "oracle",
+        "package",
+        "parallel-programming",
+        "performance",
+        "pl-sql",
+        "rocket",
+        "signalr",
+        "speed",
+        "sql-server",
+        "table-valued",
+        "throughput"
+      ],
+      "forks": 10,
+      "issues": 1,
+      "watchers": 4,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "preflightpy",
+      "name": "PreflightPy",
+      "fullName": "RimorRes/PreflightPy",
+      "category": "DevTools",
+      "stars": 18,
+      "author": "RimorRes",
+      "avatar": "https://avatars.githubusercontent.com/u/53187347?v=4",
+      "desc": "Python module for Simulation and Optimization of Rocket Trajectories, SORT for short.",
+      "demo": null,
+      "repoUrl": "https://github.com/RimorRes/PreflightPy",
+      "long1": "Python module for Simulation and Optimization of Rocket Trajectories, SORT for short. Maintained by RimorRes on GitHub, where it has earned 18 stars from the community.",
+      "long2": "It's actively developed around aerodynamics, aerospace, hacktoberfest, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Aerodynamics",
+        "Aerospace",
+        "Python",
+        "Rocket"
+      ],
+      "updated": "5 years ago",
+      "pushedAt": "2021-10-30T05:49:19-05:00",
       "license": "GPL-3.0",
       "langs": [
         {
-          "name": "C++",
+          "name": "Python",
           "pct": 100,
           "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "aerodynamics",
+        "aerospace",
+        "hacktoberfest",
+        "python",
+        "rocket"
+      ],
+      "issues": 5,
+      "watchers": 2,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "rocketlauncher",
+      "name": "RocketLauncher",
+      "fullName": "rex706/RocketLauncher",
+      "category": "DevTools",
+      "stars": 18,
+      "author": "rex706",
+      "avatar": "https://avatars.githubusercontent.com/u/15636269?v=4",
+      "desc": "Easily change Rocket League's resolution to work with dual-monitor split screen",
+      "demo": null,
+      "repoUrl": "https://github.com/rex706/RocketLauncher",
+      "long1": "Easily change Rocket League's resolution to work with dual-monitor split screen. Maintained by rex706 on GitHub, where it has earned 18 stars from the community.",
+      "long2": "It's actively developed around dual-monitor, league, rocket, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "C#",
+        "Dual Monitor",
+        "League",
+        "Rocket",
+        "Split Screen"
+      ],
+      "updated": "9 years ago",
+      "pushedAt": "2018-01-06T17:17:52-06:00",
+      "license": "—",
+      "langs": [
+        {
+          "name": "C#",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "dual-monitor",
+        "league",
+        "rocket",
+        "split-screen"
+      ],
+      "watchers": 2,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "thrust-vector-control-rocket",
+      "name": "Thrust-Vector-Control-Rocket",
+      "fullName": "Curious-Nikhil/Thrust-Vector-Control-Rocket",
+      "category": "DevTools",
+      "stars": 18,
+      "author": "Curious-Nikhil",
+      "avatar": "https://avatars.githubusercontent.com/u/12347532?v=4",
+      "desc": "A model thrust vector control system to maneuver a rocket with tuned PID settings.",
+      "demo": null,
+      "repoUrl": "https://github.com/Curious-Nikhil/Thrust-Vector-Control-Rocket",
+      "long1": "A model thrust vector control system to maneuver a rocket with tuned PID settings. Maintained by Curious-Nikhil on GitHub, where it has earned 18 stars from the community.",
+      "long2": "It's actively developed around arduino, gimbal, gimbal-lock, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Arduino",
+        "Gimbal",
+        "Gimbal Lock",
+        "Modelrocket"
+      ],
+      "updated": "7 years ago",
+      "pushedAt": "2020-01-31T10:32:07-06:00",
+      "license": "—",
+      "langs": [
+        {
+          "name": "JavaScript",
+          "pct": 71.429,
+          "size": 20
+        },
+        {
+          "name": "Other",
+          "pct": 28.571,
+          "size": 8
         }
       ],
       "versions": [],
       "topics": [
         "arduino",
-        "avionics",
-        "c",
-        "cpp",
-        "irec",
-        "platformio",
+        "gimbal",
+        "gimbal-lock",
+        "modelrocket",
+        "mpu6050",
         "rocket",
-        "rocketry",
-        "spaceport-america-cup",
-        "stm32",
-        "teensy36",
-        "ubc-engineering",
-        "ubc-rocket"
+        "thrustvectorcontrol",
+        "tvc"
       ],
-      "forks": 3,
-      "watchers": 7,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "rust-backend-tutorials",
-      "name": "rust-backend-tutorials",
-      "fullName": "elibroftw/rust-backend-tutorials",
-      "category": "Docs",
-      "stars": 19,
-      "author": "elibroftw",
-      "avatar": "https://avatars.githubusercontent.com/u/21298211?v=4",
-      "desc": "A sample project showing off how to use Axum (previously Rocket) effectively.",
-      "demo": "https://www.youtube.com/playlist?list=PLmWYh0f8jKSgv9FHydAWn9ZEdGmx0Ix_O",
-      "repoUrl": "https://github.com/elibroftw/rust-backend-tutorials",
-      "long1": "A sample project showing off how to use Axum (previously Rocket) effectively. Maintained by elibroftw on GitHub, where it has earned 19 stars from the community.",
-      "long2": "It's actively developed around rocket, rust, tauri, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Rocket",
-        "Rust",
-        "Tauri"
-      ],
-      "updated": "3 years ago",
-      "pushedAt": "2023-10-22T07:24:33-06:00",
-      "license": "—",
-      "langs": [
-        {
-          "name": "Rust",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "rocket",
-        "rust",
-        "tauri"
-      ],
-      "forks": 1,
+      "forks": 2,
       "watchers": 3,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "ilovereact",
-      "name": "ILoveReact",
-      "fullName": "jondjones/ILoveReact",
-      "category": "Testing",
-      "stars": 19,
-      "author": "jondjones",
-      "avatar": "https://avatars.githubusercontent.com/u/2204053?v=4",
-      "desc": "#ILOVEReact - This is a giant starter kit for anyone wanting to learn React.js.  This repo contains a roadmap for everything you need to learn to master react, a list of tutorials to help you get started, and a number of real-world project ideas to give you a starting point to apply your skills",
-      "demo": "http://www.jondjones.com",
-      "repoUrl": "https://github.com/jondjones/ILoveReact",
-      "long1": "#ILOVEReact - This is a giant starter kit for anyone wanting to learn React.js.  This repo contains a roadmap for everything you need to learn to master react, a list of tutorials to help you get started, and a number of real-world project ideas to give you a starting point to apply your skills. Maintained by jondjones on GitHub, where it has earned 19 stars from the community.",
-      "long2": "It's actively developed around apollo, cypress, enzyme-testing, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "JavaScript",
-        "Apollo",
-        "Cypress",
-        "Enzyme Testing",
-        "Hooks"
-      ],
-      "updated": "6 years ago",
-      "pushedAt": "2021-03-10T05:41:21-06:00",
-      "license": "—",
-      "langs": [
-        {
-          "name": "JavaScript",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "apollo",
-        "cypress",
-        "enzyme-testing",
-        "hooks",
-        "javascript",
-        "jest",
-        "react",
-        "react-redux",
-        "react-testing-library",
-        "reactcontext",
-        "reactjs",
-        "rocket",
-        "typescript"
-      ],
-      "forks": 4,
-      "watchers": 7,
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
@@ -5076,11 +5305,13 @@
       "langs": [
         {
           "name": "Rust",
-          "pct": 80
+          "pct": 80,
+          "size": 0
         },
         {
           "name": "HTML",
-          "pct": 20
+          "pct": 20,
+          "size": 0
         }
       ],
       "versions": [
@@ -5141,7 +5372,8 @@
       "langs": [
         {
           "name": "Rust",
-          "pct": 100
+          "pct": 100,
+          "size": 0
         }
       ],
       "versions": [],
@@ -5158,308 +5390,77 @@
       "addedAt": "2026-08-05T04:38:15.813733+00:00"
     },
     {
-      "slug": "dataaccess",
-      "name": "DataAccess",
-      "fullName": "DataBooster/DataAccess",
-      "category": "DevTools",
-      "stars": 18,
-      "author": "DataBooster",
-      "avatar": "https://avatars.githubusercontent.com/u/10664961?v=4",
-      "desc": "(Migrated from CodePlex) The dbParallel DataBooster library is a high-performance extension to ADO.NET Data Provider. (DbAccess, OracleLauncher  and SqlLauncher for accessing mass data)",
-      "demo": "https://databooster.codeplex.com/",
-      "repoUrl": "https://github.com/DataBooster/DataAccess",
-      "long1": "(Migrated from CodePlex) The dbParallel DataBooster library is a high-performance extension to ADO.NET Data Provider. (DbAccess, OracleLauncher  and SqlLauncher for accessing mass data). Maintained by DataBooster on GitHub, where it has earned 18 stars from the community.",
-      "long2": "It's actively developed around ado-net, associative-array, entity-framework, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "C#",
-        "Ado Net",
-        "Associative Array",
-        "Entity Framework",
-        "Faster"
-      ],
-      "updated": "8 years ago",
-      "pushedAt": "2018-12-07T23:40:40-06:00",
-      "license": "Apache-2.0",
-      "langs": [
-        {
-          "name": "C#",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "ado-net",
-        "associative-array",
-        "entity-framework",
-        "faster",
-        "framework",
-        "high-performance",
-        "launcher",
-        "managed",
-        "odp-net",
-        "oracle",
-        "package",
-        "parallel-programming",
-        "performance",
-        "pl-sql",
-        "rocket",
-        "signalr",
-        "speed",
-        "sql-server",
-        "table-valued",
-        "throughput"
-      ],
-      "forks": 10,
-      "issues": 1,
-      "watchers": 4,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "rocketlauncher",
-      "name": "RocketLauncher",
-      "fullName": "rex706/RocketLauncher",
-      "category": "DevTools",
-      "stars": 18,
-      "author": "rex706",
-      "avatar": "https://avatars.githubusercontent.com/u/15636269?v=4",
-      "desc": "Easily change Rocket League's resolution to work with dual-monitor split screen",
-      "demo": null,
-      "repoUrl": "https://github.com/rex706/RocketLauncher",
-      "long1": "Easily change Rocket League's resolution to work with dual-monitor split screen. Maintained by rex706 on GitHub, where it has earned 18 stars from the community.",
-      "long2": "It's actively developed around dual-monitor, league, rocket, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "C#",
-        "Dual Monitor",
-        "League",
-        "Rocket",
-        "Split Screen"
-      ],
-      "updated": "9 years ago",
-      "pushedAt": "2018-01-06T17:17:52-06:00",
-      "license": "—",
-      "langs": [
-        {
-          "name": "C#",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "dual-monitor",
-        "league",
-        "rocket",
-        "split-screen"
-      ],
-      "watchers": 2,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "preflightpy",
-      "name": "PreflightPy",
-      "fullName": "RimorRes/PreflightPy",
-      "category": "DevTools",
-      "stars": 18,
-      "author": "RimorRes",
-      "avatar": "https://avatars.githubusercontent.com/u/53187347?v=4",
-      "desc": "Python module for Simulation and Optimization of Rocket Trajectories, SORT for short.",
-      "demo": null,
-      "repoUrl": "https://github.com/RimorRes/PreflightPy",
-      "long1": "Python module for Simulation and Optimization of Rocket Trajectories, SORT for short. Maintained by RimorRes on GitHub, where it has earned 18 stars from the community.",
-      "long2": "It's actively developed around aerodynamics, aerospace, hacktoberfest, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Aerodynamics",
-        "Aerospace",
-        "Python",
-        "Rocket"
-      ],
-      "updated": "5 years ago",
-      "pushedAt": "2021-10-30T05:49:19-05:00",
-      "license": "GPL-3.0",
-      "langs": [
-        {
-          "name": "Python",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "aerodynamics",
-        "aerospace",
-        "hacktoberfest",
-        "python",
-        "rocket"
-      ],
-      "issues": 5,
-      "watchers": 2,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "thrust-vector-control-rocket",
-      "name": "Thrust-Vector-Control-Rocket",
-      "fullName": "Curious-Nikhil/Thrust-Vector-Control-Rocket",
-      "category": "DevTools",
-      "stars": 18,
-      "author": "Curious-Nikhil",
-      "avatar": "https://avatars.githubusercontent.com/u/12347532?v=4",
-      "desc": "A model thrust vector control system to maneuver a rocket with tuned PID settings.",
-      "demo": null,
-      "repoUrl": "https://github.com/Curious-Nikhil/Thrust-Vector-Control-Rocket",
-      "long1": "A model thrust vector control system to maneuver a rocket with tuned PID settings. Maintained by Curious-Nikhil on GitHub, where it has earned 18 stars from the community.",
-      "long2": "It's actively developed around arduino, gimbal, gimbal-lock, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Arduino",
-        "Gimbal",
-        "Gimbal Lock",
-        "Modelrocket"
-      ],
-      "updated": "7 years ago",
-      "pushedAt": "2020-01-31T10:32:07-06:00",
-      "license": "—",
-      "langs": [
-        {
-          "name": "JavaScript",
-          "pct": 71.429,
-          "size": 20
-        },
-        {
-          "name": "Other",
-          "pct": 28.571,
-          "size": 8
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "arduino",
-        "gimbal",
-        "gimbal-lock",
-        "modelrocket",
-        "mpu6050",
-        "rocket",
-        "thrustvectorcontrol",
-        "tvc"
-      ],
-      "forks": 2,
-      "watchers": 3,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "rockets",
-      "name": "rockets",
-      "fullName": "EugenHotaj/rockets",
-      "category": "DevTools",
+      "slug": "rocket-league-rank-up-fast",
+      "name": "Rocket-League-rank-up-fast",
+      "fullName": "TeamShadowReckon/Rocket-League-rank-up-fast",
+      "category": "AI & ML",
       "stars": 17,
-      "author": "EugenHotaj",
-      "avatar": "https://avatars.githubusercontent.com/u/6221162?v=4",
-      "desc": "Simple rocket simulation with different types of controllers.",
-      "demo": "https://medium.com/@eugenhotaj/controlling-rockets-with-theory-b8bf3d8b263f",
-      "repoUrl": "https://github.com/EugenHotaj/rockets",
-      "long1": "Simple rocket simulation with different types of controllers. Maintained by EugenHotaj on GitHub, where it has earned 17 stars from the community.",
-      "long2": "It's actively developed around pid-control, rocket, simulator, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Python",
-        "Pid Control",
-        "Rocket",
-        "Simulator"
-      ],
-      "updated": "7 years ago",
-      "pushedAt": "2019-04-21T20:57:04-05:00",
-      "license": "—",
-      "langs": [
-        {
-          "name": "Python",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "pid-control",
-        "rocket",
-        "simulator"
-      ],
-      "forks": 1,
-      "watchers": 2,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "hitboxplugin",
-      "name": "HitboxPlugin",
-      "fullName": "Aberinkula/HitboxPlugin",
-      "category": "DevTools",
-      "stars": 17,
-      "author": "Aberinkula",
-      "avatar": "https://avatars.githubusercontent.com/u/44514675?v=4",
-      "desc": "BakkesMod Hitbox Plugin",
+      "author": "TeamShadowReckon",
+      "avatar": "https://avatars.githubusercontent.com/u/290345548?v=4",
+      "desc": "🛡️ Rocket League Hack 2026 — undetected cheat with ball aimbot, ESP wallhack, boost hack, speed hack, auto aerials, perfect accuracy, and all cosmetics unlocked. Dominate every match, rank up fast.",
       "demo": null,
-      "repoUrl": "https://github.com/Aberinkula/HitboxPlugin",
-      "long1": "BakkesMod Hitbox Plugin. Maintained by Aberinkula on GitHub, where it has earned 17 stars from the community.",
-      "long2": "It's actively developed around bakkes, bakkesmod, league, and is a solid reference for anyone building with these tools.",
+      "repoUrl": "https://github.com/TeamShadowReckon/Rocket-League-rank-up-fast",
+      "long1": "🛡️ Rocket League Hack 2026 — undetected cheat with ball aimbot, ESP wallhack, boost hack, speed hack, auto aerials, perfect accuracy, and all cosmetics unlocked. Dominate every match, rank up fast. Maintained by TeamShadowReckon on GitHub, where it has earned 17 stars from the community.",
+      "long2": "It's actively developed around ai-game-bot, bumper, game-enhancer, and is a solid reference for anyone building with these tools.",
       "descriptionMd": "",
       "stack": [
         "C++",
-        "Bakkes",
-        "Bakkesmod",
-        "League",
-        "Plugin"
+        "Ai Game Bot",
+        "Bumper",
+        "Game Enhancer",
+        "Macros Rocketleague"
       ],
-      "updated": "5 years ago",
-      "pushedAt": "2021-10-03T08:45:24-05:00",
-      "license": "—",
+      "updated": "8 weeks ago",
+      "pushedAt": "2026-07-16T14:51:59-06:00",
+      "license": "MIT",
       "langs": [
         {
           "name": "C++",
           "pct": 100,
-          "size": 100
+          "size": 78
         }
       ],
       "versions": [],
       "topics": [
-        "bakkes",
-        "bakkesmod",
-        "league",
-        "plugin",
-        "plugins",
+        "ai-game-bot",
+        "bumper",
+        "game-enhancer",
+        "macros-rocketleague",
+        "rl",
         "rocket",
         "rocket-league",
-        "training"
+        "rocket-league-ai",
+        "rocket-league-research",
+        "rocket-league-tools",
+        "rocketleague-modification",
+        "rocketstats"
       ],
-      "forks": 11,
-      "issues": 5,
-      "watchers": 2,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+      "addedAt": "2026-07-21T11:09:08.780610+00:00"
     },
     {
-      "slug": "rocket-i18n",
-      "name": "rocket_i18n",
-      "fullName": "Plume-org/rocket_i18n",
+      "slug": "rocket-tracing-fairing-example",
+      "name": "rocket-tracing-fairing-example",
+      "fullName": "somehowchris/rocket-tracing-fairing-example",
       "category": "DevTools",
       "stars": 17,
-      "author": "Plume-org",
-      "avatar": "https://avatars.githubusercontent.com/u/38588078?v=4",
-      "desc": "A crate to help you internationalize your Rocket applications.",
+      "author": "somehowchris",
+      "avatar": "https://avatars.githubusercontent.com/u/38954618?v=4",
+      "desc": "An example of a fairing for rocket to use tracing (as this pops up at many places in dicussions and questions)",
       "demo": null,
-      "repoUrl": "https://github.com/Plume-org/rocket_i18n",
-      "long1": "A crate to help you internationalize your Rocket applications. Maintained by Plume-org on GitHub, where it has earned 17 stars from the community.",
-      "long2": "It's actively developed around gettext, i18n, internationalization, and is a solid reference for anyone building with these tools.",
+      "repoUrl": "https://github.com/somehowchris/rocket-tracing-fairing-example",
+      "long1": "An example of a fairing for rocket to use tracing (as this pops up at many places in dicussions and questions). Maintained by somehowchris on GitHub, where it has earned 17 stars from the community.",
+      "long2": "It's actively developed around async, fairing, rocket, and is a solid reference for anyone building with these tools.",
       "descriptionMd": "",
       "stack": [
         "Rust",
-        "Gettext",
-        "I18N",
-        "Internationalization",
-        "L10N"
+        "Async",
+        "Fairing",
+        "Rocket",
+        "Tokio"
       ],
-      "updated": "3 years ago",
-      "pushedAt": "2023-12-28T06:28:23-06:00",
-      "license": "GPL-3.0",
+      "updated": "3 months ago",
+      "pushedAt": "2026-06-18T13:36:54-06:00",
+      "license": "—",
       "langs": [
         {
           "name": "Rust",
@@ -5469,17 +5470,16 @@
       ],
       "versions": [],
       "topics": [
-        "gettext",
-        "i18n",
-        "internationalization",
-        "l10n",
-        "localization",
+        "async",
+        "fairing",
         "rocket",
-        "rust"
+        "tokio",
+        "tokio-rs",
+        "tracing"
       ],
-      "forks": 6,
-      "issues": 4,
-      "watchers": 6,
+      "forks": 7,
+      "issues": 8,
+      "watchers": 1,
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
@@ -5530,6 +5530,46 @@
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
+      "slug": "rockets",
+      "name": "rockets",
+      "fullName": "EugenHotaj/rockets",
+      "category": "DevTools",
+      "stars": 17,
+      "author": "EugenHotaj",
+      "avatar": "https://avatars.githubusercontent.com/u/6221162?v=4",
+      "desc": "Simple rocket simulation with different types of controllers.",
+      "demo": "https://medium.com/@eugenhotaj/controlling-rockets-with-theory-b8bf3d8b263f",
+      "repoUrl": "https://github.com/EugenHotaj/rockets",
+      "long1": "Simple rocket simulation with different types of controllers. Maintained by EugenHotaj on GitHub, where it has earned 17 stars from the community.",
+      "long2": "It's actively developed around pid-control, rocket, simulator, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Python",
+        "Pid Control",
+        "Rocket",
+        "Simulator"
+      ],
+      "updated": "7 years ago",
+      "pushedAt": "2019-04-21T20:57:04-05:00",
+      "license": "—",
+      "langs": [
+        {
+          "name": "Python",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "pid-control",
+        "rocket",
+        "simulator"
+      ],
+      "forks": 1,
+      "watchers": 2,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
       "slug": "sans",
       "name": "sans",
       "fullName": "libreflip/sans",
@@ -5555,15 +5595,18 @@
       "langs": [
         {
           "name": "Rust",
-          "pct": 98
+          "pct": 98,
+          "size": 0
         },
         {
           "name": "CSS",
-          "pct": 1
+          "pct": 1,
+          "size": 0
         },
         {
           "name": "HTML",
-          "pct": 1
+          "pct": 1,
+          "size": 0
         }
       ],
       "versions": [],
@@ -5578,29 +5621,29 @@
       "addedAt": "2026-08-05T04:38:15.813733+00:00"
     },
     {
-      "slug": "rocket-tracing-fairing-example",
-      "name": "rocket-tracing-fairing-example",
-      "fullName": "somehowchris/rocket-tracing-fairing-example",
+      "slug": "rocket-i18n",
+      "name": "rocket_i18n",
+      "fullName": "Plume-org/rocket_i18n",
       "category": "DevTools",
       "stars": 17,
-      "author": "somehowchris",
-      "avatar": "https://avatars.githubusercontent.com/u/38954618?v=4",
-      "desc": "An example of a fairing for rocket to use tracing (as this pops up at many places in dicussions and questions)",
+      "author": "Plume-org",
+      "avatar": "https://avatars.githubusercontent.com/u/38588078?v=4",
+      "desc": "A crate to help you internationalize your Rocket applications.",
       "demo": null,
-      "repoUrl": "https://github.com/somehowchris/rocket-tracing-fairing-example",
-      "long1": "An example of a fairing for rocket to use tracing (as this pops up at many places in dicussions and questions). Maintained by somehowchris on GitHub, where it has earned 17 stars from the community.",
-      "long2": "It's actively developed around async, fairing, rocket, and is a solid reference for anyone building with these tools.",
+      "repoUrl": "https://github.com/Plume-org/rocket_i18n",
+      "long1": "A crate to help you internationalize your Rocket applications. Maintained by Plume-org on GitHub, where it has earned 17 stars from the community.",
+      "long2": "It's actively developed around gettext, i18n, internationalization, and is a solid reference for anyone building with these tools.",
       "descriptionMd": "",
       "stack": [
         "Rust",
-        "Async",
-        "Fairing",
-        "Rocket",
-        "Tokio"
+        "Gettext",
+        "I18N",
+        "Internationalization",
+        "L10N"
       ],
-      "updated": "3 months ago",
-      "pushedAt": "2026-06-18T13:36:54-06:00",
-      "license": "—",
+      "updated": "3 years ago",
+      "pushedAt": "2023-12-28T06:28:23-06:00",
+      "license": "GPL-3.0",
       "langs": [
         {
           "name": "Rust",
@@ -5610,65 +5653,18 @@
       ],
       "versions": [],
       "topics": [
-        "async",
-        "fairing",
+        "gettext",
+        "i18n",
+        "internationalization",
+        "l10n",
+        "localization",
         "rocket",
-        "tokio",
-        "tokio-rs",
-        "tracing"
+        "rust"
       ],
-      "forks": 7,
-      "issues": 8,
-      "watchers": 1,
+      "forks": 6,
+      "issues": 4,
+      "watchers": 6,
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "rocket-league-rank-up-fast",
-      "name": "Rocket-League-rank-up-fast",
-      "fullName": "TeamShadowReckon/Rocket-League-rank-up-fast",
-      "category": "AI & ML",
-      "stars": 17,
-      "author": "TeamShadowReckon",
-      "avatar": "https://avatars.githubusercontent.com/u/290345548?v=4",
-      "desc": "🛡️ Rocket League Hack 2026 — undetected cheat with ball aimbot, ESP wallhack, boost hack, speed hack, auto aerials, perfect accuracy, and all cosmetics unlocked. Dominate every match, rank up fast.",
-      "demo": null,
-      "repoUrl": "https://github.com/TeamShadowReckon/Rocket-League-rank-up-fast",
-      "long1": "🛡️ Rocket League Hack 2026 — undetected cheat with ball aimbot, ESP wallhack, boost hack, speed hack, auto aerials, perfect accuracy, and all cosmetics unlocked. Dominate every match, rank up fast. Maintained by TeamShadowReckon on GitHub, where it has earned 17 stars from the community.",
-      "long2": "It's actively developed around ai-game-bot, bumper, game-enhancer, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "C++",
-        "Ai Game Bot",
-        "Bumper",
-        "Game Enhancer",
-        "Macros Rocketleague"
-      ],
-      "updated": "8 weeks ago",
-      "pushedAt": "2026-07-16T14:51:59-06:00",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "C++",
-          "pct": 100,
-          "size": 78
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "ai-game-bot",
-        "bumper",
-        "game-enhancer",
-        "macros-rocketleague",
-        "rl",
-        "rocket",
-        "rocket-league",
-        "rocket-league-ai",
-        "rocket-league-research",
-        "rocket-league-tools",
-        "rocketleague-modification",
-        "rocketstats"
-      ],
-      "addedAt": "2026-07-21T11:09:08.780610+00:00"
     },
     {
       "slug": "dendryte",
@@ -5733,95 +5729,51 @@
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
-      "slug": "rust-rocket-sqlx-sample",
-      "name": "rust-rocket-sqlx-sample",
-      "fullName": "edo1z/rust-rocket-sqlx-sample",
+      "slug": "hitboxplugin",
+      "name": "HitboxPlugin",
+      "fullName": "Aberinkula/HitboxPlugin",
       "category": "DevTools",
-      "stars": 16,
-      "author": "edo1z",
-      "avatar": "https://avatars.githubusercontent.com/u/89882017?v=4",
-      "desc": "A clean architecture style Sample using Rust's Rocket, sqlx and PostgreSQL.",
+      "stars": 17,
+      "author": "Aberinkula",
+      "avatar": "https://avatars.githubusercontent.com/u/44514675?v=4",
+      "desc": "BakkesMod Hitbox Plugin",
       "demo": null,
-      "repoUrl": "https://github.com/edo1z/rust-rocket-sqlx-sample",
-      "long1": "A clean architecture style Sample using Rust's Rocket, sqlx and PostgreSQL. Maintained by edo1z on GitHub, where it has earned 16 stars from the community.",
-      "long2": "It's actively developed around clean-architecture, postgresql, rocket, and is a solid reference for anyone building with these tools.",
+      "repoUrl": "https://github.com/Aberinkula/HitboxPlugin",
+      "long1": "BakkesMod Hitbox Plugin. Maintained by Aberinkula on GitHub, where it has earned 17 stars from the community.",
+      "long2": "It's actively developed around bakkes, bakkesmod, league, and is a solid reference for anyone building with these tools.",
       "descriptionMd": "",
       "stack": [
-        "Clean Architecture",
-        "PostgreSQL",
-        "Rocket",
-        "Rust"
+        "C++",
+        "Bakkes",
+        "Bakkesmod",
+        "League",
+        "Plugin"
       ],
-      "updated": "2 years ago",
-      "pushedAt": "2024-11-11T23:58:07-06:00",
-      "license": "MIT",
+      "updated": "5 years ago",
+      "pushedAt": "2021-10-03T08:45:24-05:00",
+      "license": "—",
       "langs": [
         {
-          "name": "Rust",
+          "name": "C++",
           "pct": 100,
           "size": 100
         }
       ],
       "versions": [],
       "topics": [
-        "clean-architecture",
-        "postgresql",
+        "bakkes",
+        "bakkesmod",
+        "league",
+        "plugin",
+        "plugins",
         "rocket",
-        "rust",
-        "sqlx"
+        "rocket-league",
+        "training"
       ],
-      "forks": 3,
-      "watchers": 1,
+      "forks": 11,
+      "issues": 5,
+      "watchers": 2,
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "rust-rocket-mongodb-token-auth-rest-api-boilerplate",
-      "name": "Rust-rocket-mongoDB-token-auth-REST-API-boilerplate",
-      "fullName": "martyr00/Rust-rocket-mongoDB-token-auth-REST-API-boilerplate",
-      "category": "Authentication",
-      "stars": 16,
-      "author": "martyr00",
-      "avatar": "https://avatars.githubusercontent.com/u/82939352?u=1414f553552f45d2888e85c87f38f5df657920bb&v=4",
-      "desc": "Rust Rocket MongoDB token-authorization REST API boilerplate",
-      "demo": null,
-      "repoUrl": "https://github.com/martyr00/Rust-rocket-mongoDB-token-auth-REST-API-boilerplate",
-      "long1": "Rust Rocket MongoDB token-authorization REST API boilerplate. Maintained by martyr00 on GitHub, where it has earned 16 stars from the community.",
-      "long2": "It's actively developed around rust, boilerplate, boilerplate-back-end, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Rust",
-        "Boilerplate",
-        "Boilerplate Back End",
-        "Boilerplate Backend"
-      ],
-      "updated": "4 years ago",
-      "pushedAt": "2023-03-08T12:37:00-06:00",
-      "license": "—",
-      "langs": [
-        {
-          "name": "Rust",
-          "pct": 100
-        }
-      ],
-      "versions": [
-        {
-          "name": "Rust",
-          "url": "https://github.com/martyr00/Rust-rocket-mongoDB-token-auth-REST-API-boilerplate/releases/tag/Rust"
-        }
-      ],
-      "topics": [
-        "rust",
-        "boilerplate",
-        "boilerplate-back-end",
-        "boilerplate-backend",
-        "boilerplate-template",
-        "jwt-auth",
-        "jwt-token",
-        "mongodb",
-        "rest-api",
-        "rocket-rs"
-      ],
-      "addedAt": "2026-08-05T04:38:15.813733+00:00"
     },
     {
       "slug": "reboothitronrouter",
@@ -5865,53 +5817,6 @@
       "forks": 6,
       "issues": 1,
       "watchers": 2,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "rust-wiki",
-      "name": "rust-wiki",
-      "fullName": "adamatti/rust-wiki",
-      "category": "Docs",
-      "stars": 16,
-      "author": "adamatti",
-      "avatar": "https://avatars.githubusercontent.com/u/89515?v=4",
-      "desc": "a wiki implementation using rust",
-      "demo": null,
-      "repoUrl": "https://github.com/adamatti/rust-wiki",
-      "long1": "a wiki implementation using rust. Maintained by adamatti on GitHub, where it has earned 16 stars from the community.",
-      "long2": "It's actively developed around docker, heroku, markdown, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Rust",
-        "Docker",
-        "Heroku",
-        "Markdown",
-        "Mongo"
-      ],
-      "updated": "6 years ago",
-      "pushedAt": "2020-10-10T16:55:13-05:00",
-      "license": "—",
-      "langs": [
-        {
-          "name": "Rust",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "docker",
-        "heroku",
-        "markdown",
-        "mongo",
-        "mongodb",
-        "rocket",
-        "rust",
-        "rust-lang",
-        "wiki"
-      ],
-      "forks": 1,
-      "watchers": 1,
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
@@ -5965,6 +5870,53 @@
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
+      "slug": "rust-wiki",
+      "name": "rust-wiki",
+      "fullName": "adamatti/rust-wiki",
+      "category": "Docs",
+      "stars": 16,
+      "author": "adamatti",
+      "avatar": "https://avatars.githubusercontent.com/u/89515?v=4",
+      "desc": "a wiki implementation using rust",
+      "demo": null,
+      "repoUrl": "https://github.com/adamatti/rust-wiki",
+      "long1": "a wiki implementation using rust. Maintained by adamatti on GitHub, where it has earned 16 stars from the community.",
+      "long2": "It's actively developed around docker, heroku, markdown, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Rust",
+        "Docker",
+        "Heroku",
+        "Markdown",
+        "Mongo"
+      ],
+      "updated": "6 years ago",
+      "pushedAt": "2020-10-10T16:55:13-05:00",
+      "license": "—",
+      "langs": [
+        {
+          "name": "Rust",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "docker",
+        "heroku",
+        "markdown",
+        "mongo",
+        "mongodb",
+        "rocket",
+        "rust",
+        "rust-lang",
+        "wiki"
+      ],
+      "forks": 1,
+      "watchers": 1,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
       "slug": "rocket-simulation",
       "name": "rocket-simulation",
       "fullName": "hamidzr/rocket-simulation",
@@ -6002,6 +5954,138 @@
       ],
       "forks": 2,
       "watchers": 2,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "rust-rocket-mongodb-token-auth-rest-api-boilerplate",
+      "name": "Rust-rocket-mongoDB-token-auth-REST-API-boilerplate",
+      "fullName": "martyr00/Rust-rocket-mongoDB-token-auth-REST-API-boilerplate",
+      "category": "Authentication",
+      "stars": 16,
+      "author": "martyr00",
+      "avatar": "https://avatars.githubusercontent.com/u/82939352?u=1414f553552f45d2888e85c87f38f5df657920bb&v=4",
+      "desc": "Rust Rocket MongoDB token-authorization REST API boilerplate",
+      "demo": null,
+      "repoUrl": "https://github.com/martyr00/Rust-rocket-mongoDB-token-auth-REST-API-boilerplate",
+      "long1": "Rust Rocket MongoDB token-authorization REST API boilerplate. Maintained by martyr00 on GitHub, where it has earned 16 stars from the community.",
+      "long2": "It's actively developed around rust, boilerplate, boilerplate-back-end, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Rust",
+        "Boilerplate",
+        "Boilerplate Back End",
+        "Boilerplate Backend"
+      ],
+      "updated": "4 years ago",
+      "pushedAt": "2023-03-08T12:37:00-06:00",
+      "license": "—",
+      "langs": [
+        {
+          "name": "Rust",
+          "pct": 100,
+          "size": 0
+        }
+      ],
+      "versions": [
+        {
+          "name": "Rust",
+          "url": "https://github.com/martyr00/Rust-rocket-mongoDB-token-auth-REST-API-boilerplate/releases/tag/Rust"
+        }
+      ],
+      "topics": [
+        "rust",
+        "boilerplate",
+        "boilerplate-back-end",
+        "boilerplate-backend",
+        "boilerplate-template",
+        "jwt-auth",
+        "jwt-token",
+        "mongodb",
+        "rest-api",
+        "rocket-rs"
+      ],
+      "addedAt": "2026-08-05T04:38:15.813733+00:00"
+    },
+    {
+      "slug": "rust-rocket-sqlx-sample",
+      "name": "rust-rocket-sqlx-sample",
+      "fullName": "edo1z/rust-rocket-sqlx-sample",
+      "category": "DevTools",
+      "stars": 16,
+      "author": "edo1z",
+      "avatar": "https://avatars.githubusercontent.com/u/89882017?v=4",
+      "desc": "A clean architecture style Sample using Rust's Rocket, sqlx and PostgreSQL.",
+      "demo": null,
+      "repoUrl": "https://github.com/edo1z/rust-rocket-sqlx-sample",
+      "long1": "A clean architecture style Sample using Rust's Rocket, sqlx and PostgreSQL. Maintained by edo1z on GitHub, where it has earned 16 stars from the community.",
+      "long2": "It's actively developed around clean-architecture, postgresql, rocket, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Clean Architecture",
+        "PostgreSQL",
+        "Rocket",
+        "Rust"
+      ],
+      "updated": "2 years ago",
+      "pushedAt": "2024-11-11T23:58:07-06:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "Rust",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "clean-architecture",
+        "postgresql",
+        "rocket",
+        "rust",
+        "sqlx"
+      ],
+      "forks": 3,
+      "watchers": 1,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "self-rocket",
+      "name": "SelF-Rocket",
+      "fullName": "ANR-MYEL/SelF-Rocket",
+      "category": "DevTools",
+      "stars": 15,
+      "author": "ANR-MYEL",
+      "avatar": "https://avatars.githubusercontent.com/u/181098346?v=4",
+      "desc": "Code related to the paper \"Time series classification with random convolution kernels: pooling operators and input representations matter\"",
+      "demo": "https://arxiv.org/abs/2409.01115v3",
+      "repoUrl": "https://github.com/ANR-MYEL/SelF-Rocket",
+      "long1": "Code related to the paper \"Time series classification with random convolution kernels: pooling operators and input representations matter\". Maintained by ANR-MYEL on GitHub, where it has earned 15 stars from the community.",
+      "long2": "It's actively developed around rocket, time-series, time-series-classification, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Python",
+        "Rocket",
+        "Time Series",
+        "Time Series Classification"
+      ],
+      "updated": "2 months ago",
+      "pushedAt": "2026-06-30T08:09:26-06:00",
+      "license": "GPL-3.0",
+      "langs": [
+        {
+          "name": "Python",
+          "pct": 100,
+          "size": 57546
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "rocket",
+        "time-series",
+        "time-series-classification"
+      ],
+      "forks": 2,
+      "watchers": 3,
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
@@ -6064,6 +6148,92 @@
       ],
       "issues": 14,
       "watchers": 2,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "rusty-bunny",
+      "name": "rusty-bunny",
+      "fullName": "jsjoeio/rusty-bunny",
+      "category": "DevTools",
+      "stars": 15,
+      "author": "jsjoeio",
+      "avatar": "https://avatars.githubusercontent.com/u/3806031?u=4f3d595eacb144a2a41fe754f67d50d9805da4f4&v=4",
+      "desc": "a tool that lets you write smart bookmarks",
+      "demo": null,
+      "repoUrl": "https://github.com/jsjoeio/rusty-bunny",
+      "long1": "a tool that lets you write smart bookmarks. Maintained by jsjoeio on GitHub, where it has earned 15 stars from the community.",
+      "long2": "It's actively developed around rust, rocket-rs, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Rust",
+        "Rocket Rs"
+      ],
+      "updated": "5 years ago",
+      "pushedAt": "2021-04-20T08:09:08-05:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "Rust",
+          "pct": 67,
+          "size": 0
+        },
+        {
+          "name": "Makefile",
+          "pct": 33,
+          "size": 0
+        },
+        {
+          "name": "LLVM",
+          "pct": 0,
+          "size": 0
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "rust",
+        "rocket-rs"
+      ],
+      "addedAt": "2026-08-05T04:38:15.813733+00:00"
+    },
+    {
+      "slug": "rocket-mvc",
+      "name": "Rocket_MVC",
+      "fullName": "madeindjs/Rocket_MVC",
+      "category": "APIs",
+      "stars": 15,
+      "author": "madeindjs",
+      "avatar": "https://avatars.githubusercontent.com/u/11815139?v=4",
+      "desc": "An MVC web application built with Rocket.rs & Diesel.rs",
+      "demo": null,
+      "repoUrl": "https://github.com/madeindjs/Rocket_MVC",
+      "long1": "An MVC web application built with Rocket.rs & Diesel.rs. Maintained by madeindjs on GitHub, where it has earned 15 stars from the community.",
+      "long2": "It's actively developed around diesel, restful, rocket, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Diesel",
+        "Restful",
+        "Rocket",
+        "Rust"
+      ],
+      "updated": "8 years ago",
+      "pushedAt": "2019-01-12T17:03:27-06:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "Rust",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "diesel",
+        "restful",
+        "rocket",
+        "rust"
+      ],
+      "forks": 2,
+      "watchers": 1,
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
@@ -6169,48 +6339,6 @@
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
-      "slug": "rusty-bunny",
-      "name": "rusty-bunny",
-      "fullName": "jsjoeio/rusty-bunny",
-      "category": "DevTools",
-      "stars": 15,
-      "author": "jsjoeio",
-      "avatar": "https://avatars.githubusercontent.com/u/3806031?u=4f3d595eacb144a2a41fe754f67d50d9805da4f4&v=4",
-      "desc": "a tool that lets you write smart bookmarks",
-      "demo": null,
-      "repoUrl": "https://github.com/jsjoeio/rusty-bunny",
-      "long1": "a tool that lets you write smart bookmarks. Maintained by jsjoeio on GitHub, where it has earned 15 stars from the community.",
-      "long2": "It's actively developed around rust, rocket-rs, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Rust",
-        "Rocket Rs"
-      ],
-      "updated": "5 years ago",
-      "pushedAt": "2021-04-20T08:09:08-05:00",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "Rust",
-          "pct": 67
-        },
-        {
-          "name": "Makefile",
-          "pct": 33
-        },
-        {
-          "name": "LLVM",
-          "pct": 0
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "rust",
-        "rocket-rs"
-      ],
-      "addedAt": "2026-08-05T04:38:15.813733+00:00"
-    },
-    {
       "slug": "rocket-template",
       "name": "rocket-template",
       "fullName": "orhanbalci/rocket-template",
@@ -6248,130 +6376,6 @@
         "rust"
       ],
       "forks": 2,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "rocket-mvc",
-      "name": "Rocket_MVC",
-      "fullName": "madeindjs/Rocket_MVC",
-      "category": "APIs",
-      "stars": 15,
-      "author": "madeindjs",
-      "avatar": "https://avatars.githubusercontent.com/u/11815139?v=4",
-      "desc": "An MVC web application built with Rocket.rs & Diesel.rs",
-      "demo": null,
-      "repoUrl": "https://github.com/madeindjs/Rocket_MVC",
-      "long1": "An MVC web application built with Rocket.rs & Diesel.rs. Maintained by madeindjs on GitHub, where it has earned 15 stars from the community.",
-      "long2": "It's actively developed around diesel, restful, rocket, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Diesel",
-        "Restful",
-        "Rocket",
-        "Rust"
-      ],
-      "updated": "8 years ago",
-      "pushedAt": "2019-01-12T17:03:27-06:00",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "Rust",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "diesel",
-        "restful",
-        "rocket",
-        "rust"
-      ],
-      "forks": 2,
-      "watchers": 1,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "self-rocket",
-      "name": "SelF-Rocket",
-      "fullName": "ANR-MYEL/SelF-Rocket",
-      "category": "DevTools",
-      "stars": 15,
-      "author": "ANR-MYEL",
-      "avatar": "https://avatars.githubusercontent.com/u/181098346?v=4",
-      "desc": "Code related to the paper \"Time series classification with random convolution kernels: pooling operators and input representations matter\"",
-      "demo": "https://arxiv.org/abs/2409.01115v3",
-      "repoUrl": "https://github.com/ANR-MYEL/SelF-Rocket",
-      "long1": "Code related to the paper \"Time series classification with random convolution kernels: pooling operators and input representations matter\". Maintained by ANR-MYEL on GitHub, where it has earned 15 stars from the community.",
-      "long2": "It's actively developed around rocket, time-series, time-series-classification, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Python",
-        "Rocket",
-        "Time Series",
-        "Time Series Classification"
-      ],
-      "updated": "2 months ago",
-      "pushedAt": "2026-06-30T08:09:26-06:00",
-      "license": "GPL-3.0",
-      "langs": [
-        {
-          "name": "Python",
-          "pct": 100,
-          "size": 57546
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "rocket",
-        "time-series",
-        "time-series-classification"
-      ],
-      "forks": 2,
-      "watchers": 3,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "thuburrow",
-      "name": "THUBurrow",
-      "fullName": "BobAnkh/THUBurrow",
-      "category": "DevTools",
-      "stars": 14,
-      "author": "BobAnkh",
-      "avatar": "https://avatars.githubusercontent.com/u/44333669?v=4",
-      "desc": "A forum built by Next.js and Rocket.",
-      "demo": "http://bobankh.com/THUBurrow/",
-      "repoUrl": "https://github.com/BobAnkh/THUBurrow",
-      "long1": "A forum built by Next.js and Rocket. Maintained by BobAnkh on GitHub, where it has earned 14 stars from the community.",
-      "long2": "It's actively developed around nextjs, rocket, rust, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Next.js",
-        "Rocket",
-        "Rust",
-        "Thu"
-      ],
-      "updated": "4 years ago",
-      "pushedAt": "2023-02-03T18:35:10-06:00",
-      "license": "GPL-3.0",
-      "langs": [
-        {
-          "name": "Rust",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "nextjs",
-        "rocket",
-        "rust",
-        "thu",
-        "typescript"
-      ],
-      "forks": 2,
-      "issues": 18,
-      "watchers": 1,
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
@@ -6464,50 +6468,6 @@
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
-      "slug": "meteoritus",
-      "name": "meteoritus",
-      "fullName": "kallebysantos/meteoritus",
-      "category": "DevTools",
-      "stars": 14,
-      "author": "kallebysantos",
-      "avatar": "https://avatars.githubusercontent.com/u/105971119?v=4",
-      "desc": "A tus server integration for Rocket framework",
-      "demo": "https://crates.io/crates/meteoritus",
-      "repoUrl": "https://github.com/kallebysantos/meteoritus",
-      "long1": "A tus server integration for Rocket framework. Maintained by kallebysantos on GitHub, where it has earned 14 stars from the community.",
-      "long2": "It's actively developed around crates-io, rocket, rust, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Crates Io",
-        "Rocket",
-        "Rust",
-        "Tus"
-      ],
-      "updated": "2 years ago",
-      "pushedAt": "2024-09-09T04:18:52-06:00",
-      "license": "Apache-2.0",
-      "langs": [
-        {
-          "name": "Rust",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "crates-io",
-        "rocket",
-        "rust",
-        "tus",
-        "tus-protocol",
-        "web",
-        "web-development"
-      ],
-      "forks": 2,
-      "watchers": 1,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
       "slug": "rocket-jwt",
       "name": "rocket-jwt",
       "fullName": "Yaxian/rocket-jwt",
@@ -6582,6 +6542,426 @@
         "rust"
       ],
       "forks": 2,
+      "watchers": 1,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "meteoritus",
+      "name": "meteoritus",
+      "fullName": "kallebysantos/meteoritus",
+      "category": "DevTools",
+      "stars": 14,
+      "author": "kallebysantos",
+      "avatar": "https://avatars.githubusercontent.com/u/105971119?v=4",
+      "desc": "A tus server integration for Rocket framework",
+      "demo": "https://crates.io/crates/meteoritus",
+      "repoUrl": "https://github.com/kallebysantos/meteoritus",
+      "long1": "A tus server integration for Rocket framework. Maintained by kallebysantos on GitHub, where it has earned 14 stars from the community.",
+      "long2": "It's actively developed around crates-io, rocket, rust, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Crates Io",
+        "Rocket",
+        "Rust",
+        "Tus"
+      ],
+      "updated": "2 years ago",
+      "pushedAt": "2024-09-09T04:18:52-06:00",
+      "license": "Apache-2.0",
+      "langs": [
+        {
+          "name": "Rust",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "crates-io",
+        "rocket",
+        "rust",
+        "tus",
+        "tus-protocol",
+        "web",
+        "web-development"
+      ],
+      "forks": 2,
+      "watchers": 1,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "thuburrow",
+      "name": "THUBurrow",
+      "fullName": "BobAnkh/THUBurrow",
+      "category": "DevTools",
+      "stars": 14,
+      "author": "BobAnkh",
+      "avatar": "https://avatars.githubusercontent.com/u/44333669?v=4",
+      "desc": "A forum built by Next.js and Rocket.",
+      "demo": "http://bobankh.com/THUBurrow/",
+      "repoUrl": "https://github.com/BobAnkh/THUBurrow",
+      "long1": "A forum built by Next.js and Rocket. Maintained by BobAnkh on GitHub, where it has earned 14 stars from the community.",
+      "long2": "It's actively developed around nextjs, rocket, rust, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Next.js",
+        "Rocket",
+        "Rust",
+        "Thu"
+      ],
+      "updated": "4 years ago",
+      "pushedAt": "2023-02-03T18:35:10-06:00",
+      "license": "GPL-3.0",
+      "langs": [
+        {
+          "name": "Rust",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "nextjs",
+        "rocket",
+        "rust",
+        "thu",
+        "typescript"
+      ],
+      "forks": 2,
+      "issues": 18,
+      "watchers": 1,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "rocket-rust-hello-world",
+      "name": "rocket-rust-hello-world",
+      "fullName": "render-examples/rocket-rust-hello-world",
+      "category": "DevTools",
+      "stars": 13,
+      "author": "render-examples",
+      "avatar": "https://avatars.githubusercontent.com/u/42682871?v=4",
+      "desc": "Rocket Hello World example for Render",
+      "demo": "https://render.com",
+      "repoUrl": "https://github.com/render-examples/rocket-rust-hello-world",
+      "long1": "Rocket Hello World example for Render. Maintained by render-examples on GitHub, where it has earned 13 stars from the community.",
+      "long2": "It's actively developed around rust, rocket-rs, render, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Rust",
+        "Rocket Rs",
+        "Render",
+        "Hosting"
+      ],
+      "updated": "7 months ago",
+      "pushedAt": "2026-02-18T02:05:53-06:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "Rust",
+          "pct": 100,
+          "size": 0
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "rust",
+        "rocket-rs",
+        "render",
+        "hosting",
+        "deployment",
+        "hello-world"
+      ],
+      "addedAt": "2026-08-05T04:38:15.813733+00:00"
+    },
+    {
+      "slug": "hnefatafl",
+      "name": "hnefatafl",
+      "fullName": "LFalch/hnefatafl",
+      "category": "Real-time",
+      "stars": 13,
+      "author": "LFalch",
+      "avatar": "https://avatars.githubusercontent.com/u/1416084?u=60df4feb2bcc3b61f7f59e18d24c2ff4142e55f0&v=4",
+      "desc": "Old \"viking\" board game written in Rust and PIXI.js",
+      "demo": "https://hnefatafl.falch.dev/",
+      "repoUrl": "https://github.com/LFalch/hnefatafl",
+      "long1": "Old \"viking\" board game written in Rust and PIXI.js. Maintained by LFalch on GitHub, where it has earned 13 stars from the community.",
+      "long2": "It's actively developed around hnefatafl, tavl, tafl, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Rust",
+        "Hnefatafl",
+        "Tavl",
+        "Tafl",
+        "Chess"
+      ],
+      "updated": "2 years ago",
+      "pushedAt": "2025-01-18T10:27:26-06:00",
+      "license": "—",
+      "langs": [
+        {
+          "name": "Rust",
+          "pct": 68,
+          "size": 0
+        },
+        {
+          "name": "JavaScript",
+          "pct": 30,
+          "size": 0
+        },
+        {
+          "name": "CSS",
+          "pct": 2,
+          "size": 0
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "hnefatafl",
+        "tavl",
+        "tafl",
+        "chess",
+        "rust-lang",
+        "websocket",
+        "website",
+        "rocket-rs",
+        "js",
+        "pixi-js"
+      ],
+      "addedAt": "2026-08-05T04:38:15.813733+00:00"
+    },
+    {
+      "slug": "rocket-rust",
+      "name": "rocket-rust",
+      "fullName": "aniskhan001/rocket-rust",
+      "category": "APIs",
+      "stars": 13,
+      "author": "aniskhan001",
+      "avatar": "https://avatars.githubusercontent.com/u/2815766?u=4d219145c9809729c793825f9c61ae74c83149af&v=4",
+      "desc": "A sample Web API using RUST and Rocket framework",
+      "demo": null,
+      "repoUrl": "https://github.com/aniskhan001/rocket-rust",
+      "long1": "A sample Web API using RUST and Rocket framework. Maintained by aniskhan001 on GitHub, where it has earned 13 stars from the community.",
+      "long2": "It's actively developed around rust, rocket-rs, api, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Rust",
+        "Rocket Rs",
+        "Api"
+      ],
+      "updated": "7 weeks ago",
+      "pushedAt": "2026-07-27T18:40:23-06:00",
+      "license": "—",
+      "langs": [
+        {
+          "name": "Rust",
+          "pct": 90,
+          "size": 0
+        },
+        {
+          "name": "Dockerfile",
+          "pct": 10,
+          "size": 0
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "rust",
+        "rocket-rs",
+        "api"
+      ],
+      "addedAt": "2026-08-05T04:38:15.813733+00:00"
+    },
+    {
+      "slug": "wol-api",
+      "name": "wol-api",
+      "fullName": "cm-core-team/wol-api",
+      "category": "APIs",
+      "stars": 13,
+      "author": "cm-core-team",
+      "avatar": "https://avatars.githubusercontent.com/u/153857326?v=4",
+      "desc": "An API utilising the watchtower online library website.",
+      "demo": null,
+      "repoUrl": "https://github.com/cm-core-team/wol-api",
+      "long1": "An API utilising the watchtower online library website. Maintained by cm-core-team on GitHub, where it has earned 13 stars from the community.",
+      "long2": "It's actively developed around api, bible, jehovahs-witnesses, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Rust",
+        "Api",
+        "Bible",
+        "Jehovahs Witnesses",
+        "Rocket Rs"
+      ],
+      "updated": "2 years ago",
+      "pushedAt": "2024-04-05T10:20:16-06:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "Rust",
+          "pct": 67,
+          "size": 0
+        },
+        {
+          "name": "Python",
+          "pct": 29,
+          "size": 0
+        },
+        {
+          "name": "Dockerfile",
+          "pct": 4,
+          "size": 0
+        }
+      ],
+      "versions": [
+        {
+          "name": "v0.1.1",
+          "url": "https://github.com/cm-core-team/wol-api/releases/tag/v0.1.1"
+        }
+      ],
+      "topics": [
+        "api",
+        "bible",
+        "jehovahs-witnesses",
+        "rocket-rs",
+        "rust"
+      ],
+      "addedAt": "2026-08-05T04:38:15.813733+00:00"
+    },
+    {
+      "slug": "rust-rocket-template",
+      "name": "rust-rocket-template",
+      "fullName": "GDGVIT/rust-rocket-template",
+      "category": "APIs",
+      "stars": 13,
+      "author": "GDGVIT",
+      "avatar": "https://avatars.githubusercontent.com/u/11557748?v=4",
+      "desc": "An opinionated template for quickly getting set up with Rocket and Diesel.",
+      "demo": null,
+      "repoUrl": "https://github.com/GDGVIT/rust-rocket-template",
+      "long1": "An opinionated template for quickly getting set up with Rocket and Diesel. Maintained by GDGVIT on GitHub, where it has earned 13 stars from the community.",
+      "long2": "It's actively developed around api, crud, diesel, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Rust",
+        "Api",
+        "Crud",
+        "Diesel",
+        "PostgreSQL"
+      ],
+      "updated": "6 years ago",
+      "pushedAt": "2021-02-02T03:25:35-06:00",
+      "license": "—",
+      "langs": [
+        {
+          "name": "Rust",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "api",
+        "crud",
+        "diesel",
+        "hacktoberfest",
+        "postgresql",
+        "rest-api",
+        "rocket",
+        "rust",
+        "template"
+      ],
+      "forks": 1,
+      "issues": 1,
+      "watchers": 7,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "bossa",
+      "name": "Bossa",
+      "fullName": "MaxXSoft/Bossa",
+      "category": "DevTools",
+      "stars": 13,
+      "author": "MaxXSoft",
+      "avatar": "https://avatars.githubusercontent.com/u/5129820?v=4",
+      "desc": "BOOM's Simulation Accelerator.",
+      "demo": null,
+      "repoUrl": "https://github.com/MaxXSoft/Bossa",
+      "long1": "BOOM's Simulation Accelerator. Maintained by MaxXSoft on GitHub, where it has earned 13 stars from the community.",
+      "long2": "It's actively developed around accelerator, boom, chipyard, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Scala",
+        "Accelerator",
+        "Boom",
+        "Chipyard",
+        "Chisel"
+      ],
+      "updated": "5 years ago",
+      "pushedAt": "2021-12-15T22:06:04-06:00",
+      "license": "GPL-3.0",
+      "langs": [
+        {
+          "name": "Scala",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "accelerator",
+        "boom",
+        "chipyard",
+        "chisel",
+        "firrtl",
+        "risc-v",
+        "riscv",
+        "rocket",
+        "rocket-chip",
+        "rtl",
+        "simulation",
+        "soc",
+        "verilator"
+      ],
+      "forks": 2,
+      "watchers": 1,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "sourcedigger",
+      "name": "SourceDigger",
+      "fullName": "Wazzaps/SourceDigger",
+      "category": "DevTools",
+      "stars": 13,
+      "author": "Wazzaps",
+      "avatar": "https://avatars.githubusercontent.com/u/6624767?v=4",
+      "desc": "A historical view on a project's symbols",
+      "demo": "https://sourcedigger.io",
+      "repoUrl": "https://github.com/Wazzaps/SourceDigger",
+      "long1": "A historical view on a project's symbols. Maintained by Wazzaps on GitHub, where it has earned 13 stars from the community.",
+      "long2": "It's actively developed around c, rocket, rust, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "C",
+        "Rocket",
+        "Rust"
+      ],
+      "updated": "3 years ago",
+      "pushedAt": "2023-04-28T14:36:24-06:00",
+      "license": "AGPL-3.0",
+      "langs": [
+        {
+          "name": "Rust",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "c",
+        "rocket",
+        "rust"
+      ],
+      "issues": 17,
       "watchers": 1,
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
@@ -6681,54 +7061,6 @@
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
-      "slug": "rust-rocket-template",
-      "name": "rust-rocket-template",
-      "fullName": "GDGVIT/rust-rocket-template",
-      "category": "APIs",
-      "stars": 13,
-      "author": "GDGVIT",
-      "avatar": "https://avatars.githubusercontent.com/u/11557748?v=4",
-      "desc": "An opinionated template for quickly getting set up with Rocket and Diesel.",
-      "demo": null,
-      "repoUrl": "https://github.com/GDGVIT/rust-rocket-template",
-      "long1": "An opinionated template for quickly getting set up with Rocket and Diesel. Maintained by GDGVIT on GitHub, where it has earned 13 stars from the community.",
-      "long2": "It's actively developed around api, crud, diesel, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Rust",
-        "Api",
-        "Crud",
-        "Diesel",
-        "PostgreSQL"
-      ],
-      "updated": "6 years ago",
-      "pushedAt": "2021-02-02T03:25:35-06:00",
-      "license": "—",
-      "langs": [
-        {
-          "name": "Rust",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "api",
-        "crud",
-        "diesel",
-        "hacktoberfest",
-        "postgresql",
-        "rest-api",
-        "rocket",
-        "rust",
-        "template"
-      ],
-      "forks": 1,
-      "issues": 1,
-      "watchers": 7,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
       "slug": "openlaval",
       "name": "OpenLaval",
       "fullName": "istellartech/OpenLaval",
@@ -6770,326 +7102,6 @@
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
-      "slug": "bossa",
-      "name": "Bossa",
-      "fullName": "MaxXSoft/Bossa",
-      "category": "DevTools",
-      "stars": 13,
-      "author": "MaxXSoft",
-      "avatar": "https://avatars.githubusercontent.com/u/5129820?v=4",
-      "desc": "BOOM's Simulation Accelerator.",
-      "demo": null,
-      "repoUrl": "https://github.com/MaxXSoft/Bossa",
-      "long1": "BOOM's Simulation Accelerator. Maintained by MaxXSoft on GitHub, where it has earned 13 stars from the community.",
-      "long2": "It's actively developed around accelerator, boom, chipyard, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Scala",
-        "Accelerator",
-        "Boom",
-        "Chipyard",
-        "Chisel"
-      ],
-      "updated": "5 years ago",
-      "pushedAt": "2021-12-15T22:06:04-06:00",
-      "license": "GPL-3.0",
-      "langs": [
-        {
-          "name": "Scala",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "accelerator",
-        "boom",
-        "chipyard",
-        "chisel",
-        "firrtl",
-        "risc-v",
-        "riscv",
-        "rocket",
-        "rocket-chip",
-        "rtl",
-        "simulation",
-        "soc",
-        "verilator"
-      ],
-      "forks": 2,
-      "watchers": 1,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "rocket-rust-hello-world",
-      "name": "rocket-rust-hello-world",
-      "fullName": "render-examples/rocket-rust-hello-world",
-      "category": "DevTools",
-      "stars": 13,
-      "author": "render-examples",
-      "avatar": "https://avatars.githubusercontent.com/u/42682871?v=4",
-      "desc": "Rocket Hello World example for Render",
-      "demo": "https://render.com",
-      "repoUrl": "https://github.com/render-examples/rocket-rust-hello-world",
-      "long1": "Rocket Hello World example for Render. Maintained by render-examples on GitHub, where it has earned 13 stars from the community.",
-      "long2": "It's actively developed around rust, rocket-rs, render, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Rust",
-        "Rocket Rs",
-        "Render",
-        "Hosting"
-      ],
-      "updated": "7 months ago",
-      "pushedAt": "2026-02-18T02:05:53-06:00",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "Rust",
-          "pct": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "rust",
-        "rocket-rs",
-        "render",
-        "hosting",
-        "deployment",
-        "hello-world"
-      ],
-      "addedAt": "2026-08-05T04:38:15.813733+00:00"
-    },
-    {
-      "slug": "hnefatafl",
-      "name": "hnefatafl",
-      "fullName": "LFalch/hnefatafl",
-      "category": "Real-time",
-      "stars": 13,
-      "author": "LFalch",
-      "avatar": "https://avatars.githubusercontent.com/u/1416084?u=60df4feb2bcc3b61f7f59e18d24c2ff4142e55f0&v=4",
-      "desc": "Old \"viking\" board game written in Rust and PIXI.js",
-      "demo": "https://hnefatafl.falch.dev/",
-      "repoUrl": "https://github.com/LFalch/hnefatafl",
-      "long1": "Old \"viking\" board game written in Rust and PIXI.js. Maintained by LFalch on GitHub, where it has earned 13 stars from the community.",
-      "long2": "It's actively developed around hnefatafl, tavl, tafl, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Rust",
-        "Hnefatafl",
-        "Tavl",
-        "Tafl",
-        "Chess"
-      ],
-      "updated": "2 years ago",
-      "pushedAt": "2025-01-18T10:27:26-06:00",
-      "license": "—",
-      "langs": [
-        {
-          "name": "Rust",
-          "pct": 68
-        },
-        {
-          "name": "JavaScript",
-          "pct": 30
-        },
-        {
-          "name": "CSS",
-          "pct": 2
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "hnefatafl",
-        "tavl",
-        "tafl",
-        "chess",
-        "rust-lang",
-        "websocket",
-        "website",
-        "rocket-rs",
-        "js",
-        "pixi-js"
-      ],
-      "addedAt": "2026-08-05T04:38:15.813733+00:00"
-    },
-    {
-      "slug": "rocket-rust",
-      "name": "rocket-rust",
-      "fullName": "aniskhan001/rocket-rust",
-      "category": "APIs",
-      "stars": 13,
-      "author": "aniskhan001",
-      "avatar": "https://avatars.githubusercontent.com/u/2815766?u=4d219145c9809729c793825f9c61ae74c83149af&v=4",
-      "desc": "A sample Web API using RUST and Rocket framework",
-      "demo": null,
-      "repoUrl": "https://github.com/aniskhan001/rocket-rust",
-      "long1": "A sample Web API using RUST and Rocket framework. Maintained by aniskhan001 on GitHub, where it has earned 13 stars from the community.",
-      "long2": "It's actively developed around rust, rocket-rs, api, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Rust",
-        "Rocket Rs",
-        "Api"
-      ],
-      "updated": "7 weeks ago",
-      "pushedAt": "2026-07-27T18:40:23-06:00",
-      "license": "—",
-      "langs": [
-        {
-          "name": "Rust",
-          "pct": 90
-        },
-        {
-          "name": "Dockerfile",
-          "pct": 10
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "rust",
-        "rocket-rs",
-        "api"
-      ],
-      "addedAt": "2026-08-05T04:38:15.813733+00:00"
-    },
-    {
-      "slug": "wol-api",
-      "name": "wol-api",
-      "fullName": "cm-core-team/wol-api",
-      "category": "APIs",
-      "stars": 13,
-      "author": "cm-core-team",
-      "avatar": "https://avatars.githubusercontent.com/u/153857326?v=4",
-      "desc": "An API utilising the watchtower online library website.",
-      "demo": null,
-      "repoUrl": "https://github.com/cm-core-team/wol-api",
-      "long1": "An API utilising the watchtower online library website. Maintained by cm-core-team on GitHub, where it has earned 13 stars from the community.",
-      "long2": "It's actively developed around api, bible, jehovahs-witnesses, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Rust",
-        "Api",
-        "Bible",
-        "Jehovahs Witnesses",
-        "Rocket Rs"
-      ],
-      "updated": "2 years ago",
-      "pushedAt": "2024-04-05T10:20:16-06:00",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "Rust",
-          "pct": 67
-        },
-        {
-          "name": "Python",
-          "pct": 29
-        },
-        {
-          "name": "Dockerfile",
-          "pct": 4
-        }
-      ],
-      "versions": [
-        {
-          "name": "v0.1.1",
-          "url": "https://github.com/cm-core-team/wol-api/releases/tag/v0.1.1"
-        }
-      ],
-      "topics": [
-        "api",
-        "bible",
-        "jehovahs-witnesses",
-        "rocket-rs",
-        "rust"
-      ],
-      "addedAt": "2026-08-05T04:38:15.813733+00:00"
-    },
-    {
-      "slug": "sourcedigger",
-      "name": "SourceDigger",
-      "fullName": "Wazzaps/SourceDigger",
-      "category": "DevTools",
-      "stars": 13,
-      "author": "Wazzaps",
-      "avatar": "https://avatars.githubusercontent.com/u/6624767?v=4",
-      "desc": "A historical view on a project's symbols",
-      "demo": "https://sourcedigger.io",
-      "repoUrl": "https://github.com/Wazzaps/SourceDigger",
-      "long1": "A historical view on a project's symbols. Maintained by Wazzaps on GitHub, where it has earned 13 stars from the community.",
-      "long2": "It's actively developed around c, rocket, rust, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "C",
-        "Rocket",
-        "Rust"
-      ],
-      "updated": "3 years ago",
-      "pushedAt": "2023-04-28T14:36:24-06:00",
-      "license": "AGPL-3.0",
-      "langs": [
-        {
-          "name": "Rust",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "c",
-        "rocket",
-        "rust"
-      ],
-      "issues": 17,
-      "watchers": 1,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "tvc-sytem-arduino",
-      "name": "TVC_Sytem_Arduino",
-      "fullName": "TobiasRothlin/TVC_Sytem_Arduino",
-      "category": "DevTools",
-      "stars": 12,
-      "author": "TobiasRothlin",
-      "avatar": "https://avatars.githubusercontent.com/u/25767557?v=4",
-      "desc": "Hardware & Software Interface for a Thrust Vector Control System for the Arduino",
-      "demo": null,
-      "repoUrl": "https://github.com/TobiasRothlin/TVC_Sytem_Arduino",
-      "long1": "Hardware & Software Interface for a Thrust Vector Control System for the Arduino. Maintained by TobiasRothlin on GitHub, where it has earned 12 stars from the community.",
-      "long2": "It's actively developed around arduino, control-systems, rocket, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "C++",
-        "Arduino",
-        "Control Systems",
-        "Rocket",
-        "Thrust"
-      ],
-      "updated": "6 years ago",
-      "pushedAt": "2021-02-21T08:45:50-06:00",
-      "license": "—",
-      "langs": [
-        {
-          "name": "C++",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "arduino",
-        "control-systems",
-        "rocket",
-        "thrust",
-        "tvc",
-        "vector"
-      ],
-      "forks": 2,
-      "watchers": 2,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
       "slug": "stay",
       "name": "stay",
       "fullName": "liftorbit/stay",
@@ -7128,6 +7140,220 @@
         "onboard",
         "rocket"
       ],
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "nomadcoin-rs",
+      "name": "nomadcoin-rs",
+      "fullName": "sjquant/nomadcoin-rs",
+      "category": "Docs",
+      "stars": 12,
+      "author": "sjquant",
+      "avatar": "https://avatars.githubusercontent.com/u/16596777?v=4",
+      "desc": "Rust version of nomadcoin (https://github.com/nomadcoders/nomadcoin)",
+      "demo": null,
+      "repoUrl": "https://github.com/sjquant/nomadcoin-rs",
+      "long1": "Rust version of nomadcoin (https://github.com/nomadcoders/nomadcoin). Maintained by sjquant on GitHub, where it has earned 12 stars from the community.",
+      "long2": "It's actively developed around blockchain, cryptocurrency, learning-by-doing, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Rust",
+        "Blockchain",
+        "Cryptocurrency",
+        "Learning By Doing",
+        "Nomadcoin"
+      ],
+      "updated": "4 years ago",
+      "pushedAt": "2022-05-15T05:24:10-05:00",
+      "license": "—",
+      "langs": [
+        {
+          "name": "Rust",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "blockchain",
+        "cryptocurrency",
+        "learning-by-doing",
+        "nomadcoin",
+        "rocket",
+        "rust",
+        "webserver"
+      ],
+      "forks": 1,
+      "watchers": 1,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "rust-study",
+      "name": "Rust-Study",
+      "fullName": "stivenson/Rust-Study",
+      "category": "DevTools",
+      "stars": 12,
+      "author": "stivenson",
+      "avatar": "https://avatars.githubusercontent.com/u/3952776?v=4",
+      "desc": "Repository to shared rush-lang's exercises of study's process. 📚",
+      "demo": null,
+      "repoUrl": "https://github.com/stivenson/Rust-Study",
+      "long1": "Repository to shared rush-lang's exercises of study's process. 📚. Maintained by stivenson on GitHub, where it has earned 12 stars from the community.",
+      "long2": "It's actively developed around cargo-rust, exercises, rocket, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Rust",
+        "Cargo Rust",
+        "Exercises",
+        "Rocket",
+        "Rust Lang"
+      ],
+      "updated": "9 months ago",
+      "pushedAt": "2025-12-23T12:25:02-06:00",
+      "license": "—",
+      "langs": [
+        {
+          "name": "Rust",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "cargo-rust",
+        "exercises",
+        "rocket",
+        "rust-lang",
+        "rust-macro",
+        "serde",
+        "study"
+      ],
+      "watchers": 1,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "channel-rocketchat",
+      "name": "channel-rocketchat",
+      "fullName": "metsrl/channel-rocketchat",
+      "category": "DevTools",
+      "stars": 12,
+      "author": "metsrl",
+      "avatar": "https://avatars.githubusercontent.com/u/63061098?v=4",
+      "desc": "Botpress 12.x.x / Rocket.Chat integration",
+      "demo": null,
+      "repoUrl": "https://github.com/metsrl/channel-rocketchat",
+      "long1": "Botpress 12.x.x / Rocket.Chat integration. Maintained by metsrl on GitHub, where it has earned 12 stars from the community.",
+      "long2": "It's actively developed around botpress, botpressmodule, bots, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "TypeScript",
+        "Botpress",
+        "Botpressmodule",
+        "Bots",
+        "Rocket"
+      ],
+      "updated": "5 years ago",
+      "pushedAt": "2022-01-18T05:39:37-06:00",
+      "license": "GPL-3.0",
+      "langs": [
+        {
+          "name": "TypeScript",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "botpress",
+        "botpressmodule",
+        "bots",
+        "rocket",
+        "rocketchat"
+      ],
+      "forks": 4,
+      "issues": 3,
+      "watchers": 4,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "focusvent",
+      "name": "focusvent",
+      "fullName": "werner/focusvent",
+      "category": "Dashboards",
+      "stars": 12,
+      "author": "werner",
+      "avatar": "https://avatars.githubusercontent.com/u/50499?v=4",
+      "desc": "Open Source ERP in Rust (API)",
+      "demo": null,
+      "repoUrl": "https://github.com/werner/focusvent",
+      "long1": "Open Source ERP in Rust (API). Maintained by werner on GitHub, where it has earned 12 stars from the community.",
+      "long2": "It's actively developed around erp, postgresql, rocket, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Erp",
+        "PostgreSQL",
+        "Rocket",
+        "Rust"
+      ],
+      "updated": "8 years ago",
+      "pushedAt": "2018-11-05T14:17:47-06:00",
+      "license": "—",
+      "langs": [
+        {
+          "name": "Rust",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "erp",
+        "postgresql",
+        "rocket",
+        "rust"
+      ],
+      "forks": 1,
+      "issues": 6,
+      "watchers": 3,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "rocket-include-static-resources",
+      "name": "rocket-include-static-resources",
+      "fullName": "magiclen/rocket-include-static-resources",
+      "category": "DevTools",
+      "stars": 12,
+      "author": "magiclen",
+      "avatar": "https://avatars.githubusercontent.com/u/5851348?v=4",
+      "desc": "This is a crate which provides macros `static_resources_initialize!` and `static_response!` to statically include files from your Rust project and make them be the HTTP response sources quickly.",
+      "demo": null,
+      "repoUrl": "https://github.com/magiclen/rocket-include-static-resources",
+      "long1": "This is a crate which provides macros `static_resources_initialize!` and `static_response!` to statically include files from your Rust project and make them be the HTTP response sources quickly. Maintained by magiclen on GitHub, where it has earned 12 stars from the community.",
+      "long2": "It's actively developed around rocket, static-resources, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Rust",
+        "Rocket",
+        "Static Resources"
+      ],
+      "updated": "10 months ago",
+      "pushedAt": "2025-11-24T11:53:08-06:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "Rust",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "rocket",
+        "static-resources"
+      ],
+      "forks": 1,
+      "issues": 2,
+      "watchers": 1,
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
@@ -7180,48 +7406,135 @@
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
-      "slug": "nomadcoin-rs",
-      "name": "nomadcoin-rs",
-      "fullName": "sjquant/nomadcoin-rs",
-      "category": "Docs",
+      "slug": "gsd-python",
+      "name": "GSD_python",
+      "fullName": "sizuhe/GSD_python",
+      "category": "Real-time",
       "stars": 12,
-      "author": "sjquant",
-      "avatar": "https://avatars.githubusercontent.com/u/16596777?v=4",
-      "desc": "Rust version of nomadcoin (https://github.com/nomadcoders/nomadcoin)",
+      "author": "sizuhe",
+      "avatar": "https://avatars.githubusercontent.com/u/109649731?v=4",
+      "desc": "Multipurpose GUI/Datalogger software for ground station with real time plotting up to 8 sensors.",
       "demo": null,
-      "repoUrl": "https://github.com/sjquant/nomadcoin-rs",
-      "long1": "Rust version of nomadcoin (https://github.com/nomadcoders/nomadcoin). Maintained by sjquant on GitHub, where it has earned 12 stars from the community.",
-      "long2": "It's actively developed around blockchain, cryptocurrency, learning-by-doing, and is a solid reference for anyone building with these tools.",
+      "repoUrl": "https://github.com/sizuhe/GSD_python",
+      "long1": "Multipurpose GUI/Datalogger software for ground station with real time plotting up to 8 sensors. Maintained by sizuhe on GitHub, where it has earned 12 stars from the community.",
+      "long2": "It's actively developed around arduino, cansat, datalogger, and is a solid reference for anyone building with these tools.",
       "descriptionMd": "",
       "stack": [
-        "Rust",
-        "Blockchain",
-        "Cryptocurrency",
-        "Learning By Doing",
-        "Nomadcoin"
+        "Python",
+        "Arduino",
+        "Cansat",
+        "Datalogger",
+        "Ground Station"
       ],
-      "updated": "4 years ago",
-      "pushedAt": "2022-05-15T05:24:10-05:00",
-      "license": "—",
+      "updated": "3 years ago",
+      "pushedAt": "2023-11-10T09:07:06-06:00",
+      "license": "MIT",
       "langs": [
         {
-          "name": "Rust",
+          "name": "Python",
           "pct": 100,
           "size": 100
         }
       ],
       "versions": [],
       "topics": [
-        "blockchain",
-        "cryptocurrency",
-        "learning-by-doing",
-        "nomadcoin",
+        "arduino",
+        "cansat",
+        "datalogger",
+        "ground-station",
+        "gui",
+        "multipurpose",
+        "python",
+        "qt",
+        "realtime",
         "rocket",
-        "rust",
-        "webserver"
+        "serial",
+        "telemetry",
+        "testbench"
       ],
-      "forks": 1,
+      "issues": 1,
       "watchers": 1,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "rocketnet",
+      "name": "RocketNet",
+      "fullName": "kebby/RocketNet",
+      "category": "DevTools",
+      "stars": 12,
+      "author": "kebby",
+      "avatar": "https://avatars.githubusercontent.com/u/1643404?v=4",
+      "desc": "Pure .NET implementation of the GNU Rocket client",
+      "demo": null,
+      "repoUrl": "https://github.com/kebby/RocketNet",
+      "long1": "Pure .NET implementation of the GNU Rocket client. Maintained by kebby on GitHub, where it has earned 12 stars from the community.",
+      "long2": "It's actively developed around demoscene, rocket, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "C#",
+        "Demoscene",
+        "Rocket"
+      ],
+      "updated": "12 years ago",
+      "pushedAt": "2015-01-06T15:40:37-06:00",
+      "license": "Zlib",
+      "langs": [
+        {
+          "name": "C#",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "demoscene",
+        "rocket"
+      ],
+      "watchers": 3,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "tvc-sytem-arduino",
+      "name": "TVC_Sytem_Arduino",
+      "fullName": "TobiasRothlin/TVC_Sytem_Arduino",
+      "category": "DevTools",
+      "stars": 12,
+      "author": "TobiasRothlin",
+      "avatar": "https://avatars.githubusercontent.com/u/25767557?v=4",
+      "desc": "Hardware & Software Interface for a Thrust Vector Control System for the Arduino",
+      "demo": null,
+      "repoUrl": "https://github.com/TobiasRothlin/TVC_Sytem_Arduino",
+      "long1": "Hardware & Software Interface for a Thrust Vector Control System for the Arduino. Maintained by TobiasRothlin on GitHub, where it has earned 12 stars from the community.",
+      "long2": "It's actively developed around arduino, control-systems, rocket, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "C++",
+        "Arduino",
+        "Control Systems",
+        "Rocket",
+        "Thrust"
+      ],
+      "updated": "6 years ago",
+      "pushedAt": "2021-02-21T08:45:50-06:00",
+      "license": "—",
+      "langs": [
+        {
+          "name": "C++",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "arduino",
+        "control-systems",
+        "rocket",
+        "thrust",
+        "tvc",
+        "vector"
+      ],
+      "forks": 2,
+      "watchers": 2,
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
@@ -7279,66 +7592,25 @@
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
-      "slug": "rocket-include-static-resources",
-      "name": "rocket-include-static-resources",
-      "fullName": "magiclen/rocket-include-static-resources",
+      "slug": "rocket-webapi",
+      "name": "rocket-webapi",
+      "fullName": "yukinarit/rocket-webapi",
       "category": "DevTools",
-      "stars": 12,
-      "author": "magiclen",
-      "avatar": "https://avatars.githubusercontent.com/u/5851348?v=4",
-      "desc": "This is a crate which provides macros `static_resources_initialize!` and `static_response!` to statically include files from your Rust project and make them be the HTTP response sources quickly.",
+      "stars": 11,
+      "author": "yukinarit",
+      "avatar": "https://avatars.githubusercontent.com/u/2347533?v=4",
+      "desc": "Making JSON webapi server with Rust and Rocket :rocket:",
       "demo": null,
-      "repoUrl": "https://github.com/magiclen/rocket-include-static-resources",
-      "long1": "This is a crate which provides macros `static_resources_initialize!` and `static_response!` to statically include files from your Rust project and make them be the HTTP response sources quickly. Maintained by magiclen on GitHub, where it has earned 12 stars from the community.",
-      "long2": "It's actively developed around rocket, static-resources, and is a solid reference for anyone building with these tools.",
+      "repoUrl": "https://github.com/yukinarit/rocket-webapi",
+      "long1": "Making JSON webapi server with Rust and Rocket :rocket:. Maintained by yukinarit on GitHub, where it has earned 11 stars from the community.",
+      "long2": "It's actively developed around rocket, rust, and is a solid reference for anyone building with these tools.",
       "descriptionMd": "",
       "stack": [
-        "Rust",
-        "Rocket",
-        "Static Resources"
-      ],
-      "updated": "10 months ago",
-      "pushedAt": "2025-11-24T11:53:08-06:00",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "Rust",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "rocket",
-        "static-resources"
-      ],
-      "forks": 1,
-      "issues": 2,
-      "watchers": 1,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "focusvent",
-      "name": "focusvent",
-      "fullName": "werner/focusvent",
-      "category": "Dashboards",
-      "stars": 12,
-      "author": "werner",
-      "avatar": "https://avatars.githubusercontent.com/u/50499?v=4",
-      "desc": "Open Source ERP in Rust (API)",
-      "demo": null,
-      "repoUrl": "https://github.com/werner/focusvent",
-      "long1": "Open Source ERP in Rust (API). Maintained by werner on GitHub, where it has earned 12 stars from the community.",
-      "long2": "It's actively developed around erp, postgresql, rocket, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Erp",
-        "PostgreSQL",
         "Rocket",
         "Rust"
       ],
-      "updated": "8 years ago",
-      "pushedAt": "2018-11-05T14:17:47-06:00",
+      "updated": "6 years ago",
+      "pushedAt": "2020-08-26T22:21:54-05:00",
       "license": "—",
       "langs": [
         {
@@ -7349,279 +7621,10 @@
       ],
       "versions": [],
       "topics": [
-        "erp",
-        "postgresql",
         "rocket",
         "rust"
       ],
       "forks": 1,
-      "issues": 6,
-      "watchers": 3,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "channel-rocketchat",
-      "name": "channel-rocketchat",
-      "fullName": "metsrl/channel-rocketchat",
-      "category": "DevTools",
-      "stars": 12,
-      "author": "metsrl",
-      "avatar": "https://avatars.githubusercontent.com/u/63061098?v=4",
-      "desc": "Botpress 12.x.x / Rocket.Chat integration",
-      "demo": null,
-      "repoUrl": "https://github.com/metsrl/channel-rocketchat",
-      "long1": "Botpress 12.x.x / Rocket.Chat integration. Maintained by metsrl on GitHub, where it has earned 12 stars from the community.",
-      "long2": "It's actively developed around botpress, botpressmodule, bots, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "TypeScript",
-        "Botpress",
-        "Botpressmodule",
-        "Bots",
-        "Rocket"
-      ],
-      "updated": "5 years ago",
-      "pushedAt": "2022-01-18T05:39:37-06:00",
-      "license": "GPL-3.0",
-      "langs": [
-        {
-          "name": "TypeScript",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "botpress",
-        "botpressmodule",
-        "bots",
-        "rocket",
-        "rocketchat"
-      ],
-      "forks": 4,
-      "issues": 3,
-      "watchers": 4,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "rust-study",
-      "name": "Rust-Study",
-      "fullName": "stivenson/Rust-Study",
-      "category": "DevTools",
-      "stars": 12,
-      "author": "stivenson",
-      "avatar": "https://avatars.githubusercontent.com/u/3952776?v=4",
-      "desc": "Repository to shared rush-lang's exercises of study's process. 📚",
-      "demo": null,
-      "repoUrl": "https://github.com/stivenson/Rust-Study",
-      "long1": "Repository to shared rush-lang's exercises of study's process. 📚. Maintained by stivenson on GitHub, where it has earned 12 stars from the community.",
-      "long2": "It's actively developed around cargo-rust, exercises, rocket, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Rust",
-        "Cargo Rust",
-        "Exercises",
-        "Rocket",
-        "Rust Lang"
-      ],
-      "updated": "9 months ago",
-      "pushedAt": "2025-12-23T12:25:02-06:00",
-      "license": "—",
-      "langs": [
-        {
-          "name": "Rust",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "cargo-rust",
-        "exercises",
-        "rocket",
-        "rust-lang",
-        "rust-macro",
-        "serde",
-        "study"
-      ],
-      "watchers": 1,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "rocketnet",
-      "name": "RocketNet",
-      "fullName": "kebby/RocketNet",
-      "category": "DevTools",
-      "stars": 12,
-      "author": "kebby",
-      "avatar": "https://avatars.githubusercontent.com/u/1643404?v=4",
-      "desc": "Pure .NET implementation of the GNU Rocket client",
-      "demo": null,
-      "repoUrl": "https://github.com/kebby/RocketNet",
-      "long1": "Pure .NET implementation of the GNU Rocket client. Maintained by kebby on GitHub, where it has earned 12 stars from the community.",
-      "long2": "It's actively developed around demoscene, rocket, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "C#",
-        "Demoscene",
-        "Rocket"
-      ],
-      "updated": "12 years ago",
-      "pushedAt": "2015-01-06T15:40:37-06:00",
-      "license": "Zlib",
-      "langs": [
-        {
-          "name": "C#",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "demoscene",
-        "rocket"
-      ],
-      "watchers": 3,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "gsd-python",
-      "name": "GSD_python",
-      "fullName": "sizuhe/GSD_python",
-      "category": "Real-time",
-      "stars": 12,
-      "author": "sizuhe",
-      "avatar": "https://avatars.githubusercontent.com/u/109649731?v=4",
-      "desc": "Multipurpose GUI/Datalogger software for ground station with real time plotting up to 8 sensors.",
-      "demo": null,
-      "repoUrl": "https://github.com/sizuhe/GSD_python",
-      "long1": "Multipurpose GUI/Datalogger software for ground station with real time plotting up to 8 sensors. Maintained by sizuhe on GitHub, where it has earned 12 stars from the community.",
-      "long2": "It's actively developed around arduino, cansat, datalogger, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Python",
-        "Arduino",
-        "Cansat",
-        "Datalogger",
-        "Ground Station"
-      ],
-      "updated": "3 years ago",
-      "pushedAt": "2023-11-10T09:07:06-06:00",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "Python",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "arduino",
-        "cansat",
-        "datalogger",
-        "ground-station",
-        "gui",
-        "multipurpose",
-        "python",
-        "qt",
-        "realtime",
-        "rocket",
-        "serial",
-        "telemetry",
-        "testbench"
-      ],
-      "issues": 1,
-      "watchers": 1,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "thermal-protection-system",
-      "name": "thermal-protection-system",
-      "fullName": "KOSASIH/thermal-protection-system",
-      "category": "APIs",
-      "stars": 11,
-      "author": "KOSASIH",
-      "avatar": "https://avatars.githubusercontent.com/u/4611581?v=4",
-      "desc": "A comprehensive repository for designing, simulating, and analyzing thermal protection systems and heat shielding for spacecraft and rockets.",
-      "demo": "https://kosasih.github.io/thermal-protection-system/",
-      "repoUrl": "https://github.com/KOSASIH/thermal-protection-system",
-      "long1": "A comprehensive repository for designing, simulating, and analyzing thermal protection systems and heat shielding for spacecraft and rockets. Maintained by KOSASIH on GitHub, where it has earned 11 stars from the community.",
-      "long2": "It's actively developed around propulsion, propulsion-systems, rocket, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Python",
-        "Propulsion",
-        "Propulsion Systems",
-        "Rocket",
-        "Spacecraft"
-      ],
-      "updated": "2 years ago",
-      "pushedAt": "2024-08-03T22:32:32-06:00",
-      "license": "Apache-2.0",
-      "langs": [
-        {
-          "name": "Python",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "propulsion",
-        "propulsion-systems",
-        "rocket",
-        "spacecraft",
-        "spacex",
-        "spacex-api"
-      ],
-      "forks": 1,
-      "issues": 1,
-      "watchers": 1,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "rocket-jwt-authorization",
-      "name": "rocket-jwt-authorization",
-      "fullName": "magiclen/rocket-jwt-authorization",
-      "category": "Authentication",
-      "stars": 11,
-      "author": "magiclen",
-      "avatar": "https://avatars.githubusercontent.com/u/5851348?v=4",
-      "desc": "This crate provides a procedure macro to create request guards used for authorization.",
-      "demo": null,
-      "repoUrl": "https://github.com/magiclen/rocket-jwt-authorization",
-      "long1": "This crate provides a procedure macro to create request guards used for authorization. Maintained by magiclen on GitHub, where it has earned 11 stars from the community.",
-      "long2": "It's actively developed around authentication, authorization, jwt, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Rust",
-        "Authentication",
-        "Authorization",
-        "Jwt",
-        "Rocket"
-      ],
-      "updated": "10 months ago",
-      "pushedAt": "2025-11-23T21:08:59-06:00",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "Rust",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "authentication",
-        "authorization",
-        "jwt",
-        "rocket",
-        "rust"
-      ],
-      "forks": 2,
-      "issues": 1,
-      "watchers": 1,
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
@@ -7679,88 +7682,6 @@
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
-      "slug": "rocket-webapi",
-      "name": "rocket-webapi",
-      "fullName": "yukinarit/rocket-webapi",
-      "category": "DevTools",
-      "stars": 11,
-      "author": "yukinarit",
-      "avatar": "https://avatars.githubusercontent.com/u/2347533?v=4",
-      "desc": "Making JSON webapi server with Rust and Rocket :rocket:",
-      "demo": null,
-      "repoUrl": "https://github.com/yukinarit/rocket-webapi",
-      "long1": "Making JSON webapi server with Rust and Rocket :rocket:. Maintained by yukinarit on GitHub, where it has earned 11 stars from the community.",
-      "long2": "It's actively developed around rocket, rust, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Rocket",
-        "Rust"
-      ],
-      "updated": "6 years ago",
-      "pushedAt": "2020-08-26T22:21:54-05:00",
-      "license": "—",
-      "langs": [
-        {
-          "name": "Rust",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "rocket",
-        "rust"
-      ],
-      "forks": 1,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "rust-graphql",
-      "name": "rust-graphql",
-      "fullName": "render-examples/rust-graphql",
-      "category": "DevTools",
-      "stars": 11,
-      "author": "render-examples",
-      "avatar": "https://avatars.githubusercontent.com/u/42682871?v=4",
-      "desc": "Rust GraphQL Server Example with Juniper and Rocket",
-      "demo": "https://render.com",
-      "repoUrl": "https://github.com/render-examples/rust-graphql",
-      "long1": "Rust GraphQL Server Example with Juniper and Rocket. Maintained by render-examples on GitHub, where it has earned 11 stars from the community.",
-      "long2": "It's actively developed around rust, rust-lang, graphql, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Rust",
-        "Rust Lang",
-        "GraphQL",
-        "Juniper"
-      ],
-      "updated": "5 months ago",
-      "pushedAt": "2026-04-10T17:06:23-06:00",
-      "license": "MIT",
-      "langs": [
-        {
-          "pct": 100,
-          "name": "Rust"
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "rust",
-        "rust-lang",
-        "graphql",
-        "juniper",
-        "rocket",
-        "rocket-rs",
-        "render",
-        "deployment",
-        "server"
-      ],
-      "forks": 14,
-      "issues": 2,
-      "watchers": 2,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
       "slug": "modelrocketcomputer",
       "name": "ModelRocketComputer",
       "fullName": "ndanilo8/ModelRocketComputer",
@@ -7801,6 +7722,142 @@
       ],
       "forks": 3,
       "watchers": 3,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "rocket-jwt-authorization",
+      "name": "rocket-jwt-authorization",
+      "fullName": "magiclen/rocket-jwt-authorization",
+      "category": "Authentication",
+      "stars": 11,
+      "author": "magiclen",
+      "avatar": "https://avatars.githubusercontent.com/u/5851348?v=4",
+      "desc": "This crate provides a procedure macro to create request guards used for authorization.",
+      "demo": null,
+      "repoUrl": "https://github.com/magiclen/rocket-jwt-authorization",
+      "long1": "This crate provides a procedure macro to create request guards used for authorization. Maintained by magiclen on GitHub, where it has earned 11 stars from the community.",
+      "long2": "It's actively developed around authentication, authorization, jwt, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Rust",
+        "Authentication",
+        "Authorization",
+        "Jwt",
+        "Rocket"
+      ],
+      "updated": "10 months ago",
+      "pushedAt": "2025-11-23T21:08:59-06:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "Rust",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "authentication",
+        "authorization",
+        "jwt",
+        "rocket",
+        "rust"
+      ],
+      "forks": 2,
+      "issues": 1,
+      "watchers": 1,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "thermal-protection-system",
+      "name": "thermal-protection-system",
+      "fullName": "KOSASIH/thermal-protection-system",
+      "category": "APIs",
+      "stars": 11,
+      "author": "KOSASIH",
+      "avatar": "https://avatars.githubusercontent.com/u/4611581?v=4",
+      "desc": "A comprehensive repository for designing, simulating, and analyzing thermal protection systems and heat shielding for spacecraft and rockets.",
+      "demo": "https://kosasih.github.io/thermal-protection-system/",
+      "repoUrl": "https://github.com/KOSASIH/thermal-protection-system",
+      "long1": "A comprehensive repository for designing, simulating, and analyzing thermal protection systems and heat shielding for spacecraft and rockets. Maintained by KOSASIH on GitHub, where it has earned 11 stars from the community.",
+      "long2": "It's actively developed around propulsion, propulsion-systems, rocket, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Python",
+        "Propulsion",
+        "Propulsion Systems",
+        "Rocket",
+        "Spacecraft"
+      ],
+      "updated": "2 years ago",
+      "pushedAt": "2024-08-03T22:32:32-06:00",
+      "license": "Apache-2.0",
+      "langs": [
+        {
+          "name": "Python",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "propulsion",
+        "propulsion-systems",
+        "rocket",
+        "spacecraft",
+        "spacex",
+        "spacex-api"
+      ],
+      "forks": 1,
+      "issues": 1,
+      "watchers": 1,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "rust-graphql",
+      "name": "rust-graphql",
+      "fullName": "render-examples/rust-graphql",
+      "category": "DevTools",
+      "stars": 11,
+      "author": "render-examples",
+      "avatar": "https://avatars.githubusercontent.com/u/42682871?v=4",
+      "desc": "Rust GraphQL Server Example with Juniper and Rocket",
+      "demo": "https://render.com",
+      "repoUrl": "https://github.com/render-examples/rust-graphql",
+      "long1": "Rust GraphQL Server Example with Juniper and Rocket. Maintained by render-examples on GitHub, where it has earned 11 stars from the community.",
+      "long2": "It's actively developed around rust, rust-lang, graphql, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Rust",
+        "Rust Lang",
+        "GraphQL",
+        "Juniper"
+      ],
+      "updated": "5 months ago",
+      "pushedAt": "2026-04-10T17:06:23-06:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "Rust",
+          "pct": 100,
+          "size": 0
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "rust",
+        "rust-lang",
+        "graphql",
+        "juniper",
+        "rocket",
+        "rocket-rs",
+        "render",
+        "deployment",
+        "server"
+      ],
+      "forks": 14,
+      "issues": 2,
+      "watchers": 2,
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
@@ -7890,131 +7947,6 @@
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
-      "slug": "microservice-checksum",
-      "name": "microservice-checksum",
-      "fullName": "timClicks/microservice-checksum",
-      "category": "DevTools",
-      "stars": 10,
-      "author": "timClicks",
-      "avatar": "https://avatars.githubusercontent.com/u/27889?u=2fe85b084762251e639b70ce116c46b40cfd8927&v=4",
-      "desc": "A HTTP microservice that provides a checksum to POSTed data",
-      "demo": null,
-      "repoUrl": "https://github.com/timClicks/microservice-checksum",
-      "long1": "A HTTP microservice that provides a checksum to POSTed data. Maintained by timClicks on GitHub, where it has earned 10 stars from the community.",
-      "long2": "It's actively developed around rust, microservice, crc, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Rust",
-        "Microservice",
-        "Crc",
-        "Crc32"
-      ],
-      "updated": "7 years ago",
-      "pushedAt": "2019-05-25T15:40:13-05:00",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "Rust",
-          "pct": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "rust",
-        "microservice",
-        "crc",
-        "crc32",
-        "crc16",
-        "crc64",
-        "crc-calculation",
-        "http",
-        "rocket-rs"
-      ],
-      "addedAt": "2026-08-05T04:38:15.813733+00:00"
-    },
-    {
-      "slug": "erwa-mytodo",
-      "name": "erwa_mytodo",
-      "fullName": "seed-rs/erwa_mytodo",
-      "category": "DevTools",
-      "stars": 10,
-      "author": "seed-rs",
-      "avatar": "https://avatars.githubusercontent.com/u/57684960?v=4",
-      "desc": "Rust full-stack example. Diesel, Rocket, Seed.",
-      "demo": "https://erwabook.com/intro/index.html",
-      "repoUrl": "https://github.com/seed-rs/erwa_mytodo",
-      "long1": "Rust full-stack example. Diesel, Rocket, Seed. Maintained by seed-rs on GitHub, where it has earned 10 stars from the community.",
-      "long2": "It's actively developed around diesel, example, rocket, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Diesel",
-        "Example",
-        "Rocket",
-        "Rust"
-      ],
-      "updated": "3 years ago",
-      "pushedAt": "2023-06-14T10:13:27-06:00",
-      "license": "—",
-      "langs": [
-        {
-          "name": "Rust",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "diesel",
-        "example",
-        "rocket",
-        "rust",
-        "seed"
-      ],
-      "forks": 1,
-      "issues": 6,
-      "watchers": 1,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "impulse",
-      "name": "impulse",
-      "fullName": "CGrassin/impulse",
-      "category": "Real-time",
-      "stars": 10,
-      "author": "CGrassin",
-      "avatar": "https://avatars.githubusercontent.com/u/42406777?v=4",
-      "desc": "Impulse is a cross-platform simulator for gimbaled thrust rockets that accurately simulates real-time physics.",
-      "demo": null,
-      "repoUrl": "https://github.com/CGrassin/impulse",
-      "long1": "Impulse is a cross-platform simulator for gimbaled thrust rockets that accurately simulates real-time physics. Maintained by CGrassin on GitHub, where it has earned 10 stars from the community.",
-      "long2": "It's actively developed around java, physics-simulation, rocket, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "Java",
-        "Physics Simulation",
-        "Rocket"
-      ],
-      "updated": "7 years ago",
-      "pushedAt": "2019-09-23T12:24:41-05:00",
-      "license": "MIT",
-      "langs": [
-        {
-          "name": "Java",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "java",
-        "physics-simulation",
-        "rocket"
-      ],
-      "forks": 5,
-      "watchers": 3,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
       "slug": "teknofest-roket-ana-aviyonik-kodu",
       "name": "Teknofest_roket_ana_aviyonik_kodu",
       "fullName": "koesan/Teknofest_roket_ana_aviyonik_kodu",
@@ -8087,7 +8019,7 @@
         "Gqlgen",
         "Gqlgen Subscriptions"
       ],
-      "updated": "4 months ago",
+      "updated": "5 months ago",
       "pushedAt": "2026-04-29T10:12:20-06:00",
       "license": "Apache-2.0",
       "langs": [
@@ -8111,6 +8043,173 @@
       ],
       "forks": 2,
       "issues": 7,
+      "watchers": 1,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "impulse",
+      "name": "impulse",
+      "fullName": "CGrassin/impulse",
+      "category": "Real-time",
+      "stars": 10,
+      "author": "CGrassin",
+      "avatar": "https://avatars.githubusercontent.com/u/42406777?v=4",
+      "desc": "Impulse is a cross-platform simulator for gimbaled thrust rockets that accurately simulates real-time physics.",
+      "demo": null,
+      "repoUrl": "https://github.com/CGrassin/impulse",
+      "long1": "Impulse is a cross-platform simulator for gimbaled thrust rockets that accurately simulates real-time physics. Maintained by CGrassin on GitHub, where it has earned 10 stars from the community.",
+      "long2": "It's actively developed around java, physics-simulation, rocket, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Java",
+        "Physics Simulation",
+        "Rocket"
+      ],
+      "updated": "7 years ago",
+      "pushedAt": "2019-09-23T12:24:41-05:00",
+      "license": "MIT",
+      "langs": [
+        {
+          "name": "Java",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "java",
+        "physics-simulation",
+        "rocket"
+      ],
+      "forks": 5,
+      "watchers": 3,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "telemetry-system",
+      "name": "telemetry-system",
+      "fullName": "cvetaevvitaliy/telemetry-system",
+      "category": "DevTools",
+      "stars": 10,
+      "author": "cvetaevvitaliy",
+      "avatar": "https://avatars.githubusercontent.com/u/26421560?v=4",
+      "desc": "Telemetry system for balloon, rocket and other things that can fly high",
+      "demo": null,
+      "repoUrl": "https://github.com/cvetaevvitaliy/telemetry-system",
+      "long1": "Telemetry system for balloon, rocket and other things that can fly high. Maintained by cvetaevvitaliy on GitHub, where it has earned 10 stars from the community.",
+      "long2": "It's actively developed around e19, e19-868m30s, ebyte, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "C",
+        "E19",
+        "E19 868M30S",
+        "Ebyte",
+        "Lora"
+      ],
+      "updated": "4 years ago",
+      "pushedAt": "2022-04-23T03:12:27-05:00",
+      "license": "GPL-3.0",
+      "langs": [
+        {
+          "name": "C",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "e19",
+        "e19-868m30s",
+        "ebyte",
+        "lora",
+        "lora-transceiver",
+        "rocket",
+        "stm32",
+        "sx1276",
+        "telemetry"
+      ],
+      "forks": 1,
+      "watchers": 1,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "erwa-mytodo",
+      "name": "erwa_mytodo",
+      "fullName": "seed-rs/erwa_mytodo",
+      "category": "DevTools",
+      "stars": 10,
+      "author": "seed-rs",
+      "avatar": "https://avatars.githubusercontent.com/u/57684960?v=4",
+      "desc": "Rust full-stack example. Diesel, Rocket, Seed.",
+      "demo": "https://erwabook.com/intro/index.html",
+      "repoUrl": "https://github.com/seed-rs/erwa_mytodo",
+      "long1": "Rust full-stack example. Diesel, Rocket, Seed. Maintained by seed-rs on GitHub, where it has earned 10 stars from the community.",
+      "long2": "It's actively developed around diesel, example, rocket, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Diesel",
+        "Example",
+        "Rocket",
+        "Rust"
+      ],
+      "updated": "3 years ago",
+      "pushedAt": "2023-06-14T10:13:27-06:00",
+      "license": "—",
+      "langs": [
+        {
+          "name": "Rust",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "diesel",
+        "example",
+        "rocket",
+        "rust",
+        "seed"
+      ],
+      "forks": 1,
+      "issues": 6,
+      "watchers": 1,
+      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+    },
+    {
+      "slug": "calendar-server",
+      "name": "calendar-server",
+      "fullName": "ItsaMeTuni/calendar-server",
+      "category": "DevTools",
+      "stars": 10,
+      "author": "ItsaMeTuni",
+      "avatar": "https://avatars.githubusercontent.com/u/22478550?v=4",
+      "desc": "A self-hosted calendaring backend alternative to Google Calendar",
+      "demo": null,
+      "repoUrl": "https://github.com/ItsaMeTuni/calendar-server",
+      "long1": "A self-hosted calendaring backend alternative to Google Calendar. Maintained by ItsaMeTuni on GitHub, where it has earned 10 stars from the community.",
+      "long2": "It's actively developed around calendar-backend, rocket, rust, and is a solid reference for anyone building with these tools.",
+      "descriptionMd": "",
+      "stack": [
+        "Calendar Backend",
+        "Rocket",
+        "Rust"
+      ],
+      "updated": "6 years ago",
+      "pushedAt": "2021-02-18T19:54:48-06:00",
+      "license": "—",
+      "langs": [
+        {
+          "name": "Rust",
+          "pct": 100,
+          "size": 100
+        }
+      ],
+      "versions": [],
+      "topics": [
+        "calendar-backend",
+        "rocket",
+        "rust"
+      ],
       "watchers": 1,
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
@@ -8164,89 +8263,48 @@
       "addedAt": "2026-07-15T22:28:32.681223+00:00"
     },
     {
-      "slug": "calendar-server",
-      "name": "calendar-server",
-      "fullName": "ItsaMeTuni/calendar-server",
+      "slug": "microservice-checksum",
+      "name": "microservice-checksum",
+      "fullName": "timClicks/microservice-checksum",
       "category": "DevTools",
       "stars": 10,
-      "author": "ItsaMeTuni",
-      "avatar": "https://avatars.githubusercontent.com/u/22478550?v=4",
-      "desc": "A self-hosted calendaring backend alternative to Google Calendar",
+      "author": "timClicks",
+      "avatar": "https://avatars.githubusercontent.com/u/27889?u=2fe85b084762251e639b70ce116c46b40cfd8927&v=4",
+      "desc": "A HTTP microservice that provides a checksum to POSTed data",
       "demo": null,
-      "repoUrl": "https://github.com/ItsaMeTuni/calendar-server",
-      "long1": "A self-hosted calendaring backend alternative to Google Calendar. Maintained by ItsaMeTuni on GitHub, where it has earned 10 stars from the community.",
-      "long2": "It's actively developed around calendar-backend, rocket, rust, and is a solid reference for anyone building with these tools.",
+      "repoUrl": "https://github.com/timClicks/microservice-checksum",
+      "long1": "A HTTP microservice that provides a checksum to POSTed data. Maintained by timClicks on GitHub, where it has earned 10 stars from the community.",
+      "long2": "It's actively developed around rust, microservice, crc, and is a solid reference for anyone building with these tools.",
       "descriptionMd": "",
       "stack": [
-        "Calendar Backend",
-        "Rocket",
-        "Rust"
+        "Rust",
+        "Microservice",
+        "Crc",
+        "Crc32"
       ],
-      "updated": "6 years ago",
-      "pushedAt": "2021-02-18T19:54:48-06:00",
-      "license": "—",
+      "updated": "7 years ago",
+      "pushedAt": "2019-05-25T15:40:13-05:00",
+      "license": "MIT",
       "langs": [
         {
           "name": "Rust",
           "pct": 100,
-          "size": 100
+          "size": 0
         }
       ],
       "versions": [],
       "topics": [
-        "calendar-backend",
-        "rocket",
-        "rust"
+        "rust",
+        "microservice",
+        "crc",
+        "crc32",
+        "crc16",
+        "crc64",
+        "crc-calculation",
+        "http",
+        "rocket-rs"
       ],
-      "watchers": 1,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
-    },
-    {
-      "slug": "telemetry-system",
-      "name": "telemetry-system",
-      "fullName": "cvetaevvitaliy/telemetry-system",
-      "category": "DevTools",
-      "stars": 10,
-      "author": "cvetaevvitaliy",
-      "avatar": "https://avatars.githubusercontent.com/u/26421560?v=4",
-      "desc": "Telemetry system for balloon, rocket and other things that can fly high",
-      "demo": null,
-      "repoUrl": "https://github.com/cvetaevvitaliy/telemetry-system",
-      "long1": "Telemetry system for balloon, rocket and other things that can fly high. Maintained by cvetaevvitaliy on GitHub, where it has earned 10 stars from the community.",
-      "long2": "It's actively developed around e19, e19-868m30s, ebyte, and is a solid reference for anyone building with these tools.",
-      "descriptionMd": "",
-      "stack": [
-        "C",
-        "E19",
-        "E19 868M30S",
-        "Ebyte",
-        "Lora"
-      ],
-      "updated": "4 years ago",
-      "pushedAt": "2022-04-23T03:12:27-05:00",
-      "license": "GPL-3.0",
-      "langs": [
-        {
-          "name": "C",
-          "pct": 100,
-          "size": 100
-        }
-      ],
-      "versions": [],
-      "topics": [
-        "e19",
-        "e19-868m30s",
-        "ebyte",
-        "lora",
-        "lora-transceiver",
-        "rocket",
-        "stm32",
-        "sx1276",
-        "telemetry"
-      ],
-      "forks": 1,
-      "watchers": 1,
-      "addedAt": "2026-07-15T22:28:32.681223+00:00"
+      "addedAt": "2026-08-05T04:38:15.813733+00:00"
     }
   ]
 }
